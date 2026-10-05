@@ -4,6 +4,7 @@ import Link from "next/link";
 import "@/components/interactives.css";
 import "@/components/teach.css";
 import EmbedCode from "@/components/EmbedCode";
+import Scenarios from "@/components/Scenarios";
 import teach from "@/data/teach.json";
 
 export const metadata: Metadata = {
@@ -87,6 +88,13 @@ export default function Page() {
             <p>Reference pages on the seven questions that decide the vote and the nine groups of voters, each with charts and a sourced reading list.</p>
           </li>
         </ul>
+
+        <h2 className="sec-h">Coalition scenarios for class</h2>
+        <p className="note">
+          Four line-ups Israeli politics has actually produced or ruled out, each with one sourced fact, one thing to try in the Coalition Builder
+          and one question. The seat counts update with the polls.
+        </p>
+        <Scenarios />
 
         <h2 className="sec-h">Embed the interactives</h2>
         <p className="note">
