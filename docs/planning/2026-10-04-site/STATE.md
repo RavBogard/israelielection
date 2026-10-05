@@ -148,6 +148,8 @@ Done:
 - Daniel (Oct 5) asked for a home-page redesign and a logo ("look awesome and less ai generic").
   - Delegated to a design subagent on a worktree branch; I review and merge.
   - Added `.claude/` to the tsconfig, ESLint and Vitest ignores, so agent worktrees don't leak into checks.
+  - Result: branch `redesign` (Vercel preview). Design: paper and ink with no accent colour, so only the bloc colours carry colour; Frank Ruhl Libre with Source Serif and Sans; a ballot-slip logo; a front page above the builder with "where the race stands", a seat strip and an index of the site.
+  - Held for Daniel's look (user-visible identity change, no precedent). Merge to main on his OK.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.

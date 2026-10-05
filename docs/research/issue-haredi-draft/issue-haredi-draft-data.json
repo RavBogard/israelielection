@@ -1,0 +1,1436 @@
+{
+ "datapoints": [
+  {
+   "id": "enlist-pre-oct7",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men enlisted in IDF in draft year (July-June)",
+   "value": 1800,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "pre-oct7"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07-29 report",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow, as data shows uptick in enlistment",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": "annual, before Oct 7 2023; JPost gives ~1,700",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "enlist-2023-24",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men enlisted in IDF in draft year (July-June)",
+   "value": 2200,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2023-24"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07-29 report",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow, as data shows uptick in enlistment",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "enlist-2024-25",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men enlisted in IDF in draft year (July-June)",
+   "value": 2800,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07-29 report",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow, as data shows uptick in enlistment",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": "IDI 61994 gives ~2,940; IDI 59892 ~2,700",
+   "verification": "CONFIRMED; source conflict: IDI 61994 gives ~2,940 (checked 2026-10-04)"
+  },
+  {
+   "id": "enlist-2025-26",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men enlisted in IDF in draft year (July-June)",
+   "value": 4000,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2025-26"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07-29 report",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow, as data shows uptick in enlistment",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": "preliminary, not final",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "enlist-target",
+   "topic": "issue-haredi-draft",
+   "measure": "IDF annual Haredi enlistment target",
+   "value": 4800,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders...",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "haredi-cohort",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men reaching draft age each year",
+   "value": 14000,
+   "unit": "people (approx.)",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "Jerusalem Post (Keinon)",
+   "source_title": "From 'better to die' to enlistment",
+   "url": "https://www.jpost.com/israel-news/article-904035",
+   "verified": true,
+   "notes": "estimate",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "enlist-combat-2025-26",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi 2025-26 enlistees going to combat units",
+   "value": 1000,
+   "unit": "people (approx.)",
+   "population": "Haredi enlistees",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "Jerusalem Post",
+   "source_title": "From 'better to die' to enlistment",
+   "url": "https://www.jpost.com/israel-news/article-904035",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "ag-h2-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi enlistees July-Dec 2025",
+   "value": 1800,
+   "unit": "people (more than)",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-05-31",
+   "source_org": "Attorney General via Times of Israel",
+   "source_title": "AG: Over 1,800 Haredi men enlisted...",
+   "url": "https://www.timesofisrael.com/liveblog_entry/ag-over-1800-haredi-men-enlisted-to-idf-in-six-month-period-in-2025-far-short-of-security-needs/",
+   "verified": true,
+   "notes": "AG: a 50 percent increase over prior period"
+  },
+  {
+   "id": "orders-2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Initial draft orders, 2024 draft year",
+   "value": 24000,
+   "unit": "orders",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI (Dagan, Cohen, Fuchs)",
+   "source_title": "Conscription of Haredi Yeshiva Students to the IDF and the Emerging Constitutional Crisis",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "orders-2024-attended",
+   "topic": "issue-haredi-draft",
+   "measure": "Attended induction center, 2024 draft year",
+   "value": 2738,
+   "unit": "people",
+   "population": "Haredi men with orders",
+   "breakdown": {
+    "draft_year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "orders-2024-enlisted",
+   "topic": "issue-haredi-draft",
+   "measure": "Enlisted from draft orders, 2024 draft year",
+   "value": 798,
+   "unit": "people",
+   "population": "Haredi men with orders",
+   "breakdown": {
+    "draft_year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": "plus 432 with enlistment dates set",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "orders-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Draft notices sent, 2025 draft year",
+   "value": 53741,
+   "unit": "notices",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2025-26"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "orders-2025-reported",
+   "topic": "issue-haredi-draft",
+   "measure": "Reported, of 15,938 whose dates passed, 2025 draft year",
+   "value": 701,
+   "unit": "people",
+   "population": "Haredi men with orders",
+   "breakdown": {
+    "draft_year": "2025-26"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "summons-jun2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Summonses issued by early June 2025",
+   "value": 19000,
+   "unit": "summonses",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-06",
+   "source_org": "IDI (Ravitsky Tur-Paz)",
+   "source_title": "A Year Since the Supreme Court's Conscription Ruling",
+   "url": "https://en.idi.org.il/articles/59892",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "summons-jun2025-reported",
+   "topic": "issue-haredi-draft",
+   "measure": "Reported to induction centers",
+   "value": 996,
+   "unit": "people",
+   "population": "of 19,000 summoned",
+   "breakdown": {
+    "share": "~5%"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-06",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/59892",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "summons-jun2025-conscripted",
+   "topic": "issue-haredi-draft",
+   "measure": "Conscripted",
+   "value": 232,
+   "unit": "people",
+   "population": "of 19,000 summoned",
+   "breakdown": {
+    "share": "1.2%"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-06",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/59892",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "evaders-2026",
+   "topic": "issue-haredi-draft",
+   "measure": "Estimated Haredi draft evaders",
+   "value": 73664,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-09-03",
+   "source_org": "High Court via Jerusalem Post",
+   "source_title": "High Court strikes down law shielding haredi yeshiva students from arrest",
+   "url": "http://www.jpost.com/israel-news/politics-and-diplomacy/article-907553",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "arrests-2026",
+   "topic": "issue-haredi-draft",
+   "measure": "Arrests of Haredi draft evaders",
+   "value": 219,
+   "unit": "people",
+   "population": "Haredi draft evaders",
+   "breakdown": {
+    "share": "~0.3%"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-09-03",
+   "source_org": "High Court via Jerusalem Post",
+   "source_title": "same",
+   "url": "http://www.jpost.com/israel-news/politics-and-diplomacy/article-907553",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "eligible-2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Yeshiva students subject to draft",
+   "value": 63000,
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-06-25",
+   "source_org": "High Court via Times of Israel",
+   "source_title": "In historic ruling, High Court says government must draft Haredi men",
+   "url": "https://www.timesofisrael.com/in-historic-ruling-high-court-says-government-must-begin-drafting-haredi-men-into-idf/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "eligible-2025-idf",
+   "topic": "issue-haredi-draft",
+   "measure": "Eligible Haredi men 18-24 not enlisted",
+   "value": 66000,
+   "unit": "people (approx.)",
+   "population": "Haredi men 18-24",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-04-02",
+   "source_org": "IDF Personnel Directorate via Times of Israel",
+   "source_title": "205 out of 10,000",
+   "url": "https://www.timesofisrael.com/liveblog_entry/just-2-of-haredi-call-ups-have-enlisted-since-high-court-struck-down-their-exemptions/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eligible-2026-toi",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi men 18-24 eligible and not enlisted",
+   "value": 80000,
+   "unit": "people (approx.)",
+   "population": "Haredi men 18-24",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07-29",
+   "source_org": "Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders...",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eligible-idi-pool",
+   "topic": "issue-haredi-draft",
+   "measure": "Draft-eligible Haredi pool",
+   "value": 100000,
+   "unit": "people (approx.)",
+   "population": "Haredi men up to 26",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-10-31",
+   "source_org": "IDI",
+   "source_title": "The Bismuth Outline for the Draft Exemption Law",
+   "url": "https://en.idi.org.il/articles/61994",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "orders-apr2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Draft orders July 2024-Mar 2025 / enlisted from them",
+   "value": {
+    "orders": 10000,
+    "enlisted": 205,
+    "arrest_warrants": 1096
+   },
+   "unit": "people",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-04-02",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "205 out of 10,000",
+   "url": "https://www.timesofisrael.com/liveblog_entry/just-2-of-haredi-call-ups-have-enlisted-since-high-court-struck-down-their-exemptions/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-share-eligible-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi share of those reaching draft eligibility",
+   "value": 23.5,
+   "unit": "percent",
+   "population": "All Israelis reaching draft age",
+   "breakdown": {
+    "year": 2025,
+    "type": "actual"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-02",
+   "source_org": "IDI (Malach, Yakir, Portal)",
+   "source_title": "Haredim in Israel 2050",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-share-eligible-2030",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi share of those reaching draft eligibility",
+   "value": 25,
+   "unit": "percent",
+   "population": "All Israelis reaching draft age",
+   "breakdown": {
+    "year": 2030,
+    "type": "projection"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-02",
+   "source_org": "IDI (Malach, Yakir, Portal)",
+   "source_title": "Haredim in Israel 2050",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-share-eligible-2040",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi share of those reaching draft eligibility",
+   "value": 33,
+   "unit": "percent",
+   "population": "All Israelis reaching draft age",
+   "breakdown": {
+    "year": 2040,
+    "type": "projection"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-02",
+   "source_org": "IDI (Malach, Yakir, Portal)",
+   "source_title": "Haredim in Israel 2050",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-share-eligible-2050",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi share of those reaching draft eligibility",
+   "value": 40,
+   "unit": "percent",
+   "population": "All Israelis reaching draft age",
+   "breakdown": {
+    "year": 2050,
+    "type": "projection"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-02",
+   "source_org": "IDI (Malach, Yakir, Portal)",
+   "source_title": "Haredim in Israel 2050",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "tal-law-2005",
+   "topic": "issue-haredi-draft",
+   "measure": "Tal Law: covered students / took decision year / later enlisted",
+   "value": {
+    "covered": 41450,
+    "decision_year": 1115,
+    "enlisted": 31
+   },
+   "unit": "people",
+   "population": "Yeshiva students",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2005",
+   "source_org": "Wikipedia (attributing Justice Minister Livni)",
+   "source_title": "Haredi conscription in Israel",
+   "url": "https://en.wikipedia.org/wiki/Haredi_conscription_in_Israel",
+   "verified": false,
+   "notes": "secondary source; replace with Knesset RIC",
+   "verification": "Wikipedia only; not checked against primary source (checked 2026-10-04)"
+  },
+  {
+   "id": "exempt-1948",
+   "topic": "issue-haredi-draft",
+   "measure": "Students exempted under 1948 arrangement",
+   "value": 400,
+   "unit": "people per year (approx.)",
+   "population": "Yeshiva students",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1948",
+   "source_org": "Wikipedia",
+   "source_title": "Haredi conscription in Israel",
+   "url": "https://en.wikipedia.org/wiki/Haredi_conscription_in_Israel",
+   "verified": false,
+   "notes": "secondary source",
+   "verification": "NOT ON PAGE: no 400 figure on Wikipedia page; removed from brief (checked 2026-10-04)"
+  },
+  {
+   "id": "yeshiva-budget-2022",
+   "topic": "issue-haredi-draft",
+   "measure": "Yeshiva/kollel sector annual budget; state share",
+   "value": {
+    "total_nis_bn": 5.3,
+    "state_nis_bn": 1.0
+   },
+   "unit": "NIS billion",
+   "population": "Haredi yeshivas",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022 data, reported 2024-04-01",
+   "source_org": "Times of Israel",
+   "source_title": "The High Court's yeshiva funding ruling goes into effect today",
+   "url": "https://www.timesofisrael.com/the-high-courts-yeshiva-funding-ruling-goes-into-effect-today-what-does-it-mean/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "yeshivas-cut-2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Yeshivas / students facing funding cuts",
+   "value": {
+    "yeshivas": 1257,
+    "students": 49485
+   },
+   "unit": "count",
+   "population": "Haredi yeshivas",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-04-01",
+   "source_org": "Times of Israel",
+   "source_title": "same",
+   "url": "https://www.timesofisrael.com/the-high-courts-yeshiva-funding-ruling-goes-into-effect-today-what-does-it-mean/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "stipend-2022",
+   "topic": "issue-haredi-draft",
+   "measure": "Monthly kollel stipend, current and agreed increase",
+   "value": {
+    "before": 700,
+    "after": 1300
+   },
+   "unit": "NIS per month",
+   "population": "Married yeshiva (kollel) students",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022-11-11",
+   "source_org": "Times of Israel",
+   "source_title": "Likud, religious allies said to agree on near-doubling stipends",
+   "url": "https://www.timesofisrael.com/likud-religious-allies-said-to-agree-on-hiking-stipends-for-yeshiva-students/",
+   "verified": true,
+   "notes": "coalition-deal report; cost NIS 1.5bn/yr; 2026 amount not found"
+  },
+  {
+   "id": "funding-revoked-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Annual yeshiva funding revoked after ruling; loss per kollel student",
+   "value": {
+    "total_nis_m": 480,
+    "per_student_nis_yr": 9500
+   },
+   "unit": "NIS",
+   "population": "Yeshivas / kollel students",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-06",
+   "source_org": "IDI",
+   "source_title": "A Year Since the Supreme Court's Conscription Ruling",
+   "url": "https://en.idi.org.il/articles/59892",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "housing-benefits",
+   "topic": "issue-haredi-draft",
+   "measure": "Households receiving target-price housing benefit; total value",
+   "value": {
+    "households": 6500,
+    "total_nis_bn": 3.25
+   },
+   "unit": "count / NIS billion",
+   "population": "Haredi households",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-04-26",
+   "source_org": "IDI",
+   "source_title": "The Dramatic High Court Ruling on Economic Sanctions",
+   "url": "https://en.idi.org.il/articles/64062",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "bismuth-targets",
+   "topic": "issue-haredi-draft",
+   "measure": "Bismuth bill enlistment targets years 1-4",
+   "value": [
+    8160,
+    6840,
+    7920,
+    8500
+   ],
+   "unit": "people per year",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-11-27",
+   "source_org": "Times of Israel",
+   "source_title": "Bismuth presents bill exempting yeshiva students",
+   "url": "https://www.timesofisrael.com/bismuth-presents-bill-exempting-yeshiva-students-from-idf-draft-loosening-sanctions/",
+   "verified": true,
+   "notes": "then >=50% of cohort from year 5; Oct 2025 outline started at 4,800 (IDI 61994)"
+  },
+  {
+   "id": "reserve-religious-2023",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 15.2,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "religious",
+    "period": "Oct-Dec 2023"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-religious-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 4.3,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "religious",
+    "period": "2025"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-traditional-2023",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 11.2,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "traditional",
+    "period": "Oct-Dec 2023"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-traditional-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 2.6,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "traditional",
+    "period": "2025"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-secular-2023",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 11.2,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "secular",
+    "period": "Oct-Dec 2023"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-secular-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 1.7,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "secular",
+    "period": "2025"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-haredi-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Share of men in reserve service in an average month",
+   "value": 0.3,
+   "unit": "percent",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "haredi",
+    "period": "2025"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve service during Swords of Iron",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reserve-days-2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Average reserve days served",
+   "value": 94,
+   "unit": "days",
+   "population": "IDF reservists",
+   "breakdown": {
+    "year": 2024
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "Average reserve duty in 2025 was 78 days",
+   "url": "https://www.timesofisrael.com/liveblog_entry/average-reserve-duty-in-2025-was-78-days-37-of-reservists-are-parents-biggest-number-comes-from-tel-aviv/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "reserve-days-2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Average reserve days served",
+   "value": 78,
+   "unit": "days",
+   "population": "IDF reservists",
+   "breakdown": {
+    "year": 2025
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "same",
+   "url": "https://www.timesofisrael.com/liveblog_entry/average-reserve-duty-in-2025-was-78-days-37-of-reservists-are-parents-biggest-number-comes-from-tel-aviv/",
+   "verified": true,
+   "notes": "IDI 63168 says ~110 days annually - disagreement"
+  },
+  {
+   "id": "idf-shortfall",
+   "topic": "issue-haredi-draft",
+   "measure": "IDF soldier shortfall",
+   "value": {
+    "total": 12000,
+    "combat": "6,000-7,500"
+   },
+   "unit": "soldiers",
+   "population": "IDF",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "IDI",
+   "source_title": "Conscription of Haredi Yeshiva Students...",
+   "url": "https://en.idi.org.il/articles/63168",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-support-jan2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Support conscripting Haredim",
+   "value": 67,
+   "unit": "percent",
+   "population": "Non-Haredi Jews",
+   "breakdown": {
+    "wave": "Jan 2024"
+   },
+   "sample": null,
+   "fieldwork_date": "2024-01",
+   "source_org": "IDI",
+   "source_title": "Survey: Public support for conscripting ultra-Orthodox has surged",
+   "url": "https://www.timesofisrael.com/survey-public-support-for-conscripting-ultra-orthodox-has-surged-throughout-war/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-support-nov2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Support conscripting Haredim",
+   "value": 84.5,
+   "unit": "percent",
+   "population": "Non-Haredi Jews",
+   "breakdown": {
+    "wave": "Nov 2024"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://www.timesofisrael.com/survey-public-support-for-conscripting-ultra-orthodox-has-surged-throughout-war/",
+   "verified": true,
+   "notes": "status-quo support 22 -> 9",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-support-nov2024-likud",
+   "topic": "issue-haredi-draft",
+   "measure": "Support conscripting Haredim",
+   "value": 74.5,
+   "unit": "percent",
+   "population": "Likud voters",
+   "breakdown": {
+    "vote": "Likud"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://www.timesofisrael.com/survey-public-support-for-conscripting-ultra-orthodox-has-surged-throughout-war/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-support-nov2024-rz",
+   "topic": "issue-haredi-draft",
+   "measure": "Support conscripting Haredim",
+   "value": 79,
+   "unit": "percent",
+   "population": "Religious Zionism voters",
+   "breakdown": {
+    "vote": "RZ"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://www.timesofisrael.com/survey-public-support-for-conscripting-ultra-orthodox-has-surged-throughout-war/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-change-nov2024-secular",
+   "topic": "issue-haredi-draft",
+   "measure": "Say Haredi conscription policy should change given security needs",
+   "value": 90,
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "IDI Releases New Survey Findings on Haredim",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-change-nov2024-traditional-non-religious",
+   "topic": "issue-haredi-draft",
+   "measure": "Say Haredi conscription policy should change given security needs",
+   "value": 80,
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "traditional non-religious"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "IDI Releases New Survey Findings on Haredim",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-change-nov2024-traditional-religious",
+   "topic": "issue-haredi-draft",
+   "measure": "Say Haredi conscription policy should change given security needs",
+   "value": 66,
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "traditional religious"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "IDI Releases New Survey Findings on Haredim",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-change-nov2024-religious",
+   "topic": "issue-haredi-draft",
+   "measure": "Say Haredi conscription policy should change given security needs",
+   "value": 64.5,
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "IDI Releases New Survey Findings on Haredim",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": "religious was 41 in Jan 2024"
+  },
+  {
+   "id": "idi-nr-support",
+   "topic": "issue-haredi-draft",
+   "measure": "Support conscription, national religious",
+   "value": {
+    "jan2024": 36.5,
+    "nov2024": 72.5
+   },
+   "unit": "percent",
+   "population": "National-religious Jews",
+   "breakdown": {},
+   "sample": 756,
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-haredi-nov2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi respondents' preferred arrangement",
+   "value": {
+    "keep_exemption": 61,
+    "support_enlistment": 20,
+    "unsure": 19
+   },
+   "unit": "percent",
+   "population": "Haredi Jews",
+   "breakdown": {
+    "religiosity": "Haredi"
+   },
+   "sample": 756,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": true,
+   "notes": "small subsample",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-sanctions-jul2025",
+   "topic": "issue-haredi-draft",
+   "measure": "Support penalties/benefit loss for non-serving Haredim",
+   "value": {
+    "non_haredi_jews": 85,
+    "likud": 73,
+    "rz": 77
+   },
+   "unit": "percent",
+   "population": "Non-Haredi Jews",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-07",
+   "source_org": "IDI (cited in IDI 61994)",
+   "source_title": "The Bismuth Outline for the Draft Exemption Law",
+   "url": "https://en.idi.org.il/articles/61994",
+   "verified": false,
+   "notes": "seen only as cited in later IDI article"
+  },
+  {
+   "id": "idi-nov2025-jews",
+   "topic": "issue-haredi-draft",
+   "measure": "Who should be drafted",
+   "value": {
+    "all_but_outstanding": 49.5,
+    "only_non_studiers": 31,
+    "keep_current": 15
+   },
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 604,
+   "fieldwork_date": "2025-11-02/06",
+   "source_org": "IDI",
+   "source_title": "Israelis Think US Administration Has Greater Influence...",
+   "url": "https://en.idi.org.il/articles/62072",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-nov2025-arabs",
+   "topic": "issue-haredi-draft",
+   "measure": "Who should be drafted",
+   "value": {
+    "all_but_outstanding": 26,
+    "only_non_studiers": 23,
+    "keep_current": 35
+   },
+   "unit": "percent",
+   "population": "Arabs",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 152,
+   "fieldwork_date": "2025-11-02/06",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/62072",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "idi-nov2025-haredi",
+   "topic": "issue-haredi-draft",
+   "measure": "Prefer status quo",
+   "value": 75,
+   "unit": "percent (approx.)",
+   "population": "Haredi Jews",
+   "breakdown": {
+    "religiosity": "Haredi"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-11-02/06",
+   "source_org": "IDI",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/62072",
+   "verified": true,
+   "notes": "article says 'approximately 75%'",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "inss-jun2025-model",
+   "topic": "issue-haredi-draft",
+   "measure": "Preferred service model",
+   "value": {
+    "universal": 41,
+    "by_idf_needs": 37.5,
+    "jews_only": 10.5,
+    "full_exemption": 8
+   },
+   "unit": "percent",
+   "population": "Jews 18+",
+   "breakdown": {},
+   "sample": 805,
+   "fieldwork_date": "2025-06-10/13",
+   "source_org": "INSS",
+   "source_title": "Special Survey: Military Service in the IDF—July 2025",
+   "url": "https://www.inss.org.il/publication/idf-conscription/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-jun2025-change",
+   "topic": "issue-haredi-draft",
+   "measure": "Want status quo on Haredi service changed",
+   "value": 89,
+   "unit": "percent",
+   "population": "Jews 18+",
+   "breakdown": {},
+   "sample": 805,
+   "fieldwork_date": "2025-06-10/13",
+   "source_org": "INSS",
+   "source_title": "same",
+   "url": "https://www.inss.org.il/publication/idf-conscription/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "jppi-jul2026",
+   "topic": "issue-haredi-draft",
+   "measure": "Approach to Haredi enlistment",
+   "value": {
+    "tougher_sanctions": 46,
+    "only_with_leadership_agreement": 31,
+    "futile": 11
+   },
+   "unit": "percent",
+   "population": "All Israelis",
+   "breakdown": {
+    "jews_sanctions": 50
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "JPPI Israeli Society Index",
+   "source_title": "Almost half of Israelis support tougher sanctions",
+   "url": "https://www.jpost.com/israel-news/article-902297",
+   "verified": true,
+   "notes": "sample size not published",
+   "verification": "CONFIRMED; sample size and wording not published (checked 2026-10-04)"
+  },
+  {
+   "id": "jppi-jul2026-groups",
+   "topic": "issue-haredi-draft",
+   "measure": "Prefer sanctions / agreement by group",
+   "value": {
+    "likud_agreement": 75,
+    "right_agreement": 59,
+    "center_sanctions": 73,
+    "left_sanctions": 79,
+    "yb_sanctions": 84,
+    "haredi_agreement": 45,
+    "haredi_sanctions": 15
+   },
+   "unit": "percent",
+   "population": "Israelis by vote / Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "JPPI",
+   "source_title": "same",
+   "url": "https://www.jpost.com/israel-news/article-902297",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "hiddush-aug2024",
+   "topic": "issue-haredi-draft",
+   "measure": "Yeshiva students: full service / quotas / exemption",
+   "value": {
+    "full_service": 51,
+    "quotas": 32,
+    "exempt": 17
+   },
+   "unit": "percent",
+   "population": "Jews 18+",
+   "breakdown": {},
+   "sample": 800,
+   "fieldwork_date": "2024-08",
+   "source_org": "Hiddush / Smith Institute",
+   "source_title": "Hiddush Annual Religion and State Index 2024",
+   "url": "https://hiddush.org/article-23675-0-Hiddush_Annual_Religion_and_State_Index_2024_.aspx",
+   "verified": true,
+   "notes": "advocacy sponsor"
+  },
+  {
+   "id": "hiddush-aug2024-sanctions",
+   "topic": "issue-haredi-draft",
+   "measure": "Support sanctions on non-compliers",
+   "value": {
+    "secular": 96,
+    "likud": 78,
+    "rz_otzma": 65
+   },
+   "unit": "percent",
+   "population": "Jews 18+",
+   "breakdown": {},
+   "sample": 800,
+   "fieldwork_date": "2024-08",
+   "source_org": "Hiddush / Smith Institute",
+   "source_title": "same",
+   "url": "https://hiddush.org/article-23675-0-Hiddush_Annual_Religion_and_State_Index_2024_.aspx",
+   "verified": true,
+   "notes": "advocacy sponsor"
+  },
+  {
+   "id": "hiddush-sep2026",
+   "topic": "issue-haredi-draft",
+   "measure": "Draft yeshiva students in some form / full exemption / back court sanctions",
+   "value": {
+    "draft_some_form": 84,
+    "exempt": 16,
+    "back_sanctions": 66
+   },
+   "unit": "percent",
+   "population": "Jews 18+",
+   "breakdown": {},
+   "sample": 800,
+   "fieldwork_date": "2026-09",
+   "source_org": "Hiddush / Smith Institute",
+   "source_title": "Majority of Israelis want government to refuse haredi demands",
+   "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-907870",
+   "verified": true,
+   "notes": "advocacy sponsor"
+  },
+  {
+   "id": "ivi-aug2026-vote",
+   "topic": "issue-haredi-draft",
+   "measure": "Party's conscription position is the greatest influence on vote",
+   "value": {
+    "first": 11.4,
+    "second": 12.0
+   },
+   "unit": "percent",
+   "population": "Jews",
+   "breakdown": {
+    "arabs": 0.0
+   },
+   "sample": 755,
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "The Israeli Voice Index - August 2026",
+   "url": "https://en.idi.org.il/media/32364/august-voice-index-data.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-voter-priorities",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredi vs non-Haredi voters",
+   "value": {
+    "religion_state_top_haredi": 41,
+    "religion_state_top_others": 17,
+    "same_party_always_haredi": 36,
+    "same_party_always_public": 7
+   },
+   "unit": "percent",
+   "population": "Haredi voters vs others",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025 Democracy Index",
+   "source_org": "IDI (Lafair, Malach)",
+   "source_title": "What Motivates Haredi Voters?",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-leadership-rating",
+   "topic": "issue-haredi-draft",
+   "measure": "Haredim giving their political leadership high marks",
+   "value": 28,
+   "unit": "percent",
+   "population": "Haredi Jews",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-06",
+   "source_org": "IDI Israeli Voice Index (via IDI 65364)",
+   "source_title": "What Motivates Haredi Voters?",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": true,
+   "notes": ""
+  }
+ ],
+ "party_positions": [
+  {
+   "party_id": "likud",
+   "party": "Likud",
+   "position": "No written position; declined Ynet's draft questions. In office backed the Bismuth bill and the July 2026 arrest-ban law (unverified: not on Ynet page).",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "shas",
+   "party": "Shas",
+   "position": "Acknowledges court rules out broad exemptions for dropouts. Protect full-time yeshiva students; wants Torah study as a basic value (unverified: not on Ynet page).",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "utj",
+   "party": "United Torah Judaism",
+   "position": "Opposes universal draft and enlistment of dropouts; 'will not support or enter any government without regulating the status of Torah learners' (Asher, Sept 28; class doc 11a, not reopened).",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "rz",
+   "party": "Religious Zionism-Zehut",
+   "position": "Basic Law for service members; declined Ynet on sanctions. Voted for arrest-ban law; says Haredim should be enlisted by consensus, not arrests (unverified: not on Ynet page).",
+   "source_title": "Ynet party questionnaire; class doc 11b",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "otzma",
+   "party": "Otzma Yehudit",
+   "position": "Backed arrest-ban law; Haredi tracks in police and Border Police 'with full observance of Shabbat, kashrut, prayers and Torah study'.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "amcha",
+   "party": "Amcha Yisrael",
+   "position": "'We will not join a government that does not pass, before it is formed, a law that puts an end to draft evasion... Full stop.'",
+   "source_title": "JPost: Winter draft conditions",
+   "url": "https://www.jpost.com/israel-election-2026/article-907373",
+   "date": "2026-09-02"
+  },
+  {
+   "party_id": "yashar",
+   "party": "Yashar!",
+   "position": "National service for all; deferrals capped at 3% of each national cohort (~2,200 of ~70,000 — the whole age cohort, not Haredim only); end rabbis' exemptions; revoke incentives for evaders.",
+   "source_title": "JPost Eisenkot interview",
+   "url": "https://www.jpost.com/israel-election-2026/article-909543",
+   "date": "2026-09-24"
+  },
+  {
+   "party_id": "byachad",
+   "party": "B'Yachad",
+   "position": "'Every citizen... will enlist in the IDF or perform national civilian service... without exemptions'; end stipends for married yeshiva students.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "democrats",
+   "party": "The Democrats",
+   "position": "'The obligation to serve the state should apply to all citizens, within a national and equal framework'; as a process.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "yb",
+   "party": "Yisrael Beiteinu",
+   "position": "'No exemptions, no quotas and no deals'; everyone at 18 including Arab citizens.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "reservists",
+   "party": "The Reservists",
+   "position": "Universal reporting, military first; broad benefit loss for non-enlistees (driver's licence, travel ban); draft law before a government is sworn in.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "jointlist",
+   "party": "Joint List",
+   "position": "Opposes all compulsory enlistment and sanctions.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "raam",
+   "party": "Ra'am",
+   "position": "Opposes drafting Arab citizens; declined to address Haredi enlistment.",
+   "source_title": "Ynet party questionnaire",
+   "url": "https://www.ynetnews.com/article/sjph72wyzx",
+   "date": "2026-09-16"
+  },
+  {
+   "party_id": "noam",
+   "party": "Noam",
+   "position": "Not found.",
+   "source_title": "",
+   "url": null,
+   "date": null
+  },
+  {
+   "party_id": "bluewhite",
+   "party": "Blue and White",
+   "position": "Not found for 2026.",
+   "source_title": "",
+   "url": null,
+   "date": null
+  }
+ ]
+}

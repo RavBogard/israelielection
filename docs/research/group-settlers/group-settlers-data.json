@@ -1,0 +1,4396 @@
+{
+ "datapoints": [
+  {
+   "id": "pop-registry-2021",
+   "topic": "size",
+   "measure": "Jewish residents of West Bank settlements, excl. East Jerusalem",
+   "value": 475481,
+   "unit": "people",
+   "population": "West Bank Jewish residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-02-01",
+   "source_org": "Bet El Institutions (Yaakov Katz), from Interior Ministry population registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": "Pro-settlement compiler; registry base differs from CBS"
+  },
+  {
+   "id": "pop-registry-2024",
+   "topic": "size",
+   "measure": "Jewish residents of West Bank settlements, excl. East Jerusalem",
+   "value": 529455,
+   "unit": "people",
+   "population": "West Bank Jewish residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-12-31",
+   "source_org": "Bet El Institutions (Yaakov Katz), from Interior Ministry population registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": "Pro-settlement compiler; registry base differs from CBS"
+  },
+  {
+   "id": "pop-registry-2026",
+   "topic": "size",
+   "measure": "Jewish residents of West Bank settlements, excl. East Jerusalem",
+   "value": 541085,
+   "unit": "people",
+   "population": "West Bank Jewish residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (Yaakov Katz), from Interior Ministry population registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Pro-settlement compiler; registry base differs from CBS"
+  },
+  {
+   "id": "pop-cbs-2000",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 191125,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2000",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2010",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 310990,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2010",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2015",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 385264,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2018",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 427072,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2019",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 440820,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2020",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 450711,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2020",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2021",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 464458,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2022",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 484340,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-cbs-2023",
+   "topic": "size",
+   "measure": "Israeli population of West Bank settlements, excl. East Jerusalem (sum of settlement rows)",
+   "value": 503732,
+   "unit": "people",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Peace Now (CBS data)",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "UNVERIFIED (Peace Now sheet not re-opened)",
+   "notes": "Sum of 127 settlement rows with CBS data; [arith]"
+  },
+  {
+   "id": "pop-wb-ej-2025",
+   "topic": "size",
+   "measure": "Israeli settlers in West Bank including East Jerusalem",
+   "value": "over 750,000",
+   "unit": "people",
+   "population": "West Bank + East Jerusalem",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "EU EEAS",
+   "source_title": "2025 Report on Israeli settlements in the occupied West Bank",
+   "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+   "verified": "CONFIRMED",
+   "notes": "15% of West Bank population incl. EJ; 147 settlements"
+  },
+  {
+   "id": "pop-ej-2024",
+   "topic": "size",
+   "measure": "Israeli residents of East Jerusalem neighborhoods beyond the Green Line",
+   "value": 233600,
+   "unit": "people",
+   "population": "East Jerusalem",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-12-31",
+   "source_org": "Peace Now / Ir Amim via EU EEAS",
+   "source_title": "EU 2024 settlement report",
+   "url": "(via class doc 06)",
+   "verified": false,
+   "notes": "Could not open 2024 EEAS PDF"
+  },
+  {
+   "id": "pop-ej-katz-2026",
+   "topic": "size",
+   "measure": "Jewish residents of Old City and eastern Jerusalem neighborhoods",
+   "value": 340000,
+   "unit": "people",
+   "population": "East Jerusalem",
+   "breakdown": {
+    "definition": "24 neighborhoods incl. Ramot, Gilo, Pisgat Zeev"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01",
+   "source_org": "Bet El Institutions",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": "\"some 340,000\"; broader definition"
+  },
+  {
+   "id": "growth-2025",
+   "topic": "growth",
+   "measure": "Annual growth of West Bank Jewish population",
+   "value": 2.2,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "comparison_israel": 1.1
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "growth-5yr",
+   "topic": "growth",
+   "measure": "Five-year growth, Feb 2021 to Jan 2026",
+   "value": 13.8,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-2022-yesha",
+   "topic": "growth",
+   "measure": "Annual growth 2022",
+   "value": 2.2,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "2021": 3.3
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Yesha Council via ToI",
+   "source_title": "Yesha settler umbrella group says over half a million Israelis live in West Bank",
+   "url": "https://www.timesofisrael.com/yesha-settler-umbrella-group-says-over-half-a-million-israelis-live-in-west-bank/",
+   "verified": true,
+   "notes": "CBS series gives 4.3% for 2022"
+  },
+  {
+   "id": "growth-bloc-maale",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 1.68,
+   "unit": "percent",
+   "population": "Maale Adumim bloc",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-ariel-elkana",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 9.06,
+   "unit": "percent",
+   "population": "Ariel-Elkana bloc",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-gush",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 7.54,
+   "unit": "percent",
+   "population": "Gush Etzion",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-kiryat",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 13.76,
+   "unit": "percent",
+   "population": "Kiryat Sefer (Modiin Illit) bloc",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-beitar",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 15.7,
+   "unit": "percent",
+   "population": "Beitar Illit",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-binyamin",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 15.65,
+   "unit": "percent",
+   "population": "Binyamin",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-south",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 17.88,
+   "unit": "percent",
+   "population": "South Hebron Hills",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-samaria",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 21.51,
+   "unit": "percent",
+   "population": "Samaria",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-jordan",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 25.76,
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-eastern",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 35.04,
+   "unit": "percent",
+   "population": "Eastern Etzion",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-bloc-north",
+   "topic": "growth",
+   "measure": "Five-year population growth by bloc, Feb 2021-Jan 2026",
+   "value": 28.1,
+   "unit": "percent",
+   "population": "North Samaria",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-2026",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-modiin-illit",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 92339,
+   "unit": "people",
+   "population": "Modiin Illit",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-beitar-illit",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 74760,
+   "unit": "people",
+   "population": "Beitar Illit",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-maale-adumim",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 40800,
+   "unit": "people",
+   "population": "Maale Adumim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-givat-zeev",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 25630,
+   "unit": "people",
+   "population": "Givat Zeev",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-ariel",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 22273,
+   "unit": "people",
+   "population": "Ariel",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-efrat",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 13502,
+   "unit": "people",
+   "population": "Efrat",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-karnei-shomron",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 11199,
+   "unit": "people",
+   "population": "Karnei Shomron",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-oranit",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 10212,
+   "unit": "people",
+   "population": "Oranit",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "town-kiryat-arba",
+   "topic": "geography",
+   "measure": "Jewish residents",
+   "value": 8437,
+   "unit": "people",
+   "population": "Kiryat Arba",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Bet El Institutions (registry)",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "top4-share",
+   "topic": "geography",
+   "measure": "Share of settlers in the four largest towns (Modiin Illit, Beitar Illit, Maale Adumim, Ariel)",
+   "value": 42.5,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Our arithmetic from registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": "230,172 / 541,085"
+  },
+  {
+   "id": "comp-yesha-2023-haredi",
+   "topic": "composition",
+   "measure": "Composition of settlers by religious type",
+   "value": 36,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "type": "haredi"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-05",
+   "source_org": "Yesha Council via ToI",
+   "source_title": "Yesha settler umbrella group says over half a million Israelis live in West Bank",
+   "url": "https://www.timesofisrael.com/yesha-settler-umbrella-group-says-over-half-a-million-israelis-live-in-west-bank/",
+   "verified": "CONFIRMED (method not stated)",
+   "notes": "Yesha estimate; method not given. Source of the class 36/36/28 figure"
+  },
+  {
+   "id": "comp-yesha-2023-religious_zionist",
+   "topic": "composition",
+   "measure": "Composition of settlers by religious type",
+   "value": 36,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "type": "religious_zionist"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-05",
+   "source_org": "Yesha Council via ToI",
+   "source_title": "Yesha settler umbrella group says over half a million Israelis live in West Bank",
+   "url": "https://www.timesofisrael.com/yesha-settler-umbrella-group-says-over-half-a-million-israelis-live-in-west-bank/",
+   "verified": "CONFIRMED (method not stated)",
+   "notes": "Yesha estimate; method not given. Source of the class 36/36/28 figure"
+  },
+  {
+   "id": "comp-yesha-2023-secular",
+   "topic": "composition",
+   "measure": "Composition of settlers by religious type",
+   "value": 28,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "type": "secular"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-05",
+   "source_org": "Yesha Council via ToI",
+   "source_title": "Yesha settler umbrella group says over half a million Israelis live in West Bank",
+   "url": "https://www.timesofisrael.com/yesha-settler-umbrella-group-says-over-half-a-million-israelis-live-in-west-bank/",
+   "verified": "CONFIRMED (method not stated)",
+   "notes": "Yesha estimate; method not given. Source of the class 36/36/28 figure"
+  },
+  {
+   "id": "comp-ipf-2025-haredi",
+   "topic": "composition",
+   "measure": "Share of settler population living in settlements of each type",
+   "value": 33.5,
+   "unit": "percent",
+   "population": "West Bank settlers, by type of settlement they live in",
+   "breakdown": {
+    "type": "haredi",
+    "settlements": 8
+   },
+   "sample": null,
+   "fieldwork_date": "2025-04",
+   "source_org": "Israel Policy Forum (Gabriel Epstein)",
+   "source_title": "The Quiet Surge in West Bank Settlements",
+   "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+   "verified": "CONFIRMED",
+   "notes": "Summary fetch Share of settlers living in Haredi/religious/mixed/secular settlements, not personal religiosity; IPF data year not stated."
+  },
+  {
+   "id": "comp-ipf-2025-religious",
+   "topic": "composition",
+   "measure": "Share of settler population living in settlements of each type",
+   "value": 25.4,
+   "unit": "percent",
+   "population": "West Bank settlers, by type of settlement they live in",
+   "breakdown": {
+    "type": "religious",
+    "settlements": 57
+   },
+   "sample": null,
+   "fieldwork_date": "2025-04",
+   "source_org": "Israel Policy Forum (Gabriel Epstein)",
+   "source_title": "The Quiet Surge in West Bank Settlements",
+   "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+   "verified": "CONFIRMED",
+   "notes": "Summary fetch Share of settlers living in Haredi/religious/mixed/secular settlements, not personal religiosity; IPF data year not stated."
+  },
+  {
+   "id": "comp-ipf-2025-mixed",
+   "topic": "composition",
+   "measure": "Share of settler population living in settlements of each type",
+   "value": 28.8,
+   "unit": "percent",
+   "population": "West Bank settlers, by type of settlement they live in",
+   "breakdown": {
+    "type": "mixed",
+    "settlements": 16
+   },
+   "sample": null,
+   "fieldwork_date": "2025-04",
+   "source_org": "Israel Policy Forum (Gabriel Epstein)",
+   "source_title": "The Quiet Surge in West Bank Settlements",
+   "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+   "verified": "CONFIRMED",
+   "notes": "Summary fetch Share of settlers living in Haredi/religious/mixed/secular settlements, not personal religiosity; IPF data year not stated."
+  },
+  {
+   "id": "comp-ipf-2025-secular",
+   "topic": "composition",
+   "measure": "Share of settler population living in settlements of each type",
+   "value": 12.2,
+   "unit": "percent",
+   "population": "West Bank settlers, by type of settlement they live in",
+   "breakdown": {
+    "type": "secular",
+    "settlements": 46
+   },
+   "sample": null,
+   "fieldwork_date": "2025-04",
+   "source_org": "Israel Policy Forum (Gabriel Epstein)",
+   "source_title": "The Quiet Surge in West Bank Settlements",
+   "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+   "verified": "CONFIRMED",
+   "notes": "Summary fetch Share of settlers living in Haredi/religious/mixed/secular settlements, not personal religiosity; IPF data year not stated."
+  },
+  {
+   "id": "comp-haredi-towns-2026",
+   "topic": "composition",
+   "measure": "Share of settlers living in 8 Haredi towns",
+   "value": 34.4,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "towns": "Modiin Illit, Beitar Illit, Emmanuel, Tel Tzion, Matityahu, Maale Amos, Metzad, Nachliel",
+    "count": 186133
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Our arithmetic from registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": "DERIVED (our arithmetic: 186,133 / 541,085)",
+   "notes": "Not a registry statement."
+  },
+  {
+   "id": "comp-suburbs-2026",
+   "topic": "composition",
+   "measure": "Share of settlers living in 11 suburban towns",
+   "value": 26.7,
+   "unit": "percent",
+   "population": "West Bank settlers",
+   "breakdown": {
+    "count": 144291
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01-01",
+   "source_org": "Our arithmetic from registry",
+   "source_title": "West Bank Jewish Population Stats, Jan 2026",
+   "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+   "verified": true,
+   "notes": "Our classification"
+  },
+  {
+   "id": "outposts-total",
+   "topic": "outposts",
+   "measure": "Outposts in Peace Now database",
+   "value": 415,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {
+    "farm_outposts": 243
+   },
+   "sample": null,
+   "fieldwork_date": "2026-10-05",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with Peace Now report",
+   "notes": "May include removed/legalized outposts Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-founded-2022",
+   "topic": "outposts",
+   "measure": "Outposts founded in year (Peace Now database)",
+   "value": 5,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with Peace Now report",
+   "notes": "[arith] from founding-year column; 2026 partial Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-founded-2023",
+   "topic": "outposts",
+   "measure": "Outposts founded in year (Peace Now database)",
+   "value": 32,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with EEAS (26)",
+   "notes": "[arith] from founding-year column; 2026 partial Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-founded-2024",
+   "topic": "outposts",
+   "measure": "Outposts founded in year (Peace Now database)",
+   "value": 61,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with Peace Now report",
+   "notes": "[arith] from founding-year column; 2026 partial Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-founded-2025",
+   "topic": "outposts",
+   "measure": "Outposts founded in year (Peace Now database)",
+   "value": 92,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with Peace Now report",
+   "notes": "[arith] from founding-year column; 2026 partial Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-founded-2026",
+   "topic": "outposts",
+   "measure": "Outposts founded in year (Peace Now database)",
+   "value": 79,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026",
+   "source_org": "Peace Now",
+   "source_title": "Peace Now settlement database spreadsheet",
+   "url": "https://peacenow.org.il/en/settlements-watch/settlements-data/population",
+   "verified": "CONFIRMED from sheet; conflicts with Peace Now report",
+   "notes": "[arith] from founding-year column; 2026 partial Source is the Peace Now outpost database sheet (counted by founding year); download URL not recorded, saved copy only. The url field points to the population page, which does not show these counts."
+  },
+  {
+   "id": "outposts-2025-report",
+   "topic": "outposts",
+   "measure": "New outposts established in 2025",
+   "value": 86,
+   "unit": "outposts",
+   "population": "West Bank",
+   "breakdown": {
+    "farms": 58
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Peace Now",
+   "source_title": "Summary of 2025 in settlements",
+   "url": "https://peacenow.org.il/en/summary-of-2025-in-settlements",
+   "verified": "CONFIRMED",
+   "notes": "Peace Now 2025 summary: 86 new outposts (60 farms)."
+  },
+  {
+   "id": "settlements-approved-2025",
+   "topic": "outposts",
+   "measure": "New settlements approved by government in 2025",
+   "value": 54,
+   "unit": "settlements",
+   "population": "West Bank",
+   "breakdown": {
+    "legalized_outposts": 26,
+    "new": 14,
+    "neighborhoods": 14
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Peace Now via ToI",
+   "source_title": "2025 was record year for settlement expansion",
+   "url": "https://www.timesofisrael.com/2025-record-year-for-settlement-expansion-construction-and-planning-ngo-finds/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "settlements-approved-term",
+   "topic": "outposts",
+   "measure": "Settlements approved or retroactively legalized by current government",
+   "value": 104,
+   "unit": "settlements",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-09-28",
+   "source_org": "ToI",
+   "source_title": "Two new West Bank settlements inaugurated",
+   "url": "https://www.timesofisrael.com/two-new-west-bank-settlements-inaugurated-with-cabinet-ministers-on-hand/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "farm-land",
+   "topic": "outposts",
+   "measure": "Land effectively controlled by farm outposts",
+   "value": 1070000,
+   "unit": "dunams",
+   "population": "West Bank",
+   "breakdown": {
+    "share_of_wb_pct": 18
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Peace Now/Kerem Navot via EU EEAS",
+   "source_title": "2025 Report on Israeli settlements",
+   "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "hilltop-stipend",
+   "topic": "hilltop youth",
+   "measure": "Settler minors in outposts identified for stipend program",
+   "value": 657,
+   "unit": "people",
+   "population": "Hilltop youth",
+   "breakdown": {
+    "Binyamin": 225,
+    "Samaria": 129,
+    "Jordan Valley": 120,
+    "Hebron": 99,
+    "Gush Etzion": 84
+   },
+   "sample": null,
+   "fieldwork_date": "2026-06",
+   "source_org": "Israeli government via ToI",
+   "source_title": "Government to provide 50-shekel daily stipends",
+   "url": "https://www.timesofisrael.com/government-to-provide-50-nis-daily-stipends-for-hundreds-of-hilltop-youth-report/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "extremists-idf",
+   "topic": "hilltop youth",
+   "measure": "Jewish extremists involved in attacks",
+   "value": 300,
+   "unit": "people",
+   "population": "West Bank",
+   "breakdown": {
+    "hardcore": 70
+   },
+   "sample": null,
+   "fieldwork_date": "2026-09",
+   "source_org": "IDF/Shin Bet via ToI",
+   "source_title": "As settler violence surges...",
+   "url": "https://www.timesofisrael.com/as-settler-violence-surges-some-ask-whether-israel-cant-crack-down-or-simply-wont/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "ocha-attacks-2023",
+   "topic": "violence",
+   "measure": "Settler attacks causing casualties or damage (OCHA)",
+   "value": 1189,
+   "unit": "incidents",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "UN OCHA via EU EEAS",
+   "source_title": "2025 Report on Israeli settlements",
+   "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "ocha-attacks-2024",
+   "topic": "violence",
+   "measure": "Settler attacks causing casualties or damage (OCHA)",
+   "value": 1420,
+   "unit": "incidents",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "UN OCHA via EU EEAS",
+   "source_title": "2025 Report on Israeli settlements",
+   "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "ocha-attacks-2025",
+   "topic": "violence",
+   "measure": "Settler attacks causing casualties or damage (OCHA)",
+   "value": 1828,
+   "unit": "incidents",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "UN OCHA via EU EEAS",
+   "source_title": "2025 Report on Israeli settlements",
+   "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "idf-nationalist-crime-2024",
+   "topic": "violence",
+   "measure": "IDF-recorded nationalist crime incidents by Jews",
+   "value": 682,
+   "unit": "incidents",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "IDF via ToI",
+   "source_title": "Cabinet quietly okayed plan to curb settler violence",
+   "url": "https://www.timesofisrael.com/report-cabinet-quietly-okayed-plan-to-curb-settler-violence-pm-called-phenomenon-cancer/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idf-nationalist-crime-2025",
+   "topic": "violence",
+   "measure": "IDF-recorded nationalist crime incidents by Jews",
+   "value": 867,
+   "unit": "incidents",
+   "population": "West Bank",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDF via ToI",
+   "source_title": "Cabinet quietly okayed plan to curb settler violence",
+   "url": "https://www.timesofisrael.com/report-cabinet-quietly-okayed-plan-to-curb-settler-violence-pm-called-phenomenon-cancer/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "yeshdin-no-indictment",
+   "topic": "violence",
+   "measure": "Investigation files closed without indictment, 2005-2025",
+   "value": 93.6,
+   "unit": "percent",
+   "population": "Ideologically motivated offenses by Israelis in WB",
+   "breakdown": {
+    "convictions_pct": 3
+   },
+   "sample": null,
+   "fieldwork_date": "2005-2025",
+   "source_org": "Yesh Din via ToI",
+   "source_title": "As settler violence surges...",
+   "url": "https://www.timesofisrael.com/as-settler-violence-surges-some-ask-whether-israel-cant-crack-down-or-simply-wont/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "inss-annex-coalition",
+   "topic": "attitudes",
+   "measure": "Prefer full annexation without civil rights",
+   "value": 50,
+   "unit": "percent",
+   "population": "Coalition voters",
+   "breakdown": {
+    "all": 25,
+    "jews": 31
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/22",
+   "source_org": "INSS",
+   "source_title": "INSS survey June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": "Summary fetch"
+  },
+  {
+   "id": "inss-terror-coalition",
+   "topic": "attitudes",
+   "measure": "Say Jewish nationalist violence is terrorism",
+   "value": 17,
+   "unit": "percent",
+   "population": "Coalition voters",
+   "breakdown": {
+    "all": 45,
+    "jews": 41,
+    "opposition": 71,
+    "coalition_natural_response": 31
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/22",
+   "source_org": "INSS",
+   "source_title": "INSS survey June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": "Summary fetch"
+  },
+  {
+   "id": "agam-sovereignty-religious",
+   "topic": "attitudes",
+   "measure": "Support extending sovereignty over West Bank settlements",
+   "value": 65,
+   "unit": "percent",
+   "population": "Religious respondents",
+   "breakdown": {
+    "blocs_and_curb_outposts": 23
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Agam Labs via ToI",
+   "source_title": "God, land and politics",
+   "url": "https://www.timesofisrael.com/god-land-and-politics-as-israel-heads-to-elections-where-do-religious-israelis-stand/",
+   "verified": false,
+   "notes": "Secondhand via ToI"
+  },
+  {
+   "id": "mitvim-sanctions-religious",
+   "topic": "attitudes",
+   "measure": "Oppose sanctions against violent settlers",
+   "value": 69,
+   "unit": "percent",
+   "population": "Religious respondents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-09",
+   "source_org": "Mitvim via ToI",
+   "source_title": "God, land and politics",
+   "url": "https://www.timesofisrael.com/god-land-and-politics-as-israel-heads-to-elections-where-do-religious-israelis-stand/",
+   "verified": false,
+   "notes": "Secondhand via ToI"
+  },
+  {
+   "id": "idi-trust-sc-natrel-2025",
+   "topic": "attitudes",
+   "measure": "Trust in Supreme Court",
+   "value": 19,
+   "unit": "percent",
+   "population": "National-religious Jews",
+   "breakdown": {
+    "2023": 16,
+    "2024": 15
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": false,
+   "notes": "From sibling issue-courts research; not re-opened here"
+  },
+  {
+   "id": "idi-draft-rz-2024",
+   "topic": "attitudes",
+   "measure": "Support conscripting Haredim",
+   "value": 79,
+   "unit": "percent",
+   "population": "2022 RZ voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI via ToI",
+   "source_title": "Survey: public support for conscripting ultra-Orthodox has surged",
+   "url": "https://www.timesofisrael.com/survey-public-support-for-conscripting-ultra-orthodox-has-surged-throughout-war/",
+   "verified": false,
+   "notes": "From sibling issue-haredi-draft research"
+  },
+  {
+   "id": "vote-2019-04-haredi",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 2.9,
+    "Blue&White/YeshAtid": 0.1,
+    "URWP (RZ+Otzma+JH)": 4.9,
+    "New Right": 0.7,
+    "Zehut": 1.3,
+    "Shas": 22.7,
+    "UTJ": 67.0,
+    "YB": 0.0,
+    "Kulanu": 0.1,
+    "Labor": 0.0,
+    "Meretz": 0.0
+   },
+   "unit": "percent",
+   "population": "Haredi cities",
+   "breakdown": {
+    "localities": 8,
+    "eligible": 59658,
+    "valid": 48137,
+    "turnout_pct": 82.1
+   },
+   "sample": 48137,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-secular-mixed",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 39.2,
+    "Blue&White/YeshAtid": 16.9,
+    "URWP (RZ+Otzma+JH)": 8.4,
+    "New Right": 7.5,
+    "Zehut": 5.6,
+    "Shas": 5.3,
+    "UTJ": 3.5,
+    "YB": 4.4,
+    "Kulanu": 3.5,
+    "Labor": 1.9,
+    "Meretz": 0.7
+   },
+   "unit": "percent",
+   "population": "Secular/mixed suburbs",
+   "breakdown": {
+    "localities": 13,
+    "eligible": 87240,
+    "valid": 64386,
+    "turnout_pct": 74.2
+   },
+   "sample": 64386,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-jordan",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 26.3,
+    "Blue&White/YeshAtid": 22.4,
+    "URWP (RZ+Otzma+JH)": 15.9,
+    "New Right": 12.1,
+    "Zehut": 7.3,
+    "Shas": 0.7,
+    "UTJ": 0.4,
+    "YB": 1.2,
+    "Kulanu": 2.2,
+    "Labor": 4.4,
+    "Meretz": 1.2
+   },
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {
+    "localities": 24,
+    "eligible": 5631,
+    "valid": 4110,
+    "turnout_pct": 73.1
+   },
+   "sample": 4110,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-other",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 22.0,
+    "Blue&White/YeshAtid": 6.0,
+    "URWP (RZ+Otzma+JH)": 36.8,
+    "New Right": 20.6,
+    "Zehut": 6.7,
+    "Shas": 1.8,
+    "UTJ": 0.9,
+    "YB": 0.9,
+    "Kulanu": 1.4,
+    "Labor": 0.9,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "Other settlements (mostly national-religious)",
+   "breakdown": {
+    "localities": 80,
+    "eligible": 85165,
+    "valid": 68371,
+    "turnout_pct": 80.5
+   },
+   "sample": 68371,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-all",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 23.1,
+    "Blue&White/YeshAtid": 8.6,
+    "URWP (RZ+Otzma+JH)": 18.2,
+    "New Right": 10.7,
+    "Zehut": 4.9,
+    "Shas": 8.4,
+    "UTJ": 19.0,
+    "YB": 1.9,
+    "Kulanu": 1.8,
+    "Labor": 1.1,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "All West Bank settlements",
+   "breakdown": {
+    "localities": 125,
+    "eligible": 237694,
+    "valid": 185004,
+    "turnout_pct": 78.4
+   },
+   "sample": 185004,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-israel",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 26.5,
+    "Blue&White/YeshAtid": 26.1,
+    "URWP (RZ+Otzma+JH)": 3.7,
+    "New Right": 3.2,
+    "Zehut": 2.7,
+    "Shas": 6.0,
+    "UTJ": 5.8,
+    "YB": 4.0,
+    "Kulanu": 3.5,
+    "Labor": 4.4,
+    "Meretz": 3.6
+   },
+   "unit": "percent",
+   "population": "Israel total (incl. double envelopes)",
+   "breakdown": {
+    "localities": 1214,
+    "eligible": 6339729,
+    "valid": 4309270,
+    "turnout_pct": 68.5
+   },
+   "sample": 4309270,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-04-wb-share-of-party",
+   "topic": "voting",
+   "measure": "Share of each list's national vote cast in West Bank settlement localities",
+   "value": {
+    "Likud": 3.8,
+    "Blue&White/YeshAtid": 1.4,
+    "URWP (RZ+Otzma+JH)": 21.1,
+    "New Right": 14.2,
+    "Zehut": 7.7,
+    "Shas": 6.1,
+    "UTJ": 14.1,
+    "YB": 2.0,
+    "Kulanu": 2.2,
+    "Labor": 1.1,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "All lists",
+   "breakdown": {
+    "wb_share_of_eligible_pct": 3.75
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": ""
+  },
+  {
+   "id": "vote-2019-09-haredi",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 2.6,
+    "Blue&White/YeshAtid": 0.1,
+    "Yamina": 2.0,
+    "Otzma": 3.7,
+    "Shas": 23.9,
+    "UTJ": 67.4,
+    "YB": 0.1,
+    "Labor": 0.0,
+    "Meretz": 0.0
+   },
+   "unit": "percent",
+   "population": "Haredi cities",
+   "breakdown": {
+    "localities": 8,
+    "eligible": 61266,
+    "valid": 50175,
+    "turnout_pct": 82.9
+   },
+   "sample": 50175,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-secular-mixed",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 38.8,
+    "Blue&White/YeshAtid": 17.8,
+    "Yamina": 14.9,
+    "Otzma": 4.7,
+    "Shas": 7.0,
+    "UTJ": 4.1,
+    "YB": 8.1,
+    "Labor": 2.9,
+    "Meretz": 1.2
+   },
+   "unit": "percent",
+   "population": "Secular/mixed suburbs",
+   "breakdown": {
+    "localities": 13,
+    "eligible": 87740,
+    "valid": 62855,
+    "turnout_pct": 72.0
+   },
+   "sample": 62855,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-jordan",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 28.3,
+    "Blue&White/YeshAtid": 23.3,
+    "Yamina": 25.6,
+    "Otzma": 5.1,
+    "Shas": 1.4,
+    "UTJ": 1.5,
+    "YB": 4.8,
+    "Labor": 6.9,
+    "Meretz": 1.7
+   },
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {
+    "localities": 24,
+    "eligible": 5701,
+    "valid": 3952,
+    "turnout_pct": 69.7
+   },
+   "sample": 3952,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-other",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 21.8,
+    "Blue&White/YeshAtid": 6.7,
+    "Yamina": 50.5,
+    "Otzma": 11.8,
+    "Shas": 2.7,
+    "UTJ": 2.1,
+    "YB": 2.0,
+    "Labor": 1.4,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "Other settlements (mostly national-religious)",
+   "breakdown": {
+    "localities": 80,
+    "eligible": 86393,
+    "valid": 67083,
+    "turnout_pct": 77.9
+   },
+   "sample": 67083,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-all",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 22.5,
+    "Blue&White/YeshAtid": 9.0,
+    "Yamina": 24.6,
+    "Otzma": 7.0,
+    "Shas": 9.9,
+    "UTJ": 20.5,
+    "YB": 3.6,
+    "Labor": 1.7,
+    "Meretz": 0.6
+   },
+   "unit": "percent",
+   "population": "All West Bank settlements",
+   "breakdown": {
+    "localities": 125,
+    "eligible": 241100,
+    "valid": 184065,
+    "turnout_pct": 76.8
+   },
+   "sample": 184065,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-israel",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 25.1,
+    "Blue&White/YeshAtid": 25.9,
+    "Yamina": 5.9,
+    "Otzma": 1.9,
+    "Shas": 7.4,
+    "UTJ": 6.1,
+    "YB": 7.0,
+    "Labor": 4.8,
+    "Meretz": 4.3
+   },
+   "unit": "percent",
+   "population": "Israel total (incl. double envelopes)",
+   "breakdown": {
+    "localities": 1214,
+    "eligible": 6391218,
+    "valid": 4436806,
+    "turnout_pct": 69.9
+   },
+   "sample": 4436806,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2019-09-wb-share-of-party",
+   "topic": "voting",
+   "measure": "Share of each list's national vote cast in West Bank settlement localities",
+   "value": {
+    "Likud": 3.7,
+    "Blue&White/YeshAtid": 1.4,
+    "Yamina": 17.4,
+    "Otzma": 15.5,
+    "Shas": 5.5,
+    "UTJ": 14.1,
+    "YB": 2.2,
+    "Labor": 1.4,
+    "Meretz": 0.6
+   },
+   "unit": "percent",
+   "population": "All lists",
+   "breakdown": {
+    "wb_share_of_eligible_pct": 3.77
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": ""
+  },
+  {
+   "id": "vote-2020-03-haredi",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 4.2,
+    "Blue&White/YeshAtid": 0.1,
+    "Yamina": 1.9,
+    "Otzma": 0.8,
+    "Shas": 25.4,
+    "UTJ": 67.5,
+    "YB": 0.0,
+    "Labor-Meretz": 0.1
+   },
+   "unit": "percent",
+   "population": "Haredi cities",
+   "breakdown": {
+    "localities": 8,
+    "eligible": 62960,
+    "valid": 51209,
+    "turnout_pct": 82.2
+   },
+   "sample": 51209,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-secular-mixed",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 47.5,
+    "Blue&White/YeshAtid": 17.8,
+    "Yamina": 12.9,
+    "Otzma": 0.9,
+    "Shas": 7.5,
+    "UTJ": 4.2,
+    "YB": 6.4,
+    "Labor-Meretz": 2.2
+   },
+   "unit": "percent",
+   "population": "Secular/mixed suburbs",
+   "breakdown": {
+    "localities": 13,
+    "eligible": 88264,
+    "valid": 63524,
+    "turnout_pct": 72.3
+   },
+   "sample": 63524,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-jordan",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 36.9,
+    "Blue&White/YeshAtid": 25.1,
+    "Yamina": 24.6,
+    "Otzma": 0.8,
+    "Shas": 1.4,
+    "UTJ": 1.9,
+    "YB": 3.4,
+    "Labor-Meretz": 5.3
+   },
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {
+    "localities": 24,
+    "eligible": 5744,
+    "valid": 3983,
+    "turnout_pct": 69.6
+   },
+   "sample": 3983,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-other",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 32.4,
+    "Blue&White/YeshAtid": 6.8,
+    "Yamina": 47.9,
+    "Otzma": 2.8,
+    "Shas": 3.4,
+    "UTJ": 3.6,
+    "YB": 1.4,
+    "Labor-Meretz": 1.2
+   },
+   "unit": "percent",
+   "population": "Other settlements (mostly national-religious)",
+   "breakdown": {
+    "localities": 80,
+    "eligible": 87810,
+    "valid": 68046,
+    "turnout_pct": 77.7
+   },
+   "sample": 68046,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-all",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 29.9,
+    "Blue&White/YeshAtid": 9.1,
+    "Yamina": 22.9,
+    "Otzma": 1.6,
+    "Shas": 10.8,
+    "UTJ": 21.3,
+    "YB": 2.8,
+    "Labor-Meretz": 1.3
+   },
+   "unit": "percent",
+   "population": "All West Bank settlements",
+   "breakdown": {
+    "localities": 125,
+    "eligible": 244778,
+    "valid": 186762,
+    "turnout_pct": 76.7
+   },
+   "sample": 186762,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-israel",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 29.5,
+    "Blue&White/YeshAtid": 26.6,
+    "Yamina": 5.2,
+    "Otzma": 0.4,
+    "Shas": 7.7,
+    "UTJ": 6.0,
+    "YB": 5.7,
+    "Labor-Meretz": 5.8
+   },
+   "unit": "percent",
+   "population": "Israel total (incl. double envelopes)",
+   "breakdown": {
+    "localities": 1214,
+    "eligible": 6453255,
+    "valid": 4590062,
+    "turnout_pct": 71.5
+   },
+   "sample": 4590062,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2020-03-wb-share-of-party",
+   "topic": "voting",
+   "measure": "Share of each list's national vote cast in West Bank settlement localities",
+   "value": {
+    "Likud": 4.1,
+    "Blue&White/YeshAtid": 1.4,
+    "Yamina": 17.8,
+    "Otzma": 15.0,
+    "Shas": 5.7,
+    "UTJ": 14.5,
+    "YB": 2.0,
+    "Labor-Meretz": 0.9
+   },
+   "unit": "percent",
+   "population": "All lists",
+   "breakdown": {
+    "wb_share_of_eligible_pct": 3.79
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": ""
+  },
+  {
+   "id": "vote-2021-03-haredi",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 1.7,
+    "Blue&White/YeshAtid": 0.1,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 8.3,
+    "Yamina": 0.7,
+    "New Hope": 0.1,
+    "Blue&White (Gantz)": 0.0,
+    "Shas": 23.4,
+    "UTJ": 65.3,
+    "YB": 0.0,
+    "Labor": 0.1,
+    "Meretz": 0.0
+   },
+   "unit": "percent",
+   "population": "Haredi cities",
+   "breakdown": {
+    "localities": 8,
+    "eligible": 66779,
+    "valid": 51832,
+    "turnout_pct": 78.5
+   },
+   "sample": 51832,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-secular-mixed",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 34.7,
+    "Blue&White/YeshAtid": 9.5,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 11.7,
+    "Yamina": 12.0,
+    "New Hope": 6.7,
+    "Blue&White (Gantz)": 4.3,
+    "Shas": 6.9,
+    "UTJ": 3.4,
+    "YB": 5.2,
+    "Labor": 2.7,
+    "Meretz": 1.2
+   },
+   "unit": "percent",
+   "population": "Secular/mixed suburbs",
+   "breakdown": {
+    "localities": 12,
+    "eligible": 89481,
+    "valid": 62144,
+    "turnout_pct": 69.7
+   },
+   "sample": 62144,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-jordan",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 23.8,
+    "Blue&White/YeshAtid": 9.3,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 18.5,
+    "Yamina": 17.9,
+    "New Hope": 7.5,
+    "Blue&White (Gantz)": 7.5,
+    "Shas": 1.0,
+    "UTJ": 0.5,
+    "YB": 2.7,
+    "Labor": 7.1,
+    "Meretz": 1.6
+   },
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {
+    "localities": 25,
+    "eligible": 5965,
+    "valid": 3992,
+    "turnout_pct": 67.2
+   },
+   "sample": 3992,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-other",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 18.7,
+    "Blue&White/YeshAtid": 3.2,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 41.0,
+    "Yamina": 24.4,
+    "New Hope": 3.4,
+    "Blue&White (Gantz)": 1.8,
+    "Shas": 2.4,
+    "UTJ": 0.7,
+    "YB": 1.1,
+    "Labor": 1.5,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "Other settlements (mostly national-religious)",
+   "breakdown": {
+    "localities": 79,
+    "eligible": 91456,
+    "valid": 68719,
+    "turnout_pct": 75.3
+   },
+   "sample": 68719,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-all",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 19.4,
+    "Blue&White/YeshAtid": 4.6,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 21.7,
+    "Yamina": 13.5,
+    "New Hope": 3.7,
+    "Blue&White (Gantz)": 2.3,
+    "Shas": 9.7,
+    "UTJ": 19.5,
+    "YB": 2.2,
+    "Labor": 1.6,
+    "Meretz": 0.6
+   },
+   "unit": "percent",
+   "population": "All West Bank settlements",
+   "breakdown": {
+    "localities": 124,
+    "eligible": 253681,
+    "valid": 186687,
+    "turnout_pct": 74.0
+   },
+   "sample": 186687,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-israel",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 24.2,
+    "Blue&White/YeshAtid": 13.9,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 5.1,
+    "Yamina": 6.2,
+    "New Hope": 4.7,
+    "Blue&White (Gantz)": 6.6,
+    "Shas": 7.2,
+    "UTJ": 5.6,
+    "YB": 5.6,
+    "Labor": 6.1,
+    "Meretz": 4.6
+   },
+   "unit": "percent",
+   "population": "Israel total (incl. double envelopes)",
+   "breakdown": {
+    "localities": 1215,
+    "eligible": 6578084,
+    "valid": 4410052,
+    "turnout_pct": 67.4
+   },
+   "sample": 4410052,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2021-03-wb-share-of-party",
+   "topic": "voting",
+   "measure": "Share of each list's national vote cast in West Bank settlement localities",
+   "value": {
+    "Likud": 3.4,
+    "Blue&White/YeshAtid": 1.4,
+    "RZ (Smotrich+Ben-Gvir+Noam)": 17.9,
+    "Yamina": 9.2,
+    "New Hope": 3.3,
+    "Blue&White (Gantz)": 1.4,
+    "Shas": 5.7,
+    "UTJ": 14.7,
+    "YB": 1.7,
+    "Labor": 1.1,
+    "Meretz": 0.6
+   },
+   "unit": "percent",
+   "population": "All lists",
+   "breakdown": {
+    "wb_share_of_eligible_pct": 3.86
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": ""
+  },
+  {
+   "id": "vote-2022-11-haredi",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 1.4,
+    "Blue&White/YeshAtid": 0.1,
+    "RZ-Otzma": 7.8,
+    "Jewish Home": 0.1,
+    "National Unity": 0.1,
+    "Shas": 26.3,
+    "UTJ": 63.9,
+    "YB": 0.0,
+    "Labor": 0.0,
+    "Meretz": 0.0
+   },
+   "unit": "percent",
+   "population": "Haredi cities",
+   "breakdown": {
+    "localities": 8,
+    "eligible": 71586,
+    "valid": 57603,
+    "turnout_pct": 81.3
+   },
+   "sample": 57603,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-secular-mixed",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 34.1,
+    "Blue&White/YeshAtid": 11.9,
+    "RZ-Otzma": 23.1,
+    "Jewish Home": 2.4,
+    "National Unity": 7.8,
+    "Shas": 8.8,
+    "UTJ": 3.8,
+    "YB": 4.4,
+    "Labor": 1.3,
+    "Meretz": 0.8
+   },
+   "unit": "percent",
+   "population": "Secular/mixed suburbs",
+   "breakdown": {
+    "localities": 11,
+    "eligible": 91568,
+    "valid": 64739,
+    "turnout_pct": 71.1
+   },
+   "sample": 64739,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-jordan",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 24.9,
+    "Blue&White/YeshAtid": 13.1,
+    "RZ-Otzma": 34.2,
+    "Jewish Home": 5.8,
+    "National Unity": 10.5,
+    "Shas": 1.8,
+    "UTJ": 0.4,
+    "YB": 1.9,
+    "Labor": 3.8,
+    "Meretz": 1.1
+   },
+   "unit": "percent",
+   "population": "Jordan Valley",
+   "breakdown": {
+    "localities": 25,
+    "eligible": 6356,
+    "valid": 4315,
+    "turnout_pct": 68.3
+   },
+   "sample": 4315,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-other",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 19.3,
+    "Blue&White/YeshAtid": 4.1,
+    "RZ-Otzma": 57.3,
+    "Jewish Home": 7.5,
+    "National Unity": 4.2,
+    "Shas": 3.1,
+    "UTJ": 0.9,
+    "YB": 1.1,
+    "Labor": 0.8,
+    "Meretz": 0.3
+   },
+   "unit": "percent",
+   "population": "Other settlements (mostly national-religious)",
+   "breakdown": {
+    "localities": 80,
+    "eligible": 97448,
+    "valid": 73205,
+    "turnout_pct": 75.3
+   },
+   "sample": 73205,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-all",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 19.1,
+    "Blue&White/YeshAtid": 5.7,
+    "RZ-Otzma": 31.5,
+    "Jewish Home": 3.7,
+    "National Unity": 4.3,
+    "Shas": 11.6,
+    "UTJ": 20.0,
+    "YB": 1.9,
+    "Labor": 0.8,
+    "Meretz": 0.4
+   },
+   "unit": "percent",
+   "population": "All West Bank settlements",
+   "breakdown": {
+    "localities": 124,
+    "eligible": 266958,
+    "valid": 199862,
+    "turnout_pct": 75.3
+   },
+   "sample": 199862,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-israel",
+   "topic": "voting",
+   "measure": "Share of valid votes by list",
+   "value": {
+    "Likud": 23.4,
+    "Blue&White/YeshAtid": 17.8,
+    "RZ-Otzma": 10.8,
+    "Jewish Home": 1.2,
+    "National Unity": 9.1,
+    "Shas": 8.2,
+    "UTJ": 5.9,
+    "YB": 4.5,
+    "Labor": 3.7,
+    "Meretz": 3.2
+   },
+   "unit": "percent",
+   "population": "Israel total (incl. double envelopes)",
+   "breakdown": {
+    "localities": 1216,
+    "eligible": 6788804,
+    "valid": 4764742,
+    "turnout_pct": 70.6
+   },
+   "sample": 4764742,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Settlements = CBS codes 3400-3899; grouping ours; excludes double envelopes and East Jerusalem"
+  },
+  {
+   "id": "vote-2022-11-wb-share-of-party",
+   "topic": "voting",
+   "measure": "Share of each list's national vote cast in West Bank settlement localities",
+   "value": {
+    "Likud": 3.4,
+    "Blue&White/YeshAtid": 1.3,
+    "RZ-Otzma": 12.2,
+    "Jewish Home": 13.0,
+    "National Unity": 2.0,
+    "Shas": 5.9,
+    "UTJ": 14.3,
+    "YB": 1.8,
+    "Labor": 0.9,
+    "Meretz": 0.5
+   },
+   "unit": "percent",
+   "population": "All lists",
+   "breakdown": {
+    "wb_share_of_eligible_pct": 3.93
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee (our arithmetic)",
+   "source_title": "CEC locality results file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": ""
+  },
+  {
+   "id": "washinst-2022",
+   "topic": "voting",
+   "measure": "RZ share in settlements / settler share of RZ vote (as cited)",
+   "value": {
+    "rz_share_in_settlements": 22,
+    "settler_share_of_rz_vote": 6,
+    "settlers_share_of_eligible": "<3.5"
+   },
+   "unit": "percent",
+   "population": "West Bank settlements",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "Washington Institute (via class doc 11b)",
+   "source_title": "Washington Institute 2022-11-22",
+   "url": "(not opened)",
+   "verified": "UNREACHABLE (not opened; no URL)",
+   "notes": "Disagrees with CEC arithmetic: 31.5 / 12.2 / 3.9"
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 2.9,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 4.9,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 22.7,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 67.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 39.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 16.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 8.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 5.6,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 5.3,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 26.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 22.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 15.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 12.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 7.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 22.0,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 6.0,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 36.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 20.6,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 6.7,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 23.1,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 8.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 18.2,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 10.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 4.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 8.4,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 19.0,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "share_or_seats": 26.5,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 26.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "URWP (RZ+Otzma+JH)",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right",
+   "share_or_seats": 3.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "share_or_seats": 6.0,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "YB",
+   "share_or_seats": 4.0,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Kulanu",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Labor",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Meretz",
+   "share_or_seats": 3.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 2.6,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 23.9,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 67.4,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 38.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 17.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 14.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 4.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 7.0,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 4.1,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 8.1,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 2.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 28.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 23.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 25.6,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 5.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 4.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 6.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 21.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 6.7,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 50.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 11.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 2.1,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 22.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 9.0,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 24.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 7.0,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 9.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 20.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 3.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 0.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "share_or_seats": 25.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 25.9,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "share_or_seats": 5.9,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "share_or_seats": 7.4,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "share_or_seats": 6.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "YB",
+   "share_or_seats": 7.0,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Labor",
+   "share_or_seats": 4.8,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Meretz",
+   "share_or_seats": 4.3,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 25.4,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 67.5,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 47.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 17.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 12.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 6.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 36.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 25.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 24.6,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 5.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 32.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 6.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 47.9,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 2.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 3.6,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 29.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 9.1,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 22.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 10.8,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 21.3,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 2.8,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "share_or_seats": 29.5,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 26.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "share_or_seats": 5.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "share_or_seats": 7.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "share_or_seats": 6.0,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "YB",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Labor-Meretz",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 8.3,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 23.4,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 65.3,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 34.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 9.5,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 11.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 12.0,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 6.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 4.3,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 6.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 5.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 23.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 9.3,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 18.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 17.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 7.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 18.7,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 3.2,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 41.0,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 24.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 2.4,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 19.4,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 4.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 21.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 13.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 2.3,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 9.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 19.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 0.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "share_or_seats": 24.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 13.9,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ (Smotrich+Ben-Gvir+Noam)",
+   "share_or_seats": 5.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "share_or_seats": 6.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "share_or_seats": 4.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue&White (Gantz)",
+   "share_or_seats": 6.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "share_or_seats": 7.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "share_or_seats": 5.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "YB",
+   "share_or_seats": 5.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Labor",
+   "share_or_seats": 6.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Meretz",
+   "share_or_seats": 4.6,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 7.8,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 26.3,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 63.9,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes, Haredi cities, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 34.1,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 11.9,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 23.1,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 2.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 7.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 8.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Secular/mixed suburbs, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 24.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 13.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 34.2,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 10.5,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes, Jordan Valley, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 19.3,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 4.1,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 57.3,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 3.1,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 0.3,
+   "basis": "% of valid votes, Other settlements (mostly national-religious), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 19.1,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 31.5,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 4.3,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 11.6,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 20.0,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes, All West Bank settlements, CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "share_or_seats": 23.4,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Blue&White/YeshAtid",
+   "share_or_seats": 17.8,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ-Otzma",
+   "share_or_seats": 10.8,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "share_or_seats": 9.1,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "share_or_seats": 8.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "share_or_seats": 5.9,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "YB",
+   "share_or_seats": 4.5,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Labor",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Meretz",
+   "share_or_seats": 3.2,
+   "basis": "% of valid votes, Israel total (incl. double envelopes), CEC locality file (our arithmetic)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  }
+ ]
+}

@@ -1,0 +1,1112 @@
+{
+ "datapoints": [
+  {
+   "id": "eth-pop-2021",
+   "topic": "group-ethiopian",
+   "measure": "Population of Ethiopian origin (born in Ethiopia, or Israel-born with Ethiopian-born father)",
+   "value": 164400,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {
+    "born_ethiopia": 90600,
+    "born_israel": 73800
+   },
+   "sample": null,
+   "fieldwork_date": "end 2021",
+   "source_org": "CBS",
+   "source_title": "Population of Ethiopian origin, Sigd 2022 release",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2022/371/11_22_371e.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "eth-pop-2023",
+   "topic": "group-ethiopian",
+   "measure": "Population of Ethiopian origin (born in Ethiopia, or Israel-born with Ethiopian-born father)",
+   "value": 171600,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {
+    "born_ethiopia": 93600,
+    "born_israel": 78000
+   },
+   "sample": null,
+   "fieldwork_date": "end 2023",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest (371/2024)",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "eth-pop-2024",
+   "topic": "group-ethiopian",
+   "measure": "Population of Ethiopian origin (born in Ethiopia, or Israel-born with Ethiopian-born father)",
+   "value": 177600,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {
+    "born_ethiopia": 93400,
+    "born_israel": 84200
+   },
+   "sample": null,
+   "fieldwork_date": "end 2024",
+   "source_org": "CBS via JNS",
+   "source_title": "Israel's Jewish Ethiopian population reached 177,600 in 2024",
+   "url": "https://www.clevelandjewishnews.com/jns/israel-s-jewish-ethiopian-population-reached-177-600-in-2024/article_02076886-a899-516a-9bd9-64a7abace4b0.html",
+   "verified": "CONFIRMED (total only; 93,400 / 84,200 split unverified)",
+   "notes": "2024 figure also on Tedros citing CBS Sigd 2025 (367/2025); CBS original not opened"
+  },
+  {
+   "id": "eth-share-jews-2024",
+   "topic": "group-ethiopian",
+   "measure": "Share of Israel's Jewish population",
+   "value": 2.3,
+   "unit": "percent",
+   "population": "Jews in Israel",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "end 2024",
+   "source_org": "CBS via JNS",
+   "source_title": "Israel's Jewish Ethiopian population reached 177,600 in 2024",
+   "url": "https://www.clevelandjewishnews.com/jns/israel-s-jewish-ethiopian-population-reached-177-600-in-2024/article_02076886-a899-516a-9bd9-64a7abace4b0.html",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-share-total-2024",
+   "topic": "group-ethiopian",
+   "measure": "Share of total population (arithmetic, 177,600 / ~10M)",
+   "value": 1.8,
+   "unit": "percent",
+   "population": "Israel total",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "end 2024",
+   "source_org": "computed",
+   "source_title": "",
+   "url": "https://www.clevelandjewishnews.com/jns/israel-s-jewish-ethiopian-population-reached-177-600-in-2024/article_02076886-a899-516a-9bd9-64a7abace4b0.html",
+   "verified": "UNVERIFIED (not on page; removed from brief)",
+   "notes": "arithmetic estimate"
+  },
+  {
+   "id": "eth-netanya-2024",
+   "topic": "group-ethiopian",
+   "measure": "Residents of Ethiopian origin, Netanya",
+   "value": 12900,
+   "unit": "persons",
+   "population": "Netanya",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "end 2023",
+   "source_org": "CBS",
+   "source_title": "CBS Sigd release 371/2024",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CORRECTED (CBS 371/2024)",
+   "notes": "Was 13,300 (Tedros, end 2024, secondhand). CBS 2022 release: 12,200 (end 2021). (id kept from earlier version; figure is end 2023.)"
+  },
+  {
+   "id": "eth-kmalachi-share",
+   "topic": "group-ethiopian",
+   "measure": "Ethiopian-origin share of Kiryat Malachi residents",
+   "value": 13.9,
+   "unit": "percent",
+   "population": "Kiryat Malachi",
+   "breakdown": {
+    "2021": 15.5,
+    "2023": 13.9,
+    "2024": 13.8
+   },
+   "sample": null,
+   "fieldwork_date": "end 2023",
+   "source_org": "CBS",
+   "source_title": "Sigd releases 2022, 2024; 2025 via Tedros",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CORRECTED (CBS 371/2024)",
+   "notes": "2024 value via Tedros (secondhand); 2021 and 2023 from CBS PDFs opened Was 13.8 (in neither CBS release). CBS 2022 release: 15.5% (end 2021)."
+  },
+  {
+   "id": "eth-districts-2024",
+   "topic": "group-ethiopian",
+   "measure": "Share living in Central and Southern districts",
+   "value": 64.6,
+   "unit": "percent",
+   "population": "Ethiopian-origin population",
+   "breakdown": {
+    "central": 37.2,
+    "southern": 27.4
+   },
+   "sample": null,
+   "fieldwork_date": "end 2024",
+   "source_org": "CBS via Tedros",
+   "source_title": "Demographics",
+   "url": "https://tedros.co.il/en/statistics/demographics",
+   "verified": false,
+   "notes": "Wikipedia gives 36.9/26.4"
+  },
+  {
+   "id": "eth-age65-2024",
+   "topic": "group-ethiopian",
+   "measure": "Share aged 65+",
+   "value": 7.0,
+   "unit": "percent",
+   "population": "Ethiopian-origin population",
+   "breakdown": {
+    "all_jews": 15.0
+   },
+   "sample": null,
+   "fieldwork_date": "end 2024",
+   "source_org": "CBS via Tedros",
+   "source_title": "Demographics",
+   "url": "https://tedros.co.il/en/statistics/demographics",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-aliyah-2021",
+   "topic": "group-ethiopian",
+   "measure": "Immigrants from Ethiopia in year",
+   "value": 1755,
+   "unit": "persons",
+   "population": "olim from Ethiopia",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eth-aliyah-2022",
+   "topic": "group-ethiopian",
+   "measure": "Immigrants from Ethiopia in year",
+   "value": 1680,
+   "unit": "persons",
+   "population": "olim from Ethiopia",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eth-aliyah-2023",
+   "topic": "group-ethiopian",
+   "measure": "Immigrants from Ethiopia in year",
+   "value": 1812,
+   "unit": "persons",
+   "population": "olim from Ethiopia",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eth-aliyah-2024",
+   "topic": "group-ethiopian",
+   "measure": "Immigrants from Ethiopia in year",
+   "value": 285,
+   "unit": "persons",
+   "population": "olim from Ethiopia",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "CBS",
+   "source_title": "CBS via JNS",
+   "url": "https://www.clevelandjewishnews.com/jns/israel-s-jewish-ethiopian-population-reached-177-600-in-2024/article_02076886-a899-516a-9bd9-64a7abace4b0.html",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-op-solomon",
+   "topic": "group-ethiopian",
+   "measure": "Operation Solomon airlift",
+   "value": 14325,
+   "unit": "persons",
+   "population": "Beta Israel",
+   "breakdown": {
+    "range_low": 14310,
+    "range_high": 14500
+   },
+   "sample": null,
+   "fieldwork_date": "1991-05-24/25",
+   "source_org": "Wikipedia citing Jewish Agency",
+   "source_title": "Ethiopian Jews in Israel",
+   "url": "https://en.wikipedia.org/wiki/Ethiopian_Jews_in_Israel",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-op-moses",
+   "topic": "group-ethiopian",
+   "measure": "Operation Moses",
+   "value": 6500,
+   "unit": "persons",
+   "population": "Beta Israel",
+   "breakdown": {
+    "exact_flight_count": 6364,
+    "range_high": 8000
+   },
+   "sample": null,
+   "fieldwork_date": "1984-11 to 1985-01",
+   "source_org": "Wikipedia; Tedros",
+   "source_title": "Ethiopian Jews in Israel",
+   "url": "https://en.wikipedia.org/wiki/Ethiopian_Jews_in_Israel",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-tzur",
+   "topic": "group-ethiopian",
+   "measure": "Operation Tzur Israel arrivals",
+   "value": 5000,
+   "unit": "persons",
+   "population": "Zera Beta Israel / Falash Mura",
+   "breakdown": {
+    "phase1": 2000,
+    "phase2": 3000,
+    "tedros_estimate": 3550
+   },
+   "sample": null,
+   "fieldwork_date": "2020-12 to 2023-07",
+   "source_org": "Wikipedia",
+   "source_title": "Operation Tzur Israel",
+   "url": "https://en.wikipedia.org/wiki/Operation_Tzur_Israel",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-waiting-jpost",
+   "topic": "group-ethiopian",
+   "measure": "People in Ethiopia awaiting aliyah",
+   "value": 7000,
+   "unit": "persons",
+   "population": "Gondar and Addis Ababa",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-09-14",
+   "source_org": "Jerusalem Post op-ed (Shmuel Legesse)",
+   "source_title": "",
+   "url": "https://www.jpost.com/opinion/article-867319",
+   "verified": true,
+   "notes": "'roughly 7,000'; op-ed"
+  },
+  {
+   "id": "eth-waiting-tedros",
+   "topic": "group-ethiopian",
+   "measure": "People in Ethiopia awaiting aliyah",
+   "value": 9000,
+   "unit": "persons",
+   "population": "Gondar and Addis Ababa",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023-07",
+   "source_org": "Tedros",
+   "source_title": "",
+   "url": "https://tedros.co.il/en/statistics/immigration",
+   "verified": false,
+   "notes": "point estimate"
+  },
+  {
+   "id": "eth-waiting-wiki",
+   "topic": "group-ethiopian",
+   "measure": "People in Ethiopia awaiting aliyah",
+   "value": 12000,
+   "unit": "persons",
+   "population": "Gondar and Addis Ababa",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "undated",
+   "source_org": "Wikipedia citing community lists",
+   "source_title": "",
+   "url": "https://en.wikipedia.org/wiki/Falash_Mura",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "eth-bagrut-2223",
+   "topic": "group-ethiopian",
+   "measure": "Bagrut eligibility, 12th grade",
+   "value": 77.7,
+   "unit": "percent",
+   "population": "Ethiopian-origin students",
+   "breakdown": {
+    "hebrew_education_all": 85.6,
+    "university_threshold": 51.5,
+    "university_threshold_all": 76.0
+   },
+   "sample": null,
+   "fieldwork_date": "2022/23",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Comparison: 85.6% in Hebrew education (\"significantly lower\"). 2023/24 parity rests on JPost (no number) and Wikipedia citing CBS 2025 (not opened)."
+  },
+  {
+   "id": "eth-bagrut-2324-uni",
+   "topic": "group-ethiopian",
+   "measure": "University-threshold bagrut eligibility",
+   "value": 60.7,
+   "unit": "percent",
+   "population": "Ethiopian-origin 12th graders",
+   "breakdown": {
+    "hebrew_education_all": 76.1
+   },
+   "sample": null,
+   "fieldwork_date": "2023/24",
+   "source_org": "CBS via Wikipedia",
+   "source_title": "Sigd 2025 digest",
+   "url": "https://en.wikipedia.org/wiki/Ethiopian_Jews_in_Israel",
+   "verified": false,
+   "notes": "steep rise from 51.5; verify"
+  },
+  {
+   "id": "eth-higher-ed-2324",
+   "topic": "group-ethiopian",
+   "measure": "Students in higher education",
+   "value": 4144,
+   "unit": "persons",
+   "population": "Ethiopian-origin",
+   "breakdown": {
+    "growth_since_2016_17_pct": 29.7,
+    "growth_others_pct": 3.9
+   },
+   "sample": null,
+   "fieldwork_date": "2023/24",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "eth-income-2017",
+   "topic": "group-ethiopian",
+   "measure": "Net monthly household income",
+   "value": 11000,
+   "unit": "NIS",
+   "population": "Ethiopian-origin households",
+   "breakdown": {
+    "comparison": 15800
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Hebrew Wikipedia",
+   "source_title": "",
+   "url": "https://he.wikipedia.org/wiki/ישראלים_יוצאי_אתיופיה",
+   "verified": false,
+   "notes": "comparison group: all households (2017, CBS 2024) or all Jewish households (2019)"
+  },
+  {
+   "id": "eth-income-2019",
+   "topic": "group-ethiopian",
+   "measure": "Net monthly household income",
+   "value": 14027,
+   "unit": "NIS",
+   "population": "Ethiopian-origin households",
+   "breakdown": {
+    "comparison": 17779
+   },
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "CBS via Wikipedia",
+   "source_title": "",
+   "url": "https://en.wikipedia.org/wiki/Ethiopian_Jews_in_Israel",
+   "verified": false,
+   "notes": "comparison group: all households (2017, CBS 2024) or all Jewish households (2019)"
+  },
+  {
+   "id": "eth-income-2022",
+   "topic": "group-ethiopian",
+   "measure": "Net monthly household income",
+   "value": 14676,
+   "unit": "NIS",
+   "population": "Ethiopian-origin households",
+   "breakdown": {
+    "comparison": 18237
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "CBS",
+   "source_title": "",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CONFIRMED (2022 Household Expenditure Survey)",
+   "notes": "comparison group: all households (2017, CBS 2024) or all Jewish households (2019) 14,676 vs 18,237 NIS, about 20% lower."
+  },
+  {
+   "id": "eth-spend-pc",
+   "topic": "group-ethiopian",
+   "measure": "Spending per person per month",
+   "value": 2749,
+   "unit": "NIS",
+   "population": "Ethiopian-origin households",
+   "breakdown": {
+    "general": 4580
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "CBS",
+   "source_title": "Sigd 2024 data digest",
+   "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+   "verified": "CONFIRMED (2022 Household Expenditure Survey)",
+   "notes": "2,749 vs 4,580 NIS per person, 40% lower."
+  },
+  {
+   "id": "eth-employment-2015",
+   "topic": "group-ethiopian",
+   "measure": "Share employed",
+   "value": 72,
+   "unit": "percent",
+   "population": "Ethiopian-Israelis (working age, definition not given)",
+   "breakdown": {
+    "2003": 50
+   },
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Jewish Virtual Library",
+   "source_title": "The Situation of Ethiopian Jews in Israel",
+   "url": "https://jewishvirtuallibrary.org/the-situation-of-ethiopian-jews-in-israel",
+   "verified": false,
+   "notes": "compiler; stale"
+  },
+  {
+   "id": "eth-enlist-2010",
+   "topic": "group-ethiopian",
+   "measure": "IDF enlistment rate",
+   "value": 86,
+   "unit": "percent",
+   "population": "Ethiopian-origin draft-age",
+   "breakdown": {
+    "idf_all": 74,
+    "soldiers_serving": 5800
+   },
+   "sample": null,
+   "fieldwork_date": "2010",
+   "source_org": "IDF Manpower via Hebrew Wikipedia",
+   "source_title": "ישראלים יוצאי אתיופיה",
+   "url": "https://he.wikipedia.org/wiki/ישראלים_יוצאי_אתיופיה",
+   "verified": "UNVERIFIED (Hebrew Wikipedia only; 2010 data)",
+   "notes": ""
+  },
+  {
+   "id": "eth-war-dead",
+   "topic": "group-ethiopian",
+   "measure": "Ethiopian-Israeli soldiers killed since Oct 7, 2023",
+   "value": 40,
+   "unit": "persons",
+   "population": "IDF",
+   "breakdown": {
+    "share_of_deaths_pct": 4.5
+   },
+   "sample": null,
+   "fieldwork_date": "mid-2025",
+   "source_org": "IDF Club (advocacy)",
+   "source_title": "From immigration to integration",
+   "url": "https://idfclub.org/from-immigration-to-integration-ethiopian-jews-excel-in-idf/",
+   "verified": "UNVERIFIED (advocacy site only)",
+   "notes": "no primary source; do not publish without IDF confirmation"
+  },
+  {
+   "id": "eth-arrests",
+   "topic": "group-ethiopian",
+   "measure": "Share of arrests",
+   "value": 8.2,
+   "unit": "percent",
+   "population": "Israel Police arrests",
+   "breakdown": {
+    "range_high": 9.4,
+    "share_of_jews": 2.2
+   },
+   "sample": null,
+   "fieldwork_date": "2019-2023",
+   "source_org": "Knesset RIC via Tedros",
+   "source_title": "Enforcement data on Ethiopian-origin Israelis 2019-2023",
+   "url": "https://tedros.co.il/en/statistics/civic-participation",
+   "verified": "CONFIRMED secondhand (Tedros citing Knesset RIC, 21 May 2024)",
+   "notes": "8.2–9.4% of arrests a year vs 2.2% of Jews; over-representation in enforcement; investigation files opened only 5–6%."
+  },
+  {
+   "id": "eth-idi-sample",
+   "topic": "group-ethiopian",
+   "measure": "Share of Jewish respondents self-identifying as Ethiopian",
+   "value": 0.6,
+   "unit": "percent",
+   "population": "IDI Democracy Index 2025 Jewish sample",
+   "breakdown": {
+    "approx_respondents": 7
+   },
+   "sample": 1205,
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "why no cross-tabs exist"
+  },
+  {
+   "id": "eth-station-2019-0",
+   "topic": "group-ethiopian",
+   "measure": "Vote share at polling stations in Ethiopian-Israeli neighborhood",
+   "value": null,
+   "unit": "percent",
+   "population": "Kiryat Moshe, Rehovot",
+   "breakdown": {
+    "likud_apr2019": 53,
+    "likud_sep2019": 42,
+    "bw_apr2019": 13,
+    "bw_sep2019": 28
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04 / 2019-09",
+   "source_org": "Ynet",
+   "source_title": "בחירות אחרי המחאה: בקהילה האתיופית נטשו את הליכוד",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html",
+   "verified": "CONFIRMED",
+   "notes": "mixed stations; second place name to confirm"
+  },
+  {
+   "id": "eth-station-2019-1",
+   "topic": "group-ethiopian",
+   "measure": "Vote share at polling stations in Ethiopian-Israeli neighborhood",
+   "value": null,
+   "unit": "percent",
+   "population": "Ramat Eliyahu",
+   "breakdown": {
+    "likud_apr2019": 53,
+    "likud_sep2019": 43,
+    "bw_apr2019": 15,
+    "bw_sep2019": 24
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04 / 2019-09",
+   "source_org": "Ynet",
+   "source_title": "בחירות אחרי המחאה: בקהילה האתיופית נטשו את הליכוד",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html",
+   "verified": "CONFIRMED",
+   "notes": "mixed stations; second place name to confirm"
+  },
+  {
+   "id": "eth-station-2019-2",
+   "topic": "group-ethiopian",
+   "measure": "Vote share at polling stations in Ethiopian-Israeli neighborhood",
+   "value": null,
+   "unit": "percent",
+   "population": "Weizmann, Kiryat Malachi",
+   "breakdown": {
+    "likud_apr2019": 50,
+    "likud_sep2019": 39,
+    "bw_apr2019": 6.5,
+    "bw_sep2019": 18
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04 / 2019-09",
+   "source_org": "Ynet",
+   "source_title": "בחירות אחרי המחאה: בקהילה האתיופית נטשו את הליכוד",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html",
+   "verified": "CONFIRMED",
+   "notes": "mixed stations; second place name to confirm"
+  },
+  {
+   "id": "eth-station-2019-3",
+   "topic": "group-ethiopian",
+   "measure": "Vote share at polling stations in Ethiopian-Israeli neighborhood",
+   "value": null,
+   "unit": "percent",
+   "population": "Shofetim, Kiryat Gat",
+   "breakdown": {
+    "likud_apr2019": 49,
+    "likud_sep2019": 38,
+    "bw_apr2019": 13,
+    "bw_sep2019": 23
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04 / 2019-09",
+   "source_org": "Ynet",
+   "source_title": "בחירות אחרי המחאה: בקהילה האתיופית נטשו את הליכוד",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html",
+   "verified": "CONFIRMED",
+   "notes": "mixed stations; second place name to confirm"
+  },
+  {
+   "id": "eth-station-2020-ramat-eliyahu",
+   "topic": "group-ethiopian",
+   "measure": "Blue and White share, Ramat Eliyahu stations",
+   "value": 18.5,
+   "unit": "percent",
+   "population": "Ramat Eliyahu, Rishon LeZion",
+   "breakdown": {
+    "sep2019": 21.8
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03",
+   "source_org": "Ynet",
+   "source_title": "חיזקו את נתניהו",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5688315,00.html",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "eth-station-2020-rehovot",
+   "topic": "group-ethiopian",
+   "measure": "Blue and White share, Rehovot stations",
+   "value": 20.1,
+   "unit": "percent",
+   "population": "Rehovot Ethiopian-neighborhood stations",
+   "breakdown": {
+    "sep2019": 27.4
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03",
+   "source_org": "Ynet",
+   "source_title": "חיזקו את נתניהו",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5688315,00.html",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "eth-kmalachi-2019-04",
+   "topic": "group-ethiopian",
+   "measure": "Likud share, Kiryat Malachi (whole town)",
+   "value": 45.5,
+   "unit": "percent",
+   "population": "Kiryat Malachi valid votes",
+   "breakdown": {
+    "bw": 7.4,
+    "shas": 12.1,
+    "urwp": 13.0,
+    "turnout": 66.8,
+    "likud_national": 26.5
+   },
+   "sample": 11186,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee",
+   "source_title": "Locality results (computed)",
+   "url": "https://votes21.bechirot.gov.il/ (locality results file expc, computed)",
+   "verified": "CONFIRMED",
+   "notes": "town is ~14% Ethiopian-origin; not an Ethiopian-Israeli result"
+  },
+  {
+   "id": "eth-kmalachi-2019-09",
+   "topic": "group-ethiopian",
+   "measure": "Likud share, Kiryat Malachi (whole town)",
+   "value": 40.9,
+   "unit": "percent",
+   "population": "Kiryat Malachi valid votes",
+   "breakdown": {
+    "bw": 12.0,
+    "shas": 17.1,
+    "yamina": 7.1,
+    "turnout": 67.8,
+    "likud_national": 25.1
+   },
+   "sample": 11465,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee",
+   "source_title": "Locality results (computed)",
+   "url": "https://votes22.bechirot.gov.il/ (locality results file expc, computed)",
+   "verified": "CONFIRMED",
+   "notes": "town is ~14% Ethiopian-origin; not an Ethiopian-Israeli result"
+  },
+  {
+   "id": "eth-kmalachi-2020-03",
+   "topic": "group-ethiopian",
+   "measure": "Likud share, Kiryat Malachi (whole town)",
+   "value": 50.9,
+   "unit": "percent",
+   "population": "Kiryat Malachi valid votes",
+   "breakdown": {
+    "bw": 9.0,
+    "shas": 19.2,
+    "yamina": 5.9,
+    "turnout": 69.4,
+    "likud_national": 29.5
+   },
+   "sample": 11862,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee",
+   "source_title": "Locality results (computed)",
+   "url": "https://votes23.bechirot.gov.il/ (locality results file expc, computed)",
+   "verified": "CONFIRMED",
+   "notes": "town is ~14% Ethiopian-origin; not an Ethiopian-Israeli result"
+  },
+  {
+   "id": "eth-kmalachi-2021-03",
+   "topic": "group-ethiopian",
+   "measure": "Likud share, Kiryat Malachi (whole town)",
+   "value": 42.0,
+   "unit": "percent",
+   "population": "Kiryat Malachi valid votes",
+   "breakdown": {
+    "yesh_atid": 2.2,
+    "bw": 4.7,
+    "shas": 16.9,
+    "rzp": 16.5,
+    "turnout": 62.5,
+    "likud_national": 24.2
+   },
+   "sample": 10846,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee",
+   "source_title": "Locality results (computed)",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)",
+   "verified": "CONFIRMED",
+   "notes": "town is ~14% Ethiopian-origin; not an Ethiopian-Israeli result"
+  },
+  {
+   "id": "eth-kmalachi-2022-11",
+   "topic": "group-ethiopian",
+   "measure": "Likud share, Kiryat Malachi (whole town)",
+   "value": 38.1,
+   "unit": "percent",
+   "population": "Kiryat Malachi valid votes",
+   "breakdown": {
+    "yesh_atid": 2.4,
+    "national_unity": 5.3,
+    "shas": 19.6,
+    "rz_otzma": 25.2,
+    "turnout": 70.5,
+    "likud_national": 23.4
+   },
+   "sample": 12591,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee",
+   "source_title": "Locality results (computed)",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)",
+   "verified": "CONFIRMED",
+   "notes": "town is ~14% Ethiopian-origin; not an Ethiopian-Israeli result"
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "2019-04",
+   "party": "likud",
+   "share_or_seats": 45.5,
+   "basis": "Kiryat Malachi whole town, CEC locality file; town ~14% Ethiopian-origin",
+   "url": "https://votes21.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-04",
+   "party": "bw",
+   "share_or_seats": 7.4,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes21.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-04",
+   "party": "shas",
+   "share_or_seats": 12.1,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes21.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-04",
+   "party": "urwp",
+   "share_or_seats": 13.0,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes21.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-09",
+   "party": "likud",
+   "share_or_seats": 40.9,
+   "basis": "Kiryat Malachi whole town, CEC locality file; town ~14% Ethiopian-origin",
+   "url": "https://votes22.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-09",
+   "party": "bw",
+   "share_or_seats": 12.0,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes22.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-09",
+   "party": "shas",
+   "share_or_seats": 17.1,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes22.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-09",
+   "party": "yamina",
+   "share_or_seats": 7.1,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes22.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2020-03",
+   "party": "likud",
+   "share_or_seats": 50.9,
+   "basis": "Kiryat Malachi whole town, CEC locality file; town ~14% Ethiopian-origin",
+   "url": "https://votes23.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2020-03",
+   "party": "bw",
+   "share_or_seats": 9.0,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes23.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2020-03",
+   "party": "shas",
+   "share_or_seats": 19.2,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes23.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2020-03",
+   "party": "yamina",
+   "share_or_seats": 5.9,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes23.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2021-03",
+   "party": "likud",
+   "share_or_seats": 42.0,
+   "basis": "Kiryat Malachi whole town, CEC locality file; town ~14% Ethiopian-origin",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2021-03",
+   "party": "yesh_atid",
+   "share_or_seats": 2.2,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2021-03",
+   "party": "bw",
+   "share_or_seats": 4.7,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2021-03",
+   "party": "shas",
+   "share_or_seats": 16.9,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2021-03",
+   "party": "rzp",
+   "share_or_seats": 16.5,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes24.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2022-11",
+   "party": "likud",
+   "share_or_seats": 38.1,
+   "basis": "Kiryat Malachi whole town, CEC locality file; town ~14% Ethiopian-origin",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2022-11",
+   "party": "yesh_atid",
+   "share_or_seats": 2.4,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2022-11",
+   "party": "national_unity",
+   "share_or_seats": 5.3,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2022-11",
+   "party": "shas",
+   "share_or_seats": 19.6,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2022-11",
+   "party": "rz_otzma",
+   "share_or_seats": 25.2,
+   "basis": "Kiryat Malachi whole town, CEC",
+   "url": "https://votes25.bechirot.gov.il/ (locality results file expc, computed)"
+  },
+  {
+   "election": "2019-04",
+   "party": "likud",
+   "share_or_seats": 53,
+   "basis": "polling stations, Kiryat Moshe, Rehovot (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "likud",
+   "share_or_seats": 42,
+   "basis": "polling stations, Kiryat Moshe, Rehovot (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "bluewhite",
+   "share_or_seats": 13,
+   "basis": "polling stations, Kiryat Moshe, Rehovot (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "bluewhite",
+   "share_or_seats": 28,
+   "basis": "polling stations, Kiryat Moshe, Rehovot (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "likud",
+   "share_or_seats": 53,
+   "basis": "polling stations, Ramat Eliyahu (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "likud",
+   "share_or_seats": 43,
+   "basis": "polling stations, Ramat Eliyahu (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "bluewhite",
+   "share_or_seats": 15,
+   "basis": "polling stations, Ramat Eliyahu (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "bluewhite",
+   "share_or_seats": 24,
+   "basis": "polling stations, Ramat Eliyahu (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "likud",
+   "share_or_seats": 50,
+   "basis": "polling stations, Weizmann, Kiryat Malachi (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "likud",
+   "share_or_seats": 39,
+   "basis": "polling stations, Weizmann, Kiryat Malachi (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "bluewhite",
+   "share_or_seats": 6.5,
+   "basis": "polling stations, Weizmann, Kiryat Malachi (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "bluewhite",
+   "share_or_seats": 18,
+   "basis": "polling stations, Weizmann, Kiryat Malachi (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "likud",
+   "share_or_seats": 49,
+   "basis": "polling stations, Shofetim, Kiryat Gat (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "likud",
+   "share_or_seats": 38,
+   "basis": "polling stations, Shofetim, Kiryat Gat (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-04",
+   "party": "bluewhite",
+   "share_or_seats": 13,
+   "basis": "polling stations, Shofetim, Kiryat Gat (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2019-09",
+   "party": "bluewhite",
+   "share_or_seats": 23,
+   "basis": "polling stations, Shofetim, Kiryat Gat (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html"
+  },
+  {
+   "election": "2020-03",
+   "party": "bluewhite",
+   "share_or_seats": 18.5,
+   "basis": "Ramat Eliyahu stations (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5688315,00.html"
+  },
+  {
+   "election": "2020-03",
+   "party": "bluewhite",
+   "share_or_seats": 20.1,
+   "basis": "Rehovot stations (Ynet)",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5688315,00.html"
+  }
+ ],
+ "candidates_2026": [
+  {
+   "name": "Pnina Tamano-Shata",
+   "party_id": "bluewhite",
+   "slot": 2,
+   "realistic": "no on current polls (party below threshold)",
+   "url": "https://en.wikipedia.org/wiki/Party_lists_for_the_2026_Israeli_legislative_election",
+   "verified": "UNVERIFIED (slot not shown on Wikipedia page as fetched); party below threshold CONFIRMED"
+  },
+  {
+   "name": "Mehereta Baruch-Ron",
+   "party_id": "democrats",
+   "slot": "26 (Wikipedia shows about 27–28; check CEC list)",
+   "realistic": "no (party polling 8-11)",
+   "url": "https://en.wikipedia.org/wiki/Party_lists_for_the_2026_Israeli_legislative_election",
+   "verified": "MISMATCH/UNVERIFIED (Wikipedia as fetched: around position 27–28)"
+  },
+  {
+   "name": "Sharon Shalom",
+   "party_id": "democrats",
+   "slot": 81,
+   "realistic": "no",
+   "url": "https://en.wikipedia.org/wiki/Party_lists_for_the_2026_Israeli_legislative_election",
+   "note": "identity as Rabbi Sharon Shalom not confirmed"
+  },
+  {
+   "name": "Gadi Yevarkan",
+   "party_id": "tzomet-beit-yisrael",
+   "slot": 1,
+   "realistic": "no (micro-list)",
+   "url": "https://en.wikipedia.org/wiki/Party_lists_for_the_2026_Israeli_legislative_election"
+  },
+  {
+   "name": "Aychlutm Masala",
+   "party_id": "otzma",
+   "slot": 16,
+   "realistic": "no",
+   "url": "https://en.wikipedia.org/wiki/Party_lists_for_the_2026_Israeli_legislative_election",
+   "note": "Ethiopian origin not confirmed"
+  }
+ ]
+}

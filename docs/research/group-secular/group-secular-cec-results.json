@@ -1,0 +1,828 @@
+{
+ "2019-04": {
+  "National (all ballot rows)": {
+   "valid": 4309270,
+   "eligible": 6339729,
+   "turnout_pct": 68.5,
+   "shares": {
+    "Likud": 26.5,
+    "Blue and White": 26.1,
+    "Shas": 6.0,
+    "UTJ": 5.8,
+    "Raam-Balad": 4.5,
+    "Labor": 4.4,
+    "Yisrael Beiteinu": 4.0,
+    "URWP": 3.7,
+    "Meretz": 3.6,
+    "Kulanu": 3.5,
+    "Hadash-Taal": 3.3,
+    "New Right": 3.2,
+    "Zehut": 2.7,
+    "נר": 1.7
+   }
+  },
+  "Tel Aviv-Yafo": {
+   "valid": 267601,
+   "eligible": 426398,
+   "turnout_pct": 63.0,
+   "shares": {
+    "Blue and White": 45.7,
+    "Likud": 19.3,
+    "Meretz": 9.0,
+    "Labor": 8.5,
+    "Shas": 3.2,
+    "Kulanu": 2.4,
+    "Zehut": 2.0,
+    "New Right": 2.0,
+    "נר": 1.8,
+    "Raam-Balad": 1.6,
+    "Yisrael Beiteinu": 1.4,
+    "URWP": 1.1
+   }
+  },
+  "Ramat HaSharon": {
+   "valid": 26963,
+   "eligible": 36941,
+   "turnout_pct": 73.2,
+   "shares": {
+    "Blue and White": 55.6,
+    "Likud": 17.1,
+    "Labor": 8.0,
+    "Meretz": 6.4,
+    "Kulanu": 2.4,
+    "Shas": 2.1,
+    "New Right": 1.8,
+    "נר": 1.7,
+    "UTJ": 1.6,
+    "Zehut": 1.2,
+    "URWP": 1.0
+   }
+  },
+  "Givatayim": {
+   "valid": 34409,
+   "eligible": 48210,
+   "turnout_pct": 71.6,
+   "shares": {
+    "Blue and White": 50.6,
+    "Likud": 17.6,
+    "Labor": 10.2,
+    "Meretz": 7.1,
+    "Kulanu": 2.9,
+    "נר": 2.5,
+    "New Right": 2.4,
+    "Zehut": 2.1,
+    "URWP": 1.5,
+    "Shas": 1.0
+   }
+  },
+  "Herzliya": {
+   "valid": 54710,
+   "eligible": 81001,
+   "turnout_pct": 67.8,
+   "shares": {
+    "Blue and White": 47.8,
+    "Likud": 23.4,
+    "Labor": 6.7,
+    "Meretz": 4.7,
+    "Kulanu": 3.4,
+    "נר": 2.3,
+    "Shas": 2.3,
+    "New Right": 2.2,
+    "Zehut": 2.1,
+    "Yisrael Beiteinu": 1.9,
+    "URWP": 1.6
+   }
+  },
+  "Haifa": {
+   "valid": 144578,
+   "eligible": 247866,
+   "turnout_pct": 58.7,
+   "shares": {
+    "Blue and White": 32.7,
+    "Likud": 23.7,
+    "Yisrael Beiteinu": 7.3,
+    "Labor": 5.6,
+    "Raam-Balad": 5.1,
+    "Kulanu": 5.1,
+    "Meretz": 4.7,
+    "UTJ": 3.6,
+    "Zehut": 2.3,
+    "New Right": 2.3,
+    "URWP": 2.1,
+    "Shas": 2.0,
+    "נר": 1.6,
+    "Hadash-Taal": 1.0
+   }
+  },
+  "Kfar Saba": {
+   "valid": 58423,
+   "eligible": 80130,
+   "turnout_pct": 73.2,
+   "shares": {
+    "Blue and White": 45.9,
+    "Likud": 23.9,
+    "Labor": 7.6,
+    "Meretz": 4.5,
+    "Kulanu": 3.1,
+    "New Right": 2.8,
+    "Yisrael Beiteinu": 2.4,
+    "Zehut": 2.2,
+    "URWP": 2.1,
+    "נר": 2.1,
+    "Shas": 2.0
+   }
+  },
+  "Ra'anana": {
+   "valid": 44167,
+   "eligible": 64703,
+   "turnout_pct": 68.5,
+   "shares": {
+    "Blue and White": 43.5,
+    "Likud": 23.4,
+    "New Right": 6.7,
+    "Labor": 5.8,
+    "URWP": 4.0,
+    "Meretz": 4.0,
+    "Shas": 2.8,
+    "Kulanu": 2.6,
+    "Zehut": 2.4,
+    "נר": 1.9,
+    "UTJ": 1.4,
+    "Yisrael Beiteinu": 1.0
+   }
+  },
+  "Hod HaSharon": {
+   "valid": 34800,
+   "eligible": 45512,
+   "turnout_pct": 76.7,
+   "shares": {
+    "Blue and White": 53.6,
+    "Likud": 20.5,
+    "Labor": 7.6,
+    "Meretz": 4.6,
+    "Kulanu": 2.9,
+    "נר": 2.3,
+    "New Right": 2.0,
+    "Zehut": 1.9,
+    "Shas": 1.6,
+    "Yisrael Beiteinu": 1.2
+   }
+  },
+  "Kibbutz Movement kibbutzim (238 matched)": {
+   "valid": 89490,
+   "eligible": 122509,
+   "turnout_pct": 73.2,
+   "shares": {
+    "Blue and White": 50.2,
+    "Labor": 21.0,
+    "Meretz": 13.1,
+    "Likud": 6.3,
+    "נר": 2.5,
+    "Zehut": 1.6,
+    "Kulanu": 1.5,
+    "New Right": 1.5
+   }
+  }
+ },
+ "2019-09": {
+  "National (all ballot rows)": {
+   "valid": 4436806,
+   "eligible": 6391218,
+   "turnout_pct": 69.9,
+   "shares": {
+    "Blue and White": 25.9,
+    "Likud": 25.1,
+    "Joint List": 10.6,
+    "Shas": 7.4,
+    "Yisrael Beiteinu": 7.0,
+    "UTJ": 6.1,
+    "Yamina": 5.9,
+    "Labor-Gesher": 4.8,
+    "Democratic Union": 4.3,
+    "כף": 1.9
+   }
+  },
+  "Tel Aviv-Yafo": {
+   "valid": 266343,
+   "eligible": 430203,
+   "turnout_pct": 62.1,
+   "shares": {
+    "Blue and White": 42.7,
+    "Likud": 19.0,
+    "Democratic Union": 14.4,
+    "Labor-Gesher": 7.2,
+    "Yisrael Beiteinu": 4.4,
+    "Shas": 4.1,
+    "Joint List": 3.2,
+    "Yamina": 2.6,
+    "UTJ": 1.1
+   }
+  },
+  "Ramat HaSharon": {
+   "valid": 26900,
+   "eligible": 37134,
+   "turnout_pct": 72.6,
+   "shares": {
+    "Blue and White": 53.0,
+    "Likud": 17.2,
+    "Democratic Union": 10.8,
+    "Labor-Gesher": 6.9,
+    "Yisrael Beiteinu": 3.8,
+    "Shas": 2.6,
+    "Yamina": 2.5,
+    "UTJ": 1.9
+   }
+  },
+  "Givatayim": {
+   "valid": 34091,
+   "eligible": 48361,
+   "turnout_pct": 70.7,
+   "shares": {
+    "Blue and White": 50.3,
+    "Likud": 17.3,
+    "Democratic Union": 11.3,
+    "Labor-Gesher": 9.6,
+    "Yisrael Beiteinu": 4.2,
+    "Yamina": 3.6,
+    "Shas": 1.4
+   }
+  },
+  "Herzliya": {
+   "valid": 54252,
+   "eligible": 81947,
+   "turnout_pct": 66.5,
+   "shares": {
+    "Blue and White": 47.7,
+    "Likud": 23.3,
+    "Democratic Union": 7.4,
+    "Labor-Gesher": 6.6,
+    "Yisrael Beiteinu": 5.8,
+    "Yamina": 3.6,
+    "Shas": 3.3,
+    "UTJ": 1.0
+   }
+  },
+  "Haifa": {
+   "valid": 144042,
+   "eligible": 248570,
+   "turnout_pct": 58.3,
+   "shares": {
+    "Blue and White": 32.9,
+    "Likud": 23.3,
+    "Yisrael Beiteinu": 11.9,
+    "Joint List": 8.8,
+    "Labor-Gesher": 5.5,
+    "Democratic Union": 5.5,
+    "UTJ": 3.9,
+    "Yamina": 3.9,
+    "Shas": 2.7
+   }
+  },
+  "Kfar Saba": {
+   "valid": 57762,
+   "eligible": 80443,
+   "turnout_pct": 72.1,
+   "shares": {
+    "Blue and White": 46.4,
+    "Likud": 23.1,
+    "Democratic Union": 7.2,
+    "Labor-Gesher": 7.1,
+    "Yisrael Beiteinu": 6.1,
+    "Yamina": 4.7,
+    "Shas": 2.9,
+    "כף": 1.0
+   }
+  },
+  "Ra'anana": {
+   "valid": 43648,
+   "eligible": 65270,
+   "turnout_pct": 67.1,
+   "shares": {
+    "Blue and White": 43.5,
+    "Likud": 22.2,
+    "Yamina": 10.5,
+    "Democratic Union": 6.5,
+    "Labor-Gesher": 5.6,
+    "Yisrael Beiteinu": 4.1,
+    "Shas": 4.1,
+    "UTJ": 1.6,
+    "כף": 1.4
+   }
+  },
+  "Hod HaSharon": {
+   "valid": 34505,
+   "eligible": 45835,
+   "turnout_pct": 75.5,
+   "shares": {
+    "Blue and White": 53.0,
+    "Likud": 20.2,
+    "Democratic Union": 7.8,
+    "Labor-Gesher": 7.5,
+    "Yisrael Beiteinu": 4.6,
+    "Yamina": 2.8,
+    "Shas": 2.5
+   }
+  },
+  "Kibbutz Movement kibbutzim (237 matched)": {
+   "valid": 88274,
+   "eligible": 123269,
+   "turnout_pct": 71.8,
+   "shares": {
+    "Blue and White": 50.1,
+    "Democratic Union": 19.6,
+    "Labor-Gesher": 16.6,
+    "Likud": 6.8,
+    "Yisrael Beiteinu": 3.0,
+    "Yamina": 1.8
+   }
+  }
+ },
+ "2020-03": {
+  "National (all ballot rows)": {
+   "valid": 4590062,
+   "eligible": 6453255,
+   "turnout_pct": 71.5,
+   "shares": {
+    "Likud": 29.5,
+    "Blue and White": 26.6,
+    "Joint List": 12.7,
+    "Shas": 7.7,
+    "UTJ": 6.0,
+    "Labor-Gesher-Meretz": 5.8,
+    "Yisrael Beiteinu": 5.7,
+    "Yamina": 5.2
+   }
+  },
+  "Tel Aviv-Yafo": {
+   "valid": 267115,
+   "eligible": 434208,
+   "turnout_pct": 61.7,
+   "shares": {
+    "Blue and White": 48.2,
+    "Likud": 21.8,
+    "Labor-Gesher-Meretz": 14.5,
+    "Joint List": 4.3,
+    "Shas": 4.2,
+    "Yisrael Beiteinu": 3.2,
+    "Yamina": 2.2,
+    "UTJ": 1.0
+   }
+  },
+  "Ramat HaSharon": {
+   "valid": 27048,
+   "eligible": 37312,
+   "turnout_pct": 72.6,
+   "shares": {
+    "Blue and White": 59.6,
+    "Likud": 19.7,
+    "Labor-Gesher-Meretz": 10.8,
+    "Shas": 2.7,
+    "Yisrael Beiteinu": 2.3,
+    "Yamina": 2.1,
+    "UTJ": 1.8
+   }
+  },
+  "Givatayim": {
+   "valid": 33861,
+   "eligible": 48523,
+   "turnout_pct": 70.0,
+   "shares": {
+    "Blue and White": 55.5,
+    "Likud": 20.3,
+    "Labor-Gesher-Meretz": 14.7,
+    "Yamina": 3.2,
+    "Yisrael Beiteinu": 2.8,
+    "Shas": 1.5,
+    "Joint List": 1.0
+   }
+  },
+  "Herzliya": {
+   "valid": 54833,
+   "eligible": 82906,
+   "turnout_pct": 66.4,
+   "shares": {
+    "Blue and White": 51.4,
+    "Likud": 27.2,
+    "Labor-Gesher-Meretz": 8.7,
+    "Yisrael Beiteinu": 4.2,
+    "Shas": 3.4,
+    "Yamina": 2.8,
+    "UTJ": 1.2
+   }
+  },
+  "Haifa": {
+   "valid": 144625,
+   "eligible": 249627,
+   "turnout_pct": 58.3,
+   "shares": {
+    "Blue and White": 34.6,
+    "Likud": 26.6,
+    "Joint List": 10.3,
+    "Yisrael Beiteinu": 10.3,
+    "Labor-Gesher-Meretz": 7.2,
+    "UTJ": 3.9,
+    "Yamina": 3.5,
+    "Shas": 2.9
+   }
+  },
+  "Kfar Saba": {
+   "valid": 58110,
+   "eligible": 80780,
+   "turnout_pct": 72.2,
+   "shares": {
+    "Blue and White": 49.7,
+    "Likud": 27.3,
+    "Labor-Gesher-Meretz": 9.5,
+    "Yisrael Beiteinu": 4.7,
+    "Yamina": 4.0,
+    "Shas": 3.0
+   }
+  },
+  "Ra'anana": {
+   "valid": 44155,
+   "eligible": 65757,
+   "turnout_pct": 67.4,
+   "shares": {
+    "Blue and White": 46.3,
+    "Likud": 27.1,
+    "Yamina": 9.5,
+    "Labor-Gesher-Meretz": 7.5,
+    "Shas": 4.2,
+    "Yisrael Beiteinu": 2.9,
+    "UTJ": 1.7
+   }
+  },
+  "Hod HaSharon": {
+   "valid": 34834,
+   "eligible": 46218,
+   "turnout_pct": 75.6,
+   "shares": {
+    "Blue and White": 57.4,
+    "Likud": 23.6,
+    "Labor-Gesher-Meretz": 9.7,
+    "Yisrael Beiteinu": 3.1,
+    "Shas": 2.5,
+    "Yamina": 2.4
+   }
+  },
+  "Kibbutz Movement kibbutzim (237 matched)": {
+   "valid": 88555,
+   "eligible": 124363,
+   "turnout_pct": 71.4,
+   "shares": {
+    "Blue and White": 57.6,
+    "Labor-Gesher-Meretz": 27.9,
+    "Likud": 8.5,
+    "Yisrael Beiteinu": 2.2,
+    "Yamina": 1.9
+   }
+  }
+ },
+ "2021-03": {
+  "National (all ballot rows)": {
+   "valid": 4410052,
+   "eligible": 6578084,
+   "turnout_pct": 67.4,
+   "shares": {
+    "Likud": 24.2,
+    "Yesh Atid": 13.9,
+    "Shas": 7.2,
+    "Blue and White": 6.6,
+    "Yamina": 6.2,
+    "Labor": 6.1,
+    "UTJ": 5.6,
+    "Yisrael Beiteinu": 5.6,
+    "Religious Zionism": 5.1,
+    "Joint List": 4.8,
+    "New Hope": 4.7,
+    "Meretz": 4.6,
+    "Raam": 3.8
+   }
+  },
+  "Tel Aviv-Yafo": {
+   "valid": 262696,
+   "eligible": 439193,
+   "turnout_pct": 60.0,
+   "shares": {
+    "Yesh Atid": 22.1,
+    "Likud": 17.0,
+    "Labor": 14.8,
+    "Meretz": 14.0,
+    "Blue and White": 10.8,
+    "New Hope": 4.2,
+    "Yisrael Beiteinu": 3.7,
+    "Yamina": 3.6,
+    "Shas": 3.6,
+    "Joint List": 1.9,
+    "Religious Zionism": 1.7
+   }
+  },
+  "Ramat HaSharon": {
+   "valid": 26955,
+   "eligible": 37614,
+   "turnout_pct": 71.8,
+   "shares": {
+    "Yesh Atid": 29.2,
+    "Likud": 15.5,
+    "Blue and White": 14.0,
+    "Meretz": 12.2,
+    "Labor": 11.2,
+    "New Hope": 4.6,
+    "Yamina": 3.5,
+    "Yisrael Beiteinu": 3.1,
+    "Shas": 2.2,
+    "Religious Zionism": 1.7,
+    "UTJ": 1.5
+   }
+  },
+  "Givatayim": {
+   "valid": 33649,
+   "eligible": 48689,
+   "turnout_pct": 69.3,
+   "shares": {
+    "Yesh Atid": 26.7,
+    "Labor": 15.2,
+    "Likud": 15.1,
+    "Blue and White": 13.2,
+    "Meretz": 11.2,
+    "New Hope": 5.4,
+    "Yamina": 4.5,
+    "Yisrael Beiteinu": 3.3,
+    "Religious Zionism": 1.8,
+    "Shas": 1.2,
+    "יז": 1.1
+   }
+  },
+  "Herzliya": {
+   "valid": 54971,
+   "eligible": 84414,
+   "turnout_pct": 65.3,
+   "shares": {
+    "Yesh Atid": 26.7,
+    "Likud": 21.1,
+    "Blue and White": 12.6,
+    "Labor": 9.3,
+    "Meretz": 8.3,
+    "New Hope": 5.5,
+    "Yamina": 4.9,
+    "Yisrael Beiteinu": 4.4,
+    "Shas": 3.1,
+    "Religious Zionism": 1.7
+   }
+  },
+  "Haifa": {
+   "valid": 136966,
+   "eligible": 249870,
+   "turnout_pct": 55.1,
+   "shares": {
+    "Likud": 21.4,
+    "Yesh Atid": 19.6,
+    "Yisrael Beiteinu": 9.3,
+    "Blue and White": 8.1,
+    "Joint List": 7.1,
+    "Labor": 6.8,
+    "Meretz": 6.3,
+    "New Hope": 5.4,
+    "Yamina": 4.8,
+    "UTJ": 3.7,
+    "Religious Zionism": 2.6,
+    "Shas": 2.6,
+    "יז": 1.0
+   }
+  },
+  "Kfar Saba": {
+   "valid": 56591,
+   "eligible": 81178,
+   "turnout_pct": 69.9,
+   "shares": {
+    "Yesh Atid": 26.3,
+    "Likud": 21.0,
+    "Blue and White": 11.0,
+    "Labor": 10.5,
+    "Meretz": 7.4,
+    "New Hope": 6.0,
+    "Yamina": 5.8,
+    "Yisrael Beiteinu": 4.5,
+    "Shas": 2.8,
+    "Religious Zionism": 2.7
+   }
+  },
+  "Ra'anana": {
+   "valid": 44539,
+   "eligible": 66998,
+   "turnout_pct": 66.7,
+   "shares": {
+    "Yesh Atid": 23.8,
+    "Likud": 19.7,
+    "Yamina": 11.8,
+    "Blue and White": 10.9,
+    "Labor": 7.9,
+    "Meretz": 6.7,
+    "New Hope": 5.5,
+    "Religious Zionism": 4.5,
+    "Shas": 3.7,
+    "Yisrael Beiteinu": 3.0,
+    "UTJ": 1.1
+   }
+  },
+  "Hod HaSharon": {
+   "valid": 35341,
+   "eligible": 47577,
+   "turnout_pct": 74.4,
+   "shares": {
+    "Yesh Atid": 30.4,
+    "Likud": 18.1,
+    "Blue and White": 12.8,
+    "Labor": 11.2,
+    "Meretz": 8.1,
+    "New Hope": 6.1,
+    "Yamina": 4.4,
+    "Yisrael Beiteinu": 3.4,
+    "Shas": 1.9,
+    "Religious Zionism": 1.6
+   }
+  },
+  "Kibbutz Movement kibbutzim (238 matched)": {
+   "valid": 90166,
+   "eligible": 126714,
+   "turnout_pct": 71.3,
+   "shares": {
+    "Labor": 25.3,
+    "Yesh Atid": 23.0,
+    "Meretz": 18.9,
+    "Blue and White": 13.3,
+    "Likud": 6.4,
+    "New Hope": 3.7,
+    "Yamina": 3.2,
+    "Yisrael Beiteinu": 2.9,
+    "יז": 1.0
+   }
+  }
+ },
+ "2022-11": {
+  "National (all ballot rows)": {
+   "valid": 4764742,
+   "eligible": 6788804,
+   "turnout_pct": 70.6,
+   "shares": {
+    "Likud": 23.4,
+    "Yesh Atid": 17.8,
+    "RZ-Otzma": 10.8,
+    "National Unity": 9.1,
+    "Shas": 8.2,
+    "UTJ": 5.9,
+    "Yisrael Beiteinu": 4.5,
+    "Raam": 4.1,
+    "Hadash-Taal": 3.8,
+    "Labor": 3.7,
+    "Meretz": 3.2,
+    "Balad": 2.9,
+    "Jewish Home": 1.2
+   }
+  },
+  "Tel Aviv-Yafo": {
+   "valid": 265796,
+   "eligible": 447576,
+   "turnout_pct": 59.6,
+   "shares": {
+    "Yesh Atid": 32.8,
+    "Likud": 17.0,
+    "National Unity": 11.0,
+    "Meretz": 10.9,
+    "Labor": 9.3,
+    "RZ-Otzma": 4.5,
+    "Shas": 4.3,
+    "Yisrael Beiteinu": 3.3,
+    "Balad": 1.5,
+    "Hadash-Taal": 1.5
+   }
+  },
+  "Ramat HaSharon": {
+   "valid": 27275,
+   "eligible": 38282,
+   "turnout_pct": 71.4,
+   "shares": {
+    "Yesh Atid": 42.2,
+    "Likud": 15.7,
+    "National Unity": 13.3,
+    "Meretz": 8.5,
+    "Labor": 7.2,
+    "RZ-Otzma": 3.7,
+    "Shas": 3.0,
+    "Yisrael Beiteinu": 2.7,
+    "UTJ": 1.5
+   }
+  },
+  "Givatayim": {
+   "valid": 33932,
+   "eligible": 49341,
+   "turnout_pct": 69.0,
+   "shares": {
+    "Yesh Atid": 37.6,
+    "Likud": 15.8,
+    "National Unity": 14.9,
+    "Labor": 10.5,
+    "Meretz": 8.6,
+    "RZ-Otzma": 4.0,
+    "Yisrael Beiteinu": 3.3,
+    "Shas": 1.5,
+    "Jewish Home": 1.0
+   }
+  },
+  "Herzliya": {
+   "valid": 58166,
+   "eligible": 88932,
+   "turnout_pct": 65.6,
+   "shares": {
+    "Yesh Atid": 37.2,
+    "Likud": 21.3,
+    "National Unity": 14.1,
+    "Labor": 5.8,
+    "Meretz": 5.7,
+    "RZ-Otzma": 5.6,
+    "Yisrael Beiteinu": 3.5,
+    "Shas": 3.5
+   }
+  },
+  "Haifa": {
+   "valid": 139764,
+   "eligible": 253292,
+   "turnout_pct": 55.5,
+   "shares": {
+    "Yesh Atid": 26.3,
+    "Likud": 20.9,
+    "National Unity": 10.1,
+    "Yisrael Beiteinu": 8.1,
+    "RZ-Otzma": 6.3,
+    "Hadash-Taal": 5.7,
+    "Labor": 4.8,
+    "Meretz": 4.6,
+    "UTJ": 3.8,
+    "Shas": 3.2,
+    "Balad": 2.8
+   }
+  },
+  "Kfar Saba": {
+   "valid": 56903,
+   "eligible": 81737,
+   "turnout_pct": 69.9,
+   "shares": {
+    "Yesh Atid": 36.2,
+    "Likud": 21.8,
+    "National Unity": 12.8,
+    "RZ-Otzma": 6.8,
+    "Labor": 6.6,
+    "Meretz": 5.1,
+    "Yisrael Beiteinu": 3.8,
+    "Shas": 3.5,
+    "Jewish Home": 1.1
+   }
+  },
+  "Ra'anana": {
+   "valid": 46223,
+   "eligible": 69652,
+   "turnout_pct": 66.6,
+   "shares": {
+    "Yesh Atid": 32.8,
+    "Likud": 20.5,
+    "National Unity": 13.9,
+    "RZ-Otzma": 9.9,
+    "Labor": 5.0,
+    "Shas": 5.0,
+    "Meretz": 4.6,
+    "Jewish Home": 2.9,
+    "Yisrael Beiteinu": 2.6,
+    "UTJ": 1.1
+   }
+  },
+  "Hod HaSharon": {
+   "valid": 36126,
+   "eligible": 48723,
+   "turnout_pct": 74.4,
+   "shares": {
+    "Yesh Atid": 40.5,
+    "Likud": 19.0,
+    "National Unity": 15.0,
+    "Labor": 6.8,
+    "Meretz": 5.7,
+    "RZ-Otzma": 4.8,
+    "Yisrael Beiteinu": 2.9,
+    "Shas": 2.4
+   }
+  },
+  "Kibbutz Movement kibbutzim (238 matched)": {
+   "valid": 91258,
+   "eligible": 131049,
+   "turnout_pct": 69.9,
+   "shares": {
+    "Yesh Atid": 36.8,
+    "Labor": 17.7,
+    "National Unity": 15.4,
+    "Meretz": 13.9,
+    "Likud": 7.3,
+    "RZ-Otzma": 3.2,
+    "Yisrael Beiteinu": 2.0
+   }
+  }
+ }
+}

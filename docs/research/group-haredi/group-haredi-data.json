@@ -1,0 +1,4587 @@
+{
+ "datapoints": [
+  {
+   "id": "pop-idi-2025",
+   "topic": "size",
+   "measure": "Haredi population",
+   "value": 1452350,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute (Malach, Cahaner)",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "share-idi-2025",
+   "topic": "size",
+   "measure": "Haredi share of population",
+   "value": 14.3,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "pop-idi-2009",
+   "topic": "size",
+   "measure": "Haredi population",
+   "value": 750000,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2009",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "growth-idi",
+   "topic": "size",
+   "measure": "Annual growth rate",
+   "value": 4.2,
+   "unit": "%/yr",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "young-idi",
+   "topic": "size",
+   "measure": "Share under age 20",
+   "value": 57,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "comparison_general_population": 31
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Media Line summary of same report says \"19 and under\""
+  },
+  {
+   "id": "tfr-idi-2003",
+   "topic": "fertility",
+   "measure": "Total fertility rate",
+   "value": 7.5,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "period": "2003-2005"
+   },
+   "sample": null,
+   "fieldwork_date": "2003-2005",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "tfr-idi-2021",
+   "topic": "fertility",
+   "measure": "Total fertility rate",
+   "value": 6.5,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "period": "2021-2023",
+    "non_haredi_jewish": 2.2
+   },
+   "sample": null,
+   "fieldwork_date": "2021-2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "proj-idi-2030",
+   "topic": "projection",
+   "measure": "Projected Haredi share",
+   "value": 16,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "year": 2030
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "proj-cbs-2040",
+   "topic": "projection",
+   "measure": "Projected Haredi share (CBS projection)",
+   "value": 20,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "year": 2040
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2026-02-10",
+   "source_org": "CBS via IDI (Malach, Yakir, Portal)",
+   "source_title": "Haredim in Israel 2050: Demographic Projections and Economic and Security Scenarios",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": "approximate (\"~20%\")"
+  },
+  {
+   "id": "proj-cbs-2050",
+   "topic": "projection",
+   "measure": "Projected Haredi share (CBS projection)",
+   "value": 24.4,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "year": 2050
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2026-02-10",
+   "source_org": "CBS via IDI",
+   "source_title": "Haredim in Israel 2050: Demographic Projections and Economic and Security Scenarios",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "proj-idi-2050",
+   "topic": "projection",
+   "measure": "Projected Haredi share (IDI own estimate)",
+   "value": 22,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "year": 2050
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2026-02-10",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Haredim in Israel 2050: Demographic Projections and Economic and Security Scenarios",
+   "url": "https://en.idi.org.il/articles/63385",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "proj-cbs-2065",
+   "topic": "projection",
+   "measure": "Projected Haredi share (CBS 2017 projection)",
+   "value": 32,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "year": 2065,
+    "haredi_count": "nearly 6.5 million"
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2017-05-22",
+   "source_org": "CBS via Israel National News",
+   "source_title": "Israel's population to surge to 20 million by 2065",
+   "url": "https://www.israelnationalnews.com/news/229972",
+   "verified": "CONFIRMED (old, 2017)",
+   "notes": "CBS 2017 long-range projection; JPost headline same day says \"a third\"; projection predates recent fertility decline"
+  },
+  {
+   "id": "proj-cbs-2065-children",
+   "topic": "projection",
+   "measure": "Haredi share of children 14 and under (CBS 2017 projection)",
+   "value": 50,
+   "unit": "%",
+   "population": "Children 0-14",
+   "breakdown": {
+    "year": 2065
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2017-05-22",
+   "source_org": "CBS via Israel National News",
+   "source_title": "Israel's population to surge to 20 million by 2065",
+   "url": "https://www.israelnationalnews.com/news/229972",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "proj-machon-2065-current",
+   "topic": "projection",
+   "measure": "Projected Haredi share 2065, Haredi Institute scenario",
+   "value": 22.6,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "scenario": "current",
+    "tfr": 6.2,
+    "haredi_pop_millions": 5.08
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2024-12/2025-03",
+   "source_org": "Haredi Institute for Public Affairs (Machon)",
+   "source_title": "State of Haredi Society Annual Report 2024 (English)",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "proj-machon-2065-moderate-decline",
+   "topic": "projection",
+   "measure": "Projected Haredi share 2065, Haredi Institute scenario",
+   "value": 20.8,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "scenario": "moderate decline",
+    "tfr": 5.8,
+    "haredi_pop_millions": 4.59
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2024-12/2025-03",
+   "source_org": "Haredi Institute for Public Affairs (Machon)",
+   "source_title": "State of Haredi Society Annual Report 2024 (English)",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "proj-machon-2065-further-decline",
+   "topic": "projection",
+   "measure": "Projected Haredi share 2065, Haredi Institute scenario",
+   "value": 18.7,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "scenario": "further decline",
+    "tfr": 5.4,
+    "haredi_pop_millions": 3.98
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2024-12/2025-03",
+   "source_org": "Haredi Institute for Public Affairs (Machon)",
+   "source_title": "State of Haredi Society Annual Report 2024 (English)",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "proj-machon-2065-substantial-decline",
+   "topic": "projection",
+   "measure": "Projected Haredi share 2065, Haredi Institute scenario",
+   "value": 17.7,
+   "unit": "%",
+   "population": "Israel residents",
+   "breakdown": {
+    "scenario": "substantial decline",
+    "tfr": 5.0,
+    "haredi_pop_millions": 3.73
+   },
+   "sample": null,
+   "fieldwork_date": "pub. 2024-12/2025-03",
+   "source_org": "Haredi Institute for Public Affairs (Machon)",
+   "source_title": "State of Haredi Society Annual Report 2024 (English)",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "pop-machon-2024",
+   "topic": "size",
+   "measure": "Haredi population",
+   "value": 1260000,
+   "unit": "persons",
+   "population": "Israel residents",
+   "breakdown": {
+    "share_pct": 12.5,
+    "share_of_jews_pct": 16
+   },
+   "sample": null,
+   "fieldwork_date": "late 2024",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Lower than IDI because of different identification method"
+  },
+  {
+   "id": "tfr-machon-2023",
+   "topic": "fertility",
+   "measure": "Total fertility rate",
+   "value": 6.1,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "non_haredi_jewish": 2.3,
+    "arab": 2.6
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "\"43-year low\" (Ynet summary)"
+  },
+  {
+   "id": "tfr-stream-hasidic",
+   "topic": "fertility",
+   "measure": "Total fertility rate by stream",
+   "value": 7.0,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "stream": "Hasidic"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "tfr-stream-lithuanian",
+   "topic": "fertility",
+   "measure": "Total fertility rate by stream",
+   "value": 6.4,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "stream": "Lithuanian"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "tfr-stream-sephardi",
+   "topic": "fertility",
+   "measure": "Total fertility rate by stream",
+   "value": 5.2,
+   "unit": "births per woman",
+   "population": "Haredi women",
+   "breakdown": {
+    "stream": "Sephardi"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "stream-lithuanian",
+   "topic": "streams",
+   "measure": "Haredi population by stream",
+   "value": 34,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "stream": "Lithuanian",
+    "count": 433000
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Class doc 05 (Machon Dec 2024 Hebrew) gives Sephardi 32%"
+  },
+  {
+   "id": "stream-sephardi",
+   "topic": "streams",
+   "measure": "Haredi population by stream",
+   "value": 33,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "stream": "Sephardi",
+    "count": 408000
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Class doc 05 (Machon Dec 2024 Hebrew) gives Sephardi 32%"
+  },
+  {
+   "id": "stream-hasidic",
+   "topic": "streams",
+   "measure": "Haredi population by stream",
+   "value": 29,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "stream": "Hasidic (excl. Chabad)",
+    "count": 369000
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Class doc 05 (Machon Dec 2024 Hebrew) gives Sephardi 32%"
+  },
+  {
+   "id": "stream-chabad",
+   "topic": "streams",
+   "measure": "Haredi population by stream",
+   "value": 4,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "stream": "Chabad",
+    "count": 50000
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Class doc 05 (Machon Dec 2024 Hebrew) gives Sephardi 32%"
+  },
+  {
+   "id": "city-jerusalem",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 292600,
+   "unit": "persons",
+   "population": "Jerusalem",
+   "breakdown": {
+    "share_of_city_pct": 28.9
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-bnei-brak",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 209700,
+   "unit": "persons",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "share_of_city_pct": 94.8
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-beit-shemesh",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 108000,
+   "unit": "persons",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "share_of_city_pct": 73.2
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-modiin-illit",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 86600,
+   "unit": "persons",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "share_of_city_pct": 99.1
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-beitar-illit",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 67100,
+   "unit": "persons",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "share_of_city_pct": 98.5
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-ashdod",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 52600,
+   "unit": "persons",
+   "population": "Ashdod",
+   "breakdown": {
+    "share_of_city_pct": 22.4
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "city-elad",
+   "topic": "geography",
+   "measure": "Haredi residents and share of city",
+   "value": 48700,
+   "unit": "persons",
+   "population": "Elad",
+   "breakdown": {
+    "share_of_city_pct": 94.4
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "dist-jerusalem",
+   "topic": "geography",
+   "measure": "Share of all Haredim living there",
+   "value": 22.6,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "place": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "dist-bnei",
+   "topic": "geography",
+   "measure": "Share of all Haredim living there",
+   "value": 15.6,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "place": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "dist-satellite",
+   "topic": "geography",
+   "measure": "Share of all Haredim living there",
+   "value": 25,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "place": "Satellite cities (Beit Shemesh, Modi'in Illit, Beitar Illit, Elad)"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "dist-other",
+   "topic": "geography",
+   "measure": "Share of all Haredim living there",
+   "value": 11,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "place": "Other major cities"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "migration-machon",
+   "topic": "geography",
+   "measure": "Haredim who left in the past decade",
+   "value": {
+    "Jerusalem": 75000,
+    "Bnei Brak": 42000,
+    "Beit Shemesh_gain": 40000
+   },
+   "unit": "persons",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "decade to 2024",
+   "source_org": "Haredi Institute via Ynet",
+   "source_title": "Report: One in eight Israelis is Haredi",
+   "url": "https://www.ynetnews.com/jewish-world/article/h1cch618jg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "emp-men-2003",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 33,
+   "unit": "%",
+   "population": "Haredi men",
+   "breakdown": {
+    "year": "2003"
+   },
+   "sample": null,
+   "fieldwork_date": "2002",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED (text says 2002)",
+   "notes": "2003 value approximate (\"~33%\") Yearbook text: \"In 2002, around one-third of men… just over half of women\"; chart label at 2003 reads ~37 for men."
+  },
+  {
+   "id": "emp-women-2003",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 50,
+   "unit": "%",
+   "population": "Haredi women",
+   "breakdown": {
+    "year": "2003"
+   },
+   "sample": null,
+   "fieldwork_date": "2002",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED (text says 2002)",
+   "notes": "2003 value approximate Yearbook text: \"In 2002, around one-third of men… just over half of women\"; chart label at 2003 reads ~37 for men."
+  },
+  {
+   "id": "emp-men-2015",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 51,
+   "unit": "%",
+   "population": "Haredi men",
+   "breakdown": {
+    "year": "2015"
+   },
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONSISTENT (read from chart, not in text)",
+   "notes": ""
+  },
+  {
+   "id": "emp-women-2015",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 78,
+   "unit": "%",
+   "population": "Haredi women",
+   "breakdown": {
+    "year": "2015"
+   },
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONSISTENT (read from chart, not in text)",
+   "notes": ""
+  },
+  {
+   "id": "emp-men-2024-25",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 53,
+   "unit": "%",
+   "population": "Haredi men",
+   "breakdown": {
+    "year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CORRECTED (2025 value)",
+   "notes": "Yearbook text says 54% \"now\"; 2025 chart label and Media Line give 53."
+  },
+  {
+   "id": "emp-women-2024-25",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 81,
+   "unit": "%",
+   "population": "Haredi women",
+   "breakdown": {
+    "year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CORRECTED (2025 value)",
+   "notes": "Yearbook text: 81% \"now\"; 82 was the 2024 chart value."
+  },
+  {
+   "id": "emp-nonharedi-men",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 87,
+   "unit": "%",
+   "population": "Non-Haredi Jewish men",
+   "breakdown": {
+    "year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2024-25",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "emp-nonharedi-women",
+   "topic": "employment",
+   "measure": "Employment rate, ages 25-66",
+   "value": 82,
+   "unit": "%",
+   "population": "Non-Haredi Jewish women",
+   "breakdown": {
+    "year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "2024-25",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "emp-men-2025-ml",
+   "topic": "employment",
+   "measure": "Employment rate (2025)",
+   "value": {
+    "men": 53,
+    "women": 81
+   },
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI via The Media Line",
+   "source_title": "IDI Report Finds Stalled Integration of Ultra-Orthodox Men",
+   "url": "https://themedialine.org/headlines/israel-democracy-institute-report-finds-stalled-integration-of-ultra-orthodox-men-as-community-growth-accelerates/",
+   "verified": "CONFIRMED",
+   "notes": "Same IDI report; 1-point difference from exec. summary"
+  },
+  {
+   "id": "emp-machon",
+   "topic": "employment",
+   "measure": "Haredi male employment rate",
+   "value": {
+    "2014": 48,
+    "2023": 55,
+    "2024": 54
+   },
+   "unit": "%",
+   "population": "Haredi men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2014-2024",
+   "source_org": "Haredi Institute via Ynet",
+   "source_title": "Report: One in eight Israelis is Haredi",
+   "url": "https://www.ynetnews.com/jewish-world/article/h1cch618jg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "emp-taub-2025",
+   "topic": "employment",
+   "measure": "Direction of Haredi employment 2025",
+   "value": "men fell below 2023 level; women 'almost closing the gap'",
+   "unit": "text",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Taub Center",
+   "source_title": "A Picture of the Nation 2026",
+   "url": "https://www.taubcenter.org.il/en/pr/pon-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "wage-men",
+   "topic": "income",
+   "measure": "Average monthly wage",
+   "value": 9929,
+   "unit": "NIS",
+   "population": "Haredi men",
+   "breakdown": {
+    "pct_of_non_haredi_men": 49
+   },
+   "sample": null,
+   "fieldwork_date": "2025 report",
+   "source_org": "IDI via The Media Line",
+   "source_title": "IDI Report Finds Stalled Integration of Ultra-Orthodox Men",
+   "url": "https://themedialine.org/headlines/israel-democracy-institute-report-finds-stalled-integration-of-ultra-orthodox-men-as-community-growth-accelerates/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "wage-women",
+   "topic": "income",
+   "measure": "Average monthly wage",
+   "value": 8617,
+   "unit": "NIS",
+   "population": "Haredi women",
+   "breakdown": {
+    "pct_of_non_haredi_women": 67
+   },
+   "sample": null,
+   "fieldwork_date": "2025 report",
+   "source_org": "IDI via The Media Line",
+   "source_title": "IDI Report Finds Stalled Integration",
+   "url": "https://themedialine.org/headlines/israel-democracy-institute-report-finds-stalled-integration-of-ultra-orthodox-men-as-community-growth-accelerates/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "poverty-idi",
+   "topic": "poverty",
+   "measure": "Poverty rate",
+   "value": 33,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "non_haredi_jews": 14
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Media Line: \"33% of ultra-Orthodox families\"; 75% own apartments Homeownership conflict: Media Line (IDI) 75% own an apartment; Machon ~65%."
+  },
+  {
+   "id": "poverty-machon",
+   "topic": "poverty",
+   "measure": "Poverty rate, households",
+   "value": 40,
+   "unit": "%",
+   "population": "Haredi households",
+   "breakdown": {
+    "non_haredi_jewish": 11,
+    "child_poverty_haredi": 47,
+    "child_poverty_non_haredi": 13
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Haredi Institute for Public Affairs",
+   "source_title": "State of Haredi Society Annual Report 2024",
+   "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "yeshiva-students",
+   "topic": "education",
+   "measure": "Yeshiva and kollel students",
+   "value": 169366,
+   "unit": "persons",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "higher-ed",
+   "topic": "education",
+   "measure": "Haredi students in higher education",
+   "value": 18953,
+   "unit": "persons",
+   "population": "Haredim",
+   "breakdown": {
+    "growth_2010_2025_pct": 306
+   },
+   "sample": null,
+   "fieldwork_date": "2024-25",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "internet",
+   "topic": "lifestyle",
+   "measure": "Internet use, 20+",
+   "value": 69,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "non_haredi_jews": 94
+   },
+   "sample": null,
+   "fieldwork_date": "2023-24",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "enlist-2024-idi",
+   "topic": "draft",
+   "measure": "Haredi education graduates enlisted in IDF",
+   "value": 2560,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "national_service": 500,
+    "pct_general_tracks": 55
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "enlist-pre-oct7",
+   "topic": "draft",
+   "measure": "Haredi men enlisted in draft year",
+   "value": 1800,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "pre-oct7"
+   },
+   "sample": null,
+   "fieldwork_date": "reported 2026-07-29",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": false,
+   "notes": "Taken from sibling research file issue-haredi-draft-data.json (verified there); not reopened in this pass"
+  },
+  {
+   "id": "enlist-2023-24",
+   "topic": "draft",
+   "measure": "Haredi men enlisted in draft year",
+   "value": 2200,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2023-24"
+   },
+   "sample": null,
+   "fieldwork_date": "reported 2026-07-29",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": false,
+   "notes": "Taken from sibling research file issue-haredi-draft-data.json (verified there); not reopened in this pass"
+  },
+  {
+   "id": "enlist-2024-25",
+   "topic": "draft",
+   "measure": "Haredi men enlisted in draft year",
+   "value": 2800,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2024-25"
+   },
+   "sample": null,
+   "fieldwork_date": "reported 2026-07-29",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": false,
+   "notes": "Taken from sibling research file issue-haredi-draft-data.json (verified there); not reopened in this pass"
+  },
+  {
+   "id": "enlist-2025-26 prelim",
+   "topic": "draft",
+   "measure": "Haredi men enlisted in draft year",
+   "value": 4000,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "draft_year": "2025-26 prelim"
+   },
+   "sample": null,
+   "fieldwork_date": "reported 2026-07-29",
+   "source_org": "IDF via Times of Israel",
+   "source_title": "IDF chief tells Haredi commanders army must grow",
+   "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+   "verified": false,
+   "notes": "Taken from sibling research file issue-haredi-draft-data.json (verified there); not reopened in this pass"
+  },
+  {
+   "id": "evaders-2026",
+   "topic": "draft",
+   "measure": "Estimated Haredi draft evaders",
+   "value": 73664,
+   "unit": "persons",
+   "population": "Haredi men",
+   "breakdown": {
+    "arrests": 219
+   },
+   "sample": null,
+   "fieldwork_date": "2026-09-03",
+   "source_org": "High Court via Jerusalem Post",
+   "source_title": "court filing report",
+   "url": "http://www.jpost.com/israel-news/politics-and-diplomacy/article-907553",
+   "verified": false,
+   "notes": "From sibling issue-haredi-draft research; ToI 2026-06-01 and 08-31 give ~80,000 aged 18-24 eligible, ToI 07-15 gives ~72,000"
+  },
+  {
+   "id": "eligible-toi",
+   "topic": "draft",
+   "measure": "Haredi men 18-24 eligible and not enlisted",
+   "value": 80000,
+   "unit": "persons",
+   "population": "Haredi men 18-24",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-06-01",
+   "source_org": "Times of Israel",
+   "source_title": "Mass ultra-Orthodox protests block roads",
+   "url": "https://www.timesofisrael.com/mass-ultra-orthodox-protests-block-roads-halt-traffic-over-arrest-of-draft-dodgers/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "reserve-2025",
+   "topic": "war",
+   "measure": "Men 21-44 in reserve service in an average month, 2025",
+   "value": 0.3,
+   "unit": "%",
+   "population": "Haredi men",
+   "breakdown": {
+    "secular": 1.7,
+    "traditional": 2.6,
+    "religious": 4.3
+   },
+   "sample": "CBS Labor Force Survey ~80,000",
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "vote22-utj",
+   "topic": "voting",
+   "measure": "2022 vote among self-identified Haredim",
+   "value": 58,
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {
+    "party": "UTJ"
+   },
+   "sample": "20 surveys, 10,694 Jewish voters",
+   "fieldwork_date": "Nov 2022-Oct 2023",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "vote22-shas",
+   "topic": "voting",
+   "measure": "2022 vote among self-identified Haredim",
+   "value": 28,
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {
+    "party": "Shas"
+   },
+   "sample": "20 surveys, 10,694 Jewish voters",
+   "fieldwork_date": "Nov 2022-Oct 2023",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "vote22-rz-otzma",
+   "topic": "voting",
+   "measure": "2022 vote among self-identified Haredim",
+   "value": 7,
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {
+    "party": "RZ-Otzma"
+   },
+   "sample": "20 surveys, 10,694 Jewish voters",
+   "fieldwork_date": "Nov 2022-Oct 2023",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "vote22-likud",
+   "topic": "voting",
+   "measure": "2022 vote among self-identified Haredim",
+   "value": 4,
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "20 surveys, 10,694 Jewish voters",
+   "fieldwork_date": "Nov 2022-Oct 2023",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "vote22-other",
+   "topic": "voting",
+   "measure": "2022 vote among self-identified Haredim",
+   "value": 3,
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {
+    "party": "Other"
+   },
+   "sample": "20 surveys, 10,694 Jewish voters",
+   "fieldwork_date": "Nov 2022-Oct 2023",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "vote21-haredilists",
+   "topic": "voting",
+   "measure": "Haredi vote for Haredi lists",
+   "value": {
+    "2021": 89,
+    "2022": 86
+   },
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021/2022",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "vote21-rz",
+   "topic": "voting",
+   "measure": "Haredi vote for RZ list",
+   "value": {
+    "2021": 4,
+    "2022": 7
+   },
+   "unit": "%",
+   "population": "Haredi Jewish voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021/2022",
+   "source_org": "IDI (Finkelstein)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "haredi-parties-share",
+   "topic": "voting",
+   "measure": "Shas+UTJ combined national share",
+   "value": {
+    "1992": 8.2,
+    "2022": 14.1
+   },
+   "unit": "%",
+   "population": "All valid votes",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1992/2022",
+   "source_org": "IDI",
+   "source_title": "IDI Statistical Report on Ultra-Orthodox Society in Israel 2025 (exec. summary)",
+   "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "cec-21-bnei-brak",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.2,
+    "UTJ": 61.8,
+    "Shas": 26.5,
+    "Likud": 5.4,
+    "URWP/Yamina (טב)": 2.3
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100",
+   "verified": "CORRECTED (CEC recount, 2026-10-04/05)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Apr 2019 turnout recounted from media21 expc.csv (voters / eligible)."
+  },
+  {
+   "id": "cec-21-modiin-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 84.5,
+    "UTJ": 80.4,
+    "Shas": 17.1,
+    "Likud": 0.9,
+    "URWP/Yamina (טב)": 0.5
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Modi'in Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797",
+   "verified": "CORRECTED (CEC recount, 2026-10-04/05)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Modi'in Illit Apr 2019 turnout 97.8% as printed by CEC. Apr 2019 turnout recounted from media21 expc.csv (voters / eligible)."
+  },
+  {
+   "id": "cec-21-beitar-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 80.8,
+    "UTJ": 63.2,
+    "Shas": 26.5,
+    "Likud": 3.4,
+    "URWP/Yamina (טב)": 4.8
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Beitar Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-21-elad",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 84.6,
+    "UTJ": 37.1,
+    "Shas": 45.9,
+    "Likud": 7.2,
+    "URWP/Yamina (טב)": 7.3
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Elad",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Elad"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-21-kiryat-yearim",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 75.2,
+    "UTJ": 68.5,
+    "Shas": 17.0,
+    "Likud": 5.0,
+    "URWP/Yamina (טב)": 4.7
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Kiryat Yearim",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Kiryat Yearim"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1137",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-21-jerusalem",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 67.9,
+    "UTJ": 23.3,
+    "Shas": 13.8,
+    "Likud": 24.8,
+    "URWP/Yamina (טב)": 6.8
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Jerusalem",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-21-beit-shemesh",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 65.3,
+    "UTJ": 33.6,
+    "Shas": 15.9,
+    "Likud": 25.8,
+    "URWP/Yamina (טב)": 7.5
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "Beit Shemesh"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-21-5-haredi-cities-combined",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 79.6,
+    "UTJ": 62.1,
+    "Shas": 27.1,
+    "Likud": 4.6,
+    "URWP/Yamina (טב)": 3.0
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "5 Haredi cities combined",
+   "breakdown": {
+    "election": "Apr 2019",
+    "city": "5 Haredi cities combined"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes21.bechirot.gov.il/cityresults (sum of 5 cities)",
+   "verified": "CORRECTED (CEC recount, 2026-10-04/05)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Combined = Bnei Brak, Modi'in Illit, Beitar Illit, Elad, Kiryat Yearim. Apr 2019 turnout recounted from media21 expc.csv (voters / eligible). Combined: 146,525 / 184,163 = 79.6, not 84.8."
+  },
+  {
+   "id": "cec-22-bnei-brak",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.3,
+    "UTJ": 61.3,
+    "Shas": 28.0,
+    "Likud": 4.8,
+    "Otzma Yehudit (alone)": 1.6,
+    "URWP/Yamina (טב)": 1.5
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-modiin-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 84.5,
+    "UTJ": 80.3,
+    "Shas": 17.7,
+    "Likud": 0.8,
+    "Otzma Yehudit (alone)": 0.8,
+    "URWP/Yamina (טב)": 0.2
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Modi'in Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-beitar-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 82.7,
+    "UTJ": 64.4,
+    "Shas": 27.8,
+    "Likud": 2.8,
+    "Otzma Yehudit (alone)": 3.7,
+    "URWP/Yamina (טב)": 1.0
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Beitar Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-elad",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 85.8,
+    "UTJ": 36.4,
+    "Shas": 49.5,
+    "Likud": 5.7,
+    "Otzma Yehudit (alone)": 3.6,
+    "URWP/Yamina (טב)": 4.3
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Elad",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Elad"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-kiryat-yearim",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.8,
+    "UTJ": 70.2,
+    "Shas": 19.4,
+    "Likud": 3.8,
+    "Otzma Yehudit (alone)": 2.9,
+    "URWP/Yamina (טב)": 2.2
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Kiryat Yearim",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Kiryat Yearim"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1137",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-jerusalem",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 63.4,
+    "UTJ": 25.0,
+    "Shas": 16.0,
+    "Likud": 23.0,
+    "Otzma Yehudit (alone)": 3.4,
+    "URWP/Yamina (טב)": 9.1
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Jerusalem",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-beit-shemesh",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 66.0,
+    "UTJ": 36.1,
+    "Shas": 18.3,
+    "Likud": 21.5,
+    "Otzma Yehudit (alone)": 3.6,
+    "URWP/Yamina (טב)": 9.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "Beit Shemesh"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-22-5-haredi-cities-combined",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 80.0,
+    "UTJ": 61.9,
+    "Shas": 28.7,
+    "Likud": 4.0,
+    "Otzma Yehudit (alone)": 2.0,
+    "URWP/Yamina (טב)": 1.6
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "5 Haredi cities combined",
+   "breakdown": {
+    "election": "Sep 2019",
+    "city": "5 Haredi cities combined"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes22.bechirot.gov.il/cityresults (sum of 5 cities)",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Combined = Bnei Brak, Modi'in Illit, Beitar Illit, Elad, Kiryat Yearim."
+  },
+  {
+   "id": "cec-23-bnei-brak",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.0,
+    "UTJ": 61.2,
+    "Shas": 28.7,
+    "Likud": 5.8,
+    "Otzma Yehudit (alone)": 0.4,
+    "URWP/Yamina (טב)": 1.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-modiin-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 83.4,
+    "UTJ": 80.0,
+    "Shas": 18.3,
+    "Likud": 1.1,
+    "Otzma Yehudit (alone)": 0.2,
+    "URWP/Yamina (טב)": 0.1
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Modi'in Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-beitar-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 82.0,
+    "UTJ": 64.1,
+    "Shas": 29.9,
+    "Likud": 4.2,
+    "Otzma Yehudit (alone)": 0.7,
+    "URWP/Yamina (טב)": 0.8
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Beitar Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-elad",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 85.6,
+    "UTJ": 36.9,
+    "Shas": 50.4,
+    "Likud": 7.7,
+    "Otzma Yehudit (alone)": 0.7,
+    "URWP/Yamina (טב)": 3.9
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Elad",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Elad"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-kiryat-yearim",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.3,
+    "UTJ": 70.1,
+    "Shas": 20.7,
+    "Likud": 5.5,
+    "Otzma Yehudit (alone)": 0.6,
+    "URWP/Yamina (טב)": 2.3
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Kiryat Yearim",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Kiryat Yearim"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1137",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-jerusalem",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 63.3,
+    "UTJ": 24.4,
+    "Shas": 17.1,
+    "Likud": 27.8,
+    "Otzma Yehudit (alone)": 0.7,
+    "URWP/Yamina (טב)": 7.9
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Jerusalem",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-beit-shemesh",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 66.5,
+    "UTJ": 35.9,
+    "Shas": 19.6,
+    "Likud": 26.4,
+    "Otzma Yehudit (alone)": 0.8,
+    "URWP/Yamina (טב)": 8.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "Beit Shemesh"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-23-5-haredi-cities-combined",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 79.6,
+    "UTJ": 61.8,
+    "Shas": 29.7,
+    "Likud": 5.1,
+    "Otzma Yehudit (alone)": 0.5,
+    "URWP/Yamina (טב)": 1.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "5 Haredi cities combined",
+   "breakdown": {
+    "election": "Mar 2020",
+    "city": "5 Haredi cities combined"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes23.bechirot.gov.il/cityresults (sum of 5 cities)",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Combined = Bnei Brak, Modi'in Illit, Beitar Illit, Elad, Kiryat Yearim."
+  },
+  {
+   "id": "cec-24-bnei-brak",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 73.9,
+    "UTJ": 60.8,
+    "Shas": 27.7,
+    "Likud": 3.8,
+    "Religious Zionism (incl. Otzma)": 4.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-modiin-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 81.0,
+    "UTJ": 79.2,
+    "Shas": 17.6,
+    "Likud": 0.5,
+    "Religious Zionism (incl. Otzma)": 2.2
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Modi'in Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-beitar-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.3,
+    "UTJ": 60.2,
+    "Shas": 27.1,
+    "Likud": 1.6,
+    "Religious Zionism (incl. Otzma)": 10.0
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Beitar Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-elad",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 81.0,
+    "UTJ": 35.3,
+    "Shas": 47.9,
+    "Likud": 4.2,
+    "Religious Zionism (incl. Otzma)": 10.7
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Elad",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Elad"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-kiryat-yearim",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 73.7,
+    "UTJ": 66.7,
+    "Shas": 18.8,
+    "Likud": 3.3,
+    "Religious Zionism (incl. Otzma)": 7.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Kiryat Yearim",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Kiryat Yearim"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1137",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-jerusalem",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 59.1,
+    "UTJ": 23.6,
+    "Shas": 15.7,
+    "Likud": 20.6,
+    "Religious Zionism (incl. Otzma)": 9.3
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Jerusalem",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-beit-shemesh",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 61.6,
+    "UTJ": 35.9,
+    "Shas": 18.2,
+    "Likud": 18.3,
+    "Religious Zionism (incl. Otzma)": 10.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "Beit Shemesh"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-24-5-haredi-cities-combined",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 76.3,
+    "UTJ": 60.8,
+    "Shas": 28.2,
+    "Likud": 3.0,
+    "Religious Zionism (incl. Otzma)": 5.7
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "5 Haredi cities combined",
+   "breakdown": {
+    "election": "Mar 2021",
+    "city": "5 Haredi cities combined"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes24.bechirot.gov.il/cityresults (sum of 5 cities)",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Combined = Bnei Brak, Modi'in Illit, Beitar Illit, Elad, Kiryat Yearim."
+  },
+  {
+   "id": "cec-25-bnei-brak",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 76.5,
+    "UTJ": 59.8,
+    "Shas": 30.2,
+    "Likud": 3.4,
+    "Religious Zionism (incl. Otzma)": 4.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Bnei Brak",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Bnei Brak"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-modiin-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 82.0,
+    "UTJ": 77.5,
+    "Shas": 19.8,
+    "Likud": 0.5,
+    "Religious Zionism (incl. Otzma)": 1.9
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Modi'in Illit",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Modi'in Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-beitar-illit",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 81.3,
+    "UTJ": 59.4,
+    "Shas": 30.8,
+    "Likud": 1.4,
+    "Religious Zionism (incl. Otzma)": 7.8
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beitar Illit",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Beitar Illit"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-elad",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 84.4,
+    "UTJ": 34.9,
+    "Shas": 49.6,
+    "Likud": 3.4,
+    "Religious Zionism (incl. Otzma)": 11.2
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Elad",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Elad"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-kiryat-yearim",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 77.8,
+    "UTJ": 64.6,
+    "Shas": 22.9,
+    "Likud": 3.0,
+    "Religious Zionism (incl. Otzma)": 7.9
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Kiryat Yearim",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Kiryat Yearim"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1137",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-jerusalem",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 61.6,
+    "UTJ": 23.8,
+    "Shas": 18.3,
+    "Likud": 19.1,
+    "Religious Zionism (incl. Otzma)": 14.2
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Jerusalem",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Jerusalem"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-beit-shemesh",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 66.1,
+    "UTJ": 38.8,
+    "Shas": 21.6,
+    "Likud": 15.5,
+    "Religious Zionism (incl. Otzma)": 14.7
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "Beit Shemesh",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "Beit Shemesh"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610",
+   "verified": true,
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad."
+  },
+  {
+   "id": "cec-25-5-haredi-cities-combined",
+   "topic": "voting",
+   "measure": "Vote shares and turnout",
+   "value": {
+    "turnout": 79.0,
+    "UTJ": 59.7,
+    "Shas": 30.8,
+    "Likud": 2.6,
+    "Religious Zionism (incl. Otzma)": 5.4
+   },
+   "unit": "% of valid votes (turnout % of registered)",
+   "population": "5 Haredi cities combined",
+   "breakdown": {
+    "election": "Nov 2022",
+    "city": "5 Haredi cities combined"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "Results by locality",
+   "url": "https://votes25.bechirot.gov.il/cityresults (sum of 5 cities)",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Computed from CEC locality pages. Turnout is against the voter register, which includes residents abroad. Combined = Bnei Brak, Modi'in Illit, Beitar Illit, Elad, Kiryat Yearim."
+  },
+  {
+   "id": "turnout-national-21",
+   "topic": "voting",
+   "measure": "National turnout",
+   "value": 68.46,
+   "unit": "%",
+   "population": "All registered voters",
+   "breakdown": {
+    "election": "Apr 2019"
+   },
+   "sample": null,
+   "fieldwork_date": "Apr 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "National results",
+   "url": "https://votes21.bechirot.gov.il/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "turnout-national-22",
+   "topic": "voting",
+   "measure": "National turnout",
+   "value": 69.83,
+   "unit": "%",
+   "population": "All registered voters",
+   "breakdown": {
+    "election": "Sep 2019"
+   },
+   "sample": null,
+   "fieldwork_date": "Sep 2019",
+   "source_org": "Central Elections Committee",
+   "source_title": "National results",
+   "url": "https://votes22.bechirot.gov.il/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "turnout-national-23",
+   "topic": "voting",
+   "measure": "National turnout",
+   "value": 71.52,
+   "unit": "%",
+   "population": "All registered voters",
+   "breakdown": {
+    "election": "Mar 2020"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2020",
+   "source_org": "Central Elections Committee",
+   "source_title": "National results",
+   "url": "https://votes23.bechirot.gov.il/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "turnout-national-24",
+   "topic": "voting",
+   "measure": "National turnout",
+   "value": 67.44,
+   "unit": "%",
+   "population": "All registered voters",
+   "breakdown": {
+    "election": "Mar 2021"
+   },
+   "sample": null,
+   "fieldwork_date": "Mar 2021",
+   "source_org": "Central Elections Committee",
+   "source_title": "National results",
+   "url": "https://votes24.bechirot.gov.il/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "turnout-national-25",
+   "topic": "voting",
+   "measure": "National turnout",
+   "value": 70.63,
+   "unit": "%",
+   "population": "All registered voters",
+   "breakdown": {
+    "election": "Nov 2022"
+   },
+   "sample": null,
+   "fieldwork_date": "Nov 2022",
+   "source_org": "Central Elections Committee",
+   "source_title": "National results",
+   "url": "https://votes25.bechirot.gov.il/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "ftv-2026",
+   "topic": "polling",
+   "measure": "Haredi first-time voters 2026 intention",
+   "value": {
+    "UTJ": 45,
+    "Shas": 20,
+    "Otzma": 13
+   },
+   "unit": "%",
+   "population": "Haredi first-time voters 18-22",
+   "breakdown": {},
+   "sample": "n=301 all first-time voters",
+   "fieldwork_date": "2026-09-15/22",
+   "source_org": "N12/Midgam via JPost",
+   "source_title": "first-time voters poll",
+   "url": "https://www.jpost.com/israel-news/article-909394",
+   "verified": false,
+   "notes": "From class doc 05/11a; small Haredi subsample"
+  },
+  {
+   "id": "seats-utj-2026",
+   "topic": "polling",
+   "measure": "UTJ seats, latest polls",
+   "value": {
+    "range": "7-8",
+    "Maariv Oct 2": 7,
+    "Ch13 Oct 1": 8,
+    "Zman Oct 1": 8,
+    "Kan Sep 28": 7,
+    "Ch14 Sep 28": 8
+   },
+   "unit": "seats",
+   "population": "All voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-09-28/10-02",
+   "source_org": "Various via class doc 11a",
+   "source_title": "class-11a-parties-likud-shas-utj",
+   "url": "class doc 11a",
+   "verified": "UNVERIFIED (class doc only, not reopened)",
+   "notes": ""
+  },
+  {
+   "id": "seats-shas-2026",
+   "topic": "polling",
+   "measure": "Shas seats, latest polls",
+   "value": {
+    "range": "7-10",
+    "Maariv Oct 2": 7,
+    "Ch13 Oct 1": 7,
+    "Zman Oct 1": 9,
+    "Kan Sep 28": 7,
+    "Ch14 Sep 28": 10
+   },
+   "unit": "seats",
+   "population": "All voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-09-28/10-02",
+   "source_org": "Various via class doc 11a",
+   "source_title": "class-11a-parties-likud-shas-utj",
+   "url": "class doc 11a",
+   "verified": "UNVERIFIED (class doc only, not reopened)",
+   "notes": ""
+  },
+  {
+   "id": "shas-base",
+   "topic": "polling",
+   "measure": "Shas core Haredi base",
+   "value": 4,
+   "unit": "seats",
+   "population": "Shas voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-08-21",
+   "source_org": "Times of Israel (activists/analysts)",
+   "source_title": "Eisenkot threatens to siphon traditional voters away from a panicking Shas",
+   "url": "https://www.timesofisrael.com/eisenkot-threatens-to-siphon-traditional-voters-away-from-a-panicking-shas/",
+   "verified": "CONFIRMED (reinterpreted)",
+   "notes": "Shas 11 seats 2022 vs ~7 in polls The 4 seats are Shas's Haredi base per a Shas activist (ToI), not its non-Haredi vote."
+  },
+  {
+   "id": "prio-religion",
+   "topic": "attitudes",
+   "measure": "Parties' religion-state positions are most influential vote factor",
+   "value": 41,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "non_haredim": 17
+   },
+   "sample": null,
+   "fieldwork_date": "2025-26",
+   "source_org": "IDI (Lafair, Malach)",
+   "source_title": "Haredi voters and the 2026 election",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "loyal",
+   "topic": "attitudes",
+   "measure": "Will vote for same party as always",
+   "value": 36,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "general_public": 7
+   },
+   "sample": null,
+   "fieldwork_date": "2025-26",
+   "source_org": "IDI (Lafair, Malach)",
+   "source_title": "Haredi voters and the 2026 election",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "leaders-rating",
+   "topic": "attitudes",
+   "measure": "Give Haredi political leadership high marks for advancing their interests",
+   "value": 28,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-06",
+   "source_org": "IDI Israeli Voice Index via Lafair & Malach",
+   "source_title": "Haredi voters and the 2026 election",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "prio-other",
+   "topic": "attitudes",
+   "measure": "Most influential factor: security / economy / leader",
+   "value": {
+    "haredim": {
+     "security": 5,
+     "economy": 3,
+     "leader": 4
+    },
+    "non_haredim": {
+     "security": 22,
+     "economy": 21,
+     "leader": 19
+    }
+   },
+   "unit": "%",
+   "population": "Jewish voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-26",
+   "source_org": "IDI (Lafair, Malach)",
+   "source_title": "Haredi voters and the 2026 election",
+   "url": "https://en.idi.org.il/articles/65364",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-idf",
+   "topic": "attitudes",
+   "measure": "Express trust in IDF",
+   "value": 61,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 87
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-shin-bet",
+   "topic": "attitudes",
+   "measure": "Express trust in Shin Bet",
+   "value": 24,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 75
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-supreme-court",
+   "topic": "attitudes",
+   "measure": "Express trust in Supreme Court",
+   "value": 3,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 66
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-attorney-general",
+   "topic": "attitudes",
+   "measure": "Express trust in Attorney General",
+   "value": 1,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 65
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-local-authority",
+   "topic": "attitudes",
+   "measure": "Express trust in Local authority",
+   "value": 54,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 57.5
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-president",
+   "topic": "attitudes",
+   "measure": "Express trust in President",
+   "value": 15,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 47
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-media",
+   "topic": "attitudes",
+   "measure": "Express trust in Media",
+   "value": 2,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 42.5
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-police",
+   "topic": "attitudes",
+   "measure": "Express trust in Police",
+   "value": 35.5,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 31
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-government",
+   "topic": "attitudes",
+   "measure": "Express trust in Government",
+   "value": 45,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 9
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-knesset",
+   "topic": "attitudes",
+   "measure": "Express trust in Knesset",
+   "value": 34.5,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 8
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-political-parties",
+   "topic": "attitudes",
+   "measure": "Express trust in Political parties",
+   "value": 14,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 5
+   },
+   "sample": "1,205 Jews (1,569 total)",
+   "fieldwork_date": "2025-05-04/28",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Israeli Democracy Index 2025, Table 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-sc-2023",
+   "topic": "courts",
+   "measure": "Express trust in Supreme Court",
+   "value": 11,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": 2023,
+    "secular": 66.5
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-sc-2024",
+   "topic": "courts",
+   "measure": "Express trust in Supreme Court",
+   "value": 7,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": 2024,
+    "secular": 58.5
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-sc-2025",
+   "topic": "courts",
+   "measure": "Express trust in Supreme Court",
+   "value": 3,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": 2025,
+    "secular": 66
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-idf-2023",
+   "topic": "war",
+   "measure": "Express trust in IDF",
+   "value": 67,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": "June 2023"
+   },
+   "sample": null,
+   "fieldwork_date": "June 2023",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-idf-2024",
+   "topic": "war",
+   "measure": "Express trust in IDF",
+   "value": 50,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": "2024"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-idf-2025",
+   "topic": "war",
+   "measure": "Express trust in IDF",
+   "value": 61,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "year": "2025"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "IDI Israeli Democracy Index 2025",
+   "source_title": "Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "intervene",
+   "topic": "courts",
+   "measure": "Agree Supreme Court intervenes too much in government decisions",
+   "value": 93.5,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "(via sibling issue-courts research)",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": false,
+   "notes": "From sibling issue-courts data file"
+  },
+  {
+   "id": "jew-dem-balance",
+   "topic": "religion-state",
+   "measure": "Democratic component is too dominant (vs Jewish)",
+   "value": 73,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "jewish_too_dominant": 5,
+    "good_balance": 11.5,
+    "multi_year_avg_democratic_too_dominant": 62.5
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Table 2.26",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "majority-rule",
+   "topic": "courts",
+   "measure": "Decisions by a Knesset majority are inherently democratic",
+   "value": 64.5,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "basic_values_prevail": 26.5
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Table 3.8",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "security-ensured",
+   "topic": "war",
+   "measure": "Agree Israel ensures the security of its citizens",
+   "value": {
+    "2022": 23,
+    "2025": 68
+   },
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular_2025": 30
+   },
+   "sample": null,
+   "fieldwork_date": "2022/2025",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Table 2.29",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "israel-good",
+   "topic": "mood",
+   "measure": "Israel's overall situation good/very good",
+   "value": 42,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "national_religious": 36,
+    "secular": 9
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Table 1.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "personal-good",
+   "topic": "mood",
+   "measure": "Personal situation good/very good",
+   "value": 85,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 43
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "stay",
+   "topic": "mood",
+   "measure": "Prefer to remain in Israel",
+   "value": 92,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "secular": 56
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "belong",
+   "topic": "mood",
+   "measure": "Feel part of the state and its problems",
+   "value": 75,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {
+    "national_religious": 92,
+    "secular": 87
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "right-hesitant",
+   "topic": "mood",
+   "measure": "People on the Right are more hesitant to express opinions",
+   "value": 70,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI Democracy Index 2025",
+   "source_title": "Table 3.3",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-arrest-freeze",
+   "topic": "draft",
+   "measure": "Support law freezing arrests of yeshiva students who did not report",
+   "value": 90,
+   "unit": "%",
+   "population": "Ultra-Orthodox (Jewish sample)",
+   "breakdown": {
+    "strongly_support": 78,
+    "somewhat": 12,
+    "oppose": 7,
+    "secular_support": 13,
+    "jewish_public_support": 32
+   },
+   "sample": "936 (803 Hebrew)",
+   "fieldwork_date": "2026-07-23/26",
+   "source_org": "INSS Data Center",
+   "source_title": "National Security Survey - July 2026",
+   "url": "INSS Data Center, \"National Security Survey - July 2026\" (page opened; public URL not captured — add before publishing)",
+   "verified": "UNVERIFIED (no public URL; saved copy agrees)",
+   "notes": "Page opened (saved copy); exact public URL to be added"
+  },
+  {
+   "id": "idi-haredi-nov2024",
+   "topic": "draft",
+   "measure": "Haredi preferred arrangement",
+   "value": {
+    "keep_exemption": 61,
+    "support_enlistment": 20,
+    "unsure": 19
+   },
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-11",
+   "source_org": "IDI",
+   "source_title": "press release 57753",
+   "url": "https://en.idi.org.il/press-releases/57753",
+   "verified": false,
+   "notes": "From sibling issue-haredi-draft"
+  },
+  {
+   "id": "idi-haredi-nov2025",
+   "topic": "draft",
+   "measure": "Prefer current arrangement (status quo)",
+   "value": 75,
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": "604 Jews",
+   "fieldwork_date": "2025-11-02/06",
+   "source_org": "IDI",
+   "source_title": "article 62072",
+   "url": "https://en.idi.org.il/articles/62072",
+   "verified": false,
+   "notes": "From sibling issue-haredi-draft; approximate (~75)"
+  },
+  {
+   "id": "jppi-haredi-jul2026",
+   "topic": "draft",
+   "measure": "Draft only by agreement with Haredi leadership / tougher sanctions",
+   "value": {
+    "agreement": 45,
+    "sanctions": 15
+   },
+   "unit": "%",
+   "population": "Haredim",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "JPPI via JPost",
+   "source_title": "Israeli Society Index July 2026",
+   "url": "https://www.jpost.com/israel-news/article-902297",
+   "verified": false,
+   "notes": "From sibling issue-haredi-draft"
+  },
+  {
+   "id": "pew-netanyahu",
+   "topic": "war",
+   "measure": "Favorable view of Netanyahu",
+   "value": 86,
+   "unit": "%",
+   "population": "Haredim and Datiim combined",
+   "breakdown": {
+    "hilonim": 23,
+    "masortim": 67
+   },
+   "sample": null,
+   "fieldwork_date": "2025 (report published 2025-06-03)",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": "Pew combines Haredim with Datiim for sample size; text read from report PDF"
+  },
+  {
+   "id": "pew-settlements",
+   "topic": "west-bank",
+   "measure": "Say continued West Bank settlement building helps Israel's security",
+   "value": 78,
+   "unit": "%",
+   "population": "Haredim and Datiim combined",
+   "breakdown": {
+    "masortim": 62,
+    "hilonim": 27
+   },
+   "sample": null,
+   "fieldwork_date": "2025 (report published 2025-06-03)",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": "Pew combines Haredim with Datiim for sample size; text read from report PDF"
+  },
+  {
+   "id": "pew-coexist",
+   "topic": "not-on-ballot",
+   "measure": "Say a way can be found for Israel and a Palestinian state to coexist peacefully",
+   "value": 9,
+   "unit": "%",
+   "population": "Haredim and Datiim combined",
+   "breakdown": {
+    "masortim": 11,
+    "hilonim": 25
+   },
+   "sample": null,
+   "fieldwork_date": "2025 (report published 2025-06-03)",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": "Pew combines Haredim with Datiim for sample size; text read from report PDF"
+  },
+  {
+   "id": "first-time-democracy",
+   "topic": "attitudes",
+   "measure": "Haredi first-time voters: rate democracy poor; most skeptical elections change anything",
+   "value": "qualitative",
+   "unit": "text",
+   "population": "Haredi first-time voters",
+   "breakdown": {},
+   "sample": "576 (443 Jewish)",
+   "fieldwork_date": "2026-05",
+   "source_org": "IDI",
+   "source_title": "First-Time Voters Ahead of the 26th Knesset Elections",
+   "url": "https://en.idi.org.il/articles/64746",
+   "verified": true,
+   "notes": ""
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 61.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 26.5,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 5.4,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 2.3,
+   "basis": "% of valid votes, Bnei Brak (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 83.1,
+   "basis": "% of registered voters, Bnei Brak",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 80.4,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 17.1,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 0.9,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Modi'in Illit (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 97.8,
+   "basis": "% of registered voters, Modi'in Illit",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 63.2,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 26.5,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 4.8,
+   "basis": "% of valid votes, Beitar Illit (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 80.8,
+   "basis": "% of registered voters, Beitar Illit",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 37.1,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 45.9,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 7.2,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 7.3,
+   "basis": "% of valid votes, Elad (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 84.6,
+   "basis": "% of registered voters, Elad",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 23.3,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 13.8,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 24.8,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 6.8,
+   "basis": "% of valid votes, Jerusalem (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 67.9,
+   "basis": "% of registered voters, Jerusalem",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 33.6,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 15.9,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 25.8,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, Beit Shemesh (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 65.3,
+   "basis": "% of registered voters, Beit Shemesh",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "utj",
+   "share_or_seats": 62.1,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "shas",
+   "share_or_seats": 27.1,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "likud",
+   "share_or_seats": 4.6,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 3.0,
+   "basis": "% of valid votes, 5 Haredi cities combined (URWP/Yamina (טב))",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "turnout",
+   "share_or_seats": 84.8,
+   "basis": "% of registered voters, 5 Haredi cities combined",
+   "url": "https://votes21.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 61.3,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 28.0,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 4.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, Bnei Brak (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes, Bnei Brak (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 77.3,
+   "basis": "% of registered voters, Bnei Brak",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 80.3,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 17.7,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Modi'in Illit (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 0.2,
+   "basis": "% of valid votes, Modi'in Illit (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 84.5,
+   "basis": "% of registered voters, Modi'in Illit",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 64.4,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 27.8,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 2.8,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, Beitar Illit (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes, Beitar Illit (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 82.7,
+   "basis": "% of registered voters, Beitar Illit",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 36.4,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 49.5,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 3.6,
+   "basis": "% of valid votes, Elad (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 4.3,
+   "basis": "% of valid votes, Elad (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 85.8,
+   "basis": "% of registered voters, Elad",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 25.0,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 16.0,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 23.0,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Jerusalem (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 9.1,
+   "basis": "% of valid votes, Jerusalem (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 63.4,
+   "basis": "% of registered voters, Jerusalem",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 36.1,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 18.3,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 21.5,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 3.6,
+   "basis": "% of valid votes, Beit Shemesh (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 9.4,
+   "basis": "% of valid votes, Beit Shemesh (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 66.0,
+   "basis": "% of registered voters, Beit Shemesh",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "utj",
+   "share_or_seats": 61.9,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "shas",
+   "share_or_seats": 28.7,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "likud",
+   "share_or_seats": 4.0,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "otzma",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes, 5 Haredi cities combined (Otzma Yehudit (alone))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "urwp-yamina",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, 5 Haredi cities combined (URWP/Yamina (טב))",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "turnout",
+   "share_or_seats": 80.0,
+   "basis": "% of registered voters, 5 Haredi cities combined",
+   "url": "https://votes22.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 61.2,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 28.7,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes, Bnei Brak (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Bnei Brak (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 77.0,
+   "basis": "% of registered voters, Bnei Brak",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 80.0,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 18.3,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.2,
+   "basis": "% of valid votes, Modi'in Illit (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes, Modi'in Illit (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 83.4,
+   "basis": "% of registered voters, Modi'in Illit",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 64.1,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 29.9,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Beitar Illit (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Beitar Illit (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 82.0,
+   "basis": "% of registered voters, Beitar Illit",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 36.9,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 50.4,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 7.7,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Elad (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 3.9,
+   "basis": "% of valid votes, Elad (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 85.6,
+   "basis": "% of registered voters, Elad",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 24.4,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 17.1,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 27.8,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes, Jerusalem (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 7.9,
+   "basis": "% of valid votes, Jerusalem (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 63.3,
+   "basis": "% of registered voters, Jerusalem",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 35.9,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 19.6,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 26.4,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes, Beit Shemesh (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 8.4,
+   "basis": "% of valid votes, Beit Shemesh (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 66.5,
+   "basis": "% of registered voters, Beit Shemesh",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "utj",
+   "share_or_seats": 61.8,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "shas",
+   "share_or_seats": 29.7,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "likud",
+   "share_or_seats": 5.1,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "otzma",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, 5 Haredi cities combined (Otzma Yehudit (alone))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "urwp-yamina",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, 5 Haredi cities combined (URWP/Yamina (טב))",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "turnout",
+   "share_or_seats": 79.6,
+   "basis": "% of registered voters, 5 Haredi cities combined",
+   "url": "https://votes23.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 60.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 27.7,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Bnei Brak (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 73.9,
+   "basis": "% of registered voters, Bnei Brak",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 79.2,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 17.6,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes, Modi'in Illit (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 81.0,
+   "basis": "% of registered voters, Modi'in Illit",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 60.2,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 27.1,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 10.0,
+   "basis": "% of valid votes, Beitar Illit (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 77.3,
+   "basis": "% of registered voters, Beitar Illit",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 35.3,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 47.9,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 10.7,
+   "basis": "% of valid votes, Elad (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 81.0,
+   "basis": "% of registered voters, Elad",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 23.6,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 15.7,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 20.6,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 9.3,
+   "basis": "% of valid votes, Jerusalem (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 59.1,
+   "basis": "% of registered voters, Jerusalem",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 35.9,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 18.2,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 18.3,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 10.4,
+   "basis": "% of valid votes, Beit Shemesh (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 61.6,
+   "basis": "% of registered voters, Beit Shemesh",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "utj",
+   "share_or_seats": 60.8,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "shas",
+   "share_or_seats": 28.2,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "likud",
+   "share_or_seats": 3.0,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "rz",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes, 5 Haredi cities combined (Religious Zionism (incl. Otzma))",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "turnout",
+   "share_or_seats": 76.3,
+   "basis": "% of registered voters, 5 Haredi cities combined",
+   "url": "https://votes24.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 59.8,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 30.2,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Bnei Brak (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 4.4,
+   "basis": "% of valid votes, Bnei Brak (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 76.5,
+   "basis": "% of registered voters, Bnei Brak",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 77.5,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 19.8,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes, Modi'in Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes, Modi'in Illit (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 82.0,
+   "basis": "% of registered voters, Modi'in Illit",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3797"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 59.4,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 30.8,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes, Beitar Illit (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 7.8,
+   "basis": "% of valid votes, Beitar Illit (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 81.3,
+   "basis": "% of registered voters, Beitar Illit",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3780"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 34.9,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 49.6,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes, Elad (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 11.2,
+   "basis": "% of valid votes, Elad (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 84.4,
+   "basis": "% of registered voters, Elad",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=1309"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 23.8,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 18.3,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 19.1,
+   "basis": "% of valid votes, Jerusalem (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 14.2,
+   "basis": "% of valid votes, Jerusalem (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 61.6,
+   "basis": "% of registered voters, Jerusalem",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=3000"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 38.8,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 21.6,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 15.5,
+   "basis": "% of valid votes, Beit Shemesh (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 14.7,
+   "basis": "% of valid votes, Beit Shemesh (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 66.1,
+   "basis": "% of registered voters, Beit Shemesh",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=2610"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 59.7,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 30.8,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 2.6,
+   "basis": "% of valid votes, 5 Haredi cities combined (CEC locality results)",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 5.4,
+   "basis": "% of valid votes, 5 Haredi cities combined (Religious Zionism (incl. Otzma))",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "turnout",
+   "share_or_seats": 79.0,
+   "basis": "% of registered voters, 5 Haredi cities combined",
+   "url": "https://votes25.bechirot.gov.il/cityresults?cityID=6100|3797|3780|1309|1137 (summed)"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": 58,
+   "basis": "% of self-identified Haredi voters (IDI pooled surveys)",
+   "url": "https://en.idi.org.il/articles/64807"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": 28,
+   "basis": "% of self-identified Haredi voters (IDI pooled surveys)",
+   "url": "https://en.idi.org.il/articles/64807"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "rz",
+   "share_or_seats": 7,
+   "basis": "% of self-identified Haredi voters (IDI pooled surveys)",
+   "url": "https://en.idi.org.il/articles/64807"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "likud",
+   "share_or_seats": 4,
+   "basis": "% of self-identified Haredi voters (IDI pooled surveys)",
+   "url": "https://en.idi.org.il/articles/64807"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "utj",
+   "share_or_seats": "7 seats; 5.88%",
+   "basis": "national result",
+   "url": "https://votes25.bechirot.gov.il/"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "shas",
+   "share_or_seats": "11 seats; 8.25%",
+   "basis": "national result",
+   "url": "https://votes25.bechirot.gov.il/"
+  },
+  {
+   "election": "2026 polls",
+   "party": "utj",
+   "share_or_seats": "7-8 seats",
+   "basis": "five polls Sep 28-Oct 2 (class doc 11a)",
+   "url": "class doc 11a"
+  },
+  {
+   "election": "2026 polls",
+   "party": "shas",
+   "share_or_seats": "7-10 seats",
+   "basis": "five polls Sep 28-Oct 2 (class doc 11a)",
+   "url": "class doc 11a"
+  }
+ ]
+}

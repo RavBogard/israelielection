@@ -1,0 +1,2886 @@
+{
+ "datapoints": [
+  {
+   "id": "pop-cbs-arabs-2026",
+   "topic": "size",
+   "measure": "Arab population (CBS definition)",
+   "value": 2173000,
+   "unit": "persons",
+   "population": "All residents classified Arab, incl. East Jerusalem and Golan",
+   "breakdown": {
+    "share_pct": 21.1,
+    "share_pct_as_printed_by_ToI": 21.7,
+    "total_pop": 10305000
+   },
+   "sample": null,
+   "fieldwork_date": "2026-09 (Rosh Hashanah release)",
+   "source_org": "CBS via Times of Israel",
+   "source_title": "Ahead of Rosh Hashanah, Israel population is at 10,305,000",
+   "url": "https://www.timesofisrael.com/ahead-of-rosh-hashanah-israel-population-is-at-10305000-up-1-2-over-last-year/",
+   "verified": "CONFIRMED as printed; share corrected",
+   "notes": "Article does not state EJ/Golan inclusion; inclusion per IDI 38540 methodology note. ToI's 21.7% does not match its own total: 2,173,000 / 10,305,000 = 21.1%. Use \"about 21%\"."
+  },
+  {
+   "id": "pop-idi-2020-total",
+   "topic": "size",
+   "measure": "Arab population incl. East Jerusalem",
+   "value": 1957270,
+   "unit": "persons",
+   "population": "Arabs, end-2020",
+   "breakdown": {
+    "share_pct": 21.1
+   },
+   "sample": null,
+   "fieldwork_date": "end-2020",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "pop-idi-2020-excl-ej",
+   "topic": "size",
+   "measure": "Arab citizens excluding East Jerusalem",
+   "value": 1595300,
+   "unit": "persons",
+   "population": "Arabs excl. EJ, end-2020",
+   "breakdown": {
+    "share_pct": 17.2
+   },
+   "sample": null,
+   "fieldwork_date": "end-2020",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "pop-ej-2020",
+   "topic": "size",
+   "measure": "East Jerusalem Arab permanent residents (non-citizens) included in CBS count",
+   "value": 362000,
+   "unit": "persons",
+   "population": "East Jerusalem Arabs",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "end-2020",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": "CONFIRMED",
+   "notes": "\"almost 362,000\""
+  },
+  {
+   "id": "pop-est-2026-citizens",
+   "topic": "size",
+   "measure": "Estimated Arab citizens excl. East Jerusalem and Golan (arithmetic)",
+   "value": 1740000,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "method": "2,173,000 - ~408,000 EJ Arabs - ~27,000 Golan Druze"
+   },
+   "sample": null,
+   "fieldwork_date": "2026 (estimate)",
+   "source_org": "Claude arithmetic from CBS figures",
+   "source_title": "n/a",
+   "url": "https://www.timesofisrael.com/ahead-of-rosh-hashanah-israel-population-is-at-10305000-up-1-2-over-last-year/",
+   "verified": "PLAUSIBLE (our estimate)",
+   "notes": "EJ figure from class doc 06 (CBS end-2025 Jerusalem 1.063M x 38.4%), secondhand; rough, needs Daniel ruling."
+  },
+  {
+   "id": "pop-muslims-2026",
+   "topic": "size",
+   "measure": "Muslim population",
+   "value": 1849000,
+   "unit": "persons",
+   "population": "Muslims in Israel incl. EJ",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-05",
+   "source_org": "CBS via TPS",
+   "source_title": "Israel's Muslim population reaches 1.85 million ahead of Eid al-Adha",
+   "url": "https://tps.co.il/articles/israels-muslim-population-reaches-1-85-million-ahead-of-eid-al-adha/",
+   "verified": true,
+   "notes": "Only headline/first sentence visible."
+  },
+  {
+   "id": "pop-christians-2024",
+   "topic": "size",
+   "measure": "Christian population",
+   "value": 184200,
+   "unit": "persons",
+   "population": "Christians in Israel",
+   "breakdown": {
+    "arab_share_pct": 78.7
+   },
+   "sample": null,
+   "fieldwork_date": "end-2024",
+   "source_org": "CBS via JPost (class doc 06)",
+   "source_title": "n/a",
+   "url": "https://www.jpost.com/",
+   "verified": false,
+   "notes": "Not re-opened."
+  },
+  {
+   "id": "pop-religion-2020",
+   "topic": "size",
+   "measure": "Religion shares among Arab citizens excl. EJ",
+   "value": {
+    "muslim": 82.9,
+    "druze": 9.2,
+    "christian": 7.9
+   },
+   "unit": "percent",
+   "population": "Arab citizens excl. EJ",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "end-2020",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pop-regions-2020",
+   "topic": "geography",
+   "measure": "Regional distribution of Arab citizens",
+   "value": {
+    "north": 51.6,
+    "triangle": 19.7,
+    "negev": 17.5,
+    "mixed_cities": 8.3,
+    "other": 2.9
+   },
+   "unit": "percent",
+   "population": "Arab citizens excl. EJ",
+   "breakdown": {
+    "north_n": 823000,
+    "triangle_n": 314000,
+    "negev_n": 280000,
+    "mixed_n": 132000
+   },
+   "sample": null,
+   "fieldwork_date": "end-2020",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": true,
+   "notes": "Stale (2020)."
+  },
+  {
+   "id": "bedouin-negev-2023",
+   "topic": "geography",
+   "measure": "Negev Bedouin population",
+   "value": 325000,
+   "unit": "persons",
+   "population": "Negev Bedouin",
+   "breakdown": {
+    "share_of_negev_pct": 20,
+    "under17_pct": 48.6,
+    "dispersed_communities": "70,000-90,000"
+   },
+   "sample": null,
+   "fieldwork_date": "end-2023",
+   "source_org": "State Comptroller via JPost",
+   "source_title": "State Comptroller Negev report",
+   "url": "https://www.jpost.com/israel-news/article-894474",
+   "verified": true,
+   "notes": "Article dated 2026-04-28."
+  },
+  {
+   "id": "bedouin-unrecognized-schools",
+   "topic": "geography",
+   "measure": "Schools in unrecognized villages",
+   "value": {
+    "residents": 70000,
+    "elementary_schools": 10,
+    "secondary_schools": 0
+   },
+   "unit": "count",
+   "population": "Unrecognized Negev villages",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "c.2021",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "poverty-families-2018",
+   "topic": "gaps",
+   "measure": "Families below poverty line",
+   "value": {
+    "arab": 45.3,
+    "jewish": 13.4
+   },
+   "unit": "percent",
+   "population": "Families",
+   "breakdown": {
+    "children_arab": 57.8,
+    "children_jewish": 21.2
+   },
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "IDI (from NII)",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": "CONFIRMED",
+   "notes": "Stale."
+  },
+  {
+   "id": "wage-gap-2018",
+   "topic": "gaps",
+   "measure": "Arab wages as % of Jewish wages",
+   "value": {
+    "men": 77,
+    "women": 61
+   },
+   "unit": "percent",
+   "population": "Employees",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": "CONFIRMED",
+   "notes": "Stale."
+  },
+  {
+   "id": "ba-rate-2019",
+   "topic": "gaps",
+   "measure": "Arab citizens gaining a bachelor's degree",
+   "value": {
+    "2007": 10.3,
+    "2019": 13.6
+   },
+   "unit": "percent",
+   "population": "Arab citizens",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2007, 2019",
+   "source_org": "IDI",
+   "source_title": "Statistical Report on Arab Society in Israel: 2021",
+   "url": "https://en.idi.org.il/articles/38540",
+   "verified": true,
+   "notes": "Stale."
+  },
+  {
+   "id": "econ-selfreport-nov2025",
+   "topic": "gaps",
+   "measure": "Rate own economic situation as good",
+   "value": 73.4,
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2025-11-13/18",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "In-depth survey of the Arab community following the ceasefire",
+   "url": "https://dayan.org/file-download/download/public/18732",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2017",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 67,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2017
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2018",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 71,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2018
+   },
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2019",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 89,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2019
+   },
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2020",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 96,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2020
+   },
+   "sample": null,
+   "fieldwork_date": "2020",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2021",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 126,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2021
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": "Same report gives 124 in age table."
+  },
+  {
+   "id": "crime-killed-2022",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 116,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2022
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2023",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 245,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2023
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2024",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 230,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2024
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "crime-killed-2025",
+   "topic": "crime",
+   "measure": "Arab citizens killed in crime and violence",
+   "value": 252,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "year": 2025
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025: Arab Murder Victims of Crime and Violence",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": "CONFIRMED",
+   "notes": "2025 as of Dec 28, 2025; report also says 251; homepage says 255 for full year. Report closing date 28 Dec 2025; homepage now says 255 for the full year. Brief uses 252 with a footnote."
+  },
+  {
+   "id": "crime-2025-detail",
+   "topic": "crime",
+   "measure": "2025 victims breakdown",
+   "value": {
+    "incidents": 218,
+    "shot_pct": 88,
+    "women": 23,
+    "minors_0_17": 12,
+    "age_18_30_pct": 51,
+    "killed_in_police_ops": 12,
+    "same_family": 31
+   },
+   "unit": "mixed",
+   "population": "Arab citizens",
+   "breakdown": {
+    "district": {
+     "north": 99,
+     "central": 66,
+     "haifa": 42,
+     "south": 35,
+     "tel_aviv": 6,
+     "jerusalem": 3
+    },
+    "top_cities": {
+     "Lod": 18,
+     "Nazareth": 18,
+     "Tira": 10,
+     "Arraba": 10
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Abraham Initiatives",
+   "source_title": "Summary Report 2025",
+   "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "crime-2026-h1",
+   "topic": "crime",
+   "measure": "Arab citizens killed, first half 2026",
+   "value": 147,
+   "unit": "persons",
+   "population": "Arab citizens",
+   "breakdown": {
+    "solved_pct": 12
+   },
+   "sample": null,
+   "fieldwork_date": "2026-01/06",
+   "source_org": "ToI via class doc 11d",
+   "source_title": "n/a",
+   "url": "https://www.timesofisrael.com/",
+   "verified": false,
+   "notes": "Not re-opened."
+  },
+  {
+   "id": "turnout-2015",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 63.5,
+    "national": 72.34
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://dayan.org/content/arab-voting-21st-knesset-elections",
+   "verified": false,
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened. 2015 Arab figure: alt calc 52%."
+  },
+  {
+   "id": "turnout-2019-04",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 49.2,
+    "national": 68.46
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019-04",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://en.idi.org.il/articles/34420",
+   "verified": "CONFIRMED",
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened."
+  },
+  {
+   "id": "turnout-2019-09",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 59.2,
+    "national": 69.83
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019-09",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://en.idi.org.il/articles/28660",
+   "verified": "CONFIRMED",
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened."
+  },
+  {
+   "id": "turnout-2020-03",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 64.8,
+    "national": 71.52
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2020-03",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://en.idi.org.il/articles/30961",
+   "verified": "CONFIRMED",
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened."
+  },
+  {
+   "id": "turnout-2021-03",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 44.6,
+    "national": 67.44
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2021-03",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://en.idi.org.il/articles/34420",
+   "verified": "CONFIRMED",
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened."
+  },
+  {
+   "id": "turnout-2022-11",
+   "topic": "voting",
+   "measure": "Turnout",
+   "value": {
+    "arab": 53.2,
+    "national": 70.63
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities (Arab); all voters (national)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "IDI (Rudnitzky); national per class doc 02",
+   "source_title": "IDI Arab vote analysis",
+   "url": "https://en.idi.org.il/articles/47986",
+   "verified": "CONFIRMED",
+   "notes": "National figures from class doc 02 (Wikipedia), not re-opened."
+  },
+  {
+   "id": "natl-2019-04-Hadash-Ta'al",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 193442,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Hadash-Ta'al",
+    "share_pct": 4.49,
+    "seats": 6
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2019-04-Ra'am-Balad",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 143666,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Ra'am-Balad",
+    "share_pct": 3.33,
+    "seats": 4
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2019-09-Joint List",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 470211,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Joint List",
+    "share_pct": 10.6,
+    "seats": 13
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2020-03-Joint List",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 581507,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Joint List",
+    "share_pct": 12.67,
+    "seats": 15
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2021-03-Joint List",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 212583,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Joint List",
+    "share_pct": 4.82,
+    "seats": 6
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2021-03-Ra'am",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 167064,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Ra'am",
+    "share_pct": 3.79,
+    "seats": 4
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2022-11-Ra'am",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 194047,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Ra'am",
+    "share_pct": 4.07,
+    "seats": 5
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2022-11-Hadash-Ta'al",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 178735,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Hadash-Ta'al",
+    "share_pct": 3.75,
+    "seats": 5
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": true,
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "natl-2022-11-Balad",
+   "topic": "voting",
+   "measure": "National vote for Arab-led list",
+   "value": 138617,
+   "unit": "votes",
+   "population": "All valid votes",
+   "breakdown": {
+    "party": "Balad",
+    "share_pct": 2.91,
+    "seats": 0
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "Central Elections Committee",
+   "source_title": "Final results by locality (data.gov.il)",
+   "url": "https://data.gov.il/dataset/votes-knesset",
+   "verified": "CONFIRMED",
+   "notes": "Computed by summing CEC locality file; seats from class docs."
+  },
+  {
+   "id": "sector-2022",
+   "topic": "voting",
+   "measure": "Vote shares in Arab and Druze localities 2022",
+   "value": {
+    "raam": 35.2,
+    "hadash_taal": 28.8,
+    "balad": 21.7,
+    "zionist": 14.3
+   },
+   "unit": "percent",
+   "population": "Arab and Druze localities",
+   "breakdown": {
+    "negev_raam": 73.9,
+    "north": {
+     "hadash_taal": 31.6,
+     "raam": 27.3,
+     "balad": 21.3
+    },
+    "triangle": {
+     "hadash_taal": 32.4,
+     "raam": 31.7,
+     "balad": 31.7
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11",
+   "source_org": "IDI (Rudnitzky)",
+   "source_title": "Arab vote in 25th Knesset elections",
+   "url": "https://en.idi.org.il/articles/47986",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "sector-2021",
+   "topic": "voting",
+   "measure": "Vote shares in Arab localities 2021",
+   "value": {
+    "arab_lists": 80.2,
+    "likud": 5.2
+   },
+   "unit": "percent",
+   "population": "Arab localities",
+   "breakdown": {
+    "north": {
+     "joint_list": 43.5,
+     "raam": 31.6
+    },
+    "negev_raam": 74.5
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03",
+   "source_org": "IDI (Rudnitzky)",
+   "source_title": "Arab vote in 24th Knesset elections",
+   "url": "https://en.idi.org.il/articles/34420",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "sector-2019-09",
+   "topic": "voting",
+   "measure": "Joint List share of Arab vote",
+   "value": 81.2,
+   "unit": "percent",
+   "population": "Arab voters",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019-09",
+   "source_org": "IDI (Rudnitzky)",
+   "source_title": "Sept 2019 Arab vote",
+   "url": "https://en.idi.org.il/articles/28660",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "poll-nov2025-separate",
+   "topic": "polling2026",
+   "measure": "Arab-sector projection, separate lists",
+   "value": {
+    "turnout": 52.4,
+    "hadash_taal": 5.3,
+    "raam": 3.9,
+    "balad": 2.6
+   },
+   "unit": "seats/percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "four_party_turnout": 61.8,
+    "four_party_seats": 15.5
+   },
+   "sample": 500,
+   "fieldwork_date": "2025-11-13/18",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "In-depth survey ... following the ceasefire",
+   "url": "https://dayan.org/file-download/download/public/18732",
+   "verified": "CONFIRMED (figures); attribution corrected",
+   "notes": "Sample misses Negev Bedouin tribes; Ra'am understated per KAP. Statnet not named in the KAP report."
+  },
+  {
+   "id": "poll-may2026-separate",
+   "topic": "polling2026",
+   "measure": "Arab-sector projection, separate lists",
+   "value": {
+    "turnout": 53,
+    "hadash_taal": 5.3,
+    "raam": 4.6,
+    "balad": 1.8,
+    "democrats": 1.1,
+    "byachad": 0.4,
+    "likud": 0.4
+   },
+   "unit": "seats/percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "four_party_turnout": 67,
+    "four_party_seats": 16.3
+   },
+   "sample": 500,
+   "fieldwork_date": "2026-04-26/05-03",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "Integration and Influence: Survey of Arab Citizens in Israel",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED (figures); attribution corrected",
+   "notes": "Four-party scenario did not happen. Statnet not named in the KAP report."
+  },
+  {
+   "id": "poll-makladeh-aug2026",
+   "topic": "polling2026",
+   "measure": "Expected Arab turnout with H-T-Balad alliance",
+   "value": 59,
+   "unit": "percent",
+   "population": "Arab voters",
+   "breakdown": {
+    "baseline": 53
+   },
+   "sample": null,
+   "fieldwork_date": "2026-08",
+   "source_org": "Statnet (Makladeh) via Ynet",
+   "source_title": "Ra'am breaks with Islamic institutions...",
+   "url": "https://www.ynetnews.com/article/s1xafktsfg",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "poll-statnet-aug2022",
+   "topic": "polling2026",
+   "measure": "Statnet predicted Arab turnout before 2022 (actual 53.2%)",
+   "value": 39,
+   "unit": "percent",
+   "population": "Arab voters",
+   "breakdown": {},
+   "sample": 200,
+   "fieldwork_date": "2022-08",
+   "source_org": "Statnet/Makan 33 via ToI",
+   "source_title": "Poll predicts all-time-low Arab turnout",
+   "url": "https://www.timesofisrael.com/poll-predicts-all-time-low-arab-turnout-in-election-potentially-boosting-netanyahu/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "natl-polls-2026",
+   "topic": "polling2026",
+   "measure": "National poll seat range",
+   "value": {
+    "joint_list": "5-10",
+    "raam": "4-6"
+   },
+   "unit": "seats",
+   "population": "National polls, late Aug 2026",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-08",
+   "source_org": "Wikipedia polling table",
+   "source_title": "n/a",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election",
+   "verified": "PARTLY CONFIRMED (replaced with Wikipedia late-Aug range)",
+   "notes": "Earlier value 7-9 / 5 came from class doc 11d citing the ToI homepage; not re-opened."
+  },
+  {
+   "id": "identity-kap-2023-05",
+   "topic": "identity",
+   "measure": "Most important component of personal identity",
+   "value": {
+    "arab": 37.5,
+    "israeli_citizenship": 21,
+    "religion": 15.6,
+    "palestinian": 16.5
+   },
+   "unit": "percent",
+   "population": "Arab adults (incl. Druze)",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2023-05",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED",
+   "notes": "Statnet is not named in the KAP reports."
+  },
+  {
+   "id": "identity-kap-2023-11",
+   "topic": "identity",
+   "measure": "Most important component of personal identity",
+   "value": {
+    "arab": 32.1,
+    "israeli_citizenship": 33.2,
+    "religion": 22.6,
+    "palestinian": 8.2
+   },
+   "unit": "percent",
+   "population": "Arab adults (incl. Druze)",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2023-11",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "NOT ON PAGE (cited PDF shows only May-23 and May-26)",
+   "notes": "Nov 2023 values read from KAP May 2026 trend chart (approx.); Wikipedia gives 33/32/23/8. Dropped from brief Chart C."
+  },
+  {
+   "id": "identity-kap-2024-12",
+   "topic": "identity",
+   "measure": "Most important component of personal identity",
+   "value": {
+    "arab": 26.9,
+    "israeli_citizenship": 33.9,
+    "religion": 29.2,
+    "palestinian": 9
+   },
+   "unit": "percent",
+   "population": "Arab adults (incl. Druze)",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2024-12",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://www.timesofisrael.com/survey-finds-arab-israelis-show-growing-sense-of-shared-destiny-since-outbreak-of-war/",
+   "verified": "CONFIRMED",
+   "notes": "Statnet is not named in the KAP reports."
+  },
+  {
+   "id": "identity-kap-2025-11",
+   "topic": "identity",
+   "measure": "Most important component of personal identity",
+   "value": {
+    "arab": 35.9,
+    "israeli_citizenship": 31.7,
+    "religion": 17.3,
+    "palestinian": 14.7
+   },
+   "unit": "percent",
+   "population": "Arab adults (incl. Druze)",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2025-11",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED",
+   "notes": "Statnet is not named in the KAP reports."
+  },
+  {
+   "id": "identity-kap-2026-05",
+   "topic": "identity",
+   "measure": "Most important component of personal identity",
+   "value": {
+    "arab": 33.3,
+    "israeli_citizenship": 27.7,
+    "religion": 24.5,
+    "palestinian": 13.5
+   },
+   "unit": "percent",
+   "population": "Arab adults (incl. Druze)",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2026-05",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED",
+   "notes": "Statnet is not named in the KAP reports."
+  },
+  {
+   "id": "identity-kap-2026-druze",
+   "topic": "identity",
+   "measure": "Druze: Israeli citizenship as top identity component",
+   "value": 64.8,
+   "unit": "percent",
+   "population": "Druze respondents",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-05",
+   "source_org": "KAP/TAU",
+   "source_title": "Integration and Influence",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": true,
+   "notes": "Druze subsample size not given."
+  },
+  {
+   "id": "identity-cbs-2025",
+   "topic": "identity",
+   "measure": "Primary identity (CBS Social Survey)",
+   "value": {
+    "arab": 56,
+    "muslim": 25,
+    "palestinian": 3,
+    "israeli": 3,
+    "other": 13
+   },
+   "unit": "percent",
+   "population": "Arab population",
+   "breakdown": {
+    "secondary_israeli_citizenship": 27
+   },
+   "sample": null,
+   "fieldwork_date": "reported 2025-05-22; survey year not stated",
+   "source_org": "CBS via JNS",
+   "source_title": "Most Arab Israelis do not consider Israeli identity primary, CBS finds",
+   "url": "https://www.jns.org/most-arab-israelis-do-not-consider-israeli-identity-important-cbs-finds/",
+   "verified": "CONFIRMED (headline only; survey year and wording not stated)",
+   "notes": "Read via Cleveland Jewish News reprint; CBS original not reachable."
+  },
+  {
+   "id": "identity-smooha-2019",
+   "topic": "identity",
+   "measure": "Self-label (Smooha Index)",
+   "value": {
+    "israeli_arab": 35.9,
+    "palestinian_in_israel": 47.1,
+    "palestinian": 14.8
+   },
+   "unit": "percent",
+   "population": "Arab citizens",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "Univ. of Haifa (Sammy Smooha)",
+   "source_title": "Arab-Jewish relations in Israel after the May 2021 unrest (Fathom)",
+   "url": "https://fathomjournal.org/arab-jewish-relations-in-israel-after-the-may-2021-unrest-a-survey-by-sammy-smooha/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "identity-idi-guttman",
+   "topic": "identity",
+   "measure": "Self-label (IDI Guttman)",
+   "value": {
+    "2008": {
+     "arab": 45,
+     "palestinian": 24,
+     "israeli": 12,
+     "religion": 19
+    },
+    "2017": {
+     "arab_in_israel": 40,
+     "palestinian": 15,
+     "palestinian_in_israel": 8.9
+    }
+   },
+   "unit": "percent",
+   "population": "Arab citizens",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2008; 2017",
+   "source_org": "IDI via Wikipedia",
+   "source_title": "Terms for Palestinian citizens of Israel",
+   "url": "https://en.wikipedia.org/wiki/Terms_for_Palestinian_citizens_of_Israel",
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "loyalty-combine-2025",
+   "topic": "identity",
+   "measure": "Palestinian identity can combine with loyalty to Israel",
+   "value": {
+    "arabs": 70,
+    "jews": 16
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {},
+   "sample": "364 Arab / 1,205 Jewish",
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "issue-salience-2025",
+   "topic": "attitudes",
+   "measure": "Issue/event with greatest impact on vote (Q58)",
+   "value": {
+    "cost_of_living": 49.1,
+    "judicial_overhaul": 11.2,
+    "netanyahu_trial": 10.7,
+    "oct7": 7.1,
+    "hostages": 6.5,
+    "haredi_conscription": 1.7,
+    "protests": 1.6,
+    "dont_know": 12.1
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "jews": {
+     "cost_of_living": 16.8,
+     "judicial_overhaul": 16.4,
+     "netanyahu_trial": 1.5,
+     "oct7": 16.9,
+     "hostages": 18.1,
+     "haredi_conscription": 16.6,
+     "protests": 2.5
+    }
+   },
+   "sample": "364 Arab / 1,205 Jewish",
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, appendix Q58",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "factor-econ-2025",
+   "topic": "attitudes",
+   "measure": "Factor most influencing vote: economy/cost of living platform",
+   "value": {
+    "arabs": 33.0,
+    "jews": 18.9
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {
+    "religion_state": {
+     "arabs": 7.4,
+     "jews": 19.4
+    },
+    "security": {
+     "arabs": 17.9,
+     "jews": 19.9
+    }
+   },
+   "sample": "364 Arab",
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Q53",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "crime-platform-2025",
+   "topic": "attitudes",
+   "measure": "Crime platform a major factor in vote",
+   "value": 72.4,
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "very_much": 41.7,
+    "quite_a_lot": 30.7
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Q54",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "crime-top-issue",
+   "topic": "attitudes",
+   "measure": "Crime is the most important issue for Arab public",
+   "value": {
+    "2025-11": 74,
+    "2026-05": 71.3
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2025-11; 2026-05",
+   "source_org": "KAP/TAU",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "trust-2025",
+   "topic": "attitudes",
+   "measure": "Trust in institutions (Arab sample)",
+   "value": {
+    "supreme_court": 40,
+    "attorney_general": 35,
+    "municipality": 33.5,
+    "idf": 33,
+    "shin_bet": 26,
+    "president": 26,
+    "media": 26,
+    "police": 25,
+    "government": 18.5,
+    "knesset": 17.5,
+    "parties": 17
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "jews_supreme_court": 42
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Fig 2.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "trust-idf-religion",
+   "topic": "attitudes",
+   "measure": "Trust in IDF by religion",
+   "value": {
+    "muslims": 28,
+    "christians": 34,
+    "druze": 84
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "2024": {
+     "muslims": 26,
+     "christians": 34,
+     "druze": 64
+    }
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.5",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "court-intervenes",
+   "topic": "attitudes",
+   "measure": "Supreme Court intervenes too much",
+   "value": 55.5,
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "jews": "about half"
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "jewish-too-dominant",
+   "topic": "attitudes",
+   "measure": "Jewish component of Israel's identity too dominant",
+   "value": {
+    "arabs": 80,
+    "jews": 44
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {},
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "two-state-trend",
+   "topic": "attitudes",
+   "measure": "Most realistic solution: two states on 1967 lines",
+   "value": {
+    "2023-05": 17.2,
+    "2024-12": 49.7,
+    "2025-11": 47.3,
+    "2026-05": 46.4
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "2026-05_other": {
+     "one_state": 18.7,
+     "regional": 7.1,
+     "no_solution": 21.4
+    }
+   },
+   "sample": 500,
+   "fieldwork_date": "2023-2026",
+   "source_org": "KAP/TAU",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "civic-service-2026",
+   "topic": "attitudes",
+   "measure": "Support voluntary non-security civic service for Arab graduates",
+   "value": 75.8,
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "age_18_34": 69.1,
+    "balad_oppose": 51.9,
+    "jewish_party_voters": 98.4,
+    "raam": 83.7,
+    "hadash_taal": 66.9
+   },
+   "sample": 500,
+   "fieldwork_date": "2026-04-26/05-03",
+   "source_org": "KAP/TAU",
+   "source_title": "Integration and Influence",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "oct7-reflects-2023",
+   "topic": "attitudes",
+   "measure": "Oct 7 attack does not reflect Arab society/Palestinian people/Islamic nation",
+   "value": {
+    "does_not": 56,
+    "does": 33,
+    "unsure": 11
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {},
+   "sample": 538,
+   "fieldwork_date": "2023-11-27/12-04",
+   "source_org": "IDI",
+   "source_title": "Most Arab Israelis: October 7 attack does not reflect...",
+   "url": "https://en.idi.org.il/articles/52016",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "war-hurt-relations",
+   "topic": "attitudes",
+   "measure": "War damaged Arab-Jewish relations",
+   "value": 74.6,
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "significantly": 45.8
+   },
+   "sample": 500,
+   "fieldwork_date": "2025-11-13/18",
+   "source_org": "KAP/TAU",
+   "source_title": "In-depth survey ... ceasefire",
+   "url": "https://dayan.org/file-download/download/public/18732",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "coalition-kap",
+   "topic": "coalition",
+   "measure": "Support Arab party joining next coalition",
+   "value": {
+    "2023-05": 63.3,
+    "2023-11": 65.9,
+    "2024-06": 68.7,
+    "2024-12": 71.8,
+    "2025-06": 73.2,
+    "2025-11": 77.4,
+    "2026-05": 77.2
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "2026-05": {
+     "any_govt": 43.3,
+     "center_left_only": 33.9,
+     "raam_voters": 95.4,
+     "balad_voters": 67.6
+    }
+   },
+   "sample": 500,
+   "fieldwork_date": "2023-2026",
+   "source_org": "Konrad Adenauer Program (Dayan Center, TAU)",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "coalition-idi-2025",
+   "topic": "coalition",
+   "measure": "Support bringing Arab parties into government",
+   "value": {
+    "arabs": 86,
+    "jews": 27
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {
+    "jews_left": 72,
+    "jews_center": 43,
+    "jews_right": 11
+   },
+   "sample": "364 Arab / 1,205 Jewish",
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "belonging-trend",
+   "topic": "belonging",
+   "measure": "Feel part of the state and its problems (Arabs)",
+   "value": {
+    "2024": 66,
+    "2025": 54
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "2025_by_religion": {
+     "muslims": 52.5,
+     "christians": 56.5,
+     "druze": 68
+    },
+    "2023-12_special": {
+     "all": 65,
+     "druze": 80,
+     "christians": 73,
+     "muslims": 62,
+     "negev": 73
+    }
+   },
+   "sample": 364,
+   "fieldwork_date": "2024; 2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025; IDI Dec 2023 survey",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI: 2024 was unusually high; 2025 still among the highest since tracking began (2003)."
+  },
+  {
+   "id": "proud-2025",
+   "topic": "belonging",
+   "measure": "Proud to be Israeli",
+   "value": {
+    "arabs": 44,
+    "jews": 83
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {},
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "speech-chill-2025",
+   "topic": "speech",
+   "measure": "Better not to express political opinions in front of strangers",
+   "value": {
+    "arabs": 70,
+    "jews": "about half"
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {
+    "no_one_hesitant_arabs": {
+     "2016": 27,
+     "2025": 16
+    }
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI: among Arabs the larger rise came about a decade ago; not an after-Oct-7 shift."
+  },
+  {
+   "id": "efficacy-age-2025",
+   "topic": "youth",
+   "measure": "Agree it makes no difference who you vote for",
+   "value": {
+    "18_34": 50,
+    "35_54": 50,
+    "55_plus": 37
+   },
+   "unit": "percent",
+   "population": "Arab adults",
+   "breakdown": {
+    "jews": {
+     "18_34": 40,
+     "35_54": 43,
+     "55_plus": 31.5
+    }
+   },
+   "sample": 364,
+   "fieldwork_date": "2025-05",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 6.2",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "youth-partnership",
+   "topic": "youth",
+   "measure": "Believe in Arab-Jewish political partnership, ages 18-34",
+   "value": {
+    "2025-11": 51.6,
+    "2026-05": 59.3
+   },
+   "unit": "percent",
+   "population": "Arab adults 18-34",
+   "breakdown": {
+    "2025-11_not_at_all": 33.6
+   },
+   "sample": 500,
+   "fieldwork_date": "2025-11; 2026-05",
+   "source_org": "KAP/TAU",
+   "source_title": "KAP surveys",
+   "url": "https://dayan.org/file-download/download/public/18837",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "free-fair-2025",
+   "topic": "attitudes",
+   "measure": "Next elections will be free and fair",
+   "value": {
+    "arabs": 50.5,
+    "jews": 68
+   },
+   "unit": "percent",
+   "population": "Adults",
+   "breakdown": {},
+   "sample": 364,
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Special Review of Public Opinion Ahead of 2026 Elections",
+   "url": "https://en.idi.org.il/articles/62794",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "nation-state-law",
+   "topic": "texture",
+   "measure": "Nation-State Law Knesset vote",
+   "value": {
+    "for": 62,
+    "against": 55,
+    "abstain": 2
+   },
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {
+    "supreme_court_2021": "10-1 upheld"
+   },
+   "sample": null,
+   "fieldwork_date": "2018-07-19",
+   "source_org": "Wikipedia",
+   "source_title": "Basic Law: Israel as the Nation-State of the Jewish People",
+   "url": "https://en.wikipedia.org/wiki/Basic_Law:_Israel_as_the_Nation-State_of_the_Jewish_People",
+   "verified": true,
+   "notes": "Primary Knesset site unreachable."
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "2019-04",
+   "locality": "Rahat",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 49.6,
+   "basis": "CEC locality file; 16131 voters / 32511 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Rahat",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 47.4,
+   "basis": "% of 15952 valid votes in locality; ballot letters דעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Rahat",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 40.6,
+   "basis": "% of 15952 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Rahat",
+   "party": "Meretz",
+   "share_or_seats": 4.3,
+   "basis": "% of 15952 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Rahat",
+   "party": "Blue and White",
+   "share_or_seats": 3.8,
+   "basis": "% of 15952 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Umm al-Fahm",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 45.1,
+   "basis": "CEC locality file; 15671 voters / 34720 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Umm al-Fahm",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 79.7,
+   "basis": "% of 15533 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Umm al-Fahm",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 12.3,
+   "basis": "% of 15533 valid votes in locality; ballot letters דעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Umm al-Fahm",
+   "party": "Meretz",
+   "share_or_seats": 5.1,
+   "basis": "% of 15533 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 39.8,
+   "basis": "CEC locality file; 22720 voters / 57041 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 53.7,
+   "basis": "% of 22405 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 29.5,
+   "basis": "% of 22405 valid votes in locality; ballot letters דעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "Meretz",
+   "share_or_seats": 7.4,
+   "basis": "% of 22405 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "Blue and White",
+   "share_or_seats": 4.1,
+   "basis": "% of 22405 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Nazareth",
+   "party": "Likud",
+   "share_or_seats": 1.5,
+   "basis": "% of 22405 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 81.4,
+   "basis": "CEC locality file; 17106 voters / 21019 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 59.6,
+   "basis": "% of 17022 valid votes in locality; ballot letters דעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 35.0,
+   "basis": "% of 17022 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "Meretz",
+   "share_or_seats": 1.8,
+   "basis": "% of 17022 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "Kulanu",
+   "share_or_seats": 1.4,
+   "basis": "% of 17022 valid votes in locality; ballot letters כ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Sakhnin",
+   "party": "Labor",
+   "share_or_seats": 1.1,
+   "basis": "% of 17022 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 47.4,
+   "basis": "CEC locality file; 13491 voters / 28453 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 42.3,
+   "basis": "% of 13280 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 19.2,
+   "basis": "% of 13280 valid votes in locality; ballot letters דעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 13.4,
+   "basis": "% of 13280 valid votes in locality; ballot letters ל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Blue and White",
+   "share_or_seats": 9.2,
+   "basis": "% of 13280 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Meretz",
+   "share_or_seats": 8.2,
+   "basis": "% of 13280 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Kulanu",
+   "share_or_seats": 2.5,
+   "basis": "% of 13280 valid votes in locality; ballot letters כ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Likud",
+   "share_or_seats": 1.2,
+   "basis": "% of 13280 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Labor",
+   "share_or_seats": 1.1,
+   "basis": "% of 13280 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "Shefa-Amr",
+   "party": "Shas",
+   "share_or_seats": 1.0,
+   "basis": "% of 13280 valid votes in locality; ballot letters שס; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 59.5,
+   "basis": "CEC locality file; 19770 voters / 33204 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "Joint List",
+   "share_or_seats": 79.6,
+   "basis": "% of 19573 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "Blue and White",
+   "share_or_seats": 6.5,
+   "basis": "% of 19573 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "Democratic Union",
+   "share_or_seats": 3.9,
+   "basis": "% of 19573 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "ballot letters כי",
+   "share_or_seats": 3.1,
+   "basis": "% of 19573 valid votes in locality; ballot letters כי; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "Labor-Gesher",
+   "share_or_seats": 2.3,
+   "basis": "% of 19573 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Rahat",
+   "party": "ballot letters נך",
+   "share_or_seats": 1.2,
+   "basis": "% of 19573 valid votes in locality; ballot letters נך; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Umm al-Fahm",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 51.3,
+   "basis": "CEC locality file; 18060 voters / 35181 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Umm al-Fahm",
+   "party": "Joint List",
+   "share_or_seats": 95.8,
+   "basis": "% of 17854 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Umm al-Fahm",
+   "party": "Democratic Union",
+   "share_or_seats": 1.5,
+   "basis": "% of 17854 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Nazareth",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 55.8,
+   "basis": "CEC locality file; 32006 voters / 57407 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Nazareth",
+   "party": "Joint List",
+   "share_or_seats": 91.7,
+   "basis": "% of 31787 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Nazareth",
+   "party": "Blue and White",
+   "share_or_seats": 2.8,
+   "basis": "% of 31787 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Nazareth",
+   "party": "Democratic Union",
+   "share_or_seats": 1.7,
+   "basis": "% of 31787 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Sakhnin",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 72.1,
+   "basis": "CEC locality file; 14829 voters / 20567 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Sakhnin",
+   "party": "Joint List",
+   "share_or_seats": 89.6,
+   "basis": "% of 14644 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Sakhnin",
+   "party": "Labor-Gesher",
+   "share_or_seats": 3.0,
+   "basis": "% of 14644 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Sakhnin",
+   "party": "Blue and White",
+   "share_or_seats": 3.0,
+   "basis": "% of 14644 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Sakhnin",
+   "party": "Democratic Union",
+   "share_or_seats": 1.6,
+   "basis": "% of 14644 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 59.2,
+   "basis": "CEC locality file; 17039 voters / 28773 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Joint List",
+   "share_or_seats": 73.9,
+   "basis": "% of 16327 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 10.6,
+   "basis": "% of 16327 valid votes in locality; ballot letters ל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Blue and White",
+   "share_or_seats": 8.0,
+   "basis": "% of 16327 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Democratic Union",
+   "share_or_seats": 2.9,
+   "basis": "% of 16327 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Labor-Gesher",
+   "share_or_seats": 1.3,
+   "basis": "% of 16327 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "Shefa-Amr",
+   "party": "Likud",
+   "share_or_seats": 1.1,
+   "basis": "% of 16327 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Umm al-Fahm",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 63.1,
+   "basis": "CEC locality file; 22535 voters / 35711 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Umm al-Fahm",
+   "party": "Joint List",
+   "share_or_seats": 98.5,
+   "basis": "% of 22409 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Nazareth",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 60.3,
+   "basis": "CEC locality file; 34849 voters / 57757 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Nazareth",
+   "party": "Joint List",
+   "share_or_seats": 95.7,
+   "basis": "% of 34644 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Nazareth",
+   "party": "Blue and White",
+   "share_or_seats": 1.5,
+   "basis": "% of 34644 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Nazareth",
+   "party": "Likud",
+   "share_or_seats": 1.0,
+   "basis": "% of 34644 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Sakhnin",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 79.2,
+   "basis": "CEC locality file; 17136 voters / 21624 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Sakhnin",
+   "party": "Joint List",
+   "share_or_seats": 97.2,
+   "basis": "% of 17085 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Sakhnin",
+   "party": "Labor-Gesher-Meretz",
+   "share_or_seats": 1.5,
+   "basis": "% of 17085 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Rahat",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 66.3,
+   "basis": "CEC locality file; 22545 voters / 33987 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Rahat",
+   "party": "Joint List",
+   "share_or_seats": 92.5,
+   "basis": "% of 22388 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Rahat",
+   "party": "Labor-Gesher-Meretz",
+   "share_or_seats": 3.9,
+   "basis": "% of 22388 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Rahat",
+   "party": "Blue and White",
+   "share_or_seats": 2.0,
+   "basis": "% of 22388 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 65.9,
+   "basis": "CEC locality file; 19200 voters / 29120 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "Joint List",
+   "share_or_seats": 83.1,
+   "basis": "% of 19032 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 8.4,
+   "basis": "% of 19032 valid votes in locality; ballot letters ל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "Blue and White",
+   "share_or_seats": 5.4,
+   "basis": "% of 19032 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "Labor-Gesher-Meretz",
+   "share_or_seats": 1.3,
+   "basis": "% of 19032 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "Shefa-Amr",
+   "party": "Likud",
+   "share_or_seats": 1.1,
+   "basis": "% of 19032 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 47.8,
+   "basis": "CEC locality file; 17087 voters / 35764 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "Ra'am",
+   "share_or_seats": 62.9,
+   "basis": "% of 16887 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "Joint List",
+   "share_or_seats": 22.1,
+   "basis": "% of 16887 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "Likud",
+   "share_or_seats": 6.1,
+   "basis": "% of 16887 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "ballot letters יז",
+   "share_or_seats": 3.0,
+   "basis": "% of 16887 valid votes in locality; ballot letters יז; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Rahat",
+   "party": "Meretz",
+   "share_or_seats": 2.8,
+   "basis": "% of 16887 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 39.0,
+   "basis": "CEC locality file; 22887 voters / 58635 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "Joint List",
+   "share_or_seats": 64.7,
+   "basis": "% of 22605 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "Ra'am",
+   "share_or_seats": 23.9,
+   "basis": "% of 22605 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "Meretz",
+   "share_or_seats": 3.9,
+   "basis": "% of 22605 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "Likud",
+   "share_or_seats": 3.9,
+   "basis": "% of 22605 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Nazareth",
+   "party": "Yesh Atid",
+   "share_or_seats": 1.2,
+   "basis": "% of 22605 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 44.8,
+   "basis": "CEC locality file; 13366 voters / 29818 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Joint List",
+   "share_or_seats": 53.9,
+   "basis": "% of 13215 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Ra'am",
+   "share_or_seats": 19.3,
+   "basis": "% of 13215 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 11.6,
+   "basis": "% of 13215 valid votes in locality; ballot letters ל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Meretz",
+   "share_or_seats": 4.2,
+   "basis": "% of 13215 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Likud",
+   "share_or_seats": 3.4,
+   "basis": "% of 13215 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Yesh Atid",
+   "share_or_seats": 2.9,
+   "basis": "% of 13215 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Shefa-Amr",
+   "party": "Labor",
+   "share_or_seats": 1.9,
+   "basis": "% of 13215 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Umm al-Fahm",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 33.1,
+   "basis": "CEC locality file; 12187 voters / 36766 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Umm al-Fahm",
+   "party": "Joint List",
+   "share_or_seats": 80.5,
+   "basis": "% of 11972 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Umm al-Fahm",
+   "party": "Ra'am",
+   "share_or_seats": 13.7,
+   "basis": "% of 11972 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Umm al-Fahm",
+   "party": "Meretz",
+   "share_or_seats": 2.6,
+   "basis": "% of 11972 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Umm al-Fahm",
+   "party": "Likud",
+   "share_or_seats": 1.4,
+   "basis": "% of 11972 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Sakhnin",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 70.3,
+   "basis": "CEC locality file; 15666 voters / 22299 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Sakhnin",
+   "party": "Ra'am",
+   "share_or_seats": 61.8,
+   "basis": "% of 15530 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Sakhnin",
+   "party": "Joint List",
+   "share_or_seats": 35.4,
+   "basis": "% of 15530 valid votes in locality; ballot letters ודעם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "Sakhnin",
+   "party": "Yesh Atid",
+   "share_or_seats": 1.1,
+   "basis": "% of 15530 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Umm al-Fahm",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 38.3,
+   "basis": "CEC locality file; 14658 voters / 38286 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Umm al-Fahm",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 40.5,
+   "basis": "% of 14451 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Umm al-Fahm",
+   "party": "Balad",
+   "share_or_seats": 37.9,
+   "basis": "% of 14451 valid votes in locality; ballot letters ד; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Umm al-Fahm",
+   "party": "Ra'am",
+   "share_or_seats": 18.0,
+   "basis": "% of 14451 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 48.3,
+   "basis": "CEC locality file; 28739 voters / 59519 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 45.3,
+   "basis": "% of 28462 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Balad",
+   "share_or_seats": 26.2,
+   "basis": "% of 28462 valid votes in locality; ballot letters ד; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Ra'am",
+   "share_or_seats": 21.4,
+   "basis": "% of 28462 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Likud",
+   "share_or_seats": 2.3,
+   "basis": "% of 28462 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Meretz",
+   "share_or_seats": 1.7,
+   "basis": "% of 28462 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Nazareth",
+   "party": "Yesh Atid",
+   "share_or_seats": 1.2,
+   "basis": "% of 28462 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Sakhnin",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 68.4,
+   "basis": "CEC locality file; 15877 voters / 23207 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Sakhnin",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 38.5,
+   "basis": "% of 15754 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Sakhnin",
+   "party": "Balad",
+   "share_or_seats": 30.3,
+   "basis": "% of 15754 valid votes in locality; ballot letters ד; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Sakhnin",
+   "party": "Ra'am",
+   "share_or_seats": 29.1,
+   "basis": "% of 15754 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 60.6,
+   "basis": "CEC locality file; 23241 voters / 38346 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "Ra'am",
+   "share_or_seats": 64.2,
+   "basis": "% of 23024 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "Balad",
+   "share_or_seats": 14.0,
+   "basis": "% of 23024 valid votes in locality; ballot letters ד; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 12.6,
+   "basis": "% of 23024 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "Meretz",
+   "share_or_seats": 4.1,
+   "basis": "% of 23024 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Rahat",
+   "party": "Likud",
+   "share_or_seats": 1.6,
+   "basis": "% of 23024 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "turnout (voters/registered)",
+   "share_or_seats": 51.5,
+   "basis": "CEC locality file; 15890 voters / 30875 registered (roll includes residents abroad)",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 36.6,
+   "basis": "% of 15703 valid votes in locality; ballot letters ום; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Balad",
+   "share_or_seats": 22.4,
+   "basis": "% of 15703 valid votes in locality; ballot letters ד; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Ra'am",
+   "share_or_seats": 20.2,
+   "basis": "% of 15703 valid votes in locality; ballot letters עם; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 8.2,
+   "basis": "% of 15703 valid votes in locality; ballot letters ל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Yesh Atid",
+   "share_or_seats": 2.9,
+   "basis": "% of 15703 valid votes in locality; ballot letters פה; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Meretz",
+   "share_or_seats": 2.7,
+   "basis": "% of 15703 valid votes in locality; ballot letters מרצ; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Labor",
+   "share_or_seats": 2.0,
+   "basis": "% of 15703 valid votes in locality; ballot letters אמת; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "National Unity",
+   "share_or_seats": 1.9,
+   "basis": "% of 15703 valid votes in locality; ballot letters כן; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "Shefa-Amr",
+   "party": "Likud",
+   "share_or_seats": 1.6,
+   "basis": "% of 15703 valid votes in locality; ballot letters מחל; CEC final results",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "All Arab and Druze localities",
+   "party": "Ra'am",
+   "share_or_seats": 35.2,
+   "basis": "% of valid votes, IDI analysis",
+   "url": "https://en.idi.org.il/articles/47986"
+  },
+  {
+   "election": "2022-11",
+   "locality": "All Arab and Druze localities",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 28.8,
+   "basis": "% of valid votes, IDI analysis",
+   "url": "https://en.idi.org.il/articles/47986"
+  },
+  {
+   "election": "2022-11",
+   "locality": "All Arab and Druze localities",
+   "party": "Balad",
+   "share_or_seats": 21.7,
+   "basis": "% of valid votes, IDI analysis",
+   "url": "https://en.idi.org.il/articles/47986"
+  },
+  {
+   "election": "2022-11",
+   "locality": "All Arab and Druze localities",
+   "party": "Zionist parties",
+   "share_or_seats": 14.3,
+   "basis": "% of valid votes, IDI analysis",
+   "url": "https://en.idi.org.il/articles/47986"
+  },
+  {
+   "election": "2019-04",
+   "locality": "National",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 6,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-04",
+   "locality": "National",
+   "party": "Ra'am-Balad",
+   "share_or_seats": 4,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2019-09",
+   "locality": "National",
+   "party": "Joint List",
+   "share_or_seats": 13,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2020-03",
+   "locality": "National",
+   "party": "Joint List",
+   "share_or_seats": 15,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "National",
+   "party": "Joint List",
+   "share_or_seats": 6,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2021-03",
+   "locality": "National",
+   "party": "Ra'am",
+   "share_or_seats": 4,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "National",
+   "party": "Hadash-Ta'al",
+   "share_or_seats": 5,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "National",
+   "party": "Ra'am",
+   "share_or_seats": 5,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  },
+  {
+   "election": "2022-11",
+   "locality": "National",
+   "party": "Balad",
+   "share_or_seats": 0,
+   "basis": "Knesset seats",
+   "url": "https://data.gov.il/dataset/votes-knesset"
+  }
+ ]
+}

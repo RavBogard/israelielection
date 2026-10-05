@@ -1,0 +1,2437 @@
+{
+ "datapoints": [
+  {
+   "id": "druze-turnout-2019-04-09",
+   "topic": "group-druze",
+   "measure": "Voter turnout (votes cast / eligible voters)",
+   "value": 60.0,
+   "unit": "%",
+   "population": "Eligible voters in ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "eligible": 58528,
+    "valid_votes": 34866,
+    "national_turnout": 68.46,
+    "arab_sector_turnout_IDI": 49.2
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. National turnout from CEC national results page; Arab-sector turnout from IDI/Rudnitzky via class doc 02."
+  },
+  {
+   "id": "druze-nonzionist-2019-04-09",
+   "topic": "group-druze",
+   "measure": "Share of valid votes for Arab-led (non-Zionist) lists",
+   "value": 3.7,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "lists_counted": [
+     "Hadash-Taal",
+     "Raam-Balad"
+    ]
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. Matches Dayan Center figures for Apr 2019 (3.75%) and 2020 (11.5%)."
+  },
+  {
+   "id": "druze-vote-2019-04-09-blue-and-white",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 33.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Blue and White"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-meretz",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 17.6,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Meretz"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-likud",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 13.3,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-yisrael-beiteinu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 9.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-kulanu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 8.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Kulanu"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-shas",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 3.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Shas"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-hadash-taal",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 3.5,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Hadash-Taal"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-labor",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 2.9,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "Labor"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-04-09-urwp",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 1.0,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Apr 2019",
+    "party": "URWP"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "golan-druze-voters-2019-04-09",
+   "topic": "group-druze",
+   "measure": "Registered eligible voters and turnout, four Golan Druze villages",
+   "value": 1780,
+   "unit": "eligible voters",
+   "population": "Majdal Shams, Mas'ade, Buq'ata, Ein Qiniyye",
+   "breakdown": {
+    "election": "Apr 2019",
+    "turnout_pct": 17.6,
+    "top_parties": {
+     "Blue and White": 37.6,
+     "Likud": 30.9,
+     "Kulanu": 8.0,
+     "Meretz": 7.4
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2019-04-09",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Only citizens can vote for the Knesset; most Golan Druze are permanent residents, so the eligible-voter count is a small fraction of the ~25,000-29,000 population. Turnout is votes/eligible."
+  },
+  {
+   "id": "druze-turnout-2019-09-17",
+   "topic": "group-druze",
+   "measure": "Voter turnout (votes cast / eligible voters)",
+   "value": 53.7,
+   "unit": "%",
+   "population": "Eligible voters in ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "eligible": 57099,
+    "valid_votes": 30330,
+    "national_turnout": 69.83,
+    "arab_sector_turnout_IDI": 59.2
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. National turnout from CEC national results page; Arab-sector turnout from IDI/Rudnitzky via class doc 02."
+  },
+  {
+   "id": "druze-nonzionist-2019-09-17",
+   "topic": "group-druze",
+   "measure": "Share of valid votes for Arab-led (non-Zionist) lists",
+   "value": 6.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "lists_counted": [
+     "Joint List"
+    ]
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. Matches Dayan Center figures for Apr 2019 (3.75%) and 2020 (11.5%)."
+  },
+  {
+   "id": "druze-vote-2019-09-17-blue-and-white",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 48.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Blue and White"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-yisrael-beiteinu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 13.7,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-labor-gesher",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 11.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Labor-Gesher"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-likud",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 11.1,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-joint-list",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 6.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Joint List"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-democratic-union",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 4.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Democratic Union"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-shas",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 2.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Shas"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2019-09-17-yamina",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 1.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Sep 2019",
+    "party": "Yamina"
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "golan-druze-voters-2019-09-17",
+   "topic": "group-druze",
+   "measure": "Registered eligible voters and turnout, four Golan Druze villages",
+   "value": 1906,
+   "unit": "eligible voters",
+   "population": "Majdal Shams, Mas'ade, Buq'ata, Ein Qiniyye",
+   "breakdown": {
+    "election": "Sep 2019",
+    "turnout_pct": 19.8,
+    "top_parties": {
+     "Blue and White": 40.2,
+     "Likud": 27.1,
+     "Shas": 8.5,
+     "Labor-Gesher": 7.4
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2019-09-17",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Only citizens can vote for the Knesset; most Golan Druze are permanent residents, so the eligible-voter count is a small fraction of the ~25,000-29,000 population. Turnout is votes/eligible."
+  },
+  {
+   "id": "druze-turnout-2020-03-02",
+   "topic": "group-druze",
+   "measure": "Voter turnout (votes cast / eligible voters)",
+   "value": 56.8,
+   "unit": "%",
+   "population": "Eligible voters in ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "eligible": 59737,
+    "valid_votes": 33610,
+    "national_turnout": 71.52,
+    "arab_sector_turnout_IDI": 64.8
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. National turnout from CEC national results page; Arab-sector turnout from IDI/Rudnitzky via class doc 02."
+  },
+  {
+   "id": "druze-nonzionist-2020-03-02",
+   "topic": "group-druze",
+   "measure": "Share of valid votes for Arab-led (non-Zionist) lists",
+   "value": 11.5,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "lists_counted": [
+     "Joint List"
+    ]
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. Matches Dayan Center figures for Apr 2019 (3.75%) and 2020 (11.5%)."
+  },
+  {
+   "id": "druze-vote-2020-03-02-blue-and-white",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 44.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Blue and White"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2020-03-02-likud",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 17.0,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2020-03-02-yisrael-beiteinu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 13.5,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2020-03-02-joint-list",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 11.5,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Joint List"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2020-03-02-labor-gesher-meretz",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 9.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Labor-Gesher-Meretz"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2020-03-02-shas",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 2.6,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2020",
+    "party": "Shas"
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "golan-druze-voters-2020-03-02",
+   "topic": "group-druze",
+   "measure": "Registered eligible voters and turnout, four Golan Druze villages",
+   "value": 1967,
+   "unit": "eligible voters",
+   "population": "Majdal Shams, Mas'ade, Buq'ata, Ein Qiniyye",
+   "breakdown": {
+    "election": "Mar 2020",
+    "turnout_pct": 17.0,
+    "top_parties": {
+     "Blue and White": 55.0,
+     "Likud": 20.7,
+     "Labor-Gesher-Meretz": 8.4,
+     "Joint List": 5.4
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2020-03-02",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Only citizens can vote for the Knesset; most Golan Druze are permanent residents, so the eligible-voter count is a small fraction of the ~25,000-29,000 population. Turnout is votes/eligible."
+  },
+  {
+   "id": "druze-turnout-2021-03-23",
+   "topic": "group-druze",
+   "measure": "Voter turnout (votes cast / eligible voters)",
+   "value": 47.9,
+   "unit": "%",
+   "population": "Eligible voters in ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "eligible": 61184,
+    "valid_votes": 28993,
+    "national_turnout": 67.44,
+    "arab_sector_turnout_IDI": 44.6
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. National turnout from CEC national results page; Arab-sector turnout from IDI/Rudnitzky via class doc 02."
+  },
+  {
+   "id": "druze-nonzionist-2021-03-23",
+   "topic": "group-druze",
+   "measure": "Share of valid votes for Arab-led (non-Zionist) lists",
+   "value": 7.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "lists_counted": [
+     "Joint List",
+     "Raam"
+    ]
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CORRECTED (verifier recount: 7.8)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. Matches Dayan Center figures for Apr 2019 (3.75%) and 2020 (11.5%). Joint List 7.5 + Ra'am; recomputed 7.8."
+  },
+  {
+   "id": "druze-vote-2021-03-23-yisrael-beiteinu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 28.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-likud",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 21.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-yesh-atid",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 10.6,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Yesh Atid"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-blue-and-white",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 8.1,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Blue and White"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-joint-list",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 7.5,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Joint List"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-meretz",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 6.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Meretz"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-shas",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 5.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Shas"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-new-hope",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 4.3,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "New Hope"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-labor",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 3.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Labor"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2021-03-23-yamina",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 2.0,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Mar 2021",
+    "party": "Yamina"
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "golan-druze-voters-2021-03-23",
+   "topic": "group-druze",
+   "measure": "Registered eligible voters and turnout, four Golan Druze villages",
+   "value": 2098,
+   "unit": "eligible voters",
+   "population": "Majdal Shams, Mas'ade, Buq'ata, Ein Qiniyye",
+   "breakdown": {
+    "election": "Mar 2021",
+    "turnout_pct": 16.7,
+    "top_parties": {
+     "Likud": 37.0,
+     "Yesh Atid": 16.9,
+     "Yisrael Beiteinu": 16.0,
+     "Blue and White": 10.3
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2021-03-23",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Only citizens can vote for the Knesset; most Golan Druze are permanent residents, so the eligible-voter count is a small fraction of the ~25,000-29,000 population. Turnout is votes/eligible."
+  },
+  {
+   "id": "druze-turnout-2022-11-01",
+   "topic": "group-druze",
+   "measure": "Voter turnout (votes cast / eligible voters)",
+   "value": 50.8,
+   "unit": "%",
+   "population": "Eligible voters in ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "eligible": 63079,
+    "valid_votes": 31717,
+    "national_turnout": 70.63,
+    "arab_sector_turnout_IDI": 53.2
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. National turnout from CEC national results page; Arab-sector turnout from IDI/Rudnitzky via class doc 02."
+  },
+  {
+   "id": "druze-nonzionist-2022-11-01",
+   "topic": "group-druze",
+   "measure": "Share of valid votes for Arab-led (non-Zionist) lists",
+   "value": 7.8,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "lists_counted": [
+     "Hadash-Taal",
+     "Raam",
+     "Balad"
+    ]
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan. Matches Dayan Center figures for Apr 2019 (3.75%) and 2020 (11.5%)."
+  },
+  {
+   "id": "druze-vote-2022-11-01-national-unity",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 30.1,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "National Unity"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-yisrael-beiteinu",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 18.4,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-meretz",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 14.9,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Meretz"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-likud",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 11.7,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-yesh-atid",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 7.9,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Yesh Atid"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-hadash-taal",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 5.3,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Hadash-Taal"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-labor",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 3.7,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Labor"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-jewish-home",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 2.7,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Jewish Home"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-raam",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 1.3,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Raam"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "druze-vote-2022-11-01-balad",
+   "topic": "group-druze",
+   "measure": "Party share of valid votes",
+   "value": 1.2,
+   "unit": "% of valid votes",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Balad"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Ten localities 95%+ Druze per Dayan Center (Shanan & Ilat 2021): Daliyat al-Karmel, Yarka, Beit Jann, Hurfeish, Kisra-Sumei, Yanuh-Jat, Peki'in, Julis, Sajur, Ein al-Asad. Excludes Druze in mixed towns (Isfiya, Maghar, Shefa-Amr, Abu Snan, Rameh, Haifa) and the Golan."
+  },
+  {
+   "id": "golan-druze-voters-2022-11-01",
+   "topic": "group-druze",
+   "measure": "Registered eligible voters and turnout, four Golan Druze villages",
+   "value": 2755,
+   "unit": "eligible voters",
+   "population": "Majdal Shams, Mas'ade, Buq'ata, Ein Qiniyye",
+   "breakdown": {
+    "election": "Nov 2022",
+    "turnout_pct": 23.2,
+    "top_parties": {
+     "Yesh Atid": 24.3,
+     "National Unity": 19.4,
+     "Likud": 15.5,
+     "Yisrael Beiteinu": 15.5
+    }
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Only citizens can vote for the Knesset; most Golan Druze are permanent residents, so the eligible-voter count is a small fraction of the ~25,000-29,000 population. Turnout is votes/eligible."
+  },
+  {
+   "id": "druze-vote-2022-alt-def",
+   "topic": "group-druze",
+   "measure": "Party shares, alternative locality set (Isfiya in, Peki'in out)",
+   "value": 31.7,
+   "unit": "% of valid votes (National Unity)",
+   "population": "Ten localities incl. Isfiya, excl. Peki'in",
+   "breakdown": {
+    "shares": {
+     "National Unity": 31.7,
+     "Yisrael Beiteinu": 16.7,
+     "Meretz": 14.6,
+     "Likud": 11.4,
+     "Yesh Atid": 8.5,
+     "Hadash-Taal": 4.0,
+     "Labor": 3.6,
+     "Jewish Home": 2.6,
+     "Balad": 2.2,
+     "Raam": 1.9
+    },
+    "turnout": 50.2
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Sensitivity check: results move 1-2 points with locality choice; Isfiya has a Christian minority that votes for Arab lists."
+  },
+  {
+   "id": "druze-2022-beit-jann",
+   "topic": "group-druze",
+   "measure": "Leading list's share of valid votes in locality",
+   "value": 61.6,
+   "unit": "% of valid votes",
+   "population": "Beit Jann",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Meretz"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Beit Jann: home town of Meretz #4 Ali Salalha (Wikipedia). Daliyat: home of National Unity #16 Akram Hasson (Wikipedia). Other home-candidate links not verified."
+  },
+  {
+   "id": "druze-2022-daliyat-al-karmel",
+   "topic": "group-druze",
+   "measure": "Leading list's share of valid votes in locality",
+   "value": 54.9,
+   "unit": "% of valid votes",
+   "population": "Daliyat al-Karmel",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "National Unity"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": "CONFIRMED (verifier recount of CEC files)",
+   "notes": "Beit Jann: home town of Meretz #4 Ali Salalha (Wikipedia). Daliyat: home of National Unity #16 Akram Hasson (Wikipedia). Other home-candidate links not verified."
+  },
+  {
+   "id": "druze-2022-hurfeish",
+   "topic": "group-druze",
+   "measure": "Leading list's share of valid votes in locality",
+   "value": 53.5,
+   "unit": "% of valid votes",
+   "population": "Hurfeish",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "National Unity"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Beit Jann: home town of Meretz #4 Ali Salalha (Wikipedia). Daliyat: home of National Unity #16 Akram Hasson (Wikipedia). Other home-candidate links not verified."
+  },
+  {
+   "id": "druze-2022-sajur",
+   "topic": "group-druze",
+   "measure": "Leading list's share of valid votes in locality",
+   "value": 47.1,
+   "unit": "% of valid votes",
+   "population": "Sajur",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Jewish Home"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Beit Jann: home town of Meretz #4 Ali Salalha (Wikipedia). Daliyat: home of National Unity #16 Akram Hasson (Wikipedia). Other home-candidate links not verified."
+  },
+  {
+   "id": "druze-2022-yarka",
+   "topic": "group-druze",
+   "measure": "Leading list's share of valid votes in locality",
+   "value": 34.4,
+   "unit": "% of valid votes",
+   "population": "Yarka",
+   "breakdown": {
+    "election": "Nov 2022",
+    "party": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Central Elections Committee (computed by researcher)",
+   "source_title": "Results by locality (expc.csv)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv",
+   "verified": true,
+   "notes": "Beit Jann: home town of Meretz #4 Ali Salalha (Wikipedia). Daliyat: home of National Unity #16 Akram Hasson (Wikipedia). Other home-candidate links not verified."
+  },
+  {
+   "id": "idi-2022-druze-shares",
+   "topic": "group-druze",
+   "measure": "Party shares in Druze localities 2022 (IDI)",
+   "value": 30.4,
+   "unit": "% (National Unity)",
+   "population": "Druze localities (IDI definition, not stated)",
+   "breakdown": {
+    "National Unity": 30.4,
+    "Yisrael Beiteinu": 18.3,
+    "Meretz": 14,
+    "Likud": 10.6,
+    "Zionist parties total": 90,
+    "turnout_avg_2021_2022": 48.7,
+    "turnout_avg_2013_2020": 55.9
+   },
+   "sample": null,
+   "fieldwork_date": "2022-11-01",
+   "source_org": "Israel Democracy Institute (Arik Rudnitzky)",
+   "source_title": "Druze voting in the 2022 Knesset elections (2022-12-25)",
+   "url": "https://en.idi.org.il/articles/47986",
+   "verified": true,
+   "notes": "Close to researcher's Dayan-10 computation."
+  },
+  {
+   "id": "dayan-druze-turnout-trend",
+   "topic": "group-druze",
+   "measure": "Turnout in Druze localities",
+   "value": 76.8,
+   "unit": "% (1996)",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "1996": 76.8,
+    "1999": 78.9,
+    "2003": 64.2,
+    "2006": 64.9,
+    "Sep 2019": 53.2,
+    "2020": 57.1
+   },
+   "sample": null,
+   "fieldwork_date": "1996-2020",
+   "source_org": "Moshe Dayan Center (Shanan & Ilat)",
+   "source_title": "From sector to society: changes in Druze voting patterns 1996-2020 (2021-03-18)",
+   "url": "https://dayan.org/he/content/5714",
+   "verified": "CONFIRMED",
+   "notes": "2020 figure 57.1 from Hebrew Wikipedia summary of the same study (verified false for that number); other points from the page."
+  },
+  {
+   "id": "dayan-druze-nonzionist-trend",
+   "topic": "group-druze",
+   "measure": "Share for non-Zionist lists, Druze localities",
+   "value": 9.58,
+   "unit": "% (1996)",
+   "population": "Ten core Druze localities",
+   "breakdown": {
+    "1996": 9.58,
+    "2013": 17,
+    "2015": 15,
+    "Apr 2019": 3.75,
+    "2020": 11.5
+   },
+   "sample": null,
+   "fieldwork_date": "1996-2020",
+   "source_org": "Moshe Dayan Center",
+   "source_title": "Shanan & Ilat 2021",
+   "url": "https://dayan.org/he/content/5714",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "cbs-druze-pop-2022",
+   "topic": "group-druze",
+   "measure": "Druze population of Israel",
+   "value": 150000,
+   "unit": "persons (approx., preliminary)",
+   "population": "Druze in Israel incl. Golan",
+   "breakdown": {
+    "share_total_pop": 1.6,
+    "share_arab_pop": 7.4,
+    "northern_district_pct_2021": 81,
+    "haifa_district_pct_2021": 19,
+    "median_age_2021": 29.6,
+    "tfr_2021": 2.0,
+    "growth_2021_pct": 1.2
+   },
+   "sample": null,
+   "fieldwork_date": "end-2022",
+   "source_org": "CBS",
+   "source_title": "Media release 129/2023, The Druze population of Israel (2023-04-23), hosted by Jewish Virtual Library",
+   "url": "https://www.jewishvirtuallibrary.org/jsource/Society_&_Culture/druze-stats2023.pdf",
+   "verified": "CONFIRMED",
+   "notes": "CBS 2023 release: 1.6% of population, 7.4% of Arabs; fertility 2.00 (2021)."
+  },
+  {
+   "id": "cbs-druze-pop-2024",
+   "topic": "group-druze",
+   "measure": "Druze population of Israel",
+   "value": 154369,
+   "unit": "persons",
+   "population": "Druze permanent residents incl. Golan",
+   "breakdown": {
+    "citizens": 125400,
+    "share_total_pop": 1.5,
+    "share_arab_pop": 7.2,
+    "growth_2024_pct": 1.0,
+    "tfr_2024": 1.66,
+    "tfr_1964": 7.9,
+    "households_with_employed_member_2024_pct": 84.3,
+    "students_2023_24": 6200,
+    "to_BA_within_8yrs_pct": 43.2
+   },
+   "sample": null,
+   "fieldwork_date": "end-2024 / release April 2026 (date in secondary source unclear)",
+   "source_org": "CBS (via Hebrew Wikipedia)",
+   "source_title": "האוכלוסייה הדרוזית בישראל - לקט נתונים לרגל חג הנביא שועייב 2026",
+   "url": "https://www.cbs.gov.il/he/mediarelease/Pages/2026/האוכלוסייה-הדרוזית-בישראל-לקט-נתונים-לרגל-חג-הנביא-שועייב-2026.aspx",
+   "verified": "UNVERIFIED (Hebrew Wikipedia citing CBS 2026; CBS unreachable)",
+   "notes": "CBS site blocked our fetch; figures read from he.wikipedia.org/wiki/דרוזים_בישראל which cites this release. Citizen count 125,400 implies ~29,000 non-citizens, inconsistent with 20-40% Golan naturalization; check against CBS before use."
+  },
+  {
+   "id": "cbs-largest-localities",
+   "topic": "group-druze",
+   "measure": "Druze residents, largest localities",
+   "value": 17500,
+   "unit": "persons (Daliyat al-Karmel, 2021)",
+   "population": "Druze localities",
+   "breakdown": {
+    "Daliyat al-Karmel_2021": 17500,
+    "Yarka_2021": 17300,
+    "Maghar_2021": 13500
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "CBS",
+   "source_title": "Media release 129/2023",
+   "url": "https://www.jewishvirtuallibrary.org/jsource/Society_&_Culture/druze-stats2023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "cbs-employment-2022",
+   "topic": "group-druze",
+   "measure": "Employment and labor force participation",
+   "value": 50.8,
+   "unit": "% employment rate",
+   "population": "Druze aged 15+",
+   "breakdown": {
+    "muslim_employment": 42.6,
+    "lfp_men": 64.2,
+    "lfp_women": 40.2,
+    "households_with_employed": 81.2,
+    "adults_with_bagrut": 39.7,
+    "adults_with_degree": 14.8
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "CBS",
+   "source_title": "Media release 129/2023",
+   "url": "https://www.jewishvirtuallibrary.org/jsource/Society_&_Culture/druze-stats2023.pdf",
+   "verified": true,
+   "notes": "Bagrut and degree figures are shares of adults holding them, per the release wording as summarized."
+  },
+  {
+   "id": "tps-druze-2024",
+   "topic": "group-druze",
+   "measure": "Druze population and indicators (CBS via TPS)",
+   "value": 152000,
+   "unit": "persons",
+   "population": "Druze in Israel",
+   "breakdown": {
+    "children_0_14_pct": 23.8,
+    "to_BA_within_8yrs_pct": 43.5,
+    "students_2022_23": 5859,
+    "households_with_employed_pct": 83.8
+   },
+   "sample": null,
+   "fieldwork_date": "end-2022 as reported (likely end-2023)",
+   "source_org": "CBS via Tazpit Press Service",
+   "source_title": "As Druze Mark Holiday, Figures Show Tenfold Growth (2024-04-17)",
+   "url": "https://tps.co.il/articles/druze-community-has-grown-tenfold-since-israels-founding/",
+   "verified": true,
+   "notes": "Article dates 152,000 to 2022, conflicting with CBS 2023 release (150,000 end-2022)."
+  },
+  {
+   "id": "golan-citizens-2022",
+   "topic": "group-druze",
+   "measure": "Golan Druze with Israeli citizenship",
+   "value": 4300,
+   "unit": "persons",
+   "population": "Golan Druze (~21,000 per article)",
+   "breakdown": {
+    "approved_2021": 239,
+    "approved_H1_2022": 206,
+    "2010": 4
+   },
+   "sample": null,
+   "fieldwork_date": "mid-2022",
+   "source_org": "Shomrim (Population and Immigration Authority FOI data)",
+   "source_title": "The changing face of the Golan",
+   "url": "https://www.shomrim.news/eng/druze-gloan",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "golan-citizens-2024",
+   "topic": "group-druze",
+   "measure": "Golan Druze with Israeli citizenship",
+   "value": 20.45,
+   "unit": "% (~6,000 of 29,000+)",
+   "population": "Golan Druze",
+   "breakdown": {
+    "applications_2022": 438,
+    "approved_2022": 419,
+    "applications_2023": 406,
+    "approved_2023": 389,
+    "applications_2024_11mo": 352,
+    "approved_2024_11mo": 318,
+    "approved_2017_2021": 539
+   },
+   "sample": null,
+   "fieldwork_date": "2024 (article 2025-01-06)",
+   "source_org": "Times of Israel / Shomrim FOI from Population and Immigration Authority",
+   "source_title": "Taboo no more: One in five Golan Druze now holds Israeli citizenship",
+   "url": "https://www.timesofisrael.com/taboo-no-more-one-in-five-golan-druze-now-holds-israeli-citizenship/",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "golan-citizens-2026",
+   "topic": "group-druze",
+   "measure": "Golan Druze citizenship applications and share naturalized",
+   "value": 3750,
+   "unit": "applications in 2025",
+   "population": "Four Golan Druze villages",
+   "breakdown": {
+    "applications_2020_2026": 6779,
+    "annual_before_2025": "500-600",
+    "naturalized_Jan_Feb_2026": "nearly 1,000",
+    "share_Majdal_Shams": "~38%",
+    "share_other_villages": "~37-43%"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-03 (article 2026-03-15)",
+   "source_org": "Times of Israel (Tal Schneider)",
+   "source_title": "After years of hesitation, more Druze of the Golan Heights seek Israeli citizenship",
+   "url": "https://www.timesofisrael.com/after-years-of-hesitation-more-druze-of-the-golan-heights-seek-israeli-citizenship/",
+   "verified": "CONFIRMED",
+   "notes": "Annual figure 500-600 conflicts with ~400/yr in Jan 2025 ToI/Shomrim data."
+  },
+  {
+   "id": "druze-enlistment",
+   "topic": "group-druze",
+   "measure": "Druze men enlisting in IDF",
+   "value": 80,
+   "unit": "% (over)",
+   "population": "Druze men",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025 (article 2025-04-21)",
+   "source_org": "Georgetown Journal of International Affairs (Eve Kheir)",
+   "source_title": "The Druze Community in Israel: A Model of Minority Integration",
+   "url": "https://gjia.georgetown.edu/conflict-security/the-druze-community-in-israel-a-model-of-minority-integration/",
+   "verified": true,
+   "notes": "No primary IDF source found. Pew 2014-15: ~60% of Druze men surveyed had served (45%) or were serving (15%)."
+  },
+  {
+   "id": "pew-druze-service",
+   "topic": "group-druze",
+   "measure": "Druze men who served or are serving in IDF",
+   "value": 60,
+   "unit": "%",
+   "population": "Druze men in Pew sample",
+   "breakdown": {
+    "served": 45,
+    "serving": 15
+   },
+   "sample": 439,
+   "fieldwork_date": "2014-10 to 2015-05",
+   "source_org": "Pew Research Center",
+   "source_title": "5 facts about Israeli Druze (2016-03-21)",
+   "url": "https://www.pewresearch.org/fact-tank/2016/03/21/5-facts-about-israeli-druze-a-unique-religious-and-ethnic-group/",
+   "verified": true,
+   "notes": "Sample 439 is all Druze respondents; men subset smaller."
+  },
+  {
+   "id": "druze-career-soldiers",
+   "topic": "group-druze",
+   "measure": "Druze share of IDF career soldiers",
+   "value": 3,
+   "unit": "% (approx.)",
+   "population": "IDF career soldiers",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-05",
+   "source_org": "Times of Israel",
+   "source_title": "Former IDF commander Wajdi Sarhan launches first Druze political party in decades (2026-05-05)",
+   "url": "https://www.timesofisrael.com/former-idf-commander-wajdi-sarhan-launches-first-druze-political-party-in-decades/",
+   "verified": false,
+   "notes": "Stated in article; no primary IDF figure opened."
+  },
+  {
+   "id": "idi25-pride",
+   "topic": "group-druze",
+   "measure": "Proud to be Israeli",
+   "value": 77,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 30,
+    "Christians": 56
+   },
+   "sample": 31,
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only. Druze subsample about 31 (8.4% of 364 Arab respondents)."
+  },
+  {
+   "id": "idi25-belong",
+   "topic": "group-druze",
+   "measure": "Feel part of the State of Israel and its problems",
+   "value": 68,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 52.5,
+    "Christians": 56.5
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-optimism",
+   "topic": "group-druze",
+   "measure": "Optimistic about Israel's future",
+   "value": 81,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 42,
+    "Christians": 47
+   },
+   "sample": 31,
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only. Druze subsample about 31 (8.4% of 364 Arab respondents)."
+  },
+  {
+   "id": "idi25-trust-idf",
+   "topic": "group-druze",
+   "measure": "Trust the IDF",
+   "value": 84,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Druze_2024": 64,
+    "Muslims": 28,
+    "Christians": 34,
+    "Jews": 83.5
+   },
+   "sample": 31,
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only. Druze subsample about 31 (8.4% of 364 Arab respondents)."
+  },
+  {
+   "id": "idi25-trust-court",
+   "topic": "group-druze",
+   "measure": "Trust the Supreme Court",
+   "value": 61,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 38,
+    "Christians": 37
+   },
+   "sample": 31,
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only. Druze subsample about 31 (8.4% of 364 Arab respondents)."
+  },
+  {
+   "id": "idi25-court-too-active",
+   "topic": "group-druze",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 71,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 54,
+    "Christians": 62
+   },
+   "sample": 31,
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only. Druze subsample about 31 (8.4% of 364 Arab respondents)."
+  },
+  {
+   "id": "idi25-constitution",
+   "topic": "group-druze",
+   "measure": "Agree Israel needs a constitution",
+   "value": 83.5,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 77,
+    "Christians": 91
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-trust-police",
+   "topic": "group-druze",
+   "measure": "Trust the police",
+   "value": 39,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 24,
+    "Christians": 22
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-trust-govt",
+   "topic": "group-druze",
+   "measure": "Trust the government",
+   "value": 29,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 18,
+    "Christians": 13
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-trust-knesset",
+   "topic": "group-druze",
+   "measure": "Trust the Knesset",
+   "value": 19,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 18,
+    "Christians": 9.5
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-trust-shinbet",
+   "topic": "group-druze",
+   "measure": "Trust the Shin Bet",
+   "value": 42,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 24,
+    "Christians": 28
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-security",
+   "topic": "group-druze",
+   "measure": "State provides security for its citizens",
+   "value": 67,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 28.5,
+    "Christians": 44
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-welfare",
+   "topic": "group-druze",
+   "measure": "State manages to ensure citizens' welfare",
+   "value": 58,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 31,
+    "Christians": 32
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-safer",
+   "topic": "group-druze",
+   "measure": "Safer for Arabs to live in Israel than elsewhere",
+   "value": 68,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 52,
+    "Christians": 46.5
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-democracy-good",
+   "topic": "group-druze",
+   "measure": "Rate Israeli democracy good/very good",
+   "value": 36,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Muslims": 18,
+    "Christians": 15.5,
+    "Druze_poor": 55
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-count-on",
+   "topic": "group-druze",
+   "measure": "Israelis can always count on other Israelis to help",
+   "value": 74,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Druze_2022": 46,
+    "Druze_2024": 90,
+    "Muslims": 64,
+    "Christians": 59
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi25-jewish-arab-tension",
+   "topic": "group-druze",
+   "measure": "Name Jewish-Arab tension as most serious (approx.)",
+   "value": 33,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults (Arab sample)",
+   "breakdown": {
+    "Druze_2024": "~50"
+   },
+   "sample": "Arab sample n=364; Druze subsample not published (~25-30 by researcher estimate from population share)",
+   "fieldwork_date": "2025-05-04 to 2025-05-28",
+   "source_org": "Israel Democracy Institute, Viterbi Center",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "IDI itself says it limited religion breakdowns because of small Christian and Druze subsamples. Treat as indicative only."
+  },
+  {
+   "id": "idi16-identity",
+   "topic": "group-druze",
+   "measure": "Most important identity: religious (Druze)",
+   "value": 54,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults",
+   "breakdown": {
+    "Israeli": 37,
+    "Arab": 5,
+    "Palestinian": 0
+   },
+   "sample": "Arab sample n=362; Druze ~12% (~43)",
+   "fieldwork_date": "2016-05-03 to 2016-05-23",
+   "source_org": "Israel Democracy Institute, Guttman Center (Fadi Omar)",
+   "source_title": "Israeli Democracy Index 2016: Attitudes of Arab Citizens",
+   "url": "https://www.idi.org.il/media/8292/",
+   "verified": true,
+   "notes": "Full PDF URL is the long Hebrew slug at idi.org.il/media/8292/. English Wikipedia dates this survey to 2015; the report says May 2016."
+  },
+  {
+   "id": "idi16-pride",
+   "topic": "group-druze",
+   "measure": "Proud to be Israeli",
+   "value": 83,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults",
+   "breakdown": {
+    "Jews": 86,
+    "Christians": 64,
+    "Muslims": 49
+   },
+   "sample": "Arab sample n=362; Druze ~12% (~43)",
+   "fieldwork_date": "2016-05-03 to 2016-05-23",
+   "source_org": "Israel Democracy Institute, Guttman Center (Fadi Omar)",
+   "source_title": "Israeli Democracy Index 2016: Attitudes of Arab Citizens",
+   "url": "https://www.idi.org.il/media/8292/",
+   "verified": true,
+   "notes": "Full PDF URL is the long Hebrew slug at idi.org.il/media/8292/. English Wikipedia dates this survey to 2015; the report says May 2016."
+  },
+  {
+   "id": "idi16-trust-idf",
+   "topic": "group-druze",
+   "measure": "Trust the IDF",
+   "value": 81,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults",
+   "breakdown": {
+    "Christians": 44,
+    "Muslims": 22
+   },
+   "sample": "Arab sample n=362; Druze ~12% (~43)",
+   "fieldwork_date": "2016-05-03 to 2016-05-23",
+   "source_org": "Israel Democracy Institute, Guttman Center (Fadi Omar)",
+   "source_title": "Israeli Democracy Index 2016: Attitudes of Arab Citizens",
+   "url": "https://www.idi.org.il/media/8292/",
+   "verified": true,
+   "notes": "Full PDF URL is the long Hebrew slug at idi.org.il/media/8292/. English Wikipedia dates this survey to 2015; the report says May 2016."
+  },
+  {
+   "id": "idi16-trust-govt",
+   "topic": "group-druze",
+   "measure": "Trust the government",
+   "value": 48,
+   "unit": "% of Druze respondents",
+   "population": "Druze adults",
+   "breakdown": {
+    "Christians": 30,
+    "Muslims": 14
+   },
+   "sample": "Arab sample n=362; Druze ~12% (~43)",
+   "fieldwork_date": "2016-05-03 to 2016-05-23",
+   "source_org": "Israel Democracy Institute, Guttman Center (Fadi Omar)",
+   "source_title": "Israeli Democracy Index 2016: Attitudes of Arab Citizens",
+   "url": "https://www.idi.org.il/media/8292/",
+   "verified": true,
+   "notes": "Full PDF URL is the long Hebrew slug at idi.org.il/media/8292/. English Wikipedia dates this survey to 2015; the report says May 2016."
+  },
+  {
+   "id": "pew-settlements",
+   "topic": "group-druze",
+   "measure": "Settlements hurt Israel's security",
+   "value": 66,
+   "unit": "% of Druze",
+   "population": "Druze adults",
+   "breakdown": {
+    "Muslims": 61,
+    "Christians": 79,
+    "All Arabs": 63
+   },
+   "sample": 439,
+   "fieldwork_date": "2014-10 to 2015-05",
+   "source_org": "Pew Research Center",
+   "source_title": "Israel's Religiously Divided Society (2016-03-08)",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-arab-identity",
+   "topic": "group-druze",
+   "measure": "Identify ethnically as Arab",
+   "value": 71,
+   "unit": "% of Druze",
+   "population": "Druze adults",
+   "breakdown": {
+    "Muslims": 99,
+    "Christians": 96
+   },
+   "sample": 439,
+   "fieldwork_date": "2014-10 to 2015-05",
+   "source_org": "Pew Research Center",
+   "source_title": "Israel's Religiously Divided Society",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": "NOT RE-OPENED (2014-15 data; dated)",
+   "notes": ""
+  },
+  {
+   "id": "pew-religion",
+   "topic": "group-druze",
+   "measure": "Religion very important in life",
+   "value": 49,
+   "unit": "% of Druze",
+   "population": "Druze adults",
+   "breakdown": {},
+   "sample": 439,
+   "fieldwork_date": "2014-10 to 2015-05",
+   "source_org": "Pew Research Center",
+   "source_title": "Israel's Religiously Divided Society",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": true,
+   "notes": "Pew's fact-tank piece gives 72% saying their religious identity is very important (a different question)."
+  },
+  {
+   "id": "tau-2008-identity",
+   "topic": "group-druze",
+   "measure": "Identify as Druze-Israeli",
+   "value": 94,
+   "unit": "%",
+   "population": "Druze",
+   "breakdown": {},
+   "sample": "764 (per Wikipedia; not on opened page)",
+   "fieldwork_date": "2008",
+   "source_org": "Tel Aviv University (Yusuf Hassan)",
+   "source_title": "Study: 94% of Druze in Israel define themselves as Druze-Israeli (Ynet 2008-03-04)",
+   "url": "http://www.ynetnews.com/articles/0,7340,L-3514638,00.html",
+   "verified": true,
+   "notes": "Older than 2 years."
+  },
+  {
+   "id": "rally-2018",
+   "topic": "group-druze",
+   "measure": "Crowd at Druze-led rally against Nation-State Law, Rabin Square",
+   "value": 90000,
+   "unit": "persons (approx.)",
+   "population": "Rally attendees",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2018-08-04",
+   "source_org": "Ynet (Hebrew)",
+   "source_title": "דיסקין: 'הפודלים נשלחו לספר שקרים'",
+   "url": "https://www.ynet.co.il/articles/0,7340,L-5322446,00.html",
+   "verified": "CONFIRMED (estimate unattributed)",
+   "notes": "Ynet: 'כ-90 אלף דרוזים, לצד מתנגדים אחרים'. Estimator not named."
+  },
+  {
+   "id": "officers-2018",
+   "topic": "group-druze",
+   "measure": "Druze reserve officers protesting Nation-State Law",
+   "value": 100,
+   "unit": "officers",
+   "population": "",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2018-07-25",
+   "source_org": "Ynetnews",
+   "source_title": "Druze IDF officers protest against Nationality Law",
+   "url": "https://www.ynetnews.com/articles/0,7340,L-5316576,00.html",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "majdal-shams-2024",
+   "topic": "group-druze",
+   "measure": "Killed in rocket strike on Majdal Shams soccer field",
+   "value": 12,
+   "unit": "children",
+   "population": "",
+   "breakdown": {
+    "wounded": 44,
+    "ages": "10-16 (most)",
+    "citizens_among_dead": 0
+   },
+   "sample": null,
+   "fieldwork_date": "2024-07-27",
+   "source_org": "The National",
+   "source_title": "Majdal Shams residents appeal for peace after deadly Golan Heights strike (2024-07-31)",
+   "url": "https://www.thenationalnews.com/news/mena/2024/07/31/majdal-shams-residents-golan-heights/",
+   "verified": true,
+   "notes": "Wounded count varies (42 per Wikipedia, 44 per The National). 'None had Israeli citizenship' is from the local council via CNN (cited by Wikipedia; not opened)."
+  },
+  {
+   "id": "suwayda-2025",
+   "topic": "group-druze",
+   "measure": "Deaths in Suwayda fighting since 13 July 2025 (as of 17 July)",
+   "value": 516,
+   "unit": "persons",
+   "population": "",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-07-17",
+   "source_org": "Syrian Observatory for Human Rights via Wikipedia",
+   "source_title": "Southern Syria clashes (July-September 2025)",
+   "url": "https://en.wikipedia.org/wiki/Southern_Syria_clashes_(July%E2%80%93September_2025)",
+   "verified": false,
+   "notes": "SNHR gave 169 (13-17 July). Tolls rose later; not verified on SOHR site."
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "Apr 2019",
+   "party": "Blue and White",
+   "share_or_seats": 33.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Meretz",
+   "share_or_seats": 17.6,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Likud",
+   "share_or_seats": 13.3,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 9.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Kulanu",
+   "share_or_seats": 8.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Shas",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Hadash-Taal",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "Labor",
+   "share_or_seats": 2.9,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Apr 2019",
+   "party": "URWP",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Blue and White",
+   "share_or_seats": 48.8,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 13.7,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Labor-Gesher",
+   "share_or_seats": 11.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Likud",
+   "share_or_seats": 11.1,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Joint List",
+   "share_or_seats": 6.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Democratic Union",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Shas",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Sep 2019",
+   "party": "Yamina",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Blue and White",
+   "share_or_seats": 44.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Likud",
+   "share_or_seats": 17.0,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 13.5,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Joint List",
+   "share_or_seats": 11.5,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Labor-Gesher-Meretz",
+   "share_or_seats": 9.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2020",
+   "party": "Shas",
+   "share_or_seats": 2.6,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 28.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Likud",
+   "share_or_seats": 21.8,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Yesh Atid",
+   "share_or_seats": 10.6,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Blue and White",
+   "share_or_seats": 8.1,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Joint List",
+   "share_or_seats": 7.5,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Meretz",
+   "share_or_seats": 6.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Shas",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "New Hope",
+   "share_or_seats": 4.3,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Labor",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Mar 2021",
+   "party": "Yamina",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "National Unity",
+   "share_or_seats": 30.1,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Yisrael Beiteinu",
+   "share_or_seats": 18.4,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Meretz",
+   "share_or_seats": 14.9,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Likud",
+   "share_or_seats": 11.7,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Yesh Atid",
+   "share_or_seats": 7.9,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Hadash-Taal",
+   "share_or_seats": 5.3,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Labor",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Jewish Home",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Raam",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "Nov 2022",
+   "party": "Balad",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes, ten core Druze localities (Dayan Center definition), computed from CEC locality file",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  }
+ ]
+}

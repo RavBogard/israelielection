@@ -1,0 +1,4576 @@
+{
+ "datapoints": [
+  {
+   "id": "rz-size-cbs-2026",
+   "topic": "size",
+   "measure": "Share self-defined religious (dati)",
+   "value": 12.4,
+   "unit": "%",
+   "population": "Jews 20+",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS Social Survey",
+   "fieldwork_date": "2026 (released 2026-09-09)",
+   "source_org": "CBS via VIN News",
+   "source_title": "Israel enters 5787...",
+   "url": "https://vinnews.com/2026/09/09/israel-enters-5787-with-population-growth-high-birthrate-and-rising-emigration/",
+   "verified": "CONFIRMED",
+   "notes": "From class doc 06; CBS page not opened."
+  },
+  {
+   "id": "rz-size-cbs-2025",
+   "topic": "size",
+   "measure": "Share self-defined religious",
+   "value": 12.0,
+   "unit": "%",
+   "population": "Jews 20+",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS",
+   "fieldwork_date": "2025",
+   "source_org": "CBS via class doc 05",
+   "source_title": "",
+   "url": null,
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "rz-size-cbs-2009",
+   "topic": "size",
+   "measure": "Share self-defined religious",
+   "value": 11.7,
+   "unit": "%",
+   "population": "Jews 20+",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS",
+   "fieldwork_date": "2009",
+   "source_org": "CBS tec25 via class doc 05",
+   "source_title": "",
+   "url": null,
+   "verified": false,
+   "notes": ""
+  },
+  {
+   "id": "rz-size-idi-2025",
+   "topic": "size",
+   "measure": "National religious / Haredi leumi share of Jewish sample",
+   "value": 12.9,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025-05-04/2025-05-28",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, p.321",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": "IDI category \"national religious / Haredi leumi\" includes Hardal."
+  },
+  {
+   "id": "rz-size-pew-2015",
+   "topic": "size",
+   "measure": "Datiim share of Israeli Jews",
+   "value": 13,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "religiosity": "dati"
+   },
+   "sample": "5,601 adults; 3,789 Jews",
+   "fieldwork_date": "2014-10/2015-05",
+   "source_org": "Pew Research Center",
+   "source_title": "Israel's Religiously Divided Society",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": "CONFIRMED (dated 2014-15)",
+   "notes": ""
+  },
+  {
+   "id": "rz-size-jppi-2025",
+   "topic": "size",
+   "measure": "Religious Zionists share of general population",
+   "value": "16-17",
+   "unit": "%",
+   "population": "all Israelis",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "JPPI",
+   "source_title": "Annual Assessment 2025 s.8",
+   "url": "https://jppi.org.il/en/annual-assessment-of-the-jewish-people-2025-5785/s/8/",
+   "verified": "UNVERIFIED (not opened)",
+   "notes": "class doc 05"
+  },
+  {
+   "id": "rz-size-men2144",
+   "topic": "size",
+   "measure": "National-religious share of Jewish men 21-44",
+   "value": 14.7,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {},
+   "sample": "CBS Labor Force Survey",
+   "fieldwork_date": "2023-2024",
+   "source_org": "IDI (Finkelstein, Porat Hirsh)",
+   "source_title": "Reserve Duty During the Iron Swords War by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/57912",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-grade1-2000",
+   "topic": "growth",
+   "measure": "First-graders in state-religious stream",
+   "value": 16639,
+   "unit": "pupils",
+   "population": "first grade, Jewish streams",
+   "breakdown": {
+    "secular": 51680,
+    "state_religious": 16639,
+    "haredi": 16525,
+    "state_religious_share_of_jewish_pct": 19.6
+   },
+   "sample": "Education Ministry administrative data",
+   "fieldwork_date": "2000-01 school year",
+   "source_org": "Education Ministry via Times of Israel",
+   "source_title": "For the 1st time, religious 1st-graders in Israel outnumber secular ones",
+   "url": "https://www.timesofisrael.com/for-the-1st-time-religious-1st-graders-in-israel-outnumber-secular-ones-by-thousands/",
+   "verified": "CONFIRMED (arithmetic checked)",
+   "notes": "Share is [arith]. State-religious schools also enroll traditional families."
+  },
+  {
+   "id": "rz-grade1-2015",
+   "topic": "growth",
+   "measure": "First-graders in state-religious stream",
+   "value": 23083,
+   "unit": "pupils",
+   "population": "first grade, Jewish streams",
+   "breakdown": {
+    "secular": 66059,
+    "state_religious": 23083,
+    "haredi": 29967,
+    "state_religious_share_of_jewish_pct": 19.4
+   },
+   "sample": "Education Ministry administrative data",
+   "fieldwork_date": "2015-16 school year",
+   "source_org": "Education Ministry via Times of Israel",
+   "source_title": "For the 1st time, religious 1st-graders in Israel outnumber secular ones",
+   "url": "https://www.timesofisrael.com/for-the-1st-time-religious-1st-graders-in-israel-outnumber-secular-ones-by-thousands/",
+   "verified": true,
+   "notes": "Share is [arith]. State-religious schools also enroll traditional families."
+  },
+  {
+   "id": "rz-grade1-2025",
+   "topic": "growth",
+   "measure": "First-graders in state-religious stream",
+   "value": 29470,
+   "unit": "pupils",
+   "population": "first grade, Jewish streams",
+   "breakdown": {
+    "secular": 66185,
+    "state_religious": 29470,
+    "haredi": 42751,
+    "state_religious_share_of_jewish_pct": 21.3
+   },
+   "sample": "Education Ministry administrative data",
+   "fieldwork_date": "2025-26 school year",
+   "source_org": "Education Ministry via Times of Israel",
+   "source_title": "For the 1st time, religious 1st-graders in Israel outnumber secular ones",
+   "url": "https://www.timesofisrael.com/for-the-1st-time-religious-1st-graders-in-israel-outnumber-secular-ones-by-thousands/",
+   "verified": "CONFIRMED (arithmetic checked)",
+   "notes": "Share is [arith]. State-religious schools also enroll traditional families."
+  },
+  {
+   "id": "rz-tfr-haredi",
+   "topic": "growth",
+   "measure": "Total fertility rate",
+   "value": 6.45,
+   "unit": "children per woman",
+   "population": "Jewish women",
+   "breakdown": {
+    "religiosity": "haredi"
+   },
+   "sample": null,
+   "fieldwork_date": "recent (year not stated; likely 2019-21 avg)",
+   "source_org": "CBS via JPPI",
+   "source_title": "Annual Assessment 2023 s.5.4",
+   "url": "https://jppi.org.il/en/%D7%94%D7%A2%D7%A8%D7%9B%D7%94-%D7%A9%D7%A0%D7%AA%D7%99%D7%AA-2023/s/5.4/",
+   "verified": true,
+   "notes": "Data year uncertain."
+  },
+  {
+   "id": "rz-tfr-dati",
+   "topic": "growth",
+   "measure": "Total fertility rate",
+   "value": 3.88,
+   "unit": "children per woman",
+   "population": "Jewish women",
+   "breakdown": {
+    "religiosity": "dati"
+   },
+   "sample": null,
+   "fieldwork_date": "recent (year not stated; likely 2019-21 avg)",
+   "source_org": "CBS via JPPI",
+   "source_title": "Annual Assessment 2023 s.5.4",
+   "url": "https://jppi.org.il/en/%D7%94%D7%A2%D7%A8%D7%9B%D7%94-%D7%A9%D7%A0%D7%AA%D7%99%D7%AA-2023/s/5.4/",
+   "verified": "CONFIRMED (years not stated)",
+   "notes": "Data year uncertain. Secular page uses Taub ~1.6 (secular + traditional non-religious, 2023); different source and category."
+  },
+  {
+   "id": "rz-tfr-traditional-religious",
+   "topic": "growth",
+   "measure": "Total fertility rate",
+   "value": 2.82,
+   "unit": "children per woman",
+   "population": "Jewish women",
+   "breakdown": {
+    "religiosity": "traditional-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "recent (year not stated; likely 2019-21 avg)",
+   "source_org": "CBS via JPPI",
+   "source_title": "Annual Assessment 2023 s.5.4",
+   "url": "https://jppi.org.il/en/%D7%94%D7%A2%D7%A8%D7%9B%D7%94-%D7%A9%D7%A0%D7%AA%D7%99%D7%AA-2023/s/5.4/",
+   "verified": true,
+   "notes": "Data year uncertain."
+  },
+  {
+   "id": "rz-tfr-traditional-not-so-religious",
+   "topic": "growth",
+   "measure": "Total fertility rate",
+   "value": 2.34,
+   "unit": "children per woman",
+   "population": "Jewish women",
+   "breakdown": {
+    "religiosity": "traditional-not-so-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "recent (year not stated; likely 2019-21 avg)",
+   "source_org": "CBS via JPPI",
+   "source_title": "Annual Assessment 2023 s.5.4",
+   "url": "https://jppi.org.il/en/%D7%94%D7%A2%D7%A8%D7%9B%D7%94-%D7%A9%D7%A0%D7%AA%D7%99%D7%AA-2023/s/5.4/",
+   "verified": true,
+   "notes": "Data year uncertain."
+  },
+  {
+   "id": "rz-tfr-secular",
+   "topic": "growth",
+   "measure": "Total fertility rate",
+   "value": 2.0,
+   "unit": "children per woman",
+   "population": "Jewish women",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": null,
+   "fieldwork_date": "recent (year not stated; likely 2019-21 avg)",
+   "source_org": "CBS via JPPI",
+   "source_title": "Annual Assessment 2023 s.5.4",
+   "url": "https://jppi.org.il/en/%D7%94%D7%A2%D7%A8%D7%9B%D7%94-%D7%A9%D7%A0%D7%AA%D7%99%D7%AA-2023/s/5.4/",
+   "verified": "CONFIRMED (years not stated)",
+   "notes": "Data year uncertain. Secular page uses Taub ~1.6 (secular + traditional non-religious, 2023); different source and category."
+  },
+  {
+   "id": "rz-res-men-religious-2023",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 15.2,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-men-traditional-2023",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 11.2,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "traditional"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-men-secular-2023",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 11.2,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-men-religious-2025",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 4.3,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": "JPost report of same study says 4.1% for religious 2025. Source category is \"religious\" (CBS self-definition), close to but not the same as national-religious."
+  },
+  {
+   "id": "rz-res-men-traditional-2025",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 2.6,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "traditional"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-men-secular-2025",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 1.7,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-men-haredi-2025",
+   "topic": "military",
+   "measure": "Men in reserve service in an average month",
+   "value": 0.3,
+   "unit": "%",
+   "population": "Jewish men 21-44",
+   "breakdown": {
+    "religiosity": "haredi"
+   },
+   "sample": "CBS Labor Force Survey (~80,000/yr)",
+   "fieldwork_date": "2025",
+   "source_org": "IDI (Finkelstein, Portal)",
+   "source_title": "Reserve Service during the Swords of Iron War by Religious Self-Definition, 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-women-secular-2023",
+   "topic": "military",
+   "measure": "Women in reserve service in an average month",
+   "value": 2.0,
+   "unit": "%",
+   "population": "Jewish women 18-44",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": "CBS LFS",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI",
+   "source_title": "Reserve Service... 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-res-women-traditional-2023",
+   "topic": "military",
+   "measure": "Women in reserve service in an average month",
+   "value": 1.6,
+   "unit": "%",
+   "population": "Jewish women 18-44",
+   "breakdown": {
+    "religiosity": "traditional"
+   },
+   "sample": "CBS LFS",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI",
+   "source_title": "Reserve Service... 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-res-women-religious-2023",
+   "topic": "military",
+   "measure": "Women in reserve service in an average month",
+   "value": 0.7,
+   "unit": "%",
+   "population": "Jewish women 18-44",
+   "breakdown": {
+    "religiosity": "religious"
+   },
+   "sample": "CBS LFS",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI",
+   "source_title": "Reserve Service... 2023-2025",
+   "url": "https://en.idi.org.il/articles/65427",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-res-share-2023",
+   "topic": "military",
+   "measure": "National-religious share of male reservists",
+   "value": 21.9,
+   "unit": "%",
+   "population": "male reservists",
+   "breakdown": {},
+   "sample": "CBS LFS",
+   "fieldwork_date": "2023-10/2023-12",
+   "source_org": "IDI",
+   "source_title": "Reserve Duty During the Iron Swords War",
+   "url": "https://en.idi.org.il/articles/57912",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-res-share-2024",
+   "topic": "military",
+   "measure": "National-religious share of male reservists",
+   "value": 27.4,
+   "unit": "%",
+   "population": "male reservists",
+   "breakdown": {},
+   "sample": "CBS LFS",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Reserve Duty During the Iron Swords War",
+   "url": "https://en.idi.org.il/articles/57912",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-officers-1990s",
+   "topic": "military",
+   "measure": "Orthodox share of infantry officer course graduates",
+   "value": 2.5,
+   "unit": "%",
+   "population": "infantry officer graduates",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "early 1990s",
+   "source_org": "Reuven Gal (ed.) 2013 via CS Monitor",
+   "source_title": "In Israel's army, more officers are now religious",
+   "url": "https://www.csmonitor.com/World/Middle-East/2015/0417/In-Israel-s-army-more-officers-are-now-religious.-What-that-means",
+   "verified": true,
+   "notes": "secondary citation of a book"
+  },
+  {
+   "id": "rz-officers-2010s",
+   "topic": "military",
+   "measure": "Orthodox share of infantry officer course graduates",
+   "value": ">25",
+   "unit": "%",
+   "population": "infantry officer graduates",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "c. 2010-2013",
+   "source_org": "Reuven Gal (ed.) 2013 via CS Monitor",
+   "source_title": "same",
+   "url": "https://www.csmonitor.com/World/Middle-East/2015/0417/In-Israel-s-army-more-officers-are-now-religious.-What-that-means",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-officers-2007",
+   "topic": "military",
+   "measure": "Kippah-wearers among new combat officers",
+   "value": 50,
+   "unit": "% (approx)",
+   "population": "new combat officers",
+   "breakdown": {
+    "officer_school_cadets_pct": 40
+   },
+   "sample": null,
+   "fieldwork_date": "2007",
+   "source_org": "Maariv (Ben Caspit) via Arutz Sheva",
+   "source_title": "Half of IDF's New Combat Officers are Religious",
+   "url": "https://www.israelnationalnews.com/news/123492",
+   "verified": true,
+   "notes": "Press report; IDF figure unpublished."
+  },
+  {
+   "id": "rz-officers-2011",
+   "topic": "military",
+   "measure": "Religious-school graduates among ground-forces officer cadets",
+   "value": 42,
+   "unit": "%",
+   "population": "ground forces officer cadets",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2011",
+   "source_org": "Tablet (Hacohen & Butler, 2026-02-27)",
+   "source_title": "Israel's New Theology of Power",
+   "url": "https://www.tabletmag.com/sections/israel-middle-east/articles/israel-theology-power-religious-zionism",
+   "verified": true,
+   "notes": "Original source not named."
+  },
+  {
+   "id": "rz-vote-2021-rz-joint-list",
+   "topic": "vote",
+   "measure": "Recalled 2021 vote",
+   "value": 30,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "RZ joint list"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2021-yamina",
+   "topic": "vote",
+   "measure": "Recalled 2021 vote",
+   "value": 27,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Yamina"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2021-likud",
+   "topic": "vote",
+   "measure": "Recalled 2021 vote",
+   "value": 23,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": "Likud 2021 \"around 23%\""
+  },
+  {
+   "id": "rz-vote-2021-haredi-lists",
+   "topic": "vote",
+   "measure": "Recalled 2021 vote",
+   "value": 11,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Haredi lists"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2021-opposition-lists",
+   "topic": "vote",
+   "measure": "Recalled 2021 vote",
+   "value": 9,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Opposition lists"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-rz-joint-list",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 45,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "RZ joint list"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-likud",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 22.5,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-haredi-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 13,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Haredi lists"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-shas",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 10.5,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Shas"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-jewish-home",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 9,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Jewish Home"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-opposition-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 10.5,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "Opposition lists"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-national-unity",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 5.5,
+   "unit": "%",
+   "population": "national-religious voters incl. Torani/Hardal",
+   "breakdown": {
+    "party": "National Unity"
+   },
+   "sample": "20 pooled surveys, 10,694 Jewish voters",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI (Finkelstein, 2026-06-28)",
+   "source_title": "Voting Patterns of Jews in the 2022 Elections by Religious Self-Definition",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-vote-2022-non--rz-joint-list",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 42,
+   "unit": "%",
+   "population": "non-Hardal national-religious",
+   "breakdown": {
+    "party": "RZ joint list"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-non--likud",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 25,
+   "unit": "%",
+   "population": "non-Hardal national-religious",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-non--opposition-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 12.5,
+   "unit": "%",
+   "population": "non-Hardal national-religious",
+   "breakdown": {
+    "party": "Opposition lists"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-non--jewish-home",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 10.5,
+   "unit": "%",
+   "population": "non-Hardal national-religious",
+   "breakdown": {
+    "party": "Jewish Home"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-non--haredi-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 10,
+   "unit": "%",
+   "population": "non-Hardal national-religious",
+   "breakdown": {
+    "party": "Haredi lists"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-tora-rz-joint-list",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 57,
+   "unit": "%",
+   "population": "Torani/Hardal",
+   "breakdown": {
+    "party": "RZ joint list"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-tora-haredi-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 29,
+   "unit": "%",
+   "population": "Torani/Hardal",
+   "breakdown": {
+    "party": "Haredi lists"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-tora-likud",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 10,
+   "unit": "%",
+   "population": "Torani/Hardal",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-tora-jewish-home",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 2,
+   "unit": "%",
+   "population": "Torani/Hardal",
+   "breakdown": {
+    "party": "Jewish Home"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-vote-2022-tora-opposition-lists",
+   "topic": "vote",
+   "measure": "Recalled 2022 vote",
+   "value": 2,
+   "unit": "%",
+   "population": "Torani/Hardal",
+   "breakdown": {
+    "party": "Opposition lists"
+   },
+   "sample": "subset of 10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "UNVERIFIED (Hardal / non-Hardal split not on IDI page)",
+   "notes": "Removed from brief."
+  },
+  {
+   "id": "rz-list2022-comp-national-religious",
+   "topic": "vote",
+   "measure": "Composition of 2022 RZ joint-list voters",
+   "value": 43,
+   "unit": "%",
+   "population": "RZ joint list voters 2022",
+   "breakdown": {
+    "religiosity": "national-religious"
+   },
+   "sample": "10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-list2022-comp-traditional",
+   "topic": "vote",
+   "measure": "Composition of 2022 RZ joint-list voters",
+   "value": 37,
+   "unit": "%",
+   "population": "RZ joint list voters 2022",
+   "breakdown": {
+    "religiosity": "traditional"
+   },
+   "sample": "10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-list2022-comp-secular",
+   "topic": "vote",
+   "measure": "Composition of 2022 RZ joint-list voters",
+   "value": 14,
+   "unit": "%",
+   "population": "RZ joint list voters 2022",
+   "breakdown": {
+    "religiosity": "secular"
+   },
+   "sample": "10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-list2022-comp-haredi",
+   "topic": "vote",
+   "measure": "Composition of 2022 RZ joint-list voters",
+   "value": 6,
+   "unit": "%",
+   "population": "RZ joint list voters 2022",
+   "breakdown": {
+    "religiosity": "haredi"
+   },
+   "sample": "10,694",
+   "fieldwork_date": "2022-11/2023-10",
+   "source_org": "IDI",
+   "source_title": "Voting Patterns... 2022",
+   "url": "https://en.idi.org.il/articles/64807",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-rz-zehut",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 30,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "RZ-Zehut"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-likud",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 17,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Likud"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-otzma",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 12,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Otzma Yehudit"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-amcha",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 6,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Amcha Yisrael (Winter)"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-yashar",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 4,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Yashar"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-shas",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 4,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Shas"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-b'yachad",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 3,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "B'Yachad"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-zionist",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 3,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Zionist Home-Reservists"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-haachdut",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 2,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "HaAchdut (unidentified)"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-yisrael",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 1,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Yisrael Beiteinu"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-blue",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 1,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Blue and White"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-noam",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 1,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Noam"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": true,
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-undecided",
+   "topic": "poll2026",
+   "measure": "Vote intention",
+   "value": 13,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "party": "Undecided"
+   },
+   "sample": "508 (484 post-merger), MoE 4.4%",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet/Yedioth",
+   "source_title": "Which parties do national-religious voters support",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": "Party names translated from Hebrew via fetch tool; check original."
+  },
+  {
+   "id": "rz-poll2026-issue-security",
+   "topic": "poll2026",
+   "measure": "Most important issue",
+   "value": 35,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "issue": "security"
+   },
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-issue-jewish_identity",
+   "topic": "poll2026",
+   "measure": "Most important issue",
+   "value": 25,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "issue": "jewish_identity"
+   },
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-issue-draft_equality",
+   "topic": "poll2026",
+   "measure": "Most important issue",
+   "value": 15,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "issue": "draft_equality"
+   },
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-issue-settlement",
+   "topic": "poll2026",
+   "measure": "Most important issue",
+   "value": 14,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "issue": "settlement"
+   },
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-draft-rep-yes",
+   "topic": "draft",
+   "measure": "Feel government represented them well on Haredi draft exemption",
+   "value": 32,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {},
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-draft-rep-no",
+   "topic": "draft",
+   "measure": "Feel government did not represent them on Haredi draft exemption",
+   "value": 37,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {},
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-poll2026-homeless",
+   "topic": "poll2026",
+   "measure": "Feel politically homeless",
+   "value": 23,
+   "unit": "%",
+   "population": "national-religious voters",
+   "breakdown": {
+    "have_political_home": 69
+   },
+   "sample": "508",
+   "fieldwork_date": "2026-08-31/2026-09-02",
+   "source_org": "Dialog for Ynet",
+   "source_title": "same",
+   "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-2023",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court",
+   "value": 16,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-2024",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court",
+   "value": 15,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-2025",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court",
+   "value": 19,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-secular-2023",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court (secular, comparison)",
+   "value": 66.5,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-secular-2024",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court (secular, comparison)",
+   "value": 58.5,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-court-secular-2025",
+   "topic": "attitudes",
+   "measure": "Trust Supreme Court (secular, comparison)",
+   "value": 66,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.6",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-ag-2023",
+   "topic": "attitudes",
+   "measure": "Trust Attorney General",
+   "value": 11,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.18",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-ag-2024",
+   "topic": "attitudes",
+   "measure": "Trust Attorney General",
+   "value": 10,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "courts"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.18",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-ag-2025",
+   "topic": "attitudes",
+   "measure": "Trust Attorney General",
+   "value": 14,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.18",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-ag-secular-2025",
+   "topic": "attitudes",
+   "measure": "Trust Attorney General (secular, comparison)",
+   "value": 65,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.18",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-court-intervenes-2025",
+   "topic": "attitudes",
+   "measure": "Agree Supreme Court intervenes too much in government decisions",
+   "value": 75,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, text ch.3",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-constitution-2025",
+   "topic": "attitudes",
+   "measure": "Constitution quite/very important",
+   "value": 51,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "courts"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 3.9",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-idf-2023",
+   "topic": "attitudes",
+   "measure": "Trust IDF",
+   "value": 87,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "war"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-idf-2024",
+   "topic": "attitudes",
+   "measure": "Trust IDF",
+   "value": 83,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "war"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-idf-2025",
+   "topic": "attitudes",
+   "measure": "Trust IDF",
+   "value": 84,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "war"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-idf-secular-2025",
+   "topic": "attitudes",
+   "measure": "Trust IDF (secular, comparison)",
+   "value": 87,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "war"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.4",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-shinbet-2024",
+   "topic": "attitudes",
+   "measure": "Trust Shin Bet",
+   "value": 65,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "war"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.21",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-shinbet-2025",
+   "topic": "attitudes",
+   "measure": "Trust Shin Bet",
+   "value": 48,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "war"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.21",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-ensures-security-2022",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures security of its citizens",
+   "value": 32,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2022",
+    "topic": "war"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2022",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.29",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-ensures-security-2025",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures security of its citizens",
+   "value": 65,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "war"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.29",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-ensures-security-secular-2022",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures security (secular, comparison)",
+   "value": 52,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2022",
+    "topic": "war"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2022",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.29",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-ensures-security-secular-2025",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures security (secular, comparison)",
+   "value": 30,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "war"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.29",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-gov-2023",
+   "topic": "attitudes",
+   "measure": "Trust government",
+   "value": 49,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.12",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-gov-2024",
+   "topic": "attitudes",
+   "measure": "Trust government",
+   "value": 39,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.12",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-gov-2025",
+   "topic": "attitudes",
+   "measure": "Trust government",
+   "value": 36,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.12",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-gov-secular-2025",
+   "topic": "attitudes",
+   "measure": "Trust government (secular, comparison)",
+   "value": 9,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.12",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-knesset-2023",
+   "topic": "attitudes",
+   "measure": "Trust Knesset",
+   "value": 35,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2023",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2023",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.14",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-knesset-2024",
+   "topic": "attitudes",
+   "measure": "Trust Knesset",
+   "value": 27,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.14",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-knesset-2025",
+   "topic": "attitudes",
+   "measure": "Trust Knesset",
+   "value": 20,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.14",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-media-2024",
+   "topic": "attitudes",
+   "measure": "Trust media",
+   "value": 8,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.11",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-media-2025",
+   "topic": "attitudes",
+   "measure": "Trust media",
+   "value": 9,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.11",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-trust-media-secular-2025",
+   "topic": "attitudes",
+   "measure": "Trust media (secular, comparison)",
+   "value": 42.5,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.11",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": "CONFIRMED",
+   "notes": ""
+  },
+  {
+   "id": "rz-optimism-2024",
+   "topic": "attitudes",
+   "measure": "Optimistic about Israel's future",
+   "value": 88.5,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "other"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 1.16",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-optimism-2025",
+   "topic": "attitudes",
+   "measure": "Optimistic about Israel's future",
+   "value": 76.5,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 1.16",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-arab-emigration-2025",
+   "topic": "attitudes",
+   "measure": "Agree government should encourage Arab citizens to emigrate",
+   "value": 68,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "westbank"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, ch.5 text",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-separation-2025",
+   "topic": "attitudes",
+   "measure": "Support separating Jews and Arabs to preserve Jewish identity",
+   "value": 61,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "westbank"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, ch.5 text",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-arab-parties-gov-2025",
+   "topic": "attitudes",
+   "measure": "Support bringing Arab parties into government",
+   "value": 13,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "westbank"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, ch.5 text",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-relsec-tension-2024",
+   "topic": "attitudes",
+   "measure": "Religious-secular is most acute social tension",
+   "value": 7,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "religion"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.9",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-relsec-tension-2025",
+   "topic": "attitudes",
+   "measure": "Religious-secular is most acute social tension",
+   "value": 14,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "religion"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.9",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-welfare-2022",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures welfare of its citizens",
+   "value": 26,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2022",
+    "topic": "economy"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2022",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.32",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-welfare-2025",
+   "topic": "attitudes",
+   "measure": "Agree Israel ensures welfare of its citizens",
+   "value": 38,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "economy"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 2.32",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-stronger-groups-2022",
+   "topic": "attitudes",
+   "measure": "Sense of belonging to stronger groups in society",
+   "value": 75,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2022",
+    "topic": "economy"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2022",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.13",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-stronger-groups-2024",
+   "topic": "attitudes",
+   "measure": "Sense of belonging to stronger groups in society",
+   "value": 72,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2024",
+    "topic": "economy"
+   },
+   "sample": "IDI DI annual survey",
+   "fieldwork_date": "2024",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.13",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-stronger-groups-2025",
+   "topic": "attitudes",
+   "measure": "Sense of belonging to stronger groups in society",
+   "value": 71,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "economy"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.13",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-solidarity-high-2025",
+   "topic": "attitudes",
+   "measure": "Rate social solidarity high (7-10)",
+   "value": 48,
+   "unit": "%",
+   "population": "Jews 18+",
+   "breakdown": {
+    "religiosity": "national religious",
+    "year": "2025",
+    "topic": "other"
+   },
+   "sample": "1,205 Jews (total 1,569); nat-rel subsample ~155 [arith]",
+   "fieldwork_date": "2025",
+   "source_org": "IDI",
+   "source_title": "Israeli Democracy Index 2025, Table 4.1",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "rz-iran-op-2026",
+   "topic": "war",
+   "measure": "Support continuing Operation Roaring Lion (Iran)",
+   "value": 87,
+   "unit": "%",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "national religious",
+    "secular": 67.5
+   },
+   "sample": null,
+   "fieldwork_date": "2026-03-22/2026-03-26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Most Jewish Israelis Think PM Netanyahu's Motivation in the War is Security Related",
+   "url": "https://en.idi.org.il/articles/63856",
+   "verified": "CONFIRMED (reworded)",
+   "notes": ""
+  },
+  {
+   "id": "rz-budget-2026",
+   "topic": "draft",
+   "measure": "State budget decision was a political deal prioritizing sectoral interests",
+   "value": 37,
+   "unit": "%",
+   "population": "Jews",
+   "breakdown": {
+    "religiosity": "national religious",
+    "responsible_decision": 34,
+    "both": 15
+   },
+   "sample": null,
+   "fieldwork_date": "2026-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "same",
+   "url": "https://en.idi.org.il/articles/63856",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "jews-arrestfreeze-2026",
+   "topic": "draft",
+   "measure": "Support law halting arrests of yeshiva students who do not report",
+   "value": 25.3,
+   "unit": "%",
+   "population": "Jews",
+   "breakdown": {
+    "strongly_support": 17.3,
+    "somewhat_support": 8.0,
+    "oppose": 71.5
+   },
+   "sample": null,
+   "fieldwork_date": "2026-07",
+   "source_org": "IDI Israeli Voice Index July 2026",
+   "source_title": "data PDF",
+   "url": "https://en.idi.org.il/media/31733/july-2026-index-data.pdf",
+   "verified": "CONFIRMED (narrative only for national-religious)",
+   "notes": "National-religious: \"only a minority\" per narrative https://en.idi.org.il/articles/65483; exact figure in chart image. Conflict: INSS (Jul 23–26 2026) puts \"religious\" support for the same law at 56%."
+  },
+  {
+   "id": "rz-pew-settlements",
+   "topic": "westbank",
+   "measure": "Settlements help Israel's security",
+   "value": 68,
+   "unit": "%",
+   "population": "Datiim",
+   "breakdown": {
+    "hurt": 13
+   },
+   "sample": "3,789 Jews",
+   "fieldwork_date": "2014-10/2015-05",
+   "source_org": "Pew",
+   "source_title": "Israel's Religiously Divided Society",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": true,
+   "notes": "Old; read via fetch summary."
+  },
+  {
+   "id": "rz-pew-transfer",
+   "topic": "westbank",
+   "measure": "Favor transfer or expulsion of Arabs from Israel",
+   "value": 71,
+   "unit": "% (approx)",
+   "population": "Datiim",
+   "breakdown": {},
+   "sample": "3,789 Jews",
+   "fieldwork_date": "2014-10/2015-05",
+   "source_org": "Pew",
+   "source_title": "same",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": "CONFIRMED (dated 2014-15)",
+   "notes": "Fetch summary gave \"~71%\"; check exact on page."
+  },
+  {
+   "id": "rz-pew-halakha",
+   "topic": "religion",
+   "measure": "Favor halakha as state law for Jews",
+   "value": 69,
+   "unit": "%",
+   "population": "Datiim",
+   "breakdown": {},
+   "sample": "3,789 Jews",
+   "fieldwork_date": "2014-10/2015-05",
+   "source_org": "Pew",
+   "source_title": "same",
+   "url": "https://www.pewresearch.org/religion/2016/03/08/israels-religiously-divided-society/",
+   "verified": "CONFIRMED (dated 2014-15)",
+   "notes": "Old."
+  }
+ ],
+ "voting_pattern": [
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "National",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "National",
+   "share_or_seats": 3.22,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "National",
+   "share_or_seats": 26.46,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "National",
+   "share_or_seats": 2.74,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "National",
+   "share_or_seats": 5.99,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "National",
+   "share_or_seats": 5.78,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "National",
+   "share_or_seats": 26.13,
+   "basis": "% of valid votes, CEC Knesset 21 locality file expc.csv (sum of all rows)",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 78.2,
+   "basis": "voters/registered, 13986/17890; valid 13947",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 14.1,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 16.7,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 25.4,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 4.0,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 22.9,
+   "basis": "% of valid votes (13947 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Kedumim",
+   "share_or_seats": 83.7,
+   "basis": "voters/registered, 2183/2609; valid 2177",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Kedumim",
+   "share_or_seats": 50.5,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Kedumim",
+   "share_or_seats": 20.0,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Kedumim",
+   "share_or_seats": 19.2,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Kedumim",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Kedumim",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Kedumim",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Kedumim",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes (2177 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Beit El",
+   "share_or_seats": 85.1,
+   "basis": "voters/registered, 2825/3318; valid 2819",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Beit El",
+   "share_or_seats": 71.1,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Beit El",
+   "share_or_seats": 9.0,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Beit El",
+   "share_or_seats": 11.0,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Beit El",
+   "share_or_seats": 5.2,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Beit El",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Beit El",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Beit El",
+   "share_or_seats": 0.3,
+   "basis": "% of valid votes (2819 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 73.4,
+   "basis": "voters/registered, 3455/4704; valid 3442",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 45.8,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 6.7,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 33.4,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 5.2,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes (3442 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Efrat",
+   "share_or_seats": 79.0,
+   "basis": "voters/registered, 5488/6951; valid 5473",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Efrat",
+   "share_or_seats": 22.8,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Efrat",
+   "share_or_seats": 34.1,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Efrat",
+   "share_or_seats": 24.4,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Efrat",
+   "share_or_seats": 8.8,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Efrat",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Efrat",
+   "share_or_seats": 0.6,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Efrat",
+   "share_or_seats": 3.8,
+   "basis": "% of valid votes (5473 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "_turnout",
+   "locality": "Eli",
+   "share_or_seats": 79.4,
+   "basis": "voters/registered, 1672/2105; valid 1671",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Union of Right-Wing Parties (Jewish Home+Tkuma+Otzma)",
+   "locality": "Eli",
+   "share_or_seats": 55.7,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "New Right (Bennett/Shaked)",
+   "locality": "Eli",
+   "share_or_seats": 16.0,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Likud",
+   "locality": "Eli",
+   "share_or_seats": 18.8,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Zehut (Feiglin)",
+   "locality": "Eli",
+   "share_or_seats": 4.7,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Shas",
+   "locality": "Eli",
+   "share_or_seats": 1.4,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "UTJ",
+   "locality": "Eli",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-04",
+   "party": "Blue and White",
+   "locality": "Eli",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (1671 valid) cast in the locality, CEC Knesset 21",
+   "url": "https://media21.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "National",
+   "share_or_seats": 5.87,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "National",
+   "share_or_seats": 1.88,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "National",
+   "share_or_seats": 25.1,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "National",
+   "share_or_seats": 7.44,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "National",
+   "share_or_seats": 6.06,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "National",
+   "share_or_seats": 25.95,
+   "basis": "% of valid votes, CEC Knesset 22 locality file expc.csv (sum of all rows)",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 75.9,
+   "basis": "voters/registered, 13720/18078; valid 13669",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 31.1,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 3.2,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 24.9,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 5.3,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 23.2,
+   "basis": "% of valid votes (13669 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Kedumim",
+   "share_or_seats": 80.1,
+   "basis": "voters/registered, 2107/2632; valid 2102",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Kedumim",
+   "share_or_seats": 64.2,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Kedumim",
+   "share_or_seats": 11.4,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Kedumim",
+   "share_or_seats": 17.7,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Kedumim",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Kedumim",
+   "share_or_seats": 2.1,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Kedumim",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes (2102 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Beit El",
+   "share_or_seats": 81.6,
+   "basis": "voters/registered, 2746/3366; valid 2739",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Beit El",
+   "share_or_seats": 67.5,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Beit El",
+   "share_or_seats": 13.3,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Beit El",
+   "share_or_seats": 12.3,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Beit El",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Beit El",
+   "share_or_seats": 3.7,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Beit El",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes (2739 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 71.3,
+   "basis": "voters/registered, 3371/4728; valid 3356",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 32.1,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 23.2,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 32.4,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 2.9,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 3.0,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 2.1,
+   "basis": "% of valid votes (3356 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Efrat",
+   "share_or_seats": 75.1,
+   "basis": "voters/registered, 5309/7067; valid 5291",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Efrat",
+   "share_or_seats": 59.8,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Efrat",
+   "share_or_seats": 6.1,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Efrat",
+   "share_or_seats": 23.7,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Efrat",
+   "share_or_seats": 1.5,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Efrat",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Efrat",
+   "share_or_seats": 4.9,
+   "basis": "% of valid votes (5291 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "_turnout",
+   "locality": "Eli",
+   "share_or_seats": 76.4,
+   "basis": "voters/registered, 1640/2148; valid 1633",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Yamina",
+   "locality": "Eli",
+   "share_or_seats": 62.5,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Otzma Yehudit",
+   "locality": "Eli",
+   "share_or_seats": 10.3,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Likud",
+   "locality": "Eli",
+   "share_or_seats": 17.9,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Shas",
+   "locality": "Eli",
+   "share_or_seats": 2.4,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "UTJ",
+   "locality": "Eli",
+   "share_or_seats": 4.2,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2019-09",
+   "party": "Blue and White",
+   "locality": "Eli",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (1633 valid) cast in the locality, CEC Knesset 22",
+   "url": "https://media22.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "National",
+   "share_or_seats": 5.24,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "National",
+   "share_or_seats": 0.42,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "National",
+   "share_or_seats": 29.46,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "National",
+   "share_or_seats": 7.69,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "National",
+   "share_or_seats": 5.98,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "National",
+   "share_or_seats": 26.59,
+   "basis": "% of valid votes, CEC Knesset 23 locality file expc.csv (sum of all rows)",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Efrat",
+   "share_or_seats": 75.4,
+   "basis": "voters/registered, 5481/7271; valid 5470",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Efrat",
+   "share_or_seats": 52.7,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Efrat",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Efrat",
+   "share_or_seats": 34.8,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Efrat",
+   "share_or_seats": 1.9,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Efrat",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Efrat",
+   "share_or_seats": 5.5,
+   "basis": "% of valid votes (5470 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Beit El",
+   "share_or_seats": 80.1,
+   "basis": "voters/registered, 2692/3360; valid 2683",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Beit El",
+   "share_or_seats": 67.5,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Beit El",
+   "share_or_seats": 2.9,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Beit El",
+   "share_or_seats": 19.6,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Beit El",
+   "share_or_seats": 2.7,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Beit El",
+   "share_or_seats": 6.6,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Beit El",
+   "share_or_seats": 0.2,
+   "basis": "% of valid votes (2683 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 76.2,
+   "basis": "voters/registered, 13891/18240; valid 13848",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 28.9,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 30.9,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 5.7,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 24.5,
+   "basis": "% of valid votes (13848 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Eli",
+   "share_or_seats": 77.0,
+   "basis": "voters/registered, 1658/2154; valid 1654",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Eli",
+   "share_or_seats": 56.9,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Eli",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Eli",
+   "share_or_seats": 30.0,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Eli",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Eli",
+   "share_or_seats": 5.9,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Eli",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (1654 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Kedumim",
+   "share_or_seats": 79.9,
+   "basis": "voters/registered, 2085/2609; valid 2083",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Kedumim",
+   "share_or_seats": 61.1,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Kedumim",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Kedumim",
+   "share_or_seats": 28.9,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Kedumim",
+   "share_or_seats": 2.3,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Kedumim",
+   "share_or_seats": 3.0,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Kedumim",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (2083 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "_turnout",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 69.5,
+   "basis": "voters/registered, 3284/4726; valid 3268",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Yamina",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 32.9,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Otzma Yehudit",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 7.1,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Likud",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 45.1,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Shas",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 4.0,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "UTJ",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 6.3,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2020-03",
+   "party": "Blue and White",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes (3268 valid) cast in the locality, CEC Knesset 23",
+   "url": "https://media23.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "National",
+   "share_or_seats": 5.12,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "National",
+   "share_or_seats": 6.21,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "National",
+   "share_or_seats": 24.19,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "National",
+   "share_or_seats": 4.74,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "National",
+   "share_or_seats": 7.17,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "National",
+   "share_or_seats": 5.63,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "National",
+   "share_or_seats": 13.93,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "National",
+   "share_or_seats": 6.63,
+   "basis": "% of valid votes, CEC Knesset 24 locality file expc.csv (sum of all rows)",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Efrat",
+   "share_or_seats": 74.4,
+   "basis": "voters/registered, 5660/7611; valid 5644",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Efrat",
+   "share_or_seats": 25.5,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Efrat",
+   "share_or_seats": 43.0,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Efrat",
+   "share_or_seats": 16.4,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Efrat",
+   "share_or_seats": 5.3,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Efrat",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Efrat",
+   "share_or_seats": 0.6,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Efrat",
+   "share_or_seats": 2.4,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Efrat",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes (5644 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 74.6,
+   "basis": "voters/registered, 14036/18823; valid 13994",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 14.9,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 24.1,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 20.9,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 5.8,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 5.0,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 1.1,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 11.8,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 6.4,
+   "basis": "% of valid votes (13994 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Beit El",
+   "share_or_seats": 76.6,
+   "basis": "voters/registered, 2606/3402; valid 2600",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Beit El",
+   "share_or_seats": 74.8,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Beit El",
+   "share_or_seats": 11.3,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Beit El",
+   "share_or_seats": 9.5,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Beit El",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Beit El",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Beit El",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Beit El",
+   "share_or_seats": 0.0,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Beit El",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes (2600 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 63.7,
+   "basis": "voters/registered, 3031/4757; valid 3018",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 53.8,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 6.5,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 29.0,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 2.8,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 0.3,
+   "basis": "% of valid votes (3018 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Eli",
+   "share_or_seats": 75.2,
+   "basis": "voters/registered, 1681/2236; valid 1673",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Eli",
+   "share_or_seats": 58.9,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Eli",
+   "share_or_seats": 18.2,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Eli",
+   "share_or_seats": 16.0,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Eli",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Eli",
+   "share_or_seats": 2.2,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Eli",
+   "share_or_seats": 0.4,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Eli",
+   "share_or_seats": 0.6,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Eli",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes (1673 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "_turnout",
+   "locality": "Kedumim",
+   "share_or_seats": 77.4,
+   "basis": "voters/registered, 2060/2660; valid 2056",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Kedumim",
+   "share_or_seats": 56.2,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yamina",
+   "locality": "Kedumim",
+   "share_or_seats": 21.9,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Likud",
+   "locality": "Kedumim",
+   "share_or_seats": 16.5,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "New Hope",
+   "locality": "Kedumim",
+   "share_or_seats": 1.2,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Shas",
+   "locality": "Kedumim",
+   "share_or_seats": 1.7,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "UTJ",
+   "locality": "Kedumim",
+   "share_or_seats": 0.2,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Yesh Atid",
+   "locality": "Kedumim",
+   "share_or_seats": 0.3,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "Blue and White",
+   "locality": "Kedumim",
+   "share_or_seats": 0.3,
+   "basis": "% of valid votes (2056 valid) cast in the locality, CEC Knesset 24",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "National",
+   "share_or_seats": 10.84,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "National",
+   "share_or_seats": 23.41,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "National",
+   "share_or_seats": 1.19,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "National",
+   "share_or_seats": 9.08,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "National",
+   "share_or_seats": 8.25,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "National",
+   "share_or_seats": 5.88,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "National",
+   "share_or_seats": 17.79,
+   "basis": "% of valid votes, CEC Knesset 25 locality file expc.csv (sum of all rows)",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Efrat",
+   "share_or_seats": 73.0,
+   "basis": "voters/registered, 5798/7945; valid 5783",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Efrat",
+   "share_or_seats": 48.1,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Efrat",
+   "share_or_seats": 19.8,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Efrat",
+   "share_or_seats": 15.4,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Efrat",
+   "share_or_seats": 6.9,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Efrat",
+   "share_or_seats": 2.1,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Efrat",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Efrat",
+   "share_or_seats": 3.0,
+   "basis": "% of valid votes (5783 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Beit El",
+   "share_or_seats": 77.2,
+   "basis": "voters/registered, 2704/3503; valid 2698",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Beit El",
+   "share_or_seats": 83.2,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Beit El",
+   "share_or_seats": 9.7,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Beit El",
+   "share_or_seats": 2.5,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Beit El",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Beit El",
+   "share_or_seats": 2.1,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Beit El",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Beit El",
+   "share_or_seats": 0.1,
+   "basis": "% of valid votes (2698 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 74.9,
+   "basis": "voters/registered, 15097/20150; valid 15059",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 24.0,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 23.9,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 9.0,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 12.0,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 6.7,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 1.6,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Givat Shmuel",
+   "share_or_seats": 14.6,
+   "basis": "% of valid votes (15059 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Eli",
+   "share_or_seats": 72.9,
+   "basis": "voters/registered, 1690/2318; valid 1686",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Eli",
+   "share_or_seats": 75.3,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Eli",
+   "share_or_seats": 15.5,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Eli",
+   "share_or_seats": 3.5,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Eli",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Eli",
+   "share_or_seats": 2.0,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Eli",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Eli",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (1686 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Kedumim",
+   "share_or_seats": 76.0,
+   "basis": "voters/registered, 2064/2715; valid 2060",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Kedumim",
+   "share_or_seats": 72.7,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Kedumim",
+   "share_or_seats": 16.2,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Kedumim",
+   "share_or_seats": 5.6,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Kedumim",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Kedumim",
+   "share_or_seats": 1.8,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Kedumim",
+   "share_or_seats": 0.7,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Kedumim",
+   "share_or_seats": 0.5,
+   "basis": "% of valid votes (2060 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "_turnout",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 66.3,
+   "basis": "voters/registered, 3257/4914; valid 3249",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Religious Zionism joint list (RZ+Otzma+Noam)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 67.4,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Likud",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 21.3,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Jewish Home (Shaked)",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.3,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "National Unity",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 0.8,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Shas",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 3.4,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "UTJ",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "Yesh Atid",
+   "locality": "Kiryat Arba",
+   "share_or_seats": 1.0,
+   "basis": "% of valid votes (3249 valid) cast in the locality, CEC Knesset 25",
+   "url": "https://media25.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2021-03",
+   "party": "RZ joint list (RZ+Otzma+Noam)",
+   "locality": "National",
+   "share_or_seats": "6 seats",
+   "basis": "CEC result",
+   "url": "https://media24.bechirot.gov.il/files/expc.csv"
+  },
+  {
+   "election": "2022-11",
+   "party": "RZ joint list (RZ+Otzma+Noam)",
+   "locality": "National",
+   "share_or_seats": "14 seats (split 2022-11-20: RZ 7, Otzma 6, Noam 1)",
+   "basis": "class doc 11b",
+   "url": null
+  },
+  {
+   "election": "2026 polls (late Sept)",
+   "party": "RZ-Zehut",
+   "locality": "National",
+   "share_or_seats": "5-7 seats",
+   "basis": "Maariv, Ch13, Zman, Kan, Ch14 range; class doc 11b",
+   "url": null
+  },
+  {
+   "election": "2026 polls (late Sept)",
+   "party": "Otzma Yehudit",
+   "locality": "National",
+   "share_or_seats": "6-9 seats",
+   "basis": "same",
+   "url": null
+  },
+  {
+   "election": "2026 polls (late Sept)",
+   "party": "Amcha Yisrael",
+   "locality": "National",
+   "share_or_seats": "0-5 seats",
+   "basis": "same",
+   "url": null
+  }
+ ]
+}

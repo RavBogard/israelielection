@@ -1,0 +1,3116 @@
+{
+ "datapoints": [
+  {
+   "id": "pew-coexist-can-all-2013",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 50,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2013",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2013",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 46,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2013",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2013",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 74,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2013",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2014",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 40,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2014",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference. Pew Global Attitudes survey; differs from the Pew 2014-15 religion survey (Jews 43%) used on american-lens.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2014",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 37,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2014",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Pew Global Attitudes survey; differs from the Pew 2014-15 religion survey (Jews 43%) used on american-lens.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2014",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 64,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2014",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Pew Global Attitudes survey; differs from the Pew 2014-15 religion survey (Jews 43%) used on american-lens.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2017",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 44,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2017",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2017",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 40,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2017",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2017",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 61,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2017",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2023",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 35,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2023",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2023",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 32,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2023",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2023",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 41,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2023",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2024",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 26,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2024",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2024",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 19,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2024",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Pew table value.",
+   "verification": "CONFIRMED as 19 in Pew table (was chart-read ~20) (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2024",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 49,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "spring 2024",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2025",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 21,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2025",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 16,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2025",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 40,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-all-2026",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 17,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 1001,
+   "fieldwork_date": "2026-04-05/2026-05-06",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "Feasibility question, not preference.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-jews-2026",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 16,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-04-05/2026-05-06",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-can-arabs-2026",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 23,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2026-04-05/2026-05-06",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "2026: 46% of Arab respondents declined/don't know.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-cannot-all-2013",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 38,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2013",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2013",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 42,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2013",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2014",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 45,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2014",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2014",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 50,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2014",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2017",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 37,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2017",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 43,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2023",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 46,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2023",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 48,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2024",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 50,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2024",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 55,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2025",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 50,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2025",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 58,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-coexist-cannot-all-2026",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 56,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": null,
+   "fieldwork_date": "2026",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-coexist-cannot-jews-2026",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 64,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2026",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2026-arabs-noanswer",
+   "topic": "pew_trend",
+   "measure": "Don't know/refused, coexistence question",
+   "value": 46,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 1001,
+   "fieldwork_date": "2026-04-05/2026-05-06",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-2026-arabs-cannot",
+   "topic": "pew_trend",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% cannot)",
+   "value": 26,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 1001,
+   "fieldwork_date": "2026-04-05/2026-05-06",
+   "source_org": "Pew Research Center",
+   "source_title": "Many Israelis and Palestinians Say They Cannot Coexist Peacefully – and Explain Why",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pew-2025-can-left",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 54,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "ideology": "left"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-can-center",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 29,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "ideology": "center"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-can-right",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 7,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "ideology": "right"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-can-hilonim",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 25,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "religious_group": "Hilonim"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-can-masortim",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 11,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "religious_group": "Masortim"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-can-haredim",
+   "topic": "pew_breakdown",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 9,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "religious_group": "Haredim and Datiim"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-gaza-israel-should-govern",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 33,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "Israel should govern"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": "2024: Israel should govern 40%."
+  },
+  {
+   "id": "pew-2025-gaza-people-of-gaza-decide",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 16,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "People of Gaza decide"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-gaza-pa-unity-govt-without-abbas",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 10,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "PA unity govt without Abbas"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-gaza-pa-unity-govt-with-abbas",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 6,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "PA unity govt with Abbas"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-gaza-un",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 2,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "UN"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-gaza-hamas",
+   "topic": "day_after",
+   "measure": "Who should govern Gaza after the war",
+   "value": 1,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "option": "Hamas"
+   },
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pew-2025-settlements-help",
+   "topic": "context",
+   "measure": "Continued settlement building helps Israel's security",
+   "value": 44,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {},
+   "sample": 998,
+   "fieldwork_date": "2025-02-05/2025-03-11",
+   "source_org": "Pew Research Center",
+   "source_title": "Israeli Public Is Increasingly Skeptical About Lasting Peace",
+   "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/06/pg_2025.06.03_israel_report.pdf",
+   "verified": true,
+   "notes": "35% say hurts."
+  },
+  {
+   "id": "pi-2023-09-jews-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 38,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2023-09-jews-annexation_limited_rights",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians",
+   "value": 30,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2023-09-jews-status_quo",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Continuing the existing situation",
+   "value": 28,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2023-09-jews-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 11,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2023-09-arabs-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 69,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart."
+  },
+  {
+   "id": "pi-2023-09-arabs-annexation_limited_rights",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians",
+   "value": 12,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart."
+  },
+  {
+   "id": "pi-2023-09-arabs-status_quo",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Continuing the existing situation",
+   "value": 15,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart."
+  },
+  {
+   "id": "pi-2023-09-arabs-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 43,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "Each option rated separately. Sept 2023 values read from bar chart."
+  },
+  {
+   "id": "pi-2025-11-jews-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 20,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2025-11-jews-annexation_limited_rights",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians",
+   "value": 38,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2025-11-jews-status_quo",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Continuing the existing situation",
+   "value": 30,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2025-11-jews-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 9,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2025-11-arabs-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 74,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "Nov 2025 Arab values from Mar 2026 release comparison."
+  },
+  {
+   "id": "pi-2025-11-arabs-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 59,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "Nov 2025 Arab values from Mar 2026 release comparison."
+  },
+  {
+   "id": "pi-2026-03-jews-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 22.7,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-jews-annexation_limited_rights",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians",
+   "value": 37.7,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-jews-status_quo",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Continuing the existing situation",
+   "value": 31.1,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-jews-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 7.5,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-arabs-palestinian_state",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: The creation of an independent Palestinian state alongside the State of Israel",
+   "value": 70.8,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": "Arab subsample n=103 of 607.",
+   "verification": "CONFIRMED 70.8%; Arab subsample n=103 (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-arabs-annexation_limited_rights",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians",
+   "value": 11.6,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-arabs-status_quo",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: Continuing the existing situation",
+   "value": 11.7,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-arabs-binational_equal",
+   "topic": "peace_index_solutions",
+   "measure": "Support (very much + moderately) for: A binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians",
+   "value": 50.5,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index (Rosler, Yakter; iPanel)",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-twostate-right",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state alongside Israel (opinion-holders)",
+   "value": 3,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "right"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-twostate-moderate-right",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state alongside Israel (opinion-holders)",
+   "value": 14,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "moderate right"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-twostate-center",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state alongside Israel (opinion-holders)",
+   "value": 44,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "center"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-twostate-left",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state alongside Israel (opinion-holders)",
+   "value": 86,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "left"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-annex-right",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 64,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "right"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-annex-moderate-right",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 49,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "moderate right"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-annex-center",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 23,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "center"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-annex-left",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 3,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "camp": "left"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-twostate-coalition",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state (opinion-holders)",
+   "value": 8,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "vote": "coalition voters"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-annex-coalition",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 52,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "vote": "coalition voters"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2026-03-twostate-opposition",
+   "topic": "peace_index_camp",
+   "measure": "Support for Palestinian state (opinion-holders)",
+   "value": 49,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "vote": "opposition voters"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-annex-opposition",
+   "topic": "peace_index_camp",
+   "measure": "Support for annexation with limited rights (opinion-holders)",
+   "value": 21,
+   "unit": "%",
+   "population": "Jewish Israelis (opinion-holders)",
+   "breakdown": {
+    "vote": "opposition voters"
+   },
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pi-2023-09-jews-negotiations",
+   "topic": "peace_index_negotiations",
+   "measure": "Support for negotiations with the Palestinian Authority",
+   "value": 47,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 612,
+   "fieldwork_date": "2023-08-29/2023-09-05",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index 2023-09",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2025-11-jews-negotiations",
+   "topic": "peace_index_negotiations",
+   "measure": "Support for negotiations with the Palestinian Authority",
+   "value": 30,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 610,
+   "fieldwork_date": "2025-11-06/2025-11-13",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index 2025-11",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-jews-negotiations",
+   "topic": "peace_index_negotiations",
+   "measure": "Support for negotiations with the Palestinian Authority",
+   "value": 26,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 607,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index 2026-03",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-arabs-negotiations",
+   "topic": "peace_index_negotiations",
+   "measure": "Support for negotiations with the PA",
+   "value": 67,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {},
+   "sample": 103,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "78% in Nov 2025."
+  },
+  {
+   "id": "pi-2026-03-jews-expect-statusquo",
+   "topic": "peace_index",
+   "measure": "Most likely outcome: status quo continues",
+   "value": 48,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "pi-2026-03-jews-negotiations-peace",
+   "topic": "peace_index",
+   "measure": "Believe negotiations with PA will lead to peace in coming years",
+   "value": 13,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 504,
+   "fieldwork_date": "2026-03-23/2026-03-28",
+   "source_org": "Tel Aviv University Peace Index",
+   "source_title": "Peace Index March 2026",
+   "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "inss-2026-06-separation",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 27,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-two-state",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 25,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-annex-no-rights",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 25,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-unsure",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 10,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-separation-jews",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 32,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "inss-2026-06-annex-jews",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 31,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": "Option worded \"full annexation without civil rights\".",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "inss-2026-06-two-state-arabs",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 57,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-binational-arabs",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 21,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-annex-coalition",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 50,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "vote": "coalition"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-separation-opposition",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 40,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "vote": "opposition"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-two-state-opposition",
+   "topic": "inss_preferred",
+   "measure": "Preferred approach to the Palestinians (single choice: separation / two-state / full annexation without granting civil rights / binational / unsure)",
+   "value": 36,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "vote": "opposition"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-all-support",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 42,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-all-oppose",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 41,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "all"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-jews",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 36,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-arabs",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 66,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-opposition",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 61,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "vote": "opposition"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "inss-2026-06-abraham-pstate-coalition",
+   "topic": "normalization",
+   "measure": "Support expanding Abraham Accords in a framework including establishment of a Palestinian state",
+   "value": 20,
+   "unit": "%",
+   "population": "Israeli adults",
+   "breakdown": {
+    "vote": "coalition"
+   },
+   "sample": 957,
+   "fieldwork_date": "2026-06-16/2026-06-22",
+   "source_org": "INSS National Security Index",
+   "source_title": "Findings of the National Security Survey: June 2026",
+   "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2016-06-jews",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 53,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 500,
+   "fieldwork_date": "2016-06",
+   "source_org": "Palestinian-Israeli Pulse (TAU Evens Program + PSR)",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2020-09-jews",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 42,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 500,
+   "fieldwork_date": "2020-09",
+   "source_org": "Palestinian-Israeli Pulse (TAU Evens Program + PSR)",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2020-09-arabs",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 59,
+   "unit": "%",
+   "population": "Israeli Arabs",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 200,
+   "fieldwork_date": "2020-09",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-jews",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 34,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse (TAU Evens Program + PSR)",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-arabs",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 60,
+   "unit": "%",
+   "population": "Israeli Arabs",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 200,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2024-07-jews",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 21,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": 500,
+   "fieldwork_date": "2024-07",
+   "source_org": "Palestinian-Israeli Pulse (TAU Evens Program + PSR)",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://www.pcpsr.org/en/node/989",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2024-07-arabs",
+   "topic": "pulse_trend",
+   "measure": "Support for the two-state solution (general concept)",
+   "value": 72,
+   "unit": "%",
+   "population": "Israeli Arabs",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": 200,
+   "fieldwork_date": "2024-07",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse",
+   "url": "https://www.timesofisrael.com/poll-shows-mirror-images-of-fear-and-distrust-between-israelis-and-palestinians/",
+   "verified": false,
+   "notes": "2024 Arab figure from ToI; PSR page gave 69% for detailed package."
+  },
+  {
+   "id": "pulse-2022-12-left",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 83,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "left"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-center",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 56,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "center"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-right",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 16,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "right"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-secular",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 57,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "secular"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-masorti",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 20,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "masorti"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-national-religious",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 14,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "national religious"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-haredi",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 8,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "haredi"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-age-18-34",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 20,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "age 18-34"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-age-35-54",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 37,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "age 35-54"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2022-12-age-55+",
+   "topic": "pulse_breakdown",
+   "measure": "Support for the two-state solution (general)",
+   "value": 47,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {
+    "subgroup": "age 55+"
+   },
+   "sample": 500,
+   "fieldwork_date": "2022-12",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Joint Poll Summary Report, Jan 24 2023",
+   "url": "https://resolution.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/resolution/Summary%20Report_%20English_Joint%20Poll%2024%20Jan%202023.pdf",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2024-07-jews-annex",
+   "topic": "pulse_alternatives",
+   "measure": "Support annexation of West Bank without equal rights for Palestinians",
+   "value": 42,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2024-07-18/2024-07-29",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse July 2024",
+   "url": "https://www.pcpsr.org/en/node/989",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "pulse-2024-07-jews-confed",
+   "topic": "pulse_alternatives",
+   "measure": "Support confederation",
+   "value": 12,
+   "unit": "%",
+   "population": "Israeli Jews",
+   "breakdown": {},
+   "sample": 500,
+   "fieldwork_date": "2024-07-18/2024-07-29",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse July 2024",
+   "url": "https://www.pcpsr.org/en/node/989",
+   "verified": true,
+   "notes": "ToI reports 20%; PSR 12%."
+  },
+  {
+   "id": "pulse-2024-07-arabs-confed",
+   "topic": "pulse_alternatives",
+   "measure": "Support confederation",
+   "value": 52,
+   "unit": "%",
+   "population": "Israeli Arabs",
+   "breakdown": {},
+   "sample": 200,
+   "fieldwork_date": "2024-07-18/2024-07-29",
+   "source_org": "Palestinian-Israeli Pulse",
+   "source_title": "Palestine/Israel Pulse July 2024",
+   "url": "https://www.pcpsr.org/en/node/989",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-longrun-1994",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 47.2,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1994",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-1995",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 36.9,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1995",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-1996",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 45.9,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1996",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-1997",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 51.0,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1997",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-1998",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 49.3,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1998",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-1999",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 52.3,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "1999",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2000",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 49.8,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2000",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2002",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 57.5,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2002",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2003",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 65.0,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2003",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2006",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 54.5,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2006",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2007",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 70.3,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2007",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2008",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 68.8,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2008",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2009",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 62.6,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2009",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2012",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 61.6,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2012",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2015",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 52.4,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2017",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 46.9,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "idi-longrun-2018",
+   "topic": "longrun",
+   "measure": "Support for the two-state solution (as labeled by JVL chart attributed to IDI)",
+   "value": 46.8,
+   "unit": "%",
+   "population": "Jewish and Arab Israelis (per JVL label)",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "Israel Democracy Institute (attributed)",
+   "source_title": "Jewish Virtual Library compilation",
+   "url": "https://jewishvirtuallibrary.org/israeli-polls-regarding-peace-with-the-palestinians",
+   "verified": false,
+   "notes": "Original IDI source not found; do not chart until verified."
+  },
+  {
+   "id": "inss-2016-jews-twostate",
+   "topic": "longrun",
+   "measure": "Support for two-state solution",
+   "value": 59,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 800,
+   "fieldwork_date": "2016-11/2016-12",
+   "source_org": "INSS",
+   "source_title": "The National Security Index: Public Support for an Arrangement Based on the Two-State Solution",
+   "url": "https://www.inss.org.il/publication/national-security-index-public-support-arrangement-based-two-state-solution/",
+   "verified": true,
+   "notes": "Same piece says ~70% in 2003–2013."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-foreign",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 39,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "foreign affairs and security"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-economy",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 38,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "economy and cost of living"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-conscription",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 27,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "conscription"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-religion",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 26,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "religion and state"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-party",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 23,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "party leader"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-jews-judicial",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration in party choice",
+   "value": 18,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "factor": "judicial reform"
+   },
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Palestinian issue not offered as an option."
+  },
+  {
+   "id": "idi-2026-09-priority-arabs-crime",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration",
+   "value": 53.5,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "factor": "crime in Arab society"
+   },
+   "sample": 150,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations...",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-2026-09-priority-arabs-economy",
+   "topic": "priorities",
+   "measure": "Ranked first or second most important consideration",
+   "value": 46,
+   "unit": "%",
+   "population": "Arab Israelis",
+   "breakdown": {
+    "factor": "economy and cost of living"
+   },
+   "sample": 150,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations...",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-2026-09-oct7-central-jews",
+   "topic": "priorities",
+   "measure": "October 7 a central factor in vote choice",
+   "value": 68,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {},
+   "sample": 605,
+   "fieldwork_date": "2026-08-31/2026-09-03",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Reveal Their Main Considerations...",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Arabs: 32%."
+  },
+  {
+   "id": "idi-2023-11-twostate-usaid-left",
+   "topic": "idi",
+   "measure": "Should Israel pursue two-states direction after the war (Biden linking US aid)",
+   "value": 75,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "camp": "left"
+   },
+   "sample": 600,
+   "fieldwork_date": "2023-11-27/2023-11-30",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Sharply Divided on the Question of a Two-State Solution in Return for US Assistance",
+   "url": "https://en.idi.org.il/articles/51746",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-2023-11-twostate-usaid-center",
+   "topic": "idi",
+   "measure": "Should Israel pursue two-states direction after the war (Biden linking US aid)",
+   "value": 45,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "camp": "center"
+   },
+   "sample": 600,
+   "fieldwork_date": "2023-11-27/2023-11-30",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Sharply Divided on the Question of a Two-State Solution in Return for US Assistance",
+   "url": "https://en.idi.org.il/articles/51746",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "idi-2023-11-twostate-usaid-right",
+   "topic": "idi",
+   "measure": "Should Israel pursue two-states direction after the war (Biden linking US aid)",
+   "value": 21,
+   "unit": "%",
+   "population": "Jewish Israelis",
+   "breakdown": {
+    "camp": "right"
+   },
+   "sample": 600,
+   "fieldwork_date": "2023-11-27/2023-11-30",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Israelis Sharply Divided on the Question of a Two-State Solution in Return for US Assistance",
+   "url": "https://en.idi.org.il/articles/51746",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "knesset-2024-07-17",
+   "topic": "knesset",
+   "measure": "Votes for resolution opposing a Palestinian state west of the Jordan",
+   "value": 68,
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {
+    "against": 9
+   },
+   "sample": null,
+   "fieldwork_date": "2024-07-17",
+   "source_org": "Knesset (via Times of Israel)",
+   "source_title": "Knesset votes overwhelmingly against Palestinian statehood",
+   "url": "https://www.timesofisrael.com/knesset-votes-overwhelmingly-against-palestinian-statehood-days-before-pms-us-trip/",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "knesset-2025-07-23",
+   "topic": "knesset",
+   "measure": "Votes for non-binding sovereignty declaration",
+   "value": 71,
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {
+    "against": 13
+   },
+   "sample": null,
+   "fieldwork_date": "2025-07-23",
+   "source_org": "Knesset (via Ynet)",
+   "source_title": "Knesset approves declaration to apply Israeli sovereignty to West Bank",
+   "url": "https://www.ynetnews.com/article/bkxfw9algl",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "knesset-2025-10-22",
+   "topic": "knesset",
+   "measure": "Votes for preliminary reading of bill annexing all settlements (Maoz)",
+   "value": 25,
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {
+    "against": 24
+   },
+   "sample": null,
+   "fieldwork_date": "2025-10-22",
+   "source_org": "Knesset (via Times of Israel)",
+   "source_title": "MKs pass preliminary reading of West Bank annexation bill",
+   "url": "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "recognition-2025-09",
+   "topic": "recognition",
+   "measure": "UN member states recognizing Palestine",
+   "value": 157,
+   "unit": "of 193",
+   "population": "UN member states",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-09-23",
+   "source_org": "Al Jazeera",
+   "source_title": "Which are the 150+ countries that have recognised Palestine as of 2025?",
+   "url": "https://aljazeera.com/news/2025/9/23/which-are-the-150-countries-that-have-recognised-palestine-as-of-2025",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "us-jews-pew-2020-coexist",
+   "topic": "american_jews",
+   "measure": "Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other? (% can)",
+   "value": 63,
+   "unit": "%",
+   "population": "U.S. Jewish adults",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2019-11-19/2020-06-03",
+   "source_org": "Pew Research Center",
+   "source_title": "U.S. Jews' connections with and attitudes toward Israel",
+   "url": "https://www.pewresearch.org/religion/2021/05/11/u-s-jews-connections-with-and-attitudes-toward-israel/",
+   "verified": true,
+   "notes": "Sample (~4,700 Jews) from Pew methodology, not opened.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "us-jews-ajc-2019-demil-state",
+   "topic": "american_jews",
+   "measure": "Favor a two-state solution through establishment of a demilitarized Palestinian state on the West Bank",
+   "value": 64,
+   "unit": "%",
+   "population": "U.S. Jewish adults",
+   "breakdown": {
+    "oppose": 26,
+    "no opinion": 10
+   },
+   "sample": 1006,
+   "fieldwork_date": "2019-04-10/2019-05-07",
+   "source_org": "American Jewish Committee",
+   "source_title": "AJC 2019 Survey of American Jewish Opinion",
+   "url": "https://www.ajc.org/news/survey2019",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "us-jews-pew-2024-twostate-best",
+   "topic": "american_jews",
+   "measure": "Two-state solution is the best possible way to resolve the conflict",
+   "value": 46,
+   "unit": "%",
+   "population": "U.S. Jewish adults",
+   "breakdown": {},
+   "sample": 1941,
+   "fieldwork_date": "2024-02-13/2024-02-25",
+   "source_org": "Pew Research Center",
+   "source_title": "Majority in U.S. Say Israel Has Valid Reasons for Fighting",
+   "url": "https://www.pewresearch.org/politics/2024/03/21/majority-in-u-s-say-israel-has-valid-reasons-for-fighting-fewer-say-the-same-about-hamas/",
+   "verified": true,
+   "notes": "All U.S. adults: 40%.",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "us-jews-pew-2024-one-israeli",
+   "topic": "american_jews",
+   "measure": "One country with an Israeli government is the best way",
+   "value": 22,
+   "unit": "%",
+   "population": "U.S. Jewish adults",
+   "breakdown": {},
+   "sample": 1941,
+   "fieldwork_date": "2024-02-13/2024-02-25",
+   "source_org": "Pew Research Center",
+   "source_title": "Majority in U.S. Say Israel Has Valid Reasons for Fighting",
+   "url": "https://www.pewresearch.org/politics/2024/03/21/majority-in-u-s-say-israel-has-valid-reasons-for-fighting-fewer-say-the-same-about-hamas/",
+   "verified": false,
+   "notes": "Approximate; read from chart via summary."
+  },
+  {
+   "id": "us-jews-pew-2026-israeli-govt-fav",
+   "topic": "american_jews",
+   "measure": "Favorable view of the Israeli government",
+   "value": 47,
+   "unit": "%",
+   "population": "U.S. Jewish adults",
+   "breakdown": {
+    "israeli_people_favorable": 83
+   },
+   "sample": null,
+   "fieldwork_date": "2026-05-04/2026-05-17",
+   "source_org": "Pew Research Center",
+   "source_title": "Americans' views of Israelis have grown increasingly negative",
+   "url": "https://www.pewresearch.org/short-reads/2026/07/09/americans-views-of-israelis-have-grown-increasingly-negative-but-views-of-palestinians-have-held-fairly-steady/",
+   "verified": true,
+   "notes": ""
+  }
+ ],
+ "party_positions": [
+  {
+   "party_id": "likud",
+   "party": "Likud",
+   "position": "Opposes. Declined questionnaire (\"does not participate in questionnaires\"). Netanyahu: \"as long as I am prime minister, no Palestinian state will arise\" (Aug 9, 2026).",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "Declined questionnaire CONFIRMED; Netanyahu Aug 9 quote not checked (checked 2026-10-04)"
+  },
+  {
+   "party_id": "shas",
+   "party": "Shas",
+   "position": "Opposes a Palestinian state; not central.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "utj",
+   "party": "United Torah Judaism",
+   "position": "No unified policy; not a central campaign issue. Agudah faction voted for Oct 2025 annexation bill.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30"
+  },
+  {
+   "party_id": "rz",
+   "party": "Religious Zionism–Zehut",
+   "position": "Opposes; says settlement has eliminated the idea of a Palestinian state: \"We have carried out an enormous, unprecedented revolution in settlement in Judea and Samaria...\"",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "otzma",
+   "party": "Otzma Yehudit",
+   "position": "Opposes; full Israeli sovereignty; dismantle the Palestinian Authority.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "Not surfaced by this topic's fetch; confirmed on the same Ynet article in the west-bank verification (checked 2026-10-04)"
+  },
+  {
+   "party_id": "noam",
+   "party": "Noam",
+   "position": "Leader Avi Maoz sponsored Oct 2025 bill to annex all West Bank settlements. Not in Ynet questionnaire.",
+   "source_title": "MKs pass preliminary reading of West Bank annexation bill",
+   "url": "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/",
+   "date": "2025-10-22",
+   "verification": "Not refetched (checked 2026-10-04)"
+  },
+  {
+   "party_id": "amcha",
+   "party": "Amcha Yisrael",
+   "position": "\"Our position is that a Palestinian state will never be established alongside us...\"",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "yashar",
+   "party": "Yashar!",
+   "position": "\"The establishment of a Palestinian state is not on the agenda as far as we are concerned.\" Supports strengthening blocs and new communities legally.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "byachad",
+   "party": "B'Yachad",
+   "position": "\"We support Jewish settlement anywhere it is carried out legally. We oppose a Palestinian state...\" Area C as future sovereign territory.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "democrats",
+   "party": "The Democrats",
+   "position": "\"Israel is a Jewish and democratic state, and in order to remain so we must strive for separation...\" as part of a regional move with the US and moderate Arab states; evacuate illegal outposts.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "yb",
+   "party": "Yisrael Beiteinu",
+   "position": "Dismantle the PA (\"a terrorist organization specializing in diplomatic terrorism\"); apply Israeli law to Area C.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "bluewhite",
+   "party": "Blue and White",
+   "position": "\"The party supports strengthening settlement in Judea and Samaria, with an emphasis on the Jordan Valley...\"; framework similar to Trump plan, no settlement evacuation.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "reservists",
+   "party": "Reservists–Economic Party",
+   "position": "\"The party supports sovereignty through actions, not words...\"; supports settlement.",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "Not surfaced by this topic's fetch; confirmed on the same Ynet article in the west-bank verification (checked 2026-10-04)"
+  },
+  {
+   "party_id": "raam",
+   "party": "Ra'am",
+   "position": "\"Ra'am supports advancing a negotiated two-state solution in which a Palestinian state would be established...\"",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "party_id": "jointlist",
+   "party": "Joint List",
+   "position": "Palestinian statehood alongside Israel; settlements \"must be evacuated immediately and without delay\", a \"war crime\".",
+   "source_title": "Annexation, settlements or separation: where Israel's parties stand on the West Bank",
+   "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+   "date": "2026-09-30",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  }
+ ]
+}

@@ -1,0 +1,3185 @@
+{
+ "datapoints": [
+  {
+   "id": "trust-sc-jews-2003",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 69,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2003",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2003",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 76,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2003",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2004",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 76,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2004",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2004",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 81,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2004",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2005",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 71,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2005",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2005",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 73,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2005",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2006",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 65,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2006",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2006",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 73,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2006",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2007",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 57,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2007",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2007",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 64,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2007",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2008",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 50,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2008",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2008",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 35,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2008",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2009",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 54,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2009",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2009",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 29,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2009",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2010",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 56,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2010",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2010",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 26,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2010",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2011",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 69,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2011",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2011",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 69,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2011",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2012",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 72,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2012",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2012",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 78,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2012",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2013",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 63,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2013",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2013",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 50,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2013",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2014",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 62,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2014",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2014",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 60,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2014",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2015",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 62,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2015",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 63,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2015",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2016",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 57,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2016",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2016",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 52,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2016",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2017",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 57,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2017",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 54,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2017",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2018",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 55,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2018",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 36,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2018",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2019",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 55,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2019",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 56,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2019",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2020",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 52,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2020",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2020",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 60,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2020",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2021",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 48,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2021",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 44,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2022",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 41,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2022",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 40,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2022",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2023-06",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 42,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2023-06",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 26,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2023-12",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 42.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-12",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Dec 2023 point from Israeli Voice Index; 2025 PDF Appendix 2 p.290 Israeli Voice Index value, different survey from the Democracy Index; do not read the Arab 26 -> 53 -> 26 as a trend.",
+   "verification": "CONFIRMED (checked 2026-10-04); this value comes from the Israeli Voice Index, not the annual Democracy Index (table footnote)"
+  },
+  {
+   "id": "trust-sc-arabs-2023-12",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 53,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-12",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Dec 2023 point from Israeli Voice Index; 2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile Israeli Voice Index value, different survey from the Democracy Index; do not read the Arab 26 -> 53 -> 26 as a trend.",
+   "verification": "CONFIRMED (checked 2026-10-04); this value comes from the Israeli Voice Index, not the annual Democracy Index (table footnote)"
+  },
+  {
+   "id": "trust-sc-jews-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 39,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 26,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-jews-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 42,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": "2025: 1,205",
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arabs-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court (very much + quite a lot)",
+   "value": 40,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": "2025: 364",
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Appendix 2 p.290; Arab sample ±5.1%, volatile",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-left-2023-06",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 80,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-left-2023-12",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 88,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-12",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-left-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 80,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-left-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 83,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-center-2023-06",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 63,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-center-2023-12",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 67,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-12",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-center-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 60,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-center-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 68,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-right-2023-06",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 26,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-right-2023-12",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 21,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2023-12",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-right-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 21,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2024",
+   "url": "https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-right-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 21.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2024 PDF Table 2.11; 2025 PDF Fig 2.7",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-haredim-2023",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 11,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Haredim"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-haredim-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 7,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Haredim"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-haredim-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 3,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Haredim"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-national-religious-2023",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 16,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "National religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-national-religious-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 15,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "National religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-national-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 19,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "National religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-religious-2023",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 24,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-religious-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 22,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 21,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-non-religious-2023",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 36,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional non-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-non-religious-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 40,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional non-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-traditional-non-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 40,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional non-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-secular-2023",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 66.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-secular-2024",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 58.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular"
+   },
+   "sample": null,
+   "fieldwork_date": "2024",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-secular-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 66,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "2025 PDF Table 2.6; 2023 = June 2023",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-secular-left-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 87,
+   "unit": "percent",
+   "population": "Secular Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular",
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "trust-sc-secular-center-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 77,
+   "unit": "percent",
+   "population": "Secular Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular",
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "trust-sc-secular-right-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 42,
+   "unit": "percent",
+   "population": "Secular Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular",
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "trust-sc-vote2022-labor",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 84,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Labor"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-yesh-atid",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 80.5,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Yesh Atid"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-national-unity",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 76.5,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "National Unity"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-yisrael-beytenu",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 66.5,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Yisrael Beytenu"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-hadash-taal",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 44,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Hadash-Ta'al"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-raam",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 37,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Ra'am"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-likud",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 19,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Likud"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-shas",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 11,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Shas"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-religious-zionism",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 10,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "Religious Zionism"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-vote2022-united-torah-judaism",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 6,
+   "unit": "percent",
+   "population": "Total sample",
+   "breakdown": {
+    "vote_2022": "United Torah Judaism"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Fig 2.8",
+   "verification": "CONFIRMED against IDI PDF table (checked 2026-10-04)"
+  },
+  {
+   "id": "trust-sc-arab-druze-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 61,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Druze"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "trust-sc-arab-muslims-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 38,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Muslims"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "trust-sc-arab-christians-2025",
+   "topic": "issue-courts",
+   "measure": "Express trust in the Supreme Court",
+   "value": 37,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Christians"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.67"
+  },
+  {
+   "id": "intervene-jews-2021",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 52,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34"
+  },
+  {
+   "id": "intervene-arabs-2021",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 56,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2021",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34"
+  },
+  {
+   "id": "intervene-jews-2023",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 50,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34"
+  },
+  {
+   "id": "intervene-arabs-2023",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 66,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2023",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34"
+  },
+  {
+   "id": "intervene-jews-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 50,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "intervene-arabs-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 55.5,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": null,
+   "fieldwork_date": "2025",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "Appendix 2 p.304, Q34",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "intervene-right-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 72,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.150"
+  },
+  {
+   "id": "intervene-left-disagree-2025",
+   "topic": "issue-courts",
+   "measure": "Disagree the Supreme Court intervenes too much",
+   "value": 87.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.150"
+  },
+  {
+   "id": "intervene-center-disagree-2025",
+   "topic": "issue-courts",
+   "measure": "Disagree the Supreme Court intervenes too much",
+   "value": 70,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.150"
+  },
+  {
+   "id": "intervene-haredim-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 93.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Haredim"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-national-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 75,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "National religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-traditional-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 71,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-traditional-non-religious-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 54.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Traditional non-religious"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-secular-disagree-2025",
+   "topic": "issue-courts",
+   "measure": "Disagree the Supreme Court intervenes too much",
+   "value": 68,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "religiosity": "Secular"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-age-18-34-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 59,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "age": "18-34"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-age-35-54-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 51,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "age": "35-54"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-age-55+-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 41,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "age": "55+"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-arab-druze-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 71,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Druze"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-arab-christians-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 62,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Christians"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "intervene-arab-muslims-2025",
+   "topic": "issue-courts",
+   "measure": "Agree the Supreme Court intervenes too much in government decisions",
+   "value": 54,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "religion": "Muslims"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-05",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "The Israeli Democracy Index 2025",
+   "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+   "verified": true,
+   "notes": "p.151"
+  },
+  {
+   "id": "overhaul-good-2023-01",
+   "topic": "issue-courts",
+   "measure": "Levin plan is good",
+   "value": 31,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "718",
+   "fieldwork_date": "2023-01-23/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2023",
+   "url": "https://en.idi.org.il/articles/47607",
+   "verified": true,
+   "notes": "Read via summarizing fetch",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "overhaul-bad-2023-01",
+   "topic": "issue-courts",
+   "measure": "Levin plan is bad",
+   "value": 43,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "718",
+   "fieldwork_date": "2023-01-23/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2023",
+   "url": "https://en.idi.org.il/articles/47607",
+   "verified": true,
+   "notes": "25% undecided; read via summarizing fetch",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "overhaul-support-coalition-2023-01",
+   "topic": "issue-courts",
+   "measure": "Support the Levin plan",
+   "value": 63,
+   "unit": "percent",
+   "population": "Coalition voters",
+   "breakdown": {
+    "vote": "coalition"
+   },
+   "sample": "718",
+   "fieldwork_date": "2023-01-23/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2023",
+   "url": "https://en.idi.org.il/articles/47607",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "overhaul-oppose-opposition-2023-01",
+   "topic": "issue-courts",
+   "measure": "Oppose the Levin plan",
+   "value": 80,
+   "unit": "percent",
+   "population": "Opposition voters",
+   "breakdown": {
+    "vote": "opposition"
+   },
+   "sample": "718",
+   "fieldwork_date": "2023-01-23/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2023",
+   "url": "https://en.idi.org.il/articles/47607",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "strike-laws-support-2023-02",
+   "topic": "issue-courts",
+   "measure": "Court should be able to strike laws that conflict with Basic Laws",
+   "value": 66,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "756",
+   "fieldwork_date": "2023-02-09/13",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Only a Minority of Israelis Support the Proposed Judicial Overhaul",
+   "url": "https://en.idi.org.il/articles/47968",
+   "verified": true,
+   "notes": "Opposition voters 87%, coalition 44%"
+  },
+  {
+   "id": "strike-laws-support-opp-2023-02",
+   "topic": "issue-courts",
+   "measure": "Court should be able to strike laws that conflict with Basic Laws",
+   "value": 87,
+   "unit": "percent",
+   "population": "Opposition voters",
+   "breakdown": {
+    "vote": "opposition"
+   },
+   "sample": "756",
+   "fieldwork_date": "2023-02-09/13",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Only a Minority of Israelis Support the Proposed Judicial Overhaul",
+   "url": "https://en.idi.org.il/articles/47968",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "strike-laws-support-coal-2023-02",
+   "topic": "issue-courts",
+   "measure": "Court should be able to strike laws that conflict with Basic Laws",
+   "value": 44,
+   "unit": "percent",
+   "population": "Coalition voters",
+   "breakdown": {
+    "vote": "coalition"
+   },
+   "sample": "756",
+   "fieldwork_date": "2023-02-09/13",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Only a Minority of Israelis Support the Proposed Judicial Overhaul",
+   "url": "https://en.idi.org.il/articles/47968",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "selection-agree-2023-02",
+   "topic": "issue-courts",
+   "measure": "Keep requirement that politicians and justices agree on appointments",
+   "value": 63,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "756",
+   "fieldwork_date": "2023-02-09/13",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Only a Minority of Israelis Support the Proposed Judicial Overhaul",
+   "url": "https://en.idi.org.il/articles/47968",
+   "verified": true,
+   "notes": "39% of Likud voters backed permanent coalition majority"
+  },
+  {
+   "id": "advisers-oppose-2023-02",
+   "topic": "issue-courts",
+   "measure": "Oppose making ministry legal advisers political appointees",
+   "value": 58,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "756",
+   "fieldwork_date": "2023-02-09/13",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Only a Minority of Israelis Support the Proposed Judicial Overhaul",
+   "url": "https://en.idi.org.il/articles/47968",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "reasonableness-oppose-2023",
+   "topic": "issue-courts",
+   "measure": "Oppose barring court from voiding grossly unreasonable decisions",
+   "value": 59,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "3,077",
+   "fieldwork_date": "2023-02/04",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Unreasonableness and the Judicial Overhaul - Survey Analysis",
+   "url": "https://en.idi.org.il/articles/50098",
+   "verified": true,
+   "notes": "14% completely support"
+  },
+  {
+   "id": "overhaul-support-2025-01",
+   "topic": "issue-courts",
+   "measure": "Support the judicial overhaul",
+   "value": 36.5,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "1,202",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": "Also JPost article-837518",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "overhaul-oppose-2025-01",
+   "topic": "issue-courts",
+   "measure": "Oppose the judicial overhaul",
+   "value": 55,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "1,202",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "overhaul-oppose-jews-2025-01",
+   "topic": "issue-courts",
+   "measure": "Oppose the judicial overhaul",
+   "value": 50.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": "1,000",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "overhaul-oppose-arabs-2025-01",
+   "topic": "issue-courts",
+   "measure": "Oppose the judicial overhaul",
+   "value": 79,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": "202",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": "",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "selection-balanced-2025-01",
+   "topic": "issue-courts",
+   "measure": "Keep balanced selection committee",
+   "value": 53,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "1,202",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": "27% favor more political representation; Right 41%"
+  },
+  {
+   "id": "overhaul-top-priority-2025-01",
+   "topic": "issue-courts",
+   "measure": "Judicial overhaul should be government's top priority",
+   "value": 8.5,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "1,202",
+   "fieldwork_date": "2024-12-31/2025-01-06",
+   "source_org": "Israel Democracy Institute",
+   "source_title": "Democracy on the Frontlines Conference Survey",
+   "url": "https://en.idi.org.il/articles/57945",
+   "verified": true,
+   "notes": ""
+  },
+  {
+   "id": "shinbet-court-total-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 56.5,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-total-ignore-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 31,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-jews-ignore-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 36,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-arabs-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 71,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arabs"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-left-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 96.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-center-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 73,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Center"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-right-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 32,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Right"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "shinbet-court-likud-obey-2025-04",
+   "topic": "issue-courts",
+   "measure": "Government should obey/ignore a court ruling against firing the Shin Bet head",
+   "value": 30,
+   "unit": "percent",
+   "population": "Likud 2022 voters",
+   "breakdown": {
+    "vote_2022": "Likud"
+   },
+   "sample": "748",
+   "fieldwork_date": "2025-03-31/04-06",
+   "source_org": "Israel Democracy Institute (reported by Times of Israel)",
+   "source_title": "Poll: 31% of public says government should ignore court on Shin Bet head's ouster",
+   "url": "https://www.timesofisrael.com/poll-31-of-public-says-government-should-ignore-court-on-shin-bet-heads-ouster/",
+   "verified": false,
+   "notes": "ToI page opened; IDI original not opened"
+  },
+  {
+   "id": "barak-not-liberal-jews-agree-2026-01",
+   "topic": "issue-courts",
+   "measure": "Agree/disagree with Aharon Barak that Israel is no longer a liberal democracy",
+   "value": 47.2,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jewish"
+   },
+   "sample": "755 (604 Heb, 151 Ar)",
+   "fieldwork_date": "2026-01-25/29",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2026 data",
+   "url": "https://en.idi.org.il/media/30266/chart-israeli-voice-index-january.pdf",
+   "verified": true,
+   "notes": "strongly + somewhat combined"
+  },
+  {
+   "id": "barak-not-liberal-jews-disagree-2026-01",
+   "topic": "issue-courts",
+   "measure": "Agree/disagree with Aharon Barak that Israel is no longer a liberal democracy",
+   "value": 49.2,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jewish"
+   },
+   "sample": "755 (604 Heb, 151 Ar)",
+   "fieldwork_date": "2026-01-25/29",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2026 data",
+   "url": "https://en.idi.org.il/media/30266/chart-israeli-voice-index-january.pdf",
+   "verified": true,
+   "notes": "strongly + somewhat combined"
+  },
+  {
+   "id": "barak-not-liberal-arabs-agree-2026-01",
+   "topic": "issue-courts",
+   "measure": "Agree/disagree with Aharon Barak that Israel is no longer a liberal democracy",
+   "value": 60.3,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arab"
+   },
+   "sample": "755 (604 Heb, 151 Ar)",
+   "fieldwork_date": "2026-01-25/29",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2026 data",
+   "url": "https://en.idi.org.il/media/30266/chart-israeli-voice-index-january.pdf",
+   "verified": true,
+   "notes": "strongly + somewhat combined"
+  },
+  {
+   "id": "barak-not-liberal-arabs-disagree-2026-01",
+   "topic": "issue-courts",
+   "measure": "Agree/disagree with Aharon Barak that Israel is no longer a liberal democracy",
+   "value": 25.3,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arab"
+   },
+   "sample": "755 (604 Heb, 151 Ar)",
+   "fieldwork_date": "2026-01-25/29",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index January 2026 data",
+   "url": "https://en.idi.org.il/media/30266/chart-israeli-voice-index-january.pdf",
+   "verified": true,
+   "notes": "strongly + somewhat combined"
+  },
+  {
+   "id": "advance-overhaul-jews-correct-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 31.8,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jewish"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-jews-not-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 53.8,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jewish"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-jews-dk-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 14.4,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jewish"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-arabs-correct-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 34.3,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arab"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-arabs-not-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 41.8,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arab"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-arabs-dk-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 23.9,
+   "unit": "percent",
+   "population": "Arab adult citizens",
+   "breakdown": {
+    "group": "Arab"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%"
+  },
+  {
+   "id": "advance-overhaul-total-correct-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 32.2,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Israeli"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "advance-overhaul-total-not-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 51.8,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Israeli"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "advance-overhaul-total-dk-2026-03",
+   "topic": "issue-courts",
+   "measure": "Correct at this time to advance Levin's judicial overhaul",
+   "value": 16.0,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Israeli"
+   },
+   "sample": "756 (604 Heb, 152 Ar)",
+   "fieldwork_date": "2026-03-22/26",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israeli Voice Index March 2026 data",
+   "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+   "verified": true,
+   "notes": "certain + think combined; ±3.56%",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "vote-factor-judicial-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 18,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews",
+    "factor": "judicial reform"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "vote-factor-judicial-left-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 22.5,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "political_orientation": "Left",
+    "factor": "judicial reform"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice"
+  },
+  {
+   "id": "vote-factor-security-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 39,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews",
+    "factor": "foreign affairs/security"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "vote-factor-economy-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 38,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews",
+    "factor": "economy"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "vote-factor-draft-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 27,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews",
+    "factor": "conscription"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "vote-factor-religion-state-2026-09",
+   "topic": "issue-courts",
+   "measure": "Rate party's position on factor as important to vote choice",
+   "value": 26,
+   "unit": "percent",
+   "population": "Jewish adults",
+   "breakdown": {
+    "group": "Jews",
+    "factor": "religion-state"
+   },
+   "sample": "605 Jews",
+   "fieldwork_date": "2026-08-31/09-03",
+   "source_org": "IDI Israeli Voice Index",
+   "source_title": "Israelis Reveal Their Main Considerations in Deciding Which Party to Vote for in October",
+   "url": "https://en.idi.org.il/articles/66177",
+   "verified": true,
+   "notes": "Read via summarizing fetch; first+second choice",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reichman-trust-supreme-court-2026-01",
+   "topic": "issue-courts",
+   "measure": "Trust in supreme court (very high + high)",
+   "value": 43,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "810",
+   "fieldwork_date": "2026-01-11/13",
+   "source_org": "Reichman University Institute for Liberty and Responsibility",
+   "source_title": "Public Trust Report January 2026",
+   "url": "https://www.runi.ac.il/media/t4vltbvk/publictrust12026english.pdf",
+   "verified": true,
+   "notes": "Online; different scale from IDI"
+  },
+  {
+   "id": "reichman-trust-attorney-general-2026-01",
+   "topic": "issue-courts",
+   "measure": "Trust in attorney general (very high + high)",
+   "value": 41,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "810",
+   "fieldwork_date": "2026-01-11/13",
+   "source_org": "Reichman University Institute for Liberty and Responsibility",
+   "source_title": "Public Trust Report January 2026",
+   "url": "https://www.runi.ac.il/media/t4vltbvk/publictrust12026english.pdf",
+   "verified": true,
+   "notes": "Online; different scale from IDI"
+  },
+  {
+   "id": "reichman-trust-government-2026-01",
+   "topic": "issue-courts",
+   "measure": "Trust in government (very high + high)",
+   "value": 21,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "810",
+   "fieldwork_date": "2026-01-11/13",
+   "source_org": "Reichman University Institute for Liberty and Responsibility",
+   "source_title": "Public Trust Report January 2026",
+   "url": "https://www.runi.ac.il/media/t4vltbvk/publictrust12026english.pdf",
+   "verified": true,
+   "notes": "Online; different scale from IDI"
+  },
+  {
+   "id": "reichman-trust-knesset-2026-01",
+   "topic": "issue-courts",
+   "measure": "Trust in knesset (very high + high)",
+   "value": 16,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": "810",
+   "fieldwork_date": "2026-01-11/13",
+   "source_org": "Reichman University Institute for Liberty and Responsibility",
+   "source_title": "Public Trust Report January 2026",
+   "url": "https://www.runi.ac.il/media/t4vltbvk/publictrust12026english.pdf",
+   "verified": true,
+   "notes": "Online; different scale from IDI"
+  },
+  {
+   "id": "sc-vacancies-2026",
+   "topic": "issue-courts",
+   "measure": "Supreme Court seats vacant (of 15)",
+   "value": 4,
+   "unit": "seats",
+   "population": "Supreme Court",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026",
+   "source_org": "Wikipedia",
+   "source_title": "Supreme Court of Israel",
+   "url": "https://en.wikipedia.org/wiki/Supreme_Court_of_Israel",
+   "verified": true,
+   "notes": "JTA: six more retirements within three years",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "reasonableness-ruling-2024",
+   "topic": "issue-courts",
+   "measure": "Justices voting to strike reasonableness amendment",
+   "value": 8,
+   "unit": "of 15",
+   "population": "Supreme Court",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2024-01-01",
+   "source_org": "Wikipedia / NPR",
+   "source_title": "2023 Israeli judicial reform",
+   "url": "https://en.wikipedia.org/wiki/2023_Israeli_judicial_reform",
+   "verified": true,
+   "notes": "12-3 that court may review Basic Laws",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "selection-law-vote-2025",
+   "topic": "issue-courts",
+   "measure": "Knesset votes for judicial selection amendment",
+   "value": 67,
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2025-03-27",
+   "source_org": "Wikipedia",
+   "source_title": "2025 Israeli judicial reform",
+   "url": "https://en.wikipedia.org/wiki/2025_Israeli_judicial_reform",
+   "verified": true,
+   "notes": "Opposition boycotted",
+   "verification": "CONFIRMED: 67 votes, \"late March 2025\"; exact day not on page (checked 2026-10-04)"
+  },
+  {
+   "id": "ag-split-first-reading-2026",
+   "topic": "issue-courts",
+   "measure": "Knesset first-reading vote on AG split bill (for)",
+   "value": 65,
+   "unit": "votes",
+   "population": "Knesset",
+   "breakdown": {
+    "against": 47
+   },
+   "sample": null,
+   "fieldwork_date": "2026-06-02",
+   "source_org": "Jerusalem Post",
+   "source_title": "Knesset votes in favor of bill to split role of attorney-general",
+   "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-898054",
+   "verified": true,
+   "notes": "Final passage not confirmed",
+   "verification": "CONFIRMED (checked 2026-10-04)"
+  },
+  {
+   "id": "lower-court-vacancies-2026-05",
+   "topic": "issue-courts",
+   "measure": "Magistrate and district court vacancies",
+   "value": 51,
+   "unit": "posts",
+   "population": "Courts",
+   "breakdown": {},
+   "sample": null,
+   "fieldwork_date": "2026-05-31",
+   "source_org": "Times of Israel",
+   "source_title": "High Court orders justice minister to convene Judicial Selection Committee",
+   "url": "https://www.timesofisrael.com/high-court-orders-justice-minister-to-convene-judicial-selection-committee/",
+   "verified": true,
+   "notes": "68 selected June 28, 2026"
+  },
+  {
+   "id": "constitution-support-2025-12",
+   "topic": "issue-courts",
+   "measure": "Support establishing a formal constitution",
+   "value": 71,
+   "unit": "percent",
+   "population": "Israeli adults",
+   "breakdown": {
+    "group": "Total"
+   },
+   "sample": null,
+   "fieldwork_date": "2025-12",
+   "source_org": "unknown (cited by Wikipedia)",
+   "source_title": "2026 Israeli legislative election",
+   "url": "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election",
+   "verified": false,
+   "notes": "Poll not opened; pollster unknown",
+   "verification": "No named pollster; keep out of the brief (checked 2026-10-04)"
+  }
+ ],
+ "party_positions": [
+  {
+   "party_id": "likud",
+   "party": "Likud",
+   "position": "No platform; 'does not participate in questionnaires'. Record: 2023 package, 2025 selection law. Levin (Kan recordings, Aug 2026): 'You'll simply go extinct.'",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "rz",
+   "party": "Religious Zionism–Zehut",
+   "position": "Secret-ballot selection of justices; split AG role; public hearings for nominees; 61-vote override; restrict interim orders and standing. Zehut: abolish the committee, elect justices directly.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "otzma",
+   "party": "Otzma Yehudit",
+   "position": "Backed 2023 reforms and political control of appointments; 2026 platform pending.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "shas",
+   "party": "Shas",
+   "position": "'Fundamentally reform the judicial system and return power to the people and their elected representatives'; no detailed plan.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "utj",
+   "party": "United Torah Judaism",
+   "position": "'The Supreme Court has accumulated excessive power'; no detailed plan.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "noam",
+   "party": "Noam",
+   "position": "Not found.",
+   "source_title": null,
+   "url": null,
+   "date": null
+  },
+  {
+   "party_id": "amcha",
+   "party": "Amcha Yisrael",
+   "position": "Reduce court power; remove Bar Association from appointments; narrow reasonableness; add a judicial tier.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "yashar",
+   "party": "Yashar!",
+   "position": "Repeal selection law and replace via Basic Law; oppose override; clearer rules for judicial review via Basic Law; constitution based on Declaration of Independence.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "byachad",
+   "party": "B'Yachad",
+   "position": "Basic Law defining branch powers and Basic Law enactment; repeal appointments law; Declaration of Independence as Basic Law; 8-year PM term limit.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "yb",
+   "party": "Yisrael Beiteinu",
+   "position": "Written constitution approved by referendum; amendments need 80 MKs.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "democrats",
+   "party": "The Democrats",
+   "position": "Priority is court delays and judge shortage; intermediate appeals court; opposes 2023 reform; defends AG.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "bluewhite",
+   "party": "Blue and White",
+   "position": "Limit Supreme Court intervention; clarify Basic Laws; oversight of prosecutors; stronger Knesset oversight.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "reservists",
+   "party": "Reservists–Economic Party",
+   "position": "Override with 72+ votes; narrow reasonableness; 61 votes to pass Basic Laws; constitution.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "jointlist",
+   "party": "Joint List",
+   "position": "Support reforms strengthening democracy; preserve judicial independence; protect minority rights.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  },
+  {
+   "party_id": "raam",
+   "party": "Ra'am",
+   "position": "No current position; previously opposed abolishing reasonableness and the power shift.",
+   "source_title": "Israel election 2026: where every party stands on the judicial overhaul and Supreme Court",
+   "url": "https://www.ynetnews.com/article/hkcjtk1cme",
+   "date": "2026-09-22"
+  }
+ ]
+}
