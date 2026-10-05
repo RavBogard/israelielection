@@ -77,6 +77,22 @@ Done:
   as the site's established tokens. Relief: every panel is titled and value-labelled; full
   table view on /polls.
 
+- Coalition Builder default is now "Average" = mean of the latest poll per pollster in the
+  current window (Daniel: "should only average the most recent polls"). Single polls remain
+  selectable.
+- docs/00-PLAN.md: merged the Cowork lane's 2026-10-05 spec, restoring the Gemini lines its
+  older base copy had reverted.
+- News (/news): 8 feeds across 7 outlets, server-fetched, ISR 15 min, no AI. Kan English
+  omitted (only feed is a 9 MB podcast feed); ToI uses its politics + elections feeds (main
+  feed is behind Cloudflare). General feeds (Jewish Insider, Forward) keyword-filtered to Israel.
+- GATE: briefing email = GitHub issue assigned to RavBogard (then closed), not Resend.
+  Proceeded because it needs no new service, account or spend and still reaches Daniel's
+  inbox; switch to Resend if he wants a real email.
+- Briefing: daily 10:30 UTC (6:30am ET). Gemini structured output; each sentence must cite
+  1–3 numbered headlines and share ≥2 content words with them, or it is dropped; <3 surviving
+  sentences = no briefing that day (and the issue says so). Kill switch: delete
+  data/briefings/DATE.json.
+
 ## Next (phase 2, remaining)
 - Polls job + validator (sum 120, pollster whitelist, fieldwork date, ≤5-seat move, below-threshold
   flagged); auto-commit on pass, PR + email on fail.

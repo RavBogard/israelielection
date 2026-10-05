@@ -17,6 +17,7 @@ const NAV = [
   { href: "/", label: "Coalition Builder" },
   { href: "/parties", label: "Party Map" },
   { href: "/polls", label: "Polls" },
+  { href: "/news", label: "News" },
   { href: "/teach", label: "Teach it" },
 ];
 

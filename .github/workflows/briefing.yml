@@ -1,0 +1,62 @@
+name: Daily briefing
+
+# 10:30 UTC = 6:30am US Eastern, 1:30pm Israel. Publishes without review (plan ruling);
+# Daniel gets it by GitHub notification (an issue assigned to him) and can kill it by
+# deleting the day's file.
+on:
+  schedule:
+    - cron: "30 10 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate today's briefing even if it exists"
+        type: boolean
+        default: false
+
+concurrency:
+  group: briefing
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
+
+      - name: Write briefing
+        id: job
+        run: npx tsx scripts/jobs/briefing.mts --report "$RUNNER_TEMP/briefing.md" ${{ inputs.force && '--force' || '' }}
+
+      - name: Gate (build with the new file)
+        if: steps.job.outputs.published == '1'
+        run: npm run build
+
+      - name: Commit
+        if: steps.job.outputs.published == '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/briefings
+          git commit -m "briefing: $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Notify Daniel
+        if: always()
+        run: |
+          [ -f "$RUNNER_TEMP/briefing.md" ] || exit 0
+          gh label create briefing --color 233f86 --description "Daily briefing notifications" 2>/dev/null || true
+          url=$(gh issue create --title "Briefing $(date -u +%Y-%m-%d)" --body-file "$RUNNER_TEMP/briefing.md" --assignee RavBogard --label briefing)
+          gh issue close "$url" --reason completed

@@ -9,9 +9,14 @@
     "lint": "eslint",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "validate": "vitest run lib/data.test.ts"
+    "validate": "vitest run lib/data.test.ts",
+    "prebuild": "node scripts/build-briefings-index.mjs",
+    "predev": "node scripts/build-briefings-index.mjs",
+    "pretypecheck": "node scripts/build-briefings-index.mjs",
+    "pretest": "node scripts/build-briefings-index.mjs"
   },
   "dependencies": {
+    "fast-xml-parser": "^5.11.2",
     "next": "16.3.8",
     "react": "19.2.8",
     "react-dom": "19.2.8"
