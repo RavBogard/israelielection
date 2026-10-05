@@ -5,6 +5,7 @@ export const NAV = [
   { href: "/polls", label: "Polls" },
   { href: "/issues", label: "Issues" },
   { href: "/communities", label: "Communities" },
+  { href: "/vote-map", label: "Vote map" },
   { href: "/news", label: "News" },
   { href: "/results", label: "Results" },
   { href: "/teach", label: "Teach it" },

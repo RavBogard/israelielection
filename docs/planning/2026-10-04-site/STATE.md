@@ -214,7 +214,35 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Coalition-process tracker after the election.
 - Confirm Likud–RZ and Shas–UTJ surplus agreements nearer election day.
 - Done: issues (7), communities (9), American lens.
-- Still to do: reference pages for system mechanics, timeline, glossary, how Israelis vote, election night, sources/method; the vote map (docs/research/data-vote-map).
+- Done: vote map, 2019–2022 (add 2026 after the final file).
+- Still to do: reference pages for system mechanics, timeline, glossary, how Israelis vote, election night, sources/method.
+
+## Vote map (Oct 5)
+- /vote-map: 2019a–2022 by locality.
+  - Shading is the share for a chosen list (ruling 101).
+  - Special-envelope votes get a separate national bar (ruling 100).
+  - The Green Line is drawn, settlements are mapped, and a note says who votes (ruling 99).
+  - IdanTravitsky is credited as precedent only (ruling 102).
+  - Lists appear as they ran (ruling 28). Lists under 1% nationally count in the totals but can't be picked.
+- Build: `npx tsx scripts/vote-map/build.mts` writes public/vote-map/.
+  - It fetches the five CEC expc.csv files with an honest user agent.
+  - It fails unless every list's column sum equals the national page; all 184 lists match.
+  - lib/votemap.test.ts re-checks the output.
+- GATE: boundaries are the research prototype (Transport 2026 + CBS 2008), copied, not refetched — proceeded because data.gov.il returns 403 without a browser user agent and spoofing is ruled out.
+- GATE: the Green Line and Gaza outlines come from OCHA's COD-AB for the State of Palestine on HDX (CC BY-IGO; HDX lists the source as the PA Ministry of Planning). Credited on the page. Proceeded because Natural Earth's West Bank leaves out East Jerusalem and Latrun, so it is not the 1949 line; OCHA's follows the 1949 line through Jerusalem.
+- GATE: spellings.
+  - English list names are translated from the CEC Hebrew names (data/vote-map/lists.json).
+  - English place names come from CBS, with the house spellings (lib/votemap.ts NAME_OVERRIDES, ruling 32), plus Qiryat→Kiryat and Bet→Beit.
+  - Four localities that appear only in 2019–2021 are transliterated from the Hebrew.
+  - Proceeded because these are spellings, not claims.
+- Page text sources:
+  - ToI, Oct 30, 2022: eligibility and double envelopes.
+  - ToI, Jan 13, 2020: East Jerusalem residency.
+  - Everything else is computed from the CEC files.
+  - Independent fact-check pass: queued.
+- Still open:
+  - 2026 results, once the final file is posted (about a week after Oct 27).
+  - The CBS 2022 layer, which needs a person to download it in a browser.
 
 ## Deploy log
 - 2026-10-04: Vercel project (preset "Other", created on the empty repo) failed twice: lockfile

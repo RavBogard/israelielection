@@ -1,0 +1,118 @@
+{
+  "note": "English names of the lists as they ran each year (ruling 28), translated from the Hebrew names on each election's CEC national results page. Only lists with at least 1% of the national vote are named; the rest are counted as 'Other lists'. Letters are the ballot letters heading the CEC file's columns, which move between parties across years.",
+  "elections": [
+    {
+      "knesset": 25,
+      "id": "2022",
+      "label": "Nov 2022",
+      "date": "2022-11-01",
+      "results": "https://votes25.bechirot.gov.il/nationalresults",
+      "csv": "https://media25.bechirot.gov.il/files/expc.csv",
+      "encoding": "utf-8",
+      "lists": [
+        { "letters": "מחל", "name": "Likud" },
+        { "letters": "פה", "name": "Yesh Atid" },
+        { "letters": "ט", "name": "Religious Zionism–Otzma Yehudit" },
+        { "letters": "כן", "name": "National Unity" },
+        { "letters": "שס", "name": "Shas" },
+        { "letters": "ג", "name": "United Torah Judaism" },
+        { "letters": "ל", "name": "Yisrael Beiteinu" },
+        { "letters": "עם", "name": "Ra'am (United Arab List)" },
+        { "letters": "ום", "name": "Hadash–Ta'al" },
+        { "letters": "אמת", "name": "Labor" },
+        { "letters": "מרצ", "name": "Meretz" },
+        { "letters": "ד", "name": "Balad" },
+        { "letters": "ב", "name": "Jewish Home" }
+      ]
+    },
+    {
+      "knesset": 24,
+      "id": "2021",
+      "label": "Mar 2021",
+      "date": "2021-03-23",
+      "results": "https://votes24.bechirot.gov.il/nationalresults",
+      "csv": "https://media24.bechirot.gov.il/files/expc.csv",
+      "encoding": "windows-1255",
+      "lists": [
+        { "letters": "מחל", "name": "Likud" },
+        { "letters": "פה", "name": "Yesh Atid" },
+        { "letters": "שס", "name": "Shas" },
+        { "letters": "כן", "name": "Blue and White" },
+        { "letters": "ב", "name": "Yamina" },
+        { "letters": "אמת", "name": "Labor" },
+        { "letters": "ג", "name": "United Torah Judaism" },
+        { "letters": "ל", "name": "Yisrael Beiteinu" },
+        { "letters": "ט", "name": "Religious Zionism" },
+        { "letters": "ודעם", "name": "Joint List (Hadash, Ta'al, Balad)" },
+        { "letters": "ת", "name": "New Hope" },
+        { "letters": "מרצ", "name": "Meretz" },
+        { "letters": "עם", "name": "Ra'am (United Arab List)" }
+      ]
+    },
+    {
+      "knesset": 23,
+      "id": "2020",
+      "label": "Mar 2020",
+      "date": "2020-03-02",
+      "results": "https://votes23.bechirot.gov.il/nationalresults",
+      "csv": "https://media23.bechirot.gov.il/files/expc.csv",
+      "encoding": "windows-1255",
+      "lists": [
+        { "letters": "מחל", "name": "Likud" },
+        { "letters": "פה", "name": "Blue and White" },
+        { "letters": "ודעם", "name": "Joint List (Hadash, Ra'am, Ta'al, Balad)" },
+        { "letters": "שס", "name": "Shas" },
+        { "letters": "ג", "name": "United Torah Judaism" },
+        { "letters": "אמת", "name": "Labor–Gesher–Meretz" },
+        { "letters": "ל", "name": "Yisrael Beiteinu" },
+        { "letters": "טב", "name": "Yamina" }
+      ]
+    },
+    {
+      "knesset": 22,
+      "id": "2019b",
+      "label": "Sep 2019",
+      "date": "2019-09-17",
+      "results": "https://votes22.bechirot.gov.il/nationalresults",
+      "csv": "https://media22.bechirot.gov.il/files/expc.csv",
+      "encoding": "windows-1255",
+      "lists": [
+        { "letters": "פה", "name": "Blue and White" },
+        { "letters": "מחל", "name": "Likud" },
+        { "letters": "ודעם", "name": "Joint List (Hadash, Ra'am, Ta'al, Balad)" },
+        { "letters": "שס", "name": "Shas" },
+        { "letters": "ל", "name": "Yisrael Beiteinu" },
+        { "letters": "ג", "name": "United Torah Judaism" },
+        { "letters": "טב", "name": "Yamina" },
+        { "letters": "אמת", "name": "Labor–Gesher" },
+        { "letters": "מרצ", "name": "Democratic Union" },
+        { "letters": "כף", "name": "Otzma Yehudit" }
+      ]
+    },
+    {
+      "knesset": 21,
+      "id": "2019a",
+      "label": "Apr 2019",
+      "date": "2019-04-09",
+      "results": "https://votes21.bechirot.gov.il/nationalresults",
+      "csv": "https://media21.bechirot.gov.il/files/expc.csv",
+      "encoding": "windows-1255",
+      "lists": [
+        { "letters": "מחל", "name": "Likud" },
+        { "letters": "פה", "name": "Blue and White" },
+        { "letters": "שס", "name": "Shas" },
+        { "letters": "ג", "name": "United Torah Judaism" },
+        { "letters": "ום", "name": "Hadash–Ta'al" },
+        { "letters": "אמת", "name": "Labor" },
+        { "letters": "ל", "name": "Yisrael Beiteinu" },
+        { "letters": "טב", "name": "Union of Right-Wing Parties" },
+        { "letters": "מרצ", "name": "Meretz" },
+        { "letters": "כ", "name": "Kulanu" },
+        { "letters": "דעם", "name": "Ra'am–Balad" },
+        { "letters": "נ", "name": "New Right" },
+        { "letters": "ז", "name": "Zehut" },
+        { "letters": "נר", "name": "Gesher" }
+      ]
+    }
+  ]
+}

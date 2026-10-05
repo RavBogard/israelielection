@@ -30,6 +30,7 @@ const SECTIONS = [
   { href: "/polls", title: "Polls", text: "Every Knesset seat poll of the 2026 campaign we track, the current average, and how each party has moved." },
   { href: "/issues", title: "Issues", text: "Seven questions that decide how Israelis vote: what is at stake, what Israelis think by group, what each party says, and the common misreadings." },
   { href: "/communities", title: "Communities", text: "Nine groups of Israeli voters: how many they are, where they live, how their towns have voted since 2019, and what they think." },
+  { href: "/vote-map", title: "Vote map", text: "How each of Israel's roughly 1,200 cities, towns, kibbutzim and villages voted in the five elections from 2019 to 2022, list by list." },
   { href: "/american-lens", title: "The American lens", text: "Why \"pro-Israel\" is not an Israeli category, and where American and Israeli political fights line up and where they don't." },
   { href: "/news", title: "News", text: "A daily briefing on what changed in Israel's 2026 election, every sentence sourced, plus the latest headlines from English-language outlets." },
   { href: "/results", title: "Results", text: "Election-night results for Israel's 2026 Knesset election from the Central Elections Committee's count, with seats by party and bloc." },
