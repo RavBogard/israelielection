@@ -133,6 +133,15 @@ Done:
   two outlets report them; one outlet → PR labelled `party-text`. Proceeded because those are
   the edits that change what the Coalition Builder shows, and a second outlet is cheap insurance.
   Surplus-agreement changes don't update `data/results.json` automatically; the notice says so.
+- Surplus check (Oct 5). The committee's site is still down (gov.il "not found").
+  - Joint List–Ra'am is now "signed": Walla, Sep 12, reports a signing on Fri Sep 11.
+  - Likud–Religious Zionism: announced Sep 8 (Channel 14, Israel Hayom). Channel 14 reported it still unsigned on Sep 15, with a signing "in about two weeks". No later report found.
+  - Shas–UTJ: JDN and JPost reported it as "expected" on Sep 10. No signing report found.
+  - Several search hits were stale articles from 2019, 2021 and 2022 elections; checked each one's datePublished.
+  - Both pairs stay in the seat method as "reported". Recheck nearer election day.
+- Daniel (Oct 5) asked for a home-page redesign and a logo ("look awesome and less ai generic").
+  - Delegated to a design subagent on a worktree branch; I review and merge.
+  - Added `.claude/` to the tsconfig, ESLint and Vitest ignores, so agent worktrees don't leak into checks.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.

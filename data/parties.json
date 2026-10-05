@@ -1300,7 +1300,7 @@
       ],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Ra'am",
+      "surplusLine": "Surplus: Ra'am (signed Sep 11)",
       "who": [
         {
           "text": "First formed in 2015 by all four Arab-led parties (13 seats; peak of 15 in 2020). Re-formed Aug 19, 2026 as Hadash–Ta'al–Balad, without Ra'am.",
@@ -1372,8 +1372,8 @@
         }
       ],
       "surplusPartner": {
-        "text": "Ra'am.",
-        "source": "Ynet, Sep 11; JPost, Sep 13, 2026"
+        "text": "Ra'am (signed Sept 11).",
+        "source": "Walla, Sep 12; Ynet, Sep 11, 2026"
       },
       "quote": {
         "text": "A political, racist, and anti-democratic decision… an attempt to exclude the political representation of more than one million voters.",
@@ -1402,7 +1402,7 @@
       ],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Joint List",
+      "surplusLine": "Surplus: Joint List (signed Sep 11)",
       "who": [
         {
           "text": "Founded 1996 as the political wing of the Islamic Movement's Southern Branch. In 2021 it became the first independent Arab party in an Israeli government.",
@@ -1481,8 +1481,8 @@
         }
       ],
       "surplusPartner": {
-        "text": "Joint List.",
-        "source": "Ynet, Sep 11; JPost, Sep 13, 2026"
+        "text": "Joint List (signed Sept 11).",
+        "source": "Walla, Sep 12; Ynet, Sep 11, 2026"
       },
       "quote": {
         "text": "I am going to an Arab party. They are not coming to me.",

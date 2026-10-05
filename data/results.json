@@ -30,9 +30,9 @@
   "agreements": [
     { "parties": ["yashar", "dem"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
     { "parties": ["byachad", "yb"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
-    { "parties": ["jl", "raam"], "status": "reported", "source": "Ynet, Sep 11; Jerusalem Post, Sep 13, 2026" },
+    { "parties": ["jl", "raam"], "status": "signed", "source": "Walla, Sep 12, 2026 (signed Sep 11); Ynet, Sep 11; Jerusalem Post, Sep 13" },
     { "parties": ["likud", "rz"], "status": "reported", "source": "Israel Hayom, Sep 8; reported unsigned, Channel 14, Sep 15, 2026" },
     { "parties": ["shas", "utj"], "status": "reported", "source": "Jerusalem Post, Sep 10, 2026 (“expected”)" }
   ],
-  "agreementsNote": "Seat estimates use every agreement listed here. Statuses other than “signed” still need checking against the committee's list of filed agreements before election night."
+  "agreementsNote": "Seat estimates use every agreement listed here. Likud–Religious Zionism and Shas–UTJ were announced or expected, but no report of a signing was found (checked Oct 5). Confirm against the committee's list of filed agreements before election night."
 }
