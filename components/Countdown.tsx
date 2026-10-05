@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const ELECTION_DAY = "2026-10-27";
 
 export function daysUntil(iso: string) {
@@ -21,7 +23,9 @@ export default function Countdown({ className }: { className?: string }) {
         <b>Election Day.</b> Polls close at 10 pm Israel time
       </>
     ) : (
-      <>Israel voted on October 27, 2026</>
+      <>
+        Israel voted on October 27. <Link href="/government">Forming a government</Link>
+      </>
     );
   return <p className={`countdown${className ? ` ${className}` : ""}`}>{text}</p>;
 }

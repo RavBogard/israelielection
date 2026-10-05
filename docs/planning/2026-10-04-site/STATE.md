@@ -334,3 +334,10 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   file: strip, hero, builder and results all switch to the count; headline becomes "Israel voted."
 - Daniel's rulings are arriving via a walkthrough (DECISIONS.md, written outside both sessions).
   Item 1 ruled: the home line is his approved wording.
+- Round three: /government, the formation clock, rendered from data/formation.json (content lane's
+  data; dates fill in once the official-results milestone carries `actual`). "Government" joins
+  Follow in the masthead; the post-election countdown links to it.
+- GATE: Vote map moved from the masthead to Understand's `more` (home Try-it card, index and footer
+  keep it) — proceeded because twelve links overflowed at every width and the masthead rule is
+  about eleven; Government matters more than the map from Oct 28 on. Masthead re-measured: fits
+  1200 to 1600 after spacing went from 22 to 18 px.

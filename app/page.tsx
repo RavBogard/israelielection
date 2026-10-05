@@ -33,6 +33,7 @@ const BLURB: Record<string, string> = {
   "/polls": "Every seat poll of the campaign, the current average, and how each party has moved.",
   "/news": "A daily briefing, every sentence sourced, and the latest headlines.",
   "/results": "The committee's count on election night, as seats by party and bloc.",
+  "/government": "The clock on forming a government after the vote: each step the law allows, its limit, and where things stand.",
   "/how-it-works": "How votes become seats, how a government is formed, and how Israelis cast their ballots.",
   "/how-it-works/who-votes": "Who can vote for the Knesset, who can't, and the legal findings about the gap.",
   "/issues": "Seven questions that decide how Israelis vote, and how Americans misread them.",
@@ -244,7 +245,9 @@ export default async function Page() {
         {note.text && (
           <section className="note-from" aria-labelledby="note-h">
             <h2 id="note-h">A note from Daniel</h2>
-            <p>{note.text}</p>
+            {note.text.split(/\n\s*\n/).map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
             <p className="sig">
               {note.signed}
               {note.date && <>, {mediumDate(note.date)}</>}

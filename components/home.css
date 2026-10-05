@@ -58,6 +58,7 @@
 /* A note from Daniel, once there is one. */
 .home .note-from { padding-block: 30px 34px; border-bottom: 1px solid var(--line); max-width: 700px; }
 .home .note-from p { font-family: var(--display); font-size: 19px; line-height: 1.5; color: var(--text); margin: 0; }
+.home .note-from p + p { margin-top: 1em; }
 .home .note-from .sig { font-family: var(--body); font-size: 14.5px; color: var(--ink-2); margin-top: 14px; }
 
 /* Teach: one band. */

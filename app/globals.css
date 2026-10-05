@@ -103,13 +103,13 @@ a:hover { text-decoration-color: currentColor; }
 .brand .word .yr { font-weight: 500; }
 
 .menu-btn { display: none; }
-.menu-sheet { grid-area: menu; display: flex; align-items: stretch; gap: 0 22px; border-top: 1px solid var(--line); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
+.menu-sheet { grid-area: menu; display: flex; align-items: stretch; gap: 0 18px; border-top: 1px solid var(--line); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
 .menu-sheet .grp { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; }
-.menu-sheet .grp + .grp { border-left: 1px solid var(--line); padding-left: 22px; }
+.menu-sheet .grp + .grp { border-left: 1px solid var(--line); padding-left: 18px; }
 .menu-sheet .grp.teach { margin-left: auto; border-left: 0; padding-left: 0; }
 .menu-sheet .glbl { font-size: 12px; font-weight: 600; color: var(--ink-3); margin: 9px 0 -7px 7px; }
 .menu-sheet ul { display: flex; gap: 0 2px; list-style: none; margin: 0; padding: 0; }
-.menu-sheet a { display: block; padding: 11px 7px 10px; font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.menu-sheet a { display: block; padding: 11px 6px 10px; font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
 .menu-sheet a:hover { color: var(--ink); }
 .menu-sheet a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--ink); }
 .menu-sheet .grp.teach a { font-weight: 600; color: var(--ink); }

@@ -1,0 +1,39 @@
+/* The government-formation clock: a numbered sequence (the law's steps are a sequence), with the step we are in marked. */
+.gov .gov-today { border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); padding: 14px 0; margin: 8px 0 28px; max-width: 700px; }
+.gov .gov-today p { margin: 0; font-family: var(--display); font-size: 19px; line-height: 1.45; color: var(--text); }
+.gov .gov-today b { color: var(--ink); font-weight: 700; }
+
+.gov .gov-steps { list-style: none; margin: 0; padding: 0; max-width: 760px; }
+.gov .step { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 0 20px; padding: 16px 0 18px; border-top: 1px solid var(--line); position: relative; }
+.gov .step .num { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.gov .step h2 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 0 0 4px; }
+.gov .step .when { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0 0 8px; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+.gov .step .when time { color: var(--ink); }
+.gov .step .rule { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 0; max-width: 62ch; }
+.gov .step .who { font-size: 14px; color: var(--ink-2); margin: 6px 0 0; }
+.gov .step .note { font-size: 14px; color: var(--ink-2); margin: 6px 0 0; max-width: 62ch; }
+.gov .step .src { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; }
+.gov .step .src a { color: var(--ink-3); }
+
+.gov .step.done .num { color: var(--ink); }
+.gov .step.done h2 { color: var(--ink-2); }
+.gov .step.skipped h2, .gov .step.skipped .rule { color: var(--ink-3); }
+.gov .step.skipped h2 { text-decoration: line-through; text-decoration-thickness: 1px; }
+.gov .step.current { border-top: 2px solid var(--ink); }
+.gov .step.current .num { color: var(--ink); }
+.gov .step .now { background: var(--ink); color: var(--bg); padding: 1px 8px; font-size: 12.5px; }
+
+.gov .gov-alt { max-width: 760px; margin-top: 6px; padding: 16px 0 18px 64px; border-top: 1px dashed var(--line-2); border-bottom: 1px solid var(--line); }
+.gov .gov-alt h2 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 0 0 4px; }
+.gov .gov-alt .when { font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0 0 8px; }
+.gov .gov-alt .rule { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 0; max-width: 62ch; }
+.gov .gov-alt .src { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; }
+.gov .gov-alt .src a { color: var(--ink-3); }
+
+.gov .gov-more { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 28px 0 40px; max-width: 62ch; }
+.gov .gov-more a { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 560px) {
+  .gov .step { grid-template-columns: 32px minmax(0, 1fr); gap: 0 12px; }
+  .gov .gov-alt { padding-left: 44px; }
+}

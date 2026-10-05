@@ -20,6 +20,7 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; mo
       { href: "/polls", label: "Polls" },
       { href: "/news", label: "News" },
       { href: "/results", label: "Results" },
+      { href: "/government", label: "Government" },
     ],
   },
   {
@@ -28,10 +29,10 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; mo
       { href: "/how-it-works", label: "How it works" },
       { href: "/issues", label: "Issues" },
       { href: "/communities", label: "Communities" },
-      { href: "/vote-map", label: "Vote map" },
       { href: "/american-lens", label: "The American lens" },
     ],
     more: [
+      { href: "/vote-map", label: "Vote map" },
       { href: "/timeline", label: "Timeline" },
       { href: "/glossary", label: "Glossary" },
     ],
