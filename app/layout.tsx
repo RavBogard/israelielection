@@ -7,7 +7,7 @@ const frank = Frank_Ruhl_Libre({ variable: "--font-frank", subsets: ["latin"], w
 const rubik = Rubik({ variable: "--font-rubik", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://israelielection.org"),
+  metadataBase: new URL("https://www.israelielection.org"),
   title: { default: "Israel Votes 2026", template: "%s · Israel Votes 2026" },
   description:
     "An English-language reference on Israel's October 27, 2026 election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced.",

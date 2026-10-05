@@ -42,7 +42,7 @@ Done:
 
 ## For Daniel
 - About/method page text; license for teach-it (CC BY-NC proposed).
-- Domain: metadataBase is set to https://israelielection.org; connect the domain in Vercel.
+- Domain: live at https://www.israelielection.org (apex 308s to www); metadataBase matches.
 - Doc 09 open items (quotes seen through summaries, Kan Shas/UTJ, C14 dates) carry over and
   are flagged on the pages.
 
@@ -51,3 +51,10 @@ Done:
   flagged); auto-commit on pass, PR + email on fail.
 - News RSS page (ISR 15 min). Daily briefing (Gemini), sourced per sentence, emailed.
 - Reference pages: system mechanics, tribes, issues, timeline, glossary, sources/method.
+
+## Deploy log
+- 2026-10-04: Vercel project (preset "Other", created on the empty repo) failed twice: lockfile
+  out of sync on Linux (regenerated), then "No Output Directory named public" (fixed with
+  `vercel.json` framework: nextjs). Third deploy Ready; www.israelielection.org serves it.
+- Internal docs class-00/03/09 kept out of the public repo (.gitignore): staff email, Zoom
+  registration link, trip dates, private artifact links.
