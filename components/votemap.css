@@ -1,61 +1,65 @@
-/* Vote map: one hue, light to dark, mixed from the theme's ink over its surface, so dark mode gets its own steps. */
+/* Vote map: one hue, light to dark, mixed from the theme's ink over its paper, so dark mode gets its own steps. */
 .vm {
-  --vm-0: color-mix(in oklab, var(--ink) 6%, var(--surface));
-  --vm-1: color-mix(in oklab, var(--ink) 18%, var(--surface));
-  --vm-2: color-mix(in oklab, var(--ink) 32%, var(--surface));
-  --vm-3: color-mix(in oklab, var(--ink) 48%, var(--surface));
-  --vm-4: color-mix(in oklab, var(--ink) 64%, var(--surface));
-  --vm-5: color-mix(in oklab, var(--ink) 80%, var(--surface));
+  --vm-0: color-mix(in oklab, var(--ink) 6%, var(--sheet));
+  --vm-1: color-mix(in oklab, var(--ink) 18%, var(--sheet));
+  --vm-2: color-mix(in oklab, var(--ink) 32%, var(--sheet));
+  --vm-3: color-mix(in oklab, var(--ink) 48%, var(--sheet));
+  --vm-4: color-mix(in oklab, var(--ink) 64%, var(--sheet));
+  --vm-5: color-mix(in oklab, var(--ink) 80%, var(--sheet));
   --vm-6: var(--ink);
   font-family: var(--body);
+  margin-top: 18px;
 }
+.vote-map-page .vm-text { padding-top: 8px; }
 .vm-msg { font-family: var(--body); color: var(--ink-3); padding: 40px 0; }
 
-.vm-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: end; margin: 0 0 14px; }
-.vm-controls label { display: grid; gap: 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); min-width: 0; }
-.vm-controls select, .vm-controls input { font: 15px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r); padding: 7px 9px; max-width: 100%; letter-spacing: 0; text-transform: none; }
+.vm-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: end; margin: 0 0 16px; }
+.vm-controls label { display: grid; gap: 5px; font-size: 13px; font-weight: 600; color: var(--ink-2); min-width: 0; }
+.vm-controls select, .vm-controls input { font: 15px var(--body); color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-radius: var(--r); padding: 7px 9px; max-width: 100%; }
+.vm-controls select:hover, .vm-controls input:hover { border-color: var(--ink); }
 .vm-find input { width: 13em; }
 
-.vm-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: 22px; align-items: start; }
+.vm-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: 28px; align-items: start; }
 .vm-mapwrap { position: relative; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); background: var(--bg); }
 .vm-map { display: block; width: 100%; height: min(78vh, 760px); touch-action: none; cursor: grab; user-select: none; }
 .vm-map:active { cursor: grabbing; }
-.vm-shapes path, .vm-shapes circle { stroke: var(--surface); stroke-width: .5px; vector-effect: non-scaling-stroke; }
+.vm-shapes path, .vm-shapes circle { stroke: var(--sheet); stroke-width: .5px; vector-effect: non-scaling-stroke; }
 .vm-shapes path:hover, .vm-shapes circle:hover { stroke: var(--warn-line); stroke-width: 2px; }
 .vm-shapes .on { stroke: var(--warn-line); stroke-width: 2.5px; }
 .vm-wb { fill: none; stroke: var(--ink-2); stroke-width: 1.25px; stroke-dasharray: 5 3; vector-effect: non-scaling-stroke; pointer-events: none; }
 .vm-gaza { fill: var(--line); stroke: var(--ink-3); stroke-width: .75px; vector-effect: non-scaling-stroke; }
 .vm-labels text { fill: var(--ink-2); font-family: var(--body); font-weight: 700; pointer-events: none; paint-order: stroke; stroke: var(--bg); stroke-width: 3px; vector-effect: non-scaling-stroke; }
 .vm-zoom { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; }
-.vm-zoom button { font: 700 15px var(--body); min-width: 36px; min-height: 36px; padding: 0 8px; color: var(--ink); background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r); cursor: pointer; }
+.vm-zoom button { font: 700 15px var(--body); min-width: 36px; min-height: 36px; padding: 0 8px; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-radius: var(--r); cursor: pointer; }
 .vm-zoom button:hover { border-color: var(--ink); }
 
 .vm-side { display: grid; gap: 18px; font-size: 14.5px; }
-.vm-k { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 6px; }
+.vm-k { font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 0 0 6px; }
 .vm-legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; font-size: 13.5px; }
 .vm-legend li { display: flex; align-items: center; gap: 7px; }
-.vm-legend span { width: 18px; height: 12px; border-radius: 2px; flex: none; border: 1px solid var(--line); }
-.vm-sw-none { background: repeating-linear-gradient(45deg, var(--surface) 0 3px, var(--line-2) 3px 4px); }
-.vm-info { min-height: 210px; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r-lg); }
-.vm-place { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 0; }
-.vm-big { font-weight: 700; font-size: 30px; font-variant-numeric: tabular-nums; margin: 4px 0 0; }
-.vm-sub { color: var(--ink-2); line-height: 1.45; margin: 4px 0 10px; font-size: 14px; }
+.vm-legend span { width: 18px; height: 12px; flex: none; border: 1px solid var(--line); }
+.vm-sw-none { background: repeating-linear-gradient(45deg, var(--sheet) 0 3px, var(--line-2) 3px 4px); }
+.vm-info { min-height: 210px; padding: 14px 16px; background: var(--sheet); border: 1px solid var(--line-2); }
+.vm-place { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.1; margin: 0; color: var(--ink); }
+.vm-big { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; font-variant-numeric: tabular-nums; margin: 6px 0 0; color: var(--ink); }
+.vm-sub { color: var(--text); line-height: 1.45; margin: 6px 0 10px; font-size: 14px; }
 .vm-tops { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; font-size: 14px; }
 .vm-tops li { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--line); padding-bottom: 3px; }
-.vm-tops li span:last-child { font-variant-numeric: tabular-nums; font-weight: 600; }
+.vm-tops li span:last-child { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
 .vm-bar { display: grid; grid-template-columns: minmax(0, 1fr) 3.6em; gap: 2px 10px; align-items: center; margin-bottom: 8px; }
 .vm-bl { grid-column: 1 / -1; font-size: 13.5px; color: var(--ink-2); }
-.vm-bt { height: 12px; background: var(--line); border-radius: 0 4px 4px 0; }
-.vm-bt span { display: block; height: 100%; background: var(--ink-2); border-radius: 0 4px 4px 0; min-width: 2px; }
-.vm-bv { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.vm-bt { height: 12px; background: var(--cell); }
+.vm-bt span { display: block; height: 100%; background: var(--ink); min-width: 2px; }
+.vm-bv { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
 
 .vm-table { margin: 18px 0 0; font-size: 14.5px; }
-.vm-table summary { cursor: pointer; font-weight: 700; padding: 8px 0; }
+.vm-table summary { cursor: pointer; font-weight: 600; padding: 8px 0; color: var(--ink); }
 .vm-tw { overflow-x: auto; }
 .vm-table table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
 .vm-table th, .vm-table td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); }
-.vm-table thead th { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); border-bottom: 1px solid var(--ink); }
+.vm-table thead th { font-size: 13px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); }
 .vm-table tbody th button { font: 600 14.5px var(--body); color: var(--ink); background: none; border: 0; padding: 0; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; cursor: pointer; text-align: left; }
+.vm-table tbody th button:hover { text-decoration-color: currentColor; }
 .vm-src { font-size: 13px; color: var(--ink-3); margin: 10px 0 0; }
 .vm-src a { color: var(--ink-2); }
 

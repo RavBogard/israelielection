@@ -114,10 +114,16 @@ a:hover { text-decoration-color: currentColor; }
 .menu-sheet a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--ink); }
 .menu-sheet .grp.teach a { font-weight: 600; color: var(--ink); }
 .menu-sheet .sheet-extra { display: none; }
-@media (max-width: 1040px) {
-  .menu-sheet { gap: 0 18px; }
-  .menu-sheet .grp + .grp { padding-left: 18px; }
+@media (max-width: 1280px) {
+  .menu-sheet { gap: 0 16px; }
+  .menu-sheet .grp + .grp { padding-left: 16px; }
   .menu-sheet .glbl { display: none; }
+  .menu-sheet a { padding-inline: 6px; font-size: 14.5px; }
+}
+@media (max-width: 1000px) {
+  .menu-sheet { gap: 0 10px; }
+  .menu-sheet .grp + .grp { padding-left: 10px; }
+  .menu-sheet a { font-size: 14px; padding-inline: 5px; }
 }
 @media (max-width: 860px) {
   .masthead .row { grid-template-columns: 1fr auto; grid-template-areas: "brand btn"; column-gap: 12px; }
