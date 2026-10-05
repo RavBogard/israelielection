@@ -1,4 +1,3 @@
-import Banner from "@/components/Banner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -32,7 +31,6 @@ export default async function Page(props: PageProps<"/parties/[id]">) {
   if (!party) notFound();
   return (
     <div className="ix">
-      <Banner />
       <div className="wrap" style={{ maxWidth: 760 }}>
         <p className="toplink">
           ← <Link href={`/parties#${party.id}`}>Party Map</Link> · <Link href="/">Coalition Builder</Link>

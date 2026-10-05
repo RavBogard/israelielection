@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import briefingsJson from "@/data/briefings/_index.json";
-import Banner from "@/components/Banner";
 import "@/components/interactives.css";
 import "@/components/news.css";
 import type { Briefing } from "@/lib/briefing";
@@ -26,7 +25,6 @@ export default async function Page() {
   const outlets = [...new Set(FEEDS.map((f) => f.outlet))];
   return (
     <div className="ix nw">
-      <Banner />
       <div className="wrap">
         <header className="ix-head">
           <div>

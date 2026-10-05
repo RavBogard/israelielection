@@ -1,4 +1,3 @@
-import Banner from "@/components/Banner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PartyMap from "@/components/PartyMap";
@@ -16,7 +15,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="ix">
-      <Banner />
       <div className="wrap">
         <p className="toplink">
           Try building a government → <Link href="/">Coalition Builder</Link>

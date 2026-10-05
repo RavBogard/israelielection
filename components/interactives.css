@@ -1,53 +1,55 @@
-/* Shared by the Coalition Builder, the Party Map and the party pages. Ported from the v2 artifacts. */
-.ix .wrap { max-width: 1840px; margin: 0 auto; padding-inline: clamp(16px, 2.5vw, 40px); padding-block: 0 40px; }
-.ix .banner { background: var(--ink); color: var(--bg); font-size: 14px; text-align: center; padding: 8px 16px; letter-spacing: .01em; }
-.ix header.ix-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-block: 24px 18px; }
-.ix h1 { font-family: var(--display); font-weight: 900; font-size: clamp(32px, 3.4vw, 52px); line-height: 1; margin: 0; text-wrap: balance; }
-.ix .sub { color: var(--ink-2); margin: 8px 0 0; max-width: 66ch; }
-.ix .toplink { font-size: 14.5px; color: var(--ink-2); padding-block: 12px 0; margin: 0; }
-.ix .toplink a { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
-.ix .sw { width: 14px; height: 14px; border-radius: 3px; display: inline-block; flex: none; }
-.ix .btn { font: inherit; font-size: 15px; font-weight: 600; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); padding: 10px 18px; border-radius: 10px; cursor: pointer; }
-.ix .btn:hover { border-color: var(--ink-3); }
+/* Shared by the Coalition Builder, the Party Map, the Polls and the party pages. */
+.ix .wrap { max-width: 1440px; margin: 0 auto; padding-inline: clamp(16px, 2.5vw, 40px); padding-block: 0 40px; }
+.ix header.ix-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-block: 28px 18px; }
+.ix h1, .ix .h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.02; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.ix .sub { font-family: var(--serif); font-size: 17px; line-height: 1.5; color: var(--ink-2); margin: 10px 0 0; max-width: 62ch; }
+.ix .sub b { color: var(--ink); font-weight: 600; }
+.ix .toplink { font-size: 14.5px; color: var(--ink-2); padding-block: 14px 0; margin: 0; }
+.ix .toplink a { color: var(--ink); font-weight: 600; }
+.ix .sw { width: 12px; height: 12px; border-radius: 2px; display: inline-block; flex: none; }
+.ix .btn { font: inherit; font-size: 14.5px; font-weight: 600; border: 1px solid var(--ink); background: var(--surface); color: var(--ink); padding: 9px 16px; border-radius: var(--r); cursor: pointer; }
+.ix .btn:hover { background: var(--ink); color: var(--bg); }
 .ix .layout { display: grid; gap: 28px; align-items: start; }
-.ix .panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.ix .panel { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); max-height: calc(100vh - 32px); overflow: auto; background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r-lg); box-shadow: 0 1px 0 var(--paper-shadow), 0 12px 32px -20px var(--shadow); padding: 22px; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 @media (max-width: 1100px) {
   .ix .layout { grid-template-columns: minmax(0, 1fr) !important; }
   .ix .panel { position: static; max-height: none; overflow: visible; }
 }
-.ix .pagefoot { margin-top: 36px; border-top: 1px solid var(--line); padding-top: 18px; font-size: 13.5px; color: var(--ink-2); }
-.ix .pagefoot h2 { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; color: var(--ink); }
-.ix .pagefoot ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; max-width: 120ch; list-style: decimal; }
-.ix .pagefoot a { color: var(--accent); overflow-wrap: anywhere; }
+.ix .pagefoot { margin-top: 40px; border-top: 1px solid var(--ink); padding-top: 16px; font-family: var(--serif); font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+.ix .pagefoot h2 { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; color: var(--ink); }
+.ix .pagefoot ol { margin: 0; padding-left: 20px; display: grid; gap: 5px; max-width: 110ch; list-style: decimal; }
+.ix .pagefoot ol::marker, .ix .pagefoot li::marker { font-family: var(--body); font-variant-numeric: tabular-nums; color: var(--ink-3); }
+.ix .pagefoot a { color: var(--ink); overflow-wrap: anywhere; }
+.ix .pagefoot b { color: var(--ink); font-weight: 600; }
 
 /* Party profile (drawer, map panel, party page) */
 .profile { display: flex; flex-direction: column; gap: 16px; }
-.profile h2.pname { font-family: var(--display); font-weight: 900; font-size: 34px; line-height: 1.05; margin: 0; text-wrap: balance; }
-.profile .bchip { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); }
+.profile h2.pname { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.05; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.profile .bchip { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
 .profile .kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; margin: 0; }
 .profile .kv dt { color: var(--ink-3); }
 .profile .kv dd { margin: 0; min-width: 0; }
 .profile .sec { display: flex; flex-direction: column; gap: 6px; }
-.profile .sec p, .profile .sec ul { margin: 0; font-size: 15px; }
+.profile .sec p, .profile .sec ul { margin: 0; font-family: var(--serif); font-size: 15.5px; line-height: 1.5; }
 .profile .sec ul { padding-left: 18px; display: flex; flex-direction: column; gap: 4px; list-style: disc; }
-.profile .s { font-size: 12.5px; color: var(--ink-3); white-space: normal; }
-.profile .lbl, .ix .lbl { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
+.profile .s { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); white-space: normal; }
+.profile .lbl, .ix .lbl { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
 .profile .polls { display: grid; grid-template-columns: auto 1fr auto; gap: 6px 10px; align-items: center; font-size: 14px; }
-.profile .polls .bar { height: 14px; background: var(--bg); border-radius: 4px; overflow: hidden; min-width: 40px; }
-.profile .polls .bar i { display: block; height: 100%; border-radius: 0 4px 4px 0; }
+.profile .polls .bar { height: 12px; background: var(--bg); border-radius: 2px; overflow: hidden; min-width: 40px; }
+.profile .polls .bar i { display: block; height: 100%; }
 .profile .polls .v { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; min-width: 3ch; }
 .profile .polls .d { color: var(--ink-3); }
 .profile .polls .x { opacity: .55; }
-.profile .issues { display: grid; grid-template-columns: minmax(96px, auto) 1fr; border-top: 1px solid var(--line); font-size: 14.5px; margin: 0; }
+.profile .issues { display: grid; grid-template-columns: minmax(96px, auto) 1fr; border-top: 1px solid var(--ink); font-size: 14.5px; margin: 0; }
 .profile .issues dt, .profile .issues dd { margin: 0; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .profile .issues dt { font-weight: 600; padding-right: 12px; color: var(--ink-2); }
-.profile .issues dd { min-width: 0; }
+.profile .issues dd { min-width: 0; font-family: var(--serif); font-size: 15px; }
 .profile .issues dd.nf { color: var(--ink-3); font-style: italic; }
-.profile .names { list-style: none !important; padding: 0 !important; }
+.profile .names { list-style: none !important; padding: 0 !important; font-family: var(--body) !important; }
 .profile .names li { display: grid; grid-template-columns: 3.2em 1fr; gap: 6px; }
 .profile .names .slot { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-2); }
-.profile blockquote { margin: 0; padding: 10px 0 10px 14px; border-left: 3px solid var(--qc); font-family: var(--display); font-size: 18px; line-height: 1.35; }
+.profile blockquote { margin: 0; padding: 10px 0 10px 14px; border-left: 3px solid var(--qc); font-family: var(--display); font-size: 19px; line-height: 1.35; }
 .profile blockquote footer { margin: 6px 0 0; font-family: var(--body); font-size: 13px; color: var(--ink-3); }
-.profile .bio { font-size: 15px; margin: 0; }
+.profile .bio { font-family: var(--serif); font-size: 15.5px; line-height: 1.5; margin: 0; }
 .profile .src, .ix .src { font-size: 12.5px; color: var(--ink-3); margin: 0; }
-.profile .more { font-size: 14.5px; font-weight: 600; color: var(--accent); text-underline-offset: 3px; }
+.profile .more { font-size: 14.5px; font-weight: 600; color: var(--ink); }

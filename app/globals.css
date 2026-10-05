@@ -1,35 +1,41 @@
 @import "tailwindcss";
 
-/* Design tokens, carried over from the v2 artifacts. Dark mode follows the system unless data-theme pins it. */
+/*
+  Design tokens. The palette is paper and ink: the warm white of a printed ballot slip (the
+  petek) and the black it is printed in. The only colour on the site is data: the four blocs.
+  Dark mode follows the system unless data-theme pins it.
+*/
 :root {
-  --bg: #f4f6f9; --surface: #ffffff; --ink: #141b27; --ink-2: #4a5568; --ink-3: #6b7586; --line: #d9dee6; --line-2: #c3cad5;
-  --accent: #233f86; --warn-bg: #fff4dc; --warn-ink: #6b4300; --warn-line: #e7c47a; --ok-bg: #e3ecff; --ok-ink: #16306e;
-  --info-bg: #eef1f6; --info-ink: #2c3a52; --info-line: #c3cad5;
+  --bg: #f1ede4; --surface: #faf8f2; --ink: #17150f; --ink-2: #4c4840; --ink-3: #7a7468; --line: #d8d2c4; --line-2: #bcb5a5;
+  --accent: #17150f; --warn-bg: #fbf0c2; --warn-ink: #5a4200; --warn-line: #e2c766; --ok-bg: #17150f; --ok-ink: #faf8f2;
+  --info-bg: #eae6dc; --info-ink: #4c4840; --info-line: #bcb5a5;
   --b-net: #233f86; --b-net-ink: #ffffff;
   --b-opp: #d98a1f; --b-opp-ink: #16120a;
-  --b-mid: #4fbfb1; --b-mid-ink: #0b1a18;
+  --b-mid: #3fb0a2; --b-mid-ink: #0b1a18;
   --b-arab: #8d4fae; --b-arab-ink: #ffffff;
-  --scrim: rgb(12 18 28 / .42); --shadow: rgb(12 18 28 / .18);
-  --display: var(--font-frank), Georgia, "Times New Roman", serif;
-  --body: var(--font-rubik), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --scrim: rgb(23 21 15 / .45); --shadow: rgb(23 21 15 / .16); --paper-shadow: rgb(23 21 15 / .08);
+  --r: 3px; --r-sm: 2px; --r-lg: 4px;
+  --display: var(--font-frank), "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --serif: var(--font-serif), "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: var(--font-sans), "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #10141b; --surface: #181e28; --ink: #e9edf3; --ink-2: #b4bdca; --ink-3: #8c96a6; --line: #2a3342; --line-2: #3a4558;
-    --accent: #8fa8ec; --warn-bg: #3a2c10; --warn-ink: #f4d58e; --warn-line: #6e5420; --ok-bg: #1f2c4d; --ok-ink: #c9d7ff;
-    --info-bg: #1d2532; --info-ink: #c9d3e2; --info-line: #3a4558;
+    --bg: #14130f; --surface: #1d1b16; --ink: #ece7da; --ink-2: #bdb6a6; --ink-3: #8d8779; --line: #34312a; --line-2: #4a463c;
+    --accent: #ece7da; --warn-bg: #39300f; --warn-ink: #f1d98a; --warn-line: #6b5722; --ok-bg: #ece7da; --ok-ink: #14130f;
+    --info-bg: #252219; --info-ink: #cfc8b8; --info-line: #4a463c;
     --b-net: #5a7bd0; --b-net-ink: #ffffff;
-    --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .5);
+    --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .5); --paper-shadow: rgb(0 0 0 / .35);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #10141b; --surface: #181e28; --ink: #e9edf3; --ink-2: #b4bdca; --ink-3: #8c96a6; --line: #2a3342; --line-2: #3a4558;
-  --accent: #8fa8ec; --warn-bg: #3a2c10; --warn-ink: #f4d58e; --warn-line: #6e5420; --ok-bg: #1f2c4d; --ok-ink: #c9d7ff;
-  --info-bg: #1d2532; --info-ink: #c9d3e2; --info-line: #3a4558;
+  --bg: #14130f; --surface: #1d1b16; --ink: #ece7da; --ink-2: #bdb6a6; --ink-3: #8d8779; --line: #34312a; --line-2: #4a463c;
+  --accent: #ece7da; --warn-bg: #39300f; --warn-ink: #f1d98a; --warn-line: #6b5722; --ok-bg: #ece7da; --ok-ink: #14130f;
+  --info-bg: #252219; --info-ink: #cfc8b8; --info-line: #4a463c;
   --b-net: #5a7bd0; --b-net-ink: #ffffff;
-  --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .5);
+  --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .5); --paper-shadow: rgb(0 0 0 / .35);
   color-scheme: dark;
 }
 
@@ -43,10 +49,11 @@
   --color-line-2: var(--line-2);
   --color-accent: var(--accent);
   --font-display: var(--display);
+  --font-serif: var(--serif);
   --font-sans: var(--body);
 }
 
-html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
 body {
   background: var(--bg);
   color: var(--ink);
@@ -54,5 +61,52 @@ body {
   font-size: 16px;
   line-height: 1.45;
   margin: 0;
+  font-feature-settings: "kern" 1, "liga" 1;
 }
-:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--bg); }
+
+/* Links are ink, underlined with a hairline the colour of a rule, like a reference book. */
+a { color: inherit; text-decoration: underline; text-decoration-color: var(--line-2); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: currentColor; }
+
+/* Small-caps labels, used as running heads throughout. */
+.eyebrow { font-family: var(--body); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); margin: 0; }
+
+/* Site chrome */
+.site-head { border-bottom: 1px solid var(--ink); background: var(--bg); }
+.site-head .row { max-width: 1440px; margin: 0 auto; padding-inline: clamp(16px, 2.5vw, 40px); display: flex; align-items: center; justify-content: space-between; gap: 16px 32px; min-height: 64px; flex-wrap: wrap; padding-block: 10px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand .mark { width: 34px; height: 34px; flex: none; }
+.brand .word { font-family: var(--display); font-weight: 700; font-size: 25px; line-height: 1; letter-spacing: -.012em; white-space: nowrap; }
+.brand .word em { font-style: normal; font-weight: 500; color: var(--ink-2); margin-left: .28em; }
+.site-nav { display: flex; flex-wrap: wrap; gap: 2px 4px; margin: 0; padding: 0; list-style: none; }
+.site-nav a { display: block; padding: 8px 10px; font-size: 15px; font-weight: 600; color: var(--ink-2); text-decoration: none; border-bottom: 2px solid transparent; letter-spacing: .005em; }
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.dateline { border-bottom: 1px solid var(--line); background: var(--bg); }
+.dateline .row { max-width: 1440px; margin: 0 auto; padding: 7px clamp(16px, 2.5vw, 40px); display: flex; flex-wrap: wrap; gap: 2px 18px; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.dateline b { color: var(--ink); font-weight: 600; }
+.dateline .sep { color: var(--ink-3); }
+@media (max-width: 720px) {
+  .site-head .row { padding-block: 12px 6px; }
+  .brand .mark { width: 30px; height: 30px; }
+  .brand .word { font-size: 22px; }
+  .site-nav { width: 100%; margin-inline: -10px; }
+  .site-nav a { padding: 6px 10px; font-size: 14.5px; }
+}
+
+.site-foot { border-top: 1px solid var(--ink); margin-top: 48px; background: var(--bg); }
+.site-foot .row { max-width: 1440px; margin: 0 auto; padding: 32px clamp(16px, 2.5vw, 40px) 40px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px 48px; font-size: 14.5px; color: var(--ink-2); }
+.site-foot .brand .mark { width: 28px; height: 28px; }
+.site-foot .brand .word { font-size: 21px; }
+.site-foot p { margin: 0; max-width: 56ch; font-family: var(--serif); font-size: 15.5px; line-height: 1.5; }
+.site-foot .cred { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.site-foot .cred a { color: var(--ink); font-weight: 600; }
+.site-foot .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.site-foot .cols ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.site-foot .cols a { text-decoration: none; color: var(--ink); font-weight: 600; font-size: 15px; }
+.site-foot .cols a:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  .site-foot .row { grid-template-columns: minmax(0, 1fr); }
+}
