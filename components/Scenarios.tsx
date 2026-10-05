@@ -78,10 +78,10 @@ export default function Scenarios() {
         return (
           <li key={s.id} id={`scenario-${s.id}`}>
             <details className="scenario">
-              <summary>
+              <summary aria-labelledby={`scenario-${s.id}-h`}>
                 <Bar ids={s.with} even={threshold} />
                 <div className="sum">
-                  <h3>{s.title}</h3>
+                  <h3 id={`scenario-${s.id}-h`}>{s.title}</h3>
                   <span className="lineup">{s.with.map((id) => partyOf(id).name).join(", ")}</span>
                   {threshold ? <Clears s={s} /> : <Count s={s} />}
                   <span className="more">
