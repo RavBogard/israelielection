@@ -44,4 +44,14 @@ describe("feeds", () => {
     expect(got[0].summary).toBe("Debate ‘now’");
     expect(toText("<b>a</b>&nbsp;b")).toBe("a b");
   });
+
+  it("unwraps Bing News links and keeps only the outlet's own site", () => {
+    const wrap = (u: string) => `http://www.bing.com/news/apiclick.aspx?ref=FexRss&amp;url=${encodeURIComponent(u)}&amp;mkt=en-us`;
+    const xml = `<rss><channel>
+      <item><title>Knesset votes</title><link>${wrap("https://www.timesofisrael.com/knesset-votes/")}</link><pubDate>Sun, 04 Oct 2026 17:00:00 GMT</pubDate></item>
+      <item><title>Israel elsewhere</title><link>${wrap("https://elsewhere.example/israel")}</link><pubDate>Sun, 04 Oct 2026 17:00:00 GMT</pubDate></item>
+    </channel></rss>`;
+    const got = parseFeed(xml, { outlet: "Times of Israel", url: "", filter: true }, { host: "timesofisrael.com" });
+    expect(got.map((i) => i.url)).toEqual(["https://www.timesofisrael.com/knesset-votes/"]);
+  });
 });
