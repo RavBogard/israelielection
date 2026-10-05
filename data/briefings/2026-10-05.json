@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-05",
+  "generatedAt": "2026-10-05T02:52:55.395Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "Israel's High Court rejected a petition by the Democrats seeking to disqualify Otzma Yehudit, Itamar Ben-Gvir, and Tally Gotliv from the election.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "High Court rejects Democrats’ bid to bar Otzma Yehudit from election",
+          "url": "https://www.jpost.com/israel-election-2026/article-910555",
+          "published": "2026-10-04T16:46:01.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Central Election Committee chairman Justice Noam Solberg upheld five petitions against Prime Minister Benjamin Netanyahu, instructing him to remove campaign videos showing the military from social media.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israel's Central Election Committee tells Netanyahu to remove campaign videos showing IDF",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-04/ty-article/.premium/central-election-committee-tells-netanyahu-to-remove-campaign-videos-showing-idf/000001a1-0712-db73-ada5-5fd37cbd0000",
+          "published": "2026-10-04T17:49:32.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Netanyahu campaign firm New Vision Production denied any link to pro-Netanyahu videos recorded at its studios after an appeal was submitted to the Central Election Committee.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu campaign firm denies 'any link' to videos backing him filmed at its studios",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-04/ty-article/.premium/netanyahu-campaign-firm-denies-link-to-videos-backing-him-filmed-at-its-studios/000001a1-0665-dc03-a7a9-ef65fab80000",
+          "published": "2026-10-04T11:59:10.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Legal scholars said public pressure and the political climate led Israel's top court to move away from its longstanding standards and bar Balad leader Sami Abu Shehadeh from the election.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Legal experts: Public pressure led Israel's top court to unprecedented barring of Arab party leader",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-04/ty-article/.premium/public-opinion-shaped-top-courts-handling-of-arab-candidate-case-experts-say/000001a1-066d-dc2d-a5eb-fffda18f0000",
+          "published": "2026-10-04T12:25:21.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Domestic gas prices are set to decrease following a tax cut pursued by Bezalel Smotrich ahead of the election, despite Finance Ministry warnings that the measure will deepen the deficit.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israel gas price to drop following Smotrich pre-election push",
+          "url": "https://www.haaretz.com/israel-news/2026-10-04/ty-article/.premium/israel-gas-price-to-drop-following-smotrich-pre-election-push/000001a1-07bf-dc0c-a5ff-57bfcace0000",
+          "published": "2026-10-04T19:03:43.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Netanyahu ordered National Security Council chief Shmuel Ben Ezra to appoint an examiner to thoroughly review foreign civilian aviation security following an attempted hijacking of a flydubai flight heading toward Tel Aviv.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu orders probe of aviation guidelines, four days after flydubai hijacking attempt",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-04/ty-article/.premium/netanyahu-orders-aviation-guidelines-probe-four-days-after-flydubai-incident/000001a1-07c1-dca1-afb9-37c9f6a30001",
+          "published": "2026-10-04T16:46:18.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Report: Initial Israeli probe finds flydubai pilot was 'lone wolf,' planned to crash plane in Tel Aviv",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-04/ty-article/reports-flydubai-pilot-acted-alone-planned-to-crash-the-plane-in-tel-aviv/000001a1-06d0-de98-a9a7-f7f9e2450000",
+          "published": "2026-10-04T14:38:09.000Z"
+        }
+      ]
+    },
+    {
+      "text": "Transportation Minister Miri Regev stated that her ministry is not an intelligence agency, following security reports that the National Security Council warned last year that the ministry was failing to screen foreign flight crews.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Shin Bet warned of foreign flight crews screening before flydubai hijacking attempt, sources say",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-04/ty-article/.premium/shin-bet-warned-of-foreign-flight-crews-screening-before-plane-hijacking-attempt/000001a1-0813-dff9-a3b3-cd3f98b50000",
+          "published": "2026-10-04T19:26:14.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Israel's National Security Council warned the Transportation Ministry was failing to screen foreign flights last year, source says",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-04/ty-article/.premium/source-israeli-security-council-warned-of-failures-in-screening-foreign-flights/000001a1-0637-d0d8-a1a9-66b764900000",
+          "published": "2026-10-04T10:07:48.000Z"
+        }
+      ]
+    }
+  ],
+  "dropped": []
+}
