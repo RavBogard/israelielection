@@ -40,8 +40,14 @@ Done:
 - Home page copy is neutral site copy, not Daniel's voice. About/method page NOT written: it's
   Daniel's (plan §Authority).
 
+## Rulings received 2026-10-04 (evening)
+- Home page is the playable Coalition Builder; teaching materials moved one level down to /teach.
+  /coalition 308s to / (query kept), so earlier shared links still work.
+- Footer: "A project of Rabbi Daniel Bogard" linking to danielbogard.com.
+- License approved: CC BY-NC 4.0 for teaching materials (footer + /teach).
+
 ## For Daniel
-- About/method page text; license for teach-it (CC BY-NC proposed).
+- About/method page text.
 - Domain: live at https://www.israelielection.org (apex 308s to www); metadataBase matches.
 - Doc 09 open items (quotes seen through summaries, Kan Shas/UTJ, C14 dates) carry over and
   are flagged on the pages.

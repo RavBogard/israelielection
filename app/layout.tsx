@@ -14,8 +14,9 @@ export const metadata: Metadata = {
 };
 
 const NAV = [
+  { href: "/", label: "Coalition Builder" },
   { href: "/parties", label: "Party Map" },
-  { href: "/coalition", label: "Coalition Builder" },
+  { href: "/teach", label: "Teach it" },
 ];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -45,8 +46,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <footer className="border-t border-line px-4 py-6 text-sm text-ink-2 sm:px-[clamp(16px,2.5vw,40px)]">
-          <div className="mx-auto max-w-[1840px]">
-            Learning, not advocacy. Every number on this site carries its date and source.
+          <div className="mx-auto flex max-w-[1840px] flex-wrap justify-between gap-x-8 gap-y-2">
+            <p>
+              A project of{" "}
+              <a href="https://danielbogard.com" className="font-semibold text-accent underline-offset-4 hover:underline">
+                Rabbi Daniel Bogard
+              </a>
+              . Learning, not advocacy: every number on this site carries its date and source.
+            </p>
+            <p>
+              Teaching materials:{" "}
+              <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" className="text-accent underline-offset-4 hover:underline">
+                CC BY-NC 4.0
+              </a>
+            </p>
           </div>
         </footer>
       </body>

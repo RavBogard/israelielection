@@ -1,9 +1,12 @@
+import Banner from "@/components/Banner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import PartyMap from "@/components/PartyMap";
 import { PollSources, ProfileSources } from "@/components/Sources";
-import { dataUpdated, otherPolls } from "@/lib/data";
-import { mediumDate } from "@/lib/format";
+import { otherPolls } from "@/lib/data";
+
+// Hourly, so the election countdown in the banner stays current.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Party Map",
@@ -13,10 +16,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="ix">
-      <div className="banner">Last updated {mediumDate(dataUpdated)}. Polls change daily.</div>
+      <Banner />
       <div className="wrap">
         <p className="toplink">
-          Try building a government → <Link href="/coalition">Coalition Builder</Link>
+          Try building a government → <Link href="/">Coalition Builder</Link>
         </p>
         <PartyMap />
         <footer className="pagefoot">

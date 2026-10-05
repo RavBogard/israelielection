@@ -1,11 +1,14 @@
+import Banner from "@/components/Banner";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import "@/components/interactives.css";
 import ProfileDetail from "@/components/ProfileDetail";
 import { PollSources, ProfileSources } from "@/components/Sources";
-import { blocLabel, dataUpdated, parties } from "@/lib/data";
-import { mediumDate } from "@/lib/format";
+import { blocLabel, parties } from "@/lib/data";
+
+// Hourly, so the election countdown in the banner stays current.
+export const revalidate = 3600;
 
 export const dynamicParams = false;
 
@@ -29,10 +32,10 @@ export default async function Page(props: PageProps<"/parties/[id]">) {
   if (!party) notFound();
   return (
     <div className="ix">
-      <div className="banner">Last updated {mediumDate(dataUpdated)}. Polls change daily.</div>
+      <Banner />
       <div className="wrap" style={{ maxWidth: 760 }}>
         <p className="toplink">
-          ← <Link href={`/parties#${party.id}`}>Party Map</Link> · <Link href="/coalition">Coalition Builder</Link>
+          ← <Link href={`/parties#${party.id}`}>Party Map</Link> · <Link href="/">Coalition Builder</Link>
         </p>
         <article style={{ paddingBlock: "24px 0" }}>
           <ProfileDetail party={party} />

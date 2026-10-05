@@ -1,65 +1,69 @@
+import Banner from "@/components/Banner";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { dataUpdated, mainPolls } from "@/lib/data";
-import { mediumDate } from "@/lib/format";
+import CoalitionBuilder from "@/components/CoalitionBuilder";
+import { PollSources, ProfileSources } from "@/components/Sources";
 
-const ELECTION = "2026-10-27";
-
-function daysUntil(iso: string) {
-  const ms = Date.parse(`${iso}T00:00:00+02:00`) - Date.now();
-  return Math.ceil(ms / 86_400_000);
-}
-
+// Hourly, so the election countdown in the banner stays current.
 export const revalidate = 3600;
 
-export default function Home() {
-  const days = daysUntil(ELECTION);
+export const metadata: Metadata = {
+  title: { absolute: "Israel Votes 2026: Build a Coalition" },
+  description: "Pick a poll, add parties, and see whether they reach 61 of the Knesset's 120 seats, with each party's recorded coalition pledges.",
+};
+
+export default function Page() {
   return (
-    <div className="mx-auto max-w-[1100px] px-4 py-10 sm:px-8 sm:py-14">
-      <p className="text-sm font-semibold uppercase tracking-[.08em] text-ink-2">
-        Election Day: Tuesday, October 27, 2026{days > 0 ? ` · ${days} day${days === 1 ? "" : "s"} away` : ""}
-      </p>
-      <h1 className="mt-3 font-display text-[clamp(38px,5vw,64px)] font-black leading-[1.02] text-balance">
-        Israel votes. Here is how to follow it.
-      </h1>
-      <p className="mt-4 max-w-[62ch] text-lg text-ink-2">
-        An English-language reference on the 2026 Knesset election for American readers and for the rabbis and educators who teach it.
-        Learning, not advocacy: every number is dated and sourced.
-      </p>
-
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <section className="rounded-2xl border border-line bg-surface p-6">
-          <h2 className="font-display text-3xl font-black">Understand it</h2>
-          <p className="mt-2 text-ink-2">The parties, the polls, and the arithmetic of a 61-seat majority.</p>
-          <ul className="mt-5 flex flex-col gap-4">
+    <div className="ix">
+      <Banner />
+      <div className="wrap">
+        <p className="toplink">
+          Full map of the parties → <Link href="/parties">Party Map</Link>
+        </p>
+        <CoalitionBuilder />
+        <footer className="pagefoot">
+          <h2>Sources</h2>
+          <ol>
+            <PollSources />
             <li>
-              <Link href="/parties" className="text-lg font-semibold text-accent underline-offset-4 hover:underline">
-                The Party Map →
-              </Link>
-              <p className="text-[15px] text-ink-2">
-                Every list sized by its poll average, grouped by bloc, with who they are, who votes for them, and where they stand on six
-                issues.
-              </p>
+              <b>Blue and White</b> below threshold in all polls; Gantz will drop out in the last week if not crossing: Times of Israel,
+              Sep 20, 2026.
             </li>
             <li>
-              <Link href="/coalition" className="text-lg font-semibold text-accent underline-offset-4 hover:underline">
-                Build a Coalition →
-              </Link>
-              <p className="text-[15px] text-ink-2">
-                Pick a poll, add parties, and see whether they reach 61, and which recorded pledges your coalition would break.
-              </p>
+              <b>Pledges.</b> Zionist opposition to govern without Arab parties: Haaretz, Oct 1, 2026 (headline). B&apos;Yachad &ldquo;only
+              rely on Zionist parties&rdquo;: Times of Israel, Apr 26, 2026; no Arab or Haredi parties: Times of Israel, May 27, 2026. Joint
+              List won&apos;t join Netanyahu: Times of Israel, Aug 19, 2026. Eisenkot on Ra&apos;am (&ldquo;he won&apos;t be part of my next
+              government&rdquo;): Times of Israel, Sep 26, 2026. Lieberman, &ldquo;not for the Arab parties and not for the haredi
+              parties&rdquo;: Jerusalem Post, Sep 21, 2025, repeated Oct 3, 2026. UTJ condition (Yaakov Asher): Matzav, Sep 28, 2026.
             </li>
-          </ul>
-        </section>
-        <section className="rounded-2xl border border-line bg-surface p-6">
-          <h2 className="font-display text-3xl font-black">Teach it</h2>
-          <p className="mt-2 text-ink-2">Class materials for educators and rabbinic colleagues: decks, source sheets, discussion guides.</p>
-          <p className="mt-5 text-[15px] text-ink-3">In preparation. The interactives on the left can be used in a class today.</p>
-        </section>
+            <li>
+              <b>Surplus-vote agreements.</b> Yashar–Democrats and B&apos;Yachad–Yisrael Beiteinu signed Sep 10, 2026 (Times of Israel).
+              Likud–Religious Zionism agreed Sep 8 (Israel Hayom), reported unsigned Sep 15 (Channel 14); final status not found. Joint
+              List–Ra&apos;am: Ynet, Sep 11, and Jerusalem Post, Sep 13, 2026. Shas–UTJ &ldquo;expected&rdquo;: Jerusalem Post, Sep 10,
+              2026; signing not found. Otzma, People of Israel and Reservists: no partner found (an IPF listing of Reservists with Yisrael
+              Beiteinu is unconfirmed, since Yisrael Beiteinu signed with B&apos;Yachad).
+            </li>
+            <li>
+              <b>Lists.</b> UTJ order (Asher 1, Goldknopf 2, Porush 4): Davar and Israel Hayom, Sep 8, 2026. Ra&apos;am no. 2 Yoav
+              Segalovitz: Jerusalem Post and Times of Israel, Aug 31, 2026. B&apos;Yachad (Yesh Atid runs inside the list, Lapid no. 2):
+              Times of Israel, Sep 6, 2026; deal signed Apr 25–26, 2026 (Jerusalem Post).
+            </li>
+            <li>
+              <b>Disqualification and court ruling:</b> Central Elections Committee vote Sep 23, 2026 (Times of Israel); Supreme Court
+              ruling Oct 2, 2026, hearing Oct 1 (Jerusalem Post; Al Jazeera, Oct 2, 2026).
+            </li>
+            <li>
+              <b>Bloc labels and leaders:</b> Israel Policy Forum 120 Project, updated Sep 24, 2026; Jerusalem Post Sep 7, 2026; Times of
+              Israel Aug 19 and Sep 6, 2026. Reservists–Economic&apos;s bloc is disputed (IsraelEd: would join Netanyahu; IPF: &ldquo;third
+              bloc&rdquo;; ToI: non-aligned), so it is shown between the blocs.
+            </li>
+            <ProfileSources />
+            <li>
+              <b>61-seat majority:</b> Israel Democracy Institute, Apr 15, 2026.
+            </li>
+          </ol>
+        </footer>
       </div>
-
-      <p className="mt-10 text-sm text-ink-3">
-        Poll data last updated {mediumDate(dataUpdated)}, from {mainPolls.length} polls ({mainPolls.map((p) => p.pollster).join(", ")}).
-      </p>
     </div>
   );
 }
