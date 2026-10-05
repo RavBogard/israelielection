@@ -3,20 +3,128 @@
   "title": "What the parties say about a Palestinian state",
   "note": "Most rows are the parties' answers to Ynet's questionnaire of Sept 30, 2026, which asked about the West Bank; Likud declined it. Noam was not in the questionnaire; its row is its leader's 2025 bill. The Joint List's answer to Ynet did not address statehood; its row adds the Jerusalem Post's report of Jabareen's position. No published position found for any other list (checked October 2026).",
   "rows": [
-    {"party": "likud", "text": "Declined Ynet's questionnaire (\"does not participate in questionnaires\"). Netanyahu's campaign video: \"Do you want a Palestinian state? (or) do you want a Jewish state?\"", "source": "Ynet, party questionnaire; Jerusalem Post on the video of Sept 18, 2026", "url": "https://www.jpost.com/israel-election-2026/article-910068", "date": "Sept 2026"},
-    {"party": "shas", "text": "Opposes the establishment of a Palestinian state; does not make West Bank settlement policy a central campaign issue. As one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit.", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "utj", "text": "Does not have a unified flagship policy on the West Bank; neither faction has made it a central campaign issue. Its Agudat Yisrael faction voted for Noam's settlement annexation bill in October 2025.", "source": "Ynet, party questionnaire; Times of Israel, Oct 22, 2025", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "rz", "text": "\"We have carried out an enormous, unprecedented revolution in settlement in Judea and Samaria that has, in practice, eliminated the idea of a Palestinian state.\" Supports \"applying full Israeli sovereignty over Judea and Samaria.\"", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "otzma", "text": "\"We will work to apply full Israeli sovereignty, dismantle the Palestinian Authority of its assets and weapons, and use all security and government mechanisms to encourage voluntary migration from Judea and Samaria and Gaza.\" \"Otzma Yehudit supports establishing new communities in all parts of Judea and Samaria, and certainly opposes evacuating communities and farms.\"", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "poi", "text": "\"Our position is that a Palestinian state will never be established alongside us.\"", "source": "Ynet, party questionnaire (Amcha Yisrael)", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "noam", "text": "Avi Maoz sponsored the bill that passed a preliminary reading 25–24: \"the State of Israel will apply its laws and sovereignty to the settlement areas in Judea and Samaria, in order to establish the status of these areas as an inseparable part of the sovereign State of Israel.\"", "source": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/", "date": "Oct 22, 2025"},
-    {"party": "yashar", "text": "\"The establishment of a Palestinian state is not on the agenda as far as we are concerned.\" Supports strengthening the settlement blocs and new communities, legally.", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "byachad", "text": "\"We support Jewish settlement anywhere it is carried out legally. We oppose a Palestinian state and the transfer of territory.\" \"Area C is viewed as a future sovereign part of the State of Israel. Obviously, discretion must be exercised regarding the timing.\"", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "dem", "text": "\"Israel is a Jewish and democratic state, and in order to remain so we must strive for separation as part of a regional move,\" with the United States and moderate Arab states. Would evacuate illegal outposts.", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "yb", "text": "\"The Palestinian Authority has become a terrorist organization specializing in diplomatic terrorism, and we must think intelligently about how to cancel the Oslo Accords and dismantle the Palestinian Authority.\" \"We support applying Israeli sovereignty to Area C.\"", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "bw", "text": "\"The party supports strengthening settlement in Judea and Samaria, with an emphasis on the Jordan Valley, the mountain ridge communities, the southern Hebron Hills and the seam-line area.\" Backs a framework similar to the Trump plan that would not require evacuating settlements.", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "res", "text": "\"The party supports sovereignty through actions, not words. If there is an opportunity to apply Israeli law, for example in the Jordan Valley, the blocs or another strategic area, we will support it.\"", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "raam", "text": "Supports advancing a negotiated two-state solution in which a Palestinian state would be established alongside Israel; opposes extending Israeli sovereignty over West Bank territory.", "source": "Ynet, party questionnaire", "url": "https://www.ynetnews.com/article/h1dpvu9cgl", "date": "Sept 30, 2026"},
-    {"party": "jl", "text": "Jabareen has said the list would push for renewed negotiations with Palestinian leadership to advance the establishment of a Palestinian state alongside Israel (as reported by the Jerusalem Post). To Ynet: \"All settlements, which constitute a violation of international law and are even defined as a war crime, must be evacuated immediately and without delay.\"", "source": "Jerusalem Post, Sept 1, 2026; Ynet, party questionnaire, Sept 30, 2026", "url": "https://www.jpost.com/israel-election-2026/article-907154", "date": "Sept 2026"}
-  ]
+    {
+      "party": "likud",
+      "stance": "Declined to answer",
+      "status": "declined",
+      "text": "Declined Ynet's questionnaire (\"does not participate in questionnaires\"). Netanyahu's campaign video: \"Do you want a Palestinian state? (or) do you want a Jewish state?\"",
+      "source": "Ynet, party questionnaire; Jerusalem Post on the video of Sept 18, 2026",
+      "url": "https://www.jpost.com/israel-election-2026/article-910068",
+      "date": "Sept 2026"
+    },
+    {
+      "party": "shas",
+      "stance": "Opposes a state",
+      "text": "Opposes the establishment of a Palestinian state; does not make West Bank settlement policy a central campaign issue. As one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit.",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "utj",
+      "stance": "No position found",
+      "status": "none",
+      "text": "Does not have a unified flagship policy on the West Bank; neither faction has made it a central campaign issue. Its Agudat Yisrael faction voted for Noam's settlement annexation bill in October 2025.",
+      "source": "Ynet, party questionnaire; Times of Israel, Oct 22, 2025",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "rz",
+      "stance": "Opposes a state; full sovereignty",
+      "text": "\"We have carried out an enormous, unprecedented revolution in settlement in Judea and Samaria that has, in practice, eliminated the idea of a Palestinian state.\" Supports \"applying full Israeli sovereignty over Judea and Samaria.\"",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "otzma",
+      "stance": "Full Israeli sovereignty",
+      "text": "\"We will work to apply full Israeli sovereignty, dismantle the Palestinian Authority of its assets and weapons, and use all security and government mechanisms to encourage voluntary migration from Judea and Samaria and Gaza.\" \"Otzma Yehudit supports establishing new communities in all parts of Judea and Samaria, and certainly opposes evacuating communities and farms.\"",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "poi",
+      "stance": "Opposes a state",
+      "text": "\"Our position is that a Palestinian state will never be established alongside us.\"",
+      "source": "Ynet, party questionnaire (Amcha Yisrael)",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "noam",
+      "stance": "Annexation bill",
+      "text": "Avi Maoz sponsored the bill that passed a preliminary reading 25–24: \"the State of Israel will apply its laws and sovereignty to the settlement areas in Judea and Samaria, in order to establish the status of these areas as an inseparable part of the sovereign State of Israel.\"",
+      "source": "Times of Israel",
+      "url": "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/",
+      "date": "Oct 22, 2025"
+    },
+    {
+      "party": "yashar",
+      "stance": "\"Not on the agenda\"",
+      "text": "\"The establishment of a Palestinian state is not on the agenda as far as we are concerned.\" Supports strengthening the settlement blocs and new communities, legally.",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "byachad",
+      "stance": "Opposes a state",
+      "text": "\"We support Jewish settlement anywhere it is carried out legally. We oppose a Palestinian state and the transfer of territory.\" \"Area C is viewed as a future sovereign part of the State of Israel. Obviously, discretion must be exercised regarding the timing.\"",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "dem",
+      "stance": "Separation, as a regional move",
+      "text": "\"Israel is a Jewish and democratic state, and in order to remain so we must strive for separation as part of a regional move,\" with the United States and moderate Arab states. Would evacuate illegal outposts.",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "yb",
+      "stance": "Dismantle the PA; annex Area C",
+      "text": "\"The Palestinian Authority has become a terrorist organization specializing in diplomatic terrorism, and we must think intelligently about how to cancel the Oslo Accords and dismantle the Palestinian Authority.\" \"We support applying Israeli sovereignty to Area C.\"",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "bw",
+      "stance": "A Trump-plan framework",
+      "text": "\"The party supports strengthening settlement in Judea and Samaria, with an emphasis on the Jordan Valley, the mountain ridge communities, the southern Hebron Hills and the seam-line area.\" Backs a framework similar to the Trump plan that would not require evacuating settlements.",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "res",
+      "stance": "Sovereignty where possible",
+      "text": "\"The party supports sovereignty through actions, not words. If there is an opportunity to apply Israeli law, for example in the Jordan Valley, the blocs or another strategic area, we will support it.\"",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "raam",
+      "stance": "Supports two states",
+      "text": "Supports advancing a negotiated two-state solution in which a Palestinian state would be established alongside Israel; opposes extending Israeli sovereignty over West Bank territory.",
+      "source": "Ynet, party questionnaire",
+      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
+      "date": "Sept 30, 2026"
+    },
+    {
+      "party": "jl",
+      "stance": "Supports a Palestinian state",
+      "text": "Jabareen has said the list would push for renewed negotiations with Palestinian leadership to advance the establishment of a Palestinian state alongside Israel (as reported by the Jerusalem Post). To Ynet: \"All settlements, which constitute a violation of international law and are even defined as a war crime, must be evacuated immediately and without delay.\"",
+      "source": "Jerusalem Post, Sept 1, 2026; Ynet, party questionnaire, Sept 30, 2026",
+      "url": "https://www.jpost.com/israel-election-2026/article-907154",
+      "date": "Sept 2026"
+    }
+  ],
+  "columnNote": "Stance: a short label for the comparison table, drawn only from the row text. \"Declined to answer\": the party refused the questionnaire. \"No position found\": no published position on a Palestinian state was found (checked October 2026)."
 }
