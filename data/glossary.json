@@ -18,7 +18,8 @@
       "def": "Applying Israeli law and administration to West Bank land. The Knesset has not passed it into law. On Oct 22, 2025, a bill applying Israeli law to \"all areas of settlement\" passed a preliminary reading 25–24 and was sent to the Foreign Affairs and Defense Committee. Supporters call it applying sovereignty; this site says annexation.",
       "see": [
         "/issues/west-bank",
-        "/communities/settlers"
+        "/communities/settlers",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "Jerusalem Post",
@@ -31,12 +32,26 @@
       "def": "The roughly 60% of the West Bank under full Israeli control under the 1995 Oslo II agreement. In Area A (about 18%) the Palestinian Authority has full control; in Area B (about 22%) the Authority has civil control and Israel security control.",
       "see": [
         "/issues/west-bank",
-        "/communities/settlers"
+        "/communities/settlers",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "B'Tselem",
         "date": "",
         "url": "https://www.btselem.org/area_c/what_is_area_c"
+      }
+    },
+    {
+      "term": "Areas A and B",
+      "def": "The two other zones of the 1995 Oslo II division of the West Bank (see Area C). The accords required Israel to transfer certain powers in Areas A and B to Palestinian authorities; the International Court of Justice found in 2024 that the transfers \"have remained limited and partial\" and that Israel \"has retained significant control in relation to security matters.\"",
+      "see": [
+        "/issues/west-bank",
+        "/how-it-works/who-votes"
+      ],
+      "source": {
+        "name": "International Court of Justice, advisory opinion (UN doc. A/78/968)",
+        "date": "2024-07-19",
+        "url": "https://documents.un.org/api/symbol/access?s=A/78/968&l=en&t=pdf"
       }
     },
     {
@@ -294,6 +309,19 @@
       }
     },
     {
+      "term": "East Jerusalem",
+      "def": "The part of Jerusalem Israel captured in 1967, to which it applied its law, jurisdiction and administration; a 1980 Basic Law proclaimed \"complete and united Jerusalem\" its capital. The UN Security Council and the International Court of Justice treat it as occupied territory. Israel, the court noted, \"regards Palestinians residing there as foreigners\" and requires residence permits.",
+      "see": [
+        "/how-it-works/who-votes",
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "International Court of Justice, advisory opinion (UN doc. A/78/968)",
+        "date": "2024-07-19",
+        "url": "https://documents.un.org/api/symbol/access?s=A/78/968&l=en&t=pdf"
+      }
+    },
+    {
       "term": "Electoral threshold",
       "def": "A list needs at least 3.25% of the valid votes to win any seats, the rule since the 2015 election. In 2022 that meant 154,855 votes. Votes for lists that fall short are dropped before seats are handed out.",
       "see": [
@@ -346,6 +374,20 @@
       }
     },
     {
+      "term": "Hamas",
+      "def": "Islamist Palestinian movement, rival of Fatah, Mahmoud Abbas's party. It won the 2006 Palestinian legislative elections, took control of Gaza \"in a violent coup against Fatah in 2007\" and has ruled it since. The Times of Israel calls it a terror group. It led the October 7, 2023 attack on Israel (see the timeline).",
+      "see": [
+        "/issues/war-hostages",
+        "/how-it-works/who-votes",
+        "/timeline"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2026-04-25",
+        "url": "https://www.timesofisrael.com/turnout-low-as-palestinians-in-west-bank-and-gaza-vote-in-local-elections/"
+      }
+    },
+    {
       "term": "Haredi draft",
       "def": "The fight over conscripting Haredi men, who for most of the state's history could defer service while studying full-time in yeshiva. In June 2024 a unanimous nine-justice Supreme Court panel found \"no legal basis for avoiding the recruitment of yeshiva students.\" Israeli debate calls men who do not report \"draft evaders\"; this site says yeshiva students who did not report.",
       "see": [
@@ -374,6 +416,18 @@
       }
     },
     {
+      "term": "Hezbollah",
+      "def": "A Shiite Muslim political party and militant group based in Lebanon, backed by Iran, with seats in Lebanon's parliament since 1992. After the Hamas-led attack of October 2023 it began firing rockets, mortars and drones across the border. An Israeli campaign in 2024 considerably weakened it, and the two sides agreed to a U.S.-brokered ceasefire in November 2024.",
+      "see": [
+        "/issues/war-hostages"
+      ],
+      "source": {
+        "name": "Council on Foreign Relations",
+        "date": "2026-04-17",
+        "url": "https://www.cfr.org/backgrounder/what-hezbollah"
+      }
+    },
+    {
       "term": "High Court of Justice",
       "def": "The name for Israel's Supreme Court when it hears petitions against government action. The court serves as both a superior court of appeals and a first-instance administrative court, so citizens and groups can challenge the government directly before it. English coverage often says \"the High Court\"; this site says Supreme Court.",
       "see": [
@@ -397,6 +451,32 @@
         "name": "VIN News (Central Bureau of Statistics)",
         "date": "2026-09-09",
         "url": "https://vinnews.com/2026/09/09/israel-enters-5787-with-population-growth-high-birthrate-and-rising-emigration/"
+      }
+    },
+    {
+      "term": "Intifada",
+      "def": "The name for the Palestinian uprisings against Israeli occupation. The first began in December 1987 and ran until the 1993 Oslo Accords; by Al Jazeera's count \"more than 100 Israelis were killed by Palestinians\" and \"at least 1,000 Palestinians were killed by Israeli forces.\" The second began in September 2000 (see the timeline).",
+      "see": [
+        "/timeline",
+        "/issues/west-bank",
+        "/how-it-works/who-votes"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "date": "2023-12-08",
+        "url": "https://www.aljazeera.com/gallery/2023/12/8/history-illustrated-the-first-intifada-against-israel"
+      }
+    },
+    {
+      "term": "Iron Dome",
+      "def": "Israel's mobile system for intercepting short-range rockets and artillery, at ranges of up to 70 km. Development began in 2007 and the first units were deployed in 2011. From fiscal 2011 to 2015 the United States provided \"almost $1.3B\" for its batteries, interceptors, co-production and maintenance.",
+      "see": [
+        "/issues/war-hostages"
+      ],
+      "source": {
+        "name": "CSIS Missile Defense Project",
+        "date": "2021-07-13",
+        "url": "https://missilethreat.csis.org/defsys/iron-dome/"
       }
     },
     {
@@ -535,6 +615,19 @@
       }
     },
     {
+      "term": "Military rule",
+      "def": "Israel's rule over Palestinians in the West Bank through its army since 1967. The International Court of Justice found in 2024 that Israel \"has to a large degree substituted its military law for the local law\": Palestinians are tried in military courts, settlers in Israeli civilian courts. Since late 2022 a civilian minister in the Defense Ministry decides civil affairs in Area C.",
+      "see": [
+        "/how-it-works/who-votes",
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "International Court of Justice, advisory opinion (UN doc. A/78/968)",
+        "date": "2024-07-19",
+        "url": "https://documents.un.org/api/symbol/access?s=A/78/968&l=en&t=pdf"
+      }
+    },
+    {
       "term": "Mizrahi",
       "hebrew": "מזרחי",
       "say": "miz-rah-HEE",
@@ -546,6 +639,20 @@
         "name": "Israel Democracy Institute, Democracy Index 2025",
         "date": "May 2025",
         "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf"
+      }
+    },
+    {
+      "term": "Nakba",
+      "def": "\"Catastrophe\": Palestinians' name for their mass displacement in 1947–49. By the first half of 1949, \"at least 750,000 Palestinians in total were forcibly expelled or fled outside of their homeland,\" Al Jazeera reports. Palestinians mark it every year on May 15.",
+      "see": [
+        "/issues/palestinian-state",
+        "/how-it-works/who-votes",
+        "/timeline"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "date": "2017-05-23",
+        "url": "https://www.aljazeera.com/news/2017/5/23/the-nakba-did-not-start-or-end-in-1948"
       }
     },
     {
@@ -565,7 +672,8 @@
       "term": "Occupied",
       "def": "This site's word for the West Bank and the parts of Gaza Israel holds. The International Court of Justice's non-binding 2024 advisory opinion refers to \"the Palestinian territory occupied since 1967.\" Netanyahu answered: \"The Jewish people are not occupiers in their own land.\"",
       "see": [
-        "/issues/west-bank"
+        "/issues/west-bank",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "Times of Israel",
@@ -591,7 +699,8 @@
       "def": "The agreements between Israel and the Palestine Liberation Organization signed on September 13, 1993, by Yitzhak Rabin and Yasser Arafat, which created the Palestinian Authority. They set a five-year interim period of Palestinian self-government and postponed issues such as Jerusalem and refugees. Oslo II, in 1995, divided the West Bank into Areas A, B and C.",
       "see": [
         "/issues/west-bank",
-        "/issues/palestinian-state"
+        "/issues/palestinian-state",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "Ynet",
@@ -613,11 +722,26 @@
       }
     },
     {
+      "term": "Palestinian Authority",
+      "def": "The Palestinian self-government created under the Oslo Accords as a \"supposedly temporary\" body; it \"administers limited rule\" over Areas A and B of the West Bank. A final treaty was due within five years and has not been reached.",
+      "see": [
+        "/issues/palestinian-state",
+        "/issues/west-bank",
+        "/how-it-works/who-votes"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "date": "2023-09-13",
+        "url": "https://www.aljazeera.com/news/2023/9/13/what-were-oslo-accords-israel-palestinians"
+      }
+    },
+    {
       "term": "Palestinian citizens of Israel",
       "def": "This site's term for Arab Muslims, among them the Negev Bedouin, and Arab Christians who hold Israeli citizenship. IDI and other sources say \"Arab citizens of Israel\" or \"Arabs.\" IDI counted 1,595,300 Arab citizens outside East Jerusalem at the end of 2020, 17.2% of the population, a figure that includes Druze.",
       "see": [
         "/communities/palestinian-citizens",
-        "/communities/druze"
+        "/communities/druze",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "Israel Democracy Institute",
@@ -754,7 +878,8 @@
       "see": [
         "/issues/west-bank",
         "/communities/settlers",
-        "/vote-map"
+        "/vote-map",
+        "/how-it-works/who-votes"
       ],
       "source": {
         "name": "Times of Israel",

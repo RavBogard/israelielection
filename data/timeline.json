@@ -766,6 +766,17 @@
       }
     },
     {
+      "date": "2014-07-07",
+      "title": "Gaza war of 2014",
+      "text": "In fighting from July 7 to Aug 26, 2,251 Palestinians were killed in Gaza, 1,462 of them civilians and 551 children, according to a UN commission of inquiry's figures published by OCHA; 67 Israeli soldiers and six civilians in Israel were killed.",
+      "kind": "war",
+      "source": {
+        "name": "UN OCHA",
+        "date": "June 23, 2015",
+        "url": "https://www.ochaopt.org/content/key-figures-2014-hostilities"
+      }
+    },
+    {
       "date": "2018-07-19",
       "title": "Nation-state law passes",
       "text": "The Knesset passed, 62–55, a Basic Law stating that the right to national self-determination in Israel is \"exclusive\" to the Jewish people. It downgraded Arabic from an official language to a \"special status.\"",
@@ -942,6 +953,17 @@
       }
     },
     {
+      "date": "2024-01-26",
+      "title": "ICJ orders provisional measures",
+      "text": "In South Africa v. Israel, the International Court of Justice ordered Israel, 15–2, to take all measures within its power to prevent acts under Article II of the convention invoked, and, 16–1, to enable humanitarian aid to Gaza. It has not ruled on the merits.",
+      "kind": "law",
+      "source": {
+        "name": "International Court of Justice",
+        "date": "January 26, 2024",
+        "url": "https://www.icj-cij.org/node/203447"
+      }
+    },
+    {
       "date": "2024-06-25",
       "title": "Court orders Haredi draft",
       "text": "A unanimous nine-justice panel ruled there is \"no legal basis for avoiding the recruitment of yeshiva students\" and that the state may not keep funding yeshivas for students eligible for service.",
@@ -950,6 +972,17 @@
         "name": "Times of Israel",
         "date": "June 25, 2024",
         "url": "https://www.timesofisrael.com/in-historic-ruling-high-court-says-government-must-begin-drafting-haredi-men-into-idf/"
+      }
+    },
+    {
+      "date": "2024-11-21",
+      "title": "ICC warrants for Netanyahu and Gallant",
+      "text": "The International Criminal Court rejected Israel's challenges to its jurisdiction and issued arrest warrants for Netanyahu and Yoav Gallant, defense minister at the time, for \"the war crime of starvation as a method of warfare\" and crimes against humanity.",
+      "kind": "law",
+      "source": {
+        "name": "International Criminal Court",
+        "date": "November 21, 2024",
+        "url": "https://www.icc-cpi.int/news/situation-state-palestine-icc-pre-trial-chamber-i-rejects-state-israels-challenges"
       }
     },
     {
@@ -1008,6 +1041,17 @@
       }
     },
     {
+      "date": "2025-08-22",
+      "title": "IPC finds famine in Gaza",
+      "text": "The IPC hunger monitor found an estimated 514,000 people in Gaza, nearly a quarter of its population, experiencing famine. Netanyahu's office called the finding an \"outright lie\" and said Israel \"has a policy of preventing starvation.\"",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "August 23, 2025",
+        "url": "https://www.timesofisrael.com/netanyahus-office-calls-gaza-famine-declaration-a-modern-blood-libel/"
+      }
+    },
+    {
       "date": "2025-10-13",
       "title": "Last living hostages come home",
       "text": "Under a ceasefire deal brokered by President Trump, Hamas released the 20 remaining living hostages and Israel released nearly 2,000 Palestinian prisoners. That day Hamas handed over 4 of the 28 dead hostages' bodies.",
@@ -1016,6 +1060,17 @@
         "name": "Times of Israel",
         "date": "October 13, 2025",
         "url": "https://www.timesofisrael.com/all-20-remaining-living-hostages-return-to-israel-after-over-2-years-in-hamas-captivity/"
+      }
+    },
+    {
+      "date": "2025-10-15",
+      "title": "Gaza's toll after two years of war",
+      "text": "As of Oct 15, 2025, Gaza's Health Ministry had reported 67,938 Palestinians killed and 170,169 injured since Oct 7, 2023, OCHA said; of the 67,173 dead it had identified by Oct 7, 20,179 were children.",
+      "kind": "war",
+      "source": {
+        "name": "UN OCHA",
+        "date": "October 16, 2025",
+        "url": "https://www.ochaopt.org/content/reported-impact-snapshot-gaza-strip-15-october-2025"
       }
     },
     {
