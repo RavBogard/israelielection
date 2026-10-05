@@ -28,7 +28,11 @@ how it is made (the method statement: sources, dating, the validator, the briefi
 fact-check rounds, the language rulings, the licence); what it is not (not advocacy, not a
 congregation project); how to correct it (an email or GitHub issues). The pollster-leaning note
 from ruling 22 goes here.
-Needed: the text, or permission to draft it from the plan and RULINGS.md for your edit.
+Resolved: Daniel approved the drafted page on 2026-10-05, with named tools instead of generic
+“AI”: Gemini Flash 3.8 for the briefing; site development primarily through Claude Code using
+Fable 5.1 and Opus 5.5. Fetching is done by scripts, so the page describes Gemini's briefing
+role separately. Added `/about` with the approved copy, GitHub issues for corrections, and
+links in the home index, footer and sitemap. Source perspectives follow ruling 22.
 
 ## 4. Plan amendment
 docs/00-PLAN.md still says "neutral reference voice on all pages." Rulings 114 to 118 supersede

@@ -42,6 +42,7 @@ const BLURB: Record<string, string> = {
   "/american-lens": "Why \"pro-Israel\" is not an Israeli category.",
   "/timeline": "From 1977 to this campaign, the turns that made today's map.",
   "/glossary": "The terms the coverage assumes you know, each with its source.",
+  "/about": "Why this site exists, where its information comes from, and how to correct it.",
   "/teach": "Decks, source sheets and discussion guides for educators.",
 };
 
@@ -153,9 +154,16 @@ function About() {
             offered as an answer. For most Jewish Israeli voters, Palestinian rights and statehood are not at the center of this election.{" "}
             <Link href="/american-lens">Read why</Link>—and <Link href="/how-it-works/who-votes">who has no vote in it</Link>.
           </p>
+          <p className="novote">
+            <Link href="/how-it-works/who-votes">
+              <b>About 5.4 million</b> Palestinians live under Israeli rule in the West Bank, East Jerusalem included, and Gaza. Apart from East Jerusalem
+              residents who have naturalized, none can vote for the Knesset.
+            </Link>
+          </p>
           <p className="src">
-            <a href={considerations.url}>{considerations.source}</a>, {considerations.date}, {considerations.sample}; first and second choices
-            combined.
+            <a href={considerations.url}>{considerations.source}</a>, {considerations.date}, {considerations.sample}; first and second choices combined.{" "}
+            <a href="https://www.ochaopt.org/sites/default/files/OPT_Flash_Appeal_2026_EN_FINAL.pdf">OCHA, Dec 16, 2025</a>: 3.3 million in the West Bank including East
+            Jerusalem, 2.1 million in Gaza.
           </p>
         </div>
       </div>

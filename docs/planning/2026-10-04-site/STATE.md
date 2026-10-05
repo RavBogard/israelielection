@@ -351,3 +351,8 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - GATE: home-strip wording sent without Daniel's review — proceeded because it restates the fact-checked who-votes sentence and the home line Daniel already ruled.
 - Note for Daniel: OCHA's 3.3 million is stated as the people whose movement is restricted, not as a population count; PCBS gives 3,325,905 for the West Bank (2024) as a cleaner alternative source.
 - forming-a-government now links /government.
+- Round five: the threshold what-if (<WhatIf /> in the seats guide: lists near 3.25% set to pass
+  or fail, seats re-counted by allocate(), bloc deltas and wasted share shown; arithmetic from the
+  average, labelled as such); the home strip gains the sourced no-vote line (about 5.4 million,
+  OCHA Dec 16, 2025, from the content lane's fact-check). "Last checked" already exists on every
+  reference page as "Facts checked <date>" from frontmatter, so that EVAL item needs no build.
