@@ -62,6 +62,14 @@ Each batch: focused meaningful checks for changed logic, verified source/data li
 
 ## Current return note
 
+### Interactive homepage mosaic — October 5 (current return note)
+
+Daniel preferred the original mosaic's visual appeal and requested a bloc-first reveal. This supersedes the majority bars below, which were deployed as 764995b. Product Sol restored the 120-cell mosaic in app/page.tsx, components/HomeRace.tsx, components/home.css and lib/home-race.ts/test. Default is four solid bloc colors; selecting a bloc via its large label button or cells reveals only its parties. Revealed cells and named rows open the selected Party Map profile. Back to blocs, same-row toggle and Escape reset the view. Bloc cell budgets and positions remain fixed throughout; fractional totals, exact shortfalls and missing/combined distinctions are preserved. Shared SeatGrid and other site pages are unchanged.
+
+Verification: 534 tests pass; full lint without warnings, production build and TypeScript pass. Root checked desktop and 390/320 CSS-pixel phone layouts, selection/reset, keyboard Enter/Escape, selected-party navigation and fixed geometry (all 120 cells; other blocs retain their colors). Mobile selection brings the entire chart into view. A fresh production-build browser showed no console errors or warnings after reveal; a development SVG-title hydration issue was corrected and the fresh production check passed. Logs remain disposable under node_modules/.cache/navigation-review/home-mosaic-*.
+
+Authorized next action: commit and push the scoped change, fast-forward main, verify the exact production deployment and public homepage. Main and feature branch were both at 764995b before this change. Preserve main's unrelated untracked outreach/attachments. Local production preview is on port 3210 (session 56446). Historical deployment-pending notes below describe earlier milestones, not the current public baseline.
+
 ### Approved homepage simplification — October 5
 
 Daniel found the multicolor homepage mosaic confusing on mobile and approved replacing it with four directly labeled majority bars and expandable party lists. Product Sol implemented app/page.tsx, components/HomeRace.tsx, components/home.css and the small lib/home-race model/test. The homepage now uses independent neutral bars on one zero-based scale (0–70 for the current figures, expanding if necessary), a 61-seat marker, full approved group names and exact fractional gaps: 54.5 means 6.5 short, not 6. Each native disclosure reveals named party rows, existing party colors, estimates/status and links to the selected Party Map panel. Missing and combined estimates remain distinct from zero; the current normalized model remains the same. Long source details follow the chart on mobile, with explicit Party Map/Builder links and the grouping/agreement distinction. This supersedes the earlier homepage mosaic design; the interactive seat grids elsewhere remain in place.
