@@ -320,3 +320,8 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   IDI note — proceeded because Daniel approved the item and the wording is flagged for him in
   HANDOFF item 1; the signed note is gated on data/home-note.json and hidden until he writes it.
 - GATE: the no-vote total is not on the home strip until the content lane sends a sourced figure.
+
+## 2026-10-05, late: EVAL build (content lane)
+- Daniel approved EVAL.md; lanes split with israelielection-9b (structure/styling vs content/data). Done here: exit polls as `kind: "exit"` (never averaged, exempt from the move rule; enter by hand on the night); stance labels + declined/none status for the Palestinian-state comparison column; Teach promise reworded; Builder links → /coalition-builder; deck calendar stripped; drift notes removed from /results, /parties, Sources; 17 bare IDI citations dated.
+- results-check (run locally Oct 5): media26.bechirot.gov.il/files/expc.csv reachable (HTTP 200) but still a July 2025 placeholder (16 localities); letters דרך (yashar), רק (byachad), די (res), ודם (jl) not yet in it. Re-run `npx tsx scripts/jobs/results-check.mts` weekly and on Oct 26; the committee's template should update before the vote.
+- Election night: enter exit polls in data/polls.json by hand with "kind": "exit" as Kan, Channel 12 and Channel 13 air them at 10 pm Israel time.
