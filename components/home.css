@@ -1,99 +1,80 @@
-/* Home: the headline and the 120 seats; what the election is about; today's briefing; the reader's path; the tools; the rest of the site. */
+/* Home: the headline and the 120 seats; the reader's path; today's first sentence; the four tools; the two standing invitations. */
 .home .wrap { padding-bottom: 48px; }
-.home section h2, .home nav h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; margin: 0 0 18px; }
+.home section h2 { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.1; margin: 0 0 16px; }
 
-.home .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 64px; align-items: center; padding-block: 44px 40px; border-bottom: 1px solid var(--ink); }
+.home .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px 64px; align-items: center; padding-block: 40px 36px; }
 .home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
 .home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 40ch; }
-.home .hero .blocs { margin: 26px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); max-width: 340px; font-size: 15px; }
+.home .hero .blocs { margin: 24px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); max-width: 360px; font-size: 15px; }
 .home .hero .blocs div { display: flex; align-items: baseline; gap: 8px; border-top: 1px solid var(--line); padding: 7px 0; }
 .home .hero .blocs div:last-child { border-bottom: 1px solid var(--line); }
-.home .hero .blocs dt { display: flex; align-items: center; gap: 9px; color: var(--text); }
+.home .hero .blocs dt { display: flex; align-items: center; gap: 9px; color: var(--text); line-height: 1.25; }
+.home .hero .blocs dt .sw { flex: none; }
 .home .hero .blocs dd { margin: 0 0 0 auto; font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
 .home .hero .read { font-family: var(--display); font-size: 17px; line-height: 1.45; color: var(--ink); margin: 16px 0 0; max-width: 44ch; }
 .home .hero .src { margin-top: 10px; max-width: 52ch; }
 .home .hero .grid { padding-inline: 2px; }
 .home .hero .grid .sg { width: 100%; }
 
-/* What this election is about: the voters' top three, then the sentence on what it is not about. */
-.home .about { padding-block: 32px 36px; border-bottom: 1px solid var(--line); }
-.home .about .row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 64px; align-items: start; }
-.home .about .considerations { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); }
-.home .about .considerations li { display: flex; align-items: baseline; gap: 14px; border-top: 1px solid var(--line); padding: 10px 0; }
-.home .about .considerations li:last-child { border-bottom: 1px solid var(--line); }
-.home .about .considerations .n { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; min-width: 2.6ch; }
-.home .about .considerations .l { font-size: 15.5px; color: var(--text); }
-.home .about .not p { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 0; max-width: 58ch; }
-.home .about .not p a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .about .novote { font-family: var(--display); font-size: 19px; line-height: 1.45; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); max-width: 58ch; }
-.home .about .not .novote a { color: var(--text); font-weight: 400; text-decoration: none; }
-.home .about .not .novote a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .about .novote b { color: var(--ink); font-weight: 700; }
-.home .about .not .src { font-family: var(--body); font-size: 13px; margin-top: 12px; max-width: none; }
+/* The reader's path, as one sentence under the hero's rule. */
+.home .start { font-family: var(--display); font-size: 18px; line-height: 1.4; color: var(--text); margin: 0; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.home .start a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
-/* Today: the briefing's first sentences. */
-.home .today { padding-block: 30px 32px; border-bottom: 1px solid var(--line); }
+/* Today: the briefing's first sentence, as one line. */
+.home .today { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 64px; align-items: baseline; padding-block: 22px 24px; border-bottom: 1px solid var(--line); }
+.home .today h2 { margin: 0; }
 .home .today h2 .d { font-weight: 400; color: var(--ink-2); margin-left: 10px; }
-.home .today ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 40px; }
-.home .today li { font-family: var(--display); font-size: 17.5px; line-height: 1.45; color: var(--text); border-top: 1px solid var(--line); padding-top: 12px; }
+.home .today p { font-family: var(--display); font-size: 17.5px; line-height: 1.45; color: var(--text); margin: 0; }
 .home .today .srcs { display: inline-flex; gap: 8px; flex-wrap: wrap; font-family: var(--body); font-size: 12.5px; font-weight: 600; vertical-align: 2px; }
 .home .today .srcs a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line-2); }
 .home .today .srcs a:hover { color: var(--ink); border-color: var(--ink); }
-.home .today .more { margin: 18px 0 0; font-size: 14.5px; }
-.home .today .more a { color: var(--ink); font-weight: 600; }
+.home .today .more { grid-column: 2; font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 6px; }
 
-/* Start here: the reader's path, four steps under one rule. */
-.home .start { padding-block: 30px 34px; border-bottom: 1px solid var(--line); }
-.home .start ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 36px; counter-reset: step; }
-.home .start li { border-top: 2px solid var(--ink); padding-top: 12px; }
-.home .start li a { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.1; color: var(--ink); text-decoration: none; }
-.home .start li a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .start li p { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 8px 0 0; }
+/* Try it: the four interactives, each with its own picture drawn from the data. */
+.home .tools { padding-block: 28px 32px; border-bottom: 1px solid var(--line); }
+.home .tools ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px 28px; }
+.home .tools li a { display: flex; flex-direction: column; gap: 6px; color: var(--ink); text-decoration: none; }
+.home .tools .gl { display: block; width: 100%; height: auto; background: var(--sheet); border: 1px solid var(--line-2); margin-bottom: 8px; transition: border-color .12s; }
+.home .tools li a:hover .gl { border-color: var(--ink); }
+.home .tools li a:hover .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.home .tools .t { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; }
+.home .tools .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 
-/* Try it: the two interactives, as slips. */
-.home .try { padding-block: 30px 34px; border-bottom: 1px solid var(--line); }
-.home .try .tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 36px; }
-.home .try .tool { display: flex; flex-direction: column; gap: 8px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 5px solid var(--ink); padding: 18px 20px 20px; color: var(--ink); text-decoration: none; min-height: 150px; }
-.home .try .tool:hover { border-color: var(--ink); }
-.home .try .tool .sg { width: 180px; margin-bottom: 6px; }
-.home .try .tool .t { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.1; }
-.home .try .tool .p { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); }
+.gl-builder .paper { fill: var(--sheet); stroke: var(--line-2); stroke-width: 1; }
+.gl-builder .let { font-family: var(--display); font-weight: 900; font-size: 36px; fill: var(--ink); }
+.gl-builder .seats { font-family: var(--display); font-weight: 700; font-size: 22px; fill: var(--ink-2); }
+.gl-polls path { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
+.gl-polls .rule { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.gl-polls .rl, .gl-polls .end { font-family: var(--display); font-weight: 700; font-size: 13px; fill: var(--ink); }
+.gl-votemap path { stroke-linecap: round; }
+.gl-votemap .gaza { fill: var(--line); stroke: var(--ink-3); stroke-width: .6; }
+.gl-votemap .wb { fill: none; stroke: var(--ink-2); stroke-width: .8; stroke-dasharray: 2.5 2; }
+.gl-votemap .v0 { fill: none; stroke: color-mix(in oklab, var(--ink) 10%, var(--sheet)); }
+.gl-votemap .v1 { fill: none; stroke: color-mix(in oklab, var(--ink) 18%, var(--sheet)); }
+.gl-votemap .v2 { fill: none; stroke: color-mix(in oklab, var(--ink) 28%, var(--sheet)); }
+.gl-votemap .v3 { fill: none; stroke: color-mix(in oklab, var(--ink) 40%, var(--sheet)); }
+.gl-votemap .v4 { fill: none; stroke: color-mix(in oklab, var(--ink) 54%, var(--sheet)); }
+.gl-votemap .v5 { fill: none; stroke: color-mix(in oklab, var(--ink) 70%, var(--sheet)); }
+.gl-votemap .v6 { fill: none; stroke: color-mix(in oklab, var(--ink) 88%, var(--sheet)); }
 
-/* A note from Daniel, once there is one. */
-.home .note-from { padding-block: 30px 34px; border-bottom: 1px solid var(--line); max-width: 700px; }
-.home .note-from p { font-family: var(--display); font-size: 19px; line-height: 1.5; color: var(--text); margin: 0; }
-.home .note-from p + p { margin-top: 1em; }
-.home .note-from .sig { font-family: var(--body); font-size: 14.5px; color: var(--ink-2); margin-top: 14px; }
-
-/* Teach: one band. */
-.home .teach-band { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 64px; align-items: baseline; padding-block: 28px; border-bottom: 1px solid var(--ink); color: var(--ink); text-decoration: none; }
-.home .teach-band:hover .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .teach-band .t { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; }
-.home .teach-band .p { font-size: 15px; line-height: 1.45; color: var(--ink-2); }
-
-/* The index of the rest of the site, in the menu's groups. */
-.home .also { padding-top: 26px; }
-.home .also h2 { font-size: 20px; }
-.home .also .groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 36px; }
-.home .also .lbl { font-size: 13px; font-weight: 600; color: var(--ink-3); margin: 0; }
-.home .also ul { list-style: none; margin: 6px 0 0; padding: 0; }
-.home .also li { display: flex; flex-direction: column; gap: 2px; padding: 8px 0 10px; border-top: 1px solid var(--line); }
-.home .also li a { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.15; color: var(--ink); text-decoration: none; }
-.home .also li a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .also li span { font-size: 13.5px; line-height: 1.45; color: var(--ink-2); }
+/* The two standing invitations, side by side. */
+.home .standing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 64px; padding-top: 28px; }
+.home .standing a { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 2px solid var(--ink); color: var(--ink); text-decoration: none; max-width: 52ch; }
+.home .standing a:hover .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.home .standing .t { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; }
+.home .standing .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 
 @media (max-width: 1000px) {
-  .home .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 28px 32px; }
+  .home .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 28px 30px; }
   .home .hero .grid { order: 2; max-width: 640px; }
-  .home .about .row { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .home .about .considerations { max-width: 420px; }
-  .home .today ul { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .home .start ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home .teach-band { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-  .home .also .groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home .today { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .home .today .more { grid-column: 1; }
+  .home .tools ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .home .hero h1 { font-size: clamp(40px, 11vw, 52px); }
-  .home .start ol, .home .try .tools, .home .also .groups { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .home .also li a { font-size: 18px; }
+  .home .tools ul { gap: 18px 16px; }
+  .home .tools .t { font-size: 19px; }
+  .home .tools .p { font-size: 13px; }
+  .home .standing { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 }

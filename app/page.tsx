@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
+import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
 import SeatGrid from "@/components/SeatGrid";
 import briefingsJson from "@/data/briefings/_index.json";
-import lensCharts from "@/data/charts/american-lens.json";
-import note from "@/data/home-note.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
-import { averagePoll, blocs, mainPolls, parties } from "@/lib/data";
+import { allPolls, averagePoll, blocs, mainPolls, parties, pollsData } from "@/lib/data";
 import { fmt, mediumDate } from "@/lib/format";
-import { blocTotals } from "@/lib/polls";
+import { blocTotals, isExit } from "@/lib/polls";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
-import { DESCRIPTION, NAV_GROUPS, TEACH } from "@/lib/site";
+import { DESCRIPTION, TEACH } from "@/lib/site";
 import type { BlocId, Poll } from "@/lib/types";
 
 // Every minute: on election night the hero shows the count as it comes in. Before then the page
@@ -25,40 +24,10 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
 };
 
-/** One line on each section, for the index at the foot of the page. */
-const BLURB: Record<string, string> = {
-  "/coalition-builder": "Pick parties and see whether they reach 61, with the pledges in the way.",
-  "/parties": "Every list sized by its poll average, with a sourced profile of each.",
-  "/compare": "Two to four parties side by side on seven questions, including a Palestinian state.",
-  "/polls": "Every seat poll of the campaign, the current average, and how each party has moved.",
-  "/news": "A daily briefing, every sentence sourced, and the latest headlines.",
-  "/results": "The committee's count on election night, as seats by party and bloc.",
-  "/government": "The clock on forming a government after the vote: each step the law allows, its limit, and where things stand.",
-  "/how-it-works": "How votes become seats, how a government is formed, and how Israelis cast their ballots.",
-  "/how-it-works/who-votes": "Who can vote for the Knesset, who can't, and the legal findings about the gap.",
-  "/issues": "Seven questions that decide how Israelis vote, and how Americans misread them.",
-  "/communities": "Nine groups of Israeli voters: how many, where, how they vote, what they think.",
-  "/vote-map": "How every town voted in the five elections from 2019 to 2022, list by list.",
-  "/american-lens": "Why \"pro-Israel\" is not an Israeli category.",
-  "/timeline": "From 1977 to this campaign, the turns that made today's map.",
-  "/glossary": "The terms the coverage assumes you know, each with its source.",
-  "/about": "Why this site exists, where its information comes from, and how to correct it.",
-  "/teach": "Session decks with speaker notes and classroom interactives for educators.",
-};
-
-/** The first-time reader's path, in reading order. */
-const START = [
-  { href: "/how-it-works", label: "How it works", text: "120 seats, a 3.25% threshold, and why 61 is the only number that matters." },
-  { href: "/parties", label: "The parties", text: "Fifteen lists in four blocs, each with its leader, its voters and its record." },
-  { href: "/issues", label: "The issues", text: "Security, the cost of living, conscription: what Israelis say will decide their vote." },
-  { href: "/how-it-works/who-votes", label: "Who votes", text: "Who has a Knesset vote, who lives under Israeli rule without one, and what the courts have found." },
-];
-
 /** Blocs in the order they fill the grid: Netanyahu's bloc first, the unaligned list, then the opposition and the Arab-led lists. */
 const GRID_ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 
 const briefings = briefingsJson as Briefing[];
-const considerations = lensCharts["vote-considerations"];
 
 function Headline({ days, live }: { days: number; live: boolean }) {
   if (live) return <>Israel voted.</>;
@@ -133,48 +102,11 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
   );
 }
 
-/** What this election is about, in the voters' own ranking, and what it is not about. */
-function About() {
-  const top = considerations.rows.slice(0, 3);
-  return (
-    <section className="about" aria-labelledby="about-h">
-      <h2 id="about-h">What this election is about</h2>
-      <div className="row">
-        <ol className="considerations">
-          {top.map((r) => (
-            <li key={r.label}>
-              <span className="n">{r.value}%</span>
-              <span className="l">{r.label}</span>
-            </li>
-          ))}
-        </ol>
-        <div className="not">
-          <p>
-            Asked what will decide their vote, Jewish Israelis named security, the cost of living and conscription. The Palestinian question was not
-            offered as an answer. For most Jewish Israeli voters, Palestinian rights and statehood are not at the center of this election.{" "}
-            <Link href="/american-lens">Read why</Link>—and <Link href="/how-it-works/who-votes">who has no vote in it</Link>.
-          </p>
-          <p className="novote">
-            <Link href="/how-it-works/who-votes">
-              <b>About 5.4 million</b> Palestinians live under Israeli rule in the West Bank, East Jerusalem included, and Gaza. Apart from East Jerusalem
-              residents who have naturalized, none can vote for the Knesset.
-            </Link>
-          </p>
-          <p className="src">
-            <a href={considerations.url}>{considerations.source}</a>, {considerations.date}, {considerations.sample}; first and second choices combined.{" "}
-            <a href="https://www.ochaopt.org/sites/default/files/OPT_Flash_Appeal_2026_EN_FINAL.pdf">OCHA, Dec 16, 2025</a>: 3.3 million in the West Bank including East
-            Jerusalem, 2.1 million in Gaza.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** The latest briefing's first sentences, with their sources. */
+/** The latest briefing's first sentence, with its sources, as one line. */
 function Today() {
   const b = briefings[0];
-  if (!b) return null;
+  const s = b?.sentences[0];
+  if (!b || !s) return null;
   const date = new Date(`${b.date}T12:00:00Z`);
   const label = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(date);
   return (
@@ -182,23 +114,19 @@ function Today() {
       <h2 id="today-h">
         Today <span className="d">{label}</span>
       </h2>
-      <ul>
-        {b.sentences.slice(0, 3).map((s, i) => (
-          <li key={i}>
-            {s.text}{" "}
-            <span className="srcs">
-              {s.sources.map((src, k) => (
-                <a key={k} href={src.url} title={src.title}>
-                  {src.outlet}
-                </a>
-              ))}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <p className="more">
-        <Link href="/news">Full briefing and the latest headlines</Link>
+      <p>
+        {s.text}{" "}
+        <span className="srcs">
+          {s.sources.map((src, k) => (
+            <a key={k} href={src.url} title={src.title}>
+              {src.outlet}
+            </a>
+          ))}
+        </span>
       </p>
+      <Link href="/news" className="more">
+        Full briefing and the latest headlines
+      </Link>
     </section>
   );
 }
@@ -208,83 +136,62 @@ export default async function Page() {
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
   const days = daysUntil(ELECTION_DAY);
   const poll = results ?? averagePoll;
-  const totals = blocTotals(poll, parties);
-  const thumb = GRID_ORDER.map((id) => ({ id, seats: totals[id], color: `var(--b-${id})`, label: blocs.find((b) => b.id === id)!.label }));
-  const shown = new Set([...START.map((s) => s.href), "/coalition-builder", "/vote-map", TEACH.href]);
-  const groups = NAV_GROUPS.map((g) => ({ label: g.label, items: [...g.items, ...(g.more ?? [])].filter((n) => !shown.has(n.href)) })).filter(
-    (g) => g.items.length
-  );
+  const trendPolls = allPolls.filter((p) => !isExit(p));
   return (
     <div className="home">
       <div className="wrap">
         <Race poll={poll} live={!!results} days={days} />
 
-        <About />
+        <p className="start">
+          New here? Start with <Link href="/how-it-works">how it works</Link>, then <Link href="/parties">the parties</Link>,{" "}
+          <Link href="/issues">the issues</Link> and <Link href="/how-it-works/who-votes">who votes</Link>.
+        </p>
 
         <Today />
 
-        <section className="start" aria-labelledby="start-h">
-          <h2 id="start-h">Start here</h2>
-          <ol>
-            {START.map((s) => (
-              <li key={s.href}>
-                <Link href={s.href}>{s.label}</Link>
-                <p>{s.text}</p>
-              </li>
-            ))}
-          </ol>
+        <section className="tools" aria-labelledby="tools-h">
+          <h2 id="tools-h">Try it</h2>
+          <ul>
+            <li>
+              <Link href="/coalition-builder">
+                <BuilderGlyph parties={parties} poll={poll} />
+                <span className="t">Coalition Builder</span>
+                <span className="p">{results ? "Build a coalition from the real results. Can you get to 61?" : "Pick parties from any poll. Can you get to 61?"}</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/parties">
+                <PartyMapGlyph parties={parties} poll={poll} />
+                <span className="t">Party Map</span>
+                <span className="p">Every list sized by its poll average, with a sourced profile of each.</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/polls">
+                <PollsGlyph polls={trendPolls} parties={parties} config={pollsData.config} />
+                <span className="t">Polls</span>
+                <span className="p">Every seat poll of the campaign, the current average, and how each party has moved.</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/vote-map">
+                <VoteMapGlyph />
+                <span className="t">Vote map</span>
+                <span className="p">How every town voted in the five elections from 2019 to 2022, list by list.</span>
+              </Link>
+            </li>
+          </ul>
         </section>
 
-        <section className="try" aria-labelledby="try-h">
-          <h2 id="try-h">Try it</h2>
-          <div className="tools">
-            <Link href="/coalition-builder" className="tool">
-              <SeatGrid segments={thumb} variant="meter" title="The current average as 120 seats" />
-              <span className="t">Coalition Builder</span>
-              <span className="p">{results ? "Build a coalition from the real results. Can you get to 61?" : "Pick parties from any poll. Can you get to 61?"}</span>
-            </Link>
-            <Link href="/vote-map" className="tool">
-              <span className="t">Vote map</span>
-              <span className="p">How every town voted in the five elections from 2019 to 2022, list by list.</span>
-            </Link>
-          </div>
-        </section>
-
-        {note.text && (
-          <section className="note-from" aria-labelledby="note-h">
-            <h2 id="note-h">A note from Daniel</h2>
-            {note.text.split(/\n\s*\n/).map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-            <p className="sig">
-              {note.signed}
-              {note.date && <>, {mediumDate(note.date)}</>}
-            </p>
-          </section>
-        )}
-
-        <Link href={TEACH.href} className="teach-band">
-          <span className="t">Teaching this election?</span>
-          <span className="p">Session decks and classroom interactives for educators and rabbinic colleagues, free to use under CC BY-NC.</span>
-        </Link>
-
-        <nav className="also" aria-labelledby="also-h">
-          <h2 id="also-h">Also on this site</h2>
-          <div className="groups">
-            {groups.map((g) => (
-              <div key={g.label}>
-                <p className="lbl">{g.label}</p>
-                <ul>
-                  {g.items.map((n) => (
-                    <li key={n.href}>
-                      <Link href={n.href}>{n.label}</Link>
-                      <span>{BLURB[n.href]}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <nav className="standing" aria-label="Teaching and about">
+          <Link href={TEACH.href}>
+            <span className="t">Teaching this election?</span>
+            <span className="p">Session decks and classroom interactives for educators and rabbinic colleagues, free to use under CC BY-NC.</span>
+          </Link>
+          <Link href="/about">
+            <span className="t">About and method</span>
+            <span className="p">Why this site exists, where its information comes from, and how to correct it.</span>
+          </Link>
         </nav>
       </div>
     </div>
