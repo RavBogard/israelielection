@@ -345,3 +345,9 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   (/api/card): the chosen parties on the grid in bloc colours, the total against 61, the pledge
   count, the poll and date, "built by a reader, not a forecast". Shared drawing code in lib/og.tsx.
   Satori has no bidi, so the Hebrew letters are reversed by hand before drawing.
+
+## 2026-10-05: content batch shipped (d3b13ed, 5d13ada)
+- No-vote total (about 5.4 million; OCHA 2026 Flash Appeal PDF) fact-checked and sent to the design session for the home strip.
+- GATE: home-strip wording sent without Daniel's review — proceeded because it restates the fact-checked who-votes sentence and the home line Daniel already ruled.
+- Note for Daniel: OCHA's 3.3 million is stated as the people whose movement is restricted, not as a population count; PCBS gives 3,325,905 for the West Bank (2024) as a cleaner alternative source.
+- forming-a-government now links /government.
