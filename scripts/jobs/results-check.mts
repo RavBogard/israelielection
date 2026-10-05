@@ -1,5 +1,6 @@
 /**
- * Rehearsal check for election night: can this machine reach the committee's file, and do its
+ * Rehearsal check for election night (run locally: GitHub runners get a 404 from the
+ * committee's CDN; Vercel iad1 gets the file): can this machine reach the committee's file, and do its
  * column letters match data/results.json? Prints a report; exits 1 if the file is unreachable.
  *
  *   tsx scripts/jobs/results-check.mts

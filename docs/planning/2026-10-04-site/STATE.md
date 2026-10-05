@@ -118,7 +118,11 @@ Done:
   Shas–UTJ, whose signing is unconfirmed. Before election night: confirm against the
   committee's list of filed agreements and fix `data/results.json`.
 - The committee's test file still uses 2022 letters (no דרך, רק, די, ודם columns); that is
-  expected. `Results check` (manual workflow) reports the mismatch; run it on election night.
+  expected. `scripts/jobs/results-check.mts` reports the mismatch; run it locally on election night.
+- Reachability (Oct 5): the committee's CDN (CloudFront) returns 404 to GitHub runners but
+  serves Vercel (iad1) and a US home connection. So the results page fetches from Vercel
+  directly; no Actions job sits in the path. Risk: the committee may tighten blocking on the
+  night. Fallback to decide then: a manual upload of the CSV into data/.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
