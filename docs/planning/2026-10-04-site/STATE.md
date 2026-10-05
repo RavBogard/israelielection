@@ -149,7 +149,12 @@ Done:
   - Delegated to a design subagent on a worktree branch; I review and merge.
   - Added `.claude/` to the tsconfig, ESLint and Vitest ignores, so agent worktrees don't leak into checks.
   - Result: branch `redesign` (Vercel preview). Design: paper and ink with no accent colour, so only the bloc colours carry colour; Frank Ruhl Libre with Source Serif and Sans; a ballot-slip logo; a front page above the builder with "where the race stands", a seat strip and an index of the site.
-  - Held for Daniel's look (user-visible identity change, no precedent). Merge to main on his OK.
+  - Held for Daniel's look (user-visible identity change, no precedent). Daniel approved ("go live", Oct 5); merged to main.
+- Session 1 deck on /teach (Daniel asked, Oct 5).
+  - Cowork exported a PPTX and a PDF to public/teach/, with privacy removals logged in docs/teach-private/ (gitignored). Its notes JSON lists the removed trip dates, so it is kept out of public/.
+  - I read all 31 slides and all speaker notes before publishing. Clean: no emails, Zoom or registration links, or trip dates.
+  - Left for Daniel: the notes name CRC ("home to Zionists, non-Zionists and anti-Zionists"), and quote two private people from a published Ynetnews/Media Line story (May 2024).
+  - Session data lives in data/teach.json.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
