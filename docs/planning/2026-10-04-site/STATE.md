@@ -341,3 +341,7 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   keep it) — proceeded because twelve links overflowed at every width and the masthead rule is
   about eleven; Government matters more than the map from Oct 28 on. Masthead re-measured: fits
   1200 to 1600 after spacing went from 22 to 18 px.
+- Round four: the coalition share card. A Builder link with ?with= now carries its own og:image
+  (/api/card): the chosen parties on the grid in bloc colours, the total against 61, the pledge
+  count, the poll and date, "built by a reader, not a forecast". Shared drawing code in lib/og.tsx.
+  Satori has no bidi, so the Hebrew letters are reversed by hand before drawing.

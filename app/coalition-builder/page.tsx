@@ -4,18 +4,31 @@ import "@/components/coalition.css";
 import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
-import { allPolls } from "@/lib/data";
+import { allPolls, parties } from "@/lib/data";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
 
 // Every minute: on election night the builder adds the count as it comes in.
 export const revalidate = 60;
 
-export const metadata: Metadata = {
-  title: "Coalition Builder",
-  description:
-    "Pick parties from the current poll average, or from any poll, and see whether they reach the 61 seats a government needs, with the pledges that stand in the way.",
-};
+const DESCRIPTION = "Pick parties from the current poll average, or from any poll, and see whether they reach the 61 seats a government needs, with the pledges that stand in the way.";
+
+/** A shared coalition link carries its own card: the chosen parties on the 120-seat grid. */
+export async function generateMetadata({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }): Promise<Metadata> {
+  const q = await searchParams;
+  const with_ = typeof q.with === "string" ? q.with : "";
+  const poll = typeof q.poll === "string" ? q.poll : "";
+  const ids = with_.split(",").filter((id) => parties.some((p) => p.id === id));
+  if (!ids.length) return { title: "Coalition Builder", description: DESCRIPTION };
+  const card = `/api/card?with=${ids.join(",")}${poll ? `&poll=${encodeURIComponent(poll)}` : ""}`;
+  const names = ids.map((id) => parties.find((p) => p.id === id)!.name);
+  return {
+    title: "A coalition on the Coalition Builder",
+    description: `${names.join(", ")}: does it reach 61? ${DESCRIPTION}`,
+    openGraph: { images: [{ url: card, width: 1200, height: 630 }] },
+    twitter: { card: "summary_large_image", images: [card] },
+  };
+}
 
 export default async function Page() {
   const live = await fetchCount(revalidate);

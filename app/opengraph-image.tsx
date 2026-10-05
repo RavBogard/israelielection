@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { COLS, MAJORITY, ROWS, TOTAL, allocate } from "@/components/SeatGrid";
 import { KNESSET } from "@/lib/coalition";
@@ -9,7 +7,7 @@ import { mediumDate } from "@/lib/format";
 import { blocTotals } from "@/lib/polls";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
-import type { BlocId } from "@/lib/types";
+import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from "@/lib/og";
 
 // The share card is the home page's opening: the race as the 120 seats of the Knesset, coloured
 // by bloc from the current poll average (or the count, on election night). It is drawn on request
@@ -19,13 +17,7 @@ export const alt = "Israel Votes 2026: the 120 seats of the Knesset by bloc in t
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Satori cannot read CSS variables; these mirror --b-* and the paper tokens in app/globals.css.
-const BLOC: Record<BlocId, string> = { net: "#233f86", opp: "#d98a1f", mid: "#3fb0a2", arab: "#8d4fae" };
-const PAPER = "#f6f5f1", CELL = "#e4e2db", INK = "#000000", TEXT = "#2a2925", INK3 = "#8b8880", LINE = "#dedcd5";
-const GRID_ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
-
-const font = (file: string) => readFile(join(process.cwd(), "assets/og", file));
-const fonts = Promise.all([font("FrankRuhlLibre-Regular.ttf"), font("FrankRuhlLibre-Bold.ttf"), font("PublicSans-Medium.ttf"), font("PublicSans-SemiBold.ttf")]);
+const { S, P } = G;
 
 /** Two lines, broken after "votes" so the number never sits alone on the second line. */
 function headline(days: number, live: boolean): [string, string] {
@@ -37,7 +29,6 @@ function headline(days: number, live: boolean): [string, string] {
 }
 
 export default async function Image() {
-  const [frank, frankBold, sans, sansSemi] = await fonts;
   const live = await fetchCount(revalidate);
   const poll = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : averagePoll;
   const isLive = live.state === "open";
@@ -46,7 +37,7 @@ export default async function Image() {
   const counts = allocate(ordered.map((b) => ({ id: b.id, seats: b.seats, color: BLOC[b.id], label: b.label })));
 
   // The grid: cell 36, gap 6, the heavy rule under row five, "61" beside it.
-  const S = 36, P = 42, W = COLS * P - 6, H = ROWS * P - 6, ruleY = 5 * P - 3;
+  const W = COLS * P - 6, H = ROWS * P - 6, ruleY = 5 * P - 3;
   const cells: React.ReactNode[] = [];
   let i = 0;
   ordered.forEach((b, k) => {
@@ -98,12 +89,7 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: [
-        { name: "Frank Ruhl Libre", data: frank, weight: 400, style: "normal" },
-        { name: "Frank Ruhl Libre", data: frankBold, weight: 700, style: "normal" },
-        { name: "Public Sans", data: sans, weight: 500, style: "normal" },
-        { name: "Public Sans", data: sansSemi, weight: 600, style: "normal" },
-      ],
+      fonts: await ogFonts(),
     }
   );
 }
