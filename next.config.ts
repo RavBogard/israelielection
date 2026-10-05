@@ -1,3 +1,4 @@
+import path from "node:path";
 import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
@@ -14,4 +15,5 @@ const nextConfig: NextConfig = {
 };
 
 // Reference pages are MDX in content/; their charts and party tables live in data/ (see lib/articles.ts).
-export default createMDX({})(nextConfig);
+// Glossary terms link to /glossary on first use (lib/remark-glossary.mjs; a string so Turbopack can load it).
+export default createMDX({ options: { remarkPlugins: [path.join(process.cwd(), "lib/remark-glossary.mjs")] } })(nextConfig);
