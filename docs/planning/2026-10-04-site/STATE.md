@@ -383,3 +383,6 @@ Lanes agreed with the content session (it: content, data, RULINGS, this STATE fi
 - GATE: the Builder's starting set is the 2022 coalition (likud, otzma, rz, shas, utj), not "the parties in government today" — proceeded because it answers whether the elected government could win again, and the /government section tells the rest. Daniel can switch it.
 - Declined a fifth Teach card: card 1 already opens the Builder with that set plus People of Israel.
 - Unverified, left out: the AG's election-period guideline text; ministers by name in 2026; whether Noam left the coalition in Mar 2025.
+
+## The outgoing government, 2026-10-05
+Karen asked how to understand the current coalition through the site; Daniel approved the plan. Content session: data/outgoing-government.json, lib/outgoing-government.ts, tests (a3c5d6a). Design: Builder preset as a text link under the intro ("Start from the outgoing government") with a "then vs now" line in the panel that reads the selected poll, so it works on the count; /government opens with "Who governs until a new government is sworn in", the dated steps with seats-after in the number column, seatsNote under the list, glossary link on "transitional government", Noam note with source; the clock gets its own heading. Rejected together: a 2022 entry in the poll picker (lists changed) and a fifth Teach card (card 1 covers it).

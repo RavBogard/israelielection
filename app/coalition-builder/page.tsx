@@ -5,6 +5,7 @@ import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
 import { allPolls, parties } from "@/lib/data";
+import { outgoingGovernment } from "@/lib/outgoing-government";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
 
@@ -30,13 +31,16 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   };
 }
 
+/** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
+const PRESET = { ids: outgoingGovernment.with, label: "the outgoing government", seats: outgoingGovernment.seats2022, year: 2022, note: outgoingGovernment.noam.text };
+
 export default async function Page() {
   const live = await fetchCount(revalidate);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
   return (
     <div className="ix builder-page">
       <div className="wrap">
-        <CoalitionBuilder results={results} />
+        <CoalitionBuilder results={results} preset={PRESET} />
 
         <SourcesBox count={allPolls.length + 10}>
           <PollSources />

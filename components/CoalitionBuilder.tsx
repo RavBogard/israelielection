@@ -147,7 +147,14 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
   );
 }
 
-export default function CoalitionBuilder({ results = null, embedded = false }: { results?: Poll | null; embedded?: boolean }) {
+/** A named line-up a reader can load in one tap, with the seats it once held for the "then vs now" line. */
+export type Preset = { ids: string[]; label: string; seats: number; year: number; note?: string | null };
+
+/** How the current poll is named in a sentence. */
+const pollPhrase = (poll: Poll) =>
+  poll.id === RESULTS_ID ? "the count so far" : poll.id === AVERAGE_ID ? `the average of the latest ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+
+export default function CoalitionBuilder({ results = null, embedded = false, preset }: { results?: Poll | null; embedded?: boolean; preset?: Preset }) {
   // On the home page the builder sits under the page's own heading, so its title is an h2.
   const Title = embedded ? "h2" : "h1";
   const choices = useMemo(() => pickList(results), [results]);
@@ -213,6 +220,9 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
 
   const profileParty = parties.find((p) => p.id === profile);
   const short = MAJORITY - t.total;
+  // The preset loads only slips that can be selected in this poll; a list without a figure is named in its note instead.
+  const presetIds = preset ? preset.ids.filter((id) => cardsFor(poll).some((p) => p.id === id && (p.coalitionCard === "active" || (poll.results[id]?.seats ?? 0) > 0))) : [];
+  const presetOn = preset ? presetIds.length > 0 && sel.size === presetIds.length && presetIds.every((id) => sel.has(id)) : false;
 
   return (
     <div className="cb">
@@ -223,6 +233,15 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
             Each card is a party&apos;s ballot slip. Tap one to add the party; a government needs <b>{MAJORITY}</b> of the Knesset&apos;s {KNESSET}{" "}
             seats to win a confidence vote. Seat numbers come from the poll you pick.
           </p>
+          {preset && presetIds.length > 0 && (
+            <p className="preset">
+              Start from{" "}
+              <button type="button" className="linkish" onClick={() => setSel(new Set(presetIds))} aria-pressed={presetOn}>
+                {preset.label}
+              </button>
+              : {presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}.
+            </p>
+          )}
         </div>
         <div className="controls">
           <div className="seg" role="group" aria-label="Choose a poll">
@@ -288,6 +307,12 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
               <li className="empty">No parties yet. Tap a slip to add one.</li>
             )}
           </ul>
+          {preset && presetOn && (
+            <p className="thennow">
+              {preset.label[0].toUpperCase() + preset.label.slice(1)} held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
+              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
+            </p>
+          )}
           {warns.length > 0 && (
             <div className="warns">
               {warns.map((w) => (

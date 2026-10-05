@@ -28,6 +28,11 @@
 .cb .warn cite { font-style: normal; opacity: .8; font-size: 12.5px; display: block; margin-top: 4px; }
 .cb .note { font-family: var(--display); font-size: 15.5px; line-height: 1.5; color: var(--text); border-top: 1px solid var(--line); padding-top: 14px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .cb .note p { margin: 0; }
+.cb .preset { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 10px 0 0; max-width: 62ch; }
+.cb .linkish { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.cb .linkish[aria-pressed="true"] { text-decoration-color: var(--line-2); }
+.cb .thennow { font-family: var(--display); font-size: 15.5px; line-height: 1.5; color: var(--text); margin: 0; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cb .thennow b { color: var(--ink); font-weight: 700; }
 .cb .naflag { font-size: 13.5px; color: var(--ink-2); background: var(--bg); padding: 8px 10px; margin: 0; }
 .cb .share { display: flex; gap: 10px; align-items: center; font-size: 13.5px; color: var(--ink-2); }
 

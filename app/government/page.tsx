@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "@/components/article/article.css";
 import "@/components/government.css";
+import OutgoingGovernmentSection from "@/components/OutgoingGovernment";
 import formationJson from "@/data/formation.json";
 import { type Formation, type Milestone, withDates } from "@/lib/formation";
 import { mediumDate } from "@/lib/format";
@@ -54,6 +55,9 @@ export default function Page() {
         </p>
       </header>
 
+      <OutgoingGovernmentSection />
+
+      <h2 className="gov-clock-h">The clock on the next one</h2>
       <section className="gov-today" aria-label="Where the process stands">
         {sinceVote < 0 ? (
           <p>
