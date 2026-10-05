@@ -91,8 +91,8 @@ export default function Page() {
 
         <h2 className="sec-h">Coalition scenarios for class</h2>
         <p className="note">
-          Four line-ups Israeli politics has actually produced or ruled out, each with one sourced fact, one thing to try in the Coalition Builder
-          and one question. The seat counts update with the polls.
+          Four line-ups Israeli politics has actually produced or ruled out. Each card opens to one sourced fact, one thing to try in the Coalition
+          Builder and one question. The seat counts update with the polls.
         </p>
         <Scenarios />
 
