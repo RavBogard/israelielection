@@ -19,6 +19,23 @@ const briefings = briefingsJson as Briefing[];
 const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 
+function Sentences({ b }: { b: Briefing }) {
+  return (
+    <>
+      {b.sentences.map((s, i) => (
+        <p key={i}>
+          {s.text}{" "}
+          {s.sources.map((src, j) => (
+            <a key={j} className="cite" href={src.url} target="_blank" rel="noopener" title={src.title}>
+              {src.outlet}
+            </a>
+          ))}
+        </p>
+      ))}
+    </>
+  );
+}
+
 export default async function Page() {
   const news = await fetchNews({ sinceHours: 72, revalidate });
   const latest = briefings[0];
@@ -26,37 +43,26 @@ export default async function Page() {
   return (
     <div className="ix nw">
       <div className="wrap">
-        <header className="ix-head">
-          <div>
-            <h1>News</h1>
-            <p className="sub">
-              A short daily briefing on what changed, then the latest headlines from {outlets.length} English-language outlets
-              ({outlets.join(", ")}).
-            </p>
-          </div>
+        <header className="page-head">
+          <h1>News</h1>
+          <p className="standfirst">
+            A short daily briefing on what changed, then the latest headlines from {outlets.length} English-language outlets.
+          </p>
+          <p className="note">{outlets.join(", ")}.</p>
         </header>
 
         <div className="nw-layout">
           <section className="nw-brief" aria-labelledby="brief-h">
-            <p className="lbl">Daily briefing</p>
+            <p className="lbl">The daily briefing</p>
             {latest ? (
               <>
                 <h2 id="brief-h">{longDate(latest.date)}</h2>
                 <div className="nw-sentences">
-                  {latest.sentences.map((s, i) => (
-                    <p key={i}>
-                      {s.text}{" "}
-                      {s.sources.map((src, j) => (
-                        <a key={j} className="cite" href={src.url} target="_blank" rel="noopener" title={src.title}>
-                          {src.outlet}
-                        </a>
-                      ))}
-                    </p>
-                  ))}
+                  <Sentences b={latest} />
                 </div>
                 <p className="src">
-                  Written by an AI model ({latest.model}) from the day&apos;s headlines and published without editing. Each sentence links
-                  the reports it draws on; sentences that could not be matched to a source were removed automatically.
+                  Written by an AI model ({latest.model}) from the day&apos;s headlines and published without editing. Each sentence links the
+                  reports it draws on; sentences that could not be matched to a source were removed automatically.
                 </p>
                 {briefings.length > 1 && (
                   <details className="nw-archive">
@@ -64,16 +70,7 @@ export default async function Page() {
                     {briefings.slice(1, 14).map((b) => (
                       <div key={b.date} className="nw-old">
                         <h3>{longDate(b.date)}</h3>
-                        {b.sentences.map((s, i) => (
-                          <p key={i}>
-                            {s.text}{" "}
-                            {s.sources.map((src, j) => (
-                              <a key={j} className="cite" href={src.url} target="_blank" rel="noopener" title={src.title}>
-                                {src.outlet}
-                              </a>
-                            ))}
-                          </p>
-                        ))}
+                        <Sentences b={b} />
                       </div>
                     ))}
                   </details>
@@ -95,7 +92,8 @@ export default async function Page() {
               {news.items.slice(0, 120).map((it) => (
                 <li key={it.url}>
                   <span className="nw-meta">
-                    <b>{it.outlet}</b> · <time dateTime={it.published}>{IL.format(new Date(it.published))}</time>
+                    <b>{it.outlet}</b>
+                    <time dateTime={it.published}>{IL.format(new Date(it.published))}</time>
                   </span>
                   <a href={it.url} target="_blank" rel="noopener" className="nw-title">
                     {it.title}

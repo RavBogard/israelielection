@@ -15,7 +15,7 @@ function SourceLine({ source, url, date, sample }: { source: string; url: string
   return (
     <>
       <a href={url}>{source}</a>, {date}
-      {sample ? ` · ${sample}` : ""}
+      {sample ? `, ${sample}` : ""}
     </>
   );
 }
@@ -150,7 +150,7 @@ export function Quote({ children, who, role, source, url, date }: { children: Re
       <blockquote>{children}</blockquote>
       <figcaption>
         {who}
-        {role ? `, ${role}` : ""} · <a href={url}>{source}</a>, {date}
+        {role ? `, ${role}` : ""}. <a href={url}>{source}</a>, {date}
       </figcaption>
     </figure>
   );

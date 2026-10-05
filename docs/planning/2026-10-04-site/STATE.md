@@ -250,3 +250,14 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   `vercel.json` framework: nextjs). Third deploy Ready; www.israelielection.org serves it.
 - Internal docs class-00/03/09 kept out of the public repo (.gitignore): staff email, Zoom
   registration link, trip dates, private artifact links.
+
+## Redesign 2 (2026-10-05, evening; branch `design`)
+- Daniel: holistic rework of UI, menu, look, branding and layout ("still feels pretty generic").
+  Answered four questions: full identity rework incl. a new mark; menu grouped by what the reader
+  is doing; Hebrew ballot letters on cards and profiles; sources folded one tap away.
+- Spec and gates: docs/planning/2026-10-05-redesign/DESIGN.md. Identity: 120-seat grid with the
+  61st marked (mark, home hero, builder meter, Party Map overview, Polls average, Results); party
+  cards as ballot slips with their letters; white paper and two inks; Frank Ruhl Libre + Public
+  Sans; one 1200px wrapper and one page-header pattern; grouped masthead menu with a phone sheet;
+  sources in a <details> at each page's end; the dateline bar and all-caps labels removed.
+- Held for Daniel's look on the Vercel preview before merge, as with the first redesign.

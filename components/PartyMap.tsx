@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./interactives.css";
 import "./map.css";
 import ProfileDetail from "./ProfileDetail";
+import SeatGrid from "./SeatGrid";
 import { blocLabel, blocs, mainPolls, otherPolls, parties } from "@/lib/data";
 import { fmt, shortDate } from "@/lib/format";
 import { average } from "@/lib/polls";
@@ -33,16 +34,18 @@ function useSize(ref: React.RefObject<HTMLElement | null>) {
 }
 
 function Overview() {
+  const order: BlocId[] = ["net", "mid", "opp", "arab"];
+  const segments = order.map((b) => ({ id: b, seats: blocSum(b), color: `var(--b-${b})`, label: blocLabel[b] }));
   return (
     <>
-      <p className="lbl">Average seats by bloc</p>
       <h2 className="ov">Four blocs, 120 seats</h2>
+      <SeatGrid variant="meter" segments={segments} labelRule />
       <table className="btable">
         <tbody>
           {blocs.map((b) => (
             <tr key={b.id}>
               <td>
-                <span className="sw" style={{ background: `var(--b-${b.id})`, marginRight: 8, verticalAlign: -2 }} />
+                <span className="sw" style={{ background: `var(--b-${b.id})`, marginRight: 8, verticalAlign: -1 }} />
                 {b.label}
               </td>
               <td>{fmt(blocSum(b.id))}</td>
@@ -109,7 +112,7 @@ export default function PartyMap() {
       const label = blocLabel[br.id as BlocId];
       cells.push(
         <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }}>
-          {bw < 230 ? label.split(" ")[0] : label} · {fmt(br.v)}
+          {bw < 230 ? label.split(" ")[0] : label} {fmt(br.v)}
         </div>
       );
       const ps = averaged
@@ -138,7 +141,7 @@ export default function PartyMap() {
                 const x = poll.results[p.id];
                 return `${poll.pollster} ${shortDate(poll.published)}: ${x ? (x.belowThreshold ? "below" : x.seats) : "n/a"}`;
               });
-              setTip({ text: `${p.name} · avg ${fmt(r.v)} · ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
+              setTip({ text: `${p.name}, average ${fmt(r.v)}. ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
             }}
             style={{
               left: r.x + 1.5, top: r.y + 1.5, width: cw, height: ch,

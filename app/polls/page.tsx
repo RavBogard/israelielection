@@ -3,6 +3,7 @@ import Link from "next/link";
 import "@/components/interactives.css";
 import "@/components/polls.css";
 import PollTrends, { type TrendPanel } from "@/components/PollTrends";
+import SeatGrid from "@/components/SeatGrid";
 import { allPolls, blocs, mainPolls, otherPolls, parties, pollsData } from "@/lib/data";
 import { fmt, httpUrl, mediumDate, shortDate } from "@/lib/format";
 import { average, pollLabel } from "@/lib/polls";
@@ -50,20 +51,24 @@ export default function Page() {
     })
     .filter((r) => r.a)
     .sort((x, y) => blocs.findIndex((b) => b.id === x.p.bloc) - blocs.findIndex((b) => b.id === y.p.bloc) || y.a!.avg - x.a!.avg);
+  // The grid fills in the order the table reads: Netanyahu's bloc, then the rest, each party its own run.
+  const gridOrder = ["net", "mid", "opp", "arab"];
+  const segments = [...rows]
+    .sort((x, y) => gridOrder.indexOf(x.p.bloc) - gridOrder.indexOf(y.p.bloc) || y.a!.avg - x.a!.avg)
+    .map(({ p, a }) => ({ id: p.id, seats: a!.avg, color: `var(--b-${p.bloc})`, label: p.name }));
 
   return (
     <div className="ix pl">
       <div className="wrap">
-        <header className="ix-head">
-          <div>
-            <h1>The Polls</h1>
-            <p className="sub">
-              Every seat poll we track since {mediumDate(from)}: {allPolls.length} polls from {new Set(allPolls.map((p) => p.pollster)).size}{" "}
-              pollsters. New polls arrive twice a day from Wikipedia&apos;s polling tables and are checked automatically before they appear
-              here (seats must add to 120, the pollster must be one we know, and no party may jump more than {cfg.maxSeatMove} seats
-              from that pollster&apos;s previous poll).
-            </p>
-          </div>
+        <header className="page-head">
+          <h1>The Polls</h1>
+          <p className="standfirst">
+            Every seat poll we track since {mediumDate(from)}: {allPolls.length} polls from {new Set(allPolls.map((p) => p.pollster)).size} pollsters.
+          </p>
+          <p className="note">
+            New polls arrive twice a day from Wikipedia&apos;s polling tables and are checked automatically before they appear here: seats must add
+            to 120, the pollster must be one we know, and no party may jump more than {cfg.maxSeatMove} seats from that pollster&apos;s previous poll.
+          </p>
         </header>
 
         <h2 className="sec-h">The current average</h2>
@@ -72,52 +77,61 @@ export default function Page() {
           {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/">Coalition Builder</Link> and{" "}
           <Link href="/parties">Party Map</Link> use the same polls. {cfg.excludedReason}
         </p>
-        <div className="table-scroll" style={{ display: "inline-block", maxWidth: "100%" }}>
-          <table className="avg-table" style={{ margin: "4px 14px" }}>
-            <thead>
-              <tr>
-                <th>Party</th>
-                <th className="num">Average</th>
-                <th className="num">Range</th>
-                <th className="num">Polls</th>
-                {otherPolls.map((p) => (
-                  <th key={p.id} className="num">{p.pollster}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map(({ p, a, lo, hi }) => (
-                <tr key={p.id}>
-                  <td>
-                    <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
-                    <Link href={`/parties/${p.id}`} style={{ color: "inherit" }}>{p.name}</Link>
-                  </td>
-                  <td className="num">{lo === 0 && hi === 0 ? <span style={{ color: "var(--ink-3)" }}>below threshold</span> : <b>{fmt(Math.round(a!.avg * 10) / 10)}</b>}</td>
-                  <td className="num">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
-                  <td className="num">{a!.n}</td>
-                  {otherPolls.map((poll) => (
-                    <td key={poll.id} className="num" style={{ color: "var(--ink-3)" }}>
-                      {poll.results[p.id] ? (poll.results[p.id].belowThreshold ? "below" : poll.results[p.id].seats) : "n/a"}
-                    </td>
+        <div className="avg-layout">
+          <div className="table-scroll">
+            <table className="data-table avg-table">
+              <thead>
+                <tr>
+                  <th>Party</th>
+                  <th className="num">Average</th>
+                  <th className="num">Range</th>
+                  <th className="num">Polls</th>
+                  {otherPolls.map((p) => (
+                    <th key={p.id} className="num">{p.pollster}</th>
                   ))}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {rows.map(({ p, a, lo, hi }) => (
+                  <tr key={p.id}>
+                    <td>
+                      <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
+                      <Link href={`/parties/${p.id}`}>{p.name}</Link>
+                    </td>
+                    <td className="num">{lo === 0 && hi === 0 ? <span className="dim">below threshold</span> : <b>{fmt(Math.round(a!.avg * 10) / 10)}</b>}</td>
+                    <td className="num">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
+                    <td className="num">{a!.n}</td>
+                    {otherPolls.map((poll) => (
+                      <td key={poll.id} className="num dim">
+                        {poll.results[p.id] ? (poll.results[p.id].belowThreshold ? "below" : poll.results[p.id].seats) : "n/a"}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="avg-grid">
+            <SeatGrid segments={segments} labelRule title="The current average as 120 seats, each party its own run of cells" />
+            <p className="src">The average as 120 seats, each party a run of cells in its bloc&apos;s colour, largest first. Hover a cell for the party.</p>
+          </div>
         </div>
 
         <h2 className="sec-h">How each party has moved</h2>
         <p className="note">
-          Dots are single polls; the line is the running average as it stood on each date (same rule as above). Every panel uses the
-          same 0–{yMax} seat scale, so heights compare across parties. A dot at 0 is a poll that had the party below the 3.25% threshold.
-          Hover or use the arrow keys on a panel for the average on a date.
+          Dots are single polls; the line is the running average as it stood on each date (same rule as above). Every panel uses the same 0–{yMax}{" "}
+          seat scale, so heights compare across parties. A dot at 0 is a poll that had the party below the 3.25% threshold. Hover or use the arrow keys
+          on a panel for the average on a date.
         </p>
         <PollTrends groups={groups} from={from} to={to} yMax={yMax} />
 
         <h2 className="sec-h">Every poll</h2>
-        <p className="note">Newest first. Grey rows are {cfg.excludedFromAverage.join(", ")}, shown but not averaged. “b” = below the threshold; “n/a” = not reported separately.</p>
-        <div className="table-scroll">
-          <table className="poll-table">
+        <p className="note">
+          Newest first. Grey rows are {cfg.excludedFromAverage.join(", ")}, shown but not averaged. &ldquo;b&rdquo; is below the threshold;
+          &ldquo;n/a&rdquo; is not reported separately.
+        </p>
+        <div className="table-scroll sheet">
+          <table className="data-table poll-table">
             <thead>
               <tr>
                 <th>Published</th>
@@ -154,7 +168,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <p className="note" style={{ marginTop: 10 }}>
+        <p className="src" style={{ marginTop: 10 }}>
           * Seats reported only for a group of parties together. Polls imported from{" "}
           <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election" target="_blank" rel="noopener">
             Wikipedia&apos;s polling tables

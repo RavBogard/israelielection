@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import "@/components/interactives.css";
 import ProfileDetail from "@/components/ProfileDetail";
 import { PollSources, ProfileSources } from "@/components/Sources";
-import { blocLabel, parties } from "@/lib/data";
+import SourcesBox from "@/components/SourcesBox";
+import { allPolls, blocLabel, parties } from "@/lib/data";
 
-// Hourly, so the election countdown in the banner stays current.
+// Hourly, so the election countdown in the masthead stays current.
 export const revalidate = 3600;
 
 export const dynamicParams = false;
@@ -31,20 +32,19 @@ export default async function Page(props: PageProps<"/parties/[id]">) {
   if (!party) notFound();
   return (
     <div className="ix">
-      <div className="wrap" style={{ maxWidth: 760 }}>
-        <p className="toplink">
-          ← <Link href={`/parties#${party.id}`}>Party Map</Link> · <Link href="/">Coalition Builder</Link>
-        </p>
-        <article style={{ paddingBlock: "24px 0" }}>
-          <ProfileDetail party={party} />
-        </article>
-        <footer className="pagefoot">
-          <h2>Sources</h2>
-          <ol>
+      <div className="wrap">
+        <div className="reading">
+          <p className="toplink">
+            <Link href={`/parties#${party.id}`}>Party Map</Link> and <Link href="/">Coalition Builder</Link>
+          </p>
+          <article style={{ paddingTop: 22 }}>
+            <ProfileDetail party={party} />
+          </article>
+          <SourcesBox count={allPolls.length + 2} open>
             <PollSources />
             <ProfileSources />
-          </ol>
-        </footer>
+          </SourcesBox>
+        </div>
       </div>
     </div>
   );

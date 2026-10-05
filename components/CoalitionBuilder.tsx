@@ -4,9 +4,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./interactives.css";
 import "./coalition.css";
 import ProfileDetail from "./ProfileDetail";
+import SeatGrid from "./SeatGrid";
 import { averagePoll, blocs, mainPolls, parties, pledgeRules } from "@/lib/data";
 import { MAJORITY, KNESSET, tally, warnings } from "@/lib/coalition";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { lettersOf } from "@/lib/letters";
 import { AVERAGE_ID, blocTotals, pollLabel } from "@/lib/polls";
 import { RESULTS_ID } from "@/lib/results";
 import type { Party, Poll } from "@/lib/types";
@@ -30,27 +32,26 @@ function seatLabel(p: Party, poll: Poll) {
 function PollNote({ poll }: { poll: Poll }) {
   const t = blocTotals(poll, parties);
   const shown = blocs.filter((b) => t[b.id] > 0);
-  const lumped = poll.combined.map((c) =>
-    c.parties.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(" and ")
-  );
+  const lumped = poll.combined.map((c) => c.parties.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(" and "));
   return (
     <p className="pollnote">
       {poll.id === RESULTS_ID ? (
         <>
-          Showing <b>the election results so far</b>. {poll.note} Seats by bloc:{" "}
+          Seats are <b>the election results so far</b>. {poll.note} By bloc:{" "}
         </>
       ) : poll.id === AVERAGE_ID ? (
         <>
-          Showing <b>the average of the latest {mainPolls.length} polls</b>, one per pollster ({mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}), so seats can be fractional. Seats by bloc:{" "}
+          Seats are <b>the average of the latest {mainPolls.length} polls</b>, one per pollster (
+          {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}), so they can be fractional. By bloc:{" "}
         </>
       ) : (
         <>
-          Showing <b>{pollLabel(poll)}, published {mediumDate(poll.published)}</b>. Seats by bloc in this poll:{" "}
+          Seats are from <b>{pollLabel(poll)}, published {mediumDate(poll.published)}</b>. By bloc:{" "}
         </>
       )}
       {shown.map((b, i) => (
         <span key={b.id}>
-          {i > 0 && " · "}
+          {i > 0 && ", "}
           {b.label} <b>{fmt(t[b.id])}</b>
         </span>
       ))}
@@ -59,48 +60,45 @@ function PollNote({ poll }: { poll: Poll }) {
   );
 }
 
-function Card({ p, poll, on, onToggle, onProfile }: {
-  p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void;
-}) {
-  const info = (
-    <button type="button" className="info" aria-haspopup="dialog" aria-label={`Profile: ${p.name}`} onClick={(e) => onProfile(e.currentTarget)}>
-      <span className="i" aria-hidden="true">i</span>Profile
+/** A party card drawn as its ballot slip: the letters a voter picks, the name, the seats. */
+function Slip({ p, poll, on, onToggle, onProfile }: { p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void }) {
+  const letters = lettersOf[p.id];
+  const profile = (
+    <button type="button" className="prof" aria-haspopup="dialog" aria-label={`Profile: ${p.name}`} onClick={(e) => onProfile(e.currentTarget)}>
+      Profile
     </button>
   );
-  // A list written off in the polls gets a normal card if the count gives it seats.
+  // A list written off in the polls gets a normal slip if the count gives it seats.
   if (p.coalitionCard === "out" && !(poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0)) {
     return (
-      <div className="card out" style={fillVars(p)} title={p.status ?? undefined}>
-        <button type="button" className="tog" disabled>
+      <div className="slip out" style={fillVars(p)}>
+        <div className="face">
+          {letters && <span className="letters" lang="he" dir="rtl">{letters}</span>}
           <span className="nm">{p.name}</span>
-          <span className="seats na">—</span>
           <span className="ld">{p.leader}</span>
-          <span className="meta">{p.status}</span>
-        </button>
-        <div className="foot">{info}</div>
+          <span className="status">{p.status}</span>
+        </div>
+        <div className="foot">{profile}</div>
       </div>
     );
   }
   const s = seatLabel(p, poll);
-  const src = poll.id === RESULTS_ID ? "the count so far" : poll.id === AVERAGE_ID ? `average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
-  const tip = s.na ? `${poll.pollster} did not report ${p.name} separately (${src})` : s.below ? `Below threshold in ${src}` : `${s.txt} seats, ${src}`;
+  const src = poll.id === RESULTS_ID ? "the count so far" : poll.id === AVERAGE_ID ? `the average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+  const tip = s.na ? `${poll.pollster} did not report ${p.name} separately (${src})` : s.below ? `Below threshold in ${src}` : `${s.txt} seats in ${src}`;
   return (
-    <div className={`card${on ? " on" : ""}`} style={fillVars(p)} title={tip} onClick={(e) => {
-      if (!(e.target as HTMLElement).closest("button")) onToggle();
-    }}>
-      <button type="button" className="tog" aria-pressed={on} onClick={onToggle}>
+    <div className={`slip${on ? " on" : ""}`} style={fillVars(p)}>
+      <button type="button" className="face" aria-pressed={on} onClick={onToggle} title={tip}>
+        {letters && <span className="letters" lang="he" dir="rtl">{letters}</span>}
         <span className="nm">{p.name}</span>
-        <span className={`seats${s.na ? " na" : ""}`}>{s.txt}</span>
         <span className="ld">{p.leader}</span>
-        {p.surplusLine && <span className="sp">{p.surplusLine}</span>}
-        <span className="meta">
-          <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
-          {s.na ? `Not reported by ${poll.pollster}` : s.below ? `Below threshold in ${poll.id === RESULTS_ID ? "the count" : "this poll"}` : "seats"}
+        <span className={`seats${s.na ? " na" : ""}`}>
+          {s.txt}
+          <small>{s.na ? "not reported" : s.below ? "below threshold" : "seats"}</small>
         </span>
       </button>
       <div className="foot">
-        {info}
-        <span className="state">{on ? "In" : "Add"}</span>
+        {profile}
+        <span className="state" aria-hidden="true">{on ? "In your coalition" : "Tap to add"}</span>
       </div>
     </div>
   );
@@ -138,7 +136,7 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
         <div className="dhead">
           <p className="lbl">Party profile</p>
           <button className="btn" type="button" onClick={onClose} ref={closeBtn}>
-            Close <span aria-hidden="true">✕</span>
+            Close
           </button>
         </div>
         <div className="dbody">
@@ -187,6 +185,7 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
   const poll = choices.find((p) => p.id === pollId) ?? choices[0];
   const t = tally(sel, parties, poll);
   const warns = warnings(sel, parties, pledgeRules);
+  const segments = t.segments.map((s) => ({ id: s.name, seats: s.seats, color: `var(--b-${s.bloc})`, label: s.name }));
 
   const choosePoll = (id: string) => {
     setPollId(id);
@@ -213,15 +212,16 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
   };
 
   const profileParty = parties.find((p) => p.id === profile);
+  const short = MAJORITY - t.total;
 
   return (
     <div className="cb">
       <header className="ix-head">
         <div>
-          <Title className="h1">Build a Coalition</Title>
+          <Title className="h1">Build a coalition</Title>
           <p className="sub">
-            Tap a party card to add it; tap <b>Profile</b> for who they are and where they stand. A government needs {MAJORITY} of the
-            Knesset&apos;s {KNESSET} seats to win a confidence vote. Seat numbers come from the poll you pick.
+            Each card is a party&apos;s ballot slip. Tap one to add the party; a government needs <b>{MAJORITY}</b> of the Knesset&apos;s {KNESSET}{" "}
+            seats to win a confidence vote. Seat numbers come from the poll you pick.
           </p>
         </div>
         <div className="controls">
@@ -233,8 +233,8 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
               </button>
             ))}
           </div>
-          <button className="btn" type="button" onClick={() => setSel(new Set())}>
-            Reset
+          <button className="btn" type="button" onClick={() => setSel(new Set())} disabled={!sel.size}>
+            Start over
           </button>
         </div>
       </header>
@@ -244,13 +244,13 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
         <div className="blocs">
           {blocs.map((b) => (
             <section className="bloc" key={b.id}>
-              <h2>
+              <h3>
                 <span className="sw" style={{ background: `var(--b-${b.id})` }} />
                 {b.label}
-              </h2>
-              <div className="cards">
+              </h3>
+              <div className="slips">
                 {cardsFor(poll).filter((p) => p.bloc === b.id).map((p) => (
-                  <Card key={p.id} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
+                  <Slip key={p.id} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
                     onProfile={(el) => { opener.current = el; setProfile(p.id); }} />
                 ))}
               </div>
@@ -259,33 +259,22 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
         </div>
 
         <aside className="panel" aria-live="polite">
-          <h3>Your coalition</h3>
           <div className="total">
             <span className="n">{fmt(t.total)}{t.partial ? "+" : ""}</span>
-            <span className="of">of {MAJORITY} needed</span>
-            {t.total >= MAJORITY ? (
-              <span className="pill maj">Majority</span>
-            ) : t.chosen.length ? (
-              <span className="pill short">{fmt(MAJORITY - t.total)} short</span>
-            ) : null}
+            <span className="read">
+              {t.total >= MAJORITY ? (
+                <b className="maj">A majority</b>
+              ) : t.chosen.length ? (
+                <>
+                  <b>{fmt(short)} short</b> of {MAJORITY}
+                </>
+              ) : (
+                <>of {MAJORITY} needed</>
+              )}
+            </span>
           </div>
-          <div>
-            <div className="meter">
-              <div className="segs">
-                {t.segments.map((s) => (
-                  <div key={s.name} className="seg-p" title={`${s.name}: ${s.seats}`}
-                    style={{ flex: `0 0 calc(${s.seats}/${KNESSET}*100% - 2px)`, background: `var(--b-${s.bloc})` }} />
-                ))}
-              </div>
-              <div className="mark" style={{ left: `calc(${MAJORITY}/${KNESSET}*100%)` }} />
-            </div>
-            <div className="scale">
-              <span style={{ left: 0 }}>0</span>
-              <span className="m61" style={{ left: `calc(${MAJORITY}/${KNESSET}*100%)` }}>{MAJORITY}</span>
-              <span style={{ left: "100%" }}>{KNESSET}</span>
-            </div>
-          </div>
-          {t.groupNote && <div className="naflag">{t.groupNote}</div>}
+          <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${fmt(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
+          {t.groupNote && <p className="naflag">{t.groupNote}</p>}
           <ul className="list">
             {t.chosen.length ? (
               t.chosen.map((p) => (
@@ -296,37 +285,34 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
                 </li>
               ))
             ) : (
-              <li className="empty">No parties yet. Tap a party card to add it.</li>
+              <li className="empty">No parties yet. Tap a slip to add one.</li>
             )}
           </ul>
           {warns.length > 0 && (
             <div className="warns">
               {warns.map((w) => (
                 <div key={w.id} className={`warn${w.kind === "condition" ? " info" : ""}`}>
-                  <b>{w.kind === "condition" ? "Condition" : "Goes against a pledge"}</b>
+                  <b>{w.kind === "condition" ? "A stated condition" : "Goes against a pledge"}</b>
                   {w.message}
-                  <cite>Source: {w.source}</cite>
+                  <cite>{w.source}</cite>
                 </div>
               ))}
             </div>
           )}
           {t.chosen.length > 0 && (
             <div className="share">
-              <button className="btn" type="button" onClick={copyLink}>Copy link to this coalition</button>
+              <button className="btn" type="button" onClick={copyLink}>Copy a link to this coalition</button>
               <span aria-live="polite">{copied ? "Copied" : ""}</span>
             </div>
           )}
           <div className="note">
             <p>
-              Parties have made public pledges about partners. This page lets you build any combination. A yellow label means the
-              combination goes against a recorded pledge; a grey dashed label is a stated condition, not a refusal.
+              Parties have made public pledges about partners. You can build any combination here; a yellow note means it goes against a recorded
+              pledge, a grey one is a stated condition, not a refusal.
             </p>
             <p>
-              The Central Elections Committee voted Sept 23 to bar the Joint List and Ra&apos;am. The Supreme Court heard the appeals Oct
-              1 and reinstated both lists 9–0 on Oct 2.
-            </p>
-            <p>
-              <b>Surplus-vote partners</b> share leftover votes when seats are divided; it is a technical deal, not a coalition promise.
+              The Central Elections Committee voted Sept 23 to bar the Joint List and Ra&apos;am. The Supreme Court heard the appeals Oct 1 and
+              reinstated both lists 9–0 on Oct 2.
             </p>
           </div>
         </aside>
@@ -335,4 +321,3 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
     </div>
   );
 }
-

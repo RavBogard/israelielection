@@ -1,11 +1,13 @@
-/* Results page: a 120-seat strip by bloc with the 61 line, then the list table. */
-.rs .rs-heb { font-weight: 700; font-size: 16px; }
+/* Results page: the 120 seats by bloc with the 61 rule, then the list table. */
+.rs .rs-heb { font-family: var(--display); font-weight: 900; font-size: 18px; color: var(--ink); }
 .rs .rs-steps { padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
-.rs .rs-strip { position: relative; display: flex; gap: 2px; height: 44px; border-radius: var(--r-sm); overflow: hidden; margin: 8px 0 10px; }
-.rs .rs-strip span { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; min-width: 0; }
-.rs .rs-strip .rs-other { background: var(--line); color: var(--ink-2); }
-.rs .rs-61 { position: absolute; top: -2px; bottom: -2px; width: 2px; margin-left: -1px; background: var(--ink); }
-.rs .rs-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13.5px; color: var(--ink-2); margin: 0 0 8px; }
-.rs .rs-legend > span { display: inline-flex; align-items: center; gap: 2px; }
-.rs .rs-legend b { color: var(--ink); margin-left: 4px; }
-.rs .poll-table th.num { text-align: right; }
+.rs .rs-count { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px 56px; align-items: center; margin-top: 10px; }
+.rs .rs-count .sg { width: 100%; }
+.rs .rs-legend { list-style: none; margin: 0; padding: 0; font-size: 15px; }
+.rs .rs-legend li { display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid var(--line); }
+.rs .rs-legend li:last-child { border-bottom: 1px solid var(--line); }
+.rs .rs-legend b { margin-left: auto; font-family: var(--display); font-size: 22px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rs .letters-table { max-width: 640px; }
+.rs .letters-table .sw { margin-right: 8px; }
+.rs .list-table td.below { color: var(--ink-3); }
+@media (max-width: 900px) { .rs .rs-count { grid-template-columns: minmax(0, 1fr); } }

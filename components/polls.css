@@ -1,37 +1,35 @@
-/* Polls page: small multiples (one panel per party, shared y-scale) and the full poll table. */
-.pl .avg-table, .pl .poll-table { border-collapse: collapse; font-size: 14.5px; }
-.pl .avg-table td, .pl .avg-table th { padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); text-align: left; }
-.pl .avg-table td.num, .pl .poll-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
-.pl .avg-table th, .pl .poll-table th { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
-.pl .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); }
-.pl .poll-table { width: 100%; font-size: 13.5px; }
-.pl .poll-table th, .pl .poll-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
-.pl .poll-table thead th { position: sticky; top: 0; background: var(--surface); vertical-align: bottom; }
-.pl .poll-table td.below { color: var(--ink-3); }
-.pl .poll-table td.na { color: var(--ink-3); }
-.pl .poll-table tr.ref td { color: var(--ink-3); }
-.pl .poll-table a { color: var(--accent); }
-.pl .sec-h { font-family: var(--display); font-weight: 700; font-size: 30px; letter-spacing: -.012em; margin: 40px 0 10px; }
-.pl .note { font-family: var(--serif); color: var(--ink-2); font-size: 15px; line-height: 1.5; max-width: 80ch; margin: 0 0 14px; }
-.pl table a { text-decoration: none; }
-.pl table a:hover { text-decoration: underline; }
-.pl .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; vertical-align: -1px; margin-right: 6px; }
+/* Polls page: the average beside the seat grid, small multiples (one panel per party, shared y-scale), and the full poll table. */
+.pl .avg-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 56px; align-items: start; margin-top: 6px; }
+.pl .avg-table td, .pl .avg-table th { white-space: nowrap; }
+.pl .avg-table .sw { margin-right: 8px; }
+.pl .dim { color: var(--ink-3); }
+.pl .avg-grid { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 10px; padding-top: 6px; }
+.pl .poll-table { font-size: 13.5px; }
+.pl .poll-table th, .pl .poll-table td { padding: 6px 10px; white-space: nowrap; }
+.pl .poll-table thead th { position: sticky; top: 0; background: var(--sheet); vertical-align: bottom; }
+.pl .poll-table td.below, .pl .poll-table td.na, .pl .poll-table tr.ref td { color: var(--ink-3); }
+.pl .table-scroll.sheet { border: 1px solid var(--line-2); }
 
-.pt { display: flex; flex-direction: column; gap: 20px; }
+.pt { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
 .pt-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13.5px; color: var(--ink-2); }
 .pt-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.pt-group h3 { display: flex; align-items: center; gap: 2px; margin-bottom: 8px; }
+.pt-group h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
 .pt-grid-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
-.pt-panel { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 10px 12px 6px; min-width: 0; }
+.pt-panel { margin: 0; background: var(--sheet); border: 1px solid var(--line-2); padding: 10px 12px 6px; min-width: 0; }
 .pt-panel figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: 14px; }
-.pt-name { font-weight: 600; display: inline-flex; align-items: center; min-width: 0; }
+.pt-name { font-weight: 600; display: inline-flex; align-items: center; gap: 7px; min-width: 0; color: var(--ink); }
 .pt-read { color: var(--ink-2); font-size: 13px; white-space: nowrap; }
-.pt-read b { color: var(--ink); font-size: 15px; }
+.pt-read b { color: var(--ink); font-size: 15px; font-variant-numeric: tabular-nums; }
 .pt-plot { width: 100%; height: 132px; }
 .pt-plot svg { display: block; touch-action: pan-y; }
-.pt-plot svg:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.pt-plot svg:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .pt-grid { stroke: var(--line); stroke-width: 1; }
 .pt-tick { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
-.pt-dot { stroke: var(--surface); stroke-width: 2; }
+.pt-dot { stroke: var(--sheet); stroke-width: 2; }
 .pt-dot-ref { fill: none; stroke: var(--ink-3); stroke-width: 1.5; }
 .pt-cross { stroke: var(--ink-3); stroke-width: 1; }
+
+@media (max-width: 900px) {
+  .pl .avg-layout { grid-template-columns: minmax(0, 1fr); }
+  .pl .avg-grid { position: static; max-width: 560px; }
+}

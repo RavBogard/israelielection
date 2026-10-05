@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { blocLabel, mainPolls, otherPolls, partiesData } from "@/lib/data";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { lettersOf } from "@/lib/letters";
 import { average } from "@/lib/polls";
 import type { Party, Sourced } from "@/lib/types";
 
@@ -84,14 +85,21 @@ export default function ProfileDetail({ party: p, headingId, linkToPage }: Props
   const color = `var(--b-${p.bloc})`;
   const leaderName = p.leader.split(" (")[0].split(",")[0];
   return (
-    <div className="profile">
-      <span className="bchip">
-        <span className="sw" style={{ background: color }} />
-        {blocLabel[p.bloc]}
-      </span>
-      <h2 className="pname" id={headingId}>
-        {p.name}
-      </h2>
+    <div className="profile" style={{ ["--qc" as string]: color }}>
+      <div className="ident">
+        {lettersOf[p.id] && (
+          <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${lettersOf[p.id]}`}>
+            {lettersOf[p.id]}
+          </span>
+        )}
+        <span className="bchip">
+          <span className="sw" style={{ background: color }} />
+          {blocLabel[p.bloc]}
+        </span>
+        <h2 className="pname" id={headingId}>
+          {p.name}
+        </h2>
+      </div>
       <dl className="kv">
         <dt>Leader</dt>
         <dd>{p.leader}</dd>
@@ -107,7 +115,7 @@ export default function ProfileDetail({ party: p, headingId, linkToPage }: Props
       </dl>
       {linkToPage && (
         <Link className="more" href={`/parties/${p.id}`}>
-          Open {p.name}&apos;s page →
+          Open {p.name}&apos;s own page
         </Link>
       )}
       <div className="sec">
@@ -173,7 +181,7 @@ export default function ProfileDetail({ party: p, headingId, linkToPage }: Props
           <blockquote style={{ ["--qc" as string]: color }}>
             “{p.quote.text}”
             <footer>
-              {p.quote.speaker} · {p.quote.source}
+              {p.quote.speaker}. {p.quote.source}
             </footer>
           </blockquote>
         </div>

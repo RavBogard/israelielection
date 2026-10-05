@@ -1,0 +1,21 @@
+/* Teach it: session decks with their covers, then the interactives to use in class. */
+.th .sessions { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 28px; }
+.th .session { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 20px 36px; align-items: start; }
+.th .cover img { display: block; width: 100%; height: auto; border: 1px solid var(--line-2); }
+.th .session h3 { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.1; margin: 6px 0 0; }
+.th .desc { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); margin: 10px 0 0; max-width: 60ch; }
+.th .files { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.th .files li { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--ink-2); }
+.th .files .btn { text-decoration: none; }
+.th .session .src { margin-top: 14px; max-width: 60ch; }
+.th .inclass { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; }
+.th .inclass li { border-top: 1px solid var(--line); padding: 14px 0 18px; }
+.th .inclass h3 { font-family: var(--display); font-weight: 700; font-size: 23px; line-height: 1.15; margin: 0; }
+.th .inclass h3 a { text-decoration: none; }
+.th .inclass h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.th .inclass p { font-family: var(--display); font-size: 16px; line-height: 1.5; color: var(--text); margin: 6px 0 0; }
+.th .license { margin: 40px 0 0; max-width: 70ch; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+@media (max-width: 760px) {
+  .th .session { grid-template-columns: minmax(0, 1fr); }
+  .th .inclass { grid-template-columns: minmax(0, 1fr); }
+}

@@ -57,7 +57,7 @@ function Panel({ p, from, to, yMax }: { p: TrendPanel; from: string; to: string;
         <span className="pt-read" aria-live="polite">
           {shown ? (
             <>
-              <b>{fmt(Math.round(shown.avg * 10) / 10)}</b> avg · {shortDate(shown.date)}
+              <b>{fmt(Math.round(shown.avg * 10) / 10)}</b> avg, {shortDate(shown.date)}
             </>
           ) : (
             "no readings"
