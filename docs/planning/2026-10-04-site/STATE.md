@@ -260,4 +260,6 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
   cards as ballot slips with their letters; white paper and two inks; Frank Ruhl Libre + Public
   Sans; one 1200px wrapper and one page-header pattern; grouped masthead menu with a phone sheet;
   sources in a <details> at each page's end; the dateline bar and all-caps labels removed.
-- Held for Daniel's look on the Vercel preview before merge, as with the first redesign.
+- Daniel approved on the preview ("go live", 2026-10-05 evening); fast-forwarded main to 10ef2ff, which also
+  carries the Vote map restyled onto the new grammar. Styling files stay with the design lane; the reference
+  lane asks for CSS changes rather than editing them.
