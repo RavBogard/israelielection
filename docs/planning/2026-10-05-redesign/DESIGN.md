@@ -121,5 +121,13 @@ one heavy rule always means 61.
   israelielection.org.
 
 ## Share card and icons (2026-10-05)
-- opengraph-image.png, 1200×630: paper, the 120-seat grid (61 black cells, heavy rule, "61") left; wordmark 72px, description 30px, domain in Public Sans right. One image for every page; per-page cards can come later.
+- The share image is the home page's opening, drawn on request: `app/opengraph-image.tsx` renders
+  the 120 seats coloured by bloc from the current poll average (or the count, on election night),
+  the headline with the days left, the standfirst, the bloc totals and the domain. Cached an hour.
+  Daniel's ruling on the first, all-black version: "super black and white and dull, for a site
+  that is supposed to be beautiful and dynamic." Colour is data, and the card shows the data.
+- Fonts for the renderer are static TTFs in `assets/og/` (Frank Ruhl Libre 400/700, Public Sans
+  500/600, OFL). Satori needs explicit `display: flex` on every box with children and has no SVG
+  `<text>`; the 61 label is a positioned div.
+- X falls back to og:image, so there is no separate twitter-image.
 - Icon: black square, white majority shape, the rest of the house as a 22% white block. No cell rows in icons: at 16px they moiré.

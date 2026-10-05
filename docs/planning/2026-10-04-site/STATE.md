@@ -272,3 +272,12 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Share cards: openGraph/twitter metadata in app/layout.tsx; app/opengraph-image.png and twitter-image.png (1200×630: the 120-seat grid with the 61 rule, wordmark, description, domain), rendered from scratchpad og.html with the site fonts. Facebook still shows the old title "Israel Votes: Build a coalition" from its cache; Daniel can re-scrape at developers.facebook.com/tools/debug.
 - Icons: app/icon.svg redrawn as the solid majority shape over a dimmed house (no row stripes, which moiré at 16px); app/apple-icon.png 180; app/favicon.ico (16+32, RGBA PNG entries, which Next's image pipeline requires). public/logo.svg and logo-dark.svg removed (unreferenced).
 - Desktop masthead shows the countdown again (it had only been in the phone sheet).
+
+## 2026-10-05, later still: the share card in colour
+- Daniel: the share image was "super black and white and dull". Replaced the static PNG with
+  `app/opengraph-image.tsx`: the home hero (120 seats by bloc, headline, totals) rendered with
+  next/og at request time, revalidated hourly, so shared links show the current average.
+- GATE: fonts committed as TTFs under `assets/og/` (about 250 KB) rather than fetched from Google
+  at request time — proceeded because the renderer must not depend on a third party at share time.
+- GATE: no separate twitter-image — proceeded because X reads og:image when twitter:image is absent
+  (verified in the rendered head: Next fills twitter:image from the OG image).
