@@ -43,6 +43,13 @@
       "when": { "party": "utj" },
       "message": "UTJ says it will not support or enter any government that does not first regulate the status of Torah learners (a yeshiva-status law), whoever leads it.",
       "source": "Yaakov Asher, Matzav, Sep 28, 2026"
+    },
+    {
+      "id": "poi-draft-law-first",
+      "kind": "condition",
+      "when": { "party": "poi" },
+      "message": "Ofer Winter says People of Israel will not join a government that does not, before it is formed, pass a law ending draft evasion and requiring everyone to report for service.",
+      "source": "Jerusalem Post, Sep 2, 2026"
     }
   ]
 }

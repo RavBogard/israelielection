@@ -389,3 +389,21 @@ Karen asked how to understand the current coalition through the site; Daniel app
 
 ## Teach scenarios as slips, 2026-10-05
 Daniel wanted the four class scenarios collapsed by default and redone as handsome cards. Content session (2364e66): native details closed to start; white sheet, hairline edge, square corners, the line-up as a bloc-colour top bar with bands sized by poll-average seats; the summary carries title, line-up, the seat count in Frank Ruhl with its "short of 61" reading, the range line and a 180px meter; the threshold card shows seven poll dots per list instead. Design review on production at 1440 and 390: passes the identity rules (radius 0, no shadow, no caps, markers or arrows, no horizontal scroll). Three fixes landed by design, announced first: the summary is named by its h3 through aria-labelledby (the accessible name had been the whole 1,200-character summary), the fold line above "Read the card" is solid (dashes mean the 61 line elsewhere), the meter's "61" label is 9.5 units on these slips.
+
+## 2026-10-05: comparable stances for the cohesion panel (content lane)
+
+- All seven data/positions files now carry `question`, `stances` (3 to 5, ordered by substance) and, on every row, a `stance` id or a `status` of "declined" or "none" (with `checked`). All 15 lists appear on every issue. Rows marked `basis: "record"` take their stance from a statement, bill or vote rather than the 2026 questionnaire.
+  - Commits: 1b18366 (draft), 66050ca and 161e4e5 (West Bank, Palestinian state), 2291f2c (courts, Oct 7 inquiry, economy, religion and state).
+  - Tests: lib/positions.test.ts.
+- New on the record:
+  - Likud on the courts: Levin's judicial-selection law, 67 to 1, Mar 27, 2025 (Times of Israel).
+  - Shas and UTJ on the Oct 7 inquiry: they backed the coalition's Knesset-appointed panel bill at first reading, 59 to 0, Jul 7, 2026 (Times of Israel).
+  - Likud on a Palestinian state is now a position (its campaign video), not a refusal.
+- Recorded silences (no 2026 position found; web search was exhausted this session, so these are worth re-checking):
+  - Noam on draft, courts, Oct 7 and economy; Blue and White on draft, economy and religion.
+  - Otzma on economy; People of Israel, Reservists–Economic, the Joint List and Ra'am on religion and state.
+  - Statehood for Reservists–Economic, Blue and White and Noam.
+- Glossary "Outside support" (8ab3990); new pledge rule `poi-draft-law-first` (Winter, Jerusalem Post, Sep 2, 2026).
+- Main was red for about a minute between 66050ca and 161e4e5: a stance label was one character over the limit. Pushes now run only on a passing vitest.
+- GATE: stance labels are site-voice characterizations of party positions. Proceeded because the design session reviewed every label for voice and logs the gate for Daniel, each stance rests on the row's quoted text, and no new prose claims shipped without a source check.
+- GATE: the economy issue's question asks for a party's priority, not its answer to one policy question, because no single economic question was put to all lists. Proceeded because it is the only comparable framing the rows support; the "Budgets for the communities it serves" label is flagged to Daniel by the design session.
