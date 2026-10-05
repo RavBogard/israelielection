@@ -69,8 +69,9 @@ describe("cells", () => {
 
   it("maps a positions row's text, source, date and url", () => {
     const likud = cellsFor(parties.find((p) => p.id === "likud")!, rows).pstate;
-    expect(likud.kind).toBe("declined");
-    if (likud.kind === "declined") expect(likud.url).toMatch(/^https:\/\//);
+    // Likud declined Ynet's questionnaire, but its campaign video is on the record (basis "record").
+    expect(likud.kind).toBe("position");
+    if (likud.kind === "position") expect(likud.url).toMatch(/^https:\/\//);
     expect(rowCell({ party: "x", text: "T", source: "Ynet", url: "https://a.b/c", date: "Sept 30, 2026" })).toEqual({
       kind: "position",
       text: "T",
