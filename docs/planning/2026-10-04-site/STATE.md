@@ -155,6 +155,8 @@ Done:
   - I read all 31 slides and all speaker notes before publishing. Clean: no emails, Zoom or registration links, or trip dates.
   - Left for Daniel: the notes name CRC ("home to Zionists, non-Zionists and anti-Zionists"), and quote two private people from a published Ynetnews/Media Line story (May 2024).
   - Session data lives in data/teach.json.
+  - Daniel (Oct 5): cut the CRC sentence from the slide 2 notes. The note now reads "This is a good frame for a class on an election, and for this room. Everyone is welcome at this table." The PDF never had it. The Ynetnews quotes stay.
+- Daniel (Oct 5): docs/research/HANDOFF-RESEARCH.md removed from the public repo; kept locally in docs/teach-private/ (gitignored). It is still in git history (commit a60949e and earlier); purging history needs a force-push, so it is left for Daniel.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
