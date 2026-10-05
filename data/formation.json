@@ -1,0 +1,176 @@
+{
+  "checked": "2026-10-05",
+  "title": "Forming the next government",
+  "standfirst": "The clock starts when the Central Elections Committee publishes the official results. If every period in Basic Law: The Government runs out in full, the law allows at most 117 days from then before the Knesset is deemed dissolved and a new election is called. From election day to a sworn-in government has taken between 20 and 100 days, and in the past two decades no government has been sworn in less than 50 days after the vote. Palestinians in the West Bank and Gaza, whose lives the next government's decisions will shape, have no vote in choosing it.",
+  "rulesSource": {
+    "name": "Basic Law: The Government (2001), arts. 7–13, English translation as published by the Constitute Project (Israel 1958, rev. 2013); the Knesset's own English PDF could not be opened (HTTP 474). Periods checked against IDI, Ofer Kenig, Apr 15, 2026",
+    "date": "2013",
+    "url": "https://www.constituteproject.org/constitution/Israel_2013"
+  },
+  "electionDay": "2026-10-27",
+  "milestones": [
+    {
+      "id": "election-day",
+      "title": "Election day",
+      "rule": "The Knesset dissolved itself by 62 votes to none, setting the election for October 27.",
+      "earliest": "2026-10-27",
+      "latest": "2026-10-27",
+      "status": "upcoming",
+      "source": {
+        "name": "Ynet",
+        "date": "2026-07-17",
+        "url": "https://www.ynetnews.com/article/h1nremv4gl"
+      }
+    },
+    {
+      "id": "results",
+      "title": "Official results published",
+      "rule": "The president's seven days to assign the task run from the publication of the election results (art. 7(a)).",
+      "status": "upcoming",
+      "note": "The Central Elections Committee publishes the official results after the count; Basic Law: The Government sets no date for that step. Every later date on this clock is counted from the day of publication, so calendar dates are filled in once that day is known.",
+      "source": {
+        "name": "Basic Law: The Government, art. 7 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "consultations",
+      "title": "The president consults the incoming lists",
+      "rule": "Before the new Knesset convenes, the president consults the representatives of the lists of candidates that will be represented in it (art. 7(b)).",
+      "status": "upcoming",
+      "who": "President Isaac Herzog",
+      "note": "The law sets no separate deadline; the consultations come before the task is assigned, at most 7 days after the official results.",
+      "source": {
+        "name": "Basic Law: The Government, art. 7 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "first-tasked",
+      "title": "First nominee given the task",
+      "rule": "The president assigns the task of forming a government to a Knesset member who has agreed to take it on, within seven days of the publication of the election results (art. 7(a)).",
+      "status": "upcoming",
+      "who": "President Isaac Herzog",
+      "note": "At the latest: official results + 7 days. The law gives the president no rule for choosing.",
+      "source": {
+        "name": "Basic Law: The Government, art. 7 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "first-period",
+      "title": "First nominee's 28 days end",
+      "rule": "The member given the task has 28 days to form a government (art. 8).",
+      "status": "upcoming",
+      "note": "At the latest: official results + 35 days, if the task is assigned on the last permitted day.",
+      "source": {
+        "name": "Basic Law: The Government, art. 8 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "first-extension",
+      "title": "Extension of up to 14 days ends",
+      "rule": "The president may extend the period by additional periods of no more than 14 days in all (art. 8).",
+      "status": "upcoming",
+      "who": "President Isaac Herzog",
+      "note": "At the latest: official results + 49 days. The extension is at the president's discretion.",
+      "source": {
+        "name": "Basic Law: The Government, art. 8 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "second-tasked",
+      "title": "Second nominee, if needed",
+      "rule": "If the first nominee fails, the president has three days to give the task to another member or to tell the Speaker no government can be formed (art. 9(a)).",
+      "status": "upcoming",
+      "who": "President Isaac Herzog",
+      "note": "At the latest: official results + 52 days. The president may consult the factions again first (art. 9(b)).",
+      "source": {
+        "name": "Basic Law: The Government, art. 9 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "second-period",
+      "title": "Second nominee's 28 days end",
+      "rule": "A member given the task under article 9 has 28 days, which cannot be extended (art. 9(c)).",
+      "status": "upcoming",
+      "note": "At the latest: official results + 80 days.",
+      "source": {
+        "name": "Basic Law: The Government, art. 9 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "knesset-request",
+      "title": "The Knesset's 21 days to name a member",
+      "rule": "A majority of the Knesset's members may ask the president in writing, within 21 days, to give the task to a member who has agreed in writing (art. 10(a)).",
+      "status": "upcoming",
+      "who": "61 Knesset members",
+      "note": "At the latest: official results + 101 days. The 21 days run from the end of the second nominee's period, or from the president's statement that no government can be formed.",
+      "source": {
+        "name": "Basic Law: The Government, art. 10 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "third-tasked",
+      "title": "The Knesset's choice given the task",
+      "rule": "Once such a request is submitted, the president assigns the task to that member within two days (art. 10(b)).",
+      "status": "upcoming",
+      "who": "President Isaac Herzog",
+      "note": "At the latest: official results + 103 days.",
+      "source": {
+        "name": "Basic Law: The Government, art. 10 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "third-period",
+      "title": "That member's 14 days end",
+      "rule": "A member given the task at the Knesset's request has 14 days to form a government (art. 10(c)).",
+      "status": "upcoming",
+      "note": "At the latest: official results + 117 days, the end of every period the law allows.",
+      "source": {
+        "name": "Basic Law: The Government, art. 10 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "government",
+      "title": "Government sworn in after a confidence vote",
+      "rule": "The Speaker sets the government's presentation to the Knesset within seven days of being told it has been formed, and it takes office once the Knesset expresses confidence in it (art. 13).",
+      "status": "upcoming",
+      "note": "This can happen at any stage of the clock. If a government is formed on the last permitted day, the confidence vote can fall up to official results + 124 days.",
+      "source": {
+        "name": "Basic Law: The Government, art. 13 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    },
+    {
+      "id": "new-election",
+      "title": "Or: Knesset dissolved and a new election",
+      "rule": "If every attempt fails, the Knesset is deemed to have decided to disperse, and the election is held on the last Tuesday before 90 days have passed from the president's announcement (art. 11(b)).",
+      "status": "upcoming",
+      "note": "At the latest: the last Tuesday no later than official results + 207 days, if the president informs the Speaker on the day the last period ends. A nominee whose government loses the confidence vote also ends that attempt (arts. 9–11).",
+      "source": {
+        "name": "Basic Law: The Government, art. 11 (Constitute Project translation)",
+        "date": "2013",
+        "url": "https://www.constituteproject.org/constitution/Israel_2013"
+      }
+    }
+  ]
+}
