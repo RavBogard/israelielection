@@ -15,6 +15,16 @@ export type WikiSources = {
 const DAY = 86_400_000;
 /** "[[Target|label]]" or "[[Target]]" → plain text. */
 const plain = (s: string | null) => s && s.replace(/\[\[(?:[^\]|]*\|)?([^\]]*)\]\]/g, "$1").replace(/''/g, "").trim();
+/** Wikipedia is editable by anyone: only http(s) URLs are kept as links. */
+export function safeUrl(u: string | null): string | null {
+  if (!u) return null;
+  try {
+    const p = new URL(u);
+    return p.protocol === "https:" || p.protocol === "http:" ? p.href : null;
+  } catch {
+    return null;
+  }
+}
 const slug = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 export function toPoll(raw: RawPoll, src: WikiSources, revision: number | string): Poll {
@@ -43,7 +53,7 @@ export function toPoll(raw: RawPoll, src: WikiSources, revision: number | string
     fieldwork: raw.fieldwork,
     published,
     via: plain(raw.ref.work),
-    url: raw.ref.url,
+    url: safeUrl(raw.ref.url),
     n: raw.sample,
     margin: null,
     note: `Imported from Wikipedia (revision ${revision}).`,

@@ -5,7 +5,7 @@ import "@/components/interactives.css";
 import "@/components/polls.css";
 import PollTrends, { type TrendPanel } from "@/components/PollTrends";
 import { allPolls, blocs, mainPolls, otherPolls, parties, pollsData } from "@/lib/data";
-import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { fmt, httpUrl, mediumDate, shortDate } from "@/lib/format";
 import { average, pollLabel } from "@/lib/polls";
 import { averageTrend } from "@/lib/trend";
 
@@ -145,8 +145,8 @@ export default function Page() {
                     return <td key={p.id} className="num">{r.seats}</td>;
                   })}
                   <td>
-                    {poll.url ? (
-                      <a href={poll.url} target="_blank" rel="noopener">{poll.via ?? new URL(poll.url).hostname.replace(/^www\./, "")}</a>
+                    {httpUrl(poll.url) ? (
+                      <a href={httpUrl(poll.url)!} target="_blank" rel="noopener">{poll.via ?? new URL(poll.url!).hostname.replace(/^www\./, "")}</a>
                     ) : (
                       poll.via ?? ""
                     )}

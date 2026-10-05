@@ -62,6 +62,11 @@ describe("validatePolls", () => {
     expect(run(p)).toContain("threshold");
   });
 
+  it("rejects non-http source links (Wikipedia is editable by anyone)", () => {
+    expect(run(next({ url: "javascript:alert(1)" }))).toContain("url");
+    expect(run(next({ url: "https://www.kan.org.il/x" }))).toEqual([]);
+  });
+
   it("rejects 1–3 seat results, unknown parties, and duplicates", () => {
     const p = next();
     p.results.poi = { seats: 3 };

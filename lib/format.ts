@@ -22,3 +22,8 @@ export function longDate(iso: string): string {
 export function fmt(x: number): string {
   return (Math.round(x * 100) / 100).toString();
 }
+
+/** The URL if it is http(s), else null. Poll links come from editable sources. */
+export function httpUrl(u: string | null): string | null {
+  return u && /^https?:\/\//i.test(u) ? u : null;
+}

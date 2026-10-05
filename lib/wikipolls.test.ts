@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import pollSources from "@/data/poll-sources.json";
 import { parties, pollsData } from "./data";
-import { importFromWikitext } from "./pollimport";
+import { importFromWikitext, safeUrl } from "./pollimport";
 import { parseOpdrts, parseReading, parseTable, seatTables } from "./wikipolls";
 
 // Header + first rows of the live table, Wikipedia revision 1378526425 (2026-10-04).
@@ -70,5 +70,14 @@ describe("importFromWikitext", () => {
   it("merges the clean i24 poll and sends Kan's 123-seat row to review", () => {
     expect(report.accepted.map((p) => p.id)).toEqual(["i24news-2026-10-02"]);
     expect(report.review.map((r) => [r.poll.id, r.problems.map((p) => p.rule)])).toEqual([["kan-11-2026-10-04", ["sum"]]]);
+  });
+});
+
+describe("safeUrl", () => {
+  it("keeps http(s) links and drops every other scheme", () => {
+    expect(safeUrl("https://www.kan.org.il/a")).toBe("https://www.kan.org.il/a");
+    expect(safeUrl("javascript:alert(1)")).toBeNull();
+    expect(safeUrl("data:text/html,hi")).toBeNull();
+    expect(safeUrl("not a url")).toBeNull();
   });
 });

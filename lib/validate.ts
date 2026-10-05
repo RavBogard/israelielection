@@ -38,6 +38,7 @@ export function validatePolls(
     else if (p.published < config.dissolved) bad("date", `Published before the Knesset dissolved (${config.dissolved}).`);
     else if (p.published > today) bad("date", "Publication date is in the future.");
     if (!p.fieldwork) bad("fieldwork", "Fieldwork date is missing.");
+    if (p.url !== null && !/^https?:\/\//i.test(p.url)) bad("url", `Source link "${p.url}" is not an http(s) URL.`);
 
     const total = pollTotal(p);
     if (total !== KNESSET_SEATS) bad("sum", `Seats add up to ${total}, not ${KNESSET_SEATS}.`);

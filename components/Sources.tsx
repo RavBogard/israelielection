@@ -1,5 +1,5 @@
 import { partiesData, pollsData } from "@/lib/data";
-import { mediumDate } from "@/lib/format";
+import { httpUrl, mediumDate } from "@/lib/format";
 import { pollLabel } from "@/lib/polls";
 
 /** Poll source lines, generated from data/polls.json. */
@@ -11,11 +11,11 @@ export function PollSources() {
           <b>{pollLabel(p)}</b> poll{p.fieldwork ? `, fieldwork ${p.fieldwork}` : ""}, published {mediumDate(p.published)}
           {p.n ? ` (n=${p.n.toLocaleString("en-US")}${p.margin ? `, margin ${p.margin}` : ""})` : ""}
           {p.via ? `, via ${p.via}` : ""}
-          {p.url && (
+          {httpUrl(p.url) && (
             <>
               :{" "}
-              <a href={p.url} target="_blank" rel="noopener">
-                {p.url.replace(/^https?:\/\/(www\.)?/, "")}
+              <a href={httpUrl(p.url)!} target="_blank" rel="noopener">
+                {p.url!.replace(/^https?:\/\/(www\.)?/, "")}
               </a>
             </>
           )}
