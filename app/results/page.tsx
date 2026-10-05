@@ -89,7 +89,7 @@ export default async function Page() {
               {live.state === "closed" ? (
                 <>
                   The Central Elections Committee starts publishing its count when polls close at {IL.format(close)} Israel time ({ET.format(close)}).
-                  This page will show the count as it comes in, refreshed every minute, and the <Link href="/">Coalition Builder</Link> will add the
+                  This page will show the count as it comes in, refreshed every minute, and the <Link href="/coalition-builder">Coalition Builder</Link> will add the
                   results as a choice.
                 </>
               ) : (

@@ -35,7 +35,7 @@ export default async function Page(props: PageProps<"/parties/[id]">) {
       <div className="wrap">
         <div className="reading">
           <p className="toplink">
-            <Link href={`/parties#${party.id}`}>Party Map</Link> and <Link href="/">Coalition Builder</Link>
+            <Link href={`/parties#${party.id}`}>Party Map</Link> and <Link href="/coalition-builder">Coalition Builder</Link>
           </p>
           <article style={{ paddingTop: 22 }}>
             <ProfileDetail party={party} />

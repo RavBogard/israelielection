@@ -78,7 +78,7 @@ export default function Page() {
         <h2 className="sec-h">The current average</h2>
         <p className="note">
           Each pollster&apos;s latest poll from the {cfg.currentWindowDays} days up to {mediumDate(to)} ({mainPolls.length} polls:{" "}
-          {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/">Coalition Builder</Link> and{" "}
+          {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/coalition-builder">Coalition Builder</Link> and{" "}
           <Link href="/parties">Party Map</Link> use the same polls. {cfg.inclusionRule}
         </p>
         <p className="note">
