@@ -98,3 +98,7 @@
 }
 
 /* Print: the reading column alone, black on white. Chrome, menus and the rail drop out; the sources print as a plain list under their heading. */
+
+/* Glossary terms, linked on first use by lib/remark-glossary.mjs: a dotted underline tells them from ordinary links. */
+.article .body a[href^="/glossary#"] { text-decoration-style: dotted; text-decoration-color: var(--ink-3); }
+.article .body a[href^="/glossary#"]:hover { text-decoration-style: solid; }
