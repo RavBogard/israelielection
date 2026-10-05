@@ -64,16 +64,23 @@ line added by the design session; the About section, with Codex's approved text,
 session's. No claim of anonymity or of a consent control: neither has been verified.
 
 ## 9. "Far-right" as a label in the site's voice
-The settlers and haredim pages use "far-right" for Otzma Yehudit and allies in page voice; press
-usage, unruled. Ruling needed: allow it as the common press label, or attribute it each time.
+Resolved: Daniel approved the rule (2026-10-05), recorded as RULINGS #119. "Far-right" in page
+voice only for Otzma Yehudit, the Religious Zionist Party and their 2021/2022 joint lists, named,
+with IDI's classification cited at first substantive use. Applied on the haredim and settlers
+pages (4dabdb2). The timeline's "far-right Jewish activist" for Yigal Amir is its source's wording
+(Jerusalem Post) and stays.
 
 ## 10. Session 1 deck PDF
-The PowerPoint carries the new labels (no class calendar, rulings 116 to 118 applied), but the
-PDF export still says "inside the territories" (p. 8), "Arab-led" (pp. 26 to 28) and "the Arab
-lists" (p. 30) because its embedded fonts lack the glyphs. Needed: a fresh PDF export from the
-Slides source, or permission for the content session to regenerate it.
+Resolved (content session, 2026-10-05): slides 21 to 24 and 28 and their notes now read
+"Anti-Netanyahu bloc (Jewish-majority parties)"; "Lieberman" corrected to "Liberman" (ruling 32).
+Fresh 31-page PDF exported from the corrected PowerPoint with the deck fonts (Libre Baskerville,
+Public Sans) embedded; the old PDF's font substitution was the cause of its stale wording. Slide
+28's bloc heading widened so the longer label fits. Every slide inspected; PDF text checked: no
+"Zionist opposition", "inside the territories" or "the Arab lists". Speaker notes preserved.
 
 ## 11. Open sourcing items (content lane)
-The Israeli toll since Oct 7 cites Arutz Sheva only; the Sasson Report outpost definition is
-unsourced; the Zehut and Religious Zionism list relationship is unclear in parties.json. No ruling
-needed unless you have a preferred source; listed so you know.
+Resolved (2026-10-05): the war page's Israeli toll now cites the Defense Ministry's Oct 4, 2026
+release (1,318 security personnel) and attributes the National Insurance Institute's 1,029
+civilians to JNS's Oct 4 report; both include Oct 7; Arutz Sheva dropped (4dabdb2). The outpost
+definition is attributed to Peace Now in the glossary; Religious Zionism–Zehut is described as two
+parties on one list. No further action.

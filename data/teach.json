@@ -8,8 +8,8 @@
       "description": "How Israel's electoral system works, who Israelis are, and where the parties and blocs stood in the polls three weeks before the vote. Speaker notes carry the source and date for every number.",
       "asOf": "Numbers as of October 4, 2026.",
       "files": [
-        { "label": "Slides (PowerPoint)", "note": "editable, with speaker notes", "href": "/teach/session-1-deck.pptx", "size": "1.3 MB" },
-        { "label": "Slides (PDF)", "note": "to view, print or project", "href": "/teach/session-1-deck.pdf", "size": "4.1 MB" }
+        { "label": "Slides (PowerPoint)", "note": "editable, with speaker notes", "href": "/teach/session-1-deck.pptx", "size": "180 KB" },
+        { "label": "Slides (PDF)", "note": "to view, print or project", "href": "/teach/session-1-deck.pdf", "size": "380 KB" }
       ],
       "cover": "/teach/session-1-cover.png",
       "fonts": "The PowerPoint uses Libre Baskerville and Public Sans, free from Google Fonts; install them first or the text may reflow."
