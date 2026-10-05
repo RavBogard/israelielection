@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./interactives.css";
 import "./coalition.css";
+import Governing from "./Governing";
+import type { StanceMap } from "@/lib/cohesion";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
 import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
@@ -148,13 +150,29 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
 }
 
 /** A named line-up a reader can load in one tap, with the seats it once held for the "then vs now" line. */
+/** The pledge and condition notes for the chosen parties: yellow goes against a recorded pledge, grey is a stated condition. */
+function Warns({ warns }: { warns: ReturnType<typeof warnings> }) {
+  if (!warns.length) return null;
+  return (
+    <div className="warns">
+      {warns.map((w) => (
+        <div key={w.id} className={`warn${w.kind === "condition" ? " info" : ""}`}>
+          <b>{w.kind === "condition" ? "A stated condition" : "Goes against a pledge"}</b>
+          {w.message}
+          <cite>{w.source}</cite>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export type Preset = { ids: string[]; label: string; seats: number; year: number; note?: string | null };
 
 /** How the current poll is named in a sentence. */
 const pollPhrase = (poll: Poll) =>
   poll.id === RESULTS_ID ? "the count so far" : poll.id === AVERAGE_ID ? `the average of the latest ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
 
-export default function CoalitionBuilder({ results = null, embedded = false, preset }: { results?: Poll | null; embedded?: boolean; preset?: Preset }) {
+export default function CoalitionBuilder({ results = null, embedded = false, preset, stances }: { results?: Poll | null; embedded?: boolean; preset?: Preset; stances?: StanceMap }) {
   // On the home page the builder sits under the page's own heading, so its title is an h2.
   const Title = embedded ? "h2" : "h1";
   const choices = useMemo(() => pickList(results), [results]);
@@ -313,16 +331,12 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
             </p>
           )}
-          {warns.length > 0 && (
-            <div className="warns">
-              {warns.map((w) => (
-                <div key={w.id} className={`warn${w.kind === "condition" ? " info" : ""}`}>
-                  <b>{w.kind === "condition" ? "A stated condition" : "Goes against a pledge"}</b>
-                  {w.message}
-                  <cite>{w.source}</cite>
-                </div>
-              ))}
-            </div>
+          {stances ? (
+            <Governing sel={sel} parties={parties} poll={poll} map={stances}>
+              <Warns warns={warns} />
+            </Governing>
+          ) : (
+            <Warns warns={warns} />
           )}
           {t.chosen.length > 0 && (
             <div className="share">

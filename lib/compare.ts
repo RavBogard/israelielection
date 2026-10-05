@@ -8,10 +8,14 @@ export type PositionRow = {
   url?: string | null;
   date?: string | null;
   declined?: boolean;
-  /** Short label drawn from the text, for narrow layouts. */
+  /** The id of one of the file's `stances`: the comparable option this row's text supports. */
   stance?: string;
-  /** "declined": refused the questionnaire; "none": no published position found. */
+  /** "declined": refused the questionnaire; "none": no published position found (text, if present, says what the party said instead). */
   status?: "declined" | "none";
+  /** "record": the party declined the questionnaire; the stance comes from a dated statement, bill or vote. */
+  basis?: "record";
+  /** When a "none" row was last checked. */
+  checked?: string;
 };
 
 export type AxisKey = IssueKey | "pstate";
@@ -20,7 +24,7 @@ export type AxisKey = IssueKey | "pstate";
 export const AXES: { key: AxisKey; label: string }[] = [
   { key: "draft", label: "Haredi draft" },
   { key: "courts", label: "Courts and the judicial overhaul" },
-  { key: "war", label: "The war and the hostages" },
+  { key: "war", label: "The October 7 inquiry" },
   { key: "wb", label: "West Bank and annexation" },
   { key: "relig", label: "Religion and state" },
   { key: "econ", label: "Cost of living and the economy" },
@@ -28,7 +32,8 @@ export const AXES: { key: AxisKey; label: string }[] = [
 ];
 
 export const MIN_PICK = 2;
-export const MAX_PICK = 4;
+/** The picker's upper bound was four when the comparison was a table of columns; the issue strips take every pickable list. */
+export const MAX_PICK = 15;
 
 export const NO_POSITION = "No position found";
 export const DECLINED = "Declined to answer";
@@ -80,8 +85,9 @@ export function cellsFor(party: Party, stateRows: PositionRow[]): Record<AxisKey
   return cells;
 }
 
-/** The four largest parties in the poll average, largest first (ties keep data order). */
-export function defaultSelection(ids: string[], results: Record<string, PollResult>, n = MAX_PICK): string[] {
+/** The page's starting set: the four largest parties in the poll average, largest first (ties keep data order). */
+export const DEFAULT_PICK = 4;
+export function defaultSelection(ids: string[], results: Record<string, PollResult>, n = DEFAULT_PICK): string[] {
   return ids
     .map((id, i) => ({ id, i, seats: results[id]?.seats ?? -1 }))
     .sort((a, b) => b.seats - a.seats || a.i - b.i)
@@ -90,23 +96,23 @@ export function defaultSelection(ids: string[], results: Record<string, PollResu
 }
 
 /**
- * `?p=likud,byachad` as a selection: known ids only, no repeats, at most four.
+ * `?p=likud,byachad` as a selection: known ids only, no repeats, at most `max`.
  * Anything giving fewer than two parties falls back to the default.
  */
-export function parseSelection(param: string | null | undefined, validIds: string[], fallback: string[]): string[] {
+export function parseSelection(param: string | null | undefined, validIds: string[], fallback: string[], max = MAX_PICK): string[] {
   if (!param) return fallback;
   const valid = new Set(validIds);
   const out: string[] = [];
   for (const raw of param.split(",")) {
     const id = raw.trim().toLowerCase();
     if (valid.has(id) && !out.includes(id)) out.push(id);
-    if (out.length === MAX_PICK) break;
+    if (out.length === max) break;
   }
   return out.length >= MIN_PICK ? out : fallback;
 }
 
-/** Adds or removes a party, keeping two to four chosen; a change that would break the bounds is ignored. */
-export function toggle(selection: string[], id: string): string[] {
+/** Adds or removes a party, keeping at least two and at most `max` chosen; a change that would break the bounds is ignored. */
+export function toggle(selection: string[], id: string, max = MAX_PICK): string[] {
   if (selection.includes(id)) return selection.length > MIN_PICK ? selection.filter((x) => x !== id) : selection;
-  return selection.length < MAX_PICK ? [...selection, id] : selection;
+  return selection.length < max ? [...selection, id] : selection;
 }

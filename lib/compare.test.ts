@@ -33,7 +33,8 @@ describe("defaultSelection", () => {
 describe("parseSelection", () => {
   const fb = ["likud", "shas"];
   it("keeps known ids in order, drops unknown and repeated ones, caps at four", () => {
-    expect(parseSelection("byachad,LIKUD, nope,likud,shas,utj,rz", ids, fb)).toEqual(["byachad", "likud", "shas", "utj"]);
+    expect(parseSelection("byachad,LIKUD, nope,likud,shas,utj,rz", ids, fb, 4)).toEqual(["byachad", "likud", "shas", "utj"]);
+    expect(parseSelection("byachad,likud,shas,utj,rz", ids, fb)).toEqual(["byachad", "likud", "shas", "utj", "rz"]);
   });
   it("falls back when missing or under two parties", () => {
     expect(parseSelection(null, ids, fb)).toBe(fb);
@@ -46,7 +47,8 @@ describe("parseSelection", () => {
 describe("toggle", () => {
   it("adds up to four and removes down to two", () => {
     expect(toggle(["a", "b"], "c")).toEqual(["a", "b", "c"]);
-    expect(toggle(["a", "b", "c", "d"], "e")).toEqual(["a", "b", "c", "d"]);
+    expect(toggle(["a", "b", "c", "d"], "e", 4)).toEqual(["a", "b", "c", "d"]);
+    expect(toggle(["a", "b", "c", "d"], "e")).toEqual(["a", "b", "c", "d", "e"]);
     expect(toggle(["a", "b", "c"], "b")).toEqual(["a", "c"]);
     expect(toggle(["a", "b"], "a")).toEqual(["a", "b"]);
   });

@@ -11,8 +11,8 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; mo
     items: [
       { href: "/coalition-builder", label: "Coalition Builder" },
       { href: "/parties", label: "Party Map" },
+      { href: "/compare", label: "Compare" },
     ],
-    more: [{ href: "/compare", label: "Compare the parties" }],
   },
   {
     label: "Follow",

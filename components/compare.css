@@ -1,59 +1,92 @@
-/* Compare the parties: a picker, then the seven issues side by side. Bloc colour appears only as
-   the thin top rule on each party column, as on the Coalition Builder's ballot slips. */
-.cmp { margin-top: 28px; font-family: var(--body); color: var(--ink); }
+/* Compare the parties: a picker grouped by bloc, then seven issue strips. In a strip the issue's
+   stances are columns and the chosen parties sit under theirs as small ballot slips, so agreement
+   reads as a pile and a split as distance. Bloc colour appears only as the bar on each slip. */
+.cmp { margin-top: 24px; font-family: var(--body); color: var(--ink); }
 
 /* Picker */
-.cmp .picker { border: 0; margin: 0 0 28px; padding: 0; min-width: 0; }
-.cmp .picker legend { font-weight: 700; font-size: 15px; padding: 0; margin-bottom: 10px; }
+.cmp .picker { border: 0; margin: 0 0 36px; padding: 0; min-width: 0; }
+.cmp .picker legend { font-weight: 700; font-size: 15px; padding: 0; margin-bottom: 6px; }
+.cmp .presets { font-family: var(--display); font-size: 16.5px; line-height: 1.55; color: var(--text); margin: 0 0 18px; max-width: 70ch; }
+.cmp .linkish { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.cmp .linkish[aria-pressed="true"] { text-decoration-color: var(--line-2); }
+.cmp .linkish:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.cmp .blocs { display: grid; grid-template-columns: repeat(4, minmax(0, auto)); gap: 16px 28px; justify-content: start; }
+.cmp .bl { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
+.cmp .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
 .cmp .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.cmp .chip { font: inherit; font-size: 14.5px; text-align: left; background: transparent; color: var(--ink); border: 1px dashed var(--line-2); border-radius: 0; padding: 8px 12px; cursor: pointer; display: inline-flex; align-items: baseline; gap: 8px; }
-.cmp .chip:hover:not(:disabled) { border-color: var(--ink-3); }
-.cmp .chip[aria-pressed="true"] { border-style: solid; border-color: var(--ink); background: var(--sheet); font-weight: 600; }
+.cmp .chip { font: inherit; font-size: 14px; text-align: left; background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); border-radius: 0; padding: 7px 11px 8px; cursor: pointer; display: inline-flex; align-items: baseline; gap: 8px; }
+.cmp .chip:hover:not(:disabled) { border-color: var(--ink); border-top-color: var(--fill); }
+.cmp .chip[aria-pressed="true"] { background: var(--fill); color: var(--fill-ink); border-color: var(--fill); font-weight: 600; }
+.cmp .chip[aria-pressed="true"] .letters, .cmp .chip[aria-pressed="true"] .nm { color: var(--fill-ink); }
 .cmp .chip:disabled { cursor: default; }
-.cmp .chip:disabled:not([aria-pressed="true"]) { color: var(--ink-3); }
 .cmp .chip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cmp .chip .letters { font-size: 18px; }
-.cmp .hint { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-2); }
+.cmp .chip .letters { font-size: 17px; }
+.cmp .hint { margin: 14px 0 0; font-size: 14px; color: var(--ink-2); }
+.cmp .hint a { color: var(--ink); font-weight: 600; }
 
-/* Party name with its ballot letters, in the display face as on the slips */
+/* Ballot letters in the display face, as on the slips */
 .cmp .letters { font-family: var(--display); font-weight: 900; line-height: 1; color: var(--ink); }
 .cmp .nm { line-height: 1.2; }
 
-/* Table */
-.cmp .tbl-wrap { overflow-x: auto; }
-.cmp .tbl { width: 100%; min-width: calc(180px + var(--cols, 4) * 190px); border-collapse: collapse; table-layout: fixed; }
-.cmp .tbl .corner { width: 180px; border: 0; }
-.cmp .tbl th, .cmp .tbl td { text-align: left; vertical-align: top; padding: 14px 16px 16px; border-bottom: 1px solid var(--line); }
-.cmp .tbl thead th.ph { background: var(--sheet); border: 1px solid var(--line-2); border-top: 5px solid var(--fill); border-bottom-color: var(--ink); padding: 12px 16px; }
-.cmp .tbl thead .letters { display: block; font-size: 30px; margin-bottom: 8px; }
-.cmp .tbl thead .nm { font-family: var(--body); font-weight: 700; font-size: 16px; }
-.cmp .tbl tbody th.ax { font-family: var(--body); font-weight: 700; font-size: 14.5px; line-height: 1.3; color: var(--ink); padding-left: 0; }
-.cmp .tbl tbody td { border-left: 1px solid var(--line); }
-.cmp .tbl tbody td:last-child { border-right: 1px solid var(--line); }
+/* Issue strips */
+.cmp .issues { list-style: none; margin: 0; padding: 0; }
+.cmp .issue { border-top: 2px solid var(--ink); padding: 18px 0 26px; }
+.cmp .issue header { margin-bottom: 18px; max-width: 70ch; }
+.cmp .issue h2 { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -.01em; margin: 0; }
+.cmp .issue .q { font-family: var(--display); font-size: 17px; line-height: 1.4; color: var(--text); margin: 4px 0 0; }
+.cmp .issue .verdict { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 8px 0 0; }
 
-/* Cell contents */
-.cmp .pos { font-family: var(--display); font-size: 16px; line-height: 1.45; color: var(--ink); margin: 0; }
-.cmp .src { font-family: var(--body); font-size: 12.5px; line-height: 1.4; color: var(--ink-3); margin: 8px 0 0; }
+.cmp .strip { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 0 18px; }
+.cmp .col { min-width: 0; border-top: 1px solid var(--line-2); padding-top: 8px; }
+.cmp .col .st { margin: 0 0 10px; font-size: 13.5px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.cmp .col.empty .st { color: var(--ink-3); font-weight: 500; }
+.cmp .col.empty { border-top-style: dashed; }
+.cmp .col.quiet { border-top-color: var(--line); }
+.cmp .col.quiet .st { color: var(--ink-3); font-weight: 500; }
+.cmp .slips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.cmp .ms { width: 72px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); padding: 8px 8px 7px; display: flex; flex-direction: column; gap: 4px; }
+.cmp .ms .letters { font-size: 20px; }
+.cmp .ms .nm { font-size: 11.5px; line-height: 1.2; color: var(--ink); }
+.cmp .col.quiet .ms { background: transparent; border-style: dashed; border-top-style: solid; border-top-color: color-mix(in srgb, var(--fill) 40%, transparent); }
+.cmp .col.quiet .ms .letters, .cmp .col.quiet .ms .nm { color: var(--ink-3); }
+
+/* What each party said */
+.cmp .said { margin-top: 18px; }
+.cmp .said summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; list-style: none; display: inline-block; }
+.cmp .said summary::-webkit-details-marker { display: none; }
+.cmp .said summary:hover { text-decoration-color: currentColor; }
+.cmp .said summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.cmp .said[open] summary { margin-bottom: 8px; }
+.cmp .quotes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.cmp .quotes li { padding: 12px 0 14px; border-top: 1px solid var(--line); }
+.cmp .quotes .who { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 6px; font-size: 14.5px; }
+.cmp .quotes .who .sw { background: var(--fill); align-self: center; }
+.cmp .quotes .who .st { font-size: 13px; color: var(--ink-2); }
+.cmp .quotes .who .st.quiet { color: var(--ink-3); font-weight: 600; }
+.cmp .pos { font-family: var(--display); font-size: 16px; line-height: 1.5; color: var(--ink); margin: 0; }
+.cmp .src { font-family: var(--body); font-size: 12.5px; line-height: 1.4; color: var(--ink-3); margin: 6px 0 0; }
 .cmp .src a { color: var(--ink-3); }
 .cmp .src a:hover { color: var(--ink); }
-.cmp .empty { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0; }
-.cmp .empty + .pos { margin-top: 6px; }
+.cmp .said .note { margin: 12px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--ink-2); max-width: 80ch; }
 
-/* Stacked cards, shown under 760px instead of the table */
-.cmp .cards { display: none; }
-.cmp .card { background: var(--sheet); border: 1px solid var(--line-2); border-top: 5px solid var(--fill); border-radius: 0; margin: 0 0 16px; }
-.cmp .card h2.ph { display: flex; align-items: baseline; gap: 10px; margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--ink); }
-.cmp .card h2 .letters { font-size: 26px; }
-.cmp .card h2 .nm { font-family: var(--body); font-weight: 700; font-size: 17px; }
-.cmp .card dl { margin: 0; }
-.cmp .card .row { padding: 12px 16px 14px; border-bottom: 1px solid var(--line); }
-.cmp .card .row:last-child { border-bottom: 0; }
-.cmp .card dt { font-weight: 700; font-size: 14px; margin: 0 0 6px; }
-.cmp .card dd { margin: 0; }
+.cmp .foot { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); max-width: 70ch; }
 
-.cmp .foot { margin: 20px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); max-width: 70ch; }
-
-@media (max-width: 759.98px) {
-  .cmp .tbl-wrap { display: none; }
-  .cmp .cards { display: block; }
+@media (max-width: 1000px) {
+  .cmp .blocs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cmp .quotes { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .cmp .issue h2 { font-size: 24px; }
+  /* The strip stacks: each stance a row, its slips inline. */
+  .cmp .strip { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .cmp .col { display: grid; grid-template-columns: minmax(96px, 34%) minmax(0, 1fr); gap: 0 14px; align-items: start; border-top: 1px solid var(--line); padding: 10px 0; }
+  .cmp .col .st { margin: 0; }
+  .cmp .col.empty { border-top-style: solid; }
+  .cmp .col.empty .st { font-size: 13px; }
+  .cmp .ms { width: 64px; padding: 6px 7px 6px; }
+  .cmp .ms .letters { font-size: 18px; }
+}
+@media (max-width: 480px) {
+  .cmp .blocs { grid-template-columns: minmax(0, 1fr); }
+  .cmp .chip { font-size: 13.5px; padding: 6px 9px 7px; }
 }

@@ -87,3 +87,23 @@
   .cb .slip { transition: none; }
   .cb .drawer { animation: none; }
 }
+
+/* Can they govern together? Seven issue rows, each with the strip glyph (stance slots left to right, the chosen parties as squares) and its reading. */
+.cb .together { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--ink); padding-top: 14px; }
+.cb .together h3 { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.15; margin: 0; }
+.cb .together .sum { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--text); margin: 0; }
+.cb .together .rows { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; }
+.cb .together .rows li { border-top: 1px solid var(--line); }
+.cb .together .rows li:last-child { border-bottom: 1px solid var(--line); }
+.cb .together .rows a { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "l g" "r g"; gap: 2px 14px; align-items: center; padding: 8px 0 9px; color: inherit; text-decoration: none; }
+.cb .together .rows a:hover .lbl { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+.cb .together .rows a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.cb .together .lbl { grid-area: l; font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.25; }
+.cb .together .read { grid-area: r; font-size: 13px; line-height: 1.35; color: var(--ink-2); }
+.cb .together .gly { grid-area: g; display: block; overflow: visible; }
+.cb .together .gly .slot { fill: none; stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 2 1.5; }
+.cb .together .gly .quiet { fill: var(--cell); }
+.cb .together .dep { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--ink); margin: 2px 0 0; }
+.cb .together .more { margin: 2px 0 0; font-size: 14px; }
+.cb .together .more a { color: var(--ink); font-weight: 600; }
+.cb .together .empty { border-bottom: 0; }

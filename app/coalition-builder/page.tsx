@@ -4,7 +4,10 @@ import "@/components/coalition.css";
 import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
+import { stanceMap } from "@/lib/cohesion";
+import { AXES } from "@/lib/compare";
 import { allPolls, parties } from "@/lib/data";
+import { ISSUES } from "@/lib/positions";
 import { outgoingGovernment } from "@/lib/outgoing-government";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
@@ -32,6 +35,9 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 }
 
 /** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
+/** Where each party stands on each issue, for the panel's "Can they govern together?"; no quotes travel to the client. */
+const STANCES = stanceMap(AXES.map((a) => ({ key: a.key, label: a.label, file: ISSUES[a.key] })), parties.map((p) => p.id));
+
 const PRESET = { ids: outgoingGovernment.with, label: "the outgoing government", seats: outgoingGovernment.seats2022, year: 2022, note: outgoingGovernment.noam.text };
 
 export default async function Page() {
@@ -40,7 +46,7 @@ export default async function Page() {
   return (
     <div className="ix builder-page">
       <div className="wrap">
-        <CoalitionBuilder results={results} preset={PRESET} />
+        <CoalitionBuilder results={results} preset={PRESET} stances={STANCES} />
 
         <SourcesBox count={allPolls.length + 10}>
           <PollSources />
