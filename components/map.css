@@ -1,0 +1,37 @@
+/* Party Map: a treemap of the four blocs (area = average seats) with a detail panel to its right; stacks on phones. */
+.pm .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink-2); }
+.pm .legend span { display: inline-flex; align-items: center; gap: 7px; }
+.pm .layout { grid-template-columns: minmax(0, 1fr) 540px; }
+.pm .mapcol { min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.pm .map { position: relative; width: 100%; aspect-ratio: 16 / 10; max-width: 100%; }
+@media (max-width: 700px) { .pm .map { aspect-ratio: 3 / 5; } }
+.pm .blocname { position: absolute; font-size: 12px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pm .cell { position: absolute; font: inherit; text-align: left; border: 0; border-radius: 6px; padding: 10px 12px; cursor: pointer; background: var(--fill); color: var(--fill-ink); overflow: hidden; display: flex; flex-direction: column; gap: 2px; transition: filter .15s, box-shadow .15s; }
+.pm .cell:hover { filter: brightness(1.08); }
+.pm .cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.pm .cell[aria-pressed="true"] { box-shadow: inset 0 0 0 4px var(--fill-ink); }
+.pm .cell .nm { font-weight: 600; font-size: clamp(13px, 1.15vw, 20px); line-height: 1.15; }
+.pm .cell .av { font-family: var(--display); font-weight: 900; font-size: clamp(20px, 2.4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
+.pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; opacity: .85; margin-left: 4px; }
+.pm .cell .ld { font-size: 13px; opacity: .88; }
+.pm .cell.nold .ld { display: none; }
+.pm .cell.nosm .av small { display: none; }
+.pm .cell.tiny { padding: 6px 7px; }
+.pm .cell.tiny .ld { display: none; }
+.pm .cell.tiny .nm { font-size: 12px; }
+.pm .cell.tiny .av { font-size: 18px; }
+.pm .cell.tiny .av small { display: none; }
+.pm .cell.xs .nm { font-size: 11px; }
+.pm .offmap { display: flex; flex-wrap: wrap; gap: 10px; }
+.pm .chip { font: inherit; font-size: 14px; text-align: left; border: 1.5px dashed var(--line-2); background: transparent; color: var(--ink); border-radius: 10px; padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.pm .chip:hover { border-color: var(--ink-3); }
+.pm .chip[aria-pressed="true"] { border-style: solid; border-color: var(--ink); }
+.pm .chip em { font-style: normal; color: var(--ink-3); }
+.pm .minor { font-size: 14px; color: var(--ink-2); margin: 0; }
+.pm .panel h2.ov { font-family: var(--display); font-weight: 900; font-size: 34px; line-height: 1.05; margin: 0; }
+.pm .hint { color: var(--ink-2); margin: 0; }
+.pm .btable { width: 100%; border-collapse: collapse; font-size: 15px; }
+.pm .btable td { padding: 6px 0; border-bottom: 1px solid var(--line); }
+.pm .btable td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+.pm .tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 9px; border-radius: 6px; z-index: 5; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .pm .cell { transition: none; } }

@@ -1,0 +1,1489 @@
+{
+  "updated": "2026-10-04",
+  "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
+  "bioSource": "Wikipedia, accessed Oct 2026, via the research memo and party registers.",
+  "blocs": [
+    {
+      "id": "net",
+      "label": "Netanyahu bloc"
+    },
+    {
+      "id": "opp",
+      "label": "Zionist opposition"
+    },
+    {
+      "id": "mid",
+      "label": "Between the blocs"
+    },
+    {
+      "id": "arab",
+      "label": "Arab-led lists"
+    }
+  ],
+  "issues": [
+    {
+      "key": "draft",
+      "label": "Haredi draft"
+    },
+    {
+      "key": "courts",
+      "label": "Courts"
+    },
+    {
+      "key": "war",
+      "label": "War & Gaza"
+    },
+    {
+      "key": "wb",
+      "label": "West Bank"
+    },
+    {
+      "key": "relig",
+      "label": "Religion & state"
+    },
+    {
+      "key": "econ",
+      "label": "Economy"
+    }
+  ],
+  "parties": [
+    {
+      "id": "likud",
+      "name": "Likud",
+      "leader": "Benjamin Netanyahu",
+      "bloc": "net",
+      "tags": [],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Religious Zionism (agreed Sep 8; reported unsigned Sep 15)",
+      "who": [
+        {
+          "text": "Founded Sept 13, 1973 by Begin and Sharon; won power in 1977 with 43 seats.",
+          "source": "IDI party page"
+        },
+        {
+          "text": "Netanyahu has led it since 2005 (and 1993–99). The Aug 17, 2026 primary put Eli Cohen first; Netanyahu used reserved slots to move hardliners down.",
+          "source": "Times of Israel, Aug 18, 2026"
+        },
+        {
+          "text": "No written 2026 platform; Likud “does not participate in questionnaires.”",
+          "source": "Ynet, Sep 30, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 1,115,336 votes, 23.41%, 32 seats.",
+          "source": "Wikipedia / IDI"
+        },
+        {
+          "text": "Its 2022 voters were 57% traditional, 32% secular, 10% national-religious, 1% Haredi. It won 46.5% of traditional voters and 20% of secular voters.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "Strong in periphery cities: Beersheba 42%, Eilat 42%, Ashkelon 40% in 2021.",
+          "source": "Times of Israel, Mar 23, 2021"
+        },
+        {
+          "text": "First-time voters (18–22): 14%, behind Yashar's 16%.",
+          "source": "N12/Midgam via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Netanyahu revived the Haredi exemption bill as the coalition fell apart; Likud's Sharren Haskel vowed to fight it.",
+          "source": "Times of Israel, May 17, 2026"
+        },
+        "courts": {
+          "text": "Levin: “We'll wait for the next term, when two-thirds of the Supreme Court justices' seats become vacant.” Professional members lose their veto under the new judge-selection law.",
+          "source": "JTA, Sep 18, 2026"
+        },
+        "war": {
+          "text": "Rejected Trump's 15-point plan; no withdrawal “until Hamas is genuinely disarmed.”",
+          "source": "Al Jazeera, Aug 9, 2026"
+        },
+        "wb": {
+          "text": "“As long as I am prime minister, no Palestinian state will arise.” (In July 2025 all Likud ministers urged applying sovereignty.)",
+          "source": "Al Jazeera, Aug 9, 2026; Ynet, Jul 2, 2025"
+        },
+        "relig": null,
+        "econ": null
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Eli Cohen",
+          "note": "won the primary"
+        },
+        {
+          "slot": "9",
+          "name": "Talik Gvili",
+          "note": "mother of Ran Gvili, the last hostage returned"
+        },
+        {
+          "slot": "11",
+          "name": "Yaakov Bardugo",
+          "note": "Channel 14 commentator"
+        }
+      ],
+      "namesSource": "JPost and i24, Sep 8, 2026",
+      "pledges": [
+        {
+          "text": "“A strong right-wing government led by me.”",
+          "source": "JPost, Sep 8, 2026"
+        },
+        {
+          "text": "Petitioned to bar the Joint List; Likud, Shas and UTJ representatives voted to bar the Joint List and Ra'am.",
+          "source": "Times of Israel, Sep 23, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Religious Zionism. Agreed Sept 8; reported still unsigned Sept 15. Final status not found.",
+        "source": "Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"
+      },
+      "quote": {
+        "text": "There is no straight. Yashar is a bluff. There's either left or right… Do you want a Palestinian state? (or) do you want a Jewish state?",
+        "speaker": "Benjamin Netanyahu",
+        "source": "Reuters via JPost, Sep 29, 2026"
+      },
+      "bios": [
+        {
+          "name": "Benjamin Netanyahu",
+          "text": "Born 1949 in Tel Aviv. Prime minister 1996–99, 2009–21 and since 2022, the longest-serving in Israel's history. The first sitting prime minister charged with a crime; his trial began May 24, 2020, and he requested a pardon in November 2025."
+        }
+      ]
+    },
+    {
+      "id": "otzma",
+      "name": "Otzma Yehudit",
+      "leader": "Itamar Ben-Gvir",
+      "bloc": "net",
+      "tags": [],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: none found",
+      "who": [
+        {
+          "text": "Founded 2012. Israel Policy Forum calls it the “ideological continuation” of Meir Kahane's Kach, which was outlawed in 1994.",
+          "source": "IPF; Wikipedia"
+        },
+        {
+          "text": "Ben-Gvir has led it since 2019. It won 6 seats in 2022 inside the Religious Zionism joint list. He left the government in Jan 2025 over the ceasefire and returned in March 2025.",
+          "source": "Wikipedia"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 6 seats as part of the Religious Zionism joint list (516,470 votes, 10.84%, 14 seats in all).",
+          "source": "IDI; Wikipedia"
+        },
+        {
+          "text": "Draws “traditional Mizrahi voters from the periphery” (Finkelstein).",
+          "source": "Times of Israel, Apr 15, 2026"
+        },
+        {
+          "text": "13% of Haredi first-time voters.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        },
+        {
+          "text": "Courting disappointed Likud and Shas voters.",
+          "source": "JPost, Aug 22, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Backed the July 14 law banning arrests of draft evaders; proposes Haredi tracks in police and Border Police: “enter service as Haredi and leave it as Haredi.”",
+          "source": "Ynet, 2026"
+        },
+        "courts": {
+          "text": "Backed the 2023 judicial reforms; wants political control of judicial appointments.",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        "war": {
+          "text": "“Disengagement 710” plan: an emigration ministry and 250,000 Gazan departures a year, NIS 10 billion. “This is a free choice; we are not forcing anyone to leave, but there is encouragement.”",
+          "source": "JPost, Sep 3; JTA, Sep 6, 2026"
+        },
+        "wb": {
+          "text": "Opposes a Palestinian state and evacuating settlers. On Temple Mount prayer: Jews “feel that they are the rightful owners of this place.”",
+          "source": "JPost, Jul 23, 2026"
+        },
+        "relig": null,
+        "econ": null
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Tally Gotliv",
+          "note": "former Likud MK"
+        },
+        {
+          "slot": "4",
+          "name": "Amichai Eliyahu",
+          "note": null
+        },
+        {
+          "slot": "12",
+          "name": "Yishai Fleisher",
+          "note": "Hebron spokesman"
+        }
+      ],
+      "namesSource": "Times of Israel, Sep 7, 2026 (no primaries)",
+      "pledges": [
+        {
+          "text": "A “fully right-wing government”; no unity with centrists, no Arab parties; demands the Defense or Justice ministry; no Palestinian-state talks.",
+          "source": "JPost, Sep 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "None found. Ben-Gvir refused Winter.",
+        "source": "CRC party register, Oct 4, 2026"
+      },
+      "quote": {
+        "text": "We survived Pharaoh, we will survive Keir Starmer as well.",
+        "speaker": "Itamar Ben-Gvir, on UK sanctions",
+        "source": "June 2025"
+      },
+      "bios": [
+        {
+          "name": "Itamar Ben-Gvir",
+          "text": "Born 1976 to Iraqi-Jewish parents. Active in Kach's youth movement; convicted in 2007 of incitement and support for a terror organization. National Security Minister from December 2022; left in January 2025 and returned in March 2025."
+        }
+      ]
+    },
+    {
+      "id": "shas",
+      "name": "Shas",
+      "leader": "Aryeh Deri",
+      "bloc": "net",
+      "tags": [
+        "haredi"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: UTJ (expected; signing not found)",
+      "who": [
+        {
+          "text": "Founded 1984 as “Shomrei Sefarad” in protest at Agudat Yisrael's thin Sephardi representation, under Rav Ovadia Yosef's Council of Torah Sages. Peak: 17 seats in 1999.",
+          "source": "IDI party page"
+        },
+        {
+          "text": "Deri has led it since 2013 (and 1990–99). Former Chief Rabbi Yitzhak Yosef was chosen “to lead” in 2026.",
+          "source": "JPost, Aug 20, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 392,964 votes, 8.25%, 11 seats.",
+          "source": "IDI; Wikipedia"
+        },
+        {
+          "text": "Won 28% of Haredi voters and 10.5% of national-religious voters in 2022.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "IDI's Malach: “at least three or four Knesset seats' worth of voters who are simply not Haredi.”",
+          "source": "Shomrim, Jun 30, 2026"
+        },
+        {
+          "text": "First-time voters: 3% overall, 20% of Haredi first-timers.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Deri: “The army doesn't want haredi soldiers, get that into your head.” Bill to enshrine Torah study as a basic value.",
+          "source": "JPost, Sep 3 and Sep 8, 2026"
+        },
+        "courts": {
+          "text": "“Fundamentally reform the judicial system and return power to the people and their elected representatives.”",
+          "source": "Ynet, Sep 22, 2026"
+        },
+        "war": {
+          "text": "Supports dismantling Hamas; opposes indefinite Israeli control (JPost's summary).",
+          "source": "JPost, Sep 8, 2026"
+        },
+        "wb": {
+          "text": "Opposes a Palestinian state; “not central” to its campaign.",
+          "source": "Ynet, Sep 30, 2026"
+        },
+        "relig": {
+          "text": "Orthodox control of marriage, conversion and kashrut; opposes civil marriage and expanded non-Orthodox prayer at the Kotel.",
+          "source": "JPost, Sep 8, 2026"
+        },
+        "econ": {
+          "text": "Deri: “It is unacceptable that a poor Haredi child would not receive the minimum support as a poor Arab child does.”",
+          "source": "Times of Israel, Dec 9, 2025"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Yinon Azoulay",
+          "note": null
+        },
+        {
+          "slot": "6",
+          "name": "Lt.-Col. (res.) Dror Amos",
+          "note": "Haifa religious council head; 25 years in the IDF"
+        },
+        {
+          "slot": "11",
+          "name": "Yosef Alnathanov",
+          "note": "Bukharan community"
+        }
+      ],
+      "namesSource": "JPost, Sep 8, 2026",
+      "pledges": [
+        {
+          "text": "“We support Netanyahu, period.”",
+          "source": "Deri, Jul 16, 2026"
+        },
+        {
+          "text": "Reported plan to sit in opposition until a draft law passes; anonymous source, “not a formal decision.”",
+          "source": "Maariv via JPost, Sep 17, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "UTJ, “expected.” Signing not found.",
+        "source": "JPost, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "Will Bibi Netanyahu repent? Not a chance… Eisenkot, perhaps he will.",
+        "speaker": "Rabbi Yitzhak Yosef",
+        "source": "Times of Israel, Jul 12, 2026"
+      },
+      "bios": [
+        {
+          "name": "Aryeh Deri",
+          "text": "Born 1959 in Meknes. Co-founded Shas and became the youngest minister. Convicted of bribery in 1999 and served 22 months; after a 2022 tax plea, the High Court barred him from serving as a minister in January 2023."
+        }
+      ]
+    },
+    {
+      "id": "utj",
+      "name": "UTJ",
+      "leader": "Yaakov Asher (Goldknopf no. 2)",
+      "bloc": "net",
+      "tags": [
+        "haredi"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Shas (expected; signing not found)",
+      "who": [
+        {
+          "text": "A joint list of Agudat Yisrael (Hasidic) and Degel HaTorah (Lithuanian) since 1992. Both factions quit the government in July 2025 over the draft.",
+          "source": "IDI party page"
+        },
+        {
+          "text": "Sept 5, 2026: Rav Dov Landau removed Gafni and Maklev by letter and made Yaakov Asher head. Sept 8: Porush and Stark formed a third faction inside the list, Homat Torat Yisrael, the first since 1992.",
+          "source": "Yeshiva World, Sep 5; Davar, Sep 8, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 280,194 votes, 5.88%, 7 seats.",
+          "source": "IDI; Wikipedia"
+        },
+        {
+          "text": "58% of Haredim voted UTJ in 2022; 86% voted UTJ or Shas.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "2021: 78% in Modi'in Illit, 60.9% in Bnei Brak.",
+          "source": "Times of Israel"
+        },
+        {
+          "text": "First-time voters: 9% overall, 45% of Haredi first-timers.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "“United Torah Judaism, with all its components, will not support or enter any government without regulating the status of Torah learners.”",
+          "source": "Yaakov Asher, Matzav, Sep 28, 2026"
+        },
+        "courts": {
+          "text": "“The Supreme Court has accumulated excessive power.”",
+          "source": "Ynet, 2026"
+        },
+        "war": {
+          "text": "“Focuses primarily on domestic issues.”",
+          "source": "JPost, Sep 8, 2026"
+        },
+        "wb": {
+          "text": "No unified policy; Agudah leans right, Degel “more moderate.”",
+          "source": "Ynet, Sep 30, 2026"
+        },
+        "relig": {
+          "text": "Same as Shas: Orthodox control of marriage, conversion and kashrut.",
+          "source": "JPost, Sep 8, 2026"
+        },
+        "econ": {
+          "text": "Housing for Haredi communities; yeshiva funding.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "1",
+          "name": "Yaakov Asher",
+          "note": "Degel HaTorah"
+        },
+        {
+          "slot": "2",
+          "name": "Yitzhak Goldknopf",
+          "note": "Agudat Yisrael (Gur)"
+        },
+        {
+          "slot": "4",
+          "name": "Meir Porush",
+          "note": "Homat Torat Yisrael"
+        }
+      ],
+      "namesSource": "Davar; Israel Hayom, Sep 8, 2026",
+      "pledges": [
+        {
+          "text": "No government without a yeshiva-status law, whoever leads it.",
+          "source": "Asher, Matzav, Sep 28, 2026"
+        },
+        {
+          "text": "Porush's faction requires separate negotiations.",
+          "source": "INN, Sep 8, 2026"
+        },
+        {
+          "text": "Rav Landau: “We no longer have trust in Netanyahu.”",
+          "source": "JPost, May 25, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Shas, “expected.” Signing not found.",
+        "source": "JPost, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "Many things look like etrogim – but this isn't an etrog.",
+        "speaker": "Yaakov Asher, on Religious Zionism and Otzma courting Haredi voters",
+        "source": "INN, Sep 27, 2026"
+      },
+      "bios": [
+        {
+          "name": "Yaakov Asher",
+          "text": "Born July 2, 1965 in Ramat Gan. Mayor of Bnei Brak from 2008; MK since 2013; Deputy Speaker 2022. Resigned as Interior Committee chair over the draft (Ynet, Sep 6, 2026)."
+        },
+        {
+          "name": "Yitzhak Goldknopf (no. 2)",
+          "text": "Born 1950 in Jerusalem; a Ger Hasid who built a kindergarten network. Leader of Agudat Yisrael since 2022. Resigned as housing minister in June 2025 over the draft."
+        }
+      ]
+    },
+    {
+      "id": "rz",
+      "name": "Religious Zionism–Zehut",
+      "leader": "Bezalel Smotrich, with Moshe Feiglin",
+      "bloc": "net",
+      "tags": [],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Likud (agreed Sep 8; reported unsigned Sep 15)",
+      "who": [
+        {
+          "text": "From the National Union line; Smotrich has chaired it since 2019. Smotrich refused a new joint run with Ben-Gvir.",
+          "source": "Wikipedia; JPost, Aug 13, 2026"
+        },
+        {
+          "text": "On Sept 1, 2026 formed a “technical bloc” with Moshe Feiglin's Zehut that can separate after the election. Feiglin: “We are a totally separate party.”",
+          "source": "JPost, Sep 1; Israel365, Sep 11, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022 (joint list with Otzma and Noam): 516,470 votes, 10.84%, 14 seats; RZ kept 7.",
+          "source": "IDI; Wikipedia"
+        },
+        {
+          "text": "The 2022 joint list took 45% of national-religious voters (up from 30%) and 14% of traditional voters.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "Won 22% in settlements vs about 11% nationally.",
+          "source": "Washington Institute, Nov 22, 2022"
+        },
+        {
+          "text": "Settler anger over the draft: “I don't have a political home today.”",
+          "source": "Times of Israel, Aug 7, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Most RZ MKs voted for the July 14 law banning arrests of draft evaders. Smotrich: arrests “just make Jews fight one another.”",
+          "source": "Times of Israel, Jul 14 and Aug 7, 2026"
+        },
+        "courts": {
+          "text": "“These elections concern the judiciary.” Plan: justices chosen by secret ballot of all judges, AG role split in two, 61-vote override.",
+          "source": "Ynet, Sep 15, 2026"
+        },
+        "war": {
+          "text": "“Return to the whole of Gaza in a big way,” with military rule before sovereignty.",
+          "source": "JPost, Aug 18, 2026"
+        },
+        "wb": {
+          "text": "E1 approval (~3,400 units) “practically erases the two-state delusion.” 103 new settlements approved during his tenure.",
+          "source": "Times of Israel, Aug 20, 2025; JPost, Aug 18, 2026"
+        },
+        "relig": {
+          "text": "“Jewish identity in state institutions and education.”",
+          "source": "israel2026.co.il"
+        },
+        "econ": {
+          "text": "“Competition-based solutions”; Zehut adds a flat tax, school vouchers, a professional army and cannabis legalization.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Moshe Feiglin",
+          "note": "Zehut leader"
+        },
+        {
+          "slot": "3",
+          "name": "Orit Strock",
+          "note": null
+        },
+        {
+          "slot": "4",
+          "name": "Simcha Rothman",
+          "note": null
+        }
+      ],
+      "namesSource": "INN, Sep 9, 2026",
+      "pledges": [
+        {
+          "text": "Netanyahu for prime minister; rules out Arab parties.",
+          "source": "JPost, Aug 18, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Likud. Agreed Sept 8; reported still unsigned Sept 15.",
+        "source": "Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"
+      },
+      "quote": {
+        "text": "Every settlement… is another nail in the coffin of this dangerous idea.",
+        "speaker": "Bezalel Smotrich, on a Palestinian state",
+        "source": "Times of Israel, Aug 20, 2025"
+      },
+      "bios": [
+        {
+          "name": "Bezalel Smotrich",
+          "text": "Born 1980; lives in Kedumim; co-founded Regavim. Finance minister and a minister in the Defense Ministry over the Civil Administration. Known for a 2023 remark that Huwara should be “wiped out”; sanctioned by several countries since June 2025."
+        }
+      ]
+    },
+    {
+      "id": "poi",
+      "name": "People of Israel",
+      "leader": "Ofer Winter",
+      "bloc": "net",
+      "tags": [],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: none found",
+      "who": [
+        {
+          "text": "Amcha Yisrael. Launched Aug 25, 2026 in Jerusalem by Ofer Winter, a retired brigadier general who turned down a Likud slot.",
+          "source": "Ynet, Aug 25, 2026"
+        },
+        {
+          "text": "Refused Smotrich's merger offer despite pressure from rabbis. Winter: the public wants “new people.”",
+          "source": "INN; JPost, Sep 7, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "New list; no 2022 result.",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        {
+          "text": "Targets younger voters, reservists, and right-wingers who can't back the current government.",
+          "source": "JPost, Sep 17, 2026"
+        },
+        {
+          "text": "Sector data: not found.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "“We will not join a government that does not pass, before it is formed, a law that puts an end to draft evasion… Full stop.”",
+          "source": "JPost, Sep 2, 2026"
+        },
+        "courts": {
+          "text": "“Judicial system reform,” with no details.",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        "war": {
+          "text": "“There is one solution in Gaza: migration.”",
+          "source": "Ynet, Aug 25, 2026"
+        },
+        "wb": {
+          "text": "“There will never be a Palestinian state here.”",
+          "source": "Ynet, Aug 25, 2026"
+        },
+        "relig": null,
+        "econ": {
+          "text": "Double combat soldiers' pay.",
+          "source": "Ynet, Oct 4, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Yoseph Haddad",
+          "note": "Arab Orthodox Christian; Golani volunteer wounded in 2006"
+        },
+        {
+          "slot": "3",
+          "name": "Netali Shem Tov",
+          "note": "journalist"
+        },
+        {
+          "slot": "5",
+          "name": "Fleur Hassan-Nahoum",
+          "note": "Jerusalem deputy mayor 2018–24"
+        }
+      ],
+      "namesSource": "INN, Sep 7, 2026",
+      "pledges": [
+        {
+          "text": "Recommends only Netanyahu; wants the Defense ministry; won't partner with Bennett or Eisenkot (JPost reports conflict).",
+          "source": "Ynet, Oct 4, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "None. Likud chose Religious Zionism; Ben-Gvir refused.",
+        "source": "CRC party register, Oct 4, 2026"
+      },
+      "quote": {
+        "text": "New people, those who were not part of the events that led us to October 7.",
+        "speaker": "Ofer Winter, on what the public wants",
+        "source": "JPost, Sep 7, 2026"
+      },
+      "bios": [
+        {
+          "name": "Ofer Winter",
+          "text": "Born Feb 3, 1971 in Rekhasim. In the IDF 1990–2024; commanded Duvdevan, the Givati Brigade and the 98th Division. On Oct 7 he went to the Be'eri front on his own. Retired May 2024 after being passed over for major general. Lives in Mitzpe Netofa."
+        }
+      ]
+    },
+    {
+      "id": "noam",
+      "name": "Noam",
+      "leader": "Avi Maoz",
+      "bloc": "net",
+      "tags": [],
+      "status": "Polling not found",
+      "coalitionCard": "hidden",
+      "surplusLine": null,
+      "who": [
+        {
+          "text": "Avi Maoz's party. Won 1 seat in 2022 as part of the Religious Zionism joint list; running alone in 2026.",
+          "source": "Wikipedia; CRC research memo Part C"
+        }
+      ],
+      "thin": "Our research registers have no 2026 profile, polling or bio for Noam or Avi Maoz.",
+      "voters": null,
+      "issues": null,
+      "names": null,
+      "namesSource": null,
+      "pledges": null,
+      "surplusPartner": null,
+      "quote": null,
+      "bios": null
+    },
+    {
+      "id": "yashar",
+      "name": "Yashar!",
+      "leader": "Gadi Eisenkot",
+      "bloc": "opp",
+      "tags": [
+        "zionistOpp"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: The Democrats (signed Sep 10)",
+      "who": [
+        {
+          "text": "Founded Sept 16, 2025 by Gadi Eisenkot with about 120 co-founders, after he left the Knesset.",
+          "source": "Times of Israel, Sep 16, 2025"
+        },
+        {
+          "text": "Named for freed hostage Eli Sharabi's line that bringing the captives home was “not about right or left, but straight (yashar).”",
+          "source": "Times of Israel"
+        },
+        {
+          "text": "2026 recruits include former Shin Bet chief Yoram Cohen, Orit Farkash-Hacohen and Elazar Stern.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "New list; no 2022 result (Eisenkot ran on National Unity, which won 12 seats).",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        {
+          "text": "Targets “Route 4” commuter suburbs: Petah Tikva, Kiryat Ono, Holon; also courting former Likud voters.",
+          "source": "Times of Israel, Jul 1 and Sep 14, 2026"
+        },
+        {
+          "text": "“Security-minded, centrist or moderate-right, secular or religiously traditional.”",
+          "source": "JC, Oct 4, 2026"
+        },
+        {
+          "text": "Largest share of first-time voters (18–22): 16%.",
+          "source": "N12/Midgam via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "“National Service for All”; deferments capped at 3% of each cohort, about 2,200 people; evaders lose benefits.",
+          "source": "Ynet, Sep 16; JPost, Sep 24, 2026"
+        },
+        "courts": {
+          "text": "Repeal the judicial selection law; opposes an override clause; clearer rules for judicial review in a Basic Law.",
+          "source": "Ynet, Sep 22, 2026"
+        },
+        "war": {
+          "text": "“The State of Israel must not accept a reality in which Hamas survives, rearms, and waits.” Wants a state commission of inquiry.",
+          "source": "JPost, Aug 1 and Sep 24, 2026"
+        },
+        "wb": {
+          "text": "Opposes a Palestinian state; would put the Civil Administration back under military coordination.",
+          "source": "Times of Israel, Sep 26, 2026"
+        },
+        "relig": {
+          "text": "“A secular party, but not anti-religious”; supports civil and same-sex marriage (JC's summary).",
+          "source": "JC, Oct 4, 2026"
+        },
+        "econ": {
+          "text": "15% raise for all conscripts; renter protections; reserve duty capped at 50 days a year.",
+          "source": "JPost, Sep 28; Ynet, Jun 30, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Yoram Cohen",
+          "note": "former Shin Bet chief"
+        },
+        {
+          "slot": "3",
+          "name": "Orit Farkash-Hacohen",
+          "note": null
+        },
+        {
+          "slot": "4",
+          "name": "Adi Altschuler",
+          "note": "designated education minister"
+        }
+      ],
+      "namesSource": "Times of Israel, Sep 7, 2026",
+      "pledges": [
+        {
+          "text": "Partners must accept four principles, including service for all and Hamas “to be dismantled and destroyed.” “I do not rule out any Zionist party.”",
+          "source": "JPost, Sep 24, 2026"
+        },
+        {
+          "text": "On Ra'am: Mansour Abbas “won't be part of my next government.” No Haredi party currently meets his criteria.",
+          "source": "Times of Israel, Sep 26, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "The Democrats (signed Sept 10).",
+        "source": "Times of Israel, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "Netanyahu initially opposed including that objective, and I forced it upon him on the ninth day of the war.",
+        "speaker": "Gadi Eisenkot, on making the hostages a war goal",
+        "source": "JPost, Sep 24, 2026"
+      },
+      "bios": [
+        {
+          "name": "Gadi Eisenkot",
+          "text": "Born 1960 in Tiberias to immigrants from Morocco. Commanded the Golani Brigade and Northern Command; IDF Chief of Staff 2015–19. His son Gal was killed in Gaza in December 2023, at 25. JTA: he would be Israel's first Mizrahi prime minister."
+        }
+      ]
+    },
+    {
+      "id": "byachad",
+      "name": "B'Yachad",
+      "leader": "Naftali Bennett (Yair Lapid no. 2)",
+      "bloc": "opp",
+      "tags": [
+        "zionistOpp"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Yisrael Beiteinu (signed Sep 10)",
+      "who": [
+        {
+          "text": "“Together – Led by Bennett.” Yesh Atid runs inside this list under a deal signed Apr 25–26, 2026; Lapid is no. 2 and Yesh Atid holds 10 of the top 24 slots. Not a formal merger.",
+          "source": "Times of Israel; JPost, Apr 26, 2026"
+        },
+        {
+          "text": "Polling fell from about 25 seats in May to roughly half; the list has tacked toward the liberal-Zionist center.",
+          "source": "Times of Israel, Sep 7, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: Yesh Atid 847,435 votes, 17.79%, 24 seats; Bennett did not run.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Yesh Atid's 2022 voters were 78.5% secular, 20% traditional; it took 39% of the secular vote.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "Russian speakers: Bennett 17%.",
+          "source": "Lazar via JPost, Dec 10, 2025"
+        },
+        {
+          "text": "First-time voters: 10%.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Bennett: “Bibi is talking about a 50% exemption, Gadi is talking about a 30% exemption, I am talking about 0 exemption.” End stipends for married yeshiva students.",
+          "source": "JPost, Aug 30; Ynet, Sep 16, 2026"
+        },
+        "courts": {
+          "text": "A Basic Law on how Basic Laws are made and when courts may step in; repeal the judicial appointments law; 8-year term limits for prime ministers.",
+          "source": "Ynet, Sep 22, 2026"
+        },
+        "war": {
+          "text": "“We must not budge a centimeter from the red line until Hamas is disarmed.” Supports a state commission on Oct 7.",
+          "source": "JPost, Aug 1, 2026"
+        },
+        "wb": {
+          "text": "Opposes a Palestinian state “under any constellation”; backs E1; would dismantle illegal outposts while backing “legal settlement in Area C.”",
+          "source": "JPost, Aug 30; Times of Israel, Jun 23, 2026"
+        },
+        "relig": {
+          "text": "Civil marriage; cities choose on Shabbat transit; “full equality of rights to protect the LGBTQ community.”",
+          "source": "JPost, Apr 20; Ynet, Sep 14, 2026"
+        },
+        "econ": {
+          "text": "“We will cut food prices by 30% within three years.”",
+          "source": "be-yahad.org.il"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Yair Lapid",
+          "note": "Yesh Atid leader"
+        },
+        {
+          "slot": "3",
+          "name": "Keren Terner",
+          "note": "former finance and transport director-general"
+        },
+        {
+          "slot": "10",
+          "name": "Yonatan Shalev",
+          "note": "23-year-old reservist activist"
+        }
+      ],
+      "namesSource": "Times of Israel, Sep 6, 2026",
+      "pledges": [
+        {
+          "text": "Zionist parties only: no Arab or Haredi parties; “no compromises on draft issues.”",
+          "source": "Times of Israel, May 27, 2026"
+        },
+        {
+          "text": "An explicit break from his 2021 government with Ra'am.",
+          "source": "Times of Israel, Apr 26, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Yisrael Beiteinu (signed Sept 10).",
+        "source": "Times of Israel, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "I'm a right-wing guy, I'm not changing my opinions. But I'm not a schmuck.",
+        "speaker": "Naftali Bennett",
+        "source": "Times of Israel, Jun 23, 2026"
+      },
+      "bios": [
+        {
+          "name": "Naftali Bennett",
+          "text": "Born 1972 in Haifa to American parents. Served in Sayeret Matkal, built tech companies (Cyota, Soluto), and led the Yesha Council 2010–12. Prime minister June 2021–June 2022, the first to wear a kippah."
+        },
+        {
+          "name": "Yair Lapid (no. 2)",
+          "text": "Born 1963; a former TV host who founded Yesh Atid in 2012 (19 seats in 2013). Prime minister July–December 2022, then opposition leader."
+        }
+      ]
+    },
+    {
+      "id": "dem",
+      "name": "The Democrats",
+      "leader": "Yair Golan",
+      "bloc": "opp",
+      "tags": [
+        "zionistOpp"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Yashar! (signed Sep 10)",
+      "who": [
+        {
+          "text": "Labor (founded 1968; prime ministers Meir, Rabin, Peres) and Meretz (1992) running together. A partial merger: both keep their own institutions.",
+          "source": "IDI"
+        },
+        {
+          "text": "Yair Golan won Labor's leadership in May 2024 with 95%. Protest leaders joined in 2026, including Moshe Radman and Gaby Lasky.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: Labor 175,992 votes, 3.69%, 4 seats; Meretz 150,793, 3.16%, 0 seats (its first time out of the Knesset).",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Labor and Meretz took 16% of the secular vote in 2022, down from 19%.",
+          "source": "IDI, Jun 28, 2026"
+        },
+        {
+          "text": "First-time voters: 7%. Claims more than 100,000 members.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Universal service “within a national and equal framework.” Golan has called mass Haredi conscription “impractical.”",
+          "source": "Ynet, Sep 16; Times of Israel, Aug 5, 2026"
+        },
+        "courts": {
+          "text": "Urgent problems are “delays, overloaded courts and a shortage of judges”; an intermediate appeals court; opposes the 2023 reform.",
+          "source": "Ynet, Sep 22, 2026"
+        },
+        "war": {
+          "text": "“Topple the Hamas regime.”",
+          "source": "IDI"
+        },
+        "wb": {
+          "text": "Opposes annexation; defund outposts. Golan: civil separation with Israeli security control.",
+          "source": "JPost, Oct 1; CSMonitor, Aug 12, 2026"
+        },
+        "relig": {
+          "text": "Civil marriage; limited Shabbat public transport in secular towns; amend the Nation-State Law.",
+          "source": "IDI"
+        },
+        "econ": {
+          "text": "“Reduce living costs, improve social services, rebuild the public sector”; JPost calls the detail “less clearly defined.”",
+          "source": "JPost"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Naama Lazimi",
+          "note": null
+        },
+        {
+          "slot": "3",
+          "name": "Gilad Kariv",
+          "note": null
+        },
+        {
+          "slot": "6",
+          "name": "Gaby Lasky",
+          "note": "protest leader; Meretz slot"
+        }
+      ],
+      "namesSource": "June 20 primary results, CRC party register",
+      "pledges": [
+        {
+          "text": "No Likud, no Haredi parties.",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        {
+          "text": "Open to an Arab party: “It is natural, right, appropriate and democratic” (the party says this is its own platform, not the bloc's).",
+          "source": "Kan via Times of Israel, Sep 27, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Yashar! (signed Sept 10).",
+        "source": "Times of Israel, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "In our government, there will be zero criminal defendants. Zero.",
+        "speaker": "Yair Golan",
+        "source": "JPost, Jul 21, 2026"
+      },
+      "bios": [
+        {
+          "name": "Yair Golan",
+          "text": "Born 1962. A former IDF deputy chief of staff, known for a 2016 Holocaust Remembrance Day speech. On October 7 he rescued Nova festival survivors; elected Labor leader in May 2024 with 95%."
+        }
+      ]
+    },
+    {
+      "id": "yb",
+      "name": "Yisrael Beiteinu",
+      "leader": "Avigdor Lieberman",
+      "bloc": "opp",
+      "tags": [
+        "zionistOpp"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: B'Yachad (signed Sep 10)",
+      "who": [
+        {
+          "text": "Founded 1999 by Avigdor Lieberman; first aimed at Soviet immigrants, later “right-wing secular voters.” Peak: 15 seats in 2009.",
+          "source": "IDI party page"
+        },
+        {
+          "text": "His April 2019 refusal to join a government over the draft law set off five elections.",
+          "source": "IDI; Wikipedia"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 213,687 votes, 4.48%, 6 seats.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Russian speakers: Yisrael Beiteinu 23%; 94% of them back a universal draft.",
+          "source": "Lazar via JPost, Dec 10, 2025"
+        },
+        {
+          "text": "First-time voters: 6%.",
+          "source": "N12 via JPost, Sep 23, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "Everyone at 18: “Jews, Muslims, Christians, Druze and Circassians”; sanctions including travel bans.",
+          "source": "Ynet, Sep 16, 2026"
+        },
+        "courts": {
+          "text": "A written constitution put to a national referendum; amendments would need 80 MKs.",
+          "source": "Ynet, Sep 22, 2026"
+        },
+        "war": {
+          "text": "Board of Peace arrangements are “a capitulation to terror.” A state commission on Oct 7 is a condition.",
+          "source": "JPost, Aug 12; Times of Israel, Aug 17, 2026"
+        },
+        "wb": {
+          "text": "“The Palestinian Authority must be dismantled.”",
+          "source": "JPost, Sep 28, 2026"
+        },
+        "relig": {
+          "text": "Civil marriage and divorce; a Western Wall compromise; local choice on Shabbat transit; a mandatory core curriculum.",
+          "source": "Ynet, Dec 7, 2025"
+        },
+        "econ": {
+          "text": "“Right-wing fiscal positions.”",
+          "source": "IDI"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Rafi Ben Shitrit",
+          "note": "former Beit She'an mayor"
+        },
+        {
+          "slot": "6",
+          "name": "Sharon Sharabi",
+          "note": "brother of freed hostage Eli Sharabi"
+        },
+        {
+          "slot": "10",
+          "name": "Dan Illouz",
+          "note": "former Likud MK"
+        }
+      ],
+      "namesSource": "JPost and Times of Israel, Sep 6, 2026",
+      "pledges": [
+        {
+          "text": "No Netanyahu, no Arab parties, no Haredi parties: “not for the Arab parties and not for the haredi parties.”",
+          "source": "JPost, Sep 21, 2025; repeated Oct 3, 2026"
+        },
+        {
+          "text": "Conditions: Oct 7 inquiry, universal service, prime-minister term limits, core curriculum, constitution by referendum.",
+          "source": "Times of Israel, Aug 17, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "B'Yachad (signed Sept 10).",
+        "source": "Times of Israel, Sep 10, 2026"
+      },
+      "quote": {
+        "text": "We are the Likud of yesteryear.",
+        "speaker": "Yisrael Beiteinu slogan",
+        "source": "Ynet, Sep 27, 2026"
+      },
+      "bios": [
+        {
+          "name": "Avigdor Lieberman",
+          "text": "Born 1958 in Chișinău; immigrated in 1978 and lives in Nokdim. Founded Yisrael Beiteinu in 1999. His refusal to join a government in April 2019 started the cycle of five elections."
+        }
+      ]
+    },
+    {
+      "id": "bw",
+      "name": "Blue and White",
+      "leader": "Benny Gantz",
+      "bloc": "opp",
+      "tags": [],
+      "status": "Below threshold in every recent poll",
+      "coalitionCard": "out",
+      "surplusLine": null,
+      "who": [
+        {
+          "text": "Down to 3 MKs after defections. Gantz will drop out in the last week if the party is not crossing the threshold.",
+          "source": "Times of Israel, Sep 20, 2026"
+        }
+      ],
+      "thin": "Our party registers do not profile Blue and White beyond this.",
+      "voters": null,
+      "issues": null,
+      "names": null,
+      "namesSource": null,
+      "pledges": null,
+      "surplusPartner": null,
+      "quote": null,
+      "bios": [
+        {
+          "name": "Benny Gantz",
+          "text": "Born 1959 to Holocaust survivors. IDF Chief of Staff 2011–15. His Blue and White tied Likud three times in 2019–20; alternate prime minister in 2020. Left the war cabinet June 9, 2024."
+        }
+      ]
+    },
+    {
+      "id": "res",
+      "name": "Reservists–Economic",
+      "leader": "Yoaz Hendel",
+      "bloc": "mid",
+      "tags": [],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: none confirmed",
+      "who": [
+        {
+          "text": "Yoaz Hendel founded The Reservists on Sept 18, 2025. It runs as a technical joint list with Yaron Zelekha's New Economic Party (filed Sept 7, 2026).",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        {
+          "text": "Pitches itself as a “third bloc.” Its bloc is disputed: IsraelEd says it would join Netanyahu; Times of Israel calls it non-aligned.",
+          "source": "IsraelEd, Sep 28; Times of Israel, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "New list; no 2022 seats. Zelekha's party won 0.29% (13,920 votes) in 2022.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Hendel: “Those wanting government with ultra-Orthodox parties know who to vote for… Those comfortable with minority government relying on Arab parties have their opposition choice. We must provide the alternative.”",
+          "source": "Maariv, Sep 7, 2026"
+        },
+        {
+          "text": "First crossed the threshold in Channel 13's Sept 23 poll. Sector data: not found.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      ],
+      "issues": {
+        "draft": {
+          "text": "“Those who do not serve cannot vote or be elected to the Knesset.” A draft law must pass before a government is sworn in.",
+          "source": "themiluimnikim.org.il; Maariv"
+        },
+        "courts": {
+          "text": "Reform, 8-year term limits, a constitution and a “Basic Law: Legislation.”",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        "war": {
+          "text": "Hendel earlier proposed moving about 1.5 million Gazans to “a tent city outside the Strip”; Wilf backs a “voluntary emigration directorate for Gaza.”",
+          "source": "JPost, Aug 11, 2026; Petek"
+        },
+        "wb": {
+          "text": "“We will not allow a Palestinian state to be established… we support settlement.”",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        "relig": null,
+        "econ": {
+          "text": "Zelekha: Israel is “a paradise for monopolies”; an apartment costs about 170 average salaries.",
+          "source": "CRC party register, Oct 4, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "2",
+          "name": "Prof. Yaron Zelekha",
+          "note": "accountant-general 2003–07"
+        },
+        {
+          "slot": "3",
+          "name": "Einat Wilf",
+          "note": "former Labor MK; joined Sept 7"
+        },
+        {
+          "slot": "4",
+          "name": "Haviv Volibovich",
+          "note": null
+        }
+      ],
+      "namesSource": "Channel 14, Sep 7, 2026",
+      "pledges": [
+        {
+          "text": "Zionist government only (no Haredi or Arab parties); universal-draft law; state commission; a national security ministry for Hendel.",
+          "source": "CRC party register, Oct 4, 2026"
+        },
+        {
+          "text": "On Netanyahu, mixed: “Netanyahu is not my red line” (Aug 11) vs. “whoever is responsible for October 7 needs to go home, and that includes Netanyahu” (Aug 23).",
+          "source": "2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "None confirmed. IPF lists Yisrael Beiteinu, but Yisrael Beiteinu signed with B'Yachad.",
+        "source": "CRC party register, Oct 4, 2026"
+      },
+      "quote": {
+        "text": "Our mission is solely to establish a Zionist government.",
+        "speaker": "The Reservists",
+        "source": "JPost, Aug 23, 2026"
+      },
+      "bios": [
+        {
+          "name": "Yoaz Hendel",
+          "text": "Born 1975 in Petah Tikva, raised in Elkana. Shayetet 13; a reserve lieutenant-colonel who commanded Battalion 8555 in the 2023 war. Netanyahu's communications director 2011–12; communications minister in 2020 and 2021–22."
+        }
+      ]
+    },
+    {
+      "id": "jl",
+      "name": "Joint List",
+      "leader": "Yousef Jabareen (Ahmad Tibi no. 2)",
+      "bloc": "arab",
+      "tags": [
+        "arab"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Ra'am",
+      "who": [
+        {
+          "text": "First formed in 2015 by all four Arab-led parties (13 seats; peak of 15 in 2020). Re-formed Aug 19, 2026 as Hadash–Ta'al–Balad, without Ra'am.",
+          "source": "IDI; JPost, Aug 19, 2026"
+        },
+        {
+          "text": "The Central Elections Committee voted Sept 23 to bar it, 18–5. The Supreme Court heard the appeal Oct 1 and reinstated it 9–0 on Oct 2. No. 3 Sami Abu Shehadeh withdrew.",
+          "source": "Times of Israel, Sep 23; JPost, Oct 2, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022 (ran split): Hadash–Ta'al 178,735 votes, 3.75%, 5 seats; Balad 138,617, 2.91%, 0 seats.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "In Arab and Druze towns in 2022: Hadash–Ta'al 28.8%, Balad 21.7%. Arab turnout 53.2%.",
+          "source": "IDI, Dec 25, 2022"
+        },
+        {
+          "text": "77.2% of Arab citizens support an Arab party joining the government.",
+          "source": "Dayan Center/KAP, May 2026"
+        }
+      ],
+      "issues": {
+        "draft": null,
+        "courts": null,
+        "war": {
+          "text": "“End Gaza destruction and West Bank ethnic cleansing.”",
+          "source": "New Arab, Sep 9, 2026"
+        },
+        "wb": {
+          "text": "Jabareen: renewed negotiations toward “a Palestinian state alongside Israel.”",
+          "source": "JPost, 2026"
+        },
+        "relig": {
+          "text": "“Full civic and national equality for Arab citizens.”",
+          "source": "Hadash principles via israel2026.co.il"
+        },
+        "econ": null
+      },
+      "names": [
+        {
+          "slot": "1",
+          "name": "Yousef Jabareen",
+          "note": "Hadash"
+        },
+        {
+          "slot": "2",
+          "name": "Ahmad Tibi",
+          "note": "Ta'al"
+        },
+        {
+          "slot": "6",
+          "name": "Ofer Cassif",
+          "note": "Hadash; reinstated by the court 7–2"
+        }
+      ],
+      "namesSource": "New Arab, Sep 9; JPost, Oct 2, 2026",
+      "pledges": [
+        {
+          "text": "Won't join Netanyahu.",
+          "source": "Times of Israel, Aug 19, 2026"
+        },
+        {
+          "text": "Conditions for backing an Eisenkot bloc: equality, a development plan, real action on crime, “a clear position against settlements”; did not rule out “a parliamentary safety net.”",
+          "source": "INN, Aug 26, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Ra'am.",
+        "source": "Ynet, Sep 11; JPost, Sep 13, 2026"
+      },
+      "quote": {
+        "text": "A political, racist, and anti-democratic decision… an attempt to exclude the political representation of more than one million voters.",
+        "speaker": "The Joint List, on the committee's vote to bar it",
+        "source": "Times of Israel; JPost, Sep 23–24, 2026"
+      },
+      "bios": [
+        {
+          "name": "Yousef Jabareen",
+          "text": "Born 1972 in Umm al-Fahm. A constitutional-law scholar with a Georgetown PhD; MK 2015–21. Elected Hadash chair May 16, 2026 with 82%, replacing Ayman Odeh, who is not on the 2026 ballot."
+        },
+        {
+          "name": "Ahmad Tibi (no. 2)",
+          "text": "Born 1958 in Tayibe; a gynecologist. Adviser to Arafat 1993–99; MK since 1999."
+        }
+      ]
+    },
+    {
+      "id": "raam",
+      "name": "Ra'am",
+      "leader": "Mansour Abbas (Yoav Segalovitz no. 2)",
+      "bloc": "arab",
+      "tags": [
+        "arab"
+      ],
+      "status": null,
+      "coalitionCard": "active",
+      "surplusLine": "Surplus: Joint List",
+      "who": [
+        {
+          "text": "Founded 1996 as the political wing of the Islamic Movement's Southern Branch. In 2021 it became the first independent Arab party in an Israeli government.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Opened membership to all Israelis in Jan 2026 and declared its split from the Shura Council complete in July 2026.",
+          "source": "Times of Israel; MEF"
+        },
+        {
+          "text": "Barred by the Elections Committee Sept 23; reinstated 9–0 by the Supreme Court Oct 2.",
+          "source": "Times of Israel, Sep 23; JPost, Oct 2, 2026"
+        }
+      ],
+      "thin": null,
+      "voters": [
+        {
+          "text": "2022: 194,047 votes, 4.07%, 5 seats.",
+          "source": "Wikipedia"
+        },
+        {
+          "text": "Took 35.2% of the Arab and Druze vote in 2022, and 73.9% in the Negev.",
+          "source": "IDI, Dec 25, 2022"
+        },
+        {
+          "text": "Strongholds: the Negev and the Triangle; now seeking Christian and Druze voters, with a 7–8 seat target.",
+          "source": "Ynet, 2026"
+        }
+      ],
+      "issues": {
+        "draft": null,
+        "courts": null,
+        "war": {
+          "text": "Asked whether Hamas is a terror group to be destroyed: “I have a straight answer; I just don't want to say it.”",
+          "source": "INN, Jul 28, 2026"
+        },
+        "wb": {
+          "text": "“The state of Palestine exists and stands… We want them to recognize it too.”",
+          "source": "Aug 22, 2026, via MEF"
+        },
+        "relig": {
+          "text": "Earlier: “Israel was born as a Jewish state, and it will remain so.” The AG told the committee Abbas recognizes Israel's Jewish character.",
+          "source": "Times of Israel, Sep 23, 2026"
+        },
+        "econ": {
+          "text": "Budgets, planning, housing and jobs for Arab towns; seeks the violence and crime portfolio. No full manifesto.",
+          "source": "Aug 31, 2026"
+        }
+      },
+      "names": [
+        {
+          "slot": "1",
+          "name": "Mansour Abbas",
+          "note": null
+        },
+        {
+          "slot": "2",
+          "name": "Yoav Segalovitz",
+          "note": "Jewish former police commander; joined Aug 31"
+        },
+        {
+          "slot": "—",
+          "name": "Walid Taha",
+          "note": "on the Aug 22 slate; final slot not confirmed"
+        }
+      ],
+      "namesSource": "JPost; Times of Israel, Aug 31, 2026",
+      "pledges": [
+        {
+          "text": "Open to any coalition, including one led by Likud.",
+          "source": "Times of Israel"
+        },
+        {
+          "text": "Eisenkot said Sept 26 that Abbas “won't be part of my next government.” Segalovitz: “Eisenkot won't have a government without Ra'am.”",
+          "source": "Times of Israel, Sep 26, 2026"
+        }
+      ],
+      "surplusPartner": {
+        "text": "Joint List.",
+        "source": "Ynet, Sep 11; JPost, Sep 13, 2026"
+      },
+      "quote": {
+        "text": "I am going to an Arab party. They are not coming to me.",
+        "speaker": "Yoav Segalovitz",
+        "source": "as quoted in CRC party register, Oct 4, 2026"
+      },
+      "bios": [
+        {
+          "name": "Mansour Abbas",
+          "text": "Born 1974 in Maghar; a dentist and imam. Describes himself as “an Arab, a Palestinian, a Muslim, and a citizen of the State of Israel.” Ra'am chair since 2018."
+        },
+        {
+          "name": "Yoav Segalovitz (no. 2)",
+          "text": "Jewish, 67. Former commander of Lahav 433 and head of the police Investigations Division; former deputy public security minister. Joins Ra'am's Knesset faction, not the party (JPost; Times of Israel, Aug 31, 2026)."
+        }
+      ]
+    }
+  ]
+}

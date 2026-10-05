@@ -1,0 +1,293 @@
+{
+  "updated": "2026-10-04",
+  "polls": [
+    {
+      "id": "maariv",
+      "pollster": "Maariv",
+      "firm": "Lazar",
+      "fieldwork": "Sep 30–Oct 1, 2026",
+      "published": "2026-10-02",
+      "via": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-election-2026/article-910396",
+      "n": null,
+      "margin": null,
+      "note": null,
+      "inAverage": true,
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 5
+        },
+        "poi": {
+          "seats": 4
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yb": {
+          "seats": 9
+        },
+        "res": {
+          "seats": 4
+        },
+        "jl": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "c13",
+      "pollster": "Channel 13",
+      "firm": null,
+      "fieldwork": null,
+      "published": "2026-10-01",
+      "via": "Times of Israel liveblog",
+      "url": null,
+      "n": 1013,
+      "margin": null,
+      "note": "Reservists–Economic polled below the threshold.",
+      "inAverage": true,
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "rz": {
+          "seats": 7
+        },
+        "poi": {
+          "seats": 5
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 11
+        },
+        "yb": {
+          "seats": 9
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "jl": {
+          "seats": 9
+        },
+        "raam": {
+          "seats": 5
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "zman",
+      "pollster": "Zman Yisrael",
+      "firm": "Tatika",
+      "fieldwork": null,
+      "published": "2026-10-01",
+      "via": null,
+      "url": null,
+      "n": 500,
+      "margin": "±4.4",
+      "note": null,
+      "inAverage": true,
+      "results": {
+        "likud": {
+          "seats": 21
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "shas": {
+          "seats": 9
+        },
+        "utj": {
+          "seats": 8
+        },
+        "rz": {
+          "seats": 5
+        },
+        "poi": {
+          "seats": 4
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 10
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 10
+        },
+        "res": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "kan",
+      "pollster": "Kan 11",
+      "firm": null,
+      "fieldwork": null,
+      "published": "2026-09-28",
+      "via": "Jerusalem Post",
+      "url": "https://jpost.com/israel-election-2026/article-909918",
+      "n": null,
+      "margin": null,
+      "note": "Kan did not report Shas or UTJ separately. The listed parties add up to 106, so Shas and UTJ together hold 14 (our arithmetic: 120 − 106).",
+      "inAverage": true,
+      "results": {
+        "likud": {
+          "seats": 21
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 6
+        },
+        "poi": {
+          "seats": 4
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "byachad": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yb": {
+          "seats": 9
+        },
+        "res": {
+          "seats": 4
+        },
+        "jl": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        }
+      },
+      "combined": [
+        {
+          "parties": [
+            "shas",
+            "utj"
+          ],
+          "seats": 14,
+          "note": "120 minus the 106 seats Kan listed for everyone else"
+        }
+      ]
+    },
+    {
+      "id": "c14",
+      "pollster": "Channel 14",
+      "firm": "Next Data / Filber",
+      "fieldwork": null,
+      "published": "2026-10-01",
+      "via": "skarim.org",
+      "url": null,
+      "n": null,
+      "margin": null,
+      "inAverage": false,
+      "results": {
+        "likud": {
+          "seats": 32
+        },
+        "otzma": {
+          "seats": 7,
+          "dateUncertain": true
+        },
+        "shas": {
+          "seats": 10,
+          "dateUncertain": true
+        },
+        "utj": {
+          "seats": 8,
+          "dateUncertain": true
+        },
+        "rz": {
+          "seats": 7,
+          "dateUncertain": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.6%",
+          "dateUncertain": true
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 8
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yb": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.2%"
+        },
+        "jl": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        }
+      },
+      "combined": [],
+      "note": "Left out of averages and the coalition count: runs well above other polls for Likud (31–32 vs 19–21). Sep 23 and Sep 28 polls also cited; figures marked date-uncertain are the latest in our register without a date."
+    }
+  ]
+}

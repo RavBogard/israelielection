@@ -1,0 +1,736 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Coalition Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Rubik:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: party cards grouped by bloc on the left; a sticky "your coalition" panel with the 61-seat meter on the right. Stacks on phones. */
+:root{
+  --bg:#f4f6f9; --surface:#ffffff; --ink:#141b27; --ink-2:#4a5568; --ink-3:#6b7586; --line:#d9dee6; --line-2:#c3cad5;
+  --accent:#233f86; --warn-bg:#fff4dc; --warn-ink:#6b4300; --warn-line:#e7c47a; --ok-bg:#e3ecff; --ok-ink:#16306e;
+  --info-bg:#eef1f6; --info-ink:#2c3a52; --info-line:#c3cad5;
+  --b-net:#233f86; --b-net-ink:#ffffff;
+  --b-opp:#d98a1f; --b-opp-ink:#16120a;
+  --b-mid:#4fbfb1; --b-mid-ink:#0b1a18;
+  --b-arab:#8d4fae; --b-arab-ink:#ffffff;
+  --display:"Frank Ruhl Libre", Georgia, "Times New Roman", serif;
+  --body:"Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#10141b; --surface:#181e28; --ink:#e9edf3; --ink-2:#b4bdca; --ink-3:#8c96a6; --line:#2a3342; --line-2:#3a4558;
+  --accent:#8fa8ec; --warn-bg:#3a2c10; --warn-ink:#f4d58e; --warn-line:#6e5420; --ok-bg:#1f2c4d; --ok-ink:#c9d7ff;
+  --info-bg:#1d2532; --info-ink:#c9d3e2; --info-line:#3a4558;
+  --b-net:#5a7bd0; --b-net-ink:#ffffff; color-scheme:dark; }}
+:root[data-theme="dark"]{
+  --bg:#10141b; --surface:#181e28; --ink:#e9edf3; --ink-2:#b4bdca; --ink-3:#8c96a6; --line:#2a3342; --line-2:#3a4558;
+  --accent:#8fa8ec; --warn-bg:#3a2c10; --warn-ink:#f4d58e; --warn-line:#6e5420; --ok-bg:#1f2c4d; --ok-ink:#c9d7ff;
+  --info-bg:#1d2532; --info-ink:#c9d3e2; --info-line:#3a4558;
+  --b-net:#5a7bd0; --b-net-ink:#ffffff; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;margin:0}
+.wrap{max-width:1840px;margin:0 auto;padding-inline:clamp(16px,2.5vw,40px);padding-block:0 40px}
+.banner{background:var(--ink);color:var(--bg);font-size:14px;text-align:center;padding:8px 16px;letter-spacing:.01em}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 32px;padding-block:24px 18px}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(32px,3.4vw,52px);line-height:1;margin:0;text-wrap:balance}
+.sub{color:var(--ink-2);margin:8px 0 0;max-width:62ch}
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--line-2);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{font:inherit;font-size:15px;border:0;background:transparent;color:var(--ink);padding:10px 14px;cursor:pointer;border-right:1px solid var(--line);text-align:left;line-height:1.2}
+.seg button:last-child{border-right:0}
+.seg button small{display:block;font-size:12px;color:var(--ink-3)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button[aria-pressed="true"] small{color:var(--bg);opacity:.8}
+.btn{font:inherit;font-size:15px;font-weight:600;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);padding:10px 18px;border-radius:10px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn:hover{border-color:var(--ink-3)}
+.pollnote{font-size:14px;color:var(--ink-2);margin:0 0 18px}
+.pollnote b{color:var(--ink);font-weight:600}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 460px;gap:28px;align-items:start}
+@media (max-width:1100px){.layout{grid-template-columns:minmax(0,1fr)}}
+.blocs{display:flex;flex-direction:column;gap:22px;min-width:0}
+.bloc h2{font-family:var(--body);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.sw{width:14px;height:14px;border-radius:3px;display:inline-block;flex:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:16px;min-width:0}
+@media (max-width:1100px){.panel{position:static;max-height:none;overflow:visible}}
+.total{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.total .n{font-family:var(--display);font-weight:900;font-size:88px;line-height:.85;font-variant-numeric:tabular-nums}
+.total .of{font-size:18px;color:var(--ink-2)}
+.pill{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:2px solid currentColor}
+.pill.maj{background:var(--ok-bg);color:var(--ok-ink)}
+.pill.short{color:var(--ink-2);border-color:var(--line-2);font-weight:600}
+.meter{position:relative;height:40px;background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:visible}
+.meter .segs{position:absolute;inset:3px;display:flex;gap:2px}
+.meter .seg-p{height:100%;border-radius:4px;min-width:2px}
+.meter .mark{position:absolute;top:-8px;bottom:-8px;width:0;border-left:2px dashed var(--ink)}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums;position:relative;height:16px}
+.scale span{position:absolute;transform:translateX(-50%)}
+.scale span:first-child{transform:none}
+.scale span:last-child{transform:translateX(-100%)}
+.scale .m61{color:var(--ink);font-weight:700}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.list li{display:flex;align-items:center;gap:10px;font-size:15px}
+.list li .v{margin-left:auto;font-variant-numeric:tabular-nums;font-weight:600}
+.empty{color:var(--ink-3);font-size:15px;margin:0}
+.warn{background:var(--warn-bg);color:var(--warn-ink);border:1px solid var(--warn-line);border-radius:10px;padding:10px 12px;font-size:14px}
+.warn.info{background:var(--info-bg);color:var(--info-ink);border-color:var(--info-line);border-style:dashed}
+.warn b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.warn cite{font-style:normal;opacity:.85;font-size:12.5px;display:block;margin-top:4px}
+.note{font-size:14px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:12px;margin:0;display:flex;flex-direction:column;gap:8px}
+.note p{margin:0}
+.panel h3{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0}
+.naflag{font-size:13.5px;color:var(--ink-2);background:var(--bg);border-radius:8px;padding:8px 10px}
+footer{margin-top:36px;border-top:1px solid var(--line);padding-top:18px;font-size:13.5px;color:var(--ink-2)}
+footer h2{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px;color:var(--ink)}
+footer ol{margin:0;padding-left:20px;display:grid;gap:4px;max-width:120ch}
+footer a{color:var(--accent);overflow-wrap:anywhere}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+/* Party profile drawer (content and formatting shared with the Party Map) */
+:root{--scrim:rgb(12 18 28 / .42);--shadow:rgb(12 18 28 / .18)}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--scrim:rgb(0 0 0 / .6);--shadow:rgb(0 0 0 / .5)}}
+:root[data-theme="dark"]{--scrim:rgb(0 0 0 / .6);--shadow:rgb(0 0 0 / .5)}
+.toplink{font-size:14.5px;color:var(--ink-2);padding-block:12px 0;margin:0}
+.toplink a{color:var(--accent);font-weight:600;text-underline-offset:3px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;min-height:132px;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+.card:hover{border-color:var(--line-2);transform:translateY(-1px)}
+.card .tog{font:inherit;text-align:left;background:transparent;color:inherit;border:0;border-radius:12px 12px 0 0;padding:14px 16px 6px;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto auto 1fr;gap:2px 10px;flex:1;width:100%}
+.card .nm{font-weight:600;font-size:18px;line-height:1.2;grid-column:1}
+.card .ld{font-size:14px;color:var(--ink-2);grid-column:1}
+.card .sp{font-size:12.5px;color:var(--ink-3);grid-column:1 / span 2}
+.card .seats{grid-column:2;grid-row:1 / span 2;font-family:var(--display);font-weight:900;font-size:44px;line-height:.9;font-variant-numeric:tabular-nums;text-align:right}
+.card .seats.na{font-family:var(--body);font-size:18px;font-weight:600;color:var(--ink-3);padding-top:6px}
+.card .meta{grid-column:1 / span 2;display:flex;align-items:flex-end;gap:8px;font-size:12.5px;color:var(--ink-3);padding-top:8px}
+.card.out .seats{color:var(--ink-3)}
+.card .tog:focus-visible,.card .info:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.card .foot{display:flex;align-items:center;gap:8px;padding:2px 16px 12px;min-height:40px}
+.card .info{font:inherit;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;background:transparent;color:inherit;border:1.5px solid var(--line-2);border-radius:999px;padding:3px 11px 3px 4px;cursor:pointer}
+.card .info:hover{border-color:currentColor}
+.card .info .i{width:20px;height:20px;border-radius:50%;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-style:italic;font-size:14px;line-height:1}
+.card .foot .state{margin-left:auto;font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3)}
+.card.on{background:var(--fill);color:var(--fill-ink);border-color:var(--fill)}
+.card.on .ld,.card.on .meta,.card.on .sp,.card.on .seats.na,.card.on .foot .state{color:var(--fill-ink);opacity:.88}
+.card.on .sw{outline:2px solid var(--fill-ink)}
+.card.on .info{border-color:var(--fill-ink)}
+.card.on .info .i{background:var(--fill-ink);color:var(--fill)}
+.card.out{cursor:default;background:transparent;border-style:dashed;color:var(--ink-3);transform:none}
+.card.out .tog{cursor:not-allowed}
+.card.out .ld{color:var(--ink-3)}
+.card.out .info{color:var(--ink)}
+.scrim{position:fixed;inset:0;background:var(--scrim);z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(620px,100%);background:var(--surface);color:var(--ink);border-left:1px solid var(--line);box-shadow:-16px 0 48px var(--shadow);z-index:21;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);animation:slidein .2s ease-out}
+@keyframes slidein{from{transform:translateX(32px)}to{transform:none}}
+.dhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 22px;border-bottom:1px solid var(--line)}
+.dhead .lbl{margin:0}
+.dbody{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:22px 22px 32px;display:flex;flex-direction:column;gap:16px}
+.dbody h2{font-family:var(--display);font-weight:900;font-size:34px;line-height:1.05;margin:0;text-wrap:balance}
+@media (max-width:640px){.drawer{width:100%;border-left:0;box-shadow:none}.dhead,.dbody{padding-inline:16px}.dbody h2{font-size:30px}}
+.bchip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px;margin:0}
+.kv dt{color:var(--ink-3)}
+.kv dd{margin:0;min-width:0}
+.sec{display:flex;flex-direction:column;gap:6px}
+.sec p,.sec ul{margin:0;font-size:15px}
+.sec ul{padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.s{font-size:12.5px;color:var(--ink-3);white-space:normal}
+.polls{display:grid;grid-template-columns:auto 1fr auto;gap:6px 10px;align-items:center;font-size:14px}
+.polls .bar{height:14px;background:var(--bg);border-radius:4px;overflow:hidden;min-width:40px}
+.polls .bar i{display:block;height:100%;border-radius:0 4px 4px 0}
+.polls .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right;min-width:3ch}
+.polls .d{color:var(--ink-3)}
+.polls .x{opacity:.55}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:0}
+.issues{display:grid;grid-template-columns:minmax(96px,auto) 1fr;border-top:1px solid var(--line);font-size:14.5px;margin:0}
+.issues dt,.issues dd{margin:0;padding:7px 0;border-bottom:1px solid var(--line)}
+.issues dt{font-weight:600;padding-right:12px;color:var(--ink-2)}
+.issues dd{min-width:0}
+.issues dd.nf{color:var(--ink-3);font-style:italic}
+.names{list-style:none;padding:0!important}
+.names li{display:grid;grid-template-columns:3.2em 1fr;gap:6px}
+.names .slot{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink-2)}
+blockquote{margin:0;padding:10px 0 10px 14px;border-left:3px solid var(--qc);font-family:var(--display);font-size:18px;line-height:1.35}
+blockquote footer{margin:6px 0 0;padding:0;border:0;font-family:var(--body);font-size:13px;color:var(--ink-3)}
+.bio{font-size:15px;margin:0}
+.src{font-size:12.5px;color:var(--ink-3);margin:0}
+@media (prefers-reduced-motion:reduce){.drawer{animation:none}}
+@media (max-width:520px){.card .seats{font-size:36px}}
+
+@media (max-width:520px){.total .n{font-size:64px}.card .seats{font-size:36px}.cards{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+</style>
+
+<div class="banner">Last updated Oct 4, 2026 — polls change daily.</div>
+<div class="wrap">
+  <p class="toplink">Full map of the parties → <a href="https://claude.ai/artifact/GLQ6ws4NgPn1iNzwKzudaR" target="_blank" rel="noopener">Party Map</a></p>
+  <header>
+    <div>
+      <h1>Build a Coalition</h1>
+      <p class="sub">Tap a party card to add it; tap <b>Profile</b> for who they are and where they stand. A government needs 61 of the Knesset's 120 seats to win a confidence vote. Seat numbers come from the poll you pick.</p>
+    </div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Choose a poll" id="polls"></div>
+      <button class="btn" id="reset" type="button">Reset</button>
+    </div>
+  </header>
+  <p class="pollnote" id="pollnote"></p>
+
+  <div class="layout">
+    <div class="blocs" id="blocs"></div>
+    <aside class="panel" aria-live="polite">
+      <h3>Your coalition</h3>
+      <div class="total"><span class="n" id="total">0</span><span class="of">of 61 needed</span><span id="status"></span></div>
+      <div>
+        <div class="meter" id="meter"><div class="segs" id="segs"></div><div class="mark" style="left:calc(61/120*100%)"></div></div>
+        <div class="scale"><span style="left:0">0</span><span class="m61" style="left:calc(61/120*100%)">61</span><span style="left:100%">120</span></div>
+      </div>
+      <div id="naflag" class="naflag" hidden></div>
+      <ul class="list" id="list"></ul>
+      <div id="warns" style="display:flex;flex-direction:column;gap:8px"></div>
+      <div class="note">
+        <p>Parties have made public pledges about partners. This page lets you build any combination. A yellow label means the combination goes against a recorded pledge; a grey dashed label is a stated condition, not a refusal.</p>
+        <p>The Central Elections Committee voted Sept 23 to bar the Joint List and Ra'am. The Supreme Court heard the appeals Oct 1 and reinstated both lists 9–0 on Oct 2.</p>
+        <p><b>Surplus-vote partners</b> share leftover votes when seats are divided; it is a technical deal, not a coalition promise.</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <h2>Sources</h2>
+    <ol>
+      <li><b>Maariv / Lazar</b> poll, fieldwork Sep 30–Oct 1, published Oct 2, 2026, via Jerusalem Post: <a href="https://www.jpost.com/israel-election-2026/article-910396" target="_blank" rel="noopener">jpost.com/israel-election-2026/article-910396</a></li>
+      <li><b>Channel 13</b> poll, published Oct 1, 2026 (n=1,013), via Times of Israel liveblog. Reservists–Economic polled below the threshold (shown as 0).</li>
+      <li><b>Zman Yisrael / Tatika</b> poll, Oct 1, 2026 (n=500, margin ±4.4).</li>
+      <li><b>Kan 11</b> poll, Sep 28, 2026, via Jerusalem Post: <a href="https://jpost.com/israel-election-2026/article-909918" target="_blank" rel="noopener">jpost.com/israel-election-2026/article-909918</a>. Kan did not report Shas or UTJ separately. The listed parties add up to 106, so Shas and UTJ together hold 14 (our arithmetic: 120 − 106).</li>
+      <li><b>Blue and White</b> below threshold in all polls; Gantz will drop out in the last week if not crossing: Times of Israel, Sep 20, 2026.</li>
+      <li><b>Pledges.</b> Zionist opposition to govern without Arab parties: Haaretz, Oct 1, 2026 (headline). B'Yachad "only rely on Zionist parties": Times of Israel, Apr 26, 2026; no Arab or Haredi parties: Times of Israel, May 27, 2026. Joint List won't join Netanyahu: Times of Israel, Aug 19, 2026. Eisenkot on Ra'am ("he won't be part of my next government"): Times of Israel, Sep 26, 2026. Lieberman, "not for the Arab parties and not for the haredi parties": Jerusalem Post, Sep 21, 2025, repeated Oct 3, 2026. UTJ condition (Yaakov Asher): Matzav, Sep 28, 2026.</li>
+      <li><b>Surplus-vote agreements.</b> Yashar–Democrats and B'Yachad–Yisrael Beiteinu signed Sep 10, 2026 (Times of Israel). Likud–Religious Zionism agreed Sep 8 (Israel Hayom), reported unsigned Sep 15 (Channel 14); final status not found. Joint List–Ra'am: Ynet, Sep 11, and Jerusalem Post, Sep 13, 2026. Shas–UTJ "expected": Jerusalem Post, Sep 10, 2026; signing not found. Otzma, People of Israel and Reservists: no partner found (an IPF listing of Reservists with Yisrael Beiteinu is unconfirmed, since Yisrael Beiteinu signed with B'Yachad).</li>
+      <li><b>Lists.</b> UTJ order (Asher 1, Goldknopf 2, Porush 4): Davar and Israel Hayom, Sep 8, 2026. Ra'am no. 2 Yoav Segalovitz: Jerusalem Post and Times of Israel, Aug 31, 2026. B'Yachad (Yesh Atid runs inside the list, Lapid no. 2): Times of Israel, Sep 6, 2026; deal signed Apr 25–26, 2026 (Jerusalem Post).</li>
+      <li><b>Disqualification and court ruling:</b> Central Elections Committee vote Sep 23, 2026 (Times of Israel); Supreme Court ruling Oct 2, 2026, hearing Oct 1 (Jerusalem Post; Al Jazeera, Oct 2, 2026).</li>
+      <li><b>Bloc labels and leaders:</b> CRC research memo Part C and party registers, Oct 4, 2026 (Israel Policy Forum 120 Project, updated Sep 24, 2026; Jerusalem Post Sep 7, 2026; Times of Israel Aug 19 and Sep 6, 2026). Reservists–Economic bloc is disputed (IsraelEd: would join Netanyahu; IPF: "third bloc"; ToI: non-aligned), so it is shown between the blocs.</li>
+      <li><b>Channel 14</b> (Next Data / Filber; Oct 1, 2026 via skarim.org; Sep 23 and Sep 28 polls also cited). Shown in each party profile but not in the coalition count, because it runs well above other polls for Likud (31–32 vs 19–21). Where our register gives a Channel 14 figure without a date, the profile says so.</li>
+      <li><b>Party profiles</b> (history, voters, positions, list names, pledges, surplus partners, quotes): CRC party registers 11a–11d, compiled Oct 4, 2026, from the sources named next to each item (Israel Democracy Institute, Times of Israel, Jerusalem Post, Ynet, JTA, INN, Al Jazeera, Maariv and others). Quotes translated from Hebrew where needed and seen through summaries; check wording before quoting on a slide. Same content as the Party Map.</li>
+      <li><b>Leader bios:</b> Wikipedia, accessed Oct 2026, via CRC research memo Part D and the party registers.</li>
+      <li><b>61-seat majority:</b> Israel Democracy Institute, Apr 15, 2026.</li>
+    </ol>
+  </footer>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dtitle" hidden>
+  <div class="dhead"><p class="lbl">Party profile</p><button class="btn" id="dclose" type="button">Close <span aria-hidden="true">✕</span></button></div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+
+<script>
+const POLLS = [
+  {id:"maariv", name:"Maariv", date:"Oct 2", full:"Maariv / Lazar, published Oct 2, 2026", blocs:"Netanyahu bloc <b>51</b> · Zionist opposition <b>53</b> · Arab-led lists <b>12</b>"},
+  {id:"c13", name:"Channel 13", date:"Oct 1", full:"Channel 13, published Oct 1, 2026", blocs:"Netanyahu bloc <b>54</b> · Zionist opposition <b>52</b> · Arab-led lists <b>14</b>"},
+  {id:"zman", name:"Zman Yisrael", date:"Oct 1", full:"Zman Yisrael / Tatika, Oct 1, 2026", blocs:"Netanyahu bloc <b>53</b> · Zionist opposition <b>49</b> · Arab-led lists <b>13</b> · unaligned <b>5</b>"},
+  {id:"kan", name:"Kan 11", date:"Sep 28", full:"Kan 11, Sep 28, 2026", blocs:"Netanyahu bloc <b>52</b> · Zionist opposition <b>52</b>. Shas and UTJ were not reported separately."}
+];
+const BLOCS = {
+  net:{label:"Netanyahu bloc", v:"--b-net"},
+  opp:{label:"Zionist opposition", v:"--b-opp"},
+  mid:{label:"Between the blocs", v:"--b-mid"},
+  arab:{label:"Arab-led lists", v:"--b-arab"}
+};
+// seats: [Maariv Oct 2, Channel 13 Oct 1, Zman Yisrael Oct 1, Kan Sep 28]; null = not given
+// sp: surplus-vote partner line (sources in footer)
+const PARTIES = [
+  {id:"likud", name:"Likud", leader:"Benjamin Netanyahu", bloc:"net", s:[19,19,21,21], sp:"Surplus: Religious Zionism (agreed Sep 8; reported unsigned Sep 15)"},
+  {id:"otzma", name:"Otzma Yehudit", leader:"Itamar Ben-Gvir", bloc:"net", s:[9,8,6,7], sp:"Surplus: none found"},
+  {id:"shas", name:"Shas", leader:"Aryeh Deri", bloc:"net", s:[7,7,9,null], haredi:true, sp:"Surplus: UTJ (expected; signing not found)"},
+  {id:"utj", name:"UTJ", leader:"Yaakov Asher (Goldknopf no. 2)", bloc:"net", s:[7,8,8,null], haredi:true, sp:"Surplus: Shas (expected; signing not found)"},
+  {id:"rz", name:"Religious Zionism–Zehut", leader:"Bezalel Smotrich, with Moshe Feiglin", bloc:"net", s:[5,7,5,6], sp:"Surplus: Likud (agreed Sep 8; reported unsigned Sep 15)"},
+  {id:"poi", name:"People of Israel", leader:"Ofer Winter", bloc:"net", s:[4,5,4,4], sp:"Surplus: none found"},
+  {id:"yashar", name:"Yashar!", leader:"Gadi Eisenkot", bloc:"opp", s:[21,21,21,23], zionistOpp:true, sp:"Surplus: The Democrats (signed Sep 10)"},
+  {id:"byachad", name:"B'Yachad", leader:"Naftali Bennett (Yair Lapid no. 2)", bloc:"opp", s:[13,11,10,11], zionistOpp:true, sp:"Surplus: Yisrael Beiteinu (signed Sep 10)"},
+  {id:"dem", name:"The Democrats", leader:"Yair Golan", bloc:"opp", s:[10,11,8,9], zionistOpp:true, sp:"Surplus: Yashar! (signed Sep 10)"},
+  {id:"yb", name:"Yisrael Beiteinu", leader:"Avigdor Lieberman", bloc:"opp", s:[9,9,10,9], zionistOpp:true, sp:"Surplus: B'Yachad (signed Sep 10)"},
+  {id:"bw", name:"Blue and White", leader:"Benny Gantz", bloc:"opp", out:true},
+  {id:"res", name:"Reservists–Economic", leader:"Yoaz Hendel", bloc:"mid", s:[4,0,5,4], below:[false,true,false,false], sp:"Surplus: none confirmed"},
+  {id:"jl", name:"Joint List", leader:"Yousef Jabareen (Ahmad Tibi no. 2)", bloc:"arab", s:[7,9,8,7], arab:true, sp:"Surplus: Ra'am"},
+  {id:"raam", name:"Ra'am", leader:"Mansour Abbas (Yoav Segalovitz no. 2)", bloc:"arab", s:[5,5,5,5], arab:true, sp:"Surplus: Joint List"}
+];
+const KAN_SHAS_UTJ = 14; // 120 minus the 106 seats Kan listed
+
+// ---- Party profiles: copied verbatim from the Party Map (same content on both pages) ----
+const NF = null; // "No 2026 position found"
+const ISSUE_LABELS = [["draft","Haredi draft"],["courts","Courts"],["war","War & Gaza"],["wb","West Bank"],["relig","Religion & state"],["econ","Economy"]];
+const REG = "CRC party register, Oct 4, 2026";
+// s: seats [Maariv Oct 2, Channel 13 Oct 1, Zman Yisrael Oct 1, Kan Sep 28]; null = not reported; below[i] = below threshold (0 seats)
+// c14: Channel 14 latest {v, d (date or null), below}
+// Text items are [text, source]
+const PROFILES = [
+ {id:"likud", name:"Likud", leader:"Benjamin Netanyahu", bloc:"net", s:[19,19,21,21], c14:{v:32,d:"Oct 1"},
+  who:[["Founded Sept 13, 1973 by Begin and Sharon; won power in 1977 with 43 seats.","IDI party page"],
+       ["Netanyahu has led it since 2005 (and 1993–99). The Aug 17, 2026 primary put Eli Cohen first; Netanyahu used reserved slots to move hardliners down.","Times of Israel, Aug 18, 2026"],
+       ["No written 2026 platform; Likud “does not participate in questionnaires.”","Ynet, Sep 30, 2026"]],
+  voters:[["2022: 1,115,336 votes, 23.41%, 32 seats.","Wikipedia / IDI"],
+          ["Its 2022 voters were 57% traditional, 32% secular, 10% national-religious, 1% Haredi. It won 46.5% of traditional voters and 20% of secular voters.","IDI, Jun 28, 2026"],
+          ["Strong in periphery cities: Beersheba 42%, Eilat 42%, Ashkelon 40% in 2021.","Times of Israel, Mar 23, 2021"],
+          ["First-time voters (18–22): 14%, behind Yashar's 16%.","N12/Midgam via JPost, Sep 23, 2026"]],
+  issues:{draft:["Netanyahu revived the Haredi exemption bill as the coalition fell apart; Likud's Sharren Haskel vowed to fight it.","Times of Israel, May 17, 2026"],
+          courts:["Levin: “We'll wait for the next term, when two-thirds of the Supreme Court justices' seats become vacant.” Professional members lose their veto under the new judge-selection law.","JTA, Sep 18, 2026"],
+          war:["Rejected Trump's 15-point plan; no withdrawal “until Hamas is genuinely disarmed.”","Al Jazeera, Aug 9, 2026"],
+          wb:["“As long as I am prime minister, no Palestinian state will arise.” (In July 2025 all Likud ministers urged applying sovereignty.)","Al Jazeera, Aug 9, 2026; Ynet, Jul 2, 2025"],
+          relig:NF,
+          econ:NF},
+  names:[["2","Eli Cohen","won the primary"],["9","Talik Gvili","mother of Ran Gvili, the last hostage returned"],["11","Yaakov Bardugo","Channel 14 commentator"]], namesSrc:"JPost and i24, Sep 8, 2026",
+  pledges:[["“A strong right-wing government led by me.”","JPost, Sep 8, 2026"],
+           ["Petitioned to bar the Joint List; Likud, Shas and UTJ representatives voted to bar the Joint List and Ra'am.","Times of Israel, Sep 23, 2026"]],
+  partner:["Religious Zionism. Agreed Sept 8; reported still unsigned Sept 15. Final status not found.","Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"],
+  quote:["There is no straight. Yashar is a bluff. There's either left or right… Do you want a Palestinian state? (or) do you want a Jewish state?","Benjamin Netanyahu","Reuters via JPost, Sep 29, 2026"],
+  bio:[["Benjamin Netanyahu","Born 1949 in Tel Aviv. Prime minister 1996–99, 2009–21 and since 2022, the longest-serving in Israel's history. The first sitting prime minister charged with a crime; his trial began May 24, 2020, and he requested a pardon in November 2025."]]},
+
+ {id:"otzma", name:"Otzma Yehudit", leader:"Itamar Ben-Gvir", bloc:"net", s:[9,8,6,7], c14:{v:7,d:null},
+  who:[["Founded 2012. Israel Policy Forum calls it the “ideological continuation” of Meir Kahane's Kach, which was outlawed in 1994.","IPF; Wikipedia"],
+       ["Ben-Gvir has led it since 2019. It won 6 seats in 2022 inside the Religious Zionism joint list. He left the government in Jan 2025 over the ceasefire and returned in March 2025.","Wikipedia"]],
+  voters:[["2022: 6 seats as part of the Religious Zionism joint list (516,470 votes, 10.84%, 14 seats in all).","IDI; Wikipedia"],
+          ["Draws “traditional Mizrahi voters from the periphery” (Finkelstein).","Times of Israel, Apr 15, 2026"],
+          ["13% of Haredi first-time voters.","N12 via JPost, Sep 23, 2026"],
+          ["Courting disappointed Likud and Shas voters.","JPost, Aug 22, 2026"]],
+  issues:{draft:["Backed the July 14 law banning arrests of draft evaders; proposes Haredi tracks in police and Border Police: “enter service as Haredi and leave it as Haredi.”","Ynet, 2026"],
+          courts:["Backed the 2023 judicial reforms; wants political control of judicial appointments.",REG],
+          war:["“Disengagement 710” plan: an emigration ministry and 250,000 Gazan departures a year, NIS 10 billion. “This is a free choice; we are not forcing anyone to leave, but there is encouragement.”","JPost, Sep 3; JTA, Sep 6, 2026"],
+          wb:["Opposes a Palestinian state and evacuating settlers. On Temple Mount prayer: Jews “feel that they are the rightful owners of this place.”","JPost, Jul 23, 2026"],
+          relig:NF,
+          econ:NF},
+  names:[["2","Tally Gotliv","former Likud MK"],["4","Amichai Eliyahu",""],["12","Yishai Fleisher","Hebron spokesman"]], namesSrc:"Times of Israel, Sep 7, 2026 (no primaries)",
+  pledges:[["A “fully right-wing government”; no unity with centrists, no Arab parties; demands the Defense or Justice ministry; no Palestinian-state talks.","JPost, Sep 2026"]],
+  partner:["None found. Ben-Gvir refused Winter.",REG],
+  quote:["We survived Pharaoh, we will survive Keir Starmer as well.","Itamar Ben-Gvir, on UK sanctions","June 2025"],
+  bio:[["Itamar Ben-Gvir","Born 1976 to Iraqi-Jewish parents. Active in Kach's youth movement; convicted in 2007 of incitement and support for a terror organization. National Security Minister from December 2022; left in January 2025 and returned in March 2025."]]},
+
+ {id:"shas", name:"Shas", leader:"Aryeh Deri", bloc:"net", s:[7,7,9,null], c14:{v:10,d:null},
+  who:[["Founded 1984 as “Shomrei Sefarad” in protest at Agudat Yisrael's thin Sephardi representation, under Rav Ovadia Yosef's Council of Torah Sages. Peak: 17 seats in 1999.","IDI party page"],
+       ["Deri has led it since 2013 (and 1990–99). Former Chief Rabbi Yitzhak Yosef was chosen “to lead” in 2026.","JPost, Aug 20, 2026"]],
+  voters:[["2022: 392,964 votes, 8.25%, 11 seats.","IDI; Wikipedia"],
+          ["Won 28% of Haredi voters and 10.5% of national-religious voters in 2022.","IDI, Jun 28, 2026"],
+          ["IDI's Malach: “at least three or four Knesset seats' worth of voters who are simply not Haredi.”","Shomrim, Jun 30, 2026"],
+          ["First-time voters: 3% overall, 20% of Haredi first-timers.","N12 via JPost, Sep 23, 2026"]],
+  issues:{draft:["Deri: “The army doesn't want haredi soldiers, get that into your head.” Bill to enshrine Torah study as a basic value.","JPost, Sep 3 and Sep 8, 2026"],
+          courts:["“Fundamentally reform the judicial system and return power to the people and their elected representatives.”","Ynet, Sep 22, 2026"],
+          war:["Supports dismantling Hamas; opposes indefinite Israeli control (JPost's summary).","JPost, Sep 8, 2026"],
+          wb:["Opposes a Palestinian state; “not central” to its campaign.","Ynet, Sep 30, 2026"],
+          relig:["Orthodox control of marriage, conversion and kashrut; opposes civil marriage and expanded non-Orthodox prayer at the Kotel.","JPost, Sep 8, 2026"],
+          econ:["Deri: “It is unacceptable that a poor Haredi child would not receive the minimum support as a poor Arab child does.”","Times of Israel, Dec 9, 2025"]},
+  names:[["2","Yinon Azoulay",""],["6","Lt.-Col. (res.) Dror Amos","Haifa religious council head; 25 years in the IDF"],["11","Yosef Alnathanov","Bukharan community"]], namesSrc:"JPost, Sep 8, 2026",
+  pledges:[["“We support Netanyahu, period.”","Deri, Jul 16, 2026"],
+           ["Reported plan to sit in opposition until a draft law passes; anonymous source, “not a formal decision.”","Maariv via JPost, Sep 17, 2026"]],
+  partner:["UTJ, “expected.” Signing not found.","JPost, Sep 10, 2026"],
+  quote:["Will Bibi Netanyahu repent? Not a chance… Eisenkot, perhaps he will.","Rabbi Yitzhak Yosef","Times of Israel, Jul 12, 2026"],
+  bio:[["Aryeh Deri","Born 1959 in Meknes. Co-founded Shas and became the youngest minister. Convicted of bribery in 1999 and served 22 months; after a 2022 tax plea, the High Court barred him from serving as a minister in January 2023."]]},
+
+ {id:"utj", name:"UTJ", leader:"Yaakov Asher (Goldknopf no. 2)", bloc:"net", s:[7,8,8,null], c14:{v:8,d:null},
+  who:[["A joint list of Agudat Yisrael (Hasidic) and Degel HaTorah (Lithuanian) since 1992. Both factions quit the government in July 2025 over the draft.","IDI party page"],
+       ["Sept 5, 2026: Rav Dov Landau removed Gafni and Maklev by letter and made Yaakov Asher head. Sept 8: Porush and Stark formed a third faction inside the list, Homat Torat Yisrael, the first since 1992.","Yeshiva World, Sep 5; Davar, Sep 8, 2026"]],
+  voters:[["2022: 280,194 votes, 5.88%, 7 seats.","IDI; Wikipedia"],
+          ["58% of Haredim voted UTJ in 2022; 86% voted UTJ or Shas.","IDI, Jun 28, 2026"],
+          ["2021: 78% in Modi'in Illit, 60.9% in Bnei Brak.","Times of Israel"],
+          ["First-time voters: 9% overall, 45% of Haredi first-timers.","N12 via JPost, Sep 23, 2026"]],
+  issues:{draft:["“United Torah Judaism, with all its components, will not support or enter any government without regulating the status of Torah learners.”","Yaakov Asher, Matzav, Sep 28, 2026"],
+          courts:["“The Supreme Court has accumulated excessive power.”","Ynet, 2026"],
+          war:["“Focuses primarily on domestic issues.”","JPost, Sep 8, 2026"],
+          wb:["No unified policy; Agudah leans right, Degel “more moderate.”","Ynet, Sep 30, 2026"],
+          relig:["Same as Shas: Orthodox control of marriage, conversion and kashrut.","JPost, Sep 8, 2026"],
+          econ:["Housing for Haredi communities; yeshiva funding.",REG]},
+  names:[["1","Yaakov Asher","Degel HaTorah"],["2","Yitzhak Goldknopf","Agudat Yisrael (Gur)"],["4","Meir Porush","Homat Torat Yisrael"]], namesSrc:"Davar; Israel Hayom, Sep 8, 2026",
+  pledges:[["No government without a yeshiva-status law, whoever leads it.","Asher, Matzav, Sep 28, 2026"],
+           ["Porush's faction requires separate negotiations.","INN, Sep 8, 2026"],
+           ["Rav Landau: “We no longer have trust in Netanyahu.”","JPost, May 25, 2026"]],
+  partner:["Shas, “expected.” Signing not found.","JPost, Sep 10, 2026"],
+  quote:["Many things look like etrogim – but this isn't an etrog.","Yaakov Asher, on Religious Zionism and Otzma courting Haredi voters","INN, Sep 27, 2026"],
+  bio:[["Yaakov Asher","Born July 2, 1965 in Ramat Gan. Mayor of Bnei Brak from 2008; MK since 2013; Deputy Speaker 2022. Resigned as Interior Committee chair over the draft (Ynet, Sep 6, 2026)."],
+       ["Yitzhak Goldknopf (no. 2)","Born 1950 in Jerusalem; a Ger Hasid who built a kindergarten network. Leader of Agudat Yisrael since 2022. Resigned as housing minister in June 2025 over the draft."]]},
+
+ {id:"rz", name:"Religious Zionism–Zehut", leader:"Bezalel Smotrich, with Moshe Feiglin", bloc:"net", s:[5,7,5,6], c14:{v:7,d:null},
+  who:[["From the National Union line; Smotrich has chaired it since 2019. Smotrich refused a new joint run with Ben-Gvir.","Wikipedia; JPost, Aug 13, 2026"],
+       ["On Sept 1, 2026 formed a “technical bloc” with Moshe Feiglin's Zehut that can separate after the election. Feiglin: “We are a totally separate party.”","JPost, Sep 1; Israel365, Sep 11, 2026"]],
+  voters:[["2022 (joint list with Otzma and Noam): 516,470 votes, 10.84%, 14 seats; RZ kept 7.","IDI; Wikipedia"],
+          ["The 2022 joint list took 45% of national-religious voters (up from 30%) and 14% of traditional voters.","IDI, Jun 28, 2026"],
+          ["Won 22% in settlements vs about 11% nationally.","Washington Institute, Nov 22, 2022"],
+          ["Settler anger over the draft: “I don't have a political home today.”","Times of Israel, Aug 7, 2026"]],
+  issues:{draft:["Most RZ MKs voted for the July 14 law banning arrests of draft evaders. Smotrich: arrests “just make Jews fight one another.”","Times of Israel, Jul 14 and Aug 7, 2026"],
+          courts:["“These elections concern the judiciary.” Plan: justices chosen by secret ballot of all judges, AG role split in two, 61-vote override.","Ynet, Sep 15, 2026"],
+          war:["“Return to the whole of Gaza in a big way,” with military rule before sovereignty.","JPost, Aug 18, 2026"],
+          wb:["E1 approval (~3,400 units) “practically erases the two-state delusion.” 103 new settlements approved during his tenure.","Times of Israel, Aug 20, 2025; JPost, Aug 18, 2026"],
+          relig:["“Jewish identity in state institutions and education.”","israel2026.co.il"],
+          econ:["“Competition-based solutions”; Zehut adds a flat tax, school vouchers, a professional army and cannabis legalization.",REG]},
+  names:[["2","Moshe Feiglin","Zehut leader"],["3","Orit Strock",""],["4","Simcha Rothman",""]], namesSrc:"INN, Sep 9, 2026",
+  pledges:[["Netanyahu for prime minister; rules out Arab parties.","JPost, Aug 18, 2026"]],
+  partner:["Likud. Agreed Sept 8; reported still unsigned Sept 15.","Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"],
+  quote:["Every settlement… is another nail in the coffin of this dangerous idea.","Bezalel Smotrich, on a Palestinian state","Times of Israel, Aug 20, 2025"],
+  bio:[["Bezalel Smotrich","Born 1980; lives in Kedumim; co-founded Regavim. Finance minister and a minister in the Defense Ministry over the Civil Administration. Known for a 2023 remark that Huwara should be “wiped out”; sanctioned by several countries since June 2025."]]},
+
+ {id:"poi", name:"People of Israel", leader:"Ofer Winter", bloc:"net", s:[4,5,4,4], c14:{below:true,pct:"1.6%",d:null},
+  who:[["Amcha Yisrael. Launched Aug 25, 2026 in Jerusalem by Ofer Winter, a retired brigadier general who turned down a Likud slot.","Ynet, Aug 25, 2026"],
+       ["Refused Smotrich's merger offer despite pressure from rabbis. Winter: the public wants “new people.”","INN; JPost, Sep 7, 2026"]],
+  voters:[["New list; no 2022 result.",REG],
+          ["Targets younger voters, reservists, and right-wingers who can't back the current government.","JPost, Sep 17, 2026"],
+          ["Sector data: not found.",REG]],
+  issues:{draft:["“We will not join a government that does not pass, before it is formed, a law that puts an end to draft evasion… Full stop.”","JPost, Sep 2, 2026"],
+          courts:["“Judicial system reform,” with no details.",REG],
+          war:["“There is one solution in Gaza: migration.”","Ynet, Aug 25, 2026"],
+          wb:["“There will never be a Palestinian state here.”","Ynet, Aug 25, 2026"],
+          relig:NF,
+          econ:["Double combat soldiers' pay.","Ynet, Oct 4, 2026"]},
+  names:[["2","Yoseph Haddad","Arab Orthodox Christian; Golani volunteer wounded in 2006"],["3","Netali Shem Tov","journalist"],["5","Fleur Hassan-Nahoum","Jerusalem deputy mayor 2018–24"]], namesSrc:"INN, Sep 7, 2026",
+  pledges:[["Recommends only Netanyahu; wants the Defense ministry; won't partner with Bennett or Eisenkot (JPost reports conflict).","Ynet, Oct 4, 2026"]],
+  partner:["None. Likud chose Religious Zionism; Ben-Gvir refused.",REG],
+  quote:["New people, those who were not part of the events that led us to October 7.","Ofer Winter, on what the public wants","JPost, Sep 7, 2026"],
+  bio:[["Ofer Winter","Born Feb 3, 1971 in Rekhasim. In the IDF 1990–2024; commanded Duvdevan, the Givati Brigade and the 98th Division. On Oct 7 he went to the Be'eri front on his own. Retired May 2024 after being passed over for major general. Lives in Mitzpe Netofa."]]},
+
+ {id:"noam", name:"Noam", leader:"Avi Maoz", bloc:"net", off:"Polling not found",
+  who:[["Avi Maoz's party. Won 1 seat in 2022 as part of the Religious Zionism joint list; running alone in 2026.","Wikipedia; CRC research memo Part C"]],
+  thin:"Our research registers have no 2026 profile, polling or bio for Noam or Avi Maoz.", bio:null},
+
+ {id:"yashar", name:"Yashar!", leader:"Gadi Eisenkot", bloc:"opp", s:[21,21,21,23], c14:{v:21,d:"Oct 1"},
+  who:[["Founded Sept 16, 2025 by Gadi Eisenkot with about 120 co-founders, after he left the Knesset.","Times of Israel, Sep 16, 2025"],
+       ["Named for freed hostage Eli Sharabi's line that bringing the captives home was “not about right or left, but straight (yashar).”","Times of Israel"],
+       ["2026 recruits include former Shin Bet chief Yoram Cohen, Orit Farkash-Hacohen and Elazar Stern.",REG]],
+  voters:[["New list; no 2022 result (Eisenkot ran on National Unity, which won 12 seats).",REG],
+          ["Targets “Route 4” commuter suburbs: Petah Tikva, Kiryat Ono, Holon; also courting former Likud voters.","Times of Israel, Jul 1 and Sep 14, 2026"],
+          ["“Security-minded, centrist or moderate-right, secular or religiously traditional.”","JC, Oct 4, 2026"],
+          ["Largest share of first-time voters (18–22): 16%.","N12/Midgam via JPost, Sep 23, 2026"]],
+  issues:{draft:["“National Service for All”; deferments capped at 3% of each cohort, about 2,200 people; evaders lose benefits.","Ynet, Sep 16; JPost, Sep 24, 2026"],
+          courts:["Repeal the judicial selection law; opposes an override clause; clearer rules for judicial review in a Basic Law.","Ynet, Sep 22, 2026"],
+          war:["“The State of Israel must not accept a reality in which Hamas survives, rearms, and waits.” Wants a state commission of inquiry.","JPost, Aug 1 and Sep 24, 2026"],
+          wb:["Opposes a Palestinian state; would put the Civil Administration back under military coordination.","Times of Israel, Sep 26, 2026"],
+          relig:["“A secular party, but not anti-religious”; supports civil and same-sex marriage (JC's summary).","JC, Oct 4, 2026"],
+          econ:["15% raise for all conscripts; renter protections; reserve duty capped at 50 days a year.","JPost, Sep 28; Ynet, Jun 30, 2026"]},
+  names:[["2","Yoram Cohen","former Shin Bet chief"],["3","Orit Farkash-Hacohen",""],["4","Adi Altschuler","designated education minister"]], namesSrc:"Times of Israel, Sep 7, 2026",
+  pledges:[["Partners must accept four principles, including service for all and Hamas “to be dismantled and destroyed.” “I do not rule out any Zionist party.”","JPost, Sep 24, 2026"],
+           ["On Ra'am: Mansour Abbas “won't be part of my next government.” No Haredi party currently meets his criteria.","Times of Israel, Sep 26, 2026"]],
+  partner:["The Democrats (signed Sept 10).","Times of Israel, Sep 10, 2026"],
+  quote:["Netanyahu initially opposed including that objective, and I forced it upon him on the ninth day of the war.","Gadi Eisenkot, on making the hostages a war goal","JPost, Sep 24, 2026"],
+  bio:[["Gadi Eisenkot","Born 1960 in Tiberias to immigrants from Morocco. Commanded the Golani Brigade and Northern Command; IDF Chief of Staff 2015–19. His son Gal was killed in Gaza in December 2023, at 25. JTA: he would be Israel's first Mizrahi prime minister."]]},
+
+ {id:"byachad", name:"B'Yachad", leader:"Naftali Bennett (Yair Lapid no. 2)", bloc:"opp", s:[13,11,10,11], c14:{v:8,d:"Oct 1"},
+  who:[["“Together – Led by Bennett.” Yesh Atid runs inside this list under a deal signed Apr 25–26, 2026; Lapid is no. 2 and Yesh Atid holds 10 of the top 24 slots. Not a formal merger.","Times of Israel; JPost, Apr 26, 2026"],
+       ["Polling fell from about 25 seats in May to roughly half; the list has tacked toward the liberal-Zionist center.","Times of Israel, Sep 7, 2026"]],
+  voters:[["2022: Yesh Atid 847,435 votes, 17.79%, 24 seats; Bennett did not run.","Wikipedia"],
+          ["Yesh Atid's 2022 voters were 78.5% secular, 20% traditional; it took 39% of the secular vote.","IDI, Jun 28, 2026"],
+          ["Russian speakers: Bennett 17%.","Lazar via JPost, Dec 10, 2025"],
+          ["First-time voters: 10%.","N12 via JPost, Sep 23, 2026"]],
+  issues:{draft:["Bennett: “Bibi is talking about a 50% exemption, Gadi is talking about a 30% exemption, I am talking about 0 exemption.” End stipends for married yeshiva students.","JPost, Aug 30; Ynet, Sep 16, 2026"],
+          courts:["A Basic Law on how Basic Laws are made and when courts may step in; repeal the judicial appointments law; 8-year term limits for prime ministers.","Ynet, Sep 22, 2026"],
+          war:["“We must not budge a centimeter from the red line until Hamas is disarmed.” Supports a state commission on Oct 7.","JPost, Aug 1, 2026"],
+          wb:["Opposes a Palestinian state “under any constellation”; backs E1; would dismantle illegal outposts while backing “legal settlement in Area C.”","JPost, Aug 30; Times of Israel, Jun 23, 2026"],
+          relig:["Civil marriage; cities choose on Shabbat transit; “full equality of rights to protect the LGBTQ community.”","JPost, Apr 20; Ynet, Sep 14, 2026"],
+          econ:["“We will cut food prices by 30% within three years.”","be-yahad.org.il"]},
+  names:[["2","Yair Lapid","Yesh Atid leader"],["3","Keren Terner","former finance and transport director-general"],["10","Yonatan Shalev","23-year-old reservist activist"]], namesSrc:"Times of Israel, Sep 6, 2026",
+  pledges:[["Zionist parties only: no Arab or Haredi parties; “no compromises on draft issues.”","Times of Israel, May 27, 2026"],
+           ["An explicit break from his 2021 government with Ra'am.","Times of Israel, Apr 26, 2026"]],
+  partner:["Yisrael Beiteinu (signed Sept 10).","Times of Israel, Sep 10, 2026"],
+  quote:["I'm a right-wing guy, I'm not changing my opinions. But I'm not a schmuck.","Naftali Bennett","Times of Israel, Jun 23, 2026"],
+  bio:[["Naftali Bennett","Born 1972 in Haifa to American parents. Served in Sayeret Matkal, built tech companies (Cyota, Soluto), and led the Yesha Council 2010–12. Prime minister June 2021–June 2022, the first to wear a kippah."],
+       ["Yair Lapid (no. 2)","Born 1963; a former TV host who founded Yesh Atid in 2012 (19 seats in 2013). Prime minister July–December 2022, then opposition leader."]]},
+
+ {id:"dem", name:"The Democrats", leader:"Yair Golan", bloc:"opp", s:[10,11,8,9], c14:{v:9,d:"Oct 1"},
+  who:[["Labor (founded 1968; prime ministers Meir, Rabin, Peres) and Meretz (1992) running together. A partial merger: both keep their own institutions.","IDI"],
+       ["Yair Golan won Labor's leadership in May 2024 with 95%. Protest leaders joined in 2026, including Moshe Radman and Gaby Lasky.",REG]],
+  voters:[["2022: Labor 175,992 votes, 3.69%, 4 seats; Meretz 150,793, 3.16%, 0 seats (its first time out of the Knesset).","Wikipedia"],
+          ["Labor and Meretz took 16% of the secular vote in 2022, down from 19%.","IDI, Jun 28, 2026"],
+          ["First-time voters: 7%. Claims more than 100,000 members.","N12 via JPost, Sep 23, 2026"]],
+  issues:{draft:["Universal service “within a national and equal framework.” Golan has called mass Haredi conscription “impractical.”","Ynet, Sep 16; Times of Israel, Aug 5, 2026"],
+          courts:["Urgent problems are “delays, overloaded courts and a shortage of judges”; an intermediate appeals court; opposes the 2023 reform.","Ynet, Sep 22, 2026"],
+          war:["“Topple the Hamas regime.”","IDI"],
+          wb:["Opposes annexation; defund outposts. Golan: civil separation with Israeli security control.","JPost, Oct 1; CSMonitor, Aug 12, 2026"],
+          relig:["Civil marriage; limited Shabbat public transport in secular towns; amend the Nation-State Law.","IDI"],
+          econ:["“Reduce living costs, improve social services, rebuild the public sector”; JPost calls the detail “less clearly defined.”","JPost"]},
+  names:[["2","Naama Lazimi",""],["3","Gilad Kariv",""],["6","Gaby Lasky","protest leader; Meretz slot"]], namesSrc:"June 20 primary results, CRC party register",
+  pledges:[["No Likud, no Haredi parties.",REG],
+           ["Open to an Arab party: “It is natural, right, appropriate and democratic” (the party says this is its own platform, not the bloc's).","Kan via Times of Israel, Sep 27, 2026"]],
+  partner:["Yashar! (signed Sept 10).","Times of Israel, Sep 10, 2026"],
+  quote:["In our government, there will be zero criminal defendants. Zero.","Yair Golan","JPost, Jul 21, 2026"],
+  bio:[["Yair Golan","Born 1962. A former IDF deputy chief of staff, known for a 2016 Holocaust Remembrance Day speech. On October 7 he rescued Nova festival survivors; elected Labor leader in May 2024 with 95%."]]},
+
+ {id:"yb", name:"Yisrael Beiteinu", leader:"Avigdor Lieberman", bloc:"opp", s:[9,9,10,9], c14:{v:6,d:"Oct 1"},
+  who:[["Founded 1999 by Avigdor Lieberman; first aimed at Soviet immigrants, later “right-wing secular voters.” Peak: 15 seats in 2009.","IDI party page"],
+       ["His April 2019 refusal to join a government over the draft law set off five elections.","IDI; Wikipedia"]],
+  voters:[["2022: 213,687 votes, 4.48%, 6 seats.","Wikipedia"],
+          ["Russian speakers: Yisrael Beiteinu 23%; 94% of them back a universal draft.","Lazar via JPost, Dec 10, 2025"],
+          ["First-time voters: 6%.","N12 via JPost, Sep 23, 2026"]],
+  issues:{draft:["Everyone at 18: “Jews, Muslims, Christians, Druze and Circassians”; sanctions including travel bans.","Ynet, Sep 16, 2026"],
+          courts:["A written constitution put to a national referendum; amendments would need 80 MKs.","Ynet, Sep 22, 2026"],
+          war:["Board of Peace arrangements are “a capitulation to terror.” A state commission on Oct 7 is a condition.","JPost, Aug 12; Times of Israel, Aug 17, 2026"],
+          wb:["“The Palestinian Authority must be dismantled.”","JPost, Sep 28, 2026"],
+          relig:["Civil marriage and divorce; a Western Wall compromise; local choice on Shabbat transit; a mandatory core curriculum.","Ynet, Dec 7, 2025"],
+          econ:["“Right-wing fiscal positions.”","IDI"]},
+  names:[["2","Rafi Ben Shitrit","former Beit She'an mayor"],["6","Sharon Sharabi","brother of freed hostage Eli Sharabi"],["10","Dan Illouz","former Likud MK"]], namesSrc:"JPost and Times of Israel, Sep 6, 2026",
+  pledges:[["No Netanyahu, no Arab parties, no Haredi parties: “not for the Arab parties and not for the haredi parties.”","JPost, Sep 21, 2025; repeated Oct 3, 2026"],
+           ["Conditions: Oct 7 inquiry, universal service, prime-minister term limits, core curriculum, constitution by referendum.","Times of Israel, Aug 17, 2026"]],
+  partner:["B'Yachad (signed Sept 10).","Times of Israel, Sep 10, 2026"],
+  quote:["We are the Likud of yesteryear.","Yisrael Beiteinu slogan","Ynet, Sep 27, 2026"],
+  bio:[["Avigdor Lieberman","Born 1958 in Chișinău; immigrated in 1978 and lives in Nokdim. Founded Yisrael Beiteinu in 1999. His refusal to join a government in April 2019 started the cycle of five elections."]]},
+
+ {id:"bw", name:"Blue and White", leader:"Benny Gantz", bloc:"opp", off:"Below threshold in every recent poll",
+  who:[["Down to 3 MKs after defections. Gantz will drop out in the last week if the party is not crossing the threshold.","Times of Israel, Sep 20, 2026"]],
+  thin:"Our party registers do not profile Blue and White beyond this.",
+  bio:[["Benny Gantz","Born 1959 to Holocaust survivors. IDF Chief of Staff 2011–15. His Blue and White tied Likud three times in 2019–20; alternate prime minister in 2020. Left the war cabinet June 9, 2024."]]},
+
+ {id:"res", name:"Reservists–Economic", leader:"Yoaz Hendel", bloc:"mid", s:[4,0,5,4], below:[false,true,false,false], c14:{below:true,pct:"1.2%",d:"Oct 1"},
+  who:[["Yoaz Hendel founded The Reservists on Sept 18, 2025. It runs as a technical joint list with Yaron Zelekha's New Economic Party (filed Sept 7, 2026).",REG],
+       ["Pitches itself as a “third bloc.” Its bloc is disputed: IsraelEd says it would join Netanyahu; Times of Israel calls it non-aligned.","IsraelEd, Sep 28; Times of Israel, 2026"]],
+  voters:[["New list; no 2022 seats. Zelekha's party won 0.29% (13,920 votes) in 2022.","Wikipedia"],
+          ["Hendel: “Those wanting government with ultra-Orthodox parties know who to vote for… Those comfortable with minority government relying on Arab parties have their opposition choice. We must provide the alternative.”","Maariv, Sep 7, 2026"],
+          ["First crossed the threshold in Channel 13's Sept 23 poll. Sector data: not found.",REG]],
+  issues:{draft:["“Those who do not serve cannot vote or be elected to the Knesset.” A draft law must pass before a government is sworn in.","themiluimnikim.org.il; Maariv"],
+          courts:["Reform, 8-year term limits, a constitution and a “Basic Law: Legislation.”",REG],
+          war:["Hendel earlier proposed moving about 1.5 million Gazans to “a tent city outside the Strip”; Wilf backs a “voluntary emigration directorate for Gaza.”","JPost, Aug 11, 2026; Petek"],
+          wb:["“We will not allow a Palestinian state to be established… we support settlement.”",REG],
+          relig:NF,
+          econ:["Zelekha: Israel is “a paradise for monopolies”; an apartment costs about 170 average salaries.",REG]},
+  names:[["2","Prof. Yaron Zelekha","accountant-general 2003–07"],["3","Einat Wilf","former Labor MK; joined Sept 7"],["4","Haviv Volibovich",""]], namesSrc:"Channel 14, Sep 7, 2026",
+  pledges:[["Zionist government only (no Haredi or Arab parties); universal-draft law; state commission; a national security ministry for Hendel.",REG],
+           ["On Netanyahu, mixed: “Netanyahu is not my red line” (Aug 11) vs. “whoever is responsible for October 7 needs to go home, and that includes Netanyahu” (Aug 23).","2026"]],
+  partner:["None confirmed. IPF lists Yisrael Beiteinu, but Yisrael Beiteinu signed with B'Yachad.",REG],
+  quote:["Our mission is solely to establish a Zionist government.","The Reservists","JPost, Aug 23, 2026"],
+  bio:[["Yoaz Hendel","Born 1975 in Petah Tikva, raised in Elkana. Shayetet 13; a reserve lieutenant-colonel who commanded Battalion 8555 in the 2023 war. Netanyahu's communications director 2011–12; communications minister in 2020 and 2021–22."]]},
+
+ {id:"jl", name:"Joint List", leader:"Yousef Jabareen (Ahmad Tibi no. 2)", bloc:"arab", s:[7,9,8,7], c14:{v:7,d:"Oct 1"},
+  who:[["First formed in 2015 by all four Arab-led parties (13 seats; peak of 15 in 2020). Re-formed Aug 19, 2026 as Hadash–Ta'al–Balad, without Ra'am.","IDI; JPost, Aug 19, 2026"],
+       ["The Central Elections Committee voted Sept 23 to bar it, 18–5. The Supreme Court heard the appeal Oct 1 and reinstated it 9–0 on Oct 2. No. 3 Sami Abu Shehadeh withdrew.","Times of Israel, Sep 23; JPost, Oct 2, 2026"]],
+  voters:[["2022 (ran split): Hadash–Ta'al 178,735 votes, 3.75%, 5 seats; Balad 138,617, 2.91%, 0 seats.","Wikipedia"],
+          ["In Arab and Druze towns in 2022: Hadash–Ta'al 28.8%, Balad 21.7%. Arab turnout 53.2%.","IDI, Dec 25, 2022"],
+          ["77.2% of Arab citizens support an Arab party joining the government.","Dayan Center/KAP, May 2026"]],
+  issues:{draft:NF,
+          courts:NF,
+          war:["“End Gaza destruction and West Bank ethnic cleansing.”","New Arab, Sep 9, 2026"],
+          wb:["Jabareen: renewed negotiations toward “a Palestinian state alongside Israel.”","JPost, 2026"],
+          relig:["“Full civic and national equality for Arab citizens.”","Hadash principles via israel2026.co.il"],
+          econ:NF},
+  names:[["1","Yousef Jabareen","Hadash"],["2","Ahmad Tibi","Ta'al"],["6","Ofer Cassif","Hadash; reinstated by the court 7–2"]], namesSrc:"New Arab, Sep 9; JPost, Oct 2, 2026",
+  pledges:[["Won't join Netanyahu.","Times of Israel, Aug 19, 2026"],
+           ["Conditions for backing an Eisenkot bloc: equality, a development plan, real action on crime, “a clear position against settlements”; did not rule out “a parliamentary safety net.”","INN, Aug 26, 2026"]],
+  partner:["Ra'am.","Ynet, Sep 11; JPost, Sep 13, 2026"],
+  quote:["A political, racist, and anti-democratic decision… an attempt to exclude the political representation of more than one million voters.","The Joint List, on the committee's vote to bar it","Times of Israel; JPost, Sep 23–24, 2026"],
+  bio:[["Yousef Jabareen","Born 1972 in Umm al-Fahm. A constitutional-law scholar with a Georgetown PhD; MK 2015–21. Elected Hadash chair May 16, 2026 with 82%, replacing Ayman Odeh, who is not on the 2026 ballot."],
+       ["Ahmad Tibi (no. 2)","Born 1958 in Tayibe; a gynecologist. Adviser to Arafat 1993–99; MK since 1999."]]},
+
+ {id:"raam", name:"Ra'am", leader:"Mansour Abbas (Yoav Segalovitz no. 2)", bloc:"arab", s:[5,5,5,5], c14:{v:5,d:"Oct 1"},
+  who:[["Founded 1996 as the political wing of the Islamic Movement's Southern Branch. In 2021 it became the first independent Arab party in an Israeli government.","Wikipedia"],
+       ["Opened membership to all Israelis in Jan 2026 and declared its split from the Shura Council complete in July 2026.","Times of Israel; MEF"],
+       ["Barred by the Elections Committee Sept 23; reinstated 9–0 by the Supreme Court Oct 2.","Times of Israel, Sep 23; JPost, Oct 2, 2026"]],
+  voters:[["2022: 194,047 votes, 4.07%, 5 seats.","Wikipedia"],
+          ["Took 35.2% of the Arab and Druze vote in 2022, and 73.9% in the Negev.","IDI, Dec 25, 2022"],
+          ["Strongholds: the Negev and the Triangle; now seeking Christian and Druze voters, with a 7–8 seat target.","Ynet, 2026"]],
+  issues:{draft:NF,
+          courts:NF,
+          war:["Asked whether Hamas is a terror group to be destroyed: “I have a straight answer; I just don't want to say it.”","INN, Jul 28, 2026"],
+          wb:["“The state of Palestine exists and stands… We want them to recognize it too.”","Aug 22, 2026, via MEF"],
+          relig:["Earlier: “Israel was born as a Jewish state, and it will remain so.” The AG told the committee Abbas recognizes Israel's Jewish character.","Times of Israel, Sep 23, 2026"],
+          econ:["Budgets, planning, housing and jobs for Arab towns; seeks the violence and crime portfolio. No full manifesto.","Aug 31, 2026"]},
+  names:[["1","Mansour Abbas",""],["2","Yoav Segalovitz","Jewish former police commander; joined Aug 31"],["—","Walid Taha","on the Aug 22 slate; final slot not confirmed"]], namesSrc:"JPost; Times of Israel, Aug 31, 2026",
+  pledges:[["Open to any coalition, including one led by Likud.","Times of Israel"],
+           ["Eisenkot said Sept 26 that Abbas “won't be part of my next government.” Segalovitz: “Eisenkot won't have a government without Ra'am.”","Times of Israel, Sep 26, 2026"]],
+  partner:["Joint List.","Ynet, Sep 11; JPost, Sep 13, 2026"],
+  quote:["I am going to an Arab party. They are not coming to me.","Yoav Segalovitz","as quoted in CRC party register, Oct 4, 2026"],
+  bio:[["Mansour Abbas","Born 1974 in Maghar; a dentist and imam. Describes himself as “an Arab, a Palestinian, a Muslim, and a citizen of the State of Israel.” Ra'am chair since 2018."],
+       ["Yoav Segalovitz (no. 2)","Jewish, 67. Former commander of Lahav 433 and head of the police Investigations Division; former deputy public security minister. Joins Ra'am's Knesset faction, not the party (JPost; Times of Israel, Aug 31, 2026)."]]}
+];
+PROFILES.forEach(p=>{
+  if(!p.s) return;
+  const vals = p.s.filter(v=>v!==null);
+  p.avg = vals.reduce((a,b)=>a+b,0)/vals.length; p.n = vals.length;
+});
+
+
+let poll = 0;
+const sel = new Set();
+try{ const p = parseInt(localStorage.getItem("cb-poll")); if(p>=0 && p<4) poll=p; }catch(e){}
+
+const $ = id => document.getElementById(id);
+
+function renderPolls(){
+  $("polls").innerHTML = POLLS.map((p,i)=>`<button type="button" aria-pressed="${i===poll}" data-i="${i}">${p.name}<small>${p.date}, 2026</small></button>`).join("");
+  $("pollnote").innerHTML = `Showing <b>${POLLS[poll].full}</b>. The poll's own bloc count: ${POLLS[poll].blocs}`;
+}
+function seatLabel(p){
+  const v = p.s[poll];
+  if(v===null) return {txt:"n/a", na:true};
+  if(p.below && p.below[poll]) return {txt:"0", below:true};
+  return {txt:String(v)};
+}
+function renderCards(){
+  const order = ["net","opp","mid","arab"];
+  $("blocs").innerHTML = order.map(b=>{
+    const ps = PARTIES.filter(p=>p.bloc===b);
+    return `<section class="bloc"><h2><span class="sw" style="background:var(${BLOCS[b].v})"></span>${BLOCS[b].label}</h2><div class="cards">${ps.map(card).join("")}</div></section>`;
+  }).join("");
+}
+function card(p){
+  const fill = `--fill:var(${BLOCS[p.bloc].v});--fill-ink:var(${BLOCS[p.bloc].v}-ink)`;
+  const info = `<button type="button" class="info" data-profile="${p.id}" aria-haspopup="dialog" aria-label="Profile: ${p.name}"><span class="i" aria-hidden="true">i</span>Profile</button>`;
+  if(p.out){
+    return `<div class="card out" data-id="${p.id}" style="${fill}" title="Below the 3.25% threshold in every recent poll (Times of Israel, Sep 20, 2026)">
+      <button type="button" class="tog" disabled><span class="nm">${p.name}</span><span class="seats na">—</span><span class="ld">${p.leader}</span>
+      <span class="meta">Below threshold in every recent poll</span></button>
+      <div class="foot">${info}</div></div>`;
+  }
+  const s = seatLabel(p), on = sel.has(p.id);
+  const src = POLLS[poll].full;
+  const tip = s.na ? `Kan did not report ${p.name} separately (Kan 11, Sep 28, 2026)` : s.below ? `Below threshold in ${src}` : `${s.txt} seats, ${src}`;
+  return `<div class="card${on?" on":""}" data-id="${p.id}" style="${fill}" title="${tip}">
+    <button type="button" class="tog" aria-pressed="${on}"><span class="nm">${p.name}</span><span class="seats${s.na?" na":""}">${s.txt}</span>
+    <span class="ld">${p.leader}</span>
+    <span class="sp">${p.sp}</span>
+    <span class="meta"><span class="sw" style="background:var(${BLOCS[p.bloc].v})"></span>${s.na?"Not reported by Kan":s.below?"Below threshold in this poll":"seats"}</span></button>
+    <div class="foot">${info}<span class="state">${on?"In":"Add"}</span></div></div>`;
+}
+function compute(){
+  let total = 0, segs = [], naIds = [];
+  const chosen = PARTIES.filter(p=>sel.has(p.id));
+  chosen.forEach(p=>{
+    const v = p.s[poll];
+    if(v===null){ naIds.push(p.id); return; }
+    const vv = (p.below && p.below[poll]) ? 0 : v;
+    total += vv; if(vv>0) segs.push({v:vv, bloc:p.bloc, name:p.name});
+  });
+  let naMsg = "";
+  if(naIds.length===2){ total += KAN_SHAS_UTJ; segs.push({v:KAN_SHAS_UTJ, bloc:"net", name:"Shas + UTJ"});
+    naMsg = "Kan did not split Shas and UTJ. With both in, the total counts their combined 14 seats (120 minus the 106 seats Kan listed for everyone else)."; }
+  else if(naIds.length===1){ const n = PARTIES.find(p=>p.id===naIds[0]).name;
+    naMsg = `Kan did not report ${n} separately, so this total leaves out ${n}'s seats. Add both Shas and UTJ to count their combined 14.`; }
+  return {total, segs, chosen, naMsg, naCount:naIds.length};
+}
+function warnings(){
+  const has = id => sel.has(id);
+  const names = arr => arr.map(p=>p.name).join(" and ");
+  const arabIn = PARTIES.filter(p=>p.arab && has(p.id));
+  const harediIn = PARTIES.filter(p=>p.haredi && has(p.id));
+  const oppIn = PARTIES.filter(p=>p.zionistOpp && has(p.id));
+  const w = [];
+  if(arabIn.length && oppIn.length){
+    w.push({t:"Goes against a pledge", m:`The Zionist opposition (${oppIn.map(p=>p.name).join(", ")}) has pledged to govern without Arab parties, and this coalition includes ${names(arabIn)}.`, c:"Haaretz, Oct 1, 2026"});
+  }
+  if(has("yashar") && has("raam")){
+    w.push({t:"Goes against a pledge", m:"Eisenkot said on Sept 26 that Mansour Abbas “won't be part of my next government.”", c:"Times of Israel, Sep 26, 2026"});
+  }
+  if(has("byachad") && (arabIn.length || harediIn.length)){
+    w.push({t:"Goes against a pledge", m:`Bennett's B'Yachad pledged to govern only with Zionist parties: no Arab or Haredi parties. This coalition includes ${names([...harediIn,...arabIn])}.`, c:"Times of Israel, Apr 26 and May 27, 2026"});
+  }
+  if(has("yb") && (arabIn.length || harediIn.length)){
+    w.push({t:"Goes against a pledge", m:`Lieberman: “not for the Arab parties and not for the haredi parties.” This coalition includes ${names([...harediIn,...arabIn])}.`, c:"Jerusalem Post, Sep 21, 2025; repeated Oct 3, 2026"});
+  }
+  if(has("jl") && has("likud")){
+    w.push({t:"Goes against a pledge", m:"The Joint List says it won't join Netanyahu.", c:"Times of Israel, Aug 19, 2026"});
+  }
+  if(has("utj")){
+    w.push({info:true, t:"Condition", m:"UTJ says it will not support or enter any government that does not first regulate the status of Torah learners (a yeshiva-status law), whoever leads it.", c:"Yaakov Asher, Matzav, Sep 28, 2026"});
+  }
+  return w;
+}
+function renderPanel(){
+  const {total, segs, chosen, naMsg, naCount} = compute();
+  $("total").textContent = total + (naCount===1 ? "+" : "");
+  $("status").innerHTML = total>=61 ? `<span class="pill maj">Majority</span>` : chosen.length ? `<span class="pill short">${61-total} short</span>` : "";
+  $("segs").innerHTML = segs.map(s=>`<div class="seg-p" title="${s.name}: ${s.v}" style="flex:0 0 calc(${s.v}/120*100% - 2px);background:var(${BLOCS[s.bloc].v})"></div>`).join("");
+  $("naflag").hidden = !naMsg; $("naflag").textContent = naMsg;
+  $("list").innerHTML = chosen.length ? chosen.map(p=>{
+    const s = seatLabel(p);
+    return `<li><span class="sw" style="background:var(${BLOCS[p.bloc].v})"></span>${p.name}<span class="v">${s.txt}</span></li>`;
+  }).join("") : `<li class="empty">No parties yet. Tap a party card to add it.</li>`;
+  $("warns").innerHTML = warnings().map(x=>`<div class="warn${x.info?" info":""}"><b>${x.t}</b>${x.m}<cite>Source: ${x.c}</cite></div>`).join("");
+}
+function renderAll(){ renderPolls(); renderCards(); renderPanel(); }
+
+$("polls").addEventListener("click", e=>{
+  const b = e.target.closest("button[data-i]"); if(!b) return;
+  poll = +b.dataset.i; try{ localStorage.setItem("cb-poll", poll); }catch(err){}
+  renderAll();
+});
+$("blocs").addEventListener("click", e=>{
+  const inf = e.target.closest("button.info[data-profile]");
+  if(inf){ openProfile(inf.dataset.profile, inf); return; }
+  const c = e.target.closest(".card[data-id]"); if(!c || c.classList.contains("out")) return;
+  const id = c.dataset.id; sel.has(id) ? sel.delete(id) : sel.add(id);
+  const fromKeys = e.detail===0;
+  renderCards(); renderPanel();
+  const again = document.querySelector(`.card[data-id="${id}"] .tog`); if(again && fromKeys) again.focus();
+});
+
+// ---- Profile drawer (same formatting as the Party Map panel) ----
+const S = src => src ? ` <span class="s">(${src})</span>` : "";
+const fmt = x => (Math.round(x*100)/100).toString();
+function seatsBlock(p){
+  const B = BLOCS[p.bloc];
+  const rows = p.s.map((v,i)=>{
+    const below = p.below && p.below[i];
+    const txt = v===null ? "n/a" : below ? "0" : v;
+    const w = v===null ? 0 : (v/35*100);
+    const tip = v===null ? `Kan 11 (Sep 28, 2026) did not report ${p.name} separately` : below ? `Below threshold, ${POLLS[i].name}, ${POLLS[i].date}, 2026` : `${v} seats, ${POLLS[i].name}, ${POLLS[i].date}, 2026`;
+    return `<span class="d">${POLLS[i].name}, ${POLLS[i].date}</span><span class="bar" title="${tip}"><i style="width:${w}%;background:var(${B.v})"></i></span><span class="v" title="${tip}">${txt}</span>`;
+  });
+  const c = p.c14;
+  if(c){
+    const lab = `Channel 14, ${c.d || "latest"}`;
+    const txt = c.below ? `below (${c.pct})` : c.v;
+    const w = c.below ? 0 : (c.v/35*100);
+    const tip = c.below ? `Below threshold at ${c.pct}, Channel 14${c.d?", "+c.d+", 2026":" (date not given in our register)"}` : `${c.v} seats, Channel 14${c.d?", "+c.d+", 2026":" (date not given in our register)"}`;
+    rows.push(`<span class="d">${lab}</span><span class="bar x" title="${tip}"><i style="width:${w}%;background:var(${B.v})"></i></span><span class="v" title="${tip}">${txt}</span>`);
+  }
+  const notes = [];
+  notes.push(`Average ${fmt(p.avg)} across ${p.n} poll${p.n>1?"s":""} (Channel 14 not included).`);
+  if(p.s.includes(null)) notes.push("Kan (Sep 28) did not report this party separately.");
+  if(p.below && p.below.some(Boolean)) notes.push("Channel 13 had it below the threshold.");
+  if(c && !c.d) notes.push("Channel 14 figure is the latest in our register; its date is not given.");
+  return `<div class="sec"><p class="lbl">Seats in each poll</p><div class="polls">${rows.join("")}</div><p class="src">${notes.join(" ")}</p></div>`;
+}
+function plist(items){ return `<ul>${items.map(([t,s])=>`<li>${t}${S(s)}</li>`).join("")}</ul>`; }
+function detail(p){
+  const B = BLOCS[p.bloc];
+  let h = `<span class="bchip"><span class="sw" style="background:var(${B.v})"></span>${B.label}</span><h2 id="dtitle">${p.name}</h2>
+    <dl class="kv"><dt>Leader</dt><dd>${p.leader}</dd>${p.partner?`<dt>Surplus-vote partner</dt><dd>${p.partner[0]}${S(p.partner[1])}</dd>`:""}</dl>`;
+  h += `<div class="sec"><p class="lbl">Who they are</p>${plist(p.who)}</div>`;
+  if(p.thin) h += `<p class="src">${p.thin}</p>`;
+  if(p.voters) h += `<div class="sec"><p class="lbl">Who votes for them</p>${plist(p.voters)}</div>`;
+  if(p.issues){
+    h += `<div class="sec"><p class="lbl">Where they stand</p><dl class="issues">${ISSUE_LABELS.map(([k,l])=>{
+      const v = p.issues[k];
+      return v ? `<dt>${l}</dt><dd>${v[0]}${S(v[1])}</dd>` : `<dt>${l}</dt><dd class="nf">No 2026 position found</dd>`;
+    }).join("")}</dl></div>`;
+  }
+  if(p.names) h += `<div class="sec"><p class="lbl">Names on the list</p><ul class="names">${p.names.map(([n,nm,d])=>`<li><span class="slot">${n==="—"?"—":"No. "+n}</span><span><b>${nm}</b>${d?", "+d:""}</span></li>`).join("")}</ul><p class="src">${p.namesSrc}</p></div>`;
+  if(p.pledges) h += `<div class="sec"><p class="lbl">Coalition pledges</p>${plist(p.pledges)}</div>`;
+  if(p.quote) h += `<div class="sec"><p class="lbl">In their words</p><blockquote style="--qc:var(${B.v})">“${p.quote[0]}”<footer>${p.quote[1]} · ${p.quote[2]}</footer></blockquote></div>`;
+  if(p.s) h += seatsBlock(p);
+  else h += `<div class="sec"><p class="lbl">Seats</p><p>${p.off}.</p></div>`;
+  const nm = p.leader.split(" (")[0].split(",")[0];
+  h += p.bio ? `<div class="sec"><p class="lbl">Bios</p>${p.bio.map(([n,t])=>`<p class="bio"><b>${n}.</b> ${t}</p>`).join("")}<p class="src">Bio source: Wikipedia, accessed Oct 2026, via CRC research memo Part D and party registers.</p></div>`
+    : `<div class="sec"><p class="lbl">Leader bio</p><p class="bio">Our research registers have no bio for ${nm}.</p></div>`;
+  return h;
+}
+let opener = null;
+function openProfile(id, from){
+  const p = PROFILES.find(q=>q.id===id); if(!p) return;
+  opener = from || null;
+  $("dbody").innerHTML = detail(p); $("dbody").scrollTop = 0;
+  $("scrim").hidden = false; $("drawer").hidden = false;
+  document.documentElement.style.overflow = "hidden";
+  $("dclose").focus();
+}
+function closeProfile(){
+  if($("drawer").hidden) return;
+  $("drawer").hidden = true; $("scrim").hidden = true;
+  document.documentElement.style.overflow = "";
+  const id = opener && opener.dataset.profile;
+  const back = id && document.querySelector(`button.info[data-profile="${id}"]`);
+  if(back) back.focus();
+  opener = null;
+}
+$("dclose").addEventListener("click", closeProfile);
+$("scrim").addEventListener("click", closeProfile);
+document.addEventListener("keydown", e=>{
+  if($("drawer").hidden) return;
+  if(e.key==="Escape"){ e.preventDefault(); closeProfile(); return; }
+  if(e.key==="Tab"){
+    const f = [...$("drawer").querySelectorAll('button,a[href],[tabindex]:not([tabindex="-1"])')];
+    if(!f.length) return;
+    const first = f[0], last = f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+});
+$("reset").addEventListener("click", ()=>{ sel.clear(); renderCards(); renderPanel(); });
+renderAll();
+</script>
+
+</body></html>

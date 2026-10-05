@@ -1,0 +1,23 @@
+name: Gemini smoke test
+
+# Manual check that GEMINI_API_KEY works and the configured model answers.
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      MODEL: gemini-3.8-flash
+    steps:
+      - name: Model metadata
+        run: |
+          curl -sf "https://generativelanguage.googleapis.com/v1beta/models/$MODEL" \
+            -H "x-goog-api-key: $GEMINI_API_KEY" | jq '{name, displayName, version, inputTokenLimit, outputTokenLimit}'
+      - name: One-line generation
+        run: |
+          curl -sf "https://generativelanguage.googleapis.com/v1beta/models/$MODEL:generateContent" \
+            -H "x-goog-api-key: $GEMINI_API_KEY" -H "Content-Type: application/json" \
+            -d '{"contents":[{"parts":[{"text":"Reply with the single word: ready"}]}]}' \
+            | jq -r '.candidates[0].content.parts[0].text'

@@ -1,0 +1,48 @@
+{
+  "updated": "2026-10-04",
+  "about": "Coalition Builder warnings. Each rule fires when its `when` condition holds for the selected parties. Conditions: {\"party\": id} selected; {\"tag\": t} any selected party carries tag t; {\"all\": [...]}, {\"any\": [...]}. Message placeholders: {and:tag1,tag2} joins the selected parties with those tags with \" and \"; {comma:tag} joins with \", \".",
+  "rules": [
+    {
+      "id": "zionist-opp-no-arab-parties",
+      "kind": "pledge",
+      "when": { "all": [{ "tag": "arab" }, { "tag": "zionistOpp" }] },
+      "message": "The Zionist opposition ({comma:zionistOpp}) has pledged to govern without Arab parties, and this coalition includes {and:arab}.",
+      "source": "Haaretz, Oct 1, 2026"
+    },
+    {
+      "id": "eisenkot-no-raam",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "yashar" }, { "party": "raam" }] },
+      "message": "Eisenkot said on Sept 26 that Mansour Abbas “won't be part of my next government.”",
+      "source": "Times of Israel, Sep 26, 2026"
+    },
+    {
+      "id": "byachad-zionist-only",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "byachad" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
+      "message": "Bennett's B'Yachad pledged to govern only with Zionist parties: no Arab or Haredi parties. This coalition includes {and:haredi,arab}.",
+      "source": "Times of Israel, Apr 26 and May 27, 2026"
+    },
+    {
+      "id": "lieberman-no-arab-no-haredi",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "yb" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
+      "message": "Lieberman: “not for the Arab parties and not for the haredi parties.” This coalition includes {and:haredi,arab}.",
+      "source": "Jerusalem Post, Sep 21, 2025; repeated Oct 3, 2026"
+    },
+    {
+      "id": "joint-list-no-netanyahu",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "jl" }, { "party": "likud" }] },
+      "message": "The Joint List says it won't join Netanyahu.",
+      "source": "Times of Israel, Aug 19, 2026"
+    },
+    {
+      "id": "utj-yeshiva-status-law",
+      "kind": "condition",
+      "when": { "party": "utj" },
+      "message": "UTJ says it will not support or enter any government that does not first regulate the status of Torah learners (a yeshiva-status law), whoever leads it.",
+      "source": "Yaakov Asher, Matzav, Sep 28, 2026"
+    }
+  ]
+}
