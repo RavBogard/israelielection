@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import "./interactives.css";
 import "./coalition.css";
 import ProfileDetail from "./ProfileDetail";
@@ -8,12 +8,16 @@ import { averagePoll, blocs, mainPolls, parties, pledgeRules } from "@/lib/data"
 import { MAJORITY, KNESSET, tally, warnings } from "@/lib/coalition";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { AVERAGE_ID, blocTotals, pollLabel } from "@/lib/polls";
+import { RESULTS_ID } from "@/lib/results";
 import type { Party, Poll } from "@/lib/types";
 
 const POLL_KEY = "cb-poll";
-/** The picker: the current average first (default), then each current poll. */
-const choices = [averagePoll, ...mainPolls];
+/** The picker: election results once counting starts, then the current average, then each current poll. */
+const pickList = (results: Poll | null) => (results ? [results, averagePoll, ...mainPolls] : [averagePoll, ...mainPolls]);
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
+/** Cards for a poll: a list hidden for lack of polling still appears if the count gives it seats. */
+const cardsFor = (poll: Poll) =>
+  parties.filter((p) => p.coalitionCard !== "hidden" || (poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0));
 const fillVars = (p: Party) =>
   ({ "--fill": `var(--b-${p.bloc})`, "--fill-ink": `var(--b-${p.bloc}-ink)` }) as React.CSSProperties;
 
@@ -31,7 +35,11 @@ function PollNote({ poll }: { poll: Poll }) {
   );
   return (
     <p className="pollnote">
-      {poll.id === AVERAGE_ID ? (
+      {poll.id === RESULTS_ID ? (
+        <>
+          Showing <b>the election results so far</b>. {poll.note} Seats by bloc:{" "}
+        </>
+      ) : poll.id === AVERAGE_ID ? (
         <>
           Showing <b>the average of the latest {mainPolls.length} polls</b>, one per pollster ({mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}), so seats can be fractional. Seats by bloc:{" "}
         </>
@@ -59,7 +67,8 @@ function Card({ p, poll, on, onToggle, onProfile }: {
       <span className="i" aria-hidden="true">i</span>Profile
     </button>
   );
-  if (p.coalitionCard === "out") {
+  // A list written off in the polls gets a normal card if the count gives it seats.
+  if (p.coalitionCard === "out" && !(poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0)) {
     return (
       <div className="card out" style={fillVars(p)} title={p.status ?? undefined}>
         <button type="button" className="tog" disabled>
@@ -73,7 +82,7 @@ function Card({ p, poll, on, onToggle, onProfile }: {
     );
   }
   const s = seatLabel(p, poll);
-  const src = poll.id === AVERAGE_ID ? `average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+  const src = poll.id === RESULTS_ID ? "the count so far" : poll.id === AVERAGE_ID ? `average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
   const tip = s.na ? `${poll.pollster} did not report ${p.name} separately (${src})` : s.below ? `Below threshold in ${src}` : `${s.txt} seats, ${src}`;
   return (
     <div className={`card${on ? " on" : ""}`} style={fillVars(p)} title={tip} onClick={(e) => {
@@ -86,7 +95,7 @@ function Card({ p, poll, on, onToggle, onProfile }: {
         {p.surplusLine && <span className="sp">{p.surplusLine}</span>}
         <span className="meta">
           <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
-          {s.na ? `Not reported by ${poll.pollster}` : s.below ? "Below threshold in this poll" : "seats"}
+          {s.na ? `Not reported by ${poll.pollster}` : s.below ? `Below threshold in ${poll.id === RESULTS_ID ? "the count" : "this poll"}` : "seats"}
         </span>
       </button>
       <div className="foot">
@@ -140,8 +149,9 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
   );
 }
 
-export default function CoalitionBuilder() {
-  const [pollId, setPollId] = useState(AVERAGE_ID);
+export default function CoalitionBuilder({ results = null }: { results?: Poll | null }) {
+  const choices = useMemo(() => pickList(results), [results]);
+  const [pollId, setPollId] = useState(results ? RESULTS_ID : AVERAGE_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [profile, setProfile] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -153,24 +163,26 @@ export default function CoalitionBuilder() {
     const q = new URLSearchParams(window.location.search);
     let p = q.get("poll");
     if (!p) try { p = localStorage.getItem(POLL_KEY); } catch {}
+    // On results night the count wins over a remembered poll; a shared link still picks its own.
+    if (results && !q.get("poll")) p = RESULTS_ID;
     // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore after hydration
     if (p && choices.some((x) => x.id === p)) setPollId(p);
-    const ids = (q.get("with") ?? "").split(",").filter((id) => cardParties.some((x) => x.id === id && x.coalitionCard === "active"));
+    const ids = (q.get("with") ?? "").split(",").filter((id) => (results ? cardsFor(results) : cardParties).some((x) => x.id === id && (x.coalitionCard === "active" || (results?.results[id]?.seats ?? 0) > 0)));
     if (ids.length) setSel(new Set(ids));
     ready.current = true;
-  }, []);
+  }, [choices, results]);
 
   // Keep the URL shareable.
   useEffect(() => {
     if (!ready.current) return;
     const q = new URLSearchParams(window.location.search);
     q.set("poll", pollId);
-    if (sel.size) q.set("with", cardParties.filter((p) => sel.has(p.id)).map((p) => p.id).join(","));
+    if (sel.size) q.set("with", parties.filter((p) => sel.has(p.id)).map((p) => p.id).join(","));
     else q.delete("with");
     history.replaceState(null, "", `${window.location.pathname}?${q.toString().replace(/%2C/g, ",")}`);
   }, [pollId, sel]);
 
-  const poll = choices.find((p) => p.id === pollId)!;
+  const poll = choices.find((p) => p.id === pollId) ?? choices[0];
   const t = tally(sel, parties, poll);
   const warns = warnings(sel, parties, pledgeRules);
 
@@ -215,7 +227,7 @@ export default function CoalitionBuilder() {
             {choices.map((p) => (
               <button key={p.id} type="button" aria-pressed={p.id === pollId} onClick={() => choosePoll(p.id)}>
                 {p.pollster}
-                <small>{p.id === AVERAGE_ID ? `latest ${mainPolls.length} polls` : mediumDate(p.published)}</small>
+                <small>{p.id === RESULTS_ID ? "count so far" : p.id === AVERAGE_ID ? `latest ${mainPolls.length} polls` : mediumDate(p.published)}</small>
               </button>
             ))}
           </div>
@@ -235,7 +247,7 @@ export default function CoalitionBuilder() {
                 {b.label}
               </h2>
               <div className="cards">
-                {cardParties.filter((p) => p.bloc === b.id).map((p) => (
+                {cardsFor(poll).filter((p) => p.bloc === b.id).map((p) => (
                   <Card key={p.id} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
                     onProfile={(el) => { opener.current = el; setProfile(p.id); }} />
                 ))}

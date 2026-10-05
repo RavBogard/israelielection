@@ -18,6 +18,7 @@ const NAV = [
   { href: "/parties", label: "Party Map" },
   { href: "/polls", label: "Polls" },
   { href: "/news", label: "News" },
+  { href: "/results", label: "Results" },
   { href: "/teach", label: "Teach it" },
 ];
 

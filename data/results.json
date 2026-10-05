@@ -1,0 +1,38 @@
+{
+  "updated": "2026-10-05",
+  "election": "2026-10-27",
+  "pollsClose": "2026-10-27T22:00:00+02:00",
+  "source": {
+    "url": "https://media26.bechirot.gov.il/files/expc.csv",
+    "label": "Central Elections Committee, results by locality",
+    "note": "The committee's file on election night. Before then it holds test data, which the site does not show."
+  },
+  "threshold": 0.0325,
+  "thresholdSource": "Knesset Elections Law, s. 81: 3.25% of valid votes.",
+  "letters": {
+    "מחל": "likud",
+    "ב": "otzma",
+    "שס": "shas",
+    "ג": "utj",
+    "ט": "rz",
+    "ך": "poi",
+    "ני": "noam",
+    "דרך": "yashar",
+    "רק": "byachad",
+    "אמת": "dem",
+    "ל": "yb",
+    "כן": "bw",
+    "די": "res",
+    "ודם": "jl",
+    "עם": "raam"
+  },
+  "lettersSource": "Approved by the Central Elections Committee Sep 27, 2026: Ynet and Emess (Sep 27), full list of 38 in Ice (Sep 2026). The committee's own list page was down when checked (Oct 5); confirm against the CSV header on election night.",
+  "agreements": [
+    { "parties": ["yashar", "dem"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
+    { "parties": ["byachad", "yb"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
+    { "parties": ["jl", "raam"], "status": "reported", "source": "Ynet, Sep 11; Jerusalem Post, Sep 13, 2026" },
+    { "parties": ["likud", "rz"], "status": "reported", "source": "Israel Hayom, Sep 8; reported unsigned, Channel 14, Sep 15, 2026" },
+    { "parties": ["shas", "utj"], "status": "reported", "source": "Jerusalem Post, Sep 10, 2026 (“expected”)" }
+  ],
+  "agreementsNote": "Seat estimates use every agreement listed here. Statuses other than “signed” still need checking against the committee's list of filed agreements before election night."
+}

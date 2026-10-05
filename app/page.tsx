@@ -3,16 +3,21 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
+import { resultsAsPoll } from "@/lib/results";
+import { fetchCount, resultsConfig } from "@/lib/results-live";
 
-// Hourly, so the election countdown in the banner stays current.
-export const revalidate = 3600;
+// Every minute: on election night the builder adds the count as it comes in. Before then
+// the page has nothing to fetch, so regenerating it is cheap.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: { absolute: "Israel Votes 2026: Build a Coalition" },
   description: "Pick a poll, add parties, and see whether they reach 61 of the Knesset's 120 seats, with each party's recorded coalition pledges.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const live = await fetchCount(revalidate);
+  const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
   return (
     <div className="ix">
       <Banner />
@@ -20,7 +25,7 @@ export default function Page() {
         <p className="toplink">
           Full map of the parties → <Link href="/parties">Party Map</Link>
         </p>
-        <CoalitionBuilder />
+        <CoalitionBuilder results={results} />
         <footer className="pagefoot">
           <h2>Sources</h2>
           <ol>

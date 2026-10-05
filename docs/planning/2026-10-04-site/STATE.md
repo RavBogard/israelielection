@@ -105,10 +105,25 @@ Done:
   are Hebrew ballot letters; the letter→party mapping must be verified from the CEC's
   official list before the /results route can use it.
 
+- Election night (/results, built 2026-10-05): reads the committee's expc.csv (per locality),
+  sums to national votes, estimates seats (threshold, Bader-Ofer, surplus agreements).
+  Reproduces the 2022 Knesset exactly from the committee's 2022 file (test fixture). Hidden
+  until polls close (Oct 27 22:00 IST); before then the page shows the ballot letters and how
+  seats are counted. The Coalition Builder adds "Results" as its first choice (and default)
+  once the count is open. Home and /results revalidate every 60 s.
+- GATE: ballot letters → party ids from press reports of the committee's Sep 27 approval (Ynet,
+  Emess, full list in Ice); the committee's own list page was down (maintenance.gov.il). Proceeded
+  because three outlets agree and the rehearsal check compares them with the live CSV header.
+- GATE: seat estimates use all five reported surplus agreements, including Likud–RZ and
+  Shas–UTJ, whose signing is unconfirmed. Before election night: confirm against the
+  committee's list of filed agreements and fix `data/results.json`.
+- The committee's test file still uses 2022 letters (no דרך, רק, די, ודם columns); that is
+  expected. `Results check` (manual workflow) reports the mismatch; run it on election night.
+
 ## Next (phase 2, remaining)
-- Polls job + validator (sum 120, pollster whitelist, fieldwork date, ≤5-seat move, below-threshold
-  flagged); auto-commit on pass, PR + email on fail.
-- News RSS page (ISR 15 min). Daily briefing (Gemini), sourced per sentence, emailed.
+- Done: polls job + validator, news page, daily briefing, election-night results.
+- Party-text change proposals (always a PR). Coalition-process tracker after the election.
+- Confirm surplus agreements (above). Fetch path for ToI and +972.
 - Reference pages: system mechanics, tribes, issues, timeline, glossary, sources/method.
 
 ## Deploy log

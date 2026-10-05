@@ -1,0 +1,21 @@
+name: Results check
+
+# Manual rehearsal for election night: fetch the committee's results file from a GitHub runner
+# and compare its ballot-letter columns with data/results.json.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
+      - run: npx tsx scripts/jobs/results-check.mts
