@@ -47,7 +47,8 @@ export function tally(selected: Set<string>, parties: Party[], poll: Poll): Tall
       groupNote = `${poll.pollster} did not report ${missing} separately, so this total leaves out ${missing}'s seats. Add both ${groupNames} to count their combined ${g.seats}.`;
     }
   }
-  return { total, segments, chosen, groupNote, partial };
+  // Averages carry one decimal; round so 60.99999… never misses the 61 line.
+  return { total: Math.round(total * 10) / 10, segments, chosen, groupNote, partial };
 }
 
 function holds(c: Condition, chosen: Party[]): boolean {

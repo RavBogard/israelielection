@@ -1,7 +1,7 @@
 import partiesJson from "@/data/parties.json";
 import pollsJson from "@/data/polls.json";
 import rulesJson from "@/data/pledge-rules.json";
-import { byNewest, currentPolls } from "./polls";
+import { averageAsPoll, byNewest, currentPolls } from "./polls";
 import type { BlocId, PartiesFile, PledgeRulesFile, PollsFile } from "./types";
 
 export const partiesData = partiesJson as PartiesFile;
@@ -20,6 +20,9 @@ const current = currentPolls(pollsData.polls, pollsData.config);
 export const mainPolls = current.main;
 /** Current polls shown for reference only (Channel 14). */
 export const otherPolls = current.reference;
+
+/** The current average as a pseudo-poll (the Coalition Builder's default). */
+export const averagePoll = averageAsPoll(mainPolls, parties.map((p) => p.id));
 
 /** The later of the two data files' update dates. */
 export const dataUpdated = [partiesData.updated, pollsData.updated].sort().at(-1)!;

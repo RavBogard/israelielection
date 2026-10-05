@@ -1,11 +1,12 @@
 # israelielection.org — mission and plan (filed 2026-10-05)
 
 ## Mission
-A public English-language reference site on the 2026 Israeli election (Oct 27, 2026) for Americans, American Jews in particular, and for rabbis and educators who want to teach it. Built from the CRC "Israel Votes" class materials. Learning, not advocacy; every number dated and sourced; polls and news update themselves.
+A public English-language reference site on the 2026 Israeli election (Oct 27, 2026) for Americans, American Jews in particular, and for rabbis and educators who want to teach it. Built from the CRC "Israel Votes" class materials. Every number dated and sourced; polls and news update themselves.
 
 ## Rulings (Daniel, 2026-10-05)
 - Audience: general American readers AND educators/rabbinic colleagues. Two front doors: "Understand it" and "Teach it."
-- Identity: Daniel's site, his byline. Not CRC-branded. About page states the learning-not-advocacy posture and the method up front.
+- Identity: Daniel's site, his byline. Not CRC-branded. About page states the method up front and carries his signed intro.
+- "Learning, not advocacy" was the CLASS ruling, not the site's. Daniel struck it from the site plan 2026-10-05. Do not apply it to site copy.
 - Hebrew: out, except party names and glossary terms.
 - Jewish texts: in, as their own section (class source sheets), not mixed into reference pages.
 - Trip material: out.
@@ -24,8 +25,8 @@ Exists (port):
 - Party profiles for 14–16 lists with six issue axes: draft, courts, war, West Bank, religion-state, economy (docs 11a–11d).
 
 New — reference layer:
-- Issues page: the six axes in plain language, what each party says, and what Israelis actually think (IDI Israeli Voice Index, INSS, Pew, Viterbi Center, Channel 12/13 issue polls). Real data, dated.
-- Bloc sociology: the four tribes with demographic, geographic and voting data, not just description.
+- Issues pages and sociology pages: see the spec section below.
+- American lens page: how American Jewish discourse maps and fails to map onto Israeli politics. One page.
 - Timeline 1977–2026 (planned for Oct 13; scrubbable).
 - Key dates and the post-election clock (results → president's consultations → mandate → 28+14 days → possible second mandate → Knesset's 21 days).
 - How Israelis vote (paper slips behind a screen, no absentee except diplomats/soldiers/ships, Election Day a holiday, soldiers' double envelopes and why the final count shifts).
@@ -43,19 +44,41 @@ New — live layer:
 - News: aggregated headlines from ToI, Haaretz, JPost, Kan English, +972, JTA, Jewish Insider, Forward; refreshed every 15 minutes.
 - Daily briefing: "what changed" in ~200 words, AI-written, sourced per sentence.
 
+## Issues and sociology layer — spec (ruled 2026-10-05)
+Issues (seven pages): Haredi draft; courts and the judicial overhaul; the war and the hostages; West Bank and annexation; religion and state; cost of living and the economy; and "what is not on the ballot" (a Palestinian state, the peace process — why not, and what is there instead).
+Each issue page, 800–1,200 words plus 2–3 charts, in four parts: (1) what is at stake, plain language; (2) what Israelis actually think — survey data broken down by group, with charts; (3) what each party says, with source; (4) how an American reader is likely to misread this issue.
+
+Sociology (nine pages, flat, no tribes hierarchy): Secular Ashkenazi / "Tel Aviv" Israel; Mizrahi-traditional (masorti) Israel; Religious Zionists; Haredim (Ashkenazi and Sephardi noted); Russian-speaking Israelis; Ethiopian-Israelis; Palestinian citizens of Israel (Muslim, Christian, Bedouin inside); Druze; Settlers (cross-cutting; 36/36/28 composition, dated).
+Each group page carries: size, growth and geography (CBS); voting pattern 2019–2022 computed from CEC results by locality; attitudes on each of the six issues (IDI, INSS, INES cross-tabs); and lived texture — who they are, one or two voices from public interviews, sourced.
+Terminology: "Palestinian citizens of Israel" first, "Arab Israelis" noted, and the naming dispute explained on the page.
+
+Vote map: interactive choropleth of Israel by locality, 2022 results (and 2026 after Oct 27), party filter. Data prep script from CEC locality results + public GIS boundaries. Heaviest interactive on the site.
+
+Data tier: free public sources plus academic datasets (INES microdata and similar). Every data point carries source, date, sample size where known, and a link a reader can follow. Nothing paywalled.
+
+Voice: neutral reference voice on all pages; Daniel's signed intro on the home page and About.
+
+American lens page: one page; why "pro-Israel" is not an Israeli category, why Israeli left/right don't line up with American ones, where US and Israeli fights rhyme and where they don't. Fact-checked like every other page.
+
+Review flow: research → one-page brief per topic (findings, chart data, open questions, framing choices flagged) → Daniel rules on the briefs in one sitting → page drafts and JSON written → handoff to Code. One pass from Daniel.
+
+Output format for Code: `data/issues.json`, `data/groups.json`, `data/surveys.json` (every datapoint: value, source, date, url, sample), `data/localities-2022.json` for the map; page copy as MDX in `content/issues/*.mdx`, `content/groups/*.mdx`, `content/american-lens.mdx`; research files under `docs/research/`.
+
+Update cadence: issue polling refreshes when IDI/INSS publish (monthly); the daily job proposes; text changes go by PR for Daniel to merge.
+
 ## Dynamic updates — design
 - Repo on GitHub; Vercel deploys on push. Data lives in `data/*.json` in the repo so every change is a commit with a diff.
-- Polls job (daily, GitHub Action — ruled 2026-10-05; the job's output is a commit, so Actions, not Vercel cron): Gemini reads the Wikipedia opinion-polling table for the 2026 election plus JPost/ToI roundups, writes `data/polls.json`. Validator: seats sum to 120; pollster on whitelist; fieldwork date present; no party moves more than 5 seats from its previous reading by the same pollster; parties below threshold flagged, not dropped. Pass → auto-commit → redeploy. Fail → open a PR and email Daniel.
+- Polls job (daily, GitHub Action — ruled 2026-10-05; the job's output is a commit, so Actions, not Vercel cron): Claude reads the Wikipedia opinion-polling table for the 2026 election plus JPost/ToI roundups, writes `data/polls.json`. Validator: seats sum to 120; pollster on whitelist; fieldwork date present; no party moves more than 5 seats from its previous reading by the same pollster; parties below threshold flagged, not dropped. Pass → auto-commit → redeploy. Fail → open a PR and email Daniel.
 - Party text changes (positions, pledges, leaders): the same job proposes; always a PR; Daniel merges.
 - News: server-side RSS fetch with ISR revalidation (15 min). No AI.
-- Briefing (daily): Gemini writes from the day's headlines; each sentence carries a source link; posted automatically; emailed to Daniel. Kill switch: delete the day's file.
+- Briefing (daily): Claude writes from the day's headlines; each sentence carries a source link; posted automatically; emailed to Daniel. Kill switch: delete the day's file.
 - Election night: a route polling the CEC results feed every few minutes (or Kan/ToI live numbers if the CEC feed is not machine-readable; verify before Oct 27). Coalition Builder gets a "real results" poll option.
 - Post-election: coalition-process tracker updated by the daily job from news; text changes via PR.
 
 ## Proof
 - Every number on the site shows its date and source inline.
 - Validator is a machine gate on all poll data.
-- Before any text page ships: an independent fact-check pass (Opus) against primary sources; quotes checked against originals (open items in doc 09 carry over).
+- Before any text page ships: an independent fact-check pass (Opus) against primary sources; anything that can't be verified is cut, not hedged; quotes checked against originals (open items in doc 09 carry over).
 - Visual check of every page at phone and desktop width before launch.
 
 ## Authority

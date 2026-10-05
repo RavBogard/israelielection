@@ -4,13 +4,15 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import "./interactives.css";
 import "./coalition.css";
 import ProfileDetail from "./ProfileDetail";
-import { blocs, mainPolls, parties, pledgeRules } from "@/lib/data";
+import { averagePoll, blocs, mainPolls, parties, pledgeRules } from "@/lib/data";
 import { MAJORITY, KNESSET, tally, warnings } from "@/lib/coalition";
-import { mediumDate } from "@/lib/format";
-import { blocTotals, pollLabel } from "@/lib/polls";
+import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { AVERAGE_ID, blocTotals, pollLabel } from "@/lib/polls";
 import type { Party, Poll } from "@/lib/types";
 
 const POLL_KEY = "cb-poll";
+/** The picker: the current average first (default), then each current poll. */
+const choices = [averagePoll, ...mainPolls];
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
 const fillVars = (p: Party) =>
   ({ "--fill": `var(--b-${p.bloc})`, "--fill-ink": `var(--b-${p.bloc}-ink)` }) as React.CSSProperties;
@@ -18,7 +20,7 @@ const fillVars = (p: Party) =>
 function seatLabel(p: Party, poll: Poll) {
   const r = poll.results[p.id];
   if (!r) return { txt: "n/a", na: true, below: false };
-  return { txt: String(r.seats), na: false, below: !!r.belowThreshold };
+  return { txt: fmt(r.seats), na: false, below: !!r.belowThreshold };
 }
 
 function PollNote({ poll }: { poll: Poll }) {
@@ -29,11 +31,19 @@ function PollNote({ poll }: { poll: Poll }) {
   );
   return (
     <p className="pollnote">
-      Showing <b>{pollLabel(poll)}, published {mediumDate(poll.published)}</b>. Seats by bloc in this poll:{" "}
+      {poll.id === AVERAGE_ID ? (
+        <>
+          Showing <b>the average of the latest {mainPolls.length} polls</b>, one per pollster ({mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}), so seats can be fractional. Seats by bloc:{" "}
+        </>
+      ) : (
+        <>
+          Showing <b>{pollLabel(poll)}, published {mediumDate(poll.published)}</b>. Seats by bloc in this poll:{" "}
+        </>
+      )}
       {shown.map((b, i) => (
         <span key={b.id}>
           {i > 0 && " · "}
-          {b.label} <b>{t[b.id]}</b>
+          {b.label} <b>{fmt(t[b.id])}</b>
         </span>
       ))}
       .{lumped.map((l) => ` ${l} were not reported separately.`)}
@@ -63,7 +73,7 @@ function Card({ p, poll, on, onToggle, onProfile }: {
     );
   }
   const s = seatLabel(p, poll);
-  const src = `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+  const src = poll.id === AVERAGE_ID ? `average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
   const tip = s.na ? `${poll.pollster} did not report ${p.name} separately (${src})` : s.below ? `Below threshold in ${src}` : `${s.txt} seats, ${src}`;
   return (
     <div className={`card${on ? " on" : ""}`} style={fillVars(p)} title={tip} onClick={(e) => {
@@ -131,7 +141,7 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
 }
 
 export default function CoalitionBuilder() {
-  const [pollId, setPollId] = useState(mainPolls[0].id);
+  const [pollId, setPollId] = useState(AVERAGE_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [profile, setProfile] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -144,7 +154,7 @@ export default function CoalitionBuilder() {
     let p = q.get("poll");
     if (!p) try { p = localStorage.getItem(POLL_KEY); } catch {}
     // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore after hydration
-    if (p && mainPolls.some((x) => x.id === p)) setPollId(p);
+    if (p && choices.some((x) => x.id === p)) setPollId(p);
     const ids = (q.get("with") ?? "").split(",").filter((id) => cardParties.some((x) => x.id === id && x.coalitionCard === "active"));
     if (ids.length) setSel(new Set(ids));
     ready.current = true;
@@ -160,7 +170,7 @@ export default function CoalitionBuilder() {
     history.replaceState(null, "", `${window.location.pathname}?${q.toString().replace(/%2C/g, ",")}`);
   }, [pollId, sel]);
 
-  const poll = mainPolls.find((p) => p.id === pollId)!;
+  const poll = choices.find((p) => p.id === pollId)!;
   const t = tally(sel, parties, poll);
   const warns = warnings(sel, parties, pledgeRules);
 
@@ -202,10 +212,10 @@ export default function CoalitionBuilder() {
         </div>
         <div className="controls">
           <div className="seg" role="group" aria-label="Choose a poll">
-            {mainPolls.map((p) => (
+            {choices.map((p) => (
               <button key={p.id} type="button" aria-pressed={p.id === pollId} onClick={() => choosePoll(p.id)}>
                 {p.pollster}
-                <small>{mediumDate(p.published)}</small>
+                <small>{p.id === AVERAGE_ID ? `latest ${mainPolls.length} polls` : mediumDate(p.published)}</small>
               </button>
             ))}
           </div>
@@ -237,12 +247,12 @@ export default function CoalitionBuilder() {
         <aside className="panel" aria-live="polite">
           <h3>Your coalition</h3>
           <div className="total">
-            <span className="n">{t.total}{t.partial ? "+" : ""}</span>
+            <span className="n">{fmt(t.total)}{t.partial ? "+" : ""}</span>
             <span className="of">of {MAJORITY} needed</span>
             {t.total >= MAJORITY ? (
               <span className="pill maj">Majority</span>
             ) : t.chosen.length ? (
-              <span className="pill short">{MAJORITY - t.total} short</span>
+              <span className="pill short">{fmt(MAJORITY - t.total)} short</span>
             ) : null}
           </div>
           <div>

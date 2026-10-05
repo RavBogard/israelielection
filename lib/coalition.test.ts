@@ -65,3 +65,14 @@ describe("pledge rules (parity with the v2 if-statements)", () => {
     ]);
   });
 });
+
+describe("the average as a poll", () => {
+  it("sums fractional seats without float drift", async () => {
+    const { averageAsPoll } = await import("./polls");
+    const avg = averageAsPoll(pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id)), parties.map((p) => p.id));
+    expect(avg.results.likud.seats).toBe(20);
+    expect(avg.results.shas.seats).toBe(7.7);
+    const t = tally(new Set(["likud", "shas", "utj", "otzma", "rz", "poi"]), parties, avg);
+    expect(t.total).toBe(Math.round((20 + 7.7 + 7.7 + 7.5 + 5.8 + 4.3) * 10) / 10);
+  });
+});

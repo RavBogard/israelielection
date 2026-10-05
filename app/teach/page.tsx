@@ -12,7 +12,7 @@ export default function Page() {
       <h1 className="font-display text-[clamp(38px,5vw,60px)] font-black leading-[1.02] text-balance">Teach it</h1>
       <p className="mt-4 max-w-[62ch] text-lg text-ink-2">
         Materials for educators and rabbinic colleagues teaching the 2026 Knesset election: session decks, source sheets, teacher&apos;s
-        guides and discussion questions. Learning, not advocacy: every number is dated and sourced.
+        guides and discussion questions. Every number is dated and sourced.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">

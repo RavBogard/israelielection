@@ -68,3 +68,34 @@ export function pollTotal(poll: Poll): number {
     poll.combined.reduce((a, c) => a + c.seats, 0)
   );
 }
+
+export const AVERAGE_ID = "avg";
+
+/**
+ * The current average expressed as a pseudo-poll, so the Coalition Builder can count with it.
+ * Seats are each party's mean across `polls`, to one decimal; a party every poll put below the
+ * threshold is marked below.
+ */
+export function averageAsPoll(polls: Poll[], partyIds: string[]): Poll {
+  const results: Poll["results"] = {};
+  for (const id of partyIds) {
+    const a = average(id, polls);
+    if (!a) continue;
+    const seats = Math.round(a.avg * 10) / 10;
+    results[id] = seats === 0 ? { seats: 0, belowThreshold: true } : { seats };
+  }
+  return {
+    id: AVERAGE_ID,
+    pollster: "Average",
+    firm: null,
+    fieldwork: null,
+    published: [...polls].sort(byNewest)[0]?.published ?? "",
+    via: null,
+    url: null,
+    n: null,
+    margin: null,
+    note: `Mean of ${polls.length} polls: ${polls.map((p) => p.pollster).join(", ")}.`,
+    results,
+    combined: [],
+  };
+}
