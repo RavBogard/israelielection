@@ -1,98 +1,145 @@
 {
   "issue": "haredi-draft",
   "title": "What the parties say about the draft",
-  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. No published position found for Noam or Blue and White (checked October 2026).",
+  "question": "Should Haredi yeshiva students be drafted?",
+  "stances": [
+    {
+      "id": "no-compulsion",
+      "label": "No compulsory service for anyone"
+    },
+    {
+      "id": "exempt-learners",
+      "label": "Exempt those who study Torah"
+    },
+    {
+      "id": "draft-leavers",
+      "label": "Draft those who leave yeshiva"
+    },
+    {
+      "id": "expand-gradually",
+      "label": "Raise Haredi service step by step"
+    },
+    {
+      "id": "draft-all",
+      "label": "Draft everyone, military or civilian"
+    }
+  ],
+  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. Likud declined the questionnaire; its stance comes from a minister's description of the coalition's 2025 bill. Ra'am answered only on drafting Arab citizens. No published position found for Noam or Blue and White (checked October 2026).",
   "rows": [
     {
       "party": "likud",
       "text": "\"Likud chose not to respond to inquiries from ynet and Yedioth Ahronoth regarding the draft law.\" In July 2025, Communications Minister Shlomo Karhi said the coalition was \"fighting here for a historic conscription law that will conscript about 17,000 young Haredi men within three years.\"",
       "source": "Ynet, Sep 16, 2026; Times of Israel, Jul 23, 2025",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "expand-gradually",
+      "basis": "record"
     },
     {
       "party": "shas",
       "text": "Ynet's summary of its answer: \"Shas acknowledges that it will no longer be possible to avoid drafting yeshiva students who have left their studies.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "draft-leavers"
     },
     {
       "party": "utj",
       "text": "Ynet's summary: both factions \"continue to oppose the enlistment of students who have dropped out of yeshivas\" and oppose a universal draft law. The party \"says the law it seeks to pass is intended solely to regulate the status of those who study Torah.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "exempt-learners"
     },
     {
       "party": "rz",
       "text": "\"Passing a Basic Law for Service Members under the principle of 'first in equality' — those who serve receive everything.\" Supports \"expanding the pool of those who serve\"; did not answer the question on sanctions.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "expand-gradually"
     },
     {
       "party": "otzma",
       "text": "Party leader Ben-Gvir: \"We opened dedicated tracks in the police and Border Police, with full observance of Shabbat, kashrut, prayers and Torah study, appropriate gender separation and the establishment of the ultra-Orthodox 'Avnet' company in the Border Police.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "expand-gradually"
     },
     {
       "party": "poi",
       "text": "Party leader Winter: \"We will not join a government that does not pass, before it is formed, a law that puts an end to draft evasion and requires everyone to report for service… Full stop.\"",
       "source": "Jerusalem Post",
       "url": "https://www.jpost.com/israel-election-2026/article-907373",
-      "date": "Sep 2, 2026"
+      "date": "Sep 2, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "yashar",
       "text": "National service for all; the \"only mechanism for deferring service will be an allocation of up to 3% of each annual cohort for outstanding individuals.\" Eisenkot puts that at about 2,200 a year of a 70,000-person national cohort (all Israelis, not Haredim only), and would \"revoke any state incentives granted to those who evade service.\"",
       "source": "Ynet, Sep 16, 2026; Jerusalem Post, Sep 24, 2026",
       "url": "https://www.jpost.com/israel-election-2026/article-909543",
-      "date": "Sep 24, 2026"
+      "date": "Sep 24, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "byachad",
       "text": "\"Every citizen… will enlist in the IDF or perform national civilian service… without exemptions — that applies to Arabs and to the ultra-Orthodox alike.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "dem",
       "text": "\"The obligation to serve the state should apply to all citizens, within a national and equal framework.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "yb",
       "text": "\"Every young man and woman at age 18 — Jews, Muslims, Christians, Druze and Circassians — will be required to perform military or civilian service. No exemptions, no quotas and no deals.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "res",
       "text": "\"Every citizen will report to the induction center.\" Those who do not serve would face \"revocation of a driver's license, a ban on leaving the country, exclusion from public-sector and government jobs,\" and loss of tax, housing and daycare benefits.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "draft-all"
     },
     {
       "party": "jl",
       "text": "Ynet reports that it opposes drafting Haredi men or any form of compulsory enlistment. The party: \"sanctions should not be imposed on someone who chooses not to enlist.\"",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "stance": "no-compulsion"
     },
     {
       "party": "raam",
       "text": "Ynet reports that it opposes a draft law that would require young Arab citizens to serve in the IDF or perform civilian service, and that it declined to respond on Haredi enlistment.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
-      "date": "Sep 16, 2026"
+      "date": "Sep 16, 2026",
+      "status": "declined"
+    },
+    {
+      "party": "noam",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "bw",
+      "status": "none",
+      "checked": "2026-10-05"
     }
   ]
 }

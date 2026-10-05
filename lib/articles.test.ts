@@ -158,10 +158,16 @@ describe("party positions", () => {
       expect(new Set(p.rows.map((r) => r.party)).size).toBe(p.rows.length);
       for (const r of p.rows) {
         expect(partyIds.has(r.party), `party id ${r.party}`).toBe(true);
+        // A recorded silence: no text, just the date the search was made.
+        if (!r.text) {
+          expect(r.status, r.party).toBe("none");
+          expect(r.checked, r.party).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+          continue;
+        }
         expect(r.text.length).toBeGreaterThan(10);
         expect(r.url).toMatch(/^https:\/\//);
-        expect(r.date.length).toBeGreaterThan(3);
-        expect(r.source.length).toBeGreaterThan(1);
+        expect(r.date!.length).toBeGreaterThan(3);
+        expect(r.source!.length).toBeGreaterThan(1);
       }
       expect(JSON.stringify(p)).not.toMatch(/unverified/i);
     });

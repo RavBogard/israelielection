@@ -118,7 +118,7 @@ export function Positions({ issue }: { issue: string }) {
     <figure className="positions">
       <figcaption className="ct">{p.title}</figcaption>
       <ul>
-        {p.rows.map((r) => {
+        {p.rows.filter((r) => r.text).map((r) => {
           const party = parties.find((x) => x.id === r.party)!;
           return (
             <li key={r.party}>
@@ -128,7 +128,7 @@ export function Positions({ issue }: { issue: string }) {
               </p>
               <p className="pt">{r.text}</p>
               <p className="cs">
-                <SourceLine source={r.source} url={r.url} date={r.date} />
+                <SourceLine source={r.source!} url={r.url!} date={r.date!} />
               </p>
             </li>
           );

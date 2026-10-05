@@ -85,14 +85,21 @@ export type Chart = {
 export type Position = {
   /** A party id from data/parties.json. */
   party: string;
-  /** What the party says, in its own words where possible; no characterization. */
-  text: string;
-  source: string;
-  url: string;
-  date: string;
+  /** What the party says, in its own words where possible; no characterization. Absent when nothing was found. */
+  text?: string;
+  source?: string;
+  url?: string;
+  date?: string;
+  /** One of the file's `stances` ids (see lib/positions.test.ts). */
+  stance?: string;
+  /** "declined": refused to answer; "none": nothing published was found by `checked`. */
+  status?: "declined" | "none";
+  /** "record": the stance comes from a statement, bill or vote, not the 2026 questionnaire. */
+  basis?: "record";
+  checked?: string;
 };
 
-export type Positions = { issue: string; title: string; note?: string; rows: Position[] };
+export type Positions = { issue: string; title: string; question?: string; stances?: { id: string; label: string }[]; note?: string; rows: Position[] };
 
 const DATA = path.join(process.cwd(), "data");
 
