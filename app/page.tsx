@@ -3,18 +3,17 @@ import Link from "next/link";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
-import SeatGrid from "@/components/SeatGrid";
+import HomeRace from "@/components/HomeRace";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
 import { allPolls, averagePoll, blocs, mainPolls, parties, pollsData } from "@/lib/data";
-import { fmt, mediumDate } from "@/lib/format";
-import { blocTotals, isExit } from "@/lib/polls";
+import { mediumDate } from "@/lib/format";
+import { isExit } from "@/lib/polls";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
 import { DESCRIPTION, TEACH } from "@/lib/site";
-import type { BlocId, Poll } from "@/lib/types";
-import {partyColor,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE} from "@/lib/party-colors";
+import type { Poll } from "@/lib/types";
 
 // Every minute: on election night the hero shows the count as it comes in. Before then the page
 // has nothing to fetch, so regenerating it is cheap.
@@ -24,9 +23,6 @@ export const metadata: Metadata = {
   title: { absolute: "Israel Votes 2026" },
   description: DESCRIPTION,
 };
-
-/** Blocs in the order they fill the grid: Netanyahu's bloc first, the unaligned list, then the opposition and the Arab-led lists. */
-const GRID_ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 
 const briefings = briefingsJson as Briefing[];
 
@@ -38,73 +34,14 @@ function Headline({ days, live }: { days: number; live: boolean }) {
   return <>Israel voted on October 27.</>;
 }
 
-/** One sentence reading the bloc numbers against 61. */
-function reading(totals: Record<BlocId, number>, label: Record<BlocId, string>, live: boolean) {
-  const part = (id: BlocId) => {
-    const n = Math.round(totals[id]);
-    const short = MAJORITY - n;
-    if (short <= 0) return `${label[id]} ${live ? "has" : "polls at"} a majority of ${n}`;
-    return `${label[id]} ${live ? "is" : "polls"} ${short} ${short === 1 ? "seat" : "seats"} short of a majority`;
-  };
-  return `The ${part("net")}; the ${label.opp} ${live ? "is" : "polls"} ${Math.max(0, MAJORITY - Math.round(totals.opp))} short.`;
-}
-
-/** The 120 seats by bloc from the current average, or from the count once it is open. */
-function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number }) {
-  const totals = blocTotals(poll, parties);
-  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
-  const ordered = GRID_ORDER.map((id) => blocs.find((b) => b.id === id)!).map((b) => ({ ...b, seats: totals[b.id] }));
-  const familyOrder=PARTY_COLOR_FAMILIES.flatMap(f=>f.ids);
-  const segments = ordered.flatMap((b) => parties.filter((p) => p.bloc === b.id).sort((a,b)=>familyOrder.indexOf(a.id)-familyOrder.indexOf(b.id)).map((p) => ({
-    id: p.id, seats: poll.results[p.id]?.seats ?? 0, color: partyColor(p.id), label: p.name, href: `/parties?party=${p.id}`,
-  })));
-  const pollsters = mainPolls.map((p) => p.pollster).join(", ");
-  return (
-    <section className="hero" aria-labelledby="hero-h">
-      <div className="text">
-        <h1 id="hero-h">
-          <Headline days={days} live={live} />
-        </h1>
-        <p className="standfirst">
-          {live ? (
-            <>The count so far, as the 120 seats of the Knesset. {MAJORITY} seats is an absolute majority.</>
-          ) : (
-            <>
-              Where the race stands: the normalized coalition average of the latest {mainPolls.length} polls as the {KNESSET} seats of the Knesset. {MAJORITY} seats is an absolute majority.
-            </>
-          )}
-        </p>
-        <dl className="blocs">
-          {ordered.map((b) => (
-            <div key={b.id}>
-              <dt>
-                <span className="sw" style={{ background: blocColorStrip(b.id) }} />
-                {b.label}
-              </dt>
-              <dd>{fmt(Math.round(b.seats * 10) / 10)}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className="read">{reading(totals, label, live)}</p>
-        <p className="src">
-          {live ? (
-            <>
-              {poll.resultState?.freshness === "stale" && <b>Saved count (stale). </b>}Central Elections Committee; seats are this site&apos;s estimate from the votes counted so far. Captured {poll.resultState?.capturedAt ?? poll.published}. <Link href="/results">Full results</Link>
-            </>
-          ) : (
-            <>
-              One poll per pollster ({pollsters}), to {mediumDate(mainPolls[0].published)}; seats can be fractional. <Link href="/polls#method">Average method</Link>
-            </>
-          )}
-        </p>
-      </div>
-      <div className="grid">
-        <SeatGrid segments={segments} animate labelRule />
-        <Link href="/parties" className="seat-grid-cue">Explore the parties <span aria-hidden="true">→</span></Link>
-        <details className="seat-grid-key"><summary>Party colors and rounded cells</summary><p>{PARTY_COLOR_NOTE} Cells round fractional seat estimates; the labels retain fractional values to one decimal place.</p><ul>{segments.filter(s=>s.seats>0).map(s=><li key={s.id}><span className="sw" style={{background:s.color}} />{s.label}: {fmt(Math.round(s.seats*10)/10)}</li>)}</ul></details>
-      </div>
-    </section>
-  );
+/** Current modeled seats, with election-night freshness preserved. */
+function Race({poll,live,days}:{poll:Poll;live:boolean;days:number}){
+ const pollsters=mainPolls.map(p=>p.pollster).join(", ");
+ return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h"><Headline days={days} live={live}/></h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count · stale":"Count so far":`Normalized coalition average · ${mainPolls.length} current polls`}</p></div>
+ <HomeRace poll={poll} parties={parties} blocs={blocs}/>
+ <p className="race-source src">{live?<>{poll.resultState?.freshness==="stale"&&<b>Saved count (stale). </b>}Central Elections Committee; seats are this site’s estimate from votes counted so far. Captured {poll.resultState?.capturedAt??poll.published}. Source updated {poll.resultState?.sourceUpdatedAt??"at an unrecorded time"}. <Link href="/results">Full results and count method</Link>.</>:<>One latest eligible poll per publisher ({pollsters}), through {mediumDate(mainPolls[0].published)}. Square-root sample-size weighting, normalized coalition values; seats can be fractional. <Link href="/polls#method">Average method</Link>.</>}</p>
+ <p className="race-context">These political groupings do not establish coalition agreements. Explore the <Link href="/parties">Party Map</Link> or try an arrangement in the <Link href="/coalition-builder">Coalition Builder</Link>.</p>
+ </section>;
 }
 
 /** The latest briefing's first sentence, with its sources, as one line. */

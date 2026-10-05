@@ -62,6 +62,12 @@ Each batch: focused meaningful checks for changed logic, verified source/data li
 
 ## Current return note
 
+### Approved homepage simplification — October 5
+
+Daniel found the multicolor homepage mosaic confusing on mobile and approved replacing it with four directly labeled majority bars and expandable party lists. Product Sol implemented app/page.tsx, components/HomeRace.tsx, components/home.css and the small lib/home-race model/test. The homepage now uses independent neutral bars on one zero-based scale (0–70 for the current figures, expanding if necessary), a 61-seat marker, full approved group names and exact fractional gaps: 54.5 means 6.5 short, not 6. Each native disclosure reveals named party rows, existing party colors, estimates/status and links to the selected Party Map panel. Missing and combined estimates remain distinct from zero; the current normalized model remains the same. Long source details follow the chart on mobile, with explicit Party Map/Builder links and the grouping/agreement distinction. This supersedes the earlier homepage mosaic design; the interactive seat grids elsewhere remain in place.
+
+Verification: **532 tests across 45 files, full lint without warnings, production build and TypeScript pass**. Four focused tests cover fractional gaps, expanding shared scale, missing/threshold/model coverage, and combined reports without invented splits. Root reviewed desktop and actual 320/390 CSS-pixel layouts, no document overflow, native Enter expansion, Tab into the first party link and the selected Likud profile. All four groups start collapsed. Research rationale is the approved conversation proposal (direct labels, shared bar scales, progressive disclosure), supported by the previously checked ONS and Datawrapper guidance. Prepared for commit, main integration and production deployment under Daniel's continuing authorization; confirm the production deployment before reporting publication.
+
 ### Commit and push authorization — October 5
 
 Daniel authorized committing and pushing the completed work. Delivery is on `codex/feature-expansion` to `origin`; merging into main and production deployment remain separate. Before committing, the feature branch was fast-forwarded to the latest origin/main documentation-only commit (`7b2f2be`), preserving its updated STATE.md without changing the verified application. The reconciliation gates below remain applicable. Disposable QA files stay in ignored cache directories.
