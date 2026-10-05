@@ -13,7 +13,7 @@ const load = <T,>(f: string): T | null => {
 };
 const ISO = /^\d{4}-\d\d-\d\d$/;
 const ROUTES = new Set([
-  "/how-it-works", "/vote-map", "/results", "/polls", "/parties", "/american-lens", "/timeline", "/issues", "/communities",
+  "/how-it-works", "/vote-map", "/results", "/polls", "/parties", "/american-lens", "/timeline", "/issues", "/communities", "/coalition-builder",
   ...GUIDES.map((s) => `/how-it-works/${s}`),
   ...ISSUES.map((s) => `/issues/${s}`),
   ...COMMUNITIES.map((s) => `/communities/${s}`),

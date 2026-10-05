@@ -19,7 +19,10 @@ const allIds = parties.parties.map((p) => p.id);
 const withStances = files.filter((f) => f.data.stances);
 
 describe("position files", () => {
-  it("there are seven", () => expect(files).toHaveLength(7));
+  it("there are seven, each with a question and stances", () => {
+    expect(files).toHaveLength(7);
+    expect(withStances.map((f) => f.name)).toEqual(files.map((f) => f.name));
+  });
 
   for (const { name, data } of withStances) {
     describe(name, () => {

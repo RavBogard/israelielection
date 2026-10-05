@@ -722,6 +722,20 @@
       }
     },
     {
+      "term": "Outside support",
+      "def": "Backing a government in Knesset votes without joining the coalition or holding ministries. In 1992 Yitzhak Rabin's Labor–Meretz–Shas coalition of 62 MKs had outside support from five Arab-party MKs. In 2021 Ra'am instead joined the Bennett–Lapid coalition. The Coalition Builder counts every party it adds as a coalition member.",
+      "see": [
+        "/how-it-works/forming-a-government",
+        "/timeline",
+        "/coalition-builder"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute, the 1992 elections",
+        "date": "2026-10-05",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1992/"
+      }
+    },
+    {
       "term": "Palestinian Authority",
       "def": "The Palestinian self-government created under the Oslo Accords as a \"supposedly temporary\" body; it \"administers limited rule\" over Areas A and B of the West Bank. A final treaty was due within five years and has not been reached.",
       "see": [
