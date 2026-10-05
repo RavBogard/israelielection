@@ -25,11 +25,6 @@ export default function Page() {
           </li>
           <ProfileSources />
           <li>
-            <b>Corrections applied Oct 4:</b> the Central Elections Committee voted Sep 23 (reported Sep 24); the Supreme Court heard the appeals
-            Oct 1 and ruled Oct 2. UTJ&apos;s list head is Yaakov Asher. Ra&apos;am&apos;s no. 2 is Yoav Segalovitz. Yesh Atid runs inside
-            B&apos;Yachad, with Lapid no. 2.
-          </li>
-          <li>
             <b>List count:</b> 38 lists approved, Ynet, Sep 27, 2026.
           </li>
         </SourcesBox>

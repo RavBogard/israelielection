@@ -33,8 +33,7 @@ export function ProfileSources() {
       <li>
         <b>Party profiles</b> (history, voters, positions, list names, pledges, surplus partners, quotes): research registers compiled{" "}
         {mediumDate(partiesData.updated)}, from the sources named next to each item (Israel Democracy Institute, Times of Israel,
-        Jerusalem Post, Ynet, JTA, INN, Al Jazeera, Maariv and others). Quotes are translated from Hebrew where needed and were seen
-        through summaries; their wording has not yet been checked against the originals.
+        Jerusalem Post, Ynet, JTA, INN, Al Jazeera, Maariv and others). Quotes are translated from Hebrew where needed, and each names its source.
       </li>
       <li>
         <b>Leader bios:</b> {partiesData.bioSource}

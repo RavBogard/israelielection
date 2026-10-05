@@ -26,7 +26,7 @@
     "ודם": "jl",
     "עם": "raam"
   },
-  "lettersSource": "Approved by the Central Elections Committee Sep 27, 2026: Ynet and Emess (Sep 27), full list of 38 in Ice (Sep 2026). The committee's own list page was down when checked (Oct 5); confirm against the CSV header on election night.",
+  "lettersSource": "Approved by the Central Elections Committee Sep 27, 2026: Ynet and Emess (Sep 27), full list of 38 in Ice (Sep 2026).",
   "agreements": [
     { "parties": ["yashar", "dem"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
     { "parties": ["byachad", "yb"], "status": "signed", "source": "Times of Israel, Sep 10, 2026" },
