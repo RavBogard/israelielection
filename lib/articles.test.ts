@@ -21,7 +21,7 @@ const charts = allCharts();
 const positions = allPositions();
 const partyIds = new Set(parties.map((p) => p.id));
 const ROUTES = new Set([
-  "/", "/parties", "/polls", "/news", "/results", "/teach", "/issues", "/communities", "/american-lens", "/vote-map", "/how-it-works", "/timeline", "/glossary",
+  "/", "/parties", "/polls", "/news", "/results", "/teach", "/issues", "/communities", "/american-lens", "/vote-map", "/how-it-works", "/timeline", "/glossary", "/coalition-builder", "/compare",
   ...parties.map((p) => `/parties/${p.id}`),
   ...ISSUES.map((s) => `/issues/${s}`),
   ...COMMUNITIES.map((s) => `/communities/${s}`),
