@@ -39,11 +39,11 @@ describe("pledge rules (parity with the v2 if-statements)", () => {
     expect(ruleIds("likud", "otzma", "rz")).toEqual([]);
   });
 
-  it("Zionist opposition + Arab party (The Democrats made no such pledge)", () => {
+  it("parties with recorded pledges + Arab party (The Democrats made no such pledge)", () => {
     const w = warnings(sel("yashar", "dem", "jl"), parties, pledgeRules);
     expect(w.map((x) => x.id)).toEqual(["zionist-opp-no-arab-parties"]);
     expect(w[0].message).toBe(
-      "The Zionist opposition (Yashar!) has pledged to govern without Arab parties, and this coalition includes Joint List."
+      "Selected parties with recorded pledges to govern without Arab parties: Yashar!. This coalition includes Joint List."
     );
   });
 

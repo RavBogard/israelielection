@@ -6,7 +6,7 @@
       "id": "zionist-opp-no-arab-parties",
       "kind": "pledge",
       "when": { "all": [{ "tag": "arab" }, { "tag": "noArabPledge" }] },
-      "message": "The Zionist opposition ({comma:noArabPledge}) has pledged to govern without Arab parties, and this coalition includes {and:arab}.",
+      "message": "Selected parties with recorded pledges to govern without Arab parties: {comma:noArabPledge}. This coalition includes {and:arab}.",
       "source": "Haaretz, Oct 1, 2026"
     },
     {

@@ -45,7 +45,7 @@ export default async function Page() {
             2026.
           </li>
           <li>
-            <b>Pledges.</b> Zionist opposition to govern without Arab parties: Haaretz, Oct 1, 2026 (headline). B&apos;Yachad &ldquo;only rely on
+            <b>Pledges.</b> Recorded pledges to govern without Arab parties: Haaretz, Oct 1, 2026 (headline). B&apos;Yachad &ldquo;only rely on
             Zionist parties&rdquo;: Times of Israel, Apr 26, 2026; no Arab or Haredi parties: Times of Israel, May 27, 2026. Joint List won&apos;t
             join Netanyahu: Times of Israel, Aug 19, 2026. Eisenkot on Ra&apos;am (&ldquo;he won&apos;t be part of my next government&rdquo;):
             Times of Israel, Sep 26, 2026. Liberman, &ldquo;not for the Arab parties and not for the haredi parties&rdquo;: Jerusalem Post, Sep

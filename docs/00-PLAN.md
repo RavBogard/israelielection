@@ -8,12 +8,12 @@ A public English-language reference site on the 2026 Israeli election (Oct 27, 2
 - Identity: Daniel's site, his byline. Not CRC-branded. About page states the method up front and carries his signed intro.
 - "Learning, not advocacy" was the CLASS ruling, not the site's. Daniel struck it from the site plan 2026-10-05. Do not apply it to site copy.
 - Hebrew: out, except party names and glossary terms.
-- Jewish texts: in, as their own section (class source sheets), not mixed into reference pages.
+- Jewish texts: occasional downloadable class sheets only, each approved by Daniel before publication. No separate Jewish-texts section; traditional Jewish texts are not a major focus of this site (Daniel, 2026-10-05).
 - Trip material: out.
 - Polls: auto-merge when validation passes. No human in the loop.
 - Daily AI news briefing: goes live without review; every sentence links its source; Daniel gets the daily email and can kill or correct any item.
 - Budget: API spend for the daily job approved; Gemini, not Anthropic (expect a few dollars a month; election week more).
-- Dates: Daniel paces; no schedule in this plan.
+- Dates: Daniel paces; no schedule in this plan. Additional teaching materials are added as they are ready, with no public release deadline (Daniel, 2026-10-05).
 
 ## Content inventory
 Exists (port):
@@ -37,7 +37,7 @@ New — reference layer:
 
 New — teach-it layer:
 - Session decks (PDF export), source sheets, teacher's guides, discussion questions, embeds of the interactives for other educators' use. License to state (CC BY-NC proposed; Daniel to confirm).
-- Torah for the election: the class texts (Berakhot 58a, the Hebron/YK/power sheets as integrated), each approved by Daniel before posting.
+- Occasional Jewish-text class sheets, if Daniel chooses to include them, offered as downloads under Teaching resources. Each sheet requires his approval before publication; no `/teach/texts` route or promised series.
 
 New — live layer:
 - Polls page: all polls since dissolution, by pollster, with averages and trend; feeds the Coalition Builder and Party Map.

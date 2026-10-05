@@ -43,7 +43,7 @@ const BLURB: Record<string, string> = {
   "/timeline": "From 1977 to this campaign, the turns that made today's map.",
   "/glossary": "The terms the coverage assumes you know, each with its source.",
   "/about": "Why this site exists, where its information comes from, and how to correct it.",
-  "/teach": "Decks, source sheets and discussion guides for educators.",
+  "/teach": "Session decks with speaker notes and classroom interactives for educators.",
 };
 
 /** The first-time reader's path, in reading order. */
@@ -265,7 +265,7 @@ export default async function Page() {
 
         <Link href={TEACH.href} className="teach-band">
           <span className="t">Teaching this election?</span>
-          <span className="p">Session decks and class materials for educators and rabbinic colleagues, free to use under CC BY-NC.</span>
+          <span className="p">Session decks and classroom interactives for educators and rabbinic colleagues, free to use under CC BY-NC.</span>
         </Link>
 
         <nav className="also" aria-labelledby="also-h">

@@ -41,15 +41,17 @@ interpretation, and preserves his signed introductions on the homepage and About
 to both the main and design checkouts.
 
 ## 5. Teaching resources: the promise
-The page and footer promise "source sheets, teacher's guides and discussion questions"; one deck
-exists. Being done now: reworded to what exists. Ruling needed: when the sheets and questions
-come, and whether the Jewish-texts section (Berakhot 58a and the class sheets) goes up under
-/teach/texts with your approval text by text, as the plan said.
+Timing resolved: Daniel chose “As they’re ready, with no public deadline” on 2026-10-05.
+Format resolved: Daniel chose downloadable class sheets only, approving each sheet before
+publication. Traditional Jewish texts will be occasional; no separate `/teach/texts` section.
+Public descriptions name materials actually available, with additions as they are ready.
 
 ## 6. "Zionist opposition" as a bloc label
-It sits on the home page, polls, results and the glossary. RULINGS 112 flagged the tension. Ruling
-needed: keep, or rename (candidates: "Opposition, Zionist parties"; "Anti-Netanyahu bloc (Zionist
-parties)"; the IPF's wording). Changing it touches data/parties.json blocs and the share card.
+Resolved: Daniel chose “Anti-Netanyahu bloc (Jewish-majority parties)” on 2026-10-05.
+Applied to the shared bloc data and glossary in both checkouts; derived labels feed home,
+polls, results, Party Map, builder, embeds and share cards. Coalition warning/explanatory copy
+now names the selected parties with recorded pledges, rather than describing the whole bloc
+as having pledged to exclude Arab parties. Bloc membership and seat arithmetic are unchanged.
 
 ## 7. Coalition Builder address
 Moving to /coalition-builder (the old /coalition redirect follows it). Ruling needed only if you

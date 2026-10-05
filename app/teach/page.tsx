@@ -26,7 +26,7 @@ export default function Page() {
         </header>
 
         <h2 className="sec-h">Session materials</h2>
-        <p className="note">Slide decks with speaker notes, session by session. More sessions will be added as they are taught.</p>
+        <p className="note">Slide decks with speaker notes, session by session. More teaching materials will be added as they are ready.</p>
         <ol className="sessions">
           {teach.sessions.map((s) => (
             <li key={s.n} className="session">
@@ -35,7 +35,7 @@ export default function Page() {
               </a>
               <div>
                 <p className="lbl">
-                  Session {s.n}, taught {DATE.format(new Date(s.taught))}. {s.slides} slides.
+                  Session {s.n}, {DATE.format(new Date(s.taught))}. {s.slides} slides.
                 </p>
                 <h3>{s.title}</h3>
                 <p className="desc">
