@@ -52,8 +52,9 @@ export function validatePolls(
       if (r.belowThreshold && r.seats !== 0) bad("threshold", `${id}: flagged below threshold but given ${r.seats} seats.`);
     }
 
-    // Compare with the same pollster's previous poll.
-    const prev = all.find((q) => q.pollster === p.pollster && q.published < p.published);
+    // Compare with the same pollster's previous campaign poll. Exit polls are exempt: the count, not
+    // the campaign, is what they measure, and a large move on election night is expected.
+    const prev = p.kind === "exit" ? undefined : all.find((q) => q.pollster === p.pollster && q.published < p.published && q.kind !== "exit");
     if (prev) {
       for (const [id, r] of Object.entries(p.results)) {
         const before = prev.results[id];

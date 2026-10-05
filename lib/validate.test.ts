@@ -93,3 +93,26 @@ describe("currentPolls", () => {
     expect(main.map((p) => p.id)).toEqual(["m2"]);
   });
 });
+
+describe("exit polls", () => {
+  const shifted = (overrides: Partial<Poll> = {}) => {
+    const p = next(overrides);
+    p.results.likud = { seats: p.results.likud.seats - 6 };
+    p.results.yashar = { seats: p.results.yashar.seats + 6 };
+    return p;
+  };
+  it("a campaign poll that moves a list more than the limit is held", () => {
+    expect(run(shifted())).toContain("move");
+  });
+  it("an exit poll is exempt from the move rule", () => {
+    expect(run(shifted({ kind: "exit", id: "maariv-exit" }))).toEqual([]);
+  });
+  it("is never averaged or treated as a pollster's latest poll", async () => {
+    const { isExit, pollLabel } = await import("./polls");
+    const exit = { ...shifted({ kind: "exit", id: "maariv-exit", published: "2026-10-27" }) };
+    const current = currentPolls([...curated, exit], config);
+    expect(current.some(isExit)).toBe(false);
+    expect(current.find((p) => p.pollster === exit.pollster)?.id).toBe("maariv");
+    expect(pollLabel({ ...exit, firm: null })).toBe(`${exit.pollster} exit poll`);
+  });
+});

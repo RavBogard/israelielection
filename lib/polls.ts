@@ -13,8 +13,11 @@ export function byNewest(a: Poll, b: Poll): number {
  * (ruling 111: firms are in or out by firm and stated method, never by result); the
  * Filber-free variant is a filter over this list, see `withoutVariantPolls`.
  */
+/** An election-night exit poll rather than a campaign poll. */
+export const isExit = (p: Poll) => p.kind === "exit";
+
 export function currentPolls(polls: Poll[], config: PollsConfig): Poll[] {
-  const sorted = [...polls].sort(byNewest);
+  const sorted = polls.filter((p) => !isExit(p)).sort(byNewest);
   if (!sorted.length) return [];
   const cutoff = Date.parse(sorted[0].published) - config.currentWindowDays * DAY;
   const seen = new Set<string>();
@@ -38,7 +41,8 @@ export function withoutVariantPolls(polls: Poll[], config: PollsConfig): Poll[] 
 }
 
 export function pollLabel(p: Poll): string {
-  return p.firm ? `${p.pollster} / ${p.firm}` : p.pollster;
+  const name = isExit(p) ? `${p.pollster} exit poll` : p.pollster;
+  return p.firm ? `${name} / ${p.firm}` : name;
 }
 
 /** Seats for a party in a poll, or null when the poll did not report it separately. */

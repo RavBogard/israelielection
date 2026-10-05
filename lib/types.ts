@@ -63,6 +63,8 @@ export type Poll = {
   results: Record<string, PollResult>;
   /** Seats reported only for a group of parties together. */
   combined: { parties: string[]; seats: number; note: string }[];
+  /** "exit": an election-night exit poll. Shown in the Coalition Builder's picker, never averaged, exempt from the seat-move rule. */
+  kind?: "exit";
 };
 
 export type PollsConfig = {
