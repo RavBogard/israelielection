@@ -93,6 +93,18 @@ Done:
   sentences = no briefing that day (and the issue says so). Kill switch: delete
   data/briefings/DATE.json.
 
+- First live runs 2026-10-05: polls job merged 28 polls and opened PR #1 (6 for review:
+  4× Channel 16, S.M.L.T., Kan Oct 4 summing to 123). Briefing 2026-10-05 published (6
+  sentences). Issue #2 was a false "live" notice from a run whose commit failed (fixed with
+  --autostash); #3 is the real one.
+- Open: Times of Israel and +972 feeds block datacenter IPs (GitHub runners and Vercel), so
+  /news and the briefing currently run on 5 outlets. Needs a fetch path that isn't a
+  datacenter IP, or permission from the outlets; not spoofing a browser.
+- Election night: CEC publishes CSVs at media26.bechirot.gov.il/files/expc.csv (per locality)
+  and expb.csv (per ballot box); 2026 files exist (test data, Last-Modified Sep 30). Columns
+  are Hebrew ballot letters; the letter→party mapping must be verified from the CEC's
+  official list before the /results route can use it.
+
 ## Next (phase 2, remaining)
 - Polls job + validator (sum 120, pollster whitelist, fieldwork date, ≤5-seat move, below-threshold
   flagged); auto-commit on pass, PR + email on fail.
