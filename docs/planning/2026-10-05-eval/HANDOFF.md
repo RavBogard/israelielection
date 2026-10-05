@@ -35,11 +35,10 @@ role separately. Added `/about` with the approved copy, GitHub issues for correc
 links in the home index, footer and sitemap. Source perspectives follow ruling 22.
 
 ## 4. Plan amendment
-docs/00-PLAN.md still says "neutral reference voice on all pages." Rulings 114 to 118 supersede
-it. Ruling needed: approve amending the plan's Voice line to: "Educational, not advocacy. The
-site's voice documents what the election is and is not about (rulings 114–118); every claim
-attributed; findings and charges stated fully and attributed first, Israel's rejection in one
-sentence." (Yes/no or your wording.)
+Resolved: Daniel selected the proposed detailed wording (writing block 82417) on 2026-10-05.
+The Voice line in `docs/00-PLAN.md` now records rulings 114–118, distinguishes evidence from
+interpretation, and preserves his signed introductions on the homepage and About. Applied
+to both the main and design checkouts.
 
 ## 5. Teaching resources: the promise
 The page and footer promise "source sheets, teacher's guides and discussion questions"; one deck

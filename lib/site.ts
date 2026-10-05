@@ -35,6 +35,7 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; mo
       { href: "/vote-map", label: "Vote map" },
       { href: "/timeline", label: "Timeline" },
       { href: "/glossary", label: "Glossary" },
+      { href: "/about", label: "About and method" },
     ],
   },
 ];

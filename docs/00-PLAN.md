@@ -56,7 +56,7 @@ Vote map: interactive choropleth of Israel by locality, 2022 results (and 2026 a
 
 Data tier: free public sources plus academic datasets (INES microdata and similar). Every data point carries source, date, sample size where known, and a link a reader can follow. Nothing paywalled.
 
-Voice: neutral reference voice on all pages; Daniel's signed intro on the home page and About.
+Voice: Educational, not advocacy. Explain what is shaping the election and what is largely absent from its debate, following rulings 114–118. Source factual claims and distinguish evidence from interpretation. Use precise language: “occupied West Bank”; no generic “the conflict” in the site’s own voice. State legal findings and charges fully and attribute them first, with Israel’s rejection in one sentence. Use “genocide” only in direct quotations from courts, UN bodies or rights groups, or in case names. Daniel’s signed introductions appear on the homepage and About.
 
 American lens page: one page; why "pro-Israel" is not an Israeli category, why Israeli left/right don't line up with American ones, where US and Israeli fights rhyme and where they don't. Fact-checked like every other page.
 

@@ -1,0 +1,45 @@
+export const meta = {
+  title: "About this site",
+  dek: "A personal project of Rabbi Daniel Bogard: why it exists, where its information comes from, and how to correct it.",
+  checked: "2026-10-05"
+};
+
+I made israelielection.org to help American readers understand Israel’s election on its own terms, and to give educators and rabbinic colleagues tools for teaching it. It grew out of my election classes. It is my own project, independent of my congregation.
+
+The purpose is education. The site explains the choices on the ballot, what voters say matters to them, and whose lives are affected without having a vote. It does not endorse a party.
+
+## Sources and perspective
+
+Numbers carry dates and sources. Survey findings identify the population surveyed; a finding about Jewish respondents is not presented as a finding about all Israelis. Party positions are attributed to the parties, with links to their statements or reporting of their answers.
+
+Sources have different purposes and perspectives. The [Israel Democracy Institute](https://en.idi.org.il/about/about-idi/) describes itself as nonpartisan and committed to strengthening Israeli democracy. [Peace Now](https://peacenow.org.il/en/about-us) advocates a two-state agreement and opposes settlement expansion. Their evidence is assessed alongside their methods and stated purposes. Advocacy- or party-sponsored surveys are used only when they provide otherwise unavailable evidence, with the sponsor identified.
+
+My decisions about terminology are [documented openly](https://github.com/RavBogard/israelielection/blob/main/docs/research/RULINGS.md). Claims, legal findings and political positions are attributed to their sources. I take responsibility for the site’s framing and language.
+
+## How the polls work
+
+New polls are imported from Wikipedia’s election-polling tables, retaining links to the underlying reports where available. Automated checks flag inconsistent seat totals, unknown parties, duplicate entries, date problems and unusually large changes. Polls that fail those checks go to review.
+
+The current average uses each publisher’s latest campaign poll within 14 days of the newest poll. Larger samples receive more weight, using the square root of sample size. When sample size is unavailable, the calculation uses the median known sample size in that set.
+
+Each list’s seat average uses only polls where it passes the electoral threshold; the site also shows how often it passes. Lists passing in fewer than half the polls that report them are excluded from the Coalition Builder’s default total. When these averages add to more than 120, coalition calculations scale them down proportionally. The [Polls page](/polls) shows the unscaled figures.
+
+The main average includes Channel 14. An alternative omits Channel 14 and i24NEWS, allowing readers to see how those pollsters affect the picture. Polls are estimates, not election results.
+
+## News, development and checking
+
+Headlines are fetched automatically from news outlets’ feeds. Gemini Flash 3.8 writes the daily briefing from those headlines and summaries, with source links for every sentence.
+
+It publishes automatically after checks for valid source references and a basic match between the sentence and its cited material. Those checks do not establish that every claim is correct. There is no routine human review before publication; I can correct or remove a briefing.
+
+Site development is primarily done through Claude Code using Fable 5.1 and Opus 5.5. Reference pages underwent separate fact-checking rounds against cited sources, with verification records kept in the repository.
+
+## Teaching and reuse
+
+Our teaching materials are licensed under [Creative Commons Attribution–NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You may share and adapt them for noncommercial use, giving credit, linking the license and indicating changes.
+
+## Corrections
+
+Please [report a correction on GitHub](https://github.com/RavBogard/israelielection/issues). Include the page address, the wording or number in question, and a supporting source where possible.
+
+—Rabbi Daniel Bogard
