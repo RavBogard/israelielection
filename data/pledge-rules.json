@@ -7,7 +7,7 @@
       "kind": "pledge",
       "when": { "all": [{ "tag": "arab" }, { "tag": "noArabPledge" }] },
       "message": "Selected parties with recorded pledges to govern without Arab parties: {comma:noArabPledge}. This coalition includes {and:arab}.",
-      "source": "Haaretz, Oct 1, 2026"
+      "source": "Haaretz, Sep 26, 2026 (Eisenkot); Times of Israel, Apr 27, 2026 (Bennett); JPost, Aug 25, 2026 (Liberman)"
     },
     {
       "id": "eisenkot-no-raam",

@@ -667,6 +667,17 @@
       }
     },
     {
+      "date": "2000-07-25",
+      "title": "Camp David summit ends without a deal",
+      "text": "Between July 11 and 24, Prime Minister Ehud Barak and Chairman Yasser Arafat met at Camp David under President Clinton's auspices but could not reach a permanent-status agreement. Both sides pledged to keep negotiating.",
+      "kind": "peace",
+      "source": {
+        "name": "American Presidency Project (Trilateral Statement)",
+        "date": "July 25, 2000",
+        "url": "https://www.presidency.ucsb.edu/documents/trilateral-statement-middle-east-peace-summit"
+      }
+    },
+    {
       "date": "2000-09-28",
       "title": "Sharon visit; second intifada",
       "text": "Opposition leader Ariel Sharon visited the Temple Mount, which Muslims call the Noble Sanctuary, and violence erupted. Palestinians attribute the uprising to the visit; his supporters say it was already planned.",
@@ -744,6 +755,28 @@
       }
     },
     {
+      "date": "2007-06-15",
+      "title": "Hamas takes control of Gaza",
+      "text": "Fighting between Fatah forces and Hamas resumed in Gaza on June 9, and by June 15 Hamas had full control of the Strip; the internal violence killed 188 Palestinians, OCHA reported. President Mahmoud Abbas dissolved the unity government on June 14.",
+      "kind": "war",
+      "source": {
+        "name": "UN OCHA",
+        "date": "July 26, 2007",
+        "url": "https://www.ochaopt.org/content/humanitarian-monitor-june-2007"
+      }
+    },
+    {
+      "date": "2008-12-27",
+      "title": "Gaza war of 2008–09",
+      "text": "Israel's \"Operation Cast Lead\" lasted until Jan 18, 2009. Its airstrikes, shelling and ground operations killed 1,383 Palestinians, 333 of them children, OCHA reported. Rockets and mortars from Gaza killed three Israeli civilians; ten Israeli soldiers were killed.",
+      "kind": "war",
+      "source": {
+        "name": "UN OCHA",
+        "date": "March 11, 2017",
+        "url": "https://www.ochaopt.org/content/eight-years-after-2008-2009-cast-lead-hostilities-gaza-lack-accountability-persists"
+      }
+    },
+    {
       "date": "2009-03-31",
       "title": "Netanyahu returns to office",
       "text": "The Knesset approved Netanyahu's government, Israel's 32nd, by 69–45 with five abstentions, after he assembled a coalition amid tensions within Likud.",
@@ -763,6 +796,17 @@
         "name": "Ynet",
         "date": "September 4, 2011",
         "url": "https://ynetnews.com/articles/0,7340,L-4117312,00.html"
+      }
+    },
+    {
+      "date": "2012-11-14",
+      "title": "Gaza war of November 2012",
+      "text": "In eight days of fighting before an Egyptian-brokered ceasefire, 158 Palestinians were killed in Gaza, 103 of them civilians, including at least 33 children, and six Israelis were killed, four civilians and two soldiers, OCHA reported.",
+      "kind": "war",
+      "source": {
+        "name": "UN OCHA",
+        "date": "November 22, 2012",
+        "url": "https://www.ochaopt.org/content/escalation-hostilities-gaza-and-southern-israel-situation-report-22-november-2012-1500-hrs"
       }
     },
     {
@@ -829,6 +873,17 @@
         "name": "Times of Israel",
         "date": "September 15, 2020",
         "url": "https://www.timesofisrael.com/marking-dawn-of-new-middle-east-israel-signs-historic-deals-with-uae-bahrain/"
+      }
+    },
+    {
+      "date": "2020-12-10",
+      "title": "Morocco joins the normalization deals",
+      "text": "Morocco agreed to normalize relations with Israel, the fourth country since August after the UAE, Bahrain and Sudan. As part of the deal, President Trump recognized Morocco's sovereignty over the Western Sahara. Palestinian officials condemned it.",
+      "kind": "peace",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "December 10, 2020",
+        "url": "https://www.aljazeera.com/news/2020/12/10/israel-morocco-agree-to-normalise-relations-in-us-brokered-deal"
       }
     },
     {
@@ -928,6 +983,17 @@
         "name": "Times of Israel",
         "date": "October 5, 2024",
         "url": "https://www.timesofisrael.com/we-still-have-nightmares-theres-no-end-oct-7-survivors-reflect-on-devastating-toll/"
+      }
+    },
+    {
+      "date": "2023-10-08",
+      "title": "Hezbollah opens fire on Israel",
+      "text": "UN peacekeepers saw about 40 rockets and mortars fired from Lebanon at three Israeli army positions in the Israeli-held Shebaa Farms area. Hezbollah said it acted \"in solidarity with the triumphant Palestinian resistance.\" Exchanges of fire across the border followed.",
+      "kind": "war",
+      "source": {
+        "name": "UN Secretary-General, report on resolution 1701",
+        "date": "November 16, 2023",
+        "url": "https://docs.un.org/en/S/2023/879"
       }
     },
     {

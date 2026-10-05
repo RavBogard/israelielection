@@ -1,0 +1,60 @@
+{
+  "checked": "2026-10-05",
+  "scenarios": [
+    {
+      "id": "bloc-draft",
+      "title": "Netanyahu's bloc and its two draft laws",
+      "with": ["likud", "otzma", "shas", "utj", "rz", "poi"],
+      "lead": "Two lists in Netanyahu's bloc have set conditions on the same issue. UTJ \"has no desire to bring down or crown anyone\" and \"will not support or enter any government without regulating the status of Torah learners.\" People of Israel \"will not join a government that does not pass, before it is formed, a law that puts an end to draft evasion.\"",
+      "notice": "Does the bloc reach 61 in the average? Switch polls: in which does People of Israel clear the threshold, and how many seats come from the two lists with conditions?",
+      "question": "If the bloc needs both lists, whose law passes, and what happens to the other? Both conditions concern military service. What does that tell you about what this election is fought over, and what it is not?",
+      "sources": [
+        { "name": "Matzav", "date": "Sep 28, 2026", "url": "https://matzav.com/draft-law-or-no-government-yaakov-asher-says-utj-will-back-no-coalition-without-protecting-bnei-yeshivos/" },
+        { "name": "Jerusalem Post", "date": "Sep 2, 2026", "url": "https://www.jpost.com/israel-election-2026/article-907373" }
+      ]
+    },
+    {
+      "id": "arab-led-lists",
+      "title": "The opposition and the Arab-led lists",
+      "with": ["yashar", "byachad", "dem", "yb", "res"],
+      "lead": "Yashar!, B'Yachad and Yisrael Beiteinu say they will govern without Arab parties; The Democrats do not. Israel has tried two other arrangements. In 1992 Rabin's government had outside support from five Arab-party MKs. In 2021 Bennett's coalition included Ra'am, the first Arab party to join a government in decades; Ra'am said it secured over NIS 53 billion for Arab society. Bennett now says he will rely only on Zionist parties.",
+      "notice": "Count the gap to 61. Add Ra'am, then the Joint List, and read the warnings the Builder raises each time.",
+      "question": "Why do opposition leaders think ruling out the Arab-led lists wins more votes than it costs? What does the pledge mean for the citizens whose votes elect those seats? Of the three arrangements, which is anyone proposing for 2026?",
+      "sources": [
+        { "name": "Haaretz", "date": "Sep 26, 2026", "url": "https://www.haaretz.com/israel-news/elections/2026-09-26/ty-article/.premium/eisenkot-says-no-arab-party-meets-demands-for-government-led-by-him/000001a0-debc-d135-a1f7-fefc033a0000" },
+        { "name": "Jerusalem Post", "date": "Aug 25, 2026", "url": "https://www.jpost.com/israel-election-2026/article-906447" },
+        { "name": "Haaretz", "date": "Sep 27, 2026", "url": "https://www.haaretz.com/israel-news/elections/2026-09-27/ty-article/.premium/golan-backs-arab-role-in-knesset-but-understands-right-wing-hesitation/000001a0-e1a5-d272-adf6-fde7501e0000" },
+        { "name": "Israel Democracy Institute, the 1992 elections", "date": "accessed Oct 5, 2026", "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1992/" },
+        { "name": "Times of Israel", "date": "Jun 3, 2021", "url": "https://www.timesofisrael.com/arab-israeli-raam-party-makes-history-by-joining-bennett-lapid-coalition/" },
+        { "name": "Times of Israel", "date": "Apr 27, 2026", "url": "https://www.timesofisrael.com/launching-joint-slate-bennett-and-lapid-promise-the-era-of-division-is-over/" }
+      ]
+    },
+    {
+      "id": "majority-on-paper",
+      "title": "A majority on paper",
+      "with": ["likud", "yashar", "byachad", "yb"],
+      "lead": "Likud with Yashar!, B'Yachad and Yisrael Beiteinu: no Haredi parties, none of Netanyahu's partners on the right, no Arab-led lists. Liberman rules out a government led by Netanyahu; Eisenkot says \"I do not rule out any Zionist party.\" Rule-outs have bent before: in May 2020 Benny Gantz, who had promised never to serve under Netanyahu, formed a rotation government with him.",
+      "notice": "Check whether this reaches 61 in the average and in the poll least favourable to it. Then remove Likud: what is left?",
+      "question": "Suppose the leaders found a way. What would this government fight about, and what would it leave alone? If the numbers work and the leaders refuse, what is this election actually deciding?",
+      "sources": [
+        { "name": "Jerusalem Post", "date": "Aug 25, 2026", "url": "https://www.jpost.com/israel-election-2026/article-906447" },
+        { "name": "Jerusalem Post", "date": "Sep 24, 2026", "url": "https://www.jpost.com/israel-election-2026/article-909543" },
+        { "name": "Times of Israel", "date": "Mar 27, 2020", "url": "https://www.timesofisrael.com/gantz-says-at-peace-with-decision-no-other-choice-during-time-of-virus-crisis/" },
+        { "name": "Times of Israel", "date": "May 17, 2020", "url": "https://www.timesofisrael.com/liveblog-may-17-2020/" }
+      ]
+    },
+    {
+      "id": "under-the-line",
+      "title": "Under the line",
+      "with": ["poi", "res", "bw"],
+      "show": "threshold",
+      "lead": "A list needs 3.25% of the valid votes, about four seats, or it wins nothing and its votes are dropped. In 2022 that meant 154,855 votes. That year Meretz and Balad fell short, and Netanyahu's bloc won a majority, 64 to 56. This year People of Israel, Reservists–Economic and Gantz's Blue and White sit near or under the line.",
+      "notice": "The link loads these three lists. Switch polls and watch when each one wins seats.",
+      "question": "Why would voters back a list that may win nothing? In 2022, whose voters paid for the threshold? Why don't lists near the line merge, and who gains when they don't?",
+      "sources": [
+        { "name": "Israel Democracy Institute", "date": "Mar 16, 2026", "url": "https://en.idi.org.il/articles/63750" },
+        { "name": "Israel Democracy Institute, the 2022 elections", "date": "accessed Oct 5, 2026", "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2022/" }
+      ]
+    }
+  ]
+}
