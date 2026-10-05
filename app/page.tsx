@@ -13,7 +13,7 @@ import { fmt, mediumDate } from "@/lib/format";
 import { blocTotals } from "@/lib/polls";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
-import { NAV_GROUPS, TEACH } from "@/lib/site";
+import { DESCRIPTION, NAV_GROUPS, TEACH } from "@/lib/site";
 import type { BlocId, Poll } from "@/lib/types";
 
 // Every minute: on election night the builder adds the count as it comes in. Before then
@@ -21,8 +21,8 @@ import type { BlocId, Poll } from "@/lib/types";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: { absolute: "Israel Votes 2026: Build a Coalition" },
-  description: "Pick a poll, add parties, and see whether they reach 61 of the Knesset's 120 seats, with each party's recorded coalition pledges.",
+  title: { absolute: "Israel Votes 2026" },
+  description: DESCRIPTION,
 };
 
 /** One line on each section, for the index at the foot of the page. */
