@@ -11,3 +11,17 @@
 .rs .letters-table .sw { margin-right: 8px; }
 .rs .list-table td.below { color: var(--ink-3); }
 @media (max-width: 900px) { .rs .rs-count { grid-template-columns: minmax(0, 1fr); } }
+
+/* What to watch, and the threshold watch during the count. */
+.rs .rs-watch { margin-top: 8px; }
+.rs .rs-watch dl { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 36px; }
+.rs .rs-watch dl > div { border-top: 2px solid var(--ink); padding-top: 10px; }
+.rs .rs-watch dt { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.15; margin: 0 0 8px; }
+.rs .rs-watch dd { margin: 0; font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); }
+.rs .rs-near { list-style: none; margin: 10px 0; padding: 0; font-family: var(--body); font-size: 14.5px; }
+.rs .rs-near li { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 6px 0; border-top: 1px solid var(--line); }
+.rs .rs-near li:last-child { border-bottom: 1px solid var(--line); }
+.rs .rs-near li a { color: var(--ink); font-weight: 600; }
+.rs .rs-near .v { color: var(--ink-2); margin-left: auto; text-align: right; }
+.rs .rs-exit-note { margin-top: 18px; }
+@media (max-width: 900px) { .rs .rs-watch dl { grid-template-columns: minmax(0, 1fr); } }

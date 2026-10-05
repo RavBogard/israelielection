@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import briefingsJson from "@/data/briefings/_index.json";
 import "@/components/interactives.css";
 import "@/components/news.css";
@@ -69,7 +70,7 @@ export default async function Page() {
                     <summary>Earlier briefings</summary>
                     {briefings.slice(1, 14).map((b) => (
                       <div key={b.date} className="nw-old">
-                        <h3>{longDate(b.date)}</h3>
+                        <h3><Link href={`/news/${b.date}`}>{longDate(b.date)}</Link></h3>
                         <Sentences b={b} />
                       </div>
                     ))}

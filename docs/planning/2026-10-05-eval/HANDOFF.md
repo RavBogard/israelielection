@@ -6,18 +6,21 @@ build picks them up. Where a draft is given, it is placeholder wording taken fro
 copy; it ships as a draft and is replaced by yours.
 
 ## 1. The one line on what this election is not about (home hero)
-Draft now on the page, under the bloc totals:
-> For most Jewish Israeli voters this election is not about the Palestinians, or about what
-> Americans argue over. Read why, and who has no vote in it.
+Approved by Daniel, 2026-10-05; applied to the homepage in the design checkout:
+> For most Jewish Israeli voters, Palestinian rights and statehood are not at the center of
+> this election. Read why—and who has no vote in it.
 Links: "Read why" → /american-lens; "who has no vote" → /how-it-works/who-votes.
-Ruling needed: your wording, or approve the draft.
+Resolved. The IDI survey did not offer Palestinian rights/statehood as a separate answer;
+the framing is a synthesis of that survey and documented party positions (ruling 114).
 
 ## 2. A note from Daniel (home page, about 120 words, signed)
 Why this site exists, who it is for, how it is made (every number dated and sourced; a daily
 AI-written briefing in which every sentence links its source; polls merged by a validator; your
 rulings on language in the open). The section is built and hidden until the text exists in
 `data/home-note.json` (`{ "text": "...", "signed": "Rabbi Daniel Bogard", "date": "2026-10-06" }`).
-Needed: the text.
+Resolved: Daniel approved the drafted note on 2026-10-05. The approved text and signature
+are saved in `data/home-note.json`, dated 2026-10-05. It explicitly discloses that the
+AI briefing publishes automatically and carries source links for every sentence.
 
 ## 3. About and method page (/about)
 The route and styling are built; the copy is yours. Suggested sections: who made this and why;
@@ -58,7 +61,13 @@ or not.
 The settlers and haredim pages use "far-right" for Otzma Yehudit and allies in page voice; press
 usage, unruled. Ruling needed: allow it as the common press label, or attribute it each time.
 
-## 10. Open sourcing items (content lane)
+## 10. Session 1 deck PDF
+The PowerPoint carries the new labels (no class calendar, rulings 116 to 118 applied), but the
+PDF export still says "inside the territories" (p. 8), "Arab-led" (pp. 26 to 28) and "the Arab
+lists" (p. 30) because its embedded fonts lack the glyphs. Needed: a fresh PDF export from the
+Slides source, or permission for the content session to regenerate it.
+
+## 11. Open sourcing items (content lane)
 The Israeli toll since Oct 7 cites Arutz Sheva only; the Sasson Report outpost definition is
 unsourced; the Zehut and Religious Zionism list relationship is unclear in parties.json. No ruling
 needed unless you have a preferred source; listed so you know.

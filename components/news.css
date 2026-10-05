@@ -28,3 +28,8 @@
   .nw .nw-meta b { display: inline; margin-right: 6px; }
   .nw .nw-sum { grid-column: 1; }
 }
+
+/* A day's briefing at its own address. */
+.nw .nw-brief-page { position: static; max-width: 700px; margin-top: 8px; }
+.nw .nw-pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 22px; font-size: 14.5px; font-weight: 600; }
+.nw .nw-pager a { color: var(--ink); }

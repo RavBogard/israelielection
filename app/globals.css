@@ -254,3 +254,14 @@ a:hover { text-decoration-color: currentColor; }
   /* Seat grids and bloc swatches keep their colours on paper. */
   .sg, .sg *, .sw, .cb .slip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+/* The count, one line under the masthead on every page once polls close. */
+.live-strip { background: var(--ink); color: var(--bg); font-size: 13.5px; line-height: 1.4; }
+.live-strip .row { max-width: var(--wrap); margin: 0 auto; padding: 8px var(--gutter); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+.live-strip .lead { color: var(--bg); font-weight: 600; text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--bg) 50%, transparent); }
+.live-strip .lead:hover { border-bottom-color: var(--bg); }
+.live-strip ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.live-strip li { display: flex; align-items: center; gap: 7px; }
+.live-strip li b { font-family: var(--display); font-size: 17px; line-height: 1; font-variant-numeric: tabular-nums; }
+.live-strip .meta { color: color-mix(in srgb, var(--bg) 70%, transparent); margin-left: auto; }
+@media (max-width: 760px) { .live-strip .meta { margin-left: 0; } }

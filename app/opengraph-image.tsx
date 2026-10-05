@@ -28,7 +28,8 @@ const font = (file: string) => readFile(join(process.cwd(), "assets/og", file));
 const fonts = Promise.all([font("FrankRuhlLibre-Regular.ttf"), font("FrankRuhlLibre-Bold.ttf"), font("PublicSans-Medium.ttf"), font("PublicSans-SemiBold.ttf")]);
 
 /** Two lines, broken after "votes" so the number never sits alone on the second line. */
-function headline(days: number): [string, string] {
+function headline(days: number, live: boolean): [string, string] {
+  if (live) return ["Israel voted.", "The count so far."];
   if (days > 1) return ["Israel votes", `in ${days} days.`];
   if (days === 1) return ["Israel votes", "tomorrow."];
   if (days === 0) return ["Israel votes", "today."];
@@ -63,7 +64,7 @@ export default async function Image() {
       <div style={{ width: "100%", height: "100%", display: "flex", background: PAPER, color: INK, padding: "56px 64px", fontFamily: "Frank Ruhl Libre" }}>
         <div style={{ display: "flex", flexDirection: "column", width: 480, flexShrink: 0 }}>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 64, fontWeight: 700, lineHeight: 0.98, letterSpacing: "-0.02em" }}>
-            {headline(daysUntil(ELECTION_DAY)).map((line) => (
+            {headline(daysUntil(ELECTION_DAY), isLive).map((line) => (
               <div key={line} style={{ display: "flex" }}>
                 {line}
               </div>

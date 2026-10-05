@@ -3,7 +3,9 @@ import { Frank_Ruhl_Libre, Public_Sans } from "next/font/google";
 import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Logo from "@/components/Logo";
+import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
+import { resultsConfig } from "@/lib/results-live";
 import Countdown from "@/components/Countdown";
 import { DESCRIPTION, NAV_GROUPS, TEACH } from "@/lib/site";
 import "./globals.css";
@@ -43,6 +45,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Countdown />
             <SiteNav extra={<Countdown />} />
           </div>
+          {/* RESULTS_FIXTURE (next dev only) rehearses the night: the strip treats the polls as closed. */}
+          <ResultsStrip pollsClose={process.env.NODE_ENV === "development" && process.env.RESULTS_FIXTURE ? "2000-01-01T00:00:00Z" : resultsConfig.pollsClose} />
         </header>
         <main id="main" className="flex-1">
           {children}

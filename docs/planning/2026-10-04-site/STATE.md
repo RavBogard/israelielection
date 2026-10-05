@@ -325,3 +325,12 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Daniel approved EVAL.md; lanes split with israelielection-9b (structure/styling vs content/data). Done here: exit polls as `kind: "exit"` (never averaged, exempt from the move rule; enter by hand on the night); stance labels + declined/none status for the Palestinian-state comparison column; Teach promise reworded; Builder links → /coalition-builder; deck calendar stripped; drift notes removed from /results, /parties, Sources; 17 bare IDI citations dated.
 - results-check (run locally Oct 5): media26.bechirot.gov.il/files/expc.csv reachable (HTTP 200) but still a July 2025 placeholder (16 localities); letters דרך (yashar), רק (byachad), די (res), ודם (jl) not yet in it. Re-run `npx tsx scripts/jobs/results-check.mts` weekly and on Oct 26; the committee's template should update before the vote.
 - Election night: enter exit polls in data/polls.json by hand with "kind": "exit" as Kan, Channel 12 and Channel 13 air them at 10 pm Israel time.
+- Round two (same evening): the election-night package. A results strip under the masthead on
+  every page once polls close (client, polls /api/count each minute); on Results, "What to watch"
+  before the count (close time in Israel and ET computed, exit-poll caution with the 2022 Meretz
+  case, lists the average puts near the threshold, the double-envelope note), exit polls beside
+  the count once they exist, and a threshold watch (lists within half a point, with what crossing
+  is worth). Briefing permalinks at /news/<date>. Rehearsed with RESULTS_FIXTURE and the 2022
+  file: strip, hero, builder and results all switch to the count; headline becomes "Israel voted."
+- Daniel's rulings are arriving via a walkthrough (DECISIONS.md, written outside both sessions).
+  Item 1 ruled: the home line is his approved wording.

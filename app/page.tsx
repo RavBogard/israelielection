@@ -58,7 +58,8 @@ const GRID_ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 const briefings = briefingsJson as Briefing[];
 const considerations = lensCharts["vote-considerations"];
 
-function Headline({ days }: { days: number }) {
+function Headline({ days, live }: { days: number; live: boolean }) {
+  if (live) return <>Israel voted.</>;
   if (days > 1) return <>Israel votes in {days} days.</>;
   if (days === 1) return <>Israel votes tomorrow.</>;
   if (days === 0) return <>Israel votes today.</>;
@@ -87,7 +88,7 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
     <section className="hero" aria-labelledby="hero-h">
       <div className="text">
         <h1 id="hero-h">
-          <Headline days={days} />
+          <Headline days={days} live={live} />
         </h1>
         <p className="standfirst">
           {live ? (
@@ -148,8 +149,8 @@ function About() {
         <div className="not">
           <p>
             Asked what will decide their vote, Jewish Israelis named security, the cost of living and conscription. The Palestinian question was not
-            offered as an answer. For most Jewish Israeli voters this election is not about the Palestinians, or about what Americans argue over.{" "}
-            <Link href="/american-lens">Read why</Link>, and <Link href="/how-it-works/who-votes">who has no vote in it</Link>.
+            offered as an answer. For most Jewish Israeli voters, Palestinian rights and statehood are not at the center of this election.{" "}
+            <Link href="/american-lens">Read why</Link>—and <Link href="/how-it-works/who-votes">who has no vote in it</Link>.
           </p>
           <p className="src">
             <a href={considerations.url}>{considerations.source}</a>, {considerations.date}, {considerations.sample}; first and second choices
