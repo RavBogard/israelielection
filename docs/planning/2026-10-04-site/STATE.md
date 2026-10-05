@@ -133,11 +133,26 @@ Done:
   two outlets report them; one outlet → PR labelled `party-text`. Proceeded because those are
   the edits that change what the Coalition Builder shows, and a second outlet is cheap insurance.
   Surplus-agreement changes don't update `data/results.json` automatically; the notice says so.
+- Surplus check (Oct 5). The committee's site is still down (gov.il "not found").
+  - Joint List–Ra'am is now "signed": Walla, Sep 12, reports a signing on Fri Sep 11.
+  - Likud–Religious Zionism: announced Sep 8 (Channel 14, Israel Hayom). Channel 14 reported it still unsigned on Sep 15, with a signing "in about two weeks". No later report found.
+  - Shas–UTJ: JDN and JPost reported it as "expected" on Sep 10. No signing report found.
+  - Several search hits were stale articles from 2019, 2021 and 2022 elections; checked each one's datePublished.
+  - Both pairs stay in the seat method as "reported". Recheck nearer election day.
+- GATE: Times of Israel and +972 headlines now fall back to Bing News's public index of each site when their own feed refuses our server. Proceeded because:
+  - It's an honest fetch, with no browser spoofing and our own User-Agent.
+  - It links to the outlet's canonical article URL (Bing's click wrapper is removed, and only links on the outlet's host are kept).
+  - /news says which outlets came via Bing.
+  - Their own feeds are still tried first.
+  - Asking the outlets for allowlisting is Daniel's call (it means messaging people), and stays open.
+- Daniel (Oct 5) asked for a home-page redesign and a logo ("look awesome and less ai generic").
+  - Delegated to a design subagent on a worktree branch; I review and merge.
+  - Added `.claude/` to the tsconfig, ESLint and Vitest ignores, so agent worktrees don't leak into checks.
 
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
 - Coalition-process tracker after the election.
-- Confirm surplus agreements (above). Fetch path for ToI and +972.
+- Confirm Likud–RZ and Shas–UTJ surplus agreements nearer election day.
 - Reference pages: system mechanics, tribes, issues, timeline, glossary, sources/method.
 
 ## Deploy log

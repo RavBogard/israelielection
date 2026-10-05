@@ -88,6 +88,7 @@ export default async function Page() {
             <h2 id="head-h" className="nw-h">Latest headlines</h2>
             <p className="src">
               Last 72 hours, newest first. Times are Israel time. Refreshed every 15 minutes; last fetched {ET.format(new Date(news.fetchedAt))}.
+              {news.indexed.length > 0 && ` ${news.indexed.join(" and ")} via Bing News, because ${news.indexed.length > 1 ? "their own feeds block" : "its own feed blocks"} our server.`}
               {news.failed.length > 0 && ` Not reachable on this refresh: ${news.failed.join(", ")}.`}
             </p>
             <ol className="nw-list">
