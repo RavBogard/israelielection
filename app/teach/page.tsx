@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="mx-auto max-w-[1100px] px-4 py-10 sm:px-8 sm:py-14">
-      <h1 className="font-display text-[clamp(38px,5vw,60px)] font-black leading-[1.02] text-balance">Teach it</h1>
-      <p className="mt-4 max-w-[62ch] text-lg text-ink-2">
+      <h1 className="font-display text-[clamp(38px,5vw,60px)] font-bold leading-[1.02] tracking-[-0.015em] text-balance">Teach it</h1>
+      <p className="mt-4 max-w-[62ch] font-serif text-lg text-ink-2">
         Materials for educators and rabbinic colleagues teaching the 2026 Knesset election: session decks, source sheets, teacher&apos;s
         guides and discussion questions. Every number is dated and sourced.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
-        <section className="rounded-2xl border border-line bg-surface p-6">
-          <h2 className="font-display text-3xl font-black">Use in class today</h2>
+        <section className="rounded-[4px] border border-line-2 bg-surface p-6 shadow-[0_1px_0_var(--paper-shadow)]">
+          <h2 className="font-display text-3xl font-bold">Use in class today</h2>
           <p className="mt-2 text-ink-2">The interactives work on a projector or on students&apos; phones.</p>
           <ul className="mt-5 flex flex-col gap-4">
             <li>
@@ -40,8 +40,8 @@ export default function Page() {
             </li>
           </ul>
         </section>
-        <section className="rounded-2xl border border-line bg-surface p-6">
-          <h2 className="font-display text-3xl font-black">Session materials</h2>
+        <section className="rounded-[4px] border border-line-2 bg-surface p-6 shadow-[0_1px_0_var(--paper-shadow)]">
+          <h2 className="font-display text-3xl font-bold">Session materials</h2>
           <p className="mt-2 text-ink-2">Decks, source sheets, teacher&apos;s guides and discussion questions, session by session.</p>
           <p className="mt-5 text-[15px] text-ink-3">In preparation.</p>
         </section>

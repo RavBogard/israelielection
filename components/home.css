@@ -1,0 +1,70 @@
+/* Home: a front page above the Coalition Builder. The hero is set like a newspaper's top story: the date, one line, the state of the race. */
+.home .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px 56px; align-items: end; padding-block: 40px 36px; border-bottom: 1px solid var(--ink); }
+.home .hero .eyebrow { margin-bottom: 18px; }
+.home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 6.2vw, 92px); line-height: .96; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.home .hero h1 .n { font-variant-numeric: tabular-nums; }
+.home .hero .dek { font-family: var(--serif); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; color: var(--ink-2); max-width: 54ch; margin: 22px 0 0; }
+.home .hero .cta { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-top: 26px; }
+.home .hero .cta .primary { display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--bg); text-decoration: none; font-weight: 600; font-size: 15px; padding: 11px 18px; border-radius: var(--r); }
+.home .hero .cta .primary:hover { background: var(--ink-2); }
+.home .hero .cta .secondary { font-weight: 600; font-size: 15px; color: var(--ink); }
+
+/* The state of the race: 120 seats by bloc, with the 61 line. */
+.home .race { background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--r-lg); box-shadow: 0 1px 0 var(--paper-shadow), 0 16px 40px -28px var(--shadow); padding: 20px 22px 18px; display: flex; flex-direction: column; gap: 14px; }
+.home .race .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.home .race h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.05; letter-spacing: -.012em; margin: 0; }
+.home .race .when { font-size: 13px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.home .race .stripwrap { position: relative; padding-top: 18px; }
+.home .race .strip { display: flex; gap: 2px; height: 48px; border-radius: var(--r-sm); overflow: hidden; }
+.home .race .strip span { display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: -.01em; min-width: 0; font-variant-numeric: tabular-nums; }
+.home .race .strip span.small { font-size: 0; }
+.home .race .strip .other { background: var(--line); color: var(--ink-2); }
+.home .race .m61 { position: absolute; top: 14px; bottom: 0; width: 2px; margin-left: -1px; background: var(--ink); }
+.home .race .m61::after { content: "61"; position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--body); font-weight: 700; font-size: 12px; color: var(--ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.home .race .legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; font-size: 14px; }
+.home .race .legend li { display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+.home .race .legend b { margin-left: auto; font-variant-numeric: tabular-nums; }
+.home .race .legend .sw { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+.home .race .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 2px 0 0; padding: 0; list-style: none; }
+.home .race .facts li { display: flex; flex-direction: column; gap: 1px; }
+.home .race .facts b { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.home .race .facts span { font-size: 12px; color: var(--ink-3); line-height: 1.25; }
+.home .race .foot { font-family: var(--serif); font-size: 13.5px; line-height: 1.45; color: var(--ink-2); margin: 0; }
+.home .race .foot a { color: var(--ink); }
+
+/* The index: every section of the site, as a numbered table of contents. */
+.home .index { padding-block: 28px 8px; }
+.home .index ol { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
+.home .index li { border-top: 1px solid var(--line); }
+.home .index a { display: grid; grid-template-columns: 2.4em minmax(0, 1fr); gap: 2px 0; padding: 16px 0 18px; text-decoration: none; color: inherit; }
+.home .index .no { grid-row: 1 / span 2; font-family: var(--display); font-weight: 500; font-size: 15px; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 4px; }
+.home .index .t { font-family: var(--display); font-weight: 700; font-size: 24px; line-height: 1.1; letter-spacing: -.012em; display: flex; align-items: baseline; gap: 8px; }
+.home .index .t::after { content: "→"; font-family: var(--body); font-weight: 400; font-size: 18px; color: var(--ink-3); transition: transform .15s; }
+.home .index a:hover .t::after { transform: translateX(4px); color: var(--ink); }
+.home .index .d { font-family: var(--serif); font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 0; }
+
+.home .build { margin-top: 24px; border-top: 1px solid var(--ink); }
+.home .build .cb .ix-head { padding-top: 32px; }
+
+@media (max-width: 1100px) {
+  .home .index ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 980px) {
+  .home .hero { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 28px; padding-block: 28px 28px; }
+  .home .hero .eyebrow { margin-bottom: 12px; }
+  .home .hero .dek { margin-top: 16px; }
+  .home .hero .cta { margin-top: 20px; }
+}
+@media (max-width: 640px) {
+  .home .hero h1 { font-size: clamp(40px, 11.5vw, 56px); }
+  .home .index ol { grid-template-columns: minmax(0, 1fr); }
+  .home .index .t { font-size: 21px; }
+  .home .race { padding: 16px 16px 14px; }
+  .home .race .strip { height: 40px; }
+  .home .race .strip span { font-size: 16px; }
+  .home .race .legend { grid-template-columns: minmax(0, 1fr); }
+  .home .race .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home .index .t::after { transition: none; }
+}

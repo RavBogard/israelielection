@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Banner from "@/components/Banner";
 import "@/components/interactives.css";
 import "@/components/polls.css";
 import "@/components/results.css";
@@ -83,7 +82,6 @@ export default async function Page() {
   if (live.state !== "open") {
     return (
       <div className="ix pl rs">
-        <Banner />
         <div className="wrap">
           <header className="ix-head">
             <div>
@@ -119,7 +117,6 @@ export default async function Page() {
 
   return (
     <div className="ix pl rs">
-      <Banner />
       <div className="wrap">
         <header className="ix-head">
           <div>

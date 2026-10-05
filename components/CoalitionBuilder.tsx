@@ -149,7 +149,9 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
   );
 }
 
-export default function CoalitionBuilder({ results = null }: { results?: Poll | null }) {
+export default function CoalitionBuilder({ results = null, embedded = false }: { results?: Poll | null; embedded?: boolean }) {
+  // On the home page the builder sits under the page's own heading, so its title is an h2.
+  const Title = embedded ? "h2" : "h1";
   const choices = useMemo(() => pickList(results), [results]);
   const [pollId, setPollId] = useState(results ? RESULTS_ID : AVERAGE_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
@@ -216,7 +218,7 @@ export default function CoalitionBuilder({ results = null }: { results?: Poll | 
     <div className="cb">
       <header className="ix-head">
         <div>
-          <h1>Build a Coalition</h1>
+          <Title className="h1">Build a Coalition</Title>
           <p className="sub">
             Tap a party card to add it; tap <b>Profile</b> for who they are and where they stand. A government needs {MAJORITY} of the
             Knesset&apos;s {KNESSET} seats to win a confidence vote. Seat numbers come from the poll you pick.

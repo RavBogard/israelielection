@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Banner from "@/components/Banner";
 import "@/components/interactives.css";
 import "@/components/polls.css";
 import PollTrends, { type TrendPanel } from "@/components/PollTrends";
@@ -54,7 +53,6 @@ export default function Page() {
 
   return (
     <div className="ix pl">
-      <Banner />
       <div className="wrap">
         <header className="ix-head">
           <div>

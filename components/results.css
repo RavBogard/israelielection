@@ -1,7 +1,7 @@
 /* Results page: a 120-seat strip by bloc with the 61 line, then the list table. */
 .rs .rs-heb { font-weight: 700; font-size: 16px; }
 .rs .rs-steps { padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
-.rs .rs-strip { position: relative; display: flex; gap: 2px; height: 44px; border-radius: 8px; overflow: hidden; margin: 8px 0 10px; }
+.rs .rs-strip { position: relative; display: flex; gap: 2px; height: 44px; border-radius: var(--r-sm); overflow: hidden; margin: 8px 0 10px; }
 .rs .rs-strip span { display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; min-width: 0; }
 .rs .rs-strip .rs-other { background: var(--line); color: var(--ink-2); }
 .rs .rs-61 { position: absolute; top: -2px; bottom: -2px; width: 2px; margin-left: -1px; background: var(--ink); }
