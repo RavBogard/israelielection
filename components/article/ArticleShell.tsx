@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import "./article.css";
 import type { ArticleMeta } from "@/lib/articles";
 
@@ -17,12 +17,15 @@ export default function ArticleShell({
   section,
   siblings = [],
   current,
+  foreword,
 }: {
   meta: ArticleMeta;
   Body: ComponentType;
   section: Sibling;
   siblings?: Sibling[];
   current?: string;
+  /** A signed note set before the body, in the author's voice (About only). */
+  foreword?: ReactNode;
 }) {
   return (
     <div className="wrap article-page">
@@ -34,6 +37,7 @@ export default function ArticleShell({
           <h1>{meta.title}</h1>
           <p className="dek">{meta.dek}</p>
           <p className="checked">Facts checked {DATE.format(new Date(meta.checked))}. Every number shows its source and date.</p>
+          {foreword}
           <div className="body">
             <Body />
           </div>
