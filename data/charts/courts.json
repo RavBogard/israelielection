@@ -1,0 +1,216 @@
+{
+  "trust": {
+    "title": "Trust in the Supreme Court, 2003–2025",
+    "kind": "table",
+    "columns": [
+      "Year",
+      "Jews",
+      "Palestinian citizens of Israel"
+    ],
+    "rows": [
+      {
+        "label": "2003",
+        "cells": [
+          "69%",
+          "76%"
+        ]
+      },
+      {
+        "label": "2008",
+        "cells": [
+          "50%",
+          "35%"
+        ]
+      },
+      {
+        "label": "2012",
+        "cells": [
+          "72%",
+          "78%"
+        ]
+      },
+      {
+        "label": "2016",
+        "cells": [
+          "57%",
+          "52%"
+        ]
+      },
+      {
+        "label": "2019",
+        "cells": [
+          "55%",
+          "56%"
+        ]
+      },
+      {
+        "label": "2021",
+        "cells": [
+          "48%",
+          "44%"
+        ]
+      },
+      {
+        "label": "2022",
+        "cells": [
+          "41%",
+          "40%"
+        ]
+      },
+      {
+        "label": "June 2023",
+        "cells": [
+          "42%",
+          "26%"
+        ]
+      },
+      {
+        "label": "2024",
+        "cells": [
+          "39%",
+          "26%"
+        ]
+      },
+      {
+        "label": "2025",
+        "cells": [
+          "42%",
+          "40%"
+        ]
+      }
+    ],
+    "question": "Trust in the Supreme Court: share answering \"very much\" or \"quite a lot\"",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Appendix 2)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 2025",
+    "note": "Selected years from IDI's annual series. Annual Democracy Index surveys, fieldwork usually in May; the 2025 survey is the latest (the 2026 index is expected in December). IDI's own label is \"Arabs\", and its Arab sample includes Druze; that sample is small (about ±5.1%) and swings widely from year to year. IDI also published a December 2023 reading from a different survey, the Israeli Voice Index; it is not part of this series and is not shown."
+  },
+  "trust-groups": {
+    "title": "Trust in the Supreme Court among Jews, by group",
+    "kind": "table",
+    "columns": [
+      "Group",
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "rows": [
+      {
+        "label": "Left",
+        "cells": [
+          "80%",
+          "80%",
+          "83%"
+        ]
+      },
+      {
+        "label": "Center",
+        "cells": [
+          "63%",
+          "60%",
+          "68%"
+        ]
+      },
+      {
+        "label": "Right",
+        "cells": [
+          "26%",
+          "21%",
+          "21.5%"
+        ]
+      },
+      {
+        "label": "Haredi",
+        "cells": [
+          "11%",
+          "7%",
+          "3%"
+        ]
+      },
+      {
+        "label": "National religious",
+        "cells": [
+          "16%",
+          "15%",
+          "19%"
+        ]
+      },
+      {
+        "label": "Traditional religious",
+        "cells": [
+          "24%",
+          "22%",
+          "21%"
+        ]
+      },
+      {
+        "label": "Traditional non-religious",
+        "cells": [
+          "36%",
+          "40%",
+          "40%"
+        ]
+      },
+      {
+        "label": "Secular",
+        "cells": [
+          "66.5%",
+          "58.5%",
+          "66%"
+        ]
+      }
+    ],
+    "question": "Trust in the Supreme Court: share answering \"very much\" or \"quite a lot\", Jewish respondents",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Table 2.6, Figure 2.7) and 2024 (Table 2.11)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "June 2023, 2024, May 2025",
+    "note": "Annual Democracy Index surveys; the 2023 column is the June 2023 survey. Political camp is self-identified. The 2023 and 2024 camp figures are from the 2024 index (https://en.idi.org.il/media/27509/israel-democracy-index-2024-e_for_web_17-2-2025.pdf). December 2023 readings from the separate Israeli Voice Index are not shown. No 2026 breakdown by group has been published."
+  },
+  "overhaul": {
+    "title": "For and against the judicial overhaul, three IDI surveys",
+    "kind": "table",
+    "columns": [
+      "Survey",
+      "For",
+      "Against"
+    ],
+    "rows": [
+      {
+        "label": "January 2023: is the Levin plan good or bad?",
+        "cells": [
+          "31% good",
+          "43% bad"
+        ],
+        "source": "IDI, Israeli Voice Index",
+        "url": "https://en.idi.org.il/articles/47607",
+        "date": "Jan 23–26, 2023"
+      },
+      {
+        "label": "January 2025: support or oppose the overhaul?",
+        "cells": [
+          "36.5% support",
+          "55% oppose"
+        ],
+        "source": "IDI",
+        "url": "https://en.idi.org.il/articles/57945",
+        "date": "Dec 31, 2024–Jan 6, 2025"
+      },
+      {
+        "label": "March 2026: correct at this time to advance it?",
+        "cells": [
+          "32% correct",
+          "52% not correct"
+        ],
+        "source": "IDI, Israeli Voice Index",
+        "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+        "date": "Mar 22–26, 2026"
+      }
+    ],
+    "question": "March 2026 wording: \"Is it correct or not correct at this time to advance the judicial overhaul initiated by Justice Minister Yariv Levin?\"",
+    "source": "Israel Democracy Institute",
+    "url": "https://en.idi.org.il/media/30641/israeli-voice-index-march-2026-eng-data.pdf",
+    "date": "January 2023 – March 2026",
+    "sample": "Jewish and Arab adults: 718 (Jan 2023), 1,202 (Jan 2025), 756 (Mar 2026)",
+    "note": "Three separate surveys with different questions; each row has its own source and date. Read them side by side, not as one trend line. The rest answered that they had no opinion or did not know."
+  }
+}

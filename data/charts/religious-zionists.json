@@ -1,0 +1,66 @@
+{
+  "towns": {
+    "title": "How these towns voted: the three leading lists, 2019–2022",
+    "kind": "table",
+    "columns": ["Town", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "Beit El", "cells": ["URWP 71.1 · Likud 11.0 · New Right 9.0", "Yamina 67.5 · Otzma 13.3 · Likud 12.3", "Yamina 67.5 · Likud 19.6 · UTJ 6.6", "RZ 74.8 · Yamina 11.3 · Likud 9.5", "RZ 83.2 · Likud 9.7 · Jewish Home 2.5"] },
+      { "label": "Eli", "cells": ["URWP 55.7 · Likud 18.8 · New Right 16.0", "Yamina 62.5 · Likud 17.9 · Otzma 10.3", "Yamina 56.9 · Likud 30.0 · UTJ 5.9", "RZ 58.9 · Yamina 18.2 · Likud 16.0", "RZ 75.3 · Likud 15.5 · Jewish Home 3.5"] },
+      { "label": "Kedumim", "cells": ["URWP 50.5 · New Right 20.0 · Likud 19.2", "Yamina 64.2 · Likud 17.7 · Otzma 11.4", "Yamina 61.1 · Likud 28.9 · UTJ 3.0", "RZ 56.2 · Yamina 21.9 · Likud 16.5", "RZ 72.7 · Likud 16.2 · Jewish Home 5.6"] },
+      { "label": "Kiryat Arba", "cells": ["URWP 45.8 · Likud 33.4 · New Right 6.7", "Likud 32.4 · Yamina 32.1 · Otzma 23.2", "Likud 45.1 · Yamina 32.9 · Otzma 7.1", "RZ 53.8 · Likud 29.0 · Yamina 6.5", "RZ 67.4 · Likud 21.3 · Shas 3.4"] },
+      { "label": "Efrat", "cells": ["New Right 34.1 · Likud 24.4 · URWP 22.8", "Yamina 59.8 · Likud 23.7 · Otzma 6.1", "Yamina 52.7 · Likud 34.8 · Blue and White 5.5", "Yamina 43.0 · RZ 25.5 · Likud 16.4", "RZ 48.1 · Likud 19.8 · Jewish Home 15.4"] },
+      { "label": "Givat Shmuel", "cells": ["Likud 25.4 · Blue and White 22.9 · New Right 16.7", "Yamina 31.1 · Likud 24.9 · Blue and White 23.2", "Likud 30.9 · Yamina 28.9 · Blue and White 24.5", "Yamina 24.1 · Likud 20.9 · RZ 14.9", "RZ 24.0 · Likud 23.9 · Yesh Atid 14.6"] },
+      { "label": "Nationwide, selected lists", "cells": ["Likud 26.5 · URWP 3.7 · New Right 3.2", "Likud 25.1 · Yamina 5.9 · Otzma 1.9", "Likud 29.5 · Yamina 5.2 · Otzma 0.4", "Likud 24.2 · Yamina 6.2 · RZ 5.1", "Likud 23.4 · RZ 10.8 · Jewish Home 1.2"] }
+    ],
+    "question": "Share of valid votes cast at each town's polling stations, Knesset elections 21–25.",
+    "source": "Central Elections Committee locality results (files for Knesset 21–25), computed for this page",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "Apr 2019 – Nov 2022",
+    "note": "Each list is shown under the name it ran with that year. URWP: Union of Right-Wing Parties (Jewish Home, Tkuma and Otzma Yehudit), April 2019. New Right: Naftali Bennett and Ayelet Shaked's list, April 2019. Yamina: the alliance of New Right, Jewish Home and National Union, headed by Ayelet Shaked in September 2019; in 2021, Naftali Bennett's list. UTJ: United Torah Judaism. Otzma: Otzma Yehudit running alone. RZ: the Religious Zionism joint list (Religious Zionism, Otzma Yehudit and Noam), 2021 and 2022. Jewish Home: Ayelet Shaked's list, 2022. In 2026 Religious Zionism runs with Zehut and Otzma Yehudit runs separately. Soldiers' and other envelope ballots are counted nationally, not by town. Files for earlier elections: media21–media24.bechirot.gov.il/files/expc.csv."
+  },
+  "poll2026": {
+    "title": "National-religious voters' 2026 vote intention",
+    "kind": "bars",
+    "unit": "%",
+    "max": 50,
+    "rows": [
+      { "label": "Religious Zionism–Zehut", "value": 30 },
+      { "label": "Likud", "value": 17 },
+      { "label": "Otzma Yehudit", "value": 12 },
+      { "label": "Amcha Yisrael (Winter)", "value": 6 },
+      { "label": "Yashar (Eisenkot)", "value": 4 },
+      { "label": "Shas", "value": 4 },
+      { "label": "B'Yachad (Bennett)", "value": 3 },
+      { "label": "Zionist Home–Reservists (Tropper and Hendel)", "value": 3 },
+      { "label": "HaAchdut (Erdan)", "value": 2 },
+      { "label": "Yisrael Beiteinu", "value": 1 },
+      { "label": "Blue and White", "value": 1 },
+      { "label": "Noam", "value": 1 },
+      { "label": "Undecided", "value": 13 }
+    ],
+    "question": "Vote intention among national-religious voters.",
+    "source": "Dialog for Ynet and Yedioth Ahronoth",
+    "url": "https://www.ynet.co.il/news/elections2026/article/sydameiozg",
+    "date": "Aug 31 – Sept 2, 2026",
+    "sample": "508 national-religious members of Dialog's online panel (484 asked again after the Religious Zionism–Zehut union); weighted by sex; margin of error 4.4 points",
+    "note": "A survey of voters who identify as national-religious, not a count of votes. Respondents described themselves as \"national-religious stream\" (50%), \"religious Zionism\" (33%) or \"Torani-leumi\" (Hardal, 17%). A further 2% named another party and 1% said they would not vote."
+  },
+  "trust": {
+    "title": "Trust in institutions: national-religious and secular Jews",
+    "kind": "table",
+    "columns": ["Institution", "National religious", "Secular"],
+    "rows": [
+      { "label": "IDF", "cells": ["84%", "87%"] },
+      { "label": "Supreme Court", "cells": ["19%", "66%"] },
+      { "label": "Attorney General", "cells": ["14%", "65%"] },
+      { "label": "Government", "cells": ["36%", "9%"] },
+      { "label": "Media", "cells": ["9%", "42.5%"] }
+    ],
+    "question": "Share expressing trust in each institution.",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Tables 2.4, 2.6, 2.11, 2.12, 2.18)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 4–28, 2025",
+    "sample": "1,205 Jewish respondents; the national-religious subsample is about 155, so its figures carry a wide margin",
+    "note": "IDI's national-religious category includes respondents who identify as Haredi leumi (Hardal)."
+  }
+}

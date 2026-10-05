@@ -1,0 +1,56 @@
+{
+  "pew-coexist": {
+    "title": "Who thinks a way can be found for Israel and an independent Palestinian state to coexist peacefully, 2013–2026",
+    "kind": "table",
+    "columns": ["Year", "All Israelis", "Jewish Israelis", "Palestinian citizens of Israel"],
+    "rows": [
+      { "label": "2013", "cells": ["50%", "46%", "74%"] },
+      { "label": "2014", "cells": ["40%", "37%", "64%"] },
+      { "label": "2017", "cells": ["44%", "40%", "61%"] },
+      { "label": "2023 (spring, before October 7)", "cells": ["35%", "32%", "41%"] },
+      { "label": "2024", "cells": ["26%", "19%", "49%"] },
+      { "label": "2025", "cells": ["21%", "16%", "40%"] },
+      { "label": "2026", "cells": ["17%", "16%", "23%"] }
+    ],
+    "question": "\"Do you think a way can be found for Israel and an independent Palestinian state to coexist peacefully with each other?\" Percent saying a way can be found. This asks whether coexistence is possible, not whether people want it.",
+    "source": "Pew Research Center, Global Attitudes surveys, as published in its Sept 15, 2026 report",
+    "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+    "date": "Spring of each year; 2026 fieldwork April 5–May 6, 2026",
+    "sample": "2026: 1,001 Israeli adults",
+    "note": "Pew's label for the third column is \"Arab Israelis\". In 2026, 46% of Arab respondents gave no answer; 26% said a way cannot be found. Pew says the 2026 overall figure (17%) has not changed significantly from 2025 (21%). The 2014 figure for Jewish Israelis (37%) is from this Global Attitudes series; Pew's separate 2014–15 survey of religion in Israel, asking the same question, found 43% (see the note on the page)."
+  },
+  "peace-index-options": {
+    "title": "Jewish Israelis who support each outcome, Peace Index, 2023–2026",
+    "kind": "table",
+    "columns": ["Option (Peace Index wording)", "Sept 2023", "Nov 2025", "Mar 2026"],
+    "rows": [
+      { "label": "\"The creation of an independent Palestinian state alongside the State of Israel\"", "cells": ["38%", "20%", "23%"] },
+      { "label": "\"Annexation of the occupied territories and the creation of one state under Israeli rule with limited rights for Palestinians\"", "cells": ["30%", "38%", "38%"] },
+      { "label": "\"Continuing the existing situation\"", "cells": ["28%", "30%", "31%"] },
+      { "label": "\"The creation of a binational state between the Jordan and the Mediterranean Sea with full and equal rights for Jews and Palestinians\"", "cells": ["11%", "9%", "8%"] }
+    ],
+    "question": "\"Regarding each of the following solutions to the Israeli-Palestinian conflict, please state to what extent you support or oppose each of them.\" (March 2026 wording.) Percent of Jewish respondents who very much or moderately support.",
+    "source": "Peace Index, Tel Aviv University (Nimrod Rosler and Alon Yakter)",
+    "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03-findings.pdf",
+    "date": "Aug 29–Sept 5, 2023; Nov 6–13, 2025; March 23–28, 2026",
+    "sample": "About 610 Israeli adults per wave, online (March 2026: 504 Jews, 103 Arabs)",
+    "note": "Each option is rated separately, so the shares do not add up to 100. Sept 2023 values are read from the Peace Index chart; March 2026 values are rounded from 22.7, 37.7, 31.1 and 7.5. Sept 2023 report: https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2023-09.pdf; Nov 2025 report: https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2025-11.pdf"
+  },
+  "peace-index-camps": {
+    "title": "Jewish Israelis who support a Palestinian state alongside Israel, by political camp, March 2026",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Right", "value": 3 },
+      { "label": "Moderate right", "value": 14 },
+      { "label": "Center", "value": 44 },
+      { "label": "Left", "value": 86 }
+    ],
+    "question": "Support for \"the creation of an independent Palestinian state alongside the State of Israel\", among Jewish respondents who gave an opinion, by self-placement on the political spectrum.",
+    "source": "Peace Index, Tel Aviv University",
+    "url": "https://en-social-sciences.tau.ac.il/sites/socsci-english.tau.ac.il/files/media_server/social/peaceindex/2026-03.pdf",
+    "date": "March 23–28, 2026",
+    "sample": "504 Jewish respondents; shares among those who gave an opinion",
+    "note": "Among opinion-holders only, so these figures are not comparable with the 23% of all Jewish respondents in the chart above."
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "units": {
+    "title": "Settlement housing units advanced in the West Bank, by year",
+    "kind": "bars",
+    "unit": "units",
+    "question": "Housing units in settlement plans advanced by the Higher Planning Council (deposit or validation), West Bank excluding East Jerusalem. Advanced means a plan cleared a planning stage, not that homes were built.",
+    "rows": [
+      { "label": "2023", "value": 12349, "display": "12,349", "source": "Peace Now 2023 summary", "url": "https://peacenow.org.il/wp-content/uploads/2024/02/A-Good-year-for-settlements-A-Bad-Year-for-Israel-Settlement-Watch-Peace-Now-Report-2023-February-2024.pdf", "date": "Feb 2024" },
+      { "label": "2024", "value": 9884, "display": "9,884", "source": "Peace Now 2024 summary", "url": "https://peacenow.org.il/wp-content/uploads/2025/02/SW-Report-Summary-2024-Peace-Now-February-2025.pdf", "date": "Feb 2025" },
+      { "label": "2025", "value": 27941, "display": "27,941", "source": "Peace Now 2025 summary", "url": "https://peacenow.org.il/en/summary-of-2025-in-settlements", "date": "Feb 3, 2026" },
+      { "label": "2026, to Sept 23", "value": 10539, "display": "10,539 (to Sept 23, 2026)", "source": "Peace Now plan table", "url": "https://peacenow.org.il/en/1261hu", "date": "to Sept 23, 2026" }
+    ],
+    "source": "Peace Now, Settlement Watch",
+    "url": "https://peacenow.org.il/en/summary-of-2025-in-settlements",
+    "date": "2024–2026",
+    "note": "Each year comes from a separate Peace Now report. 2026 is a partial year: the same Peace Now page gave 8,056 units to July 29, 2026. In 2025 some plans passed both stages and are counted once. Counting East Jerusalem, the EU's 2025 settlements report puts 2025 at 63,311 units"
+  },
+  "inss-approach": {
+    "title": "Israelis' preferred approach to the Israeli–Palestinian conflict, June 2026",
+    "kind": "bars",
+    "unit": "%",
+    "question": "Preferred approach to the Israeli–Palestinian conflict (INSS's summary of the options).",
+    "rows": [
+      { "label": "Separation from the Palestinians", "value": 27 },
+      { "label": "Two-state solution", "value": 25 },
+      { "label": "Full annexation without granting civil rights", "value": 25 },
+      { "label": "Don't know", "value": 10 }
+    ],
+    "source": "INSS survey",
+    "url": "https://www.inss.org.il/publication/inss-survey-june-2026/",
+    "date": "June 16–22, 2026",
+    "sample": "957 (805 Hebrew, 152 Arabic); ±3.17%",
+    "note": "All respondents. The remaining answers, about 13%, went to other options INSS did not list in its summary; among Arab respondents 21% chose one binational state. Jews: separation 32%, annexation without civil rights 31%. Arabs: two states 57%. Coalition voters: annexation 50%. Opposition voters: separation 40%, two states 36%"
+  },
+  "pew-coexist": {
+    "title": "Israelis who think Israel and a Palestinian state can coexist peacefully",
+    "kind": "bars",
+    "unit": "%",
+    "question": "\"A way can be found for Israel and an independent Palestinian state to coexist peacefully.\" Share of all Israeli adults saying yes.",
+    "rows": [
+      { "label": "2013", "value": 50, "source": "Pew Research Center", "url": "https://www.pewresearch.org/global/2025/06/03/views-of-the-potential-for-lasting-peace/", "date": "June 3, 2025" },
+      { "label": "2023", "value": 35, "source": "Pew Research Center", "url": "https://www.pewresearch.org/global/2025/06/03/views-of-the-potential-for-lasting-peace/", "date": "June 3, 2025" },
+      { "label": "2024", "value": 26, "source": "Pew Research Center", "url": "https://www.pewresearch.org/global/2025/06/03/views-of-the-potential-for-lasting-peace/", "date": "June 3, 2025" },
+      { "label": "2025", "value": 21, "source": "Pew Research Center", "url": "https://www.pewresearch.org/global/2025/06/03/views-of-the-potential-for-lasting-peace/", "date": "June 3, 2025" },
+      { "label": "2026", "value": 17, "source": "Pew Research Center", "url": "https://www.pewresearch.org/global/2026/09/15/many-israelis-and-palestinians-say-they-cannot-coexist-peacefully-and-explain-why/", "date": "Sept 15, 2026" }
+    ],
+    "source": "Pew Research Center",
+    "url": "https://www.pewresearch.org/global/2026/09/15/many-israelis-and-palestinians-say-they-cannot-coexist-peacefully-and-explain-why/",
+    "date": "2013–2026",
+    "sample": "2026: 1,001 adults, face to face, Apr 5–May 6, 2026",
+    "note": "Same question each year; 2013–2025 are from Pew's June 2025 report, 2026 from its September 2026 report. Jews: 16% in both 2025 and 2026. Arab respondents: 40% in 2025 and 23% in 2026, but 46% of Arab respondents gave no answer in 2026, so the drop is mostly non-response rather than a change of mind. In 2026, 56% of all respondents said it was not possible"
+  }
+}

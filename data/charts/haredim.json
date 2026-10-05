@@ -1,0 +1,109 @@
+{
+  "streams": {
+    "title": "Haredim by stream, 2024",
+    "kind": "bars",
+    "unit": "%",
+    "max": 50,
+    "rows": [
+      { "label": "Lithuanian (Litvish), non-Hasidic Ashkenazi", "value": 34, "display": "34% (433,000)" },
+      { "label": "Sephardi", "value": 33, "display": "33% (408,000)" },
+      { "label": "Hasidic, excluding Chabad", "value": 29, "display": "29% (369,000)" },
+      { "label": "Chabad", "value": 4, "display": "4% (about 50,000)" }
+    ],
+    "question": "Share of the Haredi population by stream.",
+    "source": "Haredi Institute for Public Affairs, annual report 2024",
+    "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+    "date": "2024",
+    "note": "The institute's Hebrew report from December 2024 gives the Sephardi share as 32%. IDI's yearbook does not break its figures down by stream."
+  },
+  "cities": {
+    "title": "Haredi residents in the largest Haredi centers, 2023",
+    "kind": "table",
+    "columns": ["City", "Haredi residents", "Share of city"],
+    "rows": [
+      { "label": "Jerusalem", "cells": ["292,600", "28.9%"] },
+      { "label": "Bnei Brak", "cells": ["209,700", "94.8%"] },
+      { "label": "Beit Shemesh", "cells": ["108,000", "73.2%"] },
+      { "label": "Modi'in Illit (West Bank)", "cells": ["86,600", "99.1%"] },
+      { "label": "Beitar Illit (West Bank)", "cells": ["67,100", "98.5%"] },
+      { "label": "Ashdod", "cells": ["52,600", "22.4%"] },
+      { "label": "Elad", "cells": ["48,700", "94.4%"] }
+    ],
+    "question": "Haredi residents and their share of each city's population.",
+    "source": "Haredi Institute for Public Affairs, annual report 2024",
+    "url": "https://machon.org.il/wp-content/uploads/2025/03/english-digital-1-1-1.pdf",
+    "date": "2023",
+    "note": "Modi'in Illit and Beitar Illit are settlements, Haredi cities in the West Bank; their residents are included in settler population totals."
+  },
+  "employment": {
+    "title": "Employment rate, ages 25–66",
+    "kind": "table",
+    "columns": ["Group", "2002", "2015", "2025"],
+    "rows": [
+      { "label": "Haredi men", "cells": ["about one-third", "51%", "53%"] },
+      { "label": "Haredi women", "cells": ["just over half", "78%", "81%"] },
+      { "label": "Other Jewish men", "cells": ["–", "–", "87%"] },
+      { "label": "Other Jewish women", "cells": ["–", "–", "82%"] }
+    ],
+    "question": "Share of people aged 25–66 who are employed.",
+    "source": "Israel Democracy Institute, Statistical Report on Ultra-Orthodox Society in Israel 2025",
+    "url": "https://en.idi.org.il/media/30207/final-final-haredi-shnaton-2025-pdf.pdf",
+    "date": "Dec 2025",
+    "note": "2002 figures are the report's own wording; 2015 figures are read from its chart. The report's summary gives 54% for Haredi men; The Media Line's account of the same report gives 53% and 81% for 2025. Figures for other Jews are for 2024–25."
+  },
+  "towns": {
+    "title": "How these towns voted: five Haredi towns combined, 2019–2022",
+    "kind": "table",
+    "columns": ["List", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "United Torah Judaism", "cells": ["62.1%", "61.9%", "61.8%", "60.8%", "59.7%"] },
+      { "label": "Shas", "cells": ["27.1%", "28.7%", "29.7%", "28.2%", "30.8%"] },
+      { "label": "Likud", "cells": ["4.6%", "4.0%", "5.1%", "3.0%", "2.6%"] },
+      { "label": "Union of Right-Wing Parties (incl. Otzma Yehudit)", "cells": ["3.0%", "–", "–", "–", "–"] },
+      { "label": "Otzma Yehudit, running alone", "cells": ["–", "2.0%", "0.5%", "–", "–"] },
+      { "label": "Yamina", "cells": ["–", "1.6%", "1.4%", "–", "–"] },
+      { "label": "Religious Zionism joint list (incl. Otzma Yehudit)", "cells": ["–", "–", "–", "5.7%", "5.4%"] }
+    ],
+    "question": "Share of valid votes cast at polling stations in Bnei Brak, Modi'in Illit, Beitar Illit, Elad and Kiryat Ye'arim combined.",
+    "source": "Central Elections Committee locality results (files for Knesset 21–25), computed for this page",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "Apr 2019 – Nov 2022",
+    "note": "Each list is shown under the name it ran with that year; a dash means it did not run in that form. Otzma Yehudit ran inside the Union of Right-Wing Parties in April 2019, alone in September 2019 and March 2020, and inside the Religious Zionism joint list (with Religious Zionism and Noam) in 2021 and 2022. Envelope ballots are counted nationally, not by town. Files for earlier elections: media21–media24.bechirot.gov.il/files/expc.csv."
+  },
+  "cities2022": {
+    "title": "How these towns voted, November 2022",
+    "kind": "table",
+    "columns": ["Town", "UTJ", "Shas", "Religious Zionism joint list", "Likud"],
+    "rows": [
+      { "label": "Bnei Brak", "cells": ["59.8%", "30.2%", "4.4%", "3.4%"] },
+      { "label": "Modi'in Illit", "cells": ["77.5%", "19.8%", "1.9%", "0.5%"] },
+      { "label": "Beitar Illit", "cells": ["59.4%", "30.8%", "7.8%", "1.4%"] },
+      { "label": "Elad", "cells": ["34.9%", "49.6%", "11.2%", "3.4%"] },
+      { "label": "Kiryat Ye'arim", "cells": ["64.6%", "22.9%", "7.9%", "3.0%"] },
+      { "label": "Jerusalem (mixed)", "cells": ["23.8%", "18.3%", "14.2%", "19.1%"] },
+      { "label": "Beit Shemesh (mixed)", "cells": ["38.8%", "21.6%", "14.7%", "15.5%"] }
+    ],
+    "question": "Share of valid votes cast at each town's polling stations, Knesset election 25.",
+    "source": "Central Elections Committee locality results, computed for this page",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "Nov 1, 2022",
+    "note": "The Religious Zionism joint list included Otzma Yehudit and Noam. Jerusalem and Beit Shemesh have large Haredi populations but are mixed cities. Envelope ballots are counted nationally, not by town."
+  },
+  "trust": {
+    "title": "Trust in institutions: Haredi and secular Jews",
+    "kind": "table",
+    "columns": ["Institution", "Haredim", "Secular"],
+    "rows": [
+      { "label": "Supreme Court", "cells": ["3%", "66%"] },
+      { "label": "Attorney General", "cells": ["1%", "65%"] },
+      { "label": "IDF", "cells": ["61%", "87%"] },
+      { "label": "Government", "cells": ["45%", "9%"] },
+      { "label": "Knesset", "cells": ["34.5%", "8%"] }
+    ],
+    "question": "Share expressing trust in each institution.",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Tables 2.4, 2.6, 2.12, 2.14, 2.18)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 4–28, 2025",
+    "sample": "1,205 Jewish respondents"
+  }
+}

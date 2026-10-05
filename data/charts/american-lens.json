@@ -1,0 +1,164 @@
+{
+  "coexist-jews": {
+    "title": "Think Israel and a Palestinian state can coexist peacefully: U.S. Jews and Israeli Jews",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      {
+        "label": "U.S. Jews, 2013",
+        "value": 61,
+        "source": "Pew Research Center, survey of U.S. Jews (2013), in Comparisons Between Jews in Israel and the U.S.",
+        "url": "https://www.pewresearch.org/religion/2016/03/08/comparisons-between-jews-in-israel-and-the-u-s/",
+        "date": "2013"
+      },
+      {
+        "label": "U.S. Jews, 2019–20",
+        "value": 63,
+        "source": "Pew Research Center, survey of U.S. Jews (n=4,718)",
+        "url": "https://www.pewresearch.org/religion/2021/05/11/u-s-jews-connections-with-and-attitudes-toward-israel/",
+        "date": "Nov 2019–June 2020"
+      },
+      {
+        "label": "Israeli Jews, 2014–15",
+        "value": 43,
+        "source": "Pew Research Center, Israel religion survey (n=5,601)",
+        "url": "https://www.pewresearch.org/religion/2016/03/08/comparisons-between-jews-in-israel-and-the-u-s/",
+        "date": "Oct 2014–May 2015"
+      },
+      {
+        "label": "Israeli Jews, 2025",
+        "value": 16,
+        "source": "Pew Research Center, Israel survey (n=998)",
+        "url": "https://www.pewresearch.org/global/2025/06/03/views-of-the-potential-for-lasting-peace/",
+        "date": "Feb 5–Mar 11, 2025"
+      },
+      {
+        "label": "Israeli Jews, 2026",
+        "value": 16,
+        "source": "Pew Research Center, Israel survey (n=1,001)",
+        "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+        "date": "Apr 5–May 6, 2026"
+      }
+    ],
+    "question": "A way can be found for Israel and an independent Palestinian state to coexist peacefully (% saying this).",
+    "source": "Pew Research Center (several surveys)",
+    "url": "https://www.pewresearch.org/religion/2016/03/08/comparisons-between-jews-in-israel-and-the-u-s/",
+    "date": "2013–2026",
+    "note": "Same Pew wording, different Pew surveys; each bar carries its own survey. Pew's Global Attitudes survey of spring 2014, a different survey from the 2014–15 Israel religion survey, gives 37% for Israeli Jews (https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf). No Pew figure for U.S. Jews on this question after 2020 was found."
+  },
+  "coexist-israelis": {
+    "title": "Think Israel and a Palestinian state can coexist peacefully: all Israelis",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "2013", "value": 50 },
+      { "label": "2014", "value": 40 },
+      { "label": "2017", "value": 44 },
+      { "label": "2023", "value": 35 },
+      { "label": "2024", "value": 26 },
+      { "label": "2025", "value": 21 },
+      {
+        "label": "2026",
+        "value": 17,
+        "source": "Pew Research Center, coexistence report (n=1,001)",
+        "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+        "date": "Apr 5–May 6, 2026"
+      }
+    ],
+    "question": "A way can be found for Israel and an independent Palestinian state to coexist peacefully (% saying this), all Israeli adults.",
+    "source": "Pew Research Center, Global Attitudes surveys in Israel (trend in the 2026 coexistence report)",
+    "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/09/pg_2026.09.15_coexistence_report.pdf",
+    "date": "2013–2026",
+    "note": "In 2026, 56% of Israelis said it was not possible, the first time a majority said so (Pew). Includes Palestinian citizens of Israel, whom Pew labels \"Israeli Arabs\"; Pew notes many of them declined to answer in 2026."
+  },
+  "self-placement": {
+    "title": "Israeli Jews who place themselves on the right",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "1986", "value": 39 },
+      { "label": "1995", "value": 29 },
+      { "label": "2019", "value": 46 },
+      { "label": "2022", "value": 62 }
+    ],
+    "question": "Self-placement on a 1–7 left-right scale; 5–7 counted as right.",
+    "source": "Israel Democracy Institute data, via Times of Israel",
+    "url": "https://www.timesofisrael.com/israeli-jewish-voters-moved-significantly-rightward-in-recent-years-data-shows/",
+    "date": "1986–2022",
+    "sample": "750–1,200 Jewish respondents per year",
+    "note": "The Jewish People Policy Institute found 66% of Israeli Jews placing themselves on the right in July 2026, on a different scale; the two series should not be joined (https://www.timesofisrael.com/battle-for-the-center-large-majority-of-israelis-already-know-how-theyll-vote-poll/)."
+  },
+  "vote-considerations": {
+    "title": "What Jewish Israelis say will decide their vote",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Foreign affairs and security", "value": 39 },
+      { "label": "Economy and cost of living", "value": 38 },
+      { "label": "Conscription", "value": 27 },
+      { "label": "Religion and state", "value": 26 },
+      { "label": "The party leader", "value": 23 },
+      { "label": "The judicial overhaul", "value": 18 }
+    ],
+    "question": "The factor that will most influence which party they vote for, and the second most important factor (first and second choices combined).",
+    "source": "Israel Democracy Institute",
+    "url": "https://en.idi.org.il/articles/66177",
+    "date": "Aug 31–Sept 3, 2026",
+    "sample": "605 Jewish respondents",
+    "note": "IDI's own label for the last item is \"judicial reform.\" Among Arab respondents (150), crime in Arab society led at 53.5%, then the economy at 46%."
+  },
+  "paired": {
+    "title": "Same question, two publics: U.S. \"connected\" Jews and Israeli Jews",
+    "kind": "table",
+    "columns": ["Statement", "U.S. \"connected\" Jews (JPPI panel)", "Israeli Jews"],
+    "rows": [
+      {
+        "label": "Israeli government policy contributes to antisemitism to a large extent",
+        "cells": ["39%", "28%"],
+        "source": "JPPI Jewish People Voice Index, via Jerusalem Post",
+        "url": "https://www.jpost.com/diaspora/antisemitism/article-909578",
+        "date": "Sept 2026"
+      },
+      {
+        "label": "No connection between Israeli policy and antisemitism",
+        "cells": ["23%", "44%"],
+        "source": "JPPI Jewish People Voice Index, via Jerusalem Post",
+        "url": "https://www.jpost.com/diaspora/antisemitism/article-909578",
+        "date": "Sept 2026"
+      },
+      {
+        "label": "Israel should not change its policy at all",
+        "cells": ["37%", "57%"],
+        "source": "JPPI Jewish People Voice Index, via Jerusalem Post",
+        "url": "https://www.jpost.com/diaspora/antisemitism/article-909578",
+        "date": "Sept 2026"
+      },
+      {
+        "label": "Optimistic about Israel's future",
+        "cells": ["19%", "43%"],
+        "source": "JPPI Jewish People Voice Index, via Jerusalem Post",
+        "url": "https://www.jpost.com/diaspora/antisemitism/article-909578",
+        "date": "Sept 2026"
+      },
+      {
+        "label": "Reports of famine in Gaza are true",
+        "cells": ["48%", "36%"],
+        "source": "JPPI: U.S. panel Aug 14–18, 2025 (n=639); Israeli Jews from JPPI's August 2025 Israeli Society Index",
+        "url": "https://jppi.org.il/en/jppi-survey-american-jewish-views-on-the-war-in-gaza/",
+        "date": "August 2025"
+      },
+      {
+        "label": "Worried Israel is becoming a pariah",
+        "cells": ["75%", "62%"],
+        "source": "JPPI: U.S. panel Aug 14–18, 2025 (n=639); Israeli Jews from JPPI's August 2025 Israeli Society Index",
+        "url": "https://jppi.org.il/en/jppi-survey-american-jewish-views-on-the-war-in-gaza/",
+        "date": "August 2025"
+      }
+    ],
+    "question": "Share agreeing, by statement.",
+    "source": "Jewish People Policy Institute (JPPI)",
+    "url": "https://www.jpost.com/diaspora/antisemitism/article-909578",
+    "date": "Aug 2025 and Sept 2026",
+    "note": "Two JPPI survey rounds, each row dated. In the August 2025 rows the Israeli figures come from a separate JPPI survey, its Israeli Society Index, fielded earlier that month. JPPI's U.S. sample is a panel of \"connected\" Jews (\"engaged\" in the 2026 report), more engaged with Jewish life than U.S. Jews as a whole."
+  }
+}

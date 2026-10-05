@@ -27,7 +27,7 @@
       "id": "lieberman-no-arab-no-haredi",
       "kind": "pledge",
       "when": { "all": [{ "party": "yb" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
-      "message": "Lieberman: “not for the Arab parties and not for the haredi parties.” This coalition includes {and:haredi,arab}.",
+      "message": "Liberman: “not for the Arab parties and not for the haredi parties.” This coalition includes {and:haredi,arab}.",
       "source": "Jerusalem Post, Sep 21, 2025; repeated Oct 3, 2026"
     },
     {

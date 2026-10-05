@@ -158,11 +158,63 @@ Done:
   - Daniel (Oct 5): cut the CRC sentence from the slide 2 notes. The note now reads "This is a good frame for a class on an election, and for this room. Everyone is welcome at this table." The PDF never had it. The Ynetnews quotes stay.
 - Daniel (Oct 5): docs/research/HANDOFF-RESEARCH.md removed from the public repo; kept locally in docs/teach-private/ (gitignored). It is still in git history (commit a60949e and earlier); purging history needs a force-push, so it is left for Daniel.
 
+- Reference layer (Daniel, Oct 5: "rulings are in. go"). Rulings in docs/research/RULINGS.md: 1–25 Daniel's; 26–32 delegated to Claude; Part 2 Claude-decided, overridable.
+  - Framework: page copy is MDX in content/ (as the plan's output format says); charts in data/charts/<slug>.json; party tables in data/positions/<issue>.json.
+  - Components (Chart, Positions, Quote, Note) look data up by id, so no number appears without its source.
+  - Routes: /issues, /issues/[slug], /communities, /communities/[slug], /american-lens. Nav gains Issues and Communities; the home index gains those plus the American lens (nine items, 3×3).
+  - lib/articles.test.ts turns the checkable rulings into tests: sections, length, Misreadings heading, no "unverified", terminology and house spellings outside quotes, https sources, internal links resolve, no first person, chart and positions data shape.
+  - GATE: the section name "Communities" for the nine sociology pages. Proceeded because the plan names no section label, and "Communities" is plain and not a hierarchy (the plan says flat, no tribes).
+  - GATE: charts are single-hue ink bars or tables, no categorical palette. Proceeded because the identity reserves colour for blocs, and one-measure-per-chart keeps different surveys apart (ruling 20 and the verification collisions).
+  - GATE: drafting delegated to 12 parallel agents under DRAFTING-SPEC.md; then an independent fact-check pass against sources before publish (00-PLAN Proof). Text changes later go by PR per the plan.
+  - docs/research/HANDOFF-RESEARCH.md was recreated by the research lane; it is now gitignored, so it stays out of the public repo (Daniel's Oct 5 instruction).
+
+  - Result (Oct 5): 17 pages drafted and then independently fact-checked against sources (FACTCHECK-SPEC.md), with one checker per page or pair.
+    - Checkers opened most sources directly, recomputed every town vote cell from the CEC files and corrected many errors, for example:
+      - a misread IDI figure (11.4% vs 13.7%);
+      - JPPI support figures derived wrongly;
+      - the attorney-general law, which did pass on July 15, 2026 (the research said no final vote);
+      - Pew wording;
+      - quotes cut mid-sentence;
+      - press paraphrase presented as party quotes.
+    - Every Wikipedia citation was replaced with a primary or major-outlet source. The only exception is the 2026 opinion-polling table, which is the site's own poll source.
+    - A test now enforces this. The word counter was fixed, since it had dropped quote and note text; length ceilings were reset to fit.
+  - GATE: party rows that quote a news outlet's summary (Ynet, JPost, JC) rather than the party's own words are kept, labelled as the outlet's summary. Proceeded because they are the only sourced statement of those positions, and the label keeps them honest.
+  - GATE: ruling 35 (Claude-decided) reworded to "split the coalition in its last year", because "weeks before" did not fit the dates. Ruling 84 (Claude-decided): "Zera Beta Israel" dropped, because no source that can be opened says it is the preferred term. Both are logged in RULINGS.md.
+  - Chart notes may carry bare URLs; the Chart component renders them as short site-name links.
+
+## For Daniel: reference layer (Oct 5)
+Party-profile items the reference pages turned up. data/parties.json was not edited, because these change stated positions or quotes:
+- shas: the draft entry rests on a Deri quote whose JPost link returns 404.
+- utj: the draft entry quotes Asher ("will not support or enter any government without…"); its source is a class doc nobody re-opened. The economy entry ("Housing for Haredi communities; yeshiva funding") is not on IDI's UTJ page ("education and welfare").
+- rz:
+  - The draft entry says most RZ MKs voted for the July 14 arrest-ban law; that also comes from a class doc nobody re-opened.
+  - The war line ("Return to the whole of Gaza in a big way", JPost Aug 18) has no URL on file.
+- res (Reservists):
+  - The draft entry says "Those who do not serve cannot vote or be elected", but no source was found; Ynet lists benefit sanctions only.
+  - The economy lines ("paradise for monopolies; 170 average salaries") have no source that can be opened.
+  - The Gaza entry merges two separate Hendel proposals (JPost 904910, Aug 11), and that article says the party has no formal Gaza position.
+- yashar:
+  - The profile says "Opposes a Palestinian state". Its own Ynet answer (Sep 30) is that a state "is not on the agenda as far as we are concerned."
+  - Economy pledges (15% raise, renter protections, 50-day reserve cap) are not on IDI's page.
+- poi: the courts entry says "no details", but Ynet (Sep 22) now gives specifics.
+- dem: Ynet (Sep 16) says "the obligation to serve the state should apply to all citizens", while the profile has Golan calling mass Haredi conscription "impractical". The two may be reconcilable.
+- yb: "a capitulation to terror" about the Board of Peace (JPost Aug 12) could only be found as a 2018 use.
+- jl:
+  - The profile puts "a Palestinian state alongside Israel" in quotation marks, but in JPost 907154 that is the reporter's paraphrase.
+  - The draft, courts and economy entries are null, but sourced answers now exist (Ynet; JPost).
+- raam: draft and courts entries are null, but sourced answers now exist (Ynet).
+- bw: no issue entries at all; Ynet has positions.
+- Several profile sources read "JPost, Sep 8, 2026". The religion-state checker found the Shas/UTJ article dated Sep 10. Not changed, since the other citations with that date may be different articles.
+- Courts, ruling 40: no named, sourced claimant was found for the claim that the overhaul serves Netanyahu's trial. The page attributes the prosecutor-general authority line to JPost's own description of the bill, plus Limon's "an abolition bill".
+- Courts: the attorney-general law. Times of Israel (twice) says the split of the role was dropped; World Israel News says it splits the role. The page follows ToI.
+- Done mechanically (ruling 32): "Lieberman" → "Liberman" in parties.json, pledge-rules.json and the home page.
+
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
 - Coalition-process tracker after the election.
 - Confirm Likud–RZ and Shas–UTJ surplus agreements nearer election day.
-- Reference pages: system mechanics, tribes, issues, timeline, glossary, sources/method.
+- Done: issues (7), communities (9), American lens.
+- Still to do: reference pages for system mechanics, timeline, glossary, how Israelis vote, election night, sources/method; the vote map (docs/research/data-vote-map).
 
 ## Deploy log
 - 2026-10-04: Vercel project (preset "Other", created on the empty repo) failed twice: lockfile

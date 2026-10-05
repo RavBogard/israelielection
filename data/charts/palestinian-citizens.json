@@ -1,0 +1,88 @@
+{
+  "turnout": {
+    "title": "Turnout: Palestinian citizens of Israel and all voters, 2019–2022",
+    "kind": "table",
+    "columns": ["Election", "Arab and Druze localities (IDI)", "All voters (CEC)"],
+    "rows": [
+      { "label": "April 2019", "cells": ["49.2%", "68.5%"], "source": "IDI", "url": "https://en.idi.org.il/articles/34420" },
+      { "label": "September 2019", "cells": ["59.2%", "69.8%"], "source": "IDI", "url": "https://en.idi.org.il/articles/28660" },
+      { "label": "March 2020", "cells": ["64.8%", "71.5%"], "source": "IDI", "url": "https://en.idi.org.il/articles/34420" },
+      { "label": "March 2021", "cells": ["44.6%", "67.4%"], "source": "IDI", "url": "https://en.idi.org.il/articles/34420" },
+      { "label": "November 2022", "cells": ["53.2%", "70.6%"], "source": "IDI", "url": "https://en.idi.org.il/articles/47986" }
+    ],
+    "question": "Share of registered voters who voted.",
+    "source": "IDI (Arik Rudnitzky); Central Elections Committee",
+    "url": "https://en.idi.org.il/articles/47986",
+    "date": "2019–2022",
+    "note": "IDI's term is \"Arab\" turnout, measured in Arab and Druze localities; Druze localities cannot be separated out in this series. The all-voters column is from the CEC results files (https://data.gov.il/dataset/votes-knesset)"
+  },
+  "towns": {
+    "title": "How these towns voted, 2019–2022 (% of valid votes, leading lists)",
+    "kind": "table",
+    "columns": ["Town", "April 2019", "September 2019", "March 2020", "March 2021", "November 2022"],
+    "rows": [
+      { "label": "Nazareth", "cells": ["Hadash–Ta'al 53.7, Ra'am–Balad 29.5", "Joint List 91.7", "Joint List 95.7", "Joint List 64.7, Ra'am 23.9", "Hadash–Ta'al 45.3, Balad 26.2, Ra'am 21.4"] },
+      { "label": "Umm al-Fahm", "cells": ["Hadash–Ta'al 79.7, Ra'am–Balad 12.3", "Joint List 95.8", "Joint List 98.5", "Joint List 80.5, Ra'am 13.7", "Hadash–Ta'al 40.5, Balad 37.9, Ra'am 18.0"] },
+      { "label": "Rahat", "cells": ["Ra'am–Balad 47.4, Hadash–Ta'al 40.6", "Joint List 79.6", "Joint List 92.5", "Ra'am 62.9, Joint List 22.1", "Ra'am 64.2, Balad 14.0, Hadash–Ta'al 12.6"] },
+      { "label": "Sakhnin", "cells": ["Ra'am–Balad 59.6, Hadash–Ta'al 35.0", "Joint List 89.6", "Joint List 97.2", "Ra'am 61.8, Joint List 35.4", "Hadash–Ta'al 38.5, Balad 30.3, Ra'am 29.1"] },
+      { "label": "Shefa-Amr", "cells": ["Hadash–Ta'al 42.3, Ra'am–Balad 19.2, Yisrael Beiteinu 13.4", "Joint List 73.9, Yisrael Beiteinu 10.6", "Joint List 83.1, Yisrael Beiteinu 8.4", "Joint List 53.9, Ra'am 19.3, Yisrael Beiteinu 11.6", "Hadash–Ta'al 36.6, Balad 22.4, Ra'am 20.2, Yisrael Beiteinu 8.2"] }
+    ],
+    "question": "Share of valid votes cast in each town, computed from the Central Elections Committee's locality results files. These are town results, not the vote of a group.",
+    "source": "Central Elections Committee, results by locality (computed)",
+    "url": "https://data.gov.il/dataset/votes-knesset",
+    "date": "2019–2022",
+    "note": "Lists as they ran each year. April 2019: two pairs, Hadash–Ta'al and Ra'am–Balad. September 2019 and March 2020: one Joint List of Hadash, Ta'al, Balad and Ra'am. March 2021: Ra'am ran alone; the Joint List was Hadash, Ta'al and Balad. 2022: three separate lists. In 2026 the Joint List name returns for Hadash, Ta'al and Balad, with Ra'am separate. Shefa-Amr has a Druze minority, which the town figures cannot separate"
+  },
+  "killed": {
+    "title": "Palestinian citizens of Israel killed in crime and violence, by year",
+    "kind": "bars",
+    "rows": [
+      { "label": "2017", "value": 67 },
+      { "label": "2018", "value": 71 },
+      { "label": "2019", "value": 89 },
+      { "label": "2020", "value": 96 },
+      { "label": "2021", "value": 126 },
+      { "label": "2022", "value": 116 },
+      { "label": "2023", "value": 245 },
+      { "label": "2024", "value": 230 },
+      { "label": "2025", "value": 252 }
+    ],
+    "question": "People killed in crime and violence; the report's term is \"Arab citizens.\"",
+    "source": "Abraham Initiatives, 2025 Crime and Violence Report",
+    "url": "https://abrahaminitiatives.org/wp-content/uploads/2026/04/2025-Crime-and-Violence-Report.pdf",
+    "date": "report closed December 28, 2025",
+    "note": "The 2025 bar is the report's figure to December 28; the Abraham Initiatives homepage (https://abrahaminitiatives.org/) gives 255 for the full year. The same report's age table gives 124 for 2021 and 251 for 2025"
+  },
+  "identity-component": {
+    "title": "Palestinian citizens of Israel: the most important component of personal identity",
+    "kind": "table",
+    "columns": ["Answer", "May 2023", "Dec 2024", "Nov 2025", "May 2026"],
+    "rows": [
+      { "label": "Arab", "cells": ["37.5%", "26.9%", "35.9%", "33.3%"] },
+      { "label": "Israeli citizenship", "cells": ["21%", "33.9%", "31.7%", "27.7%"] },
+      { "label": "Religion", "cells": ["15.6%", "29.2%", "17.3%", "24.5%"] },
+      { "label": "Palestinian", "cells": ["16.5%", "9%", "14.7%", "13.5%"] }
+    ],
+    "question": "What is the most important component of your personal identity? (one choice)",
+    "source": "Konrad Adenauer Program for Jewish-Arab Cooperation, Moshe Dayan Center, Tel Aviv University",
+    "url": "https://dayan.org/file-download/download/public/18837",
+    "date": "May 2023 – May 2026",
+    "sample": "about 500 per wave, by phone in Arabic; ±4.4 points",
+    "note": "The source's term is \"Arab citizens\"; the sample includes Druze, who put Israeli citizenship first (64.8% in May 2026), and no total without them is published. May 2023 and May 2026: KAP May 2026 report. Dec 2024: Times of Israel on the KAP survey (https://www.timesofisrael.com/survey-finds-arab-israelis-show-growing-sense-of-shared-destiny-since-outbreak-of-war/). Nov 2025: KAP Nov 2025 report (https://dayan.org/file-download/download/public/18732). A Nov 2023 wave is left out because its report was not found"
+  },
+  "identity-label": {
+    "title": "Palestinian citizens of Israel: self-description when offered labels, 2019",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Palestinians in Israel", "value": 47.1 },
+      { "label": "Israeli Arabs", "value": 35.9 },
+      { "label": "Just Palestinians", "value": 14.8 }
+    ],
+    "question": "How respondents defined themselves, among these labels; the source reports the labels and shares but does not print the question wording.",
+    "source": "Sammy Smooha, Index of Arab-Jewish Relations, in Fathom",
+    "url": "https://fathomjournal.org/arab-jewish-relations-in-israel-after-the-may-2021-unrest-a-survey-by-sammy-smooha/",
+    "date": "2019",
+    "note": "A different question from the identity-component series above, and older than two years; it is the newest survey found that offers these labels. The source's term is \"Arab citizens\""
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "population": {
+    "title": "Israelis of Ethiopian origin, by place of birth",
+    "kind": "table",
+    "columns": ["End of year", "Born in Ethiopia", "Born in Israel", "Total"],
+    "rows": [
+      { "label": "2021", "cells": ["90,600", "73,800", "164,400"], "source": "CBS, Sigd 2022 release", "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2022/371/11_22_371e.pdf", "date": "2022" },
+      { "label": "2023", "cells": ["93,600", "78,000", "171,600"], "source": "CBS, Sigd 2024 release", "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf", "date": "2024" }
+    ],
+    "question": "People born in Ethiopia, and people born in Israel whose father was born in Ethiopia.",
+    "source": "Central Bureau of Statistics",
+    "url": "https://www.cbs.gov.il/he/mediarelease/DocLib/2024/371/11_24_371b.pdf",
+    "date": "2022 and 2024 releases",
+    "note": "The CBS definition leaves out the third generation and the children of Ethiopian-born mothers only, so it undercounts the community as people experience it. The CBS total for the end of 2024 is 177,600 (reported by JNS, November 2025)."
+  },
+  "stations-2019": {
+    "title": "How these polling stations voted: Ethiopian-Israeli neighborhoods, April and September 2019",
+    "kind": "table",
+    "columns": ["Neighborhood", "Likud, Apr", "Likud, Sep", "Blue and White, Apr", "Blue and White, Sep"],
+    "rows": [
+      { "label": "Kiryat Moshe, Rehovot", "cells": ["53%", "42%", "13%", "28%"] },
+      { "label": "Ramat Eliyahu, Rishon LeZion", "cells": ["53%", "43%", "15%", "24%"] },
+      { "label": "Weizmann, Kiryat Malachi", "cells": ["50%", "39%", "6.5%", "18%"] },
+      { "label": "Shofetim, Kiryat Gat", "cells": ["49%", "38%", "13%", "23%"] }
+    ],
+    "question": "Share of the vote at polling stations in neighborhoods with large Ethiopian-Israeli populations.",
+    "source": "Ynet analysis of polling-station results",
+    "url": "https://www.ynet.co.il/articles/0,7340,L-5591507,00.html",
+    "date": "2019-09-18",
+    "note": "These stations serve mixed neighborhoods; the results are not the Ethiopian-Israeli vote. Blue and White ran under that name in both elections."
+  },
+  "kiryat-malachi": {
+    "title": "How these towns voted: Kiryat Malachi, 2019–2020",
+    "kind": "table",
+    "columns": ["Election", "Likud", "Shas", "Blue and White", "URWP / Yamina"],
+    "rows": [
+      { "label": "April 2019", "cells": ["45.5%", "12.1%", "7.4%", "13.0% (URWP)"], "url": "https://media21.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, locality results (computed)", "date": "2019-04-09" },
+      { "label": "September 2019", "cells": ["40.9%", "17.1%", "12.0%", "7.1% (Yamina)"], "url": "https://media22.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, locality results (computed)", "date": "2019-09" },
+      { "label": "March 2020", "cells": ["50.9%", "19.2%", "9.0%", "5.9% (Yamina)"], "url": "https://media23.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, locality results (computed)", "date": "2020-03" }
+    ],
+    "question": "Each list's share of valid votes cast at Kiryat Malachi's ballot boxes.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media23.bechirot.gov.il/files/expc.csv",
+    "date": "April 2019 – March 2020",
+    "note": "A whole-town result: about 14% of Kiryat Malachi's residents are of Ethiopian origin (CBS, end 2023). Lists are shown as they ran that year: the Union of Right-Wing Parties (URWP) in April 2019, Yamina in September 2019 and March 2020. Likud's national share in the same files: 26.5%, 25.1% and 29.5%. Double-envelope votes are not included."
+  }
+}

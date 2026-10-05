@@ -1,0 +1,92 @@
+{
+  "six-towns": {
+    "title": "Six development towns combined, 2019–2022: how these towns voted",
+    "kind": "table",
+    "columns": ["List", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "Likud", "cells": ["44.8%", "44.0%", "50.7%", "43.1%", "40.2%"] },
+      { "label": "Shas", "cells": ["15.7%", "20.1%", "20.4%", "20.3%", "22.2%"] },
+      { "label": "List carrying Otzma Yehudit", "cells": ["Union of Right-Wing Parties 4.9%", "Otzma Yehudit 3.5%", "Otzma Yehudit 0.7%", "Religious Zionism 7.3%", "Religious Zionism 17.0%"] },
+      { "label": "United Torah Judaism", "cells": ["5.5%", "5.0%", "5.0%", "4.8%", "4.9%"] },
+      { "label": "Largest centrist list", "cells": ["Blue and White 7.9%", "Blue and White 8.4%", "Blue and White 8.2%", "Yesh Atid 3.8%", "Yesh Atid 4.5%"] },
+      { "label": "Likud, whole country", "cells": ["26.5%", "25.1%", "29.5%", "24.2%", "23.4%"] }
+    ],
+    "question": "Share of valid votes cast inside Sderot, Netivot, Ofakim, Beit She'an, Kiryat Shmona and Dimona together, computed from the Central Elections Committee's per-locality result files for the 21st–25th Knessets.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "April 2019 – November 2022",
+    "note": "Files for each election at media21–media25.bechirot.gov.il/files/expc.csv. Lists are named as they ran that year. Otzma Yehudit ran inside the Union of Right-Wing Parties (with Jewish Home and National Union) in April 2019, alone in September 2019 and March 2020, and inside the Religious Zionism joint list (with Noam) in 2021 and 2022, so that row is a different list each time. National Unity, a separate list in 2022, took a further 4.0% in the six towns. Soldiers' and other double-envelope votes are not assigned to any locality"
+  },
+  "towns-2022": {
+    "title": "Each town, 2022 (and Likud in 2020): how these towns voted",
+    "kind": "table",
+    "columns": ["Place", "Likud 2020", "Likud 2022", "Shas 2022", "Religious Zionism 2022", "UTJ 2022", "Yesh Atid 2022", "National Unity 2022"],
+    "rows": [
+      { "label": "Sderot", "cells": ["51.1%", "41.5%", "12.1%", "24.6%", "1.0%", "5.8%", "5.6%"] },
+      { "label": "Netivot", "cells": ["36.5%", "27.5%", "42.5%", "15.7%", "6.0%", "1.9%", "1.7%"] },
+      { "label": "Ofakim", "cells": ["40.4%", "32.1%", "23.1%", "15.9%", "15.0%", "4.3%", "3.3%"] },
+      { "label": "Beit She'an", "cells": ["62.7%", "47.9%", "25.0%", "16.1%", "0.8%", "3.1%", "3.2%"] },
+      { "label": "Kiryat Shmona", "cells": ["58.1%", "49.5%", "11.0%", "13.7%", "0.6%", "6.6%", "7.3%"] },
+      { "label": "Dimona", "cells": ["61.8%", "50.9%", "11.7%", "15.8%", "2.8%", "6.1%", "4.5%"] },
+      { "label": "Tel Aviv-Yafo, for comparison", "cells": ["21.8%", "17.0%", "4.3%", "4.5%", "0.8%", "32.8%", "11.0%"] },
+      { "label": "Whole country", "cells": ["29.5%", "23.4%", "8.2%", "10.8%", "5.9%", "17.8%", "9.1%"] }
+    ],
+    "question": "Share of valid votes cast in each locality, computed from the Central Elections Committee's per-locality result files for the 23rd (March 2020) and 25th (November 2022) Knessets.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "March 2020 and November 2022",
+    "note": "2020 file at media23.bechirot.gov.il/files/expc.csv. Religious Zionism 2022 was the joint list of Religious Zionism, Otzma Yehudit and Noam. Netivot and Ofakim have large Haredi populations, so their Shas and UTJ shares are not a traditional vote"
+  },
+  "trust-court": {
+    "title": "Trust in the Supreme Court, by religiosity",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Haredi", "value": 3 },
+      { "label": "National religious", "value": 19 },
+      { "label": "Traditional, religious", "value": 21 },
+      { "label": "Traditional, non-religious", "value": 40 },
+      { "label": "Secular", "value": 66 }
+    ],
+    "question": "Share of Jewish respondents expressing trust in the Supreme Court.",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Table 2.6)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 4–28, 2025",
+    "sample": "1,205 respondents in the Jewish sample (Jews and others)"
+  },
+  "security": {
+    "title": "Agree that Israel ensures the security of its citizens, by religiosity, 2022 and 2025",
+    "kind": "table",
+    "columns": ["Group", "2022", "2025"],
+    "rows": [
+      { "label": "Haredi", "cells": ["23%", "68%"] },
+      { "label": "National religious", "cells": ["32%", "65%"] },
+      { "label": "Traditional, religious", "cells": ["30%", "51%"] },
+      { "label": "Traditional, non-religious", "cells": ["37%", "52%"] },
+      { "label": "Secular", "cells": ["52%", "30%"] }
+    ],
+    "question": "Share of Jewish respondents who agree that Israel ensures the security of its citizens.",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Table 2.29)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 4–28, 2025 (with the 2022 Index for comparison)",
+    "sample": "1,205 respondents in the Jewish sample (Jews and others) in 2025"
+  },
+  "draft-deal": {
+    "title": "Suspending the \"Military Service Exemption Law\" called \"a political deal,\" by religiosity",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Haredi", "value": 18 },
+      { "label": "National religious", "value": 37 },
+      { "label": "Traditional, religious", "value": 37 },
+      { "label": "Traditional, non-religious", "value": 54 },
+      { "label": "Secular", "value": 82.5 }
+    ],
+    "question": "Asked about the government's decision \"to suspend the Military Service Exemption Law and to transfer billions of shekels to Haredi institutions,\" share choosing \"A political deal that prioritizes sectoral interests over the good of the public.\"",
+    "source": "Israel Democracy Institute, Israeli Voice Index",
+    "url": "https://en.idi.org.il/articles/63856",
+    "date": "March 22–26, 2026",
+    "sample": "604 Hebrew-language interviews",
+    "note": "The other main answer, \"a responsible decision\": Haredi 51%, national religious 34%, traditional religious 43%, traditional non-religious 25%, secular 8%"
+  }
+}

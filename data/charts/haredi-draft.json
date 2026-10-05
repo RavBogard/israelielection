@@ -1,0 +1,57 @@
+{
+  "enlistment": {
+    "title": "Haredi men enlisted in the IDF, by draft year",
+    "kind": "bars",
+    "rows": [
+      { "label": "Before Oct 7, 2023 (yearly)", "value": 1800, "display": "about 1,800" },
+      { "label": "2023–24", "value": 2200, "display": "about 2,200" },
+      { "label": "2024–25", "value": 2800, "display": "about 2,800" },
+      { "label": "2025–26 (preliminary)", "value": 4000, "display": "at least 4,000" },
+      { "label": "IDF yearly target", "value": 4800, "display": "4,800" },
+      {
+        "label": "Haredi men reaching draft age each year",
+        "value": 14000,
+        "display": "about 14,000",
+        "source": "Jerusalem Post",
+        "url": "https://www.jpost.com/israel-news/article-904035",
+        "date": "July 29, 2026"
+      }
+    ],
+    "question": "Haredi men drafted into the IDF in each twelve-month period ending in July, from IDF data.",
+    "source": "IDF figures via Times of Israel",
+    "url": "https://www.timesofisrael.com/idf-chief-tells-haredi-commanders-army-must-grow-as-data-shows-uptick-in-enlistment/",
+    "date": "July 29, 2026",
+    "note": "The cohort row is the Jerusalem Post's estimate. IDI gives different figures for the same years: about 1,200 a year for most of the pre-war decade, 1,700 for 2023–24 and 2,940 for 2024–25 (https://en.idi.org.il/articles/61994). A different, much smaller measure is the response to draft orders: in the 2024 draft year, about 24,000 initial orders produced 798 enlistees (IDI, January 2026, https://en.idi.org.il/articles/63168)"
+  },
+  "reserve": {
+    "title": "Men aged 21–44 doing reserve service in an average month",
+    "kind": "table",
+    "columns": ["Group", "Oct–Dec 2023", "2025"],
+    "rows": [
+      { "label": "Religious", "cells": ["15.2%", "4.3%"] },
+      { "label": "Traditional", "cells": ["11.2%", "2.6%"] },
+      { "label": "Secular", "cells": ["11.2%", "1.7%"] },
+      { "label": "Haredi", "cells": ["not given", "0.3%"] }
+    ],
+    "question": "Share of men aged 21–44 in reserve service in an average month, by self-defined religiosity.",
+    "source": "Israel Democracy Institute (Finkelstein and Portal), from the CBS Labor Force Survey",
+    "url": "https://en.idi.org.il/articles/65427",
+    "date": "August 20, 2026",
+    "note": "\"Religious\" is the CBS self-definition, close to but not the same as national-religious. The figures are monthly rates, not headcounts"
+  },
+  "who-drafted": {
+    "title": "The most appropriate solution to drafting Haredim, November 2025",
+    "kind": "table",
+    "columns": ["Respondents", "Draft all except outstanding yeshiva students", "Draft only those not really studying", "Keep the current voluntary system"],
+    "rows": [
+      { "label": "Jewish Israelis", "cells": ["49.5%", "31%", "15%"] },
+      { "label": "Palestinian citizens of Israel", "cells": ["26%", "23%", "35%"] }
+    ],
+    "question": "\"The most appropriate solution to the issue of drafting Haredim,\" asked after the end of the war.",
+    "source": "Israel Democracy Institute",
+    "url": "https://en.idi.org.il/articles/62072",
+    "date": "November 2–6, 2025",
+    "sample": "604 Jewish and 152 Arab respondents",
+    "note": "IDI's label for the second group is \"Arabs\"; Druze are not reported separately in this result. About 75% of Haredi respondents chose the current system. IDI found the results \"very similar\" to September 2025"
+  }
+}

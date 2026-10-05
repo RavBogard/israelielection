@@ -1,0 +1,136 @@
+{
+  "count": {
+    "title": "How many settlers: without and with East Jerusalem",
+    "kind": "bars",
+    "unit": "people",
+    "rows": [
+      {
+        "label": "West Bank settlements, excluding East Jerusalem",
+        "value": 541085,
+        "display": "541,085",
+        "source": "Interior Ministry population registry, compiled by Yaakov Katz for Bet El Institutions",
+        "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+        "date": "1 Jan 2026"
+      },
+      {
+        "label": "West Bank including East Jerusalem",
+        "value": 750000,
+        "display": "over 750,000",
+        "source": "EU (EEAS), 2025 Report on Israeli settlements in the occupied West Bank",
+        "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+        "date": "2025"
+      }
+    ],
+    "question": "Israeli Jewish residents of West Bank settlements.",
+    "source": "Population registry (Bet El Institutions); EU EEAS",
+    "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+    "date": "2025–2026",
+    "note": "Two sources, two definitions. Israel does not count East Jerusalem neighborhoods as settlements; the EU, the UN and Peace Now do. The registry compilation is published by Bet El Institutions, founded by former National Union MK Yaakov Katz; it is the only 2026 count found."
+  },
+  "composition": {
+    "title": "Who settlers are: three estimates",
+    "kind": "table",
+    "columns": ["Estimate", "Haredi", "Religious", "Mixed", "Secular"],
+    "rows": [
+      {
+        "label": "Yesha Council, May 2023 (method not stated)",
+        "cells": ["36%", "36% (religious Zionist)", "—", "28%"],
+        "source": "Yesha Council, via Times of Israel",
+        "url": "https://www.timesofisrael.com/yesha-settler-umbrella-group-says-over-half-a-million-israelis-live-in-west-bank/",
+        "date": "2023-05-12"
+      },
+      {
+        "label": "Israel Policy Forum, 2025 (by type of settlement)",
+        "cells": ["33.5%", "25.4%", "28.8%", "12.2%"],
+        "source": "Israel Policy Forum (Gabriel Epstein)",
+        "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+        "date": "2025-04-16"
+      },
+      {
+        "label": "Registry, Jan 2026 (eight Haredi towns only)",
+        "cells": ["34.4%", "—", "—", "—"],
+        "source": "Sum of eight Haredi towns in the registry compilation (186,133 of 541,085), this site's arithmetic",
+        "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+        "date": "1 Jan 2026"
+      }
+    ],
+    "question": "Share of West Bank settlers in each group.",
+    "source": "Yesha Council; Israel Policy Forum; population registry",
+    "url": "https://israelpolicyforum.org/2025/04/16/the-quiet-surge-in-west-bank-settlements/",
+    "date": "2023–2026",
+    "note": "Two kinds of estimate. Yesha counts people by religiosity and does not say how. The other two rows give the share of settlers living in each type of settlement, not each person's own religiosity. IPF does not state its data year. The three agree only on the Haredi share, about a third."
+  },
+  "towns": {
+    "title": "The largest settlements by population",
+    "kind": "bars",
+    "unit": "residents",
+    "rows": [
+      { "label": "Modi'in Illit (Haredi)", "value": 92339, "display": "92,339" },
+      { "label": "Beitar Illit (Haredi)", "value": 74760, "display": "74,760" },
+      { "label": "Ma'ale Adumim", "value": 40800, "display": "40,800" },
+      { "label": "Givat Ze'ev", "value": 25630, "display": "25,630" },
+      { "label": "Ariel", "value": 22273, "display": "22,273" },
+      { "label": "Efrat", "value": 13502, "display": "13,502" },
+      { "label": "Karnei Shomron", "value": 11199, "display": "11,199" },
+      { "label": "Oranit", "value": 10212, "display": "10,212" },
+      { "label": "Shaar Shomron", "value": 9024, "display": "9,024" },
+      { "label": "Alfei Menashe", "value": 8631, "display": "8,631" },
+      { "label": "Kiryat Arba", "value": 8437, "display": "8,437" }
+    ],
+    "question": "Jewish residents by locality.",
+    "source": "Interior Ministry population registry, compiled by Yaakov Katz for Bet El Institutions",
+    "url": "https://jr.co.il/ys/West_Bank_Jewish_Population_Stats_Jan_2026.pdf",
+    "date": "1 Jan 2026",
+    "note": "Modi'in Illit, in the West Bank, is not Modi'in, the city inside the Green Line."
+  },
+  "vote-2022": {
+    "title": "How these towns voted in 2022, by type of settlement",
+    "kind": "table",
+    "columns": ["Settlements", "Likud", "Religious Zionism–Otzma Yehudit", "Shas + UTJ", "Yesh Atid + National Unity", "Turnout"],
+    "rows": [
+      { "label": "Haredi cities (8)", "cells": ["1.4%", "7.8%", "90.3%", "0.2%", "81.3%"] },
+      { "label": "Suburban settlements (11)", "cells": ["34.1%", "23.1%", "12.6%", "19.7%", "71.1%"] },
+      { "label": "Other settlements, mostly national-religious (80)", "cells": ["19.3%", "57.3%", "4.0%", "8.3%", "75.3%"] },
+      { "label": "Jordan Valley villages (25)", "cells": ["24.9%", "34.2%", "2.2%", "23.5%", "68.3%"] },
+      { "label": "All settlements (124)", "cells": ["19.1%", "31.5%", "31.6%", "10.0%", "75.3%"] },
+      { "label": "Israel", "cells": ["23.4%", "10.8%", "14.1%", "26.9%", "70.6%"] }
+    ],
+    "question": "Share of valid votes by locality group, 25th Knesset election. Turnout is a share of eligible voters.",
+    "source": "Central Elections Committee locality results; grouping and arithmetic by this site",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "November 2022",
+    "note": "How these towns voted, not how settlers voted. Settlements are CBS locality codes 3400–3899; East Jerusalem is inside Jerusalem's result and is excluded. Soldiers and others who vote by double envelope are counted nationally, not by home locality. The groups are this site's classification (see the list on the page)."
+  },
+  "vote-trend": {
+    "title": "How the settlements voted, 2019–2022, against Israel as a whole",
+    "kind": "table",
+    "columns": ["Election", "Religious-Zionist lists as they ran", "Those lists: settlements / Israel", "Likud: settlements / Israel", "Shas + UTJ: settlements / Israel"],
+    "rows": [
+      { "label": "April 2019", "cells": ["URWP + New Right + Zehut", "33.8% / 9.7%", "23.1% / 26.5%", "27.4% / 11.8%"], "url": "https://media21.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, 21st Knesset", "date": "April 2019" },
+      { "label": "September 2019", "cells": ["Yamina + Otzma Yehudit", "31.6% / 7.8%", "22.5% / 25.1%", "30.5% / 13.5%"], "url": "https://media22.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, 22nd Knesset", "date": "September 2019" },
+      { "label": "March 2020", "cells": ["Yamina + Otzma Yehudit", "24.5% / 5.7%", "29.9% / 29.5%", "32.1% / 13.7%"], "url": "https://media23.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, 23rd Knesset", "date": "March 2020" },
+      { "label": "March 2021", "cells": ["Religious Zionism + Yamina", "35.2% / 11.3%", "19.4% / 24.2%", "29.2% / 12.8%"], "url": "https://media24.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, 24th Knesset", "date": "March 2021" },
+      { "label": "November 2022", "cells": ["Religious Zionism–Otzma Yehudit + Jewish Home", "35.1% / 12.0%", "19.1% / 23.4%", "31.6% / 14.1%"], "url": "https://media25.bechirot.gov.il/files/expc.csv", "source": "Central Elections Committee, 25th Knesset", "date": "November 2022" }
+    ],
+    "question": "Share of valid votes in all West Bank settlement localities, and in Israel as a whole.",
+    "source": "Central Elections Committee locality results; arithmetic by this site",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "2019–2022",
+    "note": "How these towns voted. Each list is shown as it ran that year. The national-religious lists changed names and partners every cycle: URWP (2019) joined Jewish Home and Otzma Yehudit; Yamina was the alliance that included Naftali Bennett's New Right; in 2021 Religious Zionism ran Smotrich, Ben-Gvir and Noam together; in 2022 Religious Zionism and Otzma Yehudit ran as one list. Settlements are CBS locality codes 3400–3899, excluding East Jerusalem and double-envelope votes."
+  },
+  "violence": {
+    "title": "Settler attacks on Palestinians causing casualties or damage",
+    "kind": "bars",
+    "unit": "attacks",
+    "rows": [
+      { "label": "2023", "value": 1189, "display": "1,189" },
+      { "label": "2024", "value": 1420, "display": "1,420" },
+      { "label": "2025", "value": 1828, "display": "1,828" }
+    ],
+    "question": "Incidents in which settlers caused Palestinian casualties or property damage (UN OCHA count).",
+    "source": "UN OCHA, via the EU (EEAS) 2025 Report on Israeli settlements in the occupied West Bank",
+    "url": "https://www.eeas.europa.eu/sites/default/files/2026/documents/2025%20Report%20on%20Israeli%20settlements%20in%20the%20occupied%20West%20Bank.pdf",
+    "date": "2023–2025",
+    "note": "The IDF's own count of \"nationalistic\" Jewish incidents moves differently: 1,045 (2023), 682 (2024), 867 (2025), falling in 2024 where OCHA's count rose (JPost, Jan 19, 2026, https://www.jpost.com/israel-news/article-883857). The two bodies define incidents differently."
+  }
+}

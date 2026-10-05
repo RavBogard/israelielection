@@ -30,7 +30,7 @@ export const FEEDS: Feed[] = [
 ];
 
 const ISRAEL =
-  /\b(Israel|Israeli|Israelis|Knesset|Netanyahu|Likud|Gaza|West Bank|Hamas|Hezbollah|Jerusalem|Tel Aviv|Haredi|ultra-Orthodox|Eisenkot|Bennett|Lapid|Ben-Gvir|Ben Gvir|Smotrich|Lieberman|Deri|Golan|IDF|settler|settlement|Ra'am|Joint List)\b/i;
+  /\b(Israel|Israeli|Israelis|Knesset|Netanyahu|Likud|Gaza|West Bank|Hamas|Hezbollah|Jerusalem|Tel Aviv|Haredi|ultra-Orthodox|Eisenkot|Bennett|Lapid|Ben-Gvir|Ben Gvir|Smotrich|Liberman|Lieberman|Deri|Golan|IDF|settler|settlement|Ra'am|Joint List)\b/i;
 
 export type NewsItem = {
   outlet: string;

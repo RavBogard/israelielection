@@ -1,0 +1,135 @@
+{
+  "civil-marriage": {
+    "title": "Support for a civil marriage option, by group",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      {
+        "label": "All Jewish respondents",
+        "value": 59
+      },
+      {
+        "label": "Secular",
+        "value": 91
+      },
+      {
+        "label": "Traditional, not religious",
+        "value": 54
+      },
+      {
+        "label": "Traditional, religious",
+        "value": 36
+      },
+      {
+        "label": "Religious",
+        "value": 18
+      },
+      {
+        "label": "Haredi",
+        "value": 12
+      },
+      {
+        "label": "Palestinian citizens of Israel",
+        "value": 39
+      }
+    ],
+    "question": "\"In general, do you support also having an option for civil marriage in Israel? (Civil marriage is marriage by the state rather than by religious authorities such as the Chief Rabbinate)\"",
+    "source": "JPPI Israeli Society Index",
+    "url": "https://jppi.org.il/en/%D7%9E%D7%93%D7%93-jppi-%D7%9C%D7%97%D7%91%D7%A8%D7%94-%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99%D7%AA-%D7%9E%D7%90%D7%99-2026/",
+    "date": "Apr 30–May 4, 2026",
+    "sample": "749 (547 Jewish, 202 Arab respondents)",
+    "note": "Support is \"strongly support\" plus \"somewhat support\" in JPPI's table. Opposed: 60% of traditional-religious, 77% of religious and 85% of Haredi respondents. The last row is JPPI's \"Arabs\" (the source does not say whether Druze are included): 46% opposed and 15% did not know. All Israelis: 55% support."
+  },
+  "civil-marriage-intermarriage": {
+    "title": "Support for civil marriage when the question includes marriages between Jews and non-Jews",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      {
+        "label": "All Jewish respondents",
+        "value": 46
+      },
+      {
+        "label": "Secular",
+        "value": 75
+      },
+      {
+        "label": "Traditional, not religious",
+        "value": 36
+      },
+      {
+        "label": "Traditional, religious",
+        "value": 25
+      },
+      {
+        "label": "Religious",
+        "value": 9
+      },
+      {
+        "label": "Haredi",
+        "value": 3
+      },
+      {
+        "label": "Palestinian citizens of Israel",
+        "value": 37
+      }
+    ],
+    "question": "\"What is your view on civil marriage if it would also include the possibility of marriages between Jews and non-Jews?\"",
+    "source": "JPPI Israeli Society Index",
+    "url": "https://jppi.org.il/en/%D7%9E%D7%93%D7%93-jppi-%D7%9C%D7%97%D7%91%D7%A8%D7%94-%D7%94%D7%99%D7%A9%D7%A8%D7%90%D7%9C%D7%99%D7%AA-%D7%9E%D7%90%D7%99-2026/",
+    "date": "Apr 30–May 4, 2026",
+    "sample": "749 (547 Jewish, 202 Arab respondents)",
+    "note": "A separate follow-up question in the same survey as the chart above, so the two charts are not one series. Support is \"strongly support\" plus \"somewhat support\" in JPPI's table. Opposed: 59% of traditional-not-religious, 87% of religious and 94% of Haredi respondents. The last row is JPPI's \"Arabs\": 48% opposed. All Israelis: 44% support, 50% opposed."
+  },
+  "shabbat-transit": {
+    "title": "Support for public transport on Shabbat outside religious areas, Jewish respondents, by group",
+    "kind": "table",
+    "columns": [
+      "Group",
+      "April 2022",
+      "March 2025"
+    ],
+    "rows": [
+      {
+        "label": "Traditional",
+        "cells": [
+          "65.3%",
+          "68.4%"
+        ]
+      },
+      {
+        "label": "Religious",
+        "cells": [
+          "35.5%",
+          "45.0%"
+        ]
+      },
+      {
+        "label": "Haredi",
+        "cells": [
+          "11.2%",
+          "16.2%"
+        ]
+      },
+      {
+        "label": "Left",
+        "cells": [
+          "89.9%",
+          "92.4%"
+        ]
+      },
+      {
+        "label": "Right",
+        "cells": [
+          "Not given",
+          "51.7%"
+        ]
+      }
+    ],
+    "question": "\"Do you support or oppose operating public transportation on Saturdays (Shabbat) throughout the country, except in areas with major ultra-orthodox or religious populations?\"",
+    "source": "Reichman University, Institute for Liberty and Responsibility",
+    "url": "https://www.runi.ac.il/media/53mmwyif/transportation_on_shabbat.pdf",
+    "date": "Report Aug 2025 (surveys Apr 2022–Mar 2025)",
+    "note": "\"Don't know\" answers excluded. Left and right are respondents' own placement on a 1–7 scale. The report's text gives no April 2022 figure for the right; its lowest reading was 47.3% in September 2022. For all Jewish respondents (67.1% to 73.8%) and secular respondents (87.6% to 92.5%) it gives only the range across its surveys, not figures by date. The report gives no sample sizes."
+  }
+}

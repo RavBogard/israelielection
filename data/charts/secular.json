@@ -1,0 +1,92 @@
+{
+  "largest-list": {
+    "title": "Largest list, 2019–2022: how these towns voted",
+    "kind": "table",
+    "columns": ["Place", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "Tel Aviv-Yafo", "cells": ["Blue and White 45.7%", "Blue and White 42.7%", "Blue and White 48.2%", "Yesh Atid 22.1%", "Yesh Atid 32.8%"] },
+      { "label": "Givatayim", "cells": ["Blue and White 50.6%", "Blue and White 50.3%", "Blue and White 55.5%", "Yesh Atid 26.7%", "Yesh Atid 37.6%"] },
+      { "label": "Ramat HaSharon", "cells": ["Blue and White 55.6%", "Blue and White 53.0%", "Blue and White 59.6%", "Yesh Atid 29.2%", "Yesh Atid 42.2%"] },
+      { "label": "Herzliya", "cells": ["Blue and White 47.8%", "Blue and White 47.7%", "Blue and White 51.4%", "Yesh Atid 26.7%", "Yesh Atid 37.2%"] },
+      { "label": "Hod HaSharon", "cells": ["Blue and White 53.6%", "Blue and White 53.0%", "Blue and White 57.4%", "Yesh Atid 30.4%", "Yesh Atid 40.5%"] },
+      { "label": "Kibbutz Movement kibbutzim", "cells": ["Blue and White 50.2%", "Blue and White 50.1%", "Blue and White 57.6%", "Labor 25.3%", "Yesh Atid 36.8%"] },
+      { "label": "Whole country", "cells": ["Likud 26.5%", "Blue and White 25.9%", "Likud 29.5%", "Likud 24.2%", "Likud 23.4%"] }
+    ],
+    "question": "Share of valid votes cast in each locality, computed from the Central Elections Committee's per-locality result files for the 21st–25th Knessets.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "April 2019 – November 2022",
+    "note": "Files for each election at media21–media25.bechirot.gov.il/files/expc.csv. Lists are named as they ran that year: Blue and White (Gantz–Lapid) ran jointly in 2019–20; in 2021 Yesh Atid and Blue and White ran separately. Kibbutz Movement kibbutzim are those the CBS 2022 localities file assigns to the Kibbutz Movement (237–238 matched in each election file). Soldiers' and other double-envelope votes are not assigned to any locality. Places, not people: every city includes traditional, religious and Arab voters"
+  },
+  "vote-2022": {
+    "title": "November 2022, selected lists: how these towns voted",
+    "kind": "table",
+    "columns": ["Place", "Yesh Atid", "Likud", "National Unity", "Labor", "Meretz"],
+    "rows": [
+      { "label": "Tel Aviv-Yafo", "cells": ["32.8%", "17.0%", "11.0%", "9.3%", "10.9%"] },
+      { "label": "Givatayim", "cells": ["37.6%", "15.8%", "14.9%", "10.5%", "8.6%"] },
+      { "label": "Ramat HaSharon", "cells": ["42.2%", "15.7%", "13.3%", "7.2%", "8.5%"] },
+      { "label": "Herzliya", "cells": ["37.2%", "21.3%", "14.1%", "5.8%", "5.7%"] },
+      { "label": "Kibbutz Movement kibbutzim", "cells": ["36.8%", "7.3%", "15.4%", "17.7%", "13.9%"] },
+      { "label": "Whole country", "cells": ["17.8%", "23.4%", "9.1%", "3.7%", "3.2%"] }
+    ],
+    "question": "Share of valid votes cast in each locality, 25th Knesset election, computed from the Central Elections Committee's per-locality result file.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "November 2022",
+    "note": "National Unity was the 2022 joint list of Blue and White and New Hope. Meretz fell below the electoral threshold nationally"
+  },
+  "draft": {
+    "title": "Choose drafting all young Haredi men except a small number of outstanding yeshiva students, by religiosity",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Secular", "value": 71 },
+      { "label": "Traditional, non-religious", "value": 49 },
+      { "label": "Traditional, religious", "value": 31.5 },
+      { "label": "National religious", "value": 30.5 },
+      { "label": "Haredi", "value": 8 }
+    ],
+    "question": "Share choosing \"Draft all young Haredi men, with the exception of a small number of outstanding yeshiva students\" as the correct solution to the conscription question (other options: draft only those enrolled at \"dropout yeshivot\"; leave things as they are).",
+    "source": "Israel Democracy Institute, Israeli Voice Index",
+    "url": "https://en.idi.org.il/articles/61845",
+    "date": "September 14–18, 2025",
+    "sample": "n = 1,000 (800 Hebrew-language interviews)",
+    "note": "Values read from the chart labels in IDI's Graph 13. Jewish respondents by self-defined religiosity"
+  },
+  "trust-court": {
+    "title": "Trust in the Supreme Court, by religiosity",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Secular", "value": 66 },
+      { "label": "Traditional, non-religious", "value": 40 },
+      { "label": "Traditional, religious", "value": 21 },
+      { "label": "National religious", "value": 19 },
+      { "label": "Haredi", "value": 3 }
+    ],
+    "question": "Share of Jewish respondents expressing trust in the Supreme Court.",
+    "source": "Israel Democracy Institute, Israeli Democracy Index 2025 (Table 2.6)",
+    "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf",
+    "date": "May 4–28, 2025",
+    "sample": "1,205 respondents in the Jewish sample (Jews and others)"
+  },
+  "leaving": {
+    "title": "Considering leaving Israel, by religiosity",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Secular", "value": 39 },
+      { "label": "Traditional, non-religious", "value": 24 },
+      { "label": "Traditional, religious", "value": 19 },
+      { "label": "National religious", "value": 14 },
+      { "label": "Haredi", "value": 3 }
+    ],
+    "question": "Share of Jewish respondents who say they are considering leaving Israel.",
+    "source": "Israel Democracy Institute, \"Stay or Go\" survey",
+    "url": "https://en.idi.org.il/articles/62287",
+    "date": "April 6–17, 2025",
+    "sample": "720 Jewish respondents",
+    "note": "Published December 2025"
+  }
+}

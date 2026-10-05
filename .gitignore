@@ -55,3 +55,6 @@ next-env.d.ts
 # Agent worktrees
 .claude/worktrees/
 docs/teach-private/
+
+# Research handoff stays private (Daniel, Oct 5)
+docs/research/HANDOFF-RESEARCH.md

@@ -28,6 +28,9 @@ const SECTIONS = [
   { href: "#build", title: "Coalition Builder", text: "Pick a poll, add parties, and see whether they reach 61 of the Knesset's 120 seats, with each party's recorded coalition pledges." },
   { href: "/parties", title: "Party Map", text: "Israel's 2026 parties sized by their average poll standing, grouped by bloc, with a sourced profile of each." },
   { href: "/polls", title: "Polls", text: "Every Knesset seat poll of the 2026 campaign we track, the current average, and how each party has moved." },
+  { href: "/issues", title: "Issues", text: "Seven questions that decide how Israelis vote: what is at stake, what Israelis think by group, what each party says, and the common misreadings." },
+  { href: "/communities", title: "Communities", text: "Nine groups of Israeli voters: how many they are, where they live, how their towns have voted since 2019, and what they think." },
+  { href: "/american-lens", title: "The American lens", text: "Why \"pro-Israel\" is not an Israeli category, and where American and Israeli political fights line up and where they don't." },
   { href: "/news", title: "News", text: "A daily briefing on what changed in Israel's 2026 election, every sentence sourced, plus the latest headlines from English-language outlets." },
   { href: "/results", title: "Results", text: "Election-night results for Israel's 2026 Knesset election from the Central Elections Committee's count, with seats by party and bloc." },
   { href: "/teach", title: "Teach it", text: "Class materials on Israel's 2026 election for educators and rabbinic colleagues: decks, source sheets, discussion guides." },
@@ -166,7 +169,7 @@ export default async function Page() {
               <b>Pledges.</b> Zionist opposition to govern without Arab parties: Haaretz, Oct 1, 2026 (headline). B&apos;Yachad &ldquo;only
               rely on Zionist parties&rdquo;: Times of Israel, Apr 26, 2026; no Arab or Haredi parties: Times of Israel, May 27, 2026. Joint
               List won&apos;t join Netanyahu: Times of Israel, Aug 19, 2026. Eisenkot on Ra&apos;am (&ldquo;he won&apos;t be part of my next
-              government&rdquo;): Times of Israel, Sep 26, 2026. Lieberman, &ldquo;not for the Arab parties and not for the haredi
+              government&rdquo;): Times of Israel, Sep 26, 2026. Liberman, &ldquo;not for the Arab parties and not for the haredi
               parties&rdquo;: Jerusalem Post, Sep 21, 2025, repeated Oct 3, 2026. UTJ condition (Yaakov Asher): Matzav, Sep 28, 2026.
             </li>
             <li>

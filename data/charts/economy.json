@@ -1,0 +1,129 @@
+{
+  "economy-by-group": {
+    "title": "Economy and cost of living as a vote factor, by group",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      {
+        "label": "Palestinian citizens of Israel",
+        "value": 46
+      },
+      {
+        "label": "Jewish respondents, Center",
+        "value": 40.5
+      },
+      {
+        "label": "All Jewish respondents",
+        "value": 38
+      },
+      {
+        "label": "Jewish respondents, Left",
+        "value": 34
+      }
+    ],
+    "question": "What will have the greatest influence on your decision regarding which party to vote for in the upcoming elections? Asked twice; the figure is the share naming \"economy and the high cost of living\" as the first or second factor.",
+    "source": "Israel Democracy Institute, Israeli Voice Index",
+    "url": "https://en.idi.org.il/articles/66177",
+    "date": "Aug 31–Sept 3, 2026",
+    "sample": "605 interviewed in Hebrew and 150 in Arabic; maximum sampling error ±3.57%",
+    "note": "Among all Jewish respondents, foreign affairs and security came first, at 39%; then economy 38%, conscription 27%, religion and state 26%, head of the party 23%. IDI did not publish the economy figure for Jewish respondents on the Right, where security leads at 47%. IDI's term is \"Arab respondents\" (its Arab sample). They ranked crime in Arab society first (53.5%); their option list replaced conscription with crime. Political camp is self-placement. No breakdown by religiosity was published. Before the 2022 election, 44% of all respondents named the economy and cost of living as their main factor (IDI, late July 2022, single choice, n=750), but the question and its options changed, with no conscription item, so the figures are not a series."
+  },
+  "employment": {
+    "title": "Employment rate by group",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      {
+        "label": "Non-Haredi Jewish men (Taub, 2026 report)",
+        "value": 87,
+        "display": "about 87%",
+        "source": "Taub Center, A Picture of the Nation 2026",
+        "url": "https://www.taubcenter.org.il/en/pr/pon-2026/",
+        "date": "June 2026"
+      },
+      {
+        "label": "Haredi women (2025)",
+        "value": 81,
+        "source": "IDI Statistical Report on Haredi Society, via The Media Line",
+        "url": "https://themedialine.org/headlines/israel-democracy-institute-report-finds-stalled-integration-of-ultra-orthodox-men-as-community-growth-accelerates/",
+        "date": "Dec 2025"
+      },
+      {
+        "label": "Palestinian citizens of Israel, men (early 2025)",
+        "value": 77,
+        "source": "Taub Center, A Picture of the Nation 2026",
+        "url": "https://www.taubcenter.org.il/en/pr/pon-2026/",
+        "date": "June 2026"
+      },
+      {
+        "label": "Haredi men (2025)",
+        "value": 53,
+        "source": "Labor Ministry 2025 labor-market report, via Jerusalem Post",
+        "url": "https://www.jpost.com/business-and-innovation/opinion/article-901982",
+        "date": "July 9, 2026"
+      },
+      {
+        "label": "Palestinian citizens of Israel, women (first half of 2025)",
+        "value": 49,
+        "source": "Taub Center, A Picture of the Nation 2026",
+        "url": "https://www.taubcenter.org.il/en/pr/pon-2026/",
+        "date": "June 2026"
+      }
+    ],
+    "question": "Share of each group in employment.",
+    "source": "Taub Center; Israel Democracy Institute; Labor Ministry (per row)",
+    "url": "https://www.taubcenter.org.il/en/pr/pon-2026/",
+    "date": "2025 data",
+    "note": "Rows come from different sources and periods; each row names its own. Haredi men's rate was 52% in 2015 and 53.1% in 2022; the government target is 65% by 2030. IDI also gives 53% for Haredi men in 2025. Taub's term is \"Arab\"; its summary does not say whether these figures include Druze. Taub gives no year for the non-Haredi Jewish men's figure."
+  },
+  "war-bill": {
+    "title": "The war bill, as a share of GDP",
+    "kind": "table",
+    "columns": [
+      "% of GDP",
+      "Before the war",
+      "2025",
+      "2026"
+    ],
+    "rows": [
+      {
+        "label": "Public debt",
+        "cells": [
+          "60.5 (early 2023)",
+          "68.5 (end of year)",
+          "about 70 (Moody's projection, July 2026)"
+        ],
+        "source": "Jerusalem Post, citing the Bank of Israel; Moody's via Ynet",
+        "url": "https://www.jpost.com/israel-news/article-910242",
+        "date": "2026"
+      },
+      {
+        "label": "Deficit",
+        "cells": [
+          "—",
+          "4.7",
+          "4.9 (budget ceiling); 5.3 (Moody's projection)"
+        ],
+        "source": "Jerusalem Post; Times of Israel; Moody's via Ynet",
+        "url": "https://www.jpost.com/israel-news/article-910242",
+        "date": "2026"
+      },
+      {
+        "label": "Defense spending",
+        "cells": [
+          "about 4.5",
+          "about 8 (IMF estimate)",
+          "near 6 (IMF estimate)"
+        ],
+        "source": "Jerusalem Post, citing the IMF",
+        "url": "https://www.jpost.com/israel-news/article-910242",
+        "date": "2026"
+      }
+    ],
+    "question": "Public debt, the government deficit and defense spending, each as a percentage of GDP.",
+    "source": "Jerusalem Post (citing the Bank of Israel and the IMF); Moody's via Ynet; Times of Israel",
+    "url": "https://www.jpost.com/israel-news/article-910242",
+    "date": "2026",
+    "note": "Moody's 2026 figures are from its July 2026 summary (Ynet, https://www.ynetnews.com/business/article/rkqzvq4vfe); in February 2026 Moody's put debt at about 68% of GDP (Times of Israel), and the Bank of Israel's July forecast put 2026 debt at about 69% and the deficit at 4.9% (Jerusalem Post). Moody's deficit projection is for the central government. The 4.9% deficit ceiling is from the budget passed March 30, 2026 (Times of Israel, https://www.timesofisrael.com/knesset-approves-2026-budget-israels-largest-ever-sending-billions-to-haredi-institutions/). The Bank of Israel puts war-related costs for 2023–2026 at about NIS 350 billion."
+  }
+}

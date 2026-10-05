@@ -1,0 +1,89 @@
+{
+  "hostages-first": {
+    "title": "Bringing the hostages home was the more important war goal",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "All respondents", "value": 68 },
+      { "label": "Jews on the left", "value": 91 },
+      { "label": "Jews in the center", "value": 80.5, "display": "80.5%" },
+      { "label": "Jews on the right", "value": 52 }
+    ],
+    "question": "Which of Israel's two declared war goals is more important today: toppling Hamas, or bringing home all the hostages? (share answering the hostages)",
+    "source": "Israel Democracy Institute, Israeli Voice Index",
+    "url": "https://en.idi.org.il/articles/59019",
+    "date": "Mar 31–Apr 6, 2025",
+    "sample": "598 interviews in Hebrew and 150 in Arabic",
+    "note": "Toppling Hamas was put first by 25% of all respondents and 38.5% of Jews on the right. IDI gives the January 2024 share for the hostages as about half of the public."
+  },
+  "state-commission": {
+    "title": "Support for a state commission depends on the options offered",
+    "kind": "table",
+    "columns": ["Survey", "Options offered", "State commission", "Right or coalition"],
+    "rows": [
+      {
+        "label": "IDI, Jul–Aug 2024",
+        "cells": ["State commission, government commission, or comptroller/internal probes", "67%", "Right-wing Jews: 56%"],
+        "source": "Israel Democracy Institute",
+        "url": "https://en.idi.org.il/articles/55785",
+        "date": "Jul 30–Aug 4, 2024"
+      },
+      {
+        "label": "IDI, Sep 2025",
+        "cells": ["Support or oppose a state commission", "74%", "Not reported"],
+        "source": "Israel Democracy Institute",
+        "url": "https://en.idi.org.il/articles/61845",
+        "date": "Sep 14–18, 2025"
+      },
+      {
+        "label": "IDI, Dec 2025",
+        "cells": ["State commission, politically appointed commission, or comptroller and defense probes", "55%", "Right-wing Jews: 36%"],
+        "source": "Israel Democracy Institute, as reported by the Times of Israel",
+        "url": "https://www.timesofisrael.com/poll-support-for-state-commission-into-oct-7-recedes-as-pm-pushes-alternative/",
+        "date": "Dec 2025"
+      },
+      {
+        "label": "INSS, Dec 2025",
+        "cells": ["State commission or Knesset-appointed committee", "57%", "Not reported"],
+        "source": "Institute for National Security Studies",
+        "url": "https://www.inss.org.il/publication/inss-survey-december-2025/",
+        "date": "Dec 11–14, 2025"
+      },
+      {
+        "label": "JPPI, May 2026",
+        "cells": ["State commission, national commission without judges, government commission, or none", "46% (national commission without judges: 40%)", "80% of the right prefer a body without judges"],
+        "source": "Jewish People Policy Institute, as reported by the Jerusalem Post",
+        "url": "https://www.jpost.com/israel-news/article-896243",
+        "date": "May 2026"
+      },
+      {
+        "label": "INSS, Sep 2026",
+        "cells": ["Question format not published", "75%", "Coalition voters: 52%"],
+        "source": "Institute for National Security Studies",
+        "url": "https://www.inss.org.il/publication/three-years-survey/",
+        "date": "Published Sep 24, 2026"
+      }
+    ],
+    "question": "Each survey asked its own question about how Oct 7 should be investigated; the options column gives what respondents were offered.",
+    "source": "IDI; INSS; JPPI (each row gives its own source)",
+    "url": "https://en.idi.org.il/articles/55785",
+    "date": "2024–2026",
+    "note": "Different surveys with different questions, shown side by side to compare question design, not as one series. IDI December 2025 and JPPI May 2026 figures come from press write-ups of the surveys."
+  },
+  "trust": {
+    "title": "Trust in the army, the prime minister and the government",
+    "kind": "table",
+    "columns": ["", "All respondents", "Coalition voters", "Opposition voters"],
+    "rows": [
+      { "label": "IDF", "cells": ["73%", "82%", "79%"] },
+      { "label": "Netanyahu", "cells": ["31%", "68%", "6%"] },
+      { "label": "The government", "cells": ["25%", "55%", "6%"] }
+    ],
+    "question": "Trust to a large or fairly large extent",
+    "source": "Institute for National Security Studies, National Security Survey",
+    "url": "https://www.inss.org.il/INSS_National_Security_Survey_July_2026_EN_FIXED_v16.html",
+    "date": "Jul 23–26, 2026",
+    "sample": "803 interviews in Hebrew and 133 in Arabic",
+    "note": "Among Jewish respondents: IDF 83%, Netanyahu 37%, the government 31%. Among Arab respondents: IDF 34%, Netanyahu 6%, the government 5%."
+  }
+}

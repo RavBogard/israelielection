@@ -1,0 +1,85 @@
+{
+  "yb-towns": {
+    "title": "How these towns voted: Yisrael Beiteinu's share of the vote, 2019–2022",
+    "kind": "table",
+    "columns": ["Locality", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "Nof HaGalil", "cells": ["20.8%", "22.7%", "20.1%", "18.1%", "15.1%"] },
+      { "label": "Karmiel", "cells": ["16.3%", "23.8%", "20.9%", "18.0%", "14.2%"] },
+      { "label": "Kiryat Yam", "cells": ["16.7%", "21.7%", "19.8%", "17.7%", "14.6%"] },
+      { "label": "Bat Yam", "cells": ["12.5%", "18.0%", "16.8%", "15.2%", "11.1%"] },
+      { "label": "Ashdod", "cells": ["12.4%", "18.0%", "16.5%", "13.2%", "10.4%"] },
+      { "label": "Haifa", "cells": ["7.3%", "11.9%", "10.3%", "9.3%", "8.1%"] },
+      { "label": "Israel (all locality ballot boxes)", "cells": ["4.0%", "7.0%", "5.7%", "5.6%", "4.5%"] }
+    ],
+    "question": "Yisrael Beiteinu's share of valid votes cast at ballot boxes in each locality, computed from the Central Elections Committee's locality results files for the 21st to 25th Knesset.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "April 2019 – November 2022",
+    "note": "These are whole-town results, not the vote of Russian speakers: every town listed is mixed, and Nof HaGalil and Haifa have large Arab populations. Double-envelope votes (soldiers, hospital patients, diplomats) are counted separately by the CEC and are not included. Yisrael Beiteinu ran under its own name in all five elections. Files for earlier elections: media21 to media24.bechirot.gov.il/files/expc.csv."
+  },
+  "likud-towns": {
+    "title": "How these towns voted: Likud's share of the vote, 2019–2022",
+    "kind": "table",
+    "columns": ["Locality", "Apr 2019", "Sep 2019", "Mar 2020", "Mar 2021", "Nov 2022"],
+    "rows": [
+      { "label": "Nof HaGalil", "cells": ["29.9%", "30.0%", "33.6%", "29.6%", "27.9%"] },
+      { "label": "Karmiel", "cells": ["32.5%", "31.1%", "36.4%", "28.6%", "29.4%"] },
+      { "label": "Kiryat Yam", "cells": ["42.0%", "42.1%", "48.2%", "41.1%", "40.5%"] },
+      { "label": "Bat Yam", "cells": ["38.5%", "37.7%", "42.8%", "35.8%", "35.7%"] },
+      { "label": "Ashdod", "cells": ["33.9%", "31.2%", "36.6%", "30.7%", "28.9%"] },
+      { "label": "Haifa", "cells": ["23.7%", "23.3%", "26.6%", "21.4%", "20.9%"] },
+      { "label": "Israel (all locality ballot boxes)", "cells": ["26.5%", "25.1%", "29.5%", "24.2%", "23.4%"] }
+    ],
+    "question": "Likud's share of valid votes cast at ballot boxes in each locality, computed from the Central Elections Committee's locality results files for the 21st to 25th Knesset.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "April 2019 – November 2022",
+    "note": "Whole-town results in mixed towns, not the vote of Russian speakers. Double-envelope votes are not included. Likud ran under its own name in all five elections."
+  },
+  "turnout-2022": {
+    "title": "How these towns voted: turnout in November 2022",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "Bat Yam", "value": 50.8 },
+      { "label": "Nof HaGalil", "value": 52.8 },
+      { "label": "Haifa", "value": 55.5 },
+      { "label": "Kiryat Yam", "value": 55.6 },
+      { "label": "Israel", "value": 70.6 }
+    ],
+    "question": "Votes cast as a share of registered voters, by locality.",
+    "source": "Central Elections Committee, locality results (computed)",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "2022-11-01",
+    "note": "Whole-town figures in mixed towns. Nof HaGalil and Haifa also have large Arab populations, so these numbers are not the turnout of Russian speakers."
+  },
+  "hanin-estimates": {
+    "title": "Estimated vote of immigrants from the former Soviet Union, 2015 and April 2019",
+    "kind": "table",
+    "columns": ["Election", "Yisrael Beiteinu", "Likud", "Next-largest list"],
+    "rows": [
+      { "label": "2015", "cells": ["42%", "29%", "Zionist Union (Labor) 6.3%"] },
+      { "label": "April 2019", "cells": ["40.2%", "26.7%", "Blue and White 15.1%"] }
+    ],
+    "question": "Share of the vote of immigrants from the former Soviet Union, as estimated by Zeev Hanin of Bar-Ilan University.",
+    "source": "Zeev Hanin, cited by the Times of Israel",
+    "url": "https://www.timesofisrael.com/russians-are-coming-to-the-polls-israeli-politicians-are-finally-waking-up/",
+    "date": "2019-07-26",
+    "note": "An academic estimate, not a count. In 2015 Labor ran on the joint Zionist Union list with Hatnuah; the source calls it Labor. Blue and White is the list as it ran in April 2019. Hanin is the same scholar spelled Khanin in the page text. No comparable estimate was found for September 2019, 2020, 2021 or 2022."
+  },
+  "not-recognized": {
+    "title": "Share of each year's immigrants from the former Soviet Union who were not Jewish under halacha",
+    "kind": "bars",
+    "unit": "%",
+    "rows": [
+      { "label": "1990", "value": 6.8 },
+      { "label": "2020", "value": 71.7 }
+    ],
+    "question": "Immigrants from the former Soviet Union who were not Jewish under religious law, as a share of that year's arrivals.",
+    "source": "Knesset Research and Information Center, reported by the Times of Israel",
+    "url": "https://www.timesofisrael.com/data-shows-major-drop-in-immigrants-from-former-soviet-union-considered-jewish/",
+    "date": "2022-11-17",
+    "note": "The Law of Return's grandchild clause grants citizenship to anyone with at least one Jewish grandparent who does not practice another religion (Times of Israel). No total for the 2022–25 arrivals was found."
+  }
+}
