@@ -6,7 +6,7 @@ import { type ReactNode, useEffect, useState } from "react";
 import { NAV_GROUPS, TEACH } from "@/lib/site";
 
 /**
- * The menu: three groups by what the reader is doing, and Teach it apart. On wide screens the
+ * The menu: three groups by what the reader is doing, and Teaching resources apart. On wide screens the
  * groups sit in the masthead's second row; on phones a Menu button opens a sheet. `extra` is
  * the countdown, shown in the sheet on phones (the masthead shows it on wide screens).
  */

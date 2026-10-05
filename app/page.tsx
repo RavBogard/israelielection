@@ -31,6 +31,7 @@ const BLURB: Record<string, string> = {
   "/polls": "Every seat poll of the campaign, the current average, and how each party has moved.",
   "/news": "A daily briefing, every sentence sourced, and the latest headlines.",
   "/results": "The committee's count on election night, as seats by party and bloc.",
+  "/how-it-works": "How votes become seats, how a government is formed, and how Israelis cast their ballots.",
   "/issues": "Seven questions that decide how Israelis vote, and how Americans misread them.",
   "/communities": "Nine groups of Israeli voters: how many, where, how they vote, what they think.",
   "/vote-map": "How every town voted in the five elections from 2019 to 2022, list by list.",
@@ -104,7 +105,7 @@ export default async function Page() {
   const live = await fetchCount(revalidate);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
   const days = daysUntil(ELECTION_DAY);
-  const groups = [...NAV_GROUPS.map((g) => ({ label: g.label, items: g.items.filter((n) => n.href !== "/") })), { label: TEACH.label, items: [TEACH] }];
+  const groups = [...NAV_GROUPS.map((g) => ({ label: g.label, items: [...g.items, ...(g.more ?? [])].filter((n) => n.href !== "/") })), { label: TEACH.label, items: [TEACH] }];
   return (
     <div className="ix home">
       <div className="wrap">

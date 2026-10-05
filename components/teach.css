@@ -1,4 +1,4 @@
-/* Teach it: session decks with their covers, then the interactives to use in class. */
+/* Teaching resources: session decks with their covers, then the interactives to use in class. */
 .th .sessions { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 28px; }
 .th .session { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 20px 36px; align-items: start; }
 .th .cover img { display: block; width: 100%; height: auto; border: 1px solid var(--line-2); }

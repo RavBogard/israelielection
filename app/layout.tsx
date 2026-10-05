@@ -17,7 +17,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.israelielection.org"),
   title: { default: "Israel Votes 2026", template: "%s · Israel Votes 2026" },
   description: DESCRIPTION,
+  applicationName: "Israel Votes 2026",
+  // What Facebook, iMessage, Slack and X show when a link is shared. The picture is app/opengraph-image.png.
+  openGraph: { type: "website", siteName: "Israel Votes 2026", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
+  appleWebApp: { title: "Israel Votes" },
 };
+
+export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f6f5f1" }, { media: "(prefers-color-scheme: dark)", color: "#000000" }] };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -29,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="masthead">
           <div className="row">
             <Logo />
+            <Countdown />
             <SiteNav extra={<Countdown />} />
           </div>
         </header>
@@ -53,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <div key={g.label}>
                   <p className="lbl">{g.label}</p>
                   <ul>
-                    {g.items.map((n) => (
+                    {[...g.items, ...(g.more ?? [])].map((n) => (
                       <li key={n.href}>
                         <Link href={n.href}>{n.label}</Link>
                       </li>
@@ -65,7 +73,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <p className="lbl">{TEACH.label}</p>
                 <ul>
                   <li>
-                    <Link href={TEACH.href}>Class materials</Link>
+                    <Link href={TEACH.href}>Decks, source sheets and guides</Link>
                   </li>
                 </ul>
               </div>

@@ -1,7 +1,11 @@
 export type NavItem = { href: string; label: string };
 
-/** The menu, grouped by what the reader is doing. "Teach it" stands apart for educators. */
-export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[] }[] = [
+/**
+ * The menu, grouped by what the reader is doing. "Teaching resources" stands apart for educators.
+ * `items` sit in the masthead, which holds about eleven links; `more` are the group's further
+ * pages, listed on the home index and in the footer but not in the masthead.
+ */
+export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; more?: readonly NavItem[] }[] = [
   {
     label: "Explore",
     items: [
@@ -26,13 +30,14 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[] }[]
       { href: "/vote-map", label: "Vote map" },
       { href: "/american-lens", label: "The American lens" },
     ],
+    more: [],
   },
 ];
 
-export const TEACH: NavItem = { href: "/teach", label: "Teach it" };
+export const TEACH: NavItem = { href: "/teach", label: "Teaching resources" };
 
 /** Every section in menu order, for pages that list them. */
-export const NAV: readonly NavItem[] = [...NAV_GROUPS.flatMap((g) => g.items), TEACH];
+export const NAV: readonly NavItem[] = [...NAV_GROUPS.flatMap((g) => [...g.items, ...(g.more ?? [])]), TEACH];
 
 /** The site's one-paragraph description, used in metadata and the footer. */
 export const DESCRIPTION =

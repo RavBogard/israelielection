@@ -264,3 +264,11 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Daniel approved on the preview ("go live", 2026-10-05 evening); fast-forwarded main to 10ef2ff, which also
   carries the Vote map restyled onto the new grammar. Styling files stay with the design lane; the reference
   lane asks for CSS changes rather than editing them.
+
+### 2026-10-05, later: naming, masthead, share cards
+- "Teach it" → "Teaching resources" (Daniel: "Teach it!" felt lame). Footer link under it: "Decks, source sheets and guides".
+- Masthead rebuilt for eleven links: group labels sit above their links; Menu button now below 1200px (was 860). GATE: breakpoint moved up to 1199px — proceeded because five Understand items plus the longer label overflow a 1200px row at every width below it, and the full-screen sheet with group labels is the better tablet experience.
+- NAV_GROUPS gained `more?: NavItem[]`: pages listed on the home index and in the footer but not in the masthead. Timeline and Glossary (other lane) go there. The masthead stays at eleven links.
+- Share cards: openGraph/twitter metadata in app/layout.tsx; app/opengraph-image.png and twitter-image.png (1200×630: the 120-seat grid with the 61 rule, wordmark, description, domain), rendered from scratchpad og.html with the site fonts. Facebook still shows the old title "Israel Votes: Build a coalition" from its cache; Daniel can re-scrape at developers.facebook.com/tools/debug.
+- Icons: app/icon.svg redrawn as the solid majority shape over a dimmed house (no row stripes, which moiré at 16px); app/apple-icon.png 180; app/favicon.ico (16+32, RGBA PNG entries, which Next's image pipeline requires). public/logo.svg and logo-dark.svg removed (unreferenced).
+- Desktop masthead shows the countdown again (it had only been in the phone sheet).

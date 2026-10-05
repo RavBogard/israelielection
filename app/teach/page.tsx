@@ -6,7 +6,7 @@ import "@/components/teach.css";
 import teach from "@/data/teach.json";
 
 export const metadata: Metadata = {
-  title: "Teach it",
+  title: "Teaching resources",
   description: "Class materials on Israel's 2026 election for educators and rabbinic colleagues: decks, source sheets, discussion guides.",
 };
 
@@ -17,7 +17,7 @@ export default function Page() {
     <div className="ix th">
       <div className="wrap">
         <header className="page-head">
-          <h1>Teach it</h1>
+          <h1>Teaching resources</h1>
           <p className="standfirst">
             Materials for educators and rabbinic colleagues teaching the 2026 Knesset election: session decks, source sheets, teacher&apos;s guides and
             discussion questions. Every number is dated and sourced.

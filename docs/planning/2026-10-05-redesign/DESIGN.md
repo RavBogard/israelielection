@@ -45,7 +45,7 @@ Paper and two inks. Colour is still data only (the four blocs).
   countdown, a Menu button opening a full-screen sheet.
 - Menu groups (visible labels on desktop, no dropdowns):
   Explore: Coalition Builder, Party Map. Follow: Polls, News, Results.
-  Understand: Issues, Communities, The American lens. Teach it (apart, right).
+  Understand: How it works, Issues, Communities, Vote map, The American lens. Teaching resources (apart, right). Further Understand pages (Timeline, Glossary) live in `more`: home index and footer only.
 - The dateline bar is removed; the countdown lives in the masthead, the "polls updated" date
   sits beside the data it describes.
 - Page header pattern everywhere: title (52), standfirst (Frank Ruhl 20, text ink), content.
@@ -54,7 +54,7 @@ Paper and two inks. Colour is still data only (the four blocs).
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│ ▣ Israel Votes 2026   Explore ·· Follow ·· Understand    Teach it│
+│ ▣ Israel Votes 2026   Explore ·· Follow ·· Understand   Teaching resources│
 │                                               22 days to the vote │
 ├──────────────────────────────────────────────────────────────────┤
 │ Israel votes in 22 days.          ■■■■■■■■■■■■  Netanyahu bloc 53 │
@@ -119,3 +119,7 @@ one heavy rule always means 61.
   issues and communities are not a sequence.
 - Open for Daniel: the name. The wordmark says Israel Votes 2026; the domain is
   israelielection.org.
+
+## Share card and icons (2026-10-05)
+- opengraph-image.png, 1200×630: paper, the 120-seat grid (61 black cells, heavy rule, "61") left; wordmark 72px, description 30px, domain in Public Sans right. One image for every page; per-page cards can come later.
+- Icon: black square, white majority shape, the rest of the house as a 22% white block. No cell rows in icons: at 16px they moiré.
