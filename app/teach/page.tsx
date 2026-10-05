@@ -7,7 +7,7 @@ import teach from "@/data/teach.json";
 
 export const metadata: Metadata = {
   title: "Teaching resources",
-  description: "Class materials on Israel's 2026 election for educators and rabbinic colleagues: decks, source sheets, discussion guides.",
+  description: "Class materials on Israel's 2026 election for educators and rabbinic colleagues: session decks with speaker notes.",
 };
 
 const DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -19,8 +19,8 @@ export default function Page() {
         <header className="page-head">
           <h1>Teaching resources</h1>
           <p className="standfirst">
-            Materials for educators and rabbinic colleagues teaching the 2026 Knesset election: session decks, source sheets, teacher&apos;s guides and
-            discussion questions. Every number is dated and sourced.
+            Materials for educators and rabbinic colleagues teaching the 2026 Knesset election. So far: session decks with speaker notes, each
+            as PowerPoint and PDF. Every number is dated and sourced.
           </p>
         </header>
 
