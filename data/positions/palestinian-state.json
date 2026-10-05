@@ -20,7 +20,7 @@
       "label": "Support a Palestinian state"
     }
   ],
-  "note": "Most rows are the parties' answers to Ynet's questionnaire of Sept 30, 2026, which asked about the West Bank; Likud declined it. Noam was not in the questionnaire; its row is its leader's 2025 bill. The Joint List's answer to Ynet did not address statehood; its row adds the Jerusalem Post's report of Jabareen's position. No published position found for any other list (checked October 2026). The Reservists–Economic, Blue and White and Noam rows address annexation and settlement, not statehood.",
+  "note": "Most rows are the parties' answers to Ynet's questionnaire of Sept 30, 2026, which asked about the West Bank. Likud declined it; its row adds Netanyahu's campaign video. The Joint List's answer did not address statehood; its row adds the Jerusalem Post's report of Jabareen's position. The Reservists–Economic, Blue and White and Noam rows quote their leaders outside the questionnaire; Hendel's predates his list's merger. UTJ gave no position (checked October 2026).",
   "columnNote": "Stance: a short label for the comparison table, drawn only from the row text. \"Declined to answer\": the party refused the questionnaire. \"No position found\": no published position on a Palestinian state was found (checked October 2026).",
   "rows": [
     {
@@ -75,12 +75,12 @@
     },
     {
       "party": "noam",
-      "text": "Avi Maoz sponsored the bill that passed a preliminary reading 25–24: \"the State of Israel will apply its laws and sovereignty to the settlement areas in Judea and Samaria, in order to establish the status of these areas as an inseparable part of the sovereign State of Israel.\"",
-      "source": "Times of Israel",
-      "url": "https://www.timesofisrael.com/liveblog_entry/rebelling-against-pm-mks-pass-preliminary-reading-of-west-bank-annexation-bill/",
-      "date": "Oct 22, 2025",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Avi Maoz: \"Establishing a Palestinian state in the heart of the country will lead to the production of terror throughout Israel\" (translated). He called for a right-wing government that would prevent a Palestinian state and annex the West Bank.",
+      "source": "Channel 14",
+      "url": "https://www.c14.co.il/article/1692880",
+      "date": "Sep 7, 2026",
+      "stance": "oppose",
+      "basis": "record"
     },
     {
       "party": "yashar",
@@ -116,21 +116,21 @@
     },
     {
       "party": "bw",
-      "text": "\"The party supports strengthening settlement in Judea and Samaria, with an emphasis on the Jordan Valley, the mountain ridge communities, the southern Hebron Hills and the seam-line area.\" Backs a framework similar to the Trump plan that would not require evacuating settlements.",
-      "source": "Ynet, party questionnaire",
-      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
-      "date": "Sept 30, 2026",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Benny Gantz, in a New York Times op-ed: \"opposition to the recognition of Palestinian statehood stands at the heart of [the Israeli] consensus\"; \"any path forward for broader Palestinian civil autonomy\" must first show \"a proven long-term track record of accountable governance.\" In the campaign (Arutz Sheva, Sep 28, 2026): \"These elections are not about a Palestinian state.\"",
+      "source": "Times of Israel, Sep 24, 2025; Arutz Sheva, Sep 28, 2026",
+      "url": "https://www.timesofisrael.com/liveblog_entry/in-nyt-gantz-says-western-leaders-recognizing-palestinian-statehood-aim-to-knock-netanyahu-ignore-israeli-security/",
+      "date": "Sep 24, 2025",
+      "stance": "oppose",
+      "basis": "record"
     },
     {
       "party": "res",
-      "text": "\"The party supports sovereignty through actions, not words. If there is an opportunity to apply Israeli law, for example in the Jordan Valley, the blocs or another strategic area, we will support it.\"",
-      "source": "Ynet, party questionnaire",
-      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
-      "date": "Sept 30, 2026",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Yoaz Hendel, in August 2026, before his list merged with Yaron Zelekha's party: \"We will not allow a Palestinian state to be established, and we support a free economy.\"",
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-election-2026/article-904910",
+      "date": "Aug 11, 2026",
+      "stance": "oppose",
+      "basis": "record"
     },
     {
       "party": "raam",
