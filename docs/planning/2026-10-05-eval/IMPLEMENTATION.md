@@ -62,7 +62,11 @@ Each batch: focused meaningful checks for changed logic, verified source/data li
 
 ## Current return note
 
-### Interactive homepage mosaic — October 5 (current return note)
+### Stacked homepage order — current return note
+
+Daniel requested the mosaic above the bloc labels whenever the homepage stacks vertically. Sol changed only the <=1000px CSS grid order to intro, mosaic, selectors, detail, source, context; desktop order remains unchanged. Production build passed; root checked the 390px production preview: graphic ends at 669px, labels begin at 689px, no horizontal overflow. The prior interactive mosaic b18d2b1 is deployed and CI passed. Next action: publish this scoped follow-up to main and verify production.
+
+### Interactive homepage mosaic — October 5
 
 Daniel preferred the original mosaic's visual appeal and requested a bloc-first reveal. This supersedes the majority bars below, which were deployed as 764995b. Product Sol restored the 120-cell mosaic in app/page.tsx, components/HomeRace.tsx, components/home.css and lib/home-race.ts/test. Default is four solid bloc colors; selecting a bloc via its large label button or cells reveals only its parties. Revealed cells and named rows open the selected Party Map profile. Back to blocs, same-row toggle and Escape reset the view. Bloc cell budgets and positions remain fixed throughout; fractional totals, exact shortfalls and missing/combined distinctions are preserved. Shared SeatGrid and other site pages are unchanged.
 

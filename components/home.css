@@ -98,7 +98,7 @@
 .home .standing .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 
 @media (max-width: 1000px) {
-  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "selectors" "mosaic" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
+  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
   .home .race-visual { max-width: 640px; width: 100%; }
   .home .today { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .home .today .more { grid-column: 1; }
