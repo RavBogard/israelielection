@@ -1,6 +1,7 @@
 export type BlocId = "net" | "opp" | "mid" | "arab";
 export type IssueKey = "draft" | "courts" | "war" | "wb" | "relig" | "econ";
-export type Tag = "haredi" | "arab" | "zionistOpp";
+/** `noArabPledge`: lists whose leaders pledged to govern without Arab parties (not The Democrats, who said the opposite). */
+export type Tag = "haredi" | "arab" | "zionistOpp" | "noArabPledge";
 
 /** A sentence with the source it came from. */
 export type Sourced = { text: string; source: string | null };
@@ -69,9 +70,13 @@ export type PollsConfig = {
   dissolved: string;
   /** A pollster's latest poll is "current" if published within this many days of the newest poll. */
   currentWindowDays: number;
-  /** Pollsters shown for reference but left out of averages and the coalition count. */
-  excludedFromAverage: string[];
-  excludedReason: string;
+  /**
+   * Who is averaged, stated for readers. Every pollster on `pollsters` is in: a firm is in or out
+   * by firm and stated method (sample size and method published), never by its results.
+   */
+  inclusionRule: string;
+  /** A second average shown alongside the main one, leaving out these pollsters' polls. */
+  withoutVariant: { label: string; note: string; pollsters: string[] };
   /** Validator: largest seat change allowed between consecutive polls by the same pollster. */
   maxSeatMove: number;
   /** Validator: publishers whose polls may be merged automatically. */

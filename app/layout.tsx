@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Frank_Ruhl_Libre, Public_Sans } from "next/font/google";
 import Link from "next/link";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Logo from "@/components/Logo";
 import SiteNav from "@/components/SiteNav";
 import Countdown from "@/components/Countdown";
 import { DESCRIPTION, NAV_GROUPS, TEACH } from "@/lib/site";
 import "./globals.css";
+
+const GA_ID = "G-DB53C0NZHB";
 
 // Frank Ruhl Libre is the Latin companion of Frank-Rühl, the face Hebrew newspapers have been
 // set in since 1910: it carries the headlines, the seat numbers and the prose. Public Sans, the
@@ -81,6 +84,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </footer>
       </body>
+      {/* Google Analytics on the production site only, so preview deploys do not count. */}
+      {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }

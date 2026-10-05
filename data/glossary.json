@@ -142,7 +142,7 @@
     },
     {
       "term": "The bloc",
-      "def": "In election coverage, the parties that back Benjamin Netanyahu for prime minister, often called the Netanyahu bloc or camp. In 2022 the two blocs' vote totals were \"almost identical,\" but the Netanyahu camp won \"a clear majority of 64 seats.\" This site groups lists as the Netanyahu bloc, the Zionist opposition, lists between the blocs, and Arab-led lists.",
+      "def": "In election coverage, the parties that back Benjamin Netanyahu for prime minister, often called the Netanyahu bloc or camp. In 2022 the two blocs' vote totals were \"almost identical,\" but the Netanyahu camp won \"a clear majority of 64 seats.\" This site groups lists as the Netanyahu bloc, the Zionist opposition, lists between the blocs, and the Joint List and Ra'am.",
       "see": [
         "/parties",
         "/polls",
@@ -362,7 +362,7 @@
       "term": "Haredim",
       "hebrew": "חרדים",
       "say": "hah-ray-DEEM",
-      "def": "Israel's most strictly religious Jews (singular Haredi), often called ultra-Orthodox in English. In the Central Bureau of Statistics' 2026 survey, 11.5% of Jewish adults called themselves Haredi.",
+      "def": "Israel's most strictly religious Jews (singular Haredi), often called ultra-Orthodox in English. In Central Bureau of Statistics figures for 2025, released in September 2026, 11.5% of Jewish adults called themselves Haredi.",
       "see": [
         "/communities/haredim",
         "/issues/haredi-draft"
@@ -467,7 +467,7 @@
     },
     {
       "term": "Left and right",
-      "def": "In Israel, left and right are defined mostly by positions on the conflict with the Palestinians. Economic views are a separate, weaker dimension: an expert survey of party positions places Shas and United Torah Judaism on the right on the conflict and on the left on economics.",
+      "def": "In Israel, left and right are defined mostly by positions on the Palestinians, the occupied territories and a Palestinian state. Economic views are a separate, weaker dimension: an expert survey of party positions places Shas and United Torah Judaism on the right on the Palestinian question and on the left on economics.",
       "see": [
         "/american-lens",
         "/parties"
@@ -563,7 +563,7 @@
     },
     {
       "term": "Occupied",
-      "def": "This site's default word for the West Bank and the parts of Gaza Israel holds. The International Court of Justice's non-binding 2024 advisory opinion refers to \"the Palestinian territory occupied since 1967.\" Netanyahu answered: \"The Jewish people are not occupiers in their own land.\"",
+      "def": "This site's word for the West Bank and the parts of Gaza Israel holds. The International Court of Justice's non-binding 2024 advisory opinion refers to \"the Palestinian territory occupied since 1967.\" Netanyahu answered: \"The Jewish people are not occupiers in their own land.\"",
       "see": [
         "/issues/west-bank"
       ],
@@ -591,7 +591,7 @@
       "def": "The agreements between Israel and the Palestine Liberation Organization signed on September 13, 1993, by Yitzhak Rabin and Yasser Arafat, which created the Palestinian Authority. They set a five-year interim period of Palestinian self-government and postponed issues such as Jerusalem and refugees. Oslo II, in 1995, divided the West Bank into Areas A, B and C.",
       "see": [
         "/issues/west-bank",
-        "/issues/not-on-ballot"
+        "/issues/palestinian-state"
       ],
       "source": {
         "name": "Ynet",
@@ -639,7 +639,7 @@
     },
     {
       "term": "Reasonableness standard",
-      "def": "A doctrine under which courts could void government and ministerial decisions they found unreasonable. Curbing it was the only part of the judicial overhaul to pass, in July 2023. On January 1, 2024, a full 15-justice Supreme Court panel struck that law down 8–7.",
+      "def": "A doctrine under which courts could void government and ministerial decisions they found unreasonable. The Knesset curbed it in July 2023, the second overhaul-era law to pass after a March 2023 change limiting when a prime minister can be removed as incapacitated. On January 1, 2024, a full 15-justice Supreme Court panel struck that law down 8–7.",
       "see": [
         "/issues/courts"
       ],
@@ -750,7 +750,7 @@
     },
     {
       "term": "West Bank",
-      "def": "The territory west of the Jordan River that Israel captured in the 1967 war and that most of the international community regards as occupied. This site's default name; internal Israeli discourse refers to it primarily by its biblical name, Judea and Samaria.",
+      "def": "The territory west of the Jordan River that Israel captured in the 1967 war and has held under military occupation since (see Occupied). This site's name for it; internal Israeli discourse refers to it primarily by its biblical name, Judea and Samaria.",
       "see": [
         "/issues/west-bank",
         "/communities/settlers",

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PartyMap from "@/components/PartyMap";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
-import { allPolls, otherPolls } from "@/lib/data";
+import { allPolls } from "@/lib/data";
 
 // Hourly, so the election countdown in the masthead stays current.
 export const revalidate = 3600;
@@ -20,8 +20,8 @@ export default function Page() {
         <SourcesBox count={allPolls.length + 5}>
           <PollSources />
           <li>
-            <b>Averages</b> are our arithmetic from the averaged polls above
-            {otherPolls.length ? ` (${otherPolls.map((p) => p.pollster).join(", ")} excluded)` : ""}.
+            <b>Averages</b> are our arithmetic from each pollster&apos;s latest current poll above, weighted by the square root of sample
+            size, each party over the polls where it passed the threshold.
           </li>
           <ProfileSources />
           <li>

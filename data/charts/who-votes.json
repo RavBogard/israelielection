@@ -1,0 +1,63 @@
+{
+  "status": {
+    "title": "Who can vote for the Knesset, by legal status",
+    "kind": "table",
+    "columns": ["Who", "Knesset vote", "Other elections"],
+    "rows": [
+      {
+        "label": "Israeli citizens 18 and over living in Israel, among them Palestinian citizens of Israel and Druze citizens",
+        "cells": ["Yes", "Israeli local elections"],
+        "source": "Inter-Agency Task Force",
+        "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+        "date": "updated Dec 2022"
+      },
+      {
+        "label": "Israeli citizens living in West Bank settlements",
+        "cells": ["Yes, at polling stations in their own localities", "Israeli local elections"],
+        "source": "Central Elections Committee",
+        "url": "https://media25.bechirot.gov.il/files/expc.csv",
+        "date": "2022"
+      },
+      {
+        "label": "Israeli citizens abroad",
+        "cells": ["Only in Israel on election day, except official government and Jewish Agency emissaries", "None from abroad"],
+        "source": "Israel Democracy Institute",
+        "url": "https://en.idi.org.il/articles/29786",
+        "date": "Feb 18, 2020"
+      },
+      {
+        "label": "East Jerusalem Palestinians with permanent residency",
+        "cells": ["No, unless they become citizens", "Jerusalem municipal elections"],
+        "source": "Inter-Agency Task Force",
+        "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+        "date": "updated Dec 2022"
+      },
+      {
+        "label": "Golan Druze with permanent residency",
+        "cells": ["No, unless they become citizens", "Not covered by this source"],
+        "source": "Inter-Agency Task Force",
+        "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+        "date": "updated Dec 2022"
+      },
+      {
+        "label": "West Bank Palestinians",
+        "cells": ["No; no Israeli status", "Palestinian Authority national and local elections"],
+        "source": "Inter-Agency Task Force",
+        "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+        "date": "updated Dec 2022"
+      },
+      {
+        "label": "Gaza Palestinians",
+        "cells": ["No; no Israeli status", "Palestinian Authority elections; Hamas has ruled Gaza since 2007"],
+        "source": "Inter-Agency Task Force",
+        "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+        "date": "updated Dec 2022"
+      }
+    ],
+    "question": "Legal status decides the Knesset vote: citizenship, not residence or the territory a person lives in.",
+    "source": "Inter-Agency Task Force on Israeli Arab Issues; Central Elections Committee; Israel Democracy Institute",
+    "url": "https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf",
+    "date": "Feb 2020 – Dec 2022",
+    "note": "Palestinian Authority national elections were last held in 2005 (presidency) and 2006 (legislature); local elections were held in April 2026, and a legislative vote is set for November 28, 2026. See the Palestinian elections section."
+  }
+}

@@ -581,7 +581,7 @@
     {
       "date": "1987-12-08",
       "title": "First intifada begins",
-      "text": "After an Israeli vehicle in Gaza caused a crash that killed four Palestinians, rioting broke out in the Jabalia refugee camp. The uprising spread to the occupied West Bank.",
+      "text": "After an Israeli vehicle in Gaza caused a crash that killed four Palestinians, protests broke out in the Jabalia refugee camp. The uprising, the first intifada, spread to the occupied West Bank.",
       "kind": "war",
       "source": {
         "name": "Al Jazeera",
@@ -823,7 +823,7 @@
     {
       "date": "2021-05-12",
       "title": "Violence in mixed cities",
-      "text": "Amid fighting with Gaza and clashes at Al-Aqsa, Jewish and Arab mobs attacked each other in Lod, Acre, Ramle and Bat Yam, the widest unrest between citizens since October 2000, when 13 people, 12 of them Palestinian citizens of Israel, died in clashes with police.",
+      "text": "Amid fighting in Gaza and clashes around Al-Aqsa Mosque, Jewish and Arab mobs attacked each other in Lod, Acre, Ramle and Bat Yam, the widest unrest between citizens since October 2000, when police killed 13 protesters, 12 of them Palestinian citizens of Israel.",
       "kind": "society",
       "source": {
         "name": "Times of Israel",
@@ -900,7 +900,7 @@
     {
       "date": "2023-07-24",
       "title": "'Reasonableness' law passes",
-      "text": "The Knesset passed 64–0 the first law of the overhaul, limiting the courts' review of government decisions for \"reasonableness.\" The opposition boycotted the vote.",
+      "text": "The Knesset passed 64–0 a law limiting the courts' review of government decisions for \"reasonableness.\" The opposition boycotted the vote.",
       "kind": "law",
       "source": {
         "name": "Al Jazeera",
@@ -977,7 +977,7 @@
     {
       "date": "2025-06-13",
       "title": "Twelve-day war with Iran",
-      "text": "Israel bombed Iranian nuclear sites at Natanz and Isfahan, and Iran retaliated with drones and missiles. President Trump announced a ceasefire, calling the conflict \"the 12 Day War.\"",
+      "text": "Israel bombed Iranian nuclear sites at Natanz and Isfahan, and Iran retaliated with drones and missiles. President Trump announced a ceasefire, calling it \"the 12 Day War.\"",
       "kind": "war",
       "source": {
         "name": "Al Jazeera",

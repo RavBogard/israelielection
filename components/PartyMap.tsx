@@ -5,7 +5,7 @@ import "./interactives.css";
 import "./map.css";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
-import { blocLabel, blocs, mainPolls, otherPolls, parties } from "@/lib/data";
+import { averagePoll, blocLabel, blocs, mainPolls, parties } from "@/lib/data";
 import { fmt, shortDate } from "@/lib/format";
 import { average } from "@/lib/polls";
 import { squarify } from "@/lib/treemap";
@@ -14,8 +14,10 @@ import type { BlocId, Party } from "@/lib/types";
 const averaged = parties
   .map((p) => ({ p, a: average(p.id, mainPolls) }))
   .filter((x): x is { p: Party; a: NonNullable<typeof x.a> } => x.a !== null);
-const avgOf = new Map(averaged.map(({ p, a }) => [p.id, a.avg]));
-const blocSum = (b: BlocId) => averaged.filter(({ p }) => p.bloc === b).reduce((s, { a }) => s + a.avg, 0);
+/** Seats on the map: the average scaled to 120 (see averageAsPoll), as in the Coalition Builder. */
+const seatsOf = (id: string) => averagePoll.results[id]?.seats ?? 0;
+const avgOf = new Map(averaged.map(({ p }) => [p.id, seatsOf(p.id)]));
+const blocSum = (b: BlocId) => Math.round(averaged.filter(({ p }) => p.bloc === b).reduce((s, { p }) => s + seatsOf(p.id), 0) * 10) / 10;
 const offMap = parties.filter((p) => !avgOf.has(p.id));
 const fewerPolls = averaged.filter(({ a }) => a.n < mainPolls.length).map(({ p }) => p.name);
 
@@ -57,7 +59,7 @@ function Overview() {
         Our arithmetic: each party&apos;s average across the {mainPolls.length} polls, added up by bloc.
         {fewerPolls.length > 0 &&
           ` ${fewerPolls.join(" and ")} use fewer polls because not every poll reported them separately, so totals add to about 120, not exactly 120.`}{" "}
-        {otherPolls.map((p) => p.pollster).join(", ")} is shown in each party&apos;s panel but not averaged.
+        Each party&apos;s average is over the polls where it passed the threshold; one that passed in fewer than half counts 0. Because small lists sometimes miss the threshold, those averages can add to more than 120, so they are scaled down in proportion to 120.
       </p>
       <p className="hint">
         Tap any party block or chip for its profile: who they are, who votes for them, where they stand on six issues, key candidates,
@@ -117,7 +119,7 @@ export default function PartyMap() {
       );
       const ps = averaged
         .filter(({ p }) => p.bloc === br.id)
-        .map(({ p, a }) => ({ id: p.id, v: a.avg }))
+        .map(({ p }) => ({ id: p.id, v: seatsOf(p.id) }))
         .sort((a, b) => b.v - a.v);
       for (const r of squarify(ps, bx, by + LBL, bw, bh - LBL)) {
         const p = parties.find((q) => q.id === r.id)!;
@@ -137,7 +139,7 @@ export default function PartyMap() {
             onClick={() => select(p.id)}
             onPointerMove={(e) => {
               if (e.pointerType !== "mouse") return setTip(null);
-              const seats = [...mainPolls, ...otherPolls].map((poll) => {
+              const seats = mainPolls.map((poll) => {
                 const x = poll.results[p.id];
                 return `${poll.pollster} ${shortDate(poll.published)}: ${x ? (x.belowThreshold ? "below" : x.seats) : "n/a"}`;
               });
@@ -170,7 +172,7 @@ export default function PartyMap() {
           <p className="sub">
             Each block&apos;s area is the party&apos;s average seat count across {mainPolls.length} polls (
             {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). Tap a party for who they are, who votes for
-            them, where they stand, and their seat numbers including {otherPolls.map((p) => p.pollster).join(", ")}.
+            them, where they stand, and their seat numbers in each poll.
           </p>
         </div>
         <div className="legend">

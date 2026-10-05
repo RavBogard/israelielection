@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "about": "Coalition Builder warnings. Each rule fires when its `when` condition holds for the selected parties. Conditions: {\"party\": id} selected; {\"tag\": t} any selected party carries tag t; {\"all\": [...]}, {\"any\": [...]}. Message placeholders: {and:tag1,tag2} joins the selected parties with those tags with \" and \"; {comma:tag} joins with \", \".",
   "rules": [
     {
       "id": "zionist-opp-no-arab-parties",
       "kind": "pledge",
-      "when": { "all": [{ "tag": "arab" }, { "tag": "zionistOpp" }] },
-      "message": "The Zionist opposition ({comma:zionistOpp}) has pledged to govern without Arab parties, and this coalition includes {and:arab}.",
+      "when": { "all": [{ "tag": "arab" }, { "tag": "noArabPledge" }] },
+      "message": "The Zionist opposition ({comma:noArabPledge}) has pledged to govern without Arab parties, and this coalition includes {and:arab}.",
       "source": "Haaretz, Oct 1, 2026"
     },
     {

@@ -25,7 +25,7 @@ export const ISSUES = [
   "west-bank",
   "religion-state",
   "economy",
-  "not-on-ballot",
+  "palestinian-state",
 ] as const;
 
 export const COMMUNITIES = [
@@ -41,7 +41,7 @@ export const COMMUNITIES = [
 ] as const;
 
 /** How it works: the mechanics of the system, at /how-it-works/<slug>. */
-export const GUIDES = ["seats", "forming-a-government", "voting"] as const;
+export const GUIDES = ["seats", "forming-a-government", "voting", "who-votes"] as const;
 
 export type IssueSlug = (typeof ISSUES)[number];
 export type CommunitySlug = (typeof COMMUNITIES)[number];

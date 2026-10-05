@@ -39,12 +39,16 @@ describe("pledge rules (parity with the v2 if-statements)", () => {
     expect(ruleIds("likud", "otzma", "rz")).toEqual([]);
   });
 
-  it("Zionist opposition + Arab party", () => {
+  it("Zionist opposition + Arab party (The Democrats made no such pledge)", () => {
     const w = warnings(sel("yashar", "dem", "jl"), parties, pledgeRules);
     expect(w.map((x) => x.id)).toEqual(["zionist-opp-no-arab-parties"]);
     expect(w[0].message).toBe(
-      "The Zionist opposition (Yashar!, The Democrats) has pledged to govern without Arab parties, and this coalition includes Joint List."
+      "The Zionist opposition (Yashar!) has pledged to govern without Arab parties, and this coalition includes Joint List."
     );
+  });
+
+  it("The Democrats alone with an Arab party: no pledge warning", () => {
+    expect(warnings(sel("dem", "jl"), parties, pledgeRules).map((x) => x.id)).toEqual([]);
   });
 
   it("Eisenkot + Ra'am", () => {
@@ -67,12 +71,19 @@ describe("pledge rules (parity with the v2 if-statements)", () => {
 });
 
 describe("the average as a poll", () => {
-  it("sums fractional seats without float drift", async () => {
-    const { averageAsPoll } = await import("./polls");
-    const avg = averageAsPoll(pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id)), parties.map((p) => p.id));
-    expect(avg.results.likud.seats).toBe(20);
-    expect(avg.results.shas.seats).toBe(7.7);
-    const t = tally(new Set(["likud", "shas", "utj", "otzma", "rz", "poi"]), parties, avg);
-    expect(t.total).toBe(Math.round((20 + 7.7 + 7.7 + 7.5 + 5.8 + 4.3) * 10) / 10);
+  it("averages each list over the polls where it passed, scaled to 120, without float drift", async () => {
+    const { average, averageAsPoll } = await import("./polls");
+    const four = pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id));
+    const avg = averageAsPoll(four, parties.map((p) => p.id));
+    // res is below in Channel 13 and 4–5 elsewhere: it averages over its 3 passing polls (4.3), not 13 / 4 = 3.25.
+    expect(average("res", four)!.seats).toBeCloseTo(4.3, 1);
+    const seats = Object.values(avg.results).map((r) => r.seats);
+    const sum = seats.reduce((a, b) => a + b, 0);
+    expect(sum).toBeLessThanOrEqual(120.5);
+    expect(sum).toBeGreaterThan(115);
+    for (const r of Object.values(avg.results)) if (!r.belowThreshold) expect(r.seats).toBeGreaterThanOrEqual(4);
+    const ids = ["likud", "shas", "utj", "otzma", "rz", "poi"];
+    const t = tally(new Set(ids), parties, avg);
+    expect(t.total).toBe(Math.round(ids.reduce((a, id) => a + (avg.results[id]?.seats ?? 0), 0) * 10) / 10);
   });
 });

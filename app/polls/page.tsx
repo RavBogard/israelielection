@@ -4,9 +4,9 @@ import "@/components/interactives.css";
 import "@/components/polls.css";
 import PollTrends, { type TrendPanel } from "@/components/PollTrends";
 import SeatGrid from "@/components/SeatGrid";
-import { allPolls, blocs, mainPolls, otherPolls, parties, pollsData } from "@/lib/data";
+import { allPolls, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
 import { fmt, httpUrl, mediumDate, shortDate } from "@/lib/format";
-import { average, pollLabel } from "@/lib/polls";
+import { average, inWithoutVariant, pollLabel } from "@/lib/polls";
 import { averageTrend } from "@/lib/trend";
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ export const revalidate = 3600;
 
 const cfg = pollsData.config;
 const tracked = parties.filter((p) => allPolls.some((poll) => poll.results[p.id]));
-const excluded = (pollster: string) => cfg.excludedFromAverage.includes(pollster);
+const variant = cfg.withoutVariant;
+const filber = (poll: (typeof allPolls)[number]) => inWithoutVariant(poll, cfg);
+const round1 = (x: number) => fmt(Math.round(x * 10) / 10);
 
 export default function Page() {
   const from = allPolls.at(-1)!.published;
@@ -38,7 +40,7 @@ export default function Page() {
         trend: averageTrend(p.id, allPolls, cfg),
         dots: allPolls
           .filter((poll) => poll.results[p.id])
-          .map((poll) => ({ date: poll.published, seats: poll.results[p.id].seats, pollster: poll.pollster, ref: excluded(poll.pollster) })),
+          .map((poll) => ({ date: poll.published, seats: poll.results[p.id].seats, pollster: poll.pollster, ref: filber(poll) })),
       }))
       .sort((a, b) => (b.trend.at(-1)?.avg ?? 0) - (a.trend.at(-1)?.avg ?? 0)),
   })).filter((g) => g.panels.length);
@@ -46,16 +48,18 @@ export default function Page() {
   const rows = tracked
     .map((p) => {
       const a = average(p.id, mainPolls);
+      const w = average(p.id, variantPolls);
       const vals = mainPolls.map((poll) => poll.results[p.id]?.seats).filter((v): v is number => v !== undefined);
-      return { p, a, lo: Math.min(...vals), hi: Math.max(...vals) };
+      return { p, a, w, lo: Math.min(...vals), hi: Math.max(...vals) };
     })
     .filter((r) => r.a)
-    .sort((x, y) => blocs.findIndex((b) => b.id === x.p.bloc) - blocs.findIndex((b) => b.id === y.p.bloc) || y.a!.avg - x.a!.avg);
+    .sort((x, y) => blocs.findIndex((b) => b.id === x.p.bloc) - blocs.findIndex((b) => b.id === y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
   // The grid fills in the order the table reads: Netanyahu's bloc, then the rest, each party its own run.
   const gridOrder = ["net", "mid", "opp", "arab"];
   const segments = [...rows]
     .sort((x, y) => gridOrder.indexOf(x.p.bloc) - gridOrder.indexOf(y.p.bloc) || y.a!.avg - x.a!.avg)
-    .map(({ p, a }) => ({ id: p.id, seats: a!.avg, color: `var(--b-${p.bloc})`, label: p.name }));
+    .filter(({ a }) => a!.seats > 0)
+    .map(({ p, a }) => ({ id: p.id, seats: a!.seats, color: `var(--b-${p.bloc})`, label: p.name }));
 
   return (
     <div className="ix pl">
@@ -75,7 +79,14 @@ export default function Page() {
         <p className="note">
           Each pollster&apos;s latest poll from the {cfg.currentWindowDays} days up to {mediumDate(to)} ({mainPolls.length} polls:{" "}
           {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/">Coalition Builder</Link> and{" "}
-          <Link href="/parties">Party Map</Link> use the same polls. {cfg.excludedReason}
+          <Link href="/parties">Party Map</Link> use the same polls. {cfg.inclusionRule}
+        </p>
+        <p className="note">
+          Each list&apos;s average is taken over the polls where it passed the 3.25% threshold, so a list that passes never averages below 4
+          seats; &ldquo;passes in k of n&rdquo; counts those polls out of the polls that reported the list. A list that passes in fewer than
+          half is shown as near the threshold and left out of the Coalition Builder&apos;s default count. Polls are weighted by the square
+          root of their sample size; a poll that reports no sample size counts as the median of those that do. Because small lists sometimes miss the threshold, these averages can add to more than 120; the Coalition Builder, the Party Map and the home page scale them down in proportion to 120.{" "}
+          {variant.note}
         </p>
         <div className="avg-layout">
           <div className="table-scroll">
@@ -86,26 +97,30 @@ export default function Page() {
                   <th className="num">Average</th>
                   <th className="num">Range</th>
                   <th className="num">Polls</th>
-                  {otherPolls.map((p) => (
-                    <th key={p.id} className="num">{p.pollster}</th>
-                  ))}
+                  <th className="num">{variant.label}</th>
                 </tr>
               </thead>
               <tbody>
-                {rows.map(({ p, a, lo, hi }) => (
+                {rows.map(({ p, a, w, lo, hi }) => (
                   <tr key={p.id}>
                     <td>
                       <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
                       <Link href={`/parties/${p.id}`}>{p.name}</Link>
                     </td>
-                    <td className="num">{lo === 0 && hi === 0 ? <span className="dim">below threshold</span> : <b>{fmt(Math.round(a!.avg * 10) / 10)}</b>}</td>
+                    <td className="num">
+                      {a!.k === 0 ? (
+                        <span className="dim">below threshold</span>
+                      ) : a!.nearThreshold ? (
+                        <span className="dim" title={`${round1(a!.avg)} seats in the polls where it passes`}>near threshold</span>
+                      ) : (
+                        <b>{round1(a!.avg)}</b>
+                      )}
+                    </td>
                     <td className="num">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
-                    <td className="num">{a!.n}</td>
-                    {otherPolls.map((poll) => (
-                      <td key={poll.id} className="num dim">
-                        {poll.results[p.id] ? (poll.results[p.id].belowThreshold ? "below" : poll.results[p.id].seats) : "n/a"}
-                      </td>
-                    ))}
+                    <td className="num">passes in {a!.k} of {a!.n}</td>
+                    <td className="num dim" title={w ? `Passes in ${w.k} of ${w.n} polls without ${variant.pollsters.join(" and ")}` : undefined}>
+                      {!w ? "n/a" : w.k === 0 ? "below" : w.nearThreshold ? "near" : round1(w.avg)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -123,11 +138,12 @@ export default function Page() {
           seat scale, so heights compare across parties. A dot at 0 is a poll that had the party below the 3.25% threshold. Hover or use the arrow keys
           on a panel for the average on a date.
         </p>
-        <PollTrends groups={groups} from={from} to={to} yMax={yMax} />
+        <PollTrends groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
 
         <h2 className="sec-h">Every poll</h2>
         <p className="note">
-          Newest first. Grey rows are {cfg.excludedFromAverage.join(", ")}, shown but not averaged. &ldquo;b&rdquo; is below the threshold;
+          Newest first. Every current poll is averaged. Grey rows are {variant.pollsters.join(" and ")}, left out of the &ldquo;{variant.label}&rdquo;
+          average only. &ldquo;b&rdquo; is below the threshold;
           &ldquo;n/a&rdquo; is not reported separately.
         </p>
         <div className="table-scroll sheet">
@@ -145,7 +161,7 @@ export default function Page() {
             </thead>
             <tbody>
               {allPolls.map((poll) => (
-                <tr key={poll.id} className={excluded(poll.pollster) ? "ref" : undefined}>
+                <tr key={poll.id} className={filber(poll) ? "ref" : undefined}>
                   <td>{shortDate(poll.published)}</td>
                   <td>{pollLabel(poll)}</td>
                   <td className="num">{poll.n ? poll.n.toLocaleString("en-US") : ""}</td>

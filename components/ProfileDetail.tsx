@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { blocLabel, mainPolls, otherPolls, partiesData } from "@/lib/data";
+import { blocLabel, mainPolls, partiesData, pollsData, variantPolls } from "@/lib/data";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import { average } from "@/lib/polls";
@@ -31,7 +31,7 @@ function Seats({ party }: { party: Party }) {
       </div>
     );
   }
-  const rows = [...mainPolls, ...otherPolls].map((poll) => {
+  const rows = mainPolls.map((poll) => {
     const r = poll.results[party.id];
     const when = r?.dateUncertain ? "latest" : shortDate(poll.published);
     const dated = r?.dateUncertain ? " (date not given in our register)" : `, ${mediumDate(poll.published)}`;
@@ -47,7 +47,7 @@ function Seats({ party }: { party: Party }) {
         <span className="d">
           {poll.pollster}, {when}
         </span>
-        <span className={`bar${otherPolls.includes(poll) ? " x" : ""}`} title={tip}>
+        <span className="bar" title={tip}>
           <i style={{ width: `${w}%`, background: fill }} />
         </span>
         <span className="v" title={tip}>
@@ -56,15 +56,20 @@ function Seats({ party }: { party: Party }) {
       </div>
     );
   });
-  const notes = [`Average ${fmt(av.avg)} across ${av.n} poll${av.n > 1 ? "s" : ""} (${otherPolls.map((p) => p.pollster).join(", ")} not included).`];
+  const wv = average(party.id, variantPolls);
+  const label = pollsData.config.withoutVariant.label;
+  const notes = [
+    av.k === 0
+      ? `Below the threshold in all ${av.n} poll${av.n > 1 ? "s" : ""} that reported it.`
+      : `Average ${fmt(Math.round(av.avg * 10) / 10)} over the polls where it passes: passes in ${av.k} of ${av.n}${av.nearThreshold ? ", so it is near the threshold and counts 0 in the Coalition Builder" : ""}.` +
+        (wv && wv.k > 0 && !wv.nearThreshold ? ` ${label}: ${fmt(Math.round(wv.avg * 10) / 10)}.` : ""),
+  ];
   for (const poll of mainPolls) {
     const r = poll.results[party.id];
     if (!r) notes.push(`${poll.pollster} (${shortDate(poll.published)}) did not report this party separately.`);
     else if (r.belowThreshold) notes.push(`${poll.pollster} had it below the threshold.`);
+    if (r?.dateUncertain) notes.push(`${poll.pollster} figure is the latest in our register; its date is not given.`);
   }
-  for (const poll of otherPolls)
-    if (poll.results[party.id]?.dateUncertain)
-      notes.push(`${poll.pollster} figure is the latest in our register; its date is not given.`);
   return (
     <div className="sec">
       <p className="lbl">Seats in each poll</p>

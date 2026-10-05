@@ -16,7 +16,7 @@ Source: REVIEW-PACKET.md Parts 1–2. Items 1–25 are Daniel's rulings (2026-10
 10. b — Golan Druze in a separate box on the druze page, not in page totals.
 11. b — take Druze out of "Arab" figures wherever the source allows; where it does not, note it. On the druze page, present them as a group of their own, noting the CBS classification and the Pew 2014–15 self-description.
 12. b — relabel chart labels copied from sources as "Palestinian citizens of Israel", with the source's own term in the note.
-13. a — "Zionist / non-Zionist parties".
+13. a — "Zionist / non-Zionist parties". Revised by #112: "Jewish-majority lists".
 14. c — "yeshiva students who did not report", with "draft evaders" noted once at first use as the term used in Israeli debate.
 15. c — the party Shas on the haredi page; its traditional voters on the masorti page; label "Haredi-led party with a traditional base".
 16. b — Otzma's rise told on the masorti page; wording "a shift within the right".
@@ -146,3 +146,25 @@ Source: REVIEW-PACKET.md Parts 1–2. Items 1–25 are Daniel's rulings (2026-10
 100. C — a: separate national bar; nearly 10% is too large for a footnote.
 101. C — b: share for a chosen party; winner-colouring overstates land area and hides mixed cities.
 102. C — b: credit as precedent only until its licence is checked. Per #26.
+
+## Part 3 — after the three-perspective review (Daniel, 2026-10-05)
+103. Casualty language: active voice for every side where the source names the actor ("X killed Y"); minimizing or contested estimates are attributed, with OCHA's count beside them where one exists.
+104. New page on who votes and who doesn't (How it works): facts in the site's voice; the critique of the disparities (rights groups, the ICJ, scholars) and its rebuttals (the Israeli government and its defenders) attributed and quoted. The Gaza legal record (ICJ, ICC, IPC, UN inquiry) and West Bank and Gaza tolls go here, briefly, with Israel's response.
+105. The war page adds an Oct 7 paragraph and reworks its misreading (IDI's 79% "not troubled" beside the 78%; Jewish-Israeli dissent attributed). Otherwise Gaza and West Bank additions go on the new page, not the issue pages.
+106. Palestinian opinion (Pew, PCPSR) and attributed Palestinian voices on the West Bank, war and settlers pages; Palestinian-led and rights sources cited alongside IDI where they measure the same thing (per #22, labeled).
+107. Bloc label "Joint List and Ra'am", not "Arab-led lists". Hadash described in its own words.
+108. The issue page's address follows #58: /issues/palestinian-state, with the old address redirected.
+109. Teaching deck: no trip references.
+
+## Part 4 — after the academic review (Daniel, 2026-10-05)
+110. Poll average: each list's average is taken over the polls where it passed, shown with "passes in k of n polls"; a list that passes in fewer than half the polls is shown as near the threshold and left out of the Coalition Builder's default total. No fractional seat counts below the threshold.
+111. Pollsters are included or excluded by firm and stated method, never by result. Every firm that publishes a sample size and method is in, Channel 14 included; the average is also shown without Shlomo Filber's firms (Channel 14 / Next Data, i24NEWS / Direct Polls). Polls are weighted by the square root of the sample size where it is known.
+112. Revises #13: the non-Arab lists collectively are "Jewish-majority lists". "Zionist" only where a party uses it of itself; UTJ (Agudat Yisrael, Degel HaTorah) is historically non-Zionist.
+113. Community pages add Israel National Election Studies estimates (2022), each with its sample size, in step 4.
+
+## Part 5 — the missing issue (2026-10-05)
+114. The American lens page leads with what Americans most often get wrong: the Palestinian question (Palestinian rights and sovereignty, two states or one, equality, the conduct of the war in Gaza and the West Bank) is not a top-tier issue in this election for most Jewish Israeli voters or the Jewish-majority parties. That absence is documented in the site's voice from polls, party statements and vote-factor data; charges such as war crimes, genocide or apartheid stay attributed (#103, #104), each with Israel's response. The Issues index frames its seven pages the same way.
+115. Purpose: an educational site for understanding the election, not an advocacy site — readers, mainstream American Jews included, should come away educated, not turned off, and understanding that the election is not about what Americans imagine it is about. Where house language hides realities, choose the precise term.
+116. The West Bank is "occupied" in the site's voice (ICJ, UN; Israel's Supreme Court calls it belligerent occupation). Israel's "disputed" position is one attributed line on the West Bank page. Resolves the open "occupied/disputed" question.
+117. No generic "the conflict" in the site's voice: name the thing (Israel's military rule over the West Bank, the war in Gaza, Palestinians' lack of a vote or a state). "Conflict" stays inside quotations and pollsters' question wording.
+118. Findings and charges (ICJ, ICC, UN inquiry, rights groups) are stated fully and attributed first, with Israel's rejection in one sentence; no equal-weight rebuttal paragraphs (revises the counter-review asks). "Genocide" appears only inside a direct quotation from one of those sources or a case name.

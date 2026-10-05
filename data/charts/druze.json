@@ -2,7 +2,7 @@
   "vote": {
     "title": "How these villages voted: ten core Druze localities, 2019–2022 (% of valid votes)",
     "kind": "table",
-    "columns": ["Election", "Leading lists", "Non-Zionist lists combined"],
+    "columns": ["Election", "Leading lists", "Joint List parties and Ra'am, combined"],
     "rows": [
       { "label": "April 2019", "cells": ["Blue and White 33.2, Meretz 17.6, Likud 13.3, Yisrael Beiteinu 9.4, Kulanu 8.4", "3.7"] },
       { "label": "September 2019", "cells": ["Blue and White 48.8, Yisrael Beiteinu 13.7, Labor–Gesher 11.2, Likud 11.1", "6.2"] },
@@ -14,7 +14,7 @@
     "source": "Central Elections Committee, results by locality (computed)",
     "url": "https://media25.bechirot.gov.il/files/expc.csv",
     "date": "2019–2022",
-    "note": "Lists as they ran each year. Meretz ran within the Democratic Union in September 2019 (4.2%) and on a joint list with Labor–Gesher in March 2020. Non-Zionist lists are the Arab-led lists: Hadash–Ta'al and Ra'am–Balad (April 2019), the Joint List (2019–2021), Ra'am (2021–2022), Hadash–Ta'al and Balad (2022). The locality set follows the Moshe Dayan Center (https://dayan.org/he/content/5714); results files for earlier elections are at media21–media24.bechirot.gov.il. Counting Isfiya and leaving out Peki'in moves the 2022 shares by 1–2 points. IDI's own 2022 figures for Druze localities: National Unity 30.4, Yisrael Beiteinu 18.3, Meretz 14, Likud 10.6 (https://en.idi.org.il/articles/47986)"
+    "note": "Lists as they ran each year. Meretz ran within the Democratic Union in September 2019 (4.2%) and on a joint list with Labor–Gesher in March 2020. The last column adds up the lists of Hadash, Ta'al, Balad and Ra'am as they ran each year: Hadash–Ta'al and Ra'am–Balad (April 2019), the Joint List (2019–2021), Ra'am (2021–2022), Hadash–Ta'al and Balad (2022). The locality set follows the Moshe Dayan Center (https://dayan.org/he/content/5714); results files for earlier elections are at media21–media24.bechirot.gov.il. Counting Isfiya and leaving out Peki'in moves the 2022 shares by 1–2 points. IDI's own 2022 figures for Druze localities: National Unity 30.4, Yisrael Beiteinu 18.3, Meretz 14, Likud 10.6 (https://en.idi.org.il/articles/47986)"
   },
   "turnout": {
     "title": "Turnout: ten core Druze localities and all voters, 2019–2022",

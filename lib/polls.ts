@@ -9,22 +9,32 @@ export function byNewest(a: Poll, b: Poll): number {
 
 /**
  * The polls the site treats as "now": each pollster's latest poll, if published within
- * `currentWindowDays` of the newest poll overall. `main` feeds averages and the Coalition
- * Builder; `reference` holds excluded pollsters (Channel 14), shown but not averaged.
+ * `currentWindowDays` of the newest poll overall. Every pollster on the whitelist is in
+ * (ruling 111: firms are in or out by firm and stated method, never by result); the
+ * Filber-free variant is a filter over this list, see `withoutVariantPolls`.
  */
-export function currentPolls(polls: Poll[], config: PollsConfig): { main: Poll[]; reference: Poll[] } {
+export function currentPolls(polls: Poll[], config: PollsConfig): Poll[] {
   const sorted = [...polls].sort(byNewest);
-  if (!sorted.length) return { main: [], reference: [] };
+  if (!sorted.length) return [];
   const cutoff = Date.parse(sorted[0].published) - config.currentWindowDays * DAY;
   const seen = new Set<string>();
-  const main: Poll[] = [];
-  const reference: Poll[] = [];
+  const out: Poll[] = [];
   for (const p of sorted) {
     if (seen.has(p.pollster) || Date.parse(p.published) < cutoff) continue;
     seen.add(p.pollster);
-    (config.excludedFromAverage.includes(p.pollster) ? reference : main).push(p);
+    out.push(p);
   }
-  return { main, reference };
+  return out;
+}
+
+/** True for a poll the second average leaves out (Shlomo Filber's firms). */
+export function inWithoutVariant(poll: Poll, config: PollsConfig): boolean {
+  return config.withoutVariant.pollsters.includes(poll.pollster);
+}
+
+/** The polls behind the second average: `polls` minus the pollsters named in `config.withoutVariant`. */
+export function withoutVariantPolls(polls: Poll[], config: PollsConfig): Poll[] {
+  return polls.filter((p) => !inWithoutVariant(p, config));
 }
 
 export function pollLabel(p: Poll): string {
@@ -37,13 +47,55 @@ export function seatsIn(poll: Poll, partyId: string): number | null {
   return r ? r.seats : null;
 }
 
-export type Average = { avg: number; n: number };
+export type Average = {
+  /** Weighted mean seats over the polls where the list passed; 0 if it passed in none. */
+  avg: number;
+  /** Polls where the list passed the threshold (seats > 0, not below). */
+  k: number;
+  /** Polls that reported the list separately (passed or below). */
+  n: number;
+  /** Passed in fewer than half of the polls that reported it (ruling 110). */
+  nearThreshold: boolean;
+  /** What the list counts for in a seat total: `avg`, or 0 when near or below the threshold. */
+  seats: number;
+};
 
-/** Mean seats across the polls that reported the party; null if none did. */
+const median = (xs: number[]): number => {
+  const s = [...xs].sort((a, b) => a - b);
+  const m = s.length >> 1;
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+};
+
+/**
+ * Poll weights (ruling 111): the square root of the sample size. A poll whose sample size we do
+ * not have gets the median known sample size of `polls`, so it counts as a typical poll of the set
+ * rather than being dropped or over-counted; if no poll in the set has one, every poll weighs 1.
+ */
+export function pollWeights(polls: Poll[]): Map<Poll, number> {
+  const known = polls.map((p) => p.n).filter((n): n is number => typeof n === "number" && n > 0);
+  const fallback = known.length ? median(known) : 1;
+  return new Map(polls.map((p) => [p, Math.sqrt(p.n && p.n > 0 ? p.n : fallback)]));
+}
+
+const passed = (r: Poll["results"][string] | undefined): boolean => !!r && r.seats > 0 && !r.belowThreshold;
+
+/**
+ * A list's average (ruling 110): the √n-weighted mean of its seats over the polls where it passed,
+ * so a passing list never averages below 4. `k of n` says how many of the polls that reported it
+ * had it passing; under half is "near the threshold" and counts 0 in seat totals. Null if no poll
+ * reported the list separately.
+ */
 export function average(partyId: string, polls: Poll[]): Average | null {
-  const vals = polls.map((p) => seatsIn(p, partyId)).filter((v): v is number => v !== null);
-  if (!vals.length) return null;
-  return { avg: vals.reduce((a, b) => a + b, 0) / vals.length, n: vals.length };
+  const w = pollWeights(polls);
+  const reported = polls.filter((p) => p.results[partyId]);
+  if (!reported.length) return null;
+  const passing = reported.filter((p) => passed(p.results[partyId]));
+  const wsum = passing.reduce((a, p) => a + w.get(p)!, 0);
+  const avg = passing.length ? passing.reduce((a, p) => a + w.get(p)! * p.results[partyId].seats, 0) / wsum : 0;
+  const k = passing.length;
+  const n = reported.length;
+  const nearThreshold = k > 0 && k < n / 2;
+  return { avg, k, n, nearThreshold, seats: k === 0 || nearThreshold ? 0 : avg };
 }
 
 /** Seats by bloc in one poll, including seats reported only for a group of same-bloc parties. */
@@ -73,20 +125,27 @@ export const AVERAGE_ID = "avg";
 
 /**
  * The current average expressed as a pseudo-poll, so the Coalition Builder can count with it.
- * Seats are each party's mean across `polls`, to one decimal; a party every poll put below the
- * threshold is marked below.
+ * Seats are each list's average (see `average`) to one decimal; a list below the threshold in
+ * every poll, or near it (passing in under half), is marked below and counts 0.
  */
-export function averageAsPoll(polls: Poll[], partyIds: string[]): Poll {
-  const results: Poll["results"] = {};
+export function averageAsPoll(polls: Poll[], partyIds: string[], opts: { id?: string; label?: string } = {}): Poll {
+  const raw = new Map<string, number>();
   for (const id of partyIds) {
     const a = average(id, polls);
-    if (!a) continue;
-    const seats = Math.round(a.avg * 10) / 10;
+    if (a) raw.set(id, a.seats);
+  }
+  // Averaging each list only where it passed overcounts when small lists sometimes fail, so the
+  // lists can add to more than 120. Coalition arithmetic needs 120: scale down in proportion.
+  const sum = [...raw.values()].reduce((s, v) => s + v, 0);
+  const scale = sum > 120 ? 120 / sum : 1;
+  const results: Poll["results"] = {};
+  for (const [id, v] of raw) {
+    const seats = Math.round(v * scale * 10) / 10;
     results[id] = seats === 0 ? { seats: 0, belowThreshold: true } : { seats };
   }
   return {
-    id: AVERAGE_ID,
-    pollster: "Average",
+    id: opts.id ?? AVERAGE_ID,
+    pollster: opts.label ?? "Average",
     firm: null,
     fieldwork: null,
     published: [...polls].sort(byNewest)[0]?.published ?? "",
@@ -94,7 +153,7 @@ export function averageAsPoll(polls: Poll[], partyIds: string[]): Poll {
     url: null,
     n: null,
     margin: null,
-    note: `Mean of ${polls.length} polls: ${polls.map((p) => p.pollster).join(", ")}.`,
+    note: `Mean of ${polls.length} polls weighted by the square root of sample size, each list over the polls where it passed${scale < 1 ? `, scaled from ${Math.round(sum * 10) / 10} to 120 seats` : ""}: ${polls.map((p) => p.pollster).join(", ")}.`,
     results,
     combined: [],
   };

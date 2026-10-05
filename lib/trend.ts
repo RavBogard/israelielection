@@ -11,7 +11,7 @@ export function averageTrend(partyId: string, polls: Poll[], config: PollsConfig
   const dates = [...new Set(polls.map((p) => p.published))].filter((d) => !from || d >= from).sort();
   const out: TrendPoint[] = [];
   for (const date of dates) {
-    const { main } = currentPolls(polls.filter((p) => p.published <= date), config);
+    const main = currentPolls(polls.filter((p) => p.published <= date), config);
     const a = average(partyId, main);
     if (a) out.push({ date, avg: a.avg, n: a.n });
   }

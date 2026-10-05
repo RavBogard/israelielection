@@ -86,7 +86,7 @@ describe("reference pages", () => {
         const n = words(prose(src));
         if (p.kind === "issue") {
           expect(n).toBeGreaterThanOrEqual(800);
-          expect(n).toBeLessThanOrEqual(1350); // 800–1,200 in the plan, plus citation link text, quotes and notes
+          expect(n).toBeLessThanOrEqual(1650); // 800–1,200 in the plan, plus citation link text, quotes and notes; raised for the Part 3 review additions
         } else {
           expect(n).toBeGreaterThanOrEqual(500);
           expect(n).toBeLessThanOrEqual(1700);

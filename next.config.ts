@@ -5,7 +5,11 @@ const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   async redirects() {
     // The Coalition Builder moved to the home page; old shared links keep their ?poll=&with= query.
-    return [{ source: "/coalition", destination: "/", permanent: true }];
+    // The Palestinian-state issue page took its title's address (ruling 108).
+    return [
+      { source: "/coalition", destination: "/", permanent: true },
+      { source: "/issues/not-on-ballot", destination: "/issues/palestinian-state", permanent: true },
+    ];
   },
 };
 

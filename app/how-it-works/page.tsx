@@ -3,7 +3,7 @@ import SectionIndex from "@/components/article/SectionIndex";
 import { guideIndex } from "@/lib/content";
 
 const INTRO =
-  "The machinery of an Israeli election: how votes become Knesset seats, how a government is formed after the count, and how Israelis cast their ballots.";
+  "The machinery of an Israeli election: how votes become Knesset seats, how a government is formed after the count, how Israelis cast their ballots, and who under Israeli rule has no vote at all.";
 
 export const metadata: Metadata = { title: "How it works", description: INTRO };
 

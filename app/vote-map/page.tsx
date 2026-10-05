@@ -60,7 +60,7 @@ export default function Page() {
               Coordination of Humanitarian Affairs&apos; boundary file.
             </p>
             <p>
-              Jerusalem is one locality, East and West. More than 350,000 Arab residents of East Jerusalem hold permanent residency rather than
+              Jerusalem is one locality, East and West. More than 350,000 Palestinian residents of East Jerusalem hold permanent residency rather than
               citizenship; they can vote in municipal elections but not in national ones (<a href={TOI_EJ}>Times of Israel, Jan 13, 2020</a>).
             </p>
 

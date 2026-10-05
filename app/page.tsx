@@ -31,7 +31,7 @@ const BLURB: Record<string, string> = {
   "/polls": "Every seat poll of the campaign, the current average, and how each party has moved.",
   "/news": "A daily briefing, every sentence sourced, and the latest headlines.",
   "/results": "The committee's count on election night, as seats by party and bloc.",
-  "/how-it-works": "How votes become seats, how a government is formed, and how Israelis cast their ballots.",
+  "/how-it-works": "How votes become seats, how a government is formed, how Israelis cast their ballots, and who has no vote.",
   "/issues": "Seven questions that decide how Israelis vote, and how Americans misread them.",
   "/communities": "Nine groups of Israeli voters: how many, where, how they vote, what they think.",
   "/vote-map": "How every town voted in the five elections from 2019 to 2022, list by list.",
@@ -41,7 +41,7 @@ const BLURB: Record<string, string> = {
   "/teach": "Decks, source sheets and discussion guides for educators.",
 };
 
-/** Blocs in the order they fill the grid: Netanyahu's bloc first, the unaligned list, then the opposition and the Arab-led lists. */
+/** Blocs in the order they fill the grid: Netanyahu's bloc first, the unaligned list, then the opposition and the Joint List and Ra'am. */
 const GRID_ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 
 function Headline({ days }: { days: number }) {

@@ -38,8 +38,12 @@ describe("data/polls.json", () => {
     expect(t("kan")).toMatchObject({ net: 52, opp: 52 });
   });
 
-  it("averages Shas over the three polls that reported it", () => {
-    expect(average("shas", pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id)))).toEqual({ avg: 23 / 3, n: 3 });
+  it("averages Shas over the three polls that reported it, weighted by √n", () => {
+    // n: Maariv and Kan unknown (median known n = (1013 + 500) / 2), Channel 13 1013, Zman 500.
+    const m = Math.sqrt(756.5), c = Math.sqrt(1013), z = Math.sqrt(500);
+    const a = average("shas", pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id)))!;
+    expect(a).toMatchObject({ k: 3, n: 3, nearThreshold: false });
+    expect(a.avg).toBeCloseTo((7 * m + 7 * c + 9 * z) / (m + c + z), 10);
   });
 });
 

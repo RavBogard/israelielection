@@ -10,7 +10,7 @@ export type TrendPanel = {
   bloc: BlocId;
   /** Running average at each poll date. */
   trend: { date: string; avg: number; n: number }[];
-  /** Individual readings; `ref` = shown but not averaged (Channel 14). */
+  /** Individual readings; `ref` = a poll drawn apart (labelled by `refLabel`). */
   dots: { date: string; seats: number; pollster: string; ref: boolean }[];
 };
 
@@ -119,17 +119,19 @@ function Panel({ p, from, to, yMax }: { p: TrendPanel; from: string; to: string;
   );
 }
 
-export default function PollTrends({ groups, from, to, yMax }: {
+export default function PollTrends({ groups, from, to, yMax, refLabel }: {
   groups: { bloc: BlocId; label: string; panels: TrendPanel[] }[];
   from: string;
   to: string;
   yMax: number;
+  /** Legend text for the `ref` dots. */
+  refLabel: string;
 }) {
   return (
     <div className="pt">
       <div className="pt-legend" aria-hidden="true">
         <span><svg width="12" height="12"><circle cx="6" cy="6" r="4" fill="var(--ink-2)" /></svg> One poll (averaged)</span>
-        <span><svg width="12" height="12"><circle cx="6" cy="6" r="3.5" className="pt-dot-ref" /></svg> Channel 14 (shown, not averaged)</span>
+        <span><svg width="12" height="12"><circle cx="6" cy="6" r="3.5" className="pt-dot-ref" /></svg> {refLabel}</span>
         <span><svg width="20" height="12"><line x1="1" x2="19" y1="6" y2="6" stroke="var(--ink-2)" strokeWidth="2" strokeLinecap="round" /></svg> Running average</span>
       </div>
       {groups.map((g) => (

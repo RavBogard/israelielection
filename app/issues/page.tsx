@@ -4,7 +4,7 @@ import { issueIndex } from "@/lib/content";
 import { meta as lens } from "@/content/american-lens.mdx";
 
 const INTRO =
-  "Seven questions that decide how Israelis vote in 2026. Each page sets out what is at stake, what Israelis think by group, what each party says, and the misreadings an American reader is likely to bring.";
+  "Seven questions in Israel's 2026 election, and how Israelis divide on each. What Americans most expect to find, Palestinian statehood and the conduct of the war in Gaza, is not a top-tier issue for the Jewish-majority parties or in what their voters say will decide the vote: see A Palestinian state and the 2026 vote, and the American lens.";
 
 export const metadata: Metadata = { title: "Issues", description: INTRO };
 

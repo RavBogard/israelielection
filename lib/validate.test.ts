@@ -81,15 +81,14 @@ describe("validatePolls", () => {
 });
 
 describe("currentPolls", () => {
-  it("keeps each pollster's latest poll in the window and sets Channel 14 aside", () => {
-    const { main, reference } = currentPolls(curated, config);
-    expect(main.map((p) => p.id)).toEqual(["maariv", "c13", "zman", "kan"]);
-    expect(reference.map((p) => p.id)).toEqual(["c14"]);
+  it("keeps each pollster's latest poll in the window, Channel 14 included", () => {
+    const main = currentPolls(curated, config);
+    expect(main.map((p) => p.id)).toEqual(["maariv", "c13", "c14", "zman", "kan"]);
   });
 
   it("replaces a pollster's older poll and drops polls outside the window", () => {
     const newer = next({ id: "m2", published: "2026-10-20" });
-    const { main } = currentPolls([...curated, newer], config);
+    const main = currentPolls([...curated, newer], config);
     // Oct 20 minus 14 days = Oct 6: everything from Oct 2 and earlier falls out.
     expect(main.map((p) => p.id)).toEqual(["m2"]);
   });

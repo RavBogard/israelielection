@@ -3,10 +3,15 @@
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
-    "excludedFromAverage": [
-      "Channel 14"
-    ],
-    "excludedReason": "Channel 14 runs well above other polls for Likud (31–32 vs 19–21 in late Sep 2026), so it is shown but left out of averages and the coalition count.",
+    "inclusionRule": "Every pollster that publishes its sample size and method is averaged, Channel 14 included. Pollsters are included or left out by firm and stated method, never by their results.",
+    "withoutVariant": {
+      "label": "Without Filber",
+      "note": "The same average without the polls by Shlomo Filber's firms: Channel 14 (Next Data) and i24NEWS (Direct Polls).",
+      "pollsters": [
+        "Channel 14",
+        "i24NEWS"
+      ]
+    },
     "maxSeatMove": 5,
     "pollsters": [
       "Maariv",
