@@ -94,8 +94,7 @@ function WhatToWatch() {
             {IL.format(close)} Israel time, {ET.format(close)}
           </dt>
           <dd>
-            Polls close, and Kan, Channel 12 and Channel 13 broadcast their exit polls at that moment. Exit polls are estimates: in 2022 the early exit
-            polls gave Meretz 5 seats, and the final count put it below the threshold with none.{" "}
+            Polls close, and Kan, Channel 12 and Channel 13 broadcast their exit polls at that moment (<a href="https://www.ynetnews.com/article/h1tyl0a4s">Ynet, Nov 1, 2022</a>). Exit polls are estimates: in 2022 the early exit polls gave Meretz 5 seats (<a href="https://www.jpost.com/israel-elections/article-721230">Jerusalem Post, Nov 1, 2022</a>), and the final count put it at 3.16%, below the threshold, with none (<a href="https://votes25.bechirot.gov.il/nationalresults">Central Elections Committee</a>).{" "}
             <Link href="/how-it-works/voting">How election night turns into a count</Link>
           </dd>
         </div>
