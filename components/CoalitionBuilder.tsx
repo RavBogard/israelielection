@@ -5,7 +5,7 @@ import "./interactives.css";
 import "./coalition.css";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
-import { averagePoll, blocs, mainPolls, parties, pledgeRules } from "@/lib/data";
+import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
 import { MAJORITY, KNESSET, tally, warnings } from "@/lib/coalition";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
@@ -15,7 +15,7 @@ import type { Party, Poll } from "@/lib/types";
 
 const POLL_KEY = "cb-poll";
 /** The picker: election results once counting starts, then the current average, then each current poll. */
-const pickList = (results: Poll | null) => (results ? [results, averagePoll, ...mainPolls] : [averagePoll, ...mainPolls]);
+const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, averagePoll, ...mainPolls];
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
 /** Cards for a poll: a list hidden for lack of polling still appears if the count gives it seats. */
 const cardsFor = (poll: Poll) =>
@@ -228,7 +228,7 @@ export default function CoalitionBuilder({ results = null, embedded = false }: {
           <div className="seg" role="group" aria-label="Choose a poll">
             {choices.map((p) => (
               <button key={p.id} type="button" aria-pressed={p.id === pollId} onClick={() => choosePoll(p.id)}>
-                {p.pollster}
+                {pollLabel(p)}
                 <small>{p.id === RESULTS_ID ? "count so far" : p.id === AVERAGE_ID ? `latest ${mainPolls.length} polls` : mediumDate(p.published)}</small>
               </button>
             ))}

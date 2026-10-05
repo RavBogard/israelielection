@@ -52,7 +52,7 @@ export default async function Page() {
         </header>
 
         <div className="nw-layout">
-          <section className="nw-brief" aria-labelledby="brief-h">
+          <section className="nw-brief" id={latest?.date} aria-labelledby="brief-h">
             <p className="lbl">The daily briefing</p>
             {latest ? (
               <>

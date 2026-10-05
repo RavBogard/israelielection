@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: { default: "Israel Votes 2026", template: "%s · Israel Votes 2026" },
   description: DESCRIPTION,
   applicationName: "Israel Votes 2026",
+  alternates: { types: { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] } },
   // What Facebook, iMessage, Slack and X show when a link is shared. The picture is app/opengraph-image.png.
   openGraph: { type: "website", siteName: "Israel Votes 2026", locale: "en_US" },
   twitter: { card: "summary_large_image" },
@@ -76,7 +77,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <p className="lbl">{TEACH.label}</p>
                 <ul>
                   <li>
-                    <Link href={TEACH.href}>Decks, source sheets and guides</Link>
+                    <Link href={TEACH.href}>Session decks</Link>
                   </li>
                 </ul>
               </div>

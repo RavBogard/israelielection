@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "@/components/interactives.css";
 import "@/components/teach.css";
+import EmbedCode from "@/components/EmbedCode";
 import teach from "@/data/teach.json";
 
 export const metadata: Metadata = {
@@ -63,7 +64,7 @@ export default function Page() {
         <ul className="inclass">
           <li>
             <h3>
-              <Link href="/">Build a coalition</Link>
+              <Link href="/coalition-builder">Build a coalition</Link>
             </h3>
             <p>
               Pick a poll, add parties, and see whether they reach 61, and which recorded pledges the coalition would break. Use &ldquo;Copy a link to
@@ -86,6 +87,15 @@ export default function Page() {
             <p>Reference pages on the seven questions that decide the vote and the nine groups of voters, each with charts and a sourced reading list.</p>
           </li>
         </ul>
+
+        <h2 className="sec-h">Embed the interactives</h2>
+        <p className="note">
+          Paste one of these into a class page, a newsletter or a blog. Each frame carries its date, its source line and a link back here, and updates
+          as the polls do.
+        </p>
+        <EmbedCode path="grid" height={420} label="The 120 seats by bloc, from the poll average" />
+        <EmbedCode path="average" height={620} label="The poll average, seats by party" />
+        <EmbedCode path="builder" height={1400} label="Coalition Builder" />
 
         <p className="license">
           The teaching materials on this site are licensed under{" "}

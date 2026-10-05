@@ -96,3 +96,5 @@
   .article .bars li { grid-template-columns: minmax(0, 1fr) 4em; gap: 4px 10px; }
   .article .bars .bl { grid-column: 1 / -1; }
 }
+
+/* Print: the reading column alone, black on white. Chrome, menus and the rail drop out; the sources print as a plain list under their heading. */

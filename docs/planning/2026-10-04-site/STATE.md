@@ -307,3 +307,16 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - GATE: Cassif profile row paraphrases Likud's "genocide" accusation instead of quoting it — proceeded because #118 limits the word to quotations from the courts, UN bodies or rights groups.
 - GATE: Google Analytics (G-DB53C0NZHB) via @next/third-parties in app/layout.tsx, production only — the owner asked for it; design session told and agreed.
 - For Daniel: Israeli toll since Oct 7 (1,318 / 1,029) still cites Arutz Sheva (no mainstream copy found); Sasson Report outpost definition still unsourced; Zehut's relation to the RZ list (Ynet says it campaigns separately; parties.json treats RZ–Zehut as a technical bloc); a footer privacy note for GA was offered, not added; teaching-deck language changes are listed as proposals in the sweep log, not made; who-votes page has no named Palestinian voice yet (at its word ceiling).
+
+## 2026-10-05, evening: the approved build, round one
+- Daniel approved all of EVAL.md ("everything is approved. build them"); rulings he must make are in
+  docs/planning/2026-10-05-eval/HANDOFF.md (he answers in ChatGPT and brings them back).
+- Home re-cut: hero plus a computed reading sentence; "What this election is about" (IDI top three,
+  the not-about sentence); Today from the briefing; Start here; Try it; Teach band; compact index.
+  Builder at /coalition-builder with its Sources box; /coalition redirects there.
+- New: /compare (seven axes, status-driven "Declined to answer" and "No position found"), /embed/*
+  with copy-embed on Teach, /news/feed.xml, sitemap, robots, custom 404, print styles in globals.
+- GATE: the "not about" sentence shipped in draft wording built from the lens dek and the peer's
+  IDI note — proceeded because Daniel approved the item and the wording is flagged for him in
+  HANDOFF item 1; the signed note is gated on data/home-note.json and hidden until he writes it.
+- GATE: the no-vote total is not on the home strip until the content lane sends a sourced figure.

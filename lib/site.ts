@@ -9,9 +9,10 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[]; mo
   {
     label: "Explore",
     items: [
-      { href: "/", label: "Coalition Builder" },
+      { href: "/coalition-builder", label: "Coalition Builder" },
       { href: "/parties", label: "Party Map" },
     ],
+    more: [{ href: "/compare", label: "Compare the parties" }],
   },
   {
     label: "Follow",

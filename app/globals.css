@@ -217,3 +217,40 @@ a:hover { text-decoration-color: currentColor; }
   .site-foot .row { grid-template-columns: minmax(0, 1fr); }
   .site-foot .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Print: paper, black ink, no chrome; every page, since the reference pages are teaching material. */
+@media print {
+  @page { margin: 16mm 14mm; }
+  /* Paper even when the screen is in dark mode: matches the specificity of both dark-mode rules in globals.css. */
+  :root, :root:not([data-theme="light"]), :root[data-theme="dark"] { --bg: #ffffff; --sheet: #ffffff; --cell: #e4e2db; --ink: #000000; --text: #000000; --ink-2: #333333; --ink-3: #555555; --line: #cccccc; --line-2: #999999; --b-net: #233f86; color-scheme: light; }
+  html, body { background: #ffffff !important; color: #000000; }
+  body { font-size: 11pt; line-height: 1.4; }
+  .skip, .masthead, .site-foot, .menu-btn, .menu-sheet, .countdown, .rail { display: none !important; }
+
+  .article-grid, .article-grid.solo { display: block; }
+  .article { padding-top: 0; max-width: none; }
+  .article h1, .article .body h2, .sindex h2, .sources summary { font-family: var(--display); color: #000000; }
+  .article h1 { font-size: 26pt; }
+  .article .dek { font-size: 13pt; }
+  .article .body { font-size: 12pt; line-height: 1.4; color: #000000; }
+  .article .body h2 { font-size: 17pt; break-after: avoid; page-break-after: avoid; }
+  .article .body h3 { break-after: avoid; page-break-after: avoid; }
+
+  /* External links carry their address; internal ones read as plain text. */
+  a { color: #000000; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-family: var(--body); font-size: 8.5pt; font-weight: 400; color: #555555; overflow-wrap: anywhere; }
+  .sources a[href^="http"]::after { content: none; }
+
+  figure, table, .tw, .note, .article .positions li, .cb .slip, .sg { break-inside: avoid; page-break-inside: avoid; }
+  .article .tw { overflow: visible; }
+
+  /* Sources: the summary reads as a heading, the disclosure hint goes, and open lists print in full. */
+  .sources { margin-top: 24pt; }
+  .sources summary { display: block; padding: 8pt 0 6pt; font-size: 14pt; font-weight: 700; cursor: auto; }
+  .sources summary .hint { display: none; }
+  .sources[open] ol { display: block; max-width: none; font-size: 9pt; color: #000000; }
+  .sources[open] li { margin-bottom: 3pt; }
+
+  /* Seat grids and bloc swatches keep their colours on paper. */
+  .sg, .sg *, .sw, .cb .slip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

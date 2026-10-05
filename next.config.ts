@@ -4,10 +4,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
   async redirects() {
-    // The Coalition Builder moved to the home page; old shared links keep their ?poll=&with= query.
+    // The Coalition Builder has its own page again; old shared links keep their ?poll=&with= query.
     // The Palestinian-state issue page took its title's address (ruling 108).
     return [
-      { source: "/coalition", destination: "/", permanent: true },
+      { source: "/coalition", destination: "/coalition-builder", permanent: true },
       { source: "/issues/not-on-ballot", destination: "/issues/palestinian-state", permanent: true },
     ];
   },

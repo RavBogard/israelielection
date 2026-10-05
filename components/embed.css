@@ -1,0 +1,42 @@
+/* Embeds: one widget on paper, no masthead or site footer, for educators to iframe. The root layout still renders its chrome, so it is hidden here. */
+body:has(.embed-page) { background: var(--bg); min-height: 0; }
+body:has(.embed-page) .masthead,
+body:has(.embed-page) .site-foot,
+body:has(.embed-page) .skip { display: none; }
+.embed-page { padding: 16px; }
+.embed-page .embed-head { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; color: var(--ink); margin: 0; }
+.embed-page .embed-sub { font-size: 14px; line-height: 1.45; color: var(--ink-2); margin: 6px 0 0; }
+
+/* The credit line every embed ends with. */
+.embed-foot { margin: 16px 0 0; padding-top: 10px; border-top: 1px solid var(--line); font-family: var(--body); font-size: 12.5px; line-height: 1.45; color: var(--ink-3); }
+.embed-foot a { color: var(--ink-2); }
+
+/* Seats by bloc: legend beside the grid, stacked on narrow frames. */
+.embed-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 16px 28px; align-items: start; margin-top: 14px; max-width: 760px; }
+.embed-grid .blocs { margin: 0; font-size: 14.5px; }
+.embed-grid .blocs div { display: flex; align-items: baseline; gap: 8px; border-top: 1px solid var(--line); padding: 6px 0; }
+.embed-grid .blocs div:last-child { border-bottom: 1px solid var(--line); }
+.embed-grid .blocs dt { display: flex; align-items: center; gap: 9px; color: var(--text); }
+.embed-grid .blocs dd { margin: 0 0 0 auto; font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.embed-grid .note { font-size: 13px; line-height: 1.45; color: var(--ink-3); margin: 8px 0 0; }
+@media (max-width: 520px) { .embed-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* The poll average as a table. */
+.embed-table { border-collapse: collapse; width: 100%; max-width: 640px; margin-top: 12px; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.embed-table th, .embed-table td { text-align: left; padding: 6px 10px 6px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.embed-table thead th { font-size: 13px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); }
+.embed-table tbody th { font-weight: 600; color: var(--ink); }
+.embed-table tbody th .sw { margin-right: 8px; }
+.embed-table .num { text-align: right; padding-right: 0; }
+.embed-table td.num { font-family: var(--display); font-weight: 700; font-size: 17px; color: var(--ink); }
+.embed-table .bloc { color: var(--ink-2); }
+@media (max-width: 420px) { .embed-table .bloc { display: none; } }
+
+/* The copyable iframe snippet, shown on the Teach page. */
+.embed-code { background: var(--sheet); border: 1px solid var(--line-2); margin: 10px 0 0; }
+.embed-code .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.embed-code .bar .lbl { color: var(--ink-2); }
+.embed-code button { font: inherit; font-size: 13.5px; font-weight: 600; color: var(--ink); background: transparent; border: 1px solid var(--ink); padding: 4px 12px; cursor: pointer; }
+.embed-code button:hover { background: var(--ink); color: var(--bg); }
+.embed-code pre { margin: 0; padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.embed-code code { font-family: var(--body); font-size: 13px; line-height: 1.5; color: var(--text); }
