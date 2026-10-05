@@ -4,8 +4,10 @@ export type Rect<T extends Item = Item> = T & { x: number; y: number; w: number;
 /** Squarified treemap (Bruls et al.), as in Party Map v2. Items should be sorted largest first. */
 export function squarify<T extends Item>(items: T[], x: number, y: number, w: number, h: number): Rect<T>[] {
   const out: Rect<T>[] = [];
+  // Zero-size items and a zero-size box make 0/0 heights (NaN); skip them.
+  items = items.filter((i) => i.v > 0);
   const total = items.reduce((a, b) => a + b.v, 0);
-  if (!total) return out;
+  if (!total || w <= 0 || h <= 0) return out;
   const scale = (w * h) / total;
   let rest = items.map((i) => ({ ...i, a: i.v * scale }));
   while (rest.length) {
