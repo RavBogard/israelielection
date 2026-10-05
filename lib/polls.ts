@@ -1,4 +1,31 @@
-import type { BlocId, Party, Poll } from "./types";
+import type { BlocId, Party, Poll, PollsConfig } from "./types";
+
+const DAY = 86_400_000;
+
+/** Newest first; ties broken by pollster name so the order is stable. */
+export function byNewest(a: Poll, b: Poll): number {
+  return b.published.localeCompare(a.published) || a.pollster.localeCompare(b.pollster);
+}
+
+/**
+ * The polls the site treats as "now": each pollster's latest poll, if published within
+ * `currentWindowDays` of the newest poll overall. `main` feeds averages and the Coalition
+ * Builder; `reference` holds excluded pollsters (Channel 14), shown but not averaged.
+ */
+export function currentPolls(polls: Poll[], config: PollsConfig): { main: Poll[]; reference: Poll[] } {
+  const sorted = [...polls].sort(byNewest);
+  if (!sorted.length) return { main: [], reference: [] };
+  const cutoff = Date.parse(sorted[0].published) - config.currentWindowDays * DAY;
+  const seen = new Set<string>();
+  const main: Poll[] = [];
+  const reference: Poll[] = [];
+  for (const p of sorted) {
+    if (seen.has(p.pollster) || Date.parse(p.published) < cutoff) continue;
+    seen.add(p.pollster);
+    (config.excludedFromAverage.includes(p.pollster) ? reference : main).push(p);
+  }
+  return { main, reference };
+}
 
 export function pollLabel(p: Poll): string {
   return p.firm ? `${p.pollster} / ${p.firm}` : p.pollster;

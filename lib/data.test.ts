@@ -26,12 +26,12 @@ describe("data/polls.json", () => {
     }
   });
 
-  it("accounts for all 120 seats in every averaged poll", () => {
+  it("accounts for all 120 seats in every current poll", () => {
     for (const poll of mainPolls) expect(pollTotal(poll), poll.id).toBe(120);
   });
 
   it("matches the bloc counts the v2 artifacts showed", () => {
-    const t = (id: string) => blocTotals(mainPolls.find((p) => p.id === id)!, parties);
+    const t = (id: string) => blocTotals(pollsData.polls.find((p) => p.id === id)!, parties);
     expect(t("maariv")).toMatchObject({ net: 51, opp: 53, arab: 12 });
     expect(t("c13")).toMatchObject({ net: 54, opp: 52, arab: 14 });
     expect(t("zman")).toMatchObject({ net: 53, opp: 49, arab: 13, mid: 5 });
@@ -39,7 +39,7 @@ describe("data/polls.json", () => {
   });
 
   it("averages Shas over the three polls that reported it", () => {
-    expect(average("shas", mainPolls)).toEqual({ avg: 23 / 3, n: 3 });
+    expect(average("shas", pollsData.polls.filter((p) => ["maariv", "c13", "zman", "kan"].includes(p.id)))).toEqual({ avg: 23 / 3, n: 3 });
   });
 });
 

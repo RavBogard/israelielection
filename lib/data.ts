@@ -1,6 +1,7 @@
 import partiesJson from "@/data/parties.json";
 import pollsJson from "@/data/polls.json";
 import rulesJson from "@/data/pledge-rules.json";
+import { byNewest, currentPolls } from "./polls";
 import type { BlocId, PartiesFile, PledgeRulesFile, PollsFile } from "./types";
 
 export const partiesData = partiesJson as PartiesFile;
@@ -11,10 +12,14 @@ export const parties = partiesData.parties;
 export const blocs = partiesData.blocs;
 export const blocLabel = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
 
-/** Polls that count toward averages and the coalition count. */
-export const mainPolls = pollsData.polls.filter((p) => p.inAverage);
-/** Polls shown for reference only (Channel 14). */
-export const otherPolls = pollsData.polls.filter((p) => !p.inAverage);
+/** Every poll since dissolution, newest first. */
+export const allPolls = [...pollsData.polls].sort(byNewest);
+
+const current = currentPolls(pollsData.polls, pollsData.config);
+/** Each pollster's latest current poll: feeds averages and the Coalition Builder. */
+export const mainPolls = current.main;
+/** Current polls shown for reference only (Channel 14). */
+export const otherPolls = current.reference;
 
 /** The later of the two data files' update dates. */
 export const dataUpdated = [partiesData.updated, pollsData.updated].sort().at(-1)!;

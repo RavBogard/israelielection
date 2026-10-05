@@ -1,0 +1,66 @@
+name: Polls
+
+# Twice a day: import new polls from Wikipedia. Polls that pass the validator are committed to
+# main (Vercel redeploys). Polls that fail go to one rolling review PR assigned to Daniel.
+on:
+  schedule:
+    - cron: "0 5 * * *"   # 08:00 Israel
+    - cron: "0 18 * * *"  # 21:00 Israel, after the evening TV polls
+  workflow_dispatch:
+
+concurrency:
+  group: polls
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REVIEW_BRANCH: polls/review
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Import and validate
+        id: job
+        run: npx tsx scripts/jobs/update-polls.mts --report "$RUNNER_TEMP/report.md"
+
+      - name: Gate (tests and build on the new data)
+        if: steps.job.outputs.accepted != '0'
+        run: npm test && npm run build
+
+      - name: Commit accepted polls
+        if: steps.job.outputs.accepted != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/polls.json
+          git commit -m "polls: add ${{ steps.job.outputs.accepted }} from Wikipedia" -m "$(cat "$RUNNER_TEMP/report.md")"
+          git push origin HEAD:main
+
+      - name: Open or update the review PR
+        if: steps.job.outputs.review != '0' || steps.job.outputs.blockers != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$REVIEW_BRANCH"
+          git checkout HEAD -- data/polls.json
+          npx tsx scripts/jobs/update-polls.mts --include-review --report "$RUNNER_TEMP/review.md"
+          git add data/polls.json
+          git commit --allow-empty -m "polls: proposed for review" -m "$(cat "$RUNNER_TEMP/review.md")"
+          git push --force origin "$REVIEW_BRANCH"
+          title="Polls to review ($(date -u +%Y-%m-%d))"
+          if gh pr view "$REVIEW_BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$REVIEW_BRANCH" --title "$title" --body-file "$RUNNER_TEMP/review.md"
+          else
+            gh pr create --head "$REVIEW_BRANCH" --base main --title "$title" --body-file "$RUNNER_TEMP/review.md" --assignee RavBogard
+          fi

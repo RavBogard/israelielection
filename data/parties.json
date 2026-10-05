@@ -50,6 +50,7 @@
     {
       "id": "likud",
       "name": "Likud",
+      "short": "Likud",
       "leader": "Benjamin Netanyahu",
       "bloc": "net",
       "tags": [],
@@ -156,6 +157,7 @@
     {
       "id": "otzma",
       "name": "Otzma Yehudit",
+      "short": "Otzma",
       "leader": "Itamar Ben-Gvir",
       "bloc": "net",
       "tags": [],
@@ -254,6 +256,7 @@
     {
       "id": "shas",
       "name": "Shas",
+      "short": "Shas",
       "leader": "Aryeh Deri",
       "bloc": "net",
       "tags": [
@@ -364,6 +367,7 @@
     {
       "id": "utj",
       "name": "UTJ",
+      "short": "UTJ",
       "leader": "Yaakov Asher (Goldknopf no. 2)",
       "bloc": "net",
       "tags": [
@@ -482,6 +486,7 @@
     {
       "id": "rz",
       "name": "Religious Zionism–Zehut",
+      "short": "RZ–Zehut",
       "leader": "Bezalel Smotrich, with Moshe Feiglin",
       "bloc": "net",
       "tags": [],
@@ -586,6 +591,7 @@
     {
       "id": "poi",
       "name": "People of Israel",
+      "short": "People of Isr.",
       "leader": "Ofer Winter",
       "bloc": "net",
       "tags": [],
@@ -683,6 +689,7 @@
     {
       "id": "noam",
       "name": "Noam",
+      "short": "Noam",
       "leader": "Avi Maoz",
       "bloc": "net",
       "tags": [],
@@ -708,6 +715,7 @@
     {
       "id": "yashar",
       "name": "Yashar!",
+      "short": "Yashar!",
       "leader": "Gadi Eisenkot",
       "bloc": "opp",
       "tags": [
@@ -822,6 +830,7 @@
     {
       "id": "byachad",
       "name": "B'Yachad",
+      "short": "B'Yachad",
       "leader": "Naftali Bennett (Yair Lapid no. 2)",
       "bloc": "opp",
       "tags": [
@@ -936,6 +945,7 @@
     {
       "id": "dem",
       "name": "The Democrats",
+      "short": "Dems",
       "leader": "Yair Golan",
       "bloc": "opp",
       "tags": [
@@ -1042,6 +1052,7 @@
     {
       "id": "yb",
       "name": "Yisrael Beiteinu",
+      "short": "Yisrael B.",
       "leader": "Avigdor Lieberman",
       "bloc": "opp",
       "tags": [
@@ -1148,6 +1159,7 @@
     {
       "id": "bw",
       "name": "Blue and White",
+      "short": "B&W",
       "leader": "Benny Gantz",
       "bloc": "opp",
       "tags": [],
@@ -1178,6 +1190,7 @@
     {
       "id": "res",
       "name": "Reservists–Economic",
+      "short": "Reservists",
       "leader": "Yoaz Hendel",
       "bloc": "mid",
       "tags": [],
@@ -1279,6 +1292,7 @@
     {
       "id": "jl",
       "name": "Joint List",
+      "short": "Joint List",
       "leader": "Yousef Jabareen (Ahmad Tibi no. 2)",
       "bloc": "arab",
       "tags": [
@@ -1380,6 +1394,7 @@
     {
       "id": "raam",
       "name": "Ra'am",
+      "short": "Ra'am",
       "leader": "Mansour Abbas (Yoav Segalovitz no. 2)",
       "bloc": "arab",
       "tags": [

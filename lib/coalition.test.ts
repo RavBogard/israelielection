@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { mainPolls, parties, pledgeRules } from "./data";
+import { parties, pledgeRules, pollsData } from "./data";
 import { tally, warnings } from "./coalition";
 
-const poll = (id: string) => mainPolls.find((p) => p.id === id)!;
+const poll = (id: string) => pollsData.polls.find((p) => p.id === id)!;
 const sel = (...ids: string[]) => new Set(ids);
 const ruleIds = (...ids: string[]) => warnings(sel(...ids), parties, pledgeRules).map((w) => w.id);
 

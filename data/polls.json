@@ -1,5 +1,29 @@
 {
   "updated": "2026-10-04",
+  "config": {
+    "dissolved": "2026-07-17",
+    "currentWindowDays": 14,
+    "excludedFromAverage": [
+      "Channel 14"
+    ],
+    "excludedReason": "Channel 14 runs well above other polls for Likud (31–32 vs 19–21 in late Sep 2026), so it is shown but left out of averages and the coalition count.",
+    "maxSeatMove": 5,
+    "pollsters": [
+      "Maariv",
+      "Channel 12",
+      "Channel 13",
+      "Kan 11",
+      "Channel 14",
+      "Zman Yisrael",
+      "Israel Hayom",
+      "i24NEWS",
+      "Walla",
+      "Yedioth Ahronoth",
+      "Ynet",
+      "Makor Rishon",
+      "Haaretz"
+    ]
+  },
   "polls": [
     {
       "id": "maariv",
@@ -12,7 +36,6 @@
       "n": null,
       "margin": null,
       "note": null,
-      "inAverage": true,
       "results": {
         "likud": {
           "seats": 19
@@ -67,7 +90,6 @@
       "n": 1013,
       "margin": null,
       "note": "Reservists–Economic polled below the threshold.",
-      "inAverage": true,
       "results": {
         "likud": {
           "seats": 19
@@ -123,7 +145,6 @@
       "n": 500,
       "margin": "±4.4",
       "note": null,
-      "inAverage": true,
       "results": {
         "likud": {
           "seats": 21
@@ -178,7 +199,6 @@
       "n": null,
       "margin": null,
       "note": "Kan did not report Shas or UTJ separately. The listed parties add up to 106, so Shas and UTJ together hold 14 (our arithmetic: 120 − 106).",
-      "inAverage": true,
       "results": {
         "likud": {
           "seats": 21
@@ -235,7 +255,6 @@
       "url": null,
       "n": null,
       "margin": null,
-      "inAverage": false,
       "results": {
         "likud": {
           "seats": 32

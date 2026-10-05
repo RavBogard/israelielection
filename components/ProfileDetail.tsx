@@ -46,7 +46,7 @@ function Seats({ party }: { party: Party }) {
         <span className="d">
           {poll.pollster}, {when}
         </span>
-        <span className={`bar${poll.inAverage ? "" : " x"}`} title={tip}>
+        <span className={`bar${otherPolls.includes(poll) ? " x" : ""}`} title={tip}>
           <i style={{ width: `${w}%`, background: fill }} />
         </span>
         <span className="v" title={tip}>

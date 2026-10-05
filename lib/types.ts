@@ -8,6 +8,8 @@ export type Sourced = { text: string; source: string | null };
 export type Party = {
   id: string;
   name: string;
+  /** Column-header name for tables. */
+  short: string;
   leader: string;
   bloc: BlocId;
   tags: Tag[];
@@ -56,15 +58,27 @@ export type Poll = {
   n: number | null;
   margin: string | null;
   note: string | null;
-  /** Counts toward averages and the Coalition Builder's poll picker. */
-  inAverage: boolean;
   /** A party missing here was not reported separately by this poll. */
   results: Record<string, PollResult>;
   /** Seats reported only for a group of parties together. */
   combined: { parties: string[]; seats: number; note: string }[];
 };
 
-export type PollsFile = { updated: string; polls: Poll[] };
+export type PollsConfig = {
+  /** ISO date the Knesset dissolved; no earlier poll belongs in this file. */
+  dissolved: string;
+  /** A pollster's latest poll is "current" if published within this many days of the newest poll. */
+  currentWindowDays: number;
+  /** Pollsters shown for reference but left out of averages and the coalition count. */
+  excludedFromAverage: string[];
+  excludedReason: string;
+  /** Validator: largest seat change allowed between consecutive polls by the same pollster. */
+  maxSeatMove: number;
+  /** Validator: publishers whose polls may be merged automatically. */
+  pollsters: string[];
+};
+
+export type PollsFile = { updated: string; config: PollsConfig; polls: Poll[] };
 
 export type Condition =
   | { party: string }

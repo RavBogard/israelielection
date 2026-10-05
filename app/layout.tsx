@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 const NAV = [
   { href: "/", label: "Coalition Builder" },
   { href: "/parties", label: "Party Map" },
+  { href: "/polls", label: "Polls" },
   { href: "/teach", label: "Teach it" },
 ];
 
@@ -52,7 +53,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <a href="https://danielbogard.com" className="font-semibold text-accent underline-offset-4 hover:underline">
                 Rabbi Daniel Bogard
               </a>
-              . Learning, not advocacy: every number on this site carries its date and source.
             </p>
             <p>
               Teaching materials:{" "}

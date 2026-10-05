@@ -1,0 +1,43 @@
+{
+  "about": "How the polls job reads Wikipedia. headerMap: Wikipedia link target in a table header → our party id. untracked: header targets for lists we don't profile; their below-threshold readings are dropped, but any seats send the poll to review. publisherMap: Wikipedia link target → our pollster name (must also be on the whitelist in polls.json to merge automatically). importFrom: earliest fieldwork date the job imports; earlier tables use different party lineups and need an explicit mapping before backfill.",
+  "wikipedia": {
+    "page": "Opinion polling for the 2026 Israeli legislative election",
+    "importFrom": "2026-09-05",
+    "headerMap": {
+      "Likud": "likud",
+      "Together (Israel)": "byachad",
+      "Religious Zionist Party": "rz",
+      "Zehut": "rz",
+      "Otzma Yehudit": "otzma",
+      "Blue and White (political party)": "bw",
+      "Shas": "shas",
+      "United Torah Judaism": "utj",
+      "Yisrael Beiteinu": "yb",
+      "Ra'am": "raam",
+      "Joint List": "jl",
+      "The Democrats (Israel)": "dem",
+      "Yashar (political party)": "yashar",
+      "The Reservists (political party)": "res",
+      "New Economic Party": "res",
+      "Amcha Yisrael": "poi"
+    },
+    "untracked": ["Haredi Public"],
+    "publisherMap": {
+      "Kan 11": "Kan 11",
+      "HaHadashot 12": "Channel 12",
+      "Channel 12 (Israel)": "Channel 12",
+      "Channel 13 (Israel)": "Channel 13",
+      "Channel 14 (Israel)": "Channel 14",
+      "Channel 16 (Israel)": "Channel 16",
+      "i24NEWS (Israeli TV channel)": "i24NEWS",
+      "Maariv (newspaper)": "Maariv",
+      "Zman Yisrael": "Zman Yisrael",
+      "Israel Hayom": "Israel Hayom",
+      "Walla!": "Walla",
+      "Yedioth Ahronoth": "Yedioth Ahronoth",
+      "Ynet": "Ynet",
+      "Makor Rishon": "Makor Rishon",
+      "Haaretz": "Haaretz"
+    }
+  }
+}
