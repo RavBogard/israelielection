@@ -24,7 +24,7 @@
       "label": "Draft everyone, military or civilian"
     }
   ],
-  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. Likud declined the questionnaire; its stance comes from a minister's description of the coalition's 2025 bill. Ra'am answered only on drafting Arab citizens. No published position found for Noam or Blue and White (checked October 2026).",
+  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. Likud declined the questionnaire; its stance comes from a minister's description of the coalition's 2025 bill. Ra'am answered only on drafting Arab citizens. Blue and White's row is from Ynet's Hebrew report of the same questionnaire. No 2026 position found for Noam (checked October 2026); its row gives Maoz's position in 2025.",
   "rows": [
     {
       "party": "likud",
@@ -133,13 +133,20 @@
     },
     {
       "party": "noam",
+      "text": "No 2026 position found. In December 2025, the Times of Israel reported that Avi Maoz supports more Haredi service but would back only a noncoercive bill with Haredi rabbinic approval, and would not say how he would vote.",
+      "source": "Times of Israel",
+      "url": "https://www.timesofisrael.com/liveblog_entry/likud-mk-bullish-on-haredi-conscription-bills-chances-two-far-right-mks-noncommital/",
+      "date": "Dec 2, 2025",
       "status": "none",
       "checked": "2026-10-05"
     },
     {
       "party": "bw",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "\"A service framework for all: every young man and woman will serve the state,\" Haredim, Arabs, Druze, religious and secular. The framework must pass \"before the government is formed as a condition for its swearing-in\"; quotas replace targets, so \"only outstanding individuals will receive exemptions\"; benefits go first to those who serve (translated).",
+      "source": "Ynet (Hebrew)",
+      "url": "https://www.ynet.co.il/news/elections2026/article/yokra14898966",
+      "date": "Sep 16, 2026",
+      "stance": "draft-all"
     }
   ]
 }

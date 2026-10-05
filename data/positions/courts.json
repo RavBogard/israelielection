@@ -20,7 +20,7 @@
       "label": "Keep the courts independent"
     }
   ],
-  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. Likud declined it; its row adds its justice minister's 2025 law. Ra'am gave no current position; its row rests on its 2023 votes. Otzma Yehudit answered without a position. No published position found for Noam (checked October 2026).",
+  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. Likud declined it; its row adds its justice minister's 2025 law. Ra'am gave no current position; its row rests on its 2023 votes. Otzma Yehudit answered without a position. Noam's row is the Jerusalem Post's report of its relaunch, with no detail.",
   "rows": [
     {
       "party": "likud",
@@ -139,8 +139,12 @@
     },
     {
       "party": "noam",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "The Jerusalem Post reports that at its relaunch as Noam for Israel in July 2026, the party named passing the judicial overhaul one of its main goals. It gave no detail of the changes it wants.",
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-904171",
+      "date": "Jul 30, 2026",
+      "stance": "curb",
+      "basis": "record"
     }
   ]
 }
