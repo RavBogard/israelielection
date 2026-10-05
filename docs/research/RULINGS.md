@@ -159,7 +159,7 @@ Source: REVIEW-PACKET.md Parts 1–2. Items 1–25 are Daniel's rulings (2026-10
 ## Part 4 — after the academic review (Daniel, 2026-10-05)
 110. Poll average: each list's average is taken over the polls where it passed, shown with "passes in k of n polls"; a list that passes in fewer than half the polls is shown as near the threshold and left out of the Coalition Builder's default total. No fractional seat counts below the threshold.
 111. Pollsters are included or excluded by firm and stated method, never by result. Every firm that publishes a sample size and method is in, Channel 14 included; the average is also shown without Shlomo Filber's firms (Channel 14 / Next Data, i24NEWS / Direct Polls). Polls are weighted by the square root of the sample size where it is known.
-112. Revises #13: the non-Arab lists collectively are "Jewish-majority lists". "Zionist" only where a party uses it of itself; UTJ (Agudat Yisrael, Degel HaTorah) is historically non-Zionist.
+112. Revises #13: the non-Arab lists collectively are "Jewish-majority lists". "Zionist" only where a party uses it of itself; UTJ (Agudat Yisrael, Degel HaTorah) is historically non-Zionist. Handoff decision (Daniel, 2026-10-05): the opposition polling group is labelled "Anti-Netanyahu bloc (Jewish-majority parties)". Membership is unchanged; the glossary clarifies that polling groups do not imply a coalition agreement.
 113. Community pages add Israel National Election Studies estimates (2022), each with its sample size, in step 4.
 
 ## Part 5 — the missing issue (2026-10-05)
