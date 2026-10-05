@@ -1,0 +1,1055 @@
+{
+  "checked": "2026-10-05",
+  "elections": [
+    {
+      "date": "1977-05-17",
+      "knesset": 9,
+      "first": {
+        "list": "Likud",
+        "seats": 43
+      },
+      "second": {
+        "list": "Alignment",
+        "seats": 32
+      },
+      "turnout": 79.2,
+      "outcome": "Begin formed a coalition of Likud, the National Religious Party and Agudat Yisrael; Dash joined four months later.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1977/"
+      }
+    },
+    {
+      "date": "1981-06-30",
+      "knesset": 10,
+      "first": {
+        "list": "Likud",
+        "seats": 48
+      },
+      "second": {
+        "list": "Alignment",
+        "seats": 47
+      },
+      "turnout": 78.5,
+      "outcome": "Begin formed a narrow 61-seat coalition of Likud, the National Religious Party, Tami and Agudat Yisrael.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1981/"
+      }
+    },
+    {
+      "date": "1984-07-23",
+      "knesset": 11,
+      "first": {
+        "list": "Alignment",
+        "seats": 44
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 41
+      },
+      "turnout": 78.8,
+      "outcome": "Peres and Shamir formed a national unity government, agreeing to swap the premiership after two years.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1984/"
+      }
+    },
+    {
+      "date": "1988-11-01",
+      "knesset": 12,
+      "first": {
+        "list": "Likud",
+        "seats": 40
+      },
+      "second": {
+        "list": "Alignment",
+        "seats": 39
+      },
+      "turnout": 79.7,
+      "outcome": "Shamir formed another unity government with the Alignment, without rotation; after it fell in March 1990 he formed a narrow right-wing and religious government.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1988/"
+      }
+    },
+    {
+      "date": "1992-06-23",
+      "knesset": 13,
+      "first": {
+        "list": "Labor",
+        "seats": 44
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 32
+      },
+      "turnout": 77.4,
+      "outcome": "Rabin formed a Labor–Meretz–Shas coalition of 62 MKs, with outside support from five Arab-party MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1992/"
+      }
+    },
+    {
+      "date": "1996-05-29",
+      "knesset": 14,
+      "first": {
+        "list": "Labor",
+        "seats": 34
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 32
+      },
+      "turnout": 79.3,
+      "outcome": "Netanyahu, elected prime minister directly by about 30,000 votes, formed a six-faction coalition of 66 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1996/"
+      }
+    },
+    {
+      "date": "1999-05-17",
+      "knesset": 15,
+      "first": {
+        "list": "One Israel",
+        "seats": 26
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 19
+      },
+      "turnout": 78.7,
+      "outcome": "Barak, elected prime minister directly, formed a seven-faction coalition of 75 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1999/"
+      }
+    },
+    {
+      "date": "2003-01-28",
+      "knesset": 16,
+      "first": {
+        "list": "Likud",
+        "seats": 38
+      },
+      "second": {
+        "list": "Labor",
+        "seats": 19
+      },
+      "turnout": 67.8,
+      "outcome": "Sharon formed a coalition of Likud, Shinui, the National Religious Party and National Union, with 68 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2003/"
+      }
+    },
+    {
+      "date": "2006-03-28",
+      "knesset": 17,
+      "first": {
+        "list": "Kadima",
+        "seats": 29
+      },
+      "second": {
+        "list": "Labor",
+        "seats": 19
+      },
+      "turnout": 63.5,
+      "outcome": "Olmert formed a coalition of Kadima, Labor, Shas and Gil, with 67 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2006/"
+      }
+    },
+    {
+      "date": "2009-02-10",
+      "knesset": 18,
+      "first": {
+        "list": "Kadima",
+        "seats": 28
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 27
+      },
+      "turnout": 64.8,
+      "outcome": "Although Kadima won one more seat, a majority backed Netanyahu, who formed a six-party coalition of 74 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2009/"
+      }
+    },
+    {
+      "date": "2013-01-22",
+      "knesset": 19,
+      "first": {
+        "list": "Likud Beitenu",
+        "seats": 31
+      },
+      "second": {
+        "list": "Yesh Atid",
+        "seats": 19
+      },
+      "turnout": 67.8,
+      "outcome": "Netanyahu formed a four-party coalition of 68 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2013/"
+      },
+      "outcomeSource": {
+        "name": "Israel Democracy Institute (Ofer Kenig)",
+        "date": "April 15, 2026",
+        "url": "https://en.idi.org.il/articles/63976"
+      }
+    },
+    {
+      "date": "2015-03-17",
+      "knesset": 20,
+      "first": {
+        "list": "Likud",
+        "seats": 30
+      },
+      "second": {
+        "list": "Zionist Union",
+        "seats": 24
+      },
+      "turnout": 72.3,
+      "outcome": "Netanyahu formed a five-party coalition of 61 MKs.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2015/"
+      },
+      "outcomeSource": {
+        "name": "Israel Democracy Institute (Ofer Kenig)",
+        "date": "April 15, 2026",
+        "url": "https://en.idi.org.il/articles/63976"
+      }
+    },
+    {
+      "date": "2019-04-09",
+      "knesset": 21,
+      "first": {
+        "list": "Likud",
+        "seats": 35
+      },
+      "second": {
+        "list": "Blue and White",
+        "seats": 35
+      },
+      "turnout": 68.5,
+      "outcome": "Netanyahu could not form a coalition, and the Knesset voted 74–45 to dissolve itself, a month after being sworn in.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2019-1/"
+      },
+      "outcomeSource": {
+        "name": "Times of Israel",
+        "date": "May 30, 2019",
+        "url": "https://www.timesofisrael.com/knesset-votes-for-new-elections-on-september-17-after-pm-fails-to-form-coalition/"
+      }
+    },
+    {
+      "date": "2019-09-17",
+      "knesset": 22,
+      "first": {
+        "list": "Blue and White",
+        "seats": 33
+      },
+      "second": {
+        "list": "Likud",
+        "seats": 32
+      },
+      "turnout": 69.8,
+      "outcome": "Neither Netanyahu nor Gantz assembled a coalition, and the Knesset dissolved, setting a third election.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2019-september/"
+      },
+      "outcomeSource": {
+        "name": "Times of Israel",
+        "date": "December 12, 2019",
+        "url": "https://www.timesofisrael.com/israel-calls-another-election-for-march-the-third-in-a-year/"
+      }
+    },
+    {
+      "date": "2020-03-02",
+      "knesset": 23,
+      "first": {
+        "list": "Likud",
+        "seats": 36
+      },
+      "second": {
+        "list": "Blue and White",
+        "seats": 33
+      },
+      "turnout": 71.5,
+      "outcome": "Netanyahu and Gantz formed a rotation government, approved 73–46 on May 17, 2020; Gantz was to take over in November 2021.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2020-1/"
+      },
+      "outcomeSource": {
+        "name": "Times of Israel",
+        "date": "May 17, 2020",
+        "url": "https://www.timesofisrael.com/liveblog-may-17-2020/"
+      }
+    },
+    {
+      "date": "2021-03-23",
+      "knesset": 24,
+      "first": {
+        "list": "Likud",
+        "seats": 30
+      },
+      "second": {
+        "list": "Yesh Atid",
+        "seats": 17
+      },
+      "turnout": 67.4,
+      "outcome": "After Netanyahu failed, Lapid assembled an eight-party coalition with Yamina's Bennett as prime minister.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2021/"
+      }
+    },
+    {
+      "date": "2022-11-01",
+      "knesset": 25,
+      "first": {
+        "list": "Likud",
+        "seats": 32
+      },
+      "second": {
+        "list": "Yesh Atid",
+        "seats": 24
+      },
+      "turnout": 70.6,
+      "outcome": "Netanyahu formed a six-party coalition of Likud, Religious Zionism, Otzma Yehudit, Noam, Shas and UTJ, approved 63–54 on Dec 29, 2022.",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2022/"
+      },
+      "outcomeSource": {
+        "name": "Times of Israel",
+        "date": "December 29, 2022",
+        "url": "https://www.timesofisrael.com/netanyahu-resumes-role-as-pm-as-israels-most-hardline-government-ever-takes-office/"
+      }
+    }
+  ],
+  "governments": [
+    {
+      "pm": "Menachem Begin",
+      "party": "Likud",
+      "from": "1977-06-20",
+      "to": "1983-10-10",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144550/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=18"
+      }
+    },
+    {
+      "pm": "Yitzhak Shamir",
+      "party": "Likud",
+      "from": "1983-10-10",
+      "to": "1984-09-13",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130406224230/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=20"
+      }
+    },
+    {
+      "pm": "Shimon Peres",
+      "party": "Alignment",
+      "from": "1984-09-13",
+      "to": "1986-10-20",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130406221846/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=21"
+      }
+    },
+    {
+      "pm": "Yitzhak Shamir",
+      "party": "Likud",
+      "from": "1986-10-20",
+      "to": "1992-07-13",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130406221852/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=22"
+      }
+    },
+    {
+      "pm": "Yitzhak Rabin",
+      "party": "Labor",
+      "from": "1992-07-13",
+      "to": "1995-11-04",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144830/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=25"
+      }
+    },
+    {
+      "pm": "Shimon Peres",
+      "party": "Labor",
+      "from": "1995-11-05",
+      "to": "1996-06-18",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144830/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=25"
+      }
+    },
+    {
+      "pm": "Benjamin Netanyahu",
+      "party": "Likud",
+      "from": "1996-06-18",
+      "to": "1999-07-06",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144834/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=27"
+      }
+    },
+    {
+      "pm": "Ehud Barak",
+      "party": "One Israel (Labor)",
+      "from": "1999-07-06",
+      "to": "2001-03-07",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144559/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=28"
+      }
+    },
+    {
+      "pm": "Ariel Sharon",
+      "party": "Likud (Kadima from November 2005)",
+      "from": "2001-03-07",
+      "to": "2006-04-16",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130402144854/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=29"
+      }
+    },
+    {
+      "pm": "Ehud Olmert",
+      "party": "Kadima",
+      "from": "2006-04-16",
+      "to": "2009-03-31",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130208175906/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=30"
+      }
+    },
+    {
+      "pm": "Benjamin Netanyahu",
+      "party": "Likud",
+      "from": "2009-03-31",
+      "to": "2021-06-13",
+      "source": {
+        "name": "Haaretz",
+        "date": "March 31, 2009",
+        "url": "https://www.haaretz.com/2009-03-31/ty-article/netanyahu-sworn-in-as-israels-prime-minister/0000017f-e2a9-d804-ad7f-f3fb76eb0000"
+      }
+    },
+    {
+      "pm": "Naftali Bennett",
+      "party": "Yamina",
+      "from": "2021-06-13",
+      "to": "2022-07-01",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 13, 2021",
+        "url": "https://www.timesofisrael.com/liveblog_entry/bennett-lapid-government-wins-knesset-majority-netanyahu-is-out-after-12-years/"
+      }
+    },
+    {
+      "pm": "Yair Lapid",
+      "party": "Yesh Atid",
+      "from": "2022-07-01",
+      "to": "2022-12-29",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 30, 2022",
+        "url": "https://www.timesofisrael.com/liveblog_entry/lawmakers-finalize-vote-to-dissolve-parliament-head-for-new-elections/"
+      }
+    },
+    {
+      "pm": "Benjamin Netanyahu",
+      "party": "Likud",
+      "from": "2022-12-29",
+      "to": "",
+      "source": {
+        "name": "Times of Israel",
+        "date": "December 29, 2022",
+        "url": "https://www.timesofisrael.com/netanyahu-resumes-role-as-pm-as-israels-most-hardline-government-ever-takes-office/"
+      }
+    }
+  ],
+  "events": [
+    {
+      "date": "1977-05-17",
+      "title": "The 'upheaval': Likud wins",
+      "text": "For the first time, power shifted from Mapai and its heirs, in office for 29 years, to the right-wing bloc under Menachem Begin. The Alignment fell to 32 seats; Likud won 43. The result became known as \"the upheaval.\"",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1977/"
+      }
+    },
+    {
+      "date": "1977-11-19",
+      "title": "Sadat visits Jerusalem",
+      "text": "Begin received Egyptian President Anwar Sadat on his visit to Jerusalem.",
+      "kind": "peace",
+      "source": {
+        "name": "Haaretz",
+        "date": "February 22, 2012",
+        "url": "https://www.haaretz.com/israel-news/2012-02-22/ty-article/begins-legacy-the-man-who-transformed-israel/0000017f-e079-d804-ad7f-f1fbaea30000"
+      }
+    },
+    {
+      "date": "1978-09-17",
+      "title": "Camp David framework signed",
+      "text": "After 11 days of talks at Camp David, Begin signed a framework for a peace treaty with Egypt. Israel agreed to withdraw from the entire Sinai Peninsula.",
+      "kind": "peace",
+      "source": {
+        "name": "Haaretz",
+        "date": "February 22, 2012",
+        "url": "https://www.haaretz.com/israel-news/2012-02-22/ty-article/begins-legacy-the-man-who-transformed-israel/0000017f-e079-d804-ad7f-f1fbaea30000"
+      }
+    },
+    {
+      "date": "1979-03-26",
+      "title": "Peace treaty with Egypt",
+      "text": "At the White House, Begin signed the peace treaty with Egypt, the first agreement of its kind between Israel and an Arab state.",
+      "kind": "peace",
+      "source": {
+        "name": "Haaretz",
+        "date": "February 22, 2012",
+        "url": "https://www.haaretz.com/israel-news/2012-02-22/ty-article/begins-legacy-the-man-who-transformed-israel/0000017f-e079-d804-ad7f-f1fbaea30000"
+      }
+    },
+    {
+      "date": "1982-06-06",
+      "title": "Israel invades Lebanon",
+      "text": "Israel invaded Lebanon, with Ariel Sharon as defense minister. Sharon lost the post after Israeli-allied Christian militia killed hundreds of Palestinians in west Beirut refugee camps that September.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "January 11, 2014",
+        "url": "https://www.timesofisrael.com/major-events-in-the-life-of-ariel-sharon/"
+      }
+    },
+    {
+      "date": "1984-09-13",
+      "title": "Unity government with rotation",
+      "text": "Shimon Peres of the Alignment became prime minister of a government that included Likud, with Likud's Yitzhak Shamir as foreign minister. Shamir replaced Peres as prime minister on Oct 20, 1986.",
+      "kind": "politics",
+      "source": {
+        "name": "Knesset, Governments of Israel (Internet Archive copy, 2013)",
+        "date": "",
+        "url": "https://web.archive.org/web/20130406221846/http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp?govt=21"
+      }
+    },
+    {
+      "date": "1987-12-08",
+      "title": "First intifada begins",
+      "text": "After an Israeli vehicle in Gaza caused a crash that killed four Palestinians, rioting broke out in the Jabalia refugee camp. The uprising spread to the occupied West Bank.",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "December 8, 2023",
+        "url": "https://www.aljazeera.com/gallery/2023/12/8/history-illustrated-the-first-intifada-against-israel"
+      }
+    },
+    {
+      "date": "1991-10-30",
+      "title": "Madrid peace conference",
+      "text": "A conference co-chaired by Presidents Bush and Gorbachev opened with Israeli, Egyptian, Syrian and Lebanese delegations and a joint Jordanian-Palestinian one: the first time all parties to the Arab-Israeli conflict met for direct talks.",
+      "kind": "peace",
+      "source": {
+        "name": "US State Department, Office of the Historian",
+        "date": "",
+        "url": "https://history.state.gov/milestones/1989-1992/madrid-conference"
+      }
+    },
+    {
+      "date": "1993-09-13",
+      "title": "Oslo Accords signed",
+      "text": "Israel and the PLO signed the first Oslo Accord, in which each side recognized the other for the first time. A second accord followed in September 1995.",
+      "kind": "peace",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "September 13, 2023",
+        "url": "https://www.aljazeera.com/news/2023/9/13/what-were-oslo-accords-israel-palestinians"
+      }
+    },
+    {
+      "date": "1994-10-26",
+      "title": "Peace treaty with Jordan",
+      "text": "At the Arava border crossing, Israel and Jordan signed a peace treaty. Jordan became the second Arab country, after Egypt, to make peace with Israel.",
+      "kind": "peace",
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "October 26, 2025",
+        "url": "https://www.jpost.com/history/article-871719"
+      }
+    },
+    {
+      "date": "1995-11-04",
+      "title": "Rabin assassinated",
+      "text": "Prime Minister Yitzhak Rabin was shot dead by Yigal Amir, a far-right Jewish activist, at a rally of more than 100,000 people in Tel Aviv. In the Oslo talks Rabin had agreed to cede some territory won in 1967 to the PLO in exchange for peace.",
+      "kind": "politics",
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "November 4, 2025",
+        "url": "https://www.jpost.com/history/article-872669"
+      }
+    },
+    {
+      "date": "1996-05-29",
+      "title": "First direct election of a PM",
+      "text": "For the first time voters cast two ballots, one for the Knesset and one for prime minister. Netanyahu beat Peres by about 30,000 votes, under one percent, and sectoral parties gained seats.",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1996/"
+      }
+    },
+    {
+      "date": "1999-05-17",
+      "title": "Barak wins second direct election",
+      "text": "Ehud Barak beat Netanyahu for prime minister by a convincing margin, but his One Israel list won only 26 seats. For the first time the two largest factions held fewer than half the Knesset's seats.",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/1999/"
+      }
+    },
+    {
+      "date": "2000-05-24",
+      "title": "Israel leaves southern Lebanon",
+      "text": "The last Israeli troops withdrew from southern Lebanon, ending an 18-year presence in the security zone. The army's stay there from June 1982 had cost 1,216 Israeli soldiers' lives.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "May 21, 2015",
+        "url": "https://www.timesofisrael.com/defense-ministry-releases-footage-of-2000-lebanon-retreat/"
+      }
+    },
+    {
+      "date": "2000-09-28",
+      "title": "Sharon visit; second intifada",
+      "text": "Opposition leader Ariel Sharon visited the Temple Mount, which Muslims call the Noble Sanctuary, and violence erupted. Palestinians attribute the uprising to the visit; his supporters say it was already planned.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "January 11, 2014",
+        "url": "https://www.timesofisrael.com/major-events-in-the-life-of-ariel-sharon/"
+      }
+    },
+    {
+      "date": "2001-02-06",
+      "title": "PM-only election: Sharon wins",
+      "text": "In the first election ever held for prime minister alone, with no Knesset vote, Sharon beat Barak with 62.4%. Turnout, 62.3%, was the lowest in Israel's history to that point. A month later Israel returned to its former system.",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2002",
+        "url": "https://en.idi.org.il/publications/8832"
+      }
+    },
+    {
+      "date": "2003-01-28",
+      "title": "Back to a single ballot",
+      "text": "Sharon had abolished direct election of the prime minister, and Israel returned to single-ballot elections. Held during the second intifada, the vote gave his Likud 38 seats to Labor's 19.",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2003/"
+      }
+    },
+    {
+      "date": "2005-08-17",
+      "title": "Gaza disengagement",
+      "text": "Sharon's government began a unilateral withdrawal from Gaza and a small part of the West Bank, reversing his decades of support for expanding settlements.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "January 11, 2014",
+        "url": "https://www.timesofisrael.com/major-events-in-the-life-of-ariel-sharon/"
+      }
+    },
+    {
+      "date": "2005-11-21",
+      "title": "Sharon leaves Likud, founds Kadima",
+      "text": "Facing a Likud rebellion over the Gaza pullout, Prime Minister Sharon quit Likud to lead a new centrist party, later named Kadima, into early elections.",
+      "kind": "politics",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "November 21, 2005",
+        "url": "https://www.aljazeera.com/news/2005/11/21/sharon-leaves-likud-to-form-party"
+      }
+    },
+    {
+      "date": "2006-01-04",
+      "title": "Sharon's stroke",
+      "text": "On the eve of a scheduled heart procedure, Sharon suffered a massive stroke and entered a coma. He was still in a coma in 2013 and died in January 2014.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "January 11, 2014",
+        "url": "https://www.timesofisrael.com/major-events-in-the-life-of-ariel-sharon/"
+      }
+    },
+    {
+      "date": "2006-07-12",
+      "title": "Second Lebanon War",
+      "text": "Hezbollah fighters killed three Israeli soldiers and seized two in a cross-border raid, setting off 34 days of fighting in Lebanon.",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "August 27, 2006",
+        "url": "https://www.aljazeera.com/news/2006/8/27/nasrallah-says-he-did-not-want-war"
+      }
+    },
+    {
+      "date": "2009-03-31",
+      "title": "Netanyahu returns to office",
+      "text": "The Knesset approved Netanyahu's government, Israel's 32nd, by 69–45 with five abstentions, after he assembled a coalition amid tensions within Likud.",
+      "kind": "politics",
+      "source": {
+        "name": "Haaretz",
+        "date": "March 31, 2009",
+        "url": "https://www.haaretz.com/2009-03-31/ty-article/netanyahu-sworn-in-as-israels-prime-minister/0000017f-e2a9-d804-ad7f-f3fb76eb0000"
+      }
+    },
+    {
+      "date": "2011-09-03",
+      "title": "Social protests peak",
+      "text": "After a summer of tent protests over the high cost of living, more than 400,000 people rallied for \"social justice\" across Israel, in what was called the biggest protest in the country's history.",
+      "kind": "society",
+      "source": {
+        "name": "Ynet",
+        "date": "September 4, 2011",
+        "url": "https://ynetnews.com/articles/0,7340,L-4117312,00.html"
+      }
+    },
+    {
+      "date": "2018-07-19",
+      "title": "Nation-state law passes",
+      "text": "The Knesset passed, 62–55, a Basic Law stating that the right to national self-determination in Israel is \"exclusive\" to the Jewish people. It downgraded Arabic from an official language to a \"special status.\"",
+      "kind": "law",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "July 19, 2018",
+        "url": "https://www.aljazeera.com/news/2018/7/19/israel-passes-controversial-jewish-nation-state-law"
+      }
+    },
+    {
+      "date": "2019-05-30",
+      "title": "First of five elections fails",
+      "text": "After the April vote, Netanyahu could not form a coalition: Liberman's Yisrael Beytenu and the Haredi parties split over the draft law. The Knesset dissolved itself 74–45, forcing an unprecedented second election that year.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "May 30, 2019",
+        "url": "https://www.timesofisrael.com/knesset-votes-for-new-elections-on-september-17-after-pm-fails-to-form-coalition/"
+      }
+    },
+    {
+      "date": "2019-11-21",
+      "title": "Netanyahu indicted",
+      "text": "Attorney General Avichai Mandelblit announced that Netanyahu would be charged with bribery, fraud and breach of trust in Cases 1000, 2000 and 4000. He was the first sitting Israeli prime minister accused of bribery.",
+      "kind": "law",
+      "source": {
+        "name": "Haaretz",
+        "date": "November 21, 2019",
+        "url": "https://www.haaretz.com/israel-news/2019-11-21/ty-article/netanyahu-charged-bribery-fraud-corruption-israel-election/0000017f-e64e-df2c-a1ff-fe5f28720000"
+      }
+    },
+    {
+      "date": "2020-05-17",
+      "title": "Netanyahu–Gantz unity government",
+      "text": "After a third election, the Knesset approved a Netanyahu–Gantz government 73–46. Under the deal, Benny Gantz was to become prime minister on Nov 17, 2021.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "May 17, 2020",
+        "url": "https://www.timesofisrael.com/liveblog-may-17-2020/"
+      }
+    },
+    {
+      "date": "2020-09-15",
+      "title": "Abraham Accords signed",
+      "text": "At the White House, Israel signed agreements with the United Arab Emirates and Bahrain, which joined Egypt and Jordan as Arab states at formal peace with Israel.",
+      "kind": "peace",
+      "source": {
+        "name": "Times of Israel",
+        "date": "September 15, 2020",
+        "url": "https://www.timesofisrael.com/marking-dawn-of-new-middle-east-israel-signs-historic-deals-with-uae-bahrain/"
+      }
+    },
+    {
+      "date": "2021-05-12",
+      "title": "Violence in mixed cities",
+      "text": "Amid fighting with Gaza and clashes at Al-Aqsa, Jewish and Arab mobs attacked each other in Lod, Acre, Ramle and Bat Yam, the widest unrest between citizens since October 2000, when 13 people, 12 of them Palestinian citizens of Israel, died in clashes with police.",
+      "kind": "society",
+      "source": {
+        "name": "Times of Israel",
+        "date": "May 14, 2021",
+        "url": "https://www.timesofisrael.com/in-nights-of-arab-jewish-violence-memories-of-october-2000/"
+      }
+    },
+    {
+      "date": "2021-06-02",
+      "title": "Ra'am signs on to a coalition",
+      "text": "Mansour Abbas signed a deal to bring Ra'am into the Bennett–Lapid coalition, the first Arab party leader in half a century to do so. The coalition pledged about NIS 53 billion for Arab communities.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 3, 2021",
+        "url": "https://www.timesofisrael.com/arab-israeli-raam-party-makes-history-by-joining-bennett-lapid-coalition/"
+      }
+    },
+    {
+      "date": "2021-06-13",
+      "title": "Bennett–Lapid government sworn in",
+      "text": "The Knesset approved the new government 60–59, ending Netanyahu's 12-year tenure. Naftali Bennett became prime minister.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 13, 2021",
+        "url": "https://www.timesofisrael.com/liveblog_entry/bennett-lapid-government-wins-knesset-majority-netanyahu-is-out-after-12-years/"
+      }
+    },
+    {
+      "date": "2022-06-30",
+      "title": "Knesset dissolves; Lapid PM",
+      "text": "The Knesset dissolved itself 92–0 and set the fifth election in three and a half years for Nov 1. Yair Lapid became interim prime minister at midnight.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 30, 2022",
+        "url": "https://www.timesofisrael.com/liveblog_entry/lawmakers-finalize-vote-to-dissolve-parliament-head-for-new-elections/"
+      }
+    },
+    {
+      "date": "2022-11-01",
+      "title": "Netanyahu bloc wins 64 seats",
+      "text": "The two blocs were nearly tied in votes, but Meretz and Balad fell below the threshold. Likud and its allies won 64 seats, enough for Netanyahu to form a \"pure\" right-wing government.",
+      "kind": "politics",
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "",
+        "url": "https://en.idi.org.il/israeli-elections-and-parties/elections/2022/"
+      }
+    },
+    {
+      "date": "2023-01-04",
+      "title": "Judicial overhaul unveiled",
+      "text": "Justice Minister Yariv Levin proposed barring the courts' \"reasonableness\" review, giving the government effective control of judicial appointments, and letting 61 MKs re-enact laws the court strikes down.",
+      "kind": "law",
+      "source": {
+        "name": "Times of Israel",
+        "date": "January 4, 2023",
+        "url": "https://www.timesofisrael.com/justice-minister-unveils-plan-to-shackle-the-high-court-overhaul-israels-judiciary/"
+      }
+    },
+    {
+      "date": "2023-03-27",
+      "title": "Overhaul paused after strike",
+      "text": "After mass protests and a nationwide strike, Netanyahu delayed the overhaul: \"When there's an opportunity to avoid civil war through dialogue, I, as prime minister, am taking a time out for dialogue.\"",
+      "kind": "society",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "March 27, 2023",
+        "url": "https://www.aljazeera.com/news/2023/3/27/israel-pm-netanyahu-suspends-judicial-change-plan-after-protest"
+      }
+    },
+    {
+      "date": "2023-07-24",
+      "title": "'Reasonableness' law passes",
+      "text": "The Knesset passed 64–0 the first law of the overhaul, limiting the courts' review of government decisions for \"reasonableness.\" The opposition boycotted the vote.",
+      "kind": "law",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "July 24, 2023",
+        "url": "https://www.aljazeera.com/news/2023/7/24/israeli-parliament-passes-divisive-law-weakening-supreme-court"
+      }
+    },
+    {
+      "date": "2023-10-07",
+      "title": "Hamas-led attack on Israel",
+      "text": "Thousands of Hamas-led gunmen stormed southern Israel, killing some 1,200 people and taking 251 hostages to Gaza, which started the war in Gaza.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "October 5, 2024",
+        "url": "https://www.timesofisrael.com/we-still-have-nightmares-theres-no-end-oct-7-survivors-reflect-on-devastating-toll/"
+      }
+    },
+    {
+      "date": "2023-11-24",
+      "title": "First truce and hostage releases",
+      "text": "A seven-day truce began. Hamas freed 105 hostages, 81 of them Israelis, and Israel released 210 Palestinian prisoners, all women or minors. Fighting resumed on Dec 1.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "December 2, 2023",
+        "url": "https://www.timesofisrael.com/report-truce-fell-apart-after-hamas-refused-to-release-more-israeli-female-hostages/"
+      }
+    },
+    {
+      "date": "2024-01-01",
+      "title": "Court voids reasonableness law",
+      "text": "Eight of 15 Supreme Court justices voted to strike down the reasonableness amendment, the first time the court nullified a Basic Law or an amendment to one. Twelve ruled that it had that power.",
+      "kind": "law",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "January 2, 2024",
+        "url": "https://www.aljazeera.com/news/2024/1/2/whats-next-for-netanyahu-after-top-court-ruling-against-judicial-overhaul"
+      }
+    },
+    {
+      "date": "2024-06-25",
+      "title": "Court orders Haredi draft",
+      "text": "A unanimous nine-justice panel ruled there is \"no legal basis for avoiding the recruitment of yeshiva students\" and that the state may not keep funding yeshivas for students eligible for service.",
+      "kind": "law",
+      "source": {
+        "name": "Times of Israel",
+        "date": "June 25, 2024",
+        "url": "https://www.timesofisrael.com/in-historic-ruling-high-court-says-government-must-begin-drafting-haredi-men-into-idf/"
+      }
+    },
+    {
+      "date": "2025-01-19",
+      "title": "Gaza ceasefire takes effect",
+      "text": "A ceasefire began and Hamas freed its first three hostages under a deal whose first phase was to last 42 days.",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "January 19, 2025",
+        "url": "https://www.aljazeera.com/news/2025/1/19/hamas-releases-israeli-captives-gaza-ceasefire-palestinian-prisoners"
+      }
+    },
+    {
+      "date": "2025-03-18",
+      "title": "War resumes; Ben-Gvir returns",
+      "text": "Israel launched its deadliest strikes on Gaza since the January ceasefire. Hours later, Itamar Ben-Gvir's Otzma Yehudit, which had resigned in January in protest at the ceasefire, announced it would rejoin.",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "March 18, 2025",
+        "url": "https://www.aljazeera.com/news/2025/3/18/israels-ben-gvir-to-rejoin-netanyahus-government"
+      }
+    },
+    {
+      "date": "2025-06-13",
+      "title": "Twelve-day war with Iran",
+      "text": "Israel bombed Iranian nuclear sites at Natanz and Isfahan, and Iran retaliated with drones and missiles. President Trump announced a ceasefire, calling the conflict \"the 12 Day War.\"",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "June 24, 2025",
+        "url": "https://www.aljazeera.com/news/2025/6/24/is-the-12-day-israel-iran-war-really-over-and-who-gained"
+      }
+    },
+    {
+      "date": "2025-07-14",
+      "title": "UTJ quits the coalition",
+      "text": "Both factions of United Torah Judaism, Degel Hatorah and Agudat Yisrael, left the government and coalition in protest over the draft bill, cutting the coalition from 68 seats to 61.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel",
+        "date": "July 15, 2025",
+        "url": "https://www.timesofisrael.com/united-torah-judaism-quits-govt-to-protest-new-proposal-on-army-enlistment-exemptions/"
+      }
+    },
+    {
+      "date": "2025-07-16",
+      "title": "Shas quits the government",
+      "text": "Shas announced its resignation from the government amid the coalition's failure to advance a bill on military service for Haredi men, but said it would not vote to bring down Netanyahu's coalition.",
+      "kind": "politics",
+      "source": {
+        "name": "Haaretz",
+        "date": "July 16, 2025",
+        "url": "https://www.haaretz.com/israel-news/2025-07-16/ty-article/.premium/ultra-orthodox-party-shas-quits-government-wont-vote-to-dismantle-netanyahu-coalition/00000198-13d0-da26-abba-d7d14dcf0000"
+      }
+    },
+    {
+      "date": "2025-10-13",
+      "title": "Last living hostages come home",
+      "text": "Under a ceasefire deal brokered by President Trump, Hamas released the 20 remaining living hostages and Israel released nearly 2,000 Palestinian prisoners. That day Hamas handed over 4 of the 28 dead hostages' bodies.",
+      "kind": "war",
+      "source": {
+        "name": "Times of Israel",
+        "date": "October 13, 2025",
+        "url": "https://www.timesofisrael.com/all-20-remaining-living-hostages-return-to-israel-after-over-2-years-in-hamas-captivity/"
+      }
+    },
+    {
+      "date": "2026-02-28",
+      "title": "US and Israel strike Iran",
+      "text": "The United States and Israel launched strikes on Iran two days after US–Iran nuclear talks in Geneva ended without a breakthrough. Iran responded with missile and air strikes across the region, including on Israel.",
+      "kind": "war",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "February 28, 2026",
+        "url": "https://www.aljazeera.com/news/2026/2/28/us-israel-bomb-iran-a-timeline-of-talks-and-threats-leading-up-to-attacks"
+      }
+    },
+    {
+      "date": "2026-07-17",
+      "title": "Knesset dissolves; vote set",
+      "text": "The 25th Knesset dissolved itself 62–0 overnight and set the election for Oct 27, 2026. A separate vote kept mandatory military service at 32 months.",
+      "kind": "politics",
+      "source": {
+        "name": "Ynet",
+        "date": "July 17, 2026",
+        "url": "https://www.ynetnews.com/article/h1nremv4gl"
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Court reinstates Arab lists",
+      "text": "The Supreme Court unanimously overturned the Central Elections Committee's disqualification of the Joint List and Ra'am. Balad leader Sami Abu Shehadeh withdrew after the court signaled a majority favored barring him.",
+      "kind": "law",
+      "source": {
+        "name": "Al Jazeera",
+        "date": "October 2, 2026",
+        "url": "https://www.aljazeera.com/news/2026/10/2/israels-supreme-court-overturns-election-panel-ban-on-arab-parties"
+      }
+    }
+  ]
+}

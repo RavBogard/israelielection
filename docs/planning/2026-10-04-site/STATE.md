@@ -216,7 +216,7 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Done: issues (7), communities (9), American lens.
 - Done: vote map, 2019–2022 (add 2026 after the final file).
 - Done: How it works (seats, forming a government, voting), each drafted and then fact-checked by a separate agent; menu item under Understand.
-- Still to do: timeline, glossary, election-night page (partly covered by /how-it-works/voting and /results), sources/method (Daniel).
+- Done Oct 5: timeline and glossary (see below). Still to do: election-night page (partly covered by /how-it-works/voting and /results), sources/method (Daniel).
 
 ## Vote map (Oct 5)
 - /vote-map: 2019a–2022 by locality.
@@ -244,6 +244,15 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Still open:
   - 2026 results, once the final file is posted (about a week after Oct 27).
   - The CBS 2022 layer, which needs a person to download it in a browser.
+
+## Timeline and glossary (Oct 5)
+- /timeline: scrubbable 1977–2026 (components/Timeline.tsx, data/timeline.json): 17 elections, 14 PM terms, 47 events; the full event list and tables below it. /glossary: 56 terms (data/glossary.json), A–Z, anchors like /glossary#area-c. Checks in lib/reference.test.ts.
+- Drafted by research agents, then independent fact-checks: timeline 14 fixes (~190 claims, all opened), glossary 44 entries edited (~230 claims). Knesset pages blocked (HTTP 474); PM dates confirmed on 2013 Internet Archive copies.
+- GATE: placement in the Understand group's `more` slot (home index and footer, not masthead), per the design session — proceeded because it adds no masthead item.
+- GATE: kept the Feb 28, 2026 US–Israel strikes on Iran as an event (confirmed at Al Jazeera) — proceeded because it is a dated, sourced war event in the election year.
+- GATE: Madrid 1991 recited from an Al Jazeera opinion piece to the State Department Office of the Historian — proceeded because a news/primary source is preferred.
+- GATE: glossary Hebrew kept only where seen in a Hebrew source (11); Bibi and Torato Umanuto Hebrew removed — proceeded under "every fact sourced".
+- For Daniel: (1) glossary "Occupied" no longer mentions "disputed" (no source found); ruling 3 covers the west-bank page only. (2) The haredi-draft page states the 1977 lifting of the Torato Umanuto cap, cited to a Knesset PDF no checker could open; the research record confirms it only from Wikipedia. (3) Oct 5 briefing says the court "bar[red]" Abu Shehadeh (Haaretz headline wording); Al Jazeera and the site's community page say he withdrew after the court signaled a majority to disqualify. Briefings are yours to correct.
 
 ## Deploy log
 - 2026-10-04: Vercel project (preset "Other", created on the empty repo) failed twice: lockfile

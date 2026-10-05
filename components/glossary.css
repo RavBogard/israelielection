@@ -1,0 +1,14 @@
+/* Glossary: a letter index, then terms by letter. */
+.gl-az { display: flex; flex-wrap: wrap; gap: 4px; margin: 18px 0 0; padding: 0 0 14px; border-bottom: 1px solid var(--line); font-family: var(--body); }
+.gl-az a { display: inline-grid; place-items: center; min-width: 32px; min-height: 32px; font-weight: 700; font-size: 15px; color: var(--ink); text-decoration: none; border: 1px solid var(--line-2); border-radius: var(--r); }
+.gl-az a:hover { border-color: var(--ink); }
+.gl-letter { scroll-margin-top: 80px; }
+.gl { margin: 0; }
+.gl > div { padding: 12px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 80px; }
+.gl > div:target { background: var(--sheet); box-shadow: -10px 0 0 var(--sheet), 10px 0 0 var(--sheet); }
+.gl dt { font-family: var(--body); font-weight: 700; font-size: 17px; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.gl .he { font-weight: 600; font-size: 17px; color: var(--ink-2); }
+.gl .say { font-weight: 400; font-size: 13.5px; font-style: italic; color: var(--ink-3); }
+.gl dd { margin: 4px 0 0; }
+.gl .src, .gl .see { font-family: var(--body); font-size: 13.5px; }
+.gl .src a { color: var(--ink-2); }

@@ -1,0 +1,766 @@
+{
+  "checked": "2026-10-05",
+  "terms": [
+    {
+      "term": "Alternate prime minister",
+      "def": "A post created by a 2020 amendment to Basic Law: The Government for rotation governments. The 2020 law set up the Alternate Prime Minister's Office, to be held by Benny Gantz for 18 months and then passed to Netanyahu, so that the outgoing prime minister could keep the title after vacating the post. The Supreme Court declined to strike the law down.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2021-07-12",
+        "url": "https://www.timesofisrael.com/high-court-upholds-basic-law-underpinning-pm-rotation-deals/"
+      }
+    },
+    {
+      "term": "Annexation",
+      "def": "Applying Israeli law and administration to West Bank land. The Knesset has not passed it into law. On Oct 22, 2025, a bill applying Israeli law to \"all areas of settlement\" passed a preliminary reading 25–24 and was sent to the Foreign Affairs and Defense Committee. Supporters call it applying sovereignty; this site says annexation.",
+      "see": [
+        "/issues/west-bank",
+        "/communities/settlers"
+      ],
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "2025-10-22",
+        "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-871299"
+      }
+    },
+    {
+      "term": "Area C",
+      "def": "The roughly 60% of the West Bank under full Israeli control under the 1995 Oslo II agreement. In Area A (about 18%) the Palestinian Authority has full control; in Area B (about 22%) the Authority has civil control and Israel security control.",
+      "see": [
+        "/issues/west-bank",
+        "/communities/settlers"
+      ],
+      "source": {
+        "name": "B'Tselem",
+        "date": "",
+        "url": "https://www.btselem.org/area_c/what_is_area_c"
+      }
+    },
+    {
+      "term": "Ashkenazi",
+      "hebrew": "אשכנזי",
+      "say": "ash-ke-nah-ZEE",
+      "def": "Jews whose families trace their roots mainly to central and eastern Europe; plural Ashkenazim. Pew found that \"fully two-thirds of Ashkenazim identify as secular (Hiloni) Jews,\" compared with 32% of Sephardim and Mizrahim.",
+      "see": [
+        "/communities/secular",
+        "/communities/masorti"
+      ],
+      "source": {
+        "name": "Pew Research Center",
+        "date": "2016-03-08",
+        "url": "https://www.pewresearch.org/religion/2016/03/08/identity/"
+      }
+    },
+    {
+      "term": "Attorney general",
+      "def": "Israel's attorney general heads the criminal prosecution, represents the state and the public interest in court, and gives legal counsel to the government \"as the authorized interpreter of the law.\" Proposals to split the role have been debated for years. The government tried to remove the incumbent attorney general, but Supreme Court rulings halted the dismissal proceedings.",
+      "see": [
+        "/issues/courts"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-15",
+        "url": "https://en.idi.org.il/articles/62285"
+      }
+    },
+    {
+      "term": "Bader–Ofer method",
+      "def": "Israel's rule for sharing out leftover seats, adopted with the Bader–Ofer Law of 1973, one of whose goals was \"to strengthen the larger parties.\" After whole seats are handed out, each leftover seat goes to the list with the most votes per seat it would then hold, one seat at a time.",
+      "see": [
+        "/how-it-works/seats"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-10-30",
+        "url": "https://en.idi.org.il/articles/47485"
+      }
+    },
+    {
+      "term": "Ballot letters",
+      "def": "Each list runs under a short code of Hebrew letters printed on its ballot slip, and the Central Elections Committee reports the count by those letters, not by party name. In 2022 the Likud column in the committee's results file was headed מחל.",
+      "see": [
+        "/how-it-works/voting",
+        "/results"
+      ],
+      "source": {
+        "name": "Central Elections Committee",
+        "date": "2022-11-08",
+        "url": "https://media25.bechirot.gov.il/files/expc.csv"
+      }
+    },
+    {
+      "term": "Ballot slip",
+      "def": "Israelis vote on paper. Behind a screen, the voter takes one printed slip for the chosen list, seals it in an envelope and drops the envelope in the ballot box. A slip with writing on it, a torn slip, or an envelope holding more than one slip is disqualified.",
+      "see": [
+        "/how-it-works/voting"
+      ],
+      "source": {
+        "name": "Ynet",
+        "date": "2022-10-31",
+        "url": "https://www.ynetnews.com/article/rjxzpztvo"
+      }
+    },
+    {
+      "term": "Basic Laws",
+      "def": "Israel has no single written constitution. The assembly elected to write one turned itself into the Knesset and chose instead \"an incremental constitution, made up of a series of 'basic laws' to be legislated over the years.\" Basic Law: The Knesset and Basic Law: The Government set the rules for elections and for forming governments.",
+      "see": [
+        "/issues/courts",
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2023-02-14",
+        "url": "https://en.idi.org.il/articles/47913"
+      }
+    },
+    {
+      "term": "Bedouin",
+      "def": "The State Comptroller counted around 325,000 Bedouin in the Negev at the end of 2023, about 20% of the region's population. It estimates the \"dispersed Bedouin population,\" which includes the unrecognized villages, at 70,000 to 90,000.",
+      "see": [
+        "/communities/palestinian-citizens"
+      ],
+      "source": {
+        "name": "Jerusalem Post (State Comptroller report)",
+        "date": "2026-04-28",
+        "url": "https://www.jpost.com/israel-news/article-894474"
+      }
+    },
+    {
+      "term": "Bibi",
+      "def": "Benjamin Netanyahu's nickname since childhood. In July 2019 he passed David Ben-Gurion as Israel's longest-serving prime minister, at 4,876 days; he was first in office from 1996 to 1999 and again from 2009.",
+      "see": [
+        "/parties"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2019-07-20",
+        "url": "https://www.timesofisrael.com/netanyahu-officially-makes-israeli-history-as-longest-serving-prime-minister/"
+      }
+    },
+    {
+      "term": "The bloc",
+      "def": "In election coverage, the parties that back Benjamin Netanyahu for prime minister, often called the Netanyahu bloc or camp. In 2022 the two blocs' vote totals were \"almost identical,\" but the Netanyahu camp won \"a clear majority of 64 seats.\" This site groups lists as the Netanyahu bloc, the Zionist opposition, lists between the blocs, and Arab-led lists.",
+      "see": [
+        "/parties",
+        "/polls",
+        "/results"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-11-08",
+        "url": "https://en.idi.org.il/articles/46256"
+      }
+    },
+    {
+      "term": "Central Elections Committee",
+      "def": "The body that runs Knesset elections. It is headed by a Supreme Court justice chosen by the court's justices, currently Deputy President Noam Sohlberg, and its plenum, 31 members for the outgoing Knesset, is made up of representatives of the Knesset's factions. It can disqualify a list or candidate on grounds set in law, including incitement to racism.",
+      "see": [
+        "/how-it-works/voting",
+        "/results"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-07-23",
+        "url": "https://en.idi.org.il/articles/65189"
+      }
+    },
+    {
+      "term": "Chief Rabbinate",
+      "hebrew": "הרבנות הראשית",
+      "say": "ha-rah-bah-NOOT ha-rah-SHEET",
+      "def": "The state religious authority for Jews, led by two chief rabbis, one Ashkenazi and one Sephardi, elected for 10-year terms by a body of 150. It oversees kashrut certification, marriage, divorce and more, and the chief rabbis alternate at the head of the Chief Rabbinate Council and the Supreme Rabbinical Court.",
+      "see": [
+        "/issues/religion-state"
+      ],
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "2024-05-19",
+        "url": "https://www.jpost.com/judaism/article-801324"
+      }
+    },
+    {
+      "term": "Coalition",
+      "def": "The parties that together hold the government. No single party has ever won a majority of Knesset seats, so every Israeli government has been a coalition, of between three and nine factions. Governments formed after elections have almost always had the support of at least 61 members.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-15",
+        "url": "https://en.idi.org.il/articles/63976"
+      }
+    },
+    {
+      "term": "Coalition agreement",
+      "def": "The signed deal between the factions forming a government, specifying which ministries each faction will head and the guiding principles and policies the government will promote.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-29",
+        "url": "https://en.idi.org.il/articles/64066"
+      }
+    },
+    {
+      "term": "Constructive no-confidence",
+      "def": "Israel's rule for toppling a sitting government: a no-confidence motion passes only if 61 Knesset members support an alternative government, naming its prime minister, other ministers and basic guidelines. IDI calls the mechanism \"among the most rigid in the world.\"",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-04-06",
+        "url": "https://en.idi.org.il/articles/38731"
+      }
+    },
+    {
+      "term": "Consultations",
+      "def": "After the election, the president holds consultations with the representatives of the factions elected to the Knesset, then nominates one of their leaders to form a government. The nominee has 28 days to do so, which can be extended by 14.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-15",
+        "url": "https://en.idi.org.il/articles/63976"
+      }
+    },
+    {
+      "term": "Dati leumi",
+      "hebrew": "דתי לאומי",
+      "say": "dah-TEE leh-oo-MEE",
+      "def": "National-religious Jews, also called Religious Zionists: Orthodox in practice and fully part of the Zionist state, including army service. In the Central Bureau of Statistics' 2026 survey, 12.4% of Jewish adults called themselves \"religious\" (dati), the official category closest to this group. Not the same as the party Religious Zionism.",
+      "see": [
+        "/communities/religious-zionists"
+      ],
+      "source": {
+        "name": "Ynet (Central Bureau of Statistics)",
+        "date": "2026-09-03",
+        "url": "https://www.ynet.co.il/news/article/sjc9lpcufl"
+      }
+    },
+    {
+      "term": "Development towns",
+      "def": "In the words of the Times of Israel, \"around 30 development towns created in the 1950s and 1960s mainly in the north and south of Israel, primarily to house immigrants from North Africa.\" Sderot, Netivot, Ofakim, Dimona, Beit She'an and Kiryat Shmona are among them.",
+      "see": [
+        "/communities/masorti",
+        "/vote-map"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2019-04-30",
+        "url": "https://www.timesofisrael.com/why-the-left-keeps-failing-in-the-pro-likud-periphery-home-to-25-of-israelis/"
+      }
+    },
+    {
+      "term": "Dissolution",
+      "def": "The Knesset can end its term early by passing a dissolution law, which needs at least 61 votes on the third reading. It is also dissolved automatically if the state budget is not passed on time (in normal years, by March 31). Either way, a new election follows.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-05-12",
+        "url": "https://en.idi.org.il/articles/59621"
+      }
+    },
+    {
+      "term": "Double-envelope votes",
+      "def": "Ballots cast anywhere other than the voter's assigned polling station, officially in \"outer envelopes.\" Most come from members of the security forces stationed far from home; others from hospital patients and staff, prisoners and detainees, diplomats posted abroad, residents of senior-citizen facilities and persons with disabilities.",
+      "see": [
+        "/how-it-works/voting",
+        "/results"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-11-02",
+        "url": "https://en.idi.org.il/articles/46196"
+      }
+    },
+    {
+      "term": "Druze",
+      "def": "A religious community whose tradition, in Pew's words, \"incorporates elements of Islam, Hinduism and even classical Greek philosophy.\" In Israel they are about 2% of the population, concentrated in the north. Unlike most Muslim and Christian citizens, Druze men serve in the army: about six in ten told Pew they had served (45%) or were serving (15%).",
+      "see": [
+        "/communities/druze"
+      ],
+      "source": {
+        "name": "Pew Research Center",
+        "date": "2016-03-21",
+        "url": "https://www.pewresearch.org/fact-tank/2016/03/21/5-facts-about-israeli-druze-a-unique-religious-and-ethnic-group/"
+      }
+    },
+    {
+      "term": "Electoral threshold",
+      "def": "A list needs at least 3.25% of the valid votes to win any seats, the rule since the 2015 election. In 2022 that meant 154,855 votes. Votes for lists that fall short are dropped before seats are handed out.",
+      "see": [
+        "/how-it-works/seats",
+        "/polls"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-03-16",
+        "url": "https://en.idi.org.il/articles/63750"
+      }
+    },
+    {
+      "term": "Exit poll",
+      "def": "The estimates broadcast by Israel's three main television channels, Kan, Channel 12 and Channel 13, the moment polls close at 10:00 p.m. They are projections of seats per list, not a count, and can differ from the final result.",
+      "see": [
+        "/how-it-works/voting",
+        "/results"
+      ],
+      "source": {
+        "name": "Ynet",
+        "date": "2022-11-01",
+        "url": "https://www.ynetnews.com/article/h1tyl0a4s"
+      }
+    },
+    {
+      "term": "Gaza disengagement",
+      "def": "Israel's 2005 withdrawal from the Gaza Strip, in which more than 8,000 Israelis were removed from 21 settlements, including the Gush Katif communities. The territory was handed over to the Palestinian Authority before Hamas seized it in 2007.",
+      "see": [
+        "/issues/war-hostages",
+        "/communities/settlers"
+      ],
+      "source": {
+        "name": "Ynet",
+        "date": "2025-08-02",
+        "url": "https://www.ynetnews.com/magazine/article/symbnn2vle"
+      }
+    },
+    {
+      "term": "Green Line",
+      "def": "The 1949 ceasefire line separating Israel and the West Bank, the boundary in place before the 1967 war. In 2022 Tel Aviv began marking it on its classroom maps, against Education Ministry practice.",
+      "see": [
+        "/issues/west-bank",
+        "/vote-map"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2022-08-25",
+        "url": "https://www.timesofisrael.com/tel-aviv-marks-green-line-on-classroom-maps-bucking-education-ministry/"
+      }
+    },
+    {
+      "term": "Haredi draft",
+      "def": "The fight over conscripting Haredi men, who for most of the state's history could defer service while studying full-time in yeshiva. In June 2024 a unanimous nine-justice Supreme Court panel found \"no legal basis for avoiding the recruitment of yeshiva students.\" Israeli debate calls men who do not report \"draft evaders\"; this site says yeshiva students who did not report.",
+      "see": [
+        "/issues/haredi-draft",
+        "/communities/haredim"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2024-06-25",
+        "url": "https://www.timesofisrael.com/in-historic-ruling-high-court-says-government-must-begin-drafting-haredi-men-into-idf/"
+      }
+    },
+    {
+      "term": "Haredim",
+      "hebrew": "חרדים",
+      "say": "hah-ray-DEEM",
+      "def": "Israel's most strictly religious Jews (singular Haredi), often called ultra-Orthodox in English. In the Central Bureau of Statistics' 2026 survey, 11.5% of Jewish adults called themselves Haredi.",
+      "see": [
+        "/communities/haredim",
+        "/issues/haredi-draft"
+      ],
+      "source": {
+        "name": "Ynet (Central Bureau of Statistics)",
+        "date": "2026-09-03",
+        "url": "https://www.ynet.co.il/news/article/sjc9lpcufl"
+      }
+    },
+    {
+      "term": "High Court of Justice",
+      "def": "The name for Israel's Supreme Court when it hears petitions against government action. The court serves as both a superior court of appeals and a first-instance administrative court, so citizens and groups can challenge the government directly before it. English coverage often says \"the High Court\"; this site says Supreme Court.",
+      "see": [
+        "/issues/courts"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2023-02-14",
+        "url": "https://en.idi.org.il/articles/47913"
+      }
+    },
+    {
+      "term": "Hiloni",
+      "hebrew": "חילוני",
+      "say": "hee-lo-NEE",
+      "def": "A secular Jew; plural hilonim. In the Central Bureau of Statistics' newest count, 39.6% of Jews aged 20 and over called themselves secular, the largest single group but not a majority. The rest: 21.8% traditional, not so religious; 14.0% traditional-religious; 12.4% religious; 11.5% Haredi.",
+      "see": [
+        "/communities/secular"
+      ],
+      "source": {
+        "name": "VIN News (Central Bureau of Statistics)",
+        "date": "2026-09-09",
+        "url": "https://vinnews.com/2026/09/09/israel-enters-5787-with-population-growth-high-birthrate-and-rising-emigration/"
+      }
+    },
+    {
+      "term": "Judea and Samaria",
+      "hebrew": "יהודה ושומרון",
+      "say": "yeh-hoo-DAH veh-shom-ROHN",
+      "def": "The biblical name for the West Bank: Judea is the southern part, Samaria the northern. It is the main name in internal Israeli discourse, while the territory is known internationally as the West Bank. In 2018 the US ambassador, David Friedman, sought to use it in official statements. This site says West Bank.",
+      "see": [
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2018-04-25",
+        "url": "https://www.timesofisrael.com/friedman-seeking-to-call-west-bank-judea-and-samaria-in-official-statements/"
+      }
+    },
+    {
+      "term": "Judicial overhaul",
+      "def": "The plan Justice Minister Yariv Levin announced in January 2023 to bar courts from using a \"reasonableness\" test on government decisions, give the government a built-in majority on the committee that picks judges, curb judicial review of laws, let 61 Knesset members re-enact a law the court struck down, and let ministers appoint their own legal advisers.",
+      "see": [
+        "/issues/courts"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2023-01-04",
+        "url": "https://www.timesofisrael.com/justice-minister-unveils-plan-to-shackle-the-high-court-overhaul-israels-judiciary/"
+      }
+    },
+    {
+      "term": "Judicial Selection Committee",
+      "def": "The nine-member panel that appoints judges, with political representatives of the coalition and opposition, three Supreme Court justices and two Israel Bar Association representatives. A law passed on March 27, 2025, which takes effect only in the next Knesset, replaces the bar's seats with lawyers chosen by the coalition and opposition and removes the judges' influence over Supreme Court picks.",
+      "see": [
+        "/issues/courts"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2025-03-27",
+        "url": "https://www.timesofisrael.com/knesset-passes-law-greatly-boosting-political-control-over-judicial-appointments/"
+      }
+    },
+    {
+      "term": "Knesset",
+      "hebrew": "כנסת",
+      "say": "KNEH-set",
+      "def": "Israel's parliament, made up of 120 members (MKs), with no second chamber. Elections are due every four years, but from 1996 to 2022 they came on average every 2.4 years.",
+      "see": [
+        "/how-it-works/seats",
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-29",
+        "url": "https://en.idi.org.il/articles/64066"
+      }
+    },
+    {
+      "term": "Law of Return",
+      "def": "The 1950 law, amended in 1970, that grants citizenship to anyone with at least one Jewish grandparent. The Chief Rabbinate recognizes as Jews only those with a Jewish mother or an Orthodox conversion it approves, so many immigrants admitted under the law are not Jewish in the Rabbinate's eyes and cannot marry in a state-sanctioned wedding.",
+      "see": [
+        "/communities/russian-speakers",
+        "/issues/religion-state"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2019-01-04",
+        "url": "https://www.timesofisrael.com/why-most-new-immigrants-to-israel-arent-considered-jewish/"
+      }
+    },
+    {
+      "term": "Left and right",
+      "def": "In Israel, left and right are defined mostly by positions on the conflict with the Palestinians. Economic views are a separate, weaker dimension: an expert survey of party positions places Shas and United Torah Judaism on the right on the conflict and on the left on economics.",
+      "see": [
+        "/american-lens",
+        "/parties"
+      ],
+      "source": {
+        "name": "Zur and Bakker, Party Politics (CHES-Israel 2021–22)",
+        "date": "",
+        "url": "https://journals.sagepub.com/doi/10.1177/13540688231218917"
+      }
+    },
+    {
+      "term": "List",
+      "def": "What Israelis vote for: a party or alliance's ranked slate of candidates. Voters cannot change the order, and the ballot itself does not even carry candidates' names, except sometimes the list leader's. A list's seats go to the names at the top of its slate, in order.",
+      "see": [
+        "/how-it-works/seats",
+        "/parties"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-29",
+        "url": "https://en.idi.org.il/articles/64066"
+      }
+    },
+    {
+      "term": "Mandate",
+      "hebrew": "מנדט",
+      "say": "man-DAHT",
+      "def": "The task of forming a government, which the president gives to one Knesset member after the election. The law sets no rule for choosing. The president typically picks the leader of the largest party, \"but this is by no means mandatory\"; what counts is who seems best placed to win the Knesset's confidence.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-15",
+        "url": "https://en.idi.org.il/articles/63982"
+      }
+    },
+    {
+      "term": "Mandate (seat)",
+      "hebrew": "מנדט",
+      "say": "man-DAHT",
+      "def": "In Israeli polls and election coverage, a \"mandate\" often simply means a Knesset seat, as in a party \"expected to come second with 19 mandates.\"",
+      "see": [
+        "/polls",
+        "/results"
+      ],
+      "source": {
+        "name": "Al Jazeera",
+        "date": "2013-01-22",
+        "url": "https://www.aljazeera.com/news/2013/1/22/israeli-exit-polls-show-lead-for-likud"
+      }
+    },
+    {
+      "term": "Masorti",
+      "hebrew": "מסורתי",
+      "say": "mah-sor-TEE",
+      "def": "Traditional Jews, plural masortim, who sit between secular and religious on the scale Israeli surveys use. The Central Bureau of Statistics splits them into those \"traditional but not particularly religious\" (21.8% of Jews aged 20 and over) and \"traditional-religious\" (14%). Not the same as Mizrahi.",
+      "see": [
+        "/communities/masorti"
+      ],
+      "source": {
+        "name": "VIN News (Central Bureau of Statistics)",
+        "date": "2026-09-09",
+        "url": "https://vinnews.com/2026/09/09/israel-enters-5787-with-population-growth-high-birthrate-and-rising-emigration/"
+      }
+    },
+    {
+      "term": "Mizrahi",
+      "hebrew": "מזרחי",
+      "say": "miz-rah-HEE",
+      "def": "Jews whose families came from the Middle East and North Africa; plural Mizrahim. In IDI's May 2025 survey, 35.2% of Jewish adults described themselves as Mizrahi, 39.8% Ashkenazi and 15.3% mixed. Not the same as masorti, which describes religious practice rather than origin.",
+      "see": [
+        "/communities/masorti"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute, Democracy Index 2025",
+        "date": "May 2025",
+        "url": "https://en.idi.org.il/media/30427/the-israeli-democracy-index-2025-full-english-version.pdf"
+      }
+    },
+    {
+      "term": "Nation-State Law",
+      "def": "Basic Law: Israel – The Nation State of the Jewish People, passed 62–55 in July 2018. In the Times of Israel's translation it declares that \"the right to exercise national self-determination in the State of Israel is unique to the Jewish people\" and that \"the Arabic language has a special status in the state.\"",
+      "see": [
+        "/communities/palestinian-citizens",
+        "/communities/druze"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2018-07-18",
+        "url": "https://www.timesofisrael.com/final-text-of-jewish-nation-state-bill-set-to-become-law/"
+      }
+    },
+    {
+      "term": "Occupied",
+      "def": "This site's default word for the West Bank and the parts of Gaza Israel holds. The International Court of Justice's non-binding 2024 advisory opinion refers to \"the Palestinian territory occupied since 1967.\" Netanyahu answered: \"The Jewish people are not occupiers in their own land.\"",
+      "see": [
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2024-07-19",
+        "url": "https://www.timesofisrael.com/world-court-israeli-presence-in-east-jerusalem-west-bank-is-illegal-and-must-end/"
+      }
+    },
+    {
+      "term": "Opposition",
+      "def": "The parties in the Knesset that are not part of the government. It is led by the Leader of the Opposition, usually from the largest opposition faction, a post with special powers and status.",
+      "see": [
+        "/how-it-works/forming-a-government",
+        "/parties"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-29",
+        "url": "https://en.idi.org.il/articles/64066"
+      }
+    },
+    {
+      "term": "Oslo Accords",
+      "def": "The agreements between Israel and the Palestine Liberation Organization signed on September 13, 1993, by Yitzhak Rabin and Yasser Arafat, which created the Palestinian Authority. They set a five-year interim period of Palestinian self-government and postponed issues such as Jerusalem and refugees. Oslo II, in 1995, divided the West Bank into Areas A, B and C.",
+      "see": [
+        "/issues/west-bank",
+        "/issues/not-on-ballot"
+      ],
+      "source": {
+        "name": "Ynet",
+        "date": "2009-02-07",
+        "url": "https://www.ynetnews.com/articles/0,7340,L-3064378,00.html"
+      }
+    },
+    {
+      "term": "Outpost",
+      "def": "A West Bank settlement without official status. Peace Now defines outposts as \"settlements established by governments of Israel since the 1990s in an unofficial and illegal manner.\"",
+      "see": [
+        "/issues/west-bank",
+        "/communities/settlers"
+      ],
+      "source": {
+        "name": "Peace Now",
+        "date": "2009-06-01",
+        "url": "https://peacenow.org.il/en/west-bank-settlements-facts-and-figures"
+      }
+    },
+    {
+      "term": "Palestinian citizens of Israel",
+      "def": "This site's term for Arab Muslims, among them the Negev Bedouin, and Arab Christians who hold Israeli citizenship. IDI and other sources say \"Arab citizens of Israel\" or \"Arabs.\" IDI counted 1,595,300 Arab citizens outside East Jerusalem at the end of 2020, 17.2% of the population, a figure that includes Druze.",
+      "see": [
+        "/communities/palestinian-citizens",
+        "/communities/druze"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-03-17",
+        "url": "https://en.idi.org.il/articles/38540"
+      }
+    },
+    {
+      "term": "President",
+      "def": "Israel's head of state, elected by the Knesset for a seven-year term by an absolute majority (61 members) in a secret ballot. The role is mostly ceremonial, but the president gives the task of forming a government to a Knesset member after an election, signs laws, and grants pardons.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2014-03-25",
+        "url": "https://en.idi.org.il/articles/6409"
+      }
+    },
+    {
+      "term": "Reasonableness standard",
+      "def": "A doctrine under which courts could void government and ministerial decisions they found unreasonable. Curbing it was the only part of the judicial overhaul to pass, in July 2023. On January 1, 2024, a full 15-justice Supreme Court panel struck that law down 8–7.",
+      "see": [
+        "/issues/courts"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2024-01-01",
+        "url": "https://www.timesofisrael.com/in-historic-ruling-high-court-strikes-down-key-judicial-overhaul-legislation/"
+      }
+    },
+    {
+      "term": "Religious Zionism (party)",
+      "def": "A party led by Bezalel Smotrich. For 2026, Smotrich and Zehut leader Moshe Feiglin agreed to run together in a \"technical bloc,\" which they said was meant \"to prevent loss of votes.\" The party is distinct from the national-religious movement (dati leumi) whose name it shares.",
+      "see": [
+        "/parties",
+        "/communities/religious-zionists"
+      ],
+      "source": {
+        "name": "Ynet",
+        "date": "",
+        "url": "https://www.ynetnews.com/article/jeo9i7xfr"
+      }
+    },
+    {
+      "term": "Rotation government",
+      "def": "A government with two heads, a prime minister and an alternate, who switch posts on a date set in advance. The form was created in 2020 for the Netanyahu–Gantz government, whose ministers were split into two blocs, one tied to each leader, each head holding a veto over important decisions by the other.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2020-05-04",
+        "url": "https://en.idi.org.il/articles/31505"
+      }
+    },
+    {
+      "term": "Settlement",
+      "def": "In Peace Now's definition, one of the Jewish communities \"that Israel established after 1967 beyond the Green Line on land occupied in the Six-Day War.\" Some 30% of settlers are Haredi and live in cities built for them, such as Modi'in Illit and Beitar Illit.",
+      "see": [
+        "/communities/settlers",
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "Peace Now",
+        "date": "2009-06-01",
+        "url": "https://peacenow.org.il/en/west-bank-settlements-facts-and-figures"
+      }
+    },
+    {
+      "term": "Sovereignty",
+      "def": "The word supporters of annexation use: \"applying sovereignty\" means extending Israeli law to West Bank land. When the cabinet expanded Israeli control over West Bank land in February 2026, Bezalel Smotrich called it part of \"the normalization and de facto sovereignty revolution that we are leading\"; the Foreign Ministry called it \"an administrative measure.\" This site says annexation.",
+      "see": [
+        "/issues/west-bank"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2026-02-19",
+        "url": "https://www.timesofisrael.com/expansion-of-west-bank-rule-appears-to-shift-creeping-annexation-into-higher-gear/"
+      }
+    },
+    {
+      "term": "Status quo",
+      "def": "The arrangement on religion and state that goes back to David Ben-Gurion's 1947 letter to the Haredi party Agudat Yisrael, which promised that the new state would take Jewish religious concerns into account on Shabbat, kashrut and matrimonial law. The letter had no legal force, but \"the status quo\" is still the name for the arrangements that followed.",
+      "see": [
+        "/issues/religion-state"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2017-03-02",
+        "url": "https://en.idi.org.il/articles/14015"
+      }
+    },
+    {
+      "term": "Surplus-vote agreement",
+      "def": "A pre-election pact between two lists, also called a vote-sharing agreement. When leftover seats are handed out, the pair are treated as a single list, which raises their chance of an extra seat. Only two lists can sign together, and the agreement counts only if both pass the threshold.",
+      "see": [
+        "/how-it-works/seats",
+        "/results"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2022-10-30",
+        "url": "https://en.idi.org.il/articles/47485"
+      }
+    },
+    {
+      "term": "Torato Umanuto",
+      "def": "Hebrew for \"his Torah is his trade\": the arrangement, set up after the state was founded, under which yeshiva students could claim that \"Torah [study] is my occupation\" and receive a deferral of military service. The deferrals expired on June 30, 2023.",
+      "see": [
+        "/issues/haredi-draft"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-01-21",
+        "url": "https://en.idi.org.il/articles/63168"
+      }
+    },
+    {
+      "term": "Transitional government",
+      "def": "The common name, not found in legislation, for an outgoing government that keeps serving until a new government is formed. The law sets no limit on its powers, to avoid a \"governance vacuum,\" but transitional governments have a narrower \"scope of reasonableness\" and must act with restraint.",
+      "see": [
+        "/how-it-works/forming-a-government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-05-12",
+        "url": "https://en.idi.org.il/articles/59621"
+      }
+    },
+    {
+      "term": "West Bank",
+      "def": "The territory west of the Jordan River that Israel captured in the 1967 war and that most of the international community regards as occupied. This site's default name; internal Israeli discourse refers to it primarily by its biblical name, Judea and Samaria.",
+      "see": [
+        "/issues/west-bank",
+        "/communities/settlers",
+        "/vote-map"
+      ],
+      "source": {
+        "name": "Times of Israel",
+        "date": "2018-04-25",
+        "url": "https://www.timesofisrael.com/friedman-seeking-to-call-west-bank-judea-and-samaria-in-official-statements/"
+      }
+    }
+  ]
+}

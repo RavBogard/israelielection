@@ -36,6 +36,8 @@ const BLURB: Record<string, string> = {
   "/communities": "Nine groups of Israeli voters: how many, where, how they vote, what they think.",
   "/vote-map": "How every town voted in the five elections from 2019 to 2022, list by list.",
   "/american-lens": "Why \"pro-Israel\" is not an Israeli category.",
+  "/timeline": "Every election, prime minister and turning point since 1977, on one line.",
+  "/glossary": "The words in the coverage, from the threshold to Area C, each sourced.",
   "/teach": "Decks, source sheets and discussion guides for educators.",
 };
 
