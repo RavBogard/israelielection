@@ -26,8 +26,8 @@
 .home .about .not p { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 0; max-width: 58ch; }
 .home .about .not p a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .home .about .novote { font-family: var(--display); font-size: 19px; line-height: 1.45; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); max-width: 58ch; }
-.home .about .novote a { color: var(--text); text-decoration: none; }
-.home .about .novote a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.home .about .not .novote a { color: var(--text); font-weight: 400; text-decoration: none; }
+.home .about .not .novote a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .home .about .novote b { color: var(--ink); font-weight: 700; }
 .home .about .not .src { font-family: var(--body); font-size: 13px; margin-top: 12px; max-width: none; }
 
