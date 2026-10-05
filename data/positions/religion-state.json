@@ -16,7 +16,7 @@
       "label": "Civil marriage, non-Orthodox conversion"
     }
   ],
-  "note": "Shas and UTJ rows quote the Jerusalem Post's summary of the two parties' positions, and the Yashar row the Jewish Chronicle's; neither is the party's own text. Religious Zionism–Zehut and Noam rows come from israel2026.co.il, an aggregator site, not the parties' own pages. Likud and Otzma Yehudit rows describe their record in the 25th Knesset; no 2026 religion-and-state statement was found for either. No published position found for People of Israel, Reservists–Economic, Blue and White, the Joint List or Ra'am (checked October 2026).",
+  "note": "Shas and UTJ rows quote the Jerusalem Post's summary of the two parties' positions, and the Yashar row the Jewish Chronicle's; neither is the party's own text. Religious Zionism–Zehut and Noam rows come from israel2026.co.il, an aggregator site, not the parties' own pages. Likud and Otzma Yehudit rows describe their record in the 25th Knesset; no 2026 religion-and-state statement was found for either. No published position found for People of Israel, Reservists–Economic, Blue and White, the Joint List or Ra'am (checked October 2026); their rows give older or adjacent material, which sets no stance.",
   "rows": [
     {
       "party": "shas",
@@ -103,26 +103,46 @@
     },
     {
       "party": "poi",
+      "text": "No position found on marriage, conversion, Shabbat or the Rabbinate. The party's founding principles call for \"a state where Judaism invites and does not coerce, includes and does not dictate\" (translated).",
+      "source": "People of Israel, founding principles (Hebrew, undated)",
+      "url": "https://amchaisrael.co.il/foundations",
+      "date": "Accessed Oct 5, 2026",
       "status": "none",
       "checked": "2026-10-05"
     },
     {
       "party": "bw",
+      "text": "No 2026 position found. Its 2019 platform would \"allow personal choice in marriage matters\" and let local authorities that want it run transport on Shabbat (translated). In 2021 Gantz sought civil marriage registration, saying \"many are having their basic right to marry taken away from them.\"",
+      "source": "Zman Yisrael, Sep 11, 2019; Times of Israel, Feb 15, 2021",
+      "url": "https://www.timesofisrael.com/gantz-launches-civil-marriage-bid-as-poll-shows-him-failing-to-enter-knesset/",
+      "date": "Feb 15, 2021",
       "status": "none",
       "checked": "2026-10-05"
     },
     {
       "party": "res",
+      "text": "No position found for the list. Yoaz Hendel, as communications minister in 2021: \"We must provide an alternative for those unable to marry\" (translated).",
+      "source": "Arutz Sheva",
+      "url": "https://www.inn.co.il/news/504642",
+      "date": "Sep 12, 2021",
       "status": "none",
       "checked": "2026-10-05"
     },
     {
       "party": "jl",
+      "text": "No joint 2026 platform found. Hadash's platform, as quoted in 2019, calls for \"separation of religion from state\" and civil marriage and divorce (translated).",
+      "source": "Zman Yisrael",
+      "url": "https://www.zman.co.il/36530/",
+      "date": "Sep 11, 2019",
       "status": "none",
       "checked": "2026-10-05"
     },
     {
       "party": "raam",
+      "text": "No position found on marriage, conversion or Shabbat. Mansour Abbas, on cutting the party's ties with its religious council: \"Ra'am today is moving in the direction of being a completely civic party, with separate institutions.\"",
+      "source": "Times of Israel",
+      "url": "https://www.timesofisrael.com/raam-leader-says-party-will-cut-ties-with-religious-council-become-completely-civic/",
+      "date": "Dec 7, 2025",
       "status": "none",
       "checked": "2026-10-05"
     }
