@@ -1,0 +1,82 @@
+{
+  "checked": "2026-10-05",
+  "title": "Who governs until a new government is sworn in",
+  "with": ["likud", "otzma", "rz", "shas", "utj"],
+  "seats2022": 64,
+  "seatsNote": "Seats after each step count the parties formally in the coalition, as the reports cited give them or as follows from their counts. The Knesset's own pages could not be opened to check (Oct 5, 2026).",
+  "events": [
+    {
+      "date": "2022-12-29",
+      "text": "Netanyahu's government of Likud, Shas, the Religious Zionist Party, UTJ, Otzma Yehudit and Noam is sworn in with 64 seats. The Knesset approves it 63 to 54.",
+      "seatsAfter": 64,
+      "source": { "name": "Times of Israel", "date": "2022-12-29", "url": "https://www.timesofisrael.com/netanyahu-resumes-role-as-pm-as-israels-most-hardline-government-ever-takes-office/" }
+    },
+    {
+      "date": "2023-10-11",
+      "text": "Four days after the Hamas-led attack, Benny Gantz's National Unity agrees to join an emergency government for the war.",
+      "seatsAfter": 76,
+      "source": { "name": "Times of Israel", "date": "2023-10-11", "url": "https://www.timesofisrael.com/after-days-of-indecision-netanyahu-gantz-agree-to-establish-emergency-war-government/" }
+    },
+    {
+      "date": "2024-03-25",
+      "text": "Gideon Sa'ar's New Hope, which had split from National Unity, quits the coalition after Netanyahu does not appoint him to the war cabinet.",
+      "seatsAfter": 72,
+      "source": { "name": "Times of Israel", "date": "2024-03-25", "url": "https://www.timesofisrael.com/gideon-saar-quits-coalition-after-netanyahu-fails-to-appoint-him-to-war-cabinet/" }
+    },
+    {
+      "date": "2024-06-09",
+      "text": "Gantz quits the emergency government and calls for elections.",
+      "seatsAfter": 64,
+      "source": { "name": "Times of Israel", "date": "2024-06-09", "url": "https://www.timesofisrael.com/urging-elections-gantz-quits-wartime-government-accuses-pm-of-botching-war-effort/" }
+    },
+    {
+      "date": "2024-09-30",
+      "text": "New Hope rejoins the government.",
+      "seatsAfter": 68,
+      "source": { "name": "Times of Israel", "date": "2024-09-30", "url": "https://www.timesofisrael.com/as-he-officially-rejoins-government-saar-blasts-opposition-for-living-in-oct-6/" }
+    },
+    {
+      "date": "2025-01-19",
+      "text": "Itamar Ben-Gvir's Otzma Yehudit quits the coalition in protest at the Gaza ceasefire deal.",
+      "seatsAfter": null,
+      "seatsText": "62 or 63",
+      "source": { "name": "Times of Israel", "date": "2025-01-19", "url": "https://www.timesofisrael.com/otzma-yehudit-exits-coalition-over-gaza-deal-blasting-it-as-victory-for-terrorism/" }
+    },
+    {
+      "date": "2025-03-19",
+      "text": "Otzma Yehudit returns after the war in Gaza resumes, and Ben-Gvir is reappointed police minister.",
+      "seatsAfter": 68,
+      "source": { "name": "Times of Israel", "date": "2025-03-20", "url": "https://www.timesofisrael.com/ben-gvir-reappointed-police-minister-as-knesset-okays-his-partys-return-to-government/" }
+    },
+    {
+      "date": "2025-07-14",
+      "text": "UTJ quits the government and the coalition in protest at the draft bill for Haredi men.",
+      "seatsAfter": 61,
+      "source": { "name": "Times of Israel", "date": "2025-07-15", "url": "https://www.timesofisrael.com/united-torah-judaism-quits-govt-to-protest-new-proposal-on-army-enlistment-exemptions/" }
+    },
+    {
+      "date": "2025-07-16",
+      "text": "Shas quits the government over the same bill, but stays in the coalition and says it will not vote to bring the government down.",
+      "seatsAfter": 61,
+      "source": { "name": "Haaretz", "date": "2025-07-16", "url": "https://www.haaretz.com/israel-news/2025-07-16/ty-article/.premium/ultra-orthodox-party-shas-quits-government-wont-vote-to-dismantle-netanyahu-coalition/00000198-13d0-da26-abba-d7d14dcf0000" }
+    },
+    {
+      "date": "2026-07-17",
+      "text": "The Knesset dissolves itself 62 to 0 and sets the election for October 27.",
+      "seatsAfter": null,
+      "source": { "name": "Ynet", "date": "2026-07-17", "url": "https://www.ynetnews.com/article/h1nremv4gl" }
+    }
+  ],
+  "status": {
+    "text": "Netanyahu's government keeps serving until a new one is sworn in, as a transitional government. The law sets no limit on its powers, but the courts and the Attorney General expect restraint. As of May 2026, UTJ was outside the coalition and Shas, holding no ministries, kept supporting it in the Knesset.",
+    "date": "2026-05-12",
+    "sources": [
+      { "name": "Israel Democracy Institute", "date": "2026-05-12", "url": "https://en.idi.org.il/articles/59621" },
+      { "name": "Times of Israel", "date": "2026-05-12", "url": "https://www.timesofisrael.com/haredi-factions-back-dissolving-knesset-increasing-chance-for-early-elections/" }
+    ]
+  },
+  "noam": {
+    "text": "Noam, Avi Maoz's one-seat party, was the 2022 government's sixth member. Maoz resigned as a deputy minister in March 2025. No poll reports a figure for Noam, so the Coalition Builder leaves it out.",
+    "source": { "name": "Times of Israel", "date": "2025-03-24", "url": "https://www.timesofisrael.com/liveblog_entry/deputy-minister-avi-maoz-quits-government-railing-against-pressure-of-deep-state/" }
+  }
+}

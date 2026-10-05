@@ -375,3 +375,11 @@ Lanes agreed with the content session (it: content, data, RULINGS, this STATE fi
 - Open: US-stakes explainer, masorti Likud voices, INES (step 4), election-night dry run; weekly
   results-check (and Oct 26); exit polls by hand on the night; formation.json `actual` ~Nov 4.
   Blocked on sources: a named Palestinian voice on no-vote; the Gaza toll actor.
+
+## 2026-10-05: the government in office (content lane)
+- Karen's ask (via Daniel): understand the current coalition through the site. Daniel approved the plan (relayed by the design session): a Builder text link to the 2022 coalition's parties on today's polls, and a "Who governs until a new government is sworn in" section first on /government. 2022 seats in the poll picker were rejected because the lists no longer map.
+- data/outgoing-government.json + lib/outgoing-government.ts (types, outgoingHref, isOutgoingSet) + tests. Ten dated steps 64 → 76 → 72 → 64 → 68 → 62/63 → 68 → 61 → 61 → dissolution; status (transitional government, IDI May 12, 2026; Shas outside the ministries but supporting, TOI May 12, 2026); Noam note.
+- Fact-check: 9 OK, 3 fixed (per-party 2022 seats cut for lack of a source; New Hope's Likud merger sentence cut; the Shas step re-sourced to Haaretz, Jul 16, 2025).
+- GATE: the Builder's starting set is the 2022 coalition (likud, otzma, rz, shas, utj), not "the parties in government today" — proceeded because it answers whether the elected government could win again, and the /government section tells the rest. Daniel can switch it.
+- Declined a fifth Teach card: card 1 already opens the Builder with that set plus People of Israel.
+- Unverified, left out: the AG's election-period guideline text; ministers by name in 2026; whether Noam left the coalition in Mar 2025.
