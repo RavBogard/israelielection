@@ -1,0 +1,113 @@
+{
+  "/parties/likud": [
+    "ליכוד",
+    "בנימין נתניהו",
+    "Bibi",
+    "Netanyahoo"
+  ],
+  "/parties/otzma": [
+    "עוצמה יהודית",
+    "Ben Gvir",
+    "Jewish Power"
+  ],
+  "/parties/shas": [
+    "שס",
+    "אריה דרעי"
+  ],
+  "/parties/utj": [
+    "United Torah Judaism",
+    "יהדות התורה",
+    "Goldknopf"
+  ],
+  "/parties/rz": [
+    "Religious Zionism",
+    "הציונות הדתית",
+    "Zehut",
+    "Feiglin"
+  ],
+  "/parties/yashar": [
+    "ישר",
+    "Eizenkot",
+    "Eisenkott"
+  ],
+  "/parties/byachad": [
+    "ביחד",
+    "Beyachad",
+    "Bennett",
+    "Lapid",
+    "Yesh Atid",
+    "יש עתיד"
+  ],
+  "/parties/dem": [
+    "הדמוקרטים",
+    "Labor",
+    "Labour",
+    "Meretz",
+    "מרצ",
+    "העבודה"
+  ],
+  "/parties/yb": [
+    "ישראל ביתנו",
+    "Israel Beitenu",
+    "Yisrael Beytenu",
+    "Lieberman"
+  ],
+  "/parties/bw": [
+    "כחול לבן",
+    "Kahol Lavan",
+    "Kachol Lavan",
+    "Gantz"
+  ],
+  "/parties/raam": [
+    "רע״ם",
+    "רעם",
+    "United Arab List",
+    "Raam"
+  ],
+  "/parties/jl": [
+    "הרשימה המשותפת",
+    "Hadash",
+    "Ta'al",
+    "Balad"
+  ],
+  "/issues/haredi-draft": [
+    "conscription",
+    "ultra Orthodox draft",
+    "yeshiva students"
+  ],
+  "/issues/courts": [
+    "judicial overhaul",
+    "Supreme Court",
+    "reasonableness"
+  ],
+  "/issues/religion-state": [
+    "Shabbat",
+    "marriage",
+    "religion and state"
+  ],
+  "/how-it-works/seats": [
+    "Bader Ofer",
+    "threshold",
+    "surplus votes",
+    "אחוז החסימה"
+  ],
+  "/how-it-works/who-votes": [
+    "citizenship",
+    "eligibility",
+    "voting rights"
+  ],
+  "/how-it-works/forming-a-government": [
+    "confidence vote",
+    "rotation",
+    "61",
+    "coalition"
+  ],
+  "/corrections": [
+    "press",
+    "media inquiries",
+    "interview",
+    "contact",
+    "email",
+    "Daniel Bogard"
+  ]
+}

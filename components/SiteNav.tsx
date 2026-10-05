@@ -1,65 +1,38 @@
 "use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { type ReactNode, useEffect, useState } from "react";
-import { NAV_GROUPS, TEACH } from "@/lib/site";
+import {usePathname} from "next/navigation";
+import {type ReactNode,useEffect,useRef,useState} from "react";
+import {NAV_GROUPS,NAV_UTILITIES} from "@/lib/site";
+import {activeNavGroup,currentNavPage} from "@/lib/navigation";
+import "./site-nav.css";
 
-/**
- * The menu: three groups by what the reader is doing, and Teaching resources apart. On wide screens the
- * groups sit in the masthead's second row; on phones a Menu button opens a sheet. `extra` is
- * the countdown, shown in the sheet on phones (the masthead shows it on wide screens).
- */
-export default function SiteNav({ extra }: { extra?: ReactNode }) {
-  const path = usePathname();
-  const [open, setOpen] = useState(false);
-  const current = (href: string) => (href === "/" ? path === "/" : path === href || path.startsWith(`${href}/`));
-
-  // Close on navigation and on Escape; keep the page still while the sheet is open.
-  // eslint-disable-next-line react-hooks/set-state-in-effect -- the route changed under an open sheet
-  useEffect(() => setOpen(false), [path]);
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    document.addEventListener("keydown", onKey);
-    document.documentElement.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.documentElement.style.overflow = "";
-    };
-  }, [open]);
-
-  return (
-    <nav className="menu" aria-label="Site">
-      <button type="button" className="menu-btn" aria-expanded={open} aria-controls="menu-sheet" onClick={() => setOpen((o) => !o)}>
-        {open ? "Close" : "Menu"}
-      </button>
-      <div id="menu-sheet" className={`menu-sheet${open ? " open" : ""}`}>
-        {NAV_GROUPS.map((g) => (
-          <div className="grp" key={g.label}>
-            <span className="glbl">{g.label}</span>
-            <ul>
-              {g.items.map((n) => (
-                <li key={n.href}>
-                  <Link href={n.href} aria-current={current(n.href) ? "page" : undefined}>
-                    {n.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-        <div className="grp teach">
-          <ul>
-            <li>
-              <Link href={TEACH.href} aria-current={current(TEACH.href) ? "page" : undefined}>
-                {TEACH.label}
-              </Link>
-            </li>
-          </ul>
-        </div>
-        {extra && <div className="sheet-extra">{extra}</div>}
-      </div>
-    </nav>
-  );
+export default function SiteNav({extra}:{extra?:ReactNode}){
+ const path=usePathname(),navRef=useRef<HTMLElement>(null),menuRef=useRef<HTMLButtonElement>(null),triggerRefs=useRef<Record<string,HTMLButtonElement|null>>({});
+ const [mobileOpen,setMobileOpen]=useState(false),[expanded,setExpanded]=useState<string|null>(null);
+ const active=activeNavGroup(NAV_GROUPS,path);
+ const close=()=>{setExpanded(null);setMobileOpen(false);};
+ // eslint-disable-next-line react-hooks/set-state-in-effect -- route navigation dismisses open disclosures
+ useEffect(()=>{setExpanded(null);setMobileOpen(false);},[path]);
+ useEffect(()=>{
+  const nav=navRef.current;if(!nav)return;
+  const outside=(e:PointerEvent)=>{if(!nav.contains(e.target as Node)){setExpanded(null);setMobileOpen(false);}};
+  const historyClose=()=>{setExpanded(null);setMobileOpen(false);};
+  const media=matchMedia("(max-width: 899px)");
+  const resize=()=>{const focused=document.activeElement;const inside=nav.contains(focused);setExpanded(null);setMobileOpen(false);if(inside){if(media.matches)menuRef.current?.focus();else triggerRefs.current[NAV_GROUPS[0].id]?.focus();}};
+  document.addEventListener("pointerdown",outside);window.addEventListener("popstate",historyClose);window.addEventListener("hashchange",historyClose);media.addEventListener("change",resize);
+  return()=>{document.removeEventListener("pointerdown",outside);window.removeEventListener("popstate",historyClose);window.removeEventListener("hashchange",historyClose);media.removeEventListener("change",resize);};
+ },[]);
+ return <nav ref={navRef} className="site-nav" aria-label="Primary navigation" onBlur={(e)=>{if(e.relatedTarget&&!e.currentTarget.contains(e.relatedTarget as Node)){setExpanded(null);setMobileOpen(false);}}} onKeyDown={(e)=>{if(e.key!=="Escape")return;if(expanded){e.preventDefault();setExpanded(null);triggerRefs.current[expanded]?.focus();}else if(mobileOpen){e.preventDefault();setMobileOpen(false);menuRef.current?.focus();}}}>
+  <button ref={menuRef} type="button" className="nav-mobile-toggle" aria-label={mobileOpen?"Close menu":"Open menu"} aria-expanded={mobileOpen} aria-controls="primary-navigation" onClick={()=>{setMobileOpen(v=>!v);setExpanded(null);}}>{mobileOpen?"Close":"Menu"}</button>
+  <ul className="nav-utilities">{NAV_UTILITIES.map(n=><li key={n.href}><Link href={n.href} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={(e)=>{if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0)close();}}>{n.label}</Link></li>)}</ul>
+  <div id="primary-navigation" className={`nav-main${mobileOpen?" mobile-open":""}`}>
+   <ul className="nav-groups">{NAV_GROUPS.map(g=><li key={g.id} className={`nav-group${active===g.id?" section-active":""}`}>
+    <button ref={el=>{triggerRefs.current[g.id]=el;}} type="button" className="nav-trigger" aria-expanded={expanded===g.id} aria-controls={`nav-panel-${g.id}`} onClick={()=>setExpanded(old=>old===g.id?null:g.id)}><span className="nav-label">{g.label}<span className="nav-caret" aria-hidden="true"/></span><span className="nav-preview">{g.preview}</span></button>
+    <div id={`nav-panel-${g.id}`} className={`nav-panel${g.id==="about"?" compact":""}`} hidden={expanded!==g.id}>
+     <p className="nav-panel-label">{g.label}</p><ul>{g.items.map(n=><li key={n.href}><Link href={n.href} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={(e)=>{if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0)close();}}><span>{n.label}</span><small>{n.description}</small></Link></li>)}</ul>
+    </div>
+   </li>)}</ul>
+   {extra&&<div className="nav-mobile-extra">{extra}</div>}
+  </div>
+ </nav>;
 }

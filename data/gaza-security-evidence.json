@@ -1,0 +1,8 @@
+{
+  "issue": "gaza-security",
+  "title": "Gaza: civilian administration",
+  "question": "Should Israel administer Gaza's civilian affairs?",
+  "stances": [{ "id": "no-administration", "label": "Security control without running civilian affairs" }],
+  "note": "Evidence is deliberately incomplete. This narrow question is not a proxy for ceasefire terms, hostages, Palestinian statehood, displacement or the whole security agenda. Other lists are missing an answer here, not assumed to agree or oppose. The source is an undated party plan checked October 5, 2026.",
+  "rows": [{ "party": "byachad", "stance": "no-administration", "text": "The party's security plan says it does not seek to administer Gaza. It would retain the current military line until Hamas disarms, or Israel disarms it. This is a translated summary of the party's stated policy, not a forecast or an endorsement.", "source": "B'Yachad: security plan (Hebrew)", "url": "https://be-yahad.org.il/plans-cat/%D7%AA%D7%A9%D7%AA%D7%99%D7%95%D7%AA/", "date": "Undated; checked Oct 5, 2026", "evidence": { "kind": "Undated party plan", "date": null, "checkedAt": "2026-10-05", "scope": "Joint list", "limitation": "No publication or adoption date found" } }]
+}

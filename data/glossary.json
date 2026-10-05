@@ -723,7 +723,7 @@
     },
     {
       "term": "Outside support",
-      "def": "Backing a government in Knesset votes without joining the coalition or holding ministries. In 1992 Yitzhak Rabin's Labor–Meretz–Shas coalition of 62 MKs had outside support from five Arab-party MKs. In 2021 Ra'am instead joined the Bennett–Lapid coalition. The Coalition Builder counts every party it adds as a coalition member.",
+      "def": "Backing a government in Knesset votes without joining its cabinet or holding ministries. After Shas left Rabin's coalition in September 1993, its 56 MKs relied on outside support from Arab factions. Ra'am joined the Bennett–Lapid coalition in 2021. The Builder separates cabinet membership, hypothetical outside support and abstention; these choices do not imply an agreement.",
       "see": [
         "/how-it-works/forming-a-government",
         "/timeline",

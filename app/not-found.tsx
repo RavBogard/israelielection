@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Not found",
 };
 
-const WANTED = ["/polls", "/how-it-works", "/parties"];
+const WANTED = ["/resources", "/search", "/start", "/polls", "/how-it-works", "/parties"];
 const links = [{ href: "/", label: "The home page" }, ...WANTED.flatMap((h) => NAV.filter((n) => n.href === h)), TEACH];
 
 export default function NotFound() {

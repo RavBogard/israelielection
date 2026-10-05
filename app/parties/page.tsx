@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PartyMap from "@/components/PartyMap";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
@@ -9,7 +10,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Party Map",
-  description: "Israel's 2026 parties sized by their average poll standing, grouped by bloc, with a sourced profile of each.",
+  description: "Israel's 2026 parties sized by their average poll standing, with distinct shades grouped into editorial political families and a linked sourced profile of each.",
 };
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
     <div className="ix">
       <div className="wrap">
         <PartyMap />
+        <p><Link href="/party-history">Explore the party family tree</Link> · <Link href="/ballot">All 38 published ballot lists</Link></p>
         <SourcesBox count={allPolls.length + 5}>
           <PollSources />
           <li>

@@ -11,6 +11,15 @@ export type GlossaryTerm = {
 
 export type Glossary = { checked: string; terms: GlossaryTerm[] };
 
+export function filterTerms(terms: GlossaryTerm[], query: string, aliases: Record<string, string[]> = {}) {
+  const normalize = (s: string) => s.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[’'״־-]/g, "").replace(/\s+/g, " ").trim();
+  const words = normalize(query).split(" ").filter(Boolean);
+  return terms.filter((term) => {
+    const text = normalize([term.term, term.hebrew ?? "", term.say ?? "", ...(aliases[term.term] ?? [])].join(" "));
+    return words.every((word) => text.includes(word));
+  });
+}
+
 /** The sort key: a leading "The" is ignored, as are case and diacritics. */
 export const sortKey = (term: string) =>
   term

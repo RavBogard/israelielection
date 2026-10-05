@@ -11,7 +11,6 @@ import type { Party, Poll } from "@/lib/types";
  * Builder already shows; then the way to the full comparison. Nothing here is a score.
  */
 
-const COUNT = ["none", "one", "two", "three", "four", "five", "six", "seven"];
 
 /** The strip at thumbnail scale: stance slots left to right, parties as squares stacked two wide in their slot. */
 function Glyph({ r, map, partyOf }: { r: IssueReading; map: StanceMap; partyOf: (id: string) => Party | undefined }) {
@@ -41,7 +40,7 @@ function Glyph({ r, map, partyOf }: { r: IssueReading; map: StanceMap; partyOf: 
   );
 }
 
-export default function Governing({ sel, parties, poll, map, children }: { sel: Set<string>; parties: Party[]; poll: Poll; map: StanceMap; children?: ReactNode }) {
+export default function Governing({ sel, parties, poll, map, children, withOutsideSupport = false }: { sel: Set<string>; parties: Party[]; poll: Poll; map: StanceMap; children?: ReactNode; withOutsideSupport?: boolean }) {
   const ids = parties.filter((p) => sel.has(p.id)).map((p) => p.id);
   const partyOf = (id: string) => parties.find((p) => p.id === id);
   const nameOf = (id: string) => partyOf(id)?.name ?? id;
@@ -54,25 +53,19 @@ export default function Governing({ sel, parties, poll, map, children }: { sel: 
       </section>
     );
   }
-  const c = cohesion(AXES, map, ids);
-  const sorted = c.agree + c.split + c.silent;
-  const unsorted = c.issues.length - sorted;
-  const sum =
-    sorted === 0
-      ? "Positions are recorded for these parties but not yet sorted into stances."
-      : [c.agree ? `Agree on ${COUNT[c.agree]} ${c.agree === 1 ? "issue" : "issues"}` : null, c.split ? `${c.agree ? "split" : "Split"} on ${COUNT[c.split]}` : null, c.silent ? `${c.agree || c.split ? "nothing" : "Nothing"} recorded on ${COUNT[c.silent]}` : null]
-          .filter(Boolean)
-          .join(", ") +
-        " of the seven." +
-        (unsorted ? ` The other ${unsorted === 1 ? "one is" : `${COUNT[unsorted]} are`} not yet sorted into stances.` : "");
+  const c = cohesion(Object.keys(map).map((key) => ({ key })), map, ids);
+  const incomplete = c.issues.filter((r) => r.known < r.selected || r.verdict === "unsorted").length;
+  const sum = `${c.agree} shared recorded positions; ${c.split} questions with different recorded positions; ${incomplete} with incomplete or non-comparable evidence.`;
   const dep = dependenceText(dependence(sel, parties, poll), nameOf);
   return (
     <section className="together" aria-labelledby="together-h">
       <h3 id="together-h">Can they govern together?</h3>
+      {withOutsideSupport && <p className="note">These policy rows include cabinet parties and hypothetical outside supporters. Abstainers are not treated as policy partners.</p>}
       <p className="sum">{sum}</p>
+      <p className="note">These are selected policy questions, not a stability forecast. Questions are not equally important, and differences may be negotiable. Partial evidence never counts as coalition-wide agreement.</p>
       <ol className="rows">
         {c.issues.map((r) => {
-          const label = AXES.find((a) => a.key === r.key)!.label;
+          const label = map[r.key].label ?? AXES.find((a) => a.key === r.key)?.label ?? r.key;
           return (
             <li key={r.key} className={r.verdict}>
               <Link href={`${compareHref(ids)}#issue-${r.key}`}>
@@ -84,7 +77,7 @@ export default function Governing({ sel, parties, poll, map, children }: { sel: 
           );
         })}
       </ol>
-      {dep && <p className="dep">{dep}</p>}
+      {dep && <p className="dep">61-seat backing: {dep}</p>}
       {children}
       <p className="more">
         <Link href={compareHref(ids)}>Compare these parties in their own words</Link>

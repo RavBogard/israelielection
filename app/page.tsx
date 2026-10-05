@@ -14,6 +14,7 @@ import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
 import { DESCRIPTION, TEACH } from "@/lib/site";
 import type { BlocId, Poll } from "@/lib/types";
+import {partyColor,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE} from "@/lib/party-colors";
 
 // Every minute: on election night the hero shows the count as it comes in. Before then the page
 // has nothing to fetch, so regenerating it is cheap.
@@ -53,7 +54,10 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
   const totals = blocTotals(poll, parties);
   const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
   const ordered = GRID_ORDER.map((id) => blocs.find((b) => b.id === id)!).map((b) => ({ ...b, seats: totals[b.id] }));
-  const segments = ordered.map((b) => ({ id: b.id, seats: b.seats, color: `var(--b-${b.id})`, label: b.label }));
+  const familyOrder=PARTY_COLOR_FAMILIES.flatMap(f=>f.ids);
+  const segments = ordered.flatMap((b) => parties.filter((p) => p.bloc === b.id).sort((a,b)=>familyOrder.indexOf(a.id)-familyOrder.indexOf(b.id)).map((p) => ({
+    id: p.id, seats: poll.results[p.id]?.seats ?? 0, color: partyColor(p.id), label: p.name, href: `/parties?party=${p.id}`,
+  })));
   const pollsters = mainPolls.map((p) => p.pollster).join(", ");
   return (
     <section className="hero" aria-labelledby="hero-h">
@@ -63,11 +67,10 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
         </h1>
         <p className="standfirst">
           {live ? (
-            <>The count so far, as the 120 seats of the Knesset. A government needs {MAJORITY}.</>
+            <>The count so far, as the 120 seats of the Knesset. {MAJORITY} seats is an absolute majority.</>
           ) : (
             <>
-              Where the race stands: the average of the latest {mainPolls.length} polls as the {KNESSET} seats of the Knesset. A government needs{" "}
-              {MAJORITY}.
+              Where the race stands: the normalized coalition average of the latest {mainPolls.length} polls as the {KNESSET} seats of the Knesset. {MAJORITY} seats is an absolute majority.
             </>
           )}
         </p>
@@ -75,7 +78,7 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
           {ordered.map((b) => (
             <div key={b.id}>
               <dt>
-                <span className="sw" style={{ background: `var(--b-${b.id})` }} />
+                <span className="sw" style={{ background: blocColorStrip(b.id) }} />
                 {b.label}
               </dt>
               <dd>{fmt(Math.round(b.seats * 10) / 10)}</dd>
@@ -86,17 +89,19 @@ function Race({ poll, live, days }: { poll: Poll; live: boolean; days: number })
         <p className="src">
           {live ? (
             <>
-              Central Elections Committee; seats are this site&apos;s estimate from the votes counted so far. <Link href="/results">Full results</Link>
+              {poll.resultState?.freshness === "stale" && <b>Saved count (stale). </b>}Central Elections Committee; seats are this site&apos;s estimate from the votes counted so far. Captured {poll.resultState?.capturedAt ?? poll.published}. <Link href="/results">Full results</Link>
             </>
           ) : (
             <>
-              One poll per pollster ({pollsters}), to {mediumDate(mainPolls[0].published)}; seats can be fractional. <Link href="/polls">All polls</Link>
+              One poll per pollster ({pollsters}), to {mediumDate(mainPolls[0].published)}; seats can be fractional. <Link href="/polls#method">Average method</Link>
             </>
           )}
         </p>
       </div>
       <div className="grid">
         <SeatGrid segments={segments} animate labelRule />
+        <Link href="/parties" className="seat-grid-cue">Explore the parties <span aria-hidden="true">→</span></Link>
+        <details className="seat-grid-key"><summary>Party colors and rounded cells</summary><p>{PARTY_COLOR_NOTE} Cells round fractional seat estimates; the labels retain fractional values to one decimal place.</p><ul>{segments.filter(s=>s.seats>0).map(s=><li key={s.id}><span className="sw" style={{background:s.color}} />{s.label}: {fmt(Math.round(s.seats*10)/10)}</li>)}</ul></details>
       </div>
     </section>
   );
@@ -133,7 +138,7 @@ function Today() {
 
 export default async function Page() {
   const live = await fetchCount(revalidate);
-  const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
+  const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
   const poll = results ?? averagePoll;
   const trendPolls = allPolls.filter((p) => !isExit(p));
@@ -143,8 +148,8 @@ export default async function Page() {
         <Race poll={poll} live={!!results} days={days} />
 
         <p className="start">
-          New here? Start with <Link href="/how-it-works">how it works</Link>, then <Link href="/parties">the parties</Link>,{" "}
-          <Link href="/issues">the issues</Link> and <Link href="/how-it-works/who-votes">who votes</Link>.
+          New here? <Link href="/start">Take a short guided route</Link>, or go straight to <Link href="/how-it-works">how it works</Link>,{" "}
+          <Link href="/parties">the parties</Link> and <Link href="/how-it-works/who-votes">who votes</Link>.
         </p>
 
         <Today />

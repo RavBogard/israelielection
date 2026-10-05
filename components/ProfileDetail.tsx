@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {partyColor} from "@/lib/party-colors";
 import { blocLabel, mainPolls, partiesData, pollsData, variantPolls } from "@/lib/data";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
@@ -21,7 +22,7 @@ function Items({ items }: { items: Sourced[] }) {
 }
 
 function Seats({ party }: { party: Party }) {
-  const fill = `var(--b-${party.bloc})`;
+  const fill = partyColor(party.id);
   const av = average(party.id, mainPolls);
   if (!av) {
     return (
@@ -87,7 +88,7 @@ type Props = {
 };
 
 export default function ProfileDetail({ party: p, headingId, linkToPage }: Props) {
-  const color = `var(--b-${p.bloc})`;
+  const color = partyColor(p.id);
   const leaderName = p.leader.split(" (")[0].split(",")[0];
   return (
     <div className="profile" style={{ ["--qc" as string]: color }}>
@@ -192,6 +193,7 @@ export default function ProfileDetail({ party: p, headingId, linkToPage }: Props
         </div>
       )}
       <Seats party={p} />
+      <p className="src"><Link href={`/party-history#${p.id}`}>Party history</Link> · <Link href={`/ballot#${p.id}`}>Official ballot entry</Link></p>
       {p.bios ? (
         <div className="sec">
           <p className="lbl">Bios</p>

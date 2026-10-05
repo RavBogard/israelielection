@@ -7,6 +7,8 @@ export type Segment = {
   /** CSS colour, usually `var(--b-net)` etc. */
   color: string;
   label: string;
+  /** Optional destination: the segment's cells form one accessible SVG link. */
+  href?: string;
 };
 
 export const COLS = 12, ROWS = 10, TOTAL = 120, MAJORITY = 61;
@@ -55,8 +57,9 @@ export default function SeatGrid({
   const cells: React.ReactNode[] = [];
   let i = 0;
   segments.forEach((s, k) => {
+    const segmentCells: React.ReactNode[] = [];
     for (let n = 0; n < counts[k]; n++, i++) {
-      cells.push(
+      segmentCells.push(
         <rect
           key={i}
           className="c"
@@ -67,10 +70,14 @@ export default function SeatGrid({
           fill={s.color}
           style={animate ? { animationDelay: `${i * 6}ms` } : undefined}
         >
-          <title>{`${s.label}, seat ${i + 1}`}</title>
+          <title>{s.href ? `${s.label}: ${Math.round(s.seats * 10) / 10} seats; shown cell ${i + 1}` : `${s.label}, seat ${i + 1}`}</title>
         </rect>
       );
     }
+    if (s.href && segmentCells.length) {
+      const name = `Explore ${s.label}: ${Math.round(s.seats * 10) / 10} seats`;
+      cells.push(<a key={s.id} href={s.href} className="seat-party-link" tabIndex={0} aria-label={name}><title>{name}</title>{segmentCells}</a>);
+    } else cells.push(...segmentCells);
   });
   const filled = i;
   for (; i < TOTAL; i++) {
@@ -83,7 +90,7 @@ export default function SeatGrid({
     <svg
       viewBox={`0 0 ${W + extra} ${ROWS * U}`}
       className={`sg sg-${variant}${animate ? " sg-anim" : ""}${filled >= MAJORITY ? " sg-maj" : ""}${className ? ` ${className}` : ""}`}
-      role="img"
+      role={segments.some((s) => s.href) ? "group" : "img"}
       aria-label={label}
     >
       {cells}

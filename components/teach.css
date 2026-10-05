@@ -70,3 +70,4 @@
   .th .scenario .sc-grid { width: 160px; margin-top: 8px; }
   .th .scenario .hook .n { font-size: 48px; }
 }
+.packet-index{list-style:none;padding:0;max-width:850px}.packet-index>li{padding:20px 0;border-top:1px solid var(--line)}.packet-index h3{font:700 25px var(--display);margin:0 0 12px}.packet-index p{margin:8px 0}#packets{scroll-margin-top:24px}

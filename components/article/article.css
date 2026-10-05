@@ -108,3 +108,4 @@
 /* Glossary terms, linked on first use by lib/remark-glossary.mjs: a dotted underline tells them from ordinary links. */
 .article .body a[href^="/glossary#"] { text-decoration-style: dotted; text-decoration-color: var(--ink-3); }
 .article .body a[href^="/glossary#"]:hover { text-decoration-style: solid; }
+.article-contents{margin:24px 0;padding:16px 0;border-block:1px solid var(--line);font:400 15px/1.5 var(--body)}.article-contents>p{font:600 15px var(--body);margin:0 0 8px}.article-contents ul{columns:2;list-style:none;padding:0;margin:0}.article-contents li{break-inside:avoid;padding:4px 0}.article-contents .subsection{padding-left:14px;font-size:14px}.article .body :is(h2,h3){scroll-margin-top:24px}.article-correction{margin:32px 0;padding-top:16px;border-top:1px solid var(--line);font:400 14px/1.5 var(--body)}@media(max-width:600px){.article-contents ul{columns:1}}@media print{.article-contents,.article-correction{display:none}}

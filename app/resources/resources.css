@@ -1,0 +1,15 @@
+.resource-directory { padding-bottom: 60px; }
+.resource-utilities { list-style: none; padding: 20px 0 0; margin: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; max-width: 850px; }
+.resource-directory a { color: var(--ink); text-underline-offset: 4px; }
+.resource-utilities a { font: 700 24px var(--display); }
+.resource-utilities p,.resource-links p { color: var(--text); font-size: 15px; line-height: 1.5; margin: 7px 0 0; }
+.resource-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 64px; }
+.resource-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.resource-links li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.resource-links a { font-weight: 600; }
+.resource-packets { margin-top: 24px; border-left: 2px solid var(--line-2); padding-left: 18px; }
+.resource-packets h3 { font: 700 23px var(--display); margin: 0 0 16px; }
+.resource-packets h4 { margin: 18px 0 6px; font-weight: 600; }
+.resource-packets p { font-size: 14px; line-height: 1.5; margin: 6px 0; }
+.resource-directory a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+@media(max-width:700px) { .resource-groups { grid-template-columns: 1fr; }.resource-utilities { gap: 16px; }.resource-utilities a { font-size: 22px; } }

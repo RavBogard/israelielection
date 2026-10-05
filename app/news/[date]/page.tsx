@@ -5,6 +5,7 @@ import "@/components/interactives.css";
 import "@/components/news.css";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
+import ChangesSourceLabels from "@/components/ChangesSourceLabels";
 
 const briefings = briefingsJson as Briefing[];
 const LONG = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -50,9 +51,9 @@ export default async function Page({ params }: { params: Promise<{ date: string 
               <p key={k}>
                 {s.text}{" "}
                 {s.sources.map((src, j) => (
-                  <a key={j} className="cite" href={src.url} target="_blank" rel="noopener" title={src.title}>
+                  <span key={j}><a className="cite" href={src.url} target="_blank" rel="noopener" title={src.title}>
                     {src.outlet}
-                  </a>
+                  </a><ChangesSourceLabels url={src.url} /></span>
                 ))}
               </p>
             ))}

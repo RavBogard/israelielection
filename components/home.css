@@ -15,6 +15,12 @@
 .home .hero .src { margin-top: 10px; max-width: 52ch; }
 .home .hero .grid { padding-inline: 2px; }
 .home .hero .grid .sg { width: 100%; }
+.home .hero .seat-grid-cue { display: inline-block; color: var(--ink); margin-top: 14px; font-size: 14px; font-weight: 600; text-underline-offset: 4px; }
+.home .hero .seat-grid-cue:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.home .hero .seat-grid-key { font-size: 12px; color: var(--ink-2); margin-top: 8px; }
+.home .hero .seat-grid-key summary { cursor: pointer; }
+.home .hero .seat-grid-key ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4px 10px; }
+.home .hero .seat-grid-key li { display: flex; align-items: center; gap: 6px; }
 
 /* The reader's path, as one sentence under the hero's rule. */
 .home .start { font-family: var(--display); font-size: 18px; line-height: 1.4; color: var(--text); margin: 0; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }

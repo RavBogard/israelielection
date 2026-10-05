@@ -98,7 +98,7 @@ export type NewsResult = {
   fetchedAt: string;
 };
 
-/** All feeds, merged, newest first, de-duplicated by URL. Feeds that fail are listed, not fatal. */
+/** All feeds, newest first; only identical source records removed. Display grouping retains source URLs. */
 export async function fetchNews(opts: { sinceHours?: number; revalidate?: number } = {}): Promise<NewsResult> {
   const since = Date.now() - (opts.sinceHours ?? 72) * 3_600_000;
   const get = async (url: string) => {
@@ -129,7 +129,7 @@ export async function fetchNews(opts: { sinceHours?: number; revalidate?: number
   const items: NewsItem[] = [];
   for (const r of results)
     for (const it of r.items ?? []) {
-      const key = it.url.replace(/[?#].*$/, "");
+      const key = `${it.outlet}\u0000${it.url}\u0000${it.published}\u0000${it.title}`;
       if (seen.has(key) || Date.parse(it.published) < since) continue;
       seen.add(key);
       items.push(it);

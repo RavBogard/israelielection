@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 import briefingsJson from "@/data/briefings/_index.json";
 import partiesJson from "@/data/parties.json";
 import pollsJson from "@/data/polls.json";
+import packets from "@/data/teaching-packets.json";
 import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
+import {canonicalNavPath,canonicalNavPaths} from "@/lib/navigation";
 import { NAV } from "@/lib/site";
 
 const BASE = "https://www.israelielection.org";
@@ -24,7 +26,8 @@ function lastModified(path: string): Date {
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const statics = [
-    ...NAV.map((n) => n.href),
+    "/",
+    ...NAV.map((n) => canonicalNavPath(n.href)),
     "/polls",
     "/parties",
     "/news",
@@ -40,12 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/coalition-builder",
   ];
   const dynamic = [
+    ...briefingDates.map(date=>`/news/${date}`),
+    ...packets.packets.flatMap((p) => ["learner", "facilitator"].map((role) => `/teach/packets/${p.id}/${role}`)),
     ...partiesJson.parties.map((p) => `/parties/${p.id}`),
     ...ISSUES.map((s) => `/issues/${s}`),
     ...COMMUNITIES.map((s) => `/communities/${s}`),
     ...GUIDES.map((s) => `/how-it-works/${s}`),
   ];
-  const paths = [...new Set([...statics, ...dynamic])];
+  const paths = canonicalNavPaths([...statics, ...dynamic]);
   return paths.map((path) => ({
     url: path === "/" ? BASE : `${BASE}${path}`,
     lastModified: lastModified(path),

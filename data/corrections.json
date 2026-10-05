@@ -1,0 +1,38 @@
+{
+  "entries": [
+    {
+      "id": "confidence-majority-wording",
+      "date": "2026-10-05",
+      "page": "/coalition-builder",
+      "before": "The builder and results described 61 as an unconditional requirement to win confidence.",
+      "after": "61 is labeled an absolute seat majority and a planning target. An initial confidence vote depends on votes for and against, with abstention distinguished from opposition.",
+      "explanation": "A seat-majority target is useful coalition arithmetic but cannot replace the applicable confidence rules. The 2021 government was confirmed 60–59. The same wording correction applies on Results and the homepage.",
+      "evidence": [
+        {
+          "title": "Knesset: the 36th government confirmed 60–59 (June 13, 2021)",
+          "url": "https://main.knesset.gov.il/EN/News/PressReleases/Pages/press14621d.aspx"
+        },
+        {
+          "title": "Basic Law: The Government — initial confidence and government formation",
+          "url": "https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf"
+        }
+      ],
+      "reviewedBy": "Codex (automated), Oct 5, 2026"
+    },
+    {
+      "id": "failed-list-votes-wording",
+      "date": "2026-10-05",
+      "page": "/results",
+      "before": "The results preparation text said votes for lists below the threshold are shared out.",
+      "after": "Votes for a list below the threshold are not transferred. Seats are allocated among lists that passed.",
+      "explanation": "The previous wording could imply that a failed list's votes move to other parties. This correction aligns the preparation and count text with the seat-allocation explanation.",
+      "evidence": [
+        {
+          "title": "Israel Democracy Institute: How Votes Become Knesset Seats (March 16, 2026)",
+          "url": "https://en.idi.org.il/articles/63750"
+        }
+      ],
+      "reviewedBy": "Codex (automated), Oct 5, 2026"
+    }
+  ]
+}

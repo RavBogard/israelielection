@@ -25,3 +25,7 @@
 .rs .rs-near .v { color: var(--ink-2); margin-left: auto; text-align: right; }
 .rs .rs-exit-note { margin-top: 18px; }
 @media (max-width: 900px) { .rs .rs-watch dl { grid-template-columns: minmax(0, 1fr); } }
+.rs-freshness { border-block: 2px solid var(--ink); margin: 16px 0; padding: 8px 0; font-size: 14px; }
+.rs-freshness.stale { border-inline-start: 5px solid var(--ink); padding-inline-start: 14px; }
+.rs-refresh { padding: 8px 12px; border: 1px solid var(--line); background: var(--sheet); color: var(--ink); cursor: pointer; font: inherit; }
+.rs-changes { margin-top: 28px; }

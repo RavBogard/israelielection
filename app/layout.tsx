@@ -7,7 +7,7 @@ import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { resultsConfig } from "@/lib/results-live";
 import Countdown from "@/components/Countdown";
-import { DESCRIPTION, NAV_GROUPS, TEACH } from "@/lib/site";
+import { DESCRIPTION, NAV_GROUPS, NAV_UTILITIES } from "@/lib/site";
 import "./globals.css";
 
 const GA_ID = "G-DB53C0NZHB";
@@ -72,7 +72,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <div key={g.label}>
                   <p className="lbl">{g.label}</p>
                   <ul>
-                    {[...g.items, ...(g.more ?? [])].map((n) => (
+                    {g.items.map((n) => (
                       <li key={n.href}>
                         <Link href={n.href}>{n.label}</Link>
                       </li>
@@ -80,14 +80,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   </ul>
                 </div>
               ))}
-              <div>
-                <p className="lbl">{TEACH.label}</p>
-                <ul>
-                  <li>
-                    <Link href={TEACH.href}>Session decks</Link>
-                  </li>
-                </ul>
-              </div>
+              <div className="footer-utilities"><p className="lbl">Find your way</p><ul>{NAV_UTILITIES.map(n=><li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}</ul></div>
             </nav>
           </div>
         </footer>

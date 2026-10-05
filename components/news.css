@@ -33,3 +33,11 @@
 .nw .nw-brief-page { position: static; max-width: 700px; margin-top: 8px; }
 .nw .nw-pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 22px; font-size: 14.5px; font-weight: 600; }
 .nw .nw-pager a { color: var(--ink); }
+.nw .source-access { font: 11px var(--body); color: var(--ink-3); white-space: normal; }
+.nw .nw-meta .source-access { display: block; margin-top: 4px; }
+.nw .nw-group { grid-column: 2; font-size: 12px; color: var(--ink-2); }
+.nw .nw-group summary { cursor: pointer; font-weight: 600; }
+.nw .nw-group ul { margin: 8px 0 0; padding-left: 16px; }
+.nw .nw-group li { display: list-item; border: 0; padding: 4px 0; overflow-wrap: anywhere; }
+.nw .nw-group a { color: var(--ink-2); }
+@media(max-width:560px) { .nw .nw-group { grid-column: 1; } }

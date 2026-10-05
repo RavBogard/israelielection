@@ -16,6 +16,7 @@ export type PositionRow = {
   basis?: "record";
   /** When a "none" row was last checked. */
   checked?: string;
+  evidence?: { kind: string; date: string | null; checkedAt: string; scope?: string; limitation?: string };
 };
 
 export type AxisKey = IssueKey | "pstate";

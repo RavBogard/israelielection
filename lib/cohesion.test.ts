@@ -31,17 +31,18 @@ function mapFor(rows: PositionRow[], withStances = true): StanceMap {
 }
 
 describe("readIssue and readingText", () => {
-  it("agree: one stance among those who have one, the quiet ones named", () => {
+  it("partial: aligned known answers cannot establish agreement for missing parties", () => {
     const m = mapFor([
       { party: "a", text: "q", stance: "quotas" },
       { party: "b", text: "q", stance: "quotas" },
       { party: "c", status: "declined" },
     ]);
     const r = readIssue("draft", m, ["a", "b", "c"]);
-    expect(r.verdict).toBe("agree");
+    expect(r.verdict).toBe("partial");
     expect(r.groups).toEqual([{ stance: stances[1], parties: ["a", "b"] }]);
     expect(r.declined).toEqual(["c"]);
-    expect(readingText(r, nameOf)).toBe("Agree: draft quotas with sanctions; Gimel has no recorded position.");
+    expect(readingText(r, nameOf)).toBe("Recorded positions align; 1 of 3 missing an answer to this question.");
+    expect(cohesion([{ key: "draft" }], m, ["a", "b", "c"]).agree).toBe(0);
   });
 
   it("split: groups in stance order, counted in words", () => {
@@ -54,19 +55,22 @@ describe("readIssue and readingText", () => {
     expect(r.verdict).toBe("split");
     expect(r.groups.map((g) => g.stance.id)).toEqual(["exempt", "quotas", "all"]);
     expect(r.none).toEqual(["d"]);
-    expect(readingText(r, nameOf)).toBe("Split three ways; Dalet has no recorded position.");
+    expect(readingText(r, nameOf)).toBe("Different recorded positions: three answers; 1 of 4 missing an answer to this question.");
   });
 
   it("silent when nobody has a stance; unsorted when the file has no stances yet", () => {
     expect(readIssue("courts", mapFor([]), ["a", "b"]).verdict).toBe("silent");
     const r = readIssue("draft", mapFor([{ party: "a", text: "q" }], false), ["a", "b"]);
     expect(r.verdict).toBe("unsorted");
-    expect(readingText(r, nameOf)).toBe("Positions recorded, not yet sorted into stances.");
+    expect(readingText(r, nameOf)).toBe("Recorded priorities may coexist; no agreement or conflict classification.");
   });
 
   it("a party missing from the map counts as silent", () => {
     const m = mapFor([{ party: "a", text: "q", stance: "all" }]);
     expect(readIssue("draft", m, ["a", "zz"]).none).toEqual(["zz"]);
+    expect(readIssue("draft", m, ["a", "zz"]).verdict).toBe("partial");
+    expect(cohesion([{ key: "draft" }], m, ["a", "zz"]).agree).toBe(0);
+    expect(readIssue("draft", m, ["a"]).verdict).toBe("partial");
   });
 });
 

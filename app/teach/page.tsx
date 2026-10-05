@@ -6,6 +6,7 @@ import "@/components/teach.css";
 import EmbedCode from "@/components/EmbedCode";
 import Scenarios from "@/components/Scenarios";
 import teach from "@/data/teach.json";
+import packets from "@/data/teaching-packets.json";
 
 export const metadata: Metadata = {
   title: "Teaching resources",
@@ -22,11 +23,16 @@ export default function Page() {
           <h1>Teaching resources</h1>
           <p className="standfirst">
             Materials for educators and rabbinic colleagues teaching the 2026 Knesset election. So far: session decks with speaker notes, each
-            as PowerPoint and PDF. Every number is dated and sourced.
+            as PowerPoint and PDF, plus learner sheets and facilitator notes. Every number is dated and sourced.
           </p>
         </header>
 
-        <h2 className="sec-h">Session materials</h2>
+        <section id="packets" aria-labelledby="packets-h">
+          <h2 className="sec-h" id="packets-h">Learner and facilitator packets</h2>
+          <p className="note">Standalone discussions you can read online, download or print. Hypothetical exercises are labeled; source dates and attribution travel with each sheet.</p>
+          <ul className="packet-index">{packets.packets.map((packet) => <li key={packet.id}><h3>{packet.title}</h3><p>{packet.minutes} minutes. {packet.audience}</p><p><Link href={`/teach/packets/${packet.id}/learner`}>Learner sheet (accessible HTML)</Link> · <a href={`/teach/${packet.id}-learner.pdf`} download>Learner PDF</a></p><p><Link href={`/teach/packets/${packet.id}/facilitator`}>Facilitator notes (accessible HTML)</Link> · <a href={`/teach/${packet.id}-facilitator.pdf`} download>Facilitator PDF</a></p></li>)}</ul>
+        </section>
+        <h2 className="sec-h" id="sessions">Session materials</h2>
         <p className="note">Slide decks with speaker notes, session by session. More teaching materials will be added as they are ready.</p>
         <ol className="sessions">
           {teach.sessions.map((s) => (
@@ -89,14 +95,14 @@ export default function Page() {
           </li>
         </ul>
 
-        <h2 className="sec-h">Coalition scenarios for class</h2>
+        <h2 className="sec-h" id="scenarios">Coalition scenarios for class</h2>
         <p className="note">
           Four line-ups Israeli politics has actually produced or ruled out. Each card opens to one sourced fact, one thing to try in the Coalition
           Builder and one question. The seat counts update with the polls.
         </p>
         <Scenarios />
 
-        <h2 className="sec-h">Embed the interactives</h2>
+        <h2 className="sec-h" id="embeds">Embed the interactives</h2>
         <p className="note">
           Paste one of these into a class page, a newsletter or a blog. Each frame carries its date, its source line and a link back here, and updates
           as the polls do.

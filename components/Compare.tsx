@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense } from "react";
+import { Suspense, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { readIssue, readingText, stanceMap, type Issue, type IssueReading } from "@/lib/cohesion";
-import { AXES, DECLINED, MIN_PICK, NO_POSITION, isUrl, parseSelection, toggle, type AxisKey, type PositionRow } from "@/lib/compare";
+import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } from "@/lib/compare";
 import { builderHref } from "@/lib/scenarios";
 import type { BlocId } from "@/lib/types";
 import "./compare.css";
+import { evidenceLabel } from "@/lib/positions";
 
 /*
  * Compare the parties: seven issue strips. Each strip is the issue's comparable stances as columns,
@@ -59,7 +60,7 @@ function Quote({ p, row, stanceLabel }: { p: CompareParty; row: PositionRow | un
         <span className="sw" aria-hidden="true" />
         <b>{p.name}</b>
         {stanceLabel && <span className="st">{stanceLabel}</span>}
-        {!stanceLabel && (declined ? <span className="st quiet">{DECLINED}</span> : none ? <span className="st quiet">{NO_POSITION}</span> : null)}
+        {!stanceLabel && (declined ? <span className="st quiet">{DECLINED}</span> : none ? <span className="st quiet">Not established by these sources</span> : null)}
       </p>
       {text && <p className="pos">{text}</p>}
       {(src.text || row?.basis === "record" || (none && row?.checked)) && (
@@ -73,14 +74,16 @@ function Quote({ p, row, stanceLabel }: { p: CompareParty; row: PositionRow | un
   );
 }
 
-function Strip({ issue, reading, byId }: { issue: Issue; reading: IssueReading; byId: Map<string, CompareParty> }) {
+function Strip({ issue, reading, byId, compact }: { issue: Issue; reading: IssueReading; byId: Map<string, CompareParty>; compact: boolean }) {
   const quiet = [...reading.declined, ...reading.none];
   const get = (id: string) => byId.get(id)!;
   // Rows without a stances header yet: one column of everyone with a recorded position.
-  const columns = reading.verdict === "unsorted" || !issue.file.stances?.length
+  const allColumns = reading.verdict === "unsorted" || !issue.file.stances?.length
     ? [{ id: "recorded", label: "Position recorded", parties: reading.unsorted }]
     : issue.file.stances.map((s) => ({ id: s.id, label: s.label, parties: reading.groups.find((g) => g.stance.id === s.id)?.parties ?? [] }));
-  const n = columns.length + (quiet.length ? 1 : 0);
+  const columns = compact ? allColumns.filter((c) => c.parties.length) : allColumns;
+  const unclassified = issue.file.stances?.length ? reading.unsorted : [];
+  const n = Math.max(1, columns.length + (quiet.length ? 1 : 0) + (unclassified.length ? 1 : 0));
   return (
     <div className="strip" style={{ "--n": n } as React.CSSProperties}>
       {columns.map((c) => (
@@ -97,7 +100,7 @@ function Strip({ issue, reading, byId }: { issue: Issue; reading: IssueReading; 
       ))}
       {quiet.length > 0 && (
         <div className="col quiet">
-          <p className="st">Nothing recorded</p>
+          <p className="st">Not established by these sources</p>
           <ul className="slips">
             {quiet.map((id) => (
               <MiniSlip key={id} p={get(id)} />
@@ -105,11 +108,12 @@ function Strip({ issue, reading, byId }: { issue: Issue; reading: IssueReading; 
           </ul>
         </div>
       )}
+      {unclassified.length > 0 && <div className="col quiet"><p className="st">Unclassified evidence</p><ul className="slips">{unclassified.map((id) => <MiniSlip key={id} p={get(id)} />)}</ul></div>}
     </div>
   );
 }
 
-function IssueBlock({ issue, reading, chosen, byId }: { issue: Issue; reading: IssueReading; chosen: CompareParty[]; byId: Map<string, CompareParty> }) {
+function IssueBlock({ issue, reading, chosen, byId, compact }: { issue: Issue; reading: IssueReading; chosen: CompareParty[]; byId: Map<string, CompareParty>; compact: boolean }) {
   const nameOf = (id: string) => byId.get(id)?.name ?? id;
   const stanceLabelOf = (id: string) => reading.groups.find((g) => g.parties.includes(id))?.stance.label ?? null;
   // Quotes read in strip order: stance by stance, then the quiet.
@@ -122,7 +126,11 @@ function IssueBlock({ issue, reading, chosen, byId }: { issue: Issue; reading: I
         {issue.file.question && <p className="q">{issue.file.question}</p>}
         <p className="verdict">{readingText(reading, nameOf)}</p>
       </header>
-      <Strip issue={issue} reading={reading} byId={byId} />
+      <p className="export-link"><Link href={`/export/issue?${new URLSearchParams({issue:issue.key,p:chosen.map((p)=>p.id).join(",")})}`}>Print or export this question and selected lists</Link></p>
+      <Strip issue={issue} reading={reading} byId={byId} compact={compact} />
+      <ul className="evidence-age" aria-label="Evidence dates and types">
+        {chosen.map((p) => <li key={p.id}><b>{p.name}:</b> {evidenceLabel(issue.file.rows.find((r) => r.party === p.id))}</li>)}
+      </ul>
       <details className="said">
         <summary>What each party said</summary>
         <ul className="quotes">
@@ -137,11 +145,12 @@ function IssueBlock({ issue, reading, chosen, byId }: { issue: Issue; reading: I
 }
 
 function CompareView({ parties, blocs, issues, presets, selected, onSelect }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
+  const [compact, setCompact] = useState(true);
   const byId = new Map(parties.map((p) => [p.id, p]));
   const chosen = selected.map((id) => byId.get(id)).filter((p): p is CompareParty => !!p);
   const atMin = selected.length <= MIN_PICK;
   const map = stanceMap(issues, parties.map((p) => p.id));
-  const readings = Object.fromEntries(AXES.map((a) => [a.key, readIssue(a.key, map, selected)])) as Record<AxisKey, IssueReading>;
+  const readings = Object.fromEntries(issues.map((a) => [a.key, readIssue(a.key, map, selected)])) as Record<string, IssueReading>;
   const isPreset = (ids: string[]) => ids.length === selected.length && ids.every((id) => selected.includes(id));
 
   return (
@@ -187,9 +196,15 @@ function CompareView({ parties, blocs, issues, presets, selected, onSelect }: Pr
         </p>
       </fieldset>
 
+      <nav className="topic-jumps" aria-label="Jump to a comparison question">
+        {issues.map((issue) => <a key={issue.key} href={`#issue-${issue.key}`}>{issue.label}</a>)}
+      </nav>
+      <label className="compact-control"><input type="checkbox" checked={compact} onChange={(e) => setCompact(e.target.checked)} /> Show only occupied positions (missing answers stay visible)</label>
+      <p className="foot">These classifications compare recorded answers to selected questions. They are not a stability forecast; questions are not equally important, and differences may be negotiable.</p>
+      <p><Link href={`/export/issue?${new URLSearchParams({p:selected.join(",")})}`}>Print or export the selected comparison</Link></p>
       <ol className="issues">
         {issues.map((issue) => (
-          <IssueBlock key={issue.key} issue={issue} reading={readings[issue.key]} chosen={chosen} byId={byId} />
+          <IssueBlock key={issue.key} issue={issue} reading={readings[issue.key]} chosen={chosen} byId={byId} compact={compact} />
         ))}
       </ol>
 
@@ -209,7 +224,9 @@ function CompareLive(props: Props) {
   const selected = parseSelection(params.get("p"), ids, props.defaults);
   const onSelect = (next: string[]) => {
     if (next.length < MIN_PICK || (next.length === selected.length && next.every((id) => selected.includes(id)))) return;
-    router.replace(`${pathname}?p=${next.join(",")}`, { scroll: false });
+    const q = new URLSearchParams(params.toString());
+    q.set("p", next.join(","));
+    router.replace(`${pathname}?${q.toString().replace(/%2C/g, ",")}${window.location.hash}`, { scroll: false });
   };
   return <CompareView {...props} selected={selected} onSelect={onSelect} />;
 }

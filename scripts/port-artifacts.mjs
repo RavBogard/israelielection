@@ -91,7 +91,7 @@ for (const p of PROFILES) {
 polls.push({
   id: "c14", pollster: "Channel 14", firm: "Next Data / Filber", fieldwork: null, published: "2026-10-01",
   via: "skarim.org", url: null, n: null, margin: null, inAverage: false, results: c14, combined: [],
-  note: "Left out of averages and the coalition count: runs well above other polls for Likud (31–32 vs 19–21). Sep 23 and Sep 28 polls also cited; figures marked date-uncertain are the latest in our register without a date.",
+  note: "Sep 23 and Sep 28 polls also cited; figures marked date-uncertain are the latest in our register without a date.",
 });
 writeFileSync("data/polls.json", JSON.stringify({ updated: "2026-10-04", polls }, null, 2) + "\n");
 console.log(parties.length, "parties;", polls.length, "polls");

@@ -1,6 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import "./whatif.css";
+import {partyColor,blocColorStrip} from "@/lib/party-colors";
 import SeatGrid from "./SeatGrid";
 import { allocate } from "@/lib/results";
 import type { BlocId } from "@/lib/types";
@@ -30,7 +31,7 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
   const base = useMemo(() => count(parties, threshold, agreements, Object.fromEntries(near.map((p) => [p.id, p.seats > 0]))), [parties, threshold, agreements, near]);
   const now = useMemo(() => count(parties, threshold, agreements, passing), [parties, threshold, agreements, passing]);
   const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
-  const segments = ORDER.map((id) => ({ id, seats: now.byBloc[id], color: `var(--b-${id})`, label: label[id] }));
+  const segments = ORDER.flatMap((bloc)=>parties.filter((p)=>p.bloc===bloc&&(now.byParty[p.id]??0)>0).map((p)=>({id:p.id,seats:now.byParty[p.id],color:partyColor(p.id),label:p.name,href:`/parties?party=${p.id}`})));
   const wasted = now.wasted / VALID;
 
   return (
@@ -43,7 +44,7 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
         <ul className="wi-toggles">
           {near.map((p) => (
             <li key={p.id}>
-              <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
+              <span className="sw" style={{ background: partyColor(p.id) }} />
               <span className="nm">
                 {p.name}
                 {p.letters && (
@@ -72,7 +73,7 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
               return (
                 <div key={id}>
                   <dt>
-                    <span className="sw" style={{ background: `var(--b-${id})` }} />
+                    <span className="sw" style={{ background: blocColorStrip(id) }} />
                     {label[id]}
                   </dt>
                   <dd>
@@ -106,5 +107,5 @@ function count(parties: WhatIfParty[], threshold: number, agreements: [string, s
   for (const p of parties) byBloc[p.bloc] += alloc.seats[p.id] ?? 0;
   const failed = parties.filter((p) => votes[p.id] && !alloc.passing.includes(p.id)).map((p) => p.name);
   const wasted = parties.filter((p) => votes[p.id] && !alloc.passing.includes(p.id)).reduce((s, p) => s + votes[p.id], 0);
-  return { byBloc, failed, wasted };
+  return { byBloc, byParty: alloc.seats, failed, wasted };
 }

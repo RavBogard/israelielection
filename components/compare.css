@@ -2,6 +2,11 @@
    stances are columns and the chosen parties sit under theirs as small ballot slips, so agreement
    reads as a pile and a split as distance. Bloc colour appears only as the bar on each slip. */
 .cmp { margin-top: 24px; font-family: var(--body); color: var(--ink); }
+.cmp .topic-jumps { display: flex; flex-wrap: wrap; gap: 8px 18px; border-block: 1px solid var(--line); padding: 16px 0; margin-bottom: 16px; font-size: 14px; }
+.cmp .compact-control { display: flex; align-items: center; gap: 8px; font-size: 14px; margin-bottom: 12px; }
+.cmp .issue { scroll-margin-top: 100px; }
+.cmp .evidence-age { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 20px; font-size: 12px; line-height: 1.5; color: var(--ink-2); }
+@media (max-width: 760px) { .cmp .evidence-age { grid-template-columns: minmax(0, 1fr); } }
 
 /* Picker */
 .cmp .picker { border: 0; margin: 0 0 36px; padding: 0; min-width: 0; }

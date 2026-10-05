@@ -1,4 +1,5 @@
 import Link from "next/link";
+import {partyColor} from "@/lib/party-colors";
 import SeatGrid from "./SeatGrid";
 import { averagePoll, mainPolls, parties } from "@/lib/data";
 import { MAJORITY } from "@/lib/coalition";
@@ -14,12 +15,12 @@ const { scenarios } = data as ScenariosFile;
 const partyOf = (id: string) => parties.find((p) => p.id === id)!;
 const avgSeats = (id: string) => averagePoll.results[id]?.seats ?? 0;
 
-/** The slip's top bar: one band per list in its bloc colour, as wide as its seats in the average. */
+/** The slip's top bar: one band per list in its party shade, as wide as its seats in the average. */
 function Bar({ ids, even }: { ids: string[]; even: boolean }) {
   return (
     <span className="bar" aria-hidden="true">
       {ids.map((id) => (
-        <span key={id} style={{ flexGrow: even ? 1 : Math.max(avgSeats(id), 1), background: `var(--b-${partyOf(id).bloc})` }} />
+        <span key={id} style={{ flexGrow: even ? 1 : Math.max(avgSeats(id), 1), background: partyColor(id) }} />
       ))}
     </span>
   );
@@ -29,7 +30,7 @@ function Count({ s }: { s: Scenario }) {
   const n = scenarioNumbers(s.with, parties, averagePoll, mainPolls);
   const segments = s.with.map((id) => {
     const p = partyOf(id);
-    return { id, seats: avgSeats(id), color: `var(--b-${p.bloc})`, label: p.name };
+    return { id, seats: avgSeats(id), color: partyColor(id), label: p.name, href: `/parties?party=${id}` };
   });
   const range = n.low === n.high ? `${n.low} in each of the latest ${n.polls} polls` : `${n.low} to ${n.high} across the latest ${n.polls} polls`;
   const reach = n.reaching === 0 ? `none reaching ${MAJORITY}` : n.reaching === n.polls ? `all reaching ${MAJORITY}` : `${n.reaching} reaching ${MAJORITY}`;
@@ -59,7 +60,7 @@ function Clears({ s }: { s: Scenario }) {
             <span className="nm">{p.name}</span>
             <span className="dots" aria-hidden="true">
               {mainPolls.map((poll, i) => (
-                <span key={poll.id} className={i < k ? "on" : ""} style={{ ["--fill" as string]: `var(--b-${p.bloc})` }} />
+                <span key={poll.id} className={i < k ? "on" : ""} style={{ ["--fill" as string]: partyColor(p.id) }} />
               ))}
             </span>
             <span className="txt">{readClears(k, n)}</span>

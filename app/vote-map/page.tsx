@@ -19,7 +19,7 @@ export default function Page() {
         <h1>Vote map</h1>
         <p className="standfirst">
           How each of Israel&apos;s roughly 1,200 voting localities voted in the five Knesset elections from April 2019 to November 2022. Pick an
-          election and a list; the shade is that list&apos;s share of the locality&apos;s valid votes.
+          election, then explore one list&apos;s share in blue, the local leading list in color, or each town&apos;s vote mix in proportional pie markers.
         </p>
         <p className="note">Facts checked October 5, 2026. Results are the Central Elections Committee&apos;s final files for each election.</p>
       </header>
@@ -30,6 +30,7 @@ export default function Page() {
         <article className="article vm-text">
           <div className="body">
             <h2>Reading the map</h2>
+            <p><strong>Three views of the same votes.</strong> In the single-list view, darker blue means a higher share of valid votes. Leading-list colors show local plurality, which can be below 50%; ties are marked separately. If the combined Other lists could conceal a leader, the map leaves the leader unestablished. Pie slices show the named lists and Other, with circle area proportional to valid votes. Overlapping markers are filtered in place, with a displayed coverage count; zoom or search for any town to see its full recorded breakdown. Geography is not voter movement, and land area is not vote count.</p>
             <p>
               <strong>A town is not a group.</strong> The map shows how places voted, not how any community voted. Mixed cities such as Haifa, Lod
               and Akko are one number each: the committee publishes results by polling station, but no current public list of station addresses was
@@ -41,14 +42,13 @@ export default function Page() {
               for soldiers, hospital patients and residents of care facilities among others, are counted in one national pseudo-locality. They were
               5.5% of valid votes in April 2019 and 9.6% in November 2022 (computed from the committee&apos;s locality files). These ballots go in two
               envelopes, which attach the voter&apos;s name so it can be checked against the roll to prevent voting twice (
-              <a href={TOI_VOTE}>Times of Israel, Oct 30, 2022</a>). The bars beside the map compare each list&apos;s share of those votes with its
-              share of the votes counted by locality.
+              <a href={TOI_VOTE}>Times of Israel, Oct 30, 2022</a>). The bars beside the map keep these votes separate from locality votes: a chosen list&apos;s shares in single-list view, or the full named-list mix and Other in the two multi-list views.
             </p>
             <p>
               <strong>Each list is shown as it ran that year.</strong> Ballot letters and alliances change between elections. In 2022, for example,
               Religious Zionism ran on one list with Otzma Yehudit, and the letters פה belonged to Blue and White in 2019–2020 and to Yesh Atid in
               2021–2022. The list menu names every list that won at least 1% of the national vote; smaller lists are counted in the totals but cannot
-              be picked.
+              be picked individually. Their combined remainder appears as Other in vote-mix markers and the town breakdown. Colors identify original historical list names, not current political blocs. <Link href="/party-history">Trace changing lists and alliances</Link>.
             </p>
 
             <h2>The West Bank and East Jerusalem</h2>

@@ -5,9 +5,8 @@ import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
 import { stanceMap } from "@/lib/cohesion";
-import { AXES } from "@/lib/compare";
 import { allPolls, parties } from "@/lib/data";
-import { ISSUES } from "@/lib/positions";
+import { comparisonIssues } from "@/lib/positions";
 import { outgoingGovernment } from "@/lib/outgoing-government";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
@@ -15,7 +14,7 @@ import { fetchCount, resultsConfig } from "@/lib/results-live";
 // Every minute: on election night the builder adds the count as it comes in.
 export const revalidate = 60;
 
-const DESCRIPTION = "Pick parties from the current poll average, or from any poll, and see whether they reach the 61 seats a government needs, with the pledges that stand in the way.";
+const DESCRIPTION = "Build a hypothetical governing arrangement: distinguish a 61-seat majority from cabinet membership, outside support and the initial confidence vote.";
 
 /** A shared coalition link carries its own card: the chosen parties on the 120-seat grid. */
 export async function generateMetadata({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }): Promise<Metadata> {
@@ -36,13 +35,13 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 
 /** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
 /** Where each party stands on each issue, for the panel's "Can they govern together?"; no quotes travel to the client. */
-const STANCES = stanceMap(AXES.map((a) => ({ key: a.key, label: a.label, file: ISSUES[a.key] })), parties.map((p) => p.id));
+const STANCES = stanceMap(comparisonIssues(), parties.map((p) => p.id));
 
 const PRESET = { ids: outgoingGovernment.with, label: "the outgoing government", seats: outgoingGovernment.seats2022, year: 2022, note: outgoingGovernment.noam.text };
 
 export default async function Page() {
   const live = await fetchCount(revalidate);
-  const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : null;
+  const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   return (
     <div className="ix builder-page">
       <div className="wrap">

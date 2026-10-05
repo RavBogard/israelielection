@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
   let poll = [averagePoll, ...exitPolls, ...mainPolls].find((p) => p.id === pollId) ?? averagePoll;
   if (pollId === RESULTS_ID) {
     const live = await fetchCount(60);
-    if (live.state === "open") poll = resultsAsPoll(live.count, resultsConfig, live.fetchedAt);
+    if (live.state === "open") poll = resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live);
   }
   const sel = new Set(ids);
   const t = tally(sel, parties, poll);
@@ -35,13 +35,13 @@ export async function GET(req: NextRequest) {
   const read = !ids.length
     ? `Pick parties from any poll and see whether they reach ${MAJORITY}.`
     : whole >= MAJORITY
-      ? `A majority. ${MAJORITY} is enough to win a confidence vote.`
-      : `${MAJORITY - whole} short of the ${MAJORITY} a government needs.`;
+      ? `An absolute seat majority; initial confidence depends on votes for and against.`
+      : `${MAJORITY - whole} short of the ${MAJORITY}-seat absolute-majority target.`;
   const source =
     poll.id === RESULTS_ID
-      ? "The committee's count so far"
+      ? poll.resultState?.freshness === "stale" ? "Saved committee count (stale)" : "The committee's count so far"
       : poll.id === AVERAGE_ID
-        ? `Average of the latest ${mainPolls.length} polls, to ${mediumDate(mainPolls[0].published)}`
+        ? `Normalized average of the latest ${mainPolls.length} polls, to ${mediumDate(mainPolls[0].published)}`
         : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
 
   return new ImageResponse(

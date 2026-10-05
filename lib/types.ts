@@ -48,6 +48,7 @@ export type PollResult = {
 };
 
 export type Poll = {
+  resultState?: { freshness: "fresh" | "stale"; capturedAt: string; sourceUpdatedAt: string | null };
   id: string;
   pollster: string;
   firm: string | null;

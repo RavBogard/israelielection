@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "@/components/interactives.css";
 import "@/components/results.css";
+import ResultsFreshness from "@/components/ResultsFreshness";
+import ResultsRefresh from "@/components/ResultsRefresh";
+import ResultsChanges from "@/components/ResultsChanges";
+import {partyColor,blocColorStrip} from "@/lib/party-colors";
 import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
 import { averagePoll, blocs, exitPolls, parties } from "@/lib/data";
@@ -9,7 +13,7 @@ import { mediumDate } from "@/lib/format";
 import { pollLabel, seatsIn } from "@/lib/polls";
 import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
-import { results } from "@/lib/results";
+import { countedTurnout, results } from "@/lib/results";
 import { fetchCount, resultsConfig as cfg } from "@/lib/results-live";
 
 export const metadata: Metadata = {
@@ -47,7 +51,7 @@ function Letters() {
             {rows.map(({ letters, p }) => (
               <tr key={letters}>
                 <td className="rs-heb" lang="he" dir="rtl">{letters}</td>
-                <td><span className="sw" style={{ background: `var(--b-${p.bloc})` }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
+                <td><span className="sw" style={{ background: partyColor(p.id) }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
                 <td>{p.leader}</td>
               </tr>
             ))}
@@ -68,9 +72,9 @@ function Method() {
         <li>The {KNESSET} seats are shared among the remaining lists in proportion to their votes, by the Bader-Ofer method.</li>
         <li>
           Two lists that signed a surplus-vote agreement compete for leftover seats as if they were one list, then split what they win. This can
-          move one seat. Agreements used here: {cfg.agreements.map((a) => `${pairName(a.parties)}${a.status === "signed" ? "" : " (reported)"}`).join("; ")}.
+          affect leftover-seat allocation. Provisional assumptions here (reported signed; official filing unverified): {cfg.agreements.map((a) => pairName(a.parties)).join("; ")}.
         </li>
-        <li>A government needs the confidence of {MAJORITY} members.</li>
+        <li>{MAJORITY} seats is an absolute majority. Initial confidence requires more votes for than against, excluding abstentions; constructive no-confidence requires 61 MKs to support an alternative government. <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>; <a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government</a>.</li>
       </ol>
       <p className="src">
         {cfg.thresholdSource} Agreements: {cfg.agreements.map((a) => `${pairName(a.parties)}, ${a.source}`).join("; ")}. {cfg.agreementsNote}
@@ -103,12 +107,12 @@ function WhatToWatch() {
             The threshold, {cfg.threshold * 100}% of valid votes, about {thresholdSeats(cfg.threshold)} seats
           </dt>
           <dd>
-            A list that misses it gets nothing, and its votes are shared out among the lists that passed. In the current average these lists sit nearest
+            A list that misses it gets no seats; its votes are not transferred. Seats are allocated among lists that passed. In the current average these lists sit nearest
             the line:
             <ul className="rs-near">
               {near.map(({ party, seats }) => (
                 <li key={party.id}>
-                  <span className="sw" style={{ background: `var(--b-${party.bloc})` }} />
+                  <span className="sw" style={{ background: partyColor(party.id) }} />
                   <Link href={`/parties/${party.id}`}>{party.name}</Link>
                   <span className="v">{seats ? `${Math.round(seats * 10) / 10} seats` : "below the threshold in every poll"}</span>
                 </li>
@@ -160,7 +164,7 @@ function ExitPolls({ lists }: { lists: PartyResult[] | null }) {
             {rows.map((p) => (
               <tr key={p.id}>
                 <td>
-                  <span className="sw" style={{ background: `var(--b-${p.bloc})`, marginRight: 8 }} />
+                  <span className="sw" style={{ background: partyColor(p.id), marginRight: 8 }} />
                   <Link href={`/parties/${p.id}`}>{p.name}</Link>
                 </td>
                 {exitPolls.map((e) => {
@@ -194,7 +198,7 @@ function ThresholdWatch({ count }: { count: Count }) {
         The threshold
       </h2>
       <p className="note">
-        {cfg.threshold * 100}% of valid votes counted so far is {num(count.valid * cfg.threshold)} votes. A list below it gets no seats; its votes are shared out among the
+        {cfg.threshold * 100}% of valid votes counted so far is {num(count.valid * cfg.threshold)} votes. A list below it gets no seats; its votes are not transferred. Seats are allocated among the
         lists that passed.
       </p>
       {rows.length ? (
@@ -203,7 +207,7 @@ function ThresholdWatch({ count }: { count: Count }) {
             const p = byId(w.partyId)!;
             return (
               <li key={w.partyId}>
-                <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
+                <span className="sw" style={{ background: partyColor(p.id) }} />
                 <Link href={`/parties/${p.id}`}>{p.name}</Link>
                 <span className="v">
                   {pct(w.pct)}, {num(Math.abs(w.margin))} votes {w.passing ? "above" : "below"} the line;{" "}
@@ -242,6 +246,7 @@ export default async function Page() {
               )}
             </p>
           </header>
+          <ResultsRefresh pollsClose={cfg.pollsClose} />
           <WhatToWatch />
           <ExitPolls lists={null} />
           <Letters />
@@ -251,7 +256,8 @@ export default async function Page() {
     );
   }
 
-  const { count, fetchedAt } = live;
+  const { count } = live;
+  const turnout = countedTurnout(count);
   const r = results(count, cfg);
   const order = ["net", "mid", "opp", "arab"];
   const blocSeats = [...blocs]
@@ -260,7 +266,7 @@ export default async function Page() {
   const untrackedSeats = r.lists.filter((l) => !l.partyId).reduce((s, l) => s + l.seats, 0);
   const others = r.lists.filter((l) => !l.partyId);
   const segments = [
-    ...blocSeats.map((b) => ({ id: b.id, seats: b.seats, color: `var(--b-${b.id})`, label: b.label })),
+    ...blocSeats.flatMap((b) => r.lists.filter((l)=>l.partyId&&byId(l.partyId)?.bloc===b.id&&l.seats>0).map((l)=>({id:l.partyId!,seats:l.seats,color:partyColor(l.partyId!),label:byId(l.partyId)!.name,href:`/parties?party=${l.partyId}`}))),
     ...(untrackedSeats ? [{ id: "other", seats: untrackedSeats, color: "var(--line-2)", label: "Other lists" }] : []),
   ];
 
@@ -270,30 +276,32 @@ export default async function Page() {
         <header className="page-head">
           <h1>Results</h1>
           <p className="standfirst">
-            The committee&apos;s count so far: {num(count.valid)} valid votes from {count.localities} localities, turnout{" "}
-            {count.eligible ? pct(count.voted / count.eligible) : "n/a"} where counted.
+            The committee&apos;s count so far: {num(count.valid)} valid votes from {count.localities} regular localities and any included double envelopes; turnout{" "}
+            {turnout !== null ? pct(turnout) : "not available"} among counted regular localities.
           </p>
           <p className="note">
-            Seats are this site&apos;s estimate from those votes; the committee publishes the official allocation with the final results. Last fetched{" "}
-            {IL.format(new Date(fetchedAt))} Israel time.
+            Seats are this site&apos;s estimate from those votes; the committee publishes the official allocation with the final results.
           </p>
         </header>
 
+        <ResultsFreshness live={live} />
+        <ResultsRefresh pollsClose={cfg.pollsClose} />
         <section className="rs-count" aria-label="Seats by bloc">
           <SeatGrid segments={segments} labelRule />
           <div>
             <ul className="rs-legend">
               {blocSeats.map((b) => (
-                <li key={b.id}><span className="sw" style={{ background: `var(--b-${b.id})` }} />{b.label} <b>{b.seats}</b></li>
+                <li key={b.id}><span className="sw" style={{ background: blocColorStrip(b.id) }} />{b.label} <b>{b.seats}</b></li>
               ))}
               {untrackedSeats > 0 && <li><span className="sw" style={{ background: "var(--line-2)" }} />Other lists <b>{untrackedSeats}</b></li>}
             </ul>
             <p className="note" style={{ marginTop: 14 }}>
-              <Link href="/?poll=results">Build a coalition from these results</Link>
+              <Link href="/coalition-builder?poll=results">Build a coalition from these results</Link>
             </p>
           </div>
         </section>
 
+        <ResultsChanges current={live.snapshot} previous={live.previous} config={cfg} names={Object.fromEntries(parties.map((p) => [p.id, p.name]))} />
         <ThresholdWatch count={count} />
         <ExitPolls lists={r.lists} />
 
@@ -308,7 +316,7 @@ export default async function Page() {
                 const p = byId(l.partyId)!;
                 return (
                   <tr key={l.letters}>
-                    <td><span className="sw" style={{ background: `var(--b-${p.bloc})`, marginRight: 8 }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
+                    <td><span className="sw" style={{ background: partyColor(p.id), marginRight: 8 }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
                     <td className="rs-heb" lang="he" dir="rtl">{l.letters}</td>
                     <td className="num">{num(l.votes)}</td>
                     <td className="num">{pct(l.pct)}</td>

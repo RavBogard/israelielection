@@ -1,0 +1,32 @@
+.sourced-export { padding-block: 32px; }
+.sourced-export h1 { font-family: var(--display); font-size: clamp(28px,4vw,44px); }
+.export-controls { display:flex; flex-wrap:wrap; align-items:center; gap:16px; padding-bottom:22px; }
+.export-controls button { font:inherit; color:var(--ink); background:var(--sheet); border:1px solid var(--line); padding:8px 12px; cursor:pointer; }
+.export-assumption { max-width:90ch; }
+.export-table { overflow:auto; margin:22px 0; }
+.sourced-export table { width:100%; border-collapse:collapse; font-size:13px; }
+.sourced-export th, .sourced-export td { text-align:left; vertical-align:top; border-bottom:1px solid var(--line); padding:8px; }
+.sourced-export a { overflow-wrap:anywhere; }
+@media print {
+  @page { margin:15mm; }
+  .masthead, .site-footer, .live-strip, .export-controls, .site-menu, .skip { display:none!important; }
+  .sourced-export { max-width:none; padding:0; color:#111; background:#fff; font-size:10pt; }
+  .sourced-export h1 { font-size:22pt; }
+  .sourced-export .export-table { overflow:visible; }
+  .sourced-export table { font-size:8pt; table-layout:fixed; }
+  .sourced-export td, .sourced-export th { overflow-wrap:anywhere; padding:5px; }
+  .sourced-export tr { break-inside:avoid; }
+  .sourced-export thead { display:table-header-group; }
+  .sourced-export a { color:#111; text-decoration:underline; }
+}
+@media print {
+  /* Issue answers read as full-width labeled records, rather than seven equal narrow columns. */
+  .export-issue table, .export-issue tbody, .export-issue tr, .export-issue td { display:block; width:100%; }
+  .export-issue thead { display:none; }
+  .export-issue tr { border-top:1px solid #111; margin:0 0 14pt; padding:8pt 0; break-inside:avoid; }
+  .export-issue td { border:0; padding:3pt 0; font-size:10pt; line-height:1.35; }
+  .export-issue td::before { content:attr(data-label) ": "; font-weight:700; }
+  .export-issue td:nth-child(4) { padding:7pt 0; font-size:11pt; }
+  .export-issue td:nth-child(4)::before { display:block; }
+  .export-issue td:nth-child(7) { font-size:8pt; }
+}

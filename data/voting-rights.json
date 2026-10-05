@@ -1,0 +1,16 @@
+{
+  "checked": "2026-10-05",
+  "nationalSource": "https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf",
+  "registrySource": "https://www.gov.il/en/pages/knesset25-elections-info?chapterIndex=12",
+  "municipalSource": "https://bchirot-muni.moin.gov.il/2025/FAQ",
+  "statusSource": "https://pop.education.gov.il/tchumey_daat/moledet_hevra_ezrahut/yesodi/noseem_nilmadim/bhirot-rashuyot-mekomiyot",
+  "contextSource": "https://en.idi.org.il/articles/29757",
+  "rows": [
+    {"id":"citizen", "status":"Israeli citizen", "location":"Living in Israel, including Palestinian and Druze citizens", "national":"Eligible from 18", "municipal":"Eligible from 17", "detail":"Subject to the relevant voter register. Religion and ethnicity do not create different citizenship-based voting rights.", "nationalKind":"yes", "municipalKind":"yes"},
+    {"id":"permanent", "status":"Israeli permanent resident, without citizenship", "location":"For example, many Palestinians in East Jerusalem; check each person's actual status", "national":"Not eligible", "municipal":"Eligible from 17", "detail":"Municipal voting requires residence and registration in the relevant local authority. Naturalization changes the national-vote position.", "nationalKind":"no", "municipalKind":"yes"},
+    {"id":"golan", "status":"Golan resident: citizenship must be checked", "location":"Druze communities in the Israeli-annexed Golan Heights", "national":"Citizen: eligible from 18; noncitizen: not eligible", "municipal":"Permanent residents: eligible from 17", "detail":"Being Druze or living in the Golan does not establish whether a person has Israeli citizenship. Local voter-register conditions apply.", "nationalKind":"status", "municipalKind":"status"},
+    {"id":"settler", "status":"Israeli citizen in a West Bank settlement", "location":"The occupied West Bank", "national":"Eligible from 18", "municipal":"Check local council rules", "detail":"Citizens can vote in Knesset elections from settlement polling places. Local council arrangements should not be inferred from the national rule.", "nationalKind":"yes", "municipalKind":"status"},
+    {"id":"palestinian", "status":"Palestinian resident without Israeli citizenship or permanent residency", "location":"The West Bank or Gaza", "national":"Not eligible", "municipal":"No Israeli municipal right on that basis", "detail":"Place of residence alone does not confer Israeli voting rights. Palestinian elections are a separate system, described below.", "nationalKind":"no", "municipalKind":"no"},
+    {"id":"abroad", "status":"Israeli citizen abroad", "location":"Outside Israel on election day", "national":"Check registration and voting location", "municipal":"Check residence and the local register", "detail":"There is no general overseas absentee vote. Most registered voters must return to vote; limited official overseas categories have special arrangements.", "nationalKind":"status", "municipalKind":"status"}
+  ]
+}

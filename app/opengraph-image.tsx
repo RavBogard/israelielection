@@ -13,7 +13,7 @@ import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from
 // by bloc from the current poll average (or the count, on election night). It is drawn on request
 // and cached for an hour, so a link shared today shows today's numbers.
 export const revalidate = 3600;
-export const alt = "Israel Votes 2026: the 120 seats of the Knesset by bloc in the current poll average. A government needs 61.";
+export const alt = "Israel Votes 2026: the 120 seats of the Knesset by bloc in the current poll average. 61 seats is an absolute majority.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -30,7 +30,7 @@ function headline(days: number, live: boolean): [string, string] {
 
 export default async function Image() {
   const live = await fetchCount(revalidate);
-  const poll = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt) : averagePoll;
+  const poll = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : averagePoll;
   const isLive = live.state === "open";
   const totals = blocTotals(poll, parties);
   const ordered = GRID_ORDER.map((id) => ({ id, label: blocs.find((b) => b.id === id)!.label, seats: totals[id] }));
@@ -46,9 +46,9 @@ export default async function Image() {
   for (; i < TOTAL; i++) cells.push(<rect key={i} x={(i % COLS) * P} y={Math.floor(i / COLS) * P} width={S} height={S} fill={CELL} />);
 
   const standfirst = isLive
-    ? `The count so far, as the ${KNESSET} seats of the Knesset. A government needs ${MAJORITY}.`
-    : `Where the race stands: the average of the latest ${mainPolls.length} polls as the ${KNESSET} seats of the Knesset. A government needs ${MAJORITY}.`;
-  const dateline = isLive ? "Central Elections Committee count" : `Polls to ${mediumDate(mainPolls[0].published)}`;
+    ? `The count so far, as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`
+    : `Where the race stands: the normalized average of the latest ${mainPolls.length} polls as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`;
+  const dateline = isLive ? live.state === "open" && live.freshness === "stale" ? "Saved count (stale)" : "Central Elections Committee count" : `Polls to ${mediumDate(mainPolls[0].published)}`;
 
   return new ImageResponse(
     (

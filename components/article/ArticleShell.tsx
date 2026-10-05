@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ComponentType, ReactNode } from "react";
 import "./article.css";
 import type { ArticleMeta } from "@/lib/articles";
+import CorrectionLink from "../CorrectionLink";
 
 const DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -37,10 +38,12 @@ export default function ArticleShell({
           <h1>{meta.title}</h1>
           <p className="dek">{meta.dek}</p>
           <p className="checked">Facts checked {DATE.format(new Date(meta.checked))}. Every number shows its source and date.</p>
+          {current && current.startsWith("/issues/") && <p className="article-export"><Link href={`/export/issue?issue=${({"haredi-draft":"draft",courts:"courts","war-hostages":"war","west-bank":"wb","religion-state":"relig",economy:"econ","palestinian-state":"pstate"} as Record<string,string>)[current.split("/").at(-1)!] ?? ""}`}>Print or export recorded party positions on this issue</Link></p>}
           {foreword}
           <div className="body">
             <Body />
           </div>
+          <p className="article-correction"><CorrectionLink page={current} /> · <Link href="/corrections">Correction history and verification</Link></p>
         </article>
         {siblings.length > 0 && (
           <nav className="rail" aria-label={`More in ${section.title}`}>

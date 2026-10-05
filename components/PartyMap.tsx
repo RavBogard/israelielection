@@ -3,6 +3,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./interactives.css";
 import "./map.css";
+import Link from "next/link";
+import {partyColor,partyInk,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE} from "@/lib/party-colors";
+import {readPartyMapSelection,partyMapSelectionHref} from "@/lib/party-map-state";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
 import { averagePoll, blocLabel, blocs, mainPolls, parties } from "@/lib/data";
@@ -18,7 +21,7 @@ const averaged = parties
 const seatsOf = (id: string) => averagePoll.results[id]?.seats ?? 0;
 const avgOf = new Map(averaged.map(({ p }) => [p.id, seatsOf(p.id)]));
 const blocSum = (b: BlocId) => Math.round(averaged.filter(({ p }) => p.bloc === b).reduce((s, { p }) => s + seatsOf(p.id), 0) * 10) / 10;
-const offMap = parties.filter((p) => !avgOf.has(p.id));
+const offMap = parties.filter((p) => !avgOf.has(p.id) || seatsOf(p.id) === 0);
 const fewerPolls = averaged.filter(({ a }) => a.n < mainPolls.length).map(({ p }) => p.name);
 
 const GAP = 6, LBL = 22;
@@ -37,17 +40,17 @@ function useSize(ref: React.RefObject<HTMLElement | null>) {
 
 function Overview() {
   const order: BlocId[] = ["net", "mid", "opp", "arab"];
-  const segments = order.map((b) => ({ id: b, seats: blocSum(b), color: `var(--b-${b})`, label: blocLabel[b] }));
+  const segments = order.flatMap((b) => averaged.filter(({p}) => p.bloc===b && seatsOf(p.id)>0).map(({p}) => ({id:p.id,seats:seatsOf(p.id),color:partyColor(p.id),label:p.name,href:`/parties?party=${p.id}`})));
   return (
     <>
-      <h2 className="ov">Four blocs, 120 seats</h2>
+      <h2 className="ov">Party shades, four bloc totals</h2>
       <SeatGrid variant="meter" segments={segments} labelRule />
       <table className="btable">
         <tbody>
           {blocs.map((b) => (
             <tr key={b.id}>
               <td>
-                <span className="sw" style={{ background: `var(--b-${b.id})`, marginRight: 8, verticalAlign: -1 }} />
+                <span className="sw" style={{ background: blocColorStrip(b.id), marginRight: 8, verticalAlign: -1 }} />
                 {b.label}
               </td>
               <td>{fmt(blocSum(b.id))}</td>
@@ -78,23 +81,20 @@ export default function PartyMap() {
   const { w: W, h: H } = useSize(mapRef);
 
   useEffect(() => {
-    const h = window.location.hash.slice(1);
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore after hydration
-    if (parties.some((p) => p.id === h)) setCurrent(h);
+    const restore = () => setCurrent(readPartyMapSelection(new URLSearchParams(window.location.search),window.location.hash,parties.map((p)=>p.id)));
+    restore(); window.addEventListener("popstate",restore); window.addEventListener("hashchange",restore);
+    return () => {window.removeEventListener("popstate",restore);window.removeEventListener("hashchange",restore);};
   }, []);
 
   const select = (id: string) => {
     const next = current === id ? null : id;
     setCurrent(next);
-    history.replaceState(null, "", next ? `#${next}` : window.location.pathname + window.location.search);
-    if (next && window.innerWidth <= 1100) {
-      const smooth = !matchMedia("(prefers-reduced-motion: reduce)").matches;
-      requestAnimationFrame(() => panelRef.current?.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" }));
-    }
+    history.pushState(history.state,"",partyMapSelectionHref(new URLSearchParams(window.location.search),window.location.hash,next,parties.map((p)=>p.id)));
   };
 
   useLayoutEffect(() => {
     panelRef.current?.scrollTo?.(0, 0);
+    if(current && window.innerWidth<=1100){ const smooth=!matchMedia("(prefers-reduced-motion: reduce)").matches;requestAnimationFrame(()=>panelRef.current?.scrollIntoView({behavior:smooth?"smooth":"auto",block:"start"})); }
   }, [current]);
 
   // Keep the tooltip inside the viewport.
@@ -147,14 +147,14 @@ export default function PartyMap() {
             }}
             style={{
               left: r.x + 1.5, top: r.y + 1.5, width: cw, height: ch,
-              ["--fill" as string]: `var(--b-${p.bloc})`, ["--fill-ink" as string]: `var(--b-${p.bloc}-ink)`,
+              ["--fill" as string]: partyColor(p.id), ["--fill-ink" as string]: partyInk(p.id),
             }}
           >
             <span className="nm">{p.name}</span>
             <span className="ld">{p.leader.split(" (")[0]}</span>
             <span className="av">
               {fmt(r.v)}
-              <small>avg seats</small>
+              <small>normalized seats</small>
             </span>
           </button>
         );
@@ -170,21 +170,15 @@ export default function PartyMap() {
         <div>
           <h1>The Party Map</h1>
           <p className="sub">
-            Each block&apos;s area is the party&apos;s average seat count across {mainPolls.length} polls (
+            Each block&apos;s area is the party&apos;s normalized coalition average across {mainPolls.length} polls (
             {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). Tap a party for who they are, who votes for
-            them, where they stand, and their seat numbers in each poll.
+            them, where they stand, and their seat numbers in each poll. <Link href="/polls#method">Average method</Link>.
           </p>
         </div>
-        <div className="legend">
-          {blocs.map((b) => (
-            <span key={b.id}>
-              <span className="sw" style={{ background: `var(--b-${b.id})` }} />
-              {b.label}
-            </span>
-          ))}
-        </div>
+        <details className="party-color-key"><summary>Distinct party shades and political families</summary><ul>{PARTY_COLOR_FAMILIES.map((family)=><li key={family.label}><b>{family.label}</b><div>{family.ids.map((id)=><span key={id}><span className="sw" style={{background:partyColor(id)}}/>{parties.find((p)=>p.id===id)?.name??id}</span>)}</div></li>)}</ul></details>
       </header>
 
+      <p className="party-color-note">{PARTY_COLOR_NOTE}</p>
       <div className="layout">
         <div className="mapcol">
           <div className="map" ref={mapRef} role="group" aria-label="Parties sized by average seats" onPointerLeave={() => setTip(null)}>
@@ -193,7 +187,7 @@ export default function PartyMap() {
           <div className="offmap">
             {offMap.map((p) => (
               <button key={p.id} type="button" className="chip" aria-pressed={current === p.id} onClick={() => select(p.id)}>
-                <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
+                <span className="sw" style={{ background: partyColor(p.id) }} />
                 <b>{p.name}</b>
                 <em>{p.status}</em>
               </button>
@@ -204,7 +198,8 @@ export default function PartyMap() {
             shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
           </p>
         </div>
-        <aside className="panel" ref={panelRef} aria-live="polite">
+        <aside className="panel" ref={panelRef} aria-live="polite" aria-label={party?`${party.name} profile`:"Party Map overview"}>
+          {party && <button type="button" className="party-overview" onClick={()=>select(party.id)}>Back to overview</button>}
           {party ? <ProfileDetail party={party} linkToPage /> : <Overview />}
         </aside>
       </div>

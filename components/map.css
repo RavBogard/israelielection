@@ -7,13 +7,13 @@
 @media (max-width: 700px) { .pm .map { aspect-ratio: 3 / 5; } }
 .pm .blocname { position: absolute; font-size: 13px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .pm .cell { position: absolute; font: inherit; text-align: left; border: 0; padding: 10px 12px; cursor: pointer; background: var(--fill); color: var(--fill-ink); overflow: hidden; display: flex; flex-direction: column; gap: 2px; transition: filter .12s; }
-.pm .cell:hover { filter: brightness(1.08); }
-.pm .cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.pm .cell:hover { box-shadow: inset 0 0 0 2px var(--fill-ink); }
+.pm .cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: inset 0 0 0 3px var(--fill-ink); }
 .pm .cell[aria-pressed="true"] { box-shadow: inset 0 0 0 4px var(--fill-ink); }
 .pm .cell .nm { font-weight: 600; font-size: clamp(13px, 1.15vw, 19px); line-height: 1.15; }
 .pm .cell .av { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2.4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
-.pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; opacity: .85; margin-left: 5px; }
-.pm .cell .ld { font-size: 13px; opacity: .88; }
+.pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; margin-left: 5px; }
+.pm .cell .ld { font-size: 13px; }
 .pm .cell.nold .ld { display: none; }
 .pm .cell.nosm .av small { display: none; }
 .pm .cell.tiny { padding: 6px 7px; }
@@ -36,3 +36,12 @@
 .pm .btable td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink); }
 .pm .tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 9px; z-index: 5; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .pm .cell { transition: none; } }
+
+.pm .party-color-key { max-width: 540px; font-size: 14px; }
+.pm .party-color-key summary { cursor: pointer; font-weight: 600; }
+.pm .party-color-key ul { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 12px; }
+.pm .party-color-key li > div { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 4px; }
+.pm .party-color-key li > div > span { display: inline-flex; align-items: center; gap: 6px; }
+.pm .party-color-note { font-size: 14px; color: var(--text); max-width: 90ch; margin: 0 0 18px; }
+.pm .party-overview { align-self: flex-start; border: 1px solid var(--line-2); padding: 7px 10px; background: transparent; font: inherit; cursor: pointer; color: var(--ink); }
+.pm .party-overview:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }

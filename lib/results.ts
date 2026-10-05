@@ -33,27 +33,32 @@ export type Count = {
   /** Votes per ballot letter. */
   votes: Record<string, number>;
   localities: number;
+  /** Double-envelope votes are not a geographic locality or a turnout denominator. */
+  envelopes?: { present: boolean; voted: number; valid: number };
 };
 
 /** Parse the committee's expc.csv (one row per locality; columns after "כשרים" are ballot letters). */
 export function parseExpc(csv: string): Count {
-  const rows = csv.replace(/^﻿/, "").trim().split(/\r?\n/).map((l) => l.split(","));
-  const head = rows[0].map((h) => h.trim());
-  const col = (name: string) => {
-    const i = head.indexOf(name);
-    if (i < 0) throw new Error(`expc.csv: no "${name}" column`);
-    return i;
-  };
-  const [iElig, iVoted, iInvalid, iValid] = [col("בזב"), col("מצביעים"), col("פסולים"), col("כשרים")];
-  const count: Count = { eligible: 0, voted: 0, invalid: 0, valid: 0, votes: {}, localities: 0 };
-  for (const r of rows.slice(1)) {
-    if (r.length < head.length) continue;
-    count.localities++;
-    count.eligible += Number(r[iElig]) || 0;
-    count.voted += Number(r[iVoted]) || 0;
-    count.invalid += Number(r[iInvalid]) || 0;
-    count.valid += Number(r[iValid]) || 0;
-    for (let i = iValid + 1; i < head.length; i++) count.votes[head[i]] = (count.votes[head[i]] ?? 0) + (Number(r[i]) || 0);
+  const rows = csv.replace(/^\uFEFF/, "").trim().split(/\r?\n/).map((line) => line.split(",").map((cell) => cell.trim()));
+  const head = rows[0];
+  while (head.at(-1) === "") { head.pop(); rows.slice(1).forEach((r) => { if (r.at(-1) === "") r.pop(); }); }
+  const col = (name: string) => { const i = head.indexOf(name); if (i < 0) throw new Error(`expc.csv: no "${name}" column`); return i; };
+  const [iCode, iElig, iVoted, iInvalid, iValid] = [col("סמל ישוב"), col("בזב"), col("מצביעים"), col("פסולים"), col("כשרים")];
+  if (iValid === head.length - 1 || new Set(head.slice(iValid + 1)).size !== head.length - iValid - 1) throw new Error("expc.csv: invalid ballot columns");
+  const count: Count = { eligible: 0, voted: 0, invalid: 0, valid: 0, votes: {}, localities: 0, envelopes: { present: false, voted: 0, valid: 0 } };
+  const seen = new Set<string>();
+  const integer = (s: string) => { if (!/^\d+$/.test(s)) throw new Error("expc.csv: invalid vote number"); const n = Number(s); if (!Number.isSafeInteger(n)) throw new Error("expc.csv: unsafe vote number"); return n; };
+  for (const row of rows.slice(1)) {
+    if (row.length !== head.length || !row[iCode] || seen.has(row[iCode])) throw new Error("expc.csv: truncated or duplicate locality");
+    seen.add(row[iCode]);
+    const [eligible, voted, invalid, valid] = [iElig, iVoted, iInvalid, iValid].map((i) => integer(row[i]));
+    const envelope = /^9{4,5}$/.test(row[iCode]);
+    const votes = row.slice(iValid + 1).map(integer);
+    if (voted !== valid + invalid || votes.reduce((a, b) => a + b, 0) !== valid || (!envelope && voted > eligible)) throw new Error("expc.csv: inconsistent totals");
+    if (envelope) { count.envelopes!.present = true; count.envelopes!.voted += voted; count.envelopes!.valid += valid; }
+    else { count.localities++; count.eligible += eligible; }
+    count.voted += voted; count.invalid += invalid; count.valid += valid;
+    votes.forEach((n, i) => { const letter = head[iValid + 1 + i]; count.votes[letter] = (count.votes[letter] ?? 0) + n; });
   }
   return count;
 }
@@ -153,7 +158,7 @@ export function resultsOpen(config: ResultsConfig, now = Date.now()): boolean {
 export const RESULTS_ID = "results";
 
 /** The count as a pseudo-poll, so the Coalition Builder can use it like any poll. */
-export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: string): Poll {
+export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: string, metadata?: { freshness: "fresh" | "stale"; sourceUpdatedAt: string | null }): Poll {
   const { lists, alloc } = results(count, config);
   const out: Poll["results"] = {};
   for (const [letters, id] of Object.entries(config.letters)) {
@@ -163,7 +168,8 @@ export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: st
   }
   return {
     id: RESULTS_ID,
-    pollster: "Results",
+    pollster: metadata?.freshness === "stale" ? "Saved results (stale)" : "Results",
+    resultState: metadata ? { ...metadata, capturedAt: fetchedAt } : undefined,
     firm: null,
     fieldwork: null,
     published: fetchedAt.slice(0, 10),
@@ -178,3 +184,8 @@ export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: st
 }
 
 const fmtVotes = (n: number) => Math.round(n).toLocaleString("en-US");
+
+/** Turnout among counted regular localities only; double envelopes have no matching denominator. */
+export function countedTurnout(count: Count): number | null {
+  return count.eligible ? (count.voted - (count.envelopes?.voted ?? 0)) / count.eligible : null;
+}

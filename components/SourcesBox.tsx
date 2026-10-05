@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import CorrectionLink from "./CorrectionLink";
 
 /**
  * The sources of a page, folded at its end. `children` are the <li> items. Open by default on
@@ -16,6 +17,7 @@ export default function SourcesBox({ children, count, open = false }: { children
         </span>
       </summary>
       <ol>{children}</ol>
+      <p className="src"><CorrectionLink /></p>
     </details>
   );
 }

@@ -1,0 +1,9 @@
+import { describe,it,expect } from "vitest";
+import { historicalElections,historicalPlaces } from "./votemap-data";
+import { localityHistory,readMapState,mapHref } from "./locality-history";
+describe("historical locality and URL state",()=>{
+ it("joins five elections by locality code and retains original election lists",()=>{ const history=localityHistory(historicalElections,4000);expect(history).toHaveLength(5);for(const record of history){ const row=record.election.rows.find((r)=>r[0]===4000)!;expect(record.row).toEqual(row);expect(record.turnout).toBe(row[2]/row[1]);expect(record.lists.reduce((sum,l)=>sum+l.votes,0)).toBeLessThanOrEqual(row[3]); }expect(history[0].lists.some((l)=>l.name==="Blue and White")).toBe(true);expect(history[4].lists.some((l)=>l.name==="Yesh Atid")).toBe(true);});
+ it("missing locality is unavailable rather than fabricated zero",()=>{ const history=localityHistory(historicalElections,88888);expect(history.every((h)=>h.row===null&&h.turnout===null&&h.lists.length===0)).toBe(true); });
+ it("validates election/list/locality and roundtrips a share URL",()=>{const q=new URLSearchParams(mapHref("2021","Likud",4000).split("?")[1]);expect(readMapState(q,historicalPlaces,historicalElections[3])).toEqual({election:"2021",list:"Likud",locality:4000,mode:"single"});expect(readMapState(new URLSearchParams("election=../../../x&locality=9999&list=invalid"),historicalPlaces,historicalElections[4])).toEqual({election:"2022",list:historicalElections[4].lists[0].name,locality:null,mode:"single"});});
+ it("preserves every map mode with the election/list/town and rejects unknown modes",()=>{for(const mode of ["single","mix","leader"] as const){const q=new URLSearchParams(mapHref("2021","Likud",4000,mode).split("?")[1]);expect(readMapState(q)).toEqual({election:"2021",list:"Likud",locality:4000,mode});}expect(readMapState(new URLSearchParams("mode=winner" )).mode).toBe("single");});
+});

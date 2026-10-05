@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
+import {undatedListNames} from "@/lib/poll-browser";
+import PollBrowser from "@/components/PollBrowser";
+import PollSensitivity from "@/components/PollSensitivity";
 import "@/components/interactives.css";
 import "@/components/polls.css";
 import PollTrends, { type TrendPanel } from "@/components/PollTrends";
-import SeatGrid from "@/components/SeatGrid";
+import PollComparison from "@/components/PollComparison";
 import { allPolls, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
-import { fmt, httpUrl, mediumDate, shortDate } from "@/lib/format";
-import { average, inWithoutVariant, pollLabel } from "@/lib/polls";
+import { fmt, mediumDate, shortDate } from "@/lib/format";
+import {partyColor} from "@/lib/party-colors";
+import { average, inWithoutVariant } from "@/lib/polls";
 import { averageTrend } from "@/lib/trend";
 
 export const metadata: Metadata = {
@@ -23,7 +28,9 @@ const filber = (poll: (typeof allPolls)[number]) => inWithoutVariant(poll, cfg);
 const round1 = (x: number) => fmt(Math.round(x * 10) / 10);
 
 export default function Page() {
-  const from = allPolls.at(-1)!.published;
+  const uncertainFigures=[...new Set(allPolls.flatMap(poll=>undatedListNames(poll,parties)))];
+  const dates = [...new Set(allPolls.map((p) => p.published))].sort();
+  const from = dates[0];
   const to = allPolls[0].published;
   const maxSeats = Math.max(...allPolls.flatMap((p) => Object.values(p.results).map((r) => r.seats)));
   const yMax = Math.max(30, Math.ceil(maxSeats / 5) * 5);
@@ -36,11 +43,12 @@ export default function Page() {
       .map<TrendPanel>((p) => ({
         id: p.id,
         name: p.name,
+        short: p.short,
         bloc: p.bloc,
         trend: averageTrend(p.id, allPolls, cfg),
         dots: allPolls
           .filter((poll) => poll.results[p.id])
-          .map((poll) => ({ date: poll.published, seats: poll.results[p.id].seats, pollster: poll.pollster, ref: filber(poll) })),
+          .map((poll) => ({ date: poll.published, seats: poll.results[p.id].seats, pollster: poll.pollster, ref: filber(poll),dateUncertain:poll.results[p.id].dateUncertain })),
       }))
       .sort((a, b) => (b.trend.at(-1)?.avg ?? 0) - (a.trend.at(-1)?.avg ?? 0)),
   })).filter((g) => g.panels.length);
@@ -54,12 +62,6 @@ export default function Page() {
     })
     .filter((r) => r.a)
     .sort((x, y) => blocs.findIndex((b) => b.id === x.p.bloc) - blocs.findIndex((b) => b.id === y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
-  // The grid fills in the order the table reads: Netanyahu's bloc, then the rest, each party its own run.
-  const gridOrder = ["net", "mid", "opp", "arab"];
-  const segments = [...rows]
-    .sort((x, y) => gridOrder.indexOf(x.p.bloc) - gridOrder.indexOf(y.p.bloc) || y.a!.avg - x.a!.avg)
-    .filter(({ a }) => a!.seats > 0)
-    .map(({ p, a }) => ({ id: p.id, seats: a!.seats, color: `var(--b-${p.bloc})`, label: p.name }));
 
   return (
     <div className="ix pl">
@@ -75,7 +77,7 @@ export default function Page() {
           </p>
         </header>
 
-        <h2 className="sec-h">The current average</h2>
+        <h2 id="method" className="sec-h">The current average and its method</h2>
         <p className="note">
           Each pollster&apos;s latest poll from the {cfg.currentWindowDays} days up to {mediumDate(to)} ({mainPolls.length} polls:{" "}
           {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/coalition-builder">Coalition Builder</Link> and{" "}
@@ -85,16 +87,19 @@ export default function Page() {
           Each list&apos;s average is taken over the polls where it passed the 3.25% threshold, so a list that passes never averages below 4
           seats; &ldquo;passes in k of n&rdquo; counts those polls out of the polls that reported the list. A list that passes in fewer than
           half is shown as near the threshold and left out of the Coalition Builder&apos;s default count. Polls are weighted by the square
-          root of their sample size; a poll that reports no sample size counts as the median of those that do. Because small lists sometimes miss the threshold, these averages can add to more than 120; the Coalition Builder, the Party Map and the home page scale them down in proportion to 120.{" "}
+          root of their sample size; a poll that reports no sample size counts as the median of those that do. Because small lists sometimes miss the threshold, these averages can add to more than 120; the Coalition Builder, the Party Map and the home page scale them down in proportion only when their sum exceeds 120. This table and the trend lines show passing-poll means before normalization; the builder, Party Map and homepage use normalized coalition values.{" "}
           {variant.note}
         </p>
+        {uncertainFigures.length>0&&<p className="note">Figure-date uncertainty: the register includes figures for {uncertainFigures.join(", ")} whose own dates were not recorded. They retain the register entry’s publication date in these charts and calculations; that date is not a confirmed date for each figure. The poll browser marks them † and its method card explains the distinction.</p>}
+        <PollComparison panels={groups.flatMap((g) => g.panels)} dates={dates} from={from} to={to} yMax={yMax} />
+        <h2 className="sec-h">Current averages by party</h2>
         <div className="avg-layout">
           <div className="table-scroll">
             <table className="data-table avg-table">
               <thead>
                 <tr>
                   <th>Party</th>
-                  <th className="num">Average</th>
+                  <th className="num">Passing-poll mean</th>
                   <th className="num">Range</th>
                   <th className="num">Polls</th>
                   <th className="num">{variant.label}</th>
@@ -104,7 +109,7 @@ export default function Page() {
                 {rows.map(({ p, a, w, lo, hi }) => (
                   <tr key={p.id}>
                     <td>
-                      <span className="sw" style={{ background: `var(--b-${p.bloc})` }} />
+                      <span className="sw" style={{ background: partyColor(p.id) }} />
                       <Link href={`/parties/${p.id}`}>{p.name}</Link>
                     </td>
                     <td className="num">
@@ -126,71 +131,19 @@ export default function Page() {
               </tbody>
             </table>
           </div>
-          <div className="avg-grid">
-            <SeatGrid segments={segments} labelRule title="The current average as 120 seats, each party its own run of cells" />
-            <p className="src">The average as 120 seats, each party a run of cells in its bloc&apos;s colour, largest first. Hover a cell for the party.</p>
-          </div>
+
         </div>
 
         <h2 className="sec-h">How each party has moved</h2>
         <p className="note">
-          Dots are single polls; the line is the running average as it stood on each date (same rule as above). Every panel uses the same 0–{yMax}{" "}
-          seat scale, so heights compare across parties. A dot at 0 is a poll that had the party below the 3.25% threshold. Hover or use the arrow keys
-          on a panel for the average on a date.
+          Dots are single polls; lines are the running passing-poll mean on each publication date, using the same method above. Per-party zoom shows small changes, with a minimum four-seat span and enough range for every dot. The bounds are labeled: heights across zoomed panels do not compare party size. Switch to the shared 0–{yMax} scale to compare size. A reported threshold failure stays at zero; zero is not the 3.25% vote threshold. Gaps mean no separate average. Point, tap or use left/right arrow keys for dated values.
         </p>
-        <PollTrends groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
+        <PollTrends dates={dates} groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
 
-        <h2 className="sec-h">Every poll</h2>
-        <p className="note">
-          Newest first. Every current poll is averaged. Grey rows are {variant.pollsters.join(" and ")}, left out of the &ldquo;{variant.label}&rdquo;
-          average only. &ldquo;b&rdquo; is below the threshold;
-          &ldquo;n/a&rdquo; is not reported separately.
-        </p>
-        <div className="table-scroll sheet">
-          <table className="data-table poll-table">
-            <thead>
-              <tr>
-                <th>Published</th>
-                <th>Pollster</th>
-                <th className="num">n</th>
-                {tracked.map((p) => (
-                  <th key={p.id} className="num" title={p.name}>{p.short}</th>
-                ))}
-                <th>Source</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allPolls.map((poll) => (
-                <tr key={poll.id} className={filber(poll) ? "ref" : undefined}>
-                  <td>{shortDate(poll.published)}</td>
-                  <td>{pollLabel(poll)}</td>
-                  <td className="num">{poll.n ? poll.n.toLocaleString("en-US") : ""}</td>
-                  {tracked.map((p) => {
-                    const r = poll.results[p.id];
-                    const g = poll.combined.find((c) => c.parties.includes(p.id));
-                    if (!r) return <td key={p.id} className="num na" title={g ? `${g.seats} combined with ${g.parties.join(" + ")}` : undefined}>{g ? `${g.seats}*` : "n/a"}</td>;
-                    if (r.belowThreshold) return <td key={p.id} className="num below" title={r.pct ? `Below threshold at ${r.pct}` : "Below threshold"}>b</td>;
-                    return <td key={p.id} className="num">{r.seats}</td>;
-                  })}
-                  <td>
-                    {httpUrl(poll.url) ? (
-                      <a href={httpUrl(poll.url)!} target="_blank" rel="noopener">{poll.via ?? new URL(poll.url!).hostname.replace(/^www\./, "")}</a>
-                    ) : (
-                      poll.via ?? ""
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="src" style={{ marginTop: 10 }}>
-          * Seats reported only for a group of parties together. Polls imported from{" "}
-          <a href="https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election" target="_blank" rel="noopener">
-            Wikipedia&apos;s polling tables
-          </a>{" "}
-          link to the source Wikipedia cites; the hand-checked polls from late September carry their own sources.
-        </p>
+        <Suspense fallback={<p>Loading the poll browser…</p>}>
+          <PollBrowser polls={allPolls} parties={parties} currentIds={mainPolls.map((p) => p.id)} config={cfg} />
+          <PollSensitivity polls={allPolls} parties={parties} blocs={blocs} config={cfg} />
+        </Suspense>
       </div>
     </div>
   );

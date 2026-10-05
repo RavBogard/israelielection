@@ -1,0 +1,72 @@
+{
+  "checked": "2026-10-05",
+  "provenance": "A small, explicitly selected source log prepared by Codex automated research on October 5, 2026. Source checking is not independent human approval. It is not generated from live headlines and is not an exhaustive news chronology.",
+  "entries": [
+    {
+      "id":"confidence-rule-correction", "title":"Initial confidence is a yes–no vote, not an unconditional 61", "date":"2026-10-05", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Rules", "kind":"Site correction",
+      "before":"The builder and results preparation described 61 seats as an unconditional requirement to win confidence.",
+      "after":"The simulation compares votes for and against, excludes abstentions, and distinguishes cabinet membership from outside support. Constructive no-confidence still requires 61 and an alternative government.",
+      "why":"A 60–59 initial vote can pass. Cabinet seats, parliamentary support and later replacement motions now have different explanations.",
+      "limit":"Role choices are hypothetical; fractional poll averages illustrate support and are not real votes or a stability forecast.",
+      "tools":[{"label":"Try an arrangement","href":"/coalition-builder"},{"label":"Formation guide","href":"/how-it-works/forming-a-government"}],
+      "sources":[{"title":"Basic Law: The Government, §§13 and 28","url":"https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf","date":null},{"title":"Basic Law: The Knesset, §25","url":"https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf","date":null},{"title":"IDI: Minority governments and simple-majority confidence","url":"https://en.idi.org.il/articles/28888","date":"2019-11-12"}],
+      "review":{"method":"Codex automated source review","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Corrected the unconditional 61 wording; preserved the previous claim above.","href":"/corrections#confidence-majority-wording"}], "supersedes":[]
+    },
+    {
+      "id":"surplus-assumptions-correction", "title":"Two unconfirmed surplus pairs excluded from estimates", "date":"2026-10-05", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Results", "kind":"Site correction",
+      "before":"Preparation estimates included all five reported or expected surplus pairs; the seats guide said all five counted.",
+      "after":"Provisional estimates assume only the three pairs reported signed by the press. Likud–Religious Zionism and Shas–UTJ are excluded as unconfirmed.",
+      "why":"An expected or unsigned agreement should not silently change a seat estimate as though it were an official filing.",
+      "limit":"The three included pairs remain provisional assumptions. A complete current official filing register has not been verified; neither press reporting nor this change establishes legal filing.",
+      "tools":[{"label":"Results assumptions","href":"/results"},{"label":"Surplus-agreement guide","href":"/how-it-works/seats#surplus-vote-agreements"}],
+      "sources":[{"title":"Jerusalem Post: Shas–UTJ agreement expected","url":"https://www.jpost.com/israel-election-2026/article-908296","date":"2026-09-10"},{"title":"Channel 14: Likud–Religious Zionism agreement still unsigned","url":"https://www.c14.co.il/article/1702522","date":"2026-09-15"},{"title":"IDI: how surplus agreements work","url":"https://en.idi.org.il/articles/47485","date":"2022-10-30"}],
+      "review":{"method":"Codex automated source review of retained attributed reports; official filing not established","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Replaced the five-pair default and corrected the seats guide to match the estimate assumptions.","href":"/how-it-works/seats#surplus-vote-agreements"}], "supersedes":[]
+    },
+    {
+      "id":"comparison-coverage-correction", "title":"Missing answers now stay incomplete in policy comparisons", "date":"2026-10-05", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Policy", "kind":"Model correction",
+      "before":"Broad, exclusive categories treated compatible aims as conflicting; missing positions could contribute to an agreement verdict.",
+      "after":"The comparison uses narrower questions about appointments, overrides, civil marriage and other distinct proposals. Aligned known positions with gaps remain partial.",
+      "why":"Constitutional codification can coexist with judicial independence. Sharing an economic priority does not establish the same tax or spending policy.",
+      "limit":"These are site-created questions extracted from attributed evidence, not a new questionnaire sent to parties. Historical records and current answers retain separate labels.",
+      "tools":[{"label":"Compare recorded policies","href":"/compare"}],
+      "sources":[{"title":"Ynet: party answers on the courts","url":"https://www.ynetnews.com/article/hkcjtk1cme","date":"2026-09-22"}],
+      "review":{"method":"Codex automated source review and classification audit","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Superseded the broad category verdicts. No underlying attributed party quotation was rewritten.","href":"/compare"}], "supersedes":[]
+    },
+    {
+      "id":"otzma-procedural-appeal", "title":"Court rejects the challenge to Otzma on procedural grounds", "date":"2026-10-04", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Ballot", "kind":"Reported development",
+      "before":"The committee had allowed Otzma Yehudit to run; the Democrats sought court intervention against the list and against Ben-Gvir and Tally Gotliv individually.",
+      "after":"The Jerusalem Post reports that the High Court rejected the requests on October 4 because procedural requirements were not met, leaving the party and candidates in the race.",
+      "why":"The rejection resolves this challenge; it does not decide the substantive allegations on their merits.",
+      "limit":"This entry relies on the named court report, not an independently read court judgment. It does not certify the complete final post-appeal roster.",
+      "tools":[{"label":"Otzma profile","href":"/parties/otzma"},{"label":"Published ballot directory","href":"/ballot#otzma"}],
+      "sources":[{"title":"Jerusalem Post: High Court rejects Democrats' bid","url":"https://www.jpost.com/israel-election-2026/article-910555","date":"2026-10-04"}],
+      "review":{"method":"Codex automated source review of full report","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Initial sourced log entry. Procedural dismissal is preserved separately from any decision on the merits.","href":null}], "supersedes":[]
+    },
+    {
+      "id":"committee-ballot-letters", "title":"Committee approval assigns ballot letters to 38 submitted lists", "date":"2026-09-27", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Ballot", "kind":"Reported development",
+      "before":"Submission included requested letter combinations, some with alternatives, before committee decisions.",
+      "after":"Walla reported approval of 38 lists and their letters on September 27, with Ra'am and the Joint List conditional on Supreme Court proceedings at that stage. The CEC's October 4 table supplies all 38 names, letters and record links.",
+      "why":"Readers can distinguish actual published letters from requested alternatives and reach every roster entry, including lists absent from the polls.",
+      "limit":"The September 27 conditional status is historical. The official table still describes submitted, nonfinal lists; final candidate publication is scheduled October 18. This entry does not update every individual appeal outcome.",
+      "tools":[{"label":"All 38 published entries","href":"/ballot"},{"label":"Party Map","href":"/parties"}],
+      "sources":[{"title":"Walla: committee approval and exceptions","url":"https://www.walla.co.il/news/politics/383955473","date":"2026-09-27"},{"title":"CEC submitted roster, updated October 4","url":"https://www.gov.il/he/pages/candidates-lists-26","date":"2026-10-04"},{"title":"CEC timetable","url":"https://www.gov.il/en/pages/time--table-26","date":null}],
+      "review":{"method":"Codex automated review of full Walla report and rendered CEC table","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Initial entry after direct verification of the complete rendered official table. Submission, approval and final publication remain distinct.","href":"/ballot"}], "supersedes":[]
+    },
+    {
+      "id":"byachad-alliance", "title":"Bennett and Lapid announce a joint electoral alliance", "date":"2026-04-26", "loggedAt":"2026-10-05T19:28:10Z", "topic":"Lists", "kind":"Historical development",
+      "before":"Bennett 2026 and Yesh Atid were separate organizations, with different recent electoral histories.",
+      "after":"Bennett and Lapid announced their joint B'Yachad run at an April 26 press conference, reported that day by the Jerusalem Post and explained by IDI on April 29. The current CEC roster lists B'Yachad under Bennett with letters רק.",
+      "why":"The current list is not identical to Yesh Atid, New Right or the old Yamina alliances; historical vote shares and earlier leader statements need that context.",
+      "limit":"Electoral cooperation does not establish a complete legal party merger or retroactively turn every earlier leader statement into a joint-list commitment.",
+      "tools":[{"label":"B'Yachad's organizational path","href":"/party-history#byachad"},{"label":"Current profile","href":"/parties/byachad"}],
+      "sources":[{"title":"Jerusalem Post: April 26 Bennett–Lapid press conference (updated April 27)","url":"https://www.jpost.com/israel-news/politics-and-diplomacy/article-894194","date":"2026-04-26"},{"title":"IDI: Bennett and Lapid join forces","url":"https://en.idi.org.il/articles/64068","date":"2026-04-29"},{"title":"CEC current submitted roster","url":"https://www.gov.il/he/pages/candidates-lists-26","date":"2026-10-04"}],
+      "review":{"method":"Codex automated source review","checked":"2026-10-05","human":null},
+      "history":[{"date":"2026-10-05","note":"Historical entry. During source review, corrected the event date from the April 29 IDI publication date to the April 26 announcement established by contemporaneous reporting.","href":null}], "supersedes":[]
+    }
+  ]
+}

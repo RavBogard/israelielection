@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { nextCountSummary } from "@/lib/results-summary";
 import type { CountSummary } from "@/app/api/count/route";
 
-const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", hour: "numeric", minute: "2-digit" });
+const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 
 /**
@@ -22,9 +23,10 @@ export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
       }
       try {
         const res = await fetch("/api/count", { cache: "no-store" });
-        if (res.ok && !stopped) setData((await res.json()) as CountSummary);
+        const incoming = res.ok ? await res.json() as CountSummary : null;
+        if (!stopped) setData((previous) => nextCountSummary(previous, incoming, new Date().toISOString()));
       } catch {
-        // Keep the last good strip; try again next minute.
+        if (!stopped) setData((previous) => nextCountSummary(previous, null, new Date().toISOString()));
       }
       if (!stopped) timer = setTimeout(tick, 60_000);
     };
@@ -41,7 +43,7 @@ export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
     <div className="live-strip" role="status" aria-live="polite">
       <div className="row">
         <Link href="/results" className="lead">
-          The count so far
+          {data.freshness === "stale" ? "Saved count (stale)" : "The count so far"}
         </Link>
         <ul>
           {data.blocs.map((b) => (
@@ -52,8 +54,8 @@ export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
           ))}
         </ul>
         <span className="meta">
-          {data.localities.toLocaleString("en-US")} localities counted{data.turnout !== null && <>, turnout {(data.turnout * 100).toFixed(1)}%</>}. Fetched{" "}
-          {IL.format(when)} Israel time, {ET.format(when)}.
+          {data.localities.toLocaleString("en-US")} regular localities{data.turnout !== null && <>, turnout where counted {(data.turnout * 100).toFixed(1)}%</>}. Captured{" "}
+          {IL.format(when)} Israel time, {ET.format(when)}. Source time {data.sourceUpdatedAt ? IL.format(new Date(data.sourceUpdatedAt)) : "not provided"}.
         </span>
       </div>
     </div>

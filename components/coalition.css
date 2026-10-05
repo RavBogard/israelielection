@@ -56,7 +56,7 @@
 .cb .slip .state { font-size: 12.5px; color: var(--ink-3); }
 .cb .slip.on { background: var(--fill); color: var(--fill-ink); border-color: var(--fill); }
 .cb .slip.on .letters, .cb .slip.on .nm, .cb .slip.on .seats, .cb .slip.on .prof { color: var(--fill-ink); }
-.cb .slip.on .ld, .cb .slip.on .seats small, .cb .slip.on .state { color: var(--fill-ink); opacity: .82; }
+.cb .slip.on .ld, .cb .slip.on .seats small, .cb .slip.on .state { color: var(--fill-ink); opacity: 1; }
 .cb .slip.on .foot { border-top-color: color-mix(in srgb, var(--fill-ink) 35%, transparent); }
 .cb .slip.on .prof { text-decoration-color: color-mix(in srgb, var(--fill-ink) 50%, transparent); }
 .cb .slip.on .state { font-weight: 600; }
@@ -106,4 +106,26 @@
 .cb .together .dep { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--ink); margin: 2px 0 0; }
 .cb .together .more { margin: 2px 0 0; font-size: 14px; }
 .cb .together .more a { color: var(--ink); font-weight: 600; }
+.cb .role-picker { display: flex; flex-direction: column; gap: 4px; padding: 8px 14px 12px; font: 12px/1.3 var(--body); }
+.cb .role-picker select { width: 100%; max-width: 100%; min-width: 0; padding: 7px 4px; font: 12px var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line-2); }
+.cb .role-picker select:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.cb .arrangement-scenarios { border-block: 1px solid var(--line); padding: 16px 0; margin: 20px 0; }
+.cb .arrangement-scenarios > p { font: 700 16px var(--body); }
+.cb .arrangement-scenarios > div:first-of-type { display: flex; flex-wrap: wrap; gap: 8px; }
+.cb .arrangement-scenarios .btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.cb .scenario-reading { max-width: 78ch; font: 16px/1.55 var(--display); }
+.cb .confidence { border-block: 1px solid var(--ink); padding: 14px 0; }
+.cb .confidence h3 { font: 700 20px/1.2 var(--display); margin: 0 0 12px; }
+.cb .confidence dl { margin: 0; }
+.cb .confidence dl div { display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); padding: 8px 0; font-size: 14px; }
+.cb .confidence dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.cb .confidence p, .cb .confidence li, .cb .arrangement-history { font-size: 14px; line-height: 1.5; }
+.cb .confidence .src, .cb .scenario-reading .src { font: 12px/1.5 var(--body); color: var(--ink-2); }
+.cb .arrangement-history summary { cursor: pointer; font-weight: 600; }
+.cb .mobile-arrangement { display: none; }
+.cb #arrangement-result { scroll-margin-top: 100px; }
+@media (max-width: 1100px) {
+  .cb .mobile-arrangement { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 10px; position: sticky; top: 60px; z-index: 10; background: var(--bg); border-block: 1px solid var(--ink); padding: 10px 0; font: 13px/1.4 var(--body); }
+  .cb .mobile-arrangement a { color: var(--ink); font-weight: 700; }
+}
 .cb .together .empty { border-bottom: 0; }

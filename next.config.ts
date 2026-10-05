@@ -16,4 +16,4 @@ const nextConfig: NextConfig = {
 
 // Reference pages are MDX in content/; their charts and party tables live in data/ (see lib/articles.ts).
 // Glossary terms link to /glossary on first use (lib/remark-glossary.mjs; a string so Turbopack can load it).
-export default createMDX({ options: { remarkPlugins: [path.join(process.cwd(), "lib/remark-glossary.mjs")] } })(nextConfig);
+export default createMDX({ options: { remarkPlugins: [path.join(process.cwd(), "lib/remark-glossary.mjs"), path.join(process.cwd(), "lib/remark-headings.mjs")] } })(nextConfig);

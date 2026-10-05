@@ -1,0 +1,53 @@
+name: Save election count
+on:
+  # Bounded calendar dates; the policy guard also pins the 2026 election and seven-day window.
+  schedule:
+    - cron: "7,22,37,52 * 27-31 10 *"
+    - cron: "7,22,37,52 * 1-3 11 *"
+  workflow_dispatch:
+concurrency:
+  group: results-snapshot
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bound automatic runs to the election period
+        id: window
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          start=$(date -u -d '2026-10-27T20:00:00Z' +%s)
+          end=$((start + 604800))
+          now=$(date -u +%s)
+          if [ "$now" -ge "$start" ] && { [ "$MANUAL" = 'true' ] || [ "$now" -le "$end" ]; }; then
+            echo 'allowed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v5
+        if: steps.window.outputs.allowed == 'true'
+      - uses: actions/setup-node@v5
+        if: steps.window.outputs.allowed == 'true'
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install job dependencies
+        if: steps.window.outputs.allowed == 'true'
+        run: npm ci --no-audit --no-fund
+      - name: Acquire fresh validated count
+        if: steps.window.outputs.allowed == 'true'
+        id: capture
+        run: npx tsx scripts/jobs/results-snapshot.mts
+      - name: Verify capture helpers
+        if: steps.capture.outputs.changed == 'true'
+        run: npx vitest run lib/results.test.ts lib/results-live.test.ts lib/results-snapshot.test.ts lib/results-summary.test.ts
+      - name: Persist a distinct count
+        if: steps.capture.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/results-snapshot.json
+          git commit -m 'results: save validated count'
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
