@@ -53,7 +53,7 @@ ${list}`;
 }
 
 const STOP = new Set("the a an and or of to in on for with at by from as is are was were be been it its that this he she they his her their after before over into than who what which said says will would not no new more israel israeli israelis".split(" "));
-const terms = (s: string) =>
+export const terms = (s: string) =>
   new Set(
     s
       .toLowerCase()

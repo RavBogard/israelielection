@@ -124,9 +124,19 @@ Done:
   directly; no Actions job sits in the path. Risk: the committee may tighten blocking on the
   night. Fallback to decide then: a manual upload of the CSV into data/.
 
+- Ruling (Daniel, 2026-10-05): party-text changes merge automatically when well sourced
+  ("hands off as possible"), superseding the plan's "always a PR". Implemented in the daily
+  workflow's `register` job: Gemini proposes leader/status/surplus/pledge changes from the
+  day's headlines; the grounding check requires real citations that name the party and share
+  words with the change; tests + build gate the commit; Daniel gets a closed `register` issue.
+- GATE: leader and status changes (withdrawal, disqualification, merger) auto-merge only when
+  two outlets report them; one outlet → PR labelled `party-text`. Proceeded because those are
+  the edits that change what the Coalition Builder shows, and a second outlet is cheap insurance.
+  Surplus-agreement changes don't update `data/results.json` automatically; the notice says so.
+
 ## Next (phase 2, remaining)
 - Done: polls job + validator, news page, daily briefing, election-night results.
-- Party-text change proposals (always a PR). Coalition-process tracker after the election.
+- Coalition-process tracker after the election.
 - Confirm surplus agreements (above). Fetch path for ToI and +972.
 - Reference pages: system mechanics, tribes, issues, timeline, glossary, sources/method.
 

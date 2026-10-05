@@ -20,6 +20,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 jobs:
   brief:
@@ -60,3 +61,69 @@ jobs:
           gh label create briefing --color 233f86 --description "Daily briefing notifications" 2>/dev/null || true
           url=$(gh issue create --title "Briefing $(date -u +%Y-%m-%d)" --body-file "$RUNNER_TEMP/briefing.md" --assignee RavBogard --label briefing)
           gh issue close "$url" --reason completed
+
+  # Party register updates from the same headlines. Grounded changes commit to main after the
+  # tests pass (Daniel, 2026-10-05: "hands off as possible"); a leader or status change from a
+  # single outlet opens a PR instead. Either way Daniel gets a GitHub notification.
+  register:
+    needs: brief
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
+
+      - name: Keys already waiting in open PRs
+        run: |
+          gh label create party-text --color 8a4baf --description "Party register changes waiting for review" 2>/dev/null || true
+          gh pr list --label party-text --state open --json body -q '.[].body' \
+            | grep -o '<!-- key: .* -->' | sed -e 's/^<!-- key: //' -e 's/ -->$//' > "$RUNNER_TEMP/skip.txt" || true
+
+      - name: Propose
+        id: job
+        run: >
+          npx tsx scripts/jobs/party-proposals.mts --skip-keys "$RUNNER_TEMP/skip.txt"
+          --report "$RUNNER_TEMP/auto.md" --review-out "$RUNNER_TEMP/review.json" --review-report "$RUNNER_TEMP/review.md"
+
+      - name: Gate (tests and build with the updated register)
+        if: steps.job.outputs.auto != '0'
+        run: npx vitest run && npm run build
+
+      - name: Commit automatic updates
+        if: steps.job.outputs.auto != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/parties.json
+          git commit -m "party register: $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+          gh label create register --color 2e7d32 --description "Automatic party register updates" 2>/dev/null || true
+          url=$(gh issue create --title "Party register updated $(date -u +%Y-%m-%d)" --body-file "$RUNNER_TEMP/auto.md" --assignee RavBogard --label register)
+          gh issue close "$url" --reason completed
+
+      - name: Open PR for review
+        if: steps.job.outputs.review != '0'
+        run: |
+          day=$(date -u +%Y-%m-%d)
+          branch="party/review-$day"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -- package-lock.json 2>/dev/null || true
+          git fetch -q origin main
+          git checkout -B "$branch" origin/main
+          cp "$RUNNER_TEMP/review.json" data/parties.json
+          git add data/parties.json
+          git commit -m "Party register changes for review, $day"
+          git push -f origin "$branch"
+          gh pr create --base main --head "$branch" --title "Party register: ${{ steps.job.outputs.review }} change(s) for review, $day" \
+            --body-file "$RUNNER_TEMP/review.md" --label party-text --assignee RavBogard

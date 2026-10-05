@@ -69,7 +69,7 @@ Update cadence: issue polling refreshes when IDI/INSS publish (monthly); the dai
 ## Dynamic updates — design
 - Repo on GitHub; Vercel deploys on push. Data lives in `data/*.json` in the repo so every change is a commit with a diff.
 - Polls job (daily, GitHub Action — ruled 2026-10-05; the job's output is a commit, so Actions, not Vercel cron): Claude reads the Wikipedia opinion-polling table for the 2026 election plus JPost/ToI roundups, writes `data/polls.json`. Validator: seats sum to 120; pollster on whitelist; fieldwork date present; no party moves more than 5 seats from its previous reading by the same pollster; parties below threshold flagged, not dropped. Pass → auto-commit → redeploy. Fail → open a PR and email Daniel.
-- Party text changes (positions, pledges, leaders): the same job proposes; always a PR; Daniel merges.
+- Party text changes (positions, pledges, leaders): the same job proposes; well-sourced changes merge automatically (Daniel, 2026-10-05: "hands off as possible"); a leader or status change reported by a single outlet goes to a PR.
 - News: server-side RSS fetch with ISR revalidation (15 min). No AI.
 - Briefing (daily): Claude writes from the day's headlines; each sentence carries a source link; posted automatically; emailed to Daniel. Kill switch: delete the day's file.
 - Election night: a route polling the CEC results feed every few minutes (or Kan/ToI live numbers if the CEC feed is not machine-readable; verify before Oct 27). Coalition Builder gets a "real results" poll option.
