@@ -63,6 +63,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 </a>
                 .
               </p>
+              <p className="privacy">
+                This site uses Google Analytics to understand visits and page use. <Link href="/about#privacy">Privacy</Link>.
+              </p>
             </div>
             <nav className="cols" aria-label="Site map">
               {NAV_GROUPS.map((g) => (

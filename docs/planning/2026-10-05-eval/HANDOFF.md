@@ -54,13 +54,14 @@ now names the selected parties with recorded pledges, rather than describing the
 as having pledged to exclude Arab parties. Bloc membership and seat arithmetic are unchanged.
 
 ## 7. Coalition Builder address
-Moving to /coalition-builder (the old /coalition redirect follows it). Ruling needed only if you
-prefer another slug (/build, /coalition).
+Resolved: Daniel has no preference (2026-10-05). /coalition-builder stays; the old /coalition
+redirect (308, query preserved) follows it. No change.
 
 ## 8. Google Analytics notice
-The content session added GA at your request. A footer privacy line ("This site uses Google
-Analytics to count visits; no accounts, no ads") was offered and not added. Ruling needed: add it
-or not.
+Resolved: Daniel approved the footer line "This site uses Google Analytics to understand visits
+and page use. Privacy." with Privacy linking to a Privacy section on About (2026-10-05). Footer
+line added by the design session; the About section, with Codex's approved text, is the content
+session's. No claim of anonymity or of a consent control: neither has been verified.
 
 ## 9. "Far-right" as a label in the site's voice
 The settlers and haredim pages use "far-right" for Otzma Yehudit and allies in page voice; press
