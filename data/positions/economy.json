@@ -1,19 +1,137 @@
 {
   "issue": "economy",
   "title": "What the parties say on the economy",
+  "question": "What should economic policy put first?",
+  "stances": [
+    {
+      "id": "market",
+      "label": "Free markets, a smaller state"
+    },
+    {
+      "id": "living-costs",
+      "label": "Lower living costs, narrow gaps"
+    },
+    {
+      "id": "reward-service",
+      "label": "Reward those who serve"
+    },
+    {
+      "id": "own-community",
+      "label": "Budgets for the communities it serves"
+    }
+  ],
   "note": "No published 2026 economic position found for Otzma Yehudit, Noam or Blue and White (checked October 2026). Rows quoting IDI's party guide give IDI's description of the party's platform, not a 2026 campaign document.",
   "rows": [
-    { "party": "likud", "text": "No written 2026 platform found. IDI's guide says the opening of the Likud charter refers, alongside nationalist goals, to \"support for a competitive free market with limited government involvement in the economy.\"", "source": "IDI party guide: Likud", "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/likud/", "date": "Accessed Oct 2026" },
-    { "party": "rz", "text": "Party leader and Finance Minister Bezalel Smotrich said the 2026 budget \"takes care of everyone and fights the cost of living.\"", "source": "Times of Israel", "url": "https://www.timesofisrael.com/knesset-approves-2026-budget-israels-largest-ever-sending-billions-to-haredi-institutions/", "date": "Mar 30, 2026" },
-    { "party": "shas", "text": "Aryeh Deri: \"It is unacceptable that a poor Haredi child would not receive the minimum support as a poor Arab child does, as demanded by the Finance Ministry.\" Said when Shas threatened to withhold support for the 2026 budget over food-stamp eligibility.", "source": "Times of Israel", "url": "https://www.timesofisrael.com/deri-shas-wont-support-2026-budget-until-haredi-kids-get-food-stamp-funds/", "date": "Dec 9, 2025" },
-    { "party": "utj", "text": "IDI's guide: UTJ \"promotes the interests of the Haredi community in Israel in the areas of education and welfare.\"", "source": "IDI party guide: United Torah Judaism", "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/united-torah-judaism/", "date": "Accessed Oct 2026" },
-    { "party": "poi", "text": "Ofer Winter: \"The more you serve, the more you receive.\" He says combat and reserve service should bring greater benefits.", "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-908996", "date": "Sep 17, 2026" },
-    { "party": "byachad", "text": "\"We will cut food prices by 30% within three years.\" The party says it will \"wage all-out war to break up the food cartels.\"", "source": "B'Yachad website (English)", "url": "https://be-yahad.org.il/en/", "date": "Oct 2026" },
-    { "party": "yashar", "text": "IDI's guide: \"Developing Israel's periphery and reducing social gaps so that all Israelis enjoy equal opportunities, equal rights, and equal responsibilities.\"", "source": "IDI party guide: Yashar!", "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/yashar/", "date": "Accessed Oct 2026" },
-    { "party": "dem", "text": "IDI's guide, on socio-economics: \"reduce the cost of living; improve social services; and rebuild the public sector.\"", "source": "IDI party guide: The Democrats", "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/", "date": "Accessed Oct 2026" },
-    { "party": "yb", "text": "IDI's guide: the party \"holds right-wing fiscal positions, and its platform attests to its commitment to encouraging private enterprise.\"", "source": "IDI party guide: Yisrael Beitenu", "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/yisrael-beitenu/", "date": "Accessed Oct 2026" },
-    { "party": "res", "text": "On joining forces with Yoaz Hendel, Yaron Zelekha pledged, in the Times of Israel's summary, to fight tycoons and the cost of living.", "source": "Times of Israel liveblog", "url": "https://www.timesofisrael.com/liveblog_entry/ditched-by-partner-center-right-hendel-joins-forces-with-economist-yaron-zelekha/", "date": "Sep 6, 2026" },
-    { "party": "jl", "text": "Yousef Jabareen told the Jerusalem Post that the party would seek \"action against organized crime, and increased budgets for Arab society and local authorities\" (the Post's summary). No joint economic platform found.", "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-907154", "date": "Sep 1, 2026" },
-    { "party": "raam", "text": "Mansour Abbas has argued that \"Arab political participation should be used to address crime, housing, economic development, and other problems facing Arab society\" (the Jerusalem Post's summary). No full manifesto found.", "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-907154", "date": "Sep 1, 2026" }
+    {
+      "party": "likud",
+      "text": "No written 2026 platform found. IDI's guide says the opening of the Likud charter refers, alongside nationalist goals, to \"support for a competitive free market with limited government involvement in the economy.\"",
+      "source": "IDI party guide: Likud",
+      "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/likud/",
+      "date": "Accessed Oct 2026",
+      "stance": "market"
+    },
+    {
+      "party": "rz",
+      "text": "Party leader and Finance Minister Bezalel Smotrich said the 2026 budget \"takes care of everyone and fights the cost of living.\"",
+      "source": "Times of Israel",
+      "url": "https://www.timesofisrael.com/knesset-approves-2026-budget-israels-largest-ever-sending-billions-to-haredi-institutions/",
+      "date": "Mar 30, 2026",
+      "stance": "living-costs"
+    },
+    {
+      "party": "shas",
+      "text": "Aryeh Deri: \"It is unacceptable that a poor Haredi child would not receive the minimum support as a poor Arab child does, as demanded by the Finance Ministry.\" Said when Shas threatened to withhold support for the 2026 budget over food-stamp eligibility.",
+      "source": "Times of Israel",
+      "url": "https://www.timesofisrael.com/deri-shas-wont-support-2026-budget-until-haredi-kids-get-food-stamp-funds/",
+      "date": "Dec 9, 2025",
+      "stance": "own-community"
+    },
+    {
+      "party": "utj",
+      "text": "IDI's guide: UTJ \"promotes the interests of the Haredi community in Israel in the areas of education and welfare.\"",
+      "source": "IDI party guide: United Torah Judaism",
+      "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/united-torah-judaism/",
+      "date": "Accessed Oct 2026",
+      "stance": "own-community"
+    },
+    {
+      "party": "poi",
+      "text": "Ofer Winter: \"The more you serve, the more you receive.\" He says combat and reserve service should bring greater benefits.",
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-election-2026/article-908996",
+      "date": "Sep 17, 2026",
+      "stance": "reward-service"
+    },
+    {
+      "party": "byachad",
+      "text": "\"We will cut food prices by 30% within three years.\" The party says it will \"wage all-out war to break up the food cartels.\"",
+      "source": "B'Yachad website (English)",
+      "url": "https://be-yahad.org.il/en/",
+      "date": "Oct 2026",
+      "stance": "living-costs"
+    },
+    {
+      "party": "yashar",
+      "text": "IDI's guide: \"Developing Israel's periphery and reducing social gaps so that all Israelis enjoy equal opportunities, equal rights, and equal responsibilities.\"",
+      "source": "IDI party guide: Yashar!",
+      "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/yashar/",
+      "date": "Accessed Oct 2026",
+      "stance": "living-costs"
+    },
+    {
+      "party": "dem",
+      "text": "IDI's guide, on socio-economics: \"reduce the cost of living; improve social services; and rebuild the public sector.\"",
+      "source": "IDI party guide: The Democrats",
+      "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/",
+      "date": "Accessed Oct 2026",
+      "stance": "living-costs"
+    },
+    {
+      "party": "yb",
+      "text": "IDI's guide: the party \"holds right-wing fiscal positions, and its platform attests to its commitment to encouraging private enterprise.\"",
+      "source": "IDI party guide: Yisrael Beitenu",
+      "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/yisrael-beitenu/",
+      "date": "Accessed Oct 2026",
+      "stance": "market"
+    },
+    {
+      "party": "res",
+      "text": "On joining forces with Yoaz Hendel, Yaron Zelekha pledged, in the Times of Israel's summary, to fight tycoons and the cost of living.",
+      "source": "Times of Israel liveblog",
+      "url": "https://www.timesofisrael.com/liveblog_entry/ditched-by-partner-center-right-hendel-joins-forces-with-economist-yaron-zelekha/",
+      "date": "Sep 6, 2026",
+      "stance": "living-costs"
+    },
+    {
+      "party": "jl",
+      "text": "Yousef Jabareen told the Jerusalem Post that the party would seek \"action against organized crime, and increased budgets for Arab society and local authorities\" (the Post's summary). No joint economic platform found.",
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-election-2026/article-907154",
+      "date": "Sep 1, 2026",
+      "stance": "own-community"
+    },
+    {
+      "party": "raam",
+      "text": "Mansour Abbas has argued that \"Arab political participation should be used to address crime, housing, economic development, and other problems facing Arab society\" (the Jerusalem Post's summary). No full manifesto found.",
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/israel-election-2026/article-907154",
+      "date": "Sep 1, 2026",
+      "stance": "own-community"
+    },
+    {
+      "party": "otzma",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "noam",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "bw",
+      "status": "none",
+      "checked": "2026-10-05"
+    }
   ]
 }

@@ -1,105 +1,146 @@
 {
   "issue": "courts",
   "title": "What the parties say on the courts",
-  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. No published position found for Noam (checked October 2026).",
+  "question": "Should power shift from the courts to the Knesset and government?",
+  "stances": [
+    {
+      "id": "curb",
+      "label": "Curb the Supreme Court's powers"
+    },
+    {
+      "id": "limited-override",
+      "label": "Allow a limited override"
+    },
+    {
+      "id": "codify",
+      "label": "Write the rules into Basic Laws"
+    },
+    {
+      "id": "independence",
+      "label": "Keep the courts independent"
+    }
+  ],
+  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. Likud declined it; its row adds its justice minister's 2025 law. Ra'am gave no current position; its row rests on its 2023 votes. Otzma Yehudit answered without a position. No published position found for Noam (checked October 2026).",
   "rows": [
     {
       "party": "likud",
-      "text": "Declined to answer Ynet's questions, saying the party \"does not participate in questionnaires.\"",
-      "source": "Ynet",
-      "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "text": "Declined to answer Ynet's questions, saying the party \"does not participate in questionnaires.\" On the record: Justice Minister Yariv Levin's law removing the Israel Bar Association's two seats on the judicial selection committee and giving the coalition and the opposition a veto over Supreme Court appointments passed 67 to 1 on Mar 27, 2025, with the opposition boycotting the vote.",
+      "source": "Ynet, Sep 22, 2026; Times of Israel, Mar 27, 2025",
+      "url": "https://www.timesofisrael.com/knesset-passes-law-greatly-boosting-political-control-over-judicial-appointments/",
+      "date": "Mar 27, 2025",
+      "stance": "curb",
+      "basis": "record"
     },
     {
       "party": "rz",
       "text": "The Supreme Court's president and deputy president chosen by a secret ballot of judges; split the attorney general's role into legal adviser and chief prosecutor; public hearings for nominees; a 61-vote override; limits on interim orders and on who may petition; laws struck down only by an expanded bench and a special majority. Zehut, Feiglin's party on the joint list, would abolish the selection committee and have voters elect justices directly.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "curb"
     },
     {
       "party": "otzma",
       "text": "Said it was still preparing a detailed judicial platform with legal experts and senior figures in the legal field.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "status": "none",
+      "checked": "2026-10-05"
     },
     {
       "party": "shas",
       "text": "Deri: \"fundamentally reform the judicial system and return power to the people and their elected representatives.\" No detailed new platform.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "curb"
     },
     {
       "party": "utj",
       "text": "Says the Supreme Court has accumulated excessive power and its authority needs to be reconsidered and more clearly defined.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "curb"
     },
     {
       "party": "poi",
       "text": "The balance has shifted too far toward the courts; an additional judicial tier; remove the Israel Bar Association from the selection committee; narrow the reasonableness standard.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "curb"
     },
     {
       "party": "yashar",
       "text": "Repeal the judge-selection law and replace it through a Basic Law; opposes an override clause; clearer rules for judicial review through a Basic Law governing the judiciary, alongside a Basic Law on legislation.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "codify"
     },
     {
       "party": "byachad",
       "text": "Formally define the powers of the Knesset, government and Supreme Court; a Basic Law on legislation setting how Basic Laws are enacted and when the court may intervene; repeal the appointments law, which would politicize the court system; the Declaration of Independence as a Basic Law.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "codify"
     },
     {
       "party": "yb",
       "text": "A written constitution put to a national referendum; amendments would need at least 80 of the Knesset's 120 members.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "codify"
     },
     {
       "party": "dem",
       "text": "The urgent problem is delays, overloaded courts and a shortage of judges, not excessive judicial power; an intermediate court of appeals; a comprehensive definition of the separation of powers.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "independence"
     },
     {
       "party": "bw",
       "text": "The judiciary holds too much power; regulate the Basic Laws more clearly while limiting the Supreme Court's ability to intervene in government decisions; more oversight of prosecutors; a stronger Knesset role in overseeing the executive.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "curb"
     },
     {
       "party": "res",
       "text": "First a Basic Law on legislation; an override only with more than 72 lawmakers; narrow, not abolish, the reasonableness standard; at least 61 votes to enact a Basic Law.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "limited-override"
     },
     {
       "party": "jl",
       "text": "Supports reforms that strengthen democratic protections and safeguard the rights of all citizens; an appointment mechanism that preserves judicial independence.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "independence"
     },
     {
       "party": "raam",
       "text": "Declined to give a current position; in 2023 it opposed the law abolishing the reasonableness standard and other measures to shift power from the courts.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026"
+      "date": "Sep 22, 2026",
+      "stance": "independence",
+      "basis": "record"
+    },
+    {
+      "party": "noam",
+      "status": "none",
+      "checked": "2026-10-05"
     }
   ]
 }

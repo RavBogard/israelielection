@@ -1,6 +1,21 @@
 {
   "issue": "religion-state",
   "title": "What the parties say on religion and state",
+  "question": "Who should run marriage, conversion and Shabbat rules?",
+  "stances": [
+    {
+      "id": "orthodox",
+      "label": "Keep them Orthodox-run"
+    },
+    {
+      "id": "civil-local",
+      "label": "Civil marriage, local Shabbat rules"
+    },
+    {
+      "id": "civil-pluralist",
+      "label": "Civil marriage, non-Orthodox conversion"
+    }
+  ],
   "note": "Shas and UTJ rows quote the Jerusalem Post's summary of the two parties' positions, and the Yashar row the Jewish Chronicle's; neither is the party's own text. Religious Zionism–Zehut and Noam rows come from israel2026.co.il, an aggregator site, not the parties' own pages. Likud and Otzma Yehudit rows describe their record in the 25th Knesset; no 2026 religion-and-state statement was found for either. No published position found for People of Israel, Reservists–Economic, Blue and White, the Joint List or Ra'am (checked October 2026).",
   "rows": [
     {
@@ -8,70 +23,108 @@
       "text": "Jerusalem Post summary of Shas and UTJ: \"They have firmly opposed expanding alternatives to religious law, including civil marriage\"; on conversion they \"favor keeping the authority to do so within the Orthodox religious establishment\"; they \"oppose changes that would expand non-Orthodox forms of worship at the Western Wall.\" Shas championed the July 2026 law returning kosher certification to the Chief Rabbinate (Times of Israel).",
       "source": "Jerusalem Post; Times of Israel",
       "url": "https://www.jpost.com/israel-election-2026/article-907982",
-      "date": "Sep 10, 2026"
+      "date": "Sep 10, 2026",
+      "stance": "orthodox"
     },
     {
       "party": "utj",
       "text": "Same positions as Shas in the Jerusalem Post summary. MK Moshe Gafni, sponsor of the Torah study Basic Law: \"This Basic Law will serve as the state's moral compass.\"",
       "source": "Times of Israel",
       "url": "https://www.timesofisrael.com/knesset-passes-contentious-basic-law-declaring-torah-study-a-constitutional-value/",
-      "date": "Jul 14, 2026"
+      "date": "Jul 14, 2026",
+      "stance": "orthodox"
     },
     {
       "party": "likud",
       "text": "Record: governed with Shas and UTJ as the kashrut, rabbinical-court and Torah study laws passed. On the Western Wall bill, Netanyahu let Likud and coalition MKs vote freely; Justice Minister Yariv Levin (Likud) backed it, saying it would \"put an end to the High Court's interference in the management of the Western Wall.\"",
       "source": "The Jewish Chronicle",
       "url": "https://www.thejc.com/news/israel/knesset-bill-orthodox-western-wall-mcambwxs",
-      "date": "Feb 26, 2026"
+      "date": "Feb 26, 2026",
+      "status": "none",
+      "checked": "2026-10-05"
     },
     {
       "party": "otzma",
       "text": "Record: MK Limor Son Har-Melech sponsored the July 2026 law allowing gender-segregated master's and doctoral programs, to \"advance women from sectors that have not received the opportunities they deserve.\"",
       "source": "Times of Israel",
       "url": "https://www.timesofisrael.com/knesset-passes-law-expanding-gender-segregation-in-academia/",
-      "date": "Jul 16, 2026"
+      "date": "Jul 16, 2026",
+      "status": "none",
+      "checked": "2026-10-05"
     },
     {
       "party": "rz",
       "text": "\"Jewish identity in education and state institutions.\"",
       "source": "israel2026.co.il (aggregator)",
       "url": "https://israel2026.co.il/en/parties.html",
-      "date": "2026"
+      "date": "2026",
+      "status": "none",
+      "checked": "2026-10-05"
     },
     {
       "party": "noam",
       "text": "\"Preserving Shabbat in public space and strengthening the Orthodox rabbinate, conversion and kashrut.\" Its leader, Avi Maoz, sponsored the Western Wall bill.",
       "source": "israel2026.co.il (aggregator, Hebrew page); IDI",
       "url": "https://israel2026.co.il/parties.html",
-      "date": "2026"
+      "date": "2026",
+      "stance": "orthodox"
     },
     {
       "party": "yashar",
       "text": "The Jewish Chronicle's summary: \"a secular party, but not anti-religious\" that \"supports civil marriage, divorce and same-sex marriage,\" with a \"'live and let live' approach to Shabbat observance, devolving decisions to municipalities.\" Eisenkot (Jerusalem Post, Sep 24, 2026): \"I am not religious, but I grew up in a traditional family and have profound respect for Judaism and tradition.\"",
       "source": "The Jewish Chronicle (Oct 4, 2026); Jerusalem Post (Sep 24, 2026)",
       "url": "https://www.thejc.com/news/israel/israel-election-yashar-party-eisenkoft-chance-winning-netanyahu-likud-f0jv6m9n",
-      "date": "Oct 4, 2026"
+      "date": "Oct 4, 2026",
+      "stance": "civil-local"
     },
     {
       "party": "byachad",
       "text": "Lapid: \"In the State of Israel, there should be a parallel civil marriage option for anyone who wants it,\" with legislation on equal rights for every couple sought within the first 100 days of the next government (Sep 15, 2026). Bennett, Apr 20, 2026, before the B'Yachad merger: \"We should allow cities to choose whether they want public transportation on Shabbat.\"",
       "source": "Jerusalem Post (Lapid, Sep 15, 2026; Bennett, Apr 20, 2026)",
       "url": "https://www.jpost.com/israel-election-2026/article-908711",
-      "date": "Sep 15, 2026"
+      "date": "Sep 15, 2026",
+      "stance": "civil-local"
     },
     {
       "party": "dem",
       "text": "\"Promote civil marriage\"; \"promote the operation of public transport on Shabbat in a limited format in secular localities\"; \"extend recognition of conversion to other religious bodies in addition to the Chief Rabbinate.\"",
       "source": "Israel Democracy Institute, party page",
       "url": "https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/",
-      "date": "2026"
+      "date": "2026",
+      "stance": "civil-pluralist"
     },
     {
       "party": "yb",
       "text": "\"We will demand the implementation of civil marriage and divorce options within Israel\"; \"Tel Aviv will not impose Shabbat transportation on Bnei Brak, and Bnei Brak will not impose its way of life on Tel Aviv\"; the Western Wall compromise as drafted by Avichai Mandelblit and Natan Sharansky.",
       "source": "Ynet, five-point pledge",
       "url": "https://www.ynetnews.com/article/b1cr1ogzzl",
-      "date": "Dec 1, 2025"
+      "date": "Dec 1, 2025",
+      "stance": "civil-local"
+    },
+    {
+      "party": "poi",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "bw",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "res",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "jl",
+      "status": "none",
+      "checked": "2026-10-05"
+    },
+    {
+      "party": "raam",
+      "status": "none",
+      "checked": "2026-10-05"
     }
   ]
 }
