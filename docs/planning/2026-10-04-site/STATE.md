@@ -364,3 +364,14 @@ Glyphs (components/HomeGlyphs.tsx, 300 by 190 each, drawn from live data): Build
 
 ## Handoff items 7 to 11 closed, 2026-10-05
 Lanes agreed with the content session (it: content, data, RULINGS, this STATE file's content rounds, jobs, data logic in lib, Scenarios; me: app, components, CSS, lib/site, lib/og, lib/watch, lib/compare, mdx-components, public, next.config; Codex: DECISIONS.md; I integrate). Applied: 7 no change; 8 footer line (mine, d656311) and About Privacy section (content, 4dabdb2); 9 ruling 119 and the haredim and settlers citations; 10 deck relabelled, fresh 31-page PDF with fonts embedded (17c6c2b); 11 Defense Ministry and NII-via-JNS citations. Daniel's signed note is the About foreword (5902400). Verified on production: footer link and anchor, foreword, 400 tests, lint and typecheck clean; PDF text scan clean on all 31 pages (one descriptive "Arab-led parties" on slide 26 kept as source wording); pages 8, 21 to 24, 26 to 28 and 30 inspected as rendered images, no overflow or wrap faults. Open for Daniel: the About foreword and body share their first sentence.
+
+## 2026-10-05 (later): handoff items and Teach scenarios
+- Glossary auto-links (485ed09); timeline gaps (6 events) and pledge-source fixes (4e0fa6a).
+- DECISIONS items 8-About, 9, 11 (4dabdb2) and 10, deck relabel + fresh PDF (17c6c2b). Public Sans
+  installed for this Windows user so PowerPoint exports embed the deck fonts.
+- Teach scenario cards published (af880c0), styled by the design session (20b8870); Daniel reviewing live.
+- Lanes: content session = main checkout, content/data/RULINGS/lib data logic; design session =
+  israelielection-design, app/components/CSS/og/mdx-components, final integration; Codex = DECISIONS.md.
+- Open: US-stakes explainer, masorti Likud voices, INES (step 4), election-night dry run; weekly
+  results-check (and Oct 26); exit polls by hand on the night; formation.json `actual` ~Nov 4.
+  Blocked on sources: a named Palestinian voice on no-vote; the Gaza toll actor.
