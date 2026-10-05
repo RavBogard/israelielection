@@ -1,0 +1,97 @@
+{
+  "threshold-history": {
+    "title": "Israel's electoral threshold, 1949–2026",
+    "kind": "table",
+    "columns": ["First election held under it", "Threshold (share of valid votes)"],
+    "rows": [
+      { "label": "1949", "cells": ["No legal threshold; one seat in 120 works out to 0.83%"] },
+      { "label": "1951", "cells": ["1%"] },
+      { "label": "1992", "cells": ["1.5%"] },
+      { "label": "2006", "cells": ["2%"] },
+      { "label": "2015", "cells": ["3.25% (passed by the Knesset in March 2014)"] }
+    ],
+    "question": "The share of valid votes a list needs to win any seats",
+    "source": "Israel Democracy Institute (Assaf Shapira), \"Wasted Votes, the Electoral Threshold, and the Relationship between Them\"",
+    "url": "https://en.idi.org.il/articles/46256",
+    "date": "2022-11-08",
+    "note": "IDI's Ofer Kenig gives the same steps (1% through 1988, 1.5% from 1992 to 2003, 2% for the next three elections) and dates the move to 3.25% to a law passed in March 2014, first applied in the 2015 election (IDI, January 26, 2015, https://en.idi.org.il/articles/5225). The two IDI articles agree once the year the law passed is separated from the year it was first used."
+  },
+  "threshold-2022": {
+    "title": "Lists near the threshold in 2022, share of valid votes",
+    "kind": "bars",
+    "unit": "%",
+    "max": 5,
+    "rows": [
+      { "label": "Hadash–Ta'al (5 seats)", "value": 3.75 },
+      { "label": "Labor (4 seats)", "value": 3.69 },
+      { "label": "The threshold", "value": 3.25 },
+      { "label": "Meretz (no seats)", "value": 3.16 },
+      { "label": "Balad (no seats)", "value": 2.91 },
+      { "label": "Jewish Home (no seats)", "value": 1.19 }
+    ],
+    "question": "Each list's votes as a share of 4,764,742 valid votes. The threshold was 154,855 votes; Meretz was 4,062 short and Balad 16,238 short.",
+    "source": "Central Elections Committee, results for the 25th Knesset (shares computed from the committee's totals)",
+    "url": "https://votes25.bechirot.gov.il/nationalresults",
+    "date": "2022-11-01",
+    "note": "Lists as they ran in 2022. In 2026 Hadash–Ta'al and Balad run together as the Joint List, and Labor and Meretz run together as The Democrats."
+  },
+  "quotas-2022": {
+    "title": "2022, step one: whole seats at 36,227 votes each",
+    "kind": "table",
+    "columns": ["List", "Votes", "Whole seats", "Final seats"],
+    "rows": [
+      { "label": "Likud", "cells": ["1,115,336", "30", "32"] },
+      { "label": "Yesh Atid", "cells": ["847,435", "23", "24"] },
+      { "label": "Religious Zionism–Otzma Yehudit", "cells": ["516,470", "14", "14"] },
+      { "label": "National Unity", "cells": ["432,482", "11", "12"] },
+      { "label": "Shas", "cells": ["392,964", "10", "11"] },
+      { "label": "United Torah Judaism", "cells": ["280,194", "7", "7"] },
+      { "label": "Yisrael Beiteinu", "cells": ["213,687", "5", "6"] },
+      { "label": "Ra'am", "cells": ["194,047", "5", "5"] },
+      { "label": "Hadash–Ta'al", "cells": ["178,735", "4", "5"] },
+      { "label": "Labor", "cells": ["175,992", "4", "4"] },
+      { "label": "Total", "cells": ["4,347,342", "113", "120"] }
+    ],
+    "question": "Votes for the ten lists that passed the threshold, divided by 36,227 (4,347,342 ÷ 120), whole numbers only",
+    "source": "Central Elections Committee, results for the 25th Knesset (seat arithmetic computed from the committee's totals)",
+    "url": "https://votes25.bechirot.gov.il/nationalresults",
+    "date": "2022-11-01",
+    "note": "The same seat price (36,227) and the same 113 whole seats appear in IDI's explainer (Ofer Kenig, March 16, 2026, https://en.idi.org.il/articles/63750). Religious Zionism–Otzma Yehudit was a joint list in 2022; in 2026 Religious Zionism runs with Zehut and Otzma Yehudit runs alone."
+  },
+  "leftover-2022": {
+    "title": "2022, step two: the seven leftover seats, one round at a time",
+    "kind": "table",
+    "columns": ["Round", "Won by", "Votes counted", "Seats before the round", "Votes ÷ (seats + 1)"],
+    "rows": [
+      { "label": "Round 1 (seat 114)", "cells": ["Shas + United Torah Judaism", "673,158", "17", "37,397.67"] },
+      { "label": "Round 2 (seat 115)", "cells": ["National Unity + Yesh Atid", "1,279,917", "34", "36,569.06"] },
+      { "label": "Round 3 (seat 116)", "cells": ["Likud + Religious Zionism", "1,631,806", "44", "36,262.36"] },
+      { "label": "Round 4 (seat 117)", "cells": ["Hadash–Ta'al", "178,735", "4", "35,747.00"] },
+      { "label": "Round 5 (seat 118)", "cells": ["Yisrael Beiteinu", "213,687", "5", "35,614.50"] },
+      { "label": "Round 6 (seat 119)", "cells": ["National Unity + Yesh Atid", "1,279,917", "35", "35,553.25"] },
+      { "label": "Round 7 (seat 120)", "cells": ["Likud + Religious Zionism", "1,631,806", "45", "35,474.04"] }
+    ],
+    "question": "Each round, every list or surplus pair divides its votes by (seats it already has + 1); the highest result wins the next seat",
+    "source": "Central Elections Committee, results for the 25th Knesset (rounds computed from the committee's totals)",
+    "url": "https://votes25.bechirot.gov.il/nationalresults",
+    "date": "2022-11-01",
+    "note": "Pairs with surplus agreements count as one list in this step. Labor (best figure 35,198.40) and Ra'am (32,341.17) never had the highest number. The same rounds, worked from the same totals, are in Matthew Shugart, Fruits and Votes, September 8, 2026 (https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)."
+  },
+  "agreements-2026": {
+    "title": "Surplus-vote agreements for the 2026 election",
+    "kind": "table",
+    "columns": ["Pair", "Status", "Reported"],
+    "rows": [
+      { "label": "Yashar! + The Democrats", "cells": ["Signed", "Signed September 10"], "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-908296", "date": "2026-09-10" },
+      { "label": "B'Yachad + Yisrael Beiteinu", "cells": ["Signed", "Signed September 10"], "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-908296", "date": "2026-09-10" },
+      { "label": "Joint List + Ra'am", "cells": ["Signed", "Signed Friday, September 11"], "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-908431", "date": "2026-09-13" },
+      { "label": "Likud + Religious Zionism–Zehut", "cells": ["Agreed; not yet signed as of September 15", "Agreed September 8; still unsigned a week later"], "source": "Channel 14", "url": "https://www.c14.co.il/article/1702522", "date": "2026-09-15" },
+      { "label": "Shas + United Torah Judaism", "cells": ["Expected", "\"Reportedly expected\" to sign"], "source": "Jerusalem Post", "url": "https://www.jpost.com/israel-election-2026/article-908296", "date": "2026-09-10" }
+    ],
+    "question": "Pairs of lists that agreed to count as one list when leftover seats are shared out",
+    "source": "Jerusalem Post and Channel 14, per row",
+    "url": "https://www.jpost.com/israel-election-2026/article-908296",
+    "date": "Checked 2026-10-05",
+    "note": "Each row has its own source. Agreements can be filed until 11 days before the election, October 16 (AIJAC, September 14, 2026, https://aijac.org.au/australia-israel-review/a-game-of-margins/)."
+  }
+}

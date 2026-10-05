@@ -1,0 +1,76 @@
+{
+  "envelopes": {
+    "title": "Double-envelope votes as a share of all valid votes, 2019–2022",
+    "kind": "bars",
+    "unit": "%",
+    "max": 12,
+    "question": "Valid votes in the \"outer envelopes\" row of each election's results-by-locality file, divided by all valid votes.",
+    "rows": [
+      { "label": "Apr 2019", "value": 5.54, "display": "5.54% (238,822 votes)", "url": "https://media21.bechirot.gov.il/files/expc.csv", "date": "Apr 9, 2019" },
+      { "label": "Sep 2019", "value": 6.32, "display": "6.32% (280,216)", "url": "https://media22.bechirot.gov.il/files/expc.csv", "date": "Sep 17, 2019" },
+      { "label": "Mar 2020", "value": 7.14, "display": "7.14% (327,702)", "url": "https://media23.bechirot.gov.il/files/expc.csv", "date": "Mar 2, 2020" },
+      { "label": "Mar 2021", "value": 9.56, "display": "9.56% (421,619)", "url": "https://media24.bechirot.gov.il/files/expc.csv", "date": "Mar 23, 2021" },
+      { "label": "Nov 2022", "value": 9.63, "display": "9.63% (458,714)", "url": "https://media25.bechirot.gov.il/files/expc.csv", "date": "Nov 1, 2022" }
+    ],
+    "source": "Central Elections Committee, results by locality",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "2019–2022",
+    "note": "Computed from the committee's five locality files. The double-envelope votes sit in one row with no locality (code 99999 in April 2019, 9999 after). The Israel Democracy Institute's own table divides by all ballots cast, valid and invalid, so its figures differ slightly (for example 9.59% for 2021)."
+  },
+  "envelopes-2022": {
+    "title": "How double-envelope votes differed, 2022",
+    "kind": "table",
+    "columns": ["List (as it ran in 2022)", "Share of double-envelope votes", "Share of votes counted by locality"],
+    "rows": [
+      { "label": "Likud", "cells": ["23.5%", "23.4%"] },
+      { "label": "Yesh Atid", "cells": ["16.9%", "17.9%"] },
+      { "label": "Religious Zionism–Otzma Yehudit", "cells": ["15.5%", "10.4%"] },
+      { "label": "National Unity", "cells": ["10.6%", "8.9%"] },
+      { "label": "Shas", "cells": ["6.8%", "8.4%"] },
+      { "label": "United Torah Judaism", "cells": ["3.7%", "6.1%"] },
+      { "label": "Ra'am", "cells": ["1.7%", "4.3%"] },
+      { "label": "Hadash–Ta'al", "cells": ["1.7%", "4.0%"] },
+      { "label": "Meretz", "cells": ["3.1%", "3.2%"] },
+      { "label": "Balad", "cells": ["1.6%", "3.0%"] }
+    ],
+    "question": "Each list's share of valid votes, in the double-envelope row and in all other rows of the 2022 locality file.",
+    "source": "Central Elections Committee, results by locality",
+    "url": "https://media25.bechirot.gov.il/files/expc.csv",
+    "date": "Nov 1, 2022",
+    "note": "Computed from the committee's file. Selected lists; Yisrael Beiteinu, Labor and Jewish Home are left out of the table. Lists are shown as they ran that year."
+  },
+  "turnout": {
+    "title": "National turnout, 2019–2022",
+    "kind": "bars",
+    "unit": "%",
+    "question": "Votes cast as a share of eligible voters (\"שיעור ההצבעה\", the committee's turnout rate).",
+    "rows": [
+      { "label": "Apr 2019", "value": 68.46, "display": "68.46%", "url": "https://votes21.bechirot.gov.il/nationalresults", "date": "Apr 9, 2019" },
+      { "label": "Sep 2019", "value": 69.83, "display": "69.83%", "url": "https://votes22.bechirot.gov.il/nationalresults", "date": "Sep 17, 2019" },
+      { "label": "Mar 2020", "value": 71.52, "display": "71.52%", "url": "https://votes23.bechirot.gov.il/nationalresults", "date": "Mar 2, 2020" },
+      { "label": "Mar 2021", "value": 67.44, "display": "67.44%", "url": "https://votes24.bechirot.gov.il/nationalresults", "date": "Mar 23, 2021" },
+      { "label": "Nov 2022", "value": 70.63, "display": "70.63%", "url": "https://votes25.bechirot.gov.il/nationalresults", "date": "Nov 1, 2022" }
+    ],
+    "source": "Central Elections Committee, official national results",
+    "url": "https://votes25.bechirot.gov.il/nationalresults",
+    "date": "2019–2022",
+    "note": "Each row is from that election's official results page. The national figure includes double-envelope votes."
+  },
+  "turnout-arab": {
+    "title": "Turnout among Palestinian citizens of Israel, 2019–2022",
+    "kind": "bars",
+    "unit": "%",
+    "question": "Turnout in Arab and Druze localities, from Central Elections Committee data.",
+    "rows": [
+      { "label": "Apr 2019", "value": 49.2, "display": "49.2%", "source": "IDI (Rudnitzky)", "url": "https://en.idi.org.il/articles/28660", "date": "Sep 23, 2019" },
+      { "label": "Sep 2019", "value": 59.2, "display": "59.2%", "source": "IDI (Rudnitzky)", "url": "https://en.idi.org.il/articles/28660", "date": "Sep 23, 2019" },
+      { "label": "Mar 2020", "value": 64.8, "display": "64.8%", "source": "IDI (Rudnitzky)", "url": "https://en.idi.org.il/articles/30961", "date": "Mar 10, 2020" },
+      { "label": "Mar 2021", "value": 44.6, "display": "44.6%", "source": "IDI (Rudnitzky)", "url": "https://en.idi.org.il/articles/34420", "date": "Apr 27, 2021" },
+      { "label": "Nov 2022", "value": 53.2, "display": "53.2%", "source": "IDI (Rudnitzky)", "url": "https://en.idi.org.il/articles/47986", "date": "Dec 25, 2022" }
+    ],
+    "source": "Israel Democracy Institute, Arik Rudnitzky",
+    "url": "https://en.idi.org.il/articles/47986",
+    "date": "2019–2022",
+    "note": "IDI's measure is turnout in \"Arab and Druze localities\": it includes Druze towns and leaves out Arab voters in mixed cities. It also leaves out double-envelope votes, which IDI says made the recorded figure lower than the true one in 2021, when many voters in quarantine cast double envelopes (IDI, Apr 27, 2021). Not directly comparable with the national chart, which includes double envelopes."
+  }
+}

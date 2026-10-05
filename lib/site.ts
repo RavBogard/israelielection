@@ -20,6 +20,7 @@ export const NAV_GROUPS: readonly { label: string; items: readonly NavItem[] }[]
   {
     label: "Understand",
     items: [
+      { href: "/how-it-works", label: "How it works" },
       { href: "/issues", label: "Issues" },
       { href: "/communities", label: "Communities" },
       { href: "/vote-map", label: "Vote map" },

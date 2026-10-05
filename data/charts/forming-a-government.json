@@ -1,0 +1,81 @@
+{
+  "clock": {
+    "title": "The post-election clock in Basic Law: The Government",
+    "kind": "table",
+    "columns": ["Step", "Who acts", "Time allowed"],
+    "rows": [
+      { "label": "1. Consultations and first mandate", "cells": ["The president, after consulting every list entering the Knesset", "Within 7 days of the official results (art. 7)"] },
+      { "label": "2. First attempt", "cells": ["The Knesset member given the task", "28 days, plus up to 14 more at the president's discretion (art. 8)"] },
+      { "label": "3. Second mandate", "cells": ["The president picks another member, or tells the Speaker there is no prospect", "Within 3 days; the second candidate has 28 days, no extension (art. 9)"] },
+      { "label": "4. The Knesset's turn", "cells": ["A majority of Knesset members (61) may ask, in writing, for a named member", "Request within 21 days; the president assigns the task within 2 days, and that member then has 14 days (art. 10)"] },
+      { "label": "5. Dissolution", "cells": ["Automatic if no request is made or the third attempt fails", "New election on the last Tuesday before 90 days have passed (art. 11)"] },
+      { "label": "6. Confidence vote", "cells": ["The Knesset, after the government presents its guidelines and ministers", "A sitting within 7 days of the Knesset being notified (art. 13)"] }
+    ],
+    "question": "Time limits for forming a government after an election, as set in articles 7–13.",
+    "source": "Basic Law: The Government, Knesset unofficial English translation (amendments through Aug 15, 2023)",
+    "url": "https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf",
+    "date": "August 2023",
+    "note": "Different steps apply when a government falls mid-term (a no-confidence vote, art. 28, or a prime minister's dissolution order, art. 29)."
+  },
+  "five-elections": {
+    "title": "Five elections, 2019–2022: what followed each",
+    "kind": "table",
+    "columns": ["Election", "What followed", "Government sworn in"],
+    "rows": [
+      {
+        "label": "April 9, 2019",
+        "cells": ["Netanyahu could not form a coalition in the 42 days allowed; the Knesset voted 74–45 to dissolve itself (May 30)", "None"],
+        "source": "Times of Israel", "url": "https://www.timesofisrael.com/knesset-votes-for-new-elections-on-september-17-after-pm-fails-to-form-coalition/", "date": "May 30, 2019"
+      },
+      {
+        "label": "September 17, 2019",
+        "cells": ["Netanyahu, then Gantz, failed; no candidate gathered 61 signatures in the 21-day window, and the Knesset dissolved (Dec 11)", "None"],
+        "source": "Times of Israel", "url": "https://www.timesofisrael.com/israel-calls-another-election-for-march-the-third-in-a-year/", "date": "Dec 12, 2019"
+      },
+      {
+        "label": "March 2, 2020",
+        "cells": ["Netanyahu–Gantz rotation government; the Knesset dissolved in December 2020 when the budget was not passed", "May 17, 2020, by 73–46 (76 days after the vote)"],
+        "source": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog_entry/new-government-officially-sworn-in-with-parliamentary-vote/", "date": "May 17, 2020"
+      },
+      {
+        "label": "March 23, 2021",
+        "cells": ["Eight-party Bennett–Lapid government; the Knesset dissolved itself 92–0 on June 30, 2022", "June 13, 2021, by 60–59 (82 days)"],
+        "source": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog_entry/bennett-lapid-government-wins-knesset-majority-netanyahu-is-out-after-12-years/", "date": "June 13, 2021"
+      },
+      {
+        "label": "November 1, 2022",
+        "cells": ["Netanyahu, recommended by 64 members, formed a six-party coalition; the Knesset served until July 2026", "Dec 29, 2022, by 63–54 (58 days)"],
+        "source": "Times of Israel", "url": "https://www.timesofisrael.com/netanyahu-resumes-role-as-pm-as-israels-most-hardline-government-ever-takes-office/", "date": "Dec 29, 2022"
+      }
+    ],
+    "source": "Times of Israel",
+    "url": "https://www.timesofisrael.com/israel-calls-another-election-for-march-the-third-in-a-year/",
+    "date": "2019–2022",
+    "note": "Each row cites its own Times of Israel report. Day counts are the days from election day to the swearing-in, computed from those dates. The December 2020 dissolution: IDI, Jan 28, 2026. Gantz's 2019 mandate: Times of Israel, Oct 23, 2019. The 2022 recommendations: Al Jazeera, Nov 11, 2022. Coalition parties: IDI, Apr 15, 2026. The 25th Knesset's dissolution: Ynet, July 17, 2026."
+  },
+  "coalition-size": {
+    "title": "Knesset members in the coalition when each government was formed, 1992–2022",
+    "kind": "bars",
+    "unit": "seats",
+    "max": 120,
+    "rows": [
+      { "label": "1992 Rabin", "value": 62 },
+      { "label": "1996 Netanyahu", "value": 66 },
+      { "label": "1999 Barak", "value": 75 },
+      { "label": "2001 Sharon", "value": 78 },
+      { "label": "2003 Sharon", "value": 68 },
+      { "label": "2006 Olmert", "value": 67 },
+      { "label": "2009 Netanyahu", "value": 74 },
+      { "label": "2013 Netanyahu", "value": 68 },
+      { "label": "2015 Netanyahu", "value": 61 },
+      { "label": "2020 Netanyahu", "value": 73 },
+      { "label": "2021 Bennett", "value": 61 },
+      { "label": "2022 Netanyahu", "value": 64 }
+    ],
+    "question": "MKs in the coalition, as of the day the government was sworn in and up to a week afterwards.",
+    "source": "Israel Democracy Institute (Ofer Kenig), Table 1",
+    "url": "https://en.idi.org.il/articles/63976",
+    "date": "April 15, 2026",
+    "note": "Out of 120 seats. Elections in April and September 2019 produced no government, so they have no bar."
+  }
+}

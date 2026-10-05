@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { allCharts, allPositions, COMMUNITIES, ISSUES } from "./articles";
+import { allCharts, allPositions, COMMUNITIES, GUIDES, ISSUES } from "./articles";
 import { parties } from "./data";
 
 /*
@@ -13,6 +13,7 @@ const ROOT = process.cwd();
 const pages = [
   ...ISSUES.map((slug) => ({ slug, kind: "issue" as const, file: `content/issues/${slug}.mdx` })),
   ...COMMUNITIES.map((slug) => ({ slug, kind: "community" as const, file: `content/communities/${slug}.mdx` })),
+  ...GUIDES.map((slug) => ({ slug, kind: "guide" as const, file: `content/guides/${slug}.mdx` })),
   { slug: "american-lens", kind: "essay" as const, file: "content/american-lens.mdx" },
 ];
 const present = pages.filter((p) => existsSync(path.join(ROOT, p.file)));
@@ -20,10 +21,11 @@ const charts = allCharts();
 const positions = allPositions();
 const partyIds = new Set(parties.map((p) => p.id));
 const ROUTES = new Set([
-  "/", "/parties", "/polls", "/news", "/results", "/teach", "/issues", "/communities", "/american-lens",
+  "/", "/parties", "/polls", "/news", "/results", "/teach", "/issues", "/communities", "/american-lens", "/vote-map", "/how-it-works",
   ...parties.map((p) => `/parties/${p.id}`),
   ...ISSUES.map((s) => `/issues/${s}`),
   ...COMMUNITIES.map((s) => `/communities/${s}`),
+  ...GUIDES.map((s) => `/how-it-works/${s}`),
 ]);
 
 const read = (f: string) => readFileSync(path.join(ROOT, f), "utf8");

@@ -8,7 +8,7 @@ import path from "node:path";
  * data with a diff, and lib/articles.test.ts can check them.
  */
 
-export type Kind = "issue" | "community" | "essay";
+export type Kind = "issue" | "community" | "guide" | "essay";
 
 export type ArticleMeta = {
   title: string;
@@ -40,8 +40,12 @@ export const COMMUNITIES = [
   "settlers",
 ] as const;
 
+/** How it works: the mechanics of the system, at /how-it-works/<slug>. */
+export const GUIDES = ["seats", "forming-a-government", "voting"] as const;
+
 export type IssueSlug = (typeof ISSUES)[number];
 export type CommunitySlug = (typeof COMMUNITIES)[number];
+export type GuideSlug = (typeof GUIDES)[number];
 
 /** One bar (kind "bars") or one row (kind "table"). */
 export type ChartRow = {
@@ -114,4 +118,4 @@ export function allPositions(): Record<string, Positions> {
 }
 
 export const hrefFor = (kind: Kind, slug: string) =>
-  kind === "issue" ? `/issues/${slug}` : kind === "community" ? `/communities/${slug}` : `/${slug}`;
+  kind === "issue" ? `/issues/${slug}` : kind === "community" ? `/communities/${slug}` : kind === "guide" ? `/how-it-works/${slug}` : `/${slug}`;

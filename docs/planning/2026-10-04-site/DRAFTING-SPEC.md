@@ -85,3 +85,17 @@ Then the body: Markdown `##` sections, plus these components, which need no impo
   - Fix everything it flags in your files. Other pages' failures are not yours.
   - Do not run `next build` or `next dev`; other agents share this tree.
 - Final message: the files written, the word count, the charts, anything left out for lack of verification, and any party-profile conflict found.
+
+## How it works pages (added 2026-10-05)
+- **Files:** `content/guides/<slug>.mdx`, served at `/how-it-works/<slug>`. Charts go in `data/charts/<slug>.json`. There is no Positions table.
+- **Shape:** 600–1,400 words of prose and at least three `##` sections. Use charts or tables where numbers line up; for example, a worked seat-allocation table.
+- **The last section is "Misreadings":** what an American reader is likely to get wrong, corrected with facts.
+- **Inputs:**
+  - `docs/class-02-research-system-tribes-map.md` §A (mechanics);
+  - `docs/class-07-bader-ofer.md`;
+  - `data/results.json` (2026 threshold, ballot letters, surplus agreements and their status);
+  - `docs/research/data-vote-map/*.md` (envelope votes, CEC files);
+  - `public/vote-map/*.json`, if you need computed figures.
+  These memos cite Wikipedia in places. The page may not (see lib/articles.test.ts), so confirm each such fact at a primary or reputable source (IDI, the Knesset, CEC, Times of Israel, JPost, Ynet), or cut it.
+- **Fresh research is allowed** (WebSearch/WebFetch). Every new fact needs a URL you opened, and the date.
+- **Internal links:** `/how-it-works/<slug>`, `/vote-map`, `/results`, `/polls`, `/parties/<id>`, `/issues/<slug>`, `/communities/<slug>`, and `/#build` for the Coalition Builder. `/#build` is not in the test's route list, so link `/` instead.

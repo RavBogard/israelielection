@@ -215,7 +215,8 @@ Party-profile items the reference pages turned up. data/parties.json was not edi
 - Confirm Likud–RZ and Shas–UTJ surplus agreements nearer election day.
 - Done: issues (7), communities (9), American lens.
 - Done: vote map, 2019–2022 (add 2026 after the final file).
-- Still to do: reference pages for system mechanics, timeline, glossary, how Israelis vote, election night, sources/method.
+- Done: How it works (seats, forming a government, voting), each drafted and then fact-checked by a separate agent; menu item under Understand.
+- Still to do: timeline, glossary, election-night page (partly covered by /how-it-works/voting and /results), sources/method (Daniel).
 
 ## Vote map (Oct 5)
 - /vote-map: 2019a–2022 by locality.

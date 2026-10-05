@@ -1,0 +1,67 @@
+export const meta = {
+  "title": "From votes to seats",
+  "dek": "How Israel turns national votes into 120 Knesset seats: closed party lists, the 3.25% threshold, the Bader-Ofer count and surplus-vote agreements.",
+  "checked": "2026-10-05"
+};
+
+## One country, one ballot, 120 seats
+
+The Knesset has 120 members, and they are elected in "a single, nationwide constituency." Voters "elect party lists, not members of Knesset," and seats are shared out in proportion to the vote ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)).
+
+There are no districts. A voter in Haifa and a voter in Eilat choose from the same lists, and every valid vote goes into one national pool. Each list files a ranked slate of candidates before the election, and voters cannot reorder it. "If a party wins 10 seats, the first 10 people on the list become Knesset members" ([Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). For an American reader, the nearest picture is one at-large race for all 120 seats, in which people vote for a party's slate rather than for a person.
+
+Thirty-eight lists qualified for the October 27, 2026 ballot ([Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). Each appears on the ballot under a short code of Hebrew letters; the [results page](/results) maps them to the parties.
+
+## The 3.25% threshold
+
+A list needs at least 3.25% of the valid votes to win any seats at all; this has been the rule "since the 2015 election" ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)). The threshold has been raised several times. Summaries of that history sometimes give different years for the last step; the two IDI accounts agree once the law is separated from the election: Ofer Kenig writes that the Knesset passed the 3.25% law in March 2014 ([IDI, Jan 26, 2015](https://en.idi.org.il/articles/5225)), and Assaf Shapira dates it to 2015, the first election held under it ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)).
+
+<Chart id="seats.threshold-history" />
+
+How many votes 3.25% means depends on turnout, so the exact number is known only after the count. In 2022 it was 154,855 votes, 3.25% of 4,764,742 valid votes ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750); [Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). For 2026, with about 7.56 million eligible voters, the Center for Israel Education estimates that a list "will need 172,000 votes" ([Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)).
+
+Votes for a list that falls short are not passed on to anyone. They drop out of the count before any seat is assigned ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)). In 2022, lists under the threshold drew 417,400 votes in all ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). IDI put the wasted share at about 8.7%, an all-time high ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)). Meretz won 150,793 votes (3.16%) and missed by 4,062. Balad won 138,617 (2.91%), and Jewish Home won 56,775 (1.19%) ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). Shapira notes that the two blocs' vote totals were "almost identical," but the Netanyahu camp won "a clear majority of 64 seats" ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)).
+
+<Chart id="seats.threshold-2022" />
+
+## How the seats are counted
+
+The method is called Bader-Ofer, after Knesset members Yohanan Bader and Avraham Ofer. It dates from the Bader-Ofer Law, introduced in 1973, which was meant in part "to strengthen the larger parties" ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). In effect it is the D'Hondt method, worked out in two stages ([Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)). The steps below use the 2022 numbers. The arithmetic here is recomputed from the Central Elections Committee's totals and matches IDI's published figures ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)).
+
+1. **Count the valid votes** and remove those cast for lists under the threshold. In 2022, 4,347,342 votes remained.
+2. **Set the price of a seat.** Divide the remaining votes by 120. In 2022 one seat cost 36,227 votes.
+3. **Hand out whole seats.** Each list gets one seat for every full 36,227 votes. In 2022 this gave out 113 seats and left 7.
+4. **Hand out the leftover seats one at a time.** Divide each list's votes by the seats it already holds plus one. The highest result wins the next seat. Then that list's figure is recalculated, and the process repeats. In this step, two lists with a surplus agreement count as one list.
+5. **Split a pair's extra seats** between its two partners by the same rule.
+
+<Chart id="seats.quotas-2022" />
+
+<Chart id="seats.leftover-2022" />
+
+Inside the Likud–Religious Zionism pair, Likud's figure (1,115,336 ÷ 31 = 35,978.58) beat its partner's (516,470 ÷ 15 = 34,431.33), so Likud took the first extra seat. Its new figure, 34,854.25, still beat Religious Zionism's, so Likud took the second as well and finished with 32 seats. Inside the other pairs, Shas took the Shas–UTJ seat, and National Unity and Yesh Atid took one seat each ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults); [Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)).
+
+Under the largest-remainder rule used for the Second through Seventh Knessets, the seven leftover seats would have gone to the seven largest unused remainders. That would have given seats to Labor and United Torah Judaism instead of Likud's second extra seat and Yesh Atid's ([Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)). The tilt toward size comes almost entirely at this stage. IDI's Shapira and Gideon Rahat write that apart from leftover seats, "there is almost no electoral advantage to large lists" ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020)).
+
+## Surplus-vote agreements
+
+Before an election, two lists may sign a surplus-vote (or vote-sharing) agreement. When leftover seats are handed out, the pair "are treated as a single list": their votes are added together and divided by their combined seats plus one ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). A pair is a bigger list, and the method favors bigger lists, so its chance of an extra seat goes up. Only two lists can sign an agreement together ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)).
+
+The larger partner usually gets the extra seat, but not always. In 2021 the smaller partner won it in three pairs: Meretz over Labor, New Hope over Yamina, and Yisrael Beiteinu over Yesh Atid ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)).
+
+An agreement counts only if both lists pass the threshold. If one fails, its partner "is considered not to have signed an agreement at all" ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). That happened to Labor in 2022. Its agreement with Meretz lapsed when Meretz fell short ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020)), so Labor competed for leftover seats alone and won none.
+
+For 2026, three agreements have been signed: [Yashar!](/parties/yashar) with [The Democrats](/parties/dem), [B'Yachad](/parties/byachad) with [Yisrael Beiteinu](/parties/yb), and the [Joint List](/parties/jl) with [Ra'am](/parties/raam). The Jerusalem Post reported that [Shas](/parties/shas) and [United Torah Judaism](/parties/utj) were expected to sign one ([Sept 10, 2026](https://www.jpost.com/israel-election-2026/article-908296)). Israel Policy Forum reported that [Likud](/parties/likud) and [Religious Zionism–Zehut](/parties/rz) planned to sign ([120 Project, Sept 10 entry](https://israelpolicyforum.org/onetwenty/)); a week after the two parties agreed on a deal, Channel 14 reported that it had not yet been signed ([Channel 14, Sept 15, 2026](https://www.c14.co.il/article/1702522)). Agreements can be filed until October 16 ([AIJAC, Sept 14, 2026](https://aijac.org.au/australia-israel-review/a-game-of-margins/)). The seat estimates on the [results page](/results) count all five pairs.
+
+<Chart id="seats.agreements-2026" />
+
+## Misreadings
+
+**"A vote for a small party is a vote for its candidates in the voter's own district."** There are no districts. Every vote goes into one national count, and a list's seats go to the names at the top of its ranked slate ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750); [Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). Below 3.25%, that vote elects no one.
+
+**"Votes for a list that misses the threshold go to its allies."** They are discarded. A surplus agreement does not rescue them, because it counts only when both partners pass ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). In 2022, Meretz's 150,793 votes did nothing for Labor.
+
+**"The threshold is about seats."** It is a share of valid votes, not a number of seats. In 2022, a list at exactly 154,855 votes would still have been worth four whole seats at 36,227 votes each ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). So that year no list could pass the threshold and win only one, two or three seats. Labor, at 3.69%, won four. Meretz, at 3.16%, won none.
+
+**"The biggest party forms the government."** What matters is a 61-seat majority in the Knesset, not the size of any single list. After the 2009 election, Netanyahu formed a government "even though Kadima won one more seat than Likud," and Naftali Bennett later formed one at the head of the small Yamina faction ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020)). The steps that follow election day are on [forming a government](/how-it-works/forming-a-government).
+
+**"Seats track the vote exactly."** They come close, but not exactly. The threshold drops some votes. The leftover-seat stage slightly favors large lists and pairs, and in 2022 that gave Likud a 32nd seat ([Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)).
