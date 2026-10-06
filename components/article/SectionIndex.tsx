@@ -8,11 +8,14 @@ export default function SectionIndex({
   intro,
   items,
   extra,
+  foot,
 }: {
   title: string;
   intro: string;
   items: { href: string; title: string; dek: string; figure?: ReactNode }[];
   extra?: { href: string; title: string; dek: string; label: string };
+  /** A note on the whole section, set after the items rather than above them. */
+  foot?: string;
 }) {
   return (
     <div className="wrap article-page">
@@ -32,6 +35,7 @@ export default function SectionIndex({
             </li>
           ))}
         </ul>
+        {foot && <p className="sindex-foot">{foot}</p>}
         {extra && (
           <div className="extra">
             <h2>

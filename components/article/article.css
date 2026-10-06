@@ -47,7 +47,7 @@
 .article .rs { display: block; font-size: 12px; line-height: 1.35; color: var(--ink-3); font-weight: 400; margin-top: 2px; }
 
 .article .bars { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
-.article .bars li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr) 4.2em; align-items: center; gap: 12px; font-size: 14.5px; }
+.article .bars li { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr) minmax(4.2em, max-content); align-items: center; gap: 12px; font-size: 14.5px; }
 .article .bars .bl { line-height: 1.25; }
 .article .bars .bt { height: 14px; display: block; background: var(--cell); }
 .article .bars .bf { display: block; height: 100%; background: var(--ink); min-width: 2px; }
@@ -85,13 +85,17 @@
 .sindex { max-width: 760px; }
 .sindex .page-head { padding-bottom: 20px; border-bottom: 1px solid var(--ink); }
 .sindex .items { list-style: none; margin: 0; padding: 0; }
-.sindex .items li { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.sindex .items > li { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .sindex h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.12; margin: 0; }
 .sindex h2 a { color: var(--ink); text-decoration: none; }
 .sindex h2 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.sindex .items p, .sindex .extra p { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); margin: 6px 0 0; }
+.sindex .items > li > p, .sindex .extra p { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); margin: 6px 0 0; }
 .sindex .extra { margin-top: 32px; padding: 18px 20px; background: var(--sheet); border: 1px solid var(--line-2); }
 .sindex .extra .lbl { margin-bottom: 6px; }
+/* A section page's own opening chart, shown under its title in the index. */
+.sindex .ix-fig { padding-top: 0; }
+.sindex .ix-fig figure { margin: 12px 0 4px; }
+.sindex-foot { font-size: 14px; line-height: 1.55; color: var(--ink-2); margin: 16px 0 0; max-width: 70ch; }
 
 @media (max-width: 1000px) {
   .article-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
