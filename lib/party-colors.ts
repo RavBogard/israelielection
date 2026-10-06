@@ -19,11 +19,14 @@ export const DARK_PAPER="#1b1a17";
 /** Graphics need 3:1 against the paper (WCAG 1.4.11). */
 export const STROKE_CONTRAST=3;
 const mixWhite=(hex:string,t:number)=>"#"+[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*(1-t)+255*t).toString(16).padStart(2,"0")).join("");
-/** A list's colour for lines and dots: unchanged on light paper; on dark paper, mixed toward white just far enough to reach 3:1. Fills of areas keep partyColor. */
+/** Light paper behind charts (--bg in light, the darker of --bg and --sheet, so the stricter for strokes). Keep equal to app/globals.css. */
+export const LIGHT_PAPER="#f6f5f1";
+const mixBlack=(hex:string,t:number)=>"#"+[1,3,5].map(i=>Math.round(parseInt(hex.slice(i,i+2),16)*(1-t)).toString(16).padStart(2,"0")).join("");
+/** A list's colour for lines and dots, moved just far enough to reach 3:1: toward black on light paper, toward white on dark. Lists that already pass keep their colour; fills of areas keep partyColor. */
 export function partyStroke(id:string,theme:"light"|"dark"="light"):string{
-  const c=partyColor(id);if(theme==="light")return c;
-  for(let t=0;t<=1;t+=.02){const m=mixWhite(c,t);if(contrast(m,DARK_PAPER)>=STROKE_CONTRAST)return m;}
-  return "#ffffff";
+  const c=partyColor(id),[mix,paper]=theme==="light"?[mixBlack,LIGHT_PAPER]:[mixWhite,DARK_PAPER];
+  for(let t=0;t<=1;t+=.02){const m=mix(c,t);if(contrast(m,paper)>=STROKE_CONTRAST)return m;}
+  return theme==="light"?"#000000":"#ffffff";
 }
 /** Style variables for an element with class "pstroke" (components/party-stroke.css): its marks then use var(--psx), which switches to the dark stroke under the dark theme. */
 export const strokeVars=(id:string)=>({"--ps":partyStroke(id),"--ps-dark":partyStroke(id,"dark")}) as CSSProperties;
