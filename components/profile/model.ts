@@ -14,7 +14,7 @@ import { allPolls, averagePoll, blocLabel, mainPolls, parties, pollsData, varian
 import { lettersOf } from "@/lib/letters";
 import { listSeats } from "@/lib/list-seats";
 import { averageAsPoll, blocTotals, isExit } from "@/lib/polls";
-import { ISSUES } from "@/lib/positions";
+import { ISSUES, isRecord, isUnstated, stanceText } from "@/lib/positions";
 import type { Party } from "@/lib/types";
 import type { Places, VoteMapElection } from "@/lib/votemap";
 import { project } from "@/lib/votemap";
@@ -87,7 +87,7 @@ export type Tile = {
   source: string | null;
   url: string | null;
   date: string | null;
-  basis: "record" | null;
+  basis: "record" | "unstated" | null;
   sameStance: { id: string; name: string }[];
   /** How many answers the issue offers, and which of them is this party's (0-based), for the slot glyph. */
   options: number;
@@ -219,11 +219,11 @@ export function tiles(party: Party): Tile[] {
       kind: st.kind === "stance" ? "stance" : st.kind === "declined" ? "declined" : "none",
       stance: idx >= 0 ? stances[idx].label : null,
       position: idx >= 0 && scale && stances.length > 1 ? idx / (stances.length - 1) : null,
-      text: row?.text?.trim() || null,
+      text: stanceText(row) || null,
       source: row?.source ?? null,
       url: row?.url ?? null,
       date: row?.date ?? null,
-      basis: row?.basis === "record" ? "record" : null,
+      basis: isUnstated(row) ? "unstated" : isRecord(row) ? "record" : null,
       sameStance,
       options: stances.length,
       slot: idx >= 0 ? idx : null,

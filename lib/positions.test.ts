@@ -92,11 +92,11 @@ describe("stance basis", () => {
     expect(isRecord(record)).toBe(true);
     expect(isRecord(unstated)).toBe(false);
   });
-  it("renders the qualifier before the text and the source date", () => {
+  it("renders the qualifier once, before the text", () => {
     expect(stanceText(unstated)).toBe("Not said publicly: Has not answered.");
     expect(stanceText(record)).toBe("Declined.");
     expect(stanceText(stated)).toBe("Said so.");
-    expect(evidenceLabel(unstated)).toBe("Not said publicly: Source published Jul 18, 2024");
+    expect(evidenceLabel(unstated)).toBe("Source published Jul 18, 2024"); // the qualifier rides on stanceText, not twice
     expect(evidenceLabel(record)).toBe("Record evidence: Source published Sep 18, 2026");
     expect(basisQualifier(stated)).toBe("");
   });

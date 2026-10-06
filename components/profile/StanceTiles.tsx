@@ -46,16 +46,16 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
               aria-controls={`${base}-panel`}
               onClick={() => setOpen(isOpen ? null : t.key)}
             >
-              <span className={`bar${t.kind === "stance" ? (t.position === null ? " unordered" : onShade(t.position) === "light" ? " deep" : "") : ""}`} style={bar ? { background: bar } : undefined} aria-hidden="true" />
+              <span className={`bar${t.kind === "stance" ? (t.position === null ? " unordered" : onShade(t.position) === "light" ? " deep" : "") + (t.basis === "unstated" ? " unst" : "") : ""}`} style={bar ? { background: bar } : undefined} aria-hidden="true" />
               <span className="issue">{t.label}</span>
               <span className="stance">{t.kind === "stance" ? t.stance : t.kind === "declined" ? "Declined to answer" : "No 2026 position found"}</span>
               <Slots t={t} />
-              <span className="basis">{t.kind === "stance" ? (t.basis === "record" ? "On the record" : "From its answers") : t.text ? "What it said instead" : ""}</span>
+              <span className="basis">{t.kind === "stance" ? (t.basis === "record" ? "On the record" : t.basis === "unstated" ? "Not said publicly" : "From its answers") : t.text ? "What it said instead" : ""}</span>
             </button>
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is dotted paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer."}</p>
+      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is dotted paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer. "}<span className="unst-key" aria-hidden="true" />{"Dotted inner border: not said publicly, from the record; open the tile to see why."}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>
@@ -63,6 +63,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
             {current.text ? <p className="words">{current.text}</p> : <p className="words nf">{"No position recorded in the site’s sources."}</p>}
             <p className="fig-src">
               {current.basis === "record" && "On the record, because the party did not answer the questionnaire. "}
+              {current.basis === "unstated" && "Not said publicly: read from the party’s record, which the words above name. "}
               {current.url ? <a href={current.url} rel="noopener">{current.source}</a> : current.source}
               {current.date && !(current.source ?? "").includes(current.date) ? `, ${current.date}` : ""}
             </p>

@@ -1,6 +1,6 @@
 import { historicalElections, historicalPlaces } from "./votemap-data";
 import { averagePoll, exitPolls, dataUpdated, mainPolls, parties, pledgeRules, pollsData } from "./data";
-import { comparisonIssues, evidenceLabel } from "./positions";
+import { comparisonIssues, evidenceLabel, isRecord, isUnstated, stanceText } from "./positions";
 import { arrangement, arrangementWarnings, restoreRoles, roleOf, ROLE_LABELS } from "./coalition-arrangement";
 import { pollLabel } from "./polls";
 import { fetchCount, resultsConfig } from "./results-live";
@@ -14,8 +14,8 @@ export async function buildExport(kind: string, q: URLSearchParams): Promise<Sou
     if (!chosenIssues.length) return null;
     const selected = ids.length ? parties.filter((p)=>ids.includes(p.id)) : parties.filter((p)=>p.coalitionCard!=="hidden");
     const sources = new Map<string,string>();
-    const rows = chosenIssues.flatMap((issue)=>selected.map((p)=> { const row=issue.file.rows.find((r)=>r.party===p.id); if(row?.url && /^https?:\/\//.test(row.url))sources.set(row.url,row.source ?? "Cited evidence"); return [issue.label,issue.file.question ?? issue.file.title,p.name, row?.status==="none" || !row?.text ? `Not established by these sources${row?.text ? `; retained source context: ${row.text}` : ""}` : row.declined || row.status==="declined" ? "Declined to answer" : row.text, evidenceLabel(row),row?.source ?? "Source not recorded",row?.url ?? null]; }));
-    return {title: chosenIssues.length===1 ? chosenIssues[0].file.title : "Selected issue comparison", asOf:dataUpdated, assumptions:[`Selected lists: ${selected.map((p)=>p.name).join(", ")}.`,"Recorded answers are evidence, not a forecast. Missing evidence is not a policy position. Evidence publication dates are shown separately from source checks."],headers:["Issue","Question","List","Recorded answer / status","Evidence date and check","Source","Source link"],rows,sources:[...sources].map(([url,label])=>({url,label})),view:`/compare?${new URLSearchParams({p:selected.map((p)=>p.id).join(",")})}`};
+    const rows = chosenIssues.flatMap((issue)=>selected.map((p)=> { const row=issue.file.rows.find((r)=>r.party===p.id); if(row?.url && /^https?:\/\//.test(row.url))sources.set(row.url,row.source ?? "Cited evidence"); return [issue.label,issue.file.question ?? issue.file.title,p.name, row?.status==="none" || !row?.text ? `Not established by these sources${row?.text ? `; retained source context: ${row.text}` : ""}` : row.declined || row.status==="declined" ? "Declined to answer" : stanceText(row), isUnstated(row) ? "Not said publicly (unstated)" : isRecord(row) ? "On the record" : row?.stance ? "Stated" : "Not applicable", evidenceLabel(row),row?.source ?? "Source not recorded",row?.url ?? null]; }));
+    return {title: chosenIssues.length===1 ? chosenIssues[0].file.title : "Selected issue comparison", asOf:dataUpdated, assumptions:[`Selected lists: ${selected.map((p)=>p.name).join(", ")}.`,"Recorded answers are evidence, not a forecast. Missing evidence is not a policy position. Basis \"Not said publicly\" marks a position read from the party's record, not from its own statement. Evidence publication dates are shown separately from source checks."],headers:["Issue","Question","List","Recorded answer / status","Basis","Evidence date and check","Source","Source link"],rows,sources:[...sources].map(([url,label])=>({url,label})),view:`/compare?${new URLSearchParams({p:selected.map((p)=>p.id).join(",")})}`};
   }
   if (kind === "coalition") {
     const roles=restoreRoles(q,parties.map((p)=>p.id)); const requested=q.get("poll") ?? averagePoll.id;

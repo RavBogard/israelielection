@@ -42,7 +42,7 @@ export function evidenceLabel(row: PositionRow | undefined): string {
   if (row.evidence) return `${row.evidence.kind}, ${row.evidence.date ?? "date unavailable"}; checked ${row.evidence.checkedAt}`;
   const date = row.date?.trim();
   const accessed = !date || /accessed|checked/i.test(date);
-  const qualifier = basisQualifier(row);
+  const qualifier = row.basis === "unstated" ? "" : basisQualifier(row); // unstated rows already carry it in stanceText
   return `${qualifier}${accessed ? `evidence date unavailable${date ? ` (${date})` : ""}` : `Source published ${date}`}`;
 }
 

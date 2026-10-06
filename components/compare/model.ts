@@ -1,12 +1,12 @@
 import { standingOf, type Issue, type Stance } from "@/lib/cohesion";
 import { AXES, type AxisKey, type PositionRow } from "@/lib/compare";
-import { comparisonIssues, ISSUES } from "@/lib/positions";
+import { comparisonIssues, isRecord, isUnstated, ISSUES } from "@/lib/positions";
 
 /** Where a stance sits on its row's scale, 0 to 1, or null when the options are not a scale. */
 export type MatrixStance = Stance & { n: number; position: number | null; count: number };
 
 export type MatrixCell =
-  | { kind: "stance"; stance: string; n: number; position: number | null; record: boolean }
+  | { kind: "stance"; stance: string; n: number; position: number | null; record: boolean; unstated: boolean }
   | { kind: "declined" }
   /** The sources hold the list's words, but they do not match one of the question's options. */
   | { kind: "unsorted" }
@@ -40,7 +40,7 @@ function cellsOf(rows: PositionRow[], stances: MatrixStance[], ids: string[]): R
     const s = standingOf(row, stances);
     if (s.kind === "stance") {
       const st = stances.find((x) => x.id === s.stance)!;
-      out[id] = { kind: "stance", stance: st.id, n: st.n, position: st.position, record: row?.basis === "record" };
+      out[id] = { kind: "stance", stance: st.id, n: st.n, position: st.position, record: isRecord(row), unstated: isUnstated(row) };
     } else out[id] = { kind: s.kind };
   }
   return out;

@@ -7,7 +7,7 @@ import { readIssue, readingText, stanceMap } from "@/lib/cohesion";
 import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } from "@/lib/compare";
 import { partyColor } from "@/lib/party-colors";
 import { blocRank, seatFigure } from "@/lib/polls";
-import { evidenceLabel } from "@/lib/positions";
+import { evidenceLabel, stanceText } from "@/lib/positions";
 import { builderHref } from "@/lib/scenarios";
 import type { BlocId } from "@/lib/types";
 import { onShade, shade, type MatrixCell, type MatrixRow } from "./compare/model";
@@ -41,7 +41,7 @@ function cellLabel(p: CompareParty, row: MatrixRow, c: MatrixCell): string {
   if (c.kind === "none") return `${p.name}: no position found`;
   if (c.kind === "unsorted") return `${p.name}: recorded, not classified`;
   const st = row.stances.find((s) => s.id === c.stance)!;
-  return `${p.name}: ${st.label}${c.record ? ", on the record" : ""}`;
+  return `${p.name}: ${st.label}${c.record ? ", on the record" : ""}${c.unstated ? ", not said publicly" : ""}`;
 }
 
 type CellProps = { p: CompareParty; row: MatrixRow; c: MatrixCell; col: number; active: string | null; gap: boolean; isOpen: boolean; onOpen: () => void; onHover: (s: string | null) => void };
@@ -56,7 +56,7 @@ function Cell({ p, row, c, col, active, gap, isOpen, onOpen, onHover }: CellProp
         // One tab stop per row; the arrow keys move along it (see onRowKey).
         tabIndex={col === 0 ? 0 : -1}
         data-col={col}
-        className={`mx-cell ${c.kind}${c.kind === "stance" ? ` on-${onShade(c.position)}` : ""}${dim ? " dim" : ""}${active !== null && !dim ? " match" : ""}`}
+        className={`mx-cell ${c.kind}${c.kind === "stance" ? ` on-${onShade(c.position)}${c.unstated ? " unst" : ""}` : ""}${dim ? " dim" : ""}${active !== null && !dim ? " match" : ""}`}
         style={c.kind === "stance" ? { background: shade(c.position) } : undefined}
         aria-label={cellLabel(p, row, c)}
         aria-expanded={isOpen}
@@ -97,7 +97,7 @@ function Who({ p, children }: { p: CompareParty; children?: React.ReactNode }) {
 }
 
 function Entry({ p, row }: { p: CompareParty; row: PositionRow | undefined }) {
-  const text = row?.text?.trim() || null;
+  const text = stanceText(row) || null;
   const src = row ? sourceLine(row) : { text: null, url: null };
   return (
     <li id={`said-${p.id}`}>
@@ -157,7 +157,7 @@ function Panel({ row, shown, colSpan }: { row: MatrixRow; shown: CompareParty[];
               <ul className="said">
                 {quiet.map((p) => {
                   const r = rowOf(p.id);
-                  if (r?.text?.trim()) return <Entry key={p.id} p={p} row={r} />;
+                  if (stanceText(r)) return <Entry key={p.id} p={p} row={r} />;
                   return (
                     <li key={p.id} id={`said-${p.id}`}>
                       <Who p={p}>
@@ -271,6 +271,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
           <span><i className="g declined" aria-hidden="true" />Declined to answer</span>
           <span><i className="g unsorted" aria-hidden="true" />Recorded, not classified</span>
           <span><i className="g rec" aria-hidden="true" />On the record, not a questionnaire answer</span>
+          <span><i className="g unst" aria-hidden="true" />Not said publicly: from the record, see why</span>
           <span><i className="g ink" aria-hidden="true">1</i>Priorities that can coexist, so no order</span>
         </p>
         <p className="tap">{"Open any row for every list’s own words and source."}</p>
