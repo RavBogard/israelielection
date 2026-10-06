@@ -6,9 +6,10 @@
 .br-tick { fill: var(--ink-3); font: 12px var(--body); font-variant-numeric: tabular-nums; }
 .br-maj { stroke: var(--ink); stroke-width: 2; }
 .br-majlbl { fill: var(--ink); font: 600 12px var(--body); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; }
-.br-band { opacity: .13; }
-.br-band-net { fill: var(--b-net); }
-.br-band-opp { fill: var(--b-opp); }
+.br-edge { fill: none; stroke-width: 1; opacity: .7; }
+.br-wk { stroke: var(--line-2); stroke-width: 1; }
+.br-eday { stroke: var(--ink-3); stroke-width: 1; }
+.br-edaylbl { fill: var(--ink-2); font: 12px var(--body); }
 .br-bandlbl { fill: var(--ink-2); font: 12px var(--body); }
 .br-line { fill: none; stroke-width: 2.5; stroke-linejoin: round; }
 .br-dot { fill: var(--c); stroke: var(--bg); stroke-width: 1; opacity: .75; }
@@ -21,8 +22,10 @@
 .br-reading b { color: var(--ink); }
 .br-key { margin: 8px 0 0; list-style: none; padding: 0; }
 .br-key li { display: inline-flex; align-items: center; gap: 6px; margin-right: 18px; }
-.br-kband { display: inline-block; width: 18px; height: 12px; background: var(--b-net); opacity: .2; }
 .br .fig-note { margin: 10px 0 0; max-width: 90ch; }
+.pd-how { margin: 4px 0 0; }
+.pd-how summary { cursor: pointer; padding-block: 12px; font-size: 14px; }
+.pd-how > .fig-note, .pd-how > p { margin: 0 0 8px; max-width: 90ch; }
 .br-data { margin: 12px 0 0; }
 .br-data summary, .he-data summary { cursor: pointer; padding-block: 12px; }
 
@@ -54,4 +57,4 @@
 .he-cell .he-track { flex: 1; min-width: 0; }
 .he-v { flex: none; width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
 .he-table thead .he-scale { margin-right: calc(3.2em + 8px); }
-@media (max-width: 640px) { .br-key li { display: flex; margin-right: 0; } .br-key li svg, .br-key li .br-kband { flex: none; } }
+@media (max-width: 640px) { .br-key li { display: flex; margin-right: 0; } .br-key li svg { flex: none; } }

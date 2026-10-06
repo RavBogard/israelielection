@@ -2,7 +2,9 @@
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {type MouseEvent,useCallback,useEffect,useRef,useState,useSyncExternalStore} from "react";
-import {NAV_GROUPS,NAV_TOOLS,NAV_UTILITIES,navLabel} from "@/lib/site";
+import {NAV_BAR,NAV_GROUPS,NAV_UTILITIES,type NavItem,navLabel} from "@/lib/site";
+import type {ExitMeter,Meter} from "@/lib/nav-facts";
+import SiteNavMeter from "./SiteNavMeter";
 import {activeNavGroup,currentNavPage,visibleNavItems} from "@/lib/navigation";
 import "./site-nav.css";
 
@@ -13,7 +15,11 @@ function usePollsClosed(pollsClose:string,atRender:boolean){
  return useSyncExternalStore(subscribe,()=>Date.now()>=at,()=>atRender);
 }
 
-export default function SiteNav({facts={},pollsClose,closedAtRender=false}:{facts?:Record<string,string>;pollsClose:string;closedAtRender?:boolean}){
+/**
+ * The masthead bar: the seat meter, four group menus and the bar's utilities (Search, About). The other
+ * utilities sit at the foot of every open panel; the phone menu lists the groups, then every utility.
+ */
+export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter}:{facts?:Record<string,string>;pollsClose:string;closedAtRender?:boolean;meter:{average:Meter;exit:ExitMeter|null}}){
  const path=usePathname(),navRef=useRef<HTMLElement>(null),menuRef=useRef<HTMLButtonElement>(null),triggerRefs=useRef<Record<string,HTMLButtonElement|null>>({});
  const [mobileOpen,setMobileOpen]=useState(false),[expanded,setExpanded]=useState<string|null>(null);
  const closed=usePollsClosed(pollsClose,closedAtRender);
@@ -31,20 +37,22 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false}:{fact
   document.addEventListener("pointerdown",outside);window.addEventListener("popstate",historyClose);window.addEventListener("hashchange",historyClose);media.addEventListener("change",resize);
   return()=>{document.removeEventListener("pointerdown",outside);window.removeEventListener("popstate",historyClose);window.removeEventListener("hashchange",historyClose);media.removeEventListener("change",resize);};
  },[]);
- const link=(n:(typeof NAV_TOOLS)[number])=><Link href={n.href} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={follow}>{navLabel(n)}</Link>;
- return <nav ref={navRef} className="site-nav" aria-label="Primary navigation" onBlur={(e)=>{if(e.relatedTarget&&!e.currentTarget.contains(e.relatedTarget as Node)){setExpanded(null);setMobileOpen(false);}}} onKeyDown={(e)=>{if(e.key!=="Escape")return;if(expanded){e.preventDefault();setExpanded(null);triggerRefs.current[expanded]?.focus();}else if(mobileOpen){e.preventDefault();setMobileOpen(false);menuRef.current?.focus();}}}>
+ const link=(n:NavItem)=><Link href={n.href} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={follow}>{navLabel(n)}</Link>;
+ const more=NAV_UTILITIES.filter(n=>!NAV_BAR.includes(n.href));
+ return <nav ref={navRef} className="site-nav" aria-label="Primary navigation" data-home={path==="/"?"":undefined} data-closed={closed?"":undefined} onBlur={(e)=>{if(e.relatedTarget&&!e.currentTarget.contains(e.relatedTarget as Node)){setExpanded(null);setMobileOpen(false);}}} onKeyDown={(e)=>{if(e.key!=="Escape")return;if(expanded){e.preventDefault();setExpanded(null);triggerRefs.current[expanded]?.focus();}else if(mobileOpen){e.preventDefault();setMobileOpen(false);menuRef.current?.focus();}}}>
+  <SiteNavMeter average={meter.average} exit={meter.exit} closed={closed} pollsClose={pollsClose}/>
   <button ref={menuRef} type="button" className="nav-mobile-toggle" aria-label={mobileOpen?"Close menu":"Open menu"} aria-expanded={mobileOpen} aria-controls="primary-navigation" onClick={()=>{setMobileOpen(v=>!v);setExpanded(mobileOpen?null:active);}}>{mobileOpen?"Close":"Menu"}</button>
   <div id="primary-navigation" className={`nav-menu${mobileOpen?" mobile-open":""}`}>
-   <ul className="nav-tools" aria-label="Main tools">{NAV_TOOLS.map(n=><li key={n.href}>{link(n)}</li>)}</ul>
    <div className="nav-main">
     <ul className="nav-groups">{NAV_GROUPS.map(g=><li key={g.id} className={`nav-group${active===g.id?" section-active":""}`}>
      <button ref={el=>{triggerRefs.current[g.id]=el;}} type="button" className="nav-trigger" aria-expanded={expanded===g.id} aria-controls={`nav-panel-${g.id}`} onClick={()=>setExpanded(old=>old===g.id?null:g.id)}><span className="nav-label">{g.label}<span className="nav-caret" aria-hidden="true"/></span>{facts[g.id]&&<span className="nav-preview">{facts[g.id]}</span>}</button>
      <div id={`nav-panel-${g.id}`} className={`nav-panel${g.items.length<4?" compact":""}`} hidden={expanded!==g.id}>
       <p className="nav-panel-label">{g.label}</p><ul>{visibleNavItems(g.items,closed,path).map(n=><li key={n.href}><Link href={n.href} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={follow}><span>{n.label}</span><small>{n.description}</small></Link></li>)}</ul>
+      <ul className="nav-panel-more" aria-label="More">{more.map(n=><li key={n.href}>{link(n)}</li>)}</ul>
      </div>
     </li>)}</ul>
    </div>
-   <ul className="nav-utilities">{NAV_UTILITIES.map(n=><li key={n.href}>{link(n)}</li>)}</ul>
+   <ul className="nav-utilities">{NAV_UTILITIES.map(n=><li key={n.href} className={NAV_BAR.includes(n.href)?undefined:"nav-util-more"}>{link(n)}</li>)}</ul>
   </div>
  </nav>;
 }

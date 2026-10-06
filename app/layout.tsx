@@ -9,10 +9,8 @@ import { resultsConfig } from "@/lib/results-live";
 import Countdown from "@/components/Countdown";
 import { DESCRIPTION, NAV_GROUPS, NAV_UTILITIES } from "@/lib/site";
 import briefingsJson from "@/data/briefings/_index.json";
-import timelineJson from "@/data/timeline.json";
-import election2022 from "@/public/vote-map/2022.json";
-import { allPolls, averagePoll, parties } from "@/lib/data";
-import { navFacts } from "@/lib/nav-facts";
+import { allPolls, averagePoll, exitPolls, mainPolls, parties } from "@/lib/data";
+import { averageMeter, firstExit, navFacts } from "@/lib/nav-facts";
 import { visibleNavItems } from "@/lib/navigation";
 import { blocTotals, isExit } from "@/lib/polls";
 import { RSS } from "@/lib/canonical";
@@ -43,10 +41,9 @@ export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)",
 const FACTS = navFacts({
   newestPoll: allPolls.find((p) => !isExit(p))?.published,
   newestBriefing: (briefingsJson as { date: string }[]).map((b) => b.date).sort().at(-1),
-  netSeats: blocTotals(averagePoll, parties).net,
-  localities: (election2022 as { rows: unknown[] }).rows.length,
-  elections: timelineJson.elections.map((e) => e.date),
 });
+/** The masthead seat meter: the average until polls close, then the first channel's exit poll until the count arrives. */
+const METER = { average: averageMeter(blocTotals(averagePoll, parties), mainPolls.map((p) => p.published).sort().at(-1)!), exit: firstExit(exitPolls, parties) };
 
 /** Whether polls have closed as this page renders; the menus re-check in the browser. */
 const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
@@ -64,7 +61,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="row">
             <Logo />
             <Countdown />
-            <SiteNav facts={FACTS} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} />
+            <SiteNav facts={FACTS} meter={METER} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} />
           </div>
           <ResultsStrip pollsClose={pollsClose} />
         </header>

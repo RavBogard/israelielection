@@ -38,8 +38,10 @@ export const NAV_UTILITIES: readonly NavItem[] = [
 ];
 /** Canonical page entries only: section anchors must not leak into XML or search. */
 export const NAV: readonly NavItem[] = [...NAV_GROUPS.flatMap(g=>g.items.filter(n=>!n.href.includes("#"))),...NAV_UTILITIES];
-/** The main tools, one tap away in the masthead. */
+/** The main tools, listed on the search page while browsing. The masthead reaches them through its group menus. */
 export const NAV_TOOLS: readonly NavItem[] = ["/polls","/parties","/coalition-builder","/vote-map","/news"].map(h=>NAV.find(n=>n.href===h)!);
+/** The utilities set in the masthead bar itself; the rest sit at the foot of every open menu panel, in the phone menu and the footer. */
+export const NAV_BAR: readonly string[] = ["/search","/about"];
 export const navLabel=(n:NavItem)=>n.short??n.label;
 
 /** The site's one-paragraph description, used in metadata and the footer. */

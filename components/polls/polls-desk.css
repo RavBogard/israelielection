@@ -1,0 +1,22 @@
+/* The polls desk: the first screen's facts under the bloc race, then four tabs. Without JavaScript the
+   tablist stays hidden and every panel shows under its own heading. */
+.pd-facts { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 26px; margin: 14px 0 0; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14.5px; }
+.pd-facts p { margin: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pd-facts .pd-count { color: var(--ink); font-weight: 600; }
+.pd-facts a { color: var(--ink); }
+.pd-facts .cite { margin-left: auto; }
+
+.pd-tabs { margin-top: 40px; }
+.pd-tablist { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 1px solid var(--ink); }
+.pd-tablist[hidden] { display: none; }
+.pd-tablist [role="tab"] { min-height: 48px; padding: 10px 16px; background: transparent; border: 0; color: var(--ink-2); font: 500 16px var(--body); cursor: pointer; text-decoration: none; }
+.pd-tablist [role="tab"]:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 6px; }
+.pd-tablist [role="tab"][aria-selected="true"] { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; text-decoration-color: currentColor; }
+/* In tabs the panel's own first heading drops its top rule: the tablist rule already sits above it. */
+.pd-tabs.on .pd-panel > :first-child > .sec-h:first-child, .pd-tabs.on .pd-panel > .sec-h:first-child, .pd-tabs.on .pd-panel > :first-child.sec-h { margin-top: 22px; padding-top: 0; border-top: 0; }
+.pd-panel[hidden] { display: none; }
+@media (max-width: 560px) {
+  .pd-tablist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+  .pd-tablist [role="tab"] { padding-inline: 8px; text-align: left; font-size: 15px; }
+  .pd-facts .cite { margin-left: 0; }
+}

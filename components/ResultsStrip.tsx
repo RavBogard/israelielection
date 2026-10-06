@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import { nextCountSummary } from "@/lib/results-summary";
 import type { CountSummary } from "@/app/api/count/route";
 import { blocRank } from "@/lib/polls";
@@ -10,35 +10,43 @@ const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month:
 const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 
 /**
+ * One count summary per page, shared by this strip and the masthead's seat meter: nothing is fetched
+ * before polls close; from then on /api/count is polled every minute while anything is subscribed.
+ */
+let summary: CountSummary | null = null;
+const listeners = new Set<() => void>();
+let timer: ReturnType<typeof setTimeout> | undefined, running = false, gen = 0;
+function start(pollsClose: string) {
+  if (running) return;
+  running = true;
+  const mine = ++gen, live = () => running && mine === gen;
+  const tick = async () => {
+    if (!live()) return;
+    if (Date.now() < Date.parse(pollsClose)) { timer = setTimeout(tick, Math.min(Date.parse(pollsClose) - Date.now(), 3_600_000)); return; }
+    let incoming: CountSummary | null = null;
+    try { const res = await fetch("/api/count", { cache: "no-store" }); incoming = res.ok ? await res.json() as CountSummary : null; } catch { incoming = null; }
+    if (!live()) return;
+    summary = nextCountSummary(summary, incoming, new Date().toISOString());
+    listeners.forEach((l) => l());
+    timer = setTimeout(tick, 60_000);
+  };
+  tick();
+}
+export function useCountSummary(pollsClose: string): CountSummary | null {
+  const subscribe = useCallback((cb: () => void) => {
+    listeners.add(cb);
+    start(pollsClose);
+    return () => { listeners.delete(cb); if (!listeners.size) { running = false; gen++; if (timer) clearTimeout(timer); } };
+  }, [pollsClose]);
+  return useSyncExternalStore(subscribe, () => summary, () => null);
+}
+
+/**
  * One line under the masthead on every page once polls close: seats by bloc from the count so
  * far, how much is counted, and when it was fetched. Polls the count summary every minute.
  */
 export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
-  const [data, setData] = useState<CountSummary | null>(null);
-  useEffect(() => {
-    let timer: ReturnType<typeof setTimeout> | undefined;
-    let stopped = false;
-    const tick = async () => {
-      if (Date.now() < Date.parse(pollsClose)) {
-        timer = setTimeout(tick, Math.min(Date.parse(pollsClose) - Date.now(), 3_600_000));
-        return;
-      }
-      try {
-        const res = await fetch("/api/count", { cache: "no-store" });
-        const incoming = res.ok ? await res.json() as CountSummary : null;
-        if (!stopped) setData((previous) => nextCountSummary(previous, incoming, new Date().toISOString()));
-      } catch {
-        if (!stopped) setData((previous) => nextCountSummary(previous, null, new Date().toISOString()));
-      }
-      if (!stopped) timer = setTimeout(tick, 60_000);
-    };
-    tick();
-    return () => {
-      stopped = true;
-      if (timer) clearTimeout(timer);
-    };
-  }, [pollsClose]);
-
+  const data = useCountSummary(pollsClose);
   if (data?.state === "error" && data.phase === "exit")
     return (
       <div className="live-strip" role="status" aria-live="polite">

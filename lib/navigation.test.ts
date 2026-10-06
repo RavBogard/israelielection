@@ -1,7 +1,7 @@
 import {describe,it,expect} from "vitest";
 import {existsSync,readdirSync,readFileSync} from "node:fs";
 import {join} from "node:path";
-import {NAV,NAV_GROUPS,NAV_TOOLS,NAV_UTILITIES} from "./site";
+import {NAV,NAV_BAR,NAV_GROUPS,NAV_TOOLS,NAV_UTILITIES} from "./site";
 import {activeNavGroup,canonicalNavPaths,currentNavPage,visibleNavItems,withinNavPage} from "./navigation";
 describe("visitor navigation catalog",()=>{
  it("covers each actual first-level public page once with meaningful labels/descriptions",()=>{
@@ -22,6 +22,14 @@ describe("visitor navigation catalog",()=>{
   expect(currentNavPage("/teach","/teach")).toBe(true);expect(currentNavPage("/teach#packets","/teach")).toBe(false);expect(currentNavPage("/parties","/parties/likud")).toBe(false);
   expect(withinNavPage("/parties","/parties/likud")).toBe(true);expect(withinNavPage("/news","/newsletter")).toBe(false);
   expect(activeNavGroup(NAV_GROUPS,"/parties/likud")).toBe("parties");expect(activeNavGroup(NAV_GROUPS,"/how-it-works/forming-a-government")).toBe("how");expect(activeNavGroup(NAV_GROUPS,"/government")).toBe("polls");expect(activeNavGroup(NAV_GROUPS,"/resources")).toBeNull();
+ });
+ it("keeps the masthead lean: Search and About in the bar, every other page one menu away, nothing listed twice",()=>{
+  expect(NAV_BAR).toEqual(["/search","/about"]);
+  const menus=NAV_GROUPS.flatMap(g=>g.items.map(n=>n.href)),more=NAV_UTILITIES.filter(n=>!NAV_BAR.includes(n.href)).map(n=>n.href);
+  expect(more).toEqual(["/start","/resources","/corrections"]);
+  // Desktop: menus, the bar and each panel's foot. Phone: menus, then every utility. Both reach every page, each once.
+  for(const reach of [[...menus,...NAV_BAR,...more],[...menus,...NAV_UTILITIES.map(n=>n.href)]]){expect(new Set(reach).size).toBe(reach.length);expect(new Set(reach)).toEqual(new Set(NAV.map(n=>n.href)));}
+  expect(menus.filter(h=>h==="/polls")).toHaveLength(1);
  });
  it("holds election-night pages out of the menus until polls close, unless the reader is on one",()=>{
   const items=NAV_GROUPS.find(g=>g.id==="polls")!.items,hrefs=(closed:boolean,path:string)=>visibleNavItems(items,closed,path).map(n=>n.href);

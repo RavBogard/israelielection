@@ -72,35 +72,15 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
   );
 }
 
-/**
- * What the polls say now: the bloc totals of the current average on the 120-seat bar with 61
- * marked, where each bloc lands in each current poll, then every list as a dot per poll with the
- * average drawn as a bar. The numbers the old table carried stay as columns of the same table.
- */
-export default function PollsNow() {
+/** Where each bloc lands: the bloc totals of the current average on the 120-seat bar with 61 marked, then each bloc in each current poll. */
+export function PollsBlocs({ title }: { title: string }) {
   const totals = blocTotals(averagePoll, parties);
   const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
-  const rows = parties
-    .map((p) => {
-      const a = average(p.id, mainPolls);
-      const w = average(p.id, variantPolls), scaled = averagePoll.results[p.id]?.seats ?? 0, wScaled = variantAverage.results[p.id]?.seats ?? 0;
-      const dots = mainPolls
-        .filter((poll) => poll.results[p.id])
-        .map((poll) => ({ poll, seats: poll.results[p.id].seats, below: poll.results[p.id].seats === 0 || !!poll.results[p.id].belowThreshold, hollow: inWithoutVariant(poll, cfg) }));
-      const vals = dots.map((d) => d.seats);
-      return { p, a, w, scaled, wScaled, dots, lo: Math.min(...vals), hi: Math.max(...vals) };
-    })
-    .filter((r) => r.a)
-    .sort((x, y) => blocRank(x.p.bloc) - blocRank(y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
-  const max = Math.max(30, Math.ceil(Math.max(...rows.flatMap((r) => r.dots.map((d) => d.seats))) / 5) * 5);
-  const sx = (s: number) => `${(s / max) * 100}%`;
   const from = mainPolls.map((p) => p.published).sort()[0];
   const to = mainPolls.map((p) => p.published).sort().at(-1)!;
-
   return (
-    <section className="pn" aria-labelledby="now-h">
-      <h2 id="now-h" className="sec-h">What the polls say now</h2>
-
+    <section className="pn" aria-labelledby="blocs-h">
+      <h2 id="blocs-h" className="sec-h">{title}</h2>
       <figure className="pn-fig">
         <figcaption className="pn-lbl">The blocs in the average, out of 120 seats</figcaption>
         <SeatBar
@@ -118,11 +98,61 @@ export default function PollsNow() {
         <BlocStrip bloc="net" label={label.net} />
         <BlocStrip bloc="opp" label={label.opp} />
         <p className="fig-src">
-          The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}; hollow points are {variantNames.join(" and ")},
-          the two the site&apos;s alternative average leaves out. <a href="#method">How the average is made</a>. Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
-          totals are its own published figures. Lists that pass in fewer than half the polls count zero. <Link href="/coalition-builder">Build a coalition from these numbers</Link>.
+          The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}; hollow points are {variantNames.join(" and ")}. <Link href="/coalition-builder">Build a coalition from these numbers</Link>.
         </p>
+        <details className="pd-how">
+          <summary>How to read this</summary>
+          <p className="fig-src">
+            Hollow points are the two pollsters the site&apos;s alternative average leaves out. Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
+            totals are its own published figures. Lists that pass in fewer than half the polls count zero. <a href="#method">How the average is made</a>.
+          </p>
+        </details>
       </figure>
+    </section>
+  );
+}
+
+/** The alternative average beside the site average: the same 120-seat bar for each, the Netanyahu bloc's figure stated. */
+export function PollsAlternative({ title }: { title: string }) {
+  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
+  const rows = [{ key: "main", name: "Site average", t: blocTotals(averagePoll, parties), n: mainPolls.length }, { key: "alt", name: cfg.withoutVariant.label, t: blocTotals(variantAverage, parties), n: variantPolls.length }];
+  return (
+    <section className="pn" aria-labelledby="alt-h">
+      <h2 id="alt-h" className="sec-h">{title}</h2>
+      <div className="pn-alt">
+        {rows.map((r) => (
+          <figure key={r.key} className="pn-alt-row">
+            <figcaption><b>{r.name}</b> <span>{r.n} polls; {label.net} <b>{one(r.t.net)}</b>, {label.opp} <b>{one(r.t.opp)}</b></span></figcaption>
+            <SeatBar size="m" segments={BAR_ORDER.map((b) => ({ key: b, seats: r.t[b], color: `var(--b-${b})`, title: `${label[b]} ${one(r.t[b])}` }))} />
+          </figure>
+        ))}
+      </div>
+      <p className="fig-src">{cfg.withoutVariant.note}</p>
+    </section>
+  );
+}
+
+/** Every list as a dot per current poll over a bar at its average; the numbers the old table carried stay as columns. */
+export default function PollsLists({ title }: { title: string }) {
+  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
+  const rows = parties
+    .map((p) => {
+      const a = average(p.id, mainPolls);
+      const w = average(p.id, variantPolls), scaled = averagePoll.results[p.id]?.seats ?? 0, wScaled = variantAverage.results[p.id]?.seats ?? 0;
+      const dots = mainPolls
+        .filter((poll) => poll.results[p.id])
+        .map((poll) => ({ poll, seats: poll.results[p.id].seats, below: poll.results[p.id].seats === 0 || !!poll.results[p.id].belowThreshold, hollow: inWithoutVariant(poll, cfg) }));
+      const vals = dots.map((d) => d.seats);
+      return { p, a, w, scaled, wScaled, dots, lo: Math.min(...vals), hi: Math.max(...vals) };
+    })
+    .filter((r) => r.a)
+    .sort((x, y) => blocRank(x.p.bloc) - blocRank(y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
+  const max = Math.max(30, Math.ceil(Math.max(...rows.flatMap((r) => r.dots.map((d) => d.seats))) / 5) * 5);
+  const sx = (s: number) => `${(s / max) * 100}%`;
+
+  return (
+    <section className="pn" aria-labelledby="now-h">
+      <h2 id="now-h" className="sec-h">{title}</h2>
 
       <figure className="pn-fig">
         <figcaption className="pn-lbl">Every list in every current poll</figcaption>
@@ -184,11 +214,15 @@ export default function PollsNow() {
           <span><i className="k bar" aria-hidden="true" />{SEATS_LABEL}, scaled to 120</span>
           <span><i className="k thr" aria-hidden="true" />Threshold: a list that passes wins at least 4 seats</span>
         </p>
-        <p className="fig-src">
-          Each list&apos;s average weights each poll by the square root of its sample size, over the polls where the list passed. Those averages add to {rawSum}, so
-          every one is scaled down in proportion to 120 seats, the figure every page of the site prints; the alternative average is scaled the same way. &ldquo;Below&rdquo; is a list
-          that passes in fewer than half the polls, which counts 0. A point at zero is a poll that had the list below the threshold.
-        </p>
+        <p className="fig-src">The latest poll from each of {mainPolls.length} pollsters; averages scaled to 120 seats.</p>
+        <details className="pd-how">
+          <summary>How to read this</summary>
+          <p className="fig-src">
+            Each list&apos;s average weights each poll by the square root of its sample size, over the polls where the list passed. Those averages add to {rawSum}, so
+            every one is scaled down in proportion to 120 seats, the figure every page of the site prints; the alternative average is scaled the same way. &ldquo;Below&rdquo; is a list
+            that passes in fewer than half the polls, which counts 0. A point at zero is a poll that had the list below the threshold.
+          </p>
+        </details>
       </figure>
     </section>
   );

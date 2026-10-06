@@ -3,8 +3,8 @@ import { glance, readings } from "@/components/profile/model";
 import { averagePoll, blocs, parties } from "./data";
 import { HOME_MOSAIC_ORDER, HOME_RACE_ORDER, homeRaceModel } from "./home-race";
 import { blocSeats, blocText, listSeats } from "./list-seats";
-import { navFacts } from "./nav-facts";
-import { BLOC_ORDER, BLOC_SEAT_ORDER, seatFigure, seatText } from "./polls";
+import { averageMeter } from "./nav-facts";
+import { BLOC_ORDER, BLOC_SEAT_ORDER, blocTotals, seatFigure, seatText } from "./polls";
 
 describe("one number per fact", () => {
   const race = homeRaceModel(averagePoll, parties, blocs);
@@ -29,7 +29,7 @@ describe("one number per fact", () => {
       expect(blocText(row.id)).toBe(seatFigure(row.seats));
       for (const p of parties.filter((q) => q.bloc === row.id)) expect(Math.round(glance(p, readings(p)).blocSeats * 10) / 10).toBe(row.seats);
     }
-    expect(navFacts({ netSeats: race.rows.find((r) => r.id === "net")!.seats, localities: 0, elections: [] }).parties).toBe(`Netanyahu bloc ${blocText("net")} of 120, polling average`);
+    expect(averageMeter(blocTotals(averagePoll, parties), "2026-10-05").value).toBe(blocText("net"));
   });
   it("prints averages to one decimal and below-threshold lists as below, never 0", () => {
     expect(seatFigure(21)).toBe("21.0");

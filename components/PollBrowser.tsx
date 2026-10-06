@@ -9,8 +9,8 @@ import { mediumDate, shortDate } from "@/lib/format";
 
 const DASH = <><span aria-hidden="true">–</span><span className="sr-only">not reported</span></>;
 
-type Props = { polls: Poll[]; parties: Pick<Party, "id" | "name" | "short">[]; currentIds: string[]; config: PollsConfig };
-export default function PollBrowser({ polls, parties, currentIds, config }: Props) {
+type Props = { polls: Poll[]; parties: Pick<Party, "id" | "name" | "short">[]; currentIds: string[]; config: PollsConfig; title?: string };
+export default function PollBrowser({ polls, parties, currentIds, config, title = "Browse every poll" }: Props) {
   const params = useSearchParams(); const router = useRouter();
   const query = params.toString();
   const [filter, setFilter] = useState(() => readPollFilter(new URLSearchParams(query), polls, parties.map((p) => p.id)));
@@ -36,7 +36,7 @@ export default function PollBrowser({ polls, parties, currentIds, config }: Prop
     else { if (filter.from) next.set("from", filter.from); if (filter.to) next.set("to", filter.to); if (filter.pollster) next.set("pollster", filter.pollster); if (filter.parties.length) next.set("party", filter.parties.join(",")); }
     router.push(`/polls${next.size ? `?${next}` : ""}#browser`, { scroll: false });
   }
-  return <section id="browser" className="poll-browser" aria-labelledby="browser-h"><h2 id="browser-h" className="sec-h">Browse every poll</h2>
+  return <section id="browser" className="poll-browser" aria-labelledby="browser-h"><h2 id="browser-h" className="sec-h">{title}</h2>
     <form className="poll-controls" onSubmit={(event) => { event.preventDefault(); apply(); }}>
       <label>Published from<input type="date" value={filter.from} onChange={(e) => setFilter({ ...filter, from: e.target.value })} /></label><label>Published through<input type="date" value={filter.to} onChange={(e) => setFilter({ ...filter, to: e.target.value })} /></label>
       <label>Publisher / pollster<select value={filter.pollster} onChange={(e) => setFilter({ ...filter, pollster: e.target.value })}><option value="">All publishers</option>{[...new Set(polls.map((p) => p.pollster))].sort().map((p) => <option key={p}>{p}</option>)}</select></label><button type="submit">Apply to link</button><button type="button" onClick={() => apply(true)}>Clear filters</button>

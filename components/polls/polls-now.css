@@ -93,3 +93,11 @@
   .pn-table tr.first:first-child { border-top: 0; }
   .pn-table .blocname { left: 0; }
 }
+
+/* The alternative average beside the site average. */
+.pn-alt { display: grid; gap: 18px; margin-top: 14px; max-width: 760px; }
+.pn-alt-row { margin: 0; }
+.pn-alt-row figcaption { display: flex; flex-wrap: wrap; gap: 2px 10px; font-size: 14px; margin-bottom: 8px; }
+.pn-alt-row figcaption span { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pn-alt-row figcaption span b { color: var(--ink); }
+.pn-alt + .fig-src { margin: 12px 0 0; max-width: 90ch; }
