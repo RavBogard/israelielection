@@ -64,8 +64,8 @@ function Plot({ events, electionDay, narrow }: { events: Events; electionDay: st
             <g key={s.date}>
               {s.hi > s.lo ? <rect className="band" x={x1} width={x2 - x1} y={y(s.hi)} height={y(s.lo) - y(s.hi)} /> : <line className="seat" x1={x1} x2={x2} y1={y(s.lo)} y2={y(s.lo)} />}
               {i > 0 && <line className="seat" x1={x1} x2={x1} y1={y(Math.min(solid[i - 1].lo, s.lo))} y2={y(Math.max(solid[i - 1].hi, s.hi))} />}
-              {/* On phones a range is too long to fit its short step; the band and the caption carry it. */}
-              {!(narrow && s.hi > s.lo) && <text className="val" x={x1 + 4} y={y(s.hi) - 7}>{s.label}</text>}
+              {/* A range's label is drawn only where it fits inside its step, clear of the next step's line; otherwise the band and the caption carry it. */}
+              {!(s.hi > s.lo && (narrow || (s.label ?? "").length * 8 + 10 > x2 - x1)) && <text className="val" x={x1 + 4} y={y(s.hi) - 7}>{s.label}</text>}
             </g>
           );
         })}

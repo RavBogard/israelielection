@@ -33,7 +33,7 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
   };
   const named = data.dots
     .filter((d) => d.labelled)
-    .map((d) => ({ d, cx: px(d.x), cy: py(d.y), text: `${d.name} ${(d.share * 100).toFixed(0)}%` }))
+    .map((d) => ({ d, cx: px(d.x), cy: py(d.y), text: `${d.name} ${(d.share * 100).toFixed(1)}%` }))
     .sort((a, b) => a.cy - b.cy)
     .map((n) => ({ ...n, left: n.cx < mid, ly: n.cy, lx: 0 }));
   for (const left of [true, false]) {

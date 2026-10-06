@@ -60,7 +60,7 @@ export default function ThresholdWatch() {
               </span>
               <span className="tw-read">
                 <b>{k}</b> of {dots.length}
-                {k > 0 && avg && <span className="tw-avg"> {avg} avg</span>}
+                {k > 0 && avg && <span className="tw-avg">, average {avg}</span>}
               </span>
             </li>
           );

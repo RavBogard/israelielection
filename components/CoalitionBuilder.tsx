@@ -201,6 +201,16 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const opener = useRef<HTMLButtonElement | null>(null);
   const ready = useRef(false);
   const gate = useRef(restorationGate());
+  // The sticky phone summary steps aside while the full meter is on screen, so the total is never shown twice.
+  const meterRef = useRef<HTMLDivElement>(null);
+  const [meterSeen, setMeterSeen] = useState(false);
+  useEffect(() => {
+    const el = meterRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const io = new IntersectionObserver(([e]) => setMeterSeen(e.isIntersecting), { rootMargin: "-60px 0px 0px 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   // Restore from the URL (?poll=…&with=a,b) first, then the remembered poll.
   useEffect(() => {
@@ -320,7 +330,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
       </section>
 
       <div className="layout">
-        <div className="mobile-arrangement" aria-live="polite">
+        <div className={`mobile-arrangement${meterSeen ? " gone" : ""}`} aria-live="polite" aria-hidden={meterSeen || undefined}>
           <span><b>{sn(t.total)}</b> cabinet seats, <b>{sn(vote.yes)}</b> for / <b>{sn(vote.no)}</b> against</span>
           <a href="#arrangement-result">View the arrangement</a>
           <SeatBar className="ma-bar" total={KNESSET} majority={MAJORITY} segments={segments.map((s) => ({ key: s.id, seats: s.seats, color: s.color }))} />
@@ -346,7 +356,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
         <aside className="panel" id="arrangement-result" aria-live="polite">
           <h2 className="sr-only">Your coalition</h2>
-          <div className="meter">
+          <div className="meter" ref={meterRef}>
           <div className="total">
             <span className="n">{sn(t.total)}{t.partial ? "+" : ""}</span>
             <span className="read">

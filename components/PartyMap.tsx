@@ -243,8 +243,8 @@ export default function PartyMap() {
           </div>
           <div className="offmap">
             {offMap.map((p) => (
-              <button key={p.id} type="button" className="chip" aria-pressed={current === p.id} data-party={p.id} onClick={() => select(p.id)}>
-                <span className="sw" style={{ background: partyColor(p.id) }} />
+              <button key={p.id} type="button" className={`chip${avgOf.has(p.id) ? "" : " na"}`} aria-pressed={current === p.id} data-party={p.id} onClick={() => select(p.id)}>
+                <span className="sw" style={avgOf.has(p.id) ? { background: partyColor(p.id) } : undefined} />
                 <b>{p.name}</b>
                 <em>{p.status}</em>
               </button>

@@ -132,5 +132,6 @@
   .cb .mobile-arrangement a { color: var(--ink); font-weight: 700; }
   /* The coalition's seats on a 120-seat bar, with the 61 mark, kept in view while choosing slips. */
   .cb .ma-bar { flex-basis: 100%; margin-top: 4px; }
+  .cb .mobile-arrangement.gone { visibility: hidden; }
 }
 .cb .together .empty { border-bottom: 0; }

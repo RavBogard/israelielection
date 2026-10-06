@@ -47,6 +47,9 @@
 .pm .chip:hover { border-color: var(--ink-3); }
 .pm .chip[aria-pressed="true"] { border-style: solid; border-color: var(--ink); }
 .pm .chip em { font-style: normal; color: var(--ink-3); }
+/* Off the map: below the threshold is out (dashed); no polling found is absent (solid edge, hatched swatch). */
+.pm .chip.na { border-style: solid; }
+.pm .chip.na .sw { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); box-shadow: inset 0 0 0 1px var(--line-2); }
 .pm .minor { font-size: 14px; color: var(--ink-2); margin: 0; max-width: 80ch; }
 .pm .btable { width: 100%; border-collapse: collapse; font-size: 15px; }
 .pm .btable td { padding: 6px 0; border-bottom: 1px solid var(--line); }

@@ -92,7 +92,7 @@ export function matrixRows(ids: string[]): MatrixRow[] {
  * Fill for a stance shade: the profile tiles' ramp, fixed endpoints so light and dark modes agree. Options that are
  * not a scale (priorities that can coexist) take the paper with a faint dot screen (UNORDERED_FILL), a 1px ink outline
  * (UNORDERED_EDGE) and an ink numeral: a mark no ramp step can be read as, and one that does not read as an empty bar;
- * hatched (declined) and dashed (none) keep their meanings. It is a background shorthand, so set it as `background`.
+ * hatched (declined: dense ink; none: light) keeps its meaning. It is a background shorthand, so set it as `background`.
  */
 export const UNORDERED_FILL = "radial-gradient(circle, var(--line-2) 0.9px, transparent 1.3px) 0 0 / 5px 5px, var(--sheet)";
 export function shade(position: number | null): string {

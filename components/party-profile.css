@@ -135,8 +135,8 @@
 .pp-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; }
 .pp-tile.open .bar { margin: 0 -8px 2px; }
 .pp-tile.open::after { content: ""; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
-.pp-tile.nf { border-style: dashed; }
-.pp-tile.nf .bar { background: transparent; border-bottom: 1px dashed var(--line-2); height: 8px; }
+/* No position found is absent: a hatched bar on a plain tile. Dashed means out. */
+.pp-tile.nf .bar { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); box-shadow: inset 0 -1px 0 var(--line-2); }
 .pp-tile.nf .stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }
 .pp-tilekey { margin: 0; font-size: 12px; line-height: 1.4; color: var(--ink-3); }
 .pp-tilepanel { background: var(--sheet); border: 1px solid var(--line-2); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }

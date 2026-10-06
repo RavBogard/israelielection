@@ -308,7 +308,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
               {shown.map((p, i) => (
                 <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : !seatsOf(p) ? " below" : ""}`} style={swatch(p.id)}>
                   {p.letters ? <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${p.letters}`}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
-                  <span className="seats">{seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? "out" : p.seats === null ? "–" : "below"}</span>
+                  <span className="seats">{seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? "below" : p.seats === null ? "–" : "below"}</span>
                 </td>
               ))}
             </tr>
