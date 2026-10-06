@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -2044,6 +2044,67 @@
           "seats": 0,
           "belowThreshold": true,
           "pct": "2.6%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-12-2026-10-05",
+      "pollster": "Channel 12",
+      "firm": "Midgam R&C",
+      "fieldwork": "Oct 5, 2026",
+      "published": "2026-10-05",
+      "via": "Arutz Sheva",
+      "url": "https://www.israelnationalnews.com/news/434161",
+      "n": null,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1378756845).",
+      "results": {
+        "likud": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "0.5%"
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 9
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 8
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.5%"
         }
       },
       "combined": []
