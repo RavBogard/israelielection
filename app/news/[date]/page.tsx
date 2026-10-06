@@ -6,6 +6,7 @@ import "@/components/news.css";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import ChangesSourceLabels from "@/components/ChangesSourceLabels";
+import PageHead from "@/components/PageHead";
 
 const briefings = briefingsJson as Briefing[];
 const LONG = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -37,14 +38,12 @@ export default async function Page({ params }: { params: Promise<{ date: string 
   return (
     <div className="ix nw">
       <div className="wrap">
-        <header className="page-head">
-          <h1>Briefing, {label(b.date)}</h1>
-          <p className="standfirst">What changed in Israel&apos;s 2026 election that day, in a few sentences. Each sentence links the report it rests on.</p>
-          <p className="note">
+        <PageHead title={<>Briefing, {label(b.date)}</>} standfirst={<>What changed in Israel&apos;s 2026 election that day, in a few sentences. Each sentence links the report it rests on.</>}>
+          <p className="ph-meta">
             Written by an AI model ({b.model}) from the day&apos;s headlines at {IL.format(new Date(b.generatedAt))} Israel time; sentences that could not be matched to a
             source were removed automatically. <Link href="/news">Today&apos;s briefing and the latest headlines</Link>
           </p>
-        </header>
+        </PageHead>
         <section className="nw-brief nw-brief-page" aria-label="The briefing">
           <div className="nw-sentences">
             {b.sentences.map((s, k) => (

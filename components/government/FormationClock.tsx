@@ -72,7 +72,7 @@ export default function FormationClock({ steps, published, today }: { steps: Mil
           {day !== null && day >= 0 && day <= END && <span className="gc-nowl" style={{ left: pos(day) }}>Today, day {day}</span>}
         </span>
       </div>
-      <p className="gov-fig-src">
+      <p className="fig-src gov-fig-src">
         Black bars are a nominee&apos;s time to build a coalition; grey bars are the president&apos;s or the Knesset&apos;s turn; the open bar is the extension, which the president may grant or refuse.
         {!published && " The axis gets calendar dates once the Central Elections Committee publishes the official results, expected about a week after election day."}
       </p>

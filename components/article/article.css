@@ -15,12 +15,12 @@
 .article .foreword + .body { margin-top: 24px; }
 .article .body { font-family: var(--display); font-size: 18px; line-height: 1.62; color: var(--text); }
 .article .body > p, .article .body > ul, .article .body > ol { margin: 0 0 1.05em; }
-.article .body h2 { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.1; letter-spacing: -.012em; margin: 1.7em 0 .55em; padding-top: 14px; border-top: 1px solid var(--ink); color: var(--ink); }
+.article .body h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.1; letter-spacing: -.012em; margin: 1.7em 0 .55em; padding-top: 14px; border-top: 1px solid var(--ink); color: var(--ink); }
 .article .body > h2:first-child { border-top: 0; padding-top: 0; margin-top: 1.3em; }
 .article .body h3 { font-family: var(--body); font-weight: 700; font-size: 17px; line-height: 1.3; margin: 1.5em 0 .4em; color: var(--ink); }
 .article .body ul, .article .body ol { padding-left: 1.3em; }
 .article .body li { margin-bottom: .35em; }
-.article .body a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line-2); }
+.article .body a:not(.fig-src a) { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--line-2); }
 .article .body a:hover { text-decoration-color: var(--ink); }
 .article .body strong { font-weight: 700; color: var(--ink); }
 
@@ -39,8 +39,8 @@
 .article figure { margin: 1.6em 0; padding: 14px 0 12px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-family: var(--body); color: var(--text); }
 .article .ct { font-family: var(--body); font-weight: 700; font-size: 16px; line-height: 1.3; margin: 0; color: var(--ink); }
 .article .cq { font-size: 14px; color: var(--ink-2); margin: 4px 0 0; }
-.article .cs { font-size: 13px; line-height: 1.45; color: var(--ink-3); margin: 10px 0 0; }
-.article .cs a, .article .rs a { color: var(--ink-2); }
+.article .cs { margin: 10px 0 0; }
+.article .rs a { color: var(--ink-2); }
 .article .rs { display: block; font-size: 12px; line-height: 1.35; color: var(--ink-3); font-weight: 400; margin-top: 2px; }
 
 .article .bars { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
@@ -73,17 +73,13 @@
 .article .quote blockquote p { margin: 0 0 .5em; }
 .article .quote figcaption { font-size: 13px; color: var(--ink-3); margin-top: 6px; }
 .article .quote figcaption a { color: var(--ink-2); }
-.article .note { background: var(--sheet); border: 1px solid var(--line-2); padding: 14px 18px; margin: 1.5em 0; font-family: var(--body); font-size: 15px; line-height: 1.55; color: var(--text); }
-.article .note .nt { font-weight: 700; margin: 0 0 4px; color: var(--ink); }
-.article .note p { margin: 0 0 .5em; }
-.article .note p:last-child { margin-bottom: 0; }
 
 /* Section landing pages */
 .sindex { max-width: 760px; }
 .sindex .page-head { padding-bottom: 20px; border-bottom: 1px solid var(--ink); }
 .sindex .items { list-style: none; margin: 0; padding: 0; }
 .sindex .items > li { padding: 20px 0; border-bottom: 1px solid var(--line); }
-.sindex h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.12; margin: 0; }
+.sindex h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.12; margin: 0; }
 .sindex h2 a { color: var(--ink); text-decoration: none; }
 .sindex h2 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .sindex .items > li > p, .sindex .extra p { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); margin: 6px 0 0; }
@@ -113,8 +109,7 @@
 
 /* Chart forms drawn from tables (components/article/ChartViz.tsx). Series are told apart by mark
    (solid, ring, grey, grey ring) as well as position, so nothing depends on colour alone. */
-.article .cv-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 12px 0 8px; font-size: 13.5px; color: var(--ink-2); }
-.article .cv-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.article .cv-legend { margin: 12px 0 8px; }
 .article .cv-m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; flex: none; }
 .article .cv-m.solid { background: var(--ink); }
 .article .cv-m.ring { background: var(--sheet); border: 2.5px solid var(--ink); }
@@ -130,14 +125,14 @@
 .article .cv-dots .vals { display: flex; gap: 10px; font-variant-numeric: tabular-nums; font-size: 13.5px; }
 .article .cv-dots .vals b { font-weight: 700; color: var(--ink); text-align: right; flex: none; }
 .article .cv-dots .vals b.v-grey, .article .cv-dots .vals b.v-grey-ring { color: var(--ink-2); font-weight: 600; }
-.article .cv-dots li.cv-axis { border-top: 0; padding: 2px 0 0; font-size: 11.5px; color: var(--ink-3); }
+.article .cv-dots li.cv-axis { border-top: 0; padding: 2px 0 0; font-size: 12px; color: var(--ink-3); }
 .article .cv-dots .cv-axis .ax { display: flex; justify-content: space-between; }
 .article .cv-lines svg { display: block; width: 100%; height: auto; margin-top: 10px; }
 .article .cv-lines svg.narrow { display: none; }
 .article .cv-lines svg.narrow .tick { font-size: 12px; }
 .article .cv-lines svg.narrow .end .v { font-size: 14px; }
 .article .cv-lines .grid { stroke: var(--line); stroke-width: 1; }
-.article .cv-lines .tick { fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.article .cv-lines .tick { fill: var(--ink-3); font-size: 12px; font-variant-numeric: tabular-nums; }
 .article .cv-lines .ser path { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
 .article .cv-lines .ser.solid path { stroke: var(--ink); }
 .article .cv-lines .ser.ring path { stroke: var(--ink-2); }
@@ -151,7 +146,6 @@
 .article .cv-lines .end .v { font-family: var(--display); font-weight: 700; font-size: 16px; fill: var(--ink); }
 .article .cv-numbers { margin-top: 10px; }
 .article .cv-numbers summary { cursor: pointer; font-size: 13.5px; font-weight: 600; width: fit-content; }
-.article .cv-numbers summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .article table.heat td { text-align: center; font-variant-numeric: tabular-nums; }
 @media (max-width: 640px) {
   .article .cv-dots ul { grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; }
@@ -165,17 +159,14 @@
 /* Positions: the Knesset split by answer, then each answer's lists. Shades are the stance ramp
    shared with the party profiles and Compare; the swatch beside each list is the list's own colour. */
 .article .positions .cq { font-size: 14px; color: var(--ink-2); margin: 4px 0 0; }
-:is(.article, .sindex) .ps-bar { position: relative; display: flex; height: 34px; margin-top: 14px; background: var(--cell); }
-:is(.article, .sindex) .ps-bar .seg { display: flex; align-items: center; justify-content: flex-start; padding-left: 8px; min-width: 0; overflow: hidden; border-right: 2px solid var(--bg); font-size: 12.5px; font-variant-numeric: tabular-nums; }
-:is(.article, .sindex) .ps-bar .seg.rest { background: var(--cell); border-right: 0; }
-:is(.article, .sindex) .ps-bar .on-light, .article .ps-grp .key.on-light { color: #fff; }
-:is(.article, .sindex) .ps-bar .on-dark, .article .ps-grp .key.on-dark { color: #000; }
-:is(.article, .sindex) .ps-bar .on-ink, .article .ps-grp .key.on-ink { color: var(--bg); }
-:is(.article, .sindex) .ps-bar .maj { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; background: var(--ink); }
-.article .ps-note { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; }
+/* The bar is a SeatBar (components/SeatBar.tsx); .ps-bar only places it. */
+:is(.article, .sindex) .ps-bar { margin-top: 14px; }
+.article .ps-grp .key.on-light { color: #fff; }
+.article .ps-grp .key.on-dark { color: #000; }
+.article .ps-grp .key.on-ink { color: var(--bg); }
 .article .ps-grp { margin-top: 18px; }
 .article .ps-grp h3 { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 700; margin: 0; padding-bottom: 6px; border-bottom: 1px solid var(--ink); color: var(--ink); }
-.article .ps-grp .key { flex: none; width: 20px; height: 18px; line-height: 18px; text-align: center; font-size: 11.5px; font-weight: 700; }
+.article .ps-grp .key { flex: none; width: 20px; height: 18px; line-height: 18px; text-align: center; font-size: 12px; font-weight: 700; }
 .article .ps-grp .gs { margin-left: auto; font-family: var(--display); font-size: 15px; font-variant-numeric: tabular-nums; }
 .article .ps-grp.quiet h3 { color: var(--ink-2); border-bottom-color: var(--line-2); }
 .article .positions .ps-grp ul { margin-top: 0; }
@@ -186,7 +177,7 @@
 .article .ps-lead .ct { font-size: 16px; }
 .article .ps-legend { list-style: none; margin: 14px 0 0; padding: 0; }
 .article .ps-legend li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 8px 0; border-top: 1px solid var(--line); }
-.article .ps-legend .key { width: 22px; height: 20px; line-height: 20px; text-align: center; font-size: 11.5px; font-weight: 700; }
+.article .ps-legend .key { width: 22px; height: 20px; line-height: 20px; text-align: center; font-size: 12px; font-weight: 700; }
 .article .ps-legend .on-light { color: #fff; }
 .article .ps-legend .on-dark { color: #000; }
 .article .ps-legend .on-ink { color: var(--bg); }
@@ -198,9 +189,7 @@
 .article .lead-fig { margin: 22px 0 18px; }
 /* The Issues index: each issue's Knesset split as a small bar under its title. */
 .sindex .ps-mini { margin: 8px 0 6px; max-width: 700px; }
-.sindex .ps-mini .ps-bar { height: 22px; margin-top: 0; }
-.sindex .ps-mini .ps-bar .seg { font-size: 11px; padding-left: 5px; }
+.sindex .ps-mini .ps-bar { margin-top: 0; }
 .sindex .ps-mini-read { margin: 6px 0 0 !important; font-size: 13.5px !important; color: var(--ink-2); font-family: var(--body) !important; }
 .sindex .ps-mini-read b { color: var(--ink); font-weight: 600; }
-:is(.article, .sindex) .ps-bar .seg { border: 0; border-right: 2px solid var(--bg); border-radius: 0; flex-wrap: nowrap; }
 .vm-text .vm-checked { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); }

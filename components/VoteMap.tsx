@@ -329,7 +329,7 @@ export default function VoteMap() {
 
         <aside className="vm-side">
           <p className="vm-k">{mode==="single" ? list.name : MODE_LABELS[mode]}, {election.label}</p>
-          <ul className={`vm-legend${mode!=="single" ? " vm-category-legend" : ""}`} aria-label={mode==="single" ? "Share of the valid vote" : "Historical list colors"}>
+          <ul className={`fig-key vm-legend${mode!=="single" ? " vm-category-legend" : ""}`} aria-label={mode==="single" ? "Share of the valid vote" : "Historical list colors"}>
             {mode==="single" ? BIN_LABELS.map((l, i) => (
               <li key={l}><span style={{ background: `var(--vm-${i})` }} />{l}</li>
             )) : election.lists.map(l=><li key={l.letters}><span style={{background:listColor(l.name)}}/>{l.name}</li>)}
@@ -337,7 +337,7 @@ export default function VoteMap() {
             {mode==="leader" && <><li><span className="vm-sw-tie"/>Tie among named leaders</li><li><span className="vm-sw-unknown"/>Leader not established: Other may conceal it</li></>}
             <li><span className="vm-sw-none" />missing / no valid denominator</li>
           </ul>
-          {mode==="mix" && <div className="vm-size-key"><svg width="110" height="60" role="img" aria-label={`Circle areas: ${num(Math.round(maxValid/4))} and ${num(maxValid)} valid votes`}><circle cx="17" cy="31" r="13"/><circle cx="72" cy="31" r="26"/></svg><p>Example sizes: {num(Math.round(maxValid/4))} / {num(maxValid)} valid votes. The same area scale applies throughout this election.</p></div>}
+          {mode==="mix" && <div className="fig-key vm-size-key"><svg width="110" height="60" role="img" aria-label={`Circle areas: ${num(Math.round(maxValid/4))} and ${num(maxValid)} valid votes`}><circle cx="17" cy="31" r="13"/><circle cx="72" cy="31" r="26"/></svg><p>Example sizes: {num(Math.round(maxValid/4))} / {num(maxValid)} valid votes. The same area scale applies throughout this election.</p></div>}
 
           <div className="vm-info" aria-live="polite">
             {info !== null && places[info] ? (
@@ -413,7 +413,7 @@ export default function VoteMap() {
           </table>
         </div>
       </details>
-      <p className="vm-src">
+      <p className="fig-src vm-src">
         Source: Central Elections Committee, <a href={election.source.results}>national results</a> and{" "}
         <a href={election.source.csv}>results by locality</a> ({election.label}).
       </p>

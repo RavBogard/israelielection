@@ -5,16 +5,14 @@
 .changes-filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .changes-filters label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 14px; color: var(--ink); }
 .changes-filters select, .changes-filters input { min-height: 44px; padding: 0 12px; font: inherit; font-weight: 400; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; min-width: 0; width: 100%; }
-.changes-filters select:focus-visible, .changes-filters input:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .changes-options { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 16px 0; font-size: 14px; color: var(--ink-2); }
 .changes-options input { margin-right: 6px; }
 .changes-local { font-size: 13.5px; color: var(--ink-2); }
 .change-entry { border-top: 1px solid var(--line); padding: 24px 0; scroll-margin-top: 90px; }
 .change-entry header { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
-.change-entry header h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.2; margin: 4px 0 16px; color: var(--ink); }
+.change-entry header h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.2; margin: 4px 0 16px; color: var(--ink); }
 .change-entry .change-meta { font-size: 13px; color: var(--ink-2); margin: 0; }
 .change-entry header button { min-height: 44px; font: inherit; font-size: 14px; padding: 0 12px; background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); cursor: pointer; min-width: 60px; }
-.change-entry header button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .change-entry header button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .change-states { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; }
 .change-states > div { background: var(--sheet); padding: 14px 16px; border: 1px solid var(--line); border-top: 1px solid var(--line-2); }
@@ -33,7 +31,6 @@
 @media (max-width: 800px) { .changes-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 550px) {
   .change-states { grid-template-columns: 1fr; gap: 10px; }
-  .change-entry header h2 { font-size: 21px; }
   .changes-filters select, .changes-filters input { font-size: 16px; }
   .change-entry header { gap: 10px; }
 }

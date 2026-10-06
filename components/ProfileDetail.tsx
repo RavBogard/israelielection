@@ -79,7 +79,7 @@ export default function ProfileDetail({ party: p, headingId }: Props) {
           <Items items={p.pledges} />
         </div>
       )}
-      <p className="src">
+      <p className="fig-src">
         The <Link href={`/parties/${p.id}`}>full profile</Link> has where {p.name} stands on each issue, its seats in every poll, the names on its list,
         bios and sources.
       </p>

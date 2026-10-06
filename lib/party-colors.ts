@@ -5,7 +5,9 @@ const PARTY_COLORS:Record<string,string>={
   byachad:"#ce542d",yashar:"#ed9859",dem:"#a72f65",yb:"#9e3826",bw:"#db7898",
   res:"#b48727",jl:"#267b44",raam:"#80b667",
 };
-export const partyColor=(id:string):string=>PARTY_COLORS[id] ?? "#8c939b";
+/** The grey for a list with no editorial colour; a hex (not var(--party-fallback)) because partyInk() reads its luminance and SVG and image cards take it. Keep equal to --party-fallback. */
+export const PARTY_FALLBACK="#8c939b";
+export const partyColor=(id:string):string=>PARTY_COLORS[id] ?? PARTY_FALLBACK;
 /** Choose the higher-contrast black/white text from WCAG relative luminance. */
 export function partyInk(id:string):string{const hex=partyColor(id).slice(1);const rgb=[0,2,4].map(i=>parseInt(hex.slice(i,i+2),16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722>.179 ? "#000000" : "#ffffff";}
 export const PARTY_COLOR_FAMILIES = [

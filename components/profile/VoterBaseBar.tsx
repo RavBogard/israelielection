@@ -5,7 +5,7 @@ export default function VoterBaseBar({ base, color }: { base: VoterBase; color: 
   const total = base.groups.reduce((s, g) => s + g.pct, 0);
   // Fixed light endpoint, so the small segments stay visible on the dark paper too.
   const tints = [100, 68, 42, 22];
-  const tint = (i: number) => `color-mix(in oklab, ${color} ${tints[Math.min(i, tints.length - 1)]}%, #e9ecf2)`;
+  const tint = (i: number) => `color-mix(in oklab, ${color} ${tints[Math.min(i, tints.length - 1)]}%, var(--tint-base))`;
   return (
     <>
       <div className="pp-stack" role="img" aria-label={`${base.listName} voters in 2022: ${base.groups.map((g) => `${g.pct}% ${g.label}`).join(", ")}.`}>
@@ -13,7 +13,7 @@ export default function VoterBaseBar({ base, color }: { base: VoterBase; color: 
           <span key={g.label} style={{ width: `${(g.pct / Math.max(total, 100)) * 100}%`, background: tint(i) }} />
         ))}
       </div>
-      <ul className="pp-stack-key">
+      <ul className="fig-key pp-stack-key">
         {base.groups.map((g, i) => (
           <li key={g.label}>
             <i style={{ background: tint(i) }} />

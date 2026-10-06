@@ -102,7 +102,7 @@ function Entry({ p, row }: { p: CompareParty; row: PositionRow | undefined }) {
     <li id={`said-${p.id}`}>
       <Who p={p} />
       {text && <p className="pos">{text}</p>}
-      <p className="src">
+      <p className="fig-src">
         {src.url ? <a href={src.url} rel="noopener">{src.text ?? src.url}</a> : src.text}
         {row?.basis === "record" && <> (on the record, because the party did not answer the questionnaire)</>}
         {src.text || row?.basis === "record" ? ". " : ""}
@@ -162,14 +162,14 @@ function Panel({ row, shown, colSpan }: { row: MatrixRow; shown: CompareParty[];
                       <Who p={p}>
                         {" "}<span className="st">{kindOf(p) === "declined" ? DECLINED : "No position found"}</span>
                       </Who>
-                      <p className="src">{evidenceLabel(r)}{r?.checked ? `. Checked ${r.checked}` : ""}</p>
+                      <p className="fig-src">{evidenceLabel(r)}{r?.checked ? `. Checked ${r.checked}` : ""}</p>
                     </li>
                   );
                 })}
               </ul>
             </section>
           )}
-          {row.issue.file.note && <p className="note">{row.issue.file.note}</p>}
+          {row.issue.file.note && <p className="fig-note">{row.issue.file.note}</p>}
           <p className="links">
             {row.page && <Link href={row.page}>Read the issue page</Link>}
             <Link href={`/export/issue?${new URLSearchParams({ issue: row.key, p: ids.join(",") })}`}>Print or export this question</Link>
@@ -255,7 +255,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
         <p className="hint" aria-live="polite">{atMin ? `${selected.length} chosen. Two is the fewest to compare.` : `${selected.length} chosen.`}</p>
       </details>
 
-      <div className="mx-key">
+      <div className="fig-key mx-key">
         <p className="ramp">
           <span className="bar" aria-hidden="true">{[0, 0.25, 0.5, 0.75, 1].map((x) => <i key={x} style={{ background: shade(x) }} />)}</span>
           {"Each issue’s answers in order, from one end of the debate to the other. The same shade and number in a row is the same answer; the figure beside each answer is the seats its lists hold in the polling average."}

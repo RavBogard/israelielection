@@ -37,6 +37,6 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
     <p>{route.description} Leave or skip a step whenever you like.</p>
     <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
     </div>
-    <p className="src">Route facts as of {journeys.checked}. The linked guides carry the original evidence and dates. <Link href="/">Return to the homepage</Link>.</p>
+    <p className="fig-src">Route facts as of {journeys.checked}. The linked guides carry the original evidence and dates. <Link href="/">Return to the homepage</Link>.</p>
   </div>;
 }

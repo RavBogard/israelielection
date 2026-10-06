@@ -17,7 +17,7 @@ export default function SourcesBox({ children, count, open = false }: { children
         </span>
       </summary>
       <ol>{children}</ol>
-      <p className="src"><CorrectionLink /></p>
+      <p className="fig-src"><CorrectionLink /></p>
     </details>
   );
 }

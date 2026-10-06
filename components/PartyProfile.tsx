@@ -10,6 +10,7 @@ import SeatSparkline from "./profile/SeatSparkline";
 import StanceTiles from "./profile/StanceTiles";
 import StrongholdsMap from "./profile/StrongholdsMap";
 import VoterBaseBar from "./profile/VoterBaseBar";
+import SeatBar from "./SeatBar";
 
 const Src = ({ s }: { s: string | null }) => (s ? <> <span className="s">({s})</span></> : null);
 
@@ -59,7 +60,6 @@ export default function PartyProfile({ party: p }: { party: Party }) {
       !(map && /^Strong in /.test(v.text))
   );
   const who: Sourced[] = p.surplusPartner ? [...p.who, { text: `Surplus-vote partner: ${p.surplusPartner.text}`, source: p.surplusPartner.source }] : p.who;
-  const blocPct = Math.min(100, (g.blocSeats / TOTAL) * 100);
   return (
     <article className="pp" style={{ ["--pc" as string]: color, ["--pc-ink" as string]: ink }}>
       <header className="pp-head">
@@ -104,14 +104,11 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                 <div className="blocbox">
                   <dd>{one(g.blocSeats)}<span className="of"> of {MAJORITY}</span></dd>
                   <dt>{blocLabel[p.bloc]}</dt>
-                  <span className="pp-majority" role="img" aria-label={`${one(g.blocSeats)} of 120 seats; a majority is 61.`}>
-                    <i style={{ width: `${blocPct}%`, background: `var(--b-${p.bloc})` }} />
-                    <b style={{ left: `${(MAJORITY / TOTAL) * 100}%` }} />
-                  </span>
+                  <SeatBar className="pp-majority" total={TOTAL} majority={MAJORITY} segments={[{ key: p.bloc, seats: Math.min(TOTAL, g.blocSeats), color: `var(--b-${p.bloc})` }]} label={`${one(g.blocSeats)} of 120 seats; a majority is 61.`} />
                   <small>{g.avg !== null ? `${g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`}; this list is ${["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} in the bloc` : "this list is not counted in the bloc total"}</small>
                 </div>
               </dl>
-              <p className="src">
+              <p className="fig-src">
                 Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
               </p>
             </figure>
@@ -119,7 +116,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
             <figure className="pp-fig o3">
               <figcaption className="lbl">Seats in every poll since the Knesset dissolved</figcaption>
               <SeatSparkline series={series} result={r22} color={color} name={p.name} />
-              <p className="src">
+              <p className="fig-src">
                 {reported.length} polls from {publishers} publishers, {mediumDate(g.firstDate)} to {mediumDate(g.lastDate)}. A dot on the floor is a poll that had the list below the threshold; a gap is a poll that did not report it separately.
               </p>
             </figure>
@@ -128,7 +125,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
               <figure className="pp-fig o6">
                 <figcaption className="lbl">{vb.listName === p.name ? `${p.name}’s` : `${vb.listName}`} 2022 voters, by religious self-description</figcaption>
                 <VoterBaseBar base={vb} color={color} />
-                <p className="src">{vb.source}.</p>
+                <p className="fig-src">{vb.source}.</p>
               </figure>
             )}
 
@@ -136,7 +133,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
               <figure className="pp-fig o7">
                 <figcaption className="lbl">{r22 && !r22.sameName ? `${r22.listName}’s` : `${p.name}’s`} share of the valid vote, 2022, by locality</figcaption>
                 <StrongholdsMap data={map} color={color} name={r22 && !r22.sameName ? r22.listName : p.name} />
-                <p className="src">Central Elections Committee, 25th Knesset results by locality. Nationally {(map.national * 100).toFixed(1)}%. The five strongest localities with at least 15,000 valid votes; below the national line, the three biggest cities and the weakest place with 50,000 or more valid votes, for comparison.</p>
+                <p className="fig-src">Central Elections Committee, 25th Knesset results by locality. Nationally {(map.national * 100).toFixed(1)}%. The five strongest localities with at least 15,000 valid votes; below the national line, the three biggest cities and the weakest place with 50,000 or more valid votes, for comparison.</p>
               </figure>
             )}
           </div>
@@ -151,7 +148,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
             <section className="pp-text o4">
               <h2>Who they are</h2>
               <Items items={who} />
-              {p.thin && <p className="src">{p.thin}</p>}
+              {p.thin && <p className="fig-src">{p.thin}</p>}
             </section>
 
             {voterText.length > 0 && (
@@ -173,7 +170,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                       </li>
                     ))}
                   </ul>
-                  <p className="src">{p.namesSource}</p>
+                  <p className="fig-src">{p.namesSource}</p>
                 </>
               )}
               {p.pledges && (
@@ -200,7 +197,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                   {p.bios.map((b) => (
                     <p className="pp-bio" key={b.name}><b>{b.name}.</b> {b.text}</p>
                   ))}
-                  <p className="src">Bio source: {partiesData.bioSource}</p>
+                  <p className="fig-src">Bio source: {partiesData.bioSource}</p>
                 </>
               ) : (
                 <>

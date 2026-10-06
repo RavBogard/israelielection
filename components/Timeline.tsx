@@ -101,7 +101,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
         </div>
         <div className="tl-cursor" style={{ left: pct(month) }} aria-hidden="true" />
       </div>
-      <p className="tl-key" aria-hidden="true">
+      <p className="fig-key tl-key" aria-hidden="true">
         <span>
           <i className="k-ev" /> Event
         </span>
@@ -159,7 +159,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
               {KIND[ev.kind]}, {longDate(ev.date)}
             </p>
             <p>{ev.text}</p>
-            <p className="tl-src">
+            <p className="fig-src tl-src">
               <a href={ev.source.url}>
                 {ev.source.name}
                 {ev.source.date ? `, ${/^\d{4}-\d\d-\d\d$/.test(ev.source.date) ? longDate(ev.source.date) : ev.source.date}` : ""}

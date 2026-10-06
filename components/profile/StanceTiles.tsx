@@ -2,14 +2,12 @@
 import Link from "next/link";
 import { useId, useState } from "react";
 import { partyColor } from "@/lib/party-colors";
+import { shade } from "../compare/model";
 import type { Tile } from "./model";
 
-/** Bar colour for a stance: where it sits on the issue's scale, the same for every list that holds it. */
+/** Bar colour for a stance: where it sits on the issue's scale, the same for every list that holds it (the Compare matrix's shade). */
 function stanceColor(t: Tile): string | null {
-  if (t.kind !== "stance") return null;
-  if (t.position === null) return "var(--ink-2)";
-  // Fixed endpoints, so the scale reads the same in light and dark: darkest navy at the coalition's end.
-  return `color-mix(in oklab, #233f86 ${Math.round(100 - t.position * 80)}%, #dfe6f5)`;
+  return t.kind === "stance" ? shade(t.position) : null;
 }
 
 /**
@@ -52,7 +50,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
           <>
             <p className="q"><b>{current.label}.</b> {current.question}</p>
             {current.text ? <p className="words">{current.text}</p> : <p className="words nf">{"No position recorded in the site’s sources."}</p>}
-            <p className="src">
+            <p className="fig-src">
               {current.basis === "record" && "On the record, because the party did not answer the questionnaire. "}
               {current.url ? <a href={current.url} rel="noopener">{current.source}</a> : current.source}
               {current.date && !(current.source ?? "").includes(current.date) ? `, ${current.date}` : ""}

@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import {partyColor,partyInk,blocColorStrip} from "@/lib/party-colors";
+import {partyColor,partyInk,blocColorStrip,PARTY_FALLBACK} from "@/lib/party-colors";
 import { arrangementKey, restorationGate } from "@/lib/builder-state";
 import "./interactives.css";
 import "./coalition.css";
@@ -10,6 +10,8 @@ import Governing from "./Governing";
 import type { StanceMap } from "@/lib/cohesion";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
+import PageHead from "./PageHead";
+import SeatBar from "./SeatBar";
 import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
 import { MAJORITY, KNESSET, tally, type Warning } from "@/lib/coalition";
 import { arrangement, arrangementWarnings, initialVoteDependence, restoreRoles, roleOf, ROLE_LABELS, writeRoles, type RoleOverrides, type SupportRole } from "@/lib/coalition-arrangement";
@@ -186,7 +188,6 @@ const pollPhrase = (poll: Poll) =>
 
 export default function CoalitionBuilder({ results = null, embedded = false, preset, stances }: { results?: Poll | null; embedded?: boolean; preset?: Preset; stances?: StanceMap }) {
   // On the home page the builder sits under the page's own heading, so its title is an h2.
-  const Title = embedded ? "h2" : "h1";
   const choices = useMemo(() => pickList(results), [results]);
   const [pollId, setPollId] = useState(results ? RESULTS_ID : AVERAGE_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
@@ -236,7 +237,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const cooperation = new Set([...sel, ...supportIds]);
   const voteNeeded = initialVoteDependence(sel, roles, parties, poll);
   const scenario = scenarioData.scenarios.find((s) => s.id === scenarioId);
-  const segments = t.segments.map((s) => { const party=parties.find((p)=>p.name===s.name); return {id:party?.id??s.name,seats:s.seats,color:party?partyColor(party.id):"#8c939b",label:s.name,href:party?`/parties?party=${party.id}`:"/parties"}; });
+  const segments = t.segments.map((s) => { const party=parties.find((p)=>p.name===s.name); return {id:party?.id??s.name,seats:s.seats,color:party?partyColor(party.id):PARTY_FALLBACK,label:s.name,href:party?`/parties?party=${party.id}`:"/parties"}; });
 
   const choosePoll = (id: string) => {
     setPollId(id);
@@ -276,22 +277,10 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
   return (
     <div className="cb">
-      <header className="ix-head">
-        <div>
-          <Title className="h1">Build a coalition</Title>
-          <p className="sub">
+      <PageHead as={embedded ? "h2" : "h1"} title="Build a coalition" standfirst={<>
             Tap a ballot slip to add a cabinet partner; <b>{MAJORITY}</b> of {KNESSET} seats is a majority.
-          </p>
-          {preset && presetIds.length > 0 && (
-            <p className="preset">
-              Start from{" "}
-              <button type="button" className="linkish" onClick={() => { setSel(new Set(presetIds)); setRoles({}); setScenarioId(null); }} aria-pressed={presetOn}>
-                {preset.label}
-              </button>
-              : {presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}.
-            </p>
-          )}
-        </div>
+          </>}
+        aside={
         <div className="controls">
           <div className="seg" role="group" aria-label="Choose a poll">
             {choices.map((p) => (
@@ -305,21 +294,28 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             Start over
           </button>
         </div>
-      </header>
+        }>
+          {preset && presetIds.length > 0 && (
+            <p className="preset">
+              Start from{" "}
+              <button type="button" className="linkish" onClick={() => { setSel(new Set(presetIds)); setRoles({}); setScenarioId(null); }} aria-pressed={presetOn}>
+                {preset.label}
+              </button>
+              : {presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}.
+            </p>
+          )}
+      </PageHead>
       <section className="arrangement-scenarios" aria-label="Explore a hypothetical arrangement">
         <p>Try a governing arrangement</p>
         <div>{scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}</div>
-        {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="src"><a href={scenario.url}>{scenario.source}</a>, Research checked {scenarioData.updated}. Pledge sources appear with each warning.</p></div>}
+        {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="fig-src"><a href={scenario.url}>{scenario.source}</a>, Research checked {scenarioData.updated}. Pledge sources appear with each warning.</p></div>}
       </section>
 
       <div className="layout">
         <div className="mobile-arrangement" aria-live="polite">
           <span><b>{fmt(t.total)}</b> cabinet seats, <b>{fmt(vote.yes)}</b> for / <b>{fmt(vote.no)}</b> against</span>
           <a href="#arrangement-result">View the arrangement</a>
-          <span className="ma-bar" aria-hidden="true">
-            {segments.map((s) => <i key={s.id} style={{ width: `${(s.seats / KNESSET) * 100}%`, background: s.color }} />)}
-            <b style={{ left: `${(MAJORITY / KNESSET) * 100}%` }} />
-          </span>
+          <SeatBar className="ma-bar" total={KNESSET} majority={MAJORITY} segments={segments.map((s) => ({ key: s.id, seats: s.seats, color: s.color }))} />
         </div>
         <div className="blocs">
           <h2 className="sr-only">The lists, by bloc</h2>
@@ -387,8 +383,8 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             {Object.entries(roles).length > 0 && <ul>{Object.entries(roles).map(([id, role]) => <li key={id}>{parties.find((p) => p.id === id)?.name ?? id}: {ROLE_LABELS[role]}</li>)}</ul>}
             {voteNeeded.length > 0 && <p>If any one of {voteNeeded.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(", ")} votes against rather than for, this hypothetical initial vote no longer passes.</p>}
             <details className="confidence-more"><summary>What this vote does and does not show</summary>
-            <p className="note">Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.</p>
-            <p className="src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
+            <p className="callout">Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.</p>
+            <p className="fig-src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
             </details>
           </section>
           {preset && presetOn && (
@@ -404,7 +400,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               <span aria-live="polite">{copied ? "Copied" : ""}</span>
             </div>
           )}
-          <div className="note">
+          <div className="callout">
             <p>
               Parties have made public pledges about partners. You can build any combination here; a yellow note means it goes against a recorded
               pledge, a grey one is a stated condition, not a refusal.

@@ -41,7 +41,7 @@ export default function BallotDirectory() {
             );
           })}
         </ol>
-        <p className="bd-src">
+        <p className="fig-src bd-src">
           Coloured slips are the lists that pass the threshold in the polling average, with their seats; plain slips poll below it or are not polled. Order as in the
           published roster. {data.caveat}
         </p>

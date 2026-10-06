@@ -56,7 +56,7 @@ const MARKS = ["solid", "ring", "grey", "grey-ring"] as const;
 
 function Legend({ columns }: { columns: string[] }) {
   return (
-    <p className="cv-legend">
+    <p className="fig-key cv-legend">
       {columns.map((h, i) => (
         <span key={h}>
           <i className={`cv-m ${MARKS[i]}`} aria-hidden="true" />

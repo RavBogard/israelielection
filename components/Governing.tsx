@@ -47,7 +47,7 @@ export default function Governing({ sel, parties, poll, map, children, withOutsi
   if (ids.length < 2) {
     return (
       <section className="together" aria-labelledby="together-h">
-        <h3 id="together-h">Can they govern together?</h3>
+        <h3 id="together-h" className="sec-h3">Can they govern together?</h3>
         <p className="empty">Add a second party to see where they agree and where they split.</p>
         {children}
       </section>
@@ -59,7 +59,7 @@ export default function Governing({ sel, parties, poll, map, children, withOutsi
   const dep = dependenceText(dependence(sel, parties, poll), nameOf);
   return (
     <section className="together" aria-labelledby="together-h">
-      <h3 id="together-h">Can they govern together?</h3>
+      <h3 id="together-h" className="sec-h3">Can they govern together?</h3>
       {withOutsideSupport && <p className="note">These policy rows include cabinet parties and hypothetical outside supporters. Abstainers are not treated as policy partners.</p>}
       <p className="sum">{sum}</p>
       <p className="note">These are selected policy questions, not a stability forecast. Questions are not equally important, and differences may be negotiable. Partial evidence never counts as coalition-wide agreement.</p>

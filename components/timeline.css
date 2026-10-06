@@ -8,11 +8,10 @@
 .tl-facts dt { font-size: 13px; font-weight: 600; color: var(--ink-2); }
 .tl-facts dd { margin: 2px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); }
 .tl-ev { padding: 0 0 0 20px; border-left: 1px solid var(--line-2); }
-.tl-ev :is(h2, h3) { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 2px 0 6px; color: var(--ink); }
-.tl-ev p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text); }
+.tl-ev :is(h2, h3) { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.15; margin: 2px 0 6px; color: var(--ink); }
+.tl-ev p:not(.fig-src) { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text); }
 .tl-k { font-size: 13px; font-weight: 600; color: var(--ink-2) !important; }
-.tl-src { margin-top: 8px !important; font-size: 13px !important; }
-.tl-src a { color: var(--ink-2); }
+.tl-src { margin-top: 8px; }
 
 .tl-track { position: relative; height: 92px; margin: 6px 0 0; touch-action: none; cursor: ew-resize; user-select: none; }
 .tl-row { position: absolute; left: 0; right: 0; }
@@ -25,7 +24,7 @@
 .tl-els span.on { background: var(--ink); width: 3px; }
 .tl-els span.next { background: none; border-left: 2px dashed var(--ink-2); }
 .tl-pms { top: 46px; height: 24px; }
-.tl-pms span { position: absolute; top: 0; height: 24px; overflow: hidden; white-space: nowrap; font-size: 11.5px; font-weight: 600; line-height: 24px; padding-left: 4px; box-sizing: border-box; border-right: 2px solid var(--bg); }
+.tl-pms span { position: absolute; top: 0; height: 24px; overflow: hidden; white-space: nowrap; font-size: 12px; font-weight: 600; line-height: 24px; padding-left: 4px; box-sizing: border-box; border-right: 2px solid var(--bg); }
 .tl-pms .a { background: var(--cell); color: var(--ink); }
 .tl-pms .b { background: color-mix(in oklab, var(--ink) 22%, var(--sheet)); color: var(--ink); }
 .tl-pms .on { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px var(--bg); }
@@ -33,8 +32,8 @@
 .tl-axis span { position: absolute; top: 2px; transform: translateX(-50%); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .tl-cursor { position: absolute; top: 0; bottom: 14px; width: 1px; margin-left: -.5px; background: var(--ink); pointer-events: none; }
 
-.tl-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 8px 0 0; font-size: 13px; color: var(--ink-2); }
-.tl-key span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.tl-key { margin: 8px 0 0; }
+.tl-key span { white-space: nowrap; }
 .tl-key i { display: inline-block; flex: none; }
 .tl-key .k-ev { width: 10px; height: 10px; border-radius: 50%; background: var(--ink-3); }
 .tl-key .k-el { width: 2px; height: 12px; background: var(--ink-2); }
@@ -69,4 +68,3 @@
 }
 .tl-checked { font-size: 12.5px; color: var(--ink-3); margin: 14px 0 0; }
 .tl-key span { white-space: normal; min-width: 0; }
-.tl-key { flex-wrap: wrap; }

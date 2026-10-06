@@ -12,6 +12,7 @@ import { averagePoll, blocs, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
 import { blocTotals } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = { title: "Start here", description: "A five-minute introduction to Israel's election, or a route through the parties, each step with a figure from the site." };
 
@@ -41,7 +42,7 @@ function BlocStack() {
           </p>
         </div>
       ))}
-      <p className="js-src">Seats in the polling average, scaled to 120.</p>
+      <p className="fig-src js-src">Seats in the polling average, scaled to 120.</p>
     </figure>
   );
 }
@@ -61,10 +62,7 @@ export default function Page() {
   };
   return (
     <div className="wrap ix">
-      <header className="page-head">
-        <h1>Start here</h1>
-        <p className="standfirst">A short path through the election, one figure at a time.</p>
-      </header>
+      <PageHead title="Start here" standfirst="A short path through the election, one figure at a time." />
       <Suspense fallback={<p>Loading the routes…</p>}>
         <GuidedJourney figures={figures} />
       </Suspense>

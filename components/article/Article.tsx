@@ -5,6 +5,7 @@ import { partyColor } from "@/lib/party-colors";
 import { shade } from "../compare/model";
 import type { PositionRow } from "@/lib/compare";
 import { DotPlot, Lines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
+import SeatBar from "../SeatBar";
 
 /*
  * The building blocks of a reference page, registered for every MDX file in
@@ -130,12 +131,12 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
         <NumbersTable c={c} heat={form === "heat"} />
       )}
       {compact ? (
-        <p className="cs">
+        <p className="fig-src cs">
           {cut > 0 && `${c.rows.length} of ${full.rows.length} rows; the page has them all. `}
           Source: <SourceLine {...c} />
         </p>
       ) : (
-      <p className="cs">
+      <p className="fig-src cs">
         {form === "heat" && heatMax(c) > 0 && `Darkest shade: ${heatMax(c)}%${c.columns!.slice(1).some(unshaded) ? "; turnout is a share of eligible voters, so it is not shaded" : ""}. `}
         Source: <SourceLine {...c} />
         {c.note && (
@@ -177,17 +178,17 @@ function splitOf(issue: string) {
 const onClass = (pos: number | null) => `on-${pos === null ? "ink" : pos < 0.5 ? "light" : "dark"}`;
 
 /** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
-function SplitBar({ groups, rest }: Pick<ReturnType<typeof splitOf>, "groups" | "rest">) {
+function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
+  const ink = (pos: number | null) => (pos === null ? "var(--bg)" : pos < 0.5 ? "#fff" : "#000");
   return (
-    <div className="ps-bar" role="img" aria-label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}>
-      {groups.filter((g) => g.seats > 0).map((g) => (
-        <span key={g.st.id} className={`seg ${onClass(g.pos)}`} style={{ width: `${(g.seats / SEATS) * 100}%`, background: shade(g.pos) }} title={`${g.st.label}: ${Math.round(g.seats)} seats`}>
-          <b>{g.n}</b>
-        </span>
-      ))}
-      {rest > 0 && <span className="seg rest" style={{ width: `${(rest / SEATS) * 100}%` }} title={`No recorded answer, or below the threshold: ${Math.round(rest)} seats`} />}
-      <i className="maj" style={{ left: `${(61 / SEATS) * 100}%` }} aria-hidden />
-    </div>
+    <SeatBar
+      className="ps-bar"
+      size={size}
+      total={SEATS}
+      segments={groups.map((g) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${Math.round(g.seats)} seats` }))}
+      rest={{ title: `No recorded answer, or below the threshold: ${Math.round(rest)} seats` }}
+      label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
+    />
   );
 }
 
@@ -223,7 +224,7 @@ export function PositionsLead({ issue }: { issue: string }) {
           </li>
         ))}
       </ul>
-      <p className="ps-note">
+      <p className="fig-note ps-note">
         {scale ? "Answers in order from one end of the debate to the other. " : "These priorities can coexist, so they are not ordered. "}
         Seats are the current polling average; the tick is 61. <a href="#positions">Each list&apos;s own words and sources</a>.
       </p>
@@ -238,7 +239,7 @@ export function SplitMini({ issue }: { issue: string }) {
   const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
   return (
     <div className="ps-mini">
-      <SplitBar groups={groups} rest={rest} />
+      <SplitBar groups={groups} rest={rest} size="m" />
       <p className="ps-mini-read">
         Largest answer: <b>{top.st.label}</b>, {Math.round(top.seats)} seats{top.seats >= 61 ? ", a majority" : ""}
       </p>
@@ -264,7 +265,7 @@ export function Positions({ issue }: { issue: string }) {
         </p>
         {r.text?.trim() && <p className="pt">{r.text}</p>}
         {r.source && (
-          <p className="cs">
+          <p className="fig-src cs">
             <SourceLine source={r.source} url={r.url!} date={r.date!} />
             {r.basis === "record" ? ". On the record, because the party did not answer the questionnaire" : ""}
           </p>
@@ -309,11 +310,11 @@ export function Positions({ issue }: { issue: string }) {
         </section>
       )}
       {p.note && (
-        <p className="cs">
+        <p className="fig-src cs">
           <Linked text={p.note} />
         </p>
       )}
-      <p className="cs"><a href={`/compare#issue-${AXIS_OF[issue] ?? ""}`}>Compare every list on this issue</a></p>
+      <p className="fig-src cs"><a href={`/compare#issue-${AXIS_OF[issue] ?? ""}`}>Compare every list on this issue</a></p>
     </figure>
   );
 }
@@ -336,7 +337,7 @@ export function Quote({ children, who, role, source, url, date }: { children: Re
 /** A boxed aside: a definition, a caveat, or a group kept out of the page totals. */
 export function Note({ title, children }: { title?: string; children: ReactNode }) {
   return (
-    <aside className="note">
+    <aside className="callout">
       {title && <p className="nt">{title}</p>}
       {children}
     </aside>

@@ -9,6 +9,7 @@ import type { SearchEntry } from "@/lib/search";
 import glossaryJson from "@/data/glossary.json";
 import aliasesJson from "@/data/search-aliases.json";
 import "@/components/interactives.css";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = { title: "Search", description: "Find parties, leaders, issues, guides and election terms, including alternate names and transliterations." };
 export default async function Page() {
@@ -19,5 +20,5 @@ export default async function Page() {
   }
   for (const t of (glossaryJson as Glossary).terms) entries.push({ href: `/glossary#${anchorOf(t.term)}`, title: t.term, description: t.def, kind: "glossary", aliases: [t.hebrew ?? "", t.say ?? ""] });
   for (const n of NAV) entries.push({href:n.href,title:n.label,description:n.description,kind:"resource",aliases:[...(aliases[n.href]??[]),...NAV_GROUPS.filter(g=>g.items.some(item=>item.href===n.href)).map(g=>g.label),...(n.href==="/resources"?["resources","tools","directory","site map"]:[])]});
-  return <div className="wrap ix"><header className="page-head"><h1>Search</h1><p className="standfirst">Find the party, question or word you came for.</p></header><Suspense fallback={<p>Loading search…</p>}><SiteSearch entries={entries} /></Suspense></div>;
+  return <div className="wrap ix"><PageHead title="Search" standfirst="Find the party, question or word you came for." /><Suspense fallback={<p>Loading search…</p>}><SiteSearch entries={entries} /></Suspense></div>;
 }

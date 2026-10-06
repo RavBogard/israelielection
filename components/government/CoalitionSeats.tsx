@@ -18,7 +18,7 @@ export default function CoalitionSeats({ events, electionDay }: { events: Events
       <figcaption className="gov-fig-h">The coalition&apos;s seats after each change, against the 61 needed for a majority</figcaption>
       <Plot events={events} electionDay={electionDay} narrow={false} />
       <Plot events={events} electionDay={electionDay} narrow />
-      <p className="gov-fig-src">Grey after the dissolution: the coalition governs on as a transitional government. The band is a change the reports give as 62 or 63 seats.</p>
+      <p className="fig-src gov-fig-src">Grey after the dissolution: the coalition governs on as a transitional government. The band is a change the reports give as 62 or 63 seats.</p>
     </figure>
   );
 }
@@ -73,12 +73,12 @@ function Plot({ events, electionDay, narrow }: { events: Events; electionDay: st
           <g>
             <line className="seat after" x1={x(dissolved.date)} x2={x(electionDay)} y1={y(dissolved.lo)} y2={y(dissolved.lo)} />
             <line className="mark" x1={x(dissolved.date)} x2={x(dissolved.date)} y1={P.t - 6} y2={H - P.b} />
-            <text className="note" x={x(dissolved.date) - 6} y={P.t + 2} textAnchor="end">{narrow ? "Dissolved" : "Knesset dissolved"}</text>
-            <text className="note" x={x(dissolved.date) - 6} y={P.t + 16} textAnchor="end">{mediumDate(dissolved.date)}</text>
+            <text className="gov-ann" x={x(dissolved.date) - 6} y={P.t + 2} textAnchor="end">{narrow ? "Dissolved" : "Knesset dissolved"}</text>
+            <text className="gov-ann" x={x(dissolved.date) - 6} y={P.t + 16} textAnchor="end">{mediumDate(dissolved.date)}</text>
           </g>
         )}
         <line className="mark" x1={x(electionDay)} x2={x(electionDay)} y1={P.t - 6} y2={H - P.b} />
-        <text className="note" x={x(electionDay) - 6} y={H - P.b - 8} textAnchor="end">{narrow ? "Vote" : "Election day"}</text>
+        <text className="gov-ann" x={x(electionDay) - 6} y={H - P.b - 8} textAnchor="end">{narrow ? "Vote" : "Election day"}</text>
       </svg>
   );
 }

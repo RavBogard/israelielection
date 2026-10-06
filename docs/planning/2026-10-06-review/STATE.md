@@ -29,7 +29,7 @@ Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touc
 
 ## Status
 
-- [ ] Wave 1 shared components
+- [x] Wave 1 shared components (PageHead, SeatBar, .fig-src/.fig-key/.fig-note/.callout, .sb-seg, --fs-sec scale, ramp/tint/fallback tokens, 12px floor, 23 duplicate focus rules removed)
 - [ ] Wave 2 navigation
 - [ ] Wave 3 polls and home
 - [ ] Wave 4 stance ramp and Compare

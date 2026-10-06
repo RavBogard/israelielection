@@ -36,7 +36,7 @@
 
 .vm-side { display: grid; gap: 18px; font-size: 14.5px; }
 .vm-k { font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 0 0 6px; }
-.vm-legend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; font-size: 13.5px; }
+.vm-legend { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px; }
 .vm-legend li { display: flex; align-items: center; gap: 7px; }
 .vm-legend span { width: 18px; height: 12px; flex: none; border: 1px solid var(--line); }
 .vm-sw-none { background: repeating-linear-gradient(45deg, var(--sheet) 0 3px, var(--line-2) 3px 4px); }
@@ -61,8 +61,7 @@
 .vm-table thead th { font-size: 13px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); }
 .vm-table tbody th button { font: 600 14.5px var(--body); color: var(--ink); background: none; border: 0; padding: 0; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; cursor: pointer; text-align: left; }
 .vm-table tbody th button:hover { text-decoration-color: currentColor; }
-.vm-src { font-size: 13px; color: var(--ink-3); margin: 10px 0 0; }
-.vm-src a { color: var(--ink-2); }
+.vm-src { margin: 10px 0 0; }
 
 @media (max-width: 760px) {
   .vm-body { grid-template-columns: minmax(0, 1fr); }
@@ -73,7 +72,7 @@
   .vm-controls select { width: 100%; }
 }
 .vm-history { margin: 26px 0; padding-block: 18px; border-block: 1px solid var(--ink); }
-.vm-history h2 { font-family: var(--display); font-size: 26px; }
+.vm-history h2 { font-family: var(--display); font-size: var(--fs-sec3); }
 .vm-history p { max-width: 78ch; }
 .vm-history table { min-width: 820px; }
 .vm-history th, .vm-history td { vertical-align: top; padding: 10px; border-bottom: 1px solid var(--line); text-align: left; }
@@ -91,7 +90,7 @@
 .vm-marker-count { font-size: 12px; line-height: 1.4; padding: 8px; margin: 0; background: var(--sheet); }
 .vm-sw-tie { background: radial-gradient(#65537d 20%,#e6dff2 22%); background-size: 6px 6px; }
 .vm-sw-unknown { background: repeating-linear-gradient(45deg,#cbd0d5 0 4px,#9299a0 4px 6px); }
-.vm-size-key { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.vm-size-key { margin: 0; gap: 8px; }
 .vm-size-key svg { flex: none; }
 .vm-size-key circle { fill: none; stroke: var(--ink); }
 .vm-mixbar { display: flex; height: 18px; border: 1px solid var(--line); margin-bottom: 10px; }

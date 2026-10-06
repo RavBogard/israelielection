@@ -5,6 +5,7 @@ import Timeline from "@/components/Timeline";
 import results from "@/data/results.json";
 import timelineJson from "@/data/timeline.json";
 import { decadeOf, longDate, type Source, type Timeline as Data } from "@/lib/timeline";
+import PageHead from "@/components/PageHead";
 
 const data = timelineJson as Data;
 
@@ -27,10 +28,7 @@ export default function Page() {
   const decades = [...new Set(data.events.map((e) => decadeOf(e.date)))];
   return (
     <div className="wrap article-page timeline-page">
-      <header className="page-head">
-        <h1>Timeline, 1977–2026</h1>
-        <p className="standfirst">Every prime minister, every Knesset election and {data.events.length} events since Likud&apos;s first win.</p>
-      </header>
+      <PageHead title="Timeline, 1977–2026" standfirst={<>Every prime minister, every Knesset election and {data.events.length} events since Likud&apos;s first win.</>} />
 
       <Timeline data={data} electionDay={results.election} />
       <p className="tl-checked">Facts checked {longDate(data.checked)}; each event links its source.</p>

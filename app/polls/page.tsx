@@ -13,6 +13,7 @@ import { allPolls, blocs, mainPolls, parties, pollsData } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
 import { inWithoutVariant } from "@/lib/polls";
 import { averageTrend } from "@/lib/trend";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Polls",
@@ -55,12 +56,9 @@ export default function Page() {
   return (
     <div className="ix pl">
       <div className="wrap">
-        <header className="page-head">
-          <h1>The Polls</h1>
-          <p className="standfirst">
+        <PageHead title="The Polls" standfirst={<>
             Every seat poll we track since {mediumDate(from)}: {allPolls.length} polls from {new Set(allPolls.map((p) => p.pollster)).size} pollsters.
-          </p>
-        </header>
+          </>} />
 
         <PollsNow />
 

@@ -7,6 +7,7 @@ import FormationClock from "@/components/government/FormationClock";
 import formationJson from "@/data/formation.json";
 import { type Formation, type Milestone, withDates } from "@/lib/formation";
 import { mediumDate } from "@/lib/format";
+import PageHead from "@/components/PageHead";
 
 const formation = withDates(formationJson as Formation);
 
@@ -48,9 +49,7 @@ export default function Page() {
 
   return (
     <div className="wrap article-page gov">
-      <header className="page-head">
-        <h1>{f.title}</h1>
-      </header>
+      <PageHead title={f.title} />
 
       <OutgoingGovernmentSection />
 
@@ -115,8 +114,8 @@ export default function Page() {
                 </p>
                 <p className="rule">{m.rule}</p>
                 {m.who && <p className="who">{m.who}</p>}
-                {w.kind !== "rule" && m.note && <p className="note">{m.note}</p>}
-                <p className="src">
+                {w.kind !== "rule" && m.note && <p className="fig-note">{m.note}</p>}
+                <p className="fig-src">
                   <a href={m.source.url}>{m.source.name}</a>
                   {m.source.date && <>, {m.source.date}</>}
                 </p>
@@ -130,7 +129,7 @@ export default function Page() {
         <h2 id="alt-h">{alt.title}</h2>
         <p className="when">{alt.latest ? <>At the latest {mediumDate(alt.latest)}</> : alt.note}</p>
         <p className="rule">{alt.rule}</p>
-        <p className="src">
+        <p className="fig-src">
           <a href={alt.source.url}>{alt.source.name}</a>
           {alt.source.date && <>, {alt.source.date}</>}
         </p>

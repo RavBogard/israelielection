@@ -16,6 +16,7 @@ import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
 import { countedTurnout, results } from "@/lib/results";
 import { fetchCount, resultsConfig as cfg } from "@/lib/results-live";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Results",
@@ -59,7 +60,7 @@ function Letters() {
           </tbody>
         </table>
       </div>
-      <p className="src" style={{ marginTop: 10 }}>Source: {cfg.lettersSource}</p>
+      <p className="fig-src" style={{ marginTop: 10 }}>Source: {cfg.lettersSource}</p>
     </>
   );
 }
@@ -77,7 +78,7 @@ function Method() {
         </li>
         <li>{MAJORITY} seats is an absolute majority. Initial confidence requires more votes for than against, excluding abstentions; constructive no-confidence requires 61 MKs to support an alternative government. <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>; <a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government</a>.</li>
       </ol>
-      <p className="src">
+      <p className="fig-src">
         {cfg.thresholdSource} Agreements: {cfg.agreements.map((a) => `${pairName(a.parties)}, ${a.source}`).join("; ")}. {cfg.agreementsNote}
       </p>
     </>
@@ -183,7 +184,7 @@ function ExitPolls({ lists }: { lists: PartyResult[] | null }) {
           </tbody>
         </table>
       </div>
-      <p className="src" style={{ marginTop: 10 }}>
+      <p className="fig-src" style={{ marginTop: 10 }}>
         Exit polls as broadcast at {IL.format(new Date(cfg.pollsClose))} Israel time: {exitPolls.map((e) => `${pollLabel(e)}, ${mediumDate(e.published)}`).join("; ")}. They
         are estimates; the count is the committee&apos;s.
       </p>
@@ -234,9 +235,7 @@ export default async function Page() {
     return (
       <div className="ix rs">
         <div className="wrap">
-          <header className="page-head">
-            <h1>Results</h1>
-            <p className="standfirst">
+          <PageHead title="Results" standfirst={<>
               {live.state === "closed" ? (
                 <>
                   The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}).
@@ -244,8 +243,7 @@ export default async function Page() {
               ) : (
                 <>The committee&apos;s count could not be reached on this refresh ({IL.format(new Date(live.fetchedAt))} Israel time). The page tries again every minute.</>
               )}
-            </p>
-          </header>
+            </>} />
           <ResultsRefresh pollsClose={cfg.pollsClose} />
           <PollThresholdWatch />
           <WhatToWatch />
@@ -274,16 +272,14 @@ export default async function Page() {
   return (
     <div className="ix rs">
       <div className="wrap">
-        <header className="page-head">
-          <h1>Results</h1>
-          <p className="standfirst">
+        <PageHead title="Results" standfirst={<>
             The committee&apos;s count so far: {num(count.valid)} valid votes from {count.localities} regular localities and any included double envelopes; turnout{" "}
             {turnout !== null ? pct(turnout) : "not available"} among counted regular localities.
-          </p>
-          <p className="note">
+          </>}>
+          <p className="ph-meta">
             Seats are this site&apos;s estimate from those votes; the committee publishes the official allocation with the final results.
           </p>
-        </header>
+        </PageHead>
 
         <ResultsFreshness live={live} />
         <ResultsRefresh pollsClose={cfg.pollsClose} />
@@ -335,7 +331,7 @@ export default async function Page() {
             </tbody>
           </table>
         </div>
-        <p className="src" style={{ marginTop: 10 }}>
+        <p className="fig-src" style={{ marginTop: 10 }}>
           Threshold: {num(r.alloc.thresholdVotes)} votes ({cfg.threshold * 100}% of valid votes counted so far). Source:{" "}
           <a href={cfg.source.url}>{cfg.source.label}</a>.
           {r.unknownLetters.length > 0 && untrackedSeats > 0 && " A list this site does not track is currently over the threshold."}

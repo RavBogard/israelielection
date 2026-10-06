@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "@/components/article/article.css";
 import VoteMap from "@/components/VoteMap";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Vote map",
@@ -15,10 +16,7 @@ const TOI_EJ = "https://www.timesofisrael.com/unprecedented-1200-east-jerusalem-
 export default function Page() {
   return (
     <div className="wrap article-page vote-map-page">
-      <header className="page-head">
-        <h1>Vote map</h1>
-        <p className="standfirst">How each of Israel&apos;s roughly 1,200 voting localities voted in the five elections from April 2019 to November 2022.</p>
-      </header>
+      <PageHead title="Vote map" standfirst={<>How each of Israel&apos;s roughly 1,200 voting localities voted in the five elections from April 2019 to November 2022.</>} />
 
       <VoteMap />
 

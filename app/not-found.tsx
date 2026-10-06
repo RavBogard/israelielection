@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { NAV } from "@/lib/site";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Not found",
@@ -12,10 +13,7 @@ const links = [{ href: "/", label: "The home page" }, ...WANTED.flatMap((h) => N
 export default function NotFound() {
   return (
     <div className="wrap">
-      <header className="page-head">
-        <h1>Not here.</h1>
-        <p className="standfirst">That page is not on this site. It may have moved, or the address may have a typo.</p>
-      </header>
+      <PageHead title="Not here." standfirst="That page is not on this site. It may have moved, or the address may have a typo." />
       <ul>
         {links.map((l) => (
           <li key={l.href}>

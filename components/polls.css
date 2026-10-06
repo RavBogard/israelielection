@@ -11,8 +11,7 @@
 .pl .table-scroll.sheet { border: 1px solid var(--line-2); }
 
 .pt { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
-.pt-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 13.5px; color: var(--ink-2); }
-.pt-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.pt-legend { margin: 0; }
 .pt-group h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 14px; font-weight: 600; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
 .pt-grid-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
 .pt-panel { margin: 0; background: var(--sheet); border: 1px solid var(--line-2); padding: 10px 12px 6px; min-width: 0; }
@@ -22,9 +21,8 @@
 .pt-read b { color: var(--ink); font-size: 15px; font-variant-numeric: tabular-nums; }
 .pt-plot { width: 100%; height: 176px; }
 .pt-plot svg { display: block; touch-action: pan-y; }
-.pt-plot svg:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .pt-grid { stroke: var(--line); stroke-width: 1; }
-.pt-tick { fill: var(--ink-3); font-size: 11px; font-variant-numeric: tabular-nums; }
+.pt-tick { fill: var(--ink-3); font-size: 12px; font-variant-numeric: tabular-nums; }
 .pt-dot { stroke: var(--sheet); stroke-width: 2; }
 .pt-dot-ref { fill: none; stroke: var(--ink-3); stroke-width: 1.5; }
 .pt-cross { stroke: var(--ink-3); stroke-width: 1; }
@@ -65,7 +63,6 @@
 .pc { margin-top:30px; }
 .pc-plot { width:100%; min-width:0; border-block:1px solid var(--line); background:var(--sheet); }
 .pc-plot svg { display:block; max-width:100%; touch-action:pan-y; }
-.pc-plot svg:focus-visible { outline:3px solid var(--ink); outline-offset:3px; }
 .pc-tick { fill:var(--ink-2); font:12px var(--body); }
 .pc-label { fill:var(--ink); font:600 12px var(--body); }
 .pc-instructions { font-size:13px; color:var(--ink-2); }
@@ -93,6 +90,5 @@
 .pt-panel .pt-read { white-space:normal; font-size:12px; min-height:34px; margin:8px 0 0; }
 @media(max-width:600px) { .pc-date { grid-template-columns:minmax(0,1fr); gap:8px; } .pc-legend { grid-template-columns:minmax(0,1fr); } .pt-grid-wrap { grid-template-columns:minmax(0,1fr); } }
 
-.poll-method { scroll-margin-top: 20px; }.poll-method:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-
+.poll-method { scroll-margin-top: 20px; }
 .pt-panel .pt-date-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 6px 0; }

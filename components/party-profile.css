@@ -4,7 +4,7 @@
   one grid row. Under 860px the grid is one column and the DOM order keeps every figure directly
   above its text. --pc is the party's colour, --pc-ink the black or white that reads on it.
 */
-.pp { --pc: var(--ink); --pc-ink: var(--bg); --map-low: #e9ecf2; padding-bottom: 8px; }
+.pp { --pc: var(--ink); --pc-ink: var(--bg); --map-low: var(--tint-base); padding-bottom: 8px; }
 /* On dark paper the ramp's low end is dim, so the strongest localities stay the brightest marks. */
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pp { --map-low: #2a2d33; } }
 :root[data-theme="dark"] .pp { --map-low: #2a2d33; }
@@ -42,12 +42,11 @@
 .pp-fig { margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .pp-fig .lbl { padding-bottom: 6px; border-bottom: 1px solid var(--ink); color: var(--ink); }
 .pp-figtitle { margin: 0; font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--ink); }
-.pp-fig .src { font-size: 12.5px; }
 .pp-fig .pp-items { font-family: var(--display); font-size: 16px; line-height: 1.5; }
 
 /* Text column: section heads on a rule, prose in the reading face. */
 .pp-text { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-.pp-text h2 { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.2vw, 28px); line-height: 1.1; letter-spacing: -.01em; margin: 0; padding-top: 10px; border-top: 1px solid var(--ink); }
+.pp-text h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.1; letter-spacing: -.01em; margin: 0; padding-top: 10px; border-top: 1px solid var(--ink); }
 .pp-text h2 + * { margin-top: 2px; }
 .pp-text h2:not(:first-child) { margin-top: 26px; }
 .pp-items { margin: 0; padding-left: 18px; list-style: disc; display: flex; flex-direction: column; gap: 5px; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
@@ -71,23 +70,20 @@
 .pp-glance dt { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--ink); }
 .pp-glance small { display: block; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); margin-top: 2px; }
 /* The bloc against 61: a 120-seat bar with the one heavy rule the site always means by 61. */
-.pp-majority { display: block; position: relative; height: 10px; background: var(--cell); margin-top: 8px; }
-.pp-majority i { display: block; height: 100%; }
-.pp-majority b { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }
+.pp-majority { margin-top: 8px; }
 .pp-tilehint { margin: 0 0 2px; font-size: 13.5px; color: var(--ink-2); }
 
 /* Sparkline. */
 .pp-spark { display: block; width: 100%; height: auto; }
 .pp-spark .grid { stroke: var(--line); stroke-width: 1; }
-.pp-spark .tick { font-family: var(--body); font-size: 11.5px; fill: var(--ink-3); }
+.pp-spark .tick { font-family: var(--body); font-size: 12px; fill: var(--ink-3); }
 .pp-spark .ref { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 2 4; }
-.pp-spark .reflbl { font-family: var(--body); font-size: 11.5px; font-weight: 600; fill: var(--ink); }
+.pp-spark .reflbl { font-family: var(--body); font-size: 12px; font-weight: 600; fill: var(--ink); }
 .pp-spark .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .pp-spark .dot { stroke-width: 1.5; }
 .pp-spark .dot.hollow { stroke-width: 1.5; }
 .pp-spark .end { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
-.pp-key { margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12.5px; color: var(--ink-2); }
-.pp-key .k { display: inline-flex; align-items: center; gap: 7px; }
+.pp-key { margin: 0; }
 .pp-key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .pp-key i.ring { background: var(--sheet); border: 1.5px solid; width: 9px; height: 9px; }
 .pp-key i.dash { width: 18px; height: 0; border-radius: 0; border-top: 1.5px dashed var(--ink); }
@@ -96,8 +92,8 @@
 .pp-stack { display: flex; height: 30px; width: 100%; background: var(--cell); }
 .pp-stack span { display: block; height: 100%; border-right: 1.5px solid var(--sheet); }
 .pp-stack span:last-child { border-right: 0; }
-.pp-stack-key { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; line-height: 1.3; color: var(--ink-2); }
-.pp-stack-key li { display: inline-flex; align-items: baseline; gap: 5px; white-space: nowrap; }
+.pp-stack-key { margin: 8px 0 0; }
+.pp-stack-key li { align-items: baseline; gap: 5px; white-space: nowrap; }
 .pp-stack-key i { width: 9px; height: 9px; display: inline-block; align-self: center; flex: none; }
 .pp-stack-key b { font-family: var(--display); font-weight: 700; font-size: 16px; color: var(--ink); }
 .pp-won { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; }
@@ -110,14 +106,14 @@
 .pp-map { display: block; width: 100%; height: auto; max-height: 440px; }
 .pp-map .wb { fill: none; stroke: var(--ink-2); stroke-width: .8; stroke-dasharray: 2.5 2; }
 .pp-map .gaza { fill: var(--line); stroke: var(--ink-3); stroke-width: .6; }
-.pp-map .lbl { font-family: var(--body); font-size: 10.5px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
+.pp-map .lbl { font-family: var(--body); font-size: 11px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
 .pp-maptable { border-collapse: collapse; font-size: 13.5px; min-width: 150px; align-self: center; }
 .pp-maptable th { text-align: left; font-weight: 400; color: var(--ink-2); padding: 5px 12px 5px 0; border-bottom: 1px solid var(--line); }
 .pp-maptable td { text-align: right; font-family: var(--display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink); padding: 5px 0; border-bottom: 1px solid var(--line); }
 .pp-maptable tr.national th, .pp-maptable tr.national td { color: var(--ink-3); border-bottom: 1px solid var(--ink); }
 .pp-maptable tr.national td { font-weight: 500; }
 .pp-maptable tr.top th { color: var(--ink); font-weight: 500; }
-.pp-scale { grid-column: 1 / -1; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--ink-3); }
+.pp-scale { grid-column: 1 / -1; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); }
 .pp-scale i { display: block; width: 90px; height: 7px; border: 1px solid var(--line-2); }
 @media (max-width: 440px) {
   .pp-mapwrap { grid-template-columns: 1fr; }
@@ -131,7 +127,7 @@
 .pp-tile .bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); }
 .pp-tile .issue { font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; }
 .pp-tile .stance { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.2; letter-spacing: -.005em; text-wrap: balance; }
-.pp-tile .basis { margin-top: auto; font-size: 11px; color: var(--ink-3); line-height: 1.3; }
+.pp-tile .basis { margin-top: auto; font-size: 12px; color: var(--ink-3); line-height: 1.3; }
 .pp-tile:hover { border-color: var(--ink); }
 .pp-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; }
 .pp-tile.open .bar { margin: 0 -8px 2px; }
@@ -146,7 +142,6 @@
 .pp-tilepanel .q b { color: var(--ink); }
 .pp-tilepanel .words { margin: 0; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
 .pp-tilepanel .words.nf { color: var(--ink-3); font-style: italic; }
-.pp-tilepanel .src { font-size: 12.5px; }
 .pp-tilepanel .same { margin: 0; font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 .pp-tilepanel .chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--line-2); background: var(--bg); color: var(--ink); text-decoration: none; font-weight: 600; font-size: 12.5px; }
 .pp-tilepanel .chip:hover { border-color: var(--ink); }

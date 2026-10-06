@@ -90,7 +90,7 @@ export function matrixRows(ids: string[]): MatrixRow[] {
 
 /** Fill for a stance shade: the profile tiles' ramp, fixed endpoints so light and dark modes agree; ink-2 when the options are not a scale, so a row of coexisting priorities does not outweigh the chart. */
 export function shade(position: number | null): string {
-  return position === null ? "var(--ink-2)" : `color-mix(in oklab, #233f86 ${Math.round(100 - position * 80)}%, #dfe6f5)`;
+  return position === null ? "var(--ink-2)" : `color-mix(in oklab, var(--ramp-start) ${Math.round(100 - position * 80)}%, var(--ramp-end))`;
 }
 
 /** The numeral on a shaded cell: white on the dark half of the ramp, navy ink on the light half, paper on the ink-2 of unordered options. */

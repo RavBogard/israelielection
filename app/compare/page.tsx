@@ -5,6 +5,7 @@ import { matrixRows } from "@/components/compare/model";
 import { averagePoll, blocs, parties } from "@/lib/data";
 import { lettersOf } from "@/lib/letters";
 import { outgoingGovernment } from "@/lib/outgoing-government";
+import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Compare the parties",
@@ -33,12 +34,9 @@ const rows = matrixRows(ids);
 export default function Page() {
   return (
     <div className="wrap article-page">
-      <header className="page-head">
-        <h1>Compare the parties</h1>
-        <p className="standfirst">
+      <PageHead title="Compare the parties" standfirst={<>
           Every list&apos;s recorded answer on the questions that divide this election, in one chart. Open a row for each party&apos;s own words.
-        </p>
-      </header>
+        </>} />
 
       <Compare parties={pickable} blocs={blocs} rows={rows} presets={presets} defaults={ids} />
     </div>

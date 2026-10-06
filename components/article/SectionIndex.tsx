@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "./article.css";
+import PageHead from "@/components/PageHead";
 
 /** The landing page of a section: a short intro, then each page's title, its one-line dek, and a preview of its figure. */
 export default function SectionIndex({
@@ -20,10 +21,7 @@ export default function SectionIndex({
   return (
     <div className="wrap article-page">
       <div className="sindex">
-        <header className="page-head">
-          <h1>{title}</h1>
-          <p className="standfirst">{intro}</p>
-        </header>
+        <PageHead title={title} standfirst={intro} />
         <ul className="items">
           {items.map((s) => (
             <li key={s.href}>

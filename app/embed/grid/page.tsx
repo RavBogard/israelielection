@@ -44,10 +44,10 @@ export default function Page() {
               </div>
             ))}
           </dl>
-          <p className="note">Seats can be fractional in an average. The heavy rule marks 60 seats; the next one is the 61st.</p>
+          <p className="fig-note">Seats can be fractional in an average. The heavy rule marks 60 seats; the next one is the 61st.</p>
         </div>
       </div>
-      <p className="note">{PARTY_COLOR_NOTE} <Link href="/parties">Party Map and color key</Link>.</p>
+      <p className="fig-note">{PARTY_COLOR_NOTE} <Link href="/parties">Party Map and color key</Link>.</p>
       <EmbedFooter dateLine={`Polls to ${asOf}`} />
     </>
   );

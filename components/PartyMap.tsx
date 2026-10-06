@@ -6,6 +6,7 @@ import "./map.css";
 import Link from "next/link";
 import {partyColor,partyInk,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE} from "@/lib/party-colors";
 import {readPartyMapSelection,partyMapSelectionHref} from "@/lib/party-map-state";
+import PageHead from "./PageHead";
 import ProfileDetail from "./ProfileDetail";
 import SeatGrid from "./SeatGrid";
 import { averagePoll, blocLabel, blocs, mainPolls, parties } from "@/lib/data";
@@ -66,7 +67,7 @@ function Overview() {
           ))}
         </tbody>
       </table>
-      <p className="src">
+      <p className="fig-src">
         Our arithmetic: each party&apos;s average across the {mainPolls.length} polls, added up by bloc.
         {fewerPolls.length > 0 &&
           ` ${fewerPolls.join(" and ")} use fewer polls because not every poll reported them separately, so totals add to about 120, not exactly 120.`}{" "}
@@ -177,12 +178,7 @@ export default function PartyMap() {
 
   return (
     <div className="pm">
-      <header className="ix-head">
-        <div>
-          <h1>The Party Map</h1>
-          <p className="sub">Every list, sized by its seats in the polling average. Tap one for its profile.</p>
-        </div>
-      </header>
+      <PageHead title="The Party Map" standfirst="Every list, sized by its seats in the polling average. Tap one for its profile." />
 
       <div className="layout">
         <div className="mapcol">

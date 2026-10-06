@@ -21,7 +21,7 @@
 .pm .cell.tiny .nm { font-size: 12px; }
 .pm .cell.tiny .av { font-size: 18px; }
 .pm .cell.tiny .av small { display: none; }
-.pm .cell.xs .nm { font-size: 11px; }
+.pm .cell.xs .nm { font-size: 12px; }
 /* A cell too short for name over number sets them on one line. */
 .pm .cell.flat { flex-direction: row; align-items: center; gap: 6px; padding-block: 2px; }
 .pm .cell.flat .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -50,7 +50,6 @@
 .pm .party-color-key li > div > span { display: inline-flex; align-items: center; gap: 6px; }
 .pm .party-color-note { font-size: 14px; color: var(--text); max-width: 90ch; margin: 0 0 18px; }
 .pm .party-overview { align-self: flex-start; border: 1px solid var(--line-2); padding: 7px 10px; background: transparent; font: inherit; cursor: pointer; color: var(--ink); }
-.pm .party-overview:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 /* About this map: method, the minor lists and the colour key, under the map (graphic first). */
 .pm .pm-about { margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); display: grid; gap: 8px; max-width: 70ch; }
 .pm .pm-about p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }

@@ -16,11 +16,17 @@
   --b-mid: #3fb0a2; --b-mid-ink: #0b1a18;
   --b-arab: #8d4fae; --b-arab-ink: #ffffff;
   --scrim: rgb(0 0 0 / .45); --shadow: rgb(0 0 0 / .22);
+  /* Fixed data endpoints, the same in light, dark and print (the Fixed Endpoints Rule), so the dark blocks do not redefine them:
+     the stance ramp (shade() in components/compare/model.ts), the light end of party-colour tints, and the grey for a list
+     with no editorial colour (PARTY_FALLBACK in lib/party-colors.ts, kept equal). */
+  --ramp-start: #233f86; --ramp-end: #dfe6f5; --tint-base: #e9ecf2; --party-fallback: #8c939b;
   --r: 4px;
   --display: var(--font-frank), "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
   --body: var(--font-sans), "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   /* The wrapper and its gutters, shared by every page. */
   --wrap: 1200px; --wide: 1320px; --gutter: clamp(16px, 3vw, 40px);
+  /* The section-heading scale: a section head (h2) and a sub-section or item head (h3). Page titles and figure labels are not on it. */
+  --fs-sec: clamp(26px, 2.4vw, 32px); --fs-sec3: 22px;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -101,23 +107,51 @@ a:hover { text-decoration-color: currentColor; }
 .brand .word { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
 .brand .word .yr { font-weight: 500; }
 
-/* Page header, shared by every page: title, then the standfirst. */
+/* Page head, shared by every page (components/PageHead.tsx): the title at one display size, then the standfirst.
+   A tool's controls sit in .ph-aside, right of the title on wide screens. .ph-meta is a small meta line under the standfirst. */
 .page-head { padding-block: 36px 8px; }
-.page-head h1 { font-family: var(--display); font-weight: 700; font-size: clamp(38px, 4.4vw, 56px); line-height: 1; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.page-head.has-aside { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-bottom: 18px; }
+.page-head .ph-main { min-width: 0; }
+.page-head .ph-title { font-family: var(--display); font-weight: 700; font-size: clamp(38px, 4.4vw, 56px); line-height: 1; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
 .page-head .standfirst { font-family: var(--display); font-weight: 400; font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 14px 0 0; max-width: 62ch; }
 .page-head .standfirst a { color: var(--ink); }
 .page-head .standfirst b { color: var(--ink); font-weight: 700; }
-.page-head .note { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); max-width: 70ch; }
-.page-head .note a { color: var(--ink); }
+.page-head .ph-meta { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); max-width: 70ch; }
+.page-head .ph-meta a { color: var(--ink); }
 @media (max-width: 640px) { .page-head { padding-top: 24px; } }
 
-/* Section heading inside a page. */
-.sec-h { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.1; letter-spacing: -.01em; margin: 44px 0 10px; padding-top: 14px; border-top: 1px solid var(--ink); }
+/* Section headings inside a page: .sec-h on a 1px ink rule; .sec-h3 for a sub-section or an item in a list of sections.
+   Component headings that cannot take the class use the same tokens (--fs-sec, --fs-sec3). */
+.sec-h { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.1; letter-spacing: -.01em; margin: 44px 0 10px; padding-top: 14px; border-top: 1px solid var(--ink); }
+.sec-h3 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.15; letter-spacing: -.005em; margin: 0 0 6px; }
+/* Three kinds of note:
+   .note      a reading note in prose, between a section head and its figure (method, caveat); Frank Ruhl 17px.
+   .callout   a boxed aside set apart from the prose: a definition, a caution, a group kept out of the totals.
+   .fig-note  a small caption under or beside a figure or control, saying how to read it; Public Sans 13px.
+   (.ph-meta, the small meta line in a page head, is in the page head section.) */
 .sec-h + .note { margin-top: 0; }
 .note { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); max-width: 72ch; margin: 0 0 14px; }
 .note b { color: var(--ink); font-weight: 700; }
-.src { font-size: 13px; line-height: 1.45; color: var(--ink-3); margin: 0; }
-.src a { color: var(--ink-2); }
+.callout { font-family: var(--body); font-size: 15px; line-height: 1.55; color: var(--text); background: var(--sheet); border: 1px solid var(--line-2); padding: 14px 18px; }
+.callout .nt { font-weight: 700; margin: 0 0 4px; color: var(--ink); }
+.callout b { color: var(--ink); }
+.callout p { margin: 0 0 .5em; }
+.callout p:last-child { margin-bottom: 0; }
+.fig-note { font-family: var(--body); font-size: 13px; font-weight: 400; line-height: 1.5; color: var(--ink-2); }
+:where(.callout) { margin: 1.5em 0; max-width: 72ch; }
+:where(.fig-note) { margin: 8px 0 0; max-width: 75ch; }
+/* Figure source: the dated source line under a figure, chart, table or quoted position. A component
+   may add its own class beside it for placement (margin, width) only; type and colour come from here. */
+.fig-src { font-family: var(--body); font-size: 12.5px; font-weight: 400; font-style: normal; line-height: 1.5; color: var(--ink-3); }
+.fig-src a { color: var(--ink-2); font-weight: 400; }
+/* Figure key: the swatches and marks that name what a figure draws, as a wrapped row of items. The
+   component class beside it draws the marks and may change placement or the row's gaps. */
+.fig-key { font-family: var(--body); font-size: 13px; font-weight: 400; line-height: 1.4; color: var(--ink-2); }
+.fig-key b { color: var(--ink); font-variant-numeric: tabular-nums; }
+/* Placement is :where (no specificity), so any component class can set margins and layout. */
+:where(.fig-src) { margin: 0; }
+:where(.fig-key) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; list-style: none; margin: 10px 0 0; padding: 0; }
+:where(.fig-key) > :where(li, span) { display: inline-flex; align-items: center; gap: 7px; }
 
 /* Controls */
 .btn { font: inherit; font-size: 14.5px; font-weight: 600; border: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 8px 14px; border-radius: var(--r); cursor: pointer; line-height: 1.2; }
@@ -128,7 +162,7 @@ a:hover { text-decoration-color: currentColor; }
 .seg button { font: inherit; font-size: 14px; font-weight: 500; border: 0; background: transparent; color: var(--ink); padding: 7px 12px; cursor: pointer; border-right: 1px solid var(--line); text-align: left; line-height: 1.2; }
 .seg button:last-child { border-right: 0; }
 .seg button:hover { background: var(--bg); }
-.seg button small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.seg button small { display: block; font-size: 12px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
 .seg button[aria-pressed="true"] small { color: var(--bg); opacity: .75; }
 
@@ -200,7 +234,7 @@ a:hover { text-decoration-color: currentColor; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-family: var(--body); font-size: 8.5pt; font-weight: 400; color: #555555; overflow-wrap: anywhere; }
   .sources a[href^="http"]::after { content: none; }
 
-  figure, table, .tw, .note, .article .positions li, .cb .slip, .sg { break-inside: avoid; page-break-inside: avoid; }
+  figure, table, .tw, .note, .callout, .article .positions li, .cb .slip, .sg { break-inside: avoid; page-break-inside: avoid; }
   .article .tw { overflow: visible; }
 
   /* Sources: the summary reads as a heading, the disclosure hint goes, and open lists print in full. */

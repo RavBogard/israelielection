@@ -42,7 +42,7 @@ export default function PartyLanes() {
   return (
     <figure className="ph-lanes">
       <figcaption className="ph-h">Every 2026 list&apos;s organizational history, 1965 to 2026</figcaption>
-      <p className="ph-key" aria-hidden="true">
+      <p className="fig-key ph-key" aria-hidden="true">
         {(Object.keys(MARK_LABEL) as Mark[]).map((m) => (
           <span key={m}><M m={m} />{MARK_LABEL[m]}</span>
         ))}
@@ -82,7 +82,7 @@ export default function PartyLanes() {
           </section>
         ))}
       </div>
-      <p className="ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or tap a list&apos;s line or name for its full history, with sources, below.</p>
+      <p className="fig-src ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or tap a list&apos;s line or name for its full history, with sources, below.</p>
     </figure>
   );
 }

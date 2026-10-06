@@ -64,7 +64,7 @@ export default function ThresholdWatch() {
           );
         })}
       </ul>
-      <p className="tw-src">
+      <p className="fig-src tw-src">
         Each dot is one of the latest {mainPolls.length} polls; a dot at zero is a poll that had the list below the threshold. The shaded gap is the threshold itself:
         3.25% of valid votes is about four seats, so a list that passes wins at least four and one that misses wins none. The right column counts the polls where
         the list passes. Each list that crosses or misses on the night moves about four seats between the blocs.

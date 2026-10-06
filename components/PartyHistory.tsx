@@ -25,7 +25,7 @@ export default function PartyHistory() {
           {e.inputs.length > 0 && <div className="history-parents">{e.inputs.map(input=><span key={input}>{withHebrew(input)}</span>)}</div>}
           <strong className="history-output">{withHebrew(e.output)}</strong>
           <p>{e.text}</p>
-          <p className="history-source">{e.sources.map((id,i)=><span key={id}>{i > 0 && "; "}<a href={historySources[id].url}>{historySources[id].name}</a>{historySources[id].date ? `, ${historySources[id].date}` : " (publication date not given)"}</span>)}</p>
+          <p className="fig-src history-source">{e.sources.map((id,i)=><span key={id}>{i > 0 && "; "}<a href={historySources[id].url}>{historySources[id].name}</a>{historySources[id].date ? `, ${historySources[id].date}` : " (publication date not given)"}</span>)}</p>
         </div>
       </li>)}</ol>
       {h.related.length > 0 && <p className="history-related">Follow a connected branch: {h.related.map((id,i)=><span key={id}>{i > 0 && ", "}<a href={`#${id}`} onClick={()=>{setFamily("all");setQuery("");}}>{histories.find(h=>h.id===id)?.name}</a></span>)}</p>}

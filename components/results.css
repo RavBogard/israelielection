@@ -40,7 +40,7 @@
 .rs .tw-name:hover { text-decoration: underline; }
 .rs .tw-track { position: relative; height: 26px; }
 .rs .tw-axis .tw-track { height: 16px; }
-.rs .tw-axis i { position: absolute; transform: translateX(-50%); font-style: normal; font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.rs .tw-axis i { position: absolute; transform: translateX(-50%); font-style: normal; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .rs .tw-axis i:first-child { transform: none; }
 .rs .tw-gap { position: absolute; top: 3px; bottom: 3px; background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); border-right: 1px solid var(--ink-2); }
 .rs .tw-dot { position: absolute; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1.5px var(--bg); transform: translateX(calc(var(--k) * 9px)); }
@@ -49,7 +49,7 @@
 .rs .tw-read { font-size: 13.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rs .tw-read b { font-family: var(--display); font-size: 17px; color: var(--ink); }
 .rs .tw-avg { color: var(--ink-3); }
-.rs .tw-src { font-size: 12.5px; color: var(--ink-3); margin: 10px 0 0; line-height: 1.5; max-width: 75ch; }
+.rs .tw-src { margin: 10px 0 0; max-width: 75ch; }
 @media (max-width: 640px) {
   .rs .tw-rows { grid-template-columns: minmax(0, 1fr) auto; }
   .rs .tw-rows > li { row-gap: 2px; }

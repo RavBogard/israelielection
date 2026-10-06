@@ -1,7 +1,7 @@
 /* News page: the daily briefing (sticky on wide screens) beside the headline list. */
 .nw .nw-layout { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 36px 64px; align-items: start; margin-top: 10px; }
 .nw .nw-brief { position: sticky; top: 24px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--ink); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; }
-.nw .nw-brief h2 { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.05; margin: 0; }
+.nw .nw-brief h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.05; margin: 0; }
 .nw .nw-sentences { display: flex; flex-direction: column; gap: 12px; }
 .nw .nw-sentences p, .nw .nw-old p { margin: 0; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
 .nw .cite { font-family: var(--body); font-size: 12.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; margin-left: 2px; white-space: nowrap; border-bottom: 1px solid var(--line-2); }
@@ -11,7 +11,7 @@
 .nw .nw-archive summary { cursor: pointer; font-weight: 600; color: var(--ink-2); font-size: 14px; }
 .nw .nw-old { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
 .nw .nw-old h3 { margin: 0; font-size: 15px; }
-.nw .nw-h { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.05; margin: 0 0 6px; }
+.nw .nw-h { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.05; margin: 0 0 6px; }
 .nw .nw-list { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
 .nw .nw-list li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 2px 18px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .nw .nw-meta { font-size: 13px; color: var(--ink-3); line-height: 1.4; padding-top: 3px; }
@@ -33,7 +33,7 @@
 .nw .nw-brief-page { position: static; max-width: 700px; margin-top: 8px; }
 .nw .nw-pager { display: flex; justify-content: space-between; gap: 16px; margin-top: 22px; font-size: 14.5px; font-weight: 600; }
 .nw .nw-pager a { color: var(--ink); }
-.nw .source-access { font: 11px var(--body); color: var(--ink-3); white-space: normal; }
+.nw .source-access { font: 12px var(--body); color: var(--ink-3); white-space: normal; }
 .nw .nw-meta .source-access { display: block; margin-top: 4px; }
 .nw .nw-group { grid-column: 2; font-size: 12px; color: var(--ink-2); }
 .nw .nw-group summary { cursor: pointer; font-weight: 600; }

@@ -4,6 +4,7 @@ import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { partyColor } from "@/lib/party-colors";
 import { average, blocTotals, inWithoutVariant } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
+import SeatBar from "../SeatBar";
 import "./polls-now.css";
 
 const cfg = pollsData.config;
@@ -79,22 +80,21 @@ export default function PollsNow() {
 
       <figure className="pn-fig">
         <figcaption className="pn-lbl">The blocs in the average, out of 120 seats</figcaption>
-        <div className="pn-bar" role="img" aria-label={BAR_ORDER.map((b) => `${label[b]} ${one(totals[b])}`).join(", ") + ". A majority is 61."}>
-          {BAR_ORDER.map((b) => (
-            <span key={b} className={`seg seg-${b}`} style={{ width: `${(totals[b] / TOTAL) * 100}%`, background: `var(--b-${b})`, color: `var(--b-${b}-ink)` }}>
-              <b>{one(totals[b])}</b>
-            </span>
-          ))}
-          <i className="maj" style={{ left: `${(MAJORITY / TOTAL) * 100}%` }} aria-hidden="true" />
-        </div>
-        <ul className="pn-barkey">
+        <SeatBar
+          size="xl"
+          total={TOTAL}
+          majority={MAJORITY}
+          segments={BAR_ORDER.map((b) => ({ key: b, seats: totals[b], color: `var(--b-${b})`, ink: `var(--b-${b}-ink)`, label: one(totals[b]), className: `pn-seg pn-seg-${b}` }))}
+          label={BAR_ORDER.map((b) => `${label[b]} ${one(totals[b])}`).join(", ") + ". A majority is 61."}
+        />
+        <ul className="fig-key pn-barkey">
           {BAR_ORDER.map((b) => (
             <li key={b}><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" />{label[b]} <b>{one(totals[b])}</b></li>
           ))}
         </ul>
         <BlocStrip bloc="net" label={label.net} />
         <BlocStrip bloc="opp" label={label.opp} />
-        <p className="src">
+        <p className="fig-src">
           The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}; hollow points are {variantNames.join(" and ")},
           the two the site&apos;s alternative average leaves out. <a href="#method">How the average is made</a>. Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
           totals are its own published figures. Lists that pass in fewer than half the polls count zero. <Link href="/coalition-builder">Build a coalition from these numbers</Link>.
@@ -155,13 +155,13 @@ export default function PollsNow() {
             </tbody>
           </table>
         </div>
-        <p className="pn-key">
+        <p className="fig-key pn-key">
           <span><i className="k pt" aria-hidden="true" />One poll</span>
           <span><i className="k pt hollow" aria-hidden="true" />{variantNames.join(" or ")}</span>
           <span><i className="k bar" aria-hidden="true" />Average, over the polls where the list passes</span>
           <span><i className="k thr" aria-hidden="true" />Threshold: a list that passes wins at least 4 seats</span>
         </p>
-        <p className="src">
+        <p className="fig-src">
           Averages weight each poll by the square root of its sample size and are shown before scaling to 120, so they can add to more than 120.
           A point at zero is a poll that had the list below the threshold.
         </p>

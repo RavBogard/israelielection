@@ -13,7 +13,7 @@ export default function VotingRightsGuide() {
   return (
     <figure className="voting-rights" aria-labelledby="voting-rights-title">
       <figcaption id="voting-rights-title" className="vr-h">One place, different legal statuses: who can vote in which election</figcaption>
-      <p className="vr-key" aria-hidden="true">
+      <p className="fig-key vr-key" aria-hidden="true">
         {Object.entries(KIND_LABEL).map(([k, l]) => (
           <span key={k}><i className={`vr-k ${k}`} />{l}</span>
         ))}
@@ -40,7 +40,7 @@ export default function VotingRightsGuide() {
           ))}
         </tbody>
       </table>
-      <p className="vr-src">
+      <p className="fig-src vr-src">
         Rules checked October 5, 2026: <a href={data.nationalSource}>Basic Law: The Knesset, §5</a>; <a href={data.registrySource}>CEC voter-register guidance (2022 election)</a>;{" "}
         <a href={data.statusSource}>government explanation of national and municipal status rules</a>; <a href={data.municipalSource}>Interior Ministry local-register conditions (2025)</a>;{" "}
         <a href={data.contextSource}>IDI on citizenship and residency</a>. Age is measured on the relevant election day; the voter register decides each person&apos;s entitlement. See{" "}

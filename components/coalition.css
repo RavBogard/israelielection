@@ -26,8 +26,8 @@
 .cb .warn.info { background: var(--info-bg); color: var(--info-ink); border-color: var(--info-line); border-style: dashed; }
 .cb .warn b { display: block; font-size: 13px; margin-bottom: 2px; }
 .cb .warn cite { font-style: normal; opacity: .8; font-size: 12.5px; display: block; margin-top: 4px; }
-.cb .note { font-family: var(--display); font-size: 15.5px; line-height: 1.5; color: var(--text); border-top: 1px solid var(--line); padding-top: 14px; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-.cb .note p { margin: 0; }
+.cb .callout { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.cb .callout p { margin: 0; }
 .cb .preset { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 10px 0 0; max-width: 62ch; }
 .cb .linkish { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .cb .linkish[aria-pressed="true"] { text-decoration-color: var(--line-2); }
@@ -90,14 +90,13 @@
 
 /* Can they govern together? Seven issue rows, each with the strip glyph (stance slots left to right, the chosen parties as squares) and its reading. */
 .cb .together { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid var(--ink); padding-top: 14px; }
-.cb .together h3 { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.15; margin: 0; }
+.cb .together h3 { margin: 0; }
 .cb .together .sum { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--text); margin: 0; }
 .cb .together .rows { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; }
 .cb .together .rows li { border-top: 1px solid var(--line); }
 .cb .together .rows li:last-child { border-bottom: 1px solid var(--line); }
 .cb .together .rows a { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "l g" "r g"; gap: 2px 14px; align-items: center; padding: 8px 0 9px; color: inherit; text-decoration: none; }
 .cb .together .rows a:hover .lbl { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
-.cb .together .rows a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .cb .together .lbl { grid-area: l; font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.25; }
 .cb .together .read { grid-area: r; font-size: 13px; line-height: 1.35; color: var(--ink-2); }
 .cb .together .gly { grid-area: g; display: block; overflow: visible; }
@@ -108,7 +107,6 @@
 .cb .together .more a { color: var(--ink); font-weight: 600; }
 .cb .role-picker { display: flex; flex-direction: column; gap: 4px; padding: 8px 14px 12px; font: 12px/1.3 var(--body); }
 .cb .role-picker select { width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 0 4px; font: 14px var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line-2); }
-.cb .role-picker select:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .cb .arrangement-scenarios { border-block: 1px solid var(--line); padding: 16px 0; margin: 20px 0; }
 .cb .arrangement-scenarios > p { font: 700 16px var(--body); }
 .cb .arrangement-scenarios > div:first-of-type { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -119,8 +117,7 @@
 .cb .confidence dl { margin: 0; }
 .cb .confidence dl div { display: flex; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); padding: 8px 0; font-size: 14px; }
 .cb .confidence dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
-.cb .confidence p, .cb .confidence li, .cb .arrangement-history { font-size: 14px; line-height: 1.5; }
-.cb .confidence .src, .cb .scenario-reading .src { font: 12px/1.5 var(--body); color: var(--ink-2); }
+.cb .confidence p:not(.fig-src), .cb .confidence li, .cb .arrangement-history { font-size: 14px; line-height: 1.5; }
 .cb .arrangement-history summary { cursor: pointer; font-weight: 600; }
 .cb .mobile-arrangement { display: none; }
 .cb #arrangement-result { scroll-margin-top: 100px; }
@@ -128,8 +125,6 @@
   .cb .mobile-arrangement { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 10px; position: sticky; top: 60px; z-index: 10; background: var(--bg); border-block: 1px solid var(--ink); padding: 10px 0; font: 13px/1.4 var(--body); }
   .cb .mobile-arrangement a { color: var(--ink); font-weight: 700; }
   /* The coalition's seats on a 120-seat bar, with the 61 mark, kept in view while choosing slips. */
-  .cb .ma-bar { position: relative; display: flex; flex-basis: 100%; height: 10px; margin-top: 4px; background: var(--cell); }
-  .cb .ma-bar i { display: block; height: 100%; border-right: 1px solid var(--bg); }
-  .cb .ma-bar b { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); }
+  .cb .ma-bar { flex-basis: 100%; margin-top: 4px; }
 }
 .cb .together .empty { border-bottom: 0; }

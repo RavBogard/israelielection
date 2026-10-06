@@ -9,19 +9,17 @@
 .bd-wall { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
 .ballot-directory .bd-slip { position: relative; display: flex; flex-direction: column; min-height: 104px; padding: 8px 8px 7px; background: var(--sheet); border: 1px solid var(--line-2); color: var(--ink); text-decoration: none; }
 .ballot-directory .bd-slip:hover { border-color: var(--ink); }
-.ballot-directory .bd-slip:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .bd-letters { font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; text-align: center; padding: 6px 0 8px; }
 .bd-name { font-size: 12px; line-height: 1.25; color: var(--ink-2); margin-top: auto; }
 .ballot-directory .bd-slip.polled { border-color: var(--c); box-shadow: inset 0 5px 0 var(--c); }
 .ballot-directory .bd-slip:not(.polled) { border-style: dashed; }
 .bd-slip.polled .bd-name { color: var(--ink); font-weight: 600; padding-right: 30px; }
 .bd-seats { position: absolute; right: 0; bottom: 0; min-width: 30px; padding: 2px 5px; text-align: center; background: var(--c); color: var(--ci); font-family: var(--display); font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
-.bd-src { font-size: 12.5px; color: var(--ink-3); margin: 10px 0 0; line-height: 1.5; max-width: 85ch; }
+.bd-src { margin: 10px 0 0; max-width: 85ch; }
 
 .ballot-controls { display: flex; gap: 16px; margin: 0 0 12px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--ink); }
 .ballot-controls label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink); flex: 1; min-width: 200px; }
 .ballot-controls input, .ballot-controls select { min-height: 44px; padding: 0 12px; font: inherit; font-weight: 400; border: 1px solid var(--line-2); border-radius: 0; background: var(--sheet); color: var(--ink); }
-.ballot-controls input:focus-visible, .ballot-controls select:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .bd-count { font-size: 13.5px; color: var(--ink-2); margin: 0 0 12px; max-width: 85ch; }
 
 .ballot-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }

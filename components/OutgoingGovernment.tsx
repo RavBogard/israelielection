@@ -41,7 +41,7 @@ export default function OutgoingGovernmentSection() {
       <CoalitionSeats events={g.events} electionDay={formation.electionDay} />
       <p className="lead">
         {linked(g.status.text)}{" "}
-        <span className="src">
+        <span className="fig-src">
           {g.status.sources.map((s, i) => (
             <span key={s.url}>
               {i > 0 && "; "}
@@ -60,7 +60,7 @@ export default function OutgoingGovernmentSection() {
                 <time dateTime={e.date}>{mediumDate(e.date)}</time>
               </p>
               <p className="rule">{e.text}</p>
-              <p className="src">
+              <p className="fig-src">
                 <Src s={e.source} />
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function OutgoingGovernmentSection() {
       <p className="gov-more">
         The {g.seats2022} seats of {mediumDate(g.events[0].date)} were held by {g.with.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(", ")}, as those parties run now.{" "}
         <Link href={outgoingHref()}>See what they poll at today in the Coalition Builder</Link>. {g.noam.text}{" "}
-        <span className="src">
+        <span className="fig-src">
           <Src s={g.noam.source} />.
         </span>
       </p>
