@@ -87,3 +87,14 @@ describe("the average as a poll", () => {
     expect(t.total).toBe(Math.round(ids.reduce((a, id) => a + (avg.results[id]?.seats ?? 0), 0) * 10) / 10);
   });
 });
+
+describe("pledgeConflicts", () => {
+  it("names the chosen parties each pledge rule points at, and skips conditions", async () => {
+    const { pledgeConflicts } = await import("./coalition");
+    const c = pledgeConflicts(new Set(["likud", "jl", "utj"]), parties, pledgeRules);
+    expect(c.map((x) => x.warning.id)).toEqual(["joint-list-no-netanyahu"]);
+    expect(c[0].ids.sort()).toEqual(["jl", "likud"]);
+    const by = pledgeConflicts(new Set(["byachad", "shas", "yashar"]), parties, pledgeRules).find((x) => x.warning.id === "byachad-zionist-only")!;
+    expect(by.ids.sort()).toEqual(["byachad", "shas"]);
+  });
+});

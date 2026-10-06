@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import "@/components/interactives.css";
 import "@/components/coalition.css";
 import CoalitionBuilder from "@/components/CoalitionBuilder";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
 import { stanceMap } from "@/lib/cohesion";
+import { unstatedFrom, type Unstated } from "@/lib/coalition-governing";
+import questions from "@/data/comparison-questions.json";
 import { allPolls, parties } from "@/lib/data";
 import { comparisonIssues } from "@/lib/positions";
 import { outgoingGovernment } from "@/lib/outgoing-government";
@@ -22,21 +25,24 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   const with_ = typeof q.with === "string" ? q.with : "";
   const poll = typeof q.poll === "string" ? q.poll : "";
   const ids = with_.split(",").filter((id) => parties.some((p) => p.id === id));
-  if (!ids.length) return { title: "Coalition Builder", description: DESCRIPTION };
+  if (!ids.length) return { title: "Coalition Builder", description: DESCRIPTION, alternates: alternates("/coalition-builder") };
   const card = `/api/card?with=${ids.join(",")}${poll ? `&poll=${encodeURIComponent(poll)}` : ""}`;
   const names = ids.map((id) => parties.find((p) => p.id === id)!.name);
   return {
     title: "A coalition on the Coalition Builder",
+    alternates: alternates("/coalition-builder"),
     description: `${names.join(", ")}: does it reach 61? ${DESCRIPTION}`,
     openGraph: { images: [{ url: card, width: 1200, height: 630 }] },
     twitter: { card: "summary_large_image", images: [card] },
   };
 }
 
-/** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
 /** Where each party stands on each issue, for the panel's "Can they govern together?"; no quotes travel to the client. */
 const STANCES = stanceMap(comparisonIssues(), parties.map((p) => p.id));
+/** Positions a party holds but will not say publicly, counted as answers and marked so. */
+const UNSTATED = unstatedFrom(questions.questions as { key: string; unstated?: Record<string, Unstated> }[], STANCES);
 
+/** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
 const PRESET = { ids: outgoingGovernment.with, label: "the outgoing government", seats: outgoingGovernment.seats2022, year: 2022, note: outgoingGovernment.noam.text };
 
 export default async function Page() {
@@ -45,7 +51,7 @@ export default async function Page() {
   return (
     <div className="ix builder-page">
       <div className="wrap">
-        <CoalitionBuilder results={results} preset={PRESET} stances={STANCES} />
+        <CoalitionBuilder results={results} preset={PRESET} stances={STANCES} unstated={UNSTATED} />
 
         <SourcesBox count={allPolls.length + 10}>
           <PollSources />

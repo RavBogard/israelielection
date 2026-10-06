@@ -51,11 +51,25 @@ export function tally(selected: Set<string>, parties: Party[], poll: Poll): Tall
   return { total: Math.round(total * 10) / 10, segments, chosen, groupNote, partial };
 }
 
-function holds(c: Condition, chosen: Party[]): boolean {
+export function holds(c: Condition, chosen: Party[]): boolean {
   if ("party" in c) return chosen.some((p) => p.id === c.party);
   if ("tag" in c) return chosen.some((p) => p.tags.includes(c.tag));
   if ("all" in c) return c.all.every((x) => holds(x, chosen));
   return c.any.some((x) => holds(x, chosen));
+}
+
+/** The chosen parties a holding rule names: by id or tag, through the branches that hold. */
+export function implicated(c: Condition, chosen: Party[]): string[] {
+  if ("party" in c) return chosen.some((p) => p.id === c.party) ? [c.party] : [];
+  if ("tag" in c) return chosen.filter((p) => p.tags.includes(c.tag)).map((p) => p.id);
+  const parts = "all" in c ? c.all : c.any.filter((x) => holds(x, chosen));
+  return [...new Set(parts.flatMap((x) => implicated(x, chosen)))];
+}
+
+/** Each pledge warning with the chosen parties its rule names, so a figure can mark them. */
+export function pledgeConflicts(selected: Set<string>, parties: Party[], rules: PledgeRule[]): { warning: Warning; ids: string[] }[] {
+  const chosen = parties.filter((p) => selected.has(p.id));
+  return warnings(selected, parties, rules).filter((w) => w.kind === "pledge").map((w) => ({ warning: w, ids: implicated(rules.find((r) => r.id === w.id)!.when, chosen) }));
 }
 
 /** Fills {and:tag1,tag2} and {comma:tag} with the chosen parties carrying those tags, tag by tag. */
