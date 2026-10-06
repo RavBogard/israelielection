@@ -38,6 +38,7 @@ function tiles():Record<string,{fig:ReactNode;caption?:string}>{
  const blocsNow=blocTotals(averagePoll,parties);
  const trend=allPolls.filter(p=>!isExit(p));
  const steps=outgoingJson.events.filter(e=>e.seatsAfter!=null).map(e=>({date:e.date,seats:e.seatsAfter as number}));
+ const now=steps.at(-1)!.seats,since=steps[steps.findLastIndex(x=>x.seats!==now)+1];
  const lanes=historyJson.histories.map(h=>h.events.map(e=>e.date.slice(0,4)));
  const terms=glossaryJson.terms;
  const listed=parties.filter(p=>(averagePoll.results[p.id]?.seats??0)>0).length;
@@ -45,7 +46,7 @@ function tiles():Record<string,{fig:ReactNode;caption?:string}>{
   "/polls":{fig:<PollsGlyph polls={trend} parties={parties} config={pollsData.config}/>,caption:`${mainPolls.length} current polls in the average, newest ${shortDate(mainPolls[0].published)}`},
   "/news":{fig:b?<NewsGlyph date={shortDate(b.date)} sentences={b.sentences.map(s=>s.text)}/>:<SheetsGlyph n={1} k="news"/>,caption:b?`${longDate(b.date)}: ${clip(b.sentences[0]?.text??"",90)}`:undefined},
   "/results":{fig:<ResultsGlyph closed={closed}/>,caption:closed?"Polls have closed; the count as it comes in":`The count opens when polls close, ${IL.format(new Date(resultsConfig.pollsClose))} Israel time on October 27`},
-  "/government":{fig:<GovernmentGlyph points={steps}/>,caption:`Outgoing coalition at ${steps.at(-1)!.seats} seats since ${mediumDate(steps.at(-1)!.date)}`},
+  "/government":{fig:<GovernmentGlyph points={steps}/>,caption:`Outgoing coalition at ${now} seats since ${mediumDate(since.date)}`},
   "/parties":{fig:<PartyMapGlyph parties={parties} poll={averagePoll}/>,caption:`${listed} lists win seats in the polling average`},
   "/compare":{fig:<CompareGlyph questions={questionsJson.questions.length} lists={parties.length}/>,caption:`${questionsJson.questions.length} questions across ${parties.length} lists`},
   "/coalition-builder":{fig:<BuilderGlyph parties={parties} poll={averagePoll}/>,caption:`Netanyahu bloc ${r(blocsNow.net)}, anti-Netanyahu bloc ${r(blocsNow.opp)}; 61 is a majority`},

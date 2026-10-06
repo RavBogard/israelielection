@@ -4,11 +4,11 @@ import { blocChange, blocSeries, newestPoll, signedSeats } from "@/lib/bloc-chan
 import { allPolls, averagePoll, blocLabel, blocs, parties, pollsData } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
 import { homeRaceModel } from "@/lib/home-race";
-import { BLOC_SEAT_ORDER, pollLabel, seatFigure } from "@/lib/polls";
+import { BLOC_ORDER, BLOC_SEAT_ORDER, pollLabel, seatFigure } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 
-/** The bar's order, as on every 120-seat bar and the home mosaic. */
-const ORDER = BLOC_SEAT_ORDER;
+/** The bar runs as every 120-seat bar does; the key reads as every key does. */
+const ORDER = BLOC_SEAT_ORDER, KEY = BLOC_ORDER;
 const one = seatFigure;
 
 /** The home race's average as one compact bar, each bloc's change over the past week, and the newest poll. */
@@ -18,9 +18,9 @@ export default function NewsBlocs() {
   return (
     <figure className="nw-blocs">
       <SeatBar size="m" segments={ORDER.map((b) => ({ key: b, seats: seats(b), color: `var(--b-${b})` }))}
-        label={ORDER.map((b) => `${blocLabel[b]} ${one(seats(b))}`).join(", ") + ". A majority is 61."} />
+        label={KEY.map((b) => `${blocLabel[b]} ${one(seats(b))}`).join(", ") + ". A majority is 61."} />
       <ul className="fig-key nw-blockey">
-        {ORDER.map((b) => (
+        {KEY.map((b) => (
           <li key={b}><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" />{blocLabel[b]} <b>{one(seats(b))}</b>{change && <span className="nw-delta">{signedSeats(change.delta[b])}</span>}</li>
         ))}
       </ul>

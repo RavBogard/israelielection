@@ -2,7 +2,7 @@ import context from "@/public/vote-map/context.json";
 import election from "@/public/vote-map/2022.json";
 import places from "@/public/vote-map/places.json";
 import { lettersOf } from "@/lib/letters";
-import { averageAsPoll, blocTotals, currentPolls } from "@/lib/polls";
+import { averageAsPoll, blocTotals, currentPolls, seatFigure } from "@/lib/polls";
 import { squarify } from "@/lib/treemap";
 import type { Party, Poll, PollsConfig } from "@/lib/types";
 import type { Places, VoteMapElection } from "@/lib/votemap";
@@ -28,7 +28,7 @@ export function BuilderGlyph({ parties, poll }: { parties: Party[]; poll: Poll }
         const n = picks.length;
         const rot = (i - (n - 1) / 2) * 6;
         const cx = GW / 2 + (i - (n - 1) / 2) * 58;
-        const seats = Math.round(poll.results[p.id]!.seats);
+        const seats = seatFigure(poll.results[p.id]!.seats);
         return (
           <g key={p.id} transform={`translate(${cx} ${GH + 10}) rotate(${rot}) translate(${-W / 2} ${-H})`}>
             <rect className="paper" x="0" y="0" width={W} height={H} />
@@ -77,7 +77,7 @@ export function PollsGlyph({ polls, parties, config }: { polls: Poll[]; parties:
   });
   if (pts.length < 2) return null;
   const t0 = pts[0].t, t1 = pts[pts.length - 1].t;
-  const PAD = { l: 10, r: 30, t: 16, b: 14 };
+  const PAD = { l: 10, r: 40, t: 16, b: 14 };
   const all = pts.flatMap((p) => [p.net, p.opp]);
   const lo = Math.min(45, Math.floor(Math.min(...all) / 5) * 5), hi = Math.max(65, Math.ceil(Math.max(...all) / 5) * 5);
   const x = (t: number) => PAD.l + ((t - t0) / Math.max(1, t1 - t0)) * (GW - PAD.l - PAD.r);
@@ -95,10 +95,10 @@ export function PollsGlyph({ polls, parties, config }: { polls: Poll[]; parties:
       <circle cx={x(last.t)} cy={y(last.net)} r="3.5" fill="var(--b-net)" />
       <circle cx={x(last.t)} cy={y(last.opp)} r="3.5" fill="var(--b-opp)" />
       <text className="end" x={x(last.t) + 7} y={y(last.net) + 4}>
-        {Math.round(last.net)}
+        {seatFigure(last.net)}
       </text>
       <text className="end" x={x(last.t) + 7} y={y(last.opp) + 4}>
-        {Math.round(last.opp)}
+        {seatFigure(last.opp)}
       </text>
     </svg>
   );
