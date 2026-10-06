@@ -16,7 +16,7 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - [x] Wave 1b Builder: two-row meter with verdict, verdict and pledges under the meter, governing summary, roles only for chosen parties, live region, Paths to 61
 - [x] Wave 1c Fix batch A: Compare chips and smooth scroll, ChartViz aria, Article rounding and split-bar labels, vote map ramp, touch, wheel, dark, export overflow
 - [x] Wave 1d Fix batch B: tokens (dark navy, touch targets, footer columns, fig-src measure), news heading and brief rule, /start order, party sparkline text, embeds, search title, article title size, metadata (canonical, titles, RSS link, theme-color)
-- [ ] Wave 1e Evidence research rounds (positions and comparison questions)
+- [x] Wave 1e Evidence research rounds (positions and comparison questions)
 - [ ] Wave 2 Since yesterday home, cite, figures in search; polls desk; lean masthead
 - [ ] Wave 3 Explainer pictures, election on one page, locator maps; apply research
 - [ ] Wave 4 Review, DESIGN.md, push
@@ -27,3 +27,4 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - GATE: Paths to 61 opens "With Likud" (plain arithmetic order) — proceeded; toggle shows the alternative. Pledge rules lacked the refusals to serve under Netanyahu, so conflict-free paths were misleading; a follow-up adds sourced rules and ranks conflict-free paths first.
 - Open for Daniel: Shas West Bank row (co-sponsored the July 2025 sovereignty motion, absent on the binding bill, like Likud's settle-no-annex) — change both or neither.
 - Open for Daniel: exit polls must be entered on the night (kind "exit", pollster "Kan 11" / "Channel 12" / "Channel 13", broadcastAt); no job fetches them.
+- Research round 1 (logs in docs/research/2026-10-06-gaps/): issue positions 9 of 20 gaps filled (2 unstated, 7 stated or record), 11 left open with reasons; comparison questions 53 filled (28 stated, 25 unstated). For Daniel: four new stance options added for coalition positions with no slot (exempt full-time yeshiva students; abolish reasonableness for cabinet decisions; keep the current Shabbat rules; Israeli control of Gaza), override stance relabelled to "70 MKs or more"; Likud civil marriage left blank on purpose (Ohana's Dec 2025 vote).
