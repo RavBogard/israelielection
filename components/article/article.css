@@ -119,38 +119,46 @@
 .article .cv-m.ring { background: var(--sheet); border: 2.5px solid var(--ink); }
 .article .cv-m.grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); }
 .article .cv-m.grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; }
-.article .cv-dots ul { list-style: none; margin: 0; padding: 0; }
-.article .cv-dots li { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
+.article .cv-dots ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) auto; column-gap: 14px; }
+.article .cv-dots li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
 .article .cv-dots .lab { line-height: 1.25; }
+.article .cv-dots .lab .rs { display: block; }
 .article .cv-dots .track { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; }
 .article .cv-dots .track .cv-m { position: absolute; top: 2px; margin-left: -6px; }
 .article .cv-dots .track .span { position: absolute; top: 7px; height: 2px; background: var(--ink-3); }
-.article .cv-dots .vals { display: flex; gap: 10px; font-variant-numeric: tabular-nums; font-size: 13.5px; min-width: 7.5em; justify-content: flex-end; }
-.article .cv-dots .vals b { font-weight: 700; color: var(--ink); }
+.article .cv-dots .vals { display: flex; gap: 10px; font-variant-numeric: tabular-nums; font-size: 13.5px; }
+.article .cv-dots .vals b { font-weight: 700; color: var(--ink); text-align: right; flex: none; }
 .article .cv-dots .vals b.v-grey, .article .cv-dots .vals b.v-grey-ring { color: var(--ink-2); font-weight: 600; }
-.article .cv-axis { display: flex; justify-content: space-between; margin: 4px 0 0; padding-left: calc(13em + 14px); padding-right: calc(7.5em + 14px); font-size: 11.5px; color: var(--ink-3); }
+.article .cv-dots li.cv-axis { border-top: 0; padding: 2px 0 0; font-size: 11.5px; color: var(--ink-3); }
+.article .cv-dots .cv-axis .ax { display: flex; justify-content: space-between; }
 .article .cv-lines svg { display: block; width: 100%; height: auto; margin-top: 10px; }
+.article .cv-lines svg.narrow { display: none; }
+.article .cv-lines svg.narrow .tick { font-size: 12px; }
+.article .cv-lines svg.narrow .end .v { font-size: 14px; }
 .article .cv-lines .grid { stroke: var(--line); stroke-width: 1; }
 .article .cv-lines .tick { fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
 .article .cv-lines .ser path { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
-.article .cv-lines .ser.solid path, .article .cv-lines .ser.ring path { stroke: var(--ink); }
+.article .cv-lines .ser.solid path { stroke: var(--ink); }
+.article .cv-lines .ser.ring path { stroke: var(--ink-2); }
 .article .cv-lines .ser.grey path, .article .cv-lines .ser.grey-ring path { stroke: var(--ink-3); }
-.article .cv-lines .ser.ring path, .article .cv-lines .ser.grey-ring path { stroke-dasharray: 5 4; }
 .article .cv-lines .ser circle { stroke-width: 2; }
 .article .cv-lines .ser.solid circle { fill: var(--ink); stroke: var(--sheet); }
 .article .cv-lines .ser.ring circle { fill: var(--sheet); stroke: var(--ink); }
 .article .cv-lines .ser.grey circle { fill: var(--ink-3); stroke: var(--sheet); }
 .article .cv-lines .ser.grey-ring circle { fill: var(--sheet); stroke: var(--ink-3); }
 .article .cv-lines .end { font-size: 12.5px; fill: var(--ink-2); }
-.article .cv-lines .end .v { font-family: var(--display); font-weight: 700; font-size: 14px; fill: var(--ink); }
+.article .cv-lines .end .v { font-family: var(--display); font-weight: 700; font-size: 16px; fill: var(--ink); }
 .article .cv-numbers { margin-top: 10px; }
 .article .cv-numbers summary { cursor: pointer; font-size: 13.5px; font-weight: 600; width: fit-content; }
 .article .cv-numbers summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .article table.heat td { text-align: center; font-variant-numeric: tabular-nums; }
 @media (max-width: 640px) {
-  .article .cv-dots li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+  .article .cv-dots ul { grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; }
+  .article .cv-dots li { row-gap: 4px; }
   .article .cv-dots .lab { grid-column: 1 / -1; }
-  .article .cv-axis { padding-left: 0; padding-right: calc(7.5em + 10px); }
+  .article .cv-dots li.cv-axis .lab { display: none; }
+  .article .cv-lines svg.wide { display: none; }
+  .article .cv-lines svg.narrow { display: block; }
 }
 
 /* Positions: the Knesset split by answer, then each answer's lists. Shades are the stance ramp

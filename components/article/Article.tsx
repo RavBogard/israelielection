@@ -4,7 +4,7 @@ import { averagePoll, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
 import { shade } from "../compare/model";
 import type { PositionRow } from "@/lib/compare";
-import { DotPlot, Lines, formOf, heatStyle, pct } from "./ChartViz";
+import { DotPlot, Lines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
 
 /*
  * The building blocks of a reference page, registered for every MDX file in
@@ -42,14 +42,13 @@ function Linked({ text }: { text: string }) {
   );
 }
 
-const rowSource = (r: ChartRow) => r.source && r.url && <span className="rs"><a href={r.url}>{r.source}{r.date ? `, ${r.date}` : ""}</a></span>;
-
 /** A data/charts table as a table, with each percentage cell shaded by its size when `heat` is set. */
 function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
-  const heatMax = Math.max(0, ...c.rows.flatMap((r) => (r.cells ?? []).map(pct).filter((v): v is number => v !== null)));
+  const top = heat ? heatMax(c) : 0;
   return (
         <div className="tw">
           <table className={heat ? "heat" : undefined}>
+            <caption className="sr-only">{c.title}</caption>
             <thead>
               <tr>
                 {c.columns!.map((h) => (
@@ -67,7 +66,7 @@ function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
                     {rowSource(r)}
                   </th>
                   {r.cells!.map((x, i) => (
-                    <td key={i} style={heat ? heatStyle(x, heatMax) : undefined}>{x}</td>
+                    <td key={i} style={heat && !unshaded(c.columns![i + 1] ?? "") ? heatStyle(x, top) : undefined}>{x}</td>
                   ))}
                 </tr>
               ))}
@@ -111,8 +110,8 @@ export function Chart({ id }: { id: string }) {
       ) : form === "lines" || form === "dots" ? (
         <>
           {form === "lines" ? <Lines c={c} /> : <DotPlot c={c} />}
-          <details className="cv-numbers">
-            <summary>The numbers</summary>
+          <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
+            <summary>The numbers<span className="sr-only">: {c.title}</span></summary>
             <NumbersTable c={c} heat={false} />
           </details>
         </>
@@ -120,6 +119,7 @@ export function Chart({ id }: { id: string }) {
         <NumbersTable c={c} heat={form === "heat"} />
       )}
       <p className="cs">
+        {form === "heat" && heatMax(c) > 0 && `Darkest shade: ${heatMax(c)}%${c.columns!.slice(1).some(unshaded) ? "; turnout is a share of eligible voters, so it is not shaded" : ""}. `}
         Source: <SourceLine {...c} />
         {c.note && (
           <>
@@ -164,6 +164,7 @@ export function Positions({ issue }: { issue: string }) {
           <span className="sw" style={{ background: partyColor(party.id) }} aria-hidden />
           <a href={`/parties/${party.id}`}>{party.name}</a>
           {seats(party.id) > 0 && <span className="ps">{Math.round(seats(party.id))} seats</span>}
+          {((r as PositionRow).declined || r.status === "declined") && <span className="ps">Declined to answer</span>}
         </p>
         {r.text?.trim() && <p className="pt">{r.text}</p>}
         {r.source && (
@@ -214,7 +215,7 @@ export function Positions({ issue }: { issue: string }) {
       )}
       {quiet.length > 0 && (
         <section className="ps-grp quiet">
-          <h4>No position in these sources</h4>
+          <h4>{quiet.some((r) => (r as PositionRow).declined || r.status === "declined") ? "Declined, or no position in these sources" : "No position in these sources"}</h4>
           <ul>
             {quiet.map((r) => (r.text?.trim() ? <Entry key={r.party} r={r} /> : (
               <li key={r.party}>
