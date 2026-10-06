@@ -30,3 +30,32 @@ describe("conservative headline grouping",()=>{
     expect(groups).toHaveLength(2);expect(groups.flatMap(g=>g.sources)).toHaveLength(3);
   });
 });
+import { electionVocabulary, groupBriefing, namesElection, splitHeadlines, OTHER_TOPIC } from "./news-grouping";
+import { parties } from "./data";
+describe("election vocabulary from the party file",()=>{
+  const v=electionVocabulary(parties);
+  it("knows party names, joint-list parts and leaders' surnames, case-sensitively",()=>{
+    for(const t of ["Likud gains in Haifa","Shas council meets","Zehut joins rally","Democrats file petition","Ben Gvir visits Temple Mount","Ben-Gvir visits","Eisenkot speaks","Bennett and Lapid split","Ra’am rejects offer","Goldknopf resigns"])expect(namesElection(t,v),t).toBe(true);
+    expect(namesElection("Rain expected over the weekend",v)).toBe(false);
+    expect(namesElection("Hijacking attempt on flight to Tel Aviv",v)).toBe(false);
+    expect(namesElection("A likud-style mood",v)).toBe(false);
+  });
+  it("knows election terms in any case and whole words only",()=>{
+    for(const t of ["Knesset dissolves","New POLL shows","Voters head out","Coalition talks stall","Threshold fears"])expect(namesElection(t,v),t).toBe(true);
+    expect(namesElection("Pollution in the Kishon",v)).toBe(false);
+    expect(namesElection("Devoted fans",v)).toBe(false);
+  });
+  it("splits headline groups without losing or reordering any",()=>{
+    const gs=groupNews([item("https://a.org/1","Likud list approved","2026-10-04T12:00:00Z"),item("https://a.org/2","Storm closes schools","2026-10-04T11:00:00Z"),item("https://a.org/3","Election day logistics","2026-10-04T10:00:00Z")]);
+    const s=splitHeadlines(gs,v);expect(s.election.map(g=>g.item.url)).toEqual(["https://a.org/1","https://a.org/3"]);expect(s.other.map(g=>g.item.url)).toEqual(["https://a.org/2"]);
+  });
+});
+describe("briefing topics",()=>{
+  it("groups by the first matching topic, topics in order of first appearance, sentences kept",()=>{
+    const ss=["A new poll gave Likud 25 seats.","The High Court rejected a petition.","Gas prices fall.","The Central Election Committee upheld appeals.","Two lists announced a merger."].map(text=>({text}));
+    const g=groupBriefing(ss);
+    expect(g.map(x=>x.topic)).toEqual(["Polls","Courts and the election committee",OTHER_TOPIC,"Parties and candidates"]);
+    expect(g[1].sentences.map(s=>s.text)).toEqual(["The High Court rejected a petition.","The Central Election Committee upheld appeals."]);
+    expect(g.flatMap(x=>x.sentences)).toHaveLength(5);
+  });
+});

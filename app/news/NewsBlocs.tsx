@@ -1,0 +1,32 @@
+import Link from "next/link";
+import SeatBar from "@/components/SeatBar";
+import { blocChange, blocSeries, newestPoll, signedSeats } from "@/lib/bloc-change";
+import { allPolls, averagePoll, blocLabel, blocs, parties, pollsData } from "@/lib/data";
+import { mediumDate, shortDate } from "@/lib/format";
+import { homeRaceModel } from "@/lib/home-race";
+import { pollLabel } from "@/lib/polls";
+import type { BlocId } from "@/lib/types";
+
+/** The bar's order: the two blocs from either end, the lists between them in the middle (as on Polls). */
+const ORDER: BlocId[] = ["net", "mid", "arab", "opp"];
+const one = (x: number) => x.toFixed(1);
+
+/** The home race's average as one compact bar, each bloc's change over the past week, and the newest poll. */
+export default function NewsBlocs() {
+  const rows = homeRaceModel(averagePoll, parties, blocs).rows, seats = (b: BlocId) => rows.find((r) => r.id === b)!.seats;
+  const change = blocChange(blocSeries(pollsData.polls, parties, pollsData.config)), newest = newestPoll(allPolls);
+  return (
+    <figure className="nw-blocs">
+      <SeatBar size="m" segments={ORDER.map((b) => ({ key: b, seats: seats(b), color: `var(--b-${b})` }))}
+        label={ORDER.map((b) => `${blocLabel[b]} ${one(seats(b))}`).join(", ") + ". A majority is 61."} />
+      <ul className="fig-key nw-blockey">
+        {ORDER.map((b) => (
+          <li key={b}><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" />{blocLabel[b]} <b>{one(seats(b))}</b>{change && <span className="nw-delta">{signedSeats(change.delta[b])}</span>}</li>
+        ))}
+      </ul>
+      <figcaption className="fig-src">
+        Seats in the polling average{change && <>, with the change since {shortDate(change.since)}</>}.{newest && <> Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link>.</>} <Link href="/polls">All polls and the method</Link>.
+      </figcaption>
+    </figure>
+  );
+}

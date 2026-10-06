@@ -10,7 +10,8 @@ import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
 import { allPolls, averagePoll, blocs, mainPolls, parties, pollsData } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
-import { isExit } from "@/lib/polls";
+import { isExit, pollLabel } from "@/lib/polls";
+import { blocChange, blocSeries, newestPoll } from "@/lib/bloc-change";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
 import { DESCRIPTION } from "@/lib/site";
@@ -37,11 +38,11 @@ function Headline({ days, live }: { days: number; live: boolean }) {
 
 /** Current modeled seats, with election-night freshness preserved. */
 function Race({poll,live,days}:{poll:Poll;live:boolean;days:number}){
- const pollsters=mainPolls.map(p=>p.pollster).join(", ");
- return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h"><Headline days={days} live={live}/></h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p></div>
- <HomeRace model={homeRaceModel(poll,parties,blocs)}/>
- <p className="race-source fig-src">{live?<>{poll.resultState?.freshness==="stale"&&<b>Saved count (stale). </b>}Central Elections Committee; seats are this site’s estimate from votes counted so far. Captured {poll.resultState?.capturedAt??poll.published}. Source updated {poll.resultState?.sourceUpdatedAt??"at an unrecorded time"}. <Link href="/results">Full results and count method</Link>.</>:<>One latest eligible poll per publisher ({pollsters}), through {mediumDate(mainPolls[0].published)}. Square-root sample-size weighting, normalized coalition values; seats can be fractional. <Link href="/polls#method">Average method</Link>.</>}</p>
- <p className="race-context">These political groupings do not establish coalition agreements. Explore the <Link href="/parties">Party Map</Link> or try an arrangement in the <Link href="/coalition-builder">Coalition Builder</Link>.</p>
+ const pollsters=mainPolls.map(p=>p.pollster).join(", "),newest=live?null:newestPoll(allPolls),change=live?null:blocChange(blocSeries(pollsData.polls,parties,pollsData.config));
+ return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h"><Headline days={days} live={live}/></h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p>{newest&&<p className="race-newest">Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link></p>}</div>
+ <HomeRace model={homeRaceModel(poll,parties,blocs)} change={change}/>
+ <p className="race-source fig-src">{live?<>{poll.resultState?.freshness==="stale"&&<b>Saved count (stale). </b>}Central Elections Committee; seats are this site’s estimate from votes counted so far. Captured {poll.resultState?.capturedAt??poll.published}. Source updated {poll.resultState?.sourceUpdatedAt??"at an unrecorded time"}. <Link href="/results">Full results and count method</Link>.</>:<>One latest eligible poll per publisher ({pollsters}), through {mediumDate(mainPolls[0].published)}. Square-root sample-size weighting, normalized coalition values; seats can be fractional.{change&&<> Change is against the average as it stood on {mediumDate(change.since)}, the last poll date at least a week before the newest.</>} <Link href="/polls#method">Average method</Link>.</>}</p>
+ <p className="race-context">Explore the <Link href="/parties">Party Map</Link> or try an arrangement in the <Link href="/coalition-builder">Coalition Builder</Link>.</p>
  </section>;
 }
 
