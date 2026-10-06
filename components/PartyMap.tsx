@@ -24,22 +24,48 @@ const blocSum = (b: BlocId) => Math.round(averaged.filter(({ p }) => p.bloc === 
 const offMap = parties.filter((p) => !avgOf.has(p.id) || seatsOf(p.id) === 0);
 const fewerPolls = averaged.filter(({ a }) => a.n < mainPolls.length).map(({ p }) => p.name);
 
-const GAP = 6, LBL = 22;
-/** Shorter names for a bloc whose block is too narrow for its full label. */
-const BLOC_SHORT: Partial<Record<BlocId, string>> = { opp: "Anti-Netanyahu bloc" };
-/** The longest bloc name that fits the block's width (about 7.4px a character at 13px); a block too narrow for any keeps only its total and its swatch, which the key below the map names. */
-function blocName(id: BlocId, label: string, total: string, room: number) {
-  const fits = (t: string) => (t.length + 1 + total.length) * 7.4 <= room;
-  const name = [label, BLOC_SHORT[id]].find((t) => t && fits(t));
-  return name ? `${name} ${total}` : total;
+const GAP = 6, LBL = 22, LINE = 16;
+/** Shorter names, longest first, for a bloc whose block is too narrow for its full label. */
+const BLOC_SHORT: Record<BlocId, string[]> = { net: ["Netanyahu"], opp: ["Anti-Netanyahu bloc", "Anti-Netanyahu"], mid: ["Between"], arab: ["Joint List, Ra'am"] };
+/** Text width in px, measured on a canvas in the page's own face; a rough 7.4px a character before the font is known. */
+let ctx2d: CanvasRenderingContext2D | null = null;
+function measure(t: string, px: number, family: string) {
+  if (!ctx2d && typeof document !== "undefined") ctx2d = document.createElement("canvas").getContext("2d");
+  if (!ctx2d || !family) return t.length * px * 0.57;
+  ctx2d.font = `600 ${px}px ${family}`;
+  return ctx2d.measureText(t).width;
+}
+/** Lines a phrase takes when wrapped at `room`, or Infinity if one word alone is too wide. */
+function lines(t: string, room: number, px: number, family: string) {
+  let n = 1, cur = "";
+  for (const w of t.split(" ")) {
+    if (measure(w, px, family) > room) return Infinity;
+    const next = cur ? `${cur} ${w}` : w;
+    if (measure(next, px, family) > room) { n++; cur = w; } else cur = next;
+  }
+  return n;
+}
+/**
+ * Every bloc keeps a name: the longest that fits beside its total on one line; failing that, a name over the total on two
+ * or three lines when the block is tall enough to spare them; failing that, the shortest name, cut with an ellipsis.
+ */
+function blocName(id: BlocId, label: string, total: string, room: number, height: number, family: string) {
+  const names = [label, ...BLOC_SHORT[id]];
+  const one = names.find((t) => measure(`${t} ${total}`, 13, family) <= room);
+  if (one) return { name: one, extra: 0 };
+  for (const t of names) {
+    const n = lines(t, room, 13, family);
+    if (n <= 2 && height - LBL - n * LINE >= 90) return { name: t, extra: n };
+  }
+  return { name: names.at(-1)!, extra: 0 };
 }
 
 function useSize(ref: React.RefObject<HTMLElement | null>) {
-  const [size, setSize] = useState({ w: 0, h: 0 });
+  const [size, setSize] = useState({ w: 0, h: 0, family: "" });
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const ro = new ResizeObserver(() => setSize({ w: el.clientWidth, h: el.clientHeight }));
+    const ro = new ResizeObserver(() => setSize({ w: el.clientWidth, h: el.clientHeight, family: getComputedStyle(el).fontFamily }));
     ro.observe(el);
     return () => ro.disconnect();
   }, [ref]);
@@ -94,7 +120,7 @@ export default function PartyMap() {
   const mapRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const tipRef = useRef<HTMLDivElement>(null);
-  const { w: W, h: H } = useSize(mapRef);
+  const { w: W, h: H, family } = useSize(mapRef);
 
   useEffect(() => {
     const restore = () => setCurrent(readPartyMapSelection(new URLSearchParams(window.location.search),window.location.hash,parties.map((p)=>p.id)));
@@ -137,26 +163,39 @@ export default function PartyMap() {
     for (const br of squarify(blocItems, 0, 0, W, H)) {
       const bx = br.x + GAP / 2, by = br.y + GAP / 2, bw = br.w - GAP, bh = br.h - GAP;
       const label = blocLabel[br.id as BlocId];
-      const name = blocName(br.id as BlocId, label, seatFigure(br.v), bw - 4);
+      const total = seatFigure(br.v);
+      const { name, extra } = blocName(br.id as BlocId, label, total, bw - 4, bh, family);
+      const lbl = LBL + extra * LINE;
       cells.push(
-        <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }} title={`${label} ${seatFigure(br.v)}`}>
-          {name === seatFigure(br.v) && <><span className="sw" style={{ background: blocColorStrip(br.id), marginRight: 6, verticalAlign: -1 }} aria-hidden="true" /><span className="sr-only">{label} </span></>}
-          {name}
+        <div key={`b-${br.id}`} className={`blocname${extra ? " stack" : ""}`} style={{ left: bx + 2, top: by, width: bw - 4, height: lbl - 2 }} title={`${label} ${total}`}>
+          {name !== label && <span className="sr-only">{label} </span>}
+          <span className="bn" aria-hidden={name !== label || undefined}>{name}</span> <span className="bt">{total}</span>
         </div>
       );
       const ps = averaged
         .filter(({ p }) => p.bloc === br.id)
         .map(({ p }) => ({ id: p.id, v: seatsOf(p.id) }))
         .sort((a, b) => b.v - a.v);
-      for (const r of squarify(ps, bx, by + LBL, bw, bh - LBL)) {
+      for (const r of squarify(ps, bx, by + lbl, bw, bh - lbl)) {
         const p = parties.find((q) => q.id === r.id)!;
         const cw = r.w - 3, ch = r.h - 3;
         let cls = "cell";
         if (cw < 110 || ch < 70) cls += " tiny";
         if (cw < 80) cls += " xs";
         if (ch < 120 || cw < 130) cls += " nold";
-        if (cw < 180) cls += " nosm";
-        if (ch < 52) cls += " flat";
+        if (cw < 230) cls += " nosm";
+        const nmPx = cls.includes("tiny") || cls.includes("xs") ? 12 : Math.min(19, Math.max(13, (typeof window === "undefined" ? 1440 : window.innerWidth) * 0.0115));
+        const room = cw - (cls.includes("tiny") ? 14 : 24);
+        const fitsFlat = (t: string) => measure(t, nmPx, family) <= room - 32;
+        const fitsStack = (t: string) => lines(t, room, nmPx, family) <= (ch >= 90 ? 3 : ch >= 70 ? 2 : 1);
+        // The full name where it fits, else the short one; a short cell sets name and number on one line unless only
+        // stacking them leaves room for a name at all.
+        let flat = ch < 52, shown = p.name;
+        if (flat && !fitsFlat(p.name)) {
+          if (fitsFlat(p.short)) shown = p.short;
+          else if (ch >= 44 && fitsStack(p.short)) { flat = false; shown = fitsStack(p.name) ? p.name : p.short; }
+        } else if (!flat && !fitsStack(p.name) && fitsStack(p.short)) shown = p.short;
+        if (flat) cls += " flat";
         cells.push(
           <button
             key={p.id}
@@ -179,7 +218,7 @@ export default function PartyMap() {
               ["--fill" as string]: partyColor(p.id), ["--fill-ink" as string]: partyInk(p.id),
             }}
           >
-            <span className="nm">{p.name}</span>
+            <span className="nm">{shown}</span>
             <span className="ld">{p.leader.split(" (")[0]}</span>
             <span className="av">
               {seatFigure(r.v)}

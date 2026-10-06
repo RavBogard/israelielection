@@ -82,7 +82,8 @@ export default function SeatSparkline({ series, result, id, name, avg }: { serie
         {hollow && <span className="k"><i className="ring" style={{ borderColor: "var(--psx)" }} /> {hollowNames.join(" and ")}, which the site’s alternative average leaves out</span>}
         {ref !== null && <span className="k"><i className="dash" /> 2022 result</span>}
       </p>
-      <table className="sr-only">
+      <div className="sr-only">
+      <table>
         <caption>{name}: seats in each poll since the Knesset dissolved</caption>
         <thead><tr><th>Published</th><th>Pollster</th><th>Seats</th></tr></thead>
         <tbody>
@@ -91,6 +92,7 @@ export default function SeatSparkline({ series, result, id, name, avg }: { serie
           ))}
         </tbody>
       </table>
+      </div>
     </>
   );
 }

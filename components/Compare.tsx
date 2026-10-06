@@ -215,7 +215,12 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
   return (
     <div className="cmp">
       <div className="mx-show" role="group" aria-label="Lists to show">
-        <span className="lbl">Show</span>
+        <label className="lbl" htmlFor="mx-showsel">Show</label>
+        {/* Phones get one select in place of the segmented control, which would wrap into uneven rows. */}
+        <select id="mx-showsel" className="mx-showsel" value={custom ? "" : presets.find((pr) => isPreset(pr.ids))?.label} onChange={(e) => { const pr = presets.find((x) => x.label === e.target.value); if (pr) onSelect?.(pr.ids); }}>
+          {presets.map((pr) => <option key={pr.label} value={pr.label}>{`${pr.label}, ${pr.ids.length} lists`}</option>)}
+          {custom && <option value="">{`Your set, ${selected.length} lists`}</option>}
+        </select>
         <div className="seg">
           {presets.map((pr) => (
             <button key={pr.label} type="button" aria-pressed={isPreset(pr.ids)} onClick={() => onSelect?.(pr.ids)}>

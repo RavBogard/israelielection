@@ -76,7 +76,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} />{blocLabel[p.bloc]}</span>
-            <span className="total"><b>{one(g.blocSeats)}</b> seats across the bloc, polling average</span>
+            <span className="total">{g.avg === null ? (p.status ?? "Not polled separately") : g.below ? "Below the threshold in the polling average" : <><b>{one(g.avg)}</b> seats, polling average</>}</span>
           </div>
         </div>
       </header>

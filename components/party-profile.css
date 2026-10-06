@@ -103,24 +103,21 @@
 .pp-won .bar { height: 10px; background: var(--cell); }
 .pp-won .bar i { display: block; height: 100%; }
 
-/* Strongholds: the dot map beside its table. */
-.pp-mapwrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 18px; align-items: start; }
-.pp-map { display: block; width: 100%; height: auto; max-height: 440px; }
+/* Strongholds: the dot map, its named places in the margins either side of the country, then its table. */
+.pp-mapwrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; align-items: start; }
+.pp-map { display: block; width: 100%; height: auto; max-height: 460px; }
 .pp-map .wb { fill: none; stroke: var(--ink-2); stroke-width: .8; stroke-dasharray: 2.5 2; }
 .pp-map .gaza { fill: var(--line); stroke: var(--ink-3); stroke-width: .6; }
-.pp-map .lbl { font-family: var(--body); font-size: 11px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
-.pp-maptable { border-collapse: collapse; font-size: 13.5px; min-width: 150px; align-self: center; }
+.pp-map .lead { stroke: var(--ink-3); stroke-width: .7; }
+.pp-map .lbl { font-family: var(--body); font-size: 14px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
+.pp-maptable { border-collapse: collapse; font-size: 13.5px; width: 100%; max-width: 360px; }
 .pp-maptable th { text-align: left; font-weight: 400; color: var(--ink-2); padding: 5px 12px 5px 0; border-bottom: 1px solid var(--line); }
 .pp-maptable td { text-align: right; font-family: var(--display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink); padding: 5px 0; border-bottom: 1px solid var(--line); }
 .pp-maptable tr.national th, .pp-maptable tr.national td { color: var(--ink-3); border-bottom: 1px solid var(--ink); }
 .pp-maptable tr.national td { font-weight: 500; }
 .pp-maptable tr.top th { color: var(--ink); font-weight: 500; }
-.pp-scale { grid-column: 1 / -1; margin: 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); }
+.pp-scale { margin: 0; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-3); }
 .pp-scale i { display: block; width: 90px; height: 7px; border: 1px solid var(--line-2); }
-@media (max-width: 440px) {
-  .pp-mapwrap { grid-template-columns: 1fr; }
-  .pp-map { max-height: 380px; }
-}
 
 /* Stance tiles. */
 .pp-stand { display: flex; flex-direction: column; gap: 10px; }

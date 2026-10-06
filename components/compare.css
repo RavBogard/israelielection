@@ -15,6 +15,7 @@
 .cmp .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
 .cmp .seg button[aria-pressed="true"] small { color: var(--bg); opacity: .75; }
 .cmp .mx-show .build { font-size: 14px; color: var(--ink); }
+.cmp .mx-showsel { display: none; }
 
 /* Choosing lists one by one */
 .cmp .mx-pick { margin: -8px 0 22px; }
@@ -145,6 +146,14 @@
 /* Phones and narrow tablets: each question's label spans the full width over its row of cells,
    so all fourteen columns still fit without a sideways scroll. Roles keep the table semantics. */
 @media (max-width: 760px) {
+  /* The chart comes before its key on phones: the key, then the notes, follow the matrix. */
+  .cmp { display: flex; flex-direction: column; }
+  .cmp .mx-key { order: 1; margin-top: 18px; }
+  .cmp .foot { order: 2; }
+  .cmp .mx-show { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 12px; }
+  .cmp .mx-show .seg { display: none; }
+  .cmp .mx-showsel { display: block; min-height: 44px; min-width: 0; width: 100%; font: inherit; font-size: 15px; color: var(--ink); background: var(--sheet); border: 1px solid var(--ink); border-radius: 4px; padding: 0 10px; }
+  .cmp .mx-show .build { grid-column: 1 / -1; }
   .cmp .mx-key { grid-template-columns: minmax(0, 1fr); }
   .cmp .mx-key .tap { grid-row: auto; grid-column: auto; }
   .cmp .mx, .cmp .mx tbody { display: block; }

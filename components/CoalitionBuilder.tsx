@@ -363,6 +363,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </div>
           <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${sn(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
           </div>
+          <div className="pbody">
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}
           <ul className="list">
             {t.chosen.length ? (
@@ -413,6 +414,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               The Central Elections Committee voted Sept 23 to bar the Joint List and Ra&apos;am. The Supreme Court heard the appeals Oct 1 and
               reinstated both lists 9–0 on Oct 2.
             </p>
+          </div>
           </div>
         </aside>
       </div>
