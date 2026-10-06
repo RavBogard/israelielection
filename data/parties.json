@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-06",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -56,7 +56,7 @@
       "tags": [],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Religious Zionism (agreed Sep 8; reported unsigned Sep 15)",
+      "surplusLine": "Surplus: Religious Zionism (signed Oct 6)",
       "who": [
         {
           "text": "Founded Sept 13, 1973 by Begin and Sharon; won power in 1977 with 43 seats.",
@@ -139,8 +139,8 @@
         }
       ],
       "surplusPartner": {
-        "text": "Religious Zionism. Agreed Sept 8; reported still unsigned Sept 15. Final status not found.",
-        "source": "Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"
+        "text": "Religious Zionism (signed Oct 6).",
+        "source": "Jerusalem Post, Oct 6, 2026"
       },
       "quote": {
         "text": "There is no straight. Yashar is a bluff. There's either left or right… Do you want a Palestinian state? (or) do you want a Jewish state?",
@@ -489,7 +489,7 @@
       "tags": [],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Likud (agreed Sep 8; reported unsigned Sep 15)",
+      "surplusLine": "Surplus: Likud (signed Oct 6)",
       "who": [
         {
           "text": "The renamed National Union–Tkuma party. Ben-Gvir refused a new joint run: “Smotrich must run in one party and we must run in another party.”",
@@ -570,8 +570,8 @@
         }
       ],
       "surplusPartner": {
-        "text": "Likud. Agreed Sept 8; reported still unsigned Sept 15.",
-        "source": "Israel Hayom, Sep 8; Channel 14, Sep 15, 2026"
+        "text": "Likud (signed Oct 6).",
+        "source": "Jerusalem Post, Oct 6, 2026"
       },
       "quote": {
         "text": "Every settlement… is another nail in the coffin of this dangerous idea.",
