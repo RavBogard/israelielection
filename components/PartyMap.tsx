@@ -171,7 +171,7 @@ export default function PartyMap() {
           <h1>The Party Map</h1>
           <p className="sub">
             Each block&apos;s area is the party&apos;s normalized coalition average across {mainPolls.length} polls (
-            {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). Tap a party for who they are, who votes for
+            {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). Tap a party for a preview and a link to its full profile: who they are, who votes for
             them, where they stand, and their seat numbers in each poll. <Link href="/polls#method">Average method</Link>.
           </p>
         </div>
@@ -200,7 +200,7 @@ export default function PartyMap() {
         </div>
         <aside className="panel" ref={panelRef} aria-live="polite" aria-label={party?`${party.name} profile`:"Party Map overview"}>
           {party && <button type="button" className="party-overview" onClick={()=>select(party.id)}>Back to overview</button>}
-          {party ? <ProfileDetail party={party} linkToPage /> : <Overview />}
+          {party ? <ProfileDetail party={party} /> : <Overview />}
         </aside>
       </div>
       {tip && (

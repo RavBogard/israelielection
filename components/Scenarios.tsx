@@ -30,7 +30,7 @@ function Count({ s }: { s: Scenario }) {
   const n = scenarioNumbers(s.with, parties, averagePoll, mainPolls);
   const segments = s.with.map((id) => {
     const p = partyOf(id);
-    return { id, seats: avgSeats(id), color: partyColor(id), label: p.name, href: `/parties?party=${id}` };
+    return { id, seats: avgSeats(id), color: partyColor(id), label: p.name, href: `/parties/${id}` };
   });
   const range = n.low === n.high ? `${n.low} in each of the latest ${n.polls} polls` : `${n.low} to ${n.high} across the latest ${n.polls} polls`;
   const reach = n.reaching === 0 ? `none reaching ${MAJORITY}` : n.reaching === n.polls ? `all reaching ${MAJORITY}` : `${n.reaching} reaching ${MAJORITY}`;

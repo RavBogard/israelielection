@@ -47,3 +47,6 @@
 .profile .bio { font-family: var(--display); font-size: 16.5px; line-height: 1.5; margin: 0; color: var(--text); }
 .profile .src, .ix .src { font-size: 12.5px; color: var(--ink-3); margin: 0; }
 .profile .more { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.profile .open-profile { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; background: var(--ink); color: var(--bg); font-size: 15px; font-weight: 600; text-decoration: none; }
+.profile .open-profile:hover { background: var(--text); }
+.profile .open-profile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }

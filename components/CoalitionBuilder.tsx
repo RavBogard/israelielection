@@ -155,7 +155,7 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
           </button>
         </div>
         <div className="dbody">
-          <ProfileDetail party={party} headingId="dtitle" linkToPage />
+          <ProfileDetail party={party} headingId="dtitle" />
         </div>
       </aside>
     </>
