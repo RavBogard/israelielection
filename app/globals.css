@@ -17,9 +17,9 @@
   --b-arab: #8d4fae; --b-arab-ink: #ffffff;
   --scrim: rgb(0 0 0 / .45); --shadow: rgb(0 0 0 / .22);
   /* Fixed data endpoints, the same in light, dark and print (the Fixed Endpoints Rule), so the dark blocks do not redefine them:
-     the stance ramp (shade() in components/compare/model.ts), the light end of party-colour tints, and the grey for a list
+     the stance scale's first stop and middle (RAMP_STOPS in components/compare/ramp.ts, kept equal), the light end of party-colour tints, and the grey for a list
      with no editorial colour (PARTY_FALLBACK in lib/party-colors.ts, kept equal). */
-  --ramp-start: #34322d; --ramp-end: #eae8e1; --tint-base: #e9ecf2; --party-fallback: #8c939b;
+  --ramp-a: #8a1c3c; --ramp-mid: #f4cf7e; --tint-base: #e9ecf2; --party-fallback: #8c939b;
   --r: 4px;
   --display: var(--font-frank), "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
   --body: var(--font-sans), "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;

@@ -12,7 +12,7 @@ import StanceSlots, { type SlotColumn } from "../StanceSlots";
 
 /** Bar colour for a stance: where it sits on the issue's scale, the same for every list that holds it (the Compare matrix's shade). */
 function stanceColor(t: Tile): string | null {
-  return t.kind === "stance" ? shade(t.position) : null;
+  return t.kind === "stance" ? shade(t.position, (t.slot ?? 0) + 1) : null;
 }
 
 /** The shared slot glyph for one list: a slot per answer the issue offers, this party's square in its slot; no answer sits in the quiet slot at the end. */

@@ -72,7 +72,7 @@ function Cell({ ed, p, row, c, col, active, gap, isOpen, onOpen, onHover }: Cell
         tabIndex={col === 0 ? 0 : -1}
         data-col={col}
         className={`mx-cell ${c.kind}${c.kind === "stance" ? ` on-${onShade(c.position)}${c.unstated ? " unst" : ""}` : ""}${dim ? " dim" : ""}${active !== null && !dim ? " match" : ""}`}
-        style={c.kind === "stance" ? { background: shade(c.position) } : undefined}
+        style={c.kind === "stance" ? { background: shade(c.position, c.n) } : undefined}
         aria-label={cellLabel(ed, p, row, c)}
         aria-expanded={isOpen}
         aria-controls={`panel-${row.key}`}
@@ -168,7 +168,7 @@ function Panel({ ed, row, shown, colSpan }: { ed: Ed; row: MatrixRow; shown: Com
             return (
               <section key={s.id} className="grp">
                 <h3>
-                  <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position) }} aria-hidden="true">{s.n}</span>
+                  <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position, s.n) }} aria-hidden="true">{s.n}</span>
                   <Loc v={stanceLabel(ed, row, s.id)} />
                 </h3>
                 <ul className="said">{holders.map((p) => <Entry key={p.id} ed={ed} p={p} row={row} said={rowOf(p.id)} />)}</ul>
@@ -366,7 +366,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
                         <ul className="legend">
                           {held.map(({ s, holders }) => (
                             <li key={s.id} className={active === s.id ? "hi" : undefined}>
-                              <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position) }} aria-hidden="true">{s.n}</span>
+                              <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position, s.n) }} aria-hidden="true">{s.n}</span>
                               <span className="sl"><Loc v={stanceLabel(ed, row, s.id)} /></span>
                               <span className="ss" title={T.heldTitle}>{seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
                             </li>

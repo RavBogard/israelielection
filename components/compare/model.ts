@@ -7,6 +7,7 @@ import compareText from "@/lib/i18n/compare";
 import type { Localized } from "@/lib/i18n/localize";
 import { OVERLAYS, overlayText, positionText, questionText } from "@/lib/i18n/overlay-text";
 import { comparisonIssues, isRecord, isUnstated, ISSUES } from "@/lib/positions";
+import { CATEGORY_TINTS, rampColor, whiteOn } from "./ramp";
 
 /** Where a stance sits on its row's scale, 0 to 1, or null when the options are not a scale. */
 export type MatrixStance = Stance & { n: number; position: number | null; count: number };
@@ -95,20 +96,19 @@ export function matrixRows(ids: string[]): MatrixRow[] {
 }
 
 /**
- * Fill for a stance shade: the profile tiles' ramp, fixed endpoints so light and dark modes agree. Options that are
- * not a scale (priorities that can coexist) take the paper with a faint dot screen (UNORDERED_FILL), a 1px ink outline
- * (UNORDERED_EDGE) and an ink numeral: a mark no ramp step can be read as, and one that does not read as an empty bar;
- * hatched (declined: dense ink; none: light) keeps its meaning. It is a background shorthand, so set it as `background`.
+ * Fill for a stance: its place on the issue's scale (components/compare/ramp.ts: pomegranate at the first option to
+ * forest at the last), fixed so light and dark modes agree. Options that are not a scale (priorities that can coexist)
+ * take a light category tint by their number, with a 1px ink outline (UNORDERED_EDGE) and an ink numeral, so no tint
+ * reads as a step of the scale. Hatched (declined) keeps its meaning. It is a background value, so set it as `background`.
  */
-export const UNORDERED_FILL = "radial-gradient(circle, var(--line-2) 0.9px, transparent 1.3px) 0 0 / 5px 5px, var(--sheet)";
-export function shade(position: number | null): string {
-  return position === null ? UNORDERED_FILL : `color-mix(in oklab, var(--ramp-start) ${Math.round(100 - position * 80)}%, var(--ramp-end))`;
+export function shade(position: number | null, n = 1): string {
+  return position === null ? CATEGORY_TINTS[(Math.max(1, n) - 1) % CATEGORY_TINTS.length] : rampColor(position);
 }
 /** The outline every unordered mark carries, as an inset box-shadow so it does not change the mark's size. */
 export const UNORDERED_EDGE = "inset 0 0 0 1px var(--ink)";
 
-/** The numeral on a shaded cell: white on the dark half of the graphite ramp, black on the light half, ink on the dotted paper of unordered options (each at least 4.5:1, pinned in ramp.test.ts). */
-export const onShade = (position: number | null) => (position === null ? "ink" : position < 0.5 ? "light" : "dark");
+/** The numeral on a shaded cell: "light" (white) on the dark stretches of the scale, "dark" (black) on the light ones, ink on an unordered tint (each at least 4.5:1, pinned in ramp.test.ts). */
+export const onShade = (position: number | null) => (position === null ? "ink" : whiteOn(rampColor(position)) ? "light" : "dark");
 
 /** A row's words in one edition: what the matrix and the open row print. Each carries the language it is actually in. */
 export type RowText = {

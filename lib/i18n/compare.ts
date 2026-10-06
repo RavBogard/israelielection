@@ -29,7 +29,7 @@ const en = {
   build: "Build this set in the Coalition Builder",
   pickOne: "Choose lists one by one",
   chosen: (n: number, atMin: boolean) => (atMin ? `${n} chosen. Two is the fewest to compare.` : `${n} chosen.`),
-  ramp: "Each issue’s answers in order, from one end of the debate to the other. The same shade and number in a row is the same answer; the figure beside each answer is the seats its lists hold in the polling average.",
+  ramp: "Each issue’s answers in order, from one end of the debate to the other. The same colour and number in a row is the same answer; the figure beside each answer is the seats its lists hold in the polling average.",
   glyphs: {
     none: "No position found",
     declined: "Declined to answer",

@@ -2,7 +2,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { allCharts, allPositions, type Chart as ChartData, type ChartRow, type Positions } from "@/lib/articles";
 import { averagePoll, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
-import { shade, UNORDERED_EDGE } from "../compare/model";
+import { onShade, shade, UNORDERED_EDGE } from "../compare/model";
 import { seatFigure } from "@/lib/polls";
 import type { PositionRow } from "@/lib/compare";
 import { basisQualifier, isUnstated } from "@/lib/positions";
@@ -203,7 +203,7 @@ function splitOf(issue: string) {
   return { p, stances, scale, seats, hasText, groups, rest };
 }
 
-const onClass = (pos: number | null) => `on-${pos === null ? "ink" : pos < 0.5 ? "light" : "dark"}`;
+const onClass = (pos: number | null) => `on-${onShade(pos)}`;
 
 /**
  * A segment's label starts at its left edge; when the 61 tick falls within its first eight seats (about
@@ -218,14 +218,14 @@ function clearOfTick(start: number, seats: number) {
 const MAJORITY = 61;
 
 /** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
-const inkOn = (pos: number | null) => (pos === null ? "var(--ink)" : pos < 0.5 ? "#fff" : "#000");
+const inkOn = (pos: number | null) => ({ ink: "#000", light: "#fff", dark: "#000" })[onShade(pos)];
 function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
   return (
     <SeatBar
       className="ps-bar sb-fit"
       size={size}
       total={SEATS}
-      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: inkOn(g.pos), label: g.n, title: `${g.st.label}: ${seatsAt(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
+      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos, g.n), ink: inkOn(g.pos), label: g.n, title: `${g.st.label}: ${seatsAt(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
       rest={{ title: `No recorded answer, or below the threshold: ${seatFigure(rest)} seats` }}
       label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${seatsAt(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${seatFigure(rest)}. A majority is 61.`}
     />
@@ -248,7 +248,7 @@ export function PositionsLead({ issue }: { issue: string }) {
       <ul className="ps-legend">
         {groups.filter((g) => g.rows.length).map((g) => (
           <li key={g.st.id}>
-            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
+            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos, g.n) }} aria-hidden>{g.n}</span>
             <span className="lab">
               <b>{g.st.label}</b>
               <span className="who">
@@ -280,14 +280,14 @@ export function SplitMini({ issue }: { issue: string }) {
   const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
   return (
     <div className="ps-mini">
-      <MiniKey items={groups.filter((g) => g.seats > 0).map((g) => ({ n: g.n, label: g.st.label, seats: `${seatsAt(g.seats)} seats`, color: shade(g.pos), ink: inkOn(g.pos) }))}>
+      <MiniKey items={groups.filter((g) => g.seats > 0).map((g) => ({ n: g.n, label: g.st.label, seats: `${seatsAt(g.seats)} seats`, color: shade(g.pos, g.n), ink: inkOn(g.pos) }))}>
         <SplitBar groups={groups} rest={rest} size="m" />
       </MiniKey>
       {scale && (
         <p className="ps-mini-ends" aria-hidden="true">
           {[groups[0], groups.at(-1)!].map((g) => (
             <span key={g.st.id}>
-              <span className="k" style={{ background: shade(g.pos), color: inkOn(g.pos) }}>{g.n}</span>
+              <span className="k" style={{ background: shade(g.pos, g.n), color: inkOn(g.pos) }}>{g.n}</span>
               {g.st.label}
             </span>
           ))}
@@ -334,7 +334,7 @@ export function Positions({ issue }: { issue: string }) {
       {groups.filter((g) => g.rows.length).map((g) => (
         <section key={g.st.id} className="ps-grp">
           <h3>
-            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
+            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos, g.n) }} aria-hidden>{g.n}</span>
             {g.st.label}
             <span className="gs">{seatsAt(g.seats)} seats</span>
           </h3>

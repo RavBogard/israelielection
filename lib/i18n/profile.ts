@@ -130,7 +130,7 @@ const en = {
     unstated: "Not said publicly",
     stated: "From its answers",
     instead: "What it said instead",
-    key: "Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is dotted paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer. ",
+    key: "Bar colour: the stance’s place in the issue’s range of answers, from dark red at one end of the debate to dark green at the other, shared across all lists. The economy’s options coexist, so its bar is a pale tint with an ink outline, not a step on that range. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer. ",
     keyUnstated: "Dotted inner border: not said publicly, from the record; open the tile to see why.",
     noWords: "No position recorded in the site’s sources.",
     recordNote: "On the record, because the party did not answer the questionnaire. ",

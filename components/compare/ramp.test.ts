@@ -1,79 +1,64 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { onShade, shade, UNORDERED_EDGE, UNORDERED_FILL } from "./model";
+import { onShade, shade, UNORDERED_EDGE } from "./model";
+import { CATEGORY_TINTS, luminance, RAMP_STOPS, rampColor } from "./ramp";
 
 /*
- * The stance ramp's numerals stay readable: every shade shade() can draw, with the numeral onShade()
- * picks for it (white on the dark half, black on the light half), meets WCAG 4.5:1. The endpoints are
- * fixed, so this holds in both themes; unordered options are paper with an ink outline and an ink numeral.
+ * The stance scale stays readable: every colour shade() can draw, with the numeral onShade() picks for it, meets WCAG
+ * 4.5:1. The stops are fixed, so this holds in both themes; unordered options are light tints with an ink outline and
+ * an ink numeral.
  */
 
 const css = readFileSync(new URL("../../app/globals.css", import.meta.url), "utf8");
 const token = (name: string, from = css) => from.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, "i"))![1];
 const dark = css.slice(css.indexOf(':root[data-theme="dark"]'));
+const contrast = (a: string, b: string) => { const [x, y] = [luminance(a), luminance(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+const NUMERAL: Record<string, string> = { light: "#ffffff", dark: "#000000" };
+const BLOCS = ["b-net", "b-opp", "b-mid", "b-arab"].map((b) => token(b, css));
+const hexDist = (a: string, b: string) => Math.hypot(...[1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16) - parseInt(b.slice(i, i + 2), 16)));
 
-type RGB = [number, number, number];
-const hex = (h: string): RGB => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255) as RGB;
-const lin = (c: number) => (c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-const gam = (c: number) => (c <= 0.0031308 ? 12.92 * c : 1.055 * c ** (1 / 2.4) - 0.055);
-function toLab(rgb: RGB): RGB {
-  const [r, g, b] = rgb.map(lin);
-  const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
-  const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
-  const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
-  return [0.2104542553 * l + 0.793617785 * m - 0.0040720468 * s, 1.9779984951 * l - 2.428592205 * m + 0.4505937099 * s, 0.0259040371 * l + 0.7827717662 * m - 0.808675766 * s];
-}
-function toRgb([L, a, b]: RGB): RGB {
-  const l = (L + 0.3963377774 * a + 0.2158037573 * b) ** 3, m = (L - 0.1055613458 * a - 0.0638541728 * b) ** 3, s = (L - 0.0894841775 * a - 1.291485548 * b) ** 3;
-  const out = [4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s, -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s, -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s];
-  // Clipped and rounded to 8 bits, as the browser paints it.
-  return out.map((c) => Math.round(Math.min(1, Math.max(0, gam(c))) * 255) / 255) as RGB;
-}
-const lum = (rgb: RGB) => { const [r, g, b] = rgb.map(lin); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
-const contrast = (a: RGB, b: RGB) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
-
-/** The colour shade() names: color-mix(in oklab, start p%, end). */
-function paint(position: number): RGB {
-  const p = Number(shade(position).match(/(\d+(?:\.\d+)?)%/)![1]) / 100;
-  const a = toLab(hex(token("ramp-start"))), b = toLab(hex(token("ramp-end")));
-  return toRgb(a.map((v, i) => v * p + b[i] * (1 - p)) as RGB);
-}
-const NUMERAL: Record<string, RGB> = { light: [1, 1, 1], dark: [0, 0, 0] };
-
-describe("stance ramp", () => {
-  it("uses graphite endpoints, not a bloc colour", () => {
-    expect(token("ramp-start").toLowerCase()).not.toBe(token("b-net").toLowerCase());
-    const [L0, a0, b0] = toLab(hex(token("ramp-start")));
-    expect(Math.hypot(a0, b0)).toBeLessThan(0.02);
-    expect(L0).toBeLessThan(0.4);
+describe("stance scale", () => {
+  it("runs through its fixed stops, with the CSS tokens kept equal", () => {
+    expect(rampColor(0)).toBe(RAMP_STOPS[0]);
+    expect(rampColor(1)).toBe(RAMP_STOPS[RAMP_STOPS.length - 1]);
+    expect(token("ramp-a")).toBe(RAMP_STOPS[0]);
+    expect(token("ramp-mid")).toBe(rampColor(0.5));
   });
 
-  it("gives every step's numeral at least 4.5:1, white and black, in both themes", () => {
+  it("stays off the four bloc colours", () => {
+    for (let i = 0; i <= 20; i++) for (const b of BLOCS) expect(hexDist(rampColor(i / 20), b), `position ${i / 20} vs ${b}`).toBeGreaterThan(40);
+  });
+
+  it("gives every step's numeral at least 4.5:1", () => {
     for (let i = 0; i <= 1000; i++) {
       const pos = i / 1000;
       const on = onShade(pos);
       expect(on === "light" || on === "dark").toBe(true);
-      const c = contrast(paint(pos), NUMERAL[on]);
-      expect(c, `position ${pos}, ${on} numeral`).toBeGreaterThanOrEqual(4.5);
+      expect(contrast(rampColor(pos), NUMERAL[on]), `position ${pos}, ${on} numeral`).toBeGreaterThanOrEqual(4.5);
     }
   });
 
-  it("draws unordered options as dotted paper with an ink outline and an ink numeral, never a ramp step", () => {
-    expect(shade(null)).toBe(UNORDERED_FILL);
-    expect(UNORDERED_FILL).toMatch(/^radial-gradient\(.*var\(--line-2\).*, var\(--sheet\)$/);
-    expect(UNORDERED_FILL).not.toContain("ramp");
-    // The ink numeral reads over the dots as well as the paper.
-    for (const from of [css, dark]) expect(contrast(hex(token("ink", from)), hex(token("line-2", from)))).toBeGreaterThanOrEqual(4.5);
-    expect(UNORDERED_EDGE).toContain("var(--ink)");
-    expect(onShade(null)).toBe("ink");
-    expect(contrast(hex(token("ink")), hex(token("sheet")))).toBeGreaterThanOrEqual(4.5);
-    expect(contrast(hex(token("ink", dark)), hex(token("sheet", dark)))).toBeGreaterThanOrEqual(4.5);
-    const cmp = readFileSync(new URL("../compare.css", import.meta.url), "utf8");
-    expect(cmp).toMatch(/\.on-ink[^{]*\{[^}]*color: var\(--ink\);[^}]*box-shadow: inset 0 0 0 1px var\(--ink\)/);
+  it("separates neighbouring answers on a six-option issue", () => {
+    const steps = [0, 1, 2, 3, 4, 5].map((i) => rampColor(i / 5));
+    for (let i = 1; i < steps.length; i++) expect(hexDist(steps[i - 1], steps[i])).toBeGreaterThan(45);
   });
 
-  it("edges the dark end on dark paper with a line that reads at 3:1", () => {
+  it("draws unordered options as light category tints with an ink outline and an ink numeral, never a scale step", () => {
+    expect(shade(null, 1)).toBe(CATEGORY_TINTS[0]);
+    expect(shade(null, 2)).toBe(CATEGORY_TINTS[1]);
+    for (const t of CATEGORY_TINTS) {
+      expect(contrast(t, token("ink"))).toBeGreaterThanOrEqual(4.5);
+      for (let i = 0; i <= 20; i++) expect(hexDist(t, rampColor(i / 20))).toBeGreaterThan(20);
+    }
+    expect(UNORDERED_EDGE).toContain("var(--ink)");
+    expect(onShade(null)).toBe("ink");
+    // The tints are fixed and light, so their numeral is pinned to black rather than the theme's ink (white in dark mode).
+    const cmp = readFileSync(new URL("../compare.css", import.meta.url), "utf8");
+    expect(cmp).toMatch(/\.on-ink[^{]*\{[^}]*color: #000;/);
+  });
+
+  it("edges dark fills on dark paper with a line that reads at 3:1", () => {
     expect(css).toMatch(/:root\[data-theme="dark"\] \{ --ramp-edge: var\(--ink-3\); \}/);
-    expect(contrast(hex(token("ink-3", dark)), hex(token("bg", dark)))).toBeGreaterThanOrEqual(3);
+    expect(contrast(token("ink-3", dark), token("bg", dark))).toBeGreaterThanOrEqual(3);
   });
 });

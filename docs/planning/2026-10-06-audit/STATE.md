@@ -46,3 +46,10 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - Not done, with reasons: Gantz's 2025 "would join Netanyahu" could not be sourced (Ynet, Aug 23, 2025 has him saying "no" to joining alone), so no note was added; Liberman's X post URL could not be found and no major outlet carried the quote.
 - [x] Exit polls: the polls job imports Wikipedia rows dated election day or shaded #FFD (the 2022 page's exit-poll rows) as `kind: "exit"`, aired at the close; a changed reading is a new version with the run time; every 10 minutes 22:00–04:00 Israel time on Oct 27–28. Manual fallback: Polls workflow "Run workflow" with pollster + seats (scripts/jobs/add-exit-poll.mts). Test timeout raised to 20s so the gate can't fail on a slow runner.
 - GATE: Hebrew for the new stances, rows and the Otzma rule written by me and published unreviewed — proceeded because Daniel approved the Hebrew wholesale.
+
+## Compare colour (2026-10-06, late)
+Daniel: the Compare page is "hard to decode, and the blocks of black and grey are really ugly and monotonous. even just coloring everything instead of shades of black and grey would really help."
+- The graphite stance ramp is replaced by a diverging stance scale: pomegranate → coral → sand → sage → forest (components/compare/ramp.ts), on every surface that used `shade()` (Compare matrix, profile tiles, issue-page positions). Numerals pick black or white by luminance; ramp.test.ts pins 4.5:1, distance from the four bloc colours, and separation of six steps.
+- Coexisting options (economy, Gaza) take pale category tints with an ink edge instead of dotted paper.
+- "No position found" is an empty dashed cell instead of grey hatching; declined keeps a lighter hatch.
+- GATE: replaced the graphite ramp DESIGN.md had ruled — proceeded because Daniel asked for colour in place of the greys; hues kept off bloc colours and off red-against-blue so the scale still says only "place in the issue's order". DESIGN.md updated; .impeccable/design.json sidecar left stale (reported, not repaired).

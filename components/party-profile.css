@@ -126,7 +126,7 @@
 .pp-tile .bar.unordered { box-shadow: inset 0 0 0 1px var(--ink); }
 .pp-tile .bar.unst { position: relative; color: #000; }
 .pp-tile .bar.unst.deep { color: #fff; }
-.pp-tile .bar.unst.unordered { color: var(--ink); }
+.pp-tile .bar.unst.unordered { color: #000; }
 .pp-tile .bar.unst::after { content: ""; position: absolute; inset: 1px; border: 2px dotted currentColor; }
 .pp-tile .issue { font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; }
 .pp-tile .stance { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.2; letter-spacing: -.005em; text-wrap: balance; }
@@ -140,7 +140,7 @@
 /* No position found is absent: a hatched bar on a plain tile. Dashed means out. */
 .pp-tile.nf .bar { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); box-shadow: inset 0 -1px 0 var(--line-2); }
 .pp-tile.nf .stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }
-.pp-tilekey .unst-key { display: inline-block; width: 22px; height: 9px; vertical-align: -1px; margin-inline-end: 4px; background: color-mix(in oklab, var(--ramp-start) 50%, var(--ramp-end)); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
+.pp-tilekey .unst-key { display: inline-block; width: 22px; height: 9px; vertical-align: -1px; margin-inline-end: 4px; background: var(--ramp-mid); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
 .pp-tilekey .unst-key::after { content: ""; position: absolute; inset: 2px; border: 2px dotted currentColor; }
 .pp-tilekey { margin: 0; font-size: 12px; line-height: 1.4; color: var(--ink-3); }
 .pp-tilepanel { background: var(--sheet); border: 1px solid var(--line-2); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }

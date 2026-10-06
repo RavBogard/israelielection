@@ -42,12 +42,12 @@
 .cmp .mx-key .glyphs span { display: inline-flex; align-items: center; gap: 7px; }
 .cmp .mx-key .tap { grid-row: 1; grid-column: 2; font-weight: 600; color: var(--ink); }
 .cmp .g { width: 16px; height: 16px; display: inline-block; flex: none; position: relative; }
-/* No position found is absent, so hatched (the seat bar's light hatch); declined keeps the denser ink hatch. Dashed means out. */
-.cmp .g.none { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }
-.cmp .g.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 4px); }
-.cmp .g.rec { background: var(--ramp-start); }
+/* No position found is absent, so an empty dashed outline; declined keeps a light ink hatch. */
+.cmp .g.none { border: 1px dashed var(--line-2); background: transparent; }
+.cmp .g.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1px, transparent 1px 4px); }
+.cmp .g.rec { background: var(--ramp-a); }
 .cmp .g.rec::after, .cmp .mx-cell .rec { content: ""; position: absolute; top: 2px; right: 2px; width: 0; height: 0; border-top: 6px solid var(--bg); border-left: 6px solid transparent; } /* physical: chart geometry */
-.cmp .g.unst { background: color-mix(in oklab, var(--ramp-start) 50%, var(--ramp-end)); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
+.cmp .g.unst { background: var(--ramp-mid); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
 .cmp .g.unst::after, .cmp .mx-cell.unst::after { content: ""; position: absolute; inset: 3px; border: 2px dotted currentColor; pointer-events: none; }
 .cmp .g.ink { background: var(--sheet); box-shadow: inset 0 0 0 1px var(--ink); color: var(--ink); font-size: 12px; font-weight: 700; line-height: 16px; text-align: center; }
 .cmp .g.unsorted, .cmp .key.unsorted { background: var(--sheet); border: 1px solid var(--line-2); }
@@ -100,16 +100,16 @@
 .cmp .key { flex: none; width: 17px; height: 15px; font-size: 12px; font-weight: 700; line-height: 15px; text-align: center; font-variant-numeric: tabular-nums; }
 .cmp .key.on-light, .cmp .mx-cell.on-light { color: #fff; }
 .cmp .key.on-dark, .cmp .mx-cell.on-dark { color: #000; }
-.cmp .key.on-ink, .cmp .mx-cell.on-ink { color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
-.cmp .key.none { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }
+.cmp .key.on-ink, .cmp .mx-cell.on-ink { color: #000; box-shadow: inset 0 0 0 1px var(--ink); }
+.cmp .key.none { border: 1px dashed var(--line-2); background: transparent; }
 
 .cmp .mx-c { padding: 6px 2px; }
 .cmp .mx-row.d1 .mx-c { padding-block: 9px; }
 .cmp .mx-cell { position: relative; display: block; width: 100%; height: 44px; border: 0; padding: 0; cursor: pointer; font: inherit; background: transparent; transition: opacity .12s; }
 .cmp .mx-row.d1 .mx-cell { height: 30px; }
 .cmp .mx-cell .n { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
-.cmp .mx-cell.none { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }
-.cmp .mx-cell.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); }
+.cmp .mx-cell.none { border: 1px dashed var(--line-2); background: transparent; }
+.cmp .mx-cell.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1px, transparent 1px 5px); }
 .cmp .mx-cell.dim { opacity: .28; }
 .cmp .mx-cell.unsorted { background: var(--sheet); border: 1px solid var(--line-2); }
 .cmp .mx-cell.match { outline: 1px solid var(--ink); outline-offset: 1px; }
