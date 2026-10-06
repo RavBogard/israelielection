@@ -28,7 +28,7 @@ import type { Lang } from "@/lib/i18n";
 import builder, { type BuilderText, type VerdictKey } from "@/lib/i18n/builder";
 import { list } from "@/lib/i18n/he-grammar";
 import { useLang } from "@/lib/i18n/lang";
-import { blocText, partyText, pledgeText, pollsterText, scenarioText } from "@/lib/i18n/overlays";
+import { blocText, partyText, pledgeText, pollsterText, scenarioText } from "@/lib/i18n/overlay-text";
 
 const POLL_KEY = "cb-poll";
 /** The history note under the panel, keyed "historical" in data/he/coalition-scenarios.json. */

@@ -1,7 +1,7 @@
 import type { CountSummary } from "@/app/api/count/route";
 import { shortDate } from "./format";
 import type { Lang } from "./i18n";
-import { pollsterText } from "./i18n/overlays";
+import { pollsterText } from "./i18n/overlay-text";
 import { blocTotals, seatFigure } from "./polls";
 import { exitRows } from "./results-phase";
 import type { BlocId, Party, Poll } from "./types";

@@ -11,7 +11,7 @@ import LangSwitch from "@/components/LangSwitch";
 import { GA_ID } from "@/lib/analytics";
 import { frank, sans } from "@/lib/fonts";
 import chrome, { HE_NAV_BAR, HE_NAV_GROUPS, HE_NAV_UTILITIES } from "@/lib/i18n/chrome";
-import { LangProvider } from "@/lib/i18n/lang";
+import { HebrewProvider } from "@/lib/i18n/HebrewProvider";
 import { HE_PUBLIC } from "@/lib/i18n";
 import { blocText, partyText } from "@/lib/i18n/overlays";
 import briefingsJson from "@/data/briefings/_index.json";
@@ -84,7 +84,7 @@ export default function HebrewLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="he" dir="rtl" className={`${frank.variable} ${sans.variable} ${heSans.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <LangProvider lang="he">
+        <HebrewProvider>
           <a href="#main" className="skip">
             {t.skip}
           </a>
@@ -141,7 +141,7 @@ export default function HebrewLayout({ children }: { children: ReactNode }) {
               </nav>
             </div>
           </footer>
-        </LangProvider>
+        </HebrewProvider>
       </body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
       {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}

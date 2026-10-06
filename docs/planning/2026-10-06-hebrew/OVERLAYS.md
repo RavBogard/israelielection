@@ -2,6 +2,8 @@
 
 Pages read Hebrew data only through `lib/i18n/overlays.ts`. Writers fill `data/he/**`. Each entry:
 
+Bundle rule: server components, tests and scripts import `lib/i18n/overlays.ts` (helpers with the data loaded). Anything a client component can reach imports the same helpers from `lib/i18n/overlay-text.ts` (no data), so English pages ship no Hebrew; the Hebrew root layout's `HebrewProvider` loads `lib/i18n/overlay-data.ts` into the Hebrew pages' client bundle. Never import `overlays.ts`, `overlay-data.ts` or `data/he/**` from client-reachable code.
+
 ```json
 { "<item key>": { "<field path>": { "text": "עברית", "src": "<srcHash(English field)>", "translated": true } } }
 ```

@@ -2,6 +2,8 @@ import { partiesData, pollsData } from "@/lib/data";
 import { httpUrl, mediumDate } from "@/lib/format";
 import { pollLabel } from "@/lib/polls";
 import type { Lang } from "@/lib/i18n";
+// Server only: loads the Hebrew overlays pollLabel reads for the Hebrew source lines.
+import "@/lib/i18n/overlays";
 
 /** English data text inside a Hebrew line. */
 const En = ({ children }: { children: string }) => <span lang="en" dir="ltr">{children}</span>;

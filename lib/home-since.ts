@@ -5,7 +5,7 @@ import { BLOC_SEAT_ORDER, blocTotals, byNewest, isExit, pollLabel, seatFigure } 
 import type { BlocId, Party, Poll } from "./types";
 import type { Lang } from "./i18n";
 import { list, plural } from "./i18n/he-grammar";
-import { pollsterText } from "./i18n/overlays";
+import { pollsterText } from "./i18n/overlay-text";
 
 type Bloc = { id: BlocId; label: string };
 const DAY = 86_400_000;

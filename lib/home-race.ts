@@ -5,7 +5,7 @@ import {AVERAGE_ID,BLOC_ORDER,BLOC_SEAT_ORDER,blocTotals} from "./polls";
 import type {BlocId,Party,Poll} from "./types";
 import type {Lang} from "./i18n";
 import home from "./i18n/home";
-import {blocText,partyText} from "./i18n/overlays";
+import {blocText,partyText} from "./i18n/overlay-text";
 export const HOME_RACE_ORDER=BLOC_ORDER;
 export const seatTenths=(value:number)=>Math.round(value*10)/10;
 export const majorityShortfall=(seats:number)=>Math.max(0,seatTenths(MAJORITY-seatTenths(seats)));

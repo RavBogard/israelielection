@@ -8,7 +8,7 @@ import { MAJORITY } from "@/lib/coalition";
 import type { Party, PledgeRule, Poll } from "@/lib/types";
 import builder from "@/lib/i18n/builder";
 import { useLang } from "@/lib/i18n/lang";
-import { partyText } from "@/lib/i18n/overlays";
+import { partyText } from "@/lib/i18n/overlay-text";
 import { Loc } from "./Loc";
 
 /** Outside support: the list's colour, hatched (supporting, not in the cabinet). */

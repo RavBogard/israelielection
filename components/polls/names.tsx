@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Lang } from "@/lib/i18n";
-import { blocText, partyText, pollsterText } from "@/lib/i18n/overlays";
+import { blocText, partyText, pollsterText } from "@/lib/i18n/overlay-text";
 import { HE_BLOC } from "@/lib/i18n/polls";
 import type { BlocId } from "@/lib/types";
 

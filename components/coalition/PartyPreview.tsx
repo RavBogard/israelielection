@@ -6,7 +6,7 @@ import { listSeats } from "@/lib/list-seats";
 import { seatFigure } from "@/lib/polls";
 import type { Lang } from "@/lib/i18n";
 import builder from "@/lib/i18n/builder";
-import { blocText, partyText } from "@/lib/i18n/overlays";
+import { blocText, partyText } from "@/lib/i18n/overlay-text";
 import type { Party, Sourced } from "@/lib/types";
 import { En, Loc } from "./Loc";
 

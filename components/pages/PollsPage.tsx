@@ -26,6 +26,8 @@ import { blocName as blocLabel, partyName, pollsterName, Tx } from "@/components
 import { hePath, type Lang } from "@/lib/i18n";
 import { list } from "@/lib/i18n/he-grammar";
 import POLLS, { dayMonthHe, HE_METHOD } from "@/lib/i18n/polls";
+// Server component: loads the Hebrew overlays that pollLabel, lib/polls-desk and polls/names read in the Hebrew edition.
+import "@/lib/i18n/overlays";
 
 const cfg = pollsData.config;
 const tracked = parties.filter((p) => allPolls.some((poll) => poll.results[p.id]));

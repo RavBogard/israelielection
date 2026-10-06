@@ -8,7 +8,7 @@ import type { BlocPoint, TrendPoint } from "./trend";
 import type { HouseEffect } from "./house-effects";
 import type { BlocId, Party, Poll } from "./types";
 import type { Lang } from "./i18n";
-import { pollsterText } from "./i18n/overlays";
+import { pollsterText } from "./i18n/overlay-text";
 import { list } from "./i18n/he-grammar";
 import { dayMonthHe, HE_BLOC, HE_FIND as H } from "./i18n/polls";
 

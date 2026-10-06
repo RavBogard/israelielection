@@ -5,7 +5,7 @@ import gaza from "@/data/gaza-security-evidence.json";
 import type { Lang } from "@/lib/i18n";
 import compareText from "@/lib/i18n/compare";
 import type { Localized } from "@/lib/i18n/localize";
-import { OVERLAYS, overlayText, positionText, questionText } from "@/lib/i18n/overlays";
+import { OVERLAYS, overlayText, positionText, questionText } from "@/lib/i18n/overlay-text";
 import { comparisonIssues, isRecord, isUnstated, ISSUES } from "@/lib/positions";
 
 /** Where a stance sits on its row's scale, 0 to 1, or null when the options are not a scale. */

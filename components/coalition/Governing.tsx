@@ -8,7 +8,7 @@ import type { Party, Poll } from "@/lib/types";
 import { partyColor } from "@/lib/party-colors";
 import builder from "@/lib/i18n/builder";
 import { useLang } from "@/lib/i18n/lang";
-import { partyText } from "@/lib/i18n/overlays";
+import { partyText } from "@/lib/i18n/overlay-text";
 import StanceSlots, { type SlotColumn } from "../StanceSlots";
 import { En, Loc } from "./Loc";
 

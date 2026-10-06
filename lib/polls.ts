@@ -1,6 +1,6 @@
 import type { BlocId, Party, Poll, PollsConfig } from "./types";
 import type { Lang } from "./i18n";
-import { pollsterText } from "./i18n/overlays";
+import { pollsterText } from "./i18n/overlay-text";
 
 const DAY = 86_400_000;
 
