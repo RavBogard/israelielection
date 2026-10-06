@@ -6,14 +6,10 @@
  * Data text (who, voters, bios, pledges, the quote, the parties' words) comes from lib/i18n/overlays.ts, not from here.
  */
 import type { AxisKey } from "@/lib/compare";
-import { plural, seatsHe } from "./he-grammar";
+import { heText } from "./he-text";
 
-const pollsHe = (n: number) => plural(n, { one: "סקר אחד", two: "שני סקרים", other: `${n} סקרים` });
-const firmsHe = (n: number) => plural(n, { one: "מכון אחד", two: "שני מכונים", other: `${n} מכונים` });
 /** Hebrew ordinals for a list's size rank in its bloc. */
-const RANK_HE = ["הגדולה ביותר", "השנייה בגודלה", "השלישית בגודלה", "הרביעית בגודלה", "החמישית בגודלה", "השישית בגודלה"];
 /** A seat figure as Hebrew counts it: "מנדט אחד", otherwise "3.4 מנדטים". */
-const seatFig = (fig: string) => seatsHe(Number(fig)).replace(/^\d+(\.\d+)? /, `${fig} `);
 
 const en = {
   meta: {
@@ -155,144 +151,13 @@ const en = {
   },
 };
 
-const he: typeof en = {
-  meta: {
-    description: (name, bloc, leader) => `${name} (${bloc}) בראשות ${leader}: הסקרים, המצביעים, העמדות בשבע סוגיות והאנשים, וכל נתון עם תאריך ומקור.`,
-  },
-  head: {
-    letters: (l) => `אותיות הפתק: ${l}`,
-    ledBy: "בראשות ",
-    noPolls: "לא נמצאו סקרים",
-    notPolledSeparately: "לא נסקרה בנפרד",
-    belowAverage: "מתחת לאחוז החסימה בממוצע הסקרים",
-    seatsAverage: " מנדטים בממוצע הסקרים",
-  },
-  glance: {
-    title: "במספרים",
-    notPolled: "לא נסקרה",
-    below: "לא עוברת",
-    seatsLabel: "מנדטים, ממוצע הסקרים",
-    noSeatFigures: "אין נתוני מנדטים",
-    wherePasses: (x) => `${seatFig(x)} בסקרים שבהם היא עוברת`,
-    belowEvery: "את אחוז החסימה באף סקר",
-    range: (low, high, n) => `מנורמל ל-120; בין ${low} ל-${high} ב${pollsHe(n).replace(/^(\d)/, "-$1")}`,
-    scaled: "מנורמל ל-120 מנדטים",
-    newList: "חדשה",
-    seats2022: "מנדטים ב-2022",
-    share2022: (pct) => `${pct}% מהקולות`,
-    asList: ", ברשימת ",
-    didNotRun: "לא התמודדה ב-2022",
-    pollsPasses: "סקרים שבהם היא עוברת",
-    of: " מתוך ",
-    notReported: "אף סקר לא פרסם לה נתון נפרד",
-    near: "על סף אחוז החסימה",
-    never: "רחוקה מאחוז החסימה בכל הסקרים",
-    belowAll: "מתחת לאחוז החסימה בכולם",
-    most: "עוברת ברובם",
-    blocUnit: " מנדטים",
-    blocBar: (x) => `${x} מתוך 120 מנדטים; רוב הוא 61.`,
-    avgSource: (n, from, to) => `ממוצע של הסקר האחרון של כל אחד מ-${n} מכוני הסקרים, מ-${from} עד ${to}, משוקלל לפי גודל המדגם ומנורמל ל-120 מנדטים.`,
-    variantPre: " בלי ",
-    and: " ו",
-    variantPost: (x) => `, שני המכונים שהממוצע החלופי של האתר משמיט: ${x}.`,
-    cec2022: (votes) => ` 2022: ועדת הבחירות המרכזית, ${votes} קולות.`,
-  },
-  bloc: {
-    majority: "לגוש יש רוב",
-    short: (x) => `לגוש חסרים ${seatFig(x)} ל-61`,
-    rank: (r) => RANK_HE[r - 1] ?? `ה-${r} בגודלה`,
-    notCounted: "הרשימה לא נספרת בסך המנדטים של הגוש",
-    inBloc: (rank, size) => `זו הרשימה ${rank} מבין ${size} בגוש`,
-    partner: "שותפה אפשרית, לא גוש שמתמודד על הרכבת ממשלה",
-    ofSize: (rank, size) => `זו הרשימה ${rank} מבין ${size}`,
-  },
-  spark: {
-    title: "המנדטים בכל הסקרים מאז פיזור הכנסת",
-    noPolls: "לא נמצאו סקרים",
-    onePoll: "רק סקר אחד עד כה, מעט מדי לגרף",
-    noneReported: (n, since) => `אף אחד מ-${n} הסקרים מאז ${since} לא פרסם לרשימה נתון נפרד.`,
-    reported: (k, pubs, from, to) =>
-      `${pollsHe(k)} של ${firmsHe(pubs)}, מ-${from} עד ${to}. נקודה על ציר האפס: סקר שבו הרשימה מתחת לאחוז החסימה; רווח בקו: סקר שלא פרסם לה נתון נפרד.`,
-    aria: (name, k, from, to, latest, avg) =>
-      `${name}: המנדטים ב${pollsHe(k).replace(/^(\d)/, "-$1")}, מ-${from} עד ${to}; בסקר האחרון ${latest}${avg !== null ? `; ${seatFig(avg)} בממוצע הסקרים` : ""}. הנתונים מופיעים גם בטבלה.`,
-    below: "מתחת לאחוז החסימה",
-    undated: "התאריך לא מופיע במאגר שלנו",
-    seats: (n) => seatsHe(n),
-    point: (pollster, date, value) => `${pollster}, ${date}: ${value}`,
-    othersJoined: (n) => `${firmsHe(n)} אחרים, מחוברים בקו`,
-    joined: (n) => `${firmsHe(n)}, מחוברים בקו`,
-    hollowNote: ", שהממוצע החלופי של האתר משמיט",
-    result2022: "תוצאת 2022",
-    caption: (name) => `${name}: המנדטים בכל סקר מאז פיזור הכנסת`,
-    published: "פורסם",
-    pollster: "סוקר",
-    seatsHead: "מנדטים",
-    notSeparately: "לא פורסם בנפרד",
-  },
-  voters: {
-    caption: (name) => `מצביעי ${name} ב-2022, לפי הגדרה דתית עצמית`,
-    aria: (name, groups) => `מצביעי ${name} ב-2022: ${groups.map((g) => `${g.label} ${g.pct}%`).join(", ")}.`,
-    won: (pct, label) => `${label}: זכתה ב-${pct}%`,
-  },
-  map: {
-    caption: (name) => `${name}: שיעור התמיכה מתוך הקולות הכשרים ב-2022, לפי יישוב`,
-    source: (pct) =>
-      `ועדת הבחירות המרכזית, תוצאות הבחירות לכנסת ה-25 לפי יישוב. בכל הארץ: ${pct}%. חמשת היישובים החזקים ביותר מבין אלה עם 15,000 קולות כשרים לפחות; מתחת לקו הארצי, לשם השוואה: שלוש הערים הגדולות והיישוב החלש ביותר מבין אלה עם 50,000 קולות כשרים ומעלה.`,
-    aria: (name, strongest) => `${name}: שיעור התמיכה מתוך הקולות הכשרים ב-2022, לפי יישוב. החזקים ביותר: ${strongest}. הנתונים בטבלה שמתחת למפה.`,
-    national: "בכל הארץ",
-  },
-  text: {
-    stand: "עמדות",
-    who: "על המפלגה",
-    voters: "המצביעים",
-    names: "המועמדים ברשימה",
-    slot: (s) => `מס' ${s}`,
-    pledges: "התחייבויות לגבי הקואליציה",
-    words: "ציטוט",
-    quoteOpen: "\"",
-    quoteClose: "\"",
-    people: "ראשי הרשימה",
-    leader: "ראש הרשימה",
-    bioSource: () => "מקורות כל ביוגרפיה מצוינים בסוגריים.",
-    noBio: (leader) => `טרם נמצאה ביוגרפיה מתועדת של ${leader}.`,
-    surplus: "הסכם עודפים: ",
-    sourcePrefix: "מקור: ",
-  },
-  links: {
-    map: "מפת המפלגות (באנגלית)",
-    tree: "אילן היוחסין של המפלגות (באנגלית)",
-    ballot: "הפתק הרשמי (באנגלית)",
-    builder: "מרכיבים קואליציה",
-  },
-  tiles: {
-    labels: { draft: "גיוס חרדים", courts: "מערכת המשפט", war: "ועדת חקירה ל-7 באוקטובר", wb: "יהודה ושומרון", pstate: "מדינה פלסטינית", relig: "דת ומדינה", econ: "כלכלה" },
-    hint: "שבע שאלות שהאתר מציג לכל הרשימות. לחצו על משבצת כדי לקרוא את דברי המפלגה ואת המקור.",
-    declined: "סירבה להשיב",
-    none: "לא נמצאה עמדה ב-2026",
-    record: "לפי הרקורד",
-    unstated: "אין עמדה מוצהרת",
-    stated: "מתוך תשובותיה",
-    instead: "מה אמרה במקום",
-    key: "גוון הפס: מקום העמדה בטווח התשובות לסוגיה, מקצה אחד של הוויכוח לקצה השני, זהה לכל הרשימות. בכלכלה סדרי העדיפויות אינם סותרים, ולכן הפס מנוקד במסגרת דיו ולא בגוון. הריבועים: משבצת לכל תשובה, באותו סדר, והריבוע של המפלגה במשבצת שלה; ריבוע במשבצת האחרונה פירושו שאין תשובה. ",
-    keyUnstated: "מסגרת פנימית מנוקדת: לא הביעה עמדה בפומבי, העמדה לפי הרקורד; הפירוט במשבצת.",
-    noWords: "אין עמדה מתועדת במקורות של האתר.",
-    recordNote: "לפי הרקורד, כי המפלגה לא ענתה על השאלון. ",
-    unstatedNote: "לא הביעה עמדה בפומבי: העמדה נקראת מתוך הרקורד שלה, שמפורט למעלה. ",
-    unstatedPrefix: "לא הביעה עמדה בפומבי: ",
-    sourcePrefix: "מקור: ",
-    same: "באותה עמדה:",
-    more: "השוו את כל הרשימות בשאלה הזו",
-    sr: (name) => `${name}: שבע סוגיות; בחרו משבצת כדי לקרוא את דברי המפלגה ואת המקור.`,
-  },
-  sources: {
-    title: "מקורות",
-    polls: "סקרים",
-    pollsLine: "כל סקר, עם הגוף שפרסם אותו, מועד הפרסום והקישור, מפורט בעמוד הסקרים.",
-    profiles: "דפי המפלגות (היסטוריה, מצביעים, עמדות, מועמדים, התחייבויות, הסכמי עודפים וציטוטים): נאספו ממקורות שמצוינים ליד כל פריט, ובהם המכון הישראלי לדמוקרטיה, טיימס אוף ישראל, ג'רוזלם פוסט, ynet, JTA, ערוץ 7, אל-ג'זירה ומעריב. ציטוט שלא נמצא בעברית המקורית מסומן (תרגום).",
-    bios: "ביוגרפיות: מקורות כל ביוגרפיה מצוינים בסוגריים.",
+
+const profileText = {
+  en,
+  /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get he(): ProfileText {
+    return heText<ProfileText>("profile");
   },
 };
-
-const profileText = { en, he };
 export default profileText;
 export type ProfileText = typeof en;

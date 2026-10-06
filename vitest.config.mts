@@ -3,5 +3,5 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   resolve: { alias: { "@": fileURLToPath(new URL(".", import.meta.url)) } },
-  test: { include: ["**/*.test.ts"], exclude: ["**/node_modules/**", ".next/**", ".claude/**"] },
+  test: { setupFiles: ["lib/i18n/he/register.ts"], include: ["**/*.test.ts"], exclude: ["**/node_modules/**", ".next/**", ".claude/**"] },
 });

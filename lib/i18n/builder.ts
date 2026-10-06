@@ -7,12 +7,11 @@
  * always carry the same keys and template signatures.
  * `**x**` marks bold inside a sentence (components/coalition/Rich.tsx renders it).
  */
-import { list, plural } from "./he-grammar";
+import { heText } from "./he-text";
 
 /** Party names joined as the English sentences join them: "A and B", "A, B or C". */
 const orList = (names: string[]) => (names.length === 1 ? names[0] : names.length === 2 ? `${names[0]} or ${names[1]}` : `${names.slice(0, -1).join(", ")} or ${names[names.length - 1]}`);
 const COUNT = ["none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-const heCount = (n: number, one: string, two: string, other: string) => plural(n, { one, two, other });
 
 export type VerdictKey = "majority" | "passes" | "fails" | "none";
 export type RoleKey = "cabinet" | "support" | "opposition" | "abstain";
@@ -247,211 +246,14 @@ function lowerFirst(s: string): string {
   return s.length > 1 && s[1] === s[1].toLowerCase() ? s[0].toLowerCase() + s.slice(1) : s;
 }
 
-const seatsHeN = (n: string) => (n === "1" ? "מנדט אחד" : `${n} מנדטים`);
-const heLikud = (likud: boolean) => (likud ? "עם הליכוד" : "בלי הליכוד");
 
-const he: typeof en = {
-  title: "מרכיבים קואליציה",
-  standfirst: (majority, knesset) => `לחצו על פתק כדי לצרף מפלגה לקואליציה. רוב בכנסת: **${majority}** מתוך ${knesset} מנדטים.`,
-  pickLabel: "המנדטים לפי",
-  pickAverage: (n) => `ממוצע הסקרים (${n} סקרים)`,
-  pickCount: (stale) => (stale ? "ספירה שמורה, לא עדכנית" : "הספירה עד כה"),
-  skip: "דילוג לתוצאה",
-  countPhrase: (stale) => (stale ? "הספירה השמורה (לא עדכנית)" : "הספירה עד כה"),
-  averagePhrase: (n) => `ממוצע הסקרים (${n} סקרים)`,
-  averageSource: (n) => `ממוצע ${n} הסקרים`,
-  pollWithDate: (label, date) => `${label}, ${date}`,
 
-  seatNA: "אין נתון",
-  seatBelow: "מתחת",
-  seatSmall: { na: "לא דווחה בנפרד", below: "לאחוז החסימה", seats: "מנדטים" },
-  profile: "פרופיל",
-  profileLabel: (name) => `פרופיל: ${name}`,
-  tipNA: (_pollster, name, src) => `${name}: לא דווחה בנפרד (${src})`,
-  tipBelow: (src) => `מתחת לאחוז החסימה (${src})`,
-  tipSeats: (seats, src) => `${seatsHeN(seats)} (${src})`,
-  tipConflict: (tip) => `${tip}. נוגדת פסילה שהוצהרה בקואליציה הזו`,
-  pledgeMark: "פסילה",
-  roleFor: (name) => `התפקיד של ${name}`,
-  roles: { cabinet: "בקואליציה", support: "תמיכה מבחוץ", opposition: "באופוזיציה", abstain: "נמנעת (השערה)" },
-  outsideWord: { opposition: "נגד", support: "תמיכה מבחוץ", abstain: "נמנעת", cabinet: "בקואליציה" },
-  close: "סגירה",
-
-  warnCondition: "תנאי מוצהר",
-  warnPledge: "נוגד פסילה",
-
-  scenariosLabel: "תרחישים מוכנים",
-  scenariosLead: "או בחרו תרחיש מוכן",
-  startOver: "התחלה מחדש",
-  thenNow: (label, names, seats, year, now, poll) => `${label} (${names}) נשענה ב-${year} על **${seats}** מנדטים; למפלגות שלה יש היום **${now}** לפי ${poll}.`,
-  scenarioChecked: (date) => `. המחקר נבדק ב-${date}. המקור של כל פסילה מופיע לצידה.`,
-
-  noParties: "עדיין לא נבחרו מפלגות",
-  viewArrangement: "לתמונה המלאה",
-  listsByBloc: "הרשימות לפי גושים",
-  yourCoalition: "הקואליציה שהרכבתם",
-  verdict: { majority: "יש רוב", passes: "עוברת", fails: "לא עוברת", none: "אין הכרעה" },
-  cabinetRow: "הקואליציה",
-  voteRow: "הצבעת האמון",
-  cabMajority: (n, partial) => `${partial ? "לפחות " : ""}${n}: רוב גם בלי תמיכה מבחוץ`,
-  cabShort: (n, partial, short, majority) => `${partial ? "לפחות " : ""}${n}: ${short === "1" ? `חסר מנדט אחד ל-${majority}` : `חסרים ${short} מנדטים ל-${majority}`}`,
-  voteLine: (yes, no, abstain) => `בעד ${yes}, נגד ${no}${abstain ? `, נמנעים ${abstain}` : ""}`,
-  cabLabel: (cab, majority, knesset) => `הקואליציה: ${cab || "עדיין אין מפלגות"}. רוב: ${majority} מתוך ${knesset}.`,
-  voteWithSupport: (cab, support) => `${cab} + ${support} בתמיכה מבחוץ`,
-  voteAbstaining: (n) => `נמנעים: ${n}`,
-  voteCabinetOnly: "הקואליציה בלבד",
-  voteLabelEmpty: "הצבעת האמון: עדיין אין מפלגות.",
-  voteLabel: (line, verdict) => `הצבעת האמון: ${line}. ${verdict}.`,
-  segAbstain: (n) => `נמנעים: ${n}`,
-  segAgainst: (n) => `נגד: ${n}`,
-  keyCabinet: "בקואליציה",
-  keyHatched: "מקווקו: תמיכה מבחוץ, בלי לשבת בממשלה",
-  keyAbstains: "נמנעות",
-  keyAgainst: "נגד",
-
-  statusEmpty: "עדיין לא נבחרו מפלגות.",
-  statusCabinet: (n) => `בקואליציה ${n}.`,
-  statusMajority: (yes) => `יש רוב, ${yes} בעד`,
-  statusNoVerdict: "הצבעת האמון: אין הכרעה",
-  statusVote: (verdict, yes) => `הצבעת האמון: ${he.verdict[verdict]}, ${yes} בעד`,
-  statusConflicts: (n) => (n ? `${heCount(n, "פסילה אחת", "שתי פסילות", `${n} פסילות`)}.` : "אין פסילות."),
-  saidRole: (name, role) => `${name}: ${he.outsideWord[role]}.`,
-  saidToggle: (name, removed) => `${name} ${removed ? "הוסרה" : "נוספה"}.`,
-  saidLoaded: (title) => `נטען: ${title}.`,
-  saidPath: (cabinet, support) => `נטענו: ${list(cabinet)}${support.length ? `, בתמיכה מבחוץ של ${list(support)}` : ""}.`,
-  saidCleared: "הבחירה נוקתה.",
-
-  crossed: "הסקר דיווח על כמה מפלגות יחד, והן מחולקות כאן בין תפקידים שונים: לפי המקור אי אפשר לפצל ביניהן. ",
-  notReported: (names) => `${list(names)}: לא דווחו בנפרד. `,
-  accounted: (n) => `נספרו ${n} מתוך 120 מנדטים.`,
-  needed: (names) => `די שאחת מאלה תצביע נגד במקום בעד, והממשלה לא עוברת בהצבעת האמון: ${list(names)}.`,
-  outsideHead: "שותפות מחוץ לממשלה",
-  outsideNote: "לחצו על רשימה כדי להעביר אותה בין נגד, תמיכה מבחוץ והימנעות.",
-  listEmpty: "לחצו על פתק, או על אחת הדרכים למעלה, כדי להוסיף מפלגה.",
-  confidenceSummary: "מה הצבעת האמון מראה, ומה לא",
-  approximate: "ממוצע הסקרים אינו במספרים שלמים, ולכן הסכומים כאן ממחישים יחסי כוחות בלבד: במליאה כל ח\"כ מצביע בקול אחד. זו לא תחזית להצבעה.",
-  confidenceNote: "תמיכה מבחוץ נוגעת כאן להצבעת האמון בלבד: היא לא מבטיחה תיקים ולא תמיכה בתקציב בהמשך. מפלגה שפסלה ישיבה בממשלה לא בהכרח תסרב לתמוך מבחוץ או להימנע. כדי להחליף ממשלה מכהנת בהצבעת אי-אמון קונסטרוקטיבית, צריך 61 ח\"כים שתומכים בממשלה חלופית.",
-  lawLinks: [
-    { href: "https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf", text: "חוק-יסוד: הממשלה, סעיפים 13(ד) ו-28 (באנגלית)" },
-    { href: "https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf", text: "חוק-יסוד: הכנסת, סעיף 25 (באנגלית)" },
-    { href: "https://en.idi.org.il/articles/28888", text: "הסבר של המכון הישראלי לדמוקרטיה (באנגלית)" },
-  ],
-  copyLink: "העתקת קישור לקואליציה הזו",
-  copied: "הקישור הועתק",
-  pledgeCallout: "מפלגות הצהירו בפומבי עם מי ישבו ועם מי לא. כאן אפשר להרכיב כל צירוף: הערה צהובה מסמנת שהוא נוגד פסילה שהוצהרה, הערה אפורה מסמנת תנאי מוצהר, לא פסילה.",
-  courtCallout: "ועדת הבחירות המרכזית החליטה ב-23 בספטמבר לפסול את הרשימה המשותפת ואת רע\"ם. בית המשפט העליון דן בערעורים ב-1 באוקטובר, ולמחרת ביטל את הפסילה של שתי הרשימות פה אחד, בהרכב של תשעה שופטים.",
-  exportLink: "הדפסה או ייצוא של ההרכב (באנגלית)",
-
-  groupSplit: (pollster, group, seats) => `סקר ${pollster} לא הפריד בין ${list(group)}. כששתיהן בקואליציה, נספרים ${seats} המנדטים המשותפים שלהן.`,
-  groupPartial: (pollster, missing, group, seats) => `סקר ${pollster} לא דיווח בנפרד על ${list(missing)}, ולכן הסכום לא כולל את המנדטים שלה. הוסיפו את ${list(group)} כדי לספור את ${seats} המנדטים המשותפים שלהן.`,
-  noteResults: (phrase) => `המנדטים לפי **${phrase}**. `,
-  noteSnapshot: (captured, updated) => `צילום מצב: ${captured}. עדכון אחרון במקור: ${updated ?? "המקור לא ציין"}. `,
-  noteAverage: (n, polls) => `המנדטים לפי **ממוצע הסקרים**: ${n} הסקרים האחרונים, אחד מכל מכון (${polls}), בהתאמה ל-120 מנדטים, ולכן לא במספרים שלמים. `,
-  noteMethod: "איך חישבנו",
-  notePoll: (label, date) => `המנדטים לפי **${label}, ${date}**. `,
-  noteByBloc: "לפי גושים: ",
-  noteLumped: (names) => ` ${list(names)} לא דווחו בנפרד.`,
-
-  pathsHead: (majority) => `איך מגיעים ל-${majority}`,
-  pathsWays: (n) => heCount(n, "דרך אחת", "שתי דרכים", `${n} דרכים`),
-  pathsLead: (majority, poll) => `כל הצירופים הקטנים ביותר של רשימות שמגיעים ל-${majority}, לפי ${poll}. לחצו על צירוף כדי לטעון אותו.`,
-  likudGroup: "עם הליכוד או בלעדיו",
-  withLikud: "עם הליכוד",
-  withoutLikud: "בלי הליכוד",
-  nPaths: (n) => heCount(n, "דרך אחת", "שתי דרכים", `${n} דרכים`),
-  conflictGroup: "פסילות",
-  everyPath: "כל הדרכים",
-  noConflict: "בלי פסילות",
-  noneClear: (likud) => `אין כאן דרך ${heLikud(likud)} שלא נתקלת באף פסילה.`,
-  withConflict: (n) => heCount(n, "דרך אחת נתקלת בפסילה", "שתי דרכים נתקלות בפסילה", `${n} דרכים נתקלות בפסילה`),
-  noPath: (likud, majority, clean) => `אין כאן דרך ${heLikud(likud)} שמגיעה ל-${majority}${clean ? " בלי פסילות" : ""}.`,
-  showMore: (n) => `עוד ${n}`,
-  showing: (n, of) => `מוצגות ${n} מתוך ${of}`,
-  pathSeats: "מנדטים",
-  pathConflicts: (n, names) => `${heCount(n, "פסילה אחת", "שתי פסילות", `${n} פסילות`)}: ${list(names)}`,
-  pathClear: "אין פסילה ידועה",
-  keyMajority: (majority) => `${majority}: רוב`,
-  keyNotch: "פינה חתוכה: רשימה שנוגעת בפסילה",
-  pathsMethod: (majority) => `בלי כל אחת מהרשימות בצירוף, הוא כבר לא מגיע ל-${majority}. קודם מוצגות הדרכים שלא נתקלות באף פסילה, אחר כך אלה עם הכי מעט רשימות, ואז אלה עם הכי הרבה מנדטים. זה חשבון מנדטים מול הפסילות הידועות, לא תחזית. ליכוד בקואליציה נקרא כאן ליכוד בראשות נתניהו.`,
-  supportHead: "בתמיכה מבחוץ",
-  supportHint: (n, likud) => `${n} ${heLikud(likud)}`,
-  supportNote: "הדרכים שלמעלה שנתקלות בפסילה, בסידור אחר: מעבירים מהקואליציה לתמיכה מבחוץ את המנדטים המעטים ככל האפשר, כך שההרכב לא נוגד אף פסילה, ובהצבעת האמון נספרים אותם מנדטים בעד. הפסילות שנועדו למנוע מנתניהו להמשיך בתפקיד, וההתחייבות של בנט לא להישען על מפלגות ערביות או חרדיות, חלות גם על תמיכה מבחוץ ולא רק על ישיבה בממשלה, ולכן הן נספרות גם כאן. מפלגה שפסלה ישיבה בממשלה לא הבטיחה לתמוך מבחוץ: זה חשבון, לא תחזית.",
-  supportNames: (cabinet, support) => `${cabinet.join(", ")}; תמיכה מבחוץ: ${support.join(", ")}`,
-  supportFor: "בעד",
-  supportSplit: (cab, sup) => `בקואליציה ${cab}, בתמיכה מבחוץ ${sup}`,
-
-  govHead: "האם יוכלו לשבת יחד?",
-  govEmpty: "הוסיפו מפלגה שנייה כדי לראות על מה הן מסכימות ועל מה הן חלוקות.",
-  govHint: "השאלות",
-  govWithSupport: "השורות כוללות את מפלגות הקואליציה ואת התומכות מבחוץ (בהשערה). הנמנעות לא נחשבות כאן לשותפות למדיניות.",
-  govUnstated: (name) => `עמדה משתמעת: ${name}`,
-  govThin: (n, labels) => `אין מספיק תשובות (${n}): ${labels.join("; ")}.`,
-  govUnsorted: (labels) => `סדרי עדיפויות שיכולים לדור יחד, ולכן לא הושוו: ${labels.join("; ")}.`,
-  govNote: "שאלות מדיניות נבחרות, לא תחזית ליציבות הממשלה. לא כל השאלות שקולות, ועל חלק מהפערים אפשר להתפשר. ריבוע דהוי: עמדה משתמעת, שהמפלגה לא הצהירה עליה בפומבי.",
-  govDep: (text) => `הרוב של 61: ${text}`,
-  govCompare: "השוו את המפלגות האלה במילים שלהן",
-  govSummaryNone: (total) => `על אף אחת מ-${total} השאלות אין תשובה מכל המפלגות האלה.`,
-  govSummary: (comparable, total, agree, differ) => {
-    const all = agree === comparable ? "מסכימות" : differ === comparable ? "חלוקות" : null;
-    const n = (k: number) => heCount(k, "באחת", "בשתיים", `ב-${k}`);
-    if (comparable === 1) return `על שאלה אחת מתוך ${total} יש תשובה מכל המפלגות, והן ${all === "מסכימות" ? "מסכימות עליה" : "חלוקות בה"}.`;
-    const what = all ? `הן ${all} בכולן` : `הן מסכימות ${n(agree)} וחלוקות ${n(differ)}`;
-    return `על ${comparable} מתוך ${total} השאלות יש תשובה מכל המפלגות: ${what}.`;
+const builder = {
+  en,
+  /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get he(): BuilderText {
+    return heText<BuilderText>("builder");
   },
-  rowSame: (selected, label) => `${selected === 2 ? "שתיהן" : `כל ה-${selected}`} באותה תשובה: ${label}.`,
-  rowDifferent: (n) => heCount(n, "תשובה אחת", "שתי תשובות שונות", `${n} תשובות שונות`) + ".",
-  rowSome: (answered, selected, same, missing) => `ענו ${answered} מתוך ${selected}, ${same != null ? `כולן באותה תשובה: ${same}` : "בתשובות שונות"}. לא ענו: ${list(missing)}.`,
-  depAll: (n, majority) => `רוב שתלוי ${n === 2 ? "בשתי המפלגות שבו" : `בכל ${n} המפלגות שבו`}: בלי כל אחת מהן הוא יורד מתחת ל-${majority}.`,
-  depNone: (majority) => `נשאר עם ${majority} גם בלי כל אחת מהמפלגות האלה.`,
-  depSome: (majority, spare) => `נשאר עם ${majority} גם בלי ${list(spare, "or")}, אבל זקוק לכל אחת מהאחרות.`,
-
-  lettersTitle: (letters) => `אותיות הפתק: ${letters}`,
-  openProfile: "לפרופיל המלא",
-  leader: "בראשות",
-  seatsAverage: "מנדטים, ממוצע הסקרים",
-  noPollFigures: "אין נתוני סקרים",
-  seatsAllBelow: (n) => `מתחת לאחוז החסימה בכל ${n} הסקרים שדיווחו עליה`,
-  seatsNear: (k, n, passing) => `מתחת לאחוז החסימה: עוברת ב-${k} מתוך ${n} הסקרים, עם ${passing} מנדטים בממוצע כשהיא עוברת`,
-  seatsPasses: (text, k, n) => `${text}, בהתאמה ל-120 מנדטים; עוברת את אחוז החסימה ב-${k} מתוך ${n} הסקרים`,
-  whoTheyAre: "על המפלגה",
-  coalitionPledges: "התחייבויות קואליציוניות",
-  profileMore: (name) => `העמדות של ${name} בכל נושא, המנדטים שלה בכל סקר, המועמדים ברשימה, ביוגרפיות ומקורות.`,
-  profileLead: "",
-  fullProfile: "בפרופיל המלא:",
-
-  whatIfLabel: "מה אם: אחוז החסימה",
-  whatIfTry: "נסו בעצמכם.",
-  whatIfCaption: (polls, threshold) => ` קבעו לכל רשימה שקרובה לאחוז החסימה אם היא עוברת או לא, וראו לאן הולכים המנדטים. חשבון לפי ${polls}, לא תחזית: החלק של כל רשימה הוא ממוצע המנדטים שלה חלקי 120, ורשימה שעוברת עומדת בדיוק על ${threshold}%.`,
-  whatIfAverage: (seats) => `${seats} בממוצע`,
-  whatIfBelowAll: "מתחת לאחוז החסימה בכל הסקרים",
-  whatIfToggle: (name) => `${name}: עוברת את אחוז החסימה או לא`,
-  passes: "עוברת",
-  fails: "לא עוברת",
-  whatIfGrid: (blocs) => `מנדטים לפי גושים: ${blocs}`,
-  whatIfWasted: "קולות שלא מתורגמים למנדטים: ",
-  whatIfWastedOf: " מהקולות הכשרים",
-  whatIfCastFor: (names) => `, של ${list(names)}.`,
-
-  axes: { draft: "גיוס חרדים", courts: "מערכת המשפט", war: "ועדת חקירה לטבח 7 באוקטובר", wb: "יהודה ושומרון / הגדה המערבית: ריבונות וסיפוח", relig: "דת ומדינה", econ: "יוקר המחיה והכלכלה", pstate: "מדינה פלסטינית" },
-
-  sources: [
-    { head: `כחול לבן`, text: ` מתחת לאחוז החסימה בכל הסקרים; גנץ יפרוש בשבוע האחרון אם הרשימה לא תעבור את אחוז החסימה: טיימס אוף ישראל, 20 בספטמבר 2026.` },
-    { head: `פסילות.`, text: ` התחייבויות להרכיב ממשלה בלי המפלגות הערביות: הארץ, 1 באוקטובר 2026 (כותרת). ביחד "תישען רק על מפלגות ציוניות": טיימס אוף ישראל, 26 באפריל 2026; בלי מפלגות ערביות או חרדיות: טיימס אוף ישראל, 27 במאי 2026. הרשימה המשותפת לא תצטרף לנתניהו: טיימס אוף ישראל, 19 באוגוסט 2026. איזנקוט על רע"ם ("הוא לא יהיה חלק מהממשלה הבאה שלי"): טיימס אוף ישראל, 26 בספטמבר 2026. ליברמן, "לא עם המפלגות הערביות ולא עם המפלגות החרדיות": ג'רוזלם פוסט, 21 בספטמבר 2025, וחזר על כך ב-3 באוקטובר 2026. התנאי של יהדות התורה (יעקב אשר): מצב, 28 בספטמבר 2026.` },
-    { head: `הסכמי עודפים.`, text: ` ישר! והדמוקרטים, וביחד וישראל ביתנו, חתמו ב-10 בספטמבר 2026 (טיימס אוף ישראל). הליכוד והציונות הדתית הסכימו ב-8 בספטמבר (ישראל היום), ולפי דיווח מ-15 בספטמבר טרם חתמו (ערוץ 14); הסטטוס הסופי לא נמצא. הרשימה המשותפת ורע"ם: ynet, 11 בספטמבר, וג'רוזלם פוסט, 13 בספטמבר 2026. ש"ס ויהדות התורה "צפויות לחתום": ג'רוזלם פוסט, 10 בספטמבר 2026; חתימה לא נמצאה. עוצמה יהודית, עמך ישראל והמילואימניקים: לא נמצא שותף (רישום של IPF של המילואימניקים עם ישראל ביתנו לא אומת, כי ישראל ביתנו חתמה עם ביחד).` },
-    { head: `הרשימות.`, text: ` סדר יהדות התורה (אשר 1, גולדקנופף 2, פרוש 4): דבר וישראל היום, 8 בספטמבר 2026. מס' 2 ברע"ם, יואב סגלוביץ: ג'רוזלם פוסט וטיימס אוף ישראל, 31 באוגוסט 2026. ביחד (יש עתיד רצה בתוך הרשימה, לפיד מס' 2): טיימס אוף ישראל, 6 בספטמבר 2026; ההסכם נחתם ב-25–26 באפריל 2026 (ג'רוזלם פוסט).` },
-    { head: `הפסילה בוועדת הבחירות ופסק הדין:`, text: ` ההצבעה בוועדת הבחירות המרכזית, 23 בספטמבר 2026 (טיימס אוף ישראל); פסק הדין של בית המשפט העליון, 2 באוקטובר 2026, אחרי דיון ב-1 באוקטובר (ג'רוזלם פוסט; אל-ג'זירה, 2 באוקטובר 2026).` },
-    { head: `שיוך לגושים וראשי הרשימות:`, text: ` פרויקט 120 של Israel Policy Forum, עודכן ב-24 בספטמבר 2026; ג'רוזלם פוסט, 7 בספטמבר 2026; טיימס אוף ישראל, 19 באוגוסט ו-6 בספטמבר 2026. השיוך של המילואימניקים והכלכלית שנוי במחלוקת (IsraelEd: תצטרף לנתניהו; IPF: "גוש שלישי"; טיימס אוף ישראל: לא משויכת), ולכן היא מוצגת מחוץ לגושים.` },
-    { head: `אותיות הפתק:`, text: ` {letters}` },
-  ],
-  sourcesAfter: [
-    { head: `רוב של 61:`, text: ` המכון הישראלי לדמוקרטיה, 15 באפריל 2026.` },
-    { head: `אחוז החסימה:`, text: ` {threshold}` },
-  ],
-
-  presetLabel: "הממשלה היוצאת",
-  description: "מרכיבים קואליציה אחרי הבחירות לכנסת ה-26: מה ההבדל בין רוב של 61, ישיבה בממשלה, תמיכה מבחוץ והצבעת האמון.",
 };
-
-const builder = { en, he };
 export default builder;
 export type BuilderText = typeof en;

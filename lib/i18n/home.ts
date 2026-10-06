@@ -6,6 +6,8 @@
  * element's job. Daniel reviews it here. Generated sentences (the finding, the citation) are in lib/home-since.ts,
  * the headline in lib/results-phase.ts.
  */
+import { heText } from "./he-text";
+
 type Bits = (string | number)[];
 
 const en = {
@@ -113,109 +115,13 @@ const en = {
   },
 };
 
-const he: typeof en = {
-  title: "פתק 2026",
-  hero: {
-    standfirstLive: "הקולות שנספרו עד כה, בתרגום להערכת מנדטים.",
-    standfirst: "תמונת הגושים לפי ממוצע הסקרים, במנדטים.",
-    majority: (m, k) => [" רוב בכנסת: ", m, " מתוך ", k, " מנדטים."],
-    basisStale: "ספירה שמורה, לא מעודכנת",
-    basisLive: "הספירה עד כה",
-    basis: (n) => `ממוצע הסקרים המנורמל, ${n} סקרים עדכניים`,
-    newest: "הסקר האחרון: ",
-    stale: "ספירה שמורה (לא מעודכנת). ",
-    liveSource: (captured, updated) => ["ועדת הבחירות המרכזית; המנדטים הם הערכה של האתר לפי הקולות שנספרו עד כה. נקלט: ", captured, ". עדכון המקור: ", updated, ". "],
-    unrecorded: "לא צוין",
-    fullResults: "התוצאות המלאות ושיטת החישוב",
-    avgSource: (pollsters, through) => ["הסקר האחרון של כל גוף שמפרסם סקרים (", pollsters, "), עד ", through, ". שקלול לפי שורש גודל המדגם, ערכים מנורמלים; ממוצע משוקלל, ולכן לא במספרים שלמים."],
-    change: (since) => [" השינוי: לעומת הממוצע כפי שעמד ב-", since, ", תאריך הסקר האחרון שקדם בשבוע לפחות לסקר החדש ביותר."],
-    method: "איך חישבנו",
-    contextBefore: "אפשר גם ",
-    partyMap: "להשוות את עמדות המפלגות",
-    contextMiddle: ", או ",
-    builder: "להרכיב קואליציה בעצמכם",
-  },
-  exit: {
-    standfirst: (m, k) => ["מדגמי הערוצים, במנדטים לפי גוש. אלה הערכות; ספירת ועדת הבחירות תחליף אותן. רוב בכנסת: ", m, " מתוך ", k, " מנדטים."],
-    basis: "מדגמי הערוצים",
-    early: (pct) => ["תוצאות אמת ראשונות: נספרו יישובים שבהם ", pct, "% מבעלי זכות הבחירה. "],
-    follow: "לספירת הקולות",
-    context: "התוצאות, מדגמי הערוצים לפי רשימה ושיטת הספירה",
-  },
-  race: {
-    instruction: "בחרו גוש כדי לראות את המפלגות שבו.",
-    seats: "מנדטים",
-    knownSeats: "מנדטים ידועים",
-    noChange: "ללא שינוי",
-    since: " מאז ",
-    short: (x) => `חסרים ${x} מנדטים ל-61`,
-    at: "בדיוק 61: רוב מוחלט",
-    above: (x) => `${x} מנדטים מעל 61`,
-    known: " (בסכום הידוע)",
-    show: "הצגת המפלגות",
-    hide: "הסתרת המפלגות",
-    mosaic: (selected) => `מפת 120 המנדטים. ${selected ? `מוצגות המפלגות של ${selected}; שאר הגושים בצבע אחיד.` : "ארבעה צבעים, גוש לכל צבע; בחרו גוש כדי לראות את המפלגות שבו."}`,
-    open: (label, seats) => `לדף של ${label}: ${seats} מנדטים`,
-    group: (label, seats) => `${label}: ${seats} מנדטים`,
-    reveal: (label, seats) => `הצגת המפלגות של ${label}: ${seats} מנדטים`,
-    cell: (label, i) => `${label}; משבצת ${i}`,
-    unassigned: "אין הערכת מנדט",
-    note: "הגושים הם קיבוץ של מפלגות, לא הסכמים קואליציוניים. המשבצות מעוגלות; המספרים בספרה אחת אחרי הנקודה.",
-    empty: (n) => [" ל-", n, " משבצות אפורות אין הערכה."],
-    panel: (label) => `${label}: המפלגות`,
-    back: "חזרה לגושים",
-    status: (label) => ["בצבעי המפלגות: ", label, " בלבד. שאר הגושים שומרים על הצבע שלהם, וכל משבצת נשארת במקומה."],
-    notSeparated: "לא מופרד",
-    notReported: "לא דווח בנפרד",
-    below: "מתחת",
-    belowAvg: "לאחוז החסימה, או עוברת אותו בפחות ממחצית הסקרים",
-    belowCount: "לאחוז החסימה, בינתיים",
-    combined: (names, seats) => [names, ": ", seats, " מנדטים בדיווח משותף"],
-    within: "; נספרים פעם אחת בגוש הזה.",
-    across: "; הרשימות שייכות לגושים שונים, ולכן לא שויכו לאף גוש.",
-    noSplit: " אין פירוק לפי מפלגה.",
-    followsAvg: "המפה לפי ממוצע הסקרים המנורמל.",
-    followsCount: "המפה לפי הערכת המנדטים של האתר מהקולות שנספרו עד כה.",
-    noInvented: " למפלגות שלא דווחו בנפרד לא הומצאו מנדטים.",
-    unallocated: "לא שויך בנפרד",
-    combinedLabel: (names) => `${names} (דיווח משותף; לא מופרד)`,
-  },
-  since: {
-    heading: "מאז אתמול",
-    newest: ". הסקר האחרון:",
-    allPolls: "כל הסקרים והממוצע",
-    today: "התדריך היומי",
-    briefing: (date) => `התדריך, ${date}`,
-    machine: "תורגם אוטומטית",
-    english: "באנגלית",
-    full: "התדריך המלא (באנגלית)",
-    and: " ו",
-    atMajority: (names, m) => [names, ": ", m, " ומעלה"],
-    source: "מקור",
-  },
-  start: {
-    lead: "רוצים להבין את השיטה? ",
-    route: "מסלול היכרות קצר",
-    middle: ", ",
-    how: "איך הבחירות עובדות",
-    parties: "מפת המפלגות",
-    and: " ו",
-    who: "מי מצביע",
-  },
-  tools: {
-    heading: "נסו בעצמכם",
-    builder: "מרכיבים קואליציה",
-    builderLive: "הרכיבו קואליציה מהתוצאות האמיתיות. מגיעים ל-61?",
-    builderText: "בחרו מפלגות מכל סקר. מגיעים ל-61?",
-    partyMap: "מפת המפלגות (באנגלית)",
-    partyMapText: "כל רשימה בגודל ממוצע הסקרים שלה, ולכל אחת פרופיל עם מקורות.",
-    polls: "סקרים",
-    pollsText: "כל סקרי המנדטים של מערכת הבחירות, הממוצע העדכני ומגמת כל מפלגה.",
-    voteMap: "מפת ההצבעה (באנגלית)",
-    voteMapText: "איך הצביע כל יישוב בחמש מערכות הבחירות, 2019 עד 2022, רשימה אחר רשימה.",
+
+const home = {
+  en,
+  /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get he(): HomeText {
+    return heText<HomeText>("home");
   },
 };
-
-const home = { en, he };
 export default home;
 export type HomeText = typeof en;

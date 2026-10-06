@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { LangProvider } from "./lang";
+import "./he/register";
 import { OVERLAY_DATA } from "./overlay-data";
 import { setOverlays } from "./overlay-text";
 

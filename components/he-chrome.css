@@ -3,9 +3,4 @@
    dir="rtl". Only what Hebrew type needs differs here. */
 /* Hebrew display type takes no negative tracking. */
 .he-masthead .brand .word, .he-foot .brand .word, .he-masthead .nav-panel-label { letter-spacing: 0; }
-/* The English link sits last in the bar, set apart from the Hebrew utilities. */
-.he-masthead .nav-utilities .nav-lang { border-inline-start: 1px solid var(--line); padding-inline-start: 20px; }
-@media (max-width: 899px) {
-  .he-masthead .nav-utilities .nav-lang { border: 0; padding: 0; }
-}
 .he-foot .about .foot-links .lang-switch { font-weight: 600; }

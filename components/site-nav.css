@@ -1,8 +1,8 @@
 /* Masthead: one bar. The nameplate (countdown under it), a thin seat meter linking to the polls, the four
-   grouped disclosure menus, then Search and About. The other utilities sit at the foot of each open panel.
-   900 to 1279px: the menus take their own row. Phones: brand and Menu, the meter on one line, the countdown;
+   grouped disclosure menus, then Search and About, then the language toggle. The other utilities sit at the foot
+   of each open panel. 900 to 1359px: the menus take their own row. Phones: brand, the toggle and Menu, the meter on one line, the countdown;
    the menu lists the groups, then every utility. */
-.masthead .row { position: relative; grid-template-columns: auto auto minmax(0,1fr) auto; grid-template-areas: "brand meter navigation utilities" "countdown countdown navigation utilities"; column-gap: 16px; }
+.masthead .row { position: relative; grid-template-columns: auto auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter navigation utilities lang" "countdown countdown navigation utilities lang"; column-gap: 16px; }
 .masthead .brand { padding-block: 14px 4px; }
 .masthead > .row > .countdown { padding: 0 0 12px; font-size: 13px; }
 .masthead:has(.site-nav[data-home]) > .row > .countdown, .masthead:has(.site-nav[data-closed]) > .row > .countdown { display: none; }
@@ -23,6 +23,15 @@
 .nav-utilities a[aria-current="page"],.nav-panel-more a[aria-current="page"] { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
 .nav-utilities .nav-util-more { display: none; }
 .nav-mobile-toggle { display: none; }
+/* The language toggle: two cells, EN and עב, ruled in ink like the Menu button; the current edition filled. */
+.lang-toggle { grid-area: lang; align-self: center; display: flex; border: 1px solid var(--ink); }
+.lt-cell { display: flex; align-items: center; justify-content: center; min-width: 36px; min-height: 34px; padding: 0 8px; font: 600 13px var(--body); letter-spacing: 0; color: var(--ink); text-decoration: none; }
+.lt-cell + .lt-cell { border-inline-start: 1px solid var(--ink); }
+.lt-cell[aria-current] { background: var(--ink); color: var(--bg); }
+.lt-cell abbr { text-decoration: none; }
+a.lt-cell:hover { background: var(--sheet); }
+a.lt-cell:focus-visible { outline-offset: 2px; }
+.lt-cell:lang(he) { font-family: var(--font-he, var(--body)); font-size: 14px; }
 .nav-main { grid-area: navigation; align-self: stretch; min-width: 0; }
 .nav-groups { display: flex; height: 100%; list-style: none; padding: 0; margin: 0; }
 .nav-group { position: relative; flex: 1 1 auto; min-width: 0; }
@@ -50,14 +59,18 @@
 .nav-panel ul.nav-panel-more, .nav-panel.compact ul.nav-panel-more { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 10px; border-top: 1px solid var(--line); }
 .nav-panel .nav-panel-more a { display: flex; align-items: center; min-height: 44px; padding: 0; border: 0; font-size: 13.5px; color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .nav-panel .nav-panel-more a:hover { background: none; color: var(--ink); text-decoration-color: currentColor; }
-@media (min-width:900px) and (max-width:1279px) {
- .masthead .row { grid-template-columns: auto minmax(0,1fr) auto; grid-template-areas: "brand meter utilities" "countdown meter utilities" "navigation navigation navigation"; column-gap: 24px; }
+@media (min-width:900px) and (max-width:1359px) {
+ .masthead .row { grid-template-columns: auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter utilities lang" "countdown meter utilities lang" "navigation navigation navigation navigation"; column-gap: 24px; }
  .mast-meter { justify-self: start; }
  .nav-main { border-top: 1px solid var(--line); }
  .nav-trigger { min-height: 56px; }
 }
 @media (max-width:899px) {
- .masthead .row { grid-template-columns: minmax(0,1fr) auto; grid-template-areas: "brand toggle" "meter meter" "countdown countdown" "menu menu"; gap: 0 10px; }
+ .masthead .row { grid-template-columns: minmax(0,1fr) auto auto; grid-template-areas: "brand lang toggle" "meter meter meter" "countdown countdown countdown" "menu menu menu"; row-gap: 0; }
+ header.masthead > .row { column-gap: 8px; }
+ /* One cell on phones, naming the other edition, as a theme switch shows the other mode. */
+ .lt-cell { min-height: 44px; min-width: 44px; }
+ .lt-cell[aria-current] { display: none; }
  .masthead .brand, .masthead:has(.site-nav[data-home]) .brand, .masthead:has(.site-nav[data-closed]) .brand { padding-block: 12px 6px; }
  .masthead .brand .mark { width: 28px; }
  .masthead .brand .word { font-size: 22px; }
@@ -85,7 +98,9 @@
  .nav-utilities a { font-size: 15px; font-weight: 400; }
 }
 @media (max-width:420px) { .mm-text { font-size: 12.5px; } }
-@media print { .site-nav,.nav-menu,.nav-main,.nav-utilities,.nav-mobile-toggle,.mast-meter { display: none !important; } }
+/* Narrowest phones: the wordmark and Menu fill the top row, so the toggle ends the countdown row. */
+@media (max-width:374px) { .masthead .row { grid-template-areas: "brand brand toggle" "meter meter meter" "countdown countdown lang" "menu menu menu"; } .lang-toggle { justify-self: end; margin-bottom: 8px; } }
+@media print { .site-nav,.nav-menu,.nav-main,.nav-utilities,.nav-mobile-toggle,.mast-meter,.lang-toggle { display: none !important; } }
 
 .site-foot .cols { grid-template-columns: repeat(4,minmax(0,1fr)); }
 .site-foot .cols .lbl { margin-bottom: 9px; }

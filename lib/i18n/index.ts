@@ -12,9 +12,9 @@ export const HE_PATHS = ["/", "/polls", "/coalition-builder", "/compare", "/part
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of
- * /he. Off until Daniel has reviewed the Hebrew; /he stays reachable by its address but noindex.
+ * /he. On since 2026-10-06 (Daniel: "you can go live with the hebrew site").
  */
-export const HE_PUBLIC = false;
+export const HE_PUBLIC = true;
 
 /** The Hebrew edition's prefix. */
 export const HE_PREFIX = "/he";

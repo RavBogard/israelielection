@@ -11,7 +11,7 @@ web
 - **Primary: American readers, American Jews in particular**, trying to understand Israel's October 27, 2026 election on its own terms. They arrive through news, a share card, or a search during the campaign; they come back for the polls, the daily briefing and the Coalition Builder as the vote nears.
 - **Rabbis and educators** were a primary audience until 2026-10-06, when Daniel dropped Teaching resources ("it's really not the point of this page anymore"). Outside pages may still embed the interactives, so embeds keep working; nobody is designed for as a teacher.
 - **Journalists and Jewish institutions** who treat the site as a sourced reference. Outreach to press is underway (docs/outreach/2026-10-05/); no coverage has been confirmed yet.
-- The reader is not assumed to know Hebrew, Israeli party names, or how a parliamentary system forms a government. Site language is English only; Hebrew appears only for party names, ballot letters and glossary terms.
+- The reader is not assumed to know Hebrew, Israeli party names, or how a parliamentary system forms a government. English is the main site. Since 2026-10-06 a Hebrew edition, "פתק 2026" at /he, covers the tools (home, polls, Coalition Builder, Compare, party profiles, results), written fresh in Israeli Hebrew rather than translated; the guides stay English. Readers in Israel and browsers set to Hebrew first land on it by default (proxy.ts), and a masthead toggle switches either way and is remembered.
 
 One front door: understand it. The site is "the 538 of the Israeli election": visual, infographic, data-driven, graphic first on every page (Daniel, 2026-10-05 and 2026-10-06; the earlier "Teach it" door was dropped).
 
@@ -46,7 +46,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Stack (existing):** Next.js 16 App Router, React 19, TypeScript, Tailwind 4, MDX; Vercel deploys on push to main; GitHub Actions for jobs; Gemini Flash 3.8 for the briefing (Daniel's ruling: Gemini, not Anthropic). Node 22+.
 - **Averaging rules (published):** latest poll per publisher within 14 days of the newest; weights by square root of sample size; lists passing the threshold in fewer than half the polls are excluded from default coalition totals; totals above 120 scaled down; Channel 14 included in the main average, excluded in the alternative.
 - **Terminology is ruled, not improvised.** House language includes "Haredi", "occupied West Bank", "Palestinian citizens of Israel" (with "Arab Israelis" noted and the dispute explained), "Liberman", "hostages", "Anti-Netanyahu bloc (Zionist parties)", and "far-right" only for Otzma Yehudit and the Religious Zionist Party with IDI cited. "Genocide" only inside quotations or case names. Full list: docs/research/RULINGS.md.
-- **Out of scope by ruling:** a Hebrew edition; a Jewish-texts section or route (occasional downloadable class sheets only, each approved by Daniel); trip material; any claim of analytics anonymity or a consent control (neither verified).
+- **Out of scope by ruling:** Hebrew versions of the guides, issue and community pages (the Hebrew edition covers the tools only); a Jewish-texts section or route (occasional downloadable class sheets only, each approved by Daniel); trip material; any claim of analytics anonymity or a consent control (neither verified).
 - **Analytics:** Google Analytics loads in production only, disclosed on /about (footer line cut by Daniel, 2026-10-06).
 - **Open decisions (recorded, not invented):** none outstanding from the 2026-10-05 handoff. Future-election structure (how a second election is housed on the same site) is not yet designed.
 
@@ -69,7 +69,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - One Session 1 class deck (31 pages, PPTX and PDF) and two packets (system, coalitions); teaching scenarios in data/teach-scenarios.json.
 - Daily briefings from 2026-10-05 onward (data/briefings/).
 - Daniel's approved signed note (data/home-note.json) and About copy (content/about.mdx).
-- **Absent, do not fabricate:** testimonials, usage or adoption numbers, confirmed press coverage, institutional endorsements, teacher guides or source sheets beyond the two packets, a Hebrew edition.
+- **Absent, do not fabricate:** testimonials, usage or adoption numbers, confirmed press coverage, institutional endorsements, teacher guides or source sheets beyond the two packets, Hebrew guides.
 
 ## Product Principles
 

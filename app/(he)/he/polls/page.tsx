@@ -1,3 +1,5 @@
+// Loads the Hebrew interface words before this module reads them (lib/i18n/he-text.ts).
+import "@/lib/i18n/he/register";
 import type { Metadata } from "next";
 import { heAlternates } from "@/lib/canonical";
 import PollsPage from "@/components/pages/PollsPage";

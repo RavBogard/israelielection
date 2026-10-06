@@ -28,3 +28,9 @@ Daniel: "i want version 1. lets do it" — Hebrew versions of home, polls, Coali
 - [x] Bundle fix (b32050c): overlay data only in Hebrew pages' client chunks; English /about, /polls carry UI dictionaries only (~25 KB Hebrew strings in a shared chunk; follow-up if wanted).
 - [x] Election-night rehearsal on /he/results and /he (RESULTS_NOW 22:30, 2022 fixture): count phase, bloc strip, mirrored grid and list table correct. Found and fixed in both editions: home source line printed the raw ISO capture time; counted seats showed "63.0" (d05cb02).
 - Pushed; /he live but unannounced and noindex. Next: Daniel's review, then HE_PUBLIC on.
+- Daniel, 2026-10-06: "strip that hebrew stuff out" (UI Hebrew in English bundles), "you can go live with the hebrew site", serve Hebrew by default to readers in Israel and browsers set to Hebrew, and an easy switch "ala switching from dark to light".
+- [x] UI Hebrew moved to lib/i18n/he/*.ts, loaded through lib/i18n/he-text.ts by HebrewProvider and overlays.ts only; English dictionaries keep a `he` getter so call sites are unchanged.
+- [x] Masthead language toggle (components/LangSwitch.tsx): EN | עב cells on desktop, one cell naming the other edition on phones; sets a `lang` cookie for a year and carries query and fragment. On an English-only page the Hebrew cell opens /he.
+- [x] proxy.ts: 307 from the six English pages with a Hebrew edition to /he when x-vercel-ip-country is IL or the browser's first language is Hebrew; the cookie always wins; clicks within the site, router fetches, crawlers and link previews are never redirected.
+- GATE: HE_PUBLIC on (hreflang, sitemap, indexing) — proceeded because Daniel said to go live when ready; his line-by-line review of the Hebrew copy is still open and edits can land any time.
+- GATE: default rule uses the browser's first language, not any Hebrew in the list — proceeded because Daniel said "hebrew set as their browser's default language".

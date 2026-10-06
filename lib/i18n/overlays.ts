@@ -1,3 +1,4 @@
+import "./he/register";
 import { OVERLAY_DATA } from "./overlay-data";
 import { setOverlays } from "./overlay-text";
 

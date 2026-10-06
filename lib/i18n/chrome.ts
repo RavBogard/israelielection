@@ -5,7 +5,7 @@
  * element's job. Daniel reviews it here, in one place. `he` is typed as `typeof en`, so both carry the same keys.
  */
 import type { Lang } from "./index";
-import { seatsHe } from "./he-grammar";
+import { heText } from "./he-text";
 
 const en = {
   siteName: "Israel Votes 2026",
@@ -23,6 +23,9 @@ const en = {
   /** The language switch: the label for a link to the other edition. */
   switchTo: { en: "English", he: "עברית" },
   switchLabel: "This page in the other language",
+  /** The masthead language toggle (components/LangSwitch.tsx): the group's name, and the Hebrew cell's title on a page with no Hebrew version. Unused in Hebrew, where every page has an English one. */
+  langGroup: "Language",
+  noHebrew: "This page is in English only. Opens the Hebrew edition's home page.",
   englishSite: "The full site in English",
   description:
     "An English-language reference on Israel's October 27, 2026 election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced.",
@@ -68,60 +71,14 @@ const en = {
   },
 };
 
-const he: typeof en = {
-  siteName: "פתק 2026",
-  homeLabel: "פתק 2026, לעמוד הראשי",
-  skip: "דלגו לתוכן",
-  navLabel: "ניווט ראשי",
-  openMenu: "פתיחת התפריט",
-  closeMenu: "סגירת התפריט",
-  menu: "תפריט",
-  close: "סגירה",
-  more: "עוד",
-  inEnglish: "(באנגלית)",
-  switchTo: { en: "English", he: "עברית" },
-  switchLabel: "העמוד הזה בשפה האחרת",
-  englishSite: "האתר המלא באנגלית",
-  description: "הסקרים, המפלגות, העמדות והדרך ל-61 לקראת הבחירות לכנסת ה-26, ב-27 באוקטובר 2026. כל מספר מתוארך, ולכל נתון יש מקור.",
-  footNote: "בעברית: הסקרים, הרכבת הקואליציה, השוואת העמדות, דפי המפלגות והתוצאות. המדריכים ושאר דפי הרקע באנגלית.",
-  bylineBefore: "פרויקט של ",
-  bylineName: "הרב דניאל בוגרד",
-  bylineAfter: ".",
-  siteMapLabel: "מפת האתר",
-  countdown: {
-    days: (d: number) => (d === 2 ? ["יומיים"] : [String(d), " ימים"]),
-    daysAfter: " לבחירות, יום שלישי, 27 באוקטובר",
-    tomorrow: "הבחירות מחר",
-    tomorrowAfter: ", יום שלישי, 27 באוקטובר",
-    today: "יום הבחירות.",
-    todayAfter: " הקלפיות נסגרות ב-22:00",
-    after: "הבחירות התקיימו ב-27 באוקטובר. ",
-    formation: "הרכבת הממשלה (באנגלית)",
-  },
-  strip: {
-    closed: "הקלפיות נסגרו",
-    closedNote: "מדגמי הערוצים בעמוד התוצאות; ספירת ועדת הבחירות המרכזית בהמשך.",
-    stale: "ספירה שמורה (לא מעודכנת)",
-    early: "תוצאות אמת ראשונות",
-    count: "הספירה עד כה",
-    localities: (n: number) => `${n.toLocaleString("en-US")} יישובים רגילים`,
-    turnout: (pct: string) => `, אחוז ההצבעה ביישובים שנספרו ${pct}%`,
-    captured: "נקלט:",
-    israelTime: "שעון ישראל",
-    sourceTime: "עדכון המקור:",
-    notProvided: "לא צוין",
-  },
-  cite: { label: "לציטוט", copied: "הועתק", failed: "ההעתקה נכשלה." },
-  sources: { title: "מקורות", show: "הצגה", hide: "הסתרה", correction: "דווחו על טעות (באנגלית)" },
-  grid: {
-    majority: (m: number, total: number) => `רוב: ${m} מתוך ${total}`,
-    seat: (label: string, i: number) => `${label}, משבצת ${i}`,
-    shown: (label: string, seats: number, i: number) => `${label}: ${seatsHe(seats)}; משבצת ${i}`,
-    explore: (label: string, seats: number) => `${label}: ${seatsHe(seats)}. לפרופיל`,
+
+const chrome = {
+  en,
+  /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get he(): Chrome {
+    return heText<Chrome>("chrome");
   },
 };
-
-const chrome = { en, he };
 export default chrome;
 export type Chrome = typeof en;
 

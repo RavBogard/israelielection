@@ -1,3 +1,5 @@
+// Loads the Hebrew interface words before this module reads them (lib/i18n/he-text.ts).
+import "@/lib/i18n/he/register";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
@@ -7,7 +9,7 @@ import Logo from "@/components/Logo";
 import Countdown from "@/components/Countdown";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
-import LangSwitch from "@/components/LangSwitch";
+import { LangLink } from "@/components/LangSwitch";
 import { GA_ID } from "@/lib/analytics";
 import { frank, sans } from "@/lib/fonts";
 import chrome, { HE_NAV_BAR, HE_NAV_GROUPS, HE_NAV_UTILITIES } from "@/lib/i18n/chrome";
@@ -28,7 +30,7 @@ import "@/components/he-chrome.css";
 // The Hebrew edition's root layout (/he and below): its own <html lang="he" dir="rtl">, so crossing between
 // editions is a full page load. The same one-bar masthead as English (components/EnglishShell.tsx): the wordmark
 // פתק 2026 with the countdown, the seat meter, four group menus listing the Hebrew pages, the parties and the
-// English guides, then Home, Search, About and the English link. All words come from lib/i18n/chrome.ts.
+// English guides, then Home, Search and About, and the language toggle. All words come from lib/i18n/chrome.ts.
 
 // IBM Plex Sans Hebrew sets the interface's Hebrew (--font-he; the :root:lang(he) stack in globals.css puts
 // Public Sans first for Latin and digits). Declared only here so English pages never load it.
@@ -117,7 +119,7 @@ export default function HebrewLayout({ children }: { children: ReactNode }) {
                     </li>
                   ))}
                   <li>
-                    <LangSwitch />
+                    <LangLink />
                   </li>
                 </ul>
               </div>

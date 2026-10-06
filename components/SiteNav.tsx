@@ -19,7 +19,7 @@ function usePollsClosed(pollsClose:string,atRender:boolean){
 }
 
 /**
- * The masthead bar: the seat meter, four group menus and the bar's utilities (Search, About). The other
+ * The masthead bar: the seat meter, four group menus, the bar's utilities (Search, About) and the language toggle. The other
  * utilities sit at the foot of every open panel; the phone menu lists the groups, then every utility.
  */
 /** A menu label: marked when still in English, with "(באנגלית)" after a Hebrew menu's link to an English-only page. English menus render the bare label. */
@@ -53,6 +53,7 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,
  return <nav ref={navRef} className="site-nav" aria-label={t.navLabel} data-home={path===home?"":undefined} data-closed={closed?"":undefined} onBlur={(e)=>{if(e.relatedTarget&&!e.currentTarget.contains(e.relatedTarget as Node)){setExpanded(null);setMobileOpen(false);}}} onKeyDown={(e)=>{if(e.key!=="Escape")return;if(expanded){e.preventDefault();setExpanded(null);triggerRefs.current[expanded]?.focus();}else if(mobileOpen){e.preventDefault();setMobileOpen(false);menuRef.current?.focus();}}}>
   <SiteNavMeter average={meter.average} exit={meter.exit} closed={closed} pollsClose={pollsClose}/>
   <button ref={menuRef} type="button" className="nav-mobile-toggle" aria-label={mobileOpen?t.closeMenu:t.openMenu} aria-expanded={mobileOpen} aria-controls="primary-navigation" onClick={()=>{setMobileOpen(v=>!v);setExpanded(mobileOpen?null:active);}}>{mobileOpen?t.close:t.menu}</button>
+  <LangSwitch/>
   <div id="primary-navigation" className={`nav-menu${mobileOpen?" mobile-open":""}`}>
    <div className="nav-main">
     <ul className="nav-groups">{groups.map(g=><li key={g.id} className={`nav-group${active===g.id?" section-active":""}`}>
@@ -63,7 +64,7 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,
      </div>
     </li>)}</ul>
    </div>
-   <ul className="nav-utilities">{utilities.map(n=><li key={n.href} className={bar.includes(n.href)?undefined:"nav-util-more"}>{link(n)}</li>)}{lang==="he"&&<li className="nav-lang"><LangSwitch/></li>}</ul>
+   <ul className="nav-utilities">{utilities.map(n=><li key={n.href} className={bar.includes(n.href)?undefined:"nav-util-more"}>{link(n)}</li>)}</ul>
   </div>
  </nav>;
 }
