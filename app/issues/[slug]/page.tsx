@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
+import { PositionsLead } from "@/components/article/Article";
 import { ISSUES, type IssueSlug } from "@/lib/articles";
 import { loadIssue, issueIndex } from "@/lib/content";
 
@@ -24,5 +25,5 @@ export default async function Page(props: PageProps<"/issues/[slug]">) {
   if (!known(slug)) notFound();
   const { default: Body, meta } = await loadIssue(slug);
   const siblings = (await issueIndex()).map((s) => ({ href: s.href, title: s.meta.title }));
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/issues", title: "Issues" }} siblings={siblings} current={`/issues/${slug}`} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/issues", title: "Issues" }} siblings={siblings} current={`/issues/${slug}`} lead={<PositionsLead issue={slug} />} />;
 }

@@ -139,7 +139,8 @@ type PositionRowData = Positions["rows"][number];
  * answer (each answer's lists' seats in the polling average on a 120-seat bar, shaded on the stance
  * ramp the profiles and Compare use), then each answer's lists with their words and sources.
  */
-export function Positions({ issue }: { issue: string }) {
+/** An issue's answers with the lists that gave each and their seats in the polling average, shared by the lead figure and the full block. */
+function splitOf(issue: string) {
   const p = positions[issue];
   if (!p) throw new Error(`Unknown positions table "${issue}" (see data/positions/)`);
   const stances = p.stances ?? [];
@@ -151,10 +152,72 @@ export function Positions({ issue }: { issue: string }) {
     const rows = p.rows.filter((r) => hasText(r) && r.stance === st.id);
     return { st, n: i + 1, pos: at(i), rows, seats: rows.reduce((a, r) => a + seats(r.party), 0) };
   });
+  const rest = Math.max(0, SEATS - groups.reduce((a, g) => a + g.seats, 0));
+  return { p, stances, scale, seats, hasText, groups, rest };
+}
+
+const onClass = (pos: number | null) => `on-${pos === null ? "ink" : pos < 0.5 ? "light" : "dark"}`;
+
+/** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
+function SplitBar({ groups, rest }: Pick<ReturnType<typeof splitOf>, "groups" | "rest">) {
+  return (
+    <div className="ps-bar" role="img" aria-label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}>
+      {groups.filter((g) => g.seats > 0).map((g) => (
+        <span key={g.st.id} className={`seg ${onClass(g.pos)}`} style={{ width: `${(g.seats / SEATS) * 100}%`, background: shade(g.pos) }} title={`${g.st.label}: ${Math.round(g.seats)} seats`}>
+          <b>{g.n}</b>
+        </span>
+      ))}
+      {rest > 0 && <span className="seg rest" style={{ width: `${(rest / SEATS) * 100}%` }} title={`No recorded answer, or below the threshold: ${Math.round(rest)} seats`} />}
+      <i className="maj" style={{ left: `${(61 / SEATS) * 100}%` }} aria-hidden />
+    </div>
+  );
+}
+
+/**
+ * The lead figure of an issue page, set under its title: where the Knesset splits on the issue,
+ * each answer with its lists and their seats, before any prose. The full block lower on the page
+ * carries each list's own words and sources.
+ */
+export function PositionsLead({ issue }: { issue: string }) {
+  const { p, scale, groups, rest } = splitOf(issue);
+  if (!groups.length) return null;
+  const name = (id: string) => parties.find((x) => x.id === id)!.name;
+  return (
+    <figure className="positions ps-lead">
+      <figcaption className="ct">Where the lists stand{p.question ? `: ${p.question.replace(/\?$/, "")}?` : ""}</figcaption>
+      <SplitBar groups={groups} rest={rest} />
+      <ul className="ps-legend">
+        {groups.filter((g) => g.rows.length).map((g) => (
+          <li key={g.st.id}>
+            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
+            <span className="lab">
+              <b>{g.st.label}</b>
+              <span className="who">
+                {g.rows.map((r) => (
+                  <a key={r.party} href={`/parties/${r.party}`}>
+                    <span className="sw" style={{ background: partyColor(r.party) }} aria-hidden />
+                    {name(r.party)}
+                  </a>
+                ))}
+              </span>
+            </span>
+            <span className="gs">{Math.round(g.seats)}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="ps-note">
+        {scale ? "Answers in order from one end of the debate to the other. " : "These priorities can coexist, so they are not ordered. "}
+        Seats are the current polling average; the tick is 61. <a href="#positions">Each list&apos;s own words and sources</a>.
+      </p>
+    </figure>
+  );
+}
+
+export function Positions({ issue }: { issue: string }) {
+  const { p, stances, seats, hasText, groups } = splitOf(issue);
   const sorted = new Set(groups.flatMap((g) => g.rows.map((r) => r.party)));
   const unsorted = p.rows.filter((r) => hasText(r) && !sorted.has(r.party));
   const quiet = p.rows.filter((r) => !hasText(r));
-  const rest = Math.max(0, SEATS - groups.reduce((a, g) => a + g.seats, 0));
   const name = (id: string) => parties.find((x) => x.id === id)!;
   const Entry = ({ r }: { r: PositionRowData }) => {
     const party = name(r.party);
@@ -177,30 +240,13 @@ export function Positions({ issue }: { issue: string }) {
     );
   };
   return (
-    <figure className="positions">
+    <figure className="positions" id="positions">
       <figcaption className="ct">{p.title}</figcaption>
       {p.question && <p className="cq">{p.question}</p>}
-      {stances.length > 0 && (
-        <>
-          <div className="ps-bar" role="img" aria-label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}>
-            {groups.filter((g) => g.seats > 0).map((g) => (
-              <span key={g.st.id} className={`seg on-${g.pos === null ? "ink" : g.pos < 0.5 ? "light" : "dark"}`} style={{ width: `${(g.seats / SEATS) * 100}%`, background: shade(g.pos) }} title={`${g.st.label}: ${Math.round(g.seats)} seats`}>
-                <b>{g.n}</b>
-              </span>
-            ))}
-            {rest > 0 && <span className="seg rest" style={{ width: `${(rest / SEATS) * 100}%` }} title={`No recorded answer, or below the threshold: ${Math.round(rest)} seats`} />}
-            <i className="maj" style={{ left: `${(61 / SEATS) * 100}%` }} aria-hidden />
-          </div>
-          <p className="ps-note">
-            {scale ? "Answers in order from one end of the debate to the other; " : "These priorities can coexist, so they are not ordered; "}
-            the bar is the 120 seats of the current polling average, the tick is 61.
-          </p>
-        </>
-      )}
       {groups.filter((g) => g.rows.length).map((g) => (
         <section key={g.st.id} className="ps-grp">
           <h4>
-            <span className={`key on-${g.pos === null ? "ink" : g.pos < 0.5 ? "light" : "dark"}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
+            <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
             {g.st.label}
             <span className="gs">{Math.round(g.seats)} seats</span>
           </h4>

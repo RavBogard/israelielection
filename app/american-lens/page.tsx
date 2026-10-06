@@ -5,5 +5,5 @@ import Body, { meta } from "@/content/american-lens.mdx";
 export const metadata: Metadata = { title: meta.title, description: meta.dek };
 
 export default function Page() {
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/issues", title: "Issues" }} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/issues", title: "Issues" }} current="/american-lens" />;
 }
