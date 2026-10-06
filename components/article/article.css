@@ -109,3 +109,65 @@
 .article .body a[href^="/glossary#"] { text-decoration-style: dotted; text-decoration-color: var(--ink-3); }
 .article .body a[href^="/glossary#"]:hover { text-decoration-style: solid; }
 .article-contents{margin:24px 0;padding:16px 0;border-block:1px solid var(--line);font:400 15px/1.5 var(--body)}.article-contents>p{font:600 15px var(--body);margin:0 0 8px}.article-contents ul{columns:2;list-style:none;padding:0;margin:0}.article-contents li{break-inside:avoid;padding:4px 0}.article-contents .subsection{padding-left:14px;font-size:14px}.article .body :is(h2,h3){scroll-margin-top:24px}.article-correction{margin:32px 0;padding-top:16px;border-top:1px solid var(--line);font:400 14px/1.5 var(--body)}@media(max-width:600px){.article-contents ul{columns:1}}@media print{.article-contents,.article-correction{display:none}}
+
+/* Chart forms drawn from tables (components/article/ChartViz.tsx). Series are told apart by mark
+   (solid, ring, grey, grey ring) as well as position, so nothing depends on colour alone. */
+.article .cv-legend { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 12px 0 8px; font-size: 13.5px; color: var(--ink-2); }
+.article .cv-legend span { display: inline-flex; align-items: center; gap: 7px; }
+.article .cv-m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; flex: none; }
+.article .cv-m.solid { background: var(--ink); }
+.article .cv-m.ring { background: var(--sheet); border: 2.5px solid var(--ink); }
+.article .cv-m.grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); }
+.article .cv-m.grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; }
+.article .cv-dots ul { list-style: none; margin: 0; padding: 0; }
+.article .cv-dots li { display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
+.article .cv-dots .lab { line-height: 1.25; }
+.article .cv-dots .track { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; }
+.article .cv-dots .track .cv-m { position: absolute; top: 2px; margin-left: -6px; }
+.article .cv-dots .track .span { position: absolute; top: 7px; height: 2px; background: var(--ink-3); }
+.article .cv-dots .vals { display: flex; gap: 10px; font-variant-numeric: tabular-nums; font-size: 13.5px; min-width: 7.5em; justify-content: flex-end; }
+.article .cv-dots .vals b { font-weight: 700; color: var(--ink); }
+.article .cv-dots .vals b.v-grey, .article .cv-dots .vals b.v-grey-ring { color: var(--ink-2); font-weight: 600; }
+.article .cv-axis { display: flex; justify-content: space-between; margin: 4px 0 0; padding-left: calc(13em + 14px); padding-right: calc(7.5em + 14px); font-size: 11.5px; color: var(--ink-3); }
+.article .cv-lines svg { display: block; width: 100%; height: auto; margin-top: 10px; }
+.article .cv-lines .grid { stroke: var(--line); stroke-width: 1; }
+.article .cv-lines .tick { fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.article .cv-lines .ser path { fill: none; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+.article .cv-lines .ser.solid path, .article .cv-lines .ser.ring path { stroke: var(--ink); }
+.article .cv-lines .ser.grey path, .article .cv-lines .ser.grey-ring path { stroke: var(--ink-3); }
+.article .cv-lines .ser.ring path, .article .cv-lines .ser.grey-ring path { stroke-dasharray: 5 4; }
+.article .cv-lines .ser circle { stroke-width: 2; }
+.article .cv-lines .ser.solid circle { fill: var(--ink); stroke: var(--sheet); }
+.article .cv-lines .ser.ring circle { fill: var(--sheet); stroke: var(--ink); }
+.article .cv-lines .ser.grey circle { fill: var(--ink-3); stroke: var(--sheet); }
+.article .cv-lines .ser.grey-ring circle { fill: var(--sheet); stroke: var(--ink-3); }
+.article .cv-lines .end { font-size: 12.5px; fill: var(--ink-2); }
+.article .cv-lines .end .v { font-family: var(--display); font-weight: 700; font-size: 14px; fill: var(--ink); }
+.article .cv-numbers { margin-top: 10px; }
+.article .cv-numbers summary { cursor: pointer; font-size: 13.5px; font-weight: 600; width: fit-content; }
+.article .cv-numbers summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.article table.heat td { text-align: center; font-variant-numeric: tabular-nums; }
+@media (max-width: 640px) {
+  .article .cv-dots li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+  .article .cv-dots .lab { grid-column: 1 / -1; }
+  .article .cv-axis { padding-left: 0; padding-right: calc(7.5em + 10px); }
+}
+
+/* Positions: the Knesset split by answer, then each answer's lists. Shades are the stance ramp
+   shared with the party profiles and Compare; the swatch beside each list is the list's own colour. */
+.article .positions .cq { font-size: 14px; color: var(--ink-2); margin: 4px 0 0; }
+.article .ps-bar { position: relative; display: flex; height: 34px; margin-top: 14px; background: var(--cell); }
+.article .ps-bar .seg { display: flex; align-items: center; justify-content: flex-start; padding-left: 8px; min-width: 0; overflow: hidden; border-right: 2px solid var(--bg); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.article .ps-bar .seg.rest { background: var(--cell); border-right: 0; }
+.article .ps-bar .on-light, .article .ps-grp .key.on-light { color: #fff; }
+.article .ps-bar .on-dark, .article .ps-grp .key.on-dark { color: #000; }
+.article .ps-bar .on-ink, .article .ps-grp .key.on-ink { color: var(--bg); }
+.article .ps-bar .maj { position: absolute; top: -5px; bottom: -5px; width: 2px; margin-left: -1px; background: var(--ink); }
+.article .ps-note { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; }
+.article .ps-grp { margin-top: 18px; }
+.article .ps-grp h4 { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 700; margin: 0; padding-bottom: 6px; border-bottom: 1px solid var(--ink); color: var(--ink); }
+.article .ps-grp .key { flex: none; width: 20px; height: 18px; line-height: 18px; text-align: center; font-size: 11.5px; font-weight: 700; }
+.article .ps-grp .gs { margin-left: auto; font-family: var(--display); font-size: 15px; font-variant-numeric: tabular-nums; }
+.article .ps-grp.quiet h4 { color: var(--ink-2); border-bottom-color: var(--line-2); }
+.article .positions .ps-grp ul { margin-top: 0; }
+.article .positions .ps { font-weight: 400; font-size: 13px; color: var(--ink-3); margin-left: 4px; }
