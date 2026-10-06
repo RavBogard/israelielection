@@ -16,7 +16,7 @@ const FOOT = "The groups overlap; they are not a ranking or a hierarchy. Each pa
 export default async function Page() {
   const items = (await communityIndex()).map((s) => {
     const lead = LEAD_CHARTS[s.href];
-    return { href: s.href, title: s.meta.title, dek: s.meta.dek, figure: lead && <div className="article ix-fig"><Chart id={lead} /></div> };
+    return { href: s.href, title: s.meta.title, dek: s.meta.dek, figure: lead && <div className="article ix-fig"><Chart id={lead} compact /></div> };
   });
   return <SectionIndex title="Communities" intro={LEAD} items={items} foot={FOOT} />;
 }

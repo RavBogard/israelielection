@@ -33,7 +33,7 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
       <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step / skip</button> : <p><b>You’ve reached the end of this route.</b> <Link href={route.next}>{route.nextLabel}</Link>.</p>}</div>
     </section>
     <div className="journey-nav">
-    <nav aria-label="Choose a learning route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
+    <nav aria-label="Choose a route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
     <p>{route.description} Leave or skip a step whenever you like.</p>
     <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
     </div>

@@ -4,6 +4,12 @@ import Link from "next/link";
 import { filterHistories, histories, historyFamilies, HISTORY_KINDS, historySources } from "@/lib/party-history";
 import "./PartyHistory.css";
 
+/** Hebrew runs inside an English name, marked so screen readers switch voice and the text runs right to left. */
+const HEB = /([֐-׿][֐-׿\s"'׳״-]*[֐-׿])/;
+function withHebrew(text: string) {
+  return text.split(HEB).map((part, i) => (i % 2 ? <span key={i} lang="he" dir="rtl">{part}</span> : part));
+}
+
 export default function PartyHistory() {
   const [family, setFamily] = useState("all");
   const [query, setQuery] = useState("");
@@ -16,8 +22,8 @@ export default function PartyHistory() {
       <ol className="history-flow">{h.events.map((e,i)=><li key={`${e.date}-${i}`}>
         <div className="history-date">{e.date}<span>{HISTORY_KINDS[e.kind]}</span></div>
         <div className={`history-relation history-${e.kind}`}>
-          {e.inputs.length > 0 && <div className="history-parents">{e.inputs.map(input=><span key={input}>{input}</span>)}</div>}
-          <strong className="history-output">{e.output}</strong>
+          {e.inputs.length > 0 && <div className="history-parents">{e.inputs.map(input=><span key={input}>{withHebrew(input)}</span>)}</div>}
+          <strong className="history-output">{withHebrew(e.output)}</strong>
           <p>{e.text}</p>
           <p className="history-source">{e.sources.map((id,i)=><span key={id}>{i > 0 && "; "}<a href={historySources[id].url}>{historySources[id].name}</a>{historySources[id].date ? `, ${historySources[id].date}` : " (publication date not given)"}</span>)}</p>
         </div>

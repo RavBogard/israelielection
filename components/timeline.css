@@ -2,13 +2,13 @@
 .tl { font-family: var(--body); margin: 18px 0 8px; }
 .tl .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.tl-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 4px 32px; padding: 16px 0 18px; border-top: 2px solid var(--ink); min-height: 230px; align-content: start; }
+.tl-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 4px 32px; padding: 16px 0 18px; border-top: 1px solid var(--ink); min-height: 230px; align-content: start; }
 .tl-when { grid-column: 1 / -1; font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; margin: 0 0 10px; color: var(--ink); font-variant-numeric: tabular-nums; }
 .tl-facts { margin: 0; display: grid; gap: 10px; align-content: start; }
 .tl-facts dt { font-size: 13px; font-weight: 600; color: var(--ink-2); }
 .tl-facts dd { margin: 2px 0 0; font-size: 15px; line-height: 1.45; color: var(--ink); }
 .tl-ev { padding: 0 0 0 20px; border-left: 1px solid var(--line-2); }
-.tl-ev h3 { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 2px 0 6px; color: var(--ink); }
+.tl-ev :is(h2, h3) { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.15; margin: 2px 0 6px; color: var(--ink); }
 .tl-ev p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--text); }
 .tl-k { font-size: 13px; font-weight: 600; color: var(--ink-2) !important; }
 .tl-src { margin-top: 8px !important; font-size: 13px !important; }
@@ -19,7 +19,7 @@
 .tl-evs { top: 6px; height: 18px; }
 .tl-evs button { position: absolute; top: 3px; width: 12px; height: 12px; margin-left: -6px; padding: 0; border-radius: 50%; border: 2px solid var(--sheet); background: var(--ink-3); cursor: pointer; }
 .tl-evs button:hover, .tl-evs button:focus-visible { background: var(--ink); }
-.tl-evs button.on { background: var(--warn-line); width: 14px; height: 14px; margin-left: -7px; top: 2px; }
+.tl-evs button.on { background: var(--ink); width: 14px; height: 14px; margin-left: -7px; top: 2px; }
 .tl-els { top: 30px; height: 12px; }
 .tl-els span { position: absolute; top: 0; width: 2px; height: 12px; margin-left: -1px; background: var(--ink-2); }
 .tl-els span.on { background: var(--ink); width: 3px; }
@@ -31,7 +31,7 @@
 .tl-pms .on { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px var(--bg); }
 .tl-axis { position: absolute; left: 0; right: 0; top: 74px; height: 16px; border-top: 1px solid var(--line-2); }
 .tl-axis span { position: absolute; top: 2px; transform: translateX(-50%); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
-.tl-cursor { position: absolute; top: 0; bottom: 14px; width: 2px; margin-left: -1px; background: var(--warn-line); pointer-events: none; }
+.tl-cursor { position: absolute; top: 0; bottom: 14px; width: 1px; margin-left: -.5px; background: var(--ink); pointer-events: none; }
 
 .tl-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 8px 0 0; font-size: 13px; color: var(--ink-2); }
 .tl-key span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
@@ -41,7 +41,7 @@
 .tl-key .k-pm { width: 18px; height: 10px; background: color-mix(in oklab, var(--ink) 22%, var(--sheet)); }
 
 .tl-controls { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; margin: 14px 0 0; }
-.tl-controls button { font: 600 14px var(--body); min-height: 38px; padding: 0 12px; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-radius: var(--r); cursor: pointer; white-space: nowrap; }
+.tl-controls button { font: 600 14px var(--body); min-height: 44px; padding: 0 12px; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-radius: var(--r); cursor: pointer; white-space: nowrap; }
 .tl-controls button:hover:not(:disabled) { border-color: var(--ink); }
 .tl-controls button:disabled { color: var(--ink-3); cursor: default; }
 .tl-controls input { width: 100%; accent-color: var(--ink); }

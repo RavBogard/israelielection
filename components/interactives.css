@@ -1,7 +1,7 @@
 /* Shared by the Coalition Builder, the Party Map, the Polls and the party pages. */
 .ix .wrap { padding-bottom: 40px; }
 .ix header.ix-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-block: 34px 18px; }
-.ix h1, .ix .h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 3.6vw, 48px); line-height: 1.02; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.ix .ix-head h1, .ix .h1 { font-family: var(--display); font-weight: 700; font-size: clamp(34px, 3.6vw, 48px); line-height: 1.02; letter-spacing: -.015em; margin: 0; text-wrap: balance; }
 .ix .sub { font-family: var(--display); font-size: 18px; line-height: 1.5; color: var(--text); margin: 12px 0 0; max-width: 62ch; }
 .ix .sub b { color: var(--ink); font-weight: 700; }
 .ix .toplink { font-size: 14.5px; color: var(--ink-2); padding-block: 18px 0; margin: 0; }

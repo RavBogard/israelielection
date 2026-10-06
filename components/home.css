@@ -92,7 +92,7 @@
 
 /* The two standing invitations, side by side. */
 .home .standing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 64px; padding-top: 28px; }
-.home .standing a { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 2px solid var(--ink); color: var(--ink); text-decoration: none; max-width: 52ch; }
+.home .standing a { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid var(--ink); color: var(--ink); text-decoration: none; max-width: 52ch; }
 .home .standing a:hover .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .home .standing .t { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; }
 .home .standing .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }

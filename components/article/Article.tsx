@@ -77,9 +77,20 @@ function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
 }
 
 /** A chart from data/charts: horizontal bars, or a table drawn as lines, a dot plot or a shaded table (see ChartViz). */
-export function Chart({ id }: { id: string }) {
-  const c = charts[id];
-  if (!c) throw new Error(`Unknown chart "${id}" (see data/charts/)`);
+/** A section index's preview keeps a chart's first rows, plus a whole-country row, and its source; the page has the rest. */
+const PREVIEW_ROWS = 4;
+const NATIONAL = /whole country|all voters|israel as a whole|national/i;
+function previewRows(c: ChartData, form: string) {
+  if (form === "lines" || form === "dots" || c.rows.length <= PREVIEW_ROWS + 1) return c.rows;
+  const head = c.rows.slice(0, PREVIEW_ROWS);
+  return [...head, ...c.rows.slice(PREVIEW_ROWS).filter((r) => NATIONAL.test(r.label))];
+}
+
+export function Chart({ id, compact }: { id: string; compact?: boolean }) {
+  const full = charts[id];
+  if (!full) throw new Error(`Unknown chart "${id}" (see data/charts/)`);
+  const c = compact ? { ...full, rows: previewRows(full, formOf(full)) } : full;
+  const cut = full.rows.length - c.rows.length;
   const unit = c.unit ?? "";
   const max = c.max ?? (unit === "%" ? 100 : Math.max(...c.rows.map((r) => r.value ?? 0)));
   const form = formOf(c);
@@ -87,7 +98,7 @@ export function Chart({ id }: { id: string }) {
   return (
     <figure className="chart">
       <figcaption className="ct">{c.title}</figcaption>
-      {c.question && (
+      {c.question && !compact && (
         <p className="cq">
           <Linked text={c.question} />
         </p>
@@ -110,14 +121,20 @@ export function Chart({ id }: { id: string }) {
       ) : form === "lines" || form === "dots" ? (
         <>
           {form === "lines" ? <Lines c={c} /> : <DotPlot c={c} />}
-          <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
+          {!compact && <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
             <summary>The numbers<span className="sr-only">: {c.title}</span></summary>
             <NumbersTable c={c} heat={false} />
-          </details>
+          </details>}
         </>
       ) : (
         <NumbersTable c={c} heat={form === "heat"} />
       )}
+      {compact ? (
+        <p className="cs">
+          {cut > 0 && `${c.rows.length} of ${full.rows.length} rows; the page has them all. `}
+          Source: <SourceLine {...c} />
+        </p>
+      ) : (
       <p className="cs">
         {form === "heat" && heatMax(c) > 0 && `Darkest shade: ${heatMax(c)}%${c.columns!.slice(1).some(unshaded) ? "; turnout is a share of eligible voters, so it is not shaded" : ""}. `}
         Source: <SourceLine {...c} />
@@ -127,6 +144,7 @@ export function Chart({ id }: { id: string }) {
           </>
         )}
       </p>
+      )}
     </figure>
   );
 }
@@ -260,23 +278,23 @@ export function Positions({ issue }: { issue: string }) {
       {p.question && <p className="cq">{p.question}</p>}
       {groups.filter((g) => g.rows.length).map((g) => (
         <section key={g.st.id} className="ps-grp">
-          <h4>
+          <h3>
             <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
             {g.st.label}
             <span className="gs">{Math.round(g.seats)} seats</span>
-          </h4>
+          </h3>
           <ul>{g.rows.map((r) => <Entry key={r.party} r={r} />)}</ul>
         </section>
       ))}
       {unsorted.length > 0 && (
         <section className="ps-grp">
-          <h4>{stances.length ? "Recorded, not classified" : "Recorded positions"}</h4>
+          <h3>{stances.length ? "Recorded, not classified" : "Recorded positions"}</h3>
           <ul>{unsorted.map((r) => <Entry key={r.party} r={r} />)}</ul>
         </section>
       )}
       {quiet.length > 0 && (
         <section className="ps-grp quiet">
-          <h4>{quiet.some((r) => (r as PositionRow).declined || r.status === "declined") ? "Declined, or no position in these sources" : "No position in these sources"}</h4>
+          <h3>{quiet.some((r) => (r as PositionRow).declined || r.status === "declined") ? "Declined, or no position in these sources" : "No position in these sources"}</h3>
           <ul>
             {quiet.map((r) => (r.text?.trim() ? <Entry key={r.party} r={r} /> : (
               <li key={r.party}>

@@ -73,7 +73,7 @@ export default function FormationClock({ steps, published, today }: { steps: Mil
         </span>
       </div>
       <p className="gov-fig-src">
-        Black bars are a nominee&apos;s time to build a coalition; grey bars are the president&apos;s or the Knesset&apos;s turn; the hatched bar is the extension, which the president may grant or refuse.
+        Black bars are a nominee&apos;s time to build a coalition; grey bars are the president&apos;s or the Knesset&apos;s turn; the open bar is the extension, which the president may grant or refuse.
         {!published && " The axis gets calendar dates once the Central Elections Committee publishes the official results, expected about a week after election day."}
       </p>
     </figure>

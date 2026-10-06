@@ -154,7 +154,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
         </dl>
         {ev ? (
           <div className="tl-ev">
-            <h3>{ev.title}</h3>
+            <h2>{ev.title}</h2>
             <p className="tl-k">
               {KIND[ev.kind]}, {longDate(ev.date)}
             </p>

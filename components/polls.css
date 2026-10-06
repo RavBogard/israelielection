@@ -37,7 +37,7 @@
 .pl .wrap, .poll-browser, .poll-sensitivity { min-width: 0; }
 .poll-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px 18px; margin: 18px 0; }
 .poll-controls label { display: grid; gap: 5px; font-size: 13px; max-width: 100%; }
-.poll-controls input, .poll-controls select { font: inherit; min-height: 38px; padding: 7px; max-width: 100%; background: var(--sheet); color: var(--ink); border: 1px solid var(--line); }
+.poll-controls input, .poll-controls select { font: inherit; min-height: 44px; padding: 7px; max-width: 100%; background: var(--sheet); color: var(--ink); border: 1px solid var(--line); }
 .poll-browser button, .poll-sensitivity button { font: inherit; background: var(--sheet); color: var(--ink); border: 1px solid var(--line); padding: 7px 10px; cursor: pointer; }
 .poll-choices, .poll-presets { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 12px 0; }
 .poll-choices label { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; min-height: 32px; }
@@ -48,12 +48,12 @@
 .pl .poll-table thead .poll-identity { z-index: 2; }
 .poll-identity time, .poll-identity span { display: block; }
 .poll-identity button { font-size: 12px; margin-top: 5px; }
-.poll-method { margin: 20px 0; border-block: 2px solid var(--ink); padding-block: 16px; }
+.poll-method { margin: 20px 0; border-block: 1px solid var(--ink); padding-block: 16px; }
 .poll-method dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 28px; }
 .poll-method dl div { border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .poll-method dt { font-size: 12px; color: var(--ink-2); }
 .poll-method dd { margin: 4px 0 0; }
-.sensitivity-reading { border-block: 2px solid var(--ink); margin: 18px 0; padding: 8px 0; }
+.sensitivity-reading { border-block: 1px solid var(--ink); margin: 18px 0; padding: 8px 0; }
 .poll-sensitivity details { margin-block: 18px; }
 .poll-sensitivity summary, .poll-browser summary { cursor: pointer; }
 .poll-sensitivity input[type=range] { max-width: 100%; width: 320px; display: block; margin-block: 10px; }

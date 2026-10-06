@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { searchEntries, type SearchEntry } from "@/lib/search";
 import "./search.css";
-const KINDS = [["all", "Everything"], ["party", "Parties and leaders"], ["issue", "Issues"], ["community", "Communities"], ["guide", "Guides"], ["glossary", "Glossary"], ["resource", "Tools and teaching"]];
+const KINDS = [["all", "Everything"], ["party", "Parties and leaders"], ["issue", "Issues"], ["community", "Communities"], ["guide", "Guides"], ["glossary", "Glossary"], ["resource", "Tools"]];
 const LABELS = { party: "Current list", issue: "Issue", community: "Community", guide: "Guide", glossary: "Glossary term", resource: "Tool or resource" };
 export default function SiteSearch({ entries }: { entries: SearchEntry[] }) {
   const params = useSearchParams();

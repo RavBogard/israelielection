@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { cohesion, compareHref, dependence, dependenceText, readingText, type IssueReading, type StanceMap } from "@/lib/cohesion";
 import { AXES } from "@/lib/compare";
 import type { Party, Poll } from "@/lib/types";
+import { partyColor } from "@/lib/party-colors";
 
 /*
  * Can they govern together? In the Builder's panel: for the chosen parties, each of the seven issues
@@ -13,7 +14,7 @@ import type { Party, Poll } from "@/lib/types";
 
 
 /** The strip at thumbnail scale: stance slots left to right, parties as squares stacked two wide in their slot. */
-function Glyph({ r, map, partyOf }: { r: IssueReading; map: StanceMap; partyOf: (id: string) => Party | undefined }) {
+function Glyph({ r, map }: { r: IssueReading; map: StanceMap }) {
   const slots = map[r.key].stances.length ? map[r.key].stances.map((s) => r.groups.find((g) => g.stance.id === s.id)?.parties ?? []) : [r.unsorted];
   const quiet = [...r.declined, ...r.none];
   const cols = quiet.length ? [...slots, quiet] : slots;
@@ -29,9 +30,8 @@ function Glyph({ r, map, partyOf }: { r: IssueReading; map: StanceMap; partyOf: 
           <g key={ci}>
             {ids.length === 0 && <rect className="slot" x={x0} y={H - U} width={SLOT} height={U} />}
             {ids.map((id, i) => {
-              const p = partyOf(id);
               const x = x0 + (i % 2) * (U + G), y = H - U - Math.floor(i / 2) * (U + G);
-              return <rect key={id} className={isQuiet ? "quiet" : undefined} x={x} y={y} width={U} height={U} style={isQuiet ? undefined : { fill: `var(--b-${p?.bloc ?? "mid"})` }} />;
+              return <rect key={id} className={isQuiet ? "quiet" : undefined} x={x} y={y} width={U} height={U} style={isQuiet ? undefined : { fill: partyColor(id) }} />;
             })}
           </g>
         );
@@ -70,7 +70,7 @@ export default function Governing({ sel, parties, poll, map, children, withOutsi
             <li key={r.key} className={r.verdict}>
               <Link href={`${compareHref(ids)}#issue-${r.key}`}>
                 <span className="lbl">{label}</span>
-                <Glyph r={r} map={map} partyOf={partyOf} />
+                <Glyph r={r} map={map} />
                 <span className="read">{readingText(r, nameOf)}</span>
               </Link>
             </li>

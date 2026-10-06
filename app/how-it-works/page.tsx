@@ -15,7 +15,7 @@ const LEAD = "The machinery of an Israeli election, each part shown by the figur
 export default async function Page() {
   const items = (await guideIndex()).map((s) => {
     const lead = LEAD_CHARTS[s.href];
-    const figure = s.slug === "who-votes" ? <VotingRightsGuide /> : lead && <div className="article ix-fig"><Chart id={lead} /></div>;
+    const figure = s.slug === "who-votes" ? <VotingRightsGuide /> : lead && <div className="article ix-fig"><Chart id={lead} compact /></div>;
     return { href: s.href, title: s.meta.title, dek: s.meta.dek, figure };
   });
   return <SectionIndex title="How it works" intro={LEAD} items={items} extra={{ href: "/vote-map", title: "Vote map", dek: "How each locality voted, 2019–2022, list by list.", label: "Also" }} />;

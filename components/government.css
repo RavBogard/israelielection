@@ -87,7 +87,8 @@
 .gov .gov-clock .gc-bar { position: absolute; top: 4px; bottom: 4px; min-width: 3px; display: flex; align-items: center; overflow: hidden; }
 .gov .gov-clock .nominee .gc-bar { background: var(--ink); color: var(--bg); }
 .gov .gov-clock .president .gc-bar, .gov .gov-clock .knesset .gc-bar { background: var(--ink-3); color: var(--bg); }
-.gov .gov-clock .discretion .gc-bar { background: repeating-linear-gradient(135deg, var(--ink-2) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1.5px var(--ink-2); color: var(--ink); }
+/* The extension is open, not barred: hatching means "cannot" on this site, so it is an empty bar with an edge. */
+.gov .gov-clock .discretion .gc-bar { background: var(--sheet); box-shadow: inset 0 0 0 1.5px var(--ink-2); color: var(--ink); }
 .gov .gov-clock .any .gc-bar { top: 11px; bottom: 11px; background: var(--ink-2); }
 .gov .gov-clock .any .gc-lab { color: var(--ink); font-weight: 600; }
 .gov .gov-clock .gc-len { padding-left: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }

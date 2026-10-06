@@ -26,7 +26,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #121210; --sheet: #1b1a17; --cell: #2b2a26;
-    --ink: #ffffff; --text: #e6e3da; --ink-2: #b4b0a5; --ink-3: #85817a;
+    --ink: #ffffff; --text: #e6e3da; --ink-2: #b4b0a5; --ink-3: #8d8982;
     --line: #2f2e2a; --line-2: #45433d;
     --warn-bg: #3a300f; --warn-ink: #f1d98a; --warn-line: #6b5722;
     --info-bg: #23221e; --info-ink: #cfc8b8; --info-line: #45433d;
@@ -37,7 +37,7 @@
 }
 :root[data-theme="dark"] {
   --bg: #121210; --sheet: #1b1a17; --cell: #2b2a26;
-  --ink: #ffffff; --text: #e6e3da; --ink-2: #b4b0a5; --ink-3: #85817a;
+  --ink: #ffffff; --text: #e6e3da; --ink-2: #b4b0a5; --ink-3: #8d8982;
   --line: #2f2e2a; --line-2: #45433d;
   --warn-bg: #3a300f; --warn-ink: #f1d98a; --warn-line: #6b5722;
   --info-bg: #23221e; --info-ink: #cfc8b8; --info-line: #45433d;
@@ -224,3 +224,13 @@ a:hover { text-decoration-color: currentColor; }
 .live-strip li b { font-family: var(--display); font-size: 17px; line-height: 1; font-variant-numeric: tabular-nums; }
 .live-strip .meta { color: color-mix(in srgb, var(--bg) 70%, transparent); margin-left: auto; }
 @media (max-width: 760px) { .live-strip .meta { margin-left: 0; } }
+
+/* Motion is never needed to read the site: honour a reader's reduced-motion setting everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Phones: buttons and segmented options are at least a fingertip tall. */
+@media (pointer: coarse), (max-width: 640px) {
+  .btn, .seg button { min-height: 44px; }
+}

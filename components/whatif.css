@@ -1,5 +1,5 @@
 /* The threshold what-if inside a guide: toggles on the left, the re-counted 120 seats on the right. */
-.article .whatif { margin: 1.6em 0; padding: 14px 0 16px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); font-family: var(--body); }
+.article .whatif { margin: 1.6em 0; padding: 14px 0 16px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-family: var(--body); }
 .article .whatif figcaption { font-size: 14.5px; line-height: 1.5; color: var(--text); margin: 0 0 14px; max-width: 70ch; }
 .article .whatif figcaption b { color: var(--ink); }
 .whatif .wi-body { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 18px 32px; align-items: start; }

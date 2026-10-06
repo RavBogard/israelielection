@@ -149,7 +149,6 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
       <div className="scrim" onClick={onClose} />
       <aside className="drawer" role="dialog" aria-modal="true" aria-labelledby="dtitle" ref={ref}>
         <div className="dhead">
-          <p className="lbl">Party profile</p>
           <button className="btn" type="button" onClick={onClose} ref={closeBtn}>
             Close
           </button>
@@ -323,6 +322,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </span>
         </div>
         <div className="blocs">
+          <h2 className="sr-only">The lists, by bloc</h2>
           {blocs.map((b) => (
             <section className="bloc" key={b.id}>
               <h3>
@@ -341,6 +341,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         </div>
 
         <aside className="panel" id="arrangement-result" aria-live="polite">
+          <h2 className="sr-only">Your coalition</h2>
           <div className="total">
             <span className="n">{fmt(t.total)}{t.partial ? "+" : ""}</span>
             <span className="read">
@@ -357,17 +358,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </div>
           <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${fmt(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}
-          <section className="confidence" aria-labelledby="confidence-h">
-            <h3 id="confidence-h">Hypothetical initial confidence vote</h3>
-            <dl><div><dt>For (cabinet + outside support)</dt><dd>{fmt(vote.yes)}</dd></div><div><dt>Against (opposition)</dt><dd>{fmt(vote.no)}</dd></div><div><dt>Abstain (excluded)</dt><dd>{fmt(vote.abstain)}</dd></div></dl>
-            <p>{vote.outcome === "empty" ? "Choose a cabinet party to simulate an initial vote." : vote.outcome === "incomplete" ? "No verdict: this poll cannot resolve all role totals." : vote.outcome === "passes" ? "More for than against: passes under these hypothetical assignments." : "No majority of votes cast: fails under these hypothetical assignments."}</p>
-            {vote.approximate && <p className="naflag">Poll averages can be fractional. These totals illustrate relative support; real MKs cast whole votes. This is not a forecast of their vote.</p>}
-            {!vote.complete && vote.outcome !== "empty" && <p className="naflag">{vote.crossed ? "A combined poll group spans different roles and cannot be divided from the source. " : ""}{vote.notReported.length ? `${vote.notReported.map((p) => p.name).join(", ")} not reported separately. ` : ""}Accounted for: {fmt(vote.represented)} of 120 seats.</p>}
-            {Object.entries(roles).length > 0 && <ul>{Object.entries(roles).map(([id, role]) => <li key={id}>{parties.find((p) => p.id === id)?.name ?? id}: {ROLE_LABELS[role]}</li>)}</ul>}
-            {voteNeeded.length > 0 && <p>If any one of {voteNeeded.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(", ")} votes against rather than for, this hypothetical initial vote no longer passes.</p>}
-            <p className="note">Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.</p>
-            <p className="src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
-          </section>
           <ul className="list">
             {t.chosen.length ? (
               t.chosen.map((p) => (
@@ -381,18 +371,31 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               <li className="empty">No parties yet. Tap a slip to add one.</li>
             )}
           </ul>
-          {preset && presetOn && (
-            <p className="thennow">
-              {preset.label[0].toUpperCase() + preset.label.slice(1)} held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
-              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
-            </p>
-          )}
           {stances ? (
             <Governing sel={cooperation} parties={parties} poll={poll} map={stances} withOutsideSupport={supportIds.length > 0}>
               <Warns warns={warns} />
             </Governing>
           ) : (
             <Warns warns={warns} />
+          )}
+          <section className="confidence" aria-labelledby="confidence-h">
+            <h3 id="confidence-h">Hypothetical initial confidence vote</h3>
+            {vote.outcome !== "empty" && <dl><div><dt>For (cabinet + outside support)</dt><dd>{fmt(vote.yes)}</dd></div><div><dt>Against (opposition)</dt><dd>{fmt(vote.no)}</dd></div><div><dt>Abstain (excluded)</dt><dd>{fmt(vote.abstain)}</dd></div></dl>}
+            <p>{vote.outcome === "empty" ? "Choose a cabinet party to simulate an initial vote." : vote.outcome === "incomplete" ? "No verdict: this poll cannot resolve all role totals." : vote.outcome === "passes" ? "More for than against: passes under these hypothetical assignments." : "No majority of votes cast: fails under these hypothetical assignments."}</p>
+            {vote.approximate && <p className="naflag">Poll averages can be fractional. These totals illustrate relative support; real MKs cast whole votes. This is not a forecast of their vote.</p>}
+            {!vote.complete && vote.outcome !== "empty" && <p className="naflag">{vote.crossed ? "A combined poll group spans different roles and cannot be divided from the source. " : ""}{vote.notReported.length ? `${vote.notReported.map((p) => p.name).join(", ")} not reported separately. ` : ""}Accounted for: {fmt(vote.represented)} of 120 seats.</p>}
+            {Object.entries(roles).length > 0 && <ul>{Object.entries(roles).map(([id, role]) => <li key={id}>{parties.find((p) => p.id === id)?.name ?? id}: {ROLE_LABELS[role]}</li>)}</ul>}
+            {voteNeeded.length > 0 && <p>If any one of {voteNeeded.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(", ")} votes against rather than for, this hypothetical initial vote no longer passes.</p>}
+            <details className="confidence-more"><summary>What this vote does and does not show</summary>
+            <p className="note">Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.</p>
+            <p className="src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
+            </details>
+          </section>
+          {preset && presetOn && (
+            <p className="thennow">
+              {preset.label[0].toUpperCase() + preset.label.slice(1)} held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
+              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
+            </p>
           )}
           <details className="arrangement-history"><summary>{scenarioData.historical.title}</summary><p>{scenarioData.historical.text}</p><a href={scenarioData.historical.url}>{scenarioData.historical.source}</a></details>
           {t.chosen.length > 0 && (

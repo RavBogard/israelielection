@@ -45,6 +45,9 @@ function Race({poll,live,days}:{poll:Poll;live:boolean;days:number}){
  </section>;
 }
 
+/** Today's date in Israel, as YYYY-MM-DD, so a briefing from an earlier day is not called today's. */
+const israelToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jerusalem" }).format(new Date());
+
 /** The latest briefing's first sentence, with its sources, as one line. */
 function Today() {
   const b = briefings[0];
@@ -55,7 +58,7 @@ function Today() {
   return (
     <section className="today" aria-labelledby="today-h">
       <h2 id="today-h">
-        Today <span className="d">{label}</span>
+        {b.date === israelToday() ? "Today" : "Latest briefing"} <span className="d">{label}</span>
       </h2>
       <p>
         {s.text}{" "}
