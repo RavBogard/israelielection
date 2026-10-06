@@ -22,6 +22,12 @@
 .pm .cell.tiny .av { font-size: 18px; }
 .pm .cell.tiny .av small { display: none; }
 .pm .cell.xs .nm { font-size: 11px; }
+/* A cell too short for name over number sets them on one line. */
+.pm .cell.flat { flex-direction: row; align-items: center; gap: 6px; padding-block: 2px; }
+.pm .cell.flat .nm { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pm .cell.flat .ld { display: none; }
+.pm .cell.flat .av { margin-top: 0; font-size: 16px; flex: none; }
+.pm .cell.flat .av small { display: none; }
 .pm .offmap { display: flex; flex-wrap: wrap; gap: 10px; }
 .pm .chip { font: inherit; font-size: 14px; text-align: left; border: 1px dashed var(--line-2); background: transparent; color: var(--ink); padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .pm .chip:hover { border-color: var(--ink-3); }

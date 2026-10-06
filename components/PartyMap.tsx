@@ -25,6 +25,14 @@ const offMap = parties.filter((p) => !avgOf.has(p.id) || seatsOf(p.id) === 0);
 const fewerPolls = averaged.filter(({ a }) => a.n < mainPolls.length).map(({ p }) => p.name);
 
 const GAP = 6, LBL = 22;
+/** Shorter names for a bloc whose block is too narrow for its full label. */
+const BLOC_SHORT: Partial<Record<BlocId, string>> = { opp: "Anti-Netanyahu bloc" };
+/** The longest bloc name that fits the block's width (about 7.4px a character at 13px); a block too narrow for any keeps only its total and its swatch, which the key below the map names. */
+function blocName(id: BlocId, label: string, total: string, room: number) {
+  const fits = (t: string) => (t.length + 1 + total.length) * 7.4 <= room;
+  const name = [label, BLOC_SHORT[id]].find((t) => t && fits(t));
+  return name ? `${name} ${total}` : total;
+}
 
 function useSize(ref: React.RefObject<HTMLElement | null>) {
   const [size, setSize] = useState({ w: 0, h: 0 });
@@ -112,9 +120,11 @@ export default function PartyMap() {
     for (const br of squarify(blocItems, 0, 0, W, H)) {
       const bx = br.x + GAP / 2, by = br.y + GAP / 2, bw = br.w - GAP, bh = br.h - GAP;
       const label = blocLabel[br.id as BlocId];
+      const name = blocName(br.id as BlocId, label, fmt(br.v), bw - 4);
       cells.push(
-        <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }}>
-          {bw < 230 ? label.split(" ")[0] : label} {fmt(br.v)}
+        <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }} title={`${label} ${fmt(br.v)}`}>
+          {name === fmt(br.v) && <><span className="sw" style={{ background: blocColorStrip(br.id), marginRight: 6, verticalAlign: -1 }} aria-hidden="true" /><span className="sr-only">{label} </span></>}
+          {name}
         </div>
       );
       const ps = averaged
@@ -129,6 +139,7 @@ export default function PartyMap() {
         if (cw < 80) cls += " xs";
         if (ch < 120 || cw < 130) cls += " nold";
         if (cw < 180) cls += " nosm";
+        if (ch < 52) cls += " flat";
         cells.push(
           <button
             key={p.id}
