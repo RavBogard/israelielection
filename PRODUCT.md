@@ -9,17 +9,17 @@ web
 ## Users
 
 - **Primary: American readers, American Jews in particular**, trying to understand Israel's October 27, 2026 election on its own terms. They arrive through news, a share card, or a search during the campaign; they come back for the polls, the daily briefing and the Coalition Builder as the vote nears.
-- **Rabbis and educators** (Daniel's rabbinic colleagues and adult-education teachers) who want to teach the election: they download the class deck and packets, use the coalition scenarios, and embed the interactives in their own pages.
+- **Rabbis and educators** were a primary audience until 2026-10-06, when Daniel dropped Teaching resources ("it's really not the point of this page anymore"). Outside pages may still embed the interactives, so embeds keep working; nobody is designed for as a teacher.
 - **Journalists and Jewish institutions** who treat the site as a sourced reference. Outreach to press is underway (docs/outreach/2026-10-05/); no coverage has been confirmed yet.
 - The reader is not assumed to know Hebrew, Israeli party names, or how a parliamentary system forms a government. Site language is English only; Hebrew appears only for party names, ballot letters and glossary terms.
 
-Two front doors: "Understand it" and "Teach it." (Daniel, 2026-10-05)
+One front door: understand it. The site is "the 538 of the Israeli election": visual, infographic, data-driven, graphic first on every page (Daniel, 2026-10-05 and 2026-10-06; the earlier "Teach it" door was dropped).
 
 ## Product Purpose
 
 An English-language public reference on the 2026 Israeli election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced. Built from Rabbi Daniel Bogard's "Israel Votes" class materials and published under his byline as his own project, independent of his congregation.
 
-Success (Daniel, 2026-10-05): American readers return during the campaign; educators and rabbis teach from it; press and institutions cite it. All three count.
+Success (Daniel, 2026-10-05, revised 2026-10-06): American readers return during the campaign; press and institutions cite it.
 
 Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Israeli elections**. The 2026 election is the first edition, and the product is built to carry the next one. Work that hard-codes 2026 as the only election should be treated as debt.
 
@@ -28,7 +28,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Every number carries its date, source and a link a reader can follow.** Polls are merged by a deterministic validator; the daily briefing links a source on every sentence. The method is published on /about, and the terminology rulings are kept in the open (docs/research/RULINGS.md).
 - **Israeli terms, not American ones.** The site explains why "pro-Israel" is not an Israeli category, why Israeli left and right do not map onto American ones, and what is largely absent from the election's debate (the /american-lens page and the home hero line, ruling 114).
 - **Educational, not advocacy.** It does not endorse a party. The earlier "learning, not advocacy" wording was the class ruling and was struck from the site plan; voice rules 114–118 replace it. Source perspectives are named rather than labelled (IDI as nonpartisan; Peace Now as advocacy for a two-state agreement).
-- **Teachable by design.** Interactives are embeddable, data exports carry their sources, and class materials are licensed for other educators.
+- **Reusable by design.** Interactives are embeddable and data exports carry their sources.
 
 ## Operating Context
 
@@ -36,12 +36,12 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Phases the site must serve:** campaign (now), election night (results route polling the Central Elections Committee feed), government formation (tracker on /government), and the long tail as a dated record and a base for the next election.
 - **Live layer, no human in the loop:** a GitHub Action imports polls twice daily and auto-commits what passes validation; failures go to one rolling review PR. A daily Gemini job writes the briefing and publishes it unreviewed; Daniel receives it by email and can correct or kill any item by deleting the day's file. Results snapshots run every fifteen minutes through election week.
 - **Content pipeline:** research briefs → Daniel rules in one sitting → MDX and JSON → code. Text that changes meaning goes by PR; well-sourced party-data changes merge automatically. Questions only Daniel can answer go to docs/planning/<date>-eval/HANDOFF.md; his answers come back in DECISIONS.md.
-- **Teaching use:** a class session deck (PPTX and PDF), learner and facilitator packets in accessible HTML and PDF, coalition scenarios, and embed code for the seat grid, the poll average and the Coalition Builder. Teachers may project pages in a classroom and print the packets.
+- **Embeds:** the seat grid, the poll average and the Coalition Builder can be embedded. The teaching page, packets and decks were removed on 2026-10-06; /teach redirects home.
 - **Corrections:** public GitHub issues and the /corrections page (account-free draft). No published email address.
 
 ## Capabilities and Constraints
 
-- **Capabilities (built):** home with countdown and the 120-seat race summary; party profiles with six issue axes for 15 lists; Party Map; position compare with evidence gaps shown; Coalition Builder with pledge-conflict warnings driven by declarative rules; party family tree; ballot-list directory; polls with trend, averaging assumptions and an alternative average; daily briefing with RSS; results and government-formation trackers; sourced changes log; four how-it-works guides; seven issue pages; nine community pages; locality vote map for 2019–2022; timeline 1977–2026; glossary with pronunciations; American lens; teaching page and packets; embeds; sourced CSV exports; share cards; search; About with method and privacy.
+- **Capabilities (built):** home with countdown and the 120-seat race summary; party profiles with six issue axes for 15 lists; Party Map; position compare with evidence gaps shown; Coalition Builder with pledge-conflict warnings driven by declarative rules; party family tree; ballot-list directory; polls with trend, averaging assumptions and an alternative average; daily briefing with RSS; results and government-formation trackers; sourced changes log; four how-it-works guides; seven issue pages; nine community pages; locality vote map for 2019–2022; timeline 1977–2026; glossary with pronunciations; American lens; embeds; sourced CSV exports; share cards; search; About with method and privacy.
 - **Data lives as JSON in the repo** (data/*.json) so every change is a reviewable commit. No database. Vote-map data is precomputed from CEC locality files and public boundaries.
 - **Stack (existing):** Next.js 16 App Router, React 19, TypeScript, Tailwind 4, MDX; Vercel deploys on push to main; GitHub Actions for jobs; Gemini Flash 3.8 for the briefing (Daniel's ruling: Gemini, not Anthropic). Node 22+.
 - **Averaging rules (published):** latest poll per publisher within 14 days of the newest; weights by square root of sample size; lists passing the threshold in fewer than half the polls are excluded from default coalition totals; totals above 120 scaled down; Channel 14 included in the main average, excluded in the alternative.
@@ -76,7 +76,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 1. **A number without a date and a source is not on the site.** Sourcing is the product, not a footnote; unverifiable claims are cut, not hedged.
 2. **Explain Israel in Israeli terms, and say where American categories mislead.** Name what shapes the vote and what is absent from it.
 3. **Machines run the live layer; Daniel owns meaning.** Automate polls, briefing and results fully; route position changes, his voice, the method page, license and spend to him.
-4. **Everything should be teachable and reusable.** Exports carry sources, interactives embed, materials are licensed; a page should work projected in a classroom.
+4. **The graphic leads.** Every page opens with its infographic; explanatory text goes in captions, folds or below, never between the title and the figure (Daniel, 2026-10-06).
 5. **Built to outlast one election.** 2026 is the first edition of a standing reference, so structure, data and copy should not assume it is the last.
 
 ## Accessibility & Inclusion
