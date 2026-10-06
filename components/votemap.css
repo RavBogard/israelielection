@@ -1,9 +1,9 @@
-/* One list's share: a ramp from the low end (--tint-base, dark paper in dark mode) to that list's own colour, set as --vm-hue by VoteMap; categorical historical-list colors come from votemap-visual. */
+/* One list's share: a ramp from the low end to that list's own colour, set as --vm-hue by VoteMap; categorical historical-list colors come from votemap-visual. The low end, top and land fill per theme equal VM_RAMP in lib/votemap-visual.ts (its test checks neighbouring steps stay distinguishable). */
 .vm {
   --vm-hue: var(--ink);
-  --vm-low: var(--tint-base);
+  --vm-low: #f4f6f9;
   --vm-top: var(--vm-hue);
-  --vm-land: color-mix(in oklab, var(--ink) 10%, var(--bg));
+  --vm-land: #dcdbd7;
   --vm-0: color-mix(in oklab, var(--vm-top) 6%, var(--vm-low));
   --vm-1: color-mix(in oklab, var(--vm-top) 20%, var(--vm-low));
   --vm-2: color-mix(in oklab, var(--vm-top) 36%, var(--vm-low));
@@ -99,7 +99,8 @@
 .vm-size-key circle { fill: none; stroke: var(--ink); }
 .vm-mixbar { display: flex; height: 18px; border: 1px solid var(--line); margin-bottom: 10px; }
 .vm-mixbar span { height: 100%; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vm { --vm-low: #2c323b; --vm-top: color-mix(in oklab, var(--vm-hue) 72%, #ffffff); --vm-land: color-mix(in oklab, var(--ink) 5%, var(--bg)); } }
-:root[data-theme="dark"] .vm { --vm-low: #2c323b; --vm-top: color-mix(in oklab, var(--vm-hue) 72%, #ffffff); --vm-land: color-mix(in oklab, var(--ink) 5%, var(--bg)); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vm { --vm-low: #3a414b; --vm-top: color-mix(in oklab, var(--vm-hue) 45%, #ffffff); --vm-land: #1d1d1b; } }
+:root[data-theme="dark"] .vm { --vm-low: #3a414b; --vm-top: color-mix(in oklab, var(--vm-hue) 45%, #ffffff); --vm-land: #1d1d1b; }
+@media print { .vm, :root:not([data-theme="light"]) .vm, :root[data-theme="dark"] .vm { --vm-low: #f4f6f9; --vm-top: var(--vm-hue); --vm-land: #dcdbd7; } }
 .vm-sw-land { background: var(--vm-land); }
 .vm-method { margin: 14px 0 0; }

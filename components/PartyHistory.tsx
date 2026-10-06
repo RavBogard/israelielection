@@ -23,7 +23,7 @@ export default function PartyHistory() {
         <div className="history-date">{e.date}<span>{HISTORY_KINDS[e.kind]}</span></div>
         <div className={`history-relation history-${e.kind}`}>
           {e.inputs.length > 0 && <div className="history-parents">{e.inputs.map(input=><span key={input}>{withHebrew(input)}</span>)}</div>}
-          <strong className="history-output">{withHebrew(e.output)}</strong>
+          <strong className="history-output">{withHebrew(e.output)}{e.letters && <span className="history-letters"><span className="history-vh">, ballot letters </span><span lang="he" dir="rtl">{e.letters}</span></span>}</strong>
           <p>{e.text}</p>
           <p className="fig-src history-source">{e.sources.map((id,i)=><span key={id}>{i > 0 && "; "}<a href={historySources[id].url}>{historySources[id].name}</a>{historySources[id].date ? `, ${historySources[id].date}` : " (publication date not given)"}</span>)}</p>
         </div>

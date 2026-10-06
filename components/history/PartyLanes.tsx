@@ -1,11 +1,15 @@
 import { partyColor } from "@/lib/party-colors";
-import { HISTORY_KINDS, histories, historyFamilies, type HistoryEvent, type HistoryKind } from "@/lib/party-history";
+import { HISTORY_KINDS, histories, historyFamilies, markRows, type HistoryEvent, type HistoryKind } from "@/lib/party-history";
 
-/* Most of the record falls after 2005, so the axis gives 1965–2005 a third of the width and
-   2005–2026 the rest, with the change of scale marked on the axis. */
-const Y0 = 1965, BREAK = 2005, Y1 = 2026.9, SPLIT = 0.3;
+const years = (d: string): [number, number] => {
+  const ys = [...d.matchAll(/(19|20)\d{2}/g)].map((m) => Number(m[0]));
+  return [ys[0], ys.at(-1)!];
+};
+/* The axis starts at the earliest recorded event. Most of the record falls after 2005, so the axis gives
+   the years before 2005 a third of the width and 2005–2026 the rest, with the change of scale marked on the axis. */
+const Y0 = Math.min(...histories.flatMap((h) => h.events.map((e) => years(e.date)[0]))), BREAK = 2005, Y1 = 2026.9, SPLIT = 0.3;
 const x = (y: number) => (y <= BREAK ? ((y - Y0) / (BREAK - Y0)) * SPLIT : SPLIT + ((y - BREAK) / (Y1 - BREAK)) * (1 - SPLIT)) * 100;
-const TICKS = [1970, 1980, 1990, 2005, 2010, 2015, 2020, 2026];
+const TICKS = [Y0, 1980, 1990, 2005, 2010, 2015, 2020, 2026];
 /** Ticks with a printed year under the axis; 2005, where the scale changes, is printed beside the break. */
 const LABELLED = TICKS.filter((t) => t !== BREAK);
 
@@ -27,10 +31,8 @@ function M({ m }: { m: Mark }) {
   );
 }
 
-const years = (d: string): [number, number] => {
-  const ys = [...d.matchAll(/(19|20)\d{2}/g)].map((m) => Number(m[0]));
-  return [ys[0], ys.at(-1)!];
-};
+/** Where an event's mark sits (a 2026 slip at the end of its span), as % of the track. */
+const markX = (e: HistoryEvent) => { const [a, b] = years(e.date); return x(MARK[e.kind] === "slip" ? b : a); };
 
 /**
  * The family tree as lanes: one line per 2026 list in its own colour, from its first recorded
@@ -39,10 +41,10 @@ const years = (d: string): [number, number] => {
  * political branch; each name links to its full history below.
  */
 export default function PartyLanes() {
-  const label = (e: HistoryEvent) => `${e.date}, ${HISTORY_KINDS[e.kind]}: ${e.output}. ${e.text}`;
+  const label = (e: HistoryEvent) => `${e.date}, ${HISTORY_KINDS[e.kind]}: ${e.output}${e.letters ? `, ballot letters ${e.letters}` : ""}. ${e.text}`;
   return (
     <figure className="ph-lanes">
-      <figcaption className="ph-h">Every 2026 list&apos;s organizational history, 1965 to 2026</figcaption>
+      <figcaption className="ph-h">Every 2026 list&apos;s organizational history, {Y0} to 2026</figcaption>
       <p className="fig-key ph-key" aria-hidden="true">
         {(Object.keys(MARK_LABEL) as Mark[]).map((m) => (
           <span key={m}><M m={m} />{MARK_LABEL[m]}</span>
@@ -63,8 +65,9 @@ export default function PartyLanes() {
             {histories.filter((h) => h.family === f).map((h) => {
               const first = Math.min(...h.events.map((e) => years(e.date)[0]));
               const c = partyColor(h.id);
+              const rows = markRows(h.events.map(markX));
               return (
-                <div key={h.id} className="ph-lane">
+                <div key={h.id} className={`ph-lane${rows.some((r) => r > 0) ? " ph-stacked" : ""}`}>
                   <a href={`#${h.id}`} className="ph-name"><span className="sw" style={{ background: c }} aria-hidden="true" />{h.name}</a>
                   <a href={`#${h.id}`} className="ph-track" aria-label={`${h.name}: ${h.events.map(label).join(" ")} Full history below.`}>
                     {TICKS.map((t) => <i key={t} className="ph-grid-l" style={{ left: `${x(t)}%` }} aria-hidden="true" />)}
@@ -72,7 +75,7 @@ export default function PartyLanes() {
                     {h.events.map((e, i) => {
                       const [a, b] = years(e.date);
                       return (
-                        <span key={i} className={`ph-ev ${MARK[e.kind]}`} style={{ left: `${x(a)}%`, width: b > a ? `${x(b) - x(a)}%` : undefined, ["--c" as string]: c }} title={label(e)}>
+                        <span key={i} className={`ph-ev ${MARK[e.kind]}${rows[i] ? ` ph-r${Math.min(rows[i], 2)}` : ""}`} style={{ left: `${x(a)}%`, width: b > a ? `${x(b) - x(a)}%` : undefined, ["--c" as string]: c }} title={label(e)}>
                           <M m={MARK[e.kind]} />
                         </span>
                       );
@@ -84,7 +87,7 @@ export default function PartyLanes() {
           </section>
         ))}
       </div>
-      <p className="fig-src ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or tap a list&apos;s line or name for its full history, with sources, below.</p>
+      <p className="fig-src ph-src">The axis gives {Y0}–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. On a phone, marks too close to read side by side are stacked above and below the line. Point at a mark for what happened, or tap a list&apos;s line or name for its full history, with sources, below.</p>
     </figure>
   );
 }

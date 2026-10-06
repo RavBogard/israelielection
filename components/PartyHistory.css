@@ -79,3 +79,12 @@
 .ph-axis .ph-break-l { position: absolute; transform: translateX(6px); white-space: nowrap; font-style: normal; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .ph-ev.slip .ph-m { left: 100%; }
 @media (max-width: 640px) { .ph-axis i:nth-child(4) { display: none; } }
+/* Ballot letters as their own mark beside the 2026 list's name. */
+.history-letters { display: inline-block; margin-left: 10px; padding: 0 7px; font-family: var(--display); font-weight: 900; font-size: 16px; line-height: 1.5; background: var(--sheet); border: 1px solid var(--line-2); vertical-align: 1px; }
+.history-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+/* Phones: marks too close to read side by side go above (row 1) and below (row 2) the line. */
+@media (max-width: 640px) {
+  .ph-stacked .ph-track { height: 44px; }
+  .ph-ev.ph-r1 { top: calc(50% - 13px); }
+  .ph-ev.ph-r2 { top: calc(50% + 13px); }
+}

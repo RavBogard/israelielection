@@ -22,6 +22,23 @@ const COLORS: Record<string,string> = {
 export function listColor(name:string):string {return CONTINUES[name] ? partyColor(CONTINUES[name]) : COLORS[name] ?? OTHER_COLOR;}
 /** Seven ramp steps from the low end to the list's own colour (CSS color-mix percentages of the list colour). */
 export const RAMP_STEPS = [6, 20, 36, 52, 68, 84, 100];
+/** The share ramp per theme, kept equal to components/votemap.css: low end, how much of the list colour the top keeps (the rest white), and the plain fill of land outside any voting locality. */
+export const VM_RAMP = {light:{low:"#f4f6f9",topHue:100,land:"#dcdbd7"},dark:{low:"#3a414b",topHue:45,land:"#1d1d1b"}} as const;
+const lin=(c:number)=>c<=.04045 ? c/12.92 : ((c+.055)/1.055)**2.4;
+/** #rrggbb to OKLab, the space CSS color-mix(in oklab) interpolates in. */
+export function oklab(hex:string):[number,number,number] {
+  const [r,g,b]=[1,3,5].map(i=>lin(parseInt(hex.slice(i,i+2),16)/255));
+  const l=Math.cbrt(.4122214708*r+.5363325363*g+.0514459929*b),m=Math.cbrt(.2119034982*r+.6806995451*g+.1073969566*b),s=Math.cbrt(.0883024619*r+.2817188376*g+.6299787005*b);
+  return [.2104542553*l+.793617785*m-.0040720468*s,1.9779984951*l-2.428592205*m+.4505937099*s,.0259040371*l+.7827717662*m-.808675766*s];
+}
+type Lab=[number,number,number];
+const mixLab=(a:Lab,p:number,b:Lab):Lab=>[0,1,2].map(i=>a[i]*p+b[i]*(1-p)) as Lab;
+export const deltaE=(a:Lab,b:Lab)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
+/** The seven share steps for a list colour, as OKLab, exactly as votemap.css mixes them. */
+export function rampLab(hue:string,theme:"light"|"dark"):Lab[] {
+  const t=VM_RAMP[theme],top=mixLab(oklab(hue),t.topHue/100,oklab("#ffffff"));
+  return RAMP_STEPS.map(p=>mixLab(top,p/100,oklab(t.low)));
+}
 export type VoteSlice = {name:string;votes:number;share:number;color:string;other:boolean};
 export function voteMix(election:VoteMapElection,row:number[] | undefined):VoteSlice[] | null {
   if(!row || !Number.isSafeInteger(row[3]) || row[3]<=0)return null;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { histories, historySources, HISTORY_KINDS, filterHistories } from "./party-history";
+import { histories, historySources, HISTORY_KINDS, filterHistories, markRows } from "./party-history";
 import { parties } from "./data";
 describe("organizational histories", () => {
   it("covers each profiled list with sourced chronological events and valid related links", () => {
@@ -20,5 +20,12 @@ describe("organizational histories", () => {
     expect(filterHistories("all","meretz").map(h=>h.id)).toContain("dem");
     expect(filterHistories("Haredi parties","Meretz")).toEqual([]);
     expect(filterHistories("all","Yamina").map(h=>h.id)).toContain("byachad");
+  });
+  it("stacks marks that would collide and keeps labels free of arrows and dash fragments", () => {
+    expect(markRows([10, 12, 13, 30, 31])).toEqual([0, 1, 2, 0, 1]);
+    expect(markRows([10, 15, 20])).toEqual([0, 0, 0]);
+    for (const h of histories) for (const e of h.events) for (const t of [e.output, ...e.inputs]) expect(t).not.toMatch(/[→←]| — /);
+    for (const s of Object.values(historySources)) expect(s.name).not.toMatch(/ — /);
+    expect(histories.find(h=>h.id==="likud")?.events.at(-1)).toMatchObject({ output: "Likud", letters: "מחל" });
   });
 });

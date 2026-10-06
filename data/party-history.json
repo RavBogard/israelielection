@@ -2,27 +2,27 @@
   "checked": "2026-10-05",
   "scope": "Selected organizational and electoral milestones for all 15 profiled 2026 lists. Lines and marks show the stated relationship, not inherited platforms or a claim that every predecessor merged legally. Historical lists retain their names at the time.",
   "sources": {
-    "likud": {"name":"IDI — Likud", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/likud/", "date":null},
-    "bennett": {"name":"IDI — Bennett and Lapid join forces", "url":"https://en.idi.org.il/articles/64068", "date":"2026-04-29"},
-    "bw": {"name":"IDI — Blue and White", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/blue-and-white/", "date":null},
-    "meretz": {"name":"IDI — Meretz", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/meretz/", "date":null},
-    "labor": {"name":"IDI — Labor", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/labor-party-haavoda/", "date":null},
-    "degel": {"name":"IDI — Degel HaTorah", "url":"https://www.idi.org.il/policy/parties-and-elections/parties/degel-hatora/", "date":null},
-    "dem": {"name":"IDI — The Democrats", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/", "date":null},
-    "utj": {"name":"IDI — United Torah Judaism", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/united-torah-judaism/", "date":null},
-    "shas": {"name":"IDI — Shas", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/shas/", "date":null},
-    "rz": {"name":"IDI — Religious Zionist Party", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/religious-zionist-party/", "date":null},
-    "otzma": {"name":"IDI — Otzma Yehudit", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/otzma-yehudit/", "date":null},
-    "factions": {"name":"IDI — Division of the Religious Zionism faction", "url":"https://en.idi.org.il/articles/46496", "date":"2022-11-20"},
-    "noam": {"name":"Knesset Channel — Noam", "url":"https://www.knesset.tv/%D7%9E%D7%A4%D7%9C%D7%92%D7%95%D7%AA/noam/", "date":null},
-    "yb": {"name":"IDI — Yisrael Beitenu", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/yisrael-beitenu/", "date":null},
-    "jl": {"name":"IDI — The Joint List", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-joint-list/", "date":null},
-    "raam": {"name":"IDI — Ra'am", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/raam/", "date":null},
-    "arab2022": {"name":"IDI — Arab party lists in 2022", "url":"https://en.idi.org.il/articles/46056", "date":"2022-10-18"},
-    "yashar": {"name":"IDI — Yashar!", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/yashar/", "date":null},
-    "res": {"name":"IDI — The Reservists", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-reservists", "date":null},
-    "poi": {"name":"IDI — Amcha Yisrael", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/", "date":null},
-    "cec": {"name":"CEC — 2026 submitted roster, updated Oct 4", "url":"https://www.gov.il/he/pages/candidates-lists-26", "date":"2026-10-04"}
+    "likud": {"name":"IDI, Likud", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/likud/", "date":null},
+    "bennett": {"name":"IDI, Bennett and Lapid join forces", "url":"https://en.idi.org.il/articles/64068", "date":"2026-04-29"},
+    "bw": {"name":"IDI, Blue and White", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/blue-and-white/", "date":null},
+    "meretz": {"name":"IDI, Meretz", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/meretz/", "date":null},
+    "labor": {"name":"IDI, Labor", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/labor-party-haavoda/", "date":null},
+    "degel": {"name":"IDI, Degel HaTorah", "url":"https://www.idi.org.il/policy/parties-and-elections/parties/degel-hatora/", "date":null},
+    "dem": {"name":"IDI, The Democrats", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-democrats/", "date":null},
+    "utj": {"name":"IDI, United Torah Judaism", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/united-torah-judaism/", "date":null},
+    "shas": {"name":"IDI, Shas", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/shas/", "date":null},
+    "rz": {"name":"IDI, Religious Zionist Party", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/religious-zionist-party/", "date":null},
+    "otzma": {"name":"IDI, Otzma Yehudit", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/otzma-yehudit/", "date":null},
+    "factions": {"name":"IDI, Division of the Religious Zionism faction", "url":"https://en.idi.org.il/articles/46496", "date":"2022-11-20"},
+    "noam": {"name":"Knesset Channel, Noam", "url":"https://www.knesset.tv/%D7%9E%D7%A4%D7%9C%D7%92%D7%95%D7%AA/noam/", "date":null},
+    "yb": {"name":"IDI, Yisrael Beitenu", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/yisrael-beitenu/", "date":null},
+    "jl": {"name":"IDI, The Joint List", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-joint-list/", "date":null},
+    "raam": {"name":"IDI, Ra'am", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/raam/", "date":null},
+    "arab2022": {"name":"IDI, Arab party lists in 2022", "url":"https://en.idi.org.il/articles/46056", "date":"2022-10-18"},
+    "yashar": {"name":"IDI, Yashar!", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/yashar/", "date":null},
+    "res": {"name":"IDI, The Reservists", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/the-reservists", "date":null},
+    "poi": {"name":"IDI, Amcha Yisrael", "url":"https://en.idi.org.il/israeli-elections-and-parties/parties/amcha-yisrael/", "date":null},
+    "cec": {"name":"CEC 2026 submitted roster, updated Oct 4", "url":"https://www.gov.il/he/pages/candidates-lists-26", "date":"2026-10-04"}
   },
   "histories": [
     {"id":"likud","name":"Likud","family":"Likud and secular right","related":["yb"],"events":[
@@ -30,84 +30,84 @@
       {"date":"1988","kind":"merger","inputs":["Likud alliance components"],"output":"Likud party","text":"The component organizations merged into a single party.","sources":["likud"]},
       {"date":"2005","kind":"split","inputs":["Likud"],"output":"Sharon leaves to form Kadima","text":"A departure from Likud, not a renaming of Likud.","sources":["likud"]},
       {"date":"2013","kind":"alliance","inputs":["Likud","Yisrael Beiteinu"],"output":"Likud–Beiteinu list","text":"A joint election list; the parties retained separate identities.","sources":["yb"]},
-      {"date":"2026","kind":"list","inputs":["Likud"],"output":"Likud — מחל","text":"Listed separately in the published submitted roster.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Likud"],"output":"Likud","letters":"מחל","text":"Listed separately in the published submitted roster.","sources":["cec"]}
     ]},
     {"id":"yb","name":"Yisrael Beiteinu","family":"Likud and secular right","related":["likud"],"events":[
       {"date":"1999","kind":"party","inputs":[],"output":"Yisrael Beiteinu","text":"Established by Avigdor Liberman; initially appealed especially to former Soviet Union immigrants.","sources":["yb"]},
       {"date":"2003","kind":"alliance","inputs":["Yisrael Beiteinu","National Union"],"output":"National Union joint list","text":"Ran together in 2003; Yisrael Beiteinu ran independently again in 2006.","sources":["yb"]},
       {"date":"2013","kind":"alliance","inputs":["Yisrael Beiteinu","Likud"],"output":"Likud–Beiteinu","text":"A shared ballot, rather than a single new party.","sources":["yb"]},
-      {"date":"2026","kind":"list","inputs":["Yisrael Beiteinu"],"output":"Yisrael Beiteinu — ל","text":"A separate submitted list under Liberman.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Yisrael Beiteinu"],"output":"Yisrael Beiteinu","letters":"ל","text":"A separate submitted list under Liberman.","sources":["cec"]}
     ]},
     {"id":"byachad","name":"B'Yachad","family":"Bennett, Lapid and Gantz","related":["bw"],"events":[
-      {"date":"2012","kind":"leader","inputs":["Bennett → Jewish Home chair","Lapid → founds Yesh Atid"],"output":"Two separate political paths","text":"Bennett led Jewish Home in the 2013 and 2015 joint lists with Tkuma.","sources":["bennett"]},
+      {"date":"2012","kind":"leader","inputs":["Bennett becomes Jewish Home chair","Lapid founds Yesh Atid"],"output":"Two separate political paths","text":"Bennett led Jewish Home in the 2013 and 2015 joint lists with Tkuma.","sources":["bennett"]},
       {"date":"2018","kind":"split","inputs":["Bennett and Shaked leave Jewish Home"],"output":"New Right","text":"New Right missed the threshold in April 2019.","sources":["bennett"]},
       {"date":"2019–2020","kind":"alliance","inputs":["New Right + Tkuma + Jewish Home","Yesh Atid + Israel Resilience + Telem"],"output":"Yamina / Blue and White","text":"Bennett and Lapid ran in different electoral alliances.","sources":["bennett","bw"]},
       {"date":"2021","kind":"leader","inputs":["Bennett's New Right, branded Yamina","Lapid's Yesh Atid"],"output":"Separate lists; rotation government","text":"Their governing partnership was a coalition, not a party merger.","sources":["bennett"]},
-      {"date":"2025–2026","kind":"alliance","inputs":["Bennett 2026","Yesh Atid"],"output":"B'Yachad — רק","text":"Bennett registered his new party in 2025. In April 2026 it announced a joint electoral run with Yesh Atid. The roster names Bennett as list leader.","sources":["bennett","cec"]}
+      {"date":"2025–2026","kind":"alliance","inputs":["Bennett 2026","Yesh Atid"],"output":"B'Yachad","letters":"רק","text":"Bennett registered his new party in 2025. In April 2026 it announced a joint electoral run with Yesh Atid. The roster names Bennett as list leader.","sources":["bennett","cec"]}
     ]},
     {"id":"bw","name":"Blue and White","family":"Bennett, Lapid and Gantz","related":["byachad","yashar"],"events":[
       {"date":"2019","kind":"alliance","inputs":["Israel Resilience","Yesh Atid","Telem"],"output":"Blue and White","text":"The three-party alliance contested the two 2019 elections and the 2020 election.","sources":["bw"]},
       {"date":"2020–2021","kind":"split","inputs":["Blue and White alliance"],"output":"Gantz retains Blue and White name","text":"The alliance disbanded. Gantz's party ran alone under this name in 2021.","sources":["bw"]},
       {"date":"2022","kind":"alliance","inputs":["Gantz's Blue and White","New Hope"],"output":"National Unity","text":"A new joint list, rather than the original 2019 three-party alliance.","sources":["bw"]},
-      {"date":"2026","kind":"list","inputs":["Gantz's list"],"output":"Blue and White — כן","text":"The published roster again lists Blue and White under Benny Gantz. Reuse of a name does not restore the 2019 alliance.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Gantz's list"],"output":"Blue and White","letters":"כן","text":"The published roster again lists Blue and White under Benny Gantz. Reuse of a name does not restore the 2019 alliance.","sources":["cec"]}
     ]},
     {"id":"yashar","name":"Yashar!","family":"Bennett, Lapid and Gantz","related":["bw"],"events":[
-      {"date":"2026","kind":"list","inputs":["Gadi Eisenkot's new organization"],"output":"Yashar! — דרך","text":"IDI identifies Yashar! as a party led by Eisenkot; the CEC lists it separately. A leader's previous affiliations do not make it a legal continuation of Blue and White or National Unity. These sources do not date its registration.","sources":["yashar","cec"]}
+      {"date":"2026","kind":"list","inputs":["Gadi Eisenkot's new organization"],"output":"Yashar!","letters":"דרך","text":"IDI identifies Yashar! as a party led by Eisenkot; the CEC lists it separately. A leader's previous affiliations do not make it a legal continuation of Blue and White or National Unity. These sources do not date its registration.","sources":["yashar","cec"]}
     ]},
     {"id":"dem","name":"The Democrats","family":"Labor and Meretz","related":[],"events":[
       {"date":"1968","kind":"merger","inputs":["Mapai","Ahdut HaAvoda","Rafi"],"output":"Labor","text":"These parties established the Labor Party.","sources":["labor"]},
       {"date":"1992","kind":"alliance","inputs":["Ratz","Mapam","Shinui"],"output":"Meretz joint list","text":"Its component parties initially remained separate.","sources":["meretz"]},
       {"date":"1997","kind":"merger","inputs":["Ratz","Mapam","Part of Shinui"],"output":"Meretz party","text":"The joint list became a merged party; the merger did not include all of Shinui.","sources":["meretz","factions"]},
       {"date":"2024","kind":"partial","inputs":["Labor","Meretz"],"output":"The Democrats","text":"IDI calls this a partial merger: Labor and Meretz retained organizational and institutional independence. Yair Golan heads the combined organization.","sources":["dem"]},
-      {"date":"2026","kind":"list","inputs":["The Democrats"],"output":"The Democrats — אמת","text":"A single submitted electoral list under Golan.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["The Democrats"],"output":"The Democrats","letters":"אמת","text":"A single submitted electoral list under Golan.","sources":["cec"]}
     ]},
     {"id":"shas","name":"Shas","family":"Haredi parties","related":["utj"],"events":[
       {"date":"1984","kind":"party","inputs":["Sephardic Haredi founders"],"output":"Shas","text":"Founded in response to institutional disadvantage and under-representation relative to Ashkenazi Haredim; Rabbi Ovadia Yosef headed its Council of Torah Sages.","sources":["shas"]},
-      {"date":"2026","kind":"list","inputs":["Shas"],"output":"Shas — שס","text":"A separate submitted list. Shared Haredi interests do not make Shas a component of United Torah Judaism.","sources":["cec","utj"]}
+      {"date":"2026","kind":"list","inputs":["Shas"],"output":"Shas","letters":"שס","text":"A separate submitted list. Shared Haredi interests do not make Shas a component of United Torah Judaism.","sources":["cec","utj"]}
     ]},
     {"id":"utj","name":"United Torah Judaism","family":"Haredi parties","related":["shas"],"events":[
       {"date":"1988","kind":"split","inputs":["Agudat Yisrael"],"output":"Degel HaTorah runs separately","text":"Degel HaTorah formed to represent the Lithuanian Haredi community, distinct from the Hasidic parties in Agudat Yisrael.","sources":["degel"]},
       {"date":"1992","kind":"alliance","inputs":["Agudat Yisrael","Degel HaTorah"],"output":"United Torah Judaism","text":"A joint electoral list. Its components have continued as separate parties.","sources":["utj"]},
-      {"date":"2026","kind":"list","inputs":["Agudat Yisrael","Degel HaTorah"],"output":"UTJ — ג","text":"Both component names appear in the submitted roster title.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Agudat Yisrael","Degel HaTorah"],"output":"UTJ","letters":"ג","text":"Both component names appear in the submitted roster title.","sources":["cec"]}
     ]},
     {"id":"rz","name":"Religious Zionism–Zehut","family":"Religious right","related":["otzma","noam","byachad"],"events":[
       {"date":"2013–2015","kind":"alliance","inputs":["National Union–Tkuma","Jewish Home"],"output":"Jewish Home joint list","text":"Tkuma cooperated electorally with Jewish Home.","sources":["rz"]},
       {"date":"2021","kind":"rename","inputs":["National Union–Tkuma"],"output":"Religious Zionist Party","text":"Tkuma adopted the Religious Zionist Party name; that name also identified a broader joint list.","sources":["rz"]},
       {"date":"2022","kind":"alliance","inputs":["Religious Zionist Party","Otzma Yehudit","Noam"],"output":"Religious Zionism joint list","text":"A shared ballot followed by separate Knesset factions. IDI records two registered parties representing Otzma: Jewish National Front and Eretz Yisrael Shelanu. Electoral brands and legal parties are not always identical.","sources":["rz","factions"]},
-      {"date":"2026","kind":"alliance","inputs":["Religious Zionist Party","Zehut"],"output":"Religious Zionism–Zehut — ט","text":"Smotrich and Feiglin head this submitted joint list; Otzma and Noam have separate entries.","sources":["cec"]}
+      {"date":"2026","kind":"alliance","inputs":["Religious Zionist Party","Zehut"],"output":"Religious Zionism–Zehut","letters":"ט","text":"Smotrich and Feiglin head this submitted joint list; Otzma and Noam have separate entries.","sources":["cec"]}
     ]},
     {"id":"otzma","name":"Otzma Yehudit","family":"Religious right","related":["rz","noam"],"events":[
       {"date":"2004","kind":"party","inputs":["Baruch Marzel's organization"],"output":"Jewish National Front","text":"IDI traces Otzma's organizational roots to this party.","sources":["otzma"]},
       {"date":"2013","kind":"alliance","inputs":["Jewish National Front","Hatikva"],"output":"Otzma LeYisrael","text":"The joint list failed to enter the Knesset.","sources":["otzma"]},
       {"date":"2015","kind":"rename","inputs":["Otzma LeYisrael"],"output":"Otzma Yehudit; joint run with Yahad","text":"Changed its name and ran with Eli Yishai's Yahad; that list also missed the threshold.","sources":["otzma"]},
       {"date":"2021–2022","kind":"alliance","inputs":["Otzma Yehudit","Religious Zionist Party","Noam"],"output":"Religious Zionism joint list","text":"The far-right parties shared a ballot; they did not become one party.","sources":["otzma","factions"]},
-      {"date":"2026","kind":"list","inputs":["Otzma Yehudit"],"output":"Otzma Yehudit — ב","text":"A separate submitted list under Itamar Ben-Gvir.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Otzma Yehudit"],"output":"Otzma Yehudit","letters":"ב","text":"A separate submitted list under Itamar Ben-Gvir.","sources":["cec"]}
     ]},
     {"id":"noam","name":"Noam","family":"Religious right","related":["rz","otzma"],"events":[
       {"date":"2019","kind":"party","inputs":[],"output":"Noam","text":"Founded as a religious conservative party identified with the Haredi-nationalist stream.","sources":["noam"]},
       {"date":"2022","kind":"alliance","inputs":["Noam","Religious Zionist Party","Otzma Yehudit"],"output":"Religious Zionism joint list","text":"After the election, the shared list divided into separate Knesset factions.","sources":["factions"]},
-      {"date":"2026","kind":"list","inputs":["Noam"],"output":"Noam for Israel — ני","text":"A separate submitted list under Avi Maoz.","sources":["cec"]}
+      {"date":"2026","kind":"list","inputs":["Noam"],"output":"Noam for Israel","letters":"ני","text":"A separate submitted list under Avi Maoz.","sources":["cec"]}
     ]},
     {"id":"jl","name":"Joint List","family":"Hadash, Ta'al, Balad and Ra'am","related":["raam"],"events":[
       {"date":"2015","kind":"alliance","inputs":["Hadash","Ta'al","Balad","Ra'am"],"output":"Joint List","text":"Four parties formed a joint electoral list.","sources":["jl"]},
       {"date":"2019","kind":"split","inputs":["Joint List"],"output":"Two lists in April; reunified in September","text":"The original alliance reunited for the September 2019 and 2020 elections.","sources":["jl"]},
       {"date":"2021","kind":"split","inputs":["Joint List"],"output":"Hadash–Ta'al–Balad / separate Ra'am","text":"Ra'am left the alliance and contested separately.","sources":["jl"]},
       {"date":"2022","kind":"split","inputs":["Hadash","Ta'al","Balad","Ra'am"],"output":"Hadash–Ta'al / Balad / Ra'am","text":"These were three separate electoral lists.","sources":["arab2022"]},
-      {"date":"2026","kind":"alliance","inputs":["Hadash","Ta'al","Balad"],"output":"Joint List — ודם","text":"IDI identifies the current alliance's three components. Ra'am remains a separate roster entry.","sources":["jl","cec"]}
+      {"date":"2026","kind":"alliance","inputs":["Hadash","Ta'al","Balad"],"output":"Joint List","letters":"ודם","text":"IDI identifies the current alliance's three components. Ra'am remains a separate roster entry.","sources":["jl","cec"]}
     ]},
     {"id":"raam","name":"Ra'am","family":"Hadash, Ta'al, Balad and Ra'am","related":["jl"],"events":[
-      {"date":"1996","kind":"alliance","inputs":["New United Arab List (Ra'am)","Mada — Arab Democratic Party"],"output":"Ra'am–Mada joint list","text":"Ra'am was established in 1996 and first ran with Mada.","sources":["raam"]},
+      {"date":"1996","kind":"alliance","inputs":["New United Arab List (Ra'am)","Mada (Arab Democratic Party)"],"output":"Ra'am–Mada joint list","text":"Ra'am was established in 1996 and first ran with Mada.","sources":["raam"]},
       {"date":"1999","kind":"merger","inputs":["Mada","Ra'am"],"output":"Mada absorbed into Ra'am","text":"An organizational absorption, rather than a continuing two-party electoral alliance.","sources":["raam"]},
       {"date":"2006–2013","kind":"alliance","inputs":["Ra'am","Ta'al"],"output":"Ra'am–Ta'al","text":"Ran together in the 2006, 2009 and 2013 elections.","sources":["raam"]},
       {"date":"2015–2020","kind":"alliance","inputs":["Ra'am","Hadash","Ta'al","Balad"],"output":"Joint List (with April 2019 split)","text":"Ra'am participated in the broader alliance, then left before the 2021 election.","sources":["jl"]},
-      {"date":"2021–2026","kind":"list","inputs":["Ra'am"],"output":"Separate list — עם in 2026","text":"Ra'am joined the Bennett–Lapid coalition in 2021; coalition membership did not merge it with those parties.","sources":["raam","cec"]}
+      {"date":"2021–2026","kind":"list","inputs":["Ra'am"],"output":"Separate list in 2026","letters":"עם","text":"Ra'am joined the Bennett–Lapid coalition in 2021; coalition membership did not merge it with those parties.","sources":["raam","cec"]}
     ]},
     {"id":"res","name":"Reservists–Economic","family":"New organizations","related":[],"events":[
       {"date":"2025","kind":"party","inputs":["Yoaz Hendel's new organization"],"output":"The Reservists","text":"IDI dates the establishment of Hendel's party to 2025.","sources":["res"]},
-      {"date":"2026","kind":"alliance","inputs":["The Reservists","The Economic Party"],"output":"Reservists–Economic — די","text":"The CEC title identifies a joint list under Yoaz Hendel and Yaron Zelekha. This does not establish a legal merger or continuity with Hendel's former parties.","sources":["cec"]}
+      {"date":"2026","kind":"alliance","inputs":["The Reservists","The Economic Party"],"output":"Reservists–Economic","letters":"די","text":"The CEC title identifies a joint list under Yoaz Hendel and Yaron Zelekha. This does not establish a legal merger or continuity with Hendel's former parties.","sources":["cec"]}
     ]},
     {"id":"poi","name":"People of Israel","family":"New organizations","related":[],"events":[
-      {"date":"2026","kind":"list","inputs":["Ofer Winter's organization"],"output":"People of Israel — ך","text":"IDI identifies Amcha Yisrael as a party established ahead of this election by Winter; the CEC includes a separate submitted list. These sources establish no predecessor-party merger or exact registration date.","sources":["poi","cec"]}
+      {"date":"2026","kind":"list","inputs":["Ofer Winter's organization"],"output":"People of Israel","letters":"ך","text":"IDI identifies Amcha Yisrael as a party established ahead of this election by Winter; the CEC includes a separate submitted list. These sources establish no predecessor-party merger or exact registration date.","sources":["poi","cec"]}
     ]}
   ]
 }
