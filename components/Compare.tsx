@@ -1,45 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense, useState } from "react";
+import { Fragment, Suspense, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { readIssue, readingText, stanceMap, type Issue, type IssueReading } from "@/lib/cohesion";
+import { readIssue, readingText, stanceMap } from "@/lib/cohesion";
 import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } from "@/lib/compare";
+import { partyColor } from "@/lib/party-colors";
+import { evidenceLabel } from "@/lib/positions";
 import { builderHref } from "@/lib/scenarios";
 import type { BlocId } from "@/lib/types";
+import { onShade, shade, type MatrixCell, type MatrixRow } from "./compare/model";
 import "./compare.css";
-import { evidenceLabel } from "@/lib/positions";
 
 /*
- * Compare the parties: seven issue strips. Each strip is the issue's comparable stances as columns,
- * and the chosen parties sit under their stance as small ballot slips, so agreement reads as a pile
- * and a split as distance. Parties with nothing recorded sit at the end. Under each strip, what each
- * party actually said, with its source. The selection lives in `?p=` and can be any two or more lists.
+ * Compare the parties as one matrix: the questions down the side, every list across the top grouped
+ * by bloc, each cell shaded by the answer the list's own words or record support. The same shade in
+ * a row is the same answer, so agreement reads across and a split reads as a change of shade. A row
+ * opens to every list's words and source. The column set lives in `?p=`.
  */
 
-export type CompareParty = { id: string; name: string; bloc: BlocId; letters: string | null; seats: number | null };
+export type CompareParty = { id: string; name: string; bloc: BlocId; letters: string | null; seats: number | null; out?: boolean };
 export type Preset = { label: string; ids: string[] };
-type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: string }[]; issues: Issue[]; presets: Preset[]; defaults: string[] };
+type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: string }[]; rows: MatrixRow[]; presets: Preset[]; defaults: string[] };
 
 const fill = (bloc: BlocId) => ({ "--fill": `var(--b-${bloc})` }) as React.CSSProperties;
-
-function Letters({ p }: { p: CompareParty }) {
-  return p.letters ? (
-    <span className="letters" lang="he" dir="rtl">
-      {p.letters}
-    </span>
-  ) : null;
-}
-
-/** A party as a small ballot slip: bloc bar, ballot letters, name. */
-function MiniSlip({ p }: { p: CompareParty }) {
-  return (
-    <li className="ms" style={fill(p.bloc)}>
-      <Letters p={p} />
-      <span className="nm">{p.name}</span>
-    </li>
-  );
-}
+const swatch = (id: string) => ({ "--sw": partyColor(id) }) as React.CSSProperties;
+const seatsOf = (p: CompareParty) => (p.seats !== null && p.seats > 0 ? p.seats : 0);
 
 function sourceLine(row: PositionRow): { text: string | null; url: string | null } {
   let source = row.source?.trim() || null;
@@ -49,139 +35,215 @@ function sourceLine(row: PositionRow): { text: string | null; url: string | null
   return { text: source, url: isUrl(row.url) ? row.url.trim() : null };
 }
 
-function Quote({ p, row, stanceLabel }: { p: CompareParty; row: PositionRow | undefined; stanceLabel: string | null }) {
+function cellLabel(p: CompareParty, row: MatrixRow, c: MatrixCell): string {
+  if (c.kind === "declined") return `${p.name}: declined to answer`;
+  if (c.kind === "none") return `${p.name}: no position found`;
+  if (c.kind === "unsorted") return `${p.name}: recorded, not classified`;
+  const st = row.stances.find((s) => s.id === c.stance)!;
+  return `${p.name}: ${st.label}${c.record ? ", on the record" : ""}`;
+}
+
+type CellProps = { p: CompareParty; row: MatrixRow; c: MatrixCell; col: number; active: string | null; gap: boolean; isOpen: boolean; onOpen: () => void; onHover: (s: string | null) => void };
+
+function Cell({ p, row, c, col, active, gap, isOpen, onOpen, onHover }: CellProps) {
+  const stance = c.kind === "stance" ? c.stance : null;
+  const dim = active !== null && stance !== active;
+  return (
+    <td role="cell" className={`mx-c${gap ? " gap" : ""}`}>
+      <button
+        type="button"
+        // One tab stop per row; the arrow keys move along it (see onRowKey).
+        tabIndex={col === 0 ? 0 : -1}
+        data-col={col}
+        className={`mx-cell ${c.kind}${c.kind === "stance" ? ` on-${onShade(c.position)}` : ""}${dim ? " dim" : ""}${active !== null && !dim ? " match" : ""}`}
+        style={c.kind === "stance" ? { background: shade(c.position) } : undefined}
+        aria-label={cellLabel(p, row, c)}
+        aria-expanded={isOpen}
+        aria-controls={`panel-${row.key}`}
+        onClick={onOpen}
+        onMouseEnter={() => onHover(stance)}
+        onMouseLeave={() => onHover(null)}
+        onFocus={() => onHover(stance)}
+        onBlur={() => onHover(null)}
+      >
+        {c.kind === "stance" && <span className="n" aria-hidden="true">{c.n}</span>}
+        {c.kind === "stance" && c.record && <span className="rec" aria-hidden="true" />}
+      </button>
+    </td>
+  );
+}
+
+/** Left, Right, Home and End move focus along a row's cells. */
+function onRowKey(e: React.KeyboardEvent<HTMLTableRowElement>) {
+  const t = e.target as HTMLElement;
+  if (!t.matches("button.mx-cell")) return;
+  const cells = [...e.currentTarget.querySelectorAll<HTMLButtonElement>("button.mx-cell")];
+  const i = cells.indexOf(t as HTMLButtonElement);
+  const j = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? cells.length - 1 : null;
+  if (j === null) return;
+  e.preventDefault();
+  cells[Math.max(0, Math.min(cells.length - 1, j))].focus();
+}
+
+function Who({ p, children }: { p: CompareParty; children?: React.ReactNode }) {
+  return (
+    <p className="who">
+      <span className="sw" style={swatch(p.id)} aria-hidden="true" />
+      <b>{p.name}</b>
+      {children}
+    </p>
+  );
+}
+
+function Entry({ p, row }: { p: CompareParty; row: PositionRow | undefined }) {
   const text = row?.text?.trim() || null;
-  const declined = !!row && (row.declined || row.status === "declined");
-  const none = !row || row.status === "none" || (!text && !declined);
   const src = row ? sourceLine(row) : { text: null, url: null };
   return (
-    <li style={fill(p.bloc)}>
-      <p className="who">
-        <span className="sw" aria-hidden="true" />
-        <b>{p.name}</b>
-        {stanceLabel && <span className="st">{stanceLabel}</span>}
-        {!stanceLabel && (declined ? <span className="st quiet">{DECLINED}</span> : none ? <span className="st quiet">Not established by these sources</span> : null)}
-      </p>
+    <li id={`said-${p.id}`}>
+      <Who p={p} />
       {text && <p className="pos">{text}</p>}
-      {(src.text || row?.basis === "record" || (none && row?.checked)) && (
-        <p className="src">
-          {src.url ? <a href={src.url}>{src.text ?? src.url}</a> : src.text}
-          {row?.basis === "record" && <> (on the record, not the questionnaire)</>}
-          {none && !src.text && row?.checked && <>Checked {row.checked}</>}
-        </p>
-      )}
+      <p className="src">
+        {src.url ? <a href={src.url} rel="noopener">{src.text ?? src.url}</a> : src.text}
+        {row?.basis === "record" && <> (on the record, because the party did not answer the questionnaire)</>}
+        {src.text || row?.basis === "record" ? ". " : ""}
+        {evidenceLabel(row)}
+      </p>
     </li>
   );
 }
 
-function Strip({ issue, reading, byId, compact }: { issue: Issue; reading: IssueReading; byId: Map<string, CompareParty>; compact: boolean }) {
-  const quiet = [...reading.declined, ...reading.none];
-  const get = (id: string) => byId.get(id)!;
-  // Rows without a stances header yet: one column of everyone with a recorded position.
-  const allColumns = reading.verdict === "unsorted" || !issue.file.stances?.length
-    ? [{ id: "recorded", label: "Position recorded", parties: reading.unsorted }]
-    : issue.file.stances.map((s) => ({ id: s.id, label: s.label, parties: reading.groups.find((g) => g.stance.id === s.id)?.parties ?? [] }));
-  const columns = compact ? allColumns.filter((c) => c.parties.length) : allColumns;
-  const unclassified = issue.file.stances?.length ? reading.unsorted : [];
-  const n = Math.max(1, columns.length + (quiet.length ? 1 : 0) + (unclassified.length ? 1 : 0));
+function Panel({ row, shown, colSpan }: { row: MatrixRow; shown: CompareParty[]; colSpan: number }) {
+  const ids = shown.map((p) => p.id);
+  const reading = readIssue(row.key, stanceMap([row.issue], ids), ids);
+  const nameOf = (id: string) => shown.find((p) => p.id === id)?.name ?? id;
+  const rowOf = (id: string) => row.issue.file.rows.find((r) => r.party === id);
+  const kindOf = (p: CompareParty) => row.cells[p.id]?.kind ?? "none";
+  const unsorted = shown.filter((p) => kindOf(p) === "unsorted");
+  const quiet = shown.filter((p) => kindOf(p) === "none" || kindOf(p) === "declined");
   return (
-    <div className="strip" style={{ "--n": n } as React.CSSProperties}>
-      {columns.map((c) => (
-        <div key={c.id} className={`col${c.parties.length ? "" : " empty"}`}>
-          <p className="st">{c.label}</p>
-          {c.parties.length > 0 && (
-            <ul className="slips">
-              {c.parties.map((id) => (
-                <MiniSlip key={id} p={get(id)} />
-              ))}
-            </ul>
+    <tr role="row" className="mx-panelrow">
+      <td role="cell" colSpan={colSpan}>
+        <div className="mx-panel" id={`panel-${row.key}`}>
+          <header>
+            {row.depth === 1 && row.question && <p className="q">{row.question}</p>}
+            <p className="verdict">{readingText(reading, nameOf)}</p>
+          </header>
+          {row.stances.map((s) => {
+            const holders = shown.filter((p) => {
+              const c = row.cells[p.id];
+              return c?.kind === "stance" && c.stance === s.id;
+            });
+            if (!holders.length) return null;
+            return (
+              <section key={s.id} className="grp">
+                <h3>
+                  <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position) }} aria-hidden="true">{s.n}</span>
+                  {s.label}
+                </h3>
+                <ul className="said">{holders.map((p) => <Entry key={p.id} p={p} row={rowOf(p.id)} />)}</ul>
+              </section>
+            );
+          })}
+          {unsorted.length > 0 && (
+            <section className="grp">
+              <h3><span className="key unsorted" aria-hidden="true" />Recorded, not classified</h3>
+              <ul className="said">{unsorted.map((p) => <Entry key={p.id} p={p} row={rowOf(p.id)} />)}</ul>
+            </section>
           )}
+          {quiet.length > 0 && (
+            <section className="grp quiet">
+              <h3><span className="key none" aria-hidden="true" />Not established by these sources</h3>
+              <ul className="said">
+                {quiet.map((p) => {
+                  const r = rowOf(p.id);
+                  if (r?.text?.trim()) return <Entry key={p.id} p={p} row={r} />;
+                  return (
+                    <li key={p.id} id={`said-${p.id}`}>
+                      <Who p={p}>
+                        {" "}<span className="st">{kindOf(p) === "declined" ? DECLINED : "No position found"}</span>
+                      </Who>
+                      <p className="src">{evidenceLabel(r)}{r?.checked ? `. Checked ${r.checked}` : ""}</p>
+                    </li>
+                  );
+                })}
+              </ul>
+            </section>
+          )}
+          {row.issue.file.note && <p className="note">{row.issue.file.note}</p>}
+          <p className="links">
+            {row.page && <Link href={row.page}>Read the issue page</Link>}
+            <Link href={`/export/issue?${new URLSearchParams({ issue: row.key, p: ids.join(",") })}`}>Print or export this question</Link>
+          </p>
         </div>
-      ))}
-      {quiet.length > 0 && (
-        <div className="col quiet">
-          <p className="st">Not established by these sources</p>
-          <ul className="slips">
-            {quiet.map((id) => (
-              <MiniSlip key={id} p={get(id)} />
-            ))}
-          </ul>
-        </div>
-      )}
-      {unclassified.length > 0 && <div className="col quiet"><p className="st">Unclassified evidence</p><ul className="slips">{unclassified.map((id) => <MiniSlip key={id} p={get(id)} />)}</ul></div>}
-    </div>
+      </td>
+    </tr>
   );
 }
 
-function IssueBlock({ issue, reading, chosen, byId, compact }: { issue: Issue; reading: IssueReading; chosen: CompareParty[]; byId: Map<string, CompareParty>; compact: boolean }) {
-  const nameOf = (id: string) => byId.get(id)?.name ?? id;
-  const stanceLabelOf = (id: string) => reading.groups.find((g) => g.parties.includes(id))?.stance.label ?? null;
-  // Quotes read in strip order: stance by stance, then the quiet.
-  const order = [...reading.groups.flatMap((g) => g.parties), ...reading.unsorted, ...reading.declined, ...reading.none];
-  const ordered = order.map((id) => byId.get(id)).filter((p): p is CompareParty => !!p && chosen.includes(p));
-  return (
-    <li className="issue" id={`issue-${issue.key}`}>
-      <header>
-        <h2>{issue.label}</h2>
-        {issue.file.question && <p className="q">{issue.file.question}</p>}
-        <p className="verdict">{readingText(reading, nameOf)}</p>
-      </header>
-      <p className="export-link"><Link href={`/export/issue?${new URLSearchParams({issue:issue.key,p:chosen.map((p)=>p.id).join(",")})}`}>Print or export this question and selected lists</Link></p>
-      <Strip issue={issue} reading={reading} byId={byId} compact={compact} />
-      <ul className="evidence-age" aria-label="Evidence dates and types">
-        {chosen.map((p) => <li key={p.id}><b>{p.name}:</b> {evidenceLabel(issue.file.rows.find((r) => r.party === p.id))}</li>)}
-      </ul>
-      <details className="said">
-        <summary>What each party said</summary>
-        <ul className="quotes">
-          {ordered.map((p) => (
-            <Quote key={p.id} p={p} row={issue.file.rows.find((r) => r.party === p.id)} stanceLabel={stanceLabelOf(p.id)} />
-          ))}
-        </ul>
-        {issue.file.note && <p className="note">{issue.file.note}</p>}
-      </details>
-    </li>
-  );
-}
-
-function CompareView({ parties, blocs, issues, presets, selected, onSelect }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
-  const [compact, setCompact] = useState(true);
-  const byId = new Map(parties.map((p) => [p.id, p]));
-  const chosen = selected.map((id) => byId.get(id)).filter((p): p is CompareParty => !!p);
-  const atMin = selected.length <= MIN_PICK;
-  const map = stanceMap(issues, parties.map((p) => p.id));
-  const readings = Object.fromEntries(issues.map((a) => [a.key, readIssue(a.key, map, selected)])) as Record<string, IssueReading>;
+function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
+  const [open, setOpen] = useState<string | null>(null);
+  const [hover, setHover] = useState<{ row: string; stance: string } | null>(null);
+  // A link to /compare#issue-<key> (from the Builder or a profile tile) opens that row.
+  useEffect(() => {
+    const read = () => {
+      const key = window.location.hash.replace(/^#(issue|q)-/, "");
+      if (key && rows.some((r) => r.key === key)) setOpen(key);
+    };
+    const frame = requestAnimationFrame(read);
+    window.addEventListener("hashchange", read);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", read);
+    };
+  }, [rows]);
+  const order = blocs.map((b) => b.id);
+  const shown = parties
+    .filter((p) => selected.includes(p.id))
+    .sort((a, b) => order.indexOf(a.bloc) - order.indexOf(b.bloc) || Number(!!a.out) - Number(!!b.out) || (b.seats ?? -1) - (a.seats ?? -1));
+  const groups = blocs.map((b) => ({ id: b.id, label: b.label, n: shown.filter((p) => p.bloc === b.id).length })).filter((g) => g.n > 0);
   const isPreset = (ids: string[]) => ids.length === selected.length && ids.every((id) => selected.includes(id));
+  const custom = !presets.some((pr) => isPreset(pr.ids));
+  const atMin = selected.length <= MIN_PICK;
+  const toggleRow = (key: string, party?: string) => {
+    const next = open === key && !party ? null : key;
+    setOpen(next);
+    if (next && party) requestAnimationFrame(() => document.getElementById(`said-${party}`)?.scrollIntoView({ block: "nearest", behavior: "smooth" }));
+  };
+  const gapAt = (i: number) => i > 0 && shown[i - 1].bloc !== shown[i].bloc;
 
   return (
     <div className="cmp">
-      <fieldset className="picker">
-        <legend>Choose the parties</legend>
-        <p className="presets">
-          Start from{" "}
-          {presets.map((pr, i) => (
-            <span key={pr.label}>
-              {i > 0 && (i === presets.length - 1 ? " or " : ", ")}
-              <button type="button" className="linkish" aria-pressed={isPreset(pr.ids)} onClick={() => onSelect?.(pr.ids)}>
-                {pr.label}
-              </button>
-            </span>
+      <div className="mx-show" role="group" aria-label="Lists to show">
+        <span className="lbl">Show</span>
+        <div className="seg">
+          {presets.map((pr) => (
+            <button key={pr.label} type="button" aria-pressed={isPreset(pr.ids)} onClick={() => onSelect?.(pr.ids)}>
+              {pr.label}
+              <small>{pr.ids.length} lists</small>
+            </button>
           ))}
-          , or pick your own.
-        </p>
+          {custom && (
+            <button type="button" aria-pressed="true">
+              Your set
+              <small>{selected.length} lists</small>
+            </button>
+          )}
+        </div>
+        <Link className="build" href={builderHref(selected)}>Build this set in the Coalition Builder</Link>
+      </div>
+
+      <details className="mx-pick">
+        <summary>Choose lists one by one</summary>
         <div className="blocs">
           {blocs.map((b) => (
             <div key={b.id} className="bg">
-              <p className="bl">
-                <span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />
-                {b.label}
-              </p>
+              <p className="bl"><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{b.label}</p>
               <div className="chips">
                 {parties.filter((p) => p.bloc === b.id).map((p) => {
                   const on = selected.includes(p.id);
                   return (
                     <button key={p.id} type="button" className="chip" style={fill(p.bloc)} aria-pressed={on} disabled={on && atMin} onClick={() => onSelect?.(toggle(selected, p.id))}>
-                      <Letters p={p} />
+                      {p.letters && <span className="letters" lang="he" dir="rtl">{p.letters}</span>}
                       <span className="nm">{p.name}</span>
                     </button>
                   );
@@ -190,28 +252,113 @@ function CompareView({ parties, blocs, issues, presets, selected, onSelect }: Pr
             </div>
           ))}
         </div>
-        <p className="hint" aria-live="polite">
-          {atMin ? `${selected.length} chosen. Two is the fewest to compare.` : `${selected.length} chosen.`}{" "}
-          <Link href={builderHref(selected)}>Build this set in the Coalition Builder</Link>.
-        </p>
-      </fieldset>
+        <p className="hint" aria-live="polite">{atMin ? `${selected.length} chosen. Two is the fewest to compare.` : `${selected.length} chosen.`}</p>
+      </details>
 
-      <nav className="topic-jumps" aria-label="Jump to a comparison question">
-        {issues.map((issue) => <a key={issue.key} href={`#issue-${issue.key}`}>{issue.label}</a>)}
-      </nav>
-      <label className="compact-control"><input type="checkbox" checked={compact} onChange={(e) => setCompact(e.target.checked)} /> Show only occupied positions (missing answers stay visible)</label>
-      <p className="foot">These classifications compare recorded answers to selected questions. They are not a stability forecast; questions are not equally important, and differences may be negotiable.</p>
-      <p><Link href={`/export/issue?${new URLSearchParams({p:selected.join(",")})}`}>Print or export the selected comparison</Link></p>
-      <ol className="issues">
-        {issues.map((issue) => (
-          <IssueBlock key={issue.key} issue={issue} reading={readings[issue.key]} chosen={chosen} byId={byId} compact={compact} />
-        ))}
-      </ol>
+      <div className="mx-key">
+        <p className="ramp">
+          <span className="bar" aria-hidden="true">{[0, 0.25, 0.5, 0.75, 1].map((x) => <i key={x} style={{ background: shade(x) }} />)}</span>
+          {"Each issue’s answers in order, from one end of the debate to the other. The same shade and number in a row is the same answer; the figure beside each answer is the seats its lists hold in the polling average."}
+        </p>
+        <p className="glyphs">
+          <span><i className="g none" aria-hidden="true" />No position found</span>
+          <span><i className="g declined" aria-hidden="true" />Declined to answer</span>
+          <span><i className="g unsorted" aria-hidden="true" />Recorded, not classified</span>
+          <span><i className="g rec" aria-hidden="true" />On the record, not a questionnaire answer</span>
+          <span><i className="g ink" aria-hidden="true" />Priorities that can coexist, so no order</span>
+        </p>
+        <p className="tap">{"Open any row for every list’s own words and source."}</p>
+        <p className="seatnote">Under each list: its seats in the polling average.</p>
+      </div>
+
+      <div className="mx-wrap">
+        <table role="table" className="mx" style={{ "--cols": shown.length } as React.CSSProperties}>
+          <caption className="sr-only">{"Recorded answers by list. Rows are questions; columns are lists. Each cell opens its row with the list’s words and source."}</caption>
+          <thead role="rowgroup">
+            <tr role="row" className="mx-blocs">
+              <td role="cell" className="mx-corner" />
+              {groups.map((g, i) => (
+                <th key={g.id} scope="colgroup" role="columnheader" colSpan={g.n} className={`mx-bloc${i > 0 ? " gap" : ""}`} style={{ ...fill(g.id), ["--n" as string]: g.n }}>
+                  <span>{g.label}</span>
+                </th>
+              ))}
+            </tr>
+            <tr role="row" className="mx-names">
+              <td role="cell" className="mx-corner" />
+              {shown.map((p, i) => (
+                <th key={p.id} scope="col" role="columnheader" className={`mx-party${gapAt(i) ? " gap" : ""}`}>
+                  <Link href={`/parties/${p.id}`}>{p.name}</Link>
+                </th>
+              ))}
+            </tr>
+            <tr role="row" className="mx-heads">
+              <td role="cell" className="mx-corner">
+                <span className="seatlbl">Seats, polling average</span>
+              </td>
+              {shown.map((p, i) => (
+                <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : ""}`} style={fill(p.bloc)}>
+                  {p.letters && <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${p.letters}`}>{p.letters}</span>}
+                  <span className="seats">{seatsOf(p) ? Math.round(seatsOf(p)) : p.out ? "out" : "–"}</span>
+                </td>
+              ))}
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            {rows.map((row, ri) => {
+              const isOpen = open === row.key;
+              const active = hover?.row === row.key ? hover.stance : null;
+              const held = row.stances
+                .map((s) => ({ s, holders: shown.filter((p) => { const c = row.cells[p.id]; return c?.kind === "stance" && c.stance === s.id; }) }))
+                .filter((h) => h.holders.length);
+              return (
+                <Fragment key={row.key}>
+                  <tr role="row" id={row.depth === 0 ? `issue-${row.key}` : `q-${row.key}`} className={`mx-row d${row.depth}${isOpen ? " open" : ""}${rows[ri + 1]?.depth === 1 ? " has-sub" : ""}`} onKeyDown={onRowKey}>
+                    <th scope="row" role="rowheader" className="mx-q">
+                      <button type="button" className="mx-toggle" aria-expanded={isOpen} aria-controls={`panel-${row.key}`} onClick={() => toggleRow(row.key)}>
+                        <span className="lab">{row.label}</span>
+                        {row.depth === 0 && row.question && <span className="qq">{row.question}</span>}
+                      </button>
+                      {held.length > 0 ? (
+                        <ul className="legend">
+                          {held.map(({ s, holders }) => (
+                            <li key={s.id} className={active === s.id ? "hi" : undefined}>
+                              <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position) }} aria-hidden="true">{s.n}</span>
+                              <span className="sl">{s.label}</span>
+                              <span className="ss" title="Seats these lists hold in the polling average">{Math.round(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="legend-none">No answer recorded for these lists</p>
+                      )}
+                    </th>
+                    {shown.map((p, i) => (
+                      <Cell
+                        key={p.id}
+                        p={p}
+                        row={row}
+                        c={row.cells[p.id] ?? { kind: "none" }}
+                        col={i}
+                        active={active}
+                        gap={gapAt(i)}
+                        isOpen={isOpen}
+                        onOpen={() => toggleRow(row.key, p.id)}
+                        onHover={(s) => setHover(s ? { row: row.key, stance: s } : null)}
+                      />
+                    ))}
+                  </tr>
+                  {isOpen && <Panel row={row} shown={shown} colSpan={shown.length + 1} />}
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
 
       <p className="foot">
-        Each party is placed by the stance its own answer or record supports; the words are the party&apos;s, quoted or summarised from the sources
-        shown. Nothing recorded is itself a finding, and the site says when it last checked.
+        {"Each list is placed by the answer its own words or record support; the words are the party’s, quoted or summarised from the sources shown. Nothing recorded is itself a finding, and the site says when it last checked. Indented rows are narrower questions under the issue above them. A list’s broad answer is never carried down to them, so a blank there means these sources do not answer the narrow question. These classifications compare recorded answers; they are not a stability forecast, questions are not equally important, and differences may be negotiable."}
       </p>
+      <p className="foot"><Link href={`/export/issue?${new URLSearchParams({ p: selected.join(",") })}`}>Print or export the whole comparison for these lists</Link></p>
     </div>
   );
 }
@@ -231,7 +378,7 @@ function CompareLive(props: Props) {
   return <CompareView {...props} selected={selected} onSelect={onSelect} />;
 }
 
-/** The comparison. The selection lives in `?p=`; until the URL is read, the default set is shown. */
+/** The comparison. The column set lives in `?p=`; until the URL is read, every list is shown. */
 export default function Compare(props: Props) {
   return (
     <Suspense fallback={<CompareView {...props} selected={props.defaults} />}>
