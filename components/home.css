@@ -2,13 +2,15 @@
 .home .wrap { padding-bottom: 48px; }
 .home section h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.1; margin: 0 0 16px; }
 
-.home .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "intro mosaic" "selectors mosaic" "detail detail" "source source" "context context"; gap: 20px 64px; align-items: start; padding-block: 40px 36px; }
+.home .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro intro" "mosaic basis" "mosaic selectors" "detail detail" "source source" "context context"; gap: 20px 64px; align-items: start; padding-block: 40px 36px; }
 .home .hero .text { grid-area: intro; }
 .home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
-.home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 40ch; }
+.home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 52ch; }
 .home .race-basis { font-size: 14px; font-weight: 600; color: var(--ink); margin: 14px 0 0; }
 .home .race-chart { display: contents; }
 .home .race-selectors { grid-area: selectors; min-width: 0; }
+.home .race-meta { grid-area: basis; }
+.home .race-meta .race-basis { margin: 0; }
 .home .race-instruction { font-size: 14px; color: var(--ink); font-weight: 600; margin: 0 0 10px; }
 .home .race-selectors ul { list-style: none; padding: 0; margin: 0; }
 .home .race-selectors li { border-top: 1px solid var(--line); }
@@ -31,7 +33,7 @@
 .home .race-disclosure { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; font-weight: 600; white-space: nowrap; }
 .home .race-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-top: -3px; }
 .home .race-caret.open { transform: rotate(225deg); margin-top: 3px; }
-.home .race-visual { grid-area: mosaic; min-width: 0; align-self: center; }
+.home .race-visual { grid-area: mosaic; min-width: 0; }
 .home .home-mosaic { width: 100%; }
 .home .mosaic-bloc-control { cursor: pointer; }
 .home .mosaic-bloc-control:hover .c { stroke: var(--ink); stroke-width: .7px; }
@@ -102,7 +104,7 @@
 .home .standing .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
 
 @media (max-width: 1000px) {
-  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
+  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "basis" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
   .home .race-visual { max-width: 640px; width: 100%; }
   .home .today { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .home .today .more { grid-column: 1; }
