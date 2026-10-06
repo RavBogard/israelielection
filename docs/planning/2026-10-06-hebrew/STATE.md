@@ -20,3 +20,5 @@ Daniel: "i want version 1. lets do it" — Hebrew versions of home, polls, Coali
 - [x] Groundwork done: logical CSS (1dc92d3); wave 1 routing and plumbing built (route groups, /he root, global 404, i18n libs).
 - GATE: HE_PUBLIC switch (lib/i18n/index.ts) off — no hreflang on English pages, no /he sitemap entries, /he noindex — proceeded because the Hebrew pages are unwritten and unreviewed; flip it at launch.
 - Note: og:image now lives in app/(en) (route-group URL suffix); the old /opengraph-image URL 404s, social sites refetch.
+- Overlay contract (OVERLAYS.md, lib/i18n/overlays.ts) and Hebrew poll labels committed (dc55eb7).
+- Wave 2 and 3 running in parallel: pages he-home (home, chrome, shared components, results-phase), he-polls, he-builder, he-compare (compare and profiles), he-results; data he-parties, he-positions, he-builder-data. Each owns disjoint files; English HTML diffed before and after.
