@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
       // Teaching resources were dropped (Daniel, 2026-10-06); old links land on the home page.
       { source: "/teach", destination: "/", permanent: false },
       { source: "/teach/:path*", destination: "/", permanent: false },
+      // The changes log was cut (Daniel, 2026-10-06); dated developments are in the briefings.
+      { source: "/changes", destination: "/news", permanent: true },
     ];
   },
 };

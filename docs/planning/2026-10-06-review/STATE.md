@@ -14,6 +14,9 @@ Readings of open points, logged as gates:
 - GATE: PRODUCT.md licence scope line now reads "covers the site's original text only" instead of "teaching materials only", since no teaching materials remain; terms unchanged. Proceeded because it describes the same CC BY-NC grant with the dead noun removed.
 - GATE: build runs as parallel subagents after Wave 1, each owning disjoint files; one shared dev server; builds and screenshots done centrally per batch.
 
+- Daniel, 2026-10-06: "cut changes log". /changes removed (page, component, lib, tests, nav entry, resources tile, news link) and redirected permanently to /news. data/material-changes.json is left for the content lane to delete. components/ChangesSourceLabels.tsx stays: the news page uses it.
+- Daniel, 2026-10-06: approved the one-word edit to his signed home note ("learn and ask").
+
 ## Build order
 
 Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touched pages), fix, commit, push. Finish review and documenter after the last wave.

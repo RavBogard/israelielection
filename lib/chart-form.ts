@@ -8,6 +8,7 @@ import type { Chart, ChartRow } from "./articles";
  *   - the columns a run of three or more elections or dates, the cells carrying one percentage each
  *     (a list's name may come with it): transposed, so time runs across. Up to four rows become
  *     lines ("trend"); more become one sparkline per row on a shared scale ("sparks");
+ *   - counts split into parts with a last "Total" column the parts add up to: one stacked bar per row;
  *   - two or more columns, mostly cells carrying one percentage: the table, each such cell shaded
  *     by its size (turnout columns stay unshaded, since turnout is a share of a different whole).
  * Anything else stays a plain table. A figure always keeps the table in its "The numbers" fold.
@@ -42,7 +43,13 @@ export function timeOf(label: string): number | null {
 /** A heading that is only a date: "2022", "Nov 2022", "March 2, 2020" (not "Likud 2022"). */
 export const isDate = (h: string) => /^(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(?:\d{1,2},?\s+)?)?(?:19|20)\d{2}$/i.test(h.trim());
 
-export type ChartForm = "lines" | "dots" | "trend" | "sparks" | "heat" | "table";
+export type ChartForm = "lines" | "dots" | "trend" | "sparks" | "stack" | "heat" | "table";
+
+/** A plain count ("90,600", "1,215", "42"), or null. */
+export const count = (s: string | undefined): number | null => {
+  const t = (s ?? "").trim();
+  return /^\d{1,3}(,\d{3})+$|^\d+$/.test(t) ? Number(t.replace(/,/g, "")) : null;
+};
 
 export function formOf(c: Chart): ChartForm {
   if (c.kind !== "table" || !c.columns || c.columns.length < 2) return "table";
@@ -54,8 +61,55 @@ export function formOf(c: Chart): ChartForm {
   if (share(pct) === 1 && timeRows && series <= 4) return "lines";
   if (share(pct) === 1 && series >= 2 && series <= 4 && c.rows.length <= 12) return "dots";
   if (timeColumns(c) && share(pctIn) >= 0.8 && c.rows.every((r) => (r.cells ?? []).some((x) => pctIn(x) !== null))) return c.rows.length <= 4 ? "trend" : "sparks";
+  if (stackable(c)) return "stack";
   if (series >= 2 && share(pctIn) >= 0.5) return "heat";
   return "table";
+}
+
+/** Two or three parts and a last "Total" column, every cell a count, each row's parts adding up to its total. */
+function stackable(c: Chart) {
+  const cols = c.columns!.slice(1);
+  if (cols.length < 3 || cols.length > 4 || !/^total$/i.test(cols.at(-1)!.trim())) return false;
+  return c.rows.every((r) => {
+    const v = (r.cells ?? []).map(count);
+    if (v.length !== cols.length || v.some((x) => x === null)) return false;
+    const parts = (v as number[]).slice(0, -1).reduce((a, x) => a + x, 0);
+    return Math.abs(parts - v.at(-1)!) <= v.at(-1)! * 0.005;
+  });
+}
+
+export type Stack = { parts: string[]; max: number; rows: { row: ChartRow; values: number[]; cells: string[]; total: string }[] };
+/** A stacked bar per row: the parts in column order, every row on one scale from zero to the largest total. */
+export function stacks(c: Chart): Stack {
+  const cols = c.columns!.slice(1);
+  const rows = c.rows.map((row) => ({ row, values: row.cells!.slice(0, -1).map((x) => count(x)!), cells: row.cells!.slice(0, -1), total: row.cells!.at(-1)! }));
+  return { parts: cols.slice(0, -1), max: Math.max(...c.rows.map((r) => count(r.cells!.at(-1))!)), rows };
+}
+
+/*
+ * Heat shading: each cell mixes the theme's ink into its page ground, so more is always more ink, in
+ * light and dark. The mix stops at HEAT_TOP, where ink text still reads at 4.5:1 in both themes
+ * (pinned in chart-form.test.ts), so every cell keeps one text colour.
+ */
+export const HEAT_TOP = 42;
+/** A cell's share of ink (0 to HEAT_TOP), or null when it carries no single percentage. */
+export function heatShare(cell: string | undefined, max: number): number | null {
+  const v = pctIn(cell);
+  return v === null || max <= 0 ? null : Math.round((Math.min(v, max) / max) * HEAT_TOP);
+}
+
+/**
+ * Text cut into lines at words: the first line `first` characters wide, the rest `rest`. When even the
+ * first word does not fit the first line, that line stays empty and the text starts on the next.
+ */
+export function wrapWords(s: string, first: number, rest: number): string[] {
+  const lines = [""];
+  for (const w of s.split(/\s+/).filter(Boolean)) {
+    const n = lines.length, cur = lines[n - 1], next = cur ? `${cur} ${w}` : w;
+    if (next.length <= (n === 1 ? first : rest)) lines[n - 1] = next;
+    else lines.push(w);
+  }
+  return lines;
 }
 
 /** Three or more columns after the first, each only a date, running forward in time. */
@@ -82,14 +136,17 @@ export const listIn = (cell: string) => cell.replace(/(\d+(?:\.\d+)?)%/, "").rep
 /** A point: its column, value, the cell, and the percentage as the cell prints it ("17.0%"). */
 export type SparkPoint = { j: number; v: number; raw: string; txt: string };
 /** A list name under a sparkline: where it starts (0–1 along the track), how much room it has, its lane and alignment. */
-export type SparkLabel = { list: string; at: number; width: number; lane: 0 | 1; end: boolean };
-export type SparkRow = { row: ChartRow; pts: SparkPoint[]; runs: SparkPoint[][]; labels: SparkLabel[]; lanes: number };
+export type SparkLabel = { list: string; at: number; width: number; lane: 0 | 1; end: boolean; from: string };
+/** `flow`: where a name will not fit its room under the line, on a phone (s) or wider (l), the names are listed under it instead, each with the election it starts at. */
+export type SparkRow = { row: ChartRow; pts: SparkPoint[]; runs: SparkPoint[][]; labels: SparkLabel[]; lanes: number; flow: { s: boolean; l: boolean } };
 export type Sparks = { cols: { label: string; at: number }[]; max: number; rows: SparkRow[] };
 
 /** Room a list name at the right end is given, as a share of the track. */
 const END_ROOM = 0.3;
 /** Narrowest room a name is given before the names go on two lanes. */
 const MIN_ROOM = 0.3;
+/** About how wide a sparkline track is, in px, on a phone and wider, and a 12px name's width a character. */
+const TRACK = { s: 220, l: 290 }, CH = 6.6;
 
 /**
  * One sparkline per row on one shared scale: elections placed by date, a gap where a cell is blank,
@@ -115,11 +172,12 @@ export function sparks(c: Chart): Sparks {
         const end = at(p.j) > 1 - END_ROOM / 2;
         const next = changes.slice(k + 1).find((_, n) => lanes === 1 || n % 2 === 1);
         const stop = next ? (at(next.j) > 1 - END_ROOM / 2 ? 1 - END_ROOM : at(next.j)) : 1;
-        return { list: listIn(p.raw), at: at(p.j), width: end ? END_ROOM : Math.max(0, stop - at(p.j)), lane, end };
+        return { list: listIn(p.raw), at: at(p.j), width: end ? END_ROOM : Math.max(0, stop - at(p.j)), lane, end, from: heads[p.j] };
       });
     const one = place(1);
     const labels = one.every((l) => l.width >= MIN_ROOM || l.end) ? one : place(2);
-    return { row, pts, runs, labels, lanes: labels.length ? Math.max(...labels.map((l) => l.lane)) + 1 : 0 };
+    const fits = (px: number) => labels.every((l) => l.list.length * CH + 6 <= l.width * px);
+    return { row, pts, runs, labels, lanes: labels.length ? Math.max(...labels.map((l) => l.lane)) + 1 : 0, flow: { s: !fits(TRACK.s), l: !fits(TRACK.l) } };
   });
   return { cols: heads.map((label, j) => ({ label, at: at(j) })), max: vals.length ? scaleMax(vals) : 100, rows };
 }

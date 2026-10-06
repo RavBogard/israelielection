@@ -25,8 +25,8 @@ describe("visitor navigation catalog",()=>{
  });
  it("holds election-night pages out of the menus until polls close, unless the reader is on one",()=>{
   const items=NAV_GROUPS.find(g=>g.id==="polls")!.items,hrefs=(closed:boolean,path:string)=>visibleNavItems(items,closed,path).map(n=>n.href);
-  expect(hrefs(false,"/polls")).toEqual(["/polls","/news","/changes"]);
-  expect(hrefs(true,"/polls")).toEqual(["/polls","/news","/changes","/results","/government"]);
+  expect(hrefs(false,"/polls")).toEqual(["/polls","/news"]);
+  expect(hrefs(true,"/polls")).toEqual(["/polls","/news","/results","/government"]);
   expect(hrefs(false,"/results")).toContain("/results");expect(hrefs(false,"/results")).not.toContain("/government");
   expect(NAV.map(n=>n.href)).toEqual(expect.arrayContaining(["/results","/government"]));
  });

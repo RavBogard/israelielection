@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import Link from "next/link";
 import type {ReactNode} from "react";
 import {BuilderGlyph,PartyMapGlyph,PollsGlyph,VoteMapGlyph} from "@/components/HomeGlyphs";
-import {BallotGlyph,ChangesGlyph,CompareGlyph,FamilyGlyph,GlossaryGlyph,GovernmentGlyph,LensGlyph,NewsGlyph,ResultsGlyph,SheetsGlyph,TimelineGlyph} from "./glyphs";
+import {BallotGlyph,CompareGlyph,FamilyGlyph,GlossaryGlyph,GovernmentGlyph,LensGlyph,NewsGlyph,ResultsGlyph,SheetsGlyph,TimelineGlyph} from "./glyphs";
 import briefingsJson from "@/data/briefings/_index.json";
 import questionsJson from "@/data/comparison-questions.json";
 import glossaryJson from "@/data/glossary.json";
@@ -13,7 +13,6 @@ import election2022 from "@/public/vote-map/2022.json";
 import type {Briefing} from "@/lib/briefing";
 import {COMMUNITIES,GUIDES,ISSUES} from "@/lib/articles";
 import {ballotLists} from "@/lib/ballot";
-import {changes} from "@/lib/changes";
 import {allPolls,averagePoll,mainPolls,parties,pollsData} from "@/lib/data";
 import {longDate,mediumDate,shortDate} from "@/lib/format";
 import {initialOf} from "@/lib/glossary";
@@ -39,14 +38,12 @@ function tiles():Record<string,{fig:ReactNode;caption?:string}>{
  const blocsNow=blocTotals(averagePoll,parties);
  const trend=allPolls.filter(p=>!isExit(p));
  const steps=outgoingJson.events.filter(e=>e.seatsAfter!=null).map(e=>({date:e.date,seats:e.seatsAfter as number}));
- const changeDates=changes.map(c=>c.date).sort();
  const lanes=historyJson.histories.map(h=>h.events.map(e=>e.date.slice(0,4)));
  const terms=glossaryJson.terms;
  const listed=parties.filter(p=>(averagePoll.results[p.id]?.seats??0)>0).length;
  return {
   "/polls":{fig:<PollsGlyph polls={trend} parties={parties} config={pollsData.config}/>,caption:`${mainPolls.length} current polls in the average, newest ${shortDate(mainPolls[0].published)}`},
   "/news":{fig:b?<NewsGlyph date={shortDate(b.date)} sentences={b.sentences.map(s=>s.text)}/>:<SheetsGlyph n={1} k="news"/>,caption:b?`${longDate(b.date)}: ${clip(b.sentences[0]?.text??"",90)}`:undefined},
-  "/changes":{fig:<ChangesGlyph dates={changeDates}/>,caption:`${changes.length} logged changes, newest dated ${shortDate(changeDates.at(-1)!)}`},
   "/results":{fig:<ResultsGlyph closed={closed}/>,caption:closed?"Polls have closed; the count as it comes in":`The count opens when polls close, ${IL.format(new Date(resultsConfig.pollsClose))} Israel time on October 27`},
   "/government":{fig:<GovernmentGlyph points={steps}/>,caption:`Outgoing coalition at ${steps.at(-1)!.seats} seats since ${mediumDate(steps.at(-1)!.date)}`},
   "/parties":{fig:<PartyMapGlyph parties={parties} poll={averagePoll}/>,caption:`${listed} lists win seats in the polling average`},

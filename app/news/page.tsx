@@ -62,7 +62,6 @@ export default async function Page() {
             A short daily briefing on what changed, then the latest headlines from {outlets.length} English-language outlets.
           </>}>
           <p className="ph-meta">{outlets.join(", ")}.</p>
-          <p><Link href="/changes">What changed: before, after and affected tools</Link></p>
         </PageHead>
 
         <NewsBlocs />

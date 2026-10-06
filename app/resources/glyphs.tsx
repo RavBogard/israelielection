@@ -1,5 +1,4 @@
 import { GH, GW } from "@/components/HomeGlyphs";
-import { shortDate } from "@/lib/format";
 
 /*
  * Small pictures for the directory, one per page that the home row does not already draw. Each
@@ -20,22 +19,6 @@ export function NewsGlyph({ date, sentences }: { date: string; sentences: string
     <Svg k="news">
       <text className="big" x="20" y="40">{date}</text>
       {rows.map((s, i) => <rect key={i} className={i ? "bar" : "bar first"} x="20" y={56 + i * 15} width={Math.max(20, (s.length / max) * 260)} height="8" />)}
-    </Svg>
-  );
-}
-
-/** The changes log: each logged change as a dot on its date; same-month dots stack. */
-export function ChangesGlyph({ dates }: { dates: string[] }) {
-  const sorted = [...dates].sort();
-  const ts = dates.map(t), lo = Math.min(...ts), hi = Math.max(...ts), x = (v: number) => 24 + ((v - lo) / Math.max(1, hi - lo)) * 252;
-  const seen = new Map<number, number>();
-  const dots = [...ts].sort((a, b) => a - b).map((v) => { const k = Math.round(x(v) / 10); const n = seen.get(k) ?? 0; seen.set(k, n + 1); return { cx: x(v), cy: 112 - n * 16 }; });
-  return (
-    <Svg k="changes">
-      <line className="axis" x1="16" x2="284" y1="126" y2="126" />
-      {dots.map((d, i) => <circle key={i} cx={d.cx} cy={d.cy} r="6" />)}
-      <text className="lab" x="16" y="150">{sorted[0].slice(0, 4) === sorted.at(-1)!.slice(0, 4) ? shortDate(sorted[0]) : sorted[0].slice(0, 4)}</text>
-      <text className="lab" x="284" y="150" textAnchor="end">{shortDate(sorted.at(-1)!)}</text>
     </Svg>
   );
 }
