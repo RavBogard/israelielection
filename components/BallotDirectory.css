@@ -12,8 +12,8 @@
 .bd-letters { font-family: var(--display); font-weight: 900; font-size: 30px; line-height: 1; text-align: center; padding: 6px 0 8px; }
 .bd-name { font-size: 12px; line-height: 1.25; color: var(--ink-2); margin-top: auto; }
 .ballot-directory .bd-slip.polled { border-color: var(--c); box-shadow: inset 0 5px 0 var(--c); }
-.bd-slip.polled .bd-name { color: var(--ink); font-weight: 600; padding-right: 30px; }
-.bd-seats { position: absolute; right: 0; bottom: 0; min-width: 30px; padding: 2px 5px; text-align: center; background: var(--c); color: var(--ci); font-family: var(--display); font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
+.bd-slip.polled .bd-name { color: var(--ink); font-weight: 600; padding-inline-end: 30px; }
+.bd-seats { position: absolute; inset-inline-end: 0; bottom: 0; min-width: 30px; padding: 2px 5px; text-align: center; background: var(--c); color: var(--ci); font-family: var(--display); font-weight: 700; font-size: 14px; font-variant-numeric: tabular-nums; }
 .bd-src { margin: 10px 0 0; max-width: 85ch; }
 
 .ballot-controls { display: flex; gap: 16px; margin: 0 0 12px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--ink); }

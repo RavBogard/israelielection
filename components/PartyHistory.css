@@ -12,17 +12,17 @@
 .ph-axis i { position: absolute; transform: translateX(-50%); white-space: nowrap; font-style: normal; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .ph-axis i:first-of-type { transform: none; }
 .ph-axis i:last-of-type { transform: translateX(-60%); }
-.ph-break { position: absolute; top: 2px; bottom: -8px; width: 4px; margin-left: -2px; border-left: 1px solid var(--ink-2); border-right: 1px solid var(--ink-2); background: var(--bg); }
+.ph-break { position: absolute; top: 2px; bottom: -8px; width: 4px; margin-left: -2px; border-left: 1px solid var(--ink-2); border-right: 1px solid var(--ink-2); background: var(--bg); } /* physical: chart geometry */
 .ph-famname { grid-column: 1 / -1; margin: 14px 0 2px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
 .ph-lane { align-items: center; padding: 3px 0; border-top: 1px solid var(--line); }
 .ph-name { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink); text-decoration: none; min-width: 0; }
 .ph-name:hover { text-decoration: underline; }
-.ph-track { position: relative; display: block; height: 24px; margin-right: 12px; }
+.ph-track { position: relative; display: block; height: 24px; margin-right: 12px; } /* physical: chart geometry */
 .ph-grid-l { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); }
 .ph-line { position: absolute; top: 50%; height: 3px; margin-top: -1.5px; }
 .ph-ev { position: absolute; top: 50%; height: 0; min-width: 0; }
-.ph-ev[style*="width"]::before { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 3px; background: var(--ink-2); }
-.ph-ev .ph-m { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); }
+.ph-ev[style*="width"]::before { content: ""; position: absolute; left: 0; right: 0; top: 4px; height: 3px; background: var(--ink-2); } /* physical: chart geometry */
+.ph-ev .ph-m { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); } /* physical: chart geometry */
 
 /* The marks: a filled circle starts a line, a diamond joins others, a triangle leaves, a bar is a name or the 2026 list. */
 .ph-m { flex: none; overflow: visible; }
@@ -78,10 +78,10 @@
 /* The 2026 filing has its own mark, a ballot slip; 2005 is printed beside the scale break. */
 .ph-m.slip { fill: var(--bg); stroke: var(--ink); stroke-width: 1.6; }
 .ph-axis .ph-break-l { position: absolute; transform: translateX(6px); white-space: nowrap; font-style: normal; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.ph-ev.slip .ph-m { left: 100%; }
+.ph-ev.slip .ph-m { left: 100%; } /* physical: chart geometry */
 @media (max-width: 640px) { .ph-axis i:nth-child(4) { display: none; } }
 /* Ballot letters as their own mark beside the 2026 list's name. */
-.history-letters { display: inline-block; margin-left: 10px; padding: 0 7px; font-family: var(--display); font-weight: 900; font-size: 16px; line-height: 1.5; background: var(--sheet); border: 1px solid var(--line-2); vertical-align: 1px; }
+.history-letters { display: inline-block; margin-inline-start: 10px; padding: 0 7px; font-family: var(--display); font-weight: 900; font-size: 16px; line-height: 1.5; background: var(--sheet); border: 1px solid var(--line-2); vertical-align: 1px; }
 .history-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 /* Phones: marks too close to read side by side go above (row 1) and below (row 2) the line. */
 @media (max-width: 640px) {

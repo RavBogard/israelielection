@@ -14,7 +14,7 @@
 .home .race-instruction { font-size: 14px; color: var(--ink); font-weight: 600; margin: 0 0 10px; }
 .home .race-selectors ul { list-style: none; padding: 0; margin: 0; }
 .home .race-selectors li { border-top: 1px solid var(--line); }
-.home .race-bloc-button { display: block; width: 100%; text-align: left; cursor: pointer; border: 0; background: transparent; padding: 9px 6px 9px 8px; font: inherit; color: var(--ink); }
+.home .race-bloc-button { display: block; width: 100%; text-align: start; cursor: pointer; border: 0; background: transparent; padding-block: 9px; padding-inline: 8px 6px; font: inherit; color: var(--ink); }
 .home .race-bloc-button:hover { background: var(--sheet); }
 .home .race-bloc-button[aria-expanded="true"] { background: var(--sheet); }
 .home .race-bloc-button[aria-expanded="true"] .race-group-name { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -22,7 +22,7 @@
 .home .race-group-name { display: flex; align-items: baseline; gap: 8px; font-size: 15px; font-weight: 600; line-height: 1.3; }
 .home .race-group-name .sw { flex: 0 0 auto; align-self: baseline; }
 .home .race-value { font: 700 25px var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.home .race-value small { display: block; font: 400 12px var(--body); text-align: right; color: var(--text); }
+.home .race-value small { display: block; font: 400 12px var(--body); text-align: end; color: var(--text); }
 .home .race-change { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; margin-top: 2px; }
 .home .race-spark { width: 52px; height: 18px; flex: 0 0 auto; }
 .home .race-spark path { fill: none; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
@@ -30,7 +30,7 @@
 .home .race-newest a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
 .home .race-row-caption { display: flex; align-items: baseline; gap: 8px; justify-content: space-between; font-size: 12px; margin-top: 3px; }
 .home .race-gap { color: var(--text); }
-.home .race-disclosure { display: inline-flex; align-items: center; gap: 8px; margin-left: auto; font-weight: 600; white-space: nowrap; }
+.home .race-disclosure { display: inline-flex; align-items: center; gap: 8px; margin-inline-start: auto; font-weight: 600; white-space: nowrap; }
 .home .race-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-top: -3px; }
 .home .race-caret.open { transform: rotate(225deg); margin-top: 3px; }
 .home .race-visual { grid-area: mosaic; min-width: 0; }
@@ -48,7 +48,7 @@
 .home .race-parties li { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
 .home .race-parties a { display: inline-flex; align-items: baseline; gap: 7px; font-size: 14px; color: var(--ink); text-underline-offset: 3px; }
 .home .race-parties .sw { flex-shrink: 0; align-self: center; }
-.home .race-party-seats { text-align: right; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink); }
+.home .race-party-seats { text-align: end; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink); }
 .home .race-party-seats small { display: block; font-size: 12px; color: var(--text); margin-top: 2px; }
 .home .race-combined,.home .race-model-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 10px 0 0; max-width: 75ch; }
 .home .race-source { grid-area: source; max-width: 75ch; margin: 0; }
@@ -71,7 +71,7 @@
 .home .ss-blocs { list-style: none; margin: 0; padding: 0; }
 .home .ss-blocs li { display: flex; align-items: baseline; gap: 7px; font-size: 13px; line-height: 1.3; color: var(--text); padding: 3px 0; }
 .home .ss-blocs .sw { flex: 0 0 auto; align-self: center; }
-.home .ss-blocs b { margin-left: auto; font: 700 16px var(--display); font-variant-numeric: tabular-nums; color: var(--ink); }
+.home .ss-blocs b { margin-inline-start: auto; font: 700 16px var(--display); font-variant-numeric: tabular-nums; color: var(--ink); }
 .home .ss-blocs li.maj { color: var(--ink); font-weight: 600; }
 .home .ss-blocs li.maj b { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .home .ss-maj { margin: 0; font-size: 13px; font-weight: 600; color: var(--ink); }

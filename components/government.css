@@ -22,7 +22,7 @@
 .gov .step.current .num { color: var(--ink); }
 .gov .step .now { background: var(--ink); color: var(--bg); padding: 1px 8px; font-size: 12.5px; }
 
-.gov .gov-alt { max-width: 760px; margin-top: 6px; padding: 16px 0 18px 64px; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line); }
+.gov .gov-alt { max-width: 760px; margin-top: 6px; padding-block: 16px 18px; padding-inline: 64px 0; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line); }
 .gov .gov-alt h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.15; margin: 0 0 4px; }
 .gov .gov-alt .when { font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0 0 8px; }
 .gov .gov-alt .rule { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 0; max-width: 62ch; }
@@ -33,7 +33,7 @@
 
 @media (max-width: 560px) {
   .gov .step { grid-template-columns: 32px minmax(0, 1fr); gap: 0 12px; }
-  .gov .gov-alt { padding-left: 44px; }
+  .gov .gov-alt { padding-inline-start: 44px; }
 }
 
 /* Who governs until then: the outgoing coalition as the same dated steps, the number column carrying its seats after each change. */
@@ -87,15 +87,15 @@
 .gov .gov-clock .discretion .gc-bar { background: var(--sheet); box-shadow: inset 0 0 0 1.5px var(--ink-2); color: var(--ink); }
 .gov .gov-clock .any .gc-bar { top: 11px; bottom: 11px; background: var(--ink-2); }
 .gov .gov-clock .any .gc-lab { color: var(--ink); font-weight: 600; }
-.gov .gov-clock .gc-len { padding-left: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.gov .gov-clock .discretion .gc-len { background: var(--bg); padding: 0 4px; margin-left: 4px; }
+.gov .gov-clock .gc-len { padding-left: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; } /* physical: chart geometry */
+.gov .gov-clock .discretion .gc-len { background: var(--bg); padding: 0 4px; margin-left: 4px; } /* physical: chart geometry */
 .gov .gov-clock .gc-axis .gc-track { height: 20px; }
 .gov .gov-clock .gc-tick { position: absolute; bottom: 2px; transform: translateX(-50%); font-size: 12px; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .gov .gov-clock .gc-tick:first-child { transform: none; }
 .gov .gov-clock .gc-foot .gc-track { height: auto; min-height: 36px; }
-.gov .gov-clock .gc-end { position: absolute; top: 4px; transform: translateX(-100%); width: 21em; text-align: right; font-size: 12.5px; color: var(--ink-2); line-height: 1.35; padding-right: 6px; border-right: 1px solid var(--ink); }
-.gov .gov-clock .gc-now { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); }
-.gov .gov-clock .gc-nowl { position: absolute; top: 4px; font-size: 12.5px; font-weight: 700; color: var(--ink); padding-left: 6px; }
+.gov .gov-clock .gc-end { position: absolute; top: 4px; transform: translateX(-100%); width: 21em; text-align: right; font-size: 12.5px; color: var(--ink-2); line-height: 1.35; padding-right: 6px; border-right: 1px solid var(--ink); } /* physical: chart geometry */
+.gov .gov-clock .gc-now { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--ink); } /* physical: chart geometry */
+.gov .gov-clock .gc-nowl { position: absolute; top: 4px; font-size: 12.5px; font-weight: 700; color: var(--ink); padding-left: 6px; } /* physical: chart geometry */
 @media (max-width: 640px) {
   .gov .gov-clock .gc-row, .gov .gov-clock .gc-axis { grid-template-columns: minmax(0, 1fr); }
   .gov .gov-clock .gc-axis .gc-lab, .gov .gov-clock .gc-foot .gc-lab { display: none; }
@@ -103,7 +103,7 @@
   .gov .gov-clock .gc-lab { font-size: 13.5px; }
   .gov .gov-clock .gc-track { height: 22px; }
   .gov .gov-clock .gc-tick:nth-child(3) { display: none; }
-  .gov .gov-clock .gc-end { position: static; transform: none; width: auto; text-align: left; border-right: 0; border-left: 1px solid var(--ink); padding: 0 0 0 8px; display: block; }
+  .gov .gov-clock .gc-end { position: static; transform: none; width: auto; text-align: left; border-right: 0; border-left: 1px solid var(--ink); padding: 0 0 0 8px; display: block; } /* physical: chart geometry */
   .gov .gov-clock .gc-foot .gc-track { min-height: 0; padding-top: 8px; }
   .gov .gov-fig svg.wide { display: none; }
   .gov .gov-fig svg.narrow { display: block; }

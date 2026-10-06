@@ -4,8 +4,8 @@
 .nw .nw-brief h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.05; margin: 0; }
 .nw .nw-sentences { display: flex; flex-direction: column; gap: 12px; }
 .nw .nw-sentences p, .nw .nw-old p { margin: 0; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
-.nw .cite { font-family: var(--body); font-size: 12.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; margin-left: 2px; white-space: nowrap; border-bottom: 1px solid var(--line-2); }
-.nw .cite + .cite { margin-left: 6px; }
+.nw .cite { font-family: var(--body); font-size: 12.5px; font-weight: 600; color: var(--ink-2); text-decoration: none; margin-inline-start: 2px; white-space: nowrap; border-bottom: 1px solid var(--line-2); }
+.nw .cite + .cite { margin-inline-start: 6px; }
 .nw .cite:hover { color: var(--ink); border-bottom-color: var(--ink); }
 .nw .nw-none { color: var(--ink-3); margin: 0; }
 .nw .nw-archive summary { cursor: pointer; font-weight: 600; color: var(--ink-2); font-size: 14px; }
@@ -25,7 +25,7 @@
 }
 @media (max-width: 560px) {
   .nw .nw-list li { grid-template-columns: minmax(0, 1fr); }
-  .nw .nw-meta b { display: inline; margin-right: 6px; }
+  .nw .nw-meta b { display: inline; margin-inline-end: 6px; }
 }
 
 /* A day's briefing at its own address. */
@@ -36,7 +36,7 @@
 .nw .nw-meta .source-access { display: block; margin-top: 4px; }
 .nw .nw-group { font-size: 12px; color: var(--ink-2); }
 .nw .nw-group summary { cursor: pointer; font-weight: 600; }
-.nw .nw-group ul { margin: 8px 0 0; padding-left: 16px; }
+.nw .nw-group ul { margin: 8px 0 0; padding-inline-start: 16px; }
 .nw .nw-group li { display: list-item; border: 0; padding: 4px 0; overflow-wrap: anywhere; }
 .nw .nw-group a { color: var(--ink-2); }
 

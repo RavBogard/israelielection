@@ -17,16 +17,16 @@
 .pp-head .lead { margin: 10px 0 0; font-size: 15.5px; line-height: 1.45; color: color-mix(in oklab, var(--pc-ink) 86%, var(--pc)); max-width: 62ch; }
 .pp-head .lead b { color: var(--pc-ink); font-weight: 600; }
 .pp-head .lead .s { font-size: 12.5px; color: color-mix(in oklab, var(--pc-ink) 72%, var(--pc)); }
-.pp-head .bloc { text-align: right; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+.pp-head .bloc { text-align: end; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
 /* The bloc chip sits on paper, so its bloc swatch never reads as an empty box on the party's colour. */
 .pp-head .chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); padding: 4px 10px; background: var(--bg); }
 .pp-head .chip i { width: 11px; height: 11px; display: inline-block; }
 .pp-head .total { font-size: 13px; color: color-mix(in oklab, var(--pc-ink) 80%, var(--pc)); }
-.pp-head .total b { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--pc-ink); margin-right: 3px; }
+.pp-head .total b { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--pc-ink); margin-inline-end: 3px; }
 @media (max-width: 700px) {
   .pp-head .wrap { grid-template-columns: auto minmax(0, 1fr); padding-block: 20px; }
   .pp-head .letters { font-size: 42px; }
-  .pp-head .bloc { grid-column: 1 / -1; align-items: flex-start; text-align: left; flex-direction: row; gap: 16px; align-items: baseline; }
+  .pp-head .bloc { grid-column: 1 / -1; align-items: flex-start; text-align: start; flex-direction: row; gap: 16px; align-items: baseline; }
 }
 
 /* The spread. */
@@ -50,20 +50,20 @@
 .pp-text h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.1; letter-spacing: -.01em; margin: 0; padding-top: 10px; border-top: 1px solid var(--ink); }
 .pp-text h2 + * { margin-top: 2px; }
 .pp-text h2:not(:first-child) { margin-top: 26px; }
-.pp-items { margin: 0; padding-left: 18px; list-style: disc; display: flex; flex-direction: column; gap: 5px; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
+.pp-items { margin: 0; padding-inline-start: 18px; list-style: disc; display: flex; flex-direction: column; gap: 5px; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
 .pp .s { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); }
 .pp-names { list-style: none; margin: 0; padding: 0; font-size: 15px; display: flex; flex-direction: column; gap: 5px; }
 .pp-names li { display: grid; grid-template-columns: 3.4em 1fr; gap: 8px; }
 .pp-names .slot { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-2); }
-.pp-quote { margin: 0; padding: 4px 0 4px 18px; border-left: 3px solid var(--pc); font-family: var(--display); font-size: 21px; line-height: 1.4; color: var(--ink); }
+.pp-quote { margin: 0; padding-block: 4px; padding-inline: 18px 0; border-inline-start: 3px solid var(--pc); font-family: var(--display); font-size: 21px; line-height: 1.4; color: var(--ink); }
 .pp-quote footer { margin-top: 8px; font-family: var(--body); font-size: 13px; color: var(--ink-3); }
 .pp-bio { margin: 0; font-family: var(--display); font-size: 16.5px; line-height: 1.55; color: var(--text); }
 .pp-links { margin: 18px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14.5px; font-weight: 600; }
 .pp-links a { color: var(--ink); }
 
 /* At a glance: four numbers, two by two, hairlines between. */
-.pp-glance { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--line-2); border-left: 1px solid var(--line-2); }
-.pp-glance > div { padding: 14px 14px 12px; border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); min-width: 0; }
+.pp-glance { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px solid var(--line-2); border-inline-start: 1px solid var(--line-2); }
+.pp-glance > div { padding: 14px 14px 12px; border-inline-end: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); min-width: 0; }
 .pp-glance dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 8px; }
 .pp-glance dd .sw { width: 13px; height: 13px; align-self: center; }
 .pp-glance dd .of { font-size: 18px; font-weight: 500; color: var(--ink-2); }
@@ -90,8 +90,8 @@
 
 /* Voter base: one stacked bar, its key, then the share of each group won. */
 .pp-stack { display: flex; height: 30px; width: 100%; background: var(--cell); }
-.pp-stack span { display: block; height: 100%; border-right: 1.5px solid var(--sheet); }
-.pp-stack span:last-child { border-right: 0; }
+.pp-stack span { display: block; height: 100%; border-right: 1.5px solid var(--sheet); } /* physical: chart geometry */
+.pp-stack span:last-child { border-right: 0; } /* physical: chart geometry */
 .pp-stack-key { margin: 8px 0 0; }
 .pp-stack-key li { align-items: baseline; gap: 5px; white-space: nowrap; }
 .pp-stack-key i { width: 9px; height: 9px; display: inline-block; align-self: center; flex: none; }
@@ -109,8 +109,8 @@
 .pp-map .lead { stroke: var(--ink-3); stroke-width: .7; }
 .pp-map .lbl { font-family: var(--body); font-size: 14px; font-weight: 600; fill: var(--ink); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
 .pp-maptable { border-collapse: collapse; font-size: 13.5px; width: 100%; max-width: 360px; }
-.pp-maptable th { text-align: left; font-weight: 400; color: var(--ink-2); padding: 5px 12px 5px 0; border-bottom: 1px solid var(--line); }
-.pp-maptable td { text-align: right; font-family: var(--display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink); padding: 5px 0; border-bottom: 1px solid var(--line); }
+.pp-maptable th { text-align: start; font-weight: 400; color: var(--ink-2); padding-block: 5px; padding-inline: 0 12px; border-bottom: 1px solid var(--line); }
+.pp-maptable td { text-align: end; font-family: var(--display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink); padding: 5px 0; border-bottom: 1px solid var(--line); }
 .pp-maptable tr.national th, .pp-maptable tr.national td { color: var(--ink-3); border-bottom: 1px solid var(--ink); }
 .pp-maptable tr.national td { font-weight: 500; }
 .pp-maptable tr.top th { color: var(--ink); font-weight: 500; }
@@ -120,7 +120,7 @@
 /* Stance tiles. */
 .pp-stand { display: flex; flex-direction: column; gap: 10px; }
 .pp-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
-.pp-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); color: var(--ink); font: inherit; cursor: pointer; min-width: 0; transition: border-color .12s; }
+.pp-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: start; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); color: var(--ink); font: inherit; cursor: pointer; min-width: 0; transition: border-color .12s; }
 .pp-tile .bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); }
 .pp-tile .bar.deep { box-shadow: inset 0 0 0 1px var(--ramp-edge); }
 .pp-tile .bar.unordered { box-shadow: inset 0 0 0 1px var(--ink); }
@@ -136,11 +136,11 @@
 .pp-tile:hover { border-color: var(--ink); }
 .pp-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; }
 .pp-tile.open .bar { margin: 0 -8px 2px; }
-.pp-tile.open::after { content: ""; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); }
+.pp-tile.open::after { content: ""; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } /* physical: centered with translateX */
 /* No position found is absent: a hatched bar on a plain tile. Dashed means out. */
 .pp-tile.nf .bar { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); box-shadow: inset 0 -1px 0 var(--line-2); }
 .pp-tile.nf .stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }
-.pp-tilekey .unst-key { display: inline-block; width: 22px; height: 9px; vertical-align: -1px; margin-right: 4px; background: color-mix(in oklab, var(--ramp-start) 50%, var(--ramp-end)); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
+.pp-tilekey .unst-key { display: inline-block; width: 22px; height: 9px; vertical-align: -1px; margin-inline-end: 4px; background: color-mix(in oklab, var(--ramp-start) 50%, var(--ramp-end)); box-shadow: inset 0 0 0 1px var(--ramp-edge); position: relative; color: #000; }
 .pp-tilekey .unst-key::after { content: ""; position: absolute; inset: 2px; border: 2px dotted currentColor; }
 .pp-tilekey { margin: 0; font-size: 12px; line-height: 1.4; color: var(--ink-3); }
 .pp-tilepanel { background: var(--sheet); border: 1px solid var(--line-2); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }

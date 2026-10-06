@@ -4,7 +4,7 @@
 .pd-facts p { margin: 0; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .pd-facts .pd-count { color: var(--ink); font-weight: 600; }
 .pd-facts a { color: var(--ink); }
-.pd-facts .cite { margin-left: auto; }
+.pd-facts .cite { margin-inline-start: auto; }
 
 .pd-tabs { margin-top: 40px; }
 .pd-tablist { display: flex; flex-wrap: wrap; gap: 0 4px; border-bottom: 1px solid var(--ink); }
@@ -17,6 +17,6 @@
 .pd-panel[hidden] { display: none; }
 @media (max-width: 560px) {
   .pd-tablist { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
-  .pd-tablist [role="tab"] { padding-inline: 8px; text-align: left; font-size: 15px; }
-  .pd-facts .cite { margin-left: 0; }
+  .pd-tablist [role="tab"] { padding-inline: 8px; text-align: start; font-size: 15px; }
+  .pd-facts .cite { margin-inline-start: 0; }
 }

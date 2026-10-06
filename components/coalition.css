@@ -31,15 +31,15 @@
 .cb .verdict .none { font-size: 24px; color: var(--ink-3); }
 .cb .mrow { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: baseline; }
 .cb .mrow .ml { font: 600 13px/1.3 var(--body); color: var(--ink); }
-.cb .mrow .mv { font: 13px/1.3 var(--body); color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+.cb .mrow .mv { font: 13px/1.3 var(--body); color: var(--ink-2); text-align: end; font-variant-numeric: tabular-nums; }
 .cb .mrow .seatbar { grid-column: 1 / -1; margin-top: 2px; }
-.cb .k { display: inline-block; width: 14px; height: 12px; vertical-align: -1px; margin-right: 6px; }
+.cb .k { display: inline-block; width: 14px; height: 12px; vertical-align: -1px; margin-inline-end: 6px; }
 .cb .k-gap { background: var(--cell) !important; box-shadow: inset 0 0 0 1px var(--line-2); }
 .cb .mkey { gap: 4px 14px; font-size: 12.5px; }
 .cb .needed { font-size: 14px; line-height: 1.45; color: var(--text); margin: 0; }
 .cb .list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .cb .list li { display: flex; align-items: center; gap: 10px; font-size: 15px; padding: 7px 0; border-bottom: 1px solid var(--line); }
-.cb .list li .v { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
+.cb .list li .v { margin-inline-start: auto; font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink); }
 .cb .empty { color: var(--ink-3); font-family: var(--display); font-size: 16px; margin: 0; border-bottom: 0 !important; }
 .cb .warns { display: flex; flex-direction: column; gap: 8px; }
 .cb .warn { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line); padding: 10px 12px; font-size: 14px; line-height: 1.4; }
@@ -59,7 +59,7 @@
 */
 .cb .slip { position: relative; display: flex; flex-direction: column; background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); border-top: 5px solid var(--fill); min-height: 190px; transition: border-color .12s, background .12s; }
 .cb .slip:hover { border-color: var(--ink); border-top-color: var(--fill); }
-.cb .slip .face { font: inherit; text-align: left; background: transparent; color: inherit; border: 0; padding: 14px 14px 8px; cursor: pointer; display: flex; flex-direction: column; flex: 1; width: 100%; gap: 2px; }
+.cb .slip .face { font: inherit; text-align: start; background: transparent; color: inherit; border: 0; padding: 14px 14px 8px; cursor: pointer; display: flex; flex-direction: column; flex: 1; width: 100%; gap: 2px; }
 .cb .slip .letters { font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; letter-spacing: .02em; margin-bottom: 10px; color: var(--ink); align-self: flex-start; }
 .cb .slip .nm { font-weight: 700; font-size: 16.5px; line-height: 1.2; letter-spacing: -.005em; color: var(--ink); }
 .cb .slip .ld { font-size: 13.5px; line-height: 1.3; color: var(--ink-2); }
@@ -81,12 +81,12 @@
 .cb .slip.out .prof { color: var(--ink); }
 
 .cb .scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 40; }
-.cb .drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(620px, 100%); background: var(--bg); color: var(--text); border-left: 1px solid var(--ink); box-shadow: -16px 0 48px var(--shadow); z-index: 41; display: flex; flex-direction: column; animation: cb-slidein .2s ease-out; }
+.cb .drawer { position: fixed; top: 0; inset-inline-end: 0; bottom: 0; width: min(620px, 100%); background: var(--bg); color: var(--text); border-inline-start: 1px solid var(--ink); box-shadow: -16px 0 48px var(--shadow); z-index: 41; display: flex; flex-direction: column; animation: cb-slidein .2s ease-out; }
 @keyframes cb-slidein { from { transform: translateX(32px); opacity: 0; } to { transform: none; opacity: 1; } }
 .cb .dhead { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 12px 22px; border-bottom: 1px solid var(--ink); }
 .cb .dbody { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 22px 22px 32px; }
 @media (max-width: 640px) {
-  .cb .drawer { width: 100%; border-left: 0; box-shadow: none; }
+  .cb .drawer { width: 100%; border-inline-start: 0; box-shadow: none; }
   .cb .dhead, .cb .dbody { padding-inline: 16px; }
   .cb .dbody .pname { font-size: 30px; }
 }
@@ -125,7 +125,7 @@
 .cb .arrangement-scenarios > p { font: 600 14px var(--body); color: var(--ink-2); margin: 0 0 8px; }
 .cb .arrangement-scenarios .btn { font-size: 13.5px; padding: 6px 11px; }
 .cb .arrangement-scenarios > div:first-of-type { display: flex; flex-wrap: wrap; gap: 8px; }
-.cb .arrangement-scenarios .reset { margin-left: auto; }
+.cb .arrangement-scenarios .reset { margin-inline-start: auto; }
 .cb .arrangement-scenarios .btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .cb .scenario-reading { max-width: 78ch; font: 16px/1.55 var(--display); }
 .cb .confidence { border-top: 1px solid var(--line); padding-top: 12px; }
@@ -144,20 +144,20 @@
 .cb .together .empty { border-bottom: 0; }
 
 /* Keyboard users can jump from the head straight to the result panel. */
-.cb .to-result { position: absolute; left: -9999px; }
+.cb .to-result { position: absolute; inset-inline-start: -9999px; }
 .cb .to-result:focus { position: static; display: inline-block; margin: 0 0 12px; padding: 8px 12px; background: var(--ink); color: var(--bg); font-weight: 600; }
 .cb #arrangement-result:focus { outline: none; }
 /* A slip in a pledge conflict with the chosen cabinet says so in its foot. */
 .cb .slip .pmark { font: 600 12px/1.2 var(--body); color: var(--warn-ink); background: var(--warn-bg); border: 1px solid var(--warn-line); padding: 3px 6px; }
 .cb .slip.outside { border-color: var(--ink); }
-@media (max-width: 640px), (pointer: coarse) { .cb .slip .prof { min-height: 44px; min-width: 44px; text-align: left; } }
+@media (max-width: 640px), (pointer: coarse) { .cb .slip .prof { min-height: 44px; min-width: 44px; text-align: start; } }
 
 /* Partners outside the cabinet: one chip per list with seats, cycling against, outside support, abstains. */
 .cb .outside { display: flex; flex-direction: column; gap: 6px; }
 .cb .outside h3 { font: 600 14px/1.3 var(--body); color: var(--ink); margin: 0; }
 .cb .outside .fig-note { margin: 0; }
 .cb .chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.cb .pchip { display: inline-grid; grid-template-columns: auto auto; grid-template-areas: "k n" "k s"; align-items: center; min-height: 44px; padding: 4px 10px 4px 8px; font: 600 13px/1.2 var(--body); text-align: left; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); cursor: pointer; }
+.cb .pchip { display: inline-grid; grid-template-columns: auto auto; grid-template-areas: "k n" "k s"; align-items: center; min-height: 44px; padding-block: 4px; padding-inline: 8px 10px; font: 600 13px/1.2 var(--body); text-align: start; color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); cursor: pointer; }
 .cb .pchip .k { grid-area: k; }
 .cb .pchip span { grid-area: n; }
 .cb .pchip small { grid-area: s; font-size: 12px; font-weight: 400; color: var(--ink-2); }
@@ -184,7 +184,7 @@
 .cb .path-ctl button:disabled { color: var(--ink-3); cursor: default; background: transparent; }
 .cb .path-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
 .cb .path-list li { border-top: 1px solid var(--line); }
-.cb .path { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "b b" "c c"; gap: 6px 14px; align-items: baseline; padding: 10px 0 12px; font: inherit; text-align: left; color: var(--ink); background: transparent; border: 0; cursor: pointer; }
+.cb .path { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "b b" "c c"; gap: 6px 14px; align-items: baseline; padding: 10px 0 12px; font: inherit; text-align: start; color: var(--ink); background: transparent; border: 0; cursor: pointer; }
 .cb .path:hover .pn { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .cb .path .pn { grid-area: n; font: 600 14px/1.3 var(--body); }
 .cb .path .pv { grid-area: v; font: 13px var(--body); color: var(--ink-2); white-space: nowrap; }
@@ -195,9 +195,9 @@
 .cb .path .pc { grid-area: c; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); }
 .cb .path .pc.on { color: var(--warn-ink); }
 /* A notched top-right corner in the page ground marks a list named in a pledge conflict. */
-.cb .path .sb-seg.pc-x::after, .cb .k-notch::after { content: ""; position: absolute; top: 0; right: 0; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent var(--bg) transparent transparent; }
+.cb .path .sb-seg.pc-x::after, .cb .k-notch::after { content: ""; position: absolute; top: 0; right: 0; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent var(--bg) transparent transparent; } /* physical: chart geometry */
 .cb .k-notch { position: relative; background: var(--ink-2); }
-.cb .k-tick { width: 2px; height: 14px; background: var(--ink); margin-right: 8px; }
+.cb .k-tick { width: 2px; height: 14px; background: var(--ink); margin-inline-end: 8px; }
 .cb .k-hatch { background: repeating-linear-gradient(135deg, var(--ink-2) 0 3px, color-mix(in srgb, var(--ink-2) 28%, var(--sheet)) 3px 6px); }
 .cb .path-key { margin: 12px 0 0; }
 .cb .path-break { margin: 14px 0 6px; font: 600 13px var(--body); color: var(--ink-2); }

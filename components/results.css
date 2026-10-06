@@ -1,14 +1,14 @@
 /* Results page: the 120 seats by bloc with the 61 rule, then the list table. */
-.rs .rs-heb { font-family: var(--display); font-weight: 900; font-size: 18px; color: var(--ink); }
-.rs .rs-steps { padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.rs .rs-heb { font-family: var(--display); font-weight: 900; font-size: 18px; color: var(--ink); direction: inherit; } /* the cell's dir="rtl" is for the letters only; the cell's padding and alignment follow the table's direction */
+.rs .rs-steps { padding-inline-start: 22px; display: flex; flex-direction: column; gap: 6px; }
 .rs .rs-count { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px 56px; align-items: center; margin-top: 10px; }
 .rs .rs-count .sg { width: 100%; }
 .rs .rs-legend { list-style: none; margin: 0; padding: 0; font-size: 15px; }
 .rs .rs-legend li { display: flex; align-items: center; gap: 9px; padding: 7px 0; border-top: 1px solid var(--line); }
 .rs .rs-legend li:last-child { border-bottom: 1px solid var(--line); }
-.rs .rs-legend b { margin-left: auto; font-family: var(--display); font-size: 22px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
+.rs .rs-legend b { margin-inline-start: auto; font-family: var(--display); font-size: 22px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; }
 .rs .letters-table { max-width: 640px; }
-.rs .letters-table .sw { margin-right: 8px; }
+.rs .letters-table .sw { margin-inline-end: 8px; }
 .rs .list-table td.below { color: var(--ink-3); }
 @media (max-width: 900px) { .rs .rs-count { grid-template-columns: minmax(0, 1fr); } }
 
@@ -22,7 +22,7 @@
 .rs .rs-near li { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 6px 0; border-top: 1px solid var(--line); }
 .rs .rs-near li:last-child { border-bottom: 1px solid var(--line); }
 .rs .rs-near li a { color: var(--ink); font-weight: 600; }
-.rs .rs-near .v { color: var(--ink-2); margin-left: auto; text-align: right; }
+.rs .rs-near .v { color: var(--ink-2); margin-inline-start: auto; text-align: end; }
 .rs .rs-exit-note { margin-top: 18px; }
 @media (max-width: 900px) { .rs .rs-watch dl { grid-template-columns: minmax(0, 1fr); } }
 .rs-freshness { border-block: 1px solid var(--ink); margin: 16px 0; padding: 8px 0; font-size: 14px; }
@@ -43,10 +43,10 @@
 .rs .tw-axis .tw-track { height: 16px; }
 .rs .tw-axis i { position: absolute; transform: translateX(-50%); font-style: normal; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .rs .tw-axis i:first-child { transform: none; }
-.rs .tw-gap { position: absolute; top: 3px; bottom: 3px; background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); border-right: 1px solid var(--ink-2); }
+.rs .tw-gap { position: absolute; top: 3px; bottom: 3px; background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); border-right: 1px solid var(--ink-2); } /* physical: chart geometry */
 .rs .tw-dot { position: absolute; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1.5px var(--bg); transform: translateY(calc(var(--k) * 9px)); }
 .rs .tw-dot.hollow { background: var(--bg); box-shadow: inset 0 0 0 2.5px var(--c); }
-.rs .tw-dot.out { margin-left: 0; }
+.rs .tw-dot.out { margin-left: 0; } /* physical: chart geometry */
 .rs .tw-read { font-size: 13.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rs .tw-read b { font-family: var(--display); font-size: 17px; color: var(--ink); }
 .rs .tw-avg { color: var(--ink-3); }
@@ -64,13 +64,13 @@
 .rs .rs-h-bg { fill: var(--cell); }
 .rs .rs-h-ln { stroke: var(--line-2); stroke-width: .5; }
 .rs .rs-await .sg .e { fill: url(#rs-hatch); }
-.rs .rs-await-v { margin-left: auto; font-size: 13px; color: var(--ink-3); }
+.rs .rs-await-v { margin-inline-start: auto; font-size: 13px; color: var(--ink-3); }
 .rs .rs-counted { margin-top: 18px; }
 .rs .rs-counted-h { display: flex; align-items: baseline; gap: 9px; margin: 0 0 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
-.rs .rs-counted-h b { margin-left: auto; font-family: var(--display); font-size: 22px; line-height: 1; font-variant-numeric: tabular-nums; }
+.rs .rs-counted-h b { margin-inline-start: auto; font-family: var(--display); font-size: 22px; line-height: 1; font-variant-numeric: tabular-nums; }
 .rs .rs-counted-bar { position: relative; height: 14px; border: 1px solid var(--line-2); background: var(--cell); }
 .rs .rs-counted-bar.none { background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); }
-.rs .rs-counted-bar i { position: absolute; inset: 0 auto 0 0; background: var(--ink); }
+.rs .rs-counted-bar i { position: absolute; inset: 0 auto 0 0; background: var(--ink); } /* physical: chart geometry */
 .rs .rs-counted .fig-note { margin: 8px 0 0; }
 .rs .list-table td.rs-wait { color: var(--ink-3); background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); }
 .rs .rs-await-v { white-space: nowrap; }
@@ -81,12 +81,12 @@
   .rs .list-table .lt-seat-m { display: table-cell; }
   .rs .list-table .lt-let, .rs .list-table .lt-seat { display: none; }
   .rs .list-table td:first-child { white-space: normal; }
-  .rs .list-table th, .rs .list-table td { font-size: 13px; padding-right: 6px; }
+  .rs .list-table th, .rs .list-table td { font-size: 13px; padding-inline-end: 6px; }
 }
 
 /* Election-night phases under the page head: done ones ticked, the current one in ink, later ones plain. */
 .rs .rs-phases { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 6px; font-size: 14px; }
-.rs .rs-phases li { display: inline-flex; align-items: center; gap: 6px; min-width: 9.5em; padding: 7px 14px 0 0; border-top: 1px solid var(--line-2); color: var(--ink-3); }
+.rs .rs-phases li { display: inline-flex; align-items: center; gap: 6px; min-width: 9.5em; padding-block: 7px 0; padding-inline: 0 14px; border-top: 1px solid var(--line-2); color: var(--ink-3); }
 .rs .rs-phases li.done { color: var(--ink-2); }
 .rs .rs-phases li.done svg { fill: none; stroke: currentColor; stroke-width: 1.6; }
 .rs .rs-phases li.now { border-top-color: var(--ink); color: var(--ink); font-weight: 700; }

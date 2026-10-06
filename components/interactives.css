@@ -21,24 +21,24 @@
 .profile .kv dd { margin: 0; min-width: 0; }
 .profile .sec { display: flex; flex-direction: column; gap: 6px; }
 .profile .sec p, .profile .sec ul { margin: 0; font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); }
-.profile .sec ul { padding-left: 18px; display: flex; flex-direction: column; gap: 4px; list-style: disc; }
+.profile .sec ul { padding-inline-start: 18px; display: flex; flex-direction: column; gap: 4px; list-style: disc; }
 .profile .s { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); white-space: normal; }
 .profile .lbl { padding-bottom: 4px; border-bottom: 1px solid var(--ink); color: var(--ink); }
 .profile .polls { display: grid; grid-template-columns: auto 1fr auto; gap: 6px 10px; align-items: center; font-size: 14px; }
 .profile .polls .bar { height: 12px; background: var(--cell); overflow: hidden; min-width: 40px; }
 .profile .polls .bar i { display: block; height: 100%; }
-.profile .polls .v { font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; min-width: 3ch; }
+.profile .polls .v { font-weight: 600; font-variant-numeric: tabular-nums; text-align: end; min-width: 3ch; }
 .profile .polls .d { color: var(--ink-3); }
 .profile .polls .x { opacity: .55; }
 .profile .issues { display: grid; grid-template-columns: minmax(96px, auto) 1fr; font-size: 14.5px; margin: 0; }
 .profile .issues dt, .profile .issues dd { margin: 0; padding: 7px 0; border-bottom: 1px solid var(--line); }
-.profile .issues dt { font-weight: 600; padding-right: 12px; color: var(--ink-2); }
+.profile .issues dt { font-weight: 600; padding-inline-end: 12px; color: var(--ink-2); }
 .profile .issues dd { min-width: 0; font-family: var(--display); font-size: 16px; color: var(--text); }
 .profile .issues dd.nf { color: var(--ink-3); font-style: italic; }
 .profile .names { list-style: none !important; padding: 0 !important; font-family: var(--body) !important; font-size: 15px !important; }
 .profile .names li { display: grid; grid-template-columns: 3.2em 1fr; gap: 6px; }
 .profile .names .slot { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--ink-2); }
-.profile blockquote { margin: 0; padding: 4px 0 4px 16px; border-left: 3px solid var(--qc, var(--ink)); font-family: var(--display); font-size: 20px; line-height: 1.4; color: var(--ink); }
+.profile blockquote { margin: 0; padding-block: 4px; padding-inline: 16px 0; border-inline-start: 3px solid var(--qc, var(--ink)); font-family: var(--display); font-size: 20px; line-height: 1.4; color: var(--ink); }
 .profile blockquote footer { margin: 8px 0 0; font-family: var(--body); font-size: 13px; color: var(--ink-3); }
 .profile .bio { font-family: var(--display); font-size: 16.5px; line-height: 1.5; margin: 0; color: var(--text); }
 .profile .more { font-size: 14.5px; font-weight: 600; color: var(--ink); }

@@ -21,7 +21,7 @@
 .br-reading { font-size: 14px; margin: 10px 0 0; min-height: 44px; color: var(--ink-2); }
 .br-reading b { color: var(--ink); }
 .br-key { margin: 8px 0 0; list-style: none; padding: 0; }
-.br-key li { display: inline-flex; align-items: center; gap: 6px; margin-right: 18px; }
+.br-key li { display: inline-flex; align-items: center; gap: 6px; margin-inline-end: 18px; }
 .br .fig-note { margin: 10px 0 0; max-width: 90ch; }
 .pd-how { margin: 4px 0 0; }
 .pd-how summary { cursor: pointer; padding-block: 12px; font-size: 14px; }
@@ -32,13 +32,13 @@
 /* House effects: one row per pollster, the gap from the site average as a bar either side of zero. */
 .he { margin: 34px 0 0; }
 .he-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
-.he-table th, .he-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.he-table th, .he-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: middle; }
 .he-table thead th { font-size: 12.5px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
-.he-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.he-table .num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .he-table th[scope="row"] { font-weight: 600; white-space: nowrap; }
 .he-table .gap { width: 34%; min-width: 150px; }
 .he-track { position: relative; display: block; height: 18px; }
-.he-track .zero { position: absolute; top: -6px; bottom: -6px; left: 50%; border-left: 1px solid var(--ink-3); }
+.he-track .zero { position: absolute; top: -6px; bottom: -6px; left: 50%; border-left: 1px solid var(--ink-3); } /* physical: chart geometry */
 .he-track .bar { position: absolute; top: 3px; height: 12px; background: var(--c); }
 .he-track .bar.hollow { background: var(--bg); border: 1.5px solid var(--c); box-sizing: border-box; }
 .he-table thead .gap { position: relative; }
@@ -55,6 +55,6 @@
 }
 .he-cell { display: flex; align-items: center; gap: 8px; }
 .he-cell .he-track { flex: 1; min-width: 0; }
-.he-v { flex: none; width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
-.he-table thead .he-scale { margin-right: calc(3.2em + 8px); }
-@media (max-width: 640px) { .br-key li { display: flex; margin-right: 0; } .br-key li svg { flex: none; } }
+.he-v { flex: none; width: 3.2em; text-align: end; font-variant-numeric: tabular-nums; }
+.he-table thead .he-scale { margin-inline-end: calc(3.2em + 8px); }
+@media (max-width: 640px) { .br-key li { display: flex; margin-inline-end: 0; } .br-key li svg { flex: none; } }

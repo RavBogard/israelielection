@@ -11,7 +11,7 @@
 .pm .blocname .bn { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .pm .blocname .bt { flex: none; font-variant-numeric: tabular-nums; }
 .pm .blocname.stack { flex-direction: column; gap: 0; white-space: normal; }
-.pm .cell { position: absolute; font: inherit; text-align: left; border: 0; padding: 10px 12px; cursor: pointer; background: var(--fill); color: var(--fill-ink); overflow: hidden; display: flex; flex-direction: column; gap: 2px; transition: opacity .12s; }
+.pm .cell { position: absolute; font: inherit; text-align: left; border: 0; padding: 10px 12px; cursor: pointer; background: var(--fill); color: var(--fill-ink); overflow: hidden; display: flex; flex-direction: column; gap: 2px; transition: opacity .12s; } /* physical: chart geometry */
 .pm .cell:hover { box-shadow: inset 0 0 0 2px var(--fill-ink); }
 .pm .cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; box-shadow: inset 0 0 0 3px var(--fill-ink); }
 .pm .cell[aria-pressed="true"] { box-shadow: inset 0 0 0 4px var(--fill-ink); }
@@ -26,7 +26,7 @@
 :root[data-theme="dark"] .pm .map.has-sel .cell:not([aria-pressed="true"]):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--fill) 50%, var(--cell)); }
 .pm .cell .nm { font-weight: 600; font-size: clamp(13px, 1.15vw, 19px); line-height: 1.15; }
 .pm .cell .av { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2.4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
-.pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; margin-left: 5px; }
+.pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; margin-left: 5px; } /* physical: chart geometry */
 .pm .cell .ld { font-size: 13px; }
 .pm .cell.nold .ld { display: none; }
 .pm .cell.nosm .av small { display: none; }
@@ -43,7 +43,7 @@
 .pm .cell.flat .av { margin-top: 0; font-size: 16px; flex: none; }
 .pm .cell.flat .av small { display: none; }
 .pm .offmap { display: flex; flex-wrap: wrap; gap: 10px; }
-.pm .chip { font: inherit; font-size: 14px; text-align: left; border: 1px dashed var(--line-2); background: transparent; color: var(--ink); padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.pm .chip { font: inherit; font-size: 14px; text-align: start; border: 1px dashed var(--line-2); background: transparent; color: var(--ink); padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
 .pm .chip:hover { border-color: var(--ink-3); }
 .pm .chip[aria-pressed="true"] { border-style: solid; border-color: var(--ink); }
 .pm .chip em { font-style: normal; color: var(--ink-3); }
@@ -53,7 +53,7 @@
 .pm .minor { font-size: 14px; color: var(--ink-2); margin: 0; max-width: 80ch; }
 .pm .btable { width: 100%; border-collapse: collapse; font-size: 15px; }
 .pm .btable td { padding: 6px 0; border-bottom: 1px solid var(--line); }
-.pm .btable td:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink); }
+.pm .btable td:last-child { text-align: end; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink); }
 .pm .tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--bg); font-size: 13px; padding: 6px 9px; z-index: 5; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .pm .cell { transition: none; } }
 

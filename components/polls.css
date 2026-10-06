@@ -1,7 +1,7 @@
 /* Polls page: the average beside the seat grid, small multiples (one panel per party, shared y-scale), and the full poll table. */
 .pl .avg-layout { display: block; margin-top: 12px; }
 .pl .avg-table td, .pl .avg-table th { white-space: nowrap; }
-.pl .avg-table .sw { margin-right: 8px; }
+.pl .avg-table .sw { margin-inline-end: 8px; }
 .pl .dim { color: var(--ink-3); }
 .pl .avg-grid { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 10px; padding-top: 6px; }
 .pl .poll-table { font-size: 13.5px; }
@@ -41,7 +41,7 @@
 .poll-choices label { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; min-height: 32px; }
 .poll-selection { border: 1px solid var(--line); padding: 10px 14px; }
 .pl .poll-scroller { max-width: 100%; overflow: auto; }
-.pl .poll-table .poll-identity { position: sticky; left: 0; background: var(--sheet); z-index: 1; min-width: 0; white-space: nowrap; border-right: 1px solid var(--line); }
+.pl .poll-table .poll-identity { position: sticky; inset-inline-start: 0; background: var(--sheet); z-index: 1; min-width: 0; white-space: nowrap; border-inline-end: 1px solid var(--line); }
 .pl .poll-table thead .poll-identity { z-index: 2; }
 .poll-method { margin: 20px 0; border-block: 1px solid var(--ink); padding-block: 16px; }
 .poll-method dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 28px; }
@@ -63,7 +63,7 @@
 .pc-tick { fill:var(--ink-2); font:12px var(--body); }
 .pc-label { fill:var(--ink); font:600 12px var(--body); }
 .pc-reading { font-size:15px; padding:10px 0; border-bottom:1px solid var(--line); margin:0 0 12px; min-height:44px; }
-.pc-value { margin-left:auto; padding-left:5px; font-size:13px; font-variant-numeric:tabular-nums; }
+.pc-value { margin-inline-start:auto; padding-inline-start:5px; font-size:13px; font-variant-numeric:tabular-nums; }
 .pc-data { margin:14px 0 30px; }
 .pc-data summary { cursor:pointer; }
 .pc-data th,.pc-data td { white-space:nowrap; }
@@ -85,7 +85,7 @@
 .pc-pick button { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 5px 10px; font: 13px var(--body); color: var(--ink-2); background: var(--sheet); border: 1px solid var(--line); cursor: pointer; }
 .pc-pick button.on { color: var(--ink); border-color: var(--ink); font-weight: 600; }
 .pc-pick .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
-.pc-pick .pc-value { margin-left: 2px; padding: 0; color: var(--ink-3); font-weight: 400; }
+.pc-pick .pc-value { margin-inline-start: 2px; padding: 0; color: var(--ink-3); font-weight: 400; }
 .pc-grey { fill: none; stroke: var(--line-2); stroke-width: 1.25; stroke-linejoin: round; }
 .pc-dot { fill: var(--c); stroke: var(--sheet); stroke-width: 1; opacity: .7; }
 .pc-dot.hollow { fill: var(--sheet); stroke: var(--c); stroke-width: 1.5; opacity: 1; }
@@ -100,10 +100,10 @@
 
 /* Poll table: the date and pollster are the method link, one line per poll. Phones pick their columns. */
 .pl .poll-table th, .pl .poll-table td { padding: 4px 10px; line-height: 1.3; vertical-align: middle; }
-.pl .poll-table .poll-id-link { display: inline; background: none; border: 0; padding: 4px 0; margin: 0; font: inherit; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; cursor: pointer; text-align: left; white-space: nowrap; }
+.pl .poll-table .poll-id-link { display: inline; background: none; border: 0; padding: 4px 0; margin: 0; font: inherit; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; cursor: pointer; text-align: start; white-space: nowrap; }
 .pl .poll-table .poll-id-link:hover, .pl .poll-table .poll-id-link[aria-expanded="true"] { text-decoration-color: var(--ink); }
 .pl .poll-table .poll-id-link time { font-weight: 400; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.pl .poll-table sup { font-size: 11px; line-height: 0; margin-left: 1px; }
+.pl .poll-table sup { font-size: 11px; line-height: 0; margin-inline-start: 1px; }
 .poll-colpick { display: none; margin: 8px 0; }
 .poll-colpick summary { padding-block: 12px; font-weight: 600; }
 .poll-colpick .poll-choices label { min-height: 44px; }

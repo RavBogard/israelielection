@@ -5,7 +5,7 @@
 .export-assumption { max-width:90ch; }
 .export-table { overflow:auto; margin:22px 0; }
 .sourced-export table { width:100%; border-collapse:collapse; font-size:13px; }
-.sourced-export th, .sourced-export td { text-align:left; vertical-align:top; border-bottom:1px solid var(--line); padding:8px; }
+.sourced-export th, .sourced-export td { text-align:start; vertical-align:top; border-bottom:1px solid var(--line); padding:8px; }
 .sourced-export a, .sourced-export li { overflow-wrap:anywhere; }
 @media print {
   @page { margin:15mm; }
