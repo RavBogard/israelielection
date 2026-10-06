@@ -17,3 +17,6 @@ Daniel: "i want version 1. lets do it" — Hebrew versions of home, polls, Coali
 - Daniel: daily briefing on the Hebrew home publishes automatically with a small "תורגם אוטומטית" label after the checks pass; falls back to English if they fail. (Briefing is the one machine-translated exception.)
 - Daniel: he reviews all Hebrew himself.
 - Daniel, 2026-10-06: Hebrew site name "פתק 2026"; blocs גוש נתניהו / גוש האופוזיציה (with מחוץ לגושים and המפלגות הערביות). Style guide: STYLE.md.
+- [x] Groundwork done: logical CSS (1dc92d3); wave 1 routing and plumbing built (route groups, /he root, global 404, i18n libs).
+- GATE: HE_PUBLIC switch (lib/i18n/index.ts) off — no hreflang on English pages, no /he sitemap entries, /he noindex — proceeded because the Hebrew pages are unwritten and unreviewed; flip it at launch.
+- Note: og:image now lives in app/(en) (route-group URL suffix); the old /opengraph-image URL 404s, social sites refetch.
