@@ -7,7 +7,7 @@ import type { Tile } from "./model";
 /** Bar colour for a stance: where it sits on the issue's scale, the same for every list that holds it. */
 function stanceColor(t: Tile): string | null {
   if (t.kind !== "stance") return null;
-  if (t.position === null) return "var(--ink)";
+  if (t.position === null) return "var(--ink-2)";
   // Fixed endpoints, so the scale reads the same in light and dark: darkest navy at the coalition's end.
   return `color-mix(in oklab, #233f86 ${Math.round(100 - t.position * 80)}%, #dfe6f5)`;
 }
@@ -46,7 +46,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is ink."}</p>
+      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is grey."}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>

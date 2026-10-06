@@ -8,6 +8,8 @@ export type MatrixStance = Stance & { n: number; position: number | null; count:
 export type MatrixCell =
   | { kind: "stance"; stance: string; n: number; position: number | null; record: boolean }
   | { kind: "declined" }
+  /** The sources hold the list's words, but they do not match one of the question's options. */
+  | { kind: "unsorted" }
   | { kind: "none" };
 
 export type MatrixRow = {
@@ -39,7 +41,7 @@ function cellsOf(rows: PositionRow[], stances: MatrixStance[], ids: string[]): R
     if (s.kind === "stance") {
       const st = stances.find((x) => x.id === s.stance)!;
       out[id] = { kind: "stance", stance: st.id, n: st.n, position: st.position, record: row?.basis === "record" };
-    } else out[id] = s.kind === "declined" ? { kind: "declined" } : { kind: "none" };
+    } else out[id] = { kind: s.kind };
   }
   return out;
 }
@@ -49,10 +51,11 @@ const count = (rows: PositionRow[], id: string, ids: string[]) => rows.filter((r
 /**
  * The comparison as a matrix: the seven issues in the order the profile tiles use, each followed by
  * the narrower questions classified under it, then Gaza. An issue's options are ordered in its file
- * from the governing coalition's end to the other, so a stance's shade is its place in that order,
- * the same shade the party profiles draw. A narrower question has no order of its own: its options
- * are ranked by where the lists holding them sit on the issue above, so darker still means nearer
- * the coalition's end. A question with one recorded option takes its holders' average place.
+ * from one end of the debate to the other, so a stance's shade is its place in that order, the same
+ * shade the party profiles draw. A narrower question has no order of its own: its options are ranked
+ * by where the lists holding them sit on the issue above, so the shades keep the parent's direction.
+ * A question with one recorded option takes its holders' average place. An option none of whose
+ * holders has a place on the parent issue goes last rather than being guessed into the middle.
  */
 export function matrixRows(ids: string[]): MatrixRow[] {
   const narrow = comparisonIssues();
@@ -70,10 +73,10 @@ export function matrixRows(ids: string[]): MatrixRow[] {
       // Each option's average place on the parent issue, over the lists that hold it.
       const place = (sid: string) => {
         const ps = q.file.rows.filter((r) => r.stance === sid).map((r) => cells[r.party]).filter((c): c is Extract<MatrixCell, { kind: "stance" }> => c?.kind === "stance" && c.position !== null).map((c) => c.position!);
-        return ps.length ? ps.reduce((a, b) => a + b, 0) / ps.length : 0.5;
+        return ps.length ? ps.reduce((a, b) => a + b, 0) / ps.length : Infinity;
       };
       const ranked = qs.map((s, i) => ({ s, i, p: place(s.id) })).sort((a, b) => a.p - b.p || a.i - b.i);
-      const sub: MatrixStance[] = ranked.map(({ s, p }, i) => ({ ...s, n: i + 1, position: !scale ? null : ranked.length > 1 ? i / (ranked.length - 1) : p, count: count(q.file.rows, s.id, ids) }));
+      const sub: MatrixStance[] = ranked.map(({ s, p }, i) => ({ ...s, n: i + 1, position: !scale ? null : ranked.length > 1 ? i / (ranked.length - 1) : Number.isFinite(p) ? p : 0.5, count: count(q.file.rows, s.id, ids) }));
       out.push({ key: q.key, label: sentence(q.label.replace(/^[^:]+:\s*/, "")), question: q.file.question?.trim() || null, depth: 1, scale, stances: sub, cells: cellsOf(q.file.rows, sub, ids), issue: q, page: null });
     }
   }
