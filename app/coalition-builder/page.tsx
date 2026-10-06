@@ -40,7 +40,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
 /** Where each party stands on each issue, for the panel's "Can they govern together?"; no quotes travel to the client. */
 const STANCES = stanceMap(comparisonIssues(), parties.map((p) => p.id));
 /** Positions a party holds but will not say publicly, counted as answers and marked so. */
-const UNSTATED = unstatedFrom(questions.questions as { key: string; unstated?: Record<string, Unstated> }[], STANCES);
+const UNSTATED = unstatedFrom(questions.questions as unknown as { key: string; unstated?: Record<string, Unstated> }[], STANCES);
 
 /** The outgoing government as a one-tap line-up, with its 2022 seats for the "then vs now" line. */
 const PRESET = { ids: outgoingGovernment.with, label: "the outgoing government", seats: outgoingGovernment.seats2022, year: 2022, note: outgoingGovernment.noam.text };
