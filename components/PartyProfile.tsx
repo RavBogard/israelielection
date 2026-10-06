@@ -142,15 +142,16 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           </div>
 
           <div className="pp-col pp-col-t">
-            <section className="pp-text o2">
-              <h2>Who they are</h2>
-              <Items items={who} />
-              {p.thin && <p className="src">{p.thin}</p>}
-            </section>
-
             <section className="pp-text o4">
               <h2>Where they stand</h2>
               <StanceTiles tiles={stand} partyName={p.name} />
+            </section>
+
+            {/* Shares order 4 with the stances, so on phones it follows them, as it does here. */}
+            <section className="pp-text o4">
+              <h2>Who they are</h2>
+              <Items items={who} />
+              {p.thin && <p className="src">{p.thin}</p>}
             </section>
 
             {voterText.length > 0 && (
