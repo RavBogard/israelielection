@@ -57,11 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <Logo />
               <p>{DESCRIPTION}</p>
               <p>
-                A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>. Teaching materials are licensed{" "}
-                <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license">
-                  CC BY-NC 4.0
-                </a>
-                .
+                A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>.
               </p>
               <p className="privacy">
                 This site uses Google Analytics to understand visits and page use. <Link href="/about#privacy">Privacy</Link>.

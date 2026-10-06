@@ -10,6 +10,9 @@ const nextConfig: NextConfig = {
     return [
       { source: "/coalition", destination: "/coalition-builder", permanent: true },
       { source: "/issues/not-on-ballot", destination: "/issues/palestinian-state", permanent: true },
+      // Teaching resources were dropped (Daniel, 2026-10-06); old links land on the home page.
+      { source: "/teach", destination: "/", permanent: false },
+      { source: "/teach/:path*", destination: "/", permanent: false },
     ];
   },
 };

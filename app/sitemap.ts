@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import briefingsJson from "@/data/briefings/_index.json";
 import partiesJson from "@/data/parties.json";
 import pollsJson from "@/data/polls.json";
-import packets from "@/data/teaching-packets.json";
 import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
 import {canonicalNavPath,canonicalNavPaths} from "@/lib/navigation";
 import { NAV } from "@/lib/site";
@@ -34,7 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/results",
     "/timeline",
     "/glossary",
-    "/teach",
     "/vote-map",
     "/american-lens",
     "/how-it-works",
@@ -44,7 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   const dynamic = [
     ...briefingDates.map(date=>`/news/${date}`),
-    ...packets.packets.flatMap((p) => ["learner", "facilitator"].map((role) => `/teach/packets/${p.id}/${role}`)),
     ...partiesJson.parties.map((p) => `/parties/${p.id}`),
     ...ISSUES.map((s) => `/issues/${s}`),
     ...COMMUNITIES.map((s) => `/communities/${s}`),

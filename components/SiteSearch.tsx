@@ -19,7 +19,7 @@ export default function SiteSearch({ entries }: { entries: SearchEntry[] }) {
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { setQuery(urlQuery); setKind(urlKind); }, [urlQuery, urlKind]);
   const results = useMemo(() => searchEntries(entries, query, kind), [entries, query, kind]);
-  const shown = query.trim() ? results : (kind === "all" ? ["/start", "/parties", "/compare", "/polls", "/glossary", "/teach"].flatMap((href) => results.filter((r) => r.entry.href === href)) : results).slice(0, 6);
+  const shown = query.trim() ? results : (kind === "all" ? ["/start", "/parties", "/compare", "/polls", "/glossary"].flatMap((href) => results.filter((r) => r.entry.href === href)) : results).slice(0, 6);
   function search(value = query, category = kind) {
     setQuery(value); setKind(category);
     const next = new URLSearchParams();

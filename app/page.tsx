@@ -13,7 +13,7 @@ import { mediumDate } from "@/lib/format";
 import { isExit } from "@/lib/polls";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
-import { DESCRIPTION, TEACH } from "@/lib/site";
+import { DESCRIPTION } from "@/lib/site";
 import type { Poll } from "@/lib/types";
 
 // Every minute: on election night the hero shows the count as it comes in. Before then the page
@@ -126,11 +126,7 @@ export default async function Page() {
           </ul>
         </section>
 
-        <nav className="standing" aria-label="Teaching and about">
-          <Link href={TEACH.href}>
-            <span className="t">Teaching this election?</span>
-            <span className="p">Session decks and classroom interactives for educators and rabbinic colleagues, free to use under CC BY-NC.</span>
-          </Link>
+        <nav className="standing" aria-label="About">
           <Link href="/about">
             <span className="t">About and method</span>
             <span className="p">Why this site exists, where its information comes from, and how to correct it.</span>

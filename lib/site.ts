@@ -26,13 +26,6 @@ export const NAV_GROUPS: readonly NavGroup[] = [
   {href:"/glossary",label:"Glossary",description:"Look up election vocabulary, Hebrew terms and pronunciations."},
   {href:"/american-lens",label:"The American lens",description:"See where American political categories help or misread Israeli politics."},
  ]},
- {id:"teach",label:"Teaching resources",preview:"Packets · sessions · scenarios",items:[
-  {href:"/teach",label:"Teaching overview",description:"Find materials and practical tools for an election discussion or class."},
-  {href:"/teach#packets",label:"Learner and facilitator packets",description:"Use printable discussion sheets and facilitator notes for two topics."},
-  {href:"/teach#sessions",label:"Session materials",description:"Download PDF slides and editable PowerPoint decks with speaker notes."},
-  {href:"/teach#scenarios",label:"Coalition scenarios",description:"Start a classroom discussion with sourced scenarios and Builder follow-ups."},
-  {href:"/teach#embeds",label:"Embed the interactives",description:"Put dated, sourced election tools into a class page, newsletter or blog."},
- ]},
  {id:"about",label:"About & contact",preview:"Method · media · corrections",items:[
   {href:"/about",label:"About and method",description:"Read about the project, sourcing, automation, responsibility and privacy."},
   {href:"/corrections",label:"Media inquiries and corrections",description:"Contact Rabbi Daniel Bogard for media questions or draft an account-free correction."},
@@ -40,13 +33,11 @@ export const NAV_GROUPS: readonly NavGroup[] = [
 ];
 export const NAV_UTILITIES: readonly NavItem[] = [
  {href:"/start",label:"Start here",description:"Choose a short guided route through the election."},
- {href:"/resources",label:"All resources",description:"Browse every section, tool and teaching resource in one directory."},
+ {href:"/resources",label:"All resources",description:"Browse every section and tool in one directory."},
  {href:"/search",label:"Search",description:"Find parties, leaders, issues, guides and unfamiliar terms by name or alias."},
 ];
 /** Canonical page entries only: section anchors must not leak into XML or search. */
 export const NAV: readonly NavItem[] = [...NAV_GROUPS.flatMap(g=>g.items.filter(n=>!n.href.includes("#"))),...NAV_UTILITIES];
-/** Kept for the homepage's existing teaching callout. */
-export const TEACH: NavItem = {...NAV_GROUPS.find(g=>g.id==="teach")!.items[0],label:"Teaching resources"};
 
 /** The site's one-paragraph description, used in metadata and the footer. */
 export const DESCRIPTION =

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { NAV, TEACH } from "@/lib/site";
+import { NAV } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Not found",
 };
 
 const WANTED = ["/resources", "/search", "/start", "/polls", "/how-it-works", "/parties"];
-const links = [{ href: "/", label: "The home page" }, ...WANTED.flatMap((h) => NAV.filter((n) => n.href === h)), TEACH];
+const links = [{ href: "/", label: "The home page" }, ...WANTED.flatMap((h) => NAV.filter((n) => n.href === h))];
 
 export default function NotFound() {
   return (
