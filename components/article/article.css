@@ -202,3 +202,4 @@
 .sindex .ps-mini-read { margin: 6px 0 0 !important; font-size: 13.5px !important; color: var(--ink-2); font-family: var(--body) !important; }
 .sindex .ps-mini-read b { color: var(--ink); font-weight: 600; }
 :is(.article, .sindex) .ps-bar .seg { border: 0; border-right: 2px solid var(--bg); border-radius: 0; flex-wrap: nowrap; }
+.vm-text .vm-checked { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); }

@@ -17,11 +17,7 @@ export default function Page() {
     <div className="wrap article-page vote-map-page">
       <header className="page-head">
         <h1>Vote map</h1>
-        <p className="standfirst">
-          How each of Israel&apos;s roughly 1,200 voting localities voted in the five Knesset elections from April 2019 to November 2022. Pick an
-          election, then explore one list&apos;s share in blue, the local leading list in color, or each town&apos;s vote mix in proportional pie markers.
-        </p>
-        <p className="note">Facts checked October 5, 2026. Results are the Central Elections Committee&apos;s final files for each election.</p>
+        <p className="standfirst">How each of Israel&apos;s roughly 1,200 voting localities voted in the five elections from April 2019 to November 2022.</p>
       </header>
 
       <VoteMap />
@@ -30,6 +26,7 @@ export default function Page() {
         <article className="article vm-text">
           <div className="body">
             <h2>Reading the map</h2>
+            <p className="vm-checked">Facts checked October 5, 2026. Results are the Central Elections Committee&apos;s final files for each election.</p>
             <p><strong>Three views of the same votes.</strong> In the single-list view, darker blue means a higher share of valid votes. Leading-list colors show local plurality, which can be below 50%; ties are marked separately. If the combined Other lists could conceal a leader, the map leaves the leader unestablished. Pie slices show the named lists and Other, with circle area proportional to valid votes. Overlapping markers are filtered in place, with a displayed coverage count; zoom or search for any town to see its full recorded breakdown. Geography is not voter movement, and land area is not vote count.</p>
             <p>
               <strong>A town is not a group.</strong> The map shows how places voted, not how any community voted. Mixed cities such as Haifa, Lod
