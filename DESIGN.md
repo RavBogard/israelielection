@@ -271,12 +271,12 @@ Follows `prefers-color-scheme` unless `data-theme` pins it. Swaps every neutral 
 ## Layout
 
 - **Wrapper:** one wrapper on every page, max wrap (1200px) with gutter `clamp(16px, 3vw, 40px)`; wide data views (treemap, poll table) may use wide (1320px). Reading column 700px, left-aligned inside the wrapper. Every page title sits on the same left edge. Ragged right; nothing centred.
-- **Masthead:** nameplate row (34px mark, Frank Ruhl 700 26px wordmark, utilities, countdown) over a row of three grouped disclosure menus, closed by a 1px ink rule. Under 900px: brand plus a Menu toggle; groups stack in place.
+- **Masthead:** a slim line (countdown left, utilities right: Start here, Search, All resources, About, Media and corrections), the nameplate row (34px mark, Frank Ruhl 700 26px wordmark) with the tools row set right (Polls, Party Map, Coalition Builder, Vote map, News), then a row of four grouped disclosure menus, closed by a 1px ink rule. Under 900px: brand plus a Menu toggle, the countdown on one line beneath.
 - **Page head:** title (display), then at most one short standfirst 14px below. Notes, method and caveats move to captions, folds or below the figure; the page's graphic follows the head directly (graphic first). Padding 36px top, 24px on phones. Article titles carry no kicker or breadcrumb above them.
 - **Lead figure:** reference and community pages draw their chart straight under the title and leave it out of the body (`components/article/leads.ts` maps page to chart id; the chart moves, it is not duplicated). Issue pages lead with the Knesset split by answer (PositionsLead). Start here sets one figure inside every step.
 - **Section head:** headline set 44px below the previous block, 14px padding over a 1px ink top rule.
 - **Spread (party profile and home hero):** two columns 5/12 figures + 7/12 text, column gap 56px (home 64px), row gap 44px, each figure on the same grid row as its first sentence. Under 860px one column, figure directly above its text.
-- **Footer:** 1px ink rule, 64px above; brand and about (1.2fr) beside three link columns (2fr); one column under 860px.
+- **Footer:** 1px ink rule, 64px above; brand, about and the utility links (1.2fr) beside four link columns, one per menu group (2fr), two across under 1100px; one column of about under 860px.
 - **Breakpoints observed:** 1100 (tool panels unstick, tiles shorten), 900 (masthead collapses), 860 (spreads and footer stack), 700/640 (heads tighten), 520 (tiles two across), 440 (map stacks over its table).
 
 ## Elevation & Depth
@@ -316,7 +316,11 @@ Flat. Depth is conveyed by sheet-on-paper contrast and hairlines, never by shado
 - Ink, underlined 1px in line-2 at 3px offset; underline goes to currentColor on hover. Current page in nav: 2px underline. No arrows.
 
 ### Navigation (masthead)
-- Three groups as full-height disclosure buttons (Public Sans 600 15px with an 11.5px preview line), divided by hairlines; the active section carries a 2px ink bottom rule. Panels are sheet white in a 1px ink frame. Disclosure buttons carry a small rotated-square caret; links never do. Under 900px: a bordered Menu toggle that inverts when open, groups stacked.
+- One catalog (`lib/site.ts`) feeds the menus, footer, All resources, search and the sitemap. Four groups: Polls and news (Polls, News and briefings, Changes log; Results and Forming a government join the menu when polls close, and stay in the footer, directory, search and sitemap throughout), Parties (Party Map, Compare positions, Coalition Builder, Party family tree, Every ballot list), Voters and places (Vote map, Communities, Issues), How it works (Guides, Timeline, Glossary, American lens). Group labels use "and", never "&"; item descriptions stay under 70 characters.
+- Groups are full-height disclosure buttons (Public Sans 600 15px), divided by hairlines; under each label a 12px line states one live fact computed from the data (newest poll and briefing dates, the Netanyahu bloc's seats in the average, localities counted, elections on the timeline), never a list of the items inside. The active section carries a 2px ink bottom rule. Panels are sheet white in a 1px ink frame. Disclosure buttons carry a small rotated-square caret; links never do.
+- The tools row and utilities are plain links underlined in line-2; the current page takes a 2px underline in ink.
+- Under 900px: a bordered Menu toggle that inverts when open. The menu shows the five tools as a two-across tile grid, then the groups stacked with the current group open, then the utilities. The countdown appears once, under the brand, not again in the menu.
+- All resources is a visual index: per group, a tile for every page with a small picture drawn from its data (or a neutral mark) and a current fact as its caption, then the utilities. Links take the nav's underline; no left-edge accent rules.
 
 ### Sheet
 - Sheet white, 1px line-2 edge, square, no shadow. Tool side panels: 22px padding, sticky at 16px above 1100px.

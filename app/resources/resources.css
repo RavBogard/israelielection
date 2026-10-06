@@ -1,14 +1,42 @@
+/* The directory: one tile per page, a small picture from its data and a current fact. Links take the nav's underline. */
 .resource-directory { padding-bottom: 60px; }
-.resource-utilities { list-style: none; padding: 20px 0 0; margin: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; max-width: 850px; }
-.resource-directory a { color: var(--ink); text-underline-offset: 4px; }
-.resource-utilities a { font: 700 24px var(--display); }
-.resource-utilities p,.resource-links p { color: var(--text); font-size: 15px; line-height: 1.5; margin: 7px 0 0; }
-.resource-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 64px; }
-.resource-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-.resource-links li { padding: 14px 0; border-bottom: 1px solid var(--line); }
-.resource-links a { font-weight: 600; }
-.resource-packets { margin-top: 24px; border-left: 2px solid var(--line-2); padding-left: 18px; }
-.resource-packets h3 { font: 700 23px var(--display); margin: 0 0 16px; }
-.resource-packets h4 { margin: 18px 0 6px; font-weight: 600; }
-.resource-packets p { font-size: 14px; line-height: 1.5; margin: 6px 0; }
-@media(max-width:700px) { .resource-groups { grid-template-columns: 1fr; }.resource-utilities { gap: 16px; }.resource-utilities a { font-size: 22px; } }
+.resource-directory a { color: var(--ink); }
+.rd-group { margin-top: 36px; }
+.rd-group > h2 { margin: 0 0 14px; padding-top: 12px; border-top: 1px solid var(--ink); }
+.rd-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill,minmax(210px,1fr)); gap: 26px 24px; }
+.rd-tiles a { display: block; text-decoration: none; }
+.rd-tiles .gl { display: block; width: 100%; height: auto; background: var(--sheet); border: 1px solid var(--line-2); margin-bottom: 10px; }
+.rd-tiles a:hover .gl { border-color: var(--ink); }
+.rd-tiles .t { display: block; font-weight: 600; font-size: 16px; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 4px; }
+.rd-tiles a:hover .t { text-decoration-color: currentColor; }
+.rd-tiles .p { display: block; margin-top: 5px; font-size: 14px; line-height: 1.45; color: var(--text); }
+.rd-more { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 0 24px; }
+.rd-more li { padding: 12px 0; border-top: 1px solid var(--line); }
+.rd-more a { font-weight: 600; text-decoration-color: var(--line-2); text-underline-offset: 4px; }
+.rd-more a:hover { text-decoration-color: currentColor; }
+.rd-more p { margin: 5px 0 0; font-size: 14px; line-height: 1.45; color: var(--text); }
+@media(max-width:520px) { .rd-tiles { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px 14px; }.rd-tiles .t { font-size: 15px; }.rd-tiles .p { font-size: 13px; } }
+/* Glyph marks. */
+.rg-news .big,.rg-changes .lab,.rg-results .lab,.rg-government .lab,.rg-timeline .lab,.rg-glossary .lab { font-family: var(--display); font-weight: 700; fill: var(--ink); }
+.rg-news .big { font-size: 22px; }
+.rg-changes .lab,.rg-results .lab,.rg-government .lab,.rg-timeline .lab,.rg-glossary .lab { font-size: 14px; }
+.rg-news .bar,.rg-glossary .bar { fill: color-mix(in oklab, var(--ink) 28%, var(--sheet)); }
+.rg-news .bar.first { fill: var(--ink-2); }
+.rg-changes .axis,.rg-glossary .axis { stroke: var(--ink-3); stroke-width: 1; }
+.rg-changes circle { fill: var(--ink-2); stroke: var(--sheet); stroke-width: 1.5; }
+.rg-results .frame { stroke: var(--ink-3); stroke-width: 1; }
+.rg-results .hatch { stroke: var(--line-2); stroke-width: 2; }
+.rg-results .sixtyone,.rg-government .sixtyone { stroke: var(--ink); stroke-width: 2; }
+.rg-government .step { fill: none; stroke: var(--b-net); stroke-width: 2.4; stroke-linejoin: round; }
+.rg-compare .cell { fill: var(--bg); stroke: var(--line-2); stroke-width: 1; }
+.rg-family .lane { stroke: var(--line-2); stroke-width: 1; }
+.rg-family circle { fill: var(--ink-2); }
+.rg-ballot .slip { fill: var(--bg); stroke: var(--line-2); stroke-width: 1; }
+.rg-ballot .let { font-family: var(--display); font-weight: 700; font-size: 13px; fill: var(--ink); }
+.rg-timeline .term { fill: color-mix(in oklab, var(--ink) 22%, var(--sheet)); }
+.rg-timeline .term.alt { fill: color-mix(in oklab, var(--ink) 45%, var(--sheet)); }
+.rg-timeline .tick { stroke: var(--ink); stroke-width: 1; }
+.rg-communities .sheet,.rg-issues .sheet,.rg-guides .sheet,.rg-news .sheet { fill: var(--bg); stroke: var(--line-2); stroke-width: 1; }
+.rg-communities .rule,.rg-issues .rule,.rg-guides .rule,.rg-news .rule { stroke: var(--ink-3); stroke-width: 1.5; }
+.rg-lens .ring { fill: color-mix(in oklab, var(--ink) 8%, transparent); stroke: var(--ink-2); stroke-width: 1.5; }
+.rg-lens .ring.b { stroke-dasharray: none; }

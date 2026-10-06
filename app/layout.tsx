@@ -8,6 +8,12 @@ import SiteNav from "@/components/SiteNav";
 import { resultsConfig } from "@/lib/results-live";
 import Countdown from "@/components/Countdown";
 import { DESCRIPTION, NAV_GROUPS, NAV_UTILITIES } from "@/lib/site";
+import briefingsJson from "@/data/briefings/_index.json";
+import timelineJson from "@/data/timeline.json";
+import election2022 from "@/public/vote-map/2022.json";
+import { allPolls, averagePoll, parties } from "@/lib/data";
+import { navFacts } from "@/lib/nav-facts";
+import { blocTotals, isExit } from "@/lib/polls";
 import "./globals.css";
 
 const GA_ID = "G-DB53C0NZHB";
@@ -32,7 +38,20 @@ export const metadata: Metadata = {
 
 export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f6f5f1" }, { media: "(prefers-color-scheme: dark)", color: "#000000" }] };
 
+const FACTS = navFacts({
+  newestPoll: allPolls.find((p) => !isExit(p))?.published,
+  newestBriefing: (briefingsJson as { date: string }[]).map((b) => b.date).sort().at(-1),
+  netSeats: blocTotals(averagePoll, parties).net,
+  localities: (election2022 as { rows: unknown[] }).rows.length,
+  elections: timelineJson.elections.map((e) => e.date),
+});
+
+/** Whether polls have closed as this page renders; the menus re-check in the browser. */
+const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  // RESULTS_FIXTURE (next dev only) rehearses the night: the strip and the menus treat the polls as closed.
+  const pollsClose = process.env.NODE_ENV === "development" && process.env.RESULTS_FIXTURE ? "2000-01-01T00:00:00Z" : resultsConfig.pollsClose;
   return (
     <html lang="en" className={`${frank.variable} ${sans.variable}`}>
       <body className="min-h-screen flex flex-col">
@@ -43,10 +62,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="row">
             <Logo />
             <Countdown />
-            <SiteNav extra={<Countdown />} />
+            <SiteNav facts={FACTS} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} />
           </div>
-          {/* RESULTS_FIXTURE (next dev only) rehearses the night: the strip treats the polls as closed. */}
-          <ResultsStrip pollsClose={process.env.NODE_ENV === "development" && process.env.RESULTS_FIXTURE ? "2000-01-01T00:00:00Z" : resultsConfig.pollsClose} />
+          <ResultsStrip pollsClose={pollsClose} />
         </header>
         <main id="main" className="flex-1">
           {children}
@@ -59,6 +77,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <p>
                 A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>.
               </p>
+              <ul className="foot-links">
+                {NAV_UTILITIES.map((n) => (
+                  <li key={n.href}>
+                    <Link href={n.href}>{n.label}</Link>
+                  </li>
+                ))}
+              </ul>
               <p className="privacy">
                 This site uses Google Analytics to understand visits and page use. <Link href="/about#privacy">Privacy</Link>.
               </p>
@@ -76,7 +101,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   </ul>
                 </div>
               ))}
-              <div className="footer-utilities"><p className="lbl">Find your way</p><ul>{NAV_UTILITIES.map(n=><li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}</ul></div>
             </nav>
           </div>
         </footer>

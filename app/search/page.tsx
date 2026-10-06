@@ -19,6 +19,6 @@ export default async function Page() {
     for (const a of index) entries.push({ href: a.href, title: a.meta.title, description: a.meta.dek, kind, aliases: aliases[a.href] ?? [] });
   }
   for (const t of (glossaryJson as Glossary).terms) entries.push({ href: `/glossary#${anchorOf(t.term)}`, title: t.term, description: t.def, kind: "glossary", aliases: [t.hebrew ?? "", t.say ?? ""] });
-  for (const n of NAV) entries.push({href:n.href,title:n.label,description:n.description,kind:"resource",aliases:[...(aliases[n.href]??[]),...NAV_GROUPS.filter(g=>g.items.some(item=>item.href===n.href)).map(g=>g.label),...(n.href==="/resources"?["resources","tools","directory","site map"]:[])]});
+  for (const n of NAV) entries.push({href:n.href,title:n.label,description:n.description,kind:"resource",aliases:[...(aliases[n.href]??[]),...(n.aliases??[]),...(n.short?[n.short]:[]),...NAV_GROUPS.filter(g=>g.items.some(item=>item.href===n.href)).map(g=>g.label),...(n.href==="/resources"?["resources","tools","directory","site map"]:[])]});
   return <div className="wrap ix"><PageHead title="Search" standfirst="Find the party, question or word you came for." /><Suspense fallback={<p>Loading search…</p>}><SiteSearch entries={entries} /></Suspense></div>;
 }
