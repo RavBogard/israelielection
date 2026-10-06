@@ -33,7 +33,7 @@
 .map-fig .map-go { margin: 14px 0 0; font-size: 14px; font-weight: 600; }
 .map-fig .map-go a { color: var(--ink); display: inline-flex; align-items: center; min-height: 44px; }
 .map-fig .cv-numbers { margin-top: 12px; }
-.map-fig .cv-numbers summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); }
+.map-fig .cv-numbers summary { min-height: 44px; display: list-item; padding-block: 12px; box-sizing: border-box; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); }
 .map-fig .cv-numbers .tw { max-height: 420px; overflow-y: auto; }
 @media (max-width: 640px) {
   .map-fig .map-body { grid-template-columns: minmax(0, 1fr); }

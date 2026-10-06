@@ -116,7 +116,7 @@
 .gl-votemap .v6 { fill: none; stroke: color-mix(in oklab, var(--ink) 88%, var(--sheet)); }
 
 @media (max-width: 1000px) {
-  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "basis" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
+  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "mosaic" "basis" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
   .home .race-visual { max-width: 640px; width: 100%; }
   .home .since { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "polls" "brief"; gap: 14px; }
   .home .tools ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -199,7 +199,7 @@ export default function PollsLists({ title }: { title: string }) {
                     </td>
                     <td className="num" data-label="Range">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
                     <td className="num" data-label="Passes in">{a!.k} of {a!.n}</td>
-                    <td className="num dim" data-label={cfg.withoutVariant.label} title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
+                    <td className="num dim" data-label="Alternative average" title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
                       {!w ? "n/a" : w.k === 0 || w.nearThreshold || !wScaled ? "below" : one(wScaled)}
                     </td>
                   </tr>

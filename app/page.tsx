@@ -11,7 +11,7 @@ import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
 import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
-import { isExit, pollLabel, seatFigure } from "@/lib/polls";
+import { blocRank, isExit, pollLabel, seatFigure } from "@/lib/polls";
 import { citeText, findingSentence, israelDate, noNewLabel, pollSlip, sincePolls, type Slip } from "@/lib/home-since";
 import CiteButton from "@/components/CiteButton";
 import SeatBar from "@/components/SeatBar";
@@ -83,13 +83,15 @@ const slipLabel = (label: string) => label.replace(/\s*\(.*\)$/, "");
 /** A single poll reports whole seats; keep a decimal only where a poll itself has one. */
 const pollSeats = (s: number) => (Number.isInteger(s) ? String(s) : seatFigure(s));
 function PollSlip({ slip }: { slip: Slip }) {
-  const label = `${slip.label}, ${mediumDate(slip.date)}: ${slip.blocs.map((b) => `${slipLabel(b.label)} ${pollSeats(b.seats)}`).join(", ")}`;
+  // The bar runs in seat order (slip.blocs); the list under it runs in the site's bloc order.
+  const listed = [...slip.blocs].sort((a, b) => blocRank(a.id) - blocRank(b.id));
+  const label = `${slip.label}, ${mediumDate(slip.date)}: ${listed.map((b) => `${slipLabel(b.label)} ${pollSeats(b.seats)}`).join(", ")}`;
   return (
     <li className="since-slip">
       <p className="ss-head"><b>{slip.label}</b> <span>{shortDate(slip.date)}</span></p>
       <SeatBar segments={slip.blocs.map((b) => ({ key: b.id, seats: b.seats, color: `var(--b-${b.id})` }))} label={label} />
-      <ul className="ss-blocs">{slip.blocs.map((b) => <li key={b.id} className={b.majority ? "maj" : undefined}><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{slipLabel(b.label)}<b>{pollSeats(b.seats)}</b></li>)}</ul>
-      {slip.majority.length > 0 && <p className="ss-maj">{slip.blocs.filter((b) => b.majority).map((b) => slipLabel(b.label)).join(" and ")} at {MAJORITY} or more</p>}
+      <ul className="ss-blocs">{listed.map((b) => <li key={b.id} className={b.majority ? "maj" : undefined}><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{slipLabel(b.label)}<b>{pollSeats(b.seats)}</b></li>)}</ul>
+      {slip.majority.length > 0 && <p className="ss-maj">{listed.filter((b) => b.majority).map((b) => slipLabel(b.label)).join(" and ")} at {MAJORITY} or more</p>}
       {slip.url && <a className="ss-src" href={slip.url}>Source</a>}
     </li>
   );

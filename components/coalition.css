@@ -181,6 +181,7 @@
 .cb .paths > summary h2 { margin: 0; }
 .cb .paths .fig-note { max-width: 72ch; margin: 0 0 12px; }
 .cb .path-ctl { display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 0 0 14px; }
+.cb .path-ctl button:disabled { color: var(--ink-3); cursor: default; background: transparent; }
 .cb .path-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
 .cb .path-list li { border-top: 1px solid var(--line); }
 .cb .path { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "b b" "c c"; gap: 6px 14px; align-items: baseline; padding: 10px 0 12px; font: inherit; text-align: left; color: var(--ink); background: transparent; border: 0; cursor: pointer; }

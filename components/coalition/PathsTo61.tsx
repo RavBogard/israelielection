@@ -65,7 +65,7 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
         <h2 className="sec-h3">Paths to {MAJORITY}</h2>
         <span className="hint">{all.length} ways</span>
       </summary>
-      <p className="fig-note">Every smallest set of lists that reaches {MAJORITY} in {pollName}: drop any one list and it falls short. Paths that break no recorded pledge come first; then fewest lists, then most seats. This is seat arithmetic checked against the pledges on record, not a forecast; Likud in a cabinet is read as led by Netanyahu. Tap one to load it.</p>
+      <p className="fig-note">Every smallest set of lists that reaches {MAJORITY} in {pollName}. Tap one to load it.</p>
       <div className="path-ctl">
         <div className="seg" role="group" aria-label="Likud in the path">
           <button type="button" aria-pressed={likud} onClick={pick(true, setLikud)}>With Likud<small>{withL.length} paths</small></button>
@@ -73,7 +73,7 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
         </div>
         <div className="seg" role="group" aria-label="Pledge conflicts">
           <button type="button" aria-pressed={!clean} onClick={pick(false, setClean)}>Every path<small>{side.length}</small></button>
-          <button type="button" aria-pressed={clean} onClick={pick(true, setClean)}>No pledge conflict<small>{cleanCount}</small></button>
+          <button type="button" aria-pressed={clean} disabled={!clean && cleanCount === 0} onClick={pick(true, setClean)}>No pledge conflict<small>{cleanCount}</small></button>
         </div>
       </div>
       {rows.length ? (
@@ -101,6 +101,7 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
         <span><i className="k k-notch" />Notched corner: a list named in a recorded pledge conflict</span>
         <span><i className="k k-hatch" />Hatched: outside support, not in the cabinet</span>
       </p>
+      <p className="fig-note">Drop any one list from a path and it falls short of {MAJORITY}. Paths that break no recorded pledge come first; then fewest lists, then most seats. This is seat arithmetic checked against the pledges on record, not a forecast; Likud in a cabinet is read as led by Netanyahu.</p>
       {sideHelped.length > 0 && (
         <details className="path-support">
           <summary>With outside support <span className="hint">{sideHelped.length} {likud ? "with" : "without"} Likud</span></summary>
