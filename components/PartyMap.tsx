@@ -105,7 +105,7 @@ function About() {
         shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
       </p>
       <p>
-        Each profile covers who the party is, who votes for it, where it stands on six issues, key candidates, pledges, its surplus-vote
+        Each profile covers who the party is, who votes for it, where it stands on seven issues, key candidates, pledges, its surplus-vote
         partner, a quote, and its seats in each poll.
       </p>
       <p>{PARTY_COLOR_NOTE}</p>
