@@ -76,10 +76,6 @@ export default function PollsNow() {
   return (
     <section className="pn" aria-labelledby="now-h">
       <h2 id="now-h" className="sec-h">What the polls say now</h2>
-      <p className="note">
-        The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}. Hollow points are {variantNames.join(" and ")},
-        the two the site&apos;s alternative average leaves out. <a href="#method">How the average is made</a>.
-      </p>
 
       <figure className="pn-fig">
         <figcaption className="pn-lbl">The blocs in the average, out of 120 seats</figcaption>
@@ -99,7 +95,8 @@ export default function PollsNow() {
         <BlocStrip bloc="net" label={label.net} />
         <BlocStrip bloc="opp" label={label.opp} />
         <p className="src">
-          Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
+          The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}; hollow points are {variantNames.join(" and ")},
+          the two the site&apos;s alternative average leaves out. <a href="#method">How the average is made</a>. Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
           totals are its own published figures. Lists that pass in fewer than half the polls count zero. <Link href="/coalition-builder">Build a coalition from these numbers</Link>.
         </p>
       </figure>

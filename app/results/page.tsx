@@ -5,6 +5,7 @@ import "@/components/results.css";
 import ResultsFreshness from "@/components/ResultsFreshness";
 import ResultsRefresh from "@/components/ResultsRefresh";
 import ResultsChanges from "@/components/ResultsChanges";
+import PollThresholdWatch from "@/components/results/ThresholdWatch";
 import {partyColor,blocColorStrip} from "@/lib/party-colors";
 import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
@@ -98,6 +99,7 @@ function WhatToWatch() {
             {IL.format(close)} Israel time, {ET.format(close)}
           </dt>
           <dd>
+            This page shows the committee&apos;s count as it comes in, refreshed every minute, and the <Link href="/coalition-builder">Coalition Builder</Link> adds it as a choice.
             Polls close, and Kan, Channel 12 and Channel 13 broadcast their exit polls at that moment (<a href="https://www.ynetnews.com/article/h1tyl0a4s">Ynet, Nov 1, 2022</a>). Exit polls are estimates: in 2022 the early exit polls gave Meretz 5 seats (<a href="https://www.jpost.com/israel-elections/article-721230">Jerusalem Post, Nov 1, 2022</a>), and the final count put it at 3.16%, below the threshold, with none (<a href="https://votes25.bechirot.gov.il/nationalresults">Central Elections Committee</a>).{" "}
             <Link href="/how-it-works/voting">How election night turns into a count</Link>
           </dd>
@@ -237,9 +239,7 @@ export default async function Page() {
             <p className="standfirst">
               {live.state === "closed" ? (
                 <>
-                  The Central Elections Committee starts publishing its count when polls close at {IL.format(close)} Israel time ({ET.format(close)}).
-                  This page will show the count as it comes in, refreshed every minute, and the <Link href="/coalition-builder">Coalition Builder</Link> will add the
-                  results as a choice.
+                  The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}). Until then, the lists the night may turn on.
                 </>
               ) : (
                 <>The committee&apos;s count could not be reached on this refresh ({IL.format(new Date(live.fetchedAt))} Israel time). The page tries again every minute.</>
@@ -247,6 +247,7 @@ export default async function Page() {
             </p>
           </header>
           <ResultsRefresh pollsClose={cfg.pollsClose} />
+          <PollThresholdWatch />
           <WhatToWatch />
           <ExitPolls lists={null} />
           <Letters />

@@ -60,20 +60,16 @@ export default function Page() {
           <p className="standfirst">
             Every seat poll we track since {mediumDate(from)}: {allPolls.length} polls from {new Set(allPolls.map((p) => p.pollster)).size} pollsters.
           </p>
-          <p className="note">
-            New polls arrive twice a day from Wikipedia&apos;s polling tables and are checked automatically before they appear here: seats must add
-            to 120, the pollster must be one we know, and no party may jump more than {cfg.maxSeatMove} seats from that pollster&apos;s previous poll.
-          </p>
         </header>
 
         <PollsNow />
 
         <PollComparison panels={groups.flatMap((g) => g.panels)} dates={dates} from={from} to={to} yMax={yMax} />
         <h2 className="sec-h">How each party has moved</h2>
+        <PollTrends dates={dates} groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
         <p className="note">
           Dots are single polls; lines are the running passing-poll mean on each publication date, using the same method above. Per-party zoom shows small changes, with a minimum four-seat span and enough range for every dot. The bounds are labeled: heights across zoomed panels do not compare party size. Switch to the shared 0–{yMax} scale to compare size. A reported threshold failure stays at zero; zero is not the 3.25% vote threshold. Gaps mean no separate average. Point, tap or use left/right arrow keys for dated values.
         </p>
-        <PollTrends dates={dates} groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
 
         <Suspense fallback={<p>Loading the poll browser…</p>}>
           <PollBrowser polls={allPolls} parties={parties} currentIds={mainPolls.map((p) => p.id)} config={cfg} />
@@ -81,6 +77,10 @@ export default function Page() {
         </Suspense>
 
         <h2 id="method" className="sec-h">How the average is made</h2>
+        <p className="note">
+            New polls arrive twice a day from Wikipedia&apos;s polling tables and are checked automatically before they appear here: seats must add
+            to 120, the pollster must be one we know, and no party may jump more than {cfg.maxSeatMove} seats from that pollster&apos;s previous poll.
+        </p>
         <p className="note">
           Each pollster&apos;s latest poll from the {cfg.currentWindowDays} days up to {mediumDate(to)} ({mainPolls.length} polls:{" "}
           {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). The <Link href="/coalition-builder">Coalition Builder</Link> and{" "}

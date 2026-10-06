@@ -29,3 +29,30 @@
 .rs-freshness.stale { border-inline-start: 5px solid var(--ink); padding-inline-start: 14px; }
 .rs-refresh { padding: 8px 12px; border: 1px solid var(--line); background: var(--sheet); color: var(--ink); cursor: pointer; font: inherit; }
 .rs-changes { margin-top: 28px; }
+
+/* Threshold watch: each list near the line, a dot per current poll, the gap from 0 to 4 seats shaded as the threshold. */
+.rs .tw-fig { margin: 8px 0 34px; max-width: 900px; }
+.rs .tw-h { font-size: 15px; font-weight: 700; color: var(--ink); margin: 0 0 10px; }
+.rs .tw-rows { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 13em) minmax(0, 1fr) auto; column-gap: 16px; }
+.rs .tw-rows > li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; padding: 6px 0; border-top: 1px solid var(--line); }
+.rs .tw-rows > li.tw-axis { border-top: 0; padding: 0 0 4px; }
+.rs .tw-name { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.rs .tw-name:hover { text-decoration: underline; }
+.rs .tw-track { position: relative; height: 26px; }
+.rs .tw-axis .tw-track { height: 16px; }
+.rs .tw-axis i { position: absolute; transform: translateX(-50%); font-style: normal; font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.rs .tw-axis i:first-child { transform: none; }
+.rs .tw-gap { position: absolute; top: 3px; bottom: 3px; background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); border-right: 2px solid var(--ink); }
+.rs .tw-dot { position: absolute; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 1.5px var(--bg); transform: translateX(calc(var(--k) * 9px)); }
+.rs .tw-dot.hollow { background: var(--bg); box-shadow: inset 0 0 0 2.5px var(--c); }
+.rs .tw-dot.out { margin-left: 1px; }
+.rs .tw-read { font-size: 13.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rs .tw-read b { font-family: var(--display); font-size: 17px; color: var(--ink); }
+.rs .tw-avg { color: var(--ink-3); }
+.rs .tw-src { font-size: 12.5px; color: var(--ink-3); margin: 10px 0 0; line-height: 1.5; max-width: 75ch; }
+@media (max-width: 640px) {
+  .rs .tw-rows { grid-template-columns: minmax(0, 1fr) auto; }
+  .rs .tw-rows > li { row-gap: 2px; }
+  .rs .tw-name { grid-column: 1 / -1; }
+  .rs .tw-axis > span:first-child { display: none; }
+}

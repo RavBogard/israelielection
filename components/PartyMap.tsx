@@ -169,16 +169,10 @@ export default function PartyMap() {
       <header className="ix-head">
         <div>
           <h1>The Party Map</h1>
-          <p className="sub">
-            Each block&apos;s area is the party&apos;s normalized coalition average across {mainPolls.length} polls (
-            {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}). Tap a party for a preview and a link to its full profile: who they are, who votes for
-            them, where they stand, and their seat numbers in each poll. <Link href="/polls#method">Average method</Link>.
-          </p>
+          <p className="sub">Every list, sized by its seats in the polling average. Tap one for its profile.</p>
         </div>
-        <details className="party-color-key"><summary>Distinct party shades and political families</summary><ul>{PARTY_COLOR_FAMILIES.map((family)=><li key={family.label}><b>{family.label}</b><div>{family.ids.map((id)=><span key={id}><span className="sw" style={{background:partyColor(id)}}/>{parties.find((p)=>p.id===id)?.name??id}</span>)}</div></li>)}</ul></details>
       </header>
 
-      <p className="party-color-note">{PARTY_COLOR_NOTE}</p>
       <div className="layout">
         <div className="mapcol">
           <div className="map" ref={mapRef} role="group" aria-label="Parties sized by average seats" onPointerLeave={() => setTip(null)}>
@@ -193,10 +187,18 @@ export default function PartyMap() {
               </button>
             ))}
           </div>
-          <p className="minor">
-            38 lists filed for the Oct 27 election (Central Elections Committee approval, Ynet, Sep 27, 2026). 20+ minor lists are not
-            shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
-          </p>
+          <div className="pm-about">
+            <p>
+              Each block&apos;s area is the list&apos;s coalition average, scaled to 120 seats, across {mainPolls.length} polls:{" "}
+              {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}. <Link href="/polls#method">How the average is made</Link>.
+            </p>
+            <p>
+              38 lists filed for the Oct 27 election (Central Elections Committee approval, Ynet, Sep 27, 2026). 20+ minor lists are not
+              shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
+            </p>
+            <p>{PARTY_COLOR_NOTE}</p>
+            <details className="party-color-key"><summary>Distinct party shades and political families</summary><ul>{PARTY_COLOR_FAMILIES.map((family)=><li key={family.label}><b>{family.label}</b><div>{family.ids.map((id)=><span key={id}><span className="sw" style={{background:partyColor(id)}}/>{parties.find((p)=>p.id===id)?.name??id}</span>)}</div></li>)}</ul></details>
+          </div>
         </div>
         <aside className="panel" ref={panelRef} aria-live="polite" aria-label={party?`${party.name} profile`:"Party Map overview"}>
           {party && <button type="button" className="party-overview" onClick={()=>select(party.id)}>Back to overview</button>}

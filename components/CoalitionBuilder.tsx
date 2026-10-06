@@ -281,8 +281,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         <div>
           <Title className="h1">Build a coalition</Title>
           <p className="sub">
-            Tap a ballot slip to add a cabinet partner, or choose its role below. <b>{MAJORITY}</b> of the Knesset&apos;s {KNESSET} seats is an absolute majority.
-            An initial confidence vote needs more votes for than against; abstentions do not count. Every role here is hypothetical.
+            Tap a ballot slip to add a cabinet partner. <b>{MAJORITY}</b> of {KNESSET} seats is a majority; every arrangement here is hypothetical.
           </p>
           {preset && presetIds.length > 0 && (
             <p className="preset">
@@ -308,8 +307,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </button>
         </div>
       </header>
-      <PollNote poll={poll} />
-      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id}),sel,roles,parties.map((p)=>p.id))}`}>Print or export this arrangement</Link></p>
       <section className="arrangement-scenarios" aria-label="Explore a hypothetical arrangement">
         <p>Try a governing arrangement</p>
         <div>{scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}</div>
@@ -412,6 +409,9 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </div>
         </aside>
       </div>
+      <PollNote poll={poll} />
+      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id}),sel,roles,parties.map((p)=>p.id))}`}>Print or export this arrangement</Link></p>
+
       {profileParty && <Drawer party={profileParty} onClose={closeProfile} />}
     </div>
   );

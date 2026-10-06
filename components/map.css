@@ -45,3 +45,7 @@
 .pm .party-color-note { font-size: 14px; color: var(--text); max-width: 90ch; margin: 0 0 18px; }
 .pm .party-overview { align-self: flex-start; border: 1px solid var(--line-2); padding: 7px 10px; background: transparent; font: inherit; cursor: pointer; color: var(--ink); }
 .pm .party-overview:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+/* About this map: method, the minor lists and the colour key, under the map (graphic first). */
+.pm .pm-about { margin-top: 18px; padding-top: 10px; border-top: 1px solid var(--line); display: grid; gap: 8px; max-width: 70ch; }
+.pm .pm-about p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
+.pm .pm-about a { color: var(--ink-2); }
