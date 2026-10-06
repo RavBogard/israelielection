@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "components/party-profile.css"
+        ],
+        "createdAt": "2026-10-06T02:01:39.550Z",
+        "reason": "Site convention: the pull-quote rule in the party colour identifies the speaker's party; interactives.css uses the same 3px rule site-wide and the finish reviewer judged it should stay for consistency (2026-10-05)"
+      }
+    ]
+  }
+}
