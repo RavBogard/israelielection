@@ -10,9 +10,12 @@ import PollTrends, { type TrendPanel } from "@/components/PollTrends";
 import PollComparison from "@/components/PollComparison";
 import PollsNow from "@/components/polls/PollsNow";
 import { allPolls, blocs, mainPolls, parties, pollsData } from "@/lib/data";
-import { mediumDate, shortDate } from "@/lib/format";
-import { inWithoutVariant } from "@/lib/polls";
-import { averageTrend } from "@/lib/trend";
+import { longDate, mediumDate, shortDate } from "@/lib/format";
+import { blocTotals, inWithoutVariant, isExit } from "@/lib/polls";
+import { averageTrend, blocTrend } from "@/lib/trend";
+import { houseEffects } from "@/lib/house-effects";
+import BlocRace from "@/components/polls/BlocRace";
+import HouseEffects from "@/components/polls/HouseEffects";
 import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
@@ -53,21 +56,32 @@ export default function Page() {
       .sort((a, b) => (b.trend.at(-1)?.avg ?? 0) - (a.trend.at(-1)?.avg ?? 0)),
   })).filter((g) => g.panels.length);
 
+  const blocName = { net: blocs.find((b) => b.id === "net")!.label, opp: blocs.find((b) => b.id === "opp")!.label };
+  const race = blocTrend(allPolls, parties, cfg);
+  const raceDots = allPolls.filter((p) => !isExit(p)).map((p) => { const t = blocTotals(p, parties); return { id: p.id, date: p.published, pollster: p.pollster, net: t.net, opp: t.opp, hollow: filber(p) }; });
+
   return (
     <div className="ix pl">
       <div className="wrap">
         <PageHead title="The Polls" standfirst={<>
             Every seat poll we track since {mediumDate(from)}: {allPolls.length} polls from {new Set(allPolls.map((p) => p.pollster)).size} pollsters.
-          </>} />
+          </>}>
+          <p className="ph-meta">Updated {longDate(to).replace(/, \d{4}$/, "")}</p>
+        </PageHead>
+
+        <BlocRace trend={race} dots={raceDots} labels={blocName} hollowNames={variant.pollsters} windowDays={cfg.currentWindowDays} />
 
         <PollsNow />
 
-        <PollComparison panels={groups.flatMap((g) => g.panels)} dates={dates} from={from} to={to} yMax={yMax} />
-        <h2 className="sec-h">How each party has moved</h2>
+        <PollComparison panels={groups.flatMap((g) => g.panels)} dates={dates} from={from} to={to} yMax={yMax} hollowNames={variant.pollsters} />
+        <details className="pt-fold"><summary>Every list on its own chart</summary>
         <PollTrends dates={dates} groups={groups} from={from} to={to} yMax={yMax} refLabel={`${variant.pollsters.join(", ")} (averaged; left out of “${variant.label}”)`} />
         <p className="note">
           Dots are single polls; lines are the running passing-poll mean on each publication date, using the same method above. Per-party zoom shows small changes, with a minimum four-seat span and enough range for every dot. The bounds are labeled: heights across zoomed panels do not compare party size. Switch to the shared 0–{yMax} scale to compare size. A reported threshold failure stays at zero; zero is not the 3.25% vote threshold. Gaps mean no separate average. Point, tap or use left/right arrow keys for dated values.
         </p>
+        </details>
+
+        <HouseEffects rows={houseEffects(allPolls, parties, cfg)} labels={blocName} hollowNames={variant.pollsters} />
 
         <Suspense fallback={<p>Loading the poll browser…</p>}>
           <PollBrowser polls={allPolls} parties={parties} currentIds={mainPolls.map((p) => p.id)} config={cfg} />

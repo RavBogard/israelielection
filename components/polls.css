@@ -40,12 +40,9 @@
 .poll-choices, .poll-presets { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 12px 0; }
 .poll-choices label { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; min-height: 32px; }
 .poll-selection { border: 1px solid var(--line); padding: 10px 14px; }
-.poll-scroll-cue { font-size: 13px; color: var(--ink-2); }
 .pl .poll-scroller { max-width: 100%; overflow: auto; }
-.pl .poll-table .poll-identity { position: sticky; left: 0; background: var(--sheet); z-index: 1; min-width: 155px; max-width: 180px; white-space: normal; border-right: 1px solid var(--line); }
+.pl .poll-table .poll-identity { position: sticky; left: 0; background: var(--sheet); z-index: 1; min-width: 0; white-space: nowrap; border-right: 1px solid var(--line); }
 .pl .poll-table thead .poll-identity { z-index: 2; }
-.poll-identity time, .poll-identity span { display: block; }
-.poll-identity button { font-size: 12px; margin-top: 5px; }
 .poll-method { margin: 20px 0; border-block: 1px solid var(--ink); padding-block: 16px; }
 .poll-method dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px 28px; }
 .poll-method dl div { border-bottom: 1px solid var(--line); padding-bottom: 8px; }
@@ -56,7 +53,7 @@
 .poll-sensitivity summary, .poll-browser summary { cursor: pointer; }
 .poll-sensitivity input[type=range] { max-width: 100%; width: 320px; display: block; margin-block: 10px; }
 .poll-sensitivity input[readonly] { width: 100%; padding: 8px; font: inherit; }
-@media(max-width:600px) { .poll-method dl { grid-template-columns: minmax(0,1fr); } .poll-controls label { width: 100%; } .pl .poll-table .poll-identity { min-width: 130px; max-width: 150px; } }
+@media(max-width:600px) { .poll-method dl { grid-template-columns: minmax(0,1fr); } .poll-controls label { width: 100%; } }
 
 /* Poll comparisons use the full reading width; local tables retain their own scroll area. */
 .pl .avg-table { width:100%; }
@@ -65,19 +62,7 @@
 .pc-plot svg { display:block; max-width:100%; touch-action:pan-y; }
 .pc-tick { fill:var(--ink-2); font:12px var(--body); }
 .pc-label { fill:var(--ink); font:600 12px var(--body); }
-.pc-instructions { font-size:13px; color:var(--ink-2); }
-.pc-date { display:grid; grid-template-columns:minmax(200px,1fr) minmax(0,2fr); align-items:center; gap:18px; margin:16px 0 8px; }
-.pc-date input { width:100%; accent-color:var(--ink); }
 .pc-reading { font-size:15px; padding:10px 0; border-bottom:1px solid var(--line); margin:0 0 12px; min-height:44px; }
-.pc-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
-.pc-toolbar button { font:inherit; color:var(--ink); background:var(--sheet); border:1px solid var(--line); padding:7px 10px; cursor:pointer; }
-.pc-legend { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:2px 20px; list-style:none; padding:0; margin:14px 0; }
-.pc-legend li { display:flex; align-items:center; gap:6px; border-bottom:1px solid var(--line); min-width:0; min-height:44px; }
-.pc-legend li.active { background:var(--sheet); box-shadow:inset 0 -2px var(--ink); }
-.pc-legend input { flex-shrink:0; accent-color:var(--ink); }
-.pc-legend button { display:flex; align-items:center; gap:7px; background:none; border:0; padding:8px 2px; min-width:0; font:600 13px var(--body); color:var(--ink); cursor:pointer; text-align:left; }
-.pc-legend button svg { flex-shrink:0; }
-.pc-legend button:disabled { color:var(--ink-3); opacity:.55; }
 .pc-value { margin-left:auto; padding-left:5px; font-size:13px; font-variant-numeric:tabular-nums; }
 .pc-data { margin:14px 0 30px; }
 .pc-data summary { cursor:pointer; }
@@ -88,7 +73,44 @@
 .pt-panel .pt-context { font-size:12px; line-height:1.5; color:var(--ink-2); margin:8px 0; }
 .pt-panel .pt-domain { font-size:12px; font-weight:600; color:var(--ink); margin:6px 0; }
 .pt-panel .pt-read { white-space:normal; font-size:12px; min-height:34px; margin:8px 0 0; }
-@media(max-width:600px) { .pc-date { grid-template-columns:minmax(0,1fr); gap:8px; } .pc-legend { grid-template-columns:minmax(0,1fr); } .pt-grid-wrap { grid-template-columns:minmax(0,1fr); } }
+@media(max-width:600px) { .pt-grid-wrap { grid-template-columns:minmax(0,1fr); } }
 
 .poll-method { scroll-margin-top: 20px; }
 .pt-panel .pt-date-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 6px 0; }
+
+/* Pick-a-party: every list in grey, up to three in their own colour. */
+.pc-pick { border: 0; padding: 0; margin: 12px 0 14px; min-width: 0; }
+.pc-pick legend { font-size: 14px; font-weight: 600; padding: 0; margin-bottom: 8px; }
+.pc-pick-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.pc-pick button { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; padding: 5px 10px; font: 13px var(--body); color: var(--ink-2); background: var(--sheet); border: 1px solid var(--line); cursor: pointer; }
+.pc-pick button.on { color: var(--ink); border-color: var(--ink); font-weight: 600; }
+.pc-pick .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
+.pc-pick .pc-value { margin-left: 2px; padding: 0; color: var(--ink-3); font-weight: 400; }
+.pc-grey { fill: none; stroke: var(--line-2); stroke-width: 1.25; stroke-linejoin: round; }
+.pc-dot { fill: var(--c); stroke: var(--sheet); stroke-width: 1; opacity: .7; }
+.pc-dot.hollow { fill: var(--sheet); stroke: var(--c); stroke-width: 1.5; opacity: 1; }
+.pc-endv { font: 600 15px var(--display); font-variant-numeric: tabular-nums; }
+.pc-key { margin: 8px 0 0; }
+.pc .fig-note { margin: 10px 0 0; max-width: 90ch; }
+.pc-reading b { color: var(--ink); }
+.pt-fold { margin: 18px 0 30px; }
+.pt-fold > summary { cursor: pointer; padding-block: 12px; font-weight: 600; }
+@media (max-width: 760px) { .pc-pick button { min-height: 44px; } }
+.pl .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Poll table: the date and pollster are the method link, one line per poll. Phones pick their columns. */
+.pl .poll-table th, .pl .poll-table td { padding: 4px 10px; line-height: 1.3; vertical-align: middle; }
+.pl .poll-table .poll-id-link { display: inline; background: none; border: 0; padding: 4px 0; margin: 0; font: inherit; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; cursor: pointer; text-align: left; white-space: nowrap; }
+.pl .poll-table .poll-id-link:hover, .pl .poll-table .poll-id-link[aria-expanded="true"] { text-decoration-color: var(--ink); }
+.pl .poll-table .poll-id-link time { font-weight: 400; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pl .poll-table sup { font-size: 11px; line-height: 0; margin-left: 1px; }
+.poll-colpick { display: none; margin: 8px 0; }
+.poll-colpick summary { padding-block: 12px; font-weight: 600; }
+.poll-colpick .poll-choices label { min-height: 44px; }
+.poll-notes { margin: 10px 0 0; max-width: 90ch; }
+@media (max-width: 600px) {
+  .poll-colpick { display: block; }
+  .pl .poll-table .pcol:not(.on), .pl .poll-table .src { display: none; }
+  .pl .poll-table th, .pl .poll-table td { padding-inline: 6px; }
+  .pl .poll-table .poll-id-link { padding-block: 12px; }
+}

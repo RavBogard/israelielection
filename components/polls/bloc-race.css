@@ -1,0 +1,57 @@
+/* The bloc race and house effects. Bloc colours on bloc data only; the 61 line is the one heavy rule. */
+.br { margin: 22px 0 0; }
+.br-plot { width: 100%; min-width: 0; border-bottom: 1px solid var(--line); }
+.br-plot svg { display: block; max-width: 100%; touch-action: pan-y; }
+.br-grid { stroke: var(--line); stroke-width: 1; }
+.br-tick { fill: var(--ink-3); font: 12px var(--body); font-variant-numeric: tabular-nums; }
+.br-maj { stroke: var(--ink); stroke-width: 2; }
+.br-majlbl { fill: var(--ink); font: 600 12px var(--body); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; }
+.br-band { opacity: .13; }
+.br-band-net { fill: var(--b-net); }
+.br-band-opp { fill: var(--b-opp); }
+.br-bandlbl { fill: var(--ink-2); font: 12px var(--body); }
+.br-line { fill: none; stroke-width: 2.5; stroke-linejoin: round; }
+.br-dot { fill: var(--c); stroke: var(--bg); stroke-width: 1; opacity: .75; }
+.br-dot.hollow { fill: var(--bg); stroke: var(--c); stroke-width: 1.5; opacity: 1; }
+.br-sel { stroke: var(--bg); stroke-width: 1.5; }
+.br-cross { stroke: var(--ink-3); stroke-width: 1; }
+.br-end { fill: var(--ink); font: 13px var(--body); }
+.br-endv { font: 600 17px var(--display); font-variant-numeric: tabular-nums; }
+.br-reading { font-size: 14px; margin: 10px 0 0; min-height: 44px; color: var(--ink-2); }
+.br-reading b { color: var(--ink); }
+.br-key { margin: 8px 0 0; list-style: none; padding: 0; }
+.br-key li { display: inline-flex; align-items: center; gap: 6px; margin-right: 18px; }
+.br-kband { display: inline-block; width: 18px; height: 12px; background: var(--b-net); opacity: .2; }
+.br .fig-note { margin: 10px 0 0; max-width: 90ch; }
+.br-data { margin: 12px 0 0; }
+.br-data summary, .he-data summary { cursor: pointer; padding-block: 12px; }
+
+/* House effects: one row per pollster, the gap from the site average as a bar either side of zero. */
+.he { margin: 34px 0 0; }
+.he-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.he-table th, .he-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.he-table thead th { font-size: 12.5px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.he-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.he-table th[scope="row"] { font-weight: 600; white-space: nowrap; }
+.he-table .gap { width: 34%; min-width: 150px; }
+.he-track { position: relative; display: block; height: 18px; }
+.he-track .zero { position: absolute; top: -6px; bottom: -6px; left: 50%; border-left: 1px solid var(--ink-3); }
+.he-track .bar { position: absolute; top: 3px; height: 12px; background: var(--c); }
+.he-track .bar.hollow { background: var(--bg); border: 1.5px solid var(--c); box-sizing: border-box; }
+.he-table thead .gap { position: relative; }
+.he-scale { position: relative; display: block; height: 14px; margin-top: 4px; font-weight: 400; color: var(--ink-3); }
+.he-scale i { position: absolute; transform: translateX(-50%); font-style: normal; font-size: 12px; }
+.he .fig-note { margin: 10px 0 0; max-width: 90ch; }
+.he-data { margin: 10px 0 0; }
+@media (max-width: 640px) {
+  .he-table th, .he-table td { padding-inline: 4px; }
+  .he-table { table-layout: fixed; }
+  .he-table th:first-child { width: 30%; white-space: normal; }
+  .he-table .gap { min-width: 0; width: 35%; }
+  .he-table .n, .he-scale .mid { display: none; }
+}
+.he-cell { display: flex; align-items: center; gap: 8px; }
+.he-cell .he-track { flex: 1; min-width: 0; }
+.he-v { flex: none; width: 3.2em; text-align: right; font-variant-numeric: tabular-nums; }
+.he-table thead .he-scale { margin-right: calc(3.2em + 8px); }
+@media (max-width: 640px) { .br-key li { display: flex; margin-right: 0; } .br-key li svg, .br-key li .br-kband { flex: none; } }

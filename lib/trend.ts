@@ -1,5 +1,5 @@
-import { average, currentPolls } from "./polls";
-import type { Poll, PollsConfig } from "./types";
+import { average, averageAsPoll, blocTotals, currentPolls, isExit } from "./polls";
+import type { BlocId, Party, Poll, PollsConfig } from "./types";
 
 export type TrendPoint = { date: string; avg: number; n: number };
 
@@ -16,4 +16,26 @@ export function averageTrend(partyId: string, polls: Poll[], config: PollsConfig
     if (a) out.push({ date, avg: a.avg, n: a.n });
   }
   return out;
+}
+
+export type BlocPoint = { date: string; avg: Record<BlocId, number>; lo: Record<BlocId, number>; hi: Record<BlocId, number>; n: number };
+const BLOC_IDS: BlocId[] = ["net", "opp", "mid", "arab"];
+
+/**
+ * Bloc totals over time: on each poll date, the bloc totals of the site average (each list's
+ * average scaled to 120, as the Coalition Builder counts) and the lowest and highest bloc total
+ * among the current polls that day. The low-high span is the range of the polls, not a confidence interval.
+ */
+export function blocTrend(polls: Poll[], parties: Party[], config: PollsConfig): BlocPoint[] {
+  const campaign = polls.filter((p) => !isExit(p));
+  const dates = [...new Set(campaign.map((p) => p.published))].sort();
+  const ids = parties.map((p) => p.id);
+  return dates.map((date) => {
+    const main = currentPolls(campaign.filter((p) => p.published <= date), config);
+    const avg = blocTotals(averageAsPoll(main, ids), parties);
+    const each = main.map((p) => blocTotals(p, parties));
+    const pick = (f: (xs: number[]) => number) => Object.fromEntries(BLOC_IDS.map((b) => [b, f(each.map((t) => t[b]))])) as Record<BlocId, number>;
+    for (const b of BLOC_IDS) avg[b] = Math.round(avg[b] * 10) / 10;
+    return { date, avg, lo: pick((xs) => Math.min(...xs)), hi: pick((xs) => Math.max(...xs)), n: main.length };
+  });
 }

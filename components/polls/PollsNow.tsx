@@ -11,6 +11,8 @@ const cfg = pollsData.config;
 const MAJORITY = 61, TOTAL = 120;
 const one = (x: number) => fmt(Math.round(x * 10) / 10);
 const variantNames = cfg.withoutVariant.pollsters;
+/** Pixels per seat on the 40 to 70 axis at the narrowest width that shows pollster labels (760px). */
+const LABEL_PX_PER_SEAT = 23;
 
 /** The bloc order along the 120-seat bar: the two blocs from either end, the lists between them in the middle. */
 const BAR_ORDER: BlocId[] = ["net", "mid", "arab", "opp"];
@@ -23,6 +25,24 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
   const at = pts.filter((t) => t.seats >= MAJORITY).length;
   // Stack polls that land on the same number so every one stays visible.
   const seen = new Map<number, number>();
+  const stacked = pts.map((t) => { const k = seen.get(t.seats) ?? 0; seen.set(t.seats, k + 1); return { ...t, k }; });
+  // One label per stack of polls on the same number, level above the tallest stack, in as many
+  // lanes as it takes for none to overlap, joined to the stack by a leader. Widths are in seats at
+  // the narrowest axis that shows labels.
+  const top = Math.max(...stacked.map((t) => t.k)) + 1;
+  const ends: number[] = [];
+  const names = new Map<number, string>();
+  for (const t of stacked) names.set(t.seats, names.has(t.seats) ? `${names.get(t.seats)}, ${t.p.pollster}` : t.p.pollster);
+  const lanes = new Map<number, number>();
+  for (const [seats, text] of names) {
+    const half = (text.length * 6.8 + 12) / 2 / LABEL_PX_PER_SEAT;
+    let lane = ends.findIndex((end) => end < seats - half);
+    if (lane < 0) { lane = ends.length; ends.push(0); }
+    ends[lane] = seats + half;
+    lanes.set(seats, lane);
+  }
+  const labelled = stacked.map((t) => { const head = !stacked.some((o) => o.seats === t.seats && o.k > t.k); return { ...t, label: head ? names.get(t.seats)! : null, lift: (top - t.k) * 22 - 13 + lanes.get(t.seats)! * 17 }; });
+  const height = 6 + top * 22 + ends.length * 17 + 14;
   return (
     <div className="pn-strip">
       <p className="pn-strip-h">
@@ -30,20 +50,16 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
         <b>{label}</b>
         <span className="pn-strip-read">{at === 0 ? `under 61 in all ${pts.length} polls` : `61 or more in ${at} of ${pts.length} polls`}, from {pts[0].seats} to {pts[pts.length - 1].seats}</span>
       </p>
-      <div className="pn-axis" role="img" aria-label={`${label} seats in each current poll: ${pts.map((t) => `${t.p.pollster} ${t.seats}`).join(", ")}. A majority is 61.`}>
+      <div className="pn-axis" style={{ ["--h" as string]: `${height}px` }} role="img" aria-label={`${label} seats in each current poll: ${pts.map((t) => `${t.p.pollster} ${t.seats}`).join(", ")}. A majority is 61.`}>
         {[40, 45, 50, 55, 60, 65, 70].map((t) => (
           <span key={t} className="tick" style={{ left: x(t) }}>{t}</span>
         ))}
         <span className="maj" style={{ left: x(MAJORITY) }}><b>61</b></span>
-        {pts.map((t) => {
-          const k = seen.get(t.seats) ?? 0;
-          seen.set(t.seats, k + 1);
-          return (
-            <span key={t.p.id} className={`dot${t.hollow ? " hollow" : ""}`} style={{ left: x(t.seats), ["--fill" as string]: `var(--b-${bloc})`, ["--k" as string]: k }} title={`${t.p.pollster}, ${mediumDate(t.p.published)}: ${t.seats}`}>
-              <i className="lbl">{t.p.pollster}</i>
-            </span>
-          );
-        })}
+        {labelled.map((t) => (
+          <span key={t.p.id} className={`dot${t.hollow ? " hollow" : ""}`} style={{ left: x(t.seats), ["--fill" as string]: `var(--b-${bloc})`, ["--k" as string]: t.k, ["--lift" as string]: `${t.lift}px` }} title={`${t.p.pollster}, ${mediumDate(t.p.published)}: ${t.seats}`}>
+            {t.label && <><i className="ldr" /><i className="lbl">{t.label}</i></>}
+          </span>
+        ))}
       </div>
     </div>
   );
