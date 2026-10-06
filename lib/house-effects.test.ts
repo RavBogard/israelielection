@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { houseEffects } from "./house-effects";
-import { blocTrend } from "./trend";
-import { allPolls, parties, pollsData } from "./data";
+import { blocTrend, scaledTrends } from "./trend";
+import { allPolls, averagePoll, parties, pollsData } from "./data";
 import { blocTotals } from "./polls";
 import type { Party, Poll, PollsConfig } from "./types";
 
@@ -37,5 +37,22 @@ describe("house effects", () => {
     expect(h.reduce((n, r) => n + r.n, 0)).toBe(allPolls.filter((p) => p.kind !== "exit").length);
     const trend = new Map(blocTrend(allPolls, parties, pollsData.config).map((t) => [t.date, t.avg]));
     for (const r of h) for (const { poll: p, gap } of r.polls) expect(gap.net).toBeCloseTo(blocTotals(p, parties).net - trend.get(p.published)!.net, 6);
+  });
+});
+
+describe("scaled trends", () => {
+  it("ends on the site average every page prints, below as 0", () => {
+    const ids = parties.map((p) => p.id);
+    const t = scaledTrends(allPolls, ids, pollsData.config);
+    for (const id of ids) {
+      const r = averagePoll.results[id];
+      const last = t.get(id)!.at(-1);
+      if (!r) continue;
+      expect(last?.avg).toBe(r.belowThreshold ? 0 : r.seats);
+    }
+  });
+  it("leaves exit polls out and has a point per campaign date", () => {
+    const t = scaledTrends([poll("1", "X", "2026-09-01", 60), poll("e", "X", "2026-09-02", 40, { kind: "exit" })], ["a", "b"], cfg);
+    expect(t.get("a")).toEqual([{ date: "2026-09-01", avg: 60, n: 1 }]);
   });
 });

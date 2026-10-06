@@ -5,7 +5,7 @@
     "currentWindowDays": 14,
     "inclusionRule": "Every pollster that publishes its sample size and method is averaged, Channel 14 included. Pollsters are included or left out by firm and stated method, never by their results.",
     "withoutVariant": {
-      "label": "Without Filber",
+      "label": "Without Channel 14 and i24NEWS",
       "note": "The same average without the polls by Shlomo Filber's firms: Channel 14 (Next Data) and i24NEWS (Direct Polls).",
       "pollsters": [
         "Channel 14",

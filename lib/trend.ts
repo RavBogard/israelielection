@@ -39,3 +39,23 @@ export function blocTrend(polls: Poll[], parties: Party[], config: PollsConfig):
     return { date, avg, lo: pick((xs) => Math.min(...xs)), hi: pick((xs) => Math.max(...xs)), n: main.length };
   });
 }
+
+/**
+ * Each list's seats in the site average as it stood on each campaign poll date: `averageAsPoll` over
+ * that day's current polls, so the last point is the figure printed everywhere else (one decimal,
+ * scaled to 120). A list below or near the threshold that day is 0; a list no current poll reported
+ * separately has no point that day.
+ */
+export function scaledTrends(polls: Poll[], partyIds: string[], config: PollsConfig): Map<string, TrendPoint[]> {
+  const campaign = polls.filter((p) => !isExit(p));
+  const out = new Map<string, TrendPoint[]>(partyIds.map((id) => [id, []]));
+  for (const date of [...new Set(campaign.map((p) => p.published))].sort()) {
+    const main = currentPolls(campaign.filter((p) => p.published <= date), config);
+    const avg = averageAsPoll(main, partyIds);
+    for (const id of partyIds) {
+      const r = avg.results[id];
+      if (r) out.get(id)!.push({ date, avg: r.belowThreshold ? 0 : r.seats, n: main.filter((p) => p.results[id]).length });
+    }
+  }
+  return out;
+}

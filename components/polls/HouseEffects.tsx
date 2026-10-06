@@ -1,10 +1,13 @@
 import { mediumDate } from "@/lib/format";
+import { seatFigure } from "@/lib/polls";
 import type { HouseEffect } from "@/lib/house-effects";
 import "./bloc-race.css";
 
 const BLOCS = ["net", "opp"] as const;
-const signed = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : "0");
-const tenth = (n: number) => Math.round(n * 10) / 10;
+/** A gap in seats, one decimal always, as every average figure on the site. */
+const signed = (n: number) => { const v = seatFigure(Math.abs(n)); return v === "0.0" ? v : `${n > 0 ? "+" : "−"}${v}`; };
+/** Scale ticks are whole seats. */
+const tick = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : "0");
 
 /** Each pollster's average gap from the site's bloc average, as a bar either side of zero. */
 export default function HouseEffects({ rows, labels, hollowNames }: { rows: HouseEffect[]; labels: Record<"net" | "opp", string>; hollowNames: string[] }) {
@@ -23,7 +26,7 @@ export default function HouseEffects({ rows, labels, hollowNames }: { rows: Hous
             {BLOCS.map((b) => (
               <th key={b} scope="col" className="gap">
                 {labels[b]}
-                <span className="he-scale" aria-hidden="true">{scale.map((t, i) => <i key={t} className={i % 2 ? "mid" : undefined} style={{ left: `${pos(t)}%` }}>{signed(t)}</i>)}</span>
+                <span className="he-scale" aria-hidden="true">{scale.map((t, i) => <i key={t} className={i % 2 ? "mid" : undefined} style={{ left: `${pos(t)}%` }}>{tick(t)}</i>)}</span>
               </th>
             ))}
           </tr>
@@ -62,7 +65,7 @@ export default function HouseEffects({ rows, labels, hollowNames }: { rows: Hous
         <div className="table-scroll" tabIndex={0} role="region" aria-label="Gap of every poll from the site average, horizontally scrollable">
           <table className="data-table">
             <thead><tr><th scope="col">Pollster</th><th scope="col">Published</th>{BLOCS.map((b) => <th key={b} scope="col" className="num">{labels[b]}</th>)}</tr></thead>
-            <tbody>{rows.flatMap((r) => r.polls.map(({ poll, gap }) => <tr key={poll.id}><th scope="row">{r.pollster}</th><td>{mediumDate(poll.published)}</td>{BLOCS.map((b) => <td key={b} className="num">{signed(tenth(gap[b]))}</td>)}</tr>))}</tbody>
+            <tbody>{rows.flatMap((r) => r.polls.map(({ poll, gap }) => <tr key={poll.id}><th scope="row">{r.pollster}</th><td>{mediumDate(poll.published)}</td>{BLOCS.map((b) => <td key={b} className="num">{signed(gap[b])}</td>)}</tr>))}</tbody>
           </table>
         </div>
       </details>
