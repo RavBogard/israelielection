@@ -20,7 +20,7 @@
       "label": "Keep the courts independent"
     }
   ],
-  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. Likud declined it; its row adds its justice minister's 2025 law. Ra'am gave no current position; its row rests on its 2023 votes. Otzma Yehudit answered without a position. Noam's row is the Jerusalem Post's report of its relaunch, with no detail.",
+  "note": "From Ynet's party-by-party survey on the judiciary, Sept 22, 2026. Likud declined it; its row adds its justice minister's 2025 law. Ra'am gave no current position; its row rests on its 2023 votes. Otzma Yehudit answered without a position; its row rests on its leader's support for the 2023 and 2025 laws. Noam's row is the Jerusalem Post's report of its relaunch, with no detail.",
   "rows": [
     {
       "party": "likud",
@@ -41,12 +41,12 @@
     },
     {
       "party": "otzma",
-      "text": "Said it was still preparing a detailed judicial platform with legal experts and senior figures in the legal field.",
-      "source": "Ynet",
-      "url": "https://www.ynetnews.com/article/hkcjtk1cme",
-      "date": "Sep 22, 2026",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Told Ynet it was still preparing a detailed judicial platform. On the record: the Jerusalem Post reports that Ben-Gvir supported the 2023 overhaul and opposed softening it, calling the July 2023 law limiting the reasonableness standard \"just the beginning.\" When the judicial selection law passed in March 2025, he said the government must push on with the rest of the overhaul (Times of Israel).",
+      "source": "Ynet, Sep 22, 2026; Jerusalem Post, Sep 24, 2026; Times of Israel, Mar 27, 2025",
+      "url": "https://www.jpost.com/israel-election-2026/article-909348",
+      "date": "Sep 24, 2026",
+      "stance": "curb",
+      "basis": "record"
     },
     {
       "party": "shas",

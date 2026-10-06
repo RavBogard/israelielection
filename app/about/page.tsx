@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import ArticleShell from "@/components/article/ArticleShell";
 import Body, { meta } from "@/content/about.mdx";
 import note from "@/data/home-note.json";
 import { mediumDate } from "@/lib/format";
 
-export const metadata: Metadata = { title: meta.title, description: meta.dek };
+export const metadata: Metadata = { title: meta.title, description: meta.dek, alternates: alternates("/about") };
 
 /** Daniel's signed note, approved 2026-10-05 for the home page and moved here when the home page was cut down. */
 function Foreword() {

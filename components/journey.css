@@ -17,3 +17,7 @@
 /* Route choice sits directly under the page's standfirst. */
 .journey .journey-routes { margin: 0 0 8px; }
 .journey .journey-routes button,.journey .journey-move button { min-height: 44px; }
+/* The step label and question sit at the top of the figure as its caption. */
+.journey .journey-fig > figcaption { margin: 0 0 14px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); }
+.journey .journey-fig > figcaption h2 { margin: 2px 0 0; }
+.journey .journey-step-n { margin: 0; font: 600 13px/1.3 var(--body); color: var(--ink-2); }

@@ -24,7 +24,7 @@
       "label": "Draft everyone, military or civilian"
     }
   ],
-  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. Likud declined the questionnaire; its stance comes from a minister's description of the coalition's 2025 bill. Ra'am answered only on drafting Arab citizens. Blue and White's row is from Ynet's Hebrew report of the same questionnaire. No 2026 position found for Noam (checked October 2026); its row gives Maoz's position in 2025.",
+  "note": "Party answers to Ynet's September 2026 questionnaire unless another source is given. Likud declined the questionnaire; its stance comes from a minister's description of the coalition's 2025 bill. Ra'am answered only on drafting Arab citizens. Blue and White's row is from Ynet's Hebrew report of the same questionnaire. Noam's row is its leader's statement in the Knesset in July 2026.",
   "rows": [
     {
       "party": "likud",
@@ -125,7 +125,7 @@
     },
     {
       "party": "raam",
-      "text": "Ynet reports that it opposes a draft law that would require young Arab citizens to serve in the IDF or perform civilian service, and that it declined to respond on Haredi enlistment.",
+      "text": "Ynet reports that it opposes a draft law that would require young Arab citizens to serve in the IDF or perform civilian service, and that it declined to respond on Haredi enlistment, although three Ra'am MKs voted in January 2022, inside the Bennett–Lapid coalition, for a draft law with annual Haredi enlistment targets. That coalition vote sets no current stance.",
       "source": "Ynet",
       "url": "https://www.ynetnews.com/article/sjph72wyzx",
       "date": "Sep 16, 2026",
@@ -133,12 +133,12 @@
     },
     {
       "party": "noam",
-      "text": "No 2026 position found. In December 2025, the Times of Israel reported that Avi Maoz supports more Haredi service but would back only a noncoercive bill with Haredi rabbinic approval, and would not say how he would vote.",
-      "source": "Times of Israel",
-      "url": "https://www.timesofisrael.com/liveblog_entry/likud-mk-bullish-on-haredi-conscription-bills-chances-two-far-right-mks-noncommital/",
-      "date": "Dec 2, 2025",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Avi Maoz voted for the July 2026 law freezing arrests of yeshiva students who did not report, calling it \"a bandage before the elections.\" His position: \"Whoever studies should continue studying, and whoever does not study should enlist and share with us the great commandment of defending the homeland\" (translated).",
+      "source": "Channel 14",
+      "url": "https://www.c14.co.il/article/1620270",
+      "date": "Jul 14, 2026",
+      "stance": "draft-leavers",
+      "basis": "record"
     },
     {
       "party": "bw",

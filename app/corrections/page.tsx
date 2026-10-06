@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import { Suspense } from "react";
 import CorrectionReport from "@/components/CorrectionReport";
@@ -10,7 +11,7 @@ import { longDate } from "@/lib/format";
 import "@/components/interactives.css";
 import "@/components/corrections.css";
 import PageHead from "@/components/PageHead";
-export const metadata: Metadata = { title: "Media inquiries and corrections", description: "Contact Rabbi Daniel Bogard for media inquiries or send an evidence-based correction without an account. Read substantive corrections and their sources." };
+export const metadata: Metadata = { title: "Media inquiries and corrections", description: "Contact Rabbi Daniel Bogard for media inquiries or send an evidence-based correction without an account. Read substantive corrections and their sources.", alternates: alternates("/corrections") };
 /** A corrected page by its name in the site catalog, or its address when it has none. */
 const pageName = (href: string) => NAV.find((n) => n.href === href.split("#")[0])?.label ?? href;
 

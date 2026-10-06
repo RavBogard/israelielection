@@ -46,6 +46,24 @@ function sidesOf(vs: (number | null)[]) {
   else known.forEach((p, k) => (side[p.i] = k === 0 ? "l" : k === known.length - 1 ? "r" : k === 1 ? "t" : "b"));
   return side;
 }
+/**
+ * A run of dates prints only its first and last values, the earlier on the side away from the later, so
+ * marks that sit close never stack labels; the table keeps the rest. An end label that would run into a
+ * middle mark (within `near` of the scale) moves above its mark, and the second such label below.
+ */
+function endsOf(vs: (number | null)[], near: number) {
+  const known = vs.map((v, i) => ({ v, i })).filter((p): p is { v: number; i: number } => p.v !== null);
+  const side: Record<number, Side> = {};
+  if (known.length === 1) side[known[0].i] = "r";
+  else if (known.length > 1) {
+    const a = known[0], z = known.at(-1)!, mids = known.slice(1, -1);
+    const pick = (e: typeof a, s: "l" | "r"): Side => (mids.some((m) => (s === "l" ? e.v - m.v : m.v - e.v) > 0 && Math.abs(e.v - m.v) < near) ? "t" : s);
+    side[a.i] = pick(a, a.v <= z.v ? "l" : "r");
+    side[z.i] = pick(z, a.v <= z.v ? "r" : "l");
+    if (side[a.i] === "t" && side[z.i] === "t") side[z.i] = "b";
+  }
+  return side;
+}
 
 /** A dot plot: each row a 0-to-max track with one mark per column, each value printed beside its mark; every row shares one track width. */
 export function DotPlot({ c }: { c: Chart }) {
@@ -55,15 +73,17 @@ export function DotPlot({ c }: { c: Chart }) {
   const x = (v: number) => `${(v / max) * 100}%`;
   // Only a run of dates makes lowest-to-highest a change; otherwise the marks stand alone.
   const dated = cols.every((h) => timeOf(h) !== null);
-  const lanes = Math.max(...c.rows.map((r) => (r.cells ?? []).filter((v) => pct(v) !== null).length));
+  const sides = c.rows.map((r) => (dated ? endsOf((r.cells ?? []).map(pct), max * 0.15) : sidesOf((r.cells ?? []).map(pct))));
+  const used = new Set(sides.flatMap((sd) => Object.values(sd)));
+  const lanes = used.has("b") ? 4 : used.has("t") ? 3 : 2;
   return (
     <div className={`cv-dots${lanes >= 3 ? " up" : ""}${lanes >= 4 ? " down" : ""}`}>
       <Legend columns={cols} />
       <ul>
-        {c.rows.map((r: ChartRow) => {
+        {c.rows.map((r: ChartRow, ri) => {
           const vs = (r.cells ?? []).map(pct);
-          const known = vs.filter((v): v is number => v !== null);
-          const side = sidesOf(vs);
+          const side = sides[ri];
+          const run = vs.map((v, i) => ({ v, i })).filter((p): p is { v: number; i: number } => p.v !== null);
           return (
             <li key={r.label}>
               <span className="lab">
@@ -72,9 +92,9 @@ export function DotPlot({ c }: { c: Chart }) {
               </span>
               <span className="track" aria-hidden="true">
                 <span className="tk">
-                  {dated && known.length > 1 && <i className="span" style={{ left: x(Math.min(...known)), width: `${((Math.max(...known) - Math.min(...known)) / max) * 100}%` }} />}
+                  {dated && run.length > 1 && <i className="span" style={{ left: x(Math.min(run[0].v, run.at(-1)!.v)), width: `${(Math.abs(run.at(-1)!.v - run[0].v) / max) * 100}%` }} />}
                   {vs.map((v, i) => (v === null ? null : <i key={i} className={`cv-m ${MARKS[i]}`} style={{ left: x(v) }} title={`${cols[i]}: ${r.cells![i]}`} />))}
-                  {vs.map((v, i) => (v === null ? null : <b key={i} className={`dv dv-${side[i]} v-${MARKS[i]}`} style={{ left: x(v) }}>{r.cells![i]}</b>))}
+                  {vs.map((v, i) => (v === null || !side[i] ? null : <b key={i} className={`dv dv-${side[i]} v-${MARKS[i]}`} style={{ left: x(v) }}>{r.cells![i]}</b>))}
                 </span>
               </span>
             </li>
@@ -101,7 +121,7 @@ export function Sparklines({ c }: { c: Chart }) {
   // X labels: all that keep about 70px clear on a desktop track, the first and last on phones.
   const shown = new Set(clearLabels(cols.map((h) => h.at), 0.2));
   return (
-    <div className="cv-sparks" aria-hidden="true">
+    <div className="cv-sparks">
       <ul>
         {rows.map(({ row, pts, runs, labels, lanes, flow }) => (
           <li key={row.label} className={[lanes && `ln-${lanes}`, flow.xs && "fl-xs", flow.s && "fl-s", flow.l && "fl-l"].filter(Boolean).join(" ") || undefined}>
@@ -109,8 +129,8 @@ export function Sparklines({ c }: { c: Chart }) {
               {row.label}
               {rowSource(row)}
             </span>
-            <span className="v0">{pts.length > 1 && pts[0].j === 0 ? pts[0].txt : ""}</span>
-            <span className="sp">
+            <span className="v0" aria-hidden="true">{pts.length > 1 && pts[0].j === 0 ? pts[0].txt : ""}</span>
+            <span className="sp" aria-hidden="true">
               <span className="tk">
                 {cols.map((h) => <i key={h.label} className="g" style={{ left: at(h.at) }} />)}
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -120,8 +140,8 @@ export function Sparklines({ c }: { c: Chart }) {
                 </svg>
                 {pts.map((p) => <i key={p.j} className="pt" style={{ left: at(cols[p.j].at), top: top(p.v) }} title={`${cols[p.j].label}: ${p.raw}`} />)}
                 {/* A line that starts after the first election or stops before the last has its end values printed at its own points, not at the row's ends. */}
-                {pts.length > 1 && pts[0].j > 0 && <b className="pv to-l" style={{ left: at(cols[pts[0].j].at), top: top(pts[0].v) }}>{pts[0].txt}</b>}
-                {pts.length > 0 && pts.at(-1)!.j < cols.length - 1 && <b className="pv to-r" style={{ left: at(cols[pts.at(-1)!.j].at), top: top(pts.at(-1)!.v) }}>{pts.at(-1)!.txt}</b>}
+                {pts.length > 1 && pts[0].j > 0 && <b className={`pv to-l${pts[0].v / max < 0.3 ? " lo" : ""}`} style={{ left: at(cols[pts[0].j].at), top: top(pts[0].v) }}>{pts[0].txt}</b>}
+                {pts.length > 0 && pts.at(-1)!.j < cols.length - 1 && <b className={`pv to-r${pts.at(-1)!.v / max < 0.3 ? " lo" : ""}`} style={{ left: at(cols[pts.at(-1)!.j].at), top: top(pts.at(-1)!.v) }}>{pts.at(-1)!.txt}</b>}
               </span>
               {labels.length > 0 && (
                 <span className="lists">
@@ -131,10 +151,10 @@ export function Sparklines({ c }: { c: Chart }) {
                 </span>
               )}
             </span>
-            <span className="v1">{pts.length && pts.at(-1)!.j === cols.length - 1 ? pts.at(-1)!.txt : ""}</span>
+            <span className="v1" aria-hidden="true">{pts.length && pts.at(-1)!.j === cols.length - 1 ? pts.at(-1)!.txt : ""}</span>
           </li>
         ))}
-        <li className="cv-axis">
+        <li className="cv-axis" aria-hidden="true">
           <span className="lab">Every row 0 to {max}%</span>
           <span className="v0" />
           <span className="ax">
@@ -264,8 +284,8 @@ const FILLS = ["var(--ink)", "var(--ink-3)", "var(--line-2)"], ON_FILL = ["var(-
 export function Stacks({ c }: { c: Chart }) {
   const { parts, max, rows } = stacks(c);
   return (
-    <div className="cv-stack" aria-hidden="true">
-      <p className="fig-key cv-legend">
+    <div className="cv-stack">
+      <p className="fig-key cv-legend" aria-hidden="true">
         {parts.map((h, i) => (
           <span key={h}>
             <i className="cv-sw" style={{ background: FILLS[i] }} />
@@ -280,14 +300,14 @@ export function Stacks({ c }: { c: Chart }) {
               {row.label}
               {rowSource(row)}
             </span>
-            <span className="bar">
+            <span className="bar" aria-hidden="true">
               {values.map((v, i) => (
                 <span key={i} className={`pt p${i}`} style={{ width: `${(v / max) * 100}%`, background: FILLS[i], color: ON_FILL[i] }} title={`${parts[i]}: ${cells[i]}`}>
                   <b>{cells[i]}</b>
                 </span>
               ))}
             </span>
-            <span className="tot">{total}</span>
+            <span className="tot" aria-hidden="true">{total}</span>
           </li>
         ))}
       </ul>

@@ -12,6 +12,11 @@ import "./BallotDirectory.css";
 const seatsOf = (id: string | null) => (id ? averagePoll.results[id]?.seats ?? 0 : 0);
 /** A spaced dash in a list name stays with the word before it, so it never starts a line on its own. */
 const keepDash = (name: string) => name.replace(/ ([—–]) /g, " $1 ");
+/** On a slip, the part of a name after a spaced dash is its second line. */
+const slipName = (name: string) => {
+  const m = / [—–] /.exec(name);
+  return m ? <>{name.slice(0, m.index)}<span className="bd-sub">{name.slice(m.index + 3)}</span></> : name;
+};
 
 /**
  * The ballot tray first: all 38 published slips as one wall, the lists that win seats in the
@@ -45,7 +50,7 @@ export default function BallotDirectory() {
               <li key={l.id}>
                 <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${seatFigure(s)} seats in the average` : ""}`}>
                   <span className="bd-letters" lang="he" dir="rtl">{l.letters}</span>
-                  <span className="bd-name">{keepDash(l.name)}</span>
+                  <span className="bd-name">{slipName(l.name)}</span>
                   {s > 0 && <span className="bd-seats">{seatFigure(s)}</span>}
                 </a>
               </li>

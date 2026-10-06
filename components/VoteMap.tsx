@@ -5,7 +5,7 @@ import "./votemap.css";
 import LocalityHistory from "./LocalityHistory";
 import { readMapState, mapHref } from "@/lib/locality-history";
 import { BINS, binOf, decodeArcs, pathOf, project, ringsOf, type Places, type Topology, type VoteMapElection } from "@/lib/votemap";
-import {localLeader,listColor,voteMix,voteMarkers,visibleVoteMarkers,markerRadius,wedgePath,MODE_LABELS,OTHER_COLOR,type MapMode,type VoteSlice} from "@/lib/votemap-visual";
+import {localLeader,listColor,voteMix,voteMarkers,visibleVoteMarkers,markerRadius,wedgePath,rampDeep,MODE_LABELS,OTHER_COLOR,type MapMode,type VoteSlice} from "@/lib/votemap-visual";
 
 /*
  * The vote map: one list's share of the valid vote in each locality, for one election.
@@ -68,6 +68,11 @@ export default function VoteMap() {
   const svg = useRef<SVGSVGElement>(null);
   const drag = useRef<{ x: number; y: number; view: View; moved: boolean } | null>(null);
   const moved=useRef(false);
+  // Touch: one finger scrolls the page (touch-action: pan-y); two move and zoom the map from where they started.
+  const touches=useRef(new Map<number,{x:number;y:number}>());
+  const pinch=useRef<{view:View;mid:[number,number];dist:number;wpp:number;cx:number;cy:number}|null>(null);
+  // The scroll wheel zooms only with Ctrl or Cmd held, or once the map has been clicked, so it never traps the page's scroll.
+  const active=useRef(false);
 
   useEffect(() => {
     const restore = () => { const state = readMapState(new URLSearchParams(window.location.search)); setElectionId(state.election); setListName(state.list); setMode(state.mode); setSelected(state.locality); setQuery(""); };
@@ -106,7 +111,8 @@ export default function VoteMap() {
   }, [electionId, cache]);
 
   const election = cache[electionId];
-  const listIdx = election ? Math.max(0, election.lists.findIndex((l) => l.name === listName)) : 0;
+  const asked = election ? election.lists.findIndex((l) => l.name === listName) : 0;
+  const listIdx = election && asked < 0 ? Math.max(0, election.lists.findIndex((l) => l.name === "Likud")) : Math.max(0, asked);
   const list = election?.lists[listIdx];
   const markerData=useMemo(()=>election&&places ? voteMarkers(election,places) : {markers:[],missingCoordinates:0},[election,places]);
   const loaded=!!(shapes&&context&&places&&view&&election&&list);
@@ -145,10 +151,11 @@ export default function VoteMap() {
     const p = new DOMPoint(clientX, clientY).matrixTransform(m.inverse());
     return [p.x, p.y] as const;
   };
+  const clampW = (w: number) => (home ? Math.min(home.w, Math.max(home.w / 60, w)) : w);
   const zoom = (k: number, at?: readonly [number, number]) =>
     setView((v) => {
       if (!v || !home) return v;
-      const w = Math.min(home.w, Math.max(home.w / 60, v.w * k));
+      const w = clampW(v.w * k);
       const h = (w / v.w) * v.h;
       const [cx, cy] = at ?? [v.x + v.w / 2, v.y + v.h / 2];
       return { x: cx - ((cx - v.x) * w) / v.w, y: cy - ((cy - v.y) * h) / v.h, w, h };
@@ -181,6 +188,7 @@ export default function VoteMap() {
     const el = svg.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey && !e.metaKey && !active.current) return;
       e.preventDefault();
       zoom(e.deltaY > 0 ? 1.25 : 0.8, toView(e.clientX, e.clientY) ?? undefined);
     };
@@ -216,12 +224,12 @@ export default function VoteMap() {
   };
 
   return (
-    <div className="vm" style={mode==="single" ? {["--vm-hue" as string]:listColor(list.name)} : undefined}>
+    <div className="vm" style={mode==="single" ? {["--vm-hue" as string]:listColor(list.name),["--vm-deep" as string]:`${rampDeep(listColor(list.name))}%`} : undefined}>
       <div className="vm-controls">
         <label><span>View</span><select aria-label="View" value={mode} onChange={e=>{const next=e.target.value as MapMode;setMode(next);save(electionId,list.name,selected,next);}}>{Object.entries(MODE_LABELS).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label>
         <label>
           <span>Election</span>
-          <select aria-label="Election" value={electionId} onChange={(e) => { const id = e.target.value; const name = cache[id]?.lists.find((l) => l.name === list.name)?.name ?? "Likud"; setElectionId(id); setListName(name); save(id,name,selected); }}>
+          <select aria-label="Election" value={electionId} onChange={(e) => { const id = e.target.value; setElectionId(id); save(id,listName,selected); }}>
             {ELECTIONS.map((e) => (
               <option key={e.id} value={e.id}>{e.label}</option>
             ))}
@@ -248,7 +256,8 @@ export default function VoteMap() {
         </label>
       </div>
 
-      <p className="vm-share"><button type="button" onClick={async () => { const path = mapHref(electionId,list.name,selected,mode); history.replaceState(history.state,"",path); try { await navigator.clipboard.writeText(`https://www.israelielection.org${path}`); setCopied(true); } catch { setCopied(false); } }}>Copy this map view</button> <a href={mapHref(electionId,list.name,selected,mode)}>Link to this view</a> <span role="status">{copied ? "Copied." : ""}</span></p>
+      <p className="vm-fallback" role="status">{asked < 0 ? `${listName} did not run in the ${election.label} election, so the map shows ${list.name}.` : ""}</p>
+      <p className="vm-share"><button type="button" className="btn" onClick={async () => { const path = mapHref(electionId,list.name,selected,mode); history.replaceState(history.state,"",path); try { await navigator.clipboard.writeText(`https://www.israelielection.org${path}`); setCopied(true); } catch { setCopied(false); } }}>Copy link</button><span role="status">{copied ? "Link copied." : ""}</span></p>
       <div className="vm-body">
         <div className="vm-mapwrap">
           <svg
@@ -256,12 +265,35 @@ export default function VoteMap() {
             className="vm-map"
             viewBox={`${view.x} ${view.y} ${view.w} ${view.h}`}
             role="group"
-            aria-label={`Map: ${MODE_LABELS[mode]}, ${mode==="single" ? list.name+", " : ""}${election.label}. Find a town or select a marker for results.`}
+            aria-label={`Map: ${MODE_LABELS[mode]}, ${mode==="single" ? list.name+", " : ""}${election.label}. ${mode==="mix" ? "Select a marker for results, or find a town." : "Localities on this map cannot be reached by keyboard; use Find a town above to choose one."}`}
             onPointerDown={(e) => {
               moved.current=false;
+              if (e.pointerType === "touch") {
+                touches.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+                const pts = [...touches.current.values()], m = svg.current?.getScreenCTM(), r = svg.current?.getBoundingClientRect();
+                if (pts.length === 2 && m && r) {
+                  pinch.current = { view, mid: [(pts[0].x + pts[1].x) / 2, (pts[0].y + pts[1].y) / 2], dist: Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) || 1, wpp: 1 / m.a, cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
+                  for (const id of touches.current.keys()) svg.current!.setPointerCapture(id);
+                }
+                return;
+              }
+              active.current = true;
               drag.current = { x: e.clientX, y: e.clientY, view, moved: false };
             }}
             onPointerMove={(e) => {
+              if (e.pointerType === "touch") {
+                if (!touches.current.has(e.pointerId)) return;
+                touches.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+                const p = pinch.current, pts = [...touches.current.values()];
+                if (!p || pts.length < 2) return;
+                moved.current = true;
+                const mid = [(pts[0].x + pts[1].x) / 2, (pts[0].y + pts[1].y) / 2], dist = Math.hypot(pts[0].x - pts[1].x, pts[0].y - pts[1].y) || 1;
+                const w = clampW(p.view.w * (p.dist / dist)), h = (w / p.view.w) * p.view.h, wpp = (p.wpp * w) / p.view.w;
+                // The map point under the fingers' first midpoint stays under their midpoint now.
+                const at = [p.view.x + p.view.w / 2 + (p.mid[0] - p.cx) * p.wpp, p.view.y + p.view.h / 2 + (p.mid[1] - p.cy) * p.wpp];
+                setView({ x: at[0] - (mid[0] - p.cx) * wpp - w / 2, y: at[1] - (mid[1] - p.cy) * wpp - h / 2, w, h });
+                return;
+              }
               const d = drag.current;
               if (!d || !svg.current) return;
               const dx = e.clientX - d.x;
@@ -272,19 +304,22 @@ export default function VoteMap() {
               const k = d.view.w / svg.current.clientWidth;
               setView({ ...d.view, x: d.view.x - dx * k, y: d.view.y - dy * k });
             }}
-            onPointerUp={() => {
+            onPointerUp={(e) => {
+              if (e.pointerType === "touch") { touches.current.delete(e.pointerId); if (touches.current.size < 2) pinch.current = null; return; }
               moved.current=!!drag.current?.moved;
               drag.current = null;
             }}
-            onPointerLeave={() => setHover(null)}
+            onPointerCancel={(e) => { touches.current.delete(e.pointerId); pinch.current = null; drag.current = null; }}
+            onLostPointerCapture={(e) => { if (e.pointerType === "touch") { touches.current.delete(e.pointerId); if (touches.current.size < 2) pinch.current = null; } else drag.current = null; }}
+            onPointerLeave={(e) => { setHover(null); if (e.pointerType !== "touch") active.current = false; }}
           >
             <defs>
               <pattern id="vm-none" width={0.01 * scale} height={0.01 * scale} patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                 <rect width={0.01 * scale} height={0.01 * scale} fill="var(--sheet)" />
                 <line x1="0" y1="0" x2="0" y2={0.01 * scale} stroke="var(--line-2)" strokeWidth={0.003 * scale} />
               </pattern>
-              <pattern id="vm-tie" width={6*unit} height={6*unit} patternUnits="userSpaceOnUse"><rect width={6*unit} height={6*unit} fill="#e6dff2"/><circle cx={3*unit} cy={3*unit} r={unit} fill="#65537d"/></pattern>
-              <pattern id="vm-unresolved" width={6*unit} height={6*unit} patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width={6*unit} height={6*unit} fill="#cbd0d5"/><line y2={6*unit} stroke={OTHER_COLOR} strokeWidth={2*unit}/></pattern>
+              <pattern id="vm-tie" width={6*unit} height={6*unit} patternUnits="userSpaceOnUse"><rect width={6*unit} height={6*unit} style={{fill:"var(--vm-tie-bg)"}}/><circle cx={3*unit} cy={3*unit} r={unit} style={{fill:"var(--vm-tie-dot)"}}/></pattern>
+              <pattern id="vm-unresolved" width={6*unit} height={6*unit} patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width={6*unit} height={6*unit} style={{fill:"var(--vm-unres-bg)"}}/><line y2={6*unit} style={{stroke:"var(--vm-unres-line)"}} strokeWidth={2*unit}/></pattern>
             </defs>
             <path d={context.gaza} className="vm-gaza" />
             <g className="vm-shapes">
@@ -323,6 +358,7 @@ export default function VoteMap() {
             <button type="button" onClick={() => zoom(1 / 0.6)} aria-label="Zoom out">−</button>
             <button type="button" onClick={() => home && setView(home)}>Reset</button>
           </div>
+          <p className="fig-note vm-hint">To zoom with the scroll wheel, click the map first or hold Ctrl or Cmd; on a touch screen, move and zoom with two fingers.</p>
           {mode==="mix" && <p className="vm-marker-count" aria-live="polite">Showing {markers.shown.length} of {markers.available} mapped towns in view; others omitted for overlap or the 80-marker limit. {markerData.missingCoordinates} valid-result towns lack usable coordinates and are excluded from pies.</p>}
         </div>
 
@@ -363,7 +399,7 @@ export default function VoteMap() {
                 )}
               </>
             ) : (
-              <p className="vm-sub">Hover over or tap a locality to see how it voted. Drag to move the map; zoom with the buttons or the scroll wheel.</p>
+              <p className="vm-sub">Hover over or tap a locality to see how it voted. Drag to move the map, or use two fingers on a touch screen; zoom with the buttons.</p>
             )}
           </div>
 

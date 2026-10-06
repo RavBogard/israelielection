@@ -60,6 +60,17 @@ export default function PartyProfile({ party: p }: { party: Party }) {
       !(r22 && r22.sameName && /^2022: [\d,]+ votes, [\d.]+%, \d+ seats\.$/.test(v.text)) &&
       !(map && /^Strong in /.test(v.text))
   );
+  // No poll has reported the list at all: the seat figures are absent, drawn hatched, not zero.
+  const unpolled = reported.length === 0 && g.n === 0;
+  // Lists outside the two contenders are counted as a bloc but are not a governing bloc chasing 61 on their own.
+  const contender = p.bloc === "net" || p.bloc === "opp";
+  const counted = g.avg !== null && !g.below;
+  const rank = ["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`;
+  const toMajority = g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`;
+  const blocNote = !counted ? `${contender ? `${toMajority}; ` : ""}this list is not counted in the bloc total`
+    : contender ? `${toMajority}; this list is ${rank} of ${g.blocSize} in the bloc`
+    : `a possible partner, not a governing bloc on its own${g.blocSize > 1 ? `; this list is ${rank} of ${g.blocSize}` : ""}`;
+  const thin = p.thin?.replace(/^Our research registers have no /, "We have not yet found a sourced ");
   const who: Sourced[] = p.surplusPartner ? [...p.who, { text: `Surplus-vote partner: ${p.surplusPartner.text}`, source: p.surplusPartner.source }] : p.who;
   return (
     <article className="pp" style={{ ["--pc" as string]: color, ["--pc-ink" as string]: ink }}>
@@ -76,7 +87,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} />{blocLabel[p.bloc]}</span>
-            <span className="total">{g.avg === null ? (p.status ?? "Not polled separately") : g.below ? "Below the threshold in the polling average" : <><b>{one(g.avg)}</b> seats, polling average</>}</span>
+            <span className="total">{g.avg === null ? (unpolled ? "No polls found" : p.status ?? "Not polled separately") : g.below ? "Below the threshold in the polling average" : <><b>{one(g.avg)}</b> seats, polling average</>}</span>
           </div>
         </div>
       </header>
@@ -87,8 +98,8 @@ export default function PartyProfile({ party: p }: { party: Party }) {
             <figure className="pp-fig o1">
               <figcaption className="lbl">At a glance</figcaption>
               <dl className="pp-glance">
-                <div>
-                  <dd>{g.avg === null ? <span className="nf">{p.status ?? "Not polled"}</span> : g.below ? "below" : one(g.avg)}</dd>
+                <div className={unpolled ? "pp-none" : undefined}>
+                  <dd>{g.avg === null ? <span className="nf">{unpolled ? "No polls found" : p.status ?? "Not polled"}</span> : g.below ? "below" : one(g.avg)}</dd>
                   <dt>{SEATS_LABEL}</dt>
                   <small>{g.avg === null ? "no seat figures" : g.below ? (g.passingAvg !== null ? `${one(g.passingAvg)} where it passes` : "the threshold in every poll") : g.low !== null ? `scaled to 120; ${g.low} to ${g.high} in ${g.n} polls` : "scaled to 120"}</small>
                 </div>
@@ -97,28 +108,34 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                   <dt>Seats in 2022</dt>
                   <small>{r22 ? `${(r22.share * 100).toFixed(1)}% of the vote${r22.sameName ? "" : `, as ${r22.listName}`}` : "did not run in 2022"}</small>
                 </div>
-                <div>
-                  <dd>{g.k}<span className="of"> of {g.n}</span></dd>
+                <div className={unpolled ? "pp-none" : undefined}>
+                  <dd>{unpolled ? <span className="nf">No polls found</span> : <>{g.k}<span className="of"> of {g.n}</span></>}</dd>
                   <dt>Polls it passes</dt>
-                  <small>{g.nearThreshold ? "near the threshold" : g.k === g.n && g.n > 0 ? "never near the threshold" : g.k === 0 ? "below the threshold in all" : "passes in most"}</small>
+                  <small>{unpolled ? "no poll has reported it separately" : g.nearThreshold ? "near the threshold" : g.k === g.n && g.n > 0 ? "never near the threshold" : g.k === 0 ? "below the threshold in all" : "passes in most"}</small>
                 </div>
                 <div className="blocbox">
-                  <dd>{one(g.blocSeats)}<span className="of"> of {MAJORITY}</span></dd>
+                  <dd>{one(g.blocSeats)}<span className="of"> seats</span></dd>
                   <dt>{blocLabel[p.bloc]}</dt>
                   <SeatBar className="pp-majority" total={TOTAL} majority={MAJORITY} segments={[{ key: p.bloc, seats: Math.min(TOTAL, g.blocSeats), color: `var(--b-${p.bloc})` }]} label={`${one(g.blocSeats)} of 120 seats; a majority is 61.`} />
-                  <small>{g.avg !== null && !g.below ? `${g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`}; this list is ${["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} in the bloc` : "this list is not counted in the bloc total"}</small>
+                  <small>{blocNote}</small>
                 </div>
               </dl>
               <p className="fig-src">
-                Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size and scaled to 120 seats.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
+                {g.n > 0 && <>Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size and scaled to 120 seats.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}</>}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
               </p>
             </figure>
 
             <figure className="pp-fig o3">
               <figcaption className="lbl">Seats in every poll since the Knesset dissolved</figcaption>
-              <SeatSparkline series={series} result={r22} id={p.id} name={p.name} avg={g.avg !== null && !g.below ? g.avg : null} />
+              {reported.length < 2 ? (
+                <p className="pp-nopolls">{reported.length === 0 ? "No polls found" : "One poll so far, too few to draw"}</p>
+              ) : (
+                <SeatSparkline series={series} result={r22} id={p.id} name={p.name} avg={g.avg !== null && !g.below ? g.avg : null} />
+              )}
               <p className="fig-src">
-                {reported.length} polls from {publishers} publishers, {mediumDate(g.firstDate)} to {mediumDate(g.lastDate)}. A dot on the floor is a poll that had the list below the threshold; a gap is a poll that did not report it separately.
+                {reported.length === 0
+                  ? `None of the ${series.length} polls since ${mediumDate(series[0]?.date ?? g.firstDate)} reported this list separately.`
+                  : <>{reported.length} {reported.length === 1 ? "poll" : "polls"} from {publishers} {publishers === 1 ? "publisher" : "publishers"}, {mediumDate(g.firstDate)} to {mediumDate(g.lastDate)}. A dot on the floor is a poll that had the list below the threshold; a gap is a poll that did not report it separately.</>}
               </p>
             </figure>
 
@@ -149,7 +166,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
             <section className="pp-text o4">
               <h2>Who they are</h2>
               <Items items={who} />
-              {p.thin && <p className="fig-src">{p.thin}</p>}
+              {thin && <p className="fig-src">{thin}</p>}
             </section>
 
             {voterText.length > 0 && (
@@ -203,7 +220,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
               ) : (
                 <>
                   <h2>The leader</h2>
-                  <p className="pp-bio">Our research registers have no bio for {leaderName}.</p>
+                  <p className="pp-bio">We have not yet found a sourced biography of {leaderName}.</p>
                 </>
               )}
               <p className="pp-links">

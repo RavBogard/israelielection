@@ -20,7 +20,7 @@
       "label": "Budgets for the communities it serves"
     }
   ],
-  "note": "No published 2026 economic position found for Otzma Yehudit, Noam or Blue and White (checked October 2026). Rows quoting IDI's party guide give IDI's description of the party's platform, not a 2026 campaign document.",
+  "note": "No published 2026 economic platform found for Otzma Yehudit or Noam (checked October 2026); their rows give what they have said, which sets no stance. Blue and White's row is from its answer on the draft, not an economic platform. Rows quoting IDI's party guide give IDI's description of the party's platform, not a 2026 campaign document.",
   "rows": [
     {
       "party": "likud",
@@ -138,8 +138,12 @@
     },
     {
       "party": "bw",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "No economic platform found. In its answer to Ynet on the draft: \"Social benefits will be given first of all to those who serve\" (translated).",
+      "source": "Ynet (Hebrew)",
+      "url": "https://www.ynet.co.il/news/elections2026/article/yokra14898966",
+      "date": "Sep 16, 2026",
+      "stance": "reward-service",
+      "basis": "record"
     }
   ]
 }

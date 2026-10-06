@@ -1,4 +1,5 @@
 import type {Metadata} from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import type {ReactNode} from "react";
 import {BuilderGlyph,PartyMapGlyph,PollsGlyph,VoteMapGlyph} from "@/components/HomeGlyphs";
@@ -25,7 +26,7 @@ import PageHead from "@/components/PageHead";
 import "@/components/home.css";
 import "./resources.css";
 
-export const metadata:Metadata={title:"All resources",description:"Every section, election tool and guide on Israel Votes 2026, with a picture and a current fact for each."};
+export const metadata:Metadata={title:"All resources",description:"Every section, election tool and guide on Israel Votes 2026, with a picture and a current fact for each.", alternates: alternates("/resources") };
 // Captions are live facts; the results caption changes when polls close.
 export const revalidate=3600;
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import "@/components/article/article.css";
 import "@/components/glossary.css";
 import glossaryJson from "@/data/glossary.json";
@@ -9,7 +10,7 @@ import Glossary from "@/components/Glossary";
 import CorrectionLink from "@/components/CorrectionLink";
 import PageHead from "@/components/PageHead";
 const data = glossaryJson as GlossaryData;
-export const metadata: Metadata = { title: "Glossary", description: "Find the election terms an American reader meets, including Hebrew names and alternate spellings." };
+export const metadata: Metadata = { title: "Glossary", description: "Find the election terms an American reader meets, including Hebrew names and alternate spellings.", alternates: alternates("/glossary") };
 export default async function Page() {
   const labels: Record<string, string> = { "/vote-map": "Vote map", "/results": "Results", "/polls": "Polls", "/parties": "Party Map", "/american-lens": "The American lens", "/timeline": "Timeline" };
   for (const article of [...await guideIndex(), ...await issueIndex(), ...await communityIndex()]) labels[article.href] = article.meta.title;

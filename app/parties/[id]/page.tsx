@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import "@/components/interactives.css";
 import PartyProfile from "@/components/PartyProfile";
@@ -21,6 +22,7 @@ export async function generateMetadata(props: PageProps<"/parties/[id]">): Promi
   if (!p) return {};
   return {
     title: p.name,
+    alternates: alternates(`/parties/${p.id}`),
     description: `${p.name} (${blocLabel[p.bloc]}), led by ${p.leader}: its polls, its voters, where it stands on seven issues, and its people, every number dated and sourced.`,
   };
 }

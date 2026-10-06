@@ -95,7 +95,7 @@ export type Position = {
   /** "declined": refused to answer; "none": nothing published was found by `checked`. */
   status?: "declined" | "none";
   /** "record": the stance comes from a statement, bill or vote, not the 2026 questionnaire. */
-  basis?: "record";
+  basis?: "record" | "unstated";
   checked?: string;
 };
 

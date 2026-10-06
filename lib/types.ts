@@ -66,6 +66,8 @@ export type Poll = {
   combined: { parties: string[]; seats: number; note: string }[];
   /** "exit": an election-night exit poll. Shown in the Coalition Builder's picker, never averaged, exempt from the seat-move rule. */
   kind?: "exit";
+  /** Exit polls: when this version aired (ISO date-time with offset); the close if absent. */
+  broadcastAt?: string;
 };
 
 export type PollsConfig = {

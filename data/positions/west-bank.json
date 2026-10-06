@@ -24,7 +24,7 @@
       "label": "No annexation, a Palestinian state"
     }
   ],
-  "note": "Most rows are from the parties' answers to a Ynet questionnaire (Sept 30, 2026). Likud does not take part in questionnaires; its row is its statement on the October 2025 bills. Noam's row is from 2025; no 2026 answer was found. 'Judea and Samaria' appears here as the parties wrote it. Checked October 2026. Shas and UTJ answered without taking a position on annexation.",
+  "note": "Most rows are from the parties' answers to a Ynet questionnaire (Sept 30, 2026). Likud does not take part in questionnaires; its row is its statement on the October 2025 bills. Noam's row is its leader's campaign statement of September 2026. 'Judea and Samaria' appears here as the parties wrote it. Shas and UTJ answered without taking a position on annexation; their rows add how they voted in 2025, which does not settle one. Checked October 2026.",
   "rows": [
     {
       "party": "likud",
@@ -61,30 +61,30 @@
     },
     {
       "party": "noam",
-      "text": "Avi Maoz sponsored the 2025 sovereignty bill that passed 25–24: \"We are correcting a historical wrong that is long overdue.\"",
-      "source": "Jerusalem Post",
-      "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-871299",
-      "date": "Oct 22, 2025",
+      "text": "Avi Maoz: \"Only a fully right-wing government with a strong Noam for Israel will prevent the establishment of a Palestinian state and apply sovereignty in Judea and Samaria\" (translated). He sponsored the October 2025 sovereignty bill that passed its preliminary reading 25 to 24.",
+      "source": "Channel 14, Sep 7, 2026; Jerusalem Post, Oct 22, 2025",
+      "url": "https://www.c14.co.il/article/1692880",
+      "date": "Sep 7, 2026",
       "stance": "annex-all",
       "basis": "record"
     },
     {
       "party": "shas",
-      "text": "Opposes the establishment of a Palestinian state; says that, as one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit; per Ynet, does not make West Bank settlement policy a central campaign issue.",
-      "source": "Ynet",
+      "text": "Opposes the establishment of a Palestinian state; says that, as one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit; per Ynet, does not make West Bank settlement policy a central campaign issue. Its MKs co-submitted the July 2025 non-binding motion calling for sovereignty over the areas of Jewish settlement, which passed 71 to 13; like Likud, it stayed away from the October 2025 vote on Maoz's binding bill (Arutz Sheva).",
+      "source": "Ynet, Sept 30, 2026; Ynet, Jul 23, 2025; Arutz Sheva, Oct 22, 2025",
       "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
       "date": "Sept 30, 2026",
       "status": "none",
-      "checked": "2026-10-05"
+      "checked": "2026-10-06"
     },
     {
       "party": "utj",
-      "text": "Gave no unified position. Ynet reports that Agudat Yisrael generally leans further right, Degel HaTorah takes a more moderate position, and neither makes the issue central to its campaign.",
-      "source": "Ynet",
+      "text": "Gave no unified position. Ynet reports that Agudat Yisrael generally leans further right, Degel HaTorah takes a more moderate position, and neither makes the issue central to its campaign. The votes show the same split: both factions backed the July 2025 non-binding sovereignty motion, but UTJ split on Maoz's binding bill in October 2025. Agudat Yisrael voted for it, by the Times of Israel's account to highlight the government's hypocrisy; Degel HaTorah voted against, saying sovereignty proposals \"at this time\" put Israel in conflict with the United States.",
+      "source": "Ynet, Sept 30, 2026; Times of Israel, Jul 23, 2025; Times of Israel, Oct 22, 2025",
       "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
       "date": "Sept 30, 2026",
       "status": "none",
-      "checked": "2026-10-05"
+      "checked": "2026-10-06"
     },
     {
       "party": "yashar",

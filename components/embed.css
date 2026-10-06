@@ -39,3 +39,7 @@ body:has(.embed-page) .skip { display: none; }
 .embed-code button:hover { background: var(--ink); color: var(--bg); }
 .embed-code pre { margin: 0; padding: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .embed-code code { font-family: var(--body); font-size: 13px; line-height: 1.5; color: var(--text); }
+
+/* The poll average: the blocs on one 120-seat bar with the 61 tick, its key, then the lists. */
+.embed-page .embed-blocs { margin: 14px 0 0; max-width: 640px; }
+.embed-page .embed-blocs .fig-key { margin-top: 10px; }

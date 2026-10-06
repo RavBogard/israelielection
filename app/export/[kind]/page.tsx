@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import PrintButton from "@/components/PrintButton";
 import { buildExport } from "@/lib/export-data";
 import "@/components/export.css";
 export const dynamic = "force-dynamic";
-export async function generateMetadata({params}:{params:Promise<{kind:string}>}) { const {kind}=await params; const title=({issue:"Issue comparison",coalition:"Coalition arrangement",locality:"Locality voting history"} as Record<string,string>)[kind] ?? "Sourced view"; return {title:`${title} — print and export`,robots:{index:false,follow:true}}; }
+export async function generateMetadata({params}:{params:Promise<{kind:string}>}) { const {kind}=await params; const title=({issue:"Issue comparison",coalition:"Coalition arrangement",locality:"Locality voting history"} as Record<string,string>)[kind] ?? "Sourced view"; return {title:`${title} for print and export`,robots:{index:false,follow:true},alternates:alternates(`/export/${kind}`)}; }
 export default async function Page({params,searchParams}:{params:Promise<{kind:string}>;searchParams:Promise<Record<string,string|string[]|undefined>>}) {
   const {kind}=await params; const values=await searchParams; const q=new URLSearchParams(); for(const [key,value]of Object.entries(values))if(typeof value==="string")q.set(key,value);
   const model=await buildExport(kind,q); if(!model)notFound();

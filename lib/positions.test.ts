@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import partiesData from "@/data/parties.json";
-import { comparisonIssues, evidenceLabel } from "./positions";
+import { basisQualifier, comparisonIssues, evidenceLabel, isRecord, isUnstated, stanceText } from "./positions";
 import { readIssue, stanceMap } from "./cohesion";
 
 type Row = { party: string; text?: string | null; source?: string | null; url?: string | null; date?: string | null; stance?: string; status?: string; basis?: string; checked?: string };
@@ -40,7 +40,10 @@ describe("full position reference files", () => {
           expect(r.text).toBeTruthy();
         } else expect(["declined", "none"]).toContain(r.status);
         if (r.status === "none") expect(r.checked ?? r.date).toBeTruthy();
-        if (r.basis !== undefined) expect(r.basis).toBe("record");
+        if (r.basis !== undefined) {
+          expect(["record", "unstated"]).toContain(r.basis);
+          expect(r.stance, `${r.party}: a basis qualifies a stance`).toBeDefined();
+        }
       }
     });
     it("sources every position and refusal with a dated HTTPS link", () => {
@@ -74,5 +77,32 @@ describe("comparable questions", () => {
   it("shows undated evidence as undated, and dates the pre-merger transport statement", () => {
     expect(evidenceLabel({ party: "x", source: "IDI guide", date: "Accessed Oct 2026" })).toContain("evidence date unavailable");
     expect(evidenceLabel(issues.find((i) => i.key === "relig-shabbat")!.file.rows.find((r) => r.party === "byachad"))).toContain("Apr 20, 2026");
+  });
+});
+
+describe("stance basis", () => {
+  const unstated = { party: "utj", text: "Has not answered.", stance: "oppose", basis: "unstated" as const, date: "Jul 18, 2024" };
+  const record = { party: "likud", text: "Declined.", stance: "oppose", basis: "record" as const, date: "Sep 18, 2026" };
+  const stated = { party: "dem", text: "Said so.", stance: "separation", date: "Sept 30, 2026" };
+  it("tells unstated from stated and record rows", () => {
+    expect(isUnstated(unstated)).toBe(true);
+    expect(isUnstated(record)).toBe(false);
+    expect(isUnstated(stated)).toBe(false);
+    expect(isUnstated({ ...unstated, stance: undefined })).toBe(false);
+    expect(isRecord(record)).toBe(true);
+    expect(isRecord(unstated)).toBe(false);
+  });
+  it("renders the qualifier before the text and the source date", () => {
+    expect(stanceText(unstated)).toBe("Not said publicly: Has not answered.");
+    expect(stanceText(record)).toBe("Declined.");
+    expect(stanceText(stated)).toBe("Said so.");
+    expect(evidenceLabel(unstated)).toBe("Not said publicly: Source published Jul 18, 2024");
+    expect(evidenceLabel(record)).toBe("Record evidence: Source published Sep 18, 2026");
+    expect(basisQualifier(stated)).toBe("");
+  });
+  it("marks every unstated row in the data with the basis spelled out in its text", () => {
+    const rows = files.flatMap((f) => f.data.rows.filter((r) => r.basis === "unstated"));
+    expect(rows.length).toBeGreaterThan(0);
+    for (const r of rows) expect(r.text, r.party).toMatch(/^Has not (said|answered)/);
   });
 });

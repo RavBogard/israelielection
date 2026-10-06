@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import PartyHistory from "@/components/PartyHistory";
 import PartyLanes from "@/components/history/PartyLanes";
@@ -6,7 +7,7 @@ import data from "@/data/party-history.json";
 import "@/components/PartyHistory.css";
 import PageHead from "@/components/PageHead";
 
-export const metadata: Metadata = { title: "Party family tree", description: "Trace the parties behind Israel's 2026 lists: shared ballots, mergers, splits and leaders' moves, from Labor and Likud to B'Yachad and the Joint List." };
+export const metadata: Metadata = { title: "Party family tree", description: "Trace the parties behind Israel's 2026 lists: shared ballots, mergers, splits and leaders' moves, from Labor and Likud to B'Yachad and the Joint List.", alternates: alternates("/party-history") };
 
 export default function Page() {
   return (

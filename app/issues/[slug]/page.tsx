@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
 import { PositionsLead } from "@/components/article/Article";
@@ -17,7 +18,7 @@ export async function generateMetadata(props: PageProps<"/issues/[slug]">): Prom
   const { slug } = await props.params;
   if (!known(slug)) return {};
   const { meta } = await loadIssue(slug);
-  return { title: meta.title, description: meta.dek };
+  return { title: meta.title, description: meta.dek, alternates: alternates(`/issues/${slug}`) };
 }
 
 export default async function Page(props: PageProps<"/issues/[slug]">) {

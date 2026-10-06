@@ -8,7 +8,7 @@
     "compare": {"title":"Compare one real question","minutes":3,"text":"Choose two or more lists in Compare. Find one shared recorded position and one difference. Open the evidence: what was said, when, and what remains unknown? A category count is not a forecast of governing stability.","href":"/compare","link":"Compare recorded positions","question":"What can missing evidence establish?","options":["That parties agree because no disagreement is recorded","That the evidence is incomplete"],"answer":1,"explanation":"Silence is not agreement. Look for complete dated evidence and distinguish a shared objective from agreement on how to achieve it."}
   },
   "routes": [
-    {"id":"five","title":"I have five minutes","description":"The essential distinctions, with one tool to try.","steps":["voters","seats","parties","govern"],"next":"/polls","nextLabel":"Read the polls with these distinctions in mind"},
+    {"id":"five","title":"I have five minutes","description":"The essential distinctions, with one tool to try.","steps":["parties","seats","govern","voters"],"next":"/polls","nextLabel":"Read the polls with these distinctions in mind"},
     {"id":"parties","title":"Help me understand the parties","description":"From ballot choices to recorded disagreements and governing arrangements.","steps":["seats","parties","compare","govern"],"next":"/issues","nextLabel":"Read an issue in depth"}
   ]
 }

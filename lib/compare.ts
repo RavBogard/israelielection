@@ -12,8 +12,9 @@ export type PositionRow = {
   stance?: string;
   /** "declined": refused the questionnaire; "none": no published position found (text, if present, says what the party said instead). */
   status?: "declined" | "none";
-  /** "record": the party declined the questionnaire; the stance comes from a dated statement, bill or vote. */
-  basis?: "record";
+  /** "record": the party declined the questionnaire; the stance comes from a dated statement, bill or vote.
+   *  "unstated": the party has not said it publicly; the stance is read from its votes, coalition deals or ministers' actions (see isUnstated in lib/positions). */
+  basis?: "record" | "unstated";
   /** When a "none" row was last checked. */
   checked?: string;
   evidence?: { kind: string; date: string | null; checkedAt: string; scope?: string; limitation?: string };

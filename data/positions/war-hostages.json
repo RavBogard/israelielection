@@ -16,7 +16,7 @@
       "label": "A state commission under the 1968 law"
     }
   ],
-  "note": "Party answers to a Ynet and Yedioth Ahronoth survey of all parties (Oct 4, 2026). Likud gave no official response; its row is Ynet's account of its bill for a 'national' commission. Otzma Yehudit, Shas and United Torah Judaism declined to respond; the Shas and UTJ rows add the coalition bill they backed at its first reading (Times of Israel, July 7, 2026). No published position found for Noam (checked October 2026).",
+  "note": "Party answers to a Ynet and Yedioth Ahronoth survey of all parties (Oct 4, 2026). Likud gave no official response; its row is Ynet's account of its bill for a 'national' commission. Otzma Yehudit, Shas and United Torah Judaism declined to respond; the Shas and UTJ rows add the coalition bill they backed at its first reading (Times of Israel, July 7, 2026), and the Otzma Yehudit row its leader's words in the cabinet in November 2025. No published position found for Noam (checked October 2026).",
   "rows": [
     {
       "party": "likud",
@@ -127,11 +127,12 @@
     },
     {
       "party": "otzma",
-      "text": "Declined to respond to Ynet's survey.",
-      "source": "Ynet",
-      "url": "https://www.ynetnews.com/article/r1sz8wyimx",
-      "date": "Oct 4, 2026",
-      "status": "declined"
+      "text": "Declined Ynet's survey. On the record: when the cabinet set up a ministerial panel to shape its own Oct 7 inquiry instead of a state commission, Ben-Gvir, a member of the panel, said \"the framework must be national, without people from the legal system; those sitting on the bench are among the investigated\" (translated).",
+      "source": "Ynet, Oct 4, 2026; Mako (Hebrew), Nov 17, 2025",
+      "url": "https://www.mako.co.il/news-diplomatic/2025_q4/Article-f713e4147839a91027.htm",
+      "date": "Nov 17, 2025",
+      "stance": "other-commission",
+      "basis": "record"
     },
     {
       "party": "noam",

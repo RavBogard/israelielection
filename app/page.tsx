@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
@@ -8,12 +9,14 @@ import {homeRaceModel} from "@/lib/home-race";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
-import { allPolls, averagePoll, blocs, mainPolls, parties, pollsData } from "@/lib/data";
+import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
 import { isExit, pollLabel } from "@/lib/polls";
 import { blocChange, blocSeries, newestPoll } from "@/lib/bloc-change";
 import { resultsAsPoll } from "@/lib/results";
-import { fetchCount, resultsConfig } from "@/lib/results-live";
+import { fetchCount, resultsNow, resultsConfig } from "@/lib/results-live";
+import { headline, homeHero, night, type Night } from "@/lib/results-phase";
+import ExitPollBars from "@/components/results/ExitPollBars";
 import { DESCRIPTION } from "@/lib/site";
 import type { Poll } from "@/lib/types";
 
@@ -24,22 +27,24 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: { absolute: "Israel Votes 2026" },
   description: DESCRIPTION,
+  alternates: alternates("/"),
 };
 
 const briefings = briefingsJson as Briefing[];
 
-function Headline({ days, live }: { days: number; live: boolean }) {
-  if (live) return <>Israel voted.</>;
-  if (days > 1) return <>Israel votes in {days} days.</>;
-  if (days === 1) return <>Israel votes tomorrow.</>;
-  if (days === 0) return <>Israel votes today.</>;
-  return <>Israel voted on October 27.</>;
+/** After close and before the count is past early: the channels' exit polls, never the pre-election average. */
+function ExitHero({ n }: { n: Night }) {
+  return <section className="hero hero-exit" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(n.phase, 0)}</h1><p className="standfirst">The channels&apos; exit polls in Knesset seats by bloc. They are estimates; the committee&apos;s count replaces them. {MAJORITY} of {KNESSET} seats is an absolute majority.</p></div>
+  <div className="race-meta"><p className="race-basis">Exit polls</p>{n.phase === "early" && n.counted && <p className="race-newest">Early count: localities holding {(n.counted.share * 100).toFixed(1)}% of the voter roll are in. <Link href="/results">Follow the count</Link></p>}</div>
+  <ExitPollBars config={resultsConfig} heading={null} className="home-exit" />
+  <p className="race-context"><Link href="/results">Results, exit polls by list and the count method</Link>.</p>
+ </section>;
 }
 
 /** Current modeled seats, with election-night freshness preserved. */
-function Race({poll,live,days}:{poll:Poll;live:boolean;days:number}){
+function Race({poll,live,days,phase}:{poll:Poll;live:boolean;days:number;phase:Night["phase"]}){
  const pollsters=mainPolls.map(p=>p.pollster).join(", "),newest=live?null:newestPoll(allPolls),change=live?null:blocChange(blocSeries(pollsData.polls,parties,pollsData.config));
- return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h"><Headline days={days} live={live}/></h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p></div><div className="race-meta"><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p>{newest&&<p className="race-newest">Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link></p>}</div>
+ return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase,days)}</h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p></div><div className="race-meta"><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p>{newest&&<p className="race-newest">Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link></p>}</div>
  <HomeRace model={homeRaceModel(poll,parties,blocs)} change={change}/>
  <p className="race-source fig-src">{live?<>{poll.resultState?.freshness==="stale"&&<b>Saved count (stale). </b>}Central Elections Committee; seats are this site’s estimate from votes counted so far. Captured {poll.resultState?.capturedAt??poll.published}. Source updated {poll.resultState?.sourceUpdatedAt??"at an unrecorded time"}. <Link href="/results">Full results and count method</Link>.</>:<>One latest eligible poll per publisher ({pollsters}), through {mediumDate(mainPolls[0].published)}. Square-root sample-size weighting, normalized coalition values; seats can be fractional.{change&&<> Change is against the average as it stood on {mediumDate(change.since)}, the last poll date at least a week before the newest.</>} <Link href="/polls#method">Average method</Link>.</>}</p>
  <p className="race-context">Explore the <Link href="/parties">Party Map</Link> or try an arrangement in the <Link href="/coalition-builder">Coalition Builder</Link>.</p>
@@ -79,15 +84,18 @@ function Today() {
 }
 
 export default async function Page() {
-  const live = await fetchCount(revalidate);
+  const now = resultsNow();
+  const live = await fetchCount(revalidate, { now });
+  const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
-  const poll = results ?? averagePoll;
+  // After close the thumbnails follow the count, else the newest exit poll; the average only before close.
+  const poll = results ?? (hero === "exit" ? exitPolls[0] : undefined) ?? averagePoll;
   const trendPolls = allPolls.filter((p) => !isExit(p));
   return (
     <div className="home">
       <div className="wrap">
-        <Race poll={poll} live={!!results} days={days} />
+        {hero === "exit" ? <ExitHero n={n} /> : <Race poll={poll} live={!!results} days={days} phase={n.phase} />}
 
         <p className="start">
           New here? <Link href="/start">Take a short guided route</Link>, or go straight to <Link href="/how-it-works">how it works</Link>,{" "}

@@ -24,7 +24,7 @@ export type CompareParty = { id: string; name: string; bloc: BlocId; letters: st
 export type Preset = { label: string; ids: string[] };
 type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: string }[]; rows: MatrixRow[]; presets: Preset[]; defaults: string[] };
 
-const fill = (bloc: BlocId) => ({ "--fill": `var(--b-${bloc})` }) as React.CSSProperties;
+const fill = (bloc: BlocId) => ({ "--fill": `var(--b-${bloc})`, "--fill-ink": `var(--b-${bloc}-ink)` }) as React.CSSProperties;
 const swatch = (id: string) => ({ "--sw": partyColor(id) }) as React.CSSProperties;
 const seatsOf = (p: CompareParty) => (p.seats !== null && p.seats > 0 ? p.seats : 0);
 
@@ -208,7 +208,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
   const toggleRow = (key: string, party?: string) => {
     const next = open === key && !party ? null : key;
     setOpen(next);
-    if (next && party) requestAnimationFrame(() => document.getElementById(`said-${party}`)?.scrollIntoView({ block: "nearest", behavior: "smooth" }));
+    if (next && party) requestAnimationFrame(() => document.getElementById(`said-${party}`)?.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
   };
   const gapAt = (i: number) => i > 0 && shown[i - 1].bloc !== shown[i].bloc;
 

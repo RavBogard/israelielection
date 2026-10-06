@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import "@/components/article/article.css";
 import Compare, { type CompareParty, type Preset } from "@/components/Compare";
 import { matrixRows } from "@/components/compare/model";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "Compare the parties",
   description:
     "Every list's recorded answer on the draft, the courts, the October 7 inquiry, the West Bank, religion and state, the economy, a Palestinian state and Gaza, in one matrix, with the party's words, dates and sources.",
+  alternates: alternates("/compare"),
 };
 
 const pickable: CompareParty[] = parties

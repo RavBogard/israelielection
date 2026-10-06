@@ -36,7 +36,7 @@
     --line: #2f2e2a; --line-2: #45433d;
     --warn-bg: #3a300f; --warn-ink: #f1d98a; --warn-line: #6b5722;
     --info-bg: #23221e; --info-ink: #cfc8b8; --info-line: #45433d;
-    --b-net: #5a7bd0;
+    --b-net: #5072c9;
     --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .6);
     color-scheme: dark;
   }
@@ -47,7 +47,7 @@
   --line: #2f2e2a; --line-2: #45433d;
   --warn-bg: #3a300f; --warn-ink: #f1d98a; --warn-line: #6b5722;
   --info-bg: #23221e; --info-ink: #cfc8b8; --info-line: #45433d;
-  --b-net: #5a7bd0;
+  --b-net: #5072c9;
   --scrim: rgb(0 0 0 / .6); --shadow: rgb(0 0 0 / .6);
   color-scheme: dark;
 }
@@ -149,7 +149,7 @@ a:hover { text-decoration-color: currentColor; }
 .fig-key { font-family: var(--body); font-size: 13px; font-weight: 400; line-height: 1.4; color: var(--ink-2); }
 .fig-key b { color: var(--ink); font-variant-numeric: tabular-nums; }
 /* Placement is :where (no specificity), so any component class can set margins and layout. */
-:where(.fig-src) { margin: 0; }
+:where(.fig-src) { margin: 0; max-width: 90ch; }
 :where(.fig-key) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; list-style: none; margin: 10px 0 0; padding: 0; }
 :where(.fig-key) > :where(li, span) { display: inline-flex; align-items: center; gap: 7px; }
 
@@ -202,13 +202,12 @@ a:hover { text-decoration-color: currentColor; }
 .site-foot .about .privacy a { color: var(--ink-2); }
 .site-foot .brand .mark { width: 26px; }
 .site-foot .brand .word { font-size: 21px; }
-.site-foot .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px 28px; }
+.site-foot .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; }
+@media (min-width: 1100px) { .site-foot .cols { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .site-foot .cols ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-.site-foot .cols a { text-decoration: none; color: var(--ink); font-weight: 500; }
-.site-foot .cols a:hover { text-decoration: underline; }
+.site-foot .cols a { color: var(--ink); font-weight: 500; }
 @media (max-width: 860px) {
   .site-foot .row { grid-template-columns: minmax(0, 1fr); }
-  .site-foot .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* Print: paper, black ink, no chrome; every page, since the reference pages are teaching material. */
@@ -267,6 +266,9 @@ a:hover { text-decoration-color: currentColor; }
 /* Phones: buttons and segmented options are at least a fingertip tall. */
 @media (pointer: coarse), (max-width: 640px) {
   .btn, .seg button { min-height: 44px; }
+  /* Footer links stand on their own lines, so each is a full target; the list closes its gaps to match. */
+  .site-foot .cols ul { gap: 0; }
+  .site-foot .cols a, .site-foot .about .foot-links a { display: inline-flex; align-items: center; min-height: 44px; }
 }
 
 /* Stance ramp edge: on dark paper the dark end of the graphite ramp nearly matches the page, so those cells take a 1px edge. */

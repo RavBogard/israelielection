@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import { Suspense } from "react";
 import {undatedListNames} from "@/lib/poll-browser";
@@ -21,6 +22,7 @@ import PageHead from "@/components/PageHead";
 export const metadata: Metadata = {
   title: "Polls",
   description: "Every Knesset seat poll of the 2026 campaign we track, the current average, and how each party has moved.",
+  alternates: alternates("/polls"),
 };
 
 export const revalidate = 3600;

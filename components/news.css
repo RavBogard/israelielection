@@ -1,6 +1,6 @@
-/* News page: the daily briefing (sticky on wide screens) beside the headline list. */
+/* News page: the daily briefing beside the headline list; the briefing runs its full length with the page. */
 .nw .nw-layout { display: grid; grid-template-columns: minmax(0, 440px) minmax(0, 1fr); gap: 36px 64px; align-items: start; margin-top: 10px; }
-.nw .nw-brief { position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; overscroll-behavior: contain; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--ink); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; }
+.nw .nw-brief { background: var(--sheet); border: 1px solid var(--line-2); border-top: 1px solid var(--ink); padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 12px; }
 .nw .nw-brief h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec); line-height: 1.05; margin: 0; }
 .nw .nw-sentences { display: flex; flex-direction: column; gap: 12px; }
 .nw .nw-sentences p, .nw .nw-old p { margin: 0; font-family: var(--display); font-size: 17px; line-height: 1.55; color: var(--text); }
@@ -22,7 +22,6 @@
 .nw .nw-sum { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--text); }
 @media (max-width: 1000px) {
   .nw .nw-layout { grid-template-columns: minmax(0, 1fr); }
-  .nw .nw-brief { position: static; max-height: none; overflow: visible; }
 }
 @media (max-width: 560px) {
   .nw .nw-list li { grid-template-columns: minmax(0, 1fr); }
@@ -55,3 +54,7 @@
 .nw .nw-other { margin-top: 18px; border-top: 1px solid var(--line-2); padding-top: 12px; }
 .nw .nw-other > summary { cursor: pointer; font: 700 var(--fs-sec3)/1.2 var(--display); min-height: 44px; display: flex; align-items: center; }
 .nw .nw-other > .fig-src { margin: 4px 0 0; }
+/* Phones: the day-to-day pager and the archive's day links are full targets. */
+@media (pointer: coarse), (max-width: 640px) {
+  .nw .nw-pager a, .nw .nw-old h3 a { display: inline-flex; align-items: center; min-height: 44px; }
+}

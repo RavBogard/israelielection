@@ -2,7 +2,7 @@ import {describe,it,expect} from "vitest";
 import {historicalElections} from "./votemap-data";
 import {partyColor} from "./party-colors";
 import {readFileSync} from "node:fs";
-import {voteMix,localLeader,listColor,CONTINUES,OTHER_COLOR,markerRadius,voteMarkers,visibleVoteMarkers,wedgePath,VM_RAMP,RAMP_STEPS,rampLab,oklab,deltaE} from "./votemap-visual";
+import {voteMix,localLeader,listColor,CONTINUES,OTHER_COLOR,markerRadius,voteMarkers,visibleVoteMarkers,wedgePath,VM_RAMP,RAMP_STEPS,rampLab,rampDeep,oklab,deltaE} from "./votemap-visual";
 const election={...historicalElections[4],lists:historicalElections[4].lists.slice(0,2)};
 describe("truthful geographic vote views",()=>{
   it("retains named values and the combined remainder; unavailable data is not zero",()=>{const mix=voteMix(election,[1,100,100,100,40,35])!;expect(mix.map(s=>s.votes)).toEqual([40,35,25]);expect(mix.reduce((n,s)=>n+s.share,0)).toBe(1);expect(voteMix(election,undefined)).toBeNull();expect(voteMix(election,[1,0,0,0,0,0])).toBeNull();expect(voteMix(election,[1,100,100,100,90,20])).toBeNull();});
@@ -22,6 +22,12 @@ describe("truthful geographic vote views",()=>{
     const css=readFileSync("components/votemap.css","utf8");
     for(const t of Object.values(VM_RAMP)){expect(css).toContain(`--vm-low: ${t.low}`);expect(css).toContain(`--vm-land: ${t.land}`);}
     expect(css).toContain(`var(--vm-hue) ${VM_RAMP.dark.topHue}%, #ffffff`);
+    expect(css).toContain("--vm-top: color-mix(in oklab, var(--vm-hue) var(--vm-deep, 100%), #000000)");
     for(const p of RAMP_STEPS.slice(0,-1))expect(css).toContain(`var(--vm-top) ${p}%, var(--vm-low)`);
+  });
+  it("anchors the light ramp's darkest step near lightness 0.45 for pale list colours, and leaves dark ones alone",()=>{
+    for(const id of ["raam","yashar","utj"]){const h=partyColor(id);expect(oklab(h)[0]).toBeGreaterThan(.55);expect(rampLab(h,"light").at(-1)![0]).toBeCloseTo(.45,1);}
+    expect(rampDeep("#245b94")).toBe(100);expect(rampLab("#245b94","light").at(-1)![0]).toBeCloseTo(oklab("#245b94")[0],5);
+    expect(OTHER_COLOR).toBe("#8c939b");
   });
 });

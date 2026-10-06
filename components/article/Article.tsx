@@ -17,6 +17,10 @@ import MiniKey from "./MiniKey";
  */
 
 const charts = allCharts();
+
+/** Seats to one decimal (the One Number Rule); a total short of 61 never prints as 61.0. */
+const seatsAt = (n: number) => (n < 61 && seatFigure(n) === "61.0" ? "60.9" : seatFigure(n));
+const majorityNote = (n: number) => (n >= 61 ? ", a majority" : n >= 60.5 ? ", short of 61" : "");
 const positions = allPositions();
 
 function SourceLine({ source, url, date, sample }: { source: string; url: string; date: string; sample?: string }) {
@@ -217,9 +221,9 @@ function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>,
       className="ps-bar sb-fit"
       size={size}
       total={SEATS}
-      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: inkOn(g.pos), label: g.n, title: `${g.st.label}: ${seatFigure(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
-      rest={{ title: `No recorded answer, or below the threshold: ${Math.round(rest)} seats` }}
-      label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${seatFigure(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
+      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: inkOn(g.pos), label: g.n, title: `${g.st.label}: ${seatsAt(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
+      rest={{ title: `No recorded answer, or below the threshold: ${seatFigure(rest)} seats` }}
+      label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${seatsAt(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${seatFigure(rest)}. A majority is 61.`}
     />
   );
 }
@@ -252,7 +256,7 @@ export function PositionsLead({ issue }: { issue: string }) {
                 ))}
               </span>
             </span>
-            <span className="gs">{seatFigure(g.seats)}</span>
+            <span className="gs">{seatsAt(g.seats)}</span>
           </li>
         ))}
       </ul>
@@ -266,16 +270,26 @@ export function PositionsLead({ issue }: { issue: string }) {
 
 /** An issue's split as a small figure for the Issues index: the bar and its largest answer. */
 export function SplitMini({ issue }: { issue: string }) {
-  const { groups, rest } = splitOf(issue);
+  const { groups, rest, scale } = splitOf(issue);
   if (!groups.length) return null;
   const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
   return (
     <div className="ps-mini">
-      <MiniKey items={groups.filter((g) => g.seats > 0).map((g) => ({ n: g.n, label: g.st.label, seats: `${seatFigure(g.seats)} seats`, color: shade(g.pos), ink: inkOn(g.pos) }))}>
+      <MiniKey items={groups.filter((g) => g.seats > 0).map((g) => ({ n: g.n, label: g.st.label, seats: `${seatsAt(g.seats)} seats`, color: shade(g.pos), ink: inkOn(g.pos) }))}>
         <SplitBar groups={groups} rest={rest} size="m" />
       </MiniKey>
+      {scale && (
+        <p className="ps-mini-ends" aria-hidden="true">
+          {[groups[0], groups.at(-1)!].map((g) => (
+            <span key={g.st.id}>
+              <span className="k" style={{ background: shade(g.pos), color: inkOn(g.pos) }}>{g.n}</span>
+              {g.st.label}
+            </span>
+          ))}
+        </p>
+      )}
       <p className="ps-mini-read">
-        Largest answer: <b>{top.st.label}</b>, {Math.round(top.seats)} seats{top.seats >= 61 ? ", a majority" : ""}
+        Largest answer: <b>{top.st.label}</b>, {seatsAt(top.seats)} seats{majorityNote(top.seats)}
       </p>
     </div>
   );
@@ -294,7 +308,7 @@ export function Positions({ issue }: { issue: string }) {
         <p className="pn">
           <span className="sw" style={{ background: partyColor(party.id) }} aria-hidden />
           <a href={`/parties/${party.id}`}>{party.name}</a>
-          {seats(party.id) > 0 && <span className="ps">{Math.round(seats(party.id))} seats</span>}
+          {seats(party.id) > 0 && <span className="ps">{seatFigure(seats(party.id))} seats</span>}
           {((r as PositionRow).declined || r.status === "declined") && <span className="ps">Declined to answer</span>}
         </p>
         {r.text?.trim() && <p className="pt">{r.text}</p>}
@@ -316,7 +330,7 @@ export function Positions({ issue }: { issue: string }) {
           <h3>
             <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
             {g.st.label}
-            <span className="gs">{seatFigure(g.seats)} seats</span>
+            <span className="gs">{seatsAt(g.seats)} seats</span>
           </h3>
           <ul>{g.rows.map((r) => <Entry key={r.party} r={r} />)}</ul>
         </section>

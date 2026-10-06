@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import PartyMap from "@/components/PartyMap";
 import { PollSources, ProfileSources } from "@/components/Sources";
@@ -11,6 +12,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Party Map",
   description: "Israel's 2026 parties sized by their average poll standing, with distinct shades grouped into editorial political families and a linked sourced profile of each.",
+  alternates: alternates("/parties"),
 };
 
 export default function Page() {

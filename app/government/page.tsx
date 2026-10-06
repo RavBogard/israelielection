@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import "@/components/article/article.css";
 import "@/components/government.css";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "Forming a government",
   description:
     "The clock on forming Israel's next government after the October 27, 2026 election: each step Basic Law: The Government allows, its time limit, and where the process stands.",
+  alternates: alternates("/government"),
 };
 
 // Daily: the step we are in changes with the calendar; the data changes by commit.

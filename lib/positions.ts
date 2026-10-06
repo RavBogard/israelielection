@@ -23,13 +23,26 @@ export const ISSUES: Record<AxisKey, IssueFile> = {
   pstate: pstate as IssueFile,
 };
 
+/** "unstated": the party has not said it publicly (declined questionnaires, strategic silence); the stance is read from its votes, coalition deals or ministers' actions, which the row text names. */
+export const isUnstated = (row: Pick<PositionRow, "basis" | "stance"> | undefined | null): boolean => !!row?.stance && row.basis === "unstated";
+/** "record": stance from a dated statement, bill or vote because the party skipped the questionnaire. */
+export const isRecord = (row: Pick<PositionRow, "basis" | "stance"> | undefined | null): boolean => !!row?.stance && row.basis === "record";
+const QUALIFIER = { record: "Record evidence: ", unstated: "Not said publicly: " } as const;
+/** The reader-facing qualifier for a row's basis, or "" for a stated answer. */
+export const basisQualifier = (row: PositionRow | undefined | null): string => (row?.basis ? QUALIFIER[row.basis] : "");
+/** The row text as surfaces should print it: unstated rows lead with "Not said publicly: ". */
+export function stanceText(row: PositionRow | undefined | null): string {
+  const text = row?.text?.trim() ?? "";
+  return isUnstated(row) && text ? `${QUALIFIER.unstated}${text}` : text;
+}
+
 /** Source dates describe the evidence, never the date we accessed it. */
 export function evidenceLabel(row: PositionRow | undefined): string {
   if (!row) return "No recorded answer in these sources";
   if (row.evidence) return `${row.evidence.kind}, ${row.evidence.date ?? "date unavailable"}; checked ${row.evidence.checkedAt}`;
   const date = row.date?.trim();
   const accessed = !date || /accessed|checked/i.test(date);
-  const qualifier = row.basis === "record" ? "Record evidence: " : "";
+  const qualifier = basisQualifier(row);
   return `${qualifier}${accessed ? `evidence date unavailable${date ? ` (${date})` : ""}` : `Source published ${date}`}`;
 }
 
@@ -40,7 +53,7 @@ function extractedRow(row: PositionRow, q: Question): PositionRow {
   if (q.axis === "courts") {
     if (row.party === "likud") out.evidence = { kind: "Legislative record", date: "Mar 27, 2025", checkedAt: "2026-10-05" };
     else if (row.party === "raam") out.evidence = { kind: "Historical vote, not a current answer", date: "2023; reported Sep 22, 2026", checkedAt: "2026-10-05" };
-    else if (["rz", "otzma", "shas", "utj", "poi", "yashar", "byachad", "yb", "dem", "bw", "res", "jl"].includes(row.party)) {
+    else if (["rz", "shas", "utj", "poi", "yashar", "byachad", "yb", "dem", "bw", "res", "jl"].includes(row.party)) {
       out.evidence = { kind: "Party questionnaire answer", date: "Sep 22, 2026", checkedAt: "2026-10-05" };
     }
   }

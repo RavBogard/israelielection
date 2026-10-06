@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
 import VotingRightsGuide from "@/components/VotingRightsGuide";
@@ -17,7 +18,7 @@ export async function generateMetadata(props: PageProps<"/how-it-works/[slug]">)
   const { slug } = await props.params;
   if (!known(slug)) return {};
   const { meta } = await loadGuide(slug);
-  return { title: meta.title, description: meta.dek };
+  return { title: meta.title, description: meta.dek, alternates: alternates(`/how-it-works/${slug}`) };
 }
 
 export default async function Page(props: PageProps<"/how-it-works/[slug]">) {

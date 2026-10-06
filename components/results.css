@@ -26,7 +26,8 @@
 .rs .rs-exit-note { margin-top: 18px; }
 @media (max-width: 900px) { .rs .rs-watch dl { grid-template-columns: minmax(0, 1fr); } }
 .rs-freshness { border-block: 1px solid var(--ink); margin: 16px 0; padding: 8px 0; font-size: 14px; }
-.rs-freshness.stale { border-inline-start: 5px solid var(--ink); padding-inline-start: 14px; }
+/* A stale count is marked in its text and set as a .callout; no heavy edge (the 61 line is the only one). */
+.rs-freshness.callout { border: 1px solid var(--line-2); padding: 14px 18px; }
 .rs-refresh { padding: 8px 12px; border: 1px solid var(--line); background: var(--sheet); color: var(--ink); cursor: pointer; font: inherit; }
 .rs-changes { margin-top: 28px; }
 
@@ -82,3 +83,18 @@
   .rs .list-table td:first-child { white-space: normal; }
   .rs .list-table th, .rs .list-table td { font-size: 13px; padding-right: 6px; }
 }
+
+/* Election-night phases under the page head: done ones ticked, the current one in ink, later ones plain. */
+.rs .rs-phases { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 6px; font-size: 14px; }
+.rs .rs-phases li { display: inline-flex; align-items: center; gap: 6px; min-width: 9.5em; padding: 7px 14px 0 0; border-top: 1px solid var(--line-2); color: var(--ink-3); }
+.rs .rs-phases li.done { color: var(--ink-2); }
+.rs .rs-phases li.done svg { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.rs .rs-phases li.now { border-top-color: var(--ink); color: var(--ink); font-weight: 700; }
+.rs .rs-phases li.now::before { content: ""; width: 8px; height: 8px; background: var(--ink); }
+@media (max-width: 420px) { .rs .rs-phases li { min-width: 0; flex: 1 1 0; } }
+
+/* Early count: a hatch over the coloured grid says the seats are provisional; the flag above states the share counted. */
+.rs .rs-grid { position: relative; }
+.rs .rs-early .rs-grid::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(135deg, var(--bg) 0 2px, transparent 2px 7px); opacity: .7; }
+.rs .rs-early-flag { margin: 14px 0 0; padding: 10px 0; border-block: 1px solid var(--line); font-size: 14.5px; color: var(--ink-2); }
+.rs .rs-early-flag b { color: var(--ink); }

@@ -15,6 +15,7 @@ import { allPolls, averagePoll, parties } from "@/lib/data";
 import { navFacts } from "@/lib/nav-facts";
 import { visibleNavItems } from "@/lib/navigation";
 import { blocTotals, isExit } from "@/lib/polls";
+import { RSS } from "@/lib/canonical";
 import "./globals.css";
 
 const GA_ID = "G-DB53C0NZHB";
@@ -30,14 +31,14 @@ export const metadata: Metadata = {
   title: { default: "Israel Votes 2026", template: "%s | Israel Votes 2026" },
   description: DESCRIPTION,
   applicationName: "Israel Votes 2026",
-  alternates: { types: { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] } },
+  alternates: { types: RSS },
   // What Facebook, iMessage, Slack and X show when a link is shared. The picture is app/opengraph-image.png.
   openGraph: { type: "website", siteName: "Israel Votes 2026", locale: "en_US" },
   twitter: { card: "summary_large_image" },
   appleWebApp: { title: "Israel Votes" },
 };
 
-export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f6f5f1" }, { media: "(prefers-color-scheme: dark)", color: "#000000" }] };
+export const viewport = { themeColor: [{ media: "(prefers-color-scheme: light)", color: "#f6f5f1" }, { media: "(prefers-color-scheme: dark)", color: "#121210" }] };
 
 const FACTS = navFacts({
   newestPoll: allPolls.find((p) => !isExit(p))?.published,

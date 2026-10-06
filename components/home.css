@@ -128,3 +128,7 @@
   .home .tools .p { font-size: 13px; }
   .home .standing { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 }
+
+/* After polls close, until the count is past early: the hero is the channels' exit polls (components/results/ExitPollBars.tsx). */
+.home .hero.hero-exit { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "basis" "exit" "context"; gap: 18px; }
+.home .hero-exit .home-exit { grid-area: exit; margin: 0; }

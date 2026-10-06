@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { Suspense } from "react";
 import SiteSearch from "@/components/SiteSearch";
 import { communityIndex, guideIndex, issueIndex } from "@/lib/content";
@@ -11,7 +12,7 @@ import aliasesJson from "@/data/search-aliases.json";
 import "@/components/interactives.css";
 import PageHead from "@/components/PageHead";
 
-export const metadata: Metadata = { title: "Search", description: "Find parties, leaders, issues, guides and election terms, including alternate names and transliterations." };
+export const metadata: Metadata = { title: "Search", description: "Find parties, leaders, issues, guides and election terms, including alternate names and transliterations.", alternates: alternates("/search") };
 export default async function Page() {
   const aliases = aliasesJson as Record<string, string[]>;
   const entries: SearchEntry[] = parties.map((p) => ({ href: `/parties/${p.id}`, title: p.name, description: `${p.leader}. ${p.who[0]?.text ?? ""}`, kind: "party", aliases: [p.short, p.leader, ...(p.names ?? []).map((n) => n.name), ...(aliases[`/parties/${p.id}`] ?? [])] }));

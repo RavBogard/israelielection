@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { Suspense } from "react";
 import "@/components/interactives.css";
 import "@/components/results.css";
@@ -14,7 +15,7 @@ import { blocTotals } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 import PageHead from "@/components/PageHead";
 
-export const metadata: Metadata = { title: "Start here", description: "A five-minute introduction to Israel's election, or a route through the parties, each step with a figure from the site." };
+export const metadata: Metadata = { title: "Start here", description: "A five-minute introduction to Israel's election, or a route through the parties, each step with a figure from the site.", alternates: alternates("/start") };
 
 const ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 const seats = (id: string) => averagePoll.results[id]?.seats ?? 0;

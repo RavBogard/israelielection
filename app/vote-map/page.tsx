@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import "@/components/article/article.css";
 import VoteMap from "@/components/VoteMap";
@@ -7,6 +8,7 @@ import PageHead from "@/components/PageHead";
 export const metadata: Metadata = {
   title: "Vote map",
   description: "How Israel's cities, towns, kibbutzim and villages voted in the five Knesset elections from April 2019 to November 2022, from the Central Elections Committee's results by locality.",
+  alternates: alternates("/vote-map"),
 };
 
 const CEC = "https://votes25.bechirot.gov.il/nationalresults";

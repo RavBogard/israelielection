@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
 import { COMMUNITIES, type CommunitySlug } from "@/lib/articles";
@@ -16,7 +17,7 @@ export async function generateMetadata(props: PageProps<"/communities/[slug]">):
   const { slug } = await props.params;
   if (!known(slug)) return {};
   const { meta } = await loadCommunity(slug);
-  return { title: meta.title, description: meta.dek };
+  return { title: meta.title, description: meta.dek, alternates: alternates(`/communities/${slug}`) };
 }
 
 export default async function Page(props: PageProps<"/communities/[slug]">) {

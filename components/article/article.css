@@ -285,6 +285,10 @@
 }
 .article .cv-sparks .pv { position: absolute; transform: translate(8px, -50%); font-size: 13.5px; font-weight: 700; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .article .cv-sparks .pv.to-l { transform: translate(calc(-100% - 8px), -50%); font-weight: 400; color: var(--ink-2); }
+/* A value near the floor sits above its point, knocked out of the gridlines, so it never runs into the baseline. */
+.article .cv-sparks .pv { padding: 1px 2px; background: var(--bg); }
+.article .cv-sparks .pv.lo { transform: translate(6px, calc(-100% - 4px)); }
+.article .cv-sparks .pv.to-l.lo { transform: translate(calc(-100% - 6px), calc(-100% - 4px)); }
 /* SplitMini's key for segments too narrow to carry their number (MiniKey). */
 .sindex .ps-mini-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0 !important; font: 400 13px/1.4 var(--body) !important; color: var(--ink-2); }
 .sindex .ps-mini-key > span { display: inline-flex; align-items: center; gap: 6px; }
@@ -298,3 +302,9 @@
 .article .cv-pt { margin: 0; font: 600 14px/1.3 var(--body); color: var(--ink); }
 .article .cv-pairs .cv-legend { margin: 10px 0 0; }
 @media (max-width: 640px) { .article .cv-panels { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+/* SplitMini's scale ends under the bar: the first answer at the left, the last at the right. On phones the ends and the largest answer stay; the key of hidden numbers goes. */
+.sindex .ps-mini-ends { display: flex; justify-content: space-between; gap: 16px; margin: 6px 0 0 !important; font: 400 13px/1.35 var(--body) !important; color: var(--ink-2); }
+.sindex .ps-mini-ends > span { display: inline-flex; align-items: baseline; gap: 6px; max-width: 48%; }
+.sindex .ps-mini-ends > span:last-child { text-align: right; flex-direction: row-reverse; }
+.sindex .ps-mini-ends .k { display: inline-block; flex: none; min-width: 18px; height: 16px; line-height: 16px; text-align: center; font-size: 12px; font-weight: 700; }
+@media (max-width: 640px) { .sindex .ps-mini-key { display: none; } }

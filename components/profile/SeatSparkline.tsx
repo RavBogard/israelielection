@@ -5,14 +5,17 @@ import { SEATS_LABEL, seatFigure } from "@/lib/polls";
 import "../party-stroke.css";
 import type { Reading, Result2022 } from "./model";
 
-const W = 520, H = 210, PAD = { l: 30, r: 42, t: 18, b: 26 };
+const W = 520, H = 210, PAD = { l: 30, r: 52, t: 18, b: 26 };
+/** A label's place over the SVG, in percent of the chart, so the text is set in screen pixels (12px floor) at any width. */
+const at = (x: number, y: number) => ({ left: `${(x / W) * 100}%`, top: `${(y / H) * 100}%` });
 
 /**
  * The list's seats in every poll since the Knesset dissolved, one dot per poll on a time axis,
  * joined where consecutive polls reported it. Pollsters the alternative average leaves out are
  * hollow, so a list that two publishers read apart from the rest shows it. The 2022 result is a
  * dotted rule, and the list's seats in the polling average (the figure the rest of the site prints) a short
- * rule at the right end. Server-rendered SVG; the readings also ship as a table for assistive technology.
+ * rule at the right end. Server-rendered SVG with its labels in HTML over it (chart units shrink on a phone, the
+ * labels do not); the readings also ship as a table for assistive technology.
  */
 export default function SeatSparkline({ series, result, id, name, avg }: { series: Reading[]; result: Result2022 | null; id: string; name: string; avg: number | null }) {
   const reported = series.filter((r) => r.seats !== null);
@@ -45,17 +48,16 @@ export default function SeatSparkline({ series, result, id, name, avg }: { serie
   const hollowNames = [...new Set(series.filter((r) => r.variant && r.seats !== null).map((r) => r.pollster))];
   return (
     <>
+      <div className="pp-sparkwrap">
       <svg className="pp-spark pstroke" style={strokeVars(id)} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${name}: seats in each of ${reported.length} polls from ${mediumDate(series[0].date)} to ${mediumDate(series[series.length - 1].date)}, latest ${last.below ? "below the threshold" : last.seats}${avg !== null ? `; ${seatFigure(avg)} seats in the polling average` : ""}. The readings follow as a table.`}>
         {seatTicks(low, high).map((n) => (
           <g key={n}>
             <line className="grid" x1={PAD.l} x2={W - PAD.r} y1={y(n)} y2={y(n)} />
-            <text className="tick" x={PAD.l - 8} y={y(n) + 4} textAnchor="end">{n}</text>
           </g>
         ))}
         {ref !== null && (
           <g>
             <line className="ref" x1={PAD.l} x2={W - PAD.r} y1={y(ref)} y2={y(ref)} />
-            <text className="reflbl" x={W - PAD.r} y={y(ref) - 6} textAnchor="end">2022: {ref}</text>
           </g>
         )}
         {segments.map((seg, i) => (
@@ -69,13 +71,18 @@ export default function SeatSparkline({ series, result, id, name, avg }: { serie
         {avg !== null && (
           <g>
             <line className="avg" x1={x(Date.parse(last.date)) - 28} x2={W - PAD.r + 4} y1={y(avg)} y2={y(avg)} />
-            <text className="end" x={W - PAD.r + 6} y={y(avg) + 5}>{seatFigure(avg)}</text>
           </g>
         )}
-        <text className="tick" x={PAD.l} y={H - 6}>{shortDate(series[0].date)}</text>
-        <text className="tick" x={x(Date.parse(mid))} y={H - 6} textAnchor="middle">{shortDate(mid)}</text>
-        <text className="tick" x={W - PAD.r} y={H - 6} textAnchor="end">{shortDate(series[series.length - 1].date)}</text>
       </svg>
+      <div aria-hidden="true">
+        {seatTicks(low, high).map((n) => <span key={n} className="sl y" style={at(PAD.l - 8, y(n))}>{n}</span>)}
+        {ref !== null && <span className="sl ref" style={at(W - PAD.r, y(ref) - 4)}>2022: {ref}</span>}
+        {avg !== null && <span className="sl avg" style={at(W - PAD.r + 7, y(avg))}>{seatFigure(avg)}</span>}
+        <span className="sl x" style={at(PAD.l, H - 3)}>{shortDate(series[0].date)}</span>
+        <span className="sl x mid" style={at(x(Date.parse(mid)), H - 3)}>{shortDate(mid)}</span>
+        <span className="sl x end" style={at(W - PAD.r, H - 3)}>{shortDate(series[series.length - 1].date)}</span>
+      </div>
+      </div>
       <p className="fig-key pp-key pstroke" style={strokeVars(id)}>
         {avg !== null && <span className="k"><i className="avg" /> {SEATS_LABEL}, {seatFigure(avg)}</span>}
         <span className="k"><i className="solid" style={{ background: "var(--psx)" }} /> {hollow ? `The other ${mainPollsters} publishers, joined` : `${mainPollsters} publishers, joined`}</span>

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import EmbedFooter from "@/components/EmbedFooter";
 import {partyColor,blocColorStrip,PARTY_COLOR_NOTE} from "@/lib/party-colors";
 import Link from "next/link";
 import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY } from "@/lib/coalition";
 import { averagePoll, blocs, mainPolls, parties } from "@/lib/data";
-import { fmt, mediumDate } from "@/lib/format";
-import { blocTotals } from "@/lib/polls";
+import { mediumDate } from "@/lib/format";
+import { BLOC_ORDER, blocTotals, seatFigure } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 
 export const revalidate = 3600;
@@ -14,6 +15,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Seats by bloc (embed)",
   robots: { index: false },
+  alternates: alternates("/embed/grid"),
 };
 
 /** Blocs in the order they fill the grid, as on the home page. */
@@ -34,13 +36,13 @@ export default function Page() {
         <SeatGrid segments={segments} labelRule />
         <div>
           <dl className="blocs">
-            {ordered.map((b) => (
+            {BLOC_ORDER.map((id) => ordered.find((b) => b.id === id)!).map((b) => (
               <div key={b.id}>
                 <dt>
                   <span className="sw" style={{ background: blocColorStrip(b.id) }} />
                   {b.label}
                 </dt>
-                <dd>{fmt(Math.round(b.seats * 10) / 10)}</dd>
+                <dd>{seatFigure(b.seats)}</dd>
               </div>
             ))}
           </dl>

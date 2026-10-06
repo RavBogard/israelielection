@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import "@/components/article/article.css";
 import Timeline from "@/components/Timeline";
@@ -12,6 +13,7 @@ const data = timelineJson as Data;
 export const metadata: Metadata = {
   title: "Timeline, 1977–2026",
   description: "Israeli politics from Likud's first win in 1977 to the 2026 election: every Knesset election, every prime minister, and the events that shaped the vote.",
+  alternates: alternates("/timeline"),
 };
 
 const when = (d: string) => (/^\d{4}-\d\d-\d\d$/.test(d) ? longDate(d) : d);

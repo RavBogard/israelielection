@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import "@/components/interactives.css";
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ date: str
   if (!b) return { title: "Briefing" };
   return {
     title: `Briefing, ${label(b.date)}`,
+    alternates: alternates(`/news/${b.date}`),
     description: b.sentences[0]?.text ?? "The daily briefing on Israel's 2026 election, every sentence sourced.",
   };
 }
@@ -46,7 +48,7 @@ export default async function Page({ params }: { params: Promise<{ date: string 
         </PageHead>
         <section className="nw-brief nw-brief-page" aria-label="The briefing">
           <div className="nw-sentences">
-            <Sentences b={b} topics />
+            <Sentences b={b} topics level={2} />
           </div>
         </section>
         <nav className="nw-pager" aria-label="Other days">

@@ -18,8 +18,9 @@
 .pp-head .lead b { color: var(--pc-ink); font-weight: 600; }
 .pp-head .lead .s { font-size: 12.5px; color: color-mix(in oklab, var(--pc-ink) 72%, var(--pc)); }
 .pp-head .bloc { text-align: right; display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
-.pp-head .chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--pc-ink); padding: 4px 10px; background: color-mix(in oklab, var(--pc-ink) 14%, transparent); }
-.pp-head .chip i { width: 11px; height: 11px; display: inline-block; box-shadow: 0 0 0 1.5px var(--pc-ink); }
+/* The bloc chip sits on paper, so its bloc swatch never reads as an empty box on the party's colour. */
+.pp-head .chip { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); padding: 4px 10px; background: var(--bg); }
+.pp-head .chip i { width: 11px; height: 11px; display: inline-block; }
 .pp-head .total { font-size: 13px; color: color-mix(in oklab, var(--pc-ink) 80%, var(--pc)); }
 .pp-head .total b { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--pc-ink); margin-right: 3px; }
 @media (max-width: 700px) {
@@ -76,14 +77,11 @@
 /* Sparkline. */
 .pp-spark { display: block; width: 100%; height: auto; }
 .pp-spark .grid { stroke: var(--line); stroke-width: 1; }
-.pp-spark .tick { font-family: var(--body); font-size: 12px; fill: var(--ink-3); }
 .pp-spark .ref { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 2 4; }
-.pp-spark .reflbl { font-family: var(--body); font-size: 12px; font-weight: 600; fill: var(--ink); }
 .pp-spark .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .pp-spark .dot { stroke-width: 1.5; }
 .pp-spark .dot.hollow { stroke-width: 1.5; }
 .pp-spark .avg { stroke: var(--ink); stroke-width: 1; }
-.pp-spark .end { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
 .pp-key { margin: 0; }
 .pp-key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .pp-key i.ring { background: var(--sheet); border: 1.5px solid; width: 9px; height: 9px; }
@@ -155,3 +153,22 @@
 @media (max-width: 1100px) { .pp-tile { min-height: 118px; } }
 @media (max-width: 520px) { .pp-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (prefers-reduced-motion: reduce) { .pp-tile { transition: none; } }
+
+/* No polls found: absent, so hatched, in the glance tiles and in place of the chart. */
+.pp-glance > .pp-none { background: repeating-linear-gradient(135deg, var(--line) 0 1.5px, transparent 1.5px 7px); }
+.pp-nopolls { margin: 0; display: flex; align-items: center; justify-content: center; min-height: 120px; border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 7px), var(--cell); font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.pp-nopolls { text-shadow: 0 0 6px var(--cell), 0 0 2px var(--cell); }
+/* Sparkline labels are HTML over the SVG, so they keep their screen size at any chart width. */
+.pp-sparkwrap { position: relative; }
+.pp-sparkwrap .sl { position: absolute; font-family: var(--body); font-size: 12px; line-height: 1; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; pointer-events: none; }
+.pp-sparkwrap .sl.y { transform: translate(-100%, -50%); }
+.pp-sparkwrap .sl.x { transform: translate(0, -100%); }
+.pp-sparkwrap .sl.x.mid { transform: translate(-50%, -100%); }
+.pp-sparkwrap .sl.x.end, .pp-sparkwrap .sl.ref { transform: translate(-100%, -100%); }
+.pp-sparkwrap .sl.ref { font-weight: 600; color: var(--ink); }
+.pp-sparkwrap .sl.avg { transform: translate(0, -50%); font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--ink); }
+/* Phones: the related links under a profile are full targets. */
+@media (pointer: coarse), (max-width: 640px) {
+  .pp-links a { display: inline-flex; align-items: center; min-height: 44px; }
+  .pp-links { gap: 0 22px; }
+}

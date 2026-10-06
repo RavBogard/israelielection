@@ -39,13 +39,22 @@ export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
     };
   }, [pollsClose]);
 
+  if (data?.state === "error" && data.phase === "exit")
+    return (
+      <div className="live-strip" role="status" aria-live="polite">
+        <div className="row">
+          <Link href="/results" className="lead">Polls have closed</Link>
+          <span>The channels&apos; exit polls are on the results page; the committee&apos;s count follows.</span>
+        </div>
+      </div>
+    );
   if (!data || data.state !== "open") return null;
   const when = new Date(data.fetchedAt);
   return (
     <div className="live-strip" role="status" aria-live="polite">
       <div className="row">
         <Link href="/results" className="lead">
-          {data.freshness === "stale" ? "Saved count (stale)" : "The count so far"}
+          {data.freshness === "stale" ? "Saved count (stale)" : data.phase === "early" ? "Early count" : "The count so far"}
         </Link>
         <ul>
           {[...data.blocs].sort((a, b) => blocRank(a.id as BlocId) - blocRank(b.id as BlocId)).map((b) => (

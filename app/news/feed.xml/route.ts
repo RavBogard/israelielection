@@ -33,12 +33,14 @@ function itemHtml(b: FeedBriefing): string {
 }
 
 function item(b: FeedBriefing): string {
-  const link = `${NEWS}#${b.date}`;
+  // The day's own page. The guid keeps the old anchor address so readers do not see every briefing again as new.
+  const link = `${NEWS}/${b.date}`;
+  const guid = `${NEWS}#${b.date}`;
   return [
     "<item>",
     `<title>${esc(`Briefing, ${DAY.format(new Date(`${b.date}T00:00:00Z`))}`)}</title>`,
     `<link>${esc(link)}</link>`,
-    `<guid isPermaLink="true">${esc(link)}</guid>`,
+    `<guid isPermaLink="false">${esc(guid)}</guid>`,
     `<pubDate>${new Date(b.generatedAt).toUTCString()}</pubDate>`,
     `<description>${cdata(itemHtml(b))}</description>`,
     "</item>",

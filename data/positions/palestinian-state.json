@@ -20,7 +20,7 @@
       "label": "Support a Palestinian state"
     }
   ],
-  "note": "Most rows are the parties' answers to Ynet's questionnaire of Sept 30, 2026, which asked about the West Bank. Likud declined it; its row adds Netanyahu's campaign video. The Joint List's answer did not address statehood; its row adds the Jerusalem Post's report of Jabareen's position. The Reservists–Economic, Blue and White and Noam rows quote their leaders outside the questionnaire; Hendel's predates his list's merger. UTJ gave no position (checked October 2026).",
+  "note": "Most rows are the parties' answers to Ynet's questionnaire of Sept 30, 2026, which asked about the West Bank. Likud declined it; its row adds Netanyahu's campaign video. The Joint List's answer did not address statehood; its row adds the Jerusalem Post's report of Jabareen's position. The Reservists–Economic, Blue and White and Noam rows quote their leaders outside the questionnaire; Hendel's predates his list's merger. UTJ has not said where it stands; its row is marked not said publicly and rests on the Knesset resolution it co-sponsored in 2024.",
   "columnNote": "Stance: a short label for the comparison table, drawn only from the row text. \"Declined to answer\": the party refused the questionnaire. \"No position found\": no published position on a Palestinian state was found (checked October 2026).",
   "rows": [
     {
@@ -42,12 +42,12 @@
     },
     {
       "party": "utj",
-      "text": "Does not have a unified flagship policy on the West Bank; neither faction has made it a central campaign issue. Its Agudat Yisrael faction voted for Noam's settlement annexation bill in October 2025.",
-      "source": "Ynet, party questionnaire; Times of Israel, Oct 22, 2025",
-      "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
-      "date": "Sept 30, 2026",
-      "status": "none",
-      "checked": "2026-10-05"
+      "text": "Has not answered on a Palestinian state; it told Ynet it has no unified West Bank policy. UTJ co-sponsored the Knesset resolution of July 18, 2024 that \"opposes the establishment of a Palestinian state on any piece of land west of the Jordan River,\" which passed 68 to 9. In July 2025 its MKs voted for the non-binding motion calling for sovereignty over the areas of Jewish settlement.",
+      "source": "JNS, Jul 18, 2024; Ynet, Jul 23, 2025; Ynet, party questionnaire, Sept 30, 2026",
+      "url": "https://www.jns.org/israel-news/knesset-votes-68-9-for-resolution-against-a-palestinian-state",
+      "date": "Jul 18, 2024",
+      "stance": "oppose",
+      "basis": "unstated"
     },
     {
       "party": "rz",

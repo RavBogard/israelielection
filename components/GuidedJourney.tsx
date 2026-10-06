@@ -26,9 +26,14 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
   return <div className="journey">
     <nav aria-label="Choose a route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
     <section id="journey-step" aria-labelledby="journey-title" tabIndex={-1}>
-      {figures[key] && <div className="journey-fig">{figures[key]}</div>}
-      <p className="note">Step {index + 1} of {route.steps.length}, about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
-      <h2 id="journey-title">{step.title}</h2>
+      {/* The step label and its question caption the figure from above, so the graphic still leads the text. */}
+      <figure className="journey-fig">
+        <figcaption>
+          <p className="journey-step-n">Step {index + 1} of {route.steps.length}, about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
+          <h2 id="journey-title">{step.title}</h2>
+        </figcaption>
+        {figures[key]}
+      </figure>
       <p>{step.text}</p>
       <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
       <Check key={`${route.id}-${key}`} step={step} />

@@ -14,7 +14,7 @@ const FLOOR = 4;
  * poll, or averages six seats or fewer, with a dot for each poll. A list either clears 3.25% and
  * wins at least four seats, or wins none, so the gap between zero and four is the threshold itself.
  */
-export default function ThresholdWatch() {
+export default function ThresholdWatch({ closed = false }: { closed?: boolean }) {
   const rows = parties
     .filter((p) => p.coalitionCard !== "hidden")
     .map((p) => {
@@ -29,7 +29,7 @@ export default function ThresholdWatch() {
   const x = (s: number) => `${(Math.min(s, MAX) / MAX) * 100}%`;
   return (
     <figure className="tw-fig">
-      <figcaption className="tw-h">The lists near the threshold, in each current poll</figcaption>
+      <figcaption className="tw-h">{closed ? "The lists near the threshold, in the last poll from each pollster" : "The lists near the threshold, in each current poll"}</figcaption>
       <ul className="tw-rows">
         <li className="tw-axis" aria-hidden="true">
           <span />
