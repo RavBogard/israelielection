@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-05T23:00:00Z",
+  "generatedAt": "2026-10-05T23:30:00Z",
   "title": "Design System: Israel Votes 2026",
   "extensions": {
     "colorMeta": {
@@ -171,7 +171,7 @@
       },
       "stance-ramp-start": {
         "role": "tertiary",
-        "displayName": "Stance Ramp, coalition end",
+        "displayName": "Stance Ramp, first end of the order",
         "canonical": "#233f86",
         "tonalRamp": [
           "color-mix(in oklab, #233f86 100%, #dfe6f5)",
@@ -188,6 +188,16 @@
         "role": "tertiary",
         "displayName": "Stance Ramp, mix endpoint",
         "canonical": "#dfe6f5"
+      },
+      "stance-numeral-on-dark": {
+        "role": "tertiary",
+        "displayName": "Numeral on dark shade",
+        "canonical": "#ffffff"
+      },
+      "stance-numeral-on-light": {
+        "role": "tertiary",
+        "displayName": "Numeral on light shade",
+        "canonical": "#000000"
       },
       "tint-base": {
         "role": "tertiary",
@@ -351,8 +361,8 @@
       "name": "Stance tile",
       "kind": "card",
       "refersTo": "stance-tile",
-      "description": "One issue: a bar in the shared ordinal ramp (ink when the options are not a scale), the issue, the stance, the basis.",
-      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 47%, #dfe6f5)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
+      "description": "One issue: a bar in the shared ordinal ramp (ink-2 grey when the options are not a scale), the issue, the stance, the basis.",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 47%, #dfe6f5)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink-2)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
       "css": ".ds-tiles { display: grid; grid-template-columns: repeat(4, 150px); gap: 8px; } .ds-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; color: var(--ink); font: inherit; cursor: pointer; transition: border-color .12s; } .ds-tile:hover { border-color: var(--ink); } .ds-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); } .ds-issue { font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; } .ds-stance { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.2; } .ds-basis { margin-top: auto; font-family: var(--body); font-size: 11px; color: var(--ink-3); } .ds-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; } .ds-tile.open .ds-bar { margin: 0 -8px 2px; } .ds-tile.open::after { content: \"\"; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } .ds-tile.nf { border-style: dashed; } .ds-tile.nf .ds-bar { background: transparent; border-bottom: 1px dashed var(--line-2); height: 8px; } .ds-tile.nf .ds-stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }"
     },
     {
@@ -370,6 +380,22 @@
       "description": "End-of-page disclosure on an ink rule; numbered citations.",
       "html": "<details class=\"ds-sources\" open><summary>Sources <span class=\"n\">3</span><span class=\"hint\">Hide</span></summary><ol><li>Central Elections Committee, results of the 25th Knesset, 2022.</li><li>Israel Democracy Institute, voter survey, 2022.</li><li>Kan 11 poll, 2 October 2026.</li></ol></details>",
       "css": ".ds-sources { border-top: 1px solid var(--ink); max-width: 640px; } .ds-sources summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 12px; padding: 14px 0; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); } .ds-sources summary::-webkit-details-marker { display: none; } .ds-sources summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-sources .n { font-family: var(--body); font-weight: 500; font-size: 14px; color: var(--ink-3); } .ds-sources .hint { margin-left: auto; font-family: var(--body); font-weight: 500; font-size: 13.5px; color: var(--ink-2); } .ds-sources ol { margin: 0 0 8px; padding-left: 22px; display: grid; gap: 6px; font-family: var(--body); font-size: 13.5px; line-height: 1.5; color: var(--ink-2); } .ds-sources li::marker { font-variant-numeric: tabular-nums; color: var(--ink-3); }"
+    },
+    {
+      "name": "Compare matrix cells",
+      "kind": "custom",
+      "refersTo": "matrix-cell",
+      "description": "A recorded answer as a square cell: ramp shade with its number, a corner notch for the record, dashed none, hatched declined, sheet with a line-2 edge for recorded-not-classified, ink-2 for coexisting priorities; hover dims the other answers in the row and outlines the matches.",
+      "html": "<div class=\"ds-mx\"><i style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\">1</i><i class=\"l\" style=\"background:color-mix(in oklab, #233f86 40%, #dfe6f5)\">3</i><i class=\"l rec\" style=\"background:color-mix(in oklab, #233f86 20%, #dfe6f5)\">5</i><i class=\"ink\">2</i><i class=\"none\"></i><i class=\"declined\"></i><i class=\"unsorted\"></i></div>",
+      "css": ".ds-mx { display: grid; grid-template-columns: repeat(7, 44px); gap: 4px; } .ds-mx i { position: relative; display: block; height: 44px; font: 700 13px var(--body); font-style: normal; font-variant-numeric: tabular-nums; line-height: 44px; text-align: center; color: #fff; } .ds-mx i.l { color: #000; } .ds-mx i.ink { background: var(--ink-2); color: var(--bg); } .ds-mx i.rec::after { content: \"\"; position: absolute; top: 2px; right: 2px; border-top: 6px solid var(--bg); border-left: 6px solid transparent; } .ds-mx i.none { border: 1px dashed var(--line-2); } .ds-mx i.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); } .ds-mx i.unsorted { background: var(--sheet); border: 1px solid var(--line-2); } .ds-mx i.match { outline: 1px solid var(--ink); outline-offset: 1px; } .ds-mx i.dim { opacity: .28; }"
+    },
+    {
+      "name": "Polls bloc bar and list dots",
+      "kind": "custom",
+      "refersTo": "bloc-bar",
+      "description": "The 120-seat bloc bar with the 2px ink tick at 61 overhanging 6px, and the per-poll dots: solid, hollow for the excluded pollsters, dashed ring for below the threshold.",
+      "html": "<div class=\"ds-pb\"><span style=\"width:44%;background:var(--b-net);color:var(--b-net-ink)\">53</span><span style=\"width:3%;background:var(--b-mid);color:var(--b-mid-ink)\"></span><span style=\"width:11%;background:var(--b-arab);color:var(--b-arab-ink)\">13</span><span style=\"width:42%;background:var(--b-opp);color:var(--b-opp-ink)\">51</span><b></b></div><i class=\"ds-dot\"></i><i class=\"ds-dot hollow\"></i><i class=\"ds-dot below\"></i>",
+      "css": ".ds-pb { position: relative; display: flex; width: 420px; height: 44px; background: var(--cell); } .ds-pb span { display: flex; align-items: center; justify-content: center; border-right: 2px solid var(--bg); font: 700 19px var(--display); font-variant-numeric: tabular-nums; } .ds-pb span:last-of-type { border-right: 0; } .ds-pb b { position: absolute; left: 50.83%; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; background: var(--ink); } .ds-dot { display: inline-block; width: 14px; height: 14px; margin: 14px 6px 0 0; border-radius: 50%; background: #245b94; border: 2px solid var(--sheet); box-sizing: border-box; } .ds-dot.hollow { background: var(--bg); border: 2px solid #245b94; } .ds-dot.below { background: var(--bg); border: 1.5px dashed var(--ink-3); }"
     }
   ],
   "narrative": {
@@ -390,7 +416,7 @@
       },
       {
         "name": "The Fixed Endpoints Rule",
-        "body": "Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print.",
+        "body": "Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print. The Compare matrix draws the same ramp with the same endpoints, so one answer has one shade wherever it appears; the shade is the answer's place in its issue's order from one end of the debate to the other.",
         "section": "colors"
       },
       {
@@ -415,7 +441,7 @@
       },
       {
         "name": "The 61 Rule",
-        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar. A heavy rule anywhere else is wrong.",
+        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and the polls bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong.",
         "section": "shapes"
       },
       {
@@ -432,7 +458,8 @@
       "Do put a figure beside the sentences it illustrates, with a label on an ink rule and a dated source line.",
       "Do use 0 radius on paper and 4px on controls.",
       "Do fold sources into the end-of-page disclosure, open by default on single-subject pages.",
-      "Do use dashed strokes to mean absent, out or reference."
+      "Do use dashed strokes to mean absent, out or reference.",
+      "Do shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears."
     ],
     "donts": [
       "Don't set labels in all caps or tracked-out caps.",

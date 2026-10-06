@@ -27,6 +27,8 @@ colors:
   bloc-arab-ink: "#ffffff"
   stance-ramp-start: "#233f86"
   stance-ramp-end: "#dfe6f5"
+  stance-numeral-on-dark: "#ffffff"
+  stance-numeral-on-light: "#000000"
   tint-base: "#e9ecf2"
   map-low-dark: "#2a2d33"
   party-fallback: "#8c939b"
@@ -167,6 +169,15 @@ components:
   voter-base-bar:
     backgroundColor: "{colors.cell}"
     height: "30px"
+  matrix-cell:
+    textColor: "{colors.stance-numeral-on-dark}"
+    rounded: "{rounded.paper}"
+    height: "44px"
+  matrix-cell-light-shade:
+    textColor: "{colors.stance-numeral-on-light}"
+  bloc-bar:
+    backgroundColor: "{colors.cell}"
+    height: "44px"
 ---
 
 # Design System: Israel Votes 2026
@@ -177,7 +188,7 @@ components:
 
 An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.
 
-Colour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where a stance sits on an issue. A page with no data on it is black and white.
+Colour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where an answer sits in its issue's order. A page with no data on it is black and white.
 
 Density is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.
 
@@ -204,7 +215,8 @@ Paper and two inks, with colour reserved for data.
 
 ### Tertiary (data: lists and stances)
 - **Party colours**: one editorial colour per current list, grouped by political family in related shades (likud #245b94, otzma #514394, rz #7d67b3, noam #b29bda, poi #597fbd, shas #147c88, utj #65adb5, byachad #ce542d, yashar #ed9859, dem #a72f65, yb #9e3826, bw #db7898, res #b48727, jl #267b44, raam #80b667; unknown lists fall back to party-fallback). Text on a party colour is black or white by WCAG luminance (threshold 0.179), never chosen by eye. Source of truth: lib/party-colors.ts.
-- **Stance ramp** (stance-ramp-start to stance-ramp-end): `color-mix(in oklab, #233f86 (100 - position*80)%, #dfe6f5)`, position 0 at the first option of an issue's scale. The light end is therefore 20% navy, not the pure end token. Same shade for every list holding the same stance.
+- **Stance ramp** (stance-ramp-start to stance-ramp-end): `color-mix(in oklab, #233f86 (100 - position*80)%, #dfe6f5)`, position 0 at the first option of an issue's scale. The shade means the answer's place in the issue's order, from one end of the debate to the other; it does not say how near an answer sits to the governing coalition. The light end is therefore 20% navy, not the pure end token. Same shade for every list holding the same stance, on the profile tiles and in the Compare matrix.
+- **Stance numerals** (stance-numeral-on-dark, stance-numeral-on-light): the answer's number on a ramp shade is #fff on the dark half (position under 0.5) and #000 on the light half; on the ink-2 fill of unordered answers it is the page ground (`var(--bg)`).
 - **Tint base** (tint-base): the fixed light endpoint for party-colour tints in figures (voter-base bar, locality dot map).
 
 ### Neutral
@@ -223,7 +235,7 @@ Follows `prefers-color-scheme` unless `data-theme` pins it. Swaps every neutral 
 ### Named Rules
 **The Colour Is Data Rule.** A colour appears only where it encodes a bloc, a list or a stance position. Chrome, headings, links and buttons are ink.
 
-**The Fixed Endpoints Rule.** Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print. The one exception is the locality map's low end, which dims to map-low-dark on dark paper so weak places never outshine strongholds.
+**The Fixed Endpoints Rule.** Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print. The Compare matrix draws the same ramp with the same endpoints (`shade()` in components/compare/model.ts), as do the profile tiles, so one answer has one shade wherever it appears. The one exception is the locality map's low end, which dims to map-low-dark on dark paper so weak places never outshine strongholds.
 
 ## Typography
 
@@ -277,7 +289,7 @@ Flat. Depth is conveyed by sheet-on-paper contrast and hairlines, never by shado
 - Radius 4px on controls only (rounded.control): buttons, segmented controls, alphabet and timeline buttons.
 - Circles only for data points: sparkline dots, key dots, locality dots, timeline events.
 - Hairlines are 1px (line between rows, line-2 on sheet edges); structural rules are 1px ink (masthead, section heads, figure labels, sources, footer).
-- **The 61 Rule.** The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar. A heavy rule anywhere else is wrong.
+- **The 61 Rule.** The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and in the polls page bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong.
 - **The Pull Quote Rule.** The only left-edge colour rule is the 3px party-colour rule on a pull quote (ink when no party colour applies). Slips and party letter boxes carry their colour as a top bar instead (5px slip, 4px compare chip and drawer letters).
 - Dashed means absent or out: a slip out of a coalition, a tile with no recorded stance, the 2022 reference line, the West Bank line on the map.
 
@@ -327,7 +339,28 @@ Each figure is a label on a 1px ink rule, the figure, then a 12.5px source line,
 - **Seat sparkline:** every poll since dissolution in the party colour; line 2px with round joins; solid dots r 3.4 for pollsters in the main average, hollow dots r 4 (sheet fill, colour stroke 1.5) for the pollsters the alternative average excludes; the 2022 result as a 1.2px ink dotted rule (2 4) with a 600 label; hairline gridlines, 11.5px ink-3 ticks, end value in Frank Ruhl 700 15px. A key underneath names both point styles.
 - **Voter-base bar:** one 30px stacked bar on cell, segments split by 1.5px sheet gaps, tints of the party colour toward tint-base at fixed steps 100 / 68 / 42 / 22%; key with 9px squares and Frank Ruhl 700 16px values; then a "share won" list with 10px party-colour bars on cell.
 - **Locality dot map:** localities as dots sized by valid votes (r 1.1 / 1.9 / 2.6), shaded from the ramp's low end to the party colour by share relative to the party's strongest (low end tint-base on light paper, map-low-dark on dark, so the strongest places are always the most saturated marks); labelled localities r 4-5 with a 0.8 ink stroke and a 10.5px 600 label haloed in paper; West Bank as a dashed ink-2 line. A table beside it: strongest localities, the national share on an ink rule, the big cities; values Frank Ruhl 700 17px tabular. Stacks under 440px.
-- **Stance tiles:** seven tiles, four across (two under 520px), 8px gap, sheet white, 1px line-2 edge, min-height 132px. A 9px top bar in the stance ramp shade; ink bar when the issue's options are not a scale (Economy); dashed tile, transparent bar and italic ink-3 text when no stance is recorded. Issue 12px 600 ink-2; stance Frank Ruhl 700 16px; basis 11px ink-3 at the foot. Hover: edge goes ink. Open: 2px ink frame with a square pointer into the panel below. The panel (sheet, line-2, 16px 18px) gives the question, the party's own words in prose, the source, and chips for lists holding the same stance. One tile open at a time; the first recorded stance opens on load.
+- **Stance tiles:** seven tiles, four across (two under 520px), 8px gap, sheet white, 1px line-2 edge, min-height 132px. A 9px top bar in the stance ramp shade; ink-2 (grey) bar when the issue's options are not a scale (Economy); dashed tile, transparent bar and italic ink-3 text when no stance is recorded. Issue 12px 600 ink-2; stance Frank Ruhl 700 16px; basis 11px ink-3 at the foot. Hover: edge goes ink. Open: 2px ink frame with a square pointer into the panel below. The panel (sheet, line-2, 16px 18px) gives the question, the party's own words in prose, the source, and chips for lists holding the same stance. One tile open at a time; the first recorded stance opens on load.
+
+### Compare matrix
+One table: questions down the side, every list across, each cell the list's recorded answer. Real row and column headers; bloc colour appears only as a 3px bar over each column group and on the chips and key dots, never in the cells. Source: components/Compare.tsx, components/compare.css, components/compare/model.ts.
+- **Column-set control:** a "Show" label and a segmented control (the same frame, 4px radius, 14px 500 options with an 11.5px tabular second line) choosing every list, either bloc, the core opposition, the outgoing government or the reader's own set; beside it a link into the Coalition Builder.
+- **Choose lists one by one:** a native disclosure, 14px 600. Open, it sets four bloc columns, each headed by a 10px bloc swatch and name on a 1px ink rule, with list chips (sheet, line-2 edge, 4px party-colour top bar, Hebrew letters 17px); a chosen chip fills with the party colour and its paired ink. A live hint says how many are chosen; two is the fewest.
+- **Key:** under a 1px ink rule, 13px ink-2. The ramp as five 22 by 16 swatches with its meaning, then the cell states as 16px glyphs, then "Open any row for every list's own words and source" in 600.
+- **Bloc header row:** each bloc's name, 12.5px 600, under a 3px bar in the bloc colour, spanning its lists; a 12px gap separates blocs.
+- **Vertical names:** each list's name set vertical, read bottom to top, 12.5px 600 ink, max 150px, a link to the profile; underline on hover.
+- **Pinned strip:** the ballot letters (Frank Ruhl 900 17px in a small sheet box with a 4px party-colour top bar) and the seats in the polling average (Frank Ruhl 700 15px tabular; "out" in Public Sans 11.5px ink-3 for lists out of the average) stay sticky at the top over a 1px ink rule while rows scroll beneath. The corner carries "Seats, polling average" in 12px ink-3.
+- **Rows:** a 1px hairline between rows, 1px ink above each of the seven issues, dotted line-2 above the narrower questions, which are indented 18px and set in Public Sans 600 14px against the issue's Frank Ruhl 700 18px. The row header is a button with a small rotated-square caret, the question in 13px ink-2, and a legend.
+- **Row header legend:** one line per answer: a 17 by 15 key in the answer's shade with its number, the answer's label in 12.5px ink-2, and the seats those answers hold in the polling average (Frank Ruhl 700 13.5px tabular, right-aligned). The answer under the pointer turns ink 600. A row with no recorded answers says so in italic ink-3.
+- **Cell states:** 44px tall (30px on narrow questions), square, 2px apart. A stance is the ramp shade with its number, 13px 700 tabular, in stance-numeral-on-dark or stance-numeral-on-light. A top-right 6px notch in the page ground marks an answer taken from the record rather than a questionnaire answer. None: dashed line-2 border, empty. Declined: line-2 border with a 135-degree ink-3 hatch (1px lines, 5px pitch). Recorded, not classified: a sheet-white cell with a line-2 edge, no number. Priorities that can coexist (unordered options): ink-2 fill with the number in the page ground.
+- **Hover and focus:** hovering or focusing a cell dims every cell in that row not holding the same answer to 28% and gives the matching cells a 1px ink outline at 1px offset; the legend line for the answer turns ink. Keyboard focus is a 3px ink ring at 3px offset. Opacity eases .12s, off under reduced motion.
+- **Open-row panel:** a full-width sheet row under the question: sheet white, line-2 edge, a 1px ink top edge, padding 18px 22px. The question in Frank Ruhl 19px, a one-line reading of the field in 14px ink-2, then one group per answer (keyed heading on a hairline), each list's own words in Frank Ruhl 16px prose over a 12.5px ink-3 source line, two columns; then the lists recorded but not classified, then those with no position found or declined, set quieter, with the evidence date; a note and links at the foot.
+- **Phone reflow (under 760px):** the table becomes a grid with one column per list shown, so all fourteen fit with no sideways scroll; each question label spans the full width above its row of cells, the legend runs as a wrapped row, cells drop to 34px (24px on narrow questions), names to 10.5px, letters to 11px, bloc names to 10.5px, and the open panel stacks to one column. The pinned letters row stays sticky; the corner cell is kept out of sight so headers still pair with cells. At 1100px the row-header column narrows from 300px to 230px.
+
+### Polls overview
+Under "What the polls say now" on the polls page: a bloc bar, two bloc strips, then a dot table. Bloc colours mark blocs; party colours mark lists. Source: components/polls/PollsNow.tsx, components/polls/polls-now.css.
+- **120-seat bloc bar:** 44px on cell, segments in the bloc colours with their paired ink, in the order Netanyahu bloc, between, Arab-led, opposition, separated by 2px page-ground gaps, each labelled with its seats in Frank Ruhl 19px (the between segment 14px, hidden on phones). A 2px ink majority tick at 61 overhangs 6px top and bottom. Below it a key of 10px swatches, bloc names and tabular totals. The numbers are the average scaled to 120.
+- **Bloc-per-poll strips:** one for the Netanyahu bloc and one for the opposition, each headed by the swatch, the name in 600 and a plain reading of how many polls reach 61 and the range. The axis runs 40 to 70 seats with ticks every 5 (11.5px ink-3) on a line-2 baseline; a 2px ink rule at 61 with "61" in Frank Ruhl 14px beside it. Each poll is a 13px dot in the bloc colour, polls landing on the same number stacked 22px apart. Polls from the pollsters the alternative average excludes are hollow dots (page-ground fill, bloc-colour 2px ring). Each dot carries its pollster's name, 11px ink-2, rotated 40 degrees up from the dot; hidden on phones, where the axis drops from 84px to 54px and the title tooltip carries the name.
+- **List dot table:** each list is a row grouped by bloc and ordered by average seats, with the bloc name over the first row of its group on a 10px swatch. Beside the name, average, range, passes and alternative-average columns sits a chart column: a 22px track on a seat axis (0 to 30 or beyond, ticks every 5) holding a bar at the average, 8px high in the party colour at 55% opacity, drawn only when the list's average is stated; a 14px dot per poll in the party colour with a 2px sheet-white ring; hollow dots (page ground, party-colour ring) for the excluded pollsters; a dashed 1.5px ink-3 ring on an empty dot for a poll that had the list below the threshold; and a dashed line-2 line at 4 seats for the threshold. A key beneath names each mark. Under 760px the chart column narrows to 150px and the list name may wrap.
 
 ## Do's and Don'ts
 
@@ -340,6 +373,7 @@ Each figure is a label on a 1px ink rule, the figure, then a 12.5px source line,
 - **Do** use 0 radius on paper and 4px on controls.
 - **Do** fold sources into the end-of-page disclosure, open by default on single-subject pages.
 - **Do** use dashed strokes to mean absent, out or reference.
+- **Do** shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears.
 
 ### Don't:
 - **Don't** set labels in all caps or tracked-out caps.
