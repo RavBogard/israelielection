@@ -48,12 +48,12 @@ export default function ThresholdWatch() {
                 <span className="sw" style={{ background: partyColor(p.id) }} aria-hidden="true" />
                 {p.name}
               </Link>
-              <span className="tw-track" role="img" aria-label={`${p.name}: ${dots.map((d) => `${d.poll.pollster} ${d.seats ? `${d.seats} seats` : "below the threshold"}`).join(", ")}`}>
+              <span className="tw-track" style={{ ["--n" as string]: Math.max(...count.values()) }} role="img" aria-label={`${p.name}: ${dots.map((d) => `${d.poll.pollster} ${d.seats ? `${d.seats} seats` : "below the threshold"}`).join(", ")}`}>
                 <i className="tw-gap" style={{ left: 0, width: x(FLOOR) }} aria-hidden="true" />
                 {dots.map((d) => {
                   const n = seen.get(d.seats) ?? 0;
                   seen.set(d.seats, n + 1);
-                  return <i key={d.poll.id} className={`tw-dot${d.hollow ? " hollow" : ""}${d.seats === 0 ? " out" : ""}`} style={{ left: x(d.seats), ["--c" as string]: partyColor(p.id), ["--k" as string]: d.seats === 0 ? n : n - ((count.get(d.seats) ?? 1) - 1) / 2 }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.seats ? `${d.seats} seats` : "below the threshold"}`} />;
+                  return <i key={d.poll.id} className={`tw-dot${d.hollow ? " hollow" : ""}${d.seats === 0 ? " out" : ""}`} style={{ left: x(d.seats), ["--c" as string]: partyColor(p.id), ["--k" as string]: n - ((count.get(d.seats) ?? 1) - 1) / 2 }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.seats ? `${d.seats} seats` : "below the threshold"}`} />;
                 })}
               </span>
               <span className="tw-read">

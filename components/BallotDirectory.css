@@ -41,3 +41,6 @@
 }
 .bd-wall > li { display: flex; }
 .bd-wall .bd-slip { flex: 1; }
+.bd-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin: 0 0 10px; }
+.bd-head .bd-h { margin: 0; }
+.bd-order button { min-height: 44px; }

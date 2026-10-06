@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ballotLists, filterBallot } from "./ballot";
+import { ballotLists, filterBallot, orderSlips } from "./ballot";
 import data from "@/data/ballot-directory.json";
 import { parties } from "./data";
 
@@ -25,5 +25,15 @@ describe("published ballot roster", () => {
   it("keeps similarly named separate roster entries distinct", () => {
     expect(ballotLists.find(l=>l.id === "tekuma")?.letters).toBe("ק");
     expect(ballotLists.find(l=>l.id === "rz")?.letters).toBe("ט");
+  });
+});
+
+describe("slip order", () => {
+  it("keeps the roster, or puts polled lists first by seats and the rest in roster order", () => {
+    const seats = (l: { id: string }) => ({ [ballotLists[5].id]: 3, [ballotLists[9].id]: 7 } as Record<string, number>)[l.id] ?? 0;
+    expect(orderSlips(ballotLists, seats, "roster")).toEqual(ballotLists);
+    const out = orderSlips(ballotLists, seats, "polled");
+    expect(out.slice(0, 2)).toEqual([ballotLists[9], ballotLists[5]]);
+    expect(out.slice(2)).toEqual(ballotLists.filter((_, i) => i !== 5 && i !== 9));
   });
 });

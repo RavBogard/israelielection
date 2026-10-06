@@ -22,6 +22,8 @@ export type ResultsConfig = {
   lettersSource: string;
   agreements: { parties: string[]; status: "signed" | "reported" | string; source: string }[];
   agreementsNote: string;
+  /** The committee's published total of eligible voters, once it is published. */
+  roll?: { eligible: number; source: string };
 };
 
 export type Count = {
@@ -188,4 +190,22 @@ const fmtVotes = (n: number) => Math.round(n).toLocaleString("en-US");
 /** Turnout among counted regular localities only; double envelopes have no matching denominator. */
 export function countedTurnout(count: Count): number | null {
   return count.eligible ? (count.voted - (count.envelopes?.voted ?? 0)) / count.eligible : null;
+}
+
+/** Eligible voters in the localities counted so far, as a share of the committee's roll; null until the roll is published. */
+export function rollCounted(count: Count | null, roll?: { eligible: number }): number | null {
+  if (!count || !roll?.eligible) return null;
+  return Math.min(1, count.eligible / roll.eligible);
+}
+
+export type VersusAverage = { partyId: string; seats: number | null; avg: number | null; diff: number | null };
+
+/** Each tracked list's seats from the count beside its final polling average; difference = count seats minus average. */
+export function versusAverage(ids: string[], average: Poll, lists: PartyResult[] | null): VersusAverage[] {
+  return ids.map((id) => {
+    const r = average.results[id];
+    const avg = r ? (r.belowThreshold ? 0 : r.seats) : null;
+    const seats = lists ? (lists.find((l) => l.partyId === id)?.seats ?? 0) : null;
+    return { partyId: id, seats, avg, diff: seats !== null && avg !== null ? Math.round((seats - avg) * 10) / 10 : null };
+  });
 }

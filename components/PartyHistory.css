@@ -74,3 +74,8 @@
   .history-date span { margin: 0; }
   .history-controls label { min-width: 0; flex-basis: 100%; }
 }
+/* The 2026 filing has its own mark, a ballot slip; 2005 is printed beside the scale break. */
+.ph-m.slip { fill: var(--bg); stroke: var(--ink); stroke-width: 1.6; }
+.ph-axis .ph-break-l { position: absolute; transform: translateX(6px); white-space: nowrap; font-style: normal; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.ph-ev.slip .ph-m { left: 100%; }
+@media (max-width: 640px) { .ph-axis i:nth-child(4) { display: none; } }

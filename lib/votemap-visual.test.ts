@@ -1,6 +1,7 @@
 import {describe,it,expect} from "vitest";
 import {historicalElections} from "./votemap-data";
-import {voteMix,localLeader,listColor,OTHER_COLOR,markerRadius,voteMarkers,visibleVoteMarkers,wedgePath} from "./votemap-visual";
+import {partyColor} from "./party-colors";
+import {voteMix,localLeader,listColor,CONTINUES,OTHER_COLOR,markerRadius,voteMarkers,visibleVoteMarkers,wedgePath} from "./votemap-visual";
 const election={...historicalElections[4],lists:historicalElections[4].lists.slice(0,2)};
 describe("truthful geographic vote views",()=>{
   it("retains named values and the combined remainder; unavailable data is not zero",()=>{const mix=voteMix(election,[1,100,100,100,40,35])!;expect(mix.map(s=>s.votes)).toEqual([40,35,25]);expect(mix.reduce((n,s)=>n+s.share,0)).toBe(1);expect(voteMix(election,undefined)).toBeNull();expect(voteMix(election,[1,0,0,0,0,0])).toBeNull();expect(voteMix(election,[1,100,100,100,90,20])).toBeNull();});
@@ -10,4 +11,5 @@ describe("truthful geographic vote views",()=>{
   it("reconciles every valid locality across all five elections without negative Other",()=>{for(const e of historicalElections)for(const row of e.rows){const mix=voteMix(e,row);if(row[3]===0){expect(mix).toBeNull();continue;}expect(mix).not.toBeNull();expect(mix!.reduce((n,s)=>n+s.votes,0)).toBe(row[3]);expect(mix!.at(-1)!.votes).toBeGreaterThanOrEqual(0);expect(mix!.slice(0,-1).map(s=>s.votes)).toEqual(row.slice(4));}});
   it("excludes missing coordinates without silently inventing centroids",()=>{const e={...election,rows:[[1,100,100,100,40,35],[2,100,100,100,40,35]]};const result=voteMarkers(e,{1:["A",32,35],2:["B",0,0]});expect(result.markers).toHaveLength(1);expect(result.missingCoordinates).toBe(1);});
   it("declutters in-place, counts omitted markers and retains a selected overlapping town",()=>{const mix=voteMix(election,[1,100,100,100,40,35])!;const points=[{code:1,x:50,y:50,valid:400,mix},{code:2,x:51,y:50,valid:100,mix},{code:3,x:150,y:50,valid:100,mix}];const view={x:0,y:0,w:100,h:100};const out=visibleVoteMarkers(points,view,1,400,2);expect(out.available).toBe(2);expect(out.shown.map(p=>p.code)).toEqual([2]);expect(out.shown[0].x).toBe(51);expect(visibleVoteMarkers(points,{...view,w:200},.01,400,null).shown).toHaveLength(3);});
+  it("gives lists that continue into 2026 their party color, only for names in the files",()=>{const names=new Set(historicalElections.flatMap(e=>e.lists.map(l=>l.name)));for(const [name,id] of Object.entries(CONTINUES)){expect(names.has(name)).toBe(true);expect(listColor(name)).toBe(partyColor(id));}expect(listColor("Yesh Atid")).not.toBe(partyColor("byachad"));});
 });

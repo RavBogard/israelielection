@@ -9,12 +9,12 @@ import PollThresholdWatch from "@/components/results/ThresholdWatch";
 import {partyColor,blocColorStrip} from "@/lib/party-colors";
 import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
-import { averagePoll, blocs, exitPolls, parties } from "@/lib/data";
+import { averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
 import { pollLabel, seatsIn } from "@/lib/polls";
 import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
-import { countedTurnout, results } from "@/lib/results";
+import { countedTurnout, results, rollCounted, versusAverage } from "@/lib/results";
 import { fetchCount, resultsConfig as cfg } from "@/lib/results-live";
 import PageHead from "@/components/PageHead";
 
@@ -227,24 +227,124 @@ function ThresholdWatch({ count }: { count: Count }) {
   );
 }
 
+const signed = (n: number) => (n > 0 ? `+${n.toFixed(1)}` : n < 0 ? `−${(-n).toFixed(1)}` : "0");
+const tenths = (n: number) => (Math.round(n * 10) / 10).toFixed(1);
+const DASH = "–";
+
+/** The election-night board, drawn the same before polls close (hatched, awaiting the count) and during it, so nothing moves on the night. */
+function Board({ count }: { count: Count | null }) {
+  const r = count ? results(count, cfg) : null;
+  const toLetter = Object.fromEntries(Object.entries(cfg.letters).map(([l, id]) => [id, l]));
+  const order = ["net", "mid", "opp", "arab"];
+  const blocSeats = [...blocs]
+    .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
+    .map((b) => ({ ...b, seats: r ? r.lists.filter((l) => byId(l.partyId)?.bloc === b.id).reduce((s, l) => s + l.seats, 0) : null }));
+  const others = r ? r.lists.filter((l) => !l.partyId) : [];
+  const untrackedSeats = others.reduce((s, l) => s + l.seats, 0);
+  const segments = r
+    ? [
+        ...blocSeats.flatMap((b) => r.lists.filter((l) => l.partyId && byId(l.partyId)?.bloc === b.id && l.seats > 0).map((l) => ({ id: l.partyId!, seats: l.seats, color: partyColor(l.partyId!), label: byId(l.partyId)!.name, href: `/parties?party=${l.partyId}` }))),
+        ...(untrackedSeats ? [{ id: "other", seats: untrackedSeats, color: "var(--line-2)", label: "Other lists" }] : []),
+      ]
+    : [];
+  const vs = versusAverage(Object.values(cfg.letters), averagePoll, r?.lists ?? null);
+  const rows = r
+    ? r.lists.filter((l) => l.partyId).map((l) => ({ l: l as PartyResult | null, v: vs.find((x) => x.partyId === l.partyId)! }))
+    : [...vs].sort((a, b) => (b.avg ?? -1) - (a.avg ?? -1)).map((v) => ({ l: null as PartyResult | null, v }));
+  const share = rollCounted(count, cfg.roll);
+  const turnout = count ? countedTurnout(count) : null;
+  const wait = (k: string) => <td key={k} className="num rs-wait"><span className="sr-only">Awaiting count</span><span aria-hidden="true">{DASH}</span></td>;
+  return (
+    <>
+      <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
+        <defs>
+          <pattern id="rs-hatch" width="2.5" height="2.5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="2.5" height="2.5" className="rs-h-bg" />
+            <line x1="0" y1="0" x2="0" y2="2.5" className="rs-h-ln" />
+          </pattern>
+        </defs>
+      </svg>
+      <section className={`rs-count${r ? "" : " rs-await"}`} aria-label="Seats by bloc">
+        <SeatGrid segments={segments} labelRule title={r ? undefined : `Awaiting the count: ${KNESSET} seats; ${MAJORITY} is a majority`} />
+        <div>
+          <ul className="rs-legend">
+            {blocSeats.map((b) => (
+              <li key={b.id}><span className="sw" style={{ background: blocColorStrip(b.id) }} />{b.label} {b.seats === null ? <span className="rs-await-v">Awaiting count</span> : <b>{b.seats}</b>}</li>
+            ))}
+            {untrackedSeats > 0 && <li><span className="sw" style={{ background: "var(--line-2)" }} />Other lists <b>{untrackedSeats}</b></li>}
+          </ul>
+          <div className="rs-counted">
+            <p className="rs-counted-h">{share !== null ? <>Voter roll in the localities counted <b>{(share * 100).toFixed(1)}%</b></> : "Share of the voter roll counted"}</p>
+            <div className={`rs-counted-bar${share === null ? " none" : ""}`} role="img" aria-label={share !== null ? `${(share * 100).toFixed(1)}% of eligible voters are in localities counted so far` : "Not available yet"}>
+              {share !== null && <i style={{ width: `${share * 100}%` }} />}
+            </div>
+            <p className="fig-note">
+              {!count
+                ? "Awaiting the count."
+                : <>{num(count.valid)} valid votes from {count.localities} regular localities and any included double envelopes; turnout {turnout !== null ? pct(turnout) : "not available"} among counted regular localities.</>}
+              {share === null && " The share appears once the committee publishes its total of eligible voters."}
+            </p>
+          </div>
+          {r && <p className="note" style={{ marginTop: 14 }}><Link href="/coalition-builder?poll=results">Build a coalition from these results</Link></p>}
+        </div>
+      </section>
+
+      <h2 className="sec-h">By list</h2>
+      <div className="table-scroll">
+        <table className="data-table list-table">
+          <thead>
+            <tr><th>List</th><th>Letters</th><th className="num">Votes</th><th className="num">Share</th><th className="num">Seats</th><th className="num">Final poll average</th><th className="num">Difference</th></tr>
+          </thead>
+          <tbody>
+            {rows.map(({ l, v }) => {
+              const p = byId(v.partyId)!;
+              return (
+                <tr key={v.partyId}>
+                  <td><span className="sw" style={{ background: partyColor(p.id), marginRight: 8 }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
+                  <td className="rs-heb" lang="he" dir="rtl">{toLetter[p.id]}</td>
+                  {l ? <td className="num">{num(l.votes)}</td> : wait("v")}
+                  {l ? <td className="num">{pct(l.pct)}</td> : wait("p")}
+                  {l ? <td className={`num${l.seats ? "" : " below"}`}>{l.seats || "below threshold"}</td> : wait("s")}
+                  <td className={`num${v.avg ? "" : " below"}`}>{v.avg === null ? DASH : v.avg ? tenths(v.avg) : "below threshold"}</td>
+                  {v.diff === null ? wait("d") : <td className="num">{signed(v.diff)}</td>}
+                </tr>
+              );
+            })}
+            <tr>
+              <td>Other lists{r ? ` (${others.length})` : ""}</td>
+              <td />
+              {r ? <td className="num">{num(others.reduce((s, l) => s + l.votes, 0))}</td> : wait("v")}
+              {r ? <td className="num">{pct(others.reduce((s, l) => s + l.pct, 0))}</td> : wait("p")}
+              {r ? <td className="num">{untrackedSeats || DASH}</td> : wait("s")}
+              <td className="num">{DASH}</td>
+              <td className="num">{DASH}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="fig-src" style={{ marginTop: 10 }}>
+        {r ? <>Threshold: {num(r.alloc.thresholdVotes)} votes ({cfg.threshold * 100}% of valid votes counted so far). </> : <>Hatched cells await the count. </>}
+        Final poll average: this site&apos;s average of the latest {mainPolls.length} polls, through {mediumDate(mainPolls[0].published)}; the difference is seats in the count minus that average. Source:{" "}
+        <a href={cfg.source.url}>{cfg.source.label}</a>.
+        {r && r.unknownLetters.length > 0 && untrackedSeats > 0 && " A list this site does not track is currently over the threshold."}
+      </p>
+    </>
+  );
+}
+
 export default async function Page() {
   const live = await fetchCount(revalidate);
   const close = new Date(cfg.pollsClose);
+  const refresh = <ResultsRefresh pollsClose={cfg.pollsClose} />;
 
   if (live.state !== "open") {
     return (
       <div className="ix rs">
         <div className="wrap">
-          <PageHead title="Results" standfirst={<>
-              {live.state === "closed" ? (
-                <>
-                  The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}).
-                </>
-              ) : (
-                <>The committee&apos;s count could not be reached on this refresh ({IL.format(new Date(live.fetchedAt))} Israel time). The page tries again every minute.</>
-              )}
-            </>} />
-          <ResultsRefresh pollsClose={cfg.pollsClose} />
+          <PageHead title="Results" aside={refresh} standfirst={live.state === "closed"
+            ? <>The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}).</>
+            : <>The committee&apos;s count could not be reached on this refresh ({IL.format(new Date(live.fetchedAt))} Israel time); the page tries again every minute.</>} />
+          <Board count={null} />
           <PollThresholdWatch />
           <WhatToWatch />
           <ExitPolls lists={null} />
@@ -256,87 +356,19 @@ export default async function Page() {
   }
 
   const { count } = live;
-  const turnout = countedTurnout(count);
   const r = results(count, cfg);
-  const order = ["net", "mid", "opp", "arab"];
-  const blocSeats = [...blocs]
-    .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
-    .map((b) => ({ ...b, seats: r.lists.filter((l) => byId(l.partyId)?.bloc === b.id).reduce((s, l) => s + l.seats, 0) }));
-  const untrackedSeats = r.lists.filter((l) => !l.partyId).reduce((s, l) => s + l.seats, 0);
-  const others = r.lists.filter((l) => !l.partyId);
-  const segments = [
-    ...blocSeats.flatMap((b) => r.lists.filter((l)=>l.partyId&&byId(l.partyId)?.bloc===b.id&&l.seats>0).map((l)=>({id:l.partyId!,seats:l.seats,color:partyColor(l.partyId!),label:byId(l.partyId)!.name,href:`/parties?party=${l.partyId}`}))),
-    ...(untrackedSeats ? [{ id: "other", seats: untrackedSeats, color: "var(--line-2)", label: "Other lists" }] : []),
-  ];
-
+  const captured = new Date(live.fetchedAt);
   return (
     <div className="ix rs">
       <div className="wrap">
-        <PageHead title="Results" standfirst={<>
-            The committee&apos;s count so far: {num(count.valid)} valid votes from {count.localities} regular localities and any included double envelopes; turnout{" "}
-            {turnout !== null ? pct(turnout) : "not available"} among counted regular localities.
-          </>}>
-          <p className="ph-meta">
-            Seats are this site&apos;s estimate from those votes; the committee publishes the official allocation with the final results.
-          </p>
-        </PageHead>
-
+        <PageHead title="Results" aside={refresh} standfirst={<>
+            {live.freshness === "stale" ? "Saved count, update unavailable" : "The committee’s count so far"}, captured {IL.format(captured)} Israel time ({ET.format(captured)}); seats are this site&apos;s estimate.
+          </>} />
+        <Board count={count} />
         <ResultsFreshness live={live} />
-        <ResultsRefresh pollsClose={cfg.pollsClose} />
-        <section className="rs-count" aria-label="Seats by bloc">
-          <SeatGrid segments={segments} labelRule />
-          <div>
-            <ul className="rs-legend">
-              {blocSeats.map((b) => (
-                <li key={b.id}><span className="sw" style={{ background: blocColorStrip(b.id) }} />{b.label} <b>{b.seats}</b></li>
-              ))}
-              {untrackedSeats > 0 && <li><span className="sw" style={{ background: "var(--line-2)" }} />Other lists <b>{untrackedSeats}</b></li>}
-            </ul>
-            <p className="note" style={{ marginTop: 14 }}>
-              <Link href="/coalition-builder?poll=results">Build a coalition from these results</Link>
-            </p>
-          </div>
-        </section>
-
         <ResultsChanges current={live.snapshot} previous={live.previous} config={cfg} names={Object.fromEntries(parties.map((p) => [p.id, p.name]))} />
         <ThresholdWatch count={count} />
         <ExitPolls lists={r.lists} />
-
-        <h2 className="sec-h">By list</h2>
-        <div className="table-scroll">
-          <table className="data-table list-table">
-            <thead>
-              <tr><th>List</th><th>Letters</th><th className="num">Votes</th><th className="num">Share</th><th className="num">Seats</th></tr>
-            </thead>
-            <tbody>
-              {r.lists.filter((l) => l.partyId).map((l) => {
-                const p = byId(l.partyId)!;
-                return (
-                  <tr key={l.letters}>
-                    <td><span className="sw" style={{ background: partyColor(p.id), marginRight: 8 }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
-                    <td className="rs-heb" lang="he" dir="rtl">{l.letters}</td>
-                    <td className="num">{num(l.votes)}</td>
-                    <td className="num">{pct(l.pct)}</td>
-                    <td className={`num${l.seats ? "" : " below"}`}>{l.seats || "below threshold"}</td>
-                  </tr>
-                );
-              })}
-              <tr>
-                <td>Other lists ({others.length})</td>
-                <td />
-                <td className="num">{num(others.reduce((s, l) => s + l.votes, 0))}</td>
-                <td className="num">{pct(others.reduce((s, l) => s + l.pct, 0))}</td>
-                <td className="num">{untrackedSeats || "—"}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p className="fig-src" style={{ marginTop: 10 }}>
-          Threshold: {num(r.alloc.thresholdVotes)} votes ({cfg.threshold * 100}% of valid votes counted so far). Source:{" "}
-          <a href={cfg.source.url}>{cfg.source.label}</a>.
-          {r.unknownLetters.length > 0 && untrackedSeats > 0 && " A list this site does not track is currently over the threshold."}
-        </p>
-
         <Method />
       </div>
     </div>

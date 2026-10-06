@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parties } from "./data";
-import { allocate, parseExpc, results, resultsOpen } from "./results";
+import { allocate, parseExpc, results, resultsOpen, rollCounted, versusAverage } from "./results";
 import { resultsConfig as config } from "./results-live";
 
 // The committee's 2022 file (media25.bechirot.gov.il/files/expc.csv), final count.
@@ -50,5 +50,24 @@ describe("CEC results", () => {
     const r = results(count2022, config);
     expect(r.lists.reduce((s, l) => s + l.seats, 0)).toBe(120);
     expect(r.unknownLetters.length).toBeGreaterThan(0);
+  });
+});
+
+describe("count beside the polling average", () => {
+  const avg = { id: "average", results: { likud: { seats: 24.6 }, raam: { seats: 0, belowThreshold: true } } } as unknown as import("./types").Poll;
+  it("subtracts the average from the count's seats and waits before the count", () => {
+    const lists = [{ partyId: "likud", letters: "מחל", votes: 10, pct: 0.2, seats: 27 }];
+    expect(versusAverage(["likud", "raam", "noam"], avg, lists)).toEqual([
+      { partyId: "likud", seats: 27, avg: 24.6, diff: 2.4 },
+      { partyId: "raam", seats: 0, avg: 0, diff: 0 },
+      { partyId: "noam", seats: 0, avg: null, diff: null },
+    ]);
+    expect(versusAverage(["likud"], avg, null)).toEqual([{ partyId: "likud", seats: null, avg: 24.6, diff: null }]);
+  });
+  it("shares the roll counted only once the roll is published", () => {
+    expect(rollCounted(count2022, undefined)).toBeNull();
+    expect(rollCounted(null, { eligible: 1 })).toBeNull();
+    expect(rollCounted(count2022, { eligible: 6788804 })).toBeCloseTo(count2022.eligible / 6788804);
+    expect(rollCounted(count2022, { eligible: 1 })).toBe(1);
   });
 });

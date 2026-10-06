@@ -132,11 +132,11 @@ export default function VoteMap() {
     return r[4 + listIdx] / r[3];
   };
   const fillOf = (code: number) => {
-    if(mode==="mix")return rows.get(code)?.[3] ? "var(--vm-base)" : places?.[code] ? "url(#vm-none)" : "var(--sheet)";
-    if(mode==="leader" && election){const l=localLeader(voteMix(election,rows.get(code)));return l.status==="named" ? l.color : l.status==="tie" ? "url(#vm-tie)" : l.status==="unresolved" ? "url(#vm-unresolved)" : places?.[code] ? "url(#vm-none)" : "var(--sheet)";}
+    if(mode==="mix")return rows.get(code)?.[3] ? "var(--vm-base)" : places?.[code] ? "url(#vm-none)" : "var(--vm-land)";
+    if(mode==="leader" && election){const l=localLeader(voteMix(election,rows.get(code)));return l.status==="named" ? l.color : l.status==="tie" ? "url(#vm-tie)" : l.status==="unresolved" ? "url(#vm-unresolved)" : places?.[code] ? "url(#vm-none)" : "var(--vm-land)";}
     const s = shareOf(code);
     if (s !== null) return `var(--vm-${binOf(s)})`;
-    return places?.[code] ? "url(#vm-none)" : "var(--sheet)";
+    return places?.[code] ? "url(#vm-none)" : "var(--vm-land)";
   };
 
   const toView = (clientX: number, clientY: number) => {
@@ -216,7 +216,7 @@ export default function VoteMap() {
   };
 
   return (
-    <div className="vm">
+    <div className="vm" style={mode==="single" ? {["--vm-hue" as string]:listColor(list.name)} : undefined}>
       <div className="vm-controls">
         <label><span>View</span><select aria-label="View" value={mode} onChange={e=>{const next=e.target.value as MapMode;setMode(next);save(electionId,list.name,selected,next);}}>{Object.entries(MODE_LABELS).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label>
         <label>
@@ -249,7 +249,6 @@ export default function VoteMap() {
       </div>
 
       <p className="vm-share"><button type="button" onClick={async () => { const path = mapHref(electionId,list.name,selected,mode); history.replaceState(history.state,"",path); try { await navigator.clipboard.writeText(`https://www.israelielection.org${path}`); setCopied(true); } catch { setCopied(false); } }}>Copy this map view</button> <a href={mapHref(electionId,list.name,selected,mode)}>Link to this view</a> <span role="status">{copied ? "Copied." : ""}</span></p>
-      <p className="vm-mode-note">{mode==="single" ? "Darker blue means a larger share of valid votes for the chosen list." : mode==="leader" ? "Color shows the local plurality among named lists, not a majority or individual voters. A tie or a grouped Other total large enough to conceal the leader is marked separately. Land area is not vote count." : "Each pie shows a town's vote mix; circle area is proportional to valid votes. Larger towns are prioritized when markers overlap. Zoom in or find any town for its full recorded breakdown."} Named lists reached at least 1% nationally in that election. Other lists are combined; their individual results are not in this map file. Colors identify historical lists, not today&apos;s political blocs.</p>
       <div className="vm-body">
         <div className="vm-mapwrap">
           <svg
@@ -335,7 +334,8 @@ export default function VoteMap() {
             )) : election.lists.map(l=><li key={l.letters}><span style={{background:listColor(l.name)}}/>{l.name}</li>)}
             {mode==="mix" && <li><span style={{background:OTHER_COLOR}}/>Other lists (combined)</li>}
             {mode==="leader" && <><li><span className="vm-sw-tie"/>Tie among named leaders</li><li><span className="vm-sw-unknown"/>Leader not established: Other may conceal it</li></>}
-            <li><span className="vm-sw-none" />missing / no valid denominator</li>
+            <li><span className="vm-sw-none" />No result or no valid votes in the file</li>
+            <li><span className="vm-sw-land" />Outside any voting locality</li>
           </ul>
           {mode==="mix" && <div className="fig-key vm-size-key"><svg width="110" height="60" role="img" aria-label={`Circle areas: ${num(Math.round(maxValid/4))} and ${num(maxValid)} valid votes`}><circle cx="17" cy="31" r="13"/><circle cx="72" cy="31" r="26"/></svg><p>Example sizes: {num(Math.round(maxValid/4))} / {num(maxValid)} valid votes. The same area scale applies throughout this election.</p></div>}
 
@@ -390,6 +390,7 @@ export default function VoteMap() {
         </aside>
       </div>
 
+      <p className="fig-note vm-mode-note vm-method">{mode==="single" ? `Deeper ${list.name} color means a larger share of valid votes for that list.` : mode==="leader" ? "Color shows the local plurality among named lists, not a majority or individual voters. A tie or a grouped Other total large enough to conceal the leader is marked separately. Land area is not vote count." : "Each pie shows a town's vote mix; circle area is proportional to valid votes. Larger towns are prioritized when markers overlap. Zoom in or find any town for its full recorded breakdown."} Named lists reached at least 1% nationally in that election. Other lists are combined; their individual results are not in this map file. Lists that run on under the same party in 2026 take that list&apos;s color; other colors identify historical lists, not today&apos;s political blocs. Hatched localities have no result in the file; plain land lies outside any voting locality.</p>
       {selected !== null && places[selected] && <LocalityHistory code={selected} name={places[selected][0]} election={electionId} list={list.name} mode={mode} />}
       <details className="vm-table">
         <summary>Table: the 25 localities where {list.name} did best, {election.label} (1,000 valid votes or more)</summary>

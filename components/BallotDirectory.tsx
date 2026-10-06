@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ballotLists, filterBallot } from "@/lib/ballot";
+import { ballotLists, filterBallot, orderSlips, type SlipOrder } from "@/lib/ballot";
 import { averagePoll } from "@/lib/data";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import data from "@/data/ballot-directory.json";
@@ -18,16 +18,24 @@ const seatsOf = (id: string | null) => (id ? averagePoll.results[id]?.seats ?? 0
 export default function BallotDirectory() {
   const [query, setQuery] = useState("");
   const [coverage, setCoverage] = useState<"all" | "profiled" | "other">("all");
+  const [order, setOrder] = useState<SlipOrder>("roster");
   const shown = filterBallot(ballotLists, query, coverage);
   const polled = ballotLists.filter((l) => seatsOf(l.profile) > 0).length;
   return (
     <section className="ballot-directory">
       <figure className="bd-tray">
-        <figcaption className="bd-h">
-          The {ballotLists.length} slips on the roster; <b>{polled}</b> win seats in the polling average
+        <figcaption className="bd-head">
+          <span className="bd-h">
+            The {ballotLists.length} slips on the roster; <b>{polled}</b> win seats in the polling average
+          </span>
+          <div className="seg bd-order" role="group" aria-label="Order the slips">
+            {([["roster", "Roster order"], ["polled", "Polled first"]] as const).map(([k, t]) => (
+              <button key={k} type="button" aria-pressed={order === k} onClick={() => setOrder(k)}>{t}</button>
+            ))}
+          </div>
         </figcaption>
         <ol className="bd-wall">
-          {ballotLists.map((l) => {
+          {orderSlips(ballotLists, (l) => seatsOf(l.profile), order).map((l) => {
             const s = seatsOf(l.profile);
             const c = l.profile ? partyColor(l.profile) : null;
             return (
@@ -42,8 +50,7 @@ export default function BallotDirectory() {
           })}
         </ol>
         <p className="fig-src bd-src">
-          Coloured slips are the lists that pass the threshold in the polling average, with their seats; plain slips poll below it or are not polled. Order as in the
-          published roster. {data.caveat}
+          Coloured slips are the lists that pass the threshold in the polling average, with their seats; plain slips poll below it or are not polled. {order === "roster" ? "Order as in the published roster." : "Polled lists first, by seats; the rest in roster order."} {data.caveat}
         </p>
       </figure>
 

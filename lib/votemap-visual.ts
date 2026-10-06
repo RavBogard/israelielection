@@ -1,9 +1,15 @@
 import { project, type Places, type VoteMapElection } from "./votemap";
+import { partyColor } from "./party-colors";
 export type MapMode = "single" | "mix" | "leader";
 export const mapMode = (raw: string | null): MapMode => raw === "mix" || raw === "leader" ? raw : "single";
 export const MODE_LABELS = {single:"One list's share",mix:"Vote mix",leader:"Leading list"};
 export const OTHER_COLOR = "#9299a0";
-// Editorial colors identify exact historical list names, never current blocs or inferred party continuity.
+/** Historical list names that run on, under the same party, in 2026: these take the 2026 list's colour. Only clear continuations; mergers and renamed alliances keep a historical colour. */
+export const CONTINUES: Record<string,string> = {
+  "Likud":"likud", "Shas":"shas", "United Torah Judaism":"utj", "Yisrael Beiteinu":"yb", "Ra'am (United Arab List)":"raam",
+  "Hadash–Ta'al":"jl", "Otzma Yehudit":"otzma", "Religious Zionism":"rz",
+};
+// Other editorial colors identify exact historical list names, never current blocs or inferred party continuity.
 const COLORS: Record<string,string> = {
   "Likud":"#2166ac", "Yesh Atid":"#f4a340", "Religious Zionism–Otzma Yehudit":"#8c510a", "National Unity":"#63b5cf",
   "Shas":"#7b3294", "United Torah Judaism":"#c2a5cf", "Yisrael Beiteinu":"#d73027", "Ra'am (United Arab List)":"#2c933e",
@@ -13,7 +19,9 @@ const COLORS: Record<string,string> = {
   "New Hope":"#8c88c9", "New Right":"#e879ae", "Otzma Yehudit":"#b79b3b", "Ra'am–Balad":"#ff6f00",
   "Religious Zionism":"#8c510a", "Union of Right-Wing Parties":"#8c510a", "Yamina":"#e879ae", "Zehut":"#c1a83d",
 };
-export function listColor(name:string):string {return COLORS[name] ?? OTHER_COLOR;}
+export function listColor(name:string):string {return CONTINUES[name] ? partyColor(CONTINUES[name]) : COLORS[name] ?? OTHER_COLOR;}
+/** Seven ramp steps from the low end to the list's own colour (CSS color-mix percentages of the list colour). */
+export const RAMP_STEPS = [6, 20, 36, 52, 68, 84, 100];
 export type VoteSlice = {name:string;votes:number;share:number;color:string;other:boolean};
 export function voteMix(election:VoteMapElection,row:number[] | undefined):VoteSlice[] | null {
   if(!row || !Number.isSafeInteger(row[3]) || row[3]<=0)return null;

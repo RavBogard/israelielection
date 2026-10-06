@@ -1,12 +1,16 @@
-/* Blue sequential percentages; categorical historical-list colors come from votemap-visual. */
+/* One list's share: a ramp from the low end (--tint-base, dark paper in dark mode) to that list's own colour, set as --vm-hue by VoteMap; categorical historical-list colors come from votemap-visual. */
 .vm {
-  --vm-0: #eff3ff;
-  --vm-1: #c6dbef;
-  --vm-2: #9ecae1;
-  --vm-3: #6baed6;
-  --vm-4: #4292c6;
-  --vm-5: #2171b5;
-  --vm-6: #084594;
+  --vm-hue: var(--ink);
+  --vm-low: var(--tint-base);
+  --vm-top: var(--vm-hue);
+  --vm-land: color-mix(in oklab, var(--ink) 10%, var(--bg));
+  --vm-0: color-mix(in oklab, var(--vm-top) 6%, var(--vm-low));
+  --vm-1: color-mix(in oklab, var(--vm-top) 20%, var(--vm-low));
+  --vm-2: color-mix(in oklab, var(--vm-top) 36%, var(--vm-low));
+  --vm-3: color-mix(in oklab, var(--vm-top) 52%, var(--vm-low));
+  --vm-4: color-mix(in oklab, var(--vm-top) 68%, var(--vm-low));
+  --vm-5: color-mix(in oklab, var(--vm-top) 84%, var(--vm-low));
+  --vm-6: var(--vm-top);
   --vm-base: color-mix(in oklab, #7890a6 12%, var(--sheet));
   font-family: var(--body);
   margin-top: 18px;
@@ -95,3 +99,7 @@
 .vm-size-key circle { fill: none; stroke: var(--ink); }
 .vm-mixbar { display: flex; height: 18px; border: 1px solid var(--line); margin-bottom: 10px; }
 .vm-mixbar span { height: 100%; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vm { --vm-low: #2c323b; --vm-top: color-mix(in oklab, var(--vm-hue) 72%, #ffffff); --vm-land: color-mix(in oklab, var(--ink) 5%, var(--bg)); } }
+:root[data-theme="dark"] .vm { --vm-low: #2c323b; --vm-top: color-mix(in oklab, var(--vm-hue) 72%, #ffffff); --vm-land: color-mix(in oklab, var(--ink) 5%, var(--bg)); }
+.vm-sw-land { background: var(--vm-land); }
+.vm-method { margin: 14px 0 0; }

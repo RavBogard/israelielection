@@ -6,13 +6,13 @@ import { HISTORY_KINDS, histories, historyFamilies, type HistoryEvent, type Hist
 const Y0 = 1965, BREAK = 2005, Y1 = 2026.9, SPLIT = 0.3;
 const x = (y: number) => (y <= BREAK ? ((y - Y0) / (BREAK - Y0)) * SPLIT : SPLIT + ((y - BREAK) / (Y1 - BREAK)) * (1 - SPLIT)) * 100;
 const TICKS = [1970, 1980, 1990, 2005, 2010, 2015, 2020, 2026];
-/** Ticks with a printed year: 2005 is where the scale changes, marked by the break instead. */
+/** Ticks with a printed year under the axis; 2005, where the scale changes, is printed beside the break. */
 const LABELLED = TICKS.filter((t) => t !== BREAK);
 
 /** The four shapes the marks take: what an event does to the list's line. */
-type Mark = "start" | "join" | "leave" | "ballot";
-const MARK: Record<HistoryKind, Mark> = { party: "start", alliance: "join", merger: "join", partial: "join", split: "leave", leader: "leave", rename: "ballot", list: "ballot" };
-const MARK_LABEL: Record<Mark, string> = { start: "Party established", join: "Alliance or merger", leave: "Split or a leader's move", ballot: "Name change or 2026 list" };
+type Mark = "start" | "join" | "leave" | "ballot" | "slip";
+const MARK: Record<HistoryKind, Mark> = { party: "start", alliance: "join", merger: "join", partial: "join", split: "leave", leader: "leave", rename: "ballot", list: "slip" };
+const MARK_LABEL: Record<Mark, string> = { start: "Party established", join: "Alliance or merger", leave: "Split or a leader's move", ballot: "Name change", slip: "2026 ballot list" };
 
 /** A mark as a small drawing, so its shape holds at any size. */
 function M({ m }: { m: Mark }) {
@@ -22,6 +22,7 @@ function M({ m }: { m: Mark }) {
       {m === "join" && <path d="M0 -6.5 L6.5 0 L0 6.5 L-6.5 0 Z" />}
       {m === "leave" && <path d="M0 -6.5 L6.5 5.5 L-6.5 5.5 Z" />}
       {m === "ballot" && <rect x="-2" y="-7.5" width="4" height="15" />}
+      {m === "slip" && <><rect x="-5" y="-6.5" width="10" height="13" /><path d="M-2.5 -1.5 H2.5 M-2.5 2 H2.5" /></>}
     </svg>
   );
 }
@@ -53,6 +54,7 @@ export default function PartyLanes() {
           <span className="ph-track">
             {LABELLED.map((t) => <i key={t} style={{ left: `${x(t)}%` }}>{t}</i>)}
             <b className="ph-break" style={{ left: `${x(BREAK)}%` }} />
+            <em className="ph-break-l" style={{ left: `${x(BREAK)}%` }}>{BREAK}</em>
           </span>
         </div>
         {historyFamilies.map((f) => (
