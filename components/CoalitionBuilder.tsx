@@ -317,6 +317,10 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         <div className="mobile-arrangement" aria-live="polite">
           <span><b>{fmt(t.total)}</b> cabinet seats, <b>{fmt(vote.yes)}</b> for / <b>{fmt(vote.no)}</b> against</span>
           <a href="#arrangement-result">View the arrangement</a>
+          <span className="ma-bar" aria-hidden="true">
+            {segments.map((s) => <i key={s.id} style={{ width: `${(s.seats / KNESSET) * 100}%`, background: s.color }} />)}
+            <b style={{ left: `${(MAJORITY / KNESSET) * 100}%` }} />
+          </span>
         </div>
         <div className="blocs">
           {blocs.map((b) => (
