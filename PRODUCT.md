@@ -56,7 +56,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Byline:** "A project of Rabbi Daniel Bogard." Not CRC-branded; the About page states independence from his congregation. His signed note appears on the home page and About; text in his voice is his to approve.
 - **Tool disclosure is part of the brand:** About names Gemini Flash 3.8 for the briefing and Claude Code (Fable 5.1 and Opus 5.5) for development. Do not revert to a generic "AI".
 - **Voice:** educational, precise, sourced; evidence distinguished from interpretation; legal findings stated fully and attributed first, with Israel's rejection in one sentence.
-- **License:** original teaching text is CC BY-NC 4.0 with credit to Rabbi Daniel Bogard and a link to israelielection.org. The license covers teaching materials only, not the whole repository; third-party material keeps its own rights.
+- **License:** original text is CC BY-NC 4.0 with credit to Rabbi Daniel Bogard and a link to israelielection.org. The license covers the site's original text only, not the whole repository; third-party material keeps its own rights.
 - **Existing assets:** app/icon.svg, app/favicon.ico, app/apple-icon.png, components/Logo.tsx, a dynamic share image at app/opengraph-image.tsx and api/card, and public/teach/session-1-cover.png.
 
 ## Evidence on Hand

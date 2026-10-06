@@ -20,7 +20,7 @@ const sans = Public_Sans({ variable: "--font-sans", subsets: ["latin"], weight: 
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.israelielection.org"),
-  title: { default: "Israel Votes 2026", template: "%s · Israel Votes 2026" },
+  title: { default: "Israel Votes 2026", template: "%s | Israel Votes 2026" },
   description: DESCRIPTION,
   applicationName: "Israel Votes 2026",
   alternates: { types: { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] } },

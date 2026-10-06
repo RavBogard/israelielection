@@ -1,6 +1,5 @@
 import data from "@/data/journeys.json";
-/** Teaching resources were dropped (2026-10-06), so the route that ended there is left out. */
-export const journeys = { ...data, routes: data.routes.filter((r) => r.next !== "/teach") };
+export const journeys = data;
 export type JourneyStep = (typeof data.steps)[keyof typeof data.steps];
 export function journeyState(route: string | null, step: string | null) {
   const selected = journeys.routes.find((r) => r.id === route) ?? journeys.routes[0];

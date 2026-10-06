@@ -11,6 +11,9 @@ Readings of open points, logged as gates:
 - GATE: content-lane items (data/journeys.json teaching route, American lens subtitle in content/american-lens.mdx) are edited by this session. Proceeded because Daniel approved them directly; each change is a deletion or a shortening, no new claims.
 - GATE: Major 4 palette. Graphite ramp with fixed endpoints about #34322d to #e4e2db, numeral rule and light/dark split kept; check contrast of the numeral on every step in both themes before shipping, and update DESIGN.md and .impeccable/design.json.
 
+- GATE: PRODUCT.md licence scope line now reads "covers the site's original text only" instead of "teaching materials only", since no teaching materials remain; terms unchanged. Proceeded because it describes the same CC BY-NC grant with the dead noun removed.
+- GATE: build runs as parallel subagents after Wave 1, each owning disjoint files; one shared dev server; builds and screenshots done centrally per batch.
+
 ## Build order
 
 Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touched pages), fix, commit, push. Finish review and documenter after the last wave.
@@ -32,5 +35,5 @@ Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touc
 - [ ] Wave 4 stance ramp and Compare
 - [ ] Wave 5 charts
 - [ ] Wave 6 tools
-- [ ] Wave 7 content and copy
+- [x] Wave 7 content and copy (journeys.json teaching route and runtime filter removed; CSV licence line; American lens dek to one sentence; tab title template)
 - [ ] Wave 8 finish review and documentation
