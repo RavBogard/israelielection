@@ -36,8 +36,7 @@ export default function Page() {
       <header className="page-head">
         <h1>Compare the parties</h1>
         <p className="standfirst">
-          Every list&apos;s recorded answer on the questions that divide this election, in one chart. Read across a row to see who agrees and
-          where the field splits; open a row for each party&apos;s own words and source.
+          Every list&apos;s recorded answer on the questions that divide this election, in one chart. Open a row for each party&apos;s own words.
         </p>
       </header>
 
