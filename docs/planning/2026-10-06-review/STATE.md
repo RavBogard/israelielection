@@ -38,6 +38,6 @@ Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touc
 - [x] Wave 7 content and copy (journeys.json teaching route and runtime filter removed; CSV licence line; American lens dek to one sentence; tab title template)
 - [ ] Wave 8 finish review and documentation
 
-- [ ] Consistency pass (Medium 3 one number per fact, Medium 10 dark strokes, shared stance mark, coexist mark, map dim)
+- [x] Consistency pass (Medium 3 one number per fact, Medium 10 dark strokes, shared stance mark, coexist mark, map dim)
 
 Notes for the content lane: results config takes an optional `roll` (the committee's published voter roll) so the share-counted bar can fill on the night; until then it stays hatched.
