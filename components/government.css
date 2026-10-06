@@ -22,7 +22,7 @@
 .gov .step.current .num { color: var(--ink); }
 .gov .step .now { background: var(--ink); color: var(--bg); padding: 1px 8px; font-size: 12.5px; }
 
-.gov .gov-alt { max-width: 760px; margin-top: 6px; padding: 16px 0 18px 64px; border-top: 1px dashed var(--line-2); border-bottom: 1px solid var(--line); }
+.gov .gov-alt { max-width: 760px; margin-top: 6px; padding: 16px 0 18px 64px; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line); }
 .gov .gov-alt h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.15; margin: 0 0 4px; }
 .gov .gov-alt .when { font-size: 14px; font-weight: 600; color: var(--ink-2); margin: 0 0 8px; }
 .gov .gov-alt .rule { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 0; max-width: 62ch; }

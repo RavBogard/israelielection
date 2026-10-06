@@ -83,7 +83,7 @@
 .gl-builder .let { font-family: var(--display); font-weight: 900; font-size: 36px; fill: var(--ink); }
 .gl-builder .seats { font-family: var(--display); font-weight: 700; font-size: 22px; fill: var(--ink-2); }
 .gl-polls path { fill: none; stroke-width: 2.4; stroke-linejoin: round; stroke-linecap: round; }
-.gl-polls .rule { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.gl-polls .rule { stroke: var(--ink); stroke-width: 2; }
 .gl-polls .rl, .gl-polls .end { font-family: var(--display); font-weight: 700; font-size: 13px; fill: var(--ink); }
 .gl-votemap path { stroke-linecap: round; }
 .gl-votemap .gaza { fill: var(--line); stroke: var(--ink-3); stroke-width: .6; }

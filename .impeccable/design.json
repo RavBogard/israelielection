@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-06T12:00:00Z",
+  "generatedAt": "2026-10-06T20:00:00Z",
   "title": "Design System: Israel Votes 2026",
   "extensions": {
     "colorMeta": {
@@ -171,7 +171,7 @@
       },
       "stance-ramp-start": {
         "role": "tertiary",
-        "displayName": "Stance Ramp, first end of the order",
+        "displayName": "Graphite Stance Ramp, first end of the order",
         "canonical": "#34322d",
         "tonalRamp": [
           "color-mix(in oklab, #34322d 100%, #eae8e1)",
@@ -186,7 +186,7 @@
       },
       "stance-ramp-end": {
         "role": "tertiary",
-        "displayName": "Stance Ramp, mix endpoint",
+        "displayName": "Graphite Stance Ramp, mix endpoint",
         "canonical": "#eae8e1"
       },
       "stance-numeral-on-dark": {
@@ -222,11 +222,15 @@
       },
       "display": {
         "displayName": "Display",
-        "purpose": "Page titles in the page head and the profile running head."
+        "purpose": "Every page title at one size through PageHead; the profile running head is its own band."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section heads on a 1px ink top rule."
+        "purpose": "Section heads (.sec-h, --fs-sec) on a 1px ink top rule."
+      },
+      "headline-3": {
+        "displayName": "Headline 3",
+        "purpose": "Sub-sections and items in a list of sections (.sec-h3, --fs-sec3)."
       },
       "standfirst": {
         "displayName": "Standfirst",
@@ -234,7 +238,7 @@
       },
       "prose": {
         "displayName": "Prose",
-        "purpose": "Notes and reading text, 72ch."
+        "purpose": "Reading text and the prose reading note (.note), 72ch."
       },
       "figure-number": {
         "displayName": "Figure number",
@@ -254,7 +258,7 @@
       },
       "caption": {
         "displayName": "Caption",
-        "purpose": "Source lines and meta in ink-3; 12.5px inside figures."
+        "purpose": "Figure notes and keys 13px ink-2, figure sources 12.5px ink-3, ticks 12px; nothing under the 12px floor."
       }
     },
     "shadows": [
@@ -329,17 +333,17 @@
       "name": "Segmented control",
       "kind": "chip",
       "refersTo": "segmented",
-      "description": "Poll source picker: one ink frame, hairline dividers, selected option inverted.",
+      "description": "The only .seg: one ink frame, hairline dividers, selected option inverted; 44px tall on phones.",
       "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">Average<small>14 polls</small></button><button aria-pressed=\"false\">Kan 11<small>2 Oct</small></button><button aria-pressed=\"false\">Maariv<small>3 Oct</small></button></div>",
-      "css": ".ds-seg { display: inline-flex; border: 1px solid var(--ink); border-radius: 4px; overflow: hidden; background: var(--sheet); } .ds-seg button { font-family: var(--body); font-size: 14px; font-weight: 500; line-height: 1.2; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink); padding: 7px 12px; text-align: left; cursor: pointer; } .ds-seg button:last-child { border-right: 0; } .ds-seg button:hover { background: var(--bg); } .ds-seg button small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; } .ds-seg button[aria-pressed=\"true\"] { background: var(--ink); color: var(--bg); font-weight: 600; } .ds-seg button[aria-pressed=\"true\"] small { color: var(--bg); opacity: .75; } .ds-seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }"
+      "css": ".ds-seg { display: inline-flex; border: 1px solid var(--ink); border-radius: 4px; overflow: hidden; background: var(--sheet); } .ds-seg button { font-family: var(--body); font-size: 14px; font-weight: 500; line-height: 1.2; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink); padding: 7px 12px; text-align: left; cursor: pointer; } .ds-seg button:last-child { border-right: 0; } .ds-seg button:hover { background: var(--bg); } .ds-seg button small { display: block; font-size: 12px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; } .ds-seg button[aria-pressed=\"true\"] { background: var(--ink); color: var(--bg); font-weight: 600; } .ds-seg button[aria-pressed=\"true\"] small { color: var(--bg); opacity: .75; } .ds-seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }"
     },
     {
       "name": "Masthead navigation",
       "kind": "nav",
       "refersTo": "navigation",
-      "description": "Grouped disclosure menus under the nameplate; active section on a 2px ink rule.",
-      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-trigger active\" aria-expanded=\"false\"><span>Explore <i class=\"ds-caret\"></i></span><small>Coalition Builder, Party Map</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Follow <i class=\"ds-caret\"></i></span><small>Polls, News, Results</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Understand <i class=\"ds-caret\"></i></span><small>How it works, Issues, Communities</small></button></nav>",
-      "css": ".ds-nav { display: flex; border-top: 1px solid var(--line); border-bottom: 1px solid var(--ink); background: var(--bg); } .ds-nav-trigger { flex: 1; min-height: 66px; background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 10px 12px; color: var(--ink); text-align: left; font: 600 15px var(--body); cursor: pointer; } .ds-nav-trigger + .ds-nav-trigger { border-left: 1px solid var(--line); } .ds-nav-trigger span { display: flex; align-items: center; gap: 10px; } .ds-nav-trigger small { display: block; font-size: 11.5px; font-weight: 400; color: var(--text); margin-top: 4px; } .ds-nav-trigger.active { border-bottom-color: var(--ink); } .ds-nav-trigger:hover, .ds-nav-trigger[aria-expanded=\"true\"] { background: var(--sheet); } .ds-nav-trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-top: -3px; }"
+      "description": "Four grouped disclosure menus under the nameplate, each with one live fact from the data; active section on a 2px ink rule.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-trigger active\" aria-expanded=\"false\"><span>Polls and news <i class=\"ds-caret\"></i></span><small>Newest poll 4 Oct, briefing 6 Oct</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Parties <i class=\"ds-caret\"></i></span><small>Netanyahu bloc 52.6 of 120, polling average</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Voters and places <i class=\"ds-caret\"></i></span><small>1,214 localities in the 2022 count</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>How it works <i class=\"ds-caret\"></i></span><small>14 elections from 1977 to 2022</small></button></nav>",
+      "css": ".ds-nav { display: flex; border-top: 1px solid var(--line); border-bottom: 1px solid var(--ink); background: var(--bg); } .ds-nav-trigger { flex: 1; min-height: 62px; background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 10px 12px; color: var(--ink); text-align: left; font: 600 15px var(--body); cursor: pointer; } .ds-nav-trigger + .ds-nav-trigger { border-left: 1px solid var(--line); } .ds-nav-trigger span { display: flex; align-items: center; gap: 10px; } .ds-nav-trigger small { display: block; font-size: 12px; font-weight: 400; color: var(--text); margin-top: 4px; font-variant-numeric: tabular-nums; } .ds-nav-trigger.active { border-bottom-color: var(--ink); } .ds-nav-trigger:hover, .ds-nav-trigger[aria-expanded=\"true\"] { background: var(--sheet); } .ds-nav-trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-top: -3px; }"
     },
     {
       "name": "Seat grid",
@@ -361,9 +365,9 @@
       "name": "Stance tile",
       "kind": "card",
       "refersTo": "stance-tile",
-      "description": "One issue: a bar in the shared ordinal ramp (ink-2 grey when the options are not a scale), the issue, the stance, the basis.",
-      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 47%, #eae8e1)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink-2)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
-      "css": ".ds-tiles { display: grid; grid-template-columns: repeat(4, 150px); gap: 8px; } .ds-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; color: var(--ink); font: inherit; cursor: pointer; transition: border-color .12s; } .ds-tile:hover { border-color: var(--ink); } .ds-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); } .ds-issue { font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; } .ds-stance { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.2; } .ds-basis { margin-top: auto; font-family: var(--body); font-size: 11px; color: var(--ink-3); } .ds-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; } .ds-tile.open .ds-bar { margin: 0 -8px 2px; } .ds-tile.open::after { content: \"\"; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } .ds-tile.nf { border-style: dashed; } .ds-tile.nf .ds-bar { background: transparent; border-bottom: 1px dashed var(--line-2); height: 8px; } .ds-tile.nf .ds-stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }"
+      "description": "One issue: a bar in the graphite ramp (dotted paper with an ink edge when the options can coexist, hatched when no stance is recorded), the issue, the stance, the basis.",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 47%, #eae8e1)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar un\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
+      "css": ".ds-tiles { display: grid; grid-template-columns: repeat(4, 150px); gap: 8px; } .ds-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; color: var(--ink); font: inherit; cursor: pointer; transition: border-color .12s; } .ds-tile:hover { border-color: var(--ink); } .ds-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); } .ds-issue { font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; } .ds-stance { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.2; } .ds-basis { margin-top: auto; font-family: var(--body); font-size: 12px; color: var(--ink-3); } .ds-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; } .ds-tile.open .ds-bar { margin: 0 -8px 2px; } .ds-tile.open::after { content: \"\"; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } .ds-bar.un { background: radial-gradient(circle, var(--line-2) 0.9px, transparent 1.3px) 0 0 / 5px 5px, var(--sheet); box-shadow: inset 0 0 0 1px var(--ink); } .ds-tile.nf .ds-bar { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); box-shadow: inset 0 -1px 0 var(--line-2); } .ds-tile.nf .ds-stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }"
     },
     {
       "name": "At a glance with majority bar",
@@ -385,25 +389,25 @@
       "name": "Compare matrix cells",
       "kind": "custom",
       "refersTo": "matrix-cell",
-      "description": "A recorded answer as a square cell: ramp shade with its number, a corner notch for the record, dashed none, hatched declined, sheet with a line-2 edge for recorded-not-classified, ink-2 for coexisting priorities; hover dims the other answers in the row and outlines the matches.",
-      "html": "<div class=\"ds-mx\"><i style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\">1</i><i class=\"l\" style=\"background:color-mix(in oklab, #34322d 40%, #eae8e1)\">3</i><i class=\"l rec\" style=\"background:color-mix(in oklab, #34322d 20%, #eae8e1)\">5</i><i class=\"ink\">2</i><i class=\"none\"></i><i class=\"declined\"></i><i class=\"unsorted\"></i></div>",
-      "css": ".ds-mx { display: grid; grid-template-columns: repeat(7, 44px); gap: 4px; } .ds-mx i { position: relative; display: block; height: 44px; font: 700 13px var(--body); font-style: normal; font-variant-numeric: tabular-nums; line-height: 44px; text-align: center; color: #fff; } .ds-mx i.l { color: #000; } .ds-mx i.ink { background: var(--ink-2); color: var(--bg); } .ds-mx i.rec::after { content: \"\"; position: absolute; top: 2px; right: 2px; border-top: 6px solid var(--bg); border-left: 6px solid transparent; } .ds-mx i.none { border: 1px dashed var(--line-2); } .ds-mx i.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); } .ds-mx i.unsorted { background: var(--sheet); border: 1px solid var(--line-2); } .ds-mx i.match { outline: 1px solid var(--ink); outline-offset: 1px; } .ds-mx i.dim { opacity: .28; }"
+      "description": "A recorded answer as a square cell: graphite ramp shade with its number, a corner notch for the record, hatched none (light) and declined (dense), sheet with a line-2 edge for recorded-not-classified, dotted paper with an ink edge for coexisting priorities; hover dims the other answers in the row and outlines the matches.",
+      "html": "<div class=\"ds-mx\"><i style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\">1</i><i class=\"l\" style=\"background:color-mix(in oklab, #34322d 40%, #eae8e1)\">3</i><i class=\"l rec\" style=\"background:color-mix(in oklab, #34322d 20%, #eae8e1)\">5</i><i class=\"un\">2</i><i class=\"none\"></i><i class=\"declined\"></i><i class=\"unsorted\"></i></div>",
+      "css": ".ds-mx { display: grid; grid-template-columns: repeat(7, 44px); gap: 4px; } .ds-mx i { position: relative; display: block; height: 44px; font: 700 13px var(--body); font-style: normal; font-variant-numeric: tabular-nums; line-height: 44px; text-align: center; color: #fff; } .ds-mx i.l { color: #000; } .ds-mx i.un { background: radial-gradient(circle, var(--line-2) 0.9px, transparent 1.3px) 0 0 / 5px 5px, var(--sheet); box-shadow: inset 0 0 0 1px var(--ink); color: var(--ink); } .ds-mx i.rec::after { content: \"\"; position: absolute; top: 2px; right: 2px; border-top: 6px solid var(--bg); border-left: 6px solid transparent; } .ds-mx i.none { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); } .ds-mx i.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); } .ds-mx i.unsorted { background: var(--sheet); border: 1px solid var(--line-2); } .ds-mx i.match { outline: 1px solid var(--ink); outline-offset: 1px; } .ds-mx i.dim { opacity: .28; }"
     },
     {
-      "name": "Polls bloc bar and list dots",
+      "name": "SeatBar and poll dots",
       "kind": "custom",
       "refersTo": "bloc-bar",
-      "description": "The 120-seat bloc bar with the 2px ink tick at 61 overhanging 6px, and the per-poll dots: solid, hollow for the excluded pollsters, dashed ring for below the threshold.",
-      "html": "<div class=\"ds-pb\"><span style=\"width:44%;background:var(--b-net);color:var(--b-net-ink)\">53</span><span style=\"width:3%;background:var(--b-mid);color:var(--b-mid-ink)\"></span><span style=\"width:11%;background:var(--b-arab);color:var(--b-arab-ink)\">13</span><span style=\"width:42%;background:var(--b-opp);color:var(--b-opp-ink)\">51</span><b></b></div><i class=\"ds-dot\"></i><i class=\"ds-dot hollow\"></i><i class=\"ds-dot below\"></i>",
-      "css": ".ds-pb { position: relative; display: flex; width: 420px; height: 44px; background: var(--cell); } .ds-pb span { display: flex; align-items: center; justify-content: center; border-right: 2px solid var(--bg); font: 700 19px var(--display); font-variant-numeric: tabular-nums; } .ds-pb span:last-of-type { border-right: 0; } .ds-pb b { position: absolute; left: 50.83%; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; background: var(--ink); } .ds-dot { display: inline-block; width: 14px; height: 14px; margin: 14px 6px 0 0; border-radius: 50%; background: #245b94; border: 2px solid var(--sheet); box-sizing: border-box; } .ds-dot.hollow { background: var(--bg); border: 2px solid #245b94; } .ds-dot.below { background: var(--bg); border: 1.5px dashed var(--ink-3); }"
+      "description": "The SeatBar at xl: segments in BLOC_SEAT_ORDER (Netanyahu bloc, between, opposition, Arab-led) with the 2px ink tick at 61 overhanging 6px; per-poll dots in the party stroke: solid, hollow for the excluded pollsters, dashed ring for below the threshold (out).",
+      "html": "<div class=\"ds-pb\"><span style=\"width:43.8%;background:var(--b-net);color:var(--b-net-ink)\">52.6</span><span style=\"width:3.2%;background:var(--b-mid);color:var(--b-mid-ink)\"></span><span style=\"width:42%;background:var(--b-opp);color:var(--b-opp-ink)\">50.4</span><span style=\"width:11%;background:var(--b-arab);color:var(--b-arab-ink)\">13.2</span><b></b></div><i class=\"ds-dot\"></i><i class=\"ds-dot hollow\"></i><i class=\"ds-dot below\"></i>",
+      "css": ".ds-pb { position: relative; display: flex; width: 420px; height: 44px; background: var(--cell); } .ds-pb span { display: flex; align-items: center; justify-content: center; border-right: 2px solid var(--bg); font: 700 19px var(--display); overflow: hidden; white-space: nowrap; font-variant-numeric: tabular-nums; } .ds-pb span:last-of-type { border-right: 0; } .ds-pb b { position: absolute; left: 50.83%; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; background: var(--ink); } .ds-dot { display: inline-block; width: 14px; height: 14px; margin: 14px 6px 0 0; border-radius: 50%; background: #245b94; border: 2px solid var(--sheet); box-sizing: border-box; } .ds-dot.hollow { background: var(--bg); border: 2px solid #245b94; } .ds-dot.below { background: var(--bg); border: 1.5px dashed var(--ink-3); }"
     },
     {
       "name": "Article chart marks and heat shade",
       "kind": "custom",
       "refersTo": "article-charts",
-      "description": "Article chart forms chosen from the table's cells: lines, dot plot, heat table, plain table. Series are told apart by mark (solid, ring, grey diamond, grey ring square), never by colour or dashes. Heat shades run #2a2925 over #f6f5f1 up to 62% with text by luminance 0.179.",
-      "html": "<div class=\"ds-ac\"><p class=\"k\"><span><i class=\"m solid\"></i>2019</span><span><i class=\"m ring\"></i>2022</span><span><i class=\"m grey\"></i>2026</span><span><i class=\"m grey-ring\"></i>Other</span></p><div class=\"tr\"><i class=\"m solid\" style=\"left:30%\"></i><i class=\"m ring\" style=\"left:55%\"></i></div><p class=\"h\"><b style=\"background:color-mix(in oklab, #2a2925 12%, #f6f5f1);color:#000\">8%</b><b style=\"background:color-mix(in oklab, #2a2925 36%, #f6f5f1);color:#000\">21%</b><b style=\"background:color-mix(in oklab, #2a2925 62%, #f6f5f1);color:#fff\">36%</b></p></div>",
-      "css": ".ds-ac { max-width: 420px; font-family: var(--body); } .ds-ac .k { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); } .ds-ac .k span { display: inline-flex; align-items: center; gap: 7px; } .ds-ac .m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; } .ds-ac .solid { background: var(--ink); } .ds-ac .ring { background: var(--sheet); border: 2.5px solid var(--ink); } .ds-ac .grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); } .ds-ac .grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; } .ds-ac .tr { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; } .ds-ac .tr .m { position: absolute; top: 2px; margin-left: -6px; } .ds-ac .h { display: flex; margin: 10px 0 0; } .ds-ac .h b { flex: 1; padding: 8px 0; text-align: center; font-variant-numeric: tabular-nums; }"
+      "description": "Article chart forms chosen from the table's cells (lines, dot plot, trend, sparklines, pairs, stacked parts, heat, plain table). Series are told apart by mark (solid, ring, grey diamond, grey ring square), never by colour or dashes. Heat cells blend the theme's ink into its page ground up to 42%, with ink text.",
+      "html": "<div class=\"ds-ac\"><p class=\"k\"><span><i class=\"m solid\"></i>2019</span><span><i class=\"m ring\"></i>2022</span><span><i class=\"m grey\"></i>2026</span><span><i class=\"m grey-ring\"></i>Other</span></p><div class=\"tr\"><i class=\"m solid\" style=\"left:30%\"></i><i class=\"m ring\" style=\"left:55%\"></i></div><p class=\"h\"><b style=\"background:color-mix(in oklab, var(--ink) 9%, var(--bg))\">8%</b><b style=\"background:color-mix(in oklab, var(--ink) 25%, var(--bg))\">21%</b><b style=\"background:color-mix(in oklab, var(--ink) 42%, var(--bg))\">36%</b></p></div>",
+      "css": ".ds-ac { max-width: 420px; font-family: var(--body); } .ds-ac .k { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); } .ds-ac .k span { display: inline-flex; align-items: center; gap: 7px; } .ds-ac .m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; } .ds-ac .solid { background: var(--ink); } .ds-ac .ring { background: var(--sheet); border: 2.5px solid var(--ink); } .ds-ac .grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); } .ds-ac .grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; } .ds-ac .tr { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; } .ds-ac .tr .m { position: absolute; top: 2px; margin-left: -6px; } .ds-ac .h { display: flex; margin: 10px 0 0; } .ds-ac .h b { flex: 1; color: var(--ink); padding: 8px 0; text-align: center; font-variant-numeric: tabular-nums; }"
     },
     {
       "name": "Formation clock bars",
@@ -451,18 +455,19 @@
       "refersTo": "party-map-preview",
       "description": "The Party Map preview panel's one action: a solid ink button, 44px high.",
       "html": "<a class=\"ds-open\" href=\"#\">Open the full profile</a>",
-      "css": ".ds-open { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; background: var(--ink); color: var(--bg); font-family: var(--body); font-size: 15px; font-weight: 600; text-decoration: none; } .ds-open:hover { background: var(--text); } .ds-open:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }"
+      "css": ".ds-open { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; background: var(--ink); color: var(--bg); font-family: var(--body); font-size: 15px; font-weight: 600; text-decoration: none; } .ds-open:hover { background: var(--text); } .ds-open:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
     }
   ],
   "narrative": {
     "northStar": "The Shape of a Majority",
-    "overview": "An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.\n\nColour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where a stance sits on an issue; government figures are ink. A page with no data on it is black and white.\n\nDensity is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.\n\nTwo owner rulings (Daniel, 2026-10-06): graphic first, so every page opens with its infographic under a head of title plus at most one short sentence; and Teaching resources dropped, with embeds kept.",
+    "overview": "An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.\n\nColour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared graphite ramp shows where an answer sits in its issue's order. A page with no data on it is black and white.\n\nTwo owner rulings (Daniel, 2026-10-06) shape every page. Graphic first: each page opens with its infographic, and the page head is the title plus at most one short sentence; method, notes and caveats go in captions, folds or below. Teaching resources were dropped (the interactive embeds stay), so no surface is designed for a classroom.\n\nDensity is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.",
     "keyCharacteristics": [
       "120-seat grid, 12 across, heavy rule under row five so the next cell is the 61st.",
       "Party cards are ballot slips: square sheet, hairline edge, colour bar on top, Hebrew letters in Frank Ruhl 900.",
       "Frank Ruhl Libre carries display, numbers and reading prose; Public Sans carries labels, controls, tables and captions.",
       "Square, flat paper; 4px only on controls; one drawer shadow in the whole system.",
-      "Colour appears only where it encodes data.",
+      "Colour appears only where it encodes data; government figures are ink, because a coalition is not a bloc.",
+      "One number per fact: a list's seats are the polling average scaled to 120, one decimal, or \"below\", wherever they appear.",
       "Every page opens with its graphic, then the words."
     ],
     "rules": [
@@ -473,12 +478,22 @@
       },
       {
         "name": "The Bloc Data Only Rule",
-        "body": "Bloc colours appear only on bloc data. Government figures (the coalition's seats, the formation clock) are ink and greys.",
+        "body": "Bloc colours appear only on bloc data (the polls bloc bar and strips, the Compare group bars). Figures about the government itself, the coalition's seats and the formation clock, are drawn in ink and greys.",
         "section": "colors"
       },
       {
         "name": "The Fixed Endpoints Rule",
-        "body": "Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print. The Compare matrix draws the same ramp with the same endpoints, so one answer has one shade wherever it appears; the shade is the answer's place in its issue's order from one end of the debate to the other.",
+        "body": "The stance ramp and party tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print; one `shade()` serves every surface, so one answer has one shade wherever it appears. Two named exceptions follow the theme on purpose: the map low ends (the profile locality map dims to map-low-dark; the vote map's low end and land fill switch per theme) so weak places never outshine strongholds, and article heat tables, which blend the theme's ink into its page ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stroke Contrast Rule",
+        "body": "A party-coloured line or dot reaches 3:1 against the paper in both themes through `partyStroke`; never draw a party line in the raw fill colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Bloc Order Rule",
+        "body": "Lists, keys, legends and tables run the blocs in `BLOC_ORDER` (Netanyahu bloc, opposition, between, Arab-led), the two contenders first. A 120-seat bar or grid runs them in `BLOC_SEAT_ORDER` (Netanyahu bloc, between, opposition, Arab-led), so the unaligned list sits between the two blocs. Both live in lib/polls.ts.",
         "section": "colors"
       },
       {
@@ -493,7 +508,17 @@
       },
       {
         "name": "The Plain Headline Rule",
-        "body": "Headlines carry no eyebrow, kicker or crumb above them and no single accented word; no middle dots anywhere.",
+        "body": "Headlines carry no eyebrow above them and no single accented word.",
+        "section": "typography"
+      },
+      {
+        "name": "The Text Floor Rule",
+        "body": "No text under 12px, in CSS or SVG. Two sanctioned exceptions: the 11px footnote superscripts in the poll table, and the \"61\" beside the seat grid, which is set in grid units and scales with the figure.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Number Rule",
+        "body": "A list's seats print the same everywhere: its polling average scaled to 120, one decimal (`seatFigure`), or \"below\" when it counts 0 (`seatText`; lib/list-seats.ts for every page); a single poll prints whole seats. The figure is always called \"Seats, polling average\" (`SEATS_LABEL`).",
         "section": "typography"
       },
       {
@@ -503,7 +528,7 @@
       },
       {
         "name": "The 61 Rule",
-        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and the polls bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong. Every other ink rule is 1px.",
+        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, the 2px ink tick at 61/120 on every SeatBar, the 2px line at 61 in the bloc race and on each bloc strip axis, and the 2px rule at 61 on any article bar chart of seats (`barRefs` in lib/chart-form.ts, which draws a threshold row as a 1px rule instead). A heavy rule anywhere else is wrong. Every other ink rule is 1px, including the Government page's today and current-step rules and its outgoing-coalition head, which were 2px and are now 1px.",
         "section": "shapes"
       },
       {
@@ -513,12 +538,12 @@
       },
       {
         "name": "The Mark Tells The Series Rule",
-        "body": "In article charts a series is told apart by its mark (solid, ring, grey diamond, grey ring) and position, in ink and greys, never by colour or dashes; dashed means absent. Heat shades use the fixed endpoints #2a2925 over #f6f5f1 up to 62%, with text black or white by luminance (threshold 0.179).",
+        "body": "In article charts a series is told apart by its mark (solid, ring, grey diamond, grey ring) and position, in ink and greys, never by colour or dashes. Heat shades blend the theme's ink into its page ground up to 42%, with ink text at 4.5:1 in both themes.",
         "section": "shapes"
       },
       {
         "name": "The Graphic First Rule",
-        "body": "Every page opens with its infographic. The page head is the title plus at most one short sentence; method, notes and caveats go in captions, folds or below. Hatched means cannot or absent; dashed means out.",
+        "body": "Every page opens with its infographic. The page head is the title plus at most one short sentence; method, notes and caveats go in captions, folds or below. Hatched means absent or cannot; dashed means out.",
         "section": "layout"
       }
     ],
@@ -526,18 +551,25 @@
       "Do draw any count of the Knesset as the 120-seat grid or a 120-seat bar, with the heavy ink rule at 61.",
       "Do keep colour to data: bloc colours for blocs, the list's own colour for that list, the stance ramp for stance positions.",
       "Do pick text on a party or bloc fill by luminance (partyInk or the `-ink` tokens).",
-      "Do open every page with its graphic under a head of title plus at most one short sentence.",
-      "Do set every page head as title, then standfirst, inside the 1200px wrapper on the shared left edge.",
+      "Do open every page with its graphic: a head of title plus at most one short sentence, then the figure; method and caveats go in captions, folds or below.",
+      "Do set every page head through PageHead: title, then standfirst, then at most one `.ph-meta` line, inside the 1200px wrapper on the shared left edge.",
+      "Do draw every 120-seat bar with SeatBar, and source, key and annotate figures with `.fig-src`, `.fig-key` and `.fig-note`.",
+      "Do print a list's seats as the scaled average to one decimal, or \"below\", from lib/list-seats.ts; run lists and keys in `BLOC_ORDER` and bars and grids in `BLOC_SEAT_ORDER`.",
+      "Do draw party lines and dots in `partyStroke`; keep `partyColor` for fills.",
       "Do put a figure beside the sentences it illustrates, with a label on an ink rule and a dated source line.",
       "Do use 0 radius on paper and 4px on controls.",
       "Do fold sources into the end-of-page disclosure, open by default on single-subject pages.",
-      "Do use dashed strokes to mean absent, out or reference.",
-      "Do shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears.",
-      "Do use hatching to mean cannot or absent."
+      "Do use hatching to mean absent or cannot, and dashed strokes to mean out or a labelled reference line; the slip perforation is the one decorative dash.",
+      "Do shade a stance by its place in the issue's order, with the same graphite ramp everywhere an answer appears, and set coexisting answers on the dotted paper with an ink edge.",
+      "Do keep text at 12px or more, the global focus ring, 44px touch targets on phones, and no motion under reduced motion."
     ],
     "donts": [
       "Don't set labels in all caps or tracked-out caps.",
+      "Don't draw an absent state dashed, or a party line in the raw fill colour.",
       "Don't put an eyebrow, kicker or crumb above a headline or an article title.",
+      "Don't colour a government figure by bloc; ink and greys only.",
+      "Don't use middle dots anywhere, menu previews and correction lines included; use commas and full stops.",
+      "Don't build a teaching surface (decks, packets, classroom paths); embeds stay.",
       "Don't append arrows to links.",
       "Don't build meta lines as middle-dot strings.",
       "Don't number items (01/02/03) unless the content is a sequence; list slot numbers and source citations are data, not markers.",
@@ -545,10 +577,7 @@
       "Don't use a coloured left rule anywhere but the 3px party-colour rule on a pull quote.",
       "Don't add shadows to paper; the drawer is the only shadow.",
       "Don't draw the Knesset as a hemicycle.",
-      "Don't colour chrome, headings or buttons.",
-      "Don't colour a government figure by bloc; ink and greys only.",
-      "Don't use middle dots anywhere, menu previews included.",
-      "Don't build a teaching surface; embeds stay."
+      "Don't colour chrome, headings or buttons."
     ]
   }
 }

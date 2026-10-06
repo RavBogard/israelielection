@@ -20,7 +20,7 @@
 .nav-preview { display: block; font-size: 12px; font-weight: 400; color: var(--text); margin-top: 4px; font-variant-numeric: tabular-nums; }
 .section-active .nav-trigger { border-bottom-color: var(--ink); }
 .nav-trigger[aria-expanded="true"],.nav-trigger:hover { background: var(--sheet); }
-.nav-panel { position: absolute; inset-inline: 0; top: 100%; z-index: 50; background: var(--sheet); border: 1px solid var(--ink); padding: 18px 22px 20px; box-shadow: 0 6px 0 rgb(0 0 0 / .07); }
+.nav-panel { position: absolute; inset-inline: 0; top: 100%; z-index: 50; background: var(--sheet); border: 1px solid var(--ink); padding: 18px 22px 20px; }
 .nav-panel[hidden] { display: none; }
 .nav-panel.compact { left: auto; width: min(470px,100%); }
 .nav-group:first-child .nav-panel.compact { left: 0; right: auto; }

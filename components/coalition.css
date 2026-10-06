@@ -34,7 +34,7 @@
 .cb .empty { color: var(--ink-3); font-family: var(--display); font-size: 16px; margin: 0; border-bottom: 0 !important; }
 .cb .warns { display: flex; flex-direction: column; gap: 8px; }
 .cb .warn { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line); padding: 10px 12px; font-size: 14px; line-height: 1.4; }
-.cb .warn.info { background: var(--info-bg); color: var(--info-ink); border-color: var(--info-line); border-style: dashed; }
+.cb .warn.info { background: var(--info-bg); color: var(--info-ink); border-color: var(--info-line); }
 .cb .warn b { display: block; font-size: 13px; margin-bottom: 2px; }
 .cb .warn cite { font-style: normal; opacity: .8; font-size: 12.5px; display: block; margin-top: 4px; }
 .cb .callout { margin: 0; display: flex; flex-direction: column; gap: 8px; }
