@@ -11,8 +11,10 @@ import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } fr
 import partiesJson from "../../data/parties.json";
 import heParties from "../../data/he/parties.json";
 import { GEMINI_MODEL } from "../../lib/ai";
-import { DRAFT_SCHEMA, HE_SCHEMA, briefingPrompt, checkDraft, checkTranslation, hebrewPrompt, type Briefing, type Draft, type GlossaryEntry, type HeDraft } from "../../lib/briefing";
+import { DRAFT_SCHEMA, HE_SCHEMA, briefingPrompt, checkDraft, checkTranslation, hebrewPrompt, type Briefing, type Draft, type HeDraft } from "../../lib/briefing";
 import { generateJson } from "../../lib/gemini";
+import { partyGlossary } from "../../lib/he-glossary";
+import type { HeOverlay } from "../../lib/i18n/localize";
 import { fetchNews } from "../../lib/news";
 
 const args = process.argv.slice(2);
@@ -21,16 +23,7 @@ const date = opt("--date") ?? new Date().toISOString().slice(0, 10);
 const file = `data/briefings/${date}.json`;
 const output = (k: string, v: string | number) => process.env.GITHUB_OUTPUT && appendFileSync(process.env.GITHUB_OUTPUT, `${k}=${v}\n`);
 
-/** The English forms a briefing uses for each party (the register's names, plus the press's), and the site's Hebrew name. */
-const ALSO: Record<string, string[]> = { utj: ["United Torah Judaism"], rz: ["Religious Zionism"], dem: ["Democrats"], yashar: ["Yashar"], raam: ["Raam"], yb: ["Yisrael Beytenu"], res: ["Reservists"] };
-const SKIP = new Set(["noam", "byachad", "poi"]); // their English names are also ordinary words or a judge's first name
-type He = Record<string, { name?: { text: string }; short?: { text: string }; leader?: { text: string } }>;
-const he = heParties as He;
-const glossary: GlossaryEntry[] = partiesJson.parties.flatMap((p) =>
-  SKIP.has(p.id) || !he[p.id]?.name ? [] : [{ en: [...new Set([p.name, p.short, ...(ALSO[p.id] ?? [])])].filter((x) => !x.includes(".")), he: he[p.id].name!.text, must: he[p.id].short?.text }],
-);
-/** Leaders: given to the model for spelling, not checked (a sentence may name one by surname). */
-const leaders: GlossaryEntry[] = partiesJson.parties.flatMap((p) => (p.leader && he[p.id]?.leader ? [{ en: [p.leader], he: he[p.id].leader!.text }] : []));
+const { parties: glossary, leaders } = partyGlossary(partiesJson.parties, heParties as HeOverlay);
 
 /** Adds `textHe` to every sentence: two tries, then null (the Hebrew home falls back to English). */
 async function addHebrew(b: Briefing): Promise<string | null> {

@@ -64,7 +64,8 @@ jobs:
 
   # Party register updates from the same headlines. Grounded changes commit to main after the
   # tests pass (Daniel, 2026-10-05: "hands off as possible"); a leader or status change from a
-  # single outlet opens a PR instead. Either way Daniel gets a GitHub notification.
+  # single outlet opens a PR instead. Either way Daniel gets a GitHub notification. The Hebrew for
+  # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
     needs: brief
     if: always()
@@ -92,7 +93,7 @@ jobs:
         id: job
         run: >
           npx tsx scripts/jobs/party-proposals.mts --skip-keys "$RUNNER_TEMP/skip.txt"
-          --report "$RUNNER_TEMP/auto.md" --review-out "$RUNNER_TEMP/review.json" --review-report "$RUNNER_TEMP/review.md"
+          --report "$RUNNER_TEMP/auto.md" --review-out "$RUNNER_TEMP/review.json" --review-he-out "$RUNNER_TEMP/review-he.json" --review-report "$RUNNER_TEMP/review.md"
 
       - name: Gate (tests and build with the updated register)
         if: steps.job.outputs.auto != '0'
@@ -103,7 +104,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/parties.json
+          git add data/parties.json data/he/parties.json
           git commit -m "party register: $(date -u +%Y-%m-%d)"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
@@ -122,7 +123,8 @@ jobs:
           git fetch -q origin main
           git checkout -B "$branch" origin/main
           cp "$RUNNER_TEMP/review.json" data/parties.json
-          git add data/parties.json
+          [ -f "$RUNNER_TEMP/review-he.json" ] && cp "$RUNNER_TEMP/review-he.json" data/he/parties.json
+          git add data/parties.json data/he/parties.json
           git commit -m "Party register changes for review, $day"
           git push -f origin "$branch"
           gh pr create --base main --head "$branch" --title "Party register: ${{ steps.job.outputs.review }} change(s) for review, $day" \
