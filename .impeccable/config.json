@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-06T02:01:39.550Z",
         "reason": "Site convention: the pull-quote rule in the party colour identifies the speaker's party; interactives.css uses the same 3px rule site-wide and the finish reviewer judged it should stay for consistency (2026-10-05)"
+      },
+      {
+        "rule": "border-accent-on-rounded",
+        "value": "*",
+        "files": [
+          "components/compare.css"
+        ],
+        "createdAt": "2026-10-06T02:33:14.475Z",
+        "reason": "False positive: the list chip sets border-radius: 0; its 4px top bar in the bloc colour is the compare-chip convention DESIGN.md records (Pull Quote Rule: slips and chips carry colour as a top bar)."
       }
     ]
   }
