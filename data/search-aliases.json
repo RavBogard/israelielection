@@ -109,5 +109,31 @@
     "contact",
     "email",
     "Daniel Bogard"
+  ],
+  "bloc:net": [
+    "Netanyahu camp",
+    "Bibi bloc",
+    "right wing bloc",
+    "right-wing bloc",
+    "coalition bloc",
+    "pro Netanyahu"
+  ],
+  "bloc:opp": [
+    "Anti-Netanyahu bloc",
+    "opposition bloc",
+    "change bloc",
+    "anti Bibi",
+    "opposition"
+  ],
+  "bloc:mid": [
+    "Between the blocs",
+    "swing",
+    "unaligned"
+  ],
+  "bloc:arab": [
+    "Arab parties",
+    "Arab bloc",
+    "Arab lists",
+    "Joint List and Raam"
   ]
 }

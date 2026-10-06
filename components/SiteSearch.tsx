@@ -6,7 +6,7 @@ import { searchEntries, type SearchEntry } from "@/lib/search";
 import { NAV_TOOLS, navLabel } from "@/lib/site";
 import "./search.css";
 const KINDS = [["all", "Everything"], ["party", "Parties and leaders"], ["issue", "Issues"], ["community", "Communities"], ["guide", "Guides"], ["glossary", "Glossary"], ["resource", "Tools"]];
-const LABELS = { party: "Current list", issue: "Issue", community: "Community", guide: "Guide", glossary: "Glossary term", resource: "Tool" };
+const LABELS = { party: "Current list", bloc: "Bloc", issue: "Issue", community: "Community", guide: "Guide", glossary: "Glossary term", resource: "Tool" };
 const clipped = (d: string) => { const t = d.length > 180 ? `${d.slice(0, 177).replace(/\s+\S*$/, "")}…` : d; return /[.!?…”)]$/.test(t) ? t : `${t}.`; };
 export default function SiteSearch({ entries }: { entries: SearchEntry[] }) {
   const params = useSearchParams();
@@ -40,6 +40,6 @@ export default function SiteSearch({ entries }: { entries: SearchEntry[] }) {
     {browsing && <ul className="search-tools" aria-label="Main tools">{NAV_TOOLS.map((n) => <li key={n.href}><Link href={n.href}>{navLabel(n)}</Link></li>)}</ul>}
     {!query.trim() && <p className="note">Try <button type="button" className="suggestion" onClick={() => search("Lieberman")}>Lieberman</button>, <button type="button" className="suggestion" onClick={() => search("Meretz")}>Meretz</button> or <button type="button" className="suggestion" onClick={() => search("threshold")}>threshold</button>. Hebrew names work too.</p>}
     {!results.length && <p>No matches. Try a shorter spelling, clear the category filter, or <Link href="/glossary">browse the glossary</Link>.</p>}
-    <ul className="search-results">{shown.map(({ entry, matchedAlias }) => <li key={entry.href}><h2><Link href={entry.href}>{entry.title}</Link></h2><p>{clipped(entry.description)} <span className="search-kind">{LABELS[entry.kind]}</span></p>{matchedAlias && entry.kind === "party" && <p className="note">“{matchedAlias}” is a name or historical connection discussed in this current list’s profile. Earlier parties and today’s electoral list can differ.</p>}</li>)}</ul>
+    <ul className="search-results">{shown.map(({ entry, matchedAlias }) => <li key={`${entry.kind}${entry.href}`}><h2 className={entry.figure ? "search-figure" : undefined}><Link href={entry.href}>{entry.figure ?? entry.title}</Link></h2><p>{clipped(entry.description)} <span className="search-kind">{LABELS[entry.kind]}</span></p>{matchedAlias && entry.kind === "party" && <p className="note">“{matchedAlias}” is a name or historical connection discussed in this current list’s profile. Earlier parties and today’s electoral list can differ.</p>}</li>)}</ul>
   </div>;
 }

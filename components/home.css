@@ -1,4 +1,4 @@
-/* Home: the headline and the 120-seat mosaic and four labeled bloc controls; the reader's path; today's first sentence; the four tools; the two standing invitations. */
+/* Home: the headline and the 120-seat mosaic and four labeled bloc controls; since yesterday; the reader's path; the four tools. */
 .home .wrap { padding-bottom: 48px; }
 .home section h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.1; margin: 0 0 16px; }
 
@@ -50,24 +50,43 @@
 .home .race-parties .sw { flex-shrink: 0; align-self: center; }
 .home .race-party-seats { text-align: right; font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink); }
 .home .race-party-seats small { display: block; font-size: 12px; color: var(--text); margin-top: 2px; }
-.home .race-combined,.home .race-model-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 10px 0 0; }
-.home .race-source { grid-area: source; max-width: 100ch; margin: 0; }
+.home .race-combined,.home .race-model-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 10px 0 0; max-width: 75ch; }
+.home .race-source { grid-area: source; max-width: 75ch; margin: 0; }
 .home .race-context { grid-area: context; margin: 0; font-size: 14px; line-height: 1.5; color: var(--text); }
 .home .race-context a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
 
 /* The reader's path, as one sentence under the hero's rule. */
-.home .start { font-family: var(--display); font-size: 18px; line-height: 1.4; color: var(--text); margin: 0; padding: 14px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.home .start { font-family: var(--display); font-size: 18px; line-height: 1.4; color: var(--text); margin: 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .home .start a { color: var(--ink); font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
-/* Today: the briefing's first sentence, as one line. */
-.home .today { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 8px 64px; align-items: baseline; padding-block: 22px 24px; border-bottom: 1px solid var(--line); }
-.home .today h2 { margin: 0; }
-.home .today h2 .d { font-weight: 400; color: var(--ink-2); margin-left: 10px; }
-.home .today p { font-family: var(--display); font-size: 17.5px; line-height: 1.45; color: var(--text); margin: 0; }
-.home .today .srcs { display: inline-flex; gap: 8px; flex-wrap: wrap; font-family: var(--body); font-size: 12.5px; font-weight: 600; vertical-align: 2px; }
-.home .today .srcs a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line-2); }
-.home .today .srcs a:hover { color: var(--ink); border-color: var(--ink); }
-.home .today .more { grid-column: 2; font-size: 14px; font-weight: 600; color: var(--ink); margin-top: 6px; }
+/* Since yesterday: the newest polls as slips beside one finding, then two briefing sentences. */
+.home .since { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "h h" "polls brief"; gap: 14px 64px; align-items: start; padding-block: 22px 26px; border-top: 1px solid var(--ink); }
+.home .since > h2 { grid-area: h; margin: 0; }
+.home .since-polls { grid-area: polls; min-width: 0; }
+.home .since-none { font-size: 14px; color: var(--text); margin: 0 0 10px; }
+.home .since-slips { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.home .since-slip { display: flex; flex-direction: column; gap: 8px; padding: 12px 14px 4px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 5px solid var(--cell); }
+.home .ss-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 0; font-size: 15px; color: var(--ink); }
+.home .ss-head span { font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+.home .ss-blocs { list-style: none; margin: 0; padding: 0; }
+.home .ss-blocs li { display: flex; align-items: baseline; gap: 7px; font-size: 13px; line-height: 1.3; color: var(--text); padding: 3px 0; }
+.home .ss-blocs .sw { flex: 0 0 auto; align-self: center; }
+.home .ss-blocs b { margin-left: auto; font: 700 16px var(--display); font-variant-numeric: tabular-nums; color: var(--ink); }
+.home .ss-blocs li.maj { color: var(--ink); font-weight: 600; }
+.home .ss-blocs li.maj b { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.home .ss-maj { margin: 0; font-size: 13px; font-weight: 600; color: var(--ink); }
+.home .ss-src { display: inline-flex; align-items: center; min-height: 44px; align-self: flex-start; font-size: 13px; font-weight: 600; color: var(--ink-2); text-underline-offset: 3px; border-top: 1px solid var(--line); width: 100%; }
+.home .since-finding { font-family: var(--display); font-size: 17.5px; line-height: 1.45; color: var(--text); margin: 14px 0 0; max-width: 75ch; }
+.home .since-finding a { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--ink); white-space: nowrap; text-underline-offset: 3px; }
+.home .since-brief { grid-area: brief; min-width: 0; }
+.home .since-brief h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 0 0 6px; }
+.home .since-brief ul { list-style: none; margin: 0; padding: 0; }
+.home .since-brief li { font-family: var(--display); font-size: 16.5px; line-height: 1.45; color: var(--text); padding: 8px 0; border-top: 1px solid var(--line); max-width: 75ch; }
+.home .since-brief .srcs { display: inline-flex; gap: 8px; flex-wrap: wrap; font-family: var(--body); font-size: 12.5px; font-weight: 600; vertical-align: 1px; }
+.home .since-brief .srcs a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line-2); }
+.home .since-brief .srcs a:hover { color: var(--ink); border-color: var(--ink); }
+.home .since-brief .more { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--ink); text-underline-offset: 3px; }
+.home .race-cite { margin: 10px 0 0; }
 
 /* Try it: the four interactives, each with its own picture drawn from the data. */
 .home .tools { padding-block: 28px 32px; border-bottom: 1px solid var(--line); }
@@ -96,18 +115,10 @@
 .gl-votemap .v5 { fill: none; stroke: color-mix(in oklab, var(--ink) 70%, var(--sheet)); }
 .gl-votemap .v6 { fill: none; stroke: color-mix(in oklab, var(--ink) 88%, var(--sheet)); }
 
-/* The two standing invitations, side by side. */
-.home .standing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 64px; padding-top: 28px; }
-.home .standing a { display: flex; flex-direction: column; gap: 6px; padding-top: 12px; border-top: 1px solid var(--ink); color: var(--ink); text-decoration: none; max-width: 52ch; }
-.home .standing a:hover .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.home .standing .t { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.1; }
-.home .standing .p { font-size: 14px; line-height: 1.45; color: var(--ink-2); }
-
 @media (max-width: 1000px) {
   .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "basis" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
   .home .race-visual { max-width: 640px; width: 100%; }
-  .home .today { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .home .today .more { grid-column: 1; }
+  .home .since { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "polls" "brief"; gap: 14px; }
   .home .tools ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
@@ -126,7 +137,6 @@
   .home .tools ul { gap: 18px 16px; }
   .home .tools .t { font-size: 19px; }
   .home .tools .p { font-size: 13px; }
-  .home .standing { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 }
 
 /* After polls close, until the count is past early: the hero is the channels' exit polls (components/results/ExitPollBars.tsx). */

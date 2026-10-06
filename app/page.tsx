@@ -10,8 +10,11 @@ import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
 import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
-import { mediumDate } from "@/lib/format";
-import { isExit, pollLabel } from "@/lib/polls";
+import { mediumDate, shortDate } from "@/lib/format";
+import { isExit, pollLabel, seatFigure } from "@/lib/polls";
+import { citeText, findingSentence, israelDate, noNewLabel, pollSlip, sincePolls, type Slip } from "@/lib/home-since";
+import CiteButton from "@/components/CiteButton";
+import SeatBar from "@/components/SeatBar";
 import { blocChange, blocSeries, newestPoll } from "@/lib/bloc-change";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsNow, resultsConfig } from "@/lib/results-live";
@@ -44,42 +47,51 @@ function ExitHero({ n }: { n: Night }) {
 /** Current modeled seats, with election-night freshness preserved. */
 function Race({poll,live,days,phase}:{poll:Poll;live:boolean;days:number;phase:Night["phase"]}){
  const pollsters=mainPolls.map(p=>p.pollster).join(", "),newest=live?null:newestPoll(allPolls),change=live?null:blocChange(blocSeries(pollsData.polls,parties,pollsData.config));
- return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase,days)}</h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p></div><div className="race-meta"><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p>{newest&&<p className="race-newest">Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link></p>}</div>
- <HomeRace model={homeRaceModel(poll,parties,blocs)} change={change}/>
+ const model=homeRaceModel(poll,parties,blocs),net=model.rows.find(r=>r.id==="net")!,cite=live||phase!=="before"?null:citeText(poll,mainPolls.length,net.label,net.seats);
+ return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase,days)}</h1><p className="standfirst">{live?"The count so far, translated into estimated Knesset seats.":"Where the race stands, translated into modeled Knesset seats."} {MAJORITY} of {KNESSET} seats is an absolute majority.</p></div><div className="race-meta"><p className="race-basis">{live?poll.resultState?.freshness==="stale"?"Saved count, stale":"Count so far":`Normalized coalition average, ${mainPolls.length} current polls`}</p>{newest&&<p className="race-newest">Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link></p>}{cite&&<p className="race-cite"><CiteButton text={cite}/></p>}</div>
+ <HomeRace model={model} change={change}/>
  <p className="race-source fig-src">{live?<>{poll.resultState?.freshness==="stale"&&<b>Saved count (stale). </b>}Central Elections Committee; seats are this site’s estimate from votes counted so far. Captured {poll.resultState?.capturedAt??poll.published}. Source updated {poll.resultState?.sourceUpdatedAt??"at an unrecorded time"}. <Link href="/results">Full results and count method</Link>.</>:<>One latest eligible poll per publisher ({pollsters}), through {mediumDate(mainPolls[0].published)}. Square-root sample-size weighting, normalized coalition values; seats can be fractional.{change&&<> Change is against the average as it stood on {mediumDate(change.since)}, the last poll date at least a week before the newest.</>} <Link href="/polls#method">Average method</Link>.</>}</p>
  <p className="race-context">Explore the <Link href="/parties">Party Map</Link> or try an arrangement in the <Link href="/coalition-builder">Coalition Builder</Link>.</p>
  </section>;
 }
 
-/** Today's date in Israel, as YYYY-MM-DD, so a briefing from an earlier day is not called today's. */
-const israelToday = () => new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Jerusalem" }).format(new Date());
-
-/** The latest briefing's first sentence, with its sources, as one line. */
-function Today() {
-  const b = briefings[0];
-  const s = b?.sentences[0];
-  if (!b || !s) return null;
-  const date = new Date(`${b.date}T12:00:00Z`);
-  const label = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(date);
+/** Since yesterday: the newest polls as slips with one finding from the current polls, then the briefing's first two sentences. */
+function Since({ now }: { now: number }) {
+  const today = israelDate(now), { polls, fresh } = sincePolls(allPolls, today);
+  const finding = findingSentence(mainPolls, parties, blocs), b = briefings[0];
+  const briefDate = b ? new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${b.date}T12:00:00Z`)) : "";
   return (
-    <section className="today" aria-labelledby="today-h">
-      <h2 id="today-h">
-        {b.date === israelToday() ? "Today" : "Latest briefing"} <span className="d">{label}</span>
-      </h2>
-      <p>
-        {s.text}{" "}
-        <span className="srcs">
-          {s.sources.map((src, k) => (
-            <a key={k} href={src.url} title={src.title}>
-              {src.outlet}
-            </a>
-          ))}
-        </span>
-      </p>
-      <Link href="/news" className="more">
-        Full briefing and the latest headlines
-      </Link>
+    <section className="since" aria-labelledby="since-h">
+      <h2 id="since-h">Since yesterday</h2>
+      <div className="since-polls">
+        {!fresh && <p className="since-none">{noNewLabel(polls[0])}. The newest:</p>}
+        <ul className="since-slips">{polls.map((p) => <PollSlip key={p.id} slip={pollSlip(p, parties, blocs)} />)}</ul>
+        {finding && <p className="since-finding">{finding} <Link href="/polls">Every poll and the average</Link></p>}
+      </div>
+      {b && b.sentences.length > 0 && (
+        <div className="since-brief">
+          <h3>{b.date === today ? "Today’s briefing" : `Briefing, ${briefDate}`}</h3>
+          <ul>{b.sentences.slice(0, 2).map((s, i) => <li key={i}>{s.text} <span className="srcs">{s.sources.map((src, k) => <a key={k} href={src.url} title={src.title}>{src.outlet}</a>)}</span></li>)}</ul>
+          <Link href="/news" className="more">Full briefing</Link>
+        </div>
+      )}
     </section>
+  );
+}
+
+const slipLabel = (label: string) => label.replace(/\s*\(.*\)$/, "");
+/** A single poll reports whole seats; keep a decimal only where a poll itself has one. */
+const pollSeats = (s: number) => (Number.isInteger(s) ? String(s) : seatFigure(s));
+function PollSlip({ slip }: { slip: Slip }) {
+  const label = `${slip.label}, ${mediumDate(slip.date)}: ${slip.blocs.map((b) => `${slipLabel(b.label)} ${pollSeats(b.seats)}`).join(", ")}`;
+  return (
+    <li className="since-slip">
+      <p className="ss-head"><b>{slip.label}</b> <span>{shortDate(slip.date)}</span></p>
+      <SeatBar segments={slip.blocs.map((b) => ({ key: b.id, seats: b.seats, color: `var(--b-${b.id})` }))} label={label} />
+      <ul className="ss-blocs">{slip.blocs.map((b) => <li key={b.id} className={b.majority ? "maj" : undefined}><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{slipLabel(b.label)}<b>{pollSeats(b.seats)}</b></li>)}</ul>
+      {slip.majority.length > 0 && <p className="ss-maj">{slip.blocs.filter((b) => b.majority).map((b) => slipLabel(b.label)).join(" and ")} at {MAJORITY} or more</p>}
+      {slip.url && <a className="ss-src" href={slip.url}>Source</a>}
+    </li>
   );
 }
 
@@ -97,12 +109,12 @@ export default async function Page() {
       <div className="wrap">
         {hero === "exit" ? <ExitHero n={n} /> : <Race poll={poll} live={!!results} days={days} phase={n.phase} />}
 
+        {n.phase === "before" && <Since now={now} />}
+
         <p className="start">
           New here? <Link href="/start">Take a short guided route</Link>, or go straight to <Link href="/how-it-works">how it works</Link>,{" "}
           <Link href="/parties">the parties</Link> and <Link href="/how-it-works/who-votes">who votes</Link>.
         </p>
-
-        <Today />
 
         <section className="tools" aria-labelledby="tools-h">
           <h2 id="tools-h">Try it</h2>
@@ -137,13 +149,6 @@ export default async function Page() {
             </li>
           </ul>
         </section>
-
-        <nav className="standing" aria-label="About">
-          <Link href="/about">
-            <span className="t">About and method</span>
-            <span className="p">Why this site exists, where its information comes from, and how to correct it.</span>
-          </Link>
-        </nav>
       </div>
     </div>
   );
