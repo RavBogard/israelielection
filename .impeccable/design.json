@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T23:00:00Z",
+  "title": "Design System: Israel Votes 2026",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f6f5f1",
+        "tonalRamp": [
+          "#12120f",
+          "#2a2926",
+          "#43423f",
+          "#646360",
+          "#878683",
+          "#acaba7",
+          "#d1d1cf",
+          "#efeeec"
+        ]
+      },
+      "sheet": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#121212",
+          "#292929",
+          "#424242",
+          "#636363",
+          "#868686",
+          "#ababab",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "cell": {
+        "role": "neutral",
+        "displayName": "Empty Cell",
+        "canonical": "#e4e2db"
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Ballot Black",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "#121212",
+          "#292929",
+          "#424242",
+          "#636363",
+          "#868686",
+          "#ababab",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Prose Ink",
+        "canonical": "#2a2925",
+        "tonalRamp": [
+          "#13120e",
+          "#2a2925",
+          "#43423e",
+          "#64635f",
+          "#878681",
+          "#acaba6",
+          "#d2d1ce",
+          "#efeeeb"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#5f5d57",
+        "tonalRamp": [
+          "#13110d",
+          "#2b2923",
+          "#44423d",
+          "#65635d",
+          "#888680",
+          "#adaba4",
+          "#d2d1cd",
+          "#f0eeea"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Tertiary Ink",
+        "canonical": "#8b8880"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dedcd5",
+        "tonalRamp": [
+          "#13120d",
+          "#2a2924",
+          "#44423d",
+          "#65635d",
+          "#888680",
+          "#adaba4",
+          "#d2d1cd",
+          "#f0eeea"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#bdbab1"
+      },
+      "bloc-net": {
+        "role": "secondary",
+        "displayName": "Coalition Navy",
+        "canonical": "#233f86",
+        "tonalRamp": [
+          "#010047",
+          "#092064",
+          "#213c83",
+          "#405fa9",
+          "#6183d1",
+          "#84a9f9",
+          "#b9d1ff",
+          "#d6efff"
+        ]
+      },
+      "bloc-opp": {
+        "role": "secondary",
+        "displayName": "Opposition Amber",
+        "canonical": "#d98a1f",
+        "tonalRamp": [
+          "#350000",
+          "#530800",
+          "#722a00",
+          "#974d00",
+          "#bf7100",
+          "#e79732",
+          "#f8c793",
+          "#ffe4b0"
+        ]
+      },
+      "bloc-mid": {
+        "role": "secondary",
+        "displayName": "Between Teal",
+        "canonical": "#3fb0a2",
+        "tonalRamp": [
+          "#001d16",
+          "#00372e",
+          "#005348",
+          "#007669",
+          "#209a8d",
+          "#52c0b2",
+          "#a4dfd5",
+          "#c1fdf3"
+        ]
+      },
+      "bloc-arab": {
+        "role": "secondary",
+        "displayName": "Arab-led Violet",
+        "canonical": "#8d4fae",
+        "tonalRamp": [
+          "#270040",
+          "#41005d",
+          "#5d1d7b",
+          "#8143a1",
+          "#a567c8",
+          "#cc8cf0",
+          "#e6c0fd",
+          "#ffddff"
+        ]
+      },
+      "stance-ramp-start": {
+        "role": "tertiary",
+        "displayName": "Stance Ramp, coalition end",
+        "canonical": "#233f86",
+        "tonalRamp": [
+          "color-mix(in oklab, #233f86 100%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 89%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 77%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 66%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 54%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 43%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 31%, #dfe6f5)",
+          "color-mix(in oklab, #233f86 20%, #dfe6f5)"
+        ]
+      },
+      "stance-ramp-end": {
+        "role": "tertiary",
+        "displayName": "Stance Ramp, mix endpoint",
+        "canonical": "#dfe6f5"
+      },
+      "tint-base": {
+        "role": "tertiary",
+        "displayName": "Figure Tint Base",
+        "canonical": "#e9ecf2"
+      },
+      "party-fallback": {
+        "role": "tertiary",
+        "displayName": "Unlisted Party Grey",
+        "canonical": "#8c939b"
+      },
+      "map-low-dark": {
+        "role": "tertiary",
+        "displayName": "Map Low (dark)",
+        "canonical": "#2a2d33"
+      }
+    },
+    "typographyMeta": {
+      "display-hero": {
+        "displayName": "Display hero",
+        "purpose": "Home headline only."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page titles in the page head and the profile running head."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section heads on a 1px ink top rule."
+      },
+      "standfirst": {
+        "displayName": "Standfirst",
+        "purpose": "The sentence under every page title, prose ink, 62ch."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Notes and reading text, 72ch."
+      },
+      "figure-number": {
+        "displayName": "Figure number",
+        "purpose": "At-a-glance numbers and big counts, tabular."
+      },
+      "ballot-letters": {
+        "displayName": "Ballot letters",
+        "purpose": "Hebrew list letters on slips, drawer and running head."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Interface text, controls, tables."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Sentence-case labels, never all caps."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Source lines and meta in ink-3; 12.5px inside figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "drawer",
+        "value": "-16px 0 48px rgb(0 0 0 / .22)",
+        "purpose": "The profile drawer over its scrim only; dark mode uses rgb(0 0 0 / .6); removed on phones."
+      }
+    ],
+    "motion": [
+      {
+        "name": "seat-fill",
+        "value": "opacity 0 to 1, .32s, 6ms stagger per cell",
+        "purpose": "Home hero grid fills once on load; off under reduced motion."
+      },
+      {
+        "name": "drawer-slide",
+        "value": ".2s ease-out",
+        "purpose": "Profile drawer entry; off under reduced motion."
+      },
+      {
+        "name": "hairline-hover",
+        "value": "border-color .12s",
+        "purpose": "Slip and stance-tile edges turning ink on hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tiles-two",
+        "value": "520px"
+      },
+      {
+        "name": "spread-stack",
+        "value": "860px"
+      },
+      {
+        "name": "masthead-collapse",
+        "value": "900px"
+      },
+      {
+        "name": "panel-unstick",
+        "value": "1100px"
+      },
+      {
+        "name": "wrap",
+        "value": "1200px"
+      },
+      {
+        "name": "wide",
+        "value": "1320px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Ink-outlined control with a 4px radius; fills ink on hover.",
+      "html": "<button class=\"ds-btn\">Reset</button>",
+      "css": ".ds-btn { font-family: var(--body); font-size: 14.5px; font-weight: 600; line-height: 1.2; border: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 8px 14px; border-radius: 4px; cursor: pointer; } .ds-btn:hover { background: var(--ink); color: var(--bg); } .ds-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ink-filled control for the one primary action.",
+      "html": "<button class=\"ds-btn-primary\">Open the Builder</button>",
+      "css": ".ds-btn-primary { font-family: var(--body); font-size: 14.5px; font-weight: 600; line-height: 1.2; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 4px; cursor: pointer; } .ds-btn-primary:hover { background: var(--ink-2); border-color: var(--ink-2); } .ds-btn-primary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
+    },
+    {
+      "name": "Segmented control",
+      "kind": "chip",
+      "refersTo": "segmented",
+      "description": "Poll source picker: one ink frame, hairline dividers, selected option inverted.",
+      "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">Average<small>14 polls</small></button><button aria-pressed=\"false\">Kan 11<small>2 Oct</small></button><button aria-pressed=\"false\">Maariv<small>3 Oct</small></button></div>",
+      "css": ".ds-seg { display: inline-flex; border: 1px solid var(--ink); border-radius: 4px; overflow: hidden; background: var(--sheet); } .ds-seg button { font-family: var(--body); font-size: 14px; font-weight: 500; line-height: 1.2; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink); padding: 7px 12px; text-align: left; cursor: pointer; } .ds-seg button:last-child { border-right: 0; } .ds-seg button:hover { background: var(--bg); } .ds-seg button small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-3); font-variant-numeric: tabular-nums; } .ds-seg button[aria-pressed=\"true\"] { background: var(--ink); color: var(--bg); font-weight: 600; } .ds-seg button[aria-pressed=\"true\"] small { color: var(--bg); opacity: .75; } .ds-seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }"
+    },
+    {
+      "name": "Masthead navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Grouped disclosure menus under the nameplate; active section on a 2px ink rule.",
+      "html": "<nav class=\"ds-nav\"><button class=\"ds-nav-trigger active\" aria-expanded=\"false\"><span>Explore <i class=\"ds-caret\"></i></span><small>Coalition Builder, Party Map</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Follow <i class=\"ds-caret\"></i></span><small>Polls, News, Results</small></button><button class=\"ds-nav-trigger\" aria-expanded=\"false\"><span>Understand <i class=\"ds-caret\"></i></span><small>How it works, Issues, Communities</small></button></nav>",
+      "css": ".ds-nav { display: flex; border-top: 1px solid var(--line); border-bottom: 1px solid var(--ink); background: var(--bg); } .ds-nav-trigger { flex: 1; min-height: 66px; background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 10px 12px; color: var(--ink); text-align: left; font: 600 15px var(--body); cursor: pointer; } .ds-nav-trigger + .ds-nav-trigger { border-left: 1px solid var(--line); } .ds-nav-trigger span { display: flex; align-items: center; gap: 10px; } .ds-nav-trigger small { display: block; font-size: 11.5px; font-weight: 400; color: var(--text); margin-top: 4px; } .ds-nav-trigger.active { border-bottom-color: var(--ink); } .ds-nav-trigger:hover, .ds-nav-trigger[aria-expanded=\"true\"] { background: var(--sheet); } .ds-nav-trigger:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); margin-top: -3px; }"
+    },
+    {
+      "name": "Seat grid",
+      "kind": "custom",
+      "refersTo": "seat-grid",
+      "description": "120 seats, 12 across, heavy rule under row five so the next cell is the 61st.",
+      "html": "<svg class=\"ds-sg\" viewBox=\"0 0 164 120\" role=\"img\" aria-label=\"Netanyahu bloc 53, Zionist opposition 51, between 3, Arab-led 13; 61 of 120 is a majority\"><defs><pattern id=\"ds-n\" width=\"12\" height=\"12\" patternUnits=\"userSpaceOnUse\"><rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" fill=\"var(--b-net)\"/></pattern><pattern id=\"ds-o\" width=\"12\" height=\"12\" patternUnits=\"userSpaceOnUse\"><rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" fill=\"var(--b-opp)\"/></pattern><pattern id=\"ds-m\" width=\"12\" height=\"12\" patternUnits=\"userSpaceOnUse\"><rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" fill=\"var(--b-mid)\"/></pattern><pattern id=\"ds-a\" width=\"12\" height=\"12\" patternUnits=\"userSpaceOnUse\"><rect x=\"1\" y=\"1\" width=\"10\" height=\"10\" fill=\"var(--b-arab)\"/></pattern></defs><rect x=\"0\" y=\"0\" width=\"144\" height=\"48\" fill=\"url(#ds-n)\"/><rect x=\"0\" y=\"48\" width=\"60\" height=\"12\" fill=\"url(#ds-n)\"/><rect x=\"60\" y=\"48\" width=\"84\" height=\"12\" fill=\"url(#ds-o)\"/><rect x=\"0\" y=\"60\" width=\"144\" height=\"36\" fill=\"url(#ds-o)\"/><rect x=\"0\" y=\"96\" width=\"96\" height=\"12\" fill=\"url(#ds-o)\"/><rect x=\"96\" y=\"96\" width=\"36\" height=\"12\" fill=\"url(#ds-m)\"/><rect x=\"132\" y=\"96\" width=\"12\" height=\"12\" fill=\"url(#ds-a)\"/><rect x=\"0\" y=\"108\" width=\"144\" height=\"12\" fill=\"url(#ds-a)\"/><line class=\"rule\" x1=\"0\" x2=\"147\" y1=\"60\" y2=\"60\"/><text class=\"rl\" x=\"149\" y=\"62.4\" dominant-baseline=\"middle\">61</text></svg>",
+      "css": ".ds-sg { display: block; width: 240px; height: auto; overflow: visible; } .ds-sg .rule { stroke: var(--ink); stroke-width: 2.4; } .ds-sg .rl { font-family: var(--display); font-weight: 700; font-size: 7.5px; fill: var(--ink); }"
+    },
+    {
+      "name": "Ballot slip",
+      "kind": "card",
+      "refersTo": "slip",
+      "description": "The party card: square sheet, top bar in the fill colour, Hebrew letters, seats bottom.",
+      "html": "<div class=\"ds-slip\" style=\"--fill:#245b94;--fill-ink:#ffffff\"><button class=\"ds-face\"><span class=\"ds-letters\" lang=\"he\">מחל</span><span class=\"ds-nm\">Likud</span><span class=\"ds-ld\">Benjamin Netanyahu</span><span class=\"ds-seats\">25<small>seats</small></span></button><div class=\"ds-foot\"><a href=\"#\">Profile</a></div></div>",
+      "css": ".ds-slip { display: flex; flex-direction: column; width: 190px; min-height: 190px; background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); border-top: 5px solid var(--fill); border-radius: 0; transition: border-color .12s; } .ds-slip:hover { border-color: var(--ink); border-top-color: var(--fill); } .ds-face { font: inherit; text-align: left; background: transparent; color: inherit; border: 0; padding: 14px 14px 8px; display: flex; flex-direction: column; flex: 1; gap: 2px; cursor: pointer; } .ds-face:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-letters { font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; margin-bottom: 10px; } .ds-nm { font-family: var(--body); font-weight: 700; font-size: 16.5px; line-height: 1.2; } .ds-ld { font-family: var(--body); font-size: 13.5px; color: var(--ink-2); } .ds-seats { margin-top: auto; padding-top: 12px; display: flex; align-items: baseline; gap: 7px; font-family: var(--display); font-weight: 700; font-size: 36px; line-height: .9; font-variant-numeric: tabular-nums; } .ds-seats small { font-family: var(--body); font-weight: 500; font-size: 12.5px; color: var(--ink-3); } .ds-foot { padding: 6px 14px 10px; border-top: 1px dashed var(--line); } .ds-foot a { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; } .ds-foot a:hover { text-decoration-color: currentColor; }"
+    },
+    {
+      "name": "Stance tile",
+      "kind": "card",
+      "refersTo": "stance-tile",
+      "description": "One issue: a bar in the shared ordinal ramp (ink when the options are not a scale), the issue, the stance, the basis.",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 47%, #dfe6f5)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
+      "css": ".ds-tiles { display: grid; grid-template-columns: repeat(4, 150px); gap: 8px; } .ds-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; color: var(--ink); font: inherit; cursor: pointer; transition: border-color .12s; } .ds-tile:hover { border-color: var(--ink); } .ds-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); } .ds-issue { font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; } .ds-stance { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.2; } .ds-basis { margin-top: auto; font-family: var(--body); font-size: 11px; color: var(--ink-3); } .ds-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; } .ds-tile.open .ds-bar { margin: 0 -8px 2px; } .ds-tile.open::after { content: \"\"; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } .ds-tile.nf { border-style: dashed; } .ds-tile.nf .ds-bar { background: transparent; border-bottom: 1px dashed var(--line-2); height: 8px; } .ds-tile.nf .ds-stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }"
+    },
+    {
+      "name": "At a glance with majority bar",
+      "kind": "custom",
+      "refersTo": "glance-cell",
+      "description": "Four figure numbers in a hairline grid; the bloc cell carries the 120-seat bar with the ink tick at 61.",
+      "html": "<dl class=\"ds-glance\"><div><dd>25.4</dd><dt>Seats in the average</dt><small>14 polls, 21 Sep to 4 Oct</small></div><div><dd>14<span class=\"of\"> of 14</span></dd><dt>Polls it passes</dt><small>never near the threshold</small></div><div><dd>32</dd><dt>Seats in 2022</dt><small>23.4% of the vote</small></div><div><dd>53<span class=\"of\"> of 61</span></dd><dt>Netanyahu bloc</dt><span class=\"ds-maj\" role=\"img\" aria-label=\"53 of 120 seats; a majority is 61.\"><i style=\"width:44.2%;background:var(--b-net)\"></i><b style=\"left:50.83%\"></b></span><small>8 short of 61</small></div></dl>",
+      "css": ".ds-glance { display: grid; grid-template-columns: 1fr 1fr; width: 420px; margin: 0; border-top: 1px solid var(--line-2); border-left: 1px solid var(--line-2); } .ds-glance > div { padding: 14px 14px 12px; border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2); } .ds-glance dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; } .ds-glance dd .of { font-size: 18px; font-weight: 500; color: var(--ink-2); } .ds-glance dt { margin-top: 8px; font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink); } .ds-glance small { display: block; font-family: var(--body); font-size: 12.5px; line-height: 1.35; color: var(--ink-3); margin-top: 2px; } .ds-maj { display: block; position: relative; height: 10px; background: var(--cell); margin-top: 8px; } .ds-maj i { display: block; height: 100%; } .ds-maj b { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }"
+    },
+    {
+      "name": "Sources",
+      "kind": "custom",
+      "refersTo": "sources",
+      "description": "End-of-page disclosure on an ink rule; numbered citations.",
+      "html": "<details class=\"ds-sources\" open><summary>Sources <span class=\"n\">3</span><span class=\"hint\">Hide</span></summary><ol><li>Central Elections Committee, results of the 25th Knesset, 2022.</li><li>Israel Democracy Institute, voter survey, 2022.</li><li>Kan 11 poll, 2 October 2026.</li></ol></details>",
+      "css": ".ds-sources { border-top: 1px solid var(--ink); max-width: 640px; } .ds-sources summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 12px; padding: 14px 0; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); } .ds-sources summary::-webkit-details-marker { display: none; } .ds-sources summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-sources .n { font-family: var(--body); font-weight: 500; font-size: 14px; color: var(--ink-3); } .ds-sources .hint { margin-left: auto; font-family: var(--body); font-weight: 500; font-size: 13.5px; color: var(--ink-2); } .ds-sources ol { margin: 0 0 8px; padding-left: 22px; display: grid; gap: 6px; font-family: var(--body); font-size: 13.5px; line-height: 1.5; color: var(--ink-2); } .ds-sources li::marker { font-variant-numeric: tabular-nums; color: var(--ink-3); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Shape of a Majority",
+    "overview": "An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.\n\nColour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where a stance sits on an issue. A page with no data on it is black and white.\n\nDensity is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.",
+    "keyCharacteristics": [
+      "120-seat grid, 12 across, heavy rule under row five so the next cell is the 61st.",
+      "Party cards are ballot slips: square sheet, hairline edge, colour bar on top, Hebrew letters in Frank Ruhl 900.",
+      "Frank Ruhl Libre carries display, numbers and reading prose; Public Sans carries labels, controls, tables and captions.",
+      "Square, flat paper; 4px only on controls; one drawer shadow in the whole system.",
+      "Colour appears only where it encodes data."
+    ],
+    "rules": [
+      {
+        "name": "The Colour Is Data Rule",
+        "body": "A colour appears only where it encodes a bloc, a list or a stance position. Chrome, headings, links and buttons are ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fixed Endpoints Rule",
+        "body": "Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No all-caps labels and no tracking-out. Labels are Public Sans 600 13px, sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Numbers Rule",
+        "body": "Every number that can be compared (tables, meters, seat counts, glance figures, source list markers) uses tabular numerals.",
+        "section": "typography"
+      },
+      {
+        "name": "The Plain Headline Rule",
+        "body": "Headlines carry no eyebrow above them and no single accented word.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Paper Rule",
+        "body": "Sheets, slips, tiles, panels and grid cells take no shadow. Lift is a hairline (line-2) on sheet white; hover is the hairline turning ink.",
+        "section": "elevation"
+      },
+      {
+        "name": "The 61 Rule",
+        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar. A heavy rule anywhere else is wrong.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Pull Quote Rule",
+        "body": "The only left-edge colour rule is the 3px party-colour rule on a pull quote (ink when no party colour applies). Slips and party letter boxes carry their colour as a top bar instead (5px slip, 4px compare chip and drawer letters).",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do draw any count of the Knesset as the 120-seat grid or a 120-seat bar, with the heavy ink rule at 61.",
+      "Do keep colour to data: bloc colours for blocs, the list's own colour for that list, the stance ramp for stance positions.",
+      "Do pick text on a party or bloc fill by luminance (partyInk or the `-ink` tokens).",
+      "Do set every page head as title, then standfirst, inside the 1200px wrapper on the shared left edge.",
+      "Do put a figure beside the sentences it illustrates, with a label on an ink rule and a dated source line.",
+      "Do use 0 radius on paper and 4px on controls.",
+      "Do fold sources into the end-of-page disclosure, open by default on single-subject pages.",
+      "Do use dashed strokes to mean absent, out or reference."
+    ],
+    "donts": [
+      "Don't set labels in all caps or tracked-out caps.",
+      "Don't put an eyebrow or kicker above a headline.",
+      "Don't append arrows to links.",
+      "Don't build meta lines as middle-dot strings.",
+      "Don't number items (01/02/03) unless the content is a sequence; list slot numbers and source citations are data, not markers.",
+      "Don't draw a heavy rule that does not mean 61.",
+      "Don't use a coloured left rule anywhere but the 3px party-colour rule on a pull quote.",
+      "Don't add shadows to paper; the drawer is the only shadow.",
+      "Don't draw the Knesset as a hemicycle.",
+      "Don't colour chrome, headings or buttons."
+    ]
+  }
+}

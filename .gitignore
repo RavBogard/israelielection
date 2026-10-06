@@ -64,3 +64,8 @@ docs/research/HANDOFF-RESEARCH.md
 .github/skills/impeccable/scripts/bin/
 # Personal Claude Code settings
 .claude/settings.local.json
+
+# impeccable working files (decision hands, review captures, mocks)
+.impeccable/mocks/
+.impeccable/questions/
+.impeccable/review/
