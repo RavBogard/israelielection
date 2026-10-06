@@ -12,10 +12,10 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - After the election: vote-map 2026 lens, Party Map coalition board, community party colours.
 
 ## Waves
-- [ ] Wave 1a Election night: phases (closed, exit polls, early count, count), home after close, /results order, waiting state, legend in bloc colours, stale edge, early-count hatch
-- [ ] Wave 1b Builder: two-row meter with verdict, verdict and pledges under the meter, governing summary, roles only for chosen parties, live region, Paths to 61
-- [ ] Wave 1c Fix batch A: Compare chips and smooth scroll, ChartViz aria, Article rounding and split-bar labels, vote map ramp, touch, wheel, dark, export overflow
-- [ ] Wave 1d Fix batch B: tokens (dark navy, touch targets, footer columns, fig-src measure), news heading and brief rule, /start order, party sparkline text, embeds, search title, article title size, metadata (canonical, titles, RSS link, theme-color)
+- [x] Wave 1a Election night: phases (closed, exit polls, early count, count), home after close, /results order, waiting state, legend in bloc colours, stale edge, early-count hatch
+- [x] Wave 1b Builder: two-row meter with verdict, verdict and pledges under the meter, governing summary, roles only for chosen parties, live region, Paths to 61
+- [x] Wave 1c Fix batch A: Compare chips and smooth scroll, ChartViz aria, Article rounding and split-bar labels, vote map ramp, touch, wheel, dark, export overflow
+- [x] Wave 1d Fix batch B: tokens (dark navy, touch targets, footer columns, fig-src measure), news heading and brief rule, /start order, party sparkline text, embeds, search title, article title size, metadata (canonical, titles, RSS link, theme-color)
 - [ ] Wave 1e Evidence research rounds (positions and comparison questions)
 - [ ] Wave 2 Since yesterday home, cite, figures in search; polls desk; lean masthead
 - [ ] Wave 3 Explainer pictures, election on one page, locator maps; apply research
@@ -23,3 +23,7 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 
 ## Decisions
 - GATE: notation for unstated positions — proceeded with basis "unstated" shown as "Not said publicly" plus its basis line, because Daniel asked for the notation and the existing "record" basis sets the pattern; label is his to change.
+- GATE: election-night thresholds — early count while counted localities hold under 10% of the voter roll (2022 roll until the 2026 roll is published); "waiting" until 02:00 Israel time; results seat grid recoloured to bloc colours to match its legend. Proceeded because they follow the audit and are reversible. Rehearsed exit and count phases with RESULTS_NOW and the 2022 fixture.
+- GATE: Paths to 61 opens "With Likud" (plain arithmetic order) — proceeded; toggle shows the alternative. Pledge rules lacked the refusals to serve under Netanyahu, so conflict-free paths were misleading; a follow-up adds sourced rules and ranks conflict-free paths first.
+- Open for Daniel: Shas West Bank row (co-sponsored the July 2025 sovereignty motion, absent on the binding bill, like Likud's settle-no-annex) — change both or neither.
+- Open for Daniel: exit polls must be entered on the night (kind "exit", pollster "Kan 11" / "Channel 12" / "Channel 13", broadcastAt); no job fetches them.
