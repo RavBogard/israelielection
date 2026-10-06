@@ -281,7 +281,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         <div>
           <Title className="h1">Build a coalition</Title>
           <p className="sub">
-            Tap a ballot slip to add a cabinet partner. <b>{MAJORITY}</b> of {KNESSET} seats is a majority; every arrangement here is hypothetical.
+            Tap a ballot slip to add a cabinet partner; <b>{MAJORITY}</b> of {KNESSET} seats is a majority.
           </p>
           {preset && presetIds.length > 0 && (
             <p className="preset">
@@ -310,13 +310,13 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
       <section className="arrangement-scenarios" aria-label="Explore a hypothetical arrangement">
         <p>Try a governing arrangement</p>
         <div>{scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}</div>
-        {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="src"><a href={scenario.url}>{scenario.source}</a> · Research checked {scenarioData.updated}. Pledge sources appear with each warning.</p></div>}
+        {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="src"><a href={scenario.url}>{scenario.source}</a>, Research checked {scenarioData.updated}. Pledge sources appear with each warning.</p></div>}
       </section>
 
       <div className="layout">
         <div className="mobile-arrangement" aria-live="polite">
-          <span><b>{fmt(t.total)}</b> cabinet seats · <b>{fmt(vote.yes)}</b> for / <b>{fmt(vote.no)}</b> against</span>
-          <a href="#arrangement-result">View arrangement ↓</a>
+          <span><b>{fmt(t.total)}</b> cabinet seats, <b>{fmt(vote.yes)}</b> for / <b>{fmt(vote.no)}</b> against</span>
+          <a href="#arrangement-result">View the arrangement</a>
         </div>
         <div className="blocs">
           {blocs.map((b) => (

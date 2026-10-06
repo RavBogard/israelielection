@@ -29,7 +29,7 @@ export default function Page() {
     <div className="wrap article-page timeline-page">
       <header className="page-head">
         <h1>Timeline, 1977–2026</h1>
-        <p className="standfirst">Every prime minister, every Knesset election and {data.events.length} events since Likud&apos;s first win. Drag along the line.</p>
+        <p className="standfirst">Every prime minister, every Knesset election and {data.events.length} events since Likud&apos;s first win.</p>
       </header>
 
       <Timeline data={data} electionDay={results.election} />

@@ -18,7 +18,7 @@ export default function Page() {
     <div className="ix">
       <div className="wrap">
         <PartyMap />
-        <p><Link href="/party-history">Explore the party family tree</Link> · <Link href="/ballot">All 38 published ballot lists</Link></p>
+        <p><Link href="/party-history">Explore the party family tree</Link> or see <Link href="/ballot">all 38 published ballot lists</Link>.</p>
         <SourcesBox count={allPolls.length + 5}>
           <PollSources />
           <li>

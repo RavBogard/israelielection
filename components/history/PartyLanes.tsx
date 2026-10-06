@@ -6,6 +6,8 @@ import { HISTORY_KINDS, histories, historyFamilies, type HistoryEvent, type Hist
 const Y0 = 1965, BREAK = 2005, Y1 = 2026.9, SPLIT = 0.3;
 const x = (y: number) => (y <= BREAK ? ((y - Y0) / (BREAK - Y0)) * SPLIT : SPLIT + ((y - BREAK) / (Y1 - BREAK)) * (1 - SPLIT)) * 100;
 const TICKS = [1970, 1980, 1990, 2005, 2010, 2015, 2020, 2026];
+/** Ticks with a printed year: 2005 is where the scale changes, marked by the break instead. */
+const LABELLED = TICKS.filter((t) => t !== BREAK);
 
 /** The four shapes the marks take: what an event does to the list's line. */
 type Mark = "start" | "join" | "leave" | "ballot";
@@ -49,7 +51,7 @@ export default function PartyLanes() {
         <div className="ph-axis" aria-hidden="true">
           <span />
           <span className="ph-track">
-            {TICKS.map((t) => <i key={t} style={{ left: `${x(t)}%` }}>{t === 2026 ? "2026" : t}</i>)}
+            {LABELLED.map((t) => <i key={t} style={{ left: `${x(t)}%` }}>{t}</i>)}
             <b className="ph-break" style={{ left: `${x(BREAK)}%` }} />
           </span>
         </div>
@@ -80,7 +82,7 @@ export default function PartyLanes() {
           </section>
         ))}
       </div>
-      <p className="ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line marks the change of scale. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or follow a list&apos;s name to its full history, with sources, below.</p>
+      <p className="ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or follow a list&apos;s name to its full history, with sources, below.</p>
     </figure>
   );
 }

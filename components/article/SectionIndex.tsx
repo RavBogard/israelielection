@@ -34,7 +34,6 @@ export default function SectionIndex({
         </ul>
         {extra && (
           <div className="extra">
-            <p className="lbl">{extra.label}</p>
             <h2>
               <Link href={extra.href}>{extra.title}</Link>
             </h2>

@@ -23,18 +23,20 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
   const step = journeys.steps[key];
   const go = (id: string, next: number) => router.push(`/start?route=${id}&step=${next}#journey-step`, { scroll: true });
   return <div className="journey">
-    <nav aria-label="Choose a learning route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
-    <p>{route.description} Leave or skip a step whenever you like.</p>
-    <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
     <section id="journey-step" aria-labelledby="journey-title" tabIndex={-1}>
+      {figures[key] && <div className="journey-fig">{figures[key]}</div>}
       <p className="note">Step {index + 1} of {route.steps.length}, about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
       <h2 id="journey-title">{step.title}</h2>
-      {figures[key] && <div className="journey-fig">{figures[key]}</div>}
       <p>{step.text}</p>
       <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
       <Check key={`${route.id}-${key}`} step={step} />
       <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step / skip</button> : <p><b>You’ve reached the end of this route.</b> <Link href={route.next}>{route.nextLabel}</Link>.</p>}</div>
     </section>
+    <div className="journey-nav">
+    <nav aria-label="Choose a learning route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
+    <p>{route.description} Leave or skip a step whenever you like.</p>
+    <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
+    </div>
     <p className="src">Route facts as of {journeys.checked}. The linked guides carry the original evidence and dates. <Link href="/">Return to the homepage</Link>.</p>
   </div>;
 }

@@ -34,9 +34,14 @@ function BlocStack() {
               <span key={p.id} style={{ flexGrow: seats(p.id), background: partyColor(p.id) }} title={`${p.name}: ${Math.round(seats(p.id) * 10) / 10} seats`} />
             ))}
           </div>
+          <p className="js-lists">
+            {parties.filter((p) => p.bloc === b && seats(p.id) > 0).sort((x, y) => seats(y.id) - seats(x.id)).map((p) => (
+              <span key={p.id}><i style={{ background: partyColor(p.id) }} aria-hidden="true" />{p.name} {Math.round(seats(p.id) * 10) / 10}</span>
+            ))}
+          </p>
         </div>
       ))}
-      <p className="js-src">Seats in the polling average, scaled to 120. Hover a segment for the list.</p>
+      <p className="js-src">Seats in the polling average, scaled to 120.</p>
     </figure>
   );
 }

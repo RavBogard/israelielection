@@ -39,7 +39,8 @@
   .ph-axis > span:first-child { display: none; }
   .ph-lane { padding: 6px 0 2px; }
   .ph-name { font-size: 13.5px; }
-  .ph-axis i:nth-child(2), .ph-axis i:nth-child(5), .ph-axis i:nth-child(7) { display: none; }
+  .ph-axis i:nth-child(1), .ph-axis i:nth-child(3), .ph-axis i:nth-child(6) { display: none; }
+  .ph-name { min-height: 44px; }
 }
 
 /* The key and the full histories below the lanes. */
@@ -55,7 +56,7 @@
 .history-controls input:focus-visible, .history-controls select:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .party-history > p[aria-live] { font-size: 13.5px; color: var(--ink-2); margin: 0; }
 .history-jumps { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 10px 0 24px; font-size: 14.5px; }
-.history-branch { scroll-margin-top: 85px; border-top: 2px solid var(--ink); padding: 14px 0 24px; }
+.history-branch { scroll-margin-top: 85px; border-top: 1px solid var(--ink); padding: 14px 0 24px; }
 .history-branch h2 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.1; margin: 0; }
 .history-branch header p { margin: 4px 0 16px; font-size: 14px; color: var(--ink-2); }
 .history-flow { list-style: none; padding: 0; margin: 0; max-width: 900px; }

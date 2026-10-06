@@ -86,7 +86,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
             const to = g.to ? monthOf(g.to) : end;
             const w = ((to - from) / end) * 100;
             return (
-              <span key={g.from} className={g === gov ? "on" : undefined} style={{ left: pct(from), width: `${w}%`, background: HEIR[g.party] ? partyColor(HEIR[g.party]!) : "var(--ink-3)", color: HEIR[g.party] ? partyInk(HEIR[g.party]!) : "#fff" }}>
+              <span key={g.from} className={g === gov ? "on" : undefined} style={{ left: pct(from), width: `${w}%`, background: HEIR[g.party] ? partyColor(HEIR[g.party]!) : "var(--ink-2)", color: HEIR[g.party] ? partyInk(HEIR[g.party]!) : "var(--bg)" }}>
                 {w > 5.5 ? surname(g.pm) : ""}
               </span>
             );

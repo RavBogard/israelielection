@@ -40,9 +40,6 @@ export default function ArticleShell({
     <div className="wrap article-page">
       <div className={`article-grid${siblings.length ? "" : " solo"}`}>
         <article className="article">
-          <p className="kicker">
-            <Link href={section.href}>{section.title}</Link>
-          </p>
           <h1>{meta.title}</h1>
           <p className="dek">{meta.dek}</p>
           {lead ?? (leadChart && <div className="lead-fig"><Chart id={leadChart} /></div>)}
@@ -52,7 +49,7 @@ export default function ArticleShell({
             <Body components={components} />
           </div>
           {current && current.startsWith("/issues/") && <p className="article-export"><Link href={`/export/issue?issue=${({"haredi-draft":"draft",courts:"courts","war-hostages":"war","west-bank":"wb","religion-state":"relig",economy:"econ","palestinian-state":"pstate"} as Record<string,string>)[current.split("/").at(-1)!] ?? ""}`}>Print or export recorded party positions on this issue</Link></p>}
-          <p className="article-correction"><CorrectionLink page={current} /> · <Link href="/corrections">Correction history and verification</Link></p>
+          <p className="article-correction"><CorrectionLink page={current} />. <Link href="/corrections">Correction history and verification</Link></p>
         </article>
         {siblings.length > 0 && (
           <nav className="rail" aria-label={`More in ${section.title}`}>

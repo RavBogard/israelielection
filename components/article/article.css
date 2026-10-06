@@ -181,7 +181,7 @@
 .article .positions .ps { font-weight: 400; font-size: 13px; color: var(--ink-3); margin-left: 4px; }
 
 /* The issue page's lead figure: the Knesset split by answer, under the title, before the prose. */
-.article .ps-lead { margin: 22px 0 18px; padding: 16px 0 4px; border-top: 2px solid var(--ink); }
+.article .ps-lead { margin: 22px 0 18px; padding: 16px 0 4px; border-top: 1px solid var(--ink); }
 .article .ps-lead .ct { font-size: 16px; }
 .article .ps-legend { list-style: none; margin: 14px 0 0; padding: 0; }
 .article .ps-legend li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 8px 0; border-top: 1px solid var(--line); }

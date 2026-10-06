@@ -239,7 +239,7 @@ export default async function Page() {
             <p className="standfirst">
               {live.state === "closed" ? (
                 <>
-                  The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}). Until then, the lists the night may turn on.
+                  The count starts when polls close, {IL.format(close)} Israel time ({ET.format(close)}).
                 </>
               ) : (
                 <>The committee&apos;s count could not be reached on this refresh ({IL.format(new Date(live.fetchedAt))} Israel time). The page tries again every minute.</>
