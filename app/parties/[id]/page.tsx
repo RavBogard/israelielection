@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import "@/components/interactives.css";
-import ProfileDetail from "@/components/ProfileDetail";
+import PartyProfile from "@/components/PartyProfile";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
 import { allPolls, blocLabel, parties } from "@/lib/data";
@@ -22,7 +21,7 @@ export async function generateMetadata(props: PageProps<"/parties/[id]">): Promi
   if (!p) return {};
   return {
     title: p.name,
-    description: `${p.name} (${blocLabel[p.bloc]}), led by ${p.leader}: who they are, who votes for them, where they stand, and their polls.`,
+    description: `${p.name} (${blocLabel[p.bloc]}), led by ${p.leader}: its polls, its voters, where it stands on seven issues, and its people, every number dated and sourced.`,
   };
 }
 
@@ -32,19 +31,12 @@ export default async function Page(props: PageProps<"/parties/[id]">) {
   if (!party) notFound();
   return (
     <div className="ix">
+      <PartyProfile party={party} />
       <div className="wrap">
-        <div className="reading">
-          <p className="toplink">
-            <Link href={`/parties#${party.id}`}>Party Map</Link> and <Link href="/coalition-builder">Coalition Builder</Link>
-          </p>
-          <article style={{ paddingTop: 22 }}>
-            <ProfileDetail party={party} />
-          </article>
-          <SourcesBox count={allPolls.length + 2} open>
-            <PollSources />
-            <ProfileSources />
-          </SourcesBox>
-        </div>
+        <SourcesBox count={allPolls.length + 2}>
+          <PollSources />
+          <ProfileSources />
+        </SourcesBox>
       </div>
     </div>
   );

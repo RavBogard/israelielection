@@ -1,0 +1,31 @@
+{
+  "updated": "2026-10-05",
+  "note": "Who voted for each list in the 2022 election, by the voters' religious self-description, and the share of each group the list won. Only lists with a published breakdown appear; the party profile draws a bar when an entry exists and falls back to its sourced sentences when none does.",
+  "parties": {
+    "likud": {
+      "listName": "Likud",
+      "source": "IDI, Jun 28, 2026",
+      "groups": [
+        { "label": "traditional", "pct": 57 },
+        { "label": "secular", "pct": 32 },
+        { "label": "national-religious", "pct": 10 },
+        { "label": "Haredi", "pct": 1 }
+      ],
+      "won": [
+        { "label": "traditional voters", "pct": 46.5 },
+        { "label": "secular voters", "pct": 20 }
+      ]
+    },
+    "byachad": {
+      "listName": "Yesh Atid (2022)",
+      "source": "IDI, Jun 28, 2026",
+      "groups": [
+        { "label": "secular", "pct": 78.5 },
+        { "label": "traditional", "pct": 20 }
+      ],
+      "won": [
+        { "label": "secular voters", "pct": 39 }
+      ]
+    }
+  }
+}
