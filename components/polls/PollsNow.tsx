@@ -1,8 +1,9 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
-import { partyColor, strokeVars } from "@/lib/party-colors";
-import { average, averageAsPoll, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure } from "@/lib/polls";
+import { contrast, partyColor, partyStroke, STROKE_CONTRAST } from "@/lib/party-colors";
+import { average, averageAsPoll, BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure } from "@/lib/polls";
 import "../party-stroke.css";
 import type { BlocId } from "@/lib/types";
 import SeatBar from "../SeatBar";
@@ -19,6 +20,16 @@ const LABEL_PX_PER_SEAT = 23;
 const BAR_ORDER = BLOC_SEAT_ORDER;
 const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
 /** What the lists' passing-poll averages add to before they are scaled to 120. */
+/** The light paper behind the list chart (--bg, the darker of --bg and --sheet). */
+const LIGHT_PAPER = "#f6f5f1";
+const mixBlack = (hex: string, t: number) => "#" + [1, 3, 5].map((i) => Math.round(parseInt(hex.slice(i, i + 2), 16) * (1 - t)).toString(16).padStart(2, "0")).join("");
+/** A list's mark colour at 3:1 on either paper: on light paper darkened just far enough, on dark paper partyStroke's lighter stroke. */
+function markVars(id: string) {
+  const c = partyColor(id);
+  let light = c;
+  for (let t = 0; t <= 1 && contrast(light, LIGHT_PAPER) < STROKE_CONTRAST; t += 0.02) light = mixBlack(c, t);
+  return { "--ps": light, "--ps-dark": partyStroke(id, "dark") } as CSSProperties;
+}
 const rawSum = Math.round(parties.reduce((s, p) => s + (average(p.id, mainPolls)?.seats ?? 0), 0) * 10) / 10;
 
 /** Where a bloc's total lands in each of the current polls, on a seat axis with the majority line at 61. */
@@ -108,7 +119,7 @@ export default function PollsNow() {
           label={BAR_ORDER.map((b) => `${label[b]} ${one(totals[b])}`).join(", ") + ". A majority is 61."}
         />
         <ul className="fig-key pn-barkey">
-          {BAR_ORDER.map((b) => (
+          {BLOC_ORDER.map((b) => (
             <li key={b}><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" />{label[b]} <b>{one(totals[b])}</b></li>
           ))}
         </ul>
@@ -152,9 +163,9 @@ export default function PollsNow() {
                       <Link href={`/parties/${p.id}`}><span className="sw" style={{ background: color }} aria-hidden="true" />{p.name}</Link>
                     </th>
                     <td className="chart">
-                      <span className="track pstroke" style={strokeVars(p.id)} aria-hidden="true">
+                      <span className="track pstroke" style={markVars(p.id)} aria-hidden="true">
                         <i className="thr" style={{ left: sx(4) }} />
-                        {stated && <i className="bar" style={{ width: sx(scaled), background: color }} />}
+                        {stated && <i className="bar" style={{ width: sx(scaled) }} />}
                         {dots.map((d) => (
                           <i key={d.poll.id} className={`pt${d.hollow ? " hollow" : ""}${d.below ? " below" : ""}`} style={{ left: sx(d.seats), ["--c" as string]: "var(--psx)" }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.below ? "below the threshold" : `${d.seats} seats`}`} />
                         ))}

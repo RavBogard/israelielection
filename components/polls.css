@@ -114,3 +114,12 @@
   .pl .poll-table th, .pl .poll-table td { padding-inline: 6px; }
   .pl .poll-table .poll-id-link { padding-block: 12px; }
 }
+
+/* Sensitivity sub-section heading: section spacing above, as a sub-head of the section. */
+.poll-sensitivity .sec-h3 { margin-top: 36px; }
+
+/* Poll table at desktop widths: full list names wrap in the headers and the narrow columns tighten so every list fits without sideways scrolling. */
+.pl .poll-table thead .pcol { white-space: normal; font-size: 12px; line-height: 1.25; min-width: 0; overflow-wrap: normal; }
+.pl .poll-table .pcol { padding-inline: 4px; }
+.pl .poll-table th.num:not(.pcol), .pl .poll-table td.num:not(.pcol) { padding-inline: 6px; }
+.pl .poll-table .src { white-space: normal; min-width: 90px; max-width: 120px; font-size: 12.5px; }
