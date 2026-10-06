@@ -83,9 +83,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   </li>
                 ))}
               </ul>
-              <p className="privacy">
-                This site uses Google Analytics to understand visits and page use. <Link href="/about#privacy">Privacy</Link>.
-              </p>
             </div>
             {/* The header menus' rule: election-night pages join once polls close. Search, the sitemap and All resources always list them. */}
             <nav className="cols" aria-label="Site map">

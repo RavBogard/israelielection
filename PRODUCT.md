@@ -47,7 +47,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Averaging rules (published):** latest poll per publisher within 14 days of the newest; weights by square root of sample size; lists passing the threshold in fewer than half the polls are excluded from default coalition totals; totals above 120 scaled down; Channel 14 included in the main average, excluded in the alternative.
 - **Terminology is ruled, not improvised.** House language includes "Haredi", "occupied West Bank", "Palestinian citizens of Israel" (with "Arab Israelis" noted and the dispute explained), "Liberman", "hostages", "Anti-Netanyahu bloc (Jewish-majority parties)", and "far-right" only for Otzma Yehudit and the Religious Zionist Party with IDI cited. "Genocide" only inside quotations or case names. Full list: docs/research/RULINGS.md.
 - **Out of scope by ruling:** a Hebrew edition; a Jewish-texts section or route (occasional downloadable class sheets only, each approved by Daniel); trip material; any claim of analytics anonymity or a consent control (neither verified).
-- **Analytics:** Google Analytics loads in production only, disclosed in the footer and on /about.
+- **Analytics:** Google Analytics loads in production only, disclosed on /about (footer line cut by Daniel, 2026-10-06).
 - **Open decisions (recorded, not invented):** none outstanding from the 2026-10-05 handoff. Future-election structure (how a second election is housed on the same site) is not yet designed.
 
 ## Brand Commitments

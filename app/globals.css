@@ -198,8 +198,6 @@ a:hover { text-decoration-color: currentColor; }
 .site-foot .row { max-width: var(--wrap); margin: 0 auto; padding: 32px var(--gutter) 44px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: 28px 48px; font-size: 14.5px; color: var(--ink-2); }
 .site-foot .about { display: flex; flex-direction: column; gap: 12px; }
 .site-foot .about p { margin: 0; max-width: 46ch; font-size: 14.5px; line-height: 1.5; }
-.site-foot .about .privacy { font-size: 13px; color: var(--ink-3); }
-.site-foot .about .privacy a { color: var(--ink-2); }
 .site-foot .brand .mark { width: 26px; }
 .site-foot .brand .word { font-size: 21px; }
 .site-foot .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; }
