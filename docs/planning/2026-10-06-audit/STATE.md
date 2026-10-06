@@ -34,3 +34,4 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - GATE: West Bank areas map uses OCHA oPt / PA Ministry of Planning Oslo areas (HDX, 2004, HDX "Other" licence), attributed in the figure; the file mislabels Area B as A, corrected by point tests (Area A ~18%, B ~21%). E1 placed from Wikipedia coordinates. For Daniel: confirm the licence is acceptable for publication.
 - Open (data lane): seats guide chart titles say "step one/two" for what the numbered list calls steps 3 and 4; Communities index still previews settlers.vote-trend rather than the new map.
 - Wave 4: finish review on 48 fresh captures (finish-review folder); 7 fixes applied; DESIGN.md and design.json updated from shipped code. Audit P1s (Compare chip text, vote-map swipe, hidden chart links) confirmed fixed in wave 1c.
+- Daniel approved the data fixes (2026-10-06): seats chart titles renumbered to steps 3 and 4; Communities index previews the settlements map.
