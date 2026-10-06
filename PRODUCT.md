@@ -37,7 +37,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 - **Live layer, no human in the loop:** a GitHub Action imports polls twice daily and auto-commits what passes validation; failures go to one rolling review PR. A daily Gemini job writes the briefing and publishes it unreviewed; Daniel receives it by email and can correct or kill any item by deleting the day's file. Results snapshots run every fifteen minutes through election week.
 - **Content pipeline:** research briefs → Daniel rules in one sitting → MDX and JSON → code. Text that changes meaning goes by PR; well-sourced party-data changes merge automatically. Questions only Daniel can answer go to docs/planning/<date>-eval/HANDOFF.md; his answers come back in DECISIONS.md.
 - **Embeds:** the seat grid, the poll average and the Coalition Builder can be embedded. The teaching page, packets and decks were removed on 2026-10-06; /teach redirects home.
-- **Corrections:** public GitHub issues and the /corrections page (account-free draft). No published email address.
+- **Corrections:** public GitHub issues, the /corrections page (account-free draft), and Daniel's address on /corrections (kept by Daniel, 2026-10-06).
 
 ## Capabilities and Constraints
 
