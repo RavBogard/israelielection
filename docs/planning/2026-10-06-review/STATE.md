@@ -39,7 +39,7 @@ Each wave: build, screenshot desktop 1440 and phone 390 (light and dark for touc
 - [x] Wave 5 charts
 - [x] Wave 6 tools
 - [x] Wave 7 content and copy (journeys.json teaching route and runtime filter removed; CSV licence line; American lens dek to one sentence; tab title template)
-- [ ] Wave 8 finish review and documentation
+- [x] Wave 8 finish review and documentation (DESIGN.md and .impeccable/design.json from shipped code, db50b17; home hero back to chart left, blocs right at Daniel's request, 1cb070e)
 
 - [x] Consistency pass (Medium 3 one number per fact, Medium 10 dark strokes, shared stance mark, coexist mark, map dim)
 
