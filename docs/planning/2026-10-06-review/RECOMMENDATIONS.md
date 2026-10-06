@@ -1,5 +1,7 @@
 # Site-wide design review, October 6, 2026
 
+**Approved in full by Daniel, 2026-10-06.** Build plan and gates: STATE.md in this folder.
+
 Six isolated reviews: navigation, home and live pages, party tools, explainers, design-system code, detector and accessibility. Evidence: 92 screenshots in `.impeccable/review/full/` (desktop 1440 and phone 390, dark for key pages, every menu state).
 
 Already fixed and pushed (commits 9ddcd9a, 551cf42 and earlier today): middle dots site-wide; /changes on tokens, dark mode, no all-caps; 2px rules reduced to 1px except the 61 line; selected states in ink; dark ink-3 contrast; 44px phone controls; global reduced motion; Hebrew marked lang=he in the family tree; heading levels; corrections entries; Builder panel order, empty state and drawer label; Governing squares in list colours; compact index previews; formation-clock extension no longer hatched; stale "Today" label; teaching leftovers and dead CSS; Compare focus ring; compare-matrix branch deleted.
