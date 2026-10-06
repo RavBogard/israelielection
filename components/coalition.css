@@ -1,5 +1,4 @@
 /* Coalition Builder: ballot slips grouped by bloc on the left; a sticky "your coalition" panel with the 120-seat grid on the right. */
-.cb .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .cb .btn:disabled { opacity: .4; cursor: default; }
 .cb .btn:disabled:hover { background: transparent; color: var(--ink); }
 .cb .pollnote { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 0 0 26px; max-width: 100ch; }
@@ -9,8 +8,12 @@
 .cb .bloc h3 { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--ink); margin: 0 0 12px; display: flex; align-items: center; gap: 9px; padding-bottom: 7px; border-bottom: 1px solid var(--ink); }
 .cb .slips { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 14px; }
 
-/* The panel */
-.cb .panel { padding: 22px 22px 20px; gap: 18px; }
+/* The panel flows with the page; only the total and the seat grid stay in view (wide screens; phones have the sticky bar). */
+.cb .panel { padding: 22px 22px 20px; gap: 18px; position: static; max-height: none; overflow: visible; align-self: stretch; }
+.cb .meter { display: flex; flex-direction: column; gap: 18px; background: var(--sheet); }
+@media (min-width: 1101px) { .cb .meter { position: sticky; top: 0; z-index: 1; margin: -22px -22px 0; padding: 22px 22px 14px; border-bottom: 1px solid var(--line); } }
+.cb .poll-pick { display: flex; flex-direction: column; gap: 4px; font: 600 14px/1.3 var(--body); color: var(--ink); }
+.cb .poll-pick select { min-height: 44px; max-width: 100%; padding: 0 8px; font: 15px var(--body); color: var(--ink); background: var(--sheet); border: 1px solid var(--line-2); }
 .cb .total { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .cb .total .n { font-family: var(--display); font-weight: 700; font-size: 84px; line-height: .8; letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--ink); }
 .cb .total .read { font-family: var(--display); font-size: 19px; line-height: 1.2; color: var(--text); }
@@ -28,9 +31,6 @@
 .cb .warn cite { font-style: normal; opacity: .8; font-size: 12.5px; display: block; margin-top: 4px; }
 .cb .callout { margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .cb .callout p { margin: 0; }
-.cb .preset { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 10px 0 0; max-width: 62ch; }
-.cb .linkish { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.cb .linkish[aria-pressed="true"] { text-decoration-color: var(--line-2); }
 .cb .thennow { font-family: var(--display); font-size: 15.5px; line-height: 1.5; color: var(--text); margin: 0; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .cb .thennow b { color: var(--ink); font-weight: 700; }
 .cb .naflag { font-size: 13.5px; color: var(--ink-2); background: var(--bg); padding: 8px 10px; margin: 0; }
@@ -53,13 +53,11 @@
 .cb .slip .foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 6px 14px 10px; border-top: 1px dashed var(--line); }
 .cb .slip .prof { font: inherit; font-size: 13px; font-weight: 600; background: transparent; color: var(--ink); border: 0; padding: 4px 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .cb .slip .prof:hover { text-decoration-color: currentColor; }
-.cb .slip .state { font-size: 12.5px; color: var(--ink-3); }
 .cb .slip.on { background: var(--fill); color: var(--fill-ink); border-color: var(--fill); }
 .cb .slip.on .letters, .cb .slip.on .nm, .cb .slip.on .seats, .cb .slip.on .prof { color: var(--fill-ink); }
-.cb .slip.on .ld, .cb .slip.on .seats small, .cb .slip.on .state { color: var(--fill-ink); opacity: 1; }
+.cb .slip.on .ld, .cb .slip.on .seats small { color: var(--fill-ink); opacity: 1; }
 .cb .slip.on .foot { border-top-color: color-mix(in srgb, var(--fill-ink) 35%, transparent); }
 .cb .slip.on .prof { text-decoration-color: color-mix(in srgb, var(--fill-ink) 50%, transparent); }
-.cb .slip.on .state { font-weight: 600; }
 .cb .slip.out { background: transparent; border-style: dashed; border-top-style: solid; border-top-color: color-mix(in srgb, var(--fill) 40%, transparent); color: var(--ink-3); }
 .cb .slip.out .face { cursor: default; }
 .cb .slip.out .letters, .cb .slip.out .nm { color: var(--ink-3); }
@@ -81,7 +79,6 @@
   .cb .slip { min-height: 170px; }
   .cb .slip .letters { font-size: 32px; }
   .cb .slip .seats { font-size: 30px; }
-  .cb .slip .state { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .cb .slip { transition: none; }
@@ -107,9 +104,12 @@
 .cb .together .more a { color: var(--ink); font-weight: 600; }
 .cb .role-picker { display: flex; flex-direction: column; gap: 4px; padding: 8px 14px 12px; font: 12px/1.3 var(--body); }
 .cb .role-picker select { width: 100%; max-width: 100%; min-width: 0; min-height: 44px; padding: 0 4px; font: 14px var(--body); color: var(--ink); background: var(--bg); border: 1px solid var(--line-2); }
+/* 16px on touch screens so iOS does not zoom into the select. */
+@media (pointer: coarse) { .cb .role-picker select, .cb .poll-pick select { font-size: 16px; } }
 .cb .arrangement-scenarios { border-block: 1px solid var(--line); padding: 16px 0; margin: 20px 0; }
 .cb .arrangement-scenarios > p { font: 700 16px var(--body); }
 .cb .arrangement-scenarios > div:first-of-type { display: flex; flex-wrap: wrap; gap: 8px; }
+.cb .arrangement-scenarios .reset { margin-left: auto; }
 .cb .arrangement-scenarios .btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .cb .scenario-reading { max-width: 78ch; font: 16px/1.55 var(--display); }
 .cb .confidence { border-block: 1px solid var(--ink); padding: 14px 0; }

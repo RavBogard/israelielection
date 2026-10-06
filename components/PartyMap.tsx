@@ -8,7 +8,6 @@ import {partyColor,partyInk,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE
 import {readPartyMapSelection,partyMapSelectionHref} from "@/lib/party-map-state";
 import PageHead from "./PageHead";
 import ProfileDetail from "./ProfileDetail";
-import SeatGrid from "./SeatGrid";
 import { averagePoll, blocLabel, blocs, mainPolls, parties } from "@/lib/data";
 import { fmt, shortDate } from "@/lib/format";
 import { average } from "@/lib/polls";
@@ -47,13 +46,11 @@ function useSize(ref: React.RefObject<HTMLElement | null>) {
   return size;
 }
 
-function Overview() {
-  const order: BlocId[] = ["net", "mid", "opp", "arab"];
-  const segments = order.flatMap((b) => averaged.filter(({p}) => p.bloc===b && seatsOf(p.id)>0).map(({p}) => ({id:p.id,seats:seatsOf(p.id),color:partyColor(p.id),label:p.name,href:`/parties?party=${p.id}`})));
+/** The method notes, folded under the map: bloc totals, how the average is made, what is left off, the colour key. */
+function About() {
   return (
-    <>
-      <h2 className="ov">Party shades, four bloc totals</h2>
-      <SeatGrid variant="meter" segments={segments} labelRule />
+    <details className="pm-about">
+      <summary>About this map</summary>
       <table className="btable">
         <tbody>
           {blocs.map((b) => (
@@ -67,17 +64,27 @@ function Overview() {
           ))}
         </tbody>
       </table>
-      <p className="fig-src">
-        Our arithmetic: each party&apos;s average across the {mainPolls.length} polls, added up by bloc.
+      <p>
+        Each block&apos;s area is the list&apos;s coalition average, scaled to 120 seats, across {mainPolls.length} polls:{" "}
+        {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}. <Link href="/polls#method">How the average is made</Link>.
+      </p>
+      <p>
+        Bloc totals are our arithmetic: each party&apos;s average, added up by bloc.
         {fewerPolls.length > 0 &&
           ` ${fewerPolls.join(" and ")} use fewer polls because not every poll reported them separately, so totals add to about 120, not exactly 120.`}{" "}
         Each party&apos;s average is over the polls where it passed the threshold; one that passed in fewer than half counts 0. Because small lists sometimes miss the threshold, those averages can add to more than 120, so they are scaled down in proportion to 120.
       </p>
-      <p className="hint">
-        Tap any party block or chip for its profile: who they are, who votes for them, where they stand on six issues, key candidates,
-        pledges, surplus-vote partner, a quote, and seats in each poll.
+      <p>
+        38 lists filed for the Oct 27 election (Central Elections Committee approval, Ynet, Sep 27, 2026). 20+ minor lists are not
+        shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
       </p>
-    </>
+      <p>
+        Each profile covers who the party is, who votes for it, where it stands on six issues, key candidates, pledges, its surplus-vote
+        partner, a quote, and its seats in each poll.
+      </p>
+      <p>{PARTY_COLOR_NOTE}</p>
+      <details className="party-color-key"><summary>Distinct party shades and political families</summary><ul>{PARTY_COLOR_FAMILIES.map((family)=><li key={family.label}><b>{family.label}</b><div>{family.ids.map((id)=><span key={id}><span className="sw" style={{background:partyColor(id)}}/>{parties.find((p)=>p.id===id)?.name??id}</span>)}</div></li>)}</ul></details>
+    </details>
   );
 }
 
@@ -99,6 +106,14 @@ export default function PartyMap() {
     const next = current === id ? null : id;
     setCurrent(next);
     history.pushState(history.state,"",partyMapSelectionHref(new URLSearchParams(window.location.search),window.location.hash,next,parties.map((p)=>p.id)));
+  };
+
+  /** Closing the profile hands focus back to the cell or chip that opened it. */
+  const close = () => {
+    const id = current;
+    if (!id) return;
+    select(id);
+    requestAnimationFrame(() => document.querySelector<HTMLElement>(`.pm [data-party="${id}"]`)?.focus());
   };
 
   useLayoutEffect(() => {
@@ -147,6 +162,7 @@ export default function PartyMap() {
             type="button"
             className={cls}
             aria-pressed={current === p.id}
+            data-party={p.id}
             aria-label={`${p.name}, average ${fmt(r.v)} seats`}
             onClick={() => select(p.id)}
             onPointerMove={(e) => {
@@ -177,41 +193,33 @@ export default function PartyMap() {
   const party = parties.find((p) => p.id === current);
 
   return (
-    <div className="pm">
+    <div className="pm" onKeyDown={(e) => { if (e.key === "Escape" && current) { e.preventDefault(); close(); } }}>
       <PageHead title="The Party Map" standfirst="Every list, sized by its seats in the polling average. Tap one for its profile." />
 
-      <div className="layout">
+      <div className={`layout${party ? " open" : ""}`}>
         <div className="mapcol">
-          <div className="map" ref={mapRef} role="group" aria-label="Parties sized by average seats" onPointerLeave={() => setTip(null)}>
+          <div className={`map${party ? " has-sel" : ""}`} ref={mapRef} role="group" aria-label="Parties sized by average seats" onPointerLeave={() => setTip(null)}>
             {cells}
           </div>
           <div className="offmap">
             {offMap.map((p) => (
-              <button key={p.id} type="button" className="chip" aria-pressed={current === p.id} onClick={() => select(p.id)}>
+              <button key={p.id} type="button" className="chip" aria-pressed={current === p.id} data-party={p.id} onClick={() => select(p.id)}>
                 <span className="sw" style={{ background: partyColor(p.id) }} />
                 <b>{p.name}</b>
                 <em>{p.status}</em>
               </button>
             ))}
           </div>
-          <div className="pm-about">
-            <p>
-              Each block&apos;s area is the list&apos;s coalition average, scaled to 120 seats, across {mainPolls.length} polls:{" "}
-              {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}. <Link href="/polls#method">How the average is made</Link>.
-            </p>
-            <p>
-              38 lists filed for the Oct 27 election (Central Elections Committee approval, Ynet, Sep 27, 2026). 20+ minor lists are not
-              shown, including Israel First (Sharren Haskel) and the Haredi Public Party (Moti Leitner).
-            </p>
-            <p>{PARTY_COLOR_NOTE}</p>
-            <details className="party-color-key"><summary>Distinct party shades and political families</summary><ul>{PARTY_COLOR_FAMILIES.map((family)=><li key={family.label}><b>{family.label}</b><div>{family.ids.map((id)=><span key={id}><span className="sw" style={{background:partyColor(id)}}/>{parties.find((p)=>p.id===id)?.name??id}</span>)}</div></li>)}</ul></details>
-          </div>
+          <About />
         </div>
-        <aside className="panel" ref={panelRef} aria-live="polite" aria-label={party?`${party.name} profile`:"Party Map overview"}>
-          {party && <button type="button" className="party-overview" onClick={()=>select(party.id)}>Back to overview</button>}
-          {party ? <ProfileDetail party={party} /> : <Overview />}
-        </aside>
+        {party && (
+          <aside className="panel" ref={panelRef} aria-label={`${party.name} profile`}>
+            <button type="button" className="party-close" onClick={close}>Close profile</button>
+            <ProfileDetail party={party} />
+          </aside>
+        )}
       </div>
+      <p className="sr-only" aria-live="polite">{party ? `Showing the profile of ${party.name}` : ""}</p>
       {tip && (
         <div className="tip" ref={tipRef}>
           {tip.text}

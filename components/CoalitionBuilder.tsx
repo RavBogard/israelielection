@@ -110,7 +110,6 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole }: { p: Party; po
       </button>
       <div className="foot">
         {profile}
-        <span className="state" aria-hidden="true">{ROLE_LABELS[role]}</span>
       </div>
       <label className="role-picker">Role for {p.name}
         <select value={role} onChange={(e) => onRole(e.target.value as SupportRole)}>
@@ -281,33 +280,37 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             Tap a ballot slip to add a cabinet partner; <b>{MAJORITY}</b> of {KNESSET} seats is a majority.
           </>}
         aside={
-        <div className="controls">
-          <div className="seg" role="group" aria-label="Choose a poll">
+        <label className="poll-pick">Seats from
+          <select value={pollId} onChange={(e) => choosePoll(e.target.value)}>
             {choices.map((p) => (
-              <button key={p.id} type="button" aria-pressed={p.id === pollId} onClick={() => choosePoll(p.id)}>
-                {pollLabel(p)}
-                <small>{p.id === RESULTS_ID ? (p.resultState?.freshness === "stale" ? "saved count (stale)" : "count so far") : p.id === AVERAGE_ID ? "normalized coalition average" : mediumDate(p.published)}</small>
-              </button>
+              <option key={p.id} value={p.id}>
+                {pollLabel(p)}, {p.id === RESULTS_ID ? (p.resultState?.freshness === "stale" ? "saved count (stale)" : "count so far") : p.id === AVERAGE_ID ? "normalized coalition average" : mediumDate(p.published)}
+              </option>
             ))}
-          </div>
-          <button className="btn" type="button" onClick={() => { setSel(new Set()); setRoles({}); setScenarioId(null); }} disabled={!sel.size && !Object.keys(roles).length}>
+          </select>
+        </label>
+        } />
+      <section className="arrangement-scenarios" aria-label="Explore a hypothetical arrangement">
+        <p>Try a governing arrangement</p>
+        <div>
+          {preset && presetIds.length > 0 && (
+            <button type="button" className="btn" aria-pressed={presetOn} onClick={() => { setSel(new Set(presetIds)); setRoles({}); setScenarioId(null); }}>
+              {preset.label[0].toUpperCase() + preset.label.slice(1)}
+            </button>
+          )}
+          {scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}
+          <button className="btn reset" type="button" onClick={() => { setSel(new Set()); setRoles({}); setScenarioId(null); }} disabled={!sel.size && !Object.keys(roles).length}>
             Start over
           </button>
         </div>
-        }>
-          {preset && presetIds.length > 0 && (
-            <p className="preset">
-              Start from{" "}
-              <button type="button" className="linkish" onClick={() => { setSel(new Set(presetIds)); setRoles({}); setScenarioId(null); }} aria-pressed={presetOn}>
-                {preset.label}
-              </button>
-              : {presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}.
+        {preset && presetOn && (
+          <div className="scenario-reading">
+            <p className="thennow">
+              {preset.label[0].toUpperCase() + preset.label.slice(1)} ({presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}) held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
+              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
             </p>
-          )}
-      </PageHead>
-      <section className="arrangement-scenarios" aria-label="Explore a hypothetical arrangement">
-        <p>Try a governing arrangement</p>
-        <div>{scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}</div>
+          </div>
+        )}
         {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="fig-src"><a href={scenario.url}>{scenario.source}</a>, Research checked {scenarioData.updated}. Pledge sources appear with each warning.</p></div>}
       </section>
 
@@ -338,6 +341,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
         <aside className="panel" id="arrangement-result" aria-live="polite">
           <h2 className="sr-only">Your coalition</h2>
+          <div className="meter">
           <div className="total">
             <span className="n">{fmt(t.total)}{t.partial ? "+" : ""}</span>
             <span className="read">
@@ -353,6 +357,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             </span>
           </div>
           <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${fmt(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
+          </div>
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}
           <ul className="list">
             {t.chosen.length ? (
@@ -387,12 +392,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             <p className="fig-src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
             </details>
           </section>
-          {preset && presetOn && (
-            <p className="thennow">
-              {preset.label[0].toUpperCase() + preset.label.slice(1)} held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
-              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
-            </p>
-          )}
           <details className="arrangement-history"><summary>{scenarioData.historical.title}</summary><p>{scenarioData.historical.text}</p><a href={scenarioData.historical.url}>{scenarioData.historical.source}</a></details>
           {t.chosen.length > 0 && (
             <div className="share">

@@ -19,7 +19,7 @@
           "components/compare.css"
         ],
         "createdAt": "2026-10-06T02:33:14.475Z",
-        "reason": "False positive: the list chip sets border-radius: 0; its 4px top bar in the bloc colour is the compare-chip convention DESIGN.md records (Pull Quote Rule: slips and chips carry colour as a top bar)."
+        "reason": "Claude: chips are border-radius 0; the 4px top edge is the list's party colour (DESIGN.md list colour chip)"
       },
       {
         "rule": "side-tab",
