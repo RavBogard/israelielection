@@ -90,7 +90,7 @@ describe("chart labels", () => {
     const otzma = sparks(charts["masorti.six-towns"]).rows.find((r) => /Otzma/.test(r.row.label))!;
     expect(otzma.flow.s).toBe(true);
     expect(otzma.labels[0]).toMatchObject({ list: "Union of Right-Wing Parties", from: "Apr 2019" });
-    expect(sparks(charts["secular.largest-list"]).rows[0].flow).toEqual({ s: false, l: false });
+    expect(sparks(charts["secular.largest-list"]).rows[0].flow).toMatchObject({ s: false, l: false });
   });
 });
 

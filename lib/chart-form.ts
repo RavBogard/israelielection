@@ -137,16 +137,16 @@ export const listIn = (cell: string) => cell.replace(/(\d+(?:\.\d+)?)%/, "").rep
 export type SparkPoint = { j: number; v: number; raw: string; txt: string };
 /** A list name under a sparkline: where it starts (0–1 along the track), how much room it has, its lane and alignment. */
 export type SparkLabel = { list: string; at: number; width: number; lane: 0 | 1; end: boolean; from: string };
-/** `flow`: where a name will not fit its room under the line, on a phone (s) or wider (l), the names are listed under it instead, each with the election it starts at. */
-export type SparkRow = { row: ChartRow; pts: SparkPoint[]; runs: SparkPoint[][]; labels: SparkLabel[]; lanes: number; flow: { s: boolean; l: boolean } };
+/** `flow`: where a name will not fit its room under the line, on a small phone (xs), a phone (s) or wider (l), the names are listed under it instead, each with the election it starts at. */
+export type SparkRow = { row: ChartRow; pts: SparkPoint[]; runs: SparkPoint[][]; labels: SparkLabel[]; lanes: number; flow: { xs: boolean; s: boolean; l: boolean } };
 export type Sparks = { cols: { label: string; at: number }[]; max: number; rows: SparkRow[] };
 
 /** Room a list name at the right end is given, as a share of the track. */
 const END_ROOM = 0.3;
 /** Narrowest room a name is given before the names go on two lanes. */
 const MIN_ROOM = 0.3;
-/** About how wide a sparkline track is, in px, on a phone and wider, and a 12px name's width a character. */
-const TRACK = { s: 220, l: 290 }, CH = 6.6;
+/** About how wide a sparkline track is, in px, on a 320px phone, a 390px phone and wider, and a 12px name's width a character. */
+const TRACK = { xs: 150, s: 220, l: 290 }, CH = 6.6;
 
 /**
  * One sparkline per row on one shared scale: elections placed by date, a gap where a cell is blank,
@@ -177,7 +177,7 @@ export function sparks(c: Chart): Sparks {
     const one = place(1);
     const labels = one.every((l) => l.width >= MIN_ROOM || l.end) ? one : place(2);
     const fits = (px: number) => labels.every((l) => l.list.length * CH + 6 <= l.width * px);
-    return { row, pts, runs, labels, lanes: labels.length ? Math.max(...labels.map((l) => l.lane)) + 1 : 0, flow: { s: !fits(TRACK.s), l: !fits(TRACK.l) } };
+    return { row, pts, runs, labels, lanes: labels.length ? Math.max(...labels.map((l) => l.lane)) + 1 : 0, flow: { xs: !fits(TRACK.xs), s: !fits(TRACK.s), l: !fits(TRACK.l) } };
   });
   return { cols: heads.map((label, j) => ({ label, at: at(j) })), max: vals.length ? scaleMax(vals) : 100, rows };
 }

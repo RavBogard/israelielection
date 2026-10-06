@@ -55,7 +55,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer."}</p>
+      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is dotted paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer."}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>

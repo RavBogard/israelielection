@@ -1,6 +1,6 @@
 
 import type { Chart, ChartRow } from "@/lib/articles";
-import { clearLabels, pct, pctIn, scaleMax, sparks, timeOf, unshaded } from "@/lib/chart-form";
+import { clearLabels, heatShare, pct, pctIn, scaleMax, sparks, stacks, timeOf, unshaded, wrapWords } from "@/lib/chart-form";
 
 /*
  * Visual forms for a data/charts table; lib/chart-form.ts decides which one a table takes. The
@@ -103,13 +103,13 @@ export function Sparklines({ c }: { c: Chart }) {
   return (
     <div className="cv-sparks" aria-hidden="true">
       <ul>
-        {rows.map(({ row, pts, runs, labels, lanes }) => (
-          <li key={row.label} className={lanes ? `ln-${lanes}` : undefined}>
+        {rows.map(({ row, pts, runs, labels, lanes, flow }) => (
+          <li key={row.label} className={[lanes && `ln-${lanes}`, flow.xs && "fl-xs", flow.s && "fl-s", flow.l && "fl-l"].filter(Boolean).join(" ") || undefined}>
             <span className="lab">
               {row.label}
               {rowSource(row)}
             </span>
-            <span className="v0">{pts.length > 1 ? pts[0].txt : ""}</span>
+            <span className="v0">{pts.length > 1 && pts[0].j === 0 ? pts[0].txt : ""}</span>
             <span className="sp">
               <span className="tk">
                 {cols.map((h) => <i key={h.label} className="g" style={{ left: at(h.at) }} />)}
@@ -119,16 +119,19 @@ export function Sparklines({ c }: { c: Chart }) {
                   ))}
                 </svg>
                 {pts.map((p) => <i key={p.j} className="pt" style={{ left: at(cols[p.j].at), top: top(p.v) }} title={`${cols[p.j].label}: ${p.raw}`} />)}
+                {/* A line that starts after the first election or stops before the last has its end values printed at its own points, not at the row's ends. */}
+                {pts.length > 1 && pts[0].j > 0 && <b className="pv to-l" style={{ left: at(cols[pts[0].j].at), top: top(pts[0].v) }}>{pts[0].txt}</b>}
+                {pts.length > 0 && pts.at(-1)!.j < cols.length - 1 && <b className="pv to-r" style={{ left: at(cols[pts.at(-1)!.j].at), top: top(pts.at(-1)!.v) }}>{pts.at(-1)!.txt}</b>}
               </span>
               {labels.length > 0 && (
                 <span className="lists">
                   {labels.map((l) => (
-                    <span key={`${l.list}-${l.at}`} className={`ls ln${l.lane}${l.end ? " end" : ""}`} style={l.end ? { right: 0, maxWidth: at(l.width) } : { left: at(l.at), maxWidth: at(l.width) }} title={l.list}>{l.list}</span>
+                    <span key={`${l.list}-${l.at}`} className={`ls ln${l.lane}${l.end ? " end" : ""}`} style={l.end ? { right: 0, maxWidth: at(l.width) } : { left: at(l.at), maxWidth: at(l.width) }} title={l.list}><span className="fr">{shortLabel(l.from)}: </span>{l.list}</span>
                   ))}
                 </span>
               )}
             </span>
-            <span className="v1">{pts.length ? pts.at(-1)!.txt : ""}</span>
+            <span className="v1">{pts.length && pts.at(-1)!.j === cols.length - 1 ? pts.at(-1)!.txt : ""}</span>
           </li>
         ))}
         <li className="cv-axis">
@@ -149,15 +152,6 @@ export function Sparklines({ c }: { c: Chart }) {
 type Box = { W: number; H: number; P: { l: number; r: number; t: number; b: number } };
 const WIDE: Box = { W: 640, H: 260, P: { l: 54, r: 176, t: 14, b: 30 } };
 const NARROW: Box = { W: 360, H: 250, P: { l: 40, r: 52, t: 12, b: 28 } };
-
-/** Text that fits `room` units at about `unit` units a character, cut at a word. */
-function fit(s: string, room: number, unit: number) {
-  const n = Math.floor(room / unit);
-  if (s.length <= n) return s;
-  const cut = s.slice(0, Math.max(1, n - 1));
-  const at = cut.lastIndexOf(" ");
-  return `${(at > 0 ? cut.slice(0, at) : cut).trim()}…`;
-}
 
 function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
   const cols = c.columns!.slice(1);
@@ -187,7 +181,12 @@ function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
     })
     .filter((e): e is NonNullable<typeof e> => !!e)
     .sort((a, b) => b.v - a.v);
-  const placed = ends.reduce<((typeof ends)[number] & { ly: number })[]>((acc, e) => [...acc, { ...e, ly: Math.max(y(e.v), (acc.at(-1)?.ly ?? -Infinity) + 14) }], []);
+  // Each name wraps at words beside its value (the narrow drawing prints values only; the legend names them), and the labels stack clear of each other.
+  const named = ends.map((e) => ({ ...e, lines: narrow ? [""] : wrapWords(e.h, Math.floor((P.r - 24 - e.raw.length * 8.5) / 6.6), Math.floor((P.r - 14) / 6.6)) }));
+  const placed = named.reduce<((typeof named)[number] & { ly: number })[]>((acc, e) => {
+    const prev = acc.at(-1);
+    return [...acc, { ...e, ly: Math.max(y(e.v), prev ? prev.ly + 14 * prev.lines.length : -Infinity) }];
+  }, []);
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className={narrow ? "narrow" : "wide"}>
       {ticks.map((t) => (
@@ -211,7 +210,8 @@ function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
       {placed.map((e) => (
         <text key={e.h} className={`end ${MARKS[e.s]}`} x={x(e.i) + 10} y={e.ly + 4}>
           <tspan className="v">{e.raw}</tspan>
-          {!narrow && ` ${fit(e.h, P.r - 24 - e.raw.length * 8.5, 6.6)}`}
+          {e.lines[0] && ` ${e.lines[0]}`}
+          {e.lines.slice(1).map((l, k) => <tspan key={k} x={x(e.i) + 10} dy={14}>{l}</tspan>)}
         </text>
       ))}
     </svg>
@@ -229,17 +229,46 @@ export function Lines({ c }: { c: Chart }) {
   );
 }
 
-/* The heat ramp runs between fixed endpoints (the light theme's text and paper), so a shade means one
-   size in light, dark and print. Text on a cell is black or white by the cell's luminance. */
-const HEAT_LO = [0xf6, 0xf5, 0xf1], HEAT_HI = [0x2a, 0x29, 0x25];
-const lin = (c: number) => ((c /= 255) <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4);
-
-/** Shade for a percentage cell in a heat table, up to 62% strength at the scale maximum. */
+/** Shade for a percentage cell in a heat table: the theme's ink mixed into its page ground by the cell's size (lib/chart-form.ts heatShare), under ink text that reads at 4.5:1 on every step in both themes. */
 export function heatStyle(cell: string | undefined, max: number): React.CSSProperties | undefined {
-  const v = pctIn(cell);
-  if (v === null || max <= 0) return undefined;
-  const k = Math.round((Math.min(v, max) / max) * 62);
-  const rgb = HEAT_LO.map((lo, i) => lo + (HEAT_HI[i] - lo) * (k / 100));
-  const L = 0.2126 * lin(rgb[0]) + 0.7152 * lin(rgb[1]) + 0.0722 * lin(rgb[2]);
-  return { background: `color-mix(in oklab, #2a2925 ${k}%, #f6f5f1)`, color: L > 0.179 ? "#000" : "#fff" };
+  const k = heatShare(cell, max);
+  return k === null ? undefined : { background: `color-mix(in oklab, var(--ink) ${k}%, var(--bg))`, color: "var(--ink)" };
+}
+
+/** Fills for a stacked bar's parts, in order, and the text on each (at least 4.5:1 in both themes). */
+const FILLS = ["var(--ink)", "var(--ink-3)", "var(--line-2)"], ON_FILL = ["var(--bg)", "var(--bg)", "var(--ink)"];
+
+/** Counts split into parts: one stacked bar per row on a shared scale from zero, each part's count inside it and the total at the end. */
+export function Stacks({ c }: { c: Chart }) {
+  const { parts, max, rows } = stacks(c);
+  return (
+    <div className="cv-stack" aria-hidden="true">
+      <p className="fig-key cv-legend">
+        {parts.map((h, i) => (
+          <span key={h}>
+            <i className="cv-sw" style={{ background: FILLS[i] }} />
+            {h}
+          </span>
+        ))}
+      </p>
+      <ul>
+        {rows.map(({ row, values, cells, total }) => (
+          <li key={row.label}>
+            <span className="lab">
+              {row.label}
+              {rowSource(row)}
+            </span>
+            <span className="bar">
+              {values.map((v, i) => (
+                <span key={i} className={`pt p${i}`} style={{ width: `${(v / max) * 100}%`, background: FILLS[i], color: ON_FILL[i] }} title={`${parts[i]}: ${cells[i]}`}>
+                  <b>{cells[i]}</b>
+                </span>
+              ))}
+            </span>
+            <span className="tot">{total}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }

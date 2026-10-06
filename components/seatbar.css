@@ -16,3 +16,8 @@
 .sb-hatch { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }
 .sb-maj { position: absolute; top: calc(-1 * var(--sb-over)); bottom: calc(-1 * var(--sb-over)); width: 2px; margin-left: -1px; background: var(--ink); }
 @media print { .seatbar, .seatbar * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+/* sb-fit: a segment hides its label when the room left for it (its content box, after any padding that
+   moves the label past the 61 tick) is under about 11px, so no figure is cut or crowds the tick; the
+   figure's key carries the hidden ones. */
+:where(.sb-fit) > .sb-seg { container-type: inline-size; }
+@container (max-width: 11px) { :where(.sb-fit) > .sb-seg > b { visibility: hidden; } }

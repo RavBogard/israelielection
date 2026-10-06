@@ -90,14 +90,16 @@ export function matrixRows(ids: string[]): MatrixRow[] {
 
 /**
  * Fill for a stance shade: the profile tiles' ramp, fixed endpoints so light and dark modes agree. Options that are
- * not a scale (priorities that can coexist) take the paper with a 1px ink outline (UNORDERED_EDGE) and an ink numeral,
- * a mark no ramp step can be read as; hatched (declined) and dashed (none) keep their meanings.
+ * not a scale (priorities that can coexist) take the paper with a faint dot screen (UNORDERED_FILL), a 1px ink outline
+ * (UNORDERED_EDGE) and an ink numeral: a mark no ramp step can be read as, and one that does not read as an empty bar;
+ * hatched (declined) and dashed (none) keep their meanings. It is a background shorthand, so set it as `background`.
  */
+export const UNORDERED_FILL = "radial-gradient(circle, var(--line-2) 0.9px, transparent 1.3px) 0 0 / 5px 5px, var(--sheet)";
 export function shade(position: number | null): string {
-  return position === null ? "var(--sheet)" : `color-mix(in oklab, var(--ramp-start) ${Math.round(100 - position * 80)}%, var(--ramp-end))`;
+  return position === null ? UNORDERED_FILL : `color-mix(in oklab, var(--ramp-start) ${Math.round(100 - position * 80)}%, var(--ramp-end))`;
 }
 /** The outline every unordered mark carries, as an inset box-shadow so it does not change the mark's size. */
 export const UNORDERED_EDGE = "inset 0 0 0 1px var(--ink)";
 
-/** The numeral on a shaded cell: white on the dark half of the graphite ramp, black on the light half, ink on the paper of unordered options (each at least 4.5:1, pinned in ramp.test.ts). */
+/** The numeral on a shaded cell: white on the dark half of the graphite ramp, black on the light half, ink on the dotted paper of unordered options (each at least 4.5:1, pinned in ramp.test.ts). */
 export const onShade = (position: number | null) => (position === null ? "ink" : position < 0.5 ? "light" : "dark");

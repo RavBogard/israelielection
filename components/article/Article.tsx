@@ -5,7 +5,7 @@ import { partyColor } from "@/lib/party-colors";
 import { shade, UNORDERED_EDGE } from "../compare/model";
 import { seatFigure } from "@/lib/polls";
 import type { PositionRow } from "@/lib/compare";
-import { DotPlot, Lines, Sparklines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
+import { DotPlot, Lines, Sparklines, Stacks, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
 import { barRefs, transpose } from "@/lib/chart-form";
 import SeatBar from "../SeatBar";
 
@@ -48,9 +48,11 @@ function Linked({ text }: { text: string }) {
 /** A data/charts table as a table, with each percentage cell shaded by its size when `heat` is set. */
 function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
   const top = heat ? heatMax(c) : 0;
+  // Four or more shaded columns do not fit a phone: there each row becomes a card of labelled cells (article.css).
+  const cards = heat && c.columns!.length >= 5;
   return (
         <div className="tw">
-          <table className={heat ? "heat" : undefined}>
+          <table className={heat ? `heat${cards ? " cards" : ""}` : undefined}>
             <caption className="sr-only">{c.title}</caption>
             <thead>
               <tr>
@@ -69,7 +71,7 @@ function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
                     {rowSource(r)}
                   </th>
                   {r.cells!.map((x, i) => (
-                    <td key={i} style={heat && !unshaded(c.columns![i + 1] ?? "") ? heatStyle(x, top) : undefined}>{x}</td>
+                    <td key={i} data-col={cards ? c.columns![i + 1] : undefined} style={heat && !unshaded(c.columns![i + 1] ?? "") ? heatStyle(x, top) : undefined}>{x}</td>
                   ))}
                 </tr>
               ))}
@@ -100,7 +102,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
   const print = (r: ChartRow) => r.display ?? `${r.value}${unit === "%" ? "%" : unit ? ` ${unit}` : ""}`;
   const bars = c.kind === "bars" ? barRefs(c, print) : null;
   const xOf = (v: number) => Math.max(0, Math.min(100, (v / max) * 100));
-  const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks";
+  const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks" || form === "stack";
   return (
     <figure className="chart">
       <figcaption className="ct">{c.title}</figcaption>
@@ -138,7 +140,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
         </ul>
       ) : drawn ? (
         <>
-          {form === "lines" ? <Lines c={c} /> : form === "trend" ? <Lines c={transpose(c)} /> : form === "sparks" ? <Sparklines c={c} /> : <DotPlot c={c} />}
+          {form === "lines" ? <Lines c={c} /> : form === "trend" ? <Lines c={transpose(c)} /> : form === "sparks" ? <Sparklines c={c} /> : form === "stack" ? <Stacks c={c} /> : <DotPlot c={c} />}
           {!compact && <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
             <summary>The numbers<span className="sr-only">: {c.title}</span></summary>
             <NumbersTable c={c} heat={false} />
@@ -154,7 +156,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
         </p>
       ) : (
       <p className="fig-src cs">
-        {form === "heat" && heatMax(c) > 0 && `Darkest shade: ${heatMax(c)}%${c.columns!.slice(1).some(unshaded) ? "; turnout is a share of eligible voters, so it is not shaded" : ""}. `}
+        {form === "heat" && heatMax(c) > 0 && `Strongest shade: ${heatMax(c)}%${c.columns!.slice(1).some(unshaded) ? "; turnout is a share of eligible voters, so it is not shaded" : ""}. `}
         Source: <SourceLine {...c} />
         {c.note && (
           <>
@@ -195,13 +197,14 @@ function splitOf(issue: string) {
 const onClass = (pos: number | null) => `on-${pos === null ? "ink" : pos < 0.5 ? "light" : "dark"}`;
 
 /**
- * A segment's label starts at its left edge; when the 61 tick falls just inside that edge, the label
- * moves to just past the tick instead, if the segment has more room after the tick than before it.
- * Padding in percent is of the bar's width, so the offset is exact at any width.
+ * A segment's label starts at its left edge; when the 61 tick falls within its first eight seats (about
+ * 20px on a phone), the label moves to just past the tick instead. Padding in percent is of the bar's
+ * width, so the offset is exact at any width; a segment left without room for its label hides it
+ * (sb-fit in seatbar.css), and the key under the bar carries it.
  */
 function clearOfTick(start: number, seats: number) {
   const before = MAJORITY - start, after = start + seats - MAJORITY;
-  return before > 0 && before < 6 && after >= before ? { paddingLeft: `calc(${(before / SEATS) * 100}% + 5px)` } : undefined;
+  return before > 0 && before < 8 && after > 0 ? { paddingLeft: `calc(${(before / SEATS) * 100}% + 5px)` } : undefined;
 }
 const MAJORITY = 61;
 
@@ -210,7 +213,7 @@ function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>,
   const ink = (pos: number | null) => (pos === null ? "var(--ink)" : pos < 0.5 ? "#fff" : "#000");
   return (
     <SeatBar
-      className="ps-bar"
+      className="ps-bar sb-fit"
       size={size}
       total={SEATS}
       segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${seatFigure(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}

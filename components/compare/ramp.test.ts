@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { onShade, shade, UNORDERED_EDGE } from "./model";
+import { onShade, shade, UNORDERED_EDGE, UNORDERED_FILL } from "./model";
 
 /*
  * The stance ramp's numerals stay readable: every shade shade() can draw, with the numeral onShade()
@@ -58,8 +58,12 @@ describe("stance ramp", () => {
     }
   });
 
-  it("draws unordered options as paper with an ink outline and an ink numeral, never a ramp step", () => {
-    expect(shade(null)).toBe("var(--sheet)");
+  it("draws unordered options as dotted paper with an ink outline and an ink numeral, never a ramp step", () => {
+    expect(shade(null)).toBe(UNORDERED_FILL);
+    expect(UNORDERED_FILL).toMatch(/^radial-gradient\(.*var\(--line-2\).*, var\(--sheet\)$/);
+    expect(UNORDERED_FILL).not.toContain("ramp");
+    // The ink numeral reads over the dots as well as the paper.
+    for (const from of [css, dark]) expect(contrast(hex(token("ink", from)), hex(token("line-2", from)))).toBeGreaterThanOrEqual(4.5);
     expect(UNORDERED_EDGE).toContain("var(--ink)");
     expect(onShade(null)).toBe("ink");
     expect(contrast(hex(token("ink")), hex(token("sheet")))).toBeGreaterThanOrEqual(4.5);

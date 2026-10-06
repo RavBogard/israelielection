@@ -239,3 +239,49 @@
 .sindex .ps-mini-read { margin: 6px 0 0 !important; font-size: 13.5px !important; color: var(--ink-2); font-family: var(--body) !important; }
 .sindex .ps-mini-read b { color: var(--ink); font-weight: 600; }
 .vm-text .vm-checked { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); }
+
+/* Stacked bars (ChartViz Stacks): counts split into parts, one bar per row on one scale from zero; each part's count inside it, the total at the end. */
+.article .cv-stack .cv-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.article .cv-stack .cv-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.article .cv-sw { display: inline-block; width: 12px; height: 12px; flex: none; }
+.article .cv-stack ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 10em) minmax(0, 1fr) auto; column-gap: 12px; }
+.article .cv-stack li { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; align-items: center; padding: 9px 0; border-top: 1px solid var(--line); font-size: 14.5px; }
+.article .cv-stack .lab { line-height: 1.25; font-weight: 600; color: var(--ink); }
+.article .cv-stack .lab .rs { display: block; }
+.article .cv-stack .bar { display: flex; height: 34px; background: var(--cell); }
+.article .cv-stack .pt { box-sizing: border-box; display: flex; align-items: center; min-width: 0; overflow: hidden; white-space: nowrap; padding-left: 8px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.article .cv-stack .pt + .pt { border-left: 2px solid var(--bg); }
+.article .cv-stack .tot { font-family: var(--display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; color: var(--ink); }
+
+/* Sparkline list names that will not fit their room under the line are listed under it instead, each with the election it starts at. */
+.article .cv-sparks .ls .fr { display: none; }
+@media (max-width: 640px) {
+  .article .cv-sparks .fl-s .lists { height: auto; }
+  .article .cv-sparks .fl-s .ls { position: static; display: block; max-width: none !important; white-space: normal; border: 0; padding: 0; text-align: left; }
+  .article .cv-sparks .fl-s .ls .fr { display: inline; }
+  .article .cv-stack ul { grid-template-columns: minmax(0, 1fr) auto; }
+  .article .cv-stack li { row-gap: 6px; }
+  .article .cv-stack .lab { grid-column: 1 / -1; }
+}
+@media (max-width: 360px) {
+  .article .cv-sparks .fl-xs .lists { height: auto; }
+  .article .cv-sparks .fl-xs .ls { position: static; display: block; max-width: none !important; white-space: normal; border: 0; padding: 0; text-align: left; }
+  .article .cv-sparks .fl-xs .ls .fr { display: inline; }
+}
+@media (min-width: 641px) {
+  .article .cv-sparks .fl-l .lists { height: auto; }
+  .article .cv-sparks .fl-l .ls { position: static; display: block; max-width: none !important; white-space: normal; border: 0; padding: 0; text-align: left; }
+  .article .cv-sparks .fl-l .ls .fr { display: inline; }
+}
+
+/* Heat tables with four or more shaded columns: on a phone each row becomes a card, its cells a grid of labelled tiles, so nothing is cut at the edge. */
+@media (max-width: 640px) {
+  .article table.heat.cards, .article table.heat.cards tbody { display: block; }
+  .article table.heat.cards thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .article table.heat.cards tr { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 3px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .article table.heat.cards tbody th { grid-column: 1 / -1; padding: 0 0 4px; border: 0; }
+  .article table.heat.cards td { display: flex; flex-direction: column; gap: 1px; padding: 5px 7px; border: 0; text-align: left; font-weight: 700; }
+  .article table.heat.cards td::before { content: attr(data-col); font-size: 12px; font-weight: 400; line-height: 1.25; }
+}
+.article .cv-sparks .pv { position: absolute; transform: translate(8px, -50%); font-size: 13.5px; font-weight: 700; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.article .cv-sparks .pv.to-l { transform: translate(calc(-100% - 8px), -50%); font-weight: 400; color: var(--ink-2); }
