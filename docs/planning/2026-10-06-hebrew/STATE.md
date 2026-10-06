@@ -16,3 +16,4 @@ Daniel: "i want version 1. lets do it" — Hebrew versions of home, polls, Coali
 - Daniel: quotes with no original Hebrew found are shown marked (תרגום).
 - Daniel: daily briefing on the Hebrew home publishes automatically with a small "תורגם אוטומטית" label after the checks pass; falls back to English if they fail. (Briefing is the one machine-translated exception.)
 - Daniel: he reviews all Hebrew himself.
+- Daniel, 2026-10-06: Hebrew site name "פתק 2026"; blocs גוש נתניהו / גוש האופוזיציה (with מחוץ לגושים and המפלגות הערביות). Style guide: STYLE.md.

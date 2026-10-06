@@ -10,7 +10,7 @@ From the style research of 2026-10-06 (sources: Maariv, i24NEWS, Walla, N12, Cha
 - Avoid: המרוץ / מרוץ הגושים (use מערכת הבחירות, מפת המנדטים, תמונת הגושים); "סווינג" (המתלבטים); kingmaker (לשון המאזניים); toss-up (שוויון); momentum; גוש הימין / השמאל (Channel 14 framing); calques ("לעשות הבדל", "בסופו של יום", "זה חשוב לציין", "נאמר כי").
 - Use "נכון ל-5 באוקטובר", "לפי ממוצע הסקרים". Plural imperatives (בחרו, לחצו, הרכיבו); no slash forms. "אנחנו" only on the method tab ("איך חישבנו").
 
-## Blocs (Daniel to confirm)
+## Blocs (confirmed by Daniel, 2026-10-06)
 - Netanyahu bloc: **גוש נתניהו**.
 - Anti-Netanyahu bloc (Jewish-majority parties): **גוש האופוזיציה** (Maariv, Walla, Channel 13; matches the four-bloc model). Long form "האופוזיציה הציונית". Avoid גוש השינוי (the camp's own name). If the government changes, "גוש מתנגדי נתניהו".
 - Between the blocs: **מחוץ לגושים** in keys, **בתווך** in prose.
@@ -36,7 +36,8 @@ Full CEC slip names only on the ballot directory.
 Issues: גיוס חרדים / חוק הגיוס ("שוויון בנטל" is one side's slogan); מערכת המשפט, פסקת ההתגברות, עילת הסבירות, הוועדה לבחירת שופטים (avoid "הרפורמה המשפטית" and "ההפיכה המשטרתית" unless quoting); יהודה ושומרון / הגדה המערבית paired on first use, "החלת ריבונות" and "סיפוח" both given; ועדת חקירה ממלכתית; נישואים אזרחיים; תחבורה ציבורית בשבת; גיור; יוקר המחיה.
 Tools: Paths to 61 = **איך מגיעים ל-61**; Coalition Builder = **מרכיבים קואליציה** (button: הרכיבו קואליציה); Compare = **השוואת עמדות** (button: השוו); polls tabs: מפלגות, סוקרים, כל הסקרים, איך חישבנו; cite = לציטוט; מקור: / מקורות:; עודכן: 5.10.26, 08:30; daily briefing = התדריך היומי ("תורגם אוטומטית"); translated quote = (תרגום).
 
-## Site name (Daniel to confirm)
+## Site name (Daniel chose פתק 2026, 2026-10-06)
+The Hebrew site is **פתק 2026**.
 Taken: ישראל בוחרת (Channel 1 programme, KAS), הולכים לבחירות (Haaretz podcast), 61 (sixtyone.co.il), המדד (Channel 13 pollster). Recommended: **בוחרים כנסת** (masthead "בוחרים כנסת 2026"): plain civic Hebrew, not a translation, fits any year. Others: פתק 2026, הכנסת ה-26, הקלפי 2026.
 
 ## Numbers and dates
