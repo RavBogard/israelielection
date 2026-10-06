@@ -213,6 +213,21 @@ export function PositionsLead({ issue }: { issue: string }) {
   );
 }
 
+/** An issue's split as a small figure for the Issues index: the bar and its largest answer. */
+export function SplitMini({ issue }: { issue: string }) {
+  const { groups, rest } = splitOf(issue);
+  if (!groups.length) return null;
+  const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
+  return (
+    <div className="ps-mini">
+      <SplitBar groups={groups} rest={rest} />
+      <p className="ps-mini-read">
+        Largest answer: <b>{top.st.label}</b>, {Math.round(top.seats)} seats{top.seats >= 61 ? ", a majority" : ""}
+      </p>
+    </div>
+  );
+}
+
 export function Positions({ issue }: { issue: string }) {
   const { p, stances, seats, hasText, groups } = splitOf(issue);
   const sorted = new Set(groups.flatMap((g) => g.rows.map((r) => r.party)));

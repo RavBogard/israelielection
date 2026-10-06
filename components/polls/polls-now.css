@@ -11,7 +11,7 @@
 
 /* 120-seat bar */
 .pn-bar { position: relative; display: flex; height: 44px; background: var(--cell); }
-.pn-bar .seg { display: flex; align-items: center; justify-content: center; min-width: 0; overflow: hidden; border-right: 2px solid var(--bg); }
+.pn-bar .seg { display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; min-width: 0; overflow: hidden; border: 0; border-radius: 0; border-right: 2px solid var(--bg); }
 .pn-bar .seg:last-of-type { border-right: 0; }
 .pn-bar .seg b { font-family: var(--display); font-size: 19px; font-variant-numeric: tabular-nums; }
 .pn-bar .seg-mid b { font-size: 14px; }

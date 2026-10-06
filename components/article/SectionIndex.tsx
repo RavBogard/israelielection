@@ -1,7 +1,8 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import "./article.css";
 
-/** The landing page of a section: a short intro, then each page's title and dek. */
+/** The landing page of a section: a short intro, then each page's title, its figure when it has one, and dek. */
 export default function SectionIndex({
   title,
   intro,
@@ -10,7 +11,7 @@ export default function SectionIndex({
 }: {
   title: string;
   intro: string;
-  items: { href: string; title: string; dek: string }[];
+  items: { href: string; title: string; dek: string; figure?: ReactNode }[];
   extra?: { href: string; title: string; dek: string; label: string };
 }) {
   return (
@@ -26,6 +27,7 @@ export default function SectionIndex({
               <h2>
                 <Link href={s.href}>{s.title}</Link>
               </h2>
+              {s.figure}
               <p>{s.dek}</p>
             </li>
           ))}
