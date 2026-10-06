@@ -13,6 +13,7 @@ import timelineJson from "@/data/timeline.json";
 import election2022 from "@/public/vote-map/2022.json";
 import { allPolls, averagePoll, parties } from "@/lib/data";
 import { navFacts } from "@/lib/nav-facts";
+import { visibleNavItems } from "@/lib/navigation";
 import { blocTotals, isExit } from "@/lib/polls";
 import "./globals.css";
 
@@ -88,12 +89,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 This site uses Google Analytics to understand visits and page use. <Link href="/about#privacy">Privacy</Link>.
               </p>
             </div>
+            {/* The header menus' rule: election-night pages join once polls close. Search, the sitemap and All resources always list them. */}
             <nav className="cols" aria-label="Site map">
               {NAV_GROUPS.map((g) => (
                 <div key={g.label}>
                   <p className="lbl">{g.label}</p>
                   <ul>
-                    {g.items.map((n) => (
+                    {visibleNavItems(g.items, closedBy(pollsClose), "").map((n) => (
                       <li key={n.href}>
                         <Link href={n.href}>{n.label}</Link>
                       </li>

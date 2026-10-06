@@ -11,7 +11,7 @@ import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
 import { averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
-import { BLOC_SEAT_ORDER, pollLabel, seatsIn } from "@/lib/polls";
+import { BLOC_ORDER, BLOC_SEAT_ORDER, pollLabel, seatFigure, seatsIn } from "@/lib/polls";
 import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
 import { countedTurnout, results, rollCounted, versusAverage } from "@/lib/results";
@@ -117,7 +117,7 @@ function WhatToWatch() {
                 <li key={party.id}>
                   <span className="sw" style={{ background: partyColor(party.id) }} />
                   <Link href={`/parties/${party.id}`}>{party.name}</Link>
-                  <span className="v">{seats ? `${Math.round(seats * 10) / 10} seats` : "below the threshold in every poll"}</span>
+                  <span className="v">{seats ? `${seatFigure(seats)} seats` : "below the threshold in every poll"}</span>
                 </li>
               ))}
             </ul>
@@ -228,7 +228,6 @@ function ThresholdWatch({ count }: { count: Count }) {
 }
 
 const signed = (n: number) => (n > 0 ? `+${n.toFixed(1)}` : n < 0 ? `−${(-n).toFixed(1)}` : "0");
-const tenths = (n: number) => (Math.round(n * 10) / 10).toFixed(1);
 const DASH = "–";
 
 /** The election-night board, drawn the same before polls close (hatched, awaiting the count) and during it, so nothing moves on the night. */
@@ -252,7 +251,8 @@ function Board({ count }: { count: Count | null }) {
     : [...vs].sort((a, b) => (b.avg ?? -1) - (a.avg ?? -1)).map((v) => ({ l: null as PartyResult | null, v }));
   const share = rollCounted(count, cfg.roll);
   const turnout = count ? countedTurnout(count) : null;
-  const wait = (k: string) => <td key={k} className="num rs-wait"><span className="sr-only">Awaiting count</span><span aria-hidden="true">{DASH}</span></td>;
+  const wait = (k: string, c = "") => <td key={k} className={`num rs-wait${c ? ` ${c}` : ""}`}><span className="sr-only">Awaiting count</span><span aria-hidden="true">{DASH}</span></td>;
+  const seatCell = (l: PartyResult | null, c: string) => (l ? <td className={`num ${c}${l.seats ? "" : " below"}`}>{l.seats || "below threshold"}</td> : wait(c, c));
   return (
     <>
       <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}>
@@ -267,7 +267,7 @@ function Board({ count }: { count: Count | null }) {
         <SeatGrid segments={segments} labelRule title={r ? undefined : `Awaiting the count: ${KNESSET} seats; ${MAJORITY} is a majority`} />
         <div>
           <ul className="rs-legend">
-            {blocSeats.map((b) => (
+            {[...blocSeats].sort((a, b) => BLOC_ORDER.indexOf(a.id) - BLOC_ORDER.indexOf(b.id)).map((b) => (
               <li key={b.id}><span className="sw" style={{ background: blocColorStrip(b.id) }} />{b.label} {b.seats === null ? <span className="rs-await-v">Awaiting count</span> : <b>{b.seats}</b>}</li>
             ))}
             {untrackedSeats > 0 && <li><span className="sw" style={{ background: "var(--line-2)" }} />Other lists <b>{untrackedSeats}</b></li>}
@@ -280,7 +280,7 @@ function Board({ count }: { count: Count | null }) {
             <p className="fig-note">
               {!count
                 ? "Awaiting the count."
-                : <>{num(count.valid)} valid votes from {count.localities} regular localities and any included double envelopes; turnout {turnout !== null ? pct(turnout) : "not available"} among counted regular localities.</>}
+                : <>{num(count.valid)} valid votes from {num(count.localities)} regular localities and any included double envelopes; turnout {turnout !== null ? `${(turnout * 100).toFixed(1)}%` : "not available"} among counted regular localities.</>}
               {share === null && " The share appears once the committee publishes its total of eligible voters."}
             </p>
           </div>
@@ -292,7 +292,7 @@ function Board({ count }: { count: Count | null }) {
       <div className="table-scroll">
         <table className="data-table list-table">
           <thead>
-            <tr><th>List</th><th>Letters</th><th className="num">Votes</th><th className="num">Share</th><th className="num">Seats</th><th className="num">Final poll average</th><th className="num">Difference</th></tr>
+            <tr><th>List</th><th className="num lt-seat-m">Seats</th><th className="lt-let">Letters</th><th className="num">Votes</th><th className="num">Share</th><th className="num lt-seat">Seats</th><th className="num">Final poll average</th><th className="num">Difference</th></tr>
           </thead>
           <tbody>
             {rows.map(({ l, v }) => {
@@ -300,21 +300,23 @@ function Board({ count }: { count: Count | null }) {
               return (
                 <tr key={v.partyId}>
                   <td><span className="sw" style={{ background: partyColor(p.id), marginRight: 8 }} /><Link href={`/parties/${p.id}`}>{p.name}</Link></td>
-                  <td className="rs-heb" lang="he" dir="rtl">{toLetter[p.id]}</td>
+                  {seatCell(l, "lt-seat-m")}
+                  <td className="rs-heb lt-let" lang="he" dir="rtl">{toLetter[p.id]}</td>
                   {l ? <td className="num">{num(l.votes)}</td> : wait("v")}
                   {l ? <td className="num">{pct(l.pct)}</td> : wait("p")}
-                  {l ? <td className={`num${l.seats ? "" : " below"}`}>{l.seats || "below threshold"}</td> : wait("s")}
-                  <td className={`num${v.avg ? "" : " below"}`}>{v.avg === null ? DASH : v.avg ? tenths(v.avg) : "below threshold"}</td>
+                  {seatCell(l, "lt-seat")}
+                  <td className={`num${v.avg ? "" : " below"}`}>{v.avg === null ? DASH : v.avg ? seatFigure(v.avg) : "below threshold"}</td>
                   {v.diff === null ? wait("d") : <td className="num">{signed(v.diff)}</td>}
                 </tr>
               );
             })}
             <tr>
               <td>Other lists{r ? ` (${others.length})` : ""}</td>
-              <td />
+              {r ? <td className="num lt-seat-m">{untrackedSeats || DASH}</td> : wait("lt-seat-m", "lt-seat-m")}
+              <td className="lt-let" />
               {r ? <td className="num">{num(others.reduce((s, l) => s + l.votes, 0))}</td> : wait("v")}
               {r ? <td className="num">{pct(others.reduce((s, l) => s + l.pct, 0))}</td> : wait("p")}
-              {r ? <td className="num">{untrackedSeats || DASH}</td> : wait("s")}
+              {r ? <td className="num lt-seat">{untrackedSeats || DASH}</td> : wait("lt-seat", "lt-seat")}
               <td className="num">{DASH}</td>
               <td className="num">{DASH}</td>
             </tr>

@@ -4,6 +4,7 @@ import { mediumDate } from "@/lib/format";
 import { partyColor } from "@/lib/party-colors";
 import { average, inWithoutVariant } from "@/lib/polls";
 import { pollsData } from "@/lib/data";
+import { listSeats } from "@/lib/list-seats";
 
 const MAX = 10;
 const FLOOR = 4;
@@ -37,8 +38,9 @@ export default function ThresholdWatch() {
           </span>
           <span className="tw-read">Passes in</span>
         </li>
-        {rows.map(({ p, dots, av }) => {
+        {rows.map(({ p, dots }) => {
           const k = dots.filter((d) => d.seats > 0).length;
+          const ls = listSeats(p.id), avg = ls.below ? null : ls.text;
           const seen = new Map<number, number>();
           const count = new Map<number, number>();
           for (const d of dots) count.set(d.seats, (count.get(d.seats) ?? 0) + 1);
@@ -58,7 +60,7 @@ export default function ThresholdWatch() {
               </span>
               <span className="tw-read">
                 <b>{k}</b> of {dots.length}
-                {av && k > 0 && <span className="tw-avg"> {Math.round(av.avg * 10) / 10} avg</span>}
+                {k > 0 && avg && <span className="tw-avg"> {avg} avg</span>}
               </span>
             </li>
           );

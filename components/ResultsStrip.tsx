@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { nextCountSummary } from "@/lib/results-summary";
 import type { CountSummary } from "@/app/api/count/route";
+import { blocRank } from "@/lib/polls";
+import type { BlocId } from "@/lib/types";
 
 const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
@@ -46,7 +48,7 @@ export default function ResultsStrip({ pollsClose }: { pollsClose: string }) {
           {data.freshness === "stale" ? "Saved count (stale)" : "The count so far"}
         </Link>
         <ul>
-          {data.blocs.map((b) => (
+          {[...data.blocs].sort((a, b) => blocRank(a.id as BlocId) - blocRank(b.id as BlocId)).map((b) => (
             <li key={b.id}>
               <span className="sw" style={{ background: `var(--b-${b.id})` }} />
               {b.label} <b>{b.seats}</b>

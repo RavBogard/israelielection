@@ -58,7 +58,8 @@
 }
 
 /* Election-night board: before polls close the grid, bar and count cells are hatched as awaiting the count. */
-.rs .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.rs .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.rs .table-scroll { position: relative; }
 .rs .rs-h-bg { fill: var(--cell); }
 .rs .rs-h-ln { stroke: var(--line-2); stroke-width: .5; }
 .rs .rs-await .sg .e { fill: url(#rs-hatch); }
@@ -73,3 +74,11 @@
 .rs .list-table td.rs-wait { color: var(--ink-3); background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); }
 .rs .rs-await-v { white-space: nowrap; }
 .rs .list-table td:first-child { white-space: nowrap; }
+/* Phones: Seats straight after the name, names wrap, letters left to the ballot-letters table. */
+.rs .list-table .lt-seat-m { display: none; }
+@media (max-width: 640px) {
+  .rs .list-table .lt-seat-m { display: table-cell; }
+  .rs .list-table .lt-let, .rs .list-table .lt-seat { display: none; }
+  .rs .list-table td:first-child { white-space: normal; }
+  .rs .list-table th, .rs .list-table td { font-size: 13px; padding-right: 6px; }
+}

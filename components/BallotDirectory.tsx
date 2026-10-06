@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ballotLists, filterBallot, orderSlips, type SlipOrder } from "@/lib/ballot";
 import { averagePoll } from "@/lib/data";
+import { seatFigure } from "@/lib/polls";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import data from "@/data/ballot-directory.json";
 import "./BallotDirectory.css";
@@ -40,10 +41,10 @@ export default function BallotDirectory() {
             const c = l.profile ? partyColor(l.profile) : null;
             return (
               <li key={l.id}>
-                <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${Math.round(s * 10) / 10} seats in the average` : ""}`}>
+                <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${seatFigure(s)} seats in the average` : ""}`}>
                   <span className="bd-letters" lang="he" dir="rtl">{l.letters}</span>
                   <span className="bd-name">{l.name}</span>
-                  {s > 0 && <span className="bd-seats">{Math.round(s * 10) / 10}</span>}
+                  {s > 0 && <span className="bd-seats">{seatFigure(s)}</span>}
                 </a>
               </li>
             );
