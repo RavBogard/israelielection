@@ -17,7 +17,8 @@ const nm=(text:string,lang?:Lang):ReactNode=>lang==="en"?<span lang="en" dir="lt
  * The home hero's chart: the bloc list and the 120-seat mosaic. `rtl` (default: the Hebrew edition) fills the
  * mosaic from the top right with "61" left of the rule; SVG ignores dir, so the cells are placed mirrored here.
  */
-export default function HomeRace({model,change,rtl}:{model:HomeRaceModel;change?:BlocChange|null;rtl?:boolean}){
+/** `heading`: what the numbers are ("Average of 7 polls, to Oct 5"), set as the bloc list's header. */
+export default function HomeRace({model,change,rtl,heading}:{model:HomeRaceModel;change?:BlocChange|null;rtl?:boolean;heading?:ReactNode}){
  // The count gives whole seats; only the polling average keeps a decimal.
  const seats=(n:number)=>model.isAverage||!Number.isInteger(n)?seatFigure(n):String(n);
  const lang=useLang(),t=home[lang].race,he=lang==="he",flip=rtl??he;
@@ -32,7 +33,7 @@ export default function HomeRace({model,change,rtl}:{model:HomeRaceModel;change?
  const rects=(indices:number[],bloc:BlocId|null,color:string,label:string)=>indices.map(i=><rect key={i} data-cell={i} data-bloc={bloc??"unassigned"} className={bloc?"c":"e"} x={cx(i)} y={Math.floor(i/12)*12+1} width={10} height={10} fill={color} aria-hidden="true"><title>{t.cell(label,i+1)}</title></rect>);
  const delta=(d:number)=>he?d===0?t.noChange:<bdi dir="ltr">{signedSeats(d)}</bdi>:signedSeats(d);
  return <div className="race-chart">
-  <div className="race-selectors"><p id="race-instruction" className="race-instruction">{t.instruction}</p><ul>{model.rows.map(row=><li key={row.id}><button ref={el=>{buttons.current[row.id]=el;}} type="button" className="race-bloc-button" aria-expanded={selected===row.id} aria-controls="race-party-panel" onClick={()=>choose(row.id)}>
+  <div className="race-selectors">{heading&&<p className="race-list-head">{heading}</p>}<p id="race-instruction" className="sr-only">{t.instruction}</p><ul>{model.rows.map(row=><li key={row.id}><button ref={el=>{buttons.current[row.id]=el;}} type="button" className="race-bloc-button" aria-expanded={selected===row.id} aria-controls="race-party-panel" onClick={()=>choose(row.id)}>
    <span className="race-row-label"><span className="race-group-name"><span className="sw" style={{background:`var(--b-${row.id})`}} aria-hidden="true"/>{nm(row.label,row.labelLang)}</span><span className="race-value">{seats(row.seats)}<small>{row.incomplete?t.knownSeats:t.seats}</small></span></span>
    {change&&<span className="race-change"><svg className="race-spark" viewBox="-2 -2 52 18" aria-hidden="true" focusable="false"><path d={sparkPath(change.points,row.id,48,14,range)} stroke={`var(--b-${row.id})`}/></svg>{delta(change.delta[row.id])}{t.since}{shortDate(change.since,lang)}</span>}
    <span className="race-row-caption">{(row.id==="net"||row.id==="opp")&&<span className="race-gap">{row.shortfall>0?t.short(seats(row.shortfall)):row.seats===61?t.at:t.above(seats(row.seats-61))}{row.incomplete?t.known:""}</span>}<span className="race-disclosure">{selected===row.id?t.hide:t.show}<span className={`race-caret${selected===row.id?" open":""}`} aria-hidden="true"/></span></span>

@@ -2,14 +2,14 @@
    grouped disclosure menus, then Search and About, then the language toggle. The other utilities sit at the foot
    of each open panel. 900 to 1359px: the menus take their own row. Phones: brand, the toggle and Menu, the meter on one line, the countdown;
    the menu lists the groups, then every utility. */
-.masthead .row { position: relative; grid-template-columns: auto auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter navigation utilities lang" "countdown countdown navigation utilities lang"; column-gap: 16px; }
+.masthead .row { position: relative; grid-template-columns: auto auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter navigation utilities lang" "countdown countdown navigation utilities lang"; column-gap: 10px; }
 .masthead .brand { padding-block: 14px 4px; }
 .masthead > .row > .countdown { padding: 0 0 12px; font-size: 13px; }
 .masthead:has(.site-nav[data-home]) > .row > .countdown, .masthead:has(.site-nav[data-closed]) > .row > .countdown { display: none; }
 .masthead:has(.site-nav[data-home]) .brand, .masthead:has(.site-nav[data-closed]) .brand { padding-block: 16px; }
 .site-nav,.nav-menu { display: contents; }
 
-.mast-meter { grid-area: meter; align-self: center; display: flex; flex-direction: column; gap: 6px; width: 160px; padding-block: 8px; color: var(--ink-2); text-decoration: none; }
+.mast-meter { grid-area: meter; align-self: center; display: flex; flex-direction: column; gap: 6px; width: 140px; padding-block: 8px; color: var(--ink-2); text-decoration: none; }
 .mm-text { font-size: 13px; line-height: 1.3; }
 .mm-text b { font: 700 17px var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
 .mast-meter:hover .mm-text { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
@@ -17,7 +17,7 @@
 /* The early count: too few places to read seats from, hatched as on the results page. */
 .mast-meter.early .mm-bar::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--bg) 60%, transparent) 0 1.5px, transparent 1.5px 5px); }
 
-.nav-utilities { grid-area: utilities; display: flex; align-items: center; gap: 0 20px; list-style: none; padding: 0; margin: 0; }
+.nav-utilities { grid-area: utilities; display: flex; align-items: center; gap: 0 16px; list-style: none; padding: 0; margin: 0; }
 .nav-utilities a { display: flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration-color: var(--line-2); text-underline-offset: 5px; }
 .nav-utilities a:hover { text-decoration-color: currentColor; }
 .nav-utilities a[aria-current="page"],.nav-panel-more a[aria-current="page"] { text-decoration-color: currentColor; text-decoration-thickness: 2px; }
@@ -36,11 +36,11 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 .nav-groups { display: flex; height: 100%; list-style: none; padding: 0; margin: 0; }
 .nav-group { position: relative; flex: 1 1 auto; min-width: 0; }
 .nav-group + .nav-group { border-inline-start: 1px solid var(--line); }
-.nav-trigger { display: block; width: 100%; height: 100%; min-height: 62px; background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 10px 8px; color: var(--ink); text-align: start; font: 600 14.5px var(--body); cursor: pointer; }
-.nav-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; white-space: nowrap; }
+.nav-trigger { display: block; width: 100%; height: 100%; min-height: 62px; background: transparent; border: 0; border-bottom: 2px solid transparent; padding: 10px 6px; color: var(--ink); text-align: start; font: 600 14px var(--body); cursor: pointer; }
+.nav-label { display: flex; align-items: center; justify-content: space-between; gap: 5px; white-space: nowrap; }
 .nav-caret { display: inline-block; width: 6px; height: 6px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); flex: 0 0 auto; margin-top: -3px; }
 .nav-trigger[aria-expanded="true"] .nav-caret { transform: rotate(225deg); margin-top: 4px; }
-.nav-preview { display: block; font-size: 12px; font-weight: 400; color: var(--text); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.nav-preview { display: block; font-size: 12px; font-weight: 400; color: var(--text); margin-top: 4px; font-variant-numeric: tabular-nums; text-wrap: balance; }
 .section-active .nav-trigger { border-bottom-color: var(--ink); }
 .nav-trigger[aria-expanded="true"],.nav-trigger:hover { background: var(--sheet); }
 .nav-panel { position: absolute; inset-inline-start: 0; top: 100%; width: min(620px, calc(100vw - 2 * var(--gutter))); z-index: 50; background: var(--sheet); border: 1px solid var(--ink); padding: 18px 22px 12px; }

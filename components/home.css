@@ -2,7 +2,7 @@
 .home .wrap { padding-bottom: 48px; }
 .home section h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.1; margin: 0 0 16px; }
 
-.home .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro intro" "mosaic basis" "mosaic selectors" "detail detail" "source source" "context context"; gap: 20px 64px; align-items: start; padding-block: 40px 36px; }
+.home .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro intro" "mosaic selectors" "source selectors" "detail detail" "context context"; gap: 20px 64px; align-items: start; padding-block: 40px 36px; }
 .home .hero .text { grid-area: intro; }
 .home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
 .home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 52ch; }
@@ -11,7 +11,9 @@
 .home .race-selectors { grid-area: selectors; min-width: 0; }
 .home .race-meta { grid-area: basis; }
 .home .race-meta .race-basis { margin: 0; }
-.home .race-instruction { font-size: 14px; color: var(--ink); font-weight: 600; margin: 0 0 10px; }
+/* The bloc list's header: what the numbers are, over a heavy rule. */
+.home .race-list-head { font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink); margin: 0; padding-bottom: 8px; border-bottom: 2px solid var(--ink); font-variant-numeric: tabular-nums; }
+.home .race-selectors li:first-child { border-top: 0; }
 .home .race-selectors ul { list-style: none; padding: 0; margin: 0; }
 .home .race-selectors li { border-top: 1px solid var(--line); }
 .home .race-bloc-button { display: block; width: 100%; text-align: start; cursor: pointer; border: 0; background: transparent; padding-block: 9px; padding-inline: 8px 6px; font: inherit; color: var(--ink); }
@@ -52,6 +54,11 @@
 .home .race-party-seats small { display: block; font-size: 12px; color: var(--text); margin-top: 2px; }
 .home .race-combined,.home .race-model-note { font-size: 12px; line-height: 1.45; color: var(--text); margin: 10px 0 0; max-width: 75ch; }
 .home .race-source { grid-area: source; max-width: 75ch; margin: 0; }
+/* Cite reads as the note's last link; the copied/failed status follows it in the same line. */
+.home .race-source .cite { display: inline; }
+.home .race-source .cite-btn { min-height: 0; padding: 0; border: 0; border-radius: 0; font: inherit; color: var(--ink-2); text-decoration: underline; cursor: pointer; }
+.home .race-source .cite-btn:hover { color: var(--ink); }
+.home .race-source .cite-status { font-size: inherit; margin-inline-start: 6px; }
 .home .race-context { grid-area: context; margin: 0; font-size: 14px; line-height: 1.5; color: var(--text); }
 .home .race-context a { color: var(--ink); font-weight: 600; text-underline-offset: 3px; }
 
@@ -86,7 +93,6 @@
 .home .since-brief .srcs a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid var(--line-2); }
 .home .since-brief .srcs a:hover { color: var(--ink); border-color: var(--ink); }
 .home .since-brief .more { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--ink); text-underline-offset: 3px; }
-.home .race-cite { margin: 10px 0 0; }
 
 /* Try it: the four interactives, each with its own picture drawn from the data. */
 .home .tools { padding-block: 28px 32px; border-bottom: 1px solid var(--line); }
@@ -116,7 +122,7 @@
 .gl-votemap .v6 { fill: none; stroke: color-mix(in oklab, var(--ink) 88%, var(--sheet)); }
 
 @media (max-width: 1000px) {
-  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "mosaic" "basis" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
+  .home .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "mosaic" "selectors" "detail" "source" "context"; gap: 22px; padding-block: 28px 30px; }
   .home .race-visual { max-width: 640px; width: 100%; }
   .home .since { grid-template-columns: minmax(0, 1fr); grid-template-areas: "h" "polls" "brief"; gap: 14px; }
   .home .tools ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
