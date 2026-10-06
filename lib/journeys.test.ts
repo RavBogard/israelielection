@@ -1,7 +1,8 @@
 import { expect, it } from "vitest";
 import { journeys, journeyState } from "./journeys";
 it("validates shared route state and every question has an explanatory answer", () => {
-  expect(journeyState("discussion", "4").index).toBe(4);
+  expect(journeyState("parties", "3").index).toBe(3);
+  expect(journeyState("discussion", "0").route.id).toBe("five");
   expect(journeyState("missing", "100").route.id).toBe("five");
   expect(journeyState("five", "NaN").index).toBe(0);
   for (const route of journeys.routes) for (const key of route.steps) {

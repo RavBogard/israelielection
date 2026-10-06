@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { journeys, journeyState, type JourneyStep } from "@/lib/journeys";
 import "./journey.css";
@@ -14,7 +14,8 @@ function Check({ step }: { step: JourneyStep }) {
     {revealed && <div role="status"><p><b>{choice === null ? "The answer:" : choice === step.answer ? "That's right." : "Reconsider this distinction."}</b> {step.options[step.answer]}.</p><p>{step.explanation}</p></div>}
   </details>;
 }
-export default function GuidedJourney() {
+/** Each step leads with a figure from the site (passed in from the server page), then its text. */
+export default function GuidedJourney({ figures = {} }: { figures?: Record<string, ReactNode> }) {
   const params = useSearchParams();
   const router = useRouter();
   const { route, index } = journeyState(params.get("route"), params.get("step"));
@@ -26,9 +27,11 @@ export default function GuidedJourney() {
     <p>{route.description} Leave or skip a step whenever you like.</p>
     <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
     <section id="journey-step" aria-labelledby="journey-title" tabIndex={-1}>
-      <p className="note">Step {index + 1} of {route.steps.length} · about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
-      <h2 id="journey-title">{step.title}</h2><p>{step.text}</p>
-      <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <> · <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
+      <p className="note">Step {index + 1} of {route.steps.length}, about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
+      <h2 id="journey-title">{step.title}</h2>
+      {figures[key] && <div className="journey-fig">{figures[key]}</div>}
+      <p>{step.text}</p>
+      <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
       <Check key={`${route.id}-${key}`} step={step} />
       <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step / skip</button> : <p><b>You’ve reached the end of this route.</b> <Link href={route.next}>{route.nextLabel}</Link>.</p>}</div>
     </section>
