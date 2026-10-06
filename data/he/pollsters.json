@@ -1,1 +1,140 @@
-{}
+{
+  "Channel 12": {
+    "name": {
+      "text": "חדשות 12",
+      "src": "5bde2ecf"
+    }
+  },
+  "Channel 13": {
+    "name": {
+      "text": "חדשות 13",
+      "src": "5ade2d3c"
+    }
+  },
+  "Channel 14": {
+    "name": {
+      "text": "חדשות 14",
+      "src": "59de2ba9"
+    }
+  },
+  "Kan 11": {
+    "name": {
+      "text": "כאן 11",
+      "src": "8830eed9"
+    }
+  },
+  "Maariv": {
+    "name": {
+      "text": "מעריב",
+      "src": "1eb86123"
+    }
+  },
+  "Zman Yisrael": {
+    "name": {
+      "text": "זמן ישראל",
+      "src": "fa401430"
+    }
+  },
+  "Israel Hayom": {
+    "name": {
+      "text": "ישראל היום",
+      "src": "cfd45c27"
+    }
+  },
+  "i24NEWS": {
+    "name": {
+      "text": "i24NEWS",
+      "src": "051febed"
+    }
+  },
+  "Walla": {
+    "name": {
+      "text": "וואלה",
+      "src": "21884a3c"
+    }
+  },
+  "Yedioth Ahronoth": {
+    "name": {
+      "text": "ידיעות אחרונות",
+      "src": "1812f282"
+    }
+  },
+  "Ynet": {
+    "name": {
+      "text": "ynet",
+      "src": "e751195f"
+    }
+  },
+  "Makor Rishon": {
+    "name": {
+      "text": "מקור ראשון",
+      "src": "7301c2bc"
+    }
+  },
+  "Haaretz": {
+    "name": {
+      "text": "הארץ",
+      "src": "90d47026"
+    }
+  },
+  "Lazar": {
+    "name": {
+      "text": "לזר מחקרים",
+      "src": "71f90e3f"
+    }
+  },
+  "LRI+P4A": {
+    "name": {
+      "text": "לזר מחקרים + Panel4All",
+      "src": "998ac776"
+    }
+  },
+  "Midgam R&C": {
+    "name": {
+      "text": "מדגם מחקרים וייעוץ",
+      "src": "bfc22f61"
+    }
+  },
+  "MP+TM+SN+A": {
+    "name": {
+      "text": "פרויקט מדגם + המדד + סטט-נט + אסקריה",
+      "src": "938dbc1a"
+    }
+  },
+  "Kantar": {
+    "name": {
+      "text": "קנטאר",
+      "src": "3e7c57d4"
+    }
+  },
+  "Next Data / Filber": {
+    "name": {
+      "text": "Next Data / פילבר",
+      "src": "d0f4179b"
+    }
+  },
+  "SF+ND": {
+    "name": {
+      "text": "שלמה פילבר + Next Data",
+      "src": "d4dae18f"
+    }
+  },
+  "Direct Polls": {
+    "name": {
+      "text": "דיירקט פולס",
+      "src": "029321fe"
+    }
+  },
+  "Tatika": {
+    "name": {
+      "text": "טאטיקה מחקרים ומדידה",
+      "src": "ab53bec9"
+    }
+  },
+  "Yossi Tatika": {
+    "name": {
+      "text": "יוסי טאטיקה",
+      "src": "895b0afa"
+    }
+  }
+}

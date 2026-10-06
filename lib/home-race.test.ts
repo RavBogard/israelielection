@@ -30,3 +30,14 @@ describe("homepage mosaic arithmetic and evidence",()=>{
   delete poll.results.raam;poll.combined=[{parties:["shas","raam"],seats:14,note:"Cross-group report"}];const crossed=homeRaceModel(poll,parties,blocs);expect(crossed.rows[0].seats).toBe(30);expect(crossed.rows[0].incomplete).toBe(true);expect(crossed.rows[3].incomplete).toBe(true);expect(homeMosaicLayout(crossed).blocks.flatMap(b=>b.parts).some(p=>p.id.startsWith("combined"))).toBe(false);
  });
 });
+describe("the Hebrew mosaic model",()=>{
+ it("marks names by the language they are in and words the layout's own labels in Hebrew",()=>{
+  const en=homeRaceModel(averagePoll,parties,blocs),he=homeRaceModel(averagePoll,parties,blocs,"he");
+  expect(en.rows.every(r=>!("labelLang" in r)&&r.members.every(m=>!("nameLang" in m)))).toBe(true);
+  expect(he.rows.every(r=>r.labelLang==="he"||(r.labelLang==="en"&&r.label===blocs.find(b=>b.id===r.id)!.label))).toBe(true);
+  expect(he.rows.map(r=>r.seats)).toEqual(en.rows.map(r=>r.seats));
+  const poll=base();poll.results.likud={seats:30};delete poll.results.shas;delete poll.results.utj;poll.combined=[{parties:["shas","utj"],seats:14,note:""}];
+  const layout=homeMosaicLayout(homeRaceModel(poll,parties,blocs,"he"),"he");
+  expect(layout.blocks[0].parts.find(p=>p.partyId===null)?.label).toMatch(/\(דיווח משותף; לא מופרד\)$/);
+ });
+});

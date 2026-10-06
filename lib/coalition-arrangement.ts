@@ -1,4 +1,4 @@
-import { tally, warningsWithSupport, type Warning } from "./coalition";
+import { tally, warningsWithSupport, type Warning, type WarningText } from "./coalition";
 import type { Party, PledgeRule, Poll } from "./types";
 import { AVERAGE_ID } from "./polls";
 
@@ -47,8 +47,8 @@ export function arrangement(cabinet: Set<string>, overrides: RoleOverrides, part
 }
 
 /** Only a recorded refusal to support (a rule marked `support`) is extended to outside support; cabinet refusals stay cabinet refusals. */
-export function arrangementWarnings(cabinet: Set<string>, overrides: RoleOverrides, parties: Party[], rules: PledgeRule[]): Warning[] {
-  return warningsWithSupport(cabinet, new Set(Object.keys(overrides).filter((id) => overrides[id] === "support")), parties, rules);
+export function arrangementWarnings(cabinet: Set<string>, overrides: RoleOverrides, parties: Party[], rules: PledgeRule[], text?: WarningText): Warning[] {
+  return warningsWithSupport(cabinet, new Set(Object.keys(overrides).filter((id) => overrides[id] === "support")), parties, rules, text);
 }
 
 /** A counterfactual vote, not a prediction that any party will withdraw its backing. */

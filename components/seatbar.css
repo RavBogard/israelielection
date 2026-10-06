@@ -5,12 +5,12 @@
 :where(.seatbar).sb-m { --sb-h: 22px; --sb-over: 5px; --sb-gap: 2px; }
 :where(.seatbar).sb-l { --sb-h: 34px; --sb-over: 5px; --sb-gap: 2px; }
 :where(.seatbar).sb-xl { --sb-h: 44px; --sb-over: 6px; --sb-gap: 2px; }
-.sb-seg { box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start; min-width: 0; height: 100%; overflow: hidden; white-space: nowrap; padding-left: 8px; font-size: 12.5px; font-variant-numeric: tabular-nums; } /* physical: chart geometry */
+.sb-seg { box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start; min-width: 0; height: 100%; overflow: hidden; white-space: nowrap; padding-inline-start: 8px; font-size: 12.5px; font-variant-numeric: tabular-nums; } /* logical: segments run from the inline start, so they mirror in Hebrew */
 :where(.sb-s) > .sb-seg { padding: 0; }
-:where(.sb-m) > .sb-seg { padding-left: 5px; font-size: 12px; } /* physical: chart geometry */
+:where(.sb-m) > .sb-seg { padding-inline-start: 5px; font-size: 12px; }
 :where(.sb-xl) > .sb-seg { justify-content: center; padding: 0; }
 :where(.sb-xl > .sb-seg) b { font-family: var(--display); font-size: 19px; }
-.sb-seg + .sb-seg { border-left: var(--sb-gap) solid var(--bg); } /* physical: chart geometry */
+.sb-seg + .sb-seg { border-inline-start: var(--sb-gap) solid var(--bg); }
 .sb-rest { background: var(--cell); }
 /* Hatched means cannot or absent. */
 .sb-hatch { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }

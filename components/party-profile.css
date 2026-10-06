@@ -178,3 +178,12 @@
   .pp-links a { display: inline-flex; align-items: center; min-height: 44px; }
   .pp-links { gap: 0 22px; }
 }
+
+/* Right to left (the Hebrew edition). Sequences start at the inline start: the stance slots and the voter bar run
+   from the right, and the map's 0% end sits at the right with its label. Time axes stay left to right, so the
+   sparkline and its HTML labels keep a left-to-right box; the dot map is geography, so its SVG text keeps its anchors. */
+[dir="rtl"] .pp-sparkwrap, [dir="rtl"] .pp-map { direction: ltr; }
+[dir="rtl"] .pp-tile .gly { transform: scaleX(-1); }
+[dir="rtl"] .pp-stack span { border-right: 0; border-left: 1.5px solid var(--sheet); } /* physical: chart geometry */
+[dir="rtl"] .pp-stack span:last-child { border-left: 0; } /* physical: chart geometry */
+[dir="rtl"] .pp-scale i { transform: scaleX(-1); }

@@ -10,6 +10,8 @@
  */
 import { KNESSET } from "./coalition";
 import type { Poll } from "./types";
+import type { Lang } from "./i18n";
+import resultsText from "./i18n/results";
 
 export type ResultsConfig = {
   updated: string;
@@ -160,7 +162,7 @@ export function resultsOpen(config: ResultsConfig, now = Date.now()): boolean {
 export const RESULTS_ID = "results";
 
 /** The count as a pseudo-poll, so the Coalition Builder can use it like any poll. */
-export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: string, metadata?: { freshness: "fresh" | "stale"; sourceUpdatedAt: string | null }): Poll {
+export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: string, metadata?: { freshness: "fresh" | "stale"; sourceUpdatedAt: string | null }, lang: Lang = "en"): Poll {
   const { lists, alloc } = results(count, config);
   const out: Poll["results"] = {};
   for (const [letters, id] of Object.entries(config.letters)) {
@@ -179,7 +181,7 @@ export function resultsAsPoll(count: Count, config: ResultsConfig, fetchedAt: st
     url: config.source.url,
     n: count.valid,
     margin: null,
-    note: `Votes counted so far in ${count.localities} localities; seats estimated by this site from them (threshold ${fmtVotes(alloc.thresholdVotes)} votes).`,
+    note: resultsText[lang].asPollNote(count.localities, fmtVotes(alloc.thresholdVotes)),
     results: out,
     combined: [],
   };

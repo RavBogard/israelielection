@@ -1,3 +1,5 @@
+import type { Lang } from "@/lib/i18n";
+import chrome from "@/lib/i18n/chrome";
 import "./seatgrid.css";
 
 export type Segment = {
@@ -33,7 +35,8 @@ export function allocate(segments: Segment[], total = TOTAL): number[] {
 /**
  * 120 seats as a grid, twelve across, filled in order from the top left. The heavy rule sits
  * under the fifth row: everything above it is 60 seats, so the first cell of the sixth row is
- * the 61st, the one that makes a majority.
+ * the 61st, the one that makes a majority. `rtl` (the Hebrew edition) fills from the top right instead, with
+ * "61" left of the rule: SVG ignores dir, so the grid is mirrored here. `lang` words the default labels.
  */
 export default function SeatGrid({
   segments,
@@ -42,6 +45,8 @@ export default function SeatGrid({
   labelRule = false,
   title,
   className,
+  rtl = false,
+  lang = "en",
 }: {
   segments: Segment[];
   variant?: "hero" | "meter";
@@ -51,9 +56,15 @@ export default function SeatGrid({
   labelRule?: boolean;
   title?: string;
   className?: string;
+  /** Fill from the top right (Hebrew reading order). */
+  rtl?: boolean;
+  lang?: Lang;
 }) {
+  const t = chrome[lang].grid;
   const counts = allocate(segments);
-  const U = 12, C = 10;
+  const U = 12, C = 10, extra = labelRule ? 20 : 0;
+  /** A cell's x: twelve across from the left, or from the right with the label's room on the left. */
+  const cx = (i: number) => (rtl ? extra + (COLS - 1 - (i % COLS)) * U + 1 : (i % COLS) * U + 1);
   const cells: React.ReactNode[] = [];
   let i = 0;
   segments.forEach((s, k) => {
@@ -63,29 +74,29 @@ export default function SeatGrid({
         <rect
           key={i}
           className="c"
-          x={(i % COLS) * U + 1}
+          x={cx(i)}
           y={Math.floor(i / COLS) * U + 1}
           width={C}
           height={C}
           fill={s.color}
           style={animate ? { animationDelay: `${i * 6}ms` } : undefined}
         >
-          <title>{s.href ? `${s.label}: ${Math.round(s.seats * 10) / 10} seats; shown cell ${i + 1}` : `${s.label}, seat ${i + 1}`}</title>
+          <title>{s.href ? t.shown(s.label, Math.round(s.seats * 10) / 10, i + 1) : t.seat(s.label, i + 1)}</title>
         </rect>
       );
     }
     if (s.href && segmentCells.length) {
-      const name = `Explore ${s.label}: ${Math.round(s.seats * 10) / 10} seats`;
+      const name = t.explore(s.label, Math.round(s.seats * 10) / 10);
       cells.push(<a key={s.id} href={s.href} className="seat-party-link" tabIndex={0} aria-label={name}><title>{name}</title>{segmentCells}</a>);
     } else cells.push(...segmentCells);
   });
   const filled = i;
   for (; i < TOTAL; i++) {
-    cells.push(<rect key={i} className="e" x={(i % COLS) * U + 1} y={Math.floor(i / COLS) * U + 1} width={C} height={C} />);
+    cells.push(<rect key={i} className="e" x={cx(i)} y={Math.floor(i / COLS) * U + 1} width={C} height={C} />);
   }
-  const W = COLS * U, ruleY = 5 * U, extra = labelRule ? 20 : 0;
+  const W = COLS * U, ruleY = 5 * U;
   const label =
-    title ?? `${segments.map((s) => `${s.label} ${Math.round(s.seats * 10) / 10}`).join(", ")}; ${MAJORITY} of ${TOTAL} is a majority`;
+    title ?? `${segments.map((s) => `${s.label} ${Math.round(s.seats * 10) / 10}`).join(", ")}; ${t.majority(MAJORITY, TOTAL)}`;
   return (
     <svg
       viewBox={`0 0 ${W + extra} ${ROWS * U}`}
@@ -94,9 +105,13 @@ export default function SeatGrid({
       aria-label={label}
     >
       {cells}
-      <line className="rule" x1={0} x2={W + (labelRule ? 3 : 0)} y1={ruleY} y2={ruleY} />
+      {rtl ? (
+        <line className="rule" x1={extra - (labelRule ? 3 : 0)} x2={extra + W} y1={ruleY} y2={ruleY} />
+      ) : (
+        <line className="rule" x1={0} x2={W + (labelRule ? 3 : 0)} y1={ruleY} y2={ruleY} />
+      )}
       {labelRule && (
-        <text className="rl" x={W + 5} y={ruleY + 2.4} dominantBaseline="middle">
+        <text className="rl" x={rtl ? extra - 5 : W + 5} y={ruleY + 2.4} dominantBaseline="middle" textAnchor={rtl ? "end" : undefined} direction={rtl ? "ltr" : undefined}>
           61
         </text>
       )}

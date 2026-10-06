@@ -199,3 +199,7 @@
 @media (prefers-reduced-motion: reduce) {
   .cmp .mx-cell, .cmp .mx-toggle .lab::after { transition: none; }
 }
+
+/* Right to left (the Hebrew edition): the columns, the key and the ramp already run from the inline start. The
+   on-the-record corner flag moves to the start corner with them. */
+[dir="rtl"] .cmp .g.rec::after, [dir="rtl"] .cmp .mx-cell .rec { right: auto; left: 2px; border-left: 0; border-right: 6px solid transparent; } /* physical: chart geometry */

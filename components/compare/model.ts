@@ -1,5 +1,11 @@
 import { standingOf, type Issue, type Stance } from "@/lib/cohesion";
 import { AXES, type AxisKey, type PositionRow } from "@/lib/compare";
+import questions from "@/data/comparison-questions.json";
+import gaza from "@/data/gaza-security-evidence.json";
+import type { Lang } from "@/lib/i18n";
+import compareText from "@/lib/i18n/compare";
+import type { Localized } from "@/lib/i18n/localize";
+import { OVERLAYS, overlayText, positionText, questionText } from "@/lib/i18n/overlays";
 import { comparisonIssues, isRecord, isUnstated, ISSUES } from "@/lib/positions";
 
 /** Where a stance sits on its row's scale, 0 to 1, or null when the options are not a scale. */
@@ -103,3 +109,69 @@ export const UNORDERED_EDGE = "inset 0 0 0 1px var(--ink)";
 
 /** The numeral on a shaded cell: white on the dark half of the graphite ramp, black on the light half, ink on the dotted paper of unordered options (each at least 4.5:1, pinned in ramp.test.ts). */
 export const onShade = (position: number | null) => (position === null ? "ink" : position < 0.5 ? "light" : "dark");
+
+/** A row's words in one edition: what the matrix and the open row print. Each carries the language it is actually in. */
+export type RowText = {
+  label: Localized;
+  question: Localized | null;
+  /** The note under the open row, in parts (a narrower question adds its own note before the issue's). */
+  note: Localized[];
+  /** Stance id → label. */
+  stances: Record<string, Localized>;
+  /** Party id → the party's words (the row text the panel quotes). */
+  said: Record<string, Localized>;
+};
+
+/** The data/positions file each of the seven issues reads (its overlay is data/he/positions/<file>.json). */
+const FILES: Record<AxisKey, string> = { ...PAGES, econ: "economy" };
+
+const local = (text: string): Localized => ({ text, lang: "he" });
+const subLabel = (s: string) => s.replace(/^[^:]+:\s*/, "");
+
+/**
+ * The matrix's data text in Hebrew, read through lib/i18n/overlays: labels, questions, stance labels, notes and every
+ * party's words. A field with no current Hebrew comes back as English (lang "en"), for the page to mark. The seven
+ * issue labels are the comparison's own (lib/i18n/compare axes); the narrower questions and Gaza take theirs from data.
+ */
+export function matrixText(rows: MatrixRow[], lang: Lang): Record<string, RowText> {
+  const T = compareText[lang];
+  const out: Record<string, RowText> = {};
+  for (const row of rows) {
+    const axis = AXES.find((a) => a.key === row.key);
+    const parent = AXES.find((a) => row.key.startsWith(`${a.key}-`));
+    const q = questions.questions.find((x) => x.key === row.key);
+    const stances: Record<string, Localized> = {};
+    const said: Record<string, Localized> = {};
+    let label: Localized, question: Localized | null = null;
+    const note: Localized[] = [];
+    if (axis) {
+      const file = FILES[axis.key];
+      const data = ISSUES[axis.key];
+      label = local(T.axes[axis.key]);
+      if (data.question?.trim()) question = positionText(file, data, "question", lang);
+      (data.stances ?? []).forEach((s, i) => (stances[s.id] = positionText(file, data, `stances.${i}.label`, lang)));
+      for (const r of data.rows) if (r.text?.trim()) said[r.party] = positionText(file, r, "text", lang, r.party);
+      if (data.note) note.push(positionText(file, data, "note", lang));
+    } else if (q && parent) {
+      const file = FILES[parent.key];
+      const data = ISSUES[parent.key];
+      const l = questionText(q, "label", lang);
+      label = l.lang === "en" ? { ...l, text: row.label } : { ...l, text: subLabel(l.text) };
+      if (q.question?.trim()) question = questionText(q, "question", lang);
+      q.stances.forEach((s, i) => (stances[s.id] = questionText(q, `stances.${i}.label`, lang)));
+      for (const r of data.rows) if (r.text?.trim()) said[r.party] = positionText(file, r, "text", lang, r.party);
+      note.push(questionText(q, "note", lang));
+      if (data.note) note.push(positionText(file, data, "note", lang));
+    } else {
+      // Gaza: the evidence file is its own positions file, keyed "_" for its header and by party for its rows.
+      const head = OVERLAYS.gaza["_"];
+      label = overlayText(gaza.title, head?.title, lang);
+      if (gaza.question?.trim()) question = overlayText(gaza.question, head?.question, lang);
+      gaza.stances.forEach((s, i) => (stances[s.id] = overlayText(s.label, head?.[`stances.${i}.label`], lang)));
+      for (const r of gaza.rows) if (r.text?.trim()) said[r.party] = overlayText(r.text, OVERLAYS.gaza[r.party]?.text, lang);
+      if (gaza.note) note.push(overlayText(gaza.note, head?.note, lang));
+    }
+    out[row.key] = { label, question, note, stances, said };
+  }
+  return out;
+}

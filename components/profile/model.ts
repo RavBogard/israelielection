@@ -15,6 +15,10 @@ import { lettersOf } from "@/lib/letters";
 import { listSeats } from "@/lib/list-seats";
 import { averageAsPoll, blocTotals, isExit } from "@/lib/polls";
 import { ISSUES, isRecord, isUnstated, stanceText } from "@/lib/positions";
+import type { Lang } from "@/lib/i18n";
+import profileText from "@/lib/i18n/profile";
+import type { Localized } from "@/lib/i18n/localize";
+import { partyText, positionText } from "@/lib/i18n/overlays";
 import type { Party } from "@/lib/types";
 import type { Places, VoteMapElection } from "@/lib/votemap";
 import { project } from "@/lib/votemap";
@@ -88,10 +92,16 @@ export type Tile = {
   url: string | null;
   date: string | null;
   basis: "record" | "unstated" | null;
-  sameStance: { id: string; name: string }[];
+  /** Lists holding the same stance; `name` is Localized in the Hebrew edition. */
+  sameStance: { id: string; name: string | Localized }[];
   /** How many answers the issue offers, and which of them is this party's (0-based), for the slot glyph. */
   options: number;
   slot: number | null;
+  /**
+   * The Hebrew edition's data text, read through lib/i18n/overlays (absent in English, which prints the fields above).
+   * `text` is the party's words without the "not said publicly" lead, which the tile adds in the page's language.
+   */
+  loc?: { question: Localized | null; stance: Localized | null; text: Localized | null };
 };
 
 /** Reading order and short names for the tiles; the economy's options coexist, so it is not drawn as a scale. */
@@ -197,7 +207,10 @@ export function voterBase(party: Party): VoterBase | null {
   return vb.parties[party.id] ?? null;
 }
 
-export function tiles(party: Party): Tile[] {
+/** The data/positions file each tile reads (its Hebrew overlay is data/he/positions/<file>.json). */
+const FILES: Record<AxisKey, string> = { draft: "haredi-draft", courts: "courts", war: "war-hostages", wb: "west-bank", relig: "religion-state", econ: "economy", pstate: "palestinian-state" };
+
+export function tiles(party: Party, lang: Lang = "en"): Tile[] {
   return TILE_ORDER.map(({ key, label, scale }) => {
     const file = ISSUES[key];
     const row = file.rows.find((r) => r.party === party.id);
@@ -210,11 +223,18 @@ export function tiles(party: Party): Tile[] {
             .filter((r) => r.party !== party.id && standingOf(r, stances).kind === "stance" && r.stance === st.stance)
             .map((r) => parties.find((p) => p.id === r.party))
             .filter((p): p is Party => !!p)
-            .map((p) => ({ id: p.id, name: p.name }))
+            .map((p) => ({ id: p.id, name: lang === "en" ? p.name : partyText(p, "name", lang) }))
         : [];
+    const he = lang === "en" ? {} : {
+      loc: {
+        question: file.question ? positionText(FILES[key], file, "question", lang) : null,
+        stance: idx >= 0 ? positionText(FILES[key], file, `stances.${idx}.label`, lang) : null,
+        text: row?.text?.trim() ? positionText(FILES[key], row, "text", lang, row.party) : null,
+      },
+    };
     return {
       key,
-      label,
+      label: lang === "en" ? label : profileText[lang].tiles.labels[key],
       question: file.question ?? null,
       kind: st.kind === "stance" ? "stance" : st.kind === "declined" ? "declined" : "none",
       stance: idx >= 0 ? stances[idx].label : null,
@@ -227,9 +247,26 @@ export function tiles(party: Party): Tile[] {
       sameStance,
       options: stances.length,
       slot: idx >= 0 ? idx : null,
+      ...he,
     };
   });
 }
+
+/**
+ * The line under the bloc figure: how far the bloc is from 61 and where this list sits in it. Lists outside the two
+ * contenders are counted as a bloc but are not a governing bloc chasing 61 on their own. `fig` prints a seat figure.
+ */
+export function blocNote(g: Pick<Glance, "avg" | "below" | "blocSeats" | "blocRank" | "blocSize">, bloc: Party["bloc"], fig: (n: number) => string, lang: Lang = "en"): string {
+  const B = profileText[lang].bloc;
+  const contender = bloc === "net" || bloc === "opp";
+  const counted = g.avg !== null && !g.below;
+  const rank = B.rank(g.blocRank);
+  const toMajority = g.blocSeats >= 61 ? B.majority : B.short(fig(61 - g.blocSeats));
+  return !counted ? `${contender ? `${toMajority}; ` : ""}${B.notCounted}`
+    : contender ? `${toMajority}; ${B.inBloc(rank, g.blocSize)}`
+    : `${B.partner}${g.blocSize > 1 ? `; ${B.ofSize(rank, g.blocSize)}` : ""}`;
+}
+
 
 export function axisLabel(key: AxisKey): string {
   return AXES.find((a) => a.key === key)?.label ?? key;

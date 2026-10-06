@@ -123,3 +123,6 @@
 .pl .poll-table .pcol { padding-inline: 4px; }
 .pl .poll-table th.num:not(.pcol), .pl .poll-table td.num:not(.pcol) { padding-inline: 6px; }
 .pl .poll-table .src { white-space: normal; min-width: 90px; max-width: 120px; font-size: 12.5px; }
+
+/* Hebrew: the trend charts keep time left to right; Hebrew labels in them set their own direction (polls/names.tsx svgText). */
+[dir="rtl"] .pc-plot svg, [dir="rtl"] .pt-plot svg { direction: ltr; }

@@ -58,3 +58,8 @@
 .he-v { flex: none; width: 3.2em; text-align: end; font-variant-numeric: tabular-nums; }
 .he-table thead .he-scale { margin-inline-end: calc(3.2em + 8px); }
 @media (max-width: 640px) { .br-key li { display: flex; margin-inline-end: 0; } .br-key li svg { flex: none; } }
+
+/* Hebrew: time still runs left to right, so the plot keeps a left-to-right box; Hebrew labels set their own direction (names.tsx svgText). */
+[dir="rtl"] .br-plot svg { direction: ltr; }
+/* Hebrew: the house-effect gap scale is a signed number line, left to right; its signed ticks read "+5", not "5+". */
+[dir="rtl"] .he-scale i { direction: ltr; unicode-bidi: isolate; }

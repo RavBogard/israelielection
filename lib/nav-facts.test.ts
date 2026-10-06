@@ -38,3 +38,20 @@ describe("masthead seat meter", () => {
     expect(firstExit([exit("Channel 13", 60), exit("Channel 12", 58)], ps)).toEqual({ pollster: "Channel 12", seats: { net: 58, opp: 62, mid: 0, arab: 0 } });
   });
 });
+
+describe("the Hebrew masthead", () => {
+  it("dates the menu facts day first", () => {
+    expect(navFacts({ newestPoll: "2026-10-06", newestBriefing: "2026-10-05" }, "he")).toEqual({ polls: "סקר 6.10, תדריך 5.10" });
+    expect(navFacts({ newestBriefing: "2026-10-05" }, "he")).toEqual({ polls: "תדריך 5.10" });
+  });
+  it("reads the meter in Hebrew and links to the Hebrew pages", () => {
+    expect(averageMeter(seats, "2026-10-05", "he")).toMatchObject({ href: "/he/polls", value: "54.6", text: "גוש נתניהו, ממוצע 5.10" });
+    expect(nightMeter(false, open("count"), null, "he")).toBeNull();
+    const exit = { pollster: "Kan 11", seats: { net: 59, opp: 49, mid: 2, arab: 10 } };
+    expect(nightMeter(true, null, null, "he")).toMatchObject({ href: "/he/results", value: null, text: "הקלפיות נסגרו", seats: null });
+    expect(nightMeter(true, { state: "error", phase: "exit" }, exit, "he")?.text).toMatch(/^גוש נתניהו, מדגם /);
+    expect(nightMeter(true, open("early"), exit, "he")).toMatchObject({ href: "/he/results", value: "58", text: "גוש נתניהו, תוצאות אמת ראשונות", hatch: true });
+    expect(nightMeter(true, open("count"), exit, "he")?.text).toBe("גוש נתניהו, הספירה עד כה");
+    expect(nightMeter(true, open("count", "stale"), exit, "he")?.text).toBe("גוש נתניהו, ספירה שמורה (לא מעודכנת)");
+  });
+});

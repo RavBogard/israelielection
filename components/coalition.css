@@ -213,3 +213,8 @@
 /* Phones: a segment too narrow for its short name shows none (the row names every list). */
 .cb .path .sb-seg { container-type: inline-size; }
 @container (max-width: 40px) { .cb .path .sb-seg > b { visibility: hidden; } }
+/* Right to left (the Hebrew edition): the bars fill from the right, so the notch marks the segment's top-left corner (its end),
+   and the page-ground gap between segments sits on each segment's right edge, where the previous one ends. Scoped to the builder
+   until seatbar.css carries the same rule. */
+:where([dir="rtl"]) .cb .path .sb-seg.pc-x::after, :where([dir="rtl"]) .cb .k-notch::after { right: auto; left: 0; border-width: 0 0 8px 8px; border-color: transparent transparent transparent var(--bg); } /* physical: chart geometry */
+:where([dir="rtl"]) .cb :where(.sb-s) > .sb-seg { padding: 0; }

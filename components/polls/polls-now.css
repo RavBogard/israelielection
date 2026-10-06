@@ -101,3 +101,8 @@
 .pn-alt-row figcaption span { color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .pn-alt-row figcaption span b { color: var(--ink); }
 .pn-alt + .fig-src { margin: 12px 0 0; max-width: 90ch; }
+
+/* Hebrew: seat axes run from the right (PollsNow.tsx mirrors the positions), so the average bar grows from the right
+   and the 61 label sits on the far side of its line. */
+[dir="rtl"] .pn-table .track .bar { left: auto; right: 0; } /* physical: chart geometry */
+[dir="rtl"] .pn-axis .maj b { left: auto; right: 6px; } /* physical: chart geometry */

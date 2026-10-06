@@ -1,5 +1,7 @@
 import context from "@/public/vote-map/context.json";
 import { project } from "@/lib/votemap";
+import type { Lang } from "@/lib/i18n";
+import profileText from "@/lib/i18n/profile";
 import type { Strongholds } from "./model";
 
 const W = 410, H = 430, PAD = 14, BAND = 130;
@@ -8,9 +10,12 @@ const ctx = context as unknown as { gaza: [number, number][][]; westBank: [numbe
 /**
  * Where the list ran strongest in 2022: every locality as a dot shaded by the list's share of the
  * valid vote, so the country's shape comes from the places themselves, with the strongest five
- * and the three biggest cities named in the margins. The table under it carries the numbers.
+ * and the three biggest cities named in the margins. The table under it carries the numbers. Locality names are the
+ * English file's in both editions (marked lang="en" in Hebrew) until the map has Hebrew names.
  */
-export default function StrongholdsMap({ data, color, name }: { data: Strongholds; color: string; name: string }) {
+export default function StrongholdsMap({ data, color, name, lang = "en" }: { data: Strongholds; color: string; name: string; lang?: Lang }) {
+  const P = profileText[lang].map;
+  const he = lang === "he";
   const xs = data.dots.map((d) => d.x), ys = data.dots.map((d) => d.y);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
   // The country fills a central band; the named places are set in the margins either side of it, so no label sits on a dot.
@@ -47,7 +52,7 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
   }
   return (
     <div className="pp-mapwrap">
-      <svg className="pp-map" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${name}'s share of the valid vote in 2022, by locality. Strongest: ${data.table.filter((t) => t.kind === "top").map((t) => `${t.name} ${(t.share * 100).toFixed(1)}%`).join(", ")}. The table under the map carries the numbers.`}>
+      <svg className="pp-map" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={P.aria(name, data.table.filter((t) => t.kind === "top").map((t) => `${t.name} ${(t.share * 100).toFixed(1)}%`).join(", "))}>
         <path className="wb" d={ring(ctx.westBank)} />
         <path className="gaza" d={ring(ctx.gaza)} />
         {plain.map((d) => (
@@ -57,7 +62,7 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
           <g key={d.code}>
             <line className="lead" x1={cx} y1={cy} x2={lx + (left ? 3 : -3)} y2={ly} />
             <circle cx={cx.toFixed(1)} cy={cy.toFixed(1)} r={d.valid >= 50000 ? 5 : 4} fill={tint(d.share)} stroke="var(--ink)" strokeWidth={0.8} />
-            <text className="lbl" x={lx} y={ly + 4} textAnchor={left ? "end" : "start"}>{text}</text>
+            <text className="lbl" x={lx} y={ly + 4} textAnchor={left ? "end" : "start"} lang={he ? "en" : undefined}>{text}</text>
           </g>
         ))}
       </svg>
@@ -70,7 +75,7 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
         <tbody>
           {data.table.map((t) => (
             <tr key={t.name} className={t.kind}>
-              <th scope="row">{t.name}</th>
+              <th scope="row">{t.kind === "national" ? P.national : he ? <span lang="en" dir="ltr">{t.name}</span> : t.name}</th>
               <td>{(t.share * 100).toFixed(1)}%</td>
             </tr>
           ))}

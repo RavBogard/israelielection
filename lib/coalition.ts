@@ -1,3 +1,5 @@
+import type { Lang } from "./i18n";
+import builder, { type BuilderText } from "./i18n/builder";
 import type { BlocId, Condition, Party, PledgeRule, Poll, Tag } from "./types";
 
 export const MAJORITY = 61;
@@ -17,7 +19,13 @@ export type Tally = {
 
 const joinAnd = (names: string[]) => names.join(" and ");
 
-export function tally(selected: Set<string>, parties: Party[], poll: Poll): Tally {
+/** The words of a tally's group note in another edition: the phrasebook (lib/i18n/builder.ts), party names and the pollster's name. */
+export type TallyText = { P: Pick<BuilderText, "groupSplit" | "groupPartial">; name: (p: Party) => string; pollster: string };
+
+export function tally(selected: Set<string>, parties: Party[], poll: Poll, text?: TallyText): Tally {
+  const P = text?.P ?? builder.en;
+  const nameOf = text?.name ?? ((p: Party) => p.name);
+  const pollster = text?.pollster ?? poll.pollster;
   const chosen = parties.filter((p) => selected.has(p.id));
   const segments: Segment[] = [];
   const unknown: Party[] = [];
@@ -36,15 +44,14 @@ export function tally(selected: Set<string>, parties: Party[], poll: Poll): Tall
   for (const g of poll.combined) {
     const inGroup = unknown.filter((p) => g.parties.includes(p.id));
     if (!inGroup.length) continue;
-    const groupNames = joinAnd(g.parties.map((id) => parties.find((p) => p.id === id)?.name ?? id));
+    const groupNames = g.parties.map((id) => { const p = parties.find((x) => x.id === id); return p ? nameOf(p) : id; });
     if (inGroup.length === g.parties.length) {
       total += g.seats;
       segments.push({ seats: g.seats, bloc: inGroup[0].bloc, name: inGroup.map((p) => p.name).join(" + ") });
-      groupNote = `${poll.pollster} did not split ${groupNames}. With both in, the total counts their combined ${g.seats} seats (${g.note}).`;
+      groupNote = P.groupSplit(pollster, groupNames, g.seats, g.note);
     } else {
       partial = true;
-      const missing = joinAnd(inGroup.map((p) => p.name));
-      groupNote = `${poll.pollster} did not report ${missing} separately, so this total leaves out ${missing}'s seats. Add both ${groupNames} to count their combined ${g.seats}.`;
+      groupNote = P.groupPartial(pollster, inGroup.map(nameOf), groupNames, g.seats);
     }
   }
   // Averages carry one decimal; round so 60.99999… never misses the 61 line.
@@ -83,34 +90,53 @@ export function supportedPledgeConflicts(cabinet: Set<string>, support: Set<stri
   return supportedWarnings(cabinet, support, parties, rules, true);
 }
 
-function supportedWarnings(cabinet: Set<string>, support: Set<string>, parties: Party[], rules: PledgeRule[], pledgesOnly = false) {
+/**
+ * How a warning's words are chosen in another edition: the rule's message (the Hebrew overlay, or the English when
+ * there is none, with the language it came back in), each party's name, and the "A and B" join for {and:...}.
+ * A message that falls back to English is filled with English names, so one sentence never mixes the two.
+ */
+export type WarningText = {
+  message: (rule: PledgeRule) => { text: string; lang: Lang };
+  name: (party: Party) => string;
+  and: (names: string[]) => string;
+};
+
+function supportedWarnings(cabinet: Set<string>, support: Set<string>, parties: Party[], rules: PledgeRule[], pledgesOnly = false, text?: WarningText) {
   const cab = parties.filter((p) => cabinet.has(p.id));
   const all = parties.filter((p) => cabinet.has(p.id) || support.has(p.id));
   return rules
     .filter((r) => !pledgesOnly || r.kind === "pledge")
     .map((r) => ({ r, chosen: r.support ? all : cab }))
     .filter(({ r, chosen }) => holds(r.when, chosen, cab))
-    .map(({ r, chosen }) => ({ warning: { id: r.id, kind: r.kind, message: fill(r.message, chosen), source: r.source } as Warning, ids: implicated(r.when, chosen, cab) }));
+    .map(({ r, chosen }) => ({ warning: warningOf(r, chosen, text), ids: implicated(r.when, chosen, cab) }));
+}
+
+function warningOf(r: PledgeRule, chosen: Party[], text?: WarningText): Warning {
+  if (!text) return { id: r.id, kind: r.kind, message: fill(r.message, chosen), source: r.source };
+  const m = text.message(r);
+  const message = m.lang === "en" ? fill(m.text, chosen) : fill(m.text, chosen, text.name, text.and);
+  return { id: r.id, kind: r.kind, message, source: r.source, lang: m.lang };
 }
 
 /** Fills {and:tag1,tag2} and {comma:tag} with the chosen parties carrying those tags, tag by tag. */
-function fill(template: string, chosen: Party[]): string {
+function fill(template: string, chosen: Party[], name: (p: Party) => string = (p) => p.name, and: (names: string[]) => string = joinAnd): string {
   return template.replace(/\{(and|comma):([\w,]+)\}/g, (_, how: string, tags: string) => {
     const names = tags
       .split(",")
       .flatMap((t) => chosen.filter((p) => p.tags.includes(t as Tag)))
-      .map((p) => p.name);
-    return how === "and" ? joinAnd(names) : names.join(", ");
+      .map(name);
+    return how === "and" ? and(names) : names.join(", ");
   });
 }
 
-export type Warning = { id: string; kind: PledgeRule["kind"]; message: string; source: string };
+/** `lang` is set only when a WarningText chose the words: the language the message is in. */
+export type Warning = { id: string; kind: PledgeRule["kind"]; message: string; source: string; lang?: Lang };
 
 export function warnings(selected: Set<string>, parties: Party[], rules: PledgeRule[]): Warning[] {
   return supportedWarnings(selected, new Set(), parties, rules).map((x) => x.warning);
 }
 
-/** Warnings for a cabinet with outside support, read as in supportedPledgeConflicts. */
-export function warningsWithSupport(cabinet: Set<string>, support: Set<string>, parties: Party[], rules: PledgeRule[]): Warning[] {
-  return supportedWarnings(cabinet, support, parties, rules).map((x) => x.warning);
+/** Warnings for a cabinet with outside support, read as in supportedPledgeConflicts; `text` picks another edition's words. */
+export function warningsWithSupport(cabinet: Set<string>, support: Set<string>, parties: Party[], rules: PledgeRule[], text?: WarningText): Warning[] {
+  return supportedWarnings(cabinet, support, parties, rules, false, text).map((x) => x.warning);
 }

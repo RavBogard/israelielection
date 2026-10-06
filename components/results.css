@@ -98,3 +98,11 @@
 .rs .rs-early .rs-grid::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(135deg, var(--bg) 0 2px, transparent 2px 7px); opacity: .7; }
 .rs .rs-early-flag { margin: 14px 0 0; padding: 10px 0; border-block: 1px solid var(--line); font-size: 14.5px; color: var(--ink-2); }
 .rs .rs-early-flag b { color: var(--ink); }
+
+/* Hebrew edition: seat counts and the counted share are magnitudes, so they start at the inline start, the right (PLAN.md section 5). ThresholdWatch sets its positions with `right` under lang="he". */
+[dir="rtl"] .rs .tw-axis i { transform: translateX(50%); }
+[dir="rtl"] .rs .tw-axis i:first-child { transform: none; }
+[dir="rtl"] .rs .tw-gap { border-right: 0; border-left: 1px solid var(--ink-2); }
+[dir="rtl"] .rs .tw-dot { margin: -5.5px -5.5px 0 0; }
+[dir="rtl"] .rs .tw-dot.out { margin-right: 0; }
+[dir="rtl"] .rs .rs-counted-bar i { inset: 0 0 0 auto; }

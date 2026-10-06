@@ -1,4 +1,6 @@
 import type { Stance, StanceMap } from "./cohesion";
+import type { Lang } from "./i18n";
+import builder, { type BuilderText } from "./i18n/builder";
 
 /*
  * Can they govern together? Leads with what can be compared: the questions every chosen party has
@@ -7,7 +9,8 @@ import type { Stance, StanceMap } from "./cohesion";
  * two answers are not findings; they are listed once as not enough answers.
  */
 
-export type Unstated = { stance: string; text: string; source: string; url?: string | null; date?: string | null };
+/** `lang` is set when the text was localized for an edition: the language `text` is in. */
+export type Unstated = { stance: string; text: string; source: string; url?: string | null; date?: string | null; lang?: Lang };
 export type UnstatedMap = Record<string, Record<string, Unstated>>;
 
 /** The `unstated` entries of the comparison questions, kept only where the stance is one the question offers. */
@@ -57,18 +60,14 @@ export function governing(map: StanceMap, unstated: UnstatedMap, ids: string[]):
   return { rows, total: rows.length, comparable: every.length, agree: every.filter((r) => r.same).length, differ: every.filter((r) => !r.same).length };
 }
 
-/** The one-line summary that leads the section. */
-export function governingSummary(g: GovReading): string {
-  if (!g.comparable) return `None of the ${g.total} questions has an answer from every one of these parties.`;
-  const what = !g.differ ? `agree on ${g.agree === g.comparable && g.comparable > 1 ? "all " : ""}${g.agree}` : !g.agree ? `differ on ${g.differ === g.comparable && g.comparable > 1 ? "all " : ""}${g.differ}` : `agree on ${g.agree} and differ on ${g.differ}`;
-  return `On the ${g.comparable} of ${g.total} questions with answers from every party, they ${what}.`;
+/** The one-line summary that leads the section. `P` is the edition's phrasebook (lib/i18n/builder.ts). */
+export function governingSummary(g: GovReading, P: BuilderText = builder.en): string {
+  if (!g.comparable) return P.govSummaryNone(g.total);
+  return P.govSummary(g.comparable, g.total, g.agree, g.differ);
 }
 
 /** The reading beside one row's glyph. */
-export function rowText(r: GovRow, nameOf: (id: string) => string, selected: number): string {
-  const lower = (s: string) => (s.length > 1 && s[1] === s[1].toLowerCase() ? s[0].toLowerCase() + s.slice(1) : s);
-  const head = r.reach === "every"
-    ? r.same ? `Same answer from all ${selected}: ${lower(r.groups[0].stance.label)}.` : `${r.groups.length} different answers.`
-    : `${r.answers.length} of ${selected} answered, ${r.same ? `the same way: ${lower(r.groups[0].stance.label)}` : "differently"}. No answer: ${r.missing.map(nameOf).join(", ")}.`;
-  return head;
+export function rowText(r: GovRow, nameOf: (id: string) => string, selected: number, P: BuilderText = builder.en): string {
+  if (r.reach === "every") return r.same ? P.rowSame(selected, r.groups[0].stance.label) : P.rowDifferent(r.groups.length);
+  return P.rowSome(r.answers.length, selected, r.same ? r.groups[0].stance.label : null, r.missing.map(nameOf));
 }

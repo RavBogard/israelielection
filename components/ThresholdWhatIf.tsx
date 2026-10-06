@@ -5,6 +5,8 @@ import {partyColor,blocColorStrip} from "@/lib/party-colors";
 import SeatGrid from "./SeatGrid";
 import { allocate } from "@/lib/results";
 import type { BlocId } from "@/lib/types";
+import builder from "@/lib/i18n/builder";
+import { useLang } from "@/lib/i18n/lang";
 
 export type WhatIfParty = { id: string; name: string; bloc: BlocId; letters: string | null; seats: number; near: boolean };
 export type WhatIfProps = {
@@ -26,6 +28,9 @@ const VALID = 4800;
  * the poll average (seats over 120); a list set to pass sits exactly at the threshold.
  */
 export default function ThresholdWhatIf({ parties, blocs, threshold, agreements, pollsLabel }: WhatIfProps) {
+  // The caller passes names, bloc labels and pollsLabel in the page's edition.
+  const lang = useLang();
+  const T = builder[lang];
   const near = parties.filter((p) => p.near);
   const [passing, setPassing] = useState<Record<string, boolean>>(() => Object.fromEntries(near.map((p) => [p.id, p.seats > 0])));
   const base = useMemo(() => count(parties, threshold, agreements, Object.fromEntries(near.map((p) => [p.id, p.seats > 0]))), [parties, threshold, agreements, near]);
@@ -35,10 +40,9 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
   const wasted = now.wasted / VALID;
 
   return (
-    <figure className="whatif" aria-label="Threshold what-if">
+    <figure className="whatif" aria-label={T.whatIfLabel}>
       <figcaption>
-        <b>Try it.</b> Set each list near the threshold to pass or fail and watch where the seats go. Arithmetic from {pollsLabel}, not a prediction: each
-        list&apos;s share is its average seats over 120, and a list set to pass sits exactly at {threshold * 100}%.
+        <b>{T.whatIfTry}</b>{T.whatIfCaption(pollsLabel, threshold * 100)}
       </figcaption>
       <div className="wi-body">
         <ul className="wi-toggles">
@@ -53,20 +57,20 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
                   </span>
                 )}
               </span>
-              <span className="avg">{p.seats > 0 ? `${p.seats} in the average` : "below in every poll"}</span>
-              <span className="seg" role="group" aria-label={`${p.name}: passes or fails the threshold`}>
+              <span className="avg">{p.seats > 0 ? T.whatIfAverage(p.seats) : T.whatIfBelowAll}</span>
+              <span className="seg" role="group" aria-label={T.whatIfToggle(p.name)}>
                 <button type="button" aria-pressed={passing[p.id]} onClick={() => setPassing({ ...passing, [p.id]: true })}>
-                  Passes
+                  {T.passes}
                 </button>
                 <button type="button" aria-pressed={!passing[p.id]} onClick={() => setPassing({ ...passing, [p.id]: false })}>
-                  Fails
+                  {T.fails}
                 </button>
               </span>
             </li>
           ))}
         </ul>
         <div className="wi-out">
-          <SeatGrid segments={segments} variant="meter" labelRule title={`Seats by bloc: ${ORDER.map((id) => `${label[id]} ${now.byBloc[id]}`).join(", ")}`} />
+          <SeatGrid segments={segments} variant="meter" labelRule title={T.whatIfGrid(ORDER.map((id) => `${label[id]} ${now.byBloc[id]}`).join(", "))} />
           <dl className="wi-blocs">
             {ORDER.map((id) => {
               const d = now.byBloc[id] - base.byBloc[id];
@@ -78,15 +82,15 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
                   </dt>
                   <dd>
                     {now.byBloc[id]}
-                    {d !== 0 && <small>{d > 0 ? `+${d}` : d}</small>}
+                    {d !== 0 && <small>{lang === "en" ? (d > 0 ? `+${d}` : d) : <bdi dir="ltr">{d > 0 ? `+${d}` : `−${-d}`}</bdi>}</small>}
                   </dd>
                 </div>
               );
             })}
           </dl>
           <p className="wi-waste">
-            Votes that elect no one: <b>{(wasted * 100).toFixed(1)}%</b> of the valid vote
-            {now.failed.length ? <>, cast for {now.failed.join(", ")}.</> : "."}
+            {T.whatIfWasted}<b>{(wasted * 100).toFixed(1)}%</b>{T.whatIfWastedOf}
+            {now.failed.length ? T.whatIfCastFor(now.failed) : "."}
           </p>
         </div>
       </div>

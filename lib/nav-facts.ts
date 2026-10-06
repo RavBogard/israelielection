@@ -1,5 +1,7 @@
 import type { CountSummary } from "@/app/api/count/route";
 import { shortDate } from "./format";
+import type { Lang } from "./i18n";
+import { pollsterText } from "./i18n/overlays";
 import { blocTotals, seatFigure } from "./polls";
 import { exitRows } from "./results-phase";
 import type { BlocId, Party, Poll } from "./types";
@@ -7,9 +9,10 @@ import type { BlocId, Party, Poll } from "./types";
 export type NavFactInput = { newestPoll?: string; newestBriefing?: string };
 
 /** A live line under a menu group, only where it changes: Polls and news carries the newest poll and briefing dates. */
-export function navFacts(i: NavFactInput): Record<string, string> {
+export function navFacts(i: NavFactInput, lang: Lang = "en"): Record<string, string> {
   const out: Record<string, string> = {};
-  const dated = [i.newestPoll && `poll ${shortDate(i.newestPoll)}`, i.newestBriefing && `briefing ${shortDate(i.newestBriefing)}`].filter(Boolean).join(", ");
+  const [poll, briefing] = lang === "he" ? ["סקר", "תדריך"] : ["poll", "briefing"];
+  const dated = [i.newestPoll && `${poll} ${shortDate(i.newestPoll, lang)}`, i.newestBriefing && `${briefing} ${shortDate(i.newestBriefing, lang)}`].filter(Boolean).join(", ");
   if (dated) out.polls = dated[0].toUpperCase() + dated.slice(1);
   return out;
 }
@@ -19,7 +22,10 @@ export type Meter = { href: string; value: string | null; text: string; seats: R
 export type ExitMeter = { pollster: string; seats: Record<BlocId, number> };
 
 /** Before close: the Netanyahu bloc in the average, dated by the newest poll in it. */
-export const averageMeter = (seats: Record<BlocId, number>, date: string): Meter => ({ href: "/polls", value: seatFigure(seats.net), text: `Netanyahu bloc, average ${shortDate(date)}`, seats });
+export const averageMeter = (seats: Record<BlocId, number>, date: string, lang: Lang = "en"): Meter =>
+  lang === "he"
+    ? { href: "/he/polls", value: seatFigure(seats.net), text: `גוש נתניהו, ממוצע ${shortDate(date, "he")}`, seats }
+    : { href: "/polls", value: seatFigure(seats.net), text: `Netanyahu bloc, average ${shortDate(date)}`, seats };
 
 /** The first channel's exit poll on the night (Kan 11, then Channel 12, then Channel 13), as bloc seats. */
 export function firstExit(polls: Poll[], parties: Party[]): ExitMeter | null {
@@ -31,8 +37,17 @@ export function firstExit(polls: Poll[], parties: Party[]): ExitMeter | null {
  * After close the meter follows the night, in the strip's words: an exit poll (or "Polls have closed" until
  * one is entered), then the early count, then the count. Null before close, when the average stands.
  */
-export function nightMeter(closed: boolean, summary: CountSummary | null, exit: ExitMeter | null): Meter | null {
+export function nightMeter(closed: boolean, summary: CountSummary | null, exit: ExitMeter | null, lang: Lang = "en"): Meter | null {
   if (!closed) return null;
+  if (lang === "he") {
+    if (summary?.state === "open") {
+      const seats = Object.fromEntries(summary.blocs.map((b) => [b.id, b.seats])) as Record<BlocId, number>;
+      const what = summary.freshness === "stale" ? "ספירה שמורה (לא מעודכנת)" : summary.phase === "early" ? "תוצאות אמת ראשונות" : "הספירה עד כה";
+      return { href: "/he/results", value: String(seats.net ?? 0), text: `גוש נתניהו, ${what}`, seats, hatch: summary.phase === "early" };
+    }
+    if (exit) return { href: "/he/results", value: String(exit.seats.net), text: `גוש נתניהו, מדגם ${pollsterText(exit.pollster, "he").text}`, seats: exit.seats };
+    return { href: "/he/results", value: null, text: "הקלפיות נסגרו", seats: null };
+  }
   if (summary?.state === "open") {
     const seats = Object.fromEntries(summary.blocs.map((b) => [b.id, b.seats])) as Record<BlocId, number>;
     const what = summary.freshness === "stale" ? "saved count (stale)" : summary.phase === "early" ? "early count" : "count so far";

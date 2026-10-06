@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parseExpc, type Count } from "./results";
 import { fetchCount, resultsConfig as cfg } from "./results-live";
-import { averageLabel, countedShare, EARLY_SHARE, exitRows, headline, homeHero, night, PRIOR_ROLL, sections } from "./results-phase";
+import { averageLabel, countedShare, EARLY_SHARE, exitRows, headline, homeHero, night, PHASES, phases, PRIOR_ROLL, priorRollLabel, sections } from "./results-phase";
 import type { Poll } from "./types";
 
 const close = Date.parse(cfg.pollsClose);
@@ -74,5 +74,29 @@ describe("why the count is missing", () => {
     for (const r of [new Response("not,a,count"), new Response("", { status: 404 })]) expect(await fetchCount(60, { now: at, store: {}, fetcher: mock(r) })).toMatchObject({ state: "error", reason: "unusable" });
     expect(await fetchCount(60, { now: at, store: {}, fetcher: mock(new Response("", { status: 503 })) })).toMatchObject({ state: "error", reason: "unreachable" });
     expect(await fetchCount(60, { now: at, store: {}, fetcher: async () => { throw new Error("offline"); } })).toMatchObject({ state: "error", reason: "unreachable" });
+  });
+});
+
+describe("Hebrew phrasings", () => {
+  it("heads the home in Hebrew, with the dual for two days", () => {
+    expect(headline("before", 5, "he")).toBe("עוד 5 ימים לבחירות.");
+    expect(headline("before", 2, "he")).toBe("עוד יומיים לבחירות.");
+    expect(headline("before", 1, "he")).toBe("הבחירות מחר.");
+    expect(headline("before", 0, "he")).toBe("הבחירות היום.");
+    expect(headline("exit", 0, "he")).toBe("הקלפיות נסגרו.");
+    expect(headline("early", 0, "he")).toBe("ישראל הצביעה.");
+    expect(headline("count", -3, "he")).toBe("ישראל הצביעה.");
+    expect(headline("before", 5, "en")).toBe("Israel votes in 5 days.");
+  });
+  it("labels the average in Hebrew, dated day first", () => {
+    expect(averageLabel(cfg, "2026-10-05", Date.parse("2026-10-06T12:00:00+03:00"), "he")).toBe("ממוצע הסקרים, 5.10");
+    expect(averageLabel(cfg, "2026-10-23", Date.parse("2026-10-26T00:00:00+02:00"), "he")).toBe("ממוצע הסקרים הסופי");
+  });
+  it("keeps the phases' ids and order, and the roll label", () => {
+    expect(phases("he").map((p) => p.id)).toEqual(PHASES.map((p) => p.id));
+    expect(phases()).toBe(PHASES);
+    expect(phases("he").map((p) => p.label)).toEqual(["מדגמי הערוצים 22:00", "תוצאות אמת ראשונות", "ספירת הקולות"]);
+    expect(priorRollLabel()).toBe("the 2022 roll");
+    expect(priorRollLabel("he")).toBe("פנקס הבוחרים של 2022");
   });
 });

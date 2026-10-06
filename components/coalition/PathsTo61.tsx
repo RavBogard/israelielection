@@ -1,11 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import SeatBar, { type SeatBarSegment } from "../SeatBar";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import { pathsTo61, supportPaths, type Path, type SupportPath } from "@/lib/paths-to-61";
 import { MAJORITY } from "@/lib/coalition";
 import type { Party, PledgeRule, Poll } from "@/lib/types";
+import builder from "@/lib/i18n/builder";
+import { useLang } from "@/lib/i18n/lang";
+import { partyText } from "@/lib/i18n/overlays";
+import { Loc } from "./Loc";
 
 /** Outside support: the list's colour, hatched (supporting, not in the cabinet). */
 export const supportFill = (c: string) => `repeating-linear-gradient(135deg, ${c} 0 3px, color-mix(in srgb, ${c} 28%, var(--sheet)) 3px 6px)`;
@@ -22,6 +26,8 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
   poll: Poll; parties: Party[]; rules: PledgeRule[]; pollName: string; sn: (n: number) => string;
   onLoad: (cabinet: string[], support: string[]) => void; open: boolean;
 }) {
+  const lang = useLang();
+  const T = builder[lang];
   const all = useMemo(() => pathsTo61(poll, parties, rules), [poll, parties, rules]);
   const helped = useMemo(() => supportPaths(all, parties, rules, poll), [all, parties, rules, poll]);
   const [likud, setLikud] = useState(true);
@@ -32,8 +38,10 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
   const side = all.filter(by);
   const rows = clean ? side.filter((p) => !p.conflicts.length) : side;
   const sideHelped = helped.filter((s) => [...s.cabinet, ...s.support].includes("likud") === likud);
-  const nameOf = (id: string) => parties.find((p) => p.id === id)?.name ?? id;
-  const shortOf = (id: string) => parties.find((p) => p.id === id)?.short ?? id;
+  const nameOf = (id: string) => { const p = parties.find((x) => x.id === id); return p ? partyText(p, "name", lang).text : id; };
+  const shortOf = (id: string) => { const p = parties.find((x) => x.id === id); return p ? partyText(p, "short", lang).text : id; };
+  /** The names in a path, each marked when it falls back to English, joined by commas. */
+  const names = (ids: string[]) => ids.map((id, i) => { const p = parties.find((x) => x.id === id); return <Fragment key={id}>{i > 0 && ", "}{p ? <Loc v={partyText(p, "name", lang)} page={lang} /> : id}</Fragment>; });
   const seats = (id: string) => poll.results[id]?.seats ?? 0;
   const seg = (id: string, notch: boolean, hatched = false): SeatBarSegment => ({
     key: id, seats: seats(id), color: hatched ? supportFill(partyColor(id)) : partyColor(id), ink: partyInk(id),
@@ -49,11 +57,11 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
   const row = (p: Path) => (
     <li key={p.ids.join()}>
       <button type="button" className="path" onClick={() => onLoad(p.ids, [])}>
-        <span className="pn">{p.ids.map(nameOf).join(", ")}</span>
-        <span className="pv"><b>{sn(p.seats)}</b> seats</span>
+        <span className="pn">{lang === "en" ? p.ids.map(nameOf).join(", ") : names(p.ids)}</span>
+        <span className="pv"><b>{sn(p.seats)}</b> {T.pathSeats}</span>
         <SeatBar size="m" className="sb-fit" segments={p.ids.map((id) => seg(id, p.conflictIds.includes(id)))} />
         <span className={`pc${p.conflicts.length ? " on" : ""}`}>
-          {p.conflicts.length ? `${p.conflicts.length} pledge conflict${p.conflicts.length > 1 ? "s" : ""}, naming ${p.conflictIds.map(nameOf).join(", ")}` : "No pledge conflict on record"}
+          {p.conflicts.length ? T.pathConflicts(p.conflicts.length, p.conflictIds.map(nameOf)) : T.pathClear}
         </span>
       </button>
     </li>
@@ -62,66 +70,66 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
   return (
     <details className="paths" open={open}>
       <summary>
-        <h2 className="sec-h3">Paths to {MAJORITY}</h2>
-        <span className="hint">{all.length} ways</span>
+        <h2 className="sec-h3">{T.pathsHead(MAJORITY)}</h2>
+        <span className="hint">{T.pathsWays(all.length)}</span>
       </summary>
-      <p className="fig-note">Every smallest set of lists that reaches {MAJORITY} in {pollName}. Tap one to load it.</p>
+      <p className="fig-note">{T.pathsLead(MAJORITY, pollName)}</p>
       <div className="path-ctl">
-        <div className="seg" role="group" aria-label="Likud in the path">
-          <button type="button" aria-pressed={likud} onClick={pick(true, setLikud)}>With Likud<small>{withL.length} paths</small></button>
-          <button type="button" aria-pressed={!likud} onClick={pick(false, setLikud)}>Without Likud<small>{withoutL.length} paths</small></button>
+        <div className="seg" role="group" aria-label={T.likudGroup}>
+          <button type="button" aria-pressed={likud} onClick={pick(true, setLikud)}>{T.withLikud}<small>{T.nPaths(withL.length)}</small></button>
+          <button type="button" aria-pressed={!likud} onClick={pick(false, setLikud)}>{T.withoutLikud}<small>{T.nPaths(withoutL.length)}</small></button>
         </div>
-        <div className="seg" role="group" aria-label="Pledge conflicts">
-          <button type="button" aria-pressed={!clean} onClick={pick(false, setClean)}>Every path<small>{side.length}</small></button>
-          <button type="button" aria-pressed={clean} disabled={!clean && cleanCount === 0} onClick={pick(true, setClean)}>No pledge conflict<small>{cleanCount}</small></button>
+        <div className="seg" role="group" aria-label={T.conflictGroup}>
+          <button type="button" aria-pressed={!clean} onClick={pick(false, setClean)}>{T.everyPath}<small>{side.length}</small></button>
+          <button type="button" aria-pressed={clean} disabled={!clean && cleanCount === 0} onClick={pick(true, setClean)}>{T.noConflict}<small>{cleanCount}</small></button>
         </div>
       </div>
       {rows.length ? (
         <>
-          {!clean && !cleanCount && <p className="path-break">No path {likud ? "with" : "without"} Likud here is clear of every recorded pledge.</p>}
+          {!clean && !cleanCount && <p className="path-break">{T.noneClear(likud)}</p>}
           {shownClear.length > 0 && <ol className="path-list">{shownClear.map(row)}</ol>}
           {shownHit.length > 0 && (
             <>
-              {shownClear.length > 0 && <p className="path-break">{side.length - cleanCount} with a recorded pledge conflict</p>}
+              {shownClear.length > 0 && <p className="path-break">{T.withConflict(side.length - cleanCount)}</p>}
               <ol className="path-list" start={shownClear.length + 1}>{shownHit.map(row)}</ol>
             </>
           )}
         </>
       ) : (
-        <p className="empty">No path {likud ? "with" : "without"} Likud reaches {MAJORITY} here{clean ? " without a pledge conflict" : ""}.</p>
+        <p className="empty">{T.noPath(likud, MAJORITY, clean)}</p>
       )}
       {rows.length > n && (
         <p className="path-more">
-          <button type="button" className="btn" onClick={() => setN(n + 10)}>Show {Math.min(10, rows.length - n)} more</button>
-          <span>Showing {n} of {rows.length}</span>
+          <button type="button" className="btn" onClick={() => setN(n + 10)}>{T.showMore(Math.min(10, rows.length - n))}</button>
+          <span>{T.showing(n, rows.length)}</span>
         </p>
       )}
       <p className="fig-key path-key">
-        <span><i className="k k-tick" />{MAJORITY}, a majority</span>
-        <span><i className="k k-notch" />Notched corner: a list named in a recorded pledge conflict</span>
-        <span><i className="k k-hatch" />Hatched: outside support, not in the cabinet</span>
+        <span><i className="k k-tick" />{T.keyMajority(MAJORITY)}</span>
+        <span><i className="k k-notch" />{T.keyNotch}</span>
+        <span><i className="k k-hatch" />{T.keyHatched}</span>
       </p>
-      <p className="fig-note">Drop any one list from a path and it falls short of {MAJORITY}. Paths that break no recorded pledge come first; then fewest lists, then most seats. This is seat arithmetic checked against the pledges on record, not a forecast; Likud in a cabinet is read as led by Netanyahu.</p>
+      <p className="fig-note">{T.pathsMethod(MAJORITY)}</p>
       {sideHelped.length > 0 && (
         <details className="path-support">
-          <summary>With outside support <span className="hint">{sideHelped.length} {likud ? "with" : "without"} Likud</span></summary>
-          <p className="fig-note">Paths above with a pledge conflict, rearranged: the fewest seats move from the cabinet to outside support so the arrangement clears every recorded pledge, and the first vote counts the same seats for. The pledges against keeping Netanyahu in office, and Bennett&rsquo;s not to rely on Arab or Haredi parties, cover outside support as well as a cabinet seat, so they count here too. A pledge not to join a cabinet is not a promise of outside support; this is arithmetic, not a forecast.</p>
+          <summary>{T.supportHead} <span className="hint">{T.supportHint(sideHelped.length, likud)}</span></summary>
+          <p className="fig-note">{T.supportNote}</p>
           <ol className="path-list">
             {sideHelped.slice(0, m).map((s: SupportPath) => (
               <li key={`${s.cabinet.join()}|${s.support.join()}`}>
                 <button type="button" className="path" onClick={() => onLoad(s.cabinet, s.support)}>
-                  <span className="pn">{s.cabinet.map(nameOf).join(", ")}; outside support: {s.support.map(nameOf).join(", ")}</span>
-                  <span className="pv"><b>{sn(s.seats)}</b> for</span>
+                  <span className="pn">{T.supportNames(s.cabinet.map(nameOf), s.support.map(nameOf))}</span>
+                  <span className="pv"><b>{sn(s.seats)}</b> {T.supportFor}</span>
                   <SeatBar size="m" className="sb-fit" segments={[...s.cabinet.map((id) => seg(id, false)), ...s.support.map((id) => seg(id, false, true))]} />
-                  <span className="pc">Cabinet {sn(s.cabinetSeats)}, outside support {sn(s.supportSeats)}</span>
+                  <span className="pc">{T.supportSplit(sn(s.cabinetSeats), sn(s.supportSeats))}</span>
                 </button>
               </li>
             ))}
           </ol>
           {sideHelped.length > m && (
             <p className="path-more">
-              <button type="button" className="btn" onClick={() => setM(m + 10)}>Show {Math.min(10, sideHelped.length - m)} more</button>
-              <span>Showing {m} of {sideHelped.length}</span>
+              <button type="button" className="btn" onClick={() => setM(m + 10)}>{T.showMore(Math.min(10, sideHelped.length - m))}</button>
+              <span>{T.showing(m, sideHelped.length)}</span>
             </p>
           )}
         </details>

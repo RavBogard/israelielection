@@ -1,7 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useId, useState } from "react";
+import { hePath } from "@/lib/i18n";
+import { useLang } from "@/lib/i18n/lang";
+import profileText from "@/lib/i18n/profile";
 import { partyColor } from "@/lib/party-colors";
+import Loc, { SourceHe } from "../compare/Loc";
 import { onShade, shade } from "../compare/model";
 import type { Tile } from "./model";
 import StanceSlots, { type SlotColumn } from "../StanceSlots";
@@ -23,16 +27,20 @@ function Slots({ t }: { t: Tile }) {
 /**
  * Seven tiles, one per comparison issue: the party's recorded stance, with a bar whose shade is
  * shared across all lists holding that stance. One opens at a time to the party's own words,
- * their source and the lists that recorded the same answer.
+ * their source and the lists that recorded the same answer. The words are lib/i18n/profile's; in Hebrew the
+ * data text comes on each tile's `loc`.
  */
 export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; partyName: string }) {
+  const lang = useLang();
+  const T = profileText[lang].tiles;
+  const href = (en: string) => (lang === "he" ? hePath(en) ?? en : en);
   // The first recorded stance opens on load, so the panel's job is visible before anyone taps.
   const [open, setOpen] = useState<string | null>(() => tiles.find((t) => t.kind === "stance")?.key ?? null);
   const base = useId();
   const current = tiles.find((t) => t.key === open) ?? null;
   return (
     <div className="pp-stand">
-      <p className="pp-tilehint">{"Seven questions the site puts to every list. Tap a tile for the party’s words and source."}</p>
+      <p className="pp-tilehint">{T.hint}</p>
       <div className="pp-tiles">
         {tiles.map((t) => {
           const bar = stanceColor(t);
@@ -48,41 +56,51 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
             >
               <span className={`bar${t.kind === "stance" ? (t.position === null ? " unordered" : onShade(t.position) === "light" ? " deep" : "") + (t.basis === "unstated" ? " unst" : "") : ""}`} style={bar ? { background: bar } : undefined} aria-hidden="true" />
               <span className="issue">{t.label}</span>
-              <span className="stance">{t.kind === "stance" ? t.stance : t.kind === "declined" ? "Declined to answer" : "No 2026 position found"}</span>
+              <span className="stance">{t.kind === "stance" ? (t.loc?.stance ? <Loc v={t.loc.stance} /> : t.stance) : t.kind === "declined" ? T.declined : T.none}</span>
               <Slots t={t} />
-              <span className="basis">{t.kind === "stance" ? (t.basis === "record" ? "On the record" : t.basis === "unstated" ? "Not said publicly" : "From its answers") : t.text ? "What it said instead" : ""}</span>
+              <span className="basis">{t.kind === "stance" ? (t.basis === "record" ? T.record : t.basis === "unstated" ? T.unstated : T.stated) : t.text ? T.instead : ""}</span>
             </button>
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is dotted paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer. "}<span className="unst-key" aria-hidden="true" />{"Dotted inner border: not said publicly, from the record; open the tile to see why."}</p>
+      <p className="pp-tilekey">{T.key}<span className="unst-key" aria-hidden="true" />{T.keyUnstated}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>
-            <p className="q"><b>{current.label}.</b> {current.question}</p>
-            {current.text ? <p className="words">{current.text}</p> : <p className="words nf">{"No position recorded in the site’s sources."}</p>}
+            <p className="q"><b>{current.label}.</b> {current.loc ? current.loc.question && <Loc v={current.loc.question} /> : current.question}</p>
+            {current.text ? (
+              <p className="words">{current.loc?.text ? <>{current.basis === "unstated" && T.unstatedPrefix}<Loc v={current.loc.text} /></> : current.text}</p>
+            ) : (
+              <p className="words nf">{T.noWords}</p>
+            )}
             <p className="fig-src">
-              {current.basis === "record" && "On the record, because the party did not answer the questionnaire. "}
-              {current.basis === "unstated" && "Not said publicly: read from the party’s record, which the words above name. "}
-              {current.url ? <a href={current.url} rel="noopener">{current.source}</a> : current.source}
-              {current.date && !(current.source ?? "").includes(current.date) ? `, ${current.date}` : ""}
+              {current.basis === "record" && T.recordNote}
+              {current.basis === "unstated" && T.unstatedNote}
+              {current.loc ? (
+                <>{(current.source || current.date) && T.sourcePrefix}<SourceHe source={current.source} url={current.url} date={current.date} /></>
+              ) : (
+                <>
+                  {current.url ? <a href={current.url} rel="noopener">{current.source}</a> : current.source}
+                  {current.date && !(current.source ?? "").includes(current.date) ? `, ${current.date}` : ""}
+                </>
+              )}
             </p>
             {current.sameStance.length > 0 && (
               <p className="same">
-                Same recorded stance:{" "}
+                {T.same}{" "}
                 {current.sameStance.map((p) => (
-                  <Link key={p.id} href={`/parties/${p.id}`} className="chip">
+                  <Link key={p.id} href={href(`/parties/${p.id}`)} className="chip">
                     <i style={{ background: partyColor(p.id) }} />
-                    {p.name}
+                    <Loc v={p.name} />
                   </Link>
                 ))}
               </p>
             )}
-            <p className="more"><Link href={`/compare#issue-${current.key}`}>Compare every list on this question</Link></p>
+            <p className="more"><Link href={href(`/compare#issue-${current.key}`)}>{T.more}</Link></p>
           </>
         )}
       </div>
-      <p className="sr-only">{`${partyName}: seven issues; choose a tile to read the party’s words and source.`}</p>
+      <p className="sr-only">{T.sr(partyName)}</p>
     </div>
   );
 }

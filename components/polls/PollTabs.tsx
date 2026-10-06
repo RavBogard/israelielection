@@ -1,6 +1,8 @@
 "use client";
 import { type KeyboardEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import { type DeskTab, initialTab } from "@/lib/polls-desk";
+import { useLang } from "@/lib/i18n/lang";
+import POLLS from "@/lib/i18n/polls";
 
 /**
  * The polls desk's four tabs. Without JavaScript every panel shows, stacked, under its own heading;
@@ -8,6 +10,9 @@ import { type DeskTab, initialTab } from "@/lib/polls-desk";
  * panel, such as #browser) opens that panel, so shared links work; choosing a tab writes its hash.
  */
 export default function PollTabs({ tabs }: { tabs: { id: DeskTab; label: string; content: ReactNode }[] }) {
+  const lang = useLang(), t = POLLS[lang];
+  // The tabs run from the inline start, so in Hebrew the next tab is to the left.
+  const next = lang === "he" ? "ArrowLeft" : "ArrowRight", prev = lang === "he" ? "ArrowRight" : "ArrowLeft";
   const [on, setOn] = useState(false), [active, setActive] = useState<DeskTab>("parties");
   const refs = useRef<Record<string, HTMLButtonElement | null>>({}), pending = useRef<string | null>(null), [tick, setTick] = useState(0);
   // Scroll to a linked id once its panel is shown, after the stacked fallback has collapsed into tabs.
@@ -36,14 +41,14 @@ export default function PollTabs({ tabs }: { tabs: { id: DeskTab; label: string;
     if (focus) refs.current[id]?.focus();
   };
   const keys = (e: KeyboardEvent, i: number) => {
-    const n = tabs.length, to = e.key === "ArrowRight" ? (i + 1) % n : e.key === "ArrowLeft" ? (i - 1 + n) % n : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : -1;
+    const n = tabs.length, to = e.key === next ? (i + 1) % n : e.key === prev ? (i - 1 + n) % n : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : -1;
     if (to < 0) return;
     e.preventDefault();
     choose(tabs[to].id, true);
   };
   return (
     <div className={`pd-tabs${on ? " on" : ""}`}>
-      <div className="pd-tablist" role="tablist" aria-label="Polls desk" hidden={!on}>
+      <div className="pd-tablist" role="tablist" aria-label={t.tablist} hidden={!on}>
         {tabs.map((t, i) => (
           <button key={t.id} ref={(el) => { refs.current[t.id] = el; }} type="button" role="tab" id={`tab-${t.id}`} aria-selected={active === t.id} aria-controls={t.id} tabIndex={active === t.id ? 0 : -1} onClick={() => choose(t.id)} onKeyDown={(e) => keys(e, i)}>
             {t.label}

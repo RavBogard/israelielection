@@ -1,29 +1,38 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {partyColor,partyInk,blocColorStrip,PARTY_FALLBACK} from "@/lib/party-colors";
 import { arrangementKey, restorationGate } from "@/lib/builder-state";
 import "./interactives.css";
 import "./coalition.css";
-import Governing from "./Governing";
+import Governing from "./coalition/Governing";
 import type { StanceMap } from "@/lib/cohesion";
 import ProfileDetail from "./ProfileDetail";
+import PartyPreview from "./coalition/PartyPreview";
 import PathsTo61, { supportFill } from "./coalition/PathsTo61";
+import { En, Loc, rich } from "./coalition/Loc";
 import PageHead from "./PageHead";
 import SeatBar from "./SeatBar";
 import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
-import { MAJORITY, KNESSET, pledgeConflicts, tally, type Warning } from "@/lib/coalition";
+import { MAJORITY, KNESSET, pledgeConflicts, tally, type TallyText, type Warning, type WarningText } from "@/lib/coalition";
 import type { UnstatedMap } from "@/lib/coalition-governing";
 import { arrangement, arrangementWarnings, initialVoteDependence, restoreRoles, roleOf, ROLE_LABELS, writeRoles, type RoleOverrides, type SupportRole } from "@/lib/coalition-arrangement";
 import scenarioData from "@/data/coalition-scenarios.json";
-import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { fmt, longDate, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import { AVERAGE_ID, BLOC_ORDER, blocTotals, pollLabel, seatFigure } from "@/lib/polls";
 import { RESULTS_ID } from "@/lib/results";
 import type { Party, Poll } from "@/lib/types";
+import type { Lang } from "@/lib/i18n";
+import builder, { type BuilderText, type VerdictKey } from "@/lib/i18n/builder";
+import { list } from "@/lib/i18n/he-grammar";
+import { useLang } from "@/lib/i18n/lang";
+import { blocText, partyText, pledgeText, pollsterText, scenarioText } from "@/lib/i18n/overlays";
 
 const POLL_KEY = "cb-poll";
+/** The history note under the panel, keyed "historical" in data/he/coalition-scenarios.json. */
+const HISTORY = { id: "historical", ...scenarioData.historical };
 /** The picker: election results once counting starts, then the current average, then each current poll. */
 const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, averagePoll, ...mainPolls];
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
@@ -32,57 +41,63 @@ const cardsFor = (poll: Poll) =>
   parties.filter((p) => p.coalitionCard !== "hidden" || (poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0));
 const fillVars = (p: Party) =>
   ({ "--fill": partyColor(p.id), "--fill-ink": partyInk(p.id) }) as React.CSSProperties;
-const countPhrase = (poll: Poll) => poll.resultState?.freshness === "stale" ? "the saved count (stale)" : "the count so far";
+const countPhrase = (poll: Poll, T: BuilderText) => T.countPhrase(poll.resultState?.freshness === "stale");
 
 /** Averages print one decimal, as everywhere on the site; a single poll or the count prints its own figures. */
 const seatNum = (poll: Poll) => (poll.id === AVERAGE_ID ? seatFigure : fmt);
 
-function seatLabel(p: Party, poll: Poll) {
+function seatLabel(p: Party, poll: Poll, T: BuilderText = builder.en) {
   const r = poll.results[p.id];
-  if (!r) return { txt: "n/a", na: true, below: false };
+  if (!r) return { txt: T.seatNA, na: true, below: false };
   const below = !!r.belowThreshold || r.seats === 0;
-  return { txt: below ? "below" : seatNum(poll)(r.seats), na: false, below };
+  return { txt: below ? T.seatBelow : seatNum(poll)(r.seats), na: false, below };
 }
 
-function PollNote({ poll }: { poll: Poll }) {
+/** A party's name as this edition shows it, as text (for titles, labels and sentences). */
+const nameIn = (p: Party, lang: Lang) => partyText(p, "name", lang).text;
+
+function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
+  const T = builder[lang];
   const t = blocTotals(poll, parties);
   const shown = BLOC_ORDER.filter((b) => t[b] > 0).map((b) => blocs.find((x) => x.id === b)!);
-  const lumped = poll.combined.map((c) => c.parties.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(" and "));
+  const lumped = poll.combined.map((c) => c.parties.map((id) => { const p = parties.find((x) => x.id === id); return p ? nameIn(p, lang) : id; }));
   return (
     <p className="pollnote">
       {poll.id === RESULTS_ID ? (
         <>
-          Seats are <b>{countPhrase(poll)}</b>. {poll.note}{" "}
-          {poll.resultState && <>Snapshot captured {poll.resultState.capturedAt}. Source update time: {poll.resultState.sourceUpdatedAt ?? "not supplied by source"}. </>}
-          By bloc:{" "}
+          {rich(T.noteResults(countPhrase(poll, T)))}<En page={lang}>{poll.note}</En>{" "}
+          {poll.resultState && T.noteSnapshot(poll.resultState.capturedAt, poll.resultState.sourceUpdatedAt)}
+          {T.noteByBloc}
         </>
       ) : poll.id === AVERAGE_ID ? (
         <>
-          Seats are the <b>polling average</b> of the latest {mainPolls.length} polls, one per pollster (
-          {mainPolls.map((p) => `${p.pollster} ${shortDate(p.published)}`).join(", ")}), scaled to 120, so they can be fractional. <Link href="/polls#method">Average method</Link>. By bloc:{" "}
+          {rich(T.noteAverage(mainPolls.length, mainPolls.map((p) => `${pollsterText(p.pollster, lang).text} ${shortDate(p.published, lang)}`).join(", ")))}
+          <Link href={lang === "he" ? "/he/polls#method" : "/polls#method"}>{T.noteMethod}</Link>. {T.noteByBloc}
         </>
       ) : (
-        <>
-          Seats are from <b>{pollLabel(poll)}, published {mediumDate(poll.published)}</b>. By bloc:{" "}
-        </>
+        <>{rich(T.notePoll(pollLabel(poll, lang), mediumDate(poll.published, lang)))}{T.noteByBloc}</>
       )}
       {shown.map((b, i) => (
         <span key={b.id}>
           {i > 0 && ", "}
-          {b.label} <b>{seatNum(poll)(t[b.id])}</b>
+          <Loc v={blocText(b, lang)} page={lang} /> <b>{seatNum(poll)(t[b.id])}</b>
         </span>
       ))}
-      .{lumped.map((l) => ` ${l} were not reported separately.`)}
+      .{lumped.map((l) => T.noteLumped(l))}
     </p>
   );
 }
 
 /** A party card drawn as its ballot slip: the letters a voter picks, the name, the seats. */
-function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict }: { p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void; role: SupportRole; onRole: (role: SupportRole) => void; conflict: boolean }) {
+function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }: { p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void; role: SupportRole; onRole: (role: SupportRole) => void; conflict: boolean; lang: Lang }) {
+  const T = builder[lang];
   const letters = lettersOf[p.id];
+  const name = nameIn(p, lang);
+  const nm = <span className="nm"><Loc v={partyText(p, "name", lang)} page={lang} /></span>;
+  const ld = <span className="ld"><Loc v={partyText(p, "leader", lang)} page={lang} /></span>;
   const profile = (
-    <button type="button" className="prof" aria-haspopup="dialog" aria-label={`Profile: ${p.name}`} onClick={(e) => onProfile(e.currentTarget)}>
-      Profile
+    <button type="button" className="prof" aria-haspopup="dialog" aria-label={T.profileLabel(name)} onClick={(e) => onProfile(e.currentTarget)}>
+      {T.profile}
     </button>
   );
   // A list written off in the polls gets a normal slip if the count gives it seats.
@@ -91,37 +106,37 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict }: { p:
       <div className="slip out" style={fillVars(p)}>
         <div className="face">
           {letters && <span className="letters" lang="he" dir="rtl">{letters}</span>}
-          <span className="nm">{p.name}</span>
-          <span className="ld">{p.leader}</span>
-          <span className="status">{p.status}</span>
+          {nm}
+          {ld}
+          <span className="status">{p.status != null && <Loc v={partyText(p, "status", lang)} page={lang} />}</span>
         </div>
         <div className="foot">{profile}</div>
       </div>
     );
   }
-  const s = seatLabel(p, poll);
-  const src = poll.id === RESULTS_ID ? countPhrase(poll) : poll.id === AVERAGE_ID ? `the polling average of ${mainPolls.length} polls` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
-  const tip0 = s.na ? `${poll.pollster} did not report ${p.name} separately (${src})` : s.below ? `Below threshold in ${src}` : `${s.txt} seats in ${src}`;
-  const tip = conflict ? `${tip0}. In a pledge conflict with this coalition` : tip0;
+  const s = seatLabel(p, poll, T);
+  const src = poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averageSource(mainPolls.length) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
+  const tip0 = s.na ? T.tipNA(poll.pollster, name, src) : s.below ? T.tipBelow(src) : T.tipSeats(s.txt, src);
+  const tip = conflict ? T.tipConflict(tip0) : tip0;
   return (
     <div className={`slip${on ? " on" : ""}${role !== "cabinet" && role !== "opposition" ? " outside" : ""}`} style={fillVars(p)}>
       <button type="button" className="face" aria-pressed={on} onClick={onToggle} title={tip}>
         {letters && <span className="letters" lang="he" dir="rtl">{letters}</span>}
-        <span className="nm">{p.name}</span>
-        <span className="ld">{p.leader}</span>
+        {nm}
+        {ld}
         <span className={`seats${s.na ? " na" : ""}`}>
           {s.txt}
-          <small>{s.na ? "not reported" : s.below ? "the threshold" : "seats"}</small>
+          <small>{s.na ? T.seatSmall.na : s.below ? T.seatSmall.below : T.seatSmall.seats}</small>
         </span>
       </button>
       <div className="foot">
         {profile}
-        {conflict && <span className="pmark">Pledge conflict</span>}
+        {conflict && <span className="pmark">{T.pledgeMark}</span>}
       </div>
       {role !== "opposition" && (
-        <label className="role-picker">Role for {p.name}
+        <label className="role-picker">{T.roleFor(name)}
           <select value={role} onChange={(e) => onRole(e.target.value as SupportRole)}>
-            {Object.entries(ROLE_LABELS).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+            {(Object.keys(ROLE_LABELS) as SupportRole[]).map((value) => <option key={value} value={value}>{T.roles[value]}</option>)}
           </select>
         </label>
       )}
@@ -129,7 +144,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict }: { p:
   );
 }
 
-function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
+function Drawer({ party, onClose, lang }: { party: Party; onClose: () => void; lang: Lang }) {
   const ref = useRef<HTMLElement>(null);
   const closeBtn = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -160,47 +175,49 @@ function Drawer({ party, onClose }: { party: Party; onClose: () => void }) {
       <aside className="drawer" role="dialog" aria-modal="true" aria-labelledby="dtitle" ref={ref}>
         <div className="dhead">
           <button className="btn" type="button" onClick={onClose} ref={closeBtn}>
-            Close
+            {builder[lang].close}
           </button>
         </div>
         <div className="dbody">
-          <ProfileDetail party={party} headingId="dtitle" />
+          {lang === "en" ? <ProfileDetail party={party} headingId="dtitle" /> : <PartyPreview party={party} headingId="dtitle" lang={lang} />}
         </div>
       </aside>
     </>
   );
 }
 
-/** A named line-up a reader can load in one tap, with the seats it once held for the "then vs now" line. */
 /** The pledge and condition notes for the chosen parties: yellow goes against a recorded pledge, grey is a stated condition. */
-function Warns({ warns }: { warns: Warning[] }) {
+function Warns({ warns, lang }: { warns: Warning[]; lang: Lang }) {
   if (!warns.length) return null;
+  const T = builder[lang];
   return (
     <div className="warns">
       {warns.map((w) => (
         <div key={w.id} className={`warn${w.kind === "condition" ? " info" : ""}`}>
-          <b>{w.kind === "condition" ? "A stated condition" : "Goes against a pledge"}</b>
-          {w.message}
-          <cite>{w.source}</cite>
+          <b>{w.kind === "condition" ? T.warnCondition : T.warnPledge}</b>
+          <Loc v={{ text: w.message, lang: w.lang ?? "en" }} page={lang} />
+          <cite><En page={lang}>{w.source}</En></cite>
         </div>
       ))}
     </div>
   );
 }
 
-export type Preset = { ids: string[]; label: string; seats: number; year: number; note?: string | null };
+/** A named line-up a reader can load in one tap, with the seats it once held for the "then vs now" line. `noteLang`: the language `note` is in. */
+export type Preset = { ids: string[]; label: string; seats: number; year: number; note?: string | null; noteLang?: Lang };
 
 /** How the current poll is named in a sentence. */
-const pollPhrase = (poll: Poll) =>
-  poll.id === RESULTS_ID ? countPhrase(poll) : poll.id === AVERAGE_ID ? `the polling average (${mainPolls.length} polls)` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+const pollPhrase = (poll: Poll, T: BuilderText, lang: Lang) =>
+  poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averagePhrase(mainPolls.length) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
 
 /** Against in the first vote: a grey between ink-3 and the empty track, so it reads as filled but not as a list. */
 const AGAINST = "color-mix(in srgb, var(--ink-3) 65%, var(--cell))";
 const OUTSIDE_NEXT: Record<SupportRole, SupportRole> = { opposition: "support", support: "abstain", abstain: "opposition", cabinet: "cabinet" };
-const OUTSIDE_WORD: Record<SupportRole, string> = { opposition: "Against", support: "Outside support", abstain: "Abstains", cabinet: "Cabinet" };
 
 export default function CoalitionBuilder({ results = null, embedded = false, preset, stances, unstated }: { results?: Poll | null; embedded?: boolean; preset?: Preset; stances?: StanceMap; unstated?: UnstatedMap }) {
   // On the home page the builder sits under the page's own heading, so its title is an h2.
+  const lang = useLang();
+  const T = builder[lang];
   const choices = useMemo(() => pickList(results), [results]);
   const [pollId, setPollId] = useState(results ? RESULTS_ID : AVERAGE_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
@@ -256,8 +273,11 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
   const poll = choices.find((p) => p.id === pollId) ?? choices[0];
   const sn = seatNum(poll);
-  const t = tally(sel, parties, poll);
-  const warns = arrangementWarnings(sel, roles, parties, pledgeRules);
+  // The Hebrew edition's words for the tally's group note and the pledge notes; English passes none, so its output is unchanged.
+  const tallyText: TallyText | undefined = lang === "en" ? undefined : { P: T, name: (p) => nameIn(p, lang), pollster: pollsterText(poll.pollster, lang).text };
+  const warnText: WarningText | undefined = lang === "en" ? undefined : { message: (r) => pledgeText(r, lang), name: (p) => nameIn(p, lang), and: (n) => list(n) };
+  const t = tally(sel, parties, poll, tallyText);
+  const warns = arrangementWarnings(sel, roles, parties, pledgeRules, warnText);
   const conflicts = pledgeConflicts(sel, parties, pledgeRules);
   const conflictIds = new Set(conflicts.flatMap((c) => c.ids));
   const vote = arrangement(sel, roles, parties, poll);
@@ -268,20 +288,21 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const segsOf = (ids: Set<string>, hatched = false) => tally(ids, parties, poll).segments.map((s) => {
     const party = parties.find((p) => p.name === s.name);
     const c = party ? partyColor(party.id) : PARTY_FALLBACK;
-    return { key: party?.id ?? s.name, seats: s.seats, color: hatched ? supportFill(c) : c, title: `${s.name}: ${sn(s.seats)}` };
+    return { key: party?.id ?? s.name, seats: s.seats, color: hatched ? supportFill(c) : c, title: `${party ? nameIn(party, lang) : s.name}: ${sn(s.seats)}` };
   });
   const cabSegs = segsOf(sel);
   const supSegs = segsOf(new Set(supportIds), true);
   const voteSegs = [...cabSegs, ...supSegs.map((s) => ({ ...s, key: `s-${s.key}` })),
-    { key: "abstain", seats: vote.abstain, color: "transparent", title: `Abstain: ${sn(vote.abstain)}` },
-    { key: "against", seats: vote.no, color: AGAINST, title: `Against: ${sn(vote.no)}` }];
+    { key: "abstain", seats: vote.abstain, color: "transparent", title: T.segAbstain(sn(vote.abstain)) },
+    { key: "against", seats: vote.no, color: AGAINST, title: T.segAgainst(sn(vote.no)) }];
   const empty = vote.outcome === "empty";
-  const verdict = empty ? null : vote.outcome === "incomplete" ? "No verdict" : t.total >= MAJORITY ? "Majority" : vote.outcome === "passes" ? "Passes" : "Fails";
+  const vk: VerdictKey | null = empty ? null : vote.outcome === "incomplete" ? "none" : t.total >= MAJORITY ? "majority" : vote.outcome === "passes" ? "passes" : "fails";
+  const verdict = vk && T.verdict[vk];
   const short = MAJORITY - t.total;
-  const cabText = empty ? "" : t.total >= MAJORITY ? `${sn(t.total)}${t.partial ? "+" : ""}, a majority on its own` : `${sn(t.total)}${t.partial ? "+" : ""}, ${sn(short)} short of ${MAJORITY}`;
-  const voteLine = `For ${sn(vote.yes)}, against ${sn(vote.no)}${vote.abstain ? `, abstaining ${sn(vote.abstain)}` : ""}`;
-  const status = said && `${said} ${empty ? "No parties yet." : `Cabinet ${sn(t.total)}. ${verdict === "Majority" ? `A majority, ${sn(vote.yes)} for` : verdict === "No verdict" ? "First vote: no verdict" : `First vote ${verdict!.toLowerCase()}, ${sn(vote.yes)} for`}. ${conflicts.length ? `${conflicts.length} pledge conflict${conflicts.length > 1 ? "s" : ""}.` : "No pledge conflict."}`}`;
-  const nameOf = (id: string) => parties.find((p) => p.id === id)?.name ?? id;
+  const cabText = empty ? "" : t.total >= MAJORITY ? T.cabMajority(sn(t.total), t.partial) : T.cabShort(sn(t.total), t.partial, sn(short), MAJORITY);
+  const voteLine = T.voteLine(sn(vote.yes), sn(vote.no), vote.abstain ? sn(vote.abstain) : null);
+  const status = said && `${said} ${empty ? T.statusEmpty : `${T.statusCabinet(sn(t.total))} ${vk === "majority" ? T.statusMajority(sn(vote.yes)) : vk === "none" ? T.statusNoVerdict : T.statusVote(vk!, sn(vote.yes))}. ${T.statusConflicts(conflicts.length)}`}`;
+  const nameOf = (id: string) => { const p = parties.find((x) => x.id === id); return p ? nameIn(p, lang) : id; };
 
   const choosePoll = (id: string) => {
     setPollId(id);
@@ -291,12 +312,12 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     setScenarioId(null);
     setSel((s) => { const n = new Set(s); if (role === "cabinet") n.add(id); else n.delete(id); return n; });
     setRoles((r) => { const n = { ...r }; if (role === "support" || role === "abstain") n[id] = role; else delete n[id]; return n; });
-    if (!quiet) setSaid(`${nameOf(id)}: ${OUTSIDE_WORD[role].toLowerCase()}.`);
+    if (!quiet) setSaid(T.saidRole(nameOf(id), role));
   };
   const toggle = (id: string) => {
     const on = sel.has(id);
     assignRole(id, on ? "opposition" : "cabinet", true);
-    setSaid(`${nameOf(id)} ${on ? "removed" : "added"}.`);
+    setSaid(T.saidToggle(nameOf(id), on));
   };
   const load = (cabinet: string[], support: string[], abstain: string[] = []) => {
     setSel(new Set(cabinet));
@@ -307,12 +328,12 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     if (!s) return;
     load(s.cabinet, s.support, s.abstain);
     setScenarioId(id);
-    setSaid(`${s.title} loaded.`);
+    setSaid(T.saidLoaded(scenarioText(s, "title", lang).text));
   };
   const loadPath = (cabinet: string[], support: string[]) => {
     load(cabinet, support);
     setScenarioId(null);
-    setSaid(`Loaded ${cabinet.map(nameOf).join(", ")}${support.length ? ` with outside support from ${support.map(nameOf).join(", ")}` : ""}.`);
+    setSaid(T.saidPath(cabinet.map(nameOf), support.map(nameOf)));
     document.getElementById("builder")?.scrollIntoView({ block: "start" });
   };
   const closeProfile = useCallback(() => {
@@ -332,6 +353,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   // The preset loads only slips that can be selected in this poll; a list without a figure is named in its note instead.
   const presetIds = preset ? preset.ids.filter((id) => cardsFor(poll).some((p) => p.id === id && (p.coalitionCard === "active" || (poll.results[id]?.seats ?? 0) > 0))) : [];
   const presetOn = preset ? presetIds.length > 0 && sel.size === presetIds.length && presetIds.every((id) => sel.has(id)) : false;
+  const presetLabel = preset ? preset.label[0].toUpperCase() + preset.label.slice(1) : "";
   const atRest = !sel.size && !Object.keys(roles).length;
   // Lists outside the cabinet that hold seats here: the ones a reader may give outside support or an abstention.
   const outside = cardsFor(poll).filter((p) => !sel.has(p.id) && p.coalitionCard !== "out" && !seatLabel(p, poll).na && !seatLabel(p, poll).below);
@@ -339,68 +361,73 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
   return (
     <div className="cb">
-      <PageHead as={embedded ? "h2" : "h1"} title="Build a coalition" standfirst={<>
-            Tap a ballot slip to add a cabinet partner; <b>{MAJORITY}</b> of {KNESSET} seats is a majority.
-          </>}
+      <PageHead as={embedded ? "h2" : "h1"} title={T.title} standfirst={<>{rich(T.standfirst(MAJORITY, KNESSET))}</>}
         aside={
-        <label className="poll-pick">Seats from
+        <label className="poll-pick">{T.pickLabel}
           <select value={pollId} onChange={(e) => choosePoll(e.target.value)}>
             {choices.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.id === AVERAGE_ID ? `Polling average (${mainPolls.length} polls)` : `${pollLabel(p)}, ${p.id === RESULTS_ID ? (p.resultState?.freshness === "stale" ? "saved count (stale)" : "count so far") : mediumDate(p.published)}`}
+                {p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
               </option>
             ))}
           </select>
         </label>
         } />
-      <a className="to-result" href="#arrangement-result">Skip to result</a>
+      <a className="to-result" href="#arrangement-result">{T.skip}</a>
       <p className="sr-only" role="status">{status}</p>
 
-      <PathsTo61 poll={poll} parties={parties} rules={pledgeRules} pollName={pollPhrase(poll)} sn={sn} onLoad={loadPath} open={atRest} />
+      <PathsTo61 poll={poll} parties={parties} rules={pledgeRules} pollName={pollPhrase(poll, T, lang)} sn={sn} onLoad={loadPath} open={atRest} />
 
-      <section className="arrangement-scenarios" aria-label="Load a named arrangement">
-        <p>Or load a named arrangement</p>
+      <section className="arrangement-scenarios" aria-label={T.scenariosLabel}>
+        <p>{T.scenariosLead}</p>
         <div>
           {preset && presetIds.length > 0 && (
-            <button type="button" className="btn" aria-pressed={presetOn} onClick={() => { load(presetIds, []); setScenarioId(null); setSaid(`${preset.label[0].toUpperCase() + preset.label.slice(1)} loaded.`); }}>
-              {preset.label[0].toUpperCase() + preset.label.slice(1)}
+            <button type="button" className="btn" aria-pressed={presetOn} onClick={() => { load(presetIds, []); setScenarioId(null); setSaid(T.saidLoaded(presetLabel)); }}>
+              {presetLabel}
             </button>
           )}
-          {scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}>{s.title}</button>)}
-          <button className="btn reset" type="button" onClick={() => { load([], []); setScenarioId(null); setSaid("Cleared."); }} disabled={atRest}>
-            Start over
+          {scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}><Loc v={scenarioText(s, "title", lang)} page={lang} /></button>)}
+          <button className="btn reset" type="button" onClick={() => { load([], []); setScenarioId(null); setSaid(T.saidCleared); }} disabled={atRest}>
+            {T.startOver}
           </button>
         </div>
         {preset && presetOn && (
           <div className="scenario-reading">
             <p className="thennow">
-              {preset.label[0].toUpperCase() + preset.label.slice(1)} ({presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}) held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{sn(t.total)}</b> in{" "}
-              {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
+              {rich(T.thenNow(presetLabel, presetIds.map(nameOf).join(", "), preset.seats, preset.year, sn(t.total), pollPhrase(poll, T, lang)))}
+              {preset.note ? <> <Loc v={{ text: preset.note, lang: preset.noteLang ?? "en" }} page={lang} /></> : null}
             </p>
           </div>
         )}
-        {scenario && <div className="scenario-reading"><p>{scenario.agenda}</p><ol>{scenario.obstacles.map((text) => <li key={text}>{text}</li>)}</ol><p>{scenario.leadership}</p><p className="fig-src"><a href={scenario.url}>{scenario.source}</a>, Research checked {mediumDate(scenarioData.updated)}. Pledge sources appear with each warning.</p></div>}
+        {scenario && (
+          <div className="scenario-reading">
+            <p><Loc v={scenarioText(scenario, "agenda", lang)} page={lang} /></p>
+            <ol>{scenario.obstacles.map((text, i) => <li key={text}><Loc v={scenarioText(scenario, `obstacles.${i}`, lang)} page={lang} /></li>)}</ol>
+            <p><Loc v={scenarioText(scenario, "leadership", lang)} page={lang} /></p>
+            <p className="fig-src"><a href={scenario.url}><En page={lang}>{scenario.source}</En></a>{T.scenarioChecked(lang === "en" ? mediumDate(scenarioData.updated) : longDate(scenarioData.updated, lang))}</p>
+          </div>
+        )}
       </section>
 
       <div className="layout" id="builder">
         <div className={`mobile-arrangement${meterSeen ? " gone" : ""}`} aria-hidden={meterSeen || undefined}>
-          <span>{verdict ? <><b>{verdict}</b>. {voteLine}</> : "No parties yet"}</span>
-          <a href="#arrangement-result">View the arrangement</a>
+          <span>{verdict ? <><b>{verdict}</b>. {voteLine}</> : T.noParties}</span>
+          <a href="#arrangement-result">{T.viewArrangement}</a>
           <SeatBar className="ma-bar" total={KNESSET} majority={MAJORITY} segments={empty ? [] : voteSegs} />
         </div>
         <div className="blocs">
-          <h2 className="sr-only">The lists, by bloc</h2>
+          <h2 className="sr-only">{T.listsByBloc}</h2>
           {BLOC_ORDER.map((id) => blocs.find((b) => b.id === id)!).map((b) => (
             <section className="bloc" key={b.id}>
               <h3>
                 <span className="sw" style={{ background: blocColorStrip(b.id) }} />
-                {b.label}
+                <Loc v={blocText(b, lang)} page={lang} />
               </h3>
               <div className="slips">
                 {cardsFor(poll).filter((p) => p.bloc === b.id).map((p) => (
                   <Slip key={p.id} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
                     role={roleOf(p.id, sel, roles)} onRole={(role) => assignRole(p.id, role)} conflict={conflictIds.has(p.id)}
-                    onProfile={(el) => { opener.current = el; setProfile(p.id); }} />
+                    onProfile={(el) => { opener.current = el; setProfile(p.id); }} lang={lang} />
                 ))}
               </div>
             </section>
@@ -408,45 +435,45 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         </div>
 
         <aside className="panel" id="arrangement-result" tabIndex={-1}>
-          <h2 className="sr-only">Your coalition</h2>
+          <h2 className="sr-only">{T.yourCoalition}</h2>
           <div className="meter" ref={meterRef}>
             <p className="verdict">
-              {verdict ? <><b className={verdict === "Fails" || verdict === "No verdict" ? "" : "maj"}>{verdict}</b><span>{voteLine}</span></> : <span className="none">No parties yet</span>}
+              {verdict ? <><b className={vk === "fails" || vk === "none" ? "" : "maj"}>{verdict}</b><span>{voteLine}</span></> : <span className="none">{T.noParties}</span>}
             </p>
             <div className="mrow">
-              <span className="ml">Cabinet</span>
+              <span className="ml">{T.cabinetRow}</span>
               <span className="mv">{cabText}</span>
-              <SeatBar size="l" segments={cabSegs} label={`Cabinet: ${cabText || "no parties yet"}. ${MAJORITY} of ${KNESSET} is a majority.`} />
+              <SeatBar size="l" segments={cabSegs} label={T.cabLabel(cabText, MAJORITY, KNESSET)} />
             </div>
             <div className="mrow">
-              <span className="ml">First confidence vote</span>
-              <span className="mv">{empty ? "" : supportIds.length ? `${sn(t.total)} + ${sn(vote.yes - t.total)} outside support` : vote.abstain ? `Abstaining ${sn(vote.abstain)}` : "Cabinet only"}</span>
-              <SeatBar size="l" segments={empty ? [] : voteSegs} label={empty ? "First confidence vote: no parties yet." : `First confidence vote: ${voteLine}. ${verdict}.`} />
+              <span className="ml">{T.voteRow}</span>
+              <span className="mv">{empty ? "" : supportIds.length ? T.voteWithSupport(sn(t.total), sn(vote.yes - t.total)) : vote.abstain ? T.voteAbstaining(sn(vote.abstain)) : T.voteCabinetOnly}</span>
+              <SeatBar size="l" segments={empty ? [] : voteSegs} label={empty ? T.voteLabelEmpty : T.voteLabel(voteLine, verdict!)} />
             </div>
             <p className="fig-key mkey">
-              <span><i className="k" style={{ background: keyColor }} />Cabinet</span>
-              <span><i className="k" style={{ background: supportFill(supSegs[0] ? partyColor(supSegs[0].key) : "var(--ink)") }} />Hatched: outside support, not in the cabinet</span>
-              <span><i className="k k-gap" />Abstains</span>
-              <span><i className="k" style={{ background: AGAINST }} />Against</span>
+              <span><i className="k" style={{ background: keyColor }} />{T.keyCabinet}</span>
+              <span><i className="k" style={{ background: supportFill(supSegs[0] ? partyColor(supSegs[0].key) : "var(--ink)") }} />{T.keyHatched}</span>
+              <span><i className="k k-gap" />{T.keyAbstains}</span>
+              <span><i className="k" style={{ background: AGAINST }} />{T.keyAgainst}</span>
             </p>
           </div>
           <div className="pbody">
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}
-          {!vote.complete && !empty && <p className="naflag">{vote.crossed ? "A combined poll group spans different roles and cannot be divided from the source. " : ""}{vote.notReported.length ? `${vote.notReported.map((p) => p.name).join(", ")} not reported separately. ` : ""}Accounted for: {sn(vote.represented)} of 120 seats.</p>}
-          <Warns warns={warns} />
-          {voteNeeded.length > 0 && <p className="needed">If any one of {voteNeeded.map(nameOf).join(", ")} votes against rather than for, this first vote no longer passes.</p>}
+          {!vote.complete && !empty && <p className="naflag">{vote.crossed ? T.crossed : ""}{vote.notReported.length ? T.notReported(vote.notReported.map((p) => nameIn(p, lang))) : ""}{T.accounted(sn(vote.represented))}</p>}
+          <Warns warns={warns} lang={lang} />
+          {voteNeeded.length > 0 && <p className="needed">{T.needed(voteNeeded.map(nameOf))}</p>}
           {sel.size > 0 && outside.length > 0 && (
             <section className="outside" aria-labelledby="outside-h">
-              <h3 id="outside-h">Partners outside the cabinet</h3>
-              <p className="fig-note">Tap a list to switch it between against, outside support and abstaining.</p>
+              <h3 id="outside-h">{T.outsideHead}</h3>
+              <p className="fig-note">{T.outsideNote}</p>
               <div className="chips">
                 {outside.map((p) => {
                   const r = roleOf(p.id, sel, roles);
                   return (
                     <button key={p.id} type="button" className={`pchip r-${r}`} style={fillVars(p)} onClick={() => assignRole(p.id, OUTSIDE_NEXT[r])}>
                       <i className="k" style={{ background: r === "support" ? supportFill(partyColor(p.id)) : r === "abstain" ? "transparent" : AGAINST }} aria-hidden="true" />
-                      <span>{p.name}</span>
-                      <small>{OUTSIDE_WORD[r]}</small>
+                      <span><Loc v={partyText(p, "name", lang)} page={lang} /></span>
+                      <small>{T.outsideWord[r]}</small>
                     </button>
                   );
                 })}
@@ -458,45 +485,39 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               t.chosen.map((p) => (
                 <li key={p.id}>
                   <span className="sw" style={{ background: partyColor(p.id) }} />
-                  {p.name}
-                  <span className="v">{seatLabel(p, poll).txt}</span>
+                  <Loc v={partyText(p, "name", lang)} page={lang} />
+                  <span className="v">{seatLabel(p, poll, T).txt}</span>
                 </li>
               ))
             ) : (
-              <li className="empty">Tap a slip, or a path above, to add a party.</li>
+              <li className="empty">{T.listEmpty}</li>
             )}
           </ul>
           {stances && <Governing sel={cooperation} parties={parties} poll={poll} map={stances} unstated={unstated} withOutsideSupport={supportIds.length > 0} />}
           <details className="confidence">
-            <summary>What the first vote does and does not show</summary>
-            {vote.approximate && <p className="naflag">Poll averages can be fractional. These totals illustrate relative support; real MKs cast whole votes. This is not a forecast of their vote.</p>}
-            <p className="callout">Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.</p>
-            <p className="fig-src"><a href="https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf">Basic Law: Government §§13(d), 28</a>; <a href="https://main.knesset.gov.il/EN/activity/documents/BasicLawsPDF/BasicLawTheKnesset.pdf">Knesset §25</a>; <a href="https://en.idi.org.il/articles/28888">IDI explanation</a>.</p>
+            <summary>{T.confidenceSummary}</summary>
+            {vote.approximate && <p className="naflag">{T.approximate}</p>}
+            <p className="callout">{T.confidenceNote}</p>
+            <p className="fig-src">{T.lawLinks.map((l, i) => <Fragment key={l.href}>{i > 0 && "; "}<a href={l.href}>{l.text}</a></Fragment>)}.</p>
           </details>
-          <details className="arrangement-history"><summary>{scenarioData.historical.title}</summary><p>{scenarioData.historical.text}</p><a href={scenarioData.historical.url}>{scenarioData.historical.source}</a></details>
+          <details className="arrangement-history"><summary><Loc v={scenarioText(HISTORY, "title", lang)} page={lang} /></summary><p><Loc v={scenarioText(HISTORY, "text", lang)} page={lang} /></p><a href={HISTORY.url}><En page={lang}>{HISTORY.source}</En></a></details>
           {t.chosen.length > 0 && (
             <div className="share">
-              <button className="btn" type="button" onClick={copyLink}>Copy a link to this coalition</button>
-              <span aria-live="polite">{copied ? "Copied" : ""}</span>
+              <button className="btn" type="button" onClick={copyLink}>{T.copyLink}</button>
+              <span aria-live="polite">{copied ? T.copied : ""}</span>
             </div>
           )}
           <div className="callout">
-            <p>
-              Parties have made public pledges about partners. You can build any combination here; a yellow note means it goes against a recorded
-              pledge, a grey one is a stated condition, not a refusal.
-            </p>
-            <p>
-              The Central Elections Committee voted Sept 23 to bar the Joint List and Ra&apos;am. The Supreme Court heard the appeals Oct 1 and
-              reinstated both lists 9–0 on Oct 2.
-            </p>
+            <p>{T.pledgeCallout}</p>
+            <p>{T.courtCallout}</p>
           </div>
           </div>
         </aside>
       </div>
-      <PollNote poll={poll} />
-      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id}),sel,roles,parties.map((p)=>p.id))}`}>Print or export this arrangement</Link></p>
+      <PollNote poll={poll} lang={lang} />
+      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id}),sel,roles,parties.map((p)=>p.id))}`}>{T.exportLink}</Link></p>
 
-      {profileParty && <Drawer party={profileParty} onClose={closeProfile} />}
+      {profileParty && <Drawer party={profileParty} onClose={closeProfile} lang={lang} />}
     </div>
   );
 }

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { Lang } from "@/lib/i18n";
+import chrome from "@/lib/i18n/chrome";
 
 export const ELECTION_DAY = "2026-10-27";
 
@@ -6,25 +8,25 @@ export function daysUntil(iso: string) {
   return Math.ceil((Date.parse(`${iso}T00:00:00+02:00`) - Date.now()) / 86_400_000);
 }
 
-/** One line in the masthead: how far away Election Day is. */
-export default function Countdown({ className }: { className?: string }) {
-  const d = daysUntil(ELECTION_DAY);
+/** One line in the masthead: how far away Election Day is. Words from lib/i18n/chrome.ts. */
+export default function Countdown({ className, lang = "en" }: { className?: string; lang?: Lang }) {
+  const d = daysUntil(ELECTION_DAY), t = chrome[lang].countdown;
   const text =
     d > 1 ? (
       <>
-        <b>{d} days</b> to Election Day, Tuesday, October 27
+        <b>{t.days(d)}</b>{t.daysAfter}
       </>
     ) : d === 1 ? (
       <>
-        <b>Election Day is tomorrow</b>, Tuesday, October 27
+        <b>{t.tomorrow}</b>{t.tomorrowAfter}
       </>
     ) : d === 0 ? (
       <>
-        <b>Election Day.</b> Polls close at 10 pm Israel time
+        <b>{t.today}</b>{t.todayAfter}
       </>
     ) : (
       <>
-        Israel voted on October 27. <Link href="/government">Forming a government</Link>
+        {t.after}<Link href="/government" hrefLang={lang === "he" ? "en" : undefined}>{t.formation}</Link>
       </>
     );
   return <p className={`countdown${className ? ` ${className}` : ""}`}>{text}</p>;

@@ -142,3 +142,9 @@
 /* After polls close, until the count is past early: the hero is the channels' exit polls (components/results/ExitPollBars.tsx). */
 .home .hero.hero-exit { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "basis" "exit" "context"; gap: 18px; }
 .home .hero-exit .home-exit { grid-area: exit; margin: 0; }
+
+/* The Hebrew home (/he): Hebrew display type takes no negative tracking; the briefing says which language it is in. */
+.home:lang(he) .hero h1 { letter-spacing: 0; }
+.home .since-brief-lang { font-size: 12.5px; font-weight: 500; color: var(--ink-2); }
+/* The tool pictures are drawn in SVG coordinates, left to right; keep their text anchors from flipping under dir="rtl". */
+.home .tools .gl { direction: ltr; }

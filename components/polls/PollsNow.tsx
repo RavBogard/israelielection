@@ -6,6 +6,10 @@ import { average, averageAsPoll, BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTota
 import "../party-stroke.css";
 import type { BlocId } from "@/lib/types";
 import SeatBar from "../SeatBar";
+import type { Lang } from "@/lib/i18n";
+import { hePath } from "@/lib/i18n";
+import POLLS, { HE_METHOD } from "@/lib/i18n/polls";
+import { blocName, Ltr, partyName, pollsterName, Tx } from "./names";
 import "./polls-now.css";
 
 const cfg = pollsData.config;
@@ -22,13 +26,20 @@ const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { i
 /** The light paper behind the list chart (--bg, the darker of --bg and --sheet). */
 /** A list's mark colour at 3:1 on either paper: on light paper darkened just far enough, on dark paper partyStroke's lighter stroke. */
 const markVars = strokeVars;
+/** The bloc labels in an edition. */
+const blocLabels = (lang: Lang) => Object.fromEntries(blocs.map((b) => [b.id, blocName(b, lang)])) as Record<BlocId, string>;
+/** The alternative average's name: the data's English label, or the Hebrew built from the outlets it leaves out. */
+const altName = (lang: Lang) => (lang === "he" ? HE_METHOD.variantLabel(variantNames.map((n) => pollsterName(n, lang))) : cfg.withoutVariant.label);
+/** Seat axes are magnitudes, so in Hebrew they run from the right (PLAN.md section 5): positions mirror, widths do not. */
+const flip = (pct: number, lang: Lang) => (lang === "he" ? 100 - pct : pct);
 const rawSum = Math.round(parties.reduce((s, p) => s + (average(p.id, mainPolls)?.seats ?? 0), 0) * 10) / 10;
 
 /** Where a bloc's total lands in each of the current polls, on a seat axis with the majority line at 61. */
-function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
+function BlocStrip({ bloc, label, lang }: { bloc: BlocId; label: string; lang: Lang }) {
+  const t = POLLS[lang].now, pn = (name: string) => pollsterName(name, lang);
   const pts = mainPolls.map((p) => ({ p, seats: blocTotals(p, parties)[bloc], hollow: inWithoutVariant(p, cfg) })).sort((a, b) => a.seats - b.seats);
   const lo = 40, hi = 70;
-  const x = (s: number) => `${((Math.min(hi, Math.max(lo, s)) - lo) / (hi - lo)) * 100}%`;
+  const x = (s: number) => `${flip(((Math.min(hi, Math.max(lo, s)) - lo) / (hi - lo)) * 100, lang)}%`;
   const at = pts.filter((t) => t.seats >= MAJORITY).length;
   // Stack polls that land on the same number so every one stays visible.
   const seen = new Map<number, number>();
@@ -39,7 +50,7 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
   const top = Math.max(...stacked.map((t) => t.k)) + 1;
   const ends: number[] = [];
   const names = new Map<number, string>();
-  for (const t of stacked) names.set(t.seats, names.has(t.seats) ? `${names.get(t.seats)}, ${t.p.pollster}` : t.p.pollster);
+  for (const t of stacked) names.set(t.seats, names.has(t.seats) ? `${names.get(t.seats)}, ${pn(t.p.pollster)}` : pn(t.p.pollster));
   const lanes = new Map<number, number>();
   for (const [seats, text] of names) {
     const half = (text.length * 6.8 + 12) / 2 / LABEL_PX_PER_SEAT;
@@ -55,15 +66,15 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
       <p className="pn-strip-h">
         <span className="sw" style={{ background: `var(--b-${bloc})` }} aria-hidden="true" />
         <b>{label}</b>
-        <span className="pn-strip-read">{at === 0 ? `under 61 in all ${pts.length} polls` : `61 or more in ${at} of ${pts.length} polls`}, from {pts[0].seats} to {pts[pts.length - 1].seats}</span>
+        <span className="pn-strip-read">{lang === "he" ? t.stripRead(at, pts.length, pts[0].seats, pts[pts.length - 1].seats) : <>{at === 0 ? `under 61 in all ${pts.length} polls` : `61 or more in ${at} of ${pts.length} polls`}, from {pts[0].seats} to {pts[pts.length - 1].seats}</>}</span>
       </p>
-      <div className="pn-axis" style={{ ["--h" as string]: `${height}px` }} role="img" aria-label={`${label} seats in each current poll: ${pts.map((t) => `${t.p.pollster} ${t.seats}`).join(", ")}. A majority is 61.`}>
+      <div className="pn-axis" style={{ ["--h" as string]: `${height}px` }} role="img" aria-label={t.stripAria(label, pts.map((q) => `${pn(q.p.pollster)} ${q.seats}`).join(", "))}>
         {[40, 45, 50, 55, 60, 65, 70].map((t) => (
           <span key={t} className="tick" style={{ left: x(t) }}>{t}</span>
         ))}
         <span className="maj" style={{ left: x(MAJORITY) }}><b>61</b></span>
         {labelled.map((t) => (
-          <span key={t.p.id} className={`dot${t.hollow ? " hollow" : ""}`} style={{ left: x(t.seats), ["--fill" as string]: `var(--b-${bloc})`, ["--k" as string]: t.k, ["--lift" as string]: `${t.lift}px` }} title={`${t.p.pollster}, ${mediumDate(t.p.published)}: ${t.seats}`}>
+          <span key={t.p.id} className={`dot${t.hollow ? " hollow" : ""}`} style={{ left: x(t.seats), ["--fill" as string]: `var(--b-${bloc})`, ["--k" as string]: t.k, ["--lift" as string]: `${t.lift}px` }} title={POLLS[lang].now.stripDot(pn(t.p.pollster), mediumDate(t.p.published, lang), t.seats)}>
             {t.label && <><i className="ldr" /><i className="lbl">{t.label}</i></>}
           </span>
         ))}
@@ -73,39 +84,42 @@ function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
 }
 
 /** Where each bloc lands: the bloc totals of the current average on the 120-seat bar with 61 marked, then each bloc in each current poll. */
-export function PollsBlocs({ title }: { title: string }) {
+export function PollsBlocs({ title, lang = "en" }: { title: string; lang?: Lang }) {
+  const T = POLLS[lang], t = T.now, he = lang === "he";
   const totals = blocTotals(averagePoll, parties);
-  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
+  const label = blocLabels(lang);
   const from = mainPolls.map((p) => p.published).sort()[0];
   const to = mainPolls.map((p) => p.published).sort().at(-1)!;
   return (
     <section className="pn" aria-labelledby="blocs-h">
       <h2 id="blocs-h" className="sec-h">{title}</h2>
       <figure className="pn-fig">
-        <figcaption className="pn-lbl">The blocs in the average, out of 120 seats</figcaption>
+        <figcaption className="pn-lbl">{t.blocsCaption}</figcaption>
         <SeatBar
           size="xl"
           total={TOTAL}
           majority={MAJORITY}
           segments={BAR_ORDER.map((b) => ({ key: b, seats: totals[b], color: `var(--b-${b})`, ink: `var(--b-${b}-ink)`, label: one(totals[b]), className: `pn-seg pn-seg-${b}` }))}
-          label={BAR_ORDER.map((b) => `${label[b]} ${one(totals[b])}`).join(", ") + ". A majority is 61."}
+          label={BAR_ORDER.map((b) => `${label[b]} ${one(totals[b])}`).join(", ") + (he ? ". " + T.common.majorityIs61 : ". A majority is 61.")}
         />
         <ul className="fig-key pn-barkey">
           {BLOC_ORDER.map((b) => (
             <li key={b}><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" />{label[b]} <b>{one(totals[b])}</b></li>
           ))}
         </ul>
-        <BlocStrip bloc="net" label={label.net} />
-        <BlocStrip bloc="opp" label={label.opp} />
-        <p className="fig-src">
+        <BlocStrip bloc="net" label={label.net} lang={lang} />
+        <BlocStrip bloc="opp" label={label.opp} lang={lang} />
+        {he ? <p className="fig-src">
+          {t.blocsSrc(mainPolls.length, shortDate(from, lang), mediumDate(to, lang), variantNames.map((n) => pollsterName(n, lang)))}<Link href={hePath("/coalition-builder")!}>{t.buildLink}</Link>.
+        </p> : <p className="fig-src">
           The latest poll from each of {mainPolls.length} pollsters, {shortDate(from)} to {mediumDate(to)}; hollow points are {variantNames.join(" and ")}. <Link href="/coalition-builder">Build a coalition from these numbers</Link>.
-        </p>
+        </p>}
         <details className="pd-how">
-          <summary>How to read this</summary>
-          <p className="fig-src">
+          <summary>{T.common.howToRead}</summary>
+          {he ? <p className="fig-src">{t.blocsHow}<a href="#method">{t.methodLink}</a>.</p> : <p className="fig-src">
             Hollow points are the two pollsters the site&apos;s alternative average leaves out. Bloc totals in the average are the lists&apos; averages scaled to 120 seats, the values the Coalition Builder starts from; each poll&apos;s
             totals are its own published figures. Lists that pass in fewer than half the polls count zero. <a href="#method">How the average is made</a>.
-          </p>
+          </p>}
         </details>
       </figure>
     </section>
@@ -113,28 +127,30 @@ export function PollsBlocs({ title }: { title: string }) {
 }
 
 /** The alternative average beside the site average: the same 120-seat bar for each, the Netanyahu bloc's figure stated. */
-export function PollsAlternative({ title }: { title: string }) {
-  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
-  const rows = [{ key: "main", name: "Site average", t: blocTotals(averagePoll, parties), n: mainPolls.length }, { key: "alt", name: cfg.withoutVariant.label, t: blocTotals(variantAverage, parties), n: variantPolls.length }];
+export function PollsAlternative({ title, lang = "en" }: { title: string; lang?: Lang }) {
+  const N = POLLS[lang].now, he = lang === "he";
+  const label = blocLabels(lang);
+  const rows = [{ key: "main", name: N.siteAverage, t: blocTotals(averagePoll, parties), n: mainPolls.length }, { key: "alt", name: altName(lang), t: blocTotals(variantAverage, parties), n: variantPolls.length }];
   return (
     <section className="pn" aria-labelledby="alt-h">
       <h2 id="alt-h" className="sec-h">{title}</h2>
       <div className="pn-alt">
         {rows.map((r) => (
           <figure key={r.key} className="pn-alt-row">
-            <figcaption><b>{r.name}</b> <span>{r.n} polls; {label.net} <b>{one(r.t.net)}</b>, {label.opp} <b>{one(r.t.opp)}</b></span></figcaption>
+            <figcaption><b>{r.name}</b> <span>{he ? N.altCaption(r.n) : <>{r.n} polls; </>}{label.net} <b>{one(r.t.net)}</b>, {label.opp} <b>{one(r.t.opp)}</b></span></figcaption>
             <SeatBar size="m" segments={BAR_ORDER.map((b) => ({ key: b, seats: r.t[b], color: `var(--b-${b})`, title: `${label[b]} ${one(r.t[b])}` }))} />
           </figure>
         ))}
       </div>
-      <p className="fig-src">{cfg.withoutVariant.note}</p>
+      <p className="fig-src">{he ? HE_METHOD.variantNote : cfg.withoutVariant.note}</p>
     </section>
   );
 }
 
 /** Every list as a dot per current poll over a bar at its average; the numbers the old table carried stay as columns. */
-export default function PollsLists({ title }: { title: string }) {
-  const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
+export default function PollsLists({ title, lang = "en" }: { title: string; lang?: Lang }) {
+  const T = POLLS[lang], t = T.now, he = lang === "he", pn = (name: string) => pollsterName(name, lang);
+  const label = blocLabels(lang);
   const rows = parties
     .map((p) => {
       const a = average(p.id, mainPolls);
@@ -149,28 +165,30 @@ export default function PollsLists({ title }: { title: string }) {
     .sort((x, y) => blocRank(x.p.bloc) - blocRank(y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
   const max = Math.max(30, Math.ceil(Math.max(...rows.flatMap((r) => r.dots.map((d) => d.seats))) / 5) * 5);
   const sx = (s: number) => `${(s / max) * 100}%`;
+  /** A position on the seat axis (mirrored in Hebrew); sx stays the width of a bar. */
+  const px = (s: number) => (he ? `${flip((s / max) * 100, lang)}%` : sx(s));
 
   return (
     <section className="pn" aria-labelledby="now-h">
       <h2 id="now-h" className="sec-h">{title}</h2>
 
       <figure className="pn-fig">
-        <figcaption className="pn-lbl">Every list in every current poll</figcaption>
+        <figcaption className="pn-lbl">{t.listsCaption}</figcaption>
         <div className="table-scroll">
           <table className="pn-table">
             <thead>
               <tr>
-                <th scope="col">List</th>
+                <th scope="col">{t.list}</th>
                 <th scope="col" className="chart">
-                  <span className="sr-only">Seats in each poll</span>
+                  <span className="sr-only">{t.seatsInEach}</span>
                   <span className="scale" aria-hidden="true">
-                    {[0, 5, 10, 15, 20, 25, 30, 35].filter((t) => t <= max).map((t) => <i key={t} style={{ left: sx(t) }}>{t}</i>)}
+                    {[0, 5, 10, 15, 20, 25, 30, 35].filter((t) => t <= max).map((n) => <i key={n} style={{ left: px(n) }}>{n}</i>)}
                   </span>
                 </th>
-                <th scope="col" className="num">{SEATS_LABEL}</th>
-                <th scope="col" className="num">Range</th>
-                <th scope="col" className="num">Passes</th>
-                <th scope="col" className="num">{cfg.withoutVariant.label}</th>
+                <th scope="col" className="num">{he ? t.seatsLabel : SEATS_LABEL}</th>
+                <th scope="col" className="num">{t.range}</th>
+                <th scope="col" className="num">{t.passes}</th>
+                <th scope="col" className="num">{altName(lang)}</th>
               </tr>
             </thead>
             <tbody>
@@ -182,25 +200,25 @@ export default function PollsLists({ title }: { title: string }) {
                   <tr key={p.id} className={first ? "first" : undefined}>
                     <th scope="row">
                       {first && <span className="blocname" style={{ ["--fill" as string]: `var(--b-${p.bloc})` }}>{label[p.bloc]}</span>}
-                      <Link href={`/parties/${p.id}`}><span className="sw" style={{ background: color }} aria-hidden="true" />{p.name}</Link>
+                      <Link href={he ? hePath(`/parties/${p.id}`)! : `/parties/${p.id}`}><span className="sw" style={{ background: color }} aria-hidden="true" /><Tx text={partyName(p, lang)} lang={lang} /></Link>
                     </th>
                     <td className="chart">
                       <span className="track pstroke" style={markVars(p.id)} aria-hidden="true">
-                        <i className="thr" style={{ left: sx(4) }} />
+                        <i className="thr" style={{ left: px(4) }} />
                         {stated && <i className="bar" style={{ width: sx(scaled) }} />}
                         {dots.map((d) => (
-                          <i key={d.poll.id} className={`pt${d.hollow ? " hollow" : ""}${d.below ? " below" : ""}`} style={{ left: sx(d.seats), ["--c" as string]: "var(--psx)" }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.below ? "below the threshold" : `${d.seats} seats`}`} />
+                          <i key={d.poll.id} className={`pt${d.hollow ? " hollow" : ""}${d.below ? " below" : ""}`} style={{ left: px(d.seats), ["--c" as string]: "var(--psx)" }} title={t.dot(pn(d.poll.pollster), mediumDate(d.poll.published, lang), d.below, d.seats)} />
                         ))}
                       </span>
-                      <span className="sr-only">{dots.map((d) => `${d.poll.pollster} ${d.below ? "below the threshold" : d.seats}`).join(", ")}</span>
+                      <span className="sr-only">{dots.map((d) => t.srDot(pn(d.poll.pollster), d.below, d.seats)).join(", ")}</span>
                     </td>
                     <td className="num avg">
-                      {a!.k === 0 ? <span className="dim">below</span> : a!.nearThreshold ? <span className="dim" title={`Near the threshold: ${one(a!.avg)} seats in the polls where it passes`}>below</span> : <b>{one(scaled)}</b>}
+                      {a!.k === 0 ? <span className="dim">{T.common.below}</span> : a!.nearThreshold ? <span className="dim" title={t.near(one(a!.avg))}>{T.common.below}</span> : <b>{one(scaled)}</b>}
                     </td>
-                    <td className="num" data-label="Range">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
-                    <td className="num" data-label="Passes in">{a!.k} of {a!.n}</td>
-                    <td className="num dim" data-label="Alternative average" title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
-                      {!w ? "n/a" : w.k === 0 || w.nearThreshold || !wScaled ? "below" : one(wScaled)}
+                    <td className="num" data-label={t.range}>{lo === 0 && hi === 0 ? "" : lo === hi ? lo : <Ltr lang={lang}>{`${lo}–${hi}`}</Ltr>}</td>
+                    <td className="num" data-label={t.passesIn}>{he ? T.common.of(a!.k, a!.n) : <>{a!.k} of {a!.n}</>}</td>
+                    <td className="num dim" data-label={t.altLabel} title={w ? t.passesWithout(w.k, w.n, variantNames.map(pn)) : undefined}>
+                      {!w ? t.na : w.k === 0 || w.nearThreshold || !wScaled ? T.common.below : one(wScaled)}
                     </td>
                   </tr>
                 );
@@ -209,19 +227,19 @@ export default function PollsLists({ title }: { title: string }) {
           </table>
         </div>
         <p className="fig-key pn-key">
-          <span><i className="k pt" aria-hidden="true" />One poll</span>
-          <span><i className="k pt hollow" aria-hidden="true" />{variantNames.join(" or ")}</span>
-          <span><i className="k bar" aria-hidden="true" />{SEATS_LABEL}, scaled to 120</span>
-          <span><i className="k thr" aria-hidden="true" />Threshold: a list that passes wins at least 4 seats</span>
+          <span><i className="k pt" aria-hidden="true" />{T.common.onePoll}</span>
+          <span><i className="k pt hollow" aria-hidden="true" />{T.common.or(variantNames.map(pn))}</span>
+          <span><i className="k bar" aria-hidden="true" />{he ? t.keyBar : <>{SEATS_LABEL}, scaled to 120</>}</span>
+          <span><i className="k thr" aria-hidden="true" />{t.keyThr}</span>
         </p>
-        <p className="fig-src">The latest poll from each of {mainPolls.length} pollsters; averages scaled to 120 seats.</p>
+        <p className="fig-src">{he ? t.listsSrc(mainPolls.length) : <>The latest poll from each of {mainPolls.length} pollsters; averages scaled to 120 seats.</>}</p>
         <details className="pd-how">
-          <summary>How to read this</summary>
-          <p className="fig-src">
+          <summary>{T.common.howToRead}</summary>
+          {he ? <p className="fig-src">{t.listsHow(rawSum)}</p> : <p className="fig-src">
             Each list&apos;s average weights each poll by the square root of its sample size, over the polls where the list passed. Those averages add to {rawSum}, so
             every one is scaled down in proportion to 120 seats, the figure every page of the site prints; the alternative average is scaled the same way. &ldquo;Below&rdquo; is a list
             that passes in fewer than half the polls, which counts 0. A point at zero is a poll that had the list below the threshold.
-          </p>
+          </p>}
         </details>
       </figure>
     </section>

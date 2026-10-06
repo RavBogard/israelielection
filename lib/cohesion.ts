@@ -7,9 +7,12 @@
  */
 import { MAJORITY, tally } from "./coalition";
 import type { PositionRow } from "./compare";
+import type { Lang } from "./i18n";
+import builder, { type BuilderText } from "./i18n/builder";
 import type { Party, Poll } from "./types";
 
-export type Stance = { id: string; label: string };
+/** `lang` is set when the label was localized for an edition: the language `label` is in. */
+export type Stance = { id: string; label: string; lang?: Lang };
 
 /** One data/positions file, with the header fields the comparison reads. */
 export type IssueFile = {
@@ -30,7 +33,30 @@ export type Issue = { key: string; label: string; file: IssueFile };
 export type Standing = { kind: "stance"; stance: string } | { kind: "declined" } | { kind: "none" } | { kind: "unsorted" };
 
 /** Per issue, each party's standing; `unsorted` means the file has rows but no `stances` header yet. */
-export type StanceMap = Record<string, { question: string | null; stances: Stance[]; byParty: Record<string, Standing>; label?: string }>;
+export type StanceMap = Record<string, { question: string | null; stances: Stance[]; byParty: Record<string, Standing>; label?: string; labelLang?: Lang }>;
+
+/** A field as an edition shows it (lib/i18n/localize Localized). */
+type Shown = { text: string; lang: Lang };
+
+/**
+ * The map with its issue and stance labels in another edition. `text(key, field, english)` returns the shown text
+ * for "label" or "stances.N.label" of issue `key` (from the Hebrew overlays); each label records the language it is in.
+ */
+export function localizeStanceMap(map: StanceMap, text: (key: string, field: string, english: string) => Shown): StanceMap {
+  const out = {} as StanceMap;
+  for (const [key, m] of Object.entries(map)) {
+    const label = m.label != null ? text(key, "label", m.label) : null;
+    out[key] = {
+      ...m,
+      ...(label ? { label: label.text, labelLang: label.lang } : {}),
+      stances: m.stances.map((s, i) => {
+        const t = text(key, `stances.${i}.label`, s.label);
+        return { ...s, label: t.text, lang: t.lang };
+      }),
+    };
+  }
+  return out;
+}
 
 export function standingOf(row: PositionRow | undefined, stances: Stance[] | undefined): Standing {
   if (!row) return { kind: "none" };
@@ -99,7 +125,6 @@ export function cohesion(axes: { key: string }[], map: StanceMap, ids: string[])
 }
 
 const WAYS = ["", "", "two", "three", "four", "five"];
-const COUNT = ["none", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 
 /** The reading beside an issue's glyph, in the panel. Names come from the caller so this stays data-only. */
 export function readingText(r: IssueReading, nameOf: (id: string) => string): string {
@@ -138,13 +163,13 @@ export function dependence(selected: Set<string>, parties: Party[], poll: Poll):
   return { needed, spare, majority: true };
 }
 
-export function dependenceText(d: Dependence, nameOf: (id: string) => string): string | null {
+/** `P` is the edition's phrasebook (lib/i18n/builder.ts). */
+export function dependenceText(d: Dependence, nameOf: (id: string) => string, P: BuilderText = builder.en): string | null {
   if (!d.majority) return null;
-  if (!d.spare.length) return `A majority that needs every one of its ${COUNT[d.needed.length] ?? d.needed.length} parties: lose any one and it falls under ${MAJORITY}.`;
-  if (!d.needed.length) return `Holds ${MAJORITY} without any one of these parties.`;
-  const spare = d.spare.map(nameOf);
-  const list = spare.length === 1 ? spare[0] : spare.length === 2 ? `${spare[0]} or ${spare[1]}` : `${spare.slice(0, -1).join(", ")} or ${spare[spare.length - 1]}`;
-  return `Holds ${MAJORITY} without ${list}; needs each of the others.`;
+  if (!d.spare.length) return P.depAll(d.needed.length, MAJORITY);
+  if (!d.needed.length) return P.depNone(MAJORITY);
+  return P.depSome(MAJORITY, d.spare.map(nameOf));
 }
 
-export const compareHref = (ids: string[]) => `/compare?p=${ids.join(",")}`;
+/** The Compare page with these parties picked, in the given edition. */
+export const compareHref = (ids: string[], lang: Lang = "en") => `${lang === "he" ? "/he" : ""}/compare?p=${ids.join(",")}`;

@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
-import "@/components/interactives.css";
-import PartyProfile from "@/components/PartyProfile";
-import { PollSources, ProfileSources } from "@/components/Sources";
-import SourcesBox from "@/components/SourcesBox";
-import { allPolls, blocLabel, parties } from "@/lib/data";
+import { alternates } from "@/lib/canonical";
+import ProfilePage from "@/components/pages/ProfilePage";
+import { blocLabel, parties } from "@/lib/data";
+import profileText from "@/lib/i18n/profile";
 
 // Hourly, so the election countdown in the masthead stays current.
 export const revalidate = 3600;
@@ -20,26 +18,12 @@ export async function generateMetadata(props: PageProps<"/parties/[id]">): Promi
   const { id } = await props.params;
   const p = parties.find((x) => x.id === id);
   if (!p) return {};
-  return {
-    title: p.name,
-    alternates: alternates(`/parties/${p.id}`),
-    description: `${p.name} (${blocLabel[p.bloc]}), led by ${p.leader}: its polls, its voters, where it stands on seven issues, and its people, every number dated and sourced.`,
-  };
+  return { title: p.name, alternates: alternates(`/parties/${p.id}`), description: profileText.en.meta.description(p.name, blocLabel[p.bloc], p.leader) };
 }
 
 export default async function Page(props: PageProps<"/parties/[id]">) {
   const { id } = await props.params;
   const party = parties.find((p) => p.id === id);
   if (!party) notFound();
-  return (
-    <div className="ix">
-      <PartyProfile party={party} />
-      <div className="wrap">
-        <SourcesBox count={allPolls.length + 2}>
-          <PollSources />
-          <ProfileSources />
-        </SourcesBox>
-      </div>
-    </div>
-  );
+  return <ProfilePage party={party} lang="en" />;
 }

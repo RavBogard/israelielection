@@ -12,6 +12,8 @@ import type { IssueFile } from "./cohesion";
 import type { AxisKey } from "./compare";
 import { AXES, type PositionRow } from "./compare";
 import type { Issue } from "./cohesion";
+import type { Lang } from "./i18n";
+import { EVIDENCE } from "./i18n/compare";
 
 export const ISSUES: Record<AxisKey, IssueFile> = {
   draft: draft as IssueFile,
@@ -36,14 +38,18 @@ export function stanceText(row: PositionRow | undefined | null): string {
   return isUnstated(row) && text ? `${QUALIFIER.unstated}${text}` : text;
 }
 
-/** Source dates describe the evidence, never the date we accessed it. */
-export function evidenceLabel(row: PositionRow | undefined): string {
-  if (!row) return "No recorded answer in these sources";
-  if (row.evidence) return `${row.evidence.kind}, ${row.evidence.date ?? "date unavailable"}; checked ${row.evidence.checkedAt}`;
+/**
+ * Source dates describe the evidence, never the date we accessed it. `lang` picks the phrasebook
+ * (lib/i18n/compare EVIDENCE); English output is unchanged.
+ */
+export function evidenceLabel(row: PositionRow | undefined, lang: Lang = "en"): string {
+  const P = EVIDENCE[lang];
+  if (!row) return P.noRow;
+  if (row.evidence) return P.evidence(P.kind(row.evidence.kind), row.evidence.date === null ? null : P.date(row.evidence.date), P.checkedAt(row.evidence.checkedAt));
   const date = row.date?.trim();
   const accessed = !date || /accessed|checked/i.test(date);
-  const qualifier = row.basis === "unstated" ? "" : basisQualifier(row); // unstated rows already carry it in stanceText
-  return `${qualifier}${accessed ? `evidence date unavailable${date ? ` (${date})` : ""}` : `Source published ${date}`}`;
+  const qualifier = row.basis === "unstated" ? "" : row.basis === "record" ? P.record : ""; // unstated rows already carry it in stanceText
+  return `${qualifier}${accessed ? P.unavailable(date ? P.date(date) : null) : P.published(P.date(date))}`;
 }
 
 type Question = (typeof questions.questions)[number];

@@ -4,6 +4,8 @@
  * early: a count holding under EARLY_SHARE of the voter roll. count: past that.
  */
 import { shortDate } from "./format";
+import type { Lang } from "./i18n";
+import { plural } from "./i18n/he-grammar";
 import type { Count, ResultsConfig } from "./results";
 import type { Poll } from "./types";
 
@@ -21,9 +23,19 @@ export const PHASES = [
   { id: "early", label: "Early count" },
   { id: "count", label: "The count" },
 ] as const;
+/** The phase labels in Hebrew (STYLE.md: מדגמי הערוצים at 22:00, then תוצאות אמת). Same ids and order as PHASES. */
+export const PHASES_HE = [
+  { id: "exit", label: "מדגמי הערוצים 22:00" },
+  { id: "early", label: "תוצאות אמת ראשונות" },
+  { id: "count", label: "ספירת הקולות" },
+] as const;
+/** The phase labels in the given edition. */
+export const phases = (lang: Lang = "en") => (lang === "he" ? PHASES_HE : PHASES);
 
 /** The committee's 2022 roll, 6,788,804 eligible in 1,215 localities (lib/fixtures/cec-2022-expc.csv): the denominator until the 2026 roll is published. */
 export const PRIOR_ROLL = { eligible: 6_788_804, localities: 1_215, label: "the 2022 roll" };
+/** PRIOR_ROLL.label in the given edition. */
+export const priorRollLabel = (lang: Lang = "en") => (lang === "he" ? "פנקס הבוחרים של 2022" : PRIOR_ROLL.label);
 /** A count is early while its localities hold under a tenth of the roll: too few places to read seats from. */
 export const EARLY_SHARE = 0.1;
 /** Until 02:00 Israel time (four hours after close) a file with no usable figures means waiting, not failure. */
@@ -62,15 +74,21 @@ export function sections(phase: Phase): Section[] {
 
 /** Home: the exit polls lead until the count is past early; the pre-election average only before close. */
 export const homeHero = (phase: Phase): "average" | "exit" | "count" => (phase === "before" ? "average" : phase === "count" ? "count" : "exit");
-export function headline(phase: Phase, days: number): string {
+export function headline(phase: Phase, days: number, lang: Lang = "en"): string {
+  if (lang === "he") {
+    if (phase === "exit") return "הקלפיות נסגרו.";
+    if (phase !== "before") return "ישראל הצביעה.";
+    return days > 1 ? `עוד ${plural(days, { one: "יום אחד", two: "יומיים", other: `${days} ימים` })} לבחירות.` : days === 1 ? "הבחירות מחר." : "הבחירות היום.";
+  }
   if (phase === "exit") return "Polls have closed.";
   if (phase !== "before") return "Israel voted.";
   return days > 1 ? `Israel votes in ${days} days.` : days === 1 ? "Israel votes tomorrow." : "Israel votes today.";
 }
 
 /** The average beside the count: dated until election eve, "final" from then on (no new polls are published). */
-export function averageLabel(config: ResultsConfig, latest: string, now: number): string {
+export function averageLabel(config: ResultsConfig, latest: string, now: number, lang: Lang = "en"): string {
   const eve = Date.parse(`${config.election}T00:00:00+02:00`) - 86_400_000;
+  if (lang === "he") return now >= eve ? "ממוצע הסקרים הסופי" : `ממוצע הסקרים, ${shortDate(latest, "he")}`;
   return now >= eve ? "Final poll average" : `Polling average, ${shortDate(latest)}`;
 }
 

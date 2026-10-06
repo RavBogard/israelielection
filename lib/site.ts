@@ -1,5 +1,11 @@
-/** `short` is the masthead label; `aliases` are former labels search should still find; `afterClose` items join the menus once polls close. */
-export type NavItem = { href: string; label: string; description: string; short?: string; aliases?: readonly string[]; afterClose?: true };
+import type { Lang } from "./i18n";
+
+/**
+ * `short` is the masthead label; `aliases` are former labels search should still find; `afterClose` items join the menus once polls close.
+ * Hebrew menus only: `hrefLang` marks a link to a page in the other edition (an English guide, marked "(באנגלית)");
+ * `lang` marks a label still in English (a party name with no Hebrew overlay yet).
+ */
+export type NavItem = { href: string; label: string; description: string; short?: string; aliases?: readonly string[]; afterClose?: true; hrefLang?: Lang; lang?: Lang };
 export type NavGroup = { id: string; label: string; items: readonly NavItem[] };
 
 /** One visitor-facing catalog for header, footer, directory, search and sitemap. */

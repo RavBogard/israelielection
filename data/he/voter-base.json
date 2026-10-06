@@ -1,1 +1,58 @@
-{}
+{
+  "likud": {
+    "listName": {
+      "text": "הליכוד",
+      "src": "957f8de6"
+    },
+    "source": {
+      "text": "המכון הישראלי לדמוקרטיה, 28 ביוני 2026",
+      "src": "73142d8c"
+    },
+    "groups.0.label": {
+      "text": "מסורתיים",
+      "src": "6b31b8c2"
+    },
+    "groups.1.label": {
+      "text": "חילונים",
+      "src": "79f5cd44"
+    },
+    "groups.2.label": {
+      "text": "דתיים-לאומיים",
+      "src": "1acb30c9"
+    },
+    "groups.3.label": {
+      "text": "חרדים",
+      "src": "e31c2348"
+    },
+    "won.0.label": {
+      "text": "המצביעים המסורתיים",
+      "src": "6f7ab491"
+    },
+    "won.1.label": {
+      "text": "המצביעים החילונים",
+      "src": "6ef8559f"
+    }
+  },
+  "byachad": {
+    "listName": {
+      "text": "יש עתיד (2022)",
+      "src": "cc00207d"
+    },
+    "source": {
+      "text": "המכון הישראלי לדמוקרטיה, 28 ביוני 2026",
+      "src": "73142d8c"
+    },
+    "groups.0.label": {
+      "text": "חילונים",
+      "src": "79f5cd44"
+    },
+    "groups.1.label": {
+      "text": "מסורתיים",
+      "src": "6b31b8c2"
+    },
+    "won.0.label": {
+      "text": "המצביעים החילונים",
+      "src": "6ef8559f"
+    }
+  }
+}

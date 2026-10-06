@@ -59,3 +59,41 @@ describe("cite", () => {
     expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "Netanyahu bloc", 54.63)).toBe("Israel Votes 2026 polling average, October 5, 2026: Netanyahu bloc 54.6 of 120 seats (7 polls). israelielection.org/polls");
   });
 });
+
+describe("the Hebrew finding (STYLE.md agreement: blocs masculine, pollsters through the outlet)", () => {
+  const he = [{ id: "net" as const, label: "גוש נתניהו" }, { id: "opp" as const, label: "גוש האופוזיציה" }, { id: "mid" as const, label: "מחוץ לגושים" }, { id: "arab" as const, label: "המפלגות הערביות" }];
+  const f = (ps: Poll[], id: "net" | "arab" = "net") => findingSentence(ps, parties, he, id, "he");
+  it("names the only poll at 61 or more", () => {
+    const ps = [...["A", "B", "C", "D", "E", "F"].map((n) => short(n, n)), over("g", "Z")];
+    expect(f(ps)).toBe("גוש נתניהו נשאר מתחת ל-61 ב-6 מתוך 7 הסקרים העדכניים; 61 ומעלה רק בסקר Z.");
+  });
+  it("names several, with the Hebrew conjunction", () => {
+    expect(f([short("a", "A"), over("b", "X"), over("c", "Y")])).toMatch(/^גוש נתניהו נשאר מתחת ל-61 באחד מתוך 3 הסקרים העדכניים; 61 ומעלה בסקרים של X ו-?Y\.$/);
+    expect(f([short("a", "A"), short("b", "B"), over("c", "X"), over("d", "Y")])).toMatch(/^גוש נתניהו נשאר מתחת ל-61 בשניים מתוך 4 הסקרים/);
+    expect(f([short("a", "A"), over("b", "X")])).toBe("גוש נתניהו נשאר מתחת ל-61 באחד משני הסקרים העדכניים; 61 ומעלה רק בסקר X.");
+  });
+  it("handles none, all, one and two polls without '1 סקרים'", () => {
+    expect(f([short("a", "A"), short("b", "B")])).toBe("גוש נתניהו נשאר מתחת ל-61 בשני הסקרים העדכניים.");
+    expect(f([short("a", "A"), short("b", "B"), short("c", "C")])).toBe("גוש נתניהו נשאר מתחת ל-61 בכל 3 הסקרים העדכניים.");
+    expect(f([over("a", "A")])).toBe("גוש נתניהו מגיע ל-61 ומעלה בסקר העדכני היחיד.");
+    expect(f([])).toBeNull();
+  });
+  it("takes the feminine plural for the Arab lists", () => {
+    expect(f([short("a", "A")], "arab")).toBe("המפלגות הערביות נשארות מתחת ל-61 בסקר העדכני היחיד.");
+  });
+  it("sets aside cross-bloc polls, one or several, and says when none can be compared", () => {
+    const crossed = (id: string, name: string) => poll(id, name, "2026-10-01", { likud: 40, yashar: 50 }, { combined: [{ parties: ["shas", "raam"], seats: 30, note: "" }] });
+    expect(f([short("a", "A"), crossed("x", "Zman")])).toBe("גוש נתניהו נשאר מתחת ל-61 בסקר העדכני היחיד. סקר Zman לא נכלל, כי הוא מדווח יחד על רשימות מגושים שונים.");
+    expect(f([short("a", "A"), crossed("x", "P"), crossed("y", "Q")])).toMatch(/\. סקרי P ו-?Q לא נכללו, כי הם מדווחים יחד על רשימות מגושים שונים\.$/);
+    expect(f([crossed("x", "P")])).toBe("באף סקר עדכני אי אפשר לחשב את גוש נתניהו בנפרד מול רף ה-61.");
+  });
+  it("cites, labels the no-news line and the slip in Hebrew", () => {
+    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "גוש נתניהו", 54.63, undefined, "he")).toBe("ממוצע הסקרים של פתק 2026, 5 באוקטובר 2026: גוש נתניהו 54.6 מתוך 120 מנדטים (7 סקרים). israelielection.org/he/polls");
+    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 1, "גוש נתניהו", 54.63, undefined, "he")).toContain("(סקר אחד)");
+    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 2, "גוש נתניהו", 54.63, undefined, "he")).toContain("(שני סקרים)");
+    expect(noNewLabel(short("c", "C", "2026-10-06"), "he")).toBe("אין סקרים חדשים מאז 6.10");
+    expect(noNewLabel(undefined, "he")).toBe("עדיין אין סקרים");
+    expect(noNewLabel(undefined)).toBe("No polls yet");
+    expect(pollSlip(short("s", "Maariv"), parties, he, "he").blocs.map((b) => b.label)).toEqual(["גוש נתניהו", "מחוץ לגושים", "גוש האופוזיציה", "המפלגות הערביות"]);
+  });
+});
