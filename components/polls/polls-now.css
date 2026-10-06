@@ -1,0 +1,78 @@
+/* What the polls say now: the 120-seat bloc bar with 61 marked, each bloc's total in every current
+   poll on a seat axis, and every list as a dot per poll over a bar at its average. Bloc colours mark
+   blocs, party colours mark lists; the only heavy rule is the majority line. */
+.pn { margin-bottom: 8px; }
+.pn .note a { color: var(--ink); }
+.pn-fig { margin: 22px 0 0; }
+.pn-lbl { font-size: 14px; font-weight: 600; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid var(--ink); margin-bottom: 14px; }
+.pn .src { font-size: 12.5px; line-height: 1.5; color: var(--ink-3); margin: 12px 0 0; max-width: 110ch; }
+.pn .src a { color: var(--ink-2); }
+.pn .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
+
+/* 120-seat bar */
+.pn-bar { position: relative; display: flex; height: 44px; background: var(--cell); }
+.pn-bar .seg { display: flex; align-items: center; justify-content: center; min-width: 0; overflow: hidden; border-right: 2px solid var(--bg); }
+.pn-bar .seg:last-of-type { border-right: 0; }
+.pn-bar .seg b { font-family: var(--display); font-size: 19px; font-variant-numeric: tabular-nums; }
+.pn-bar .seg-mid b { font-size: 14px; }
+.pn-bar .maj { position: absolute; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; background: var(--ink); }
+.pn-barkey { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13.5px; color: var(--ink-2); }
+.pn-barkey li { display: inline-flex; align-items: center; gap: 7px; }
+.pn-barkey b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* Bloc totals in each poll */
+.pn-strip { margin-top: 26px; }
+.pn-strip-h { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 9px; font-size: 14.5px; margin: 0 0 6px; }
+.pn-strip-read { color: var(--ink-2); font-size: 13.5px; }
+.pn-axis { position: relative; height: 84px; margin: 0 12px; border-bottom: 1px solid var(--line-2); }
+.pn-axis .tick { position: absolute; bottom: -20px; transform: translateX(-50%); font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pn-axis .maj { position: absolute; top: 0; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }
+.pn-axis .maj b { position: absolute; top: -2px; left: 6px; font-family: var(--display); font-size: 14px; }
+.pn-axis .dot { position: absolute; bottom: calc(6px + var(--k) * 22px); width: 13px; height: 13px; margin-left: -6.5px; border-radius: 50%; background: var(--fill); border: 2px solid var(--fill); }
+.pn-axis .dot.hollow { background: var(--bg); }
+.pn-axis .dot .lbl { position: absolute; left: 50%; bottom: 15px; transform: translateX(-50%) rotate(-40deg); transform-origin: left bottom; font-style: normal; font-size: 11px; color: var(--ink-2); white-space: nowrap; pointer-events: none; }
+.pn-strip + .pn-strip { margin-top: 34px; }
+.pn-fig .pn-strip:last-of-type { margin-bottom: 26px; }
+
+/* Every list in every poll */
+.pn-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.pn-table th, .pn-table td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; white-space: nowrap; }
+.pn-table thead th { font-size: 12.5px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.pn-table th[scope="row"] { font-weight: 600; }
+.pn-table th[scope="row"] a { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; }
+.pn-table th[scope="row"] a:hover { text-decoration: underline; }
+.pn-table tr.first > * { padding-top: 34px; position: relative; }
+.pn-table .blocname { position: absolute; top: 8px; left: 10px; font-size: 12.5px; font-weight: 600; color: var(--ink-2); padding-left: 16px; }
+.pn-table .blocname::before { content: ""; position: absolute; left: 0; top: 3px; width: 10px; height: 10px; background: var(--fill); }
+.pn-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.pn-table .avg b { font-family: var(--display); font-size: 17px; }
+.pn-table .dim { color: var(--ink-3); }
+.pn-table .chart { width: 46%; min-width: 280px; padding-inline: 14px; }
+.pn-table thead .chart { position: relative; height: 34px; }
+.pn-table .scale { position: absolute; left: 14px; right: 14px; bottom: 7px; height: 14px; }
+.pn-table .scale i { position: absolute; transform: translateX(-50%); font-style: normal; font-weight: 400; font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pn-table .track { position: relative; display: block; height: 22px; }
+.pn-table .track .bar { position: absolute; left: 0; top: 7px; height: 8px; opacity: .55; }
+.pn-table .track .thr { position: absolute; top: -4px; bottom: -4px; border-left: 1px dashed var(--line-2); }
+.pn-table .track .pt { position: absolute; top: 4px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--c); border: 2px solid var(--sheet); box-sizing: border-box; }
+.pn-table .track .pt.hollow { background: var(--bg); border: 2px solid var(--c); }
+.pn-table .track .pt.below { background: var(--bg); border: 1.5px dashed var(--ink-3); }
+
+.pn-key { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; color: var(--ink-2); margin: 12px 0 0; }
+.pn-key span { display: inline-flex; align-items: center; gap: 7px; }
+.pn-key .k { display: inline-block; flex: none; }
+.pn-key .k.pt { width: 12px; height: 12px; border-radius: 50%; background: var(--ink-2); }
+.pn-key .k.pt.hollow { background: transparent; border: 2px solid var(--ink-2); box-sizing: border-box; }
+.pn-key .k.bar { width: 22px; height: 8px; background: var(--ink-2); opacity: .55; }
+.pn-key .k.thr { width: 0; height: 14px; border-left: 1px dashed var(--ink-3); }
+
+@media (max-width: 760px) {
+  .pn-bar .seg b { font-size: 15px; }
+  .pn-bar .seg-mid b { display: none; }
+  .pn-axis .dot .lbl { display: none; }
+  .pn-axis { height: 54px; }
+  .pn-table .chart { min-width: 150px; width: auto; padding-inline: 8px; }
+  .pn-table .scale { left: 8px; right: 8px; }
+  .pn-table th[scope="row"] { white-space: normal; min-width: 110px; }
+  .pn-table th, .pn-table td { padding-inline: 6px; }
+}
