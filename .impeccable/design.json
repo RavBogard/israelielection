@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-05T23:30:00Z",
+  "generatedAt": "2026-10-06T12:00:00Z",
   "title": "Design System: Israel Votes 2026",
   "extensions": {
     "colorMeta": {
@@ -87,7 +87,7 @@
       "ink-3": {
         "role": "neutral",
         "displayName": "Tertiary Ink",
-        "canonical": "#8b8880"
+        "canonical": "#706d66"
       },
       "line": {
         "role": "neutral",
@@ -404,22 +404,76 @@
       "description": "Article chart forms chosen from the table's cells: lines, dot plot, heat table, plain table. Series are told apart by mark (solid, ring, grey diamond, grey ring square), never by colour or dashes. Heat shades run #2a2925 over #f6f5f1 up to 62% with text by luminance 0.179.",
       "html": "<div class=\"ds-ac\"><p class=\"k\"><span><i class=\"m solid\"></i>2019</span><span><i class=\"m ring\"></i>2022</span><span><i class=\"m grey\"></i>2026</span><span><i class=\"m grey-ring\"></i>Other</span></p><div class=\"tr\"><i class=\"m solid\" style=\"left:30%\"></i><i class=\"m ring\" style=\"left:55%\"></i></div><p class=\"h\"><b style=\"background:color-mix(in oklab, #2a2925 12%, #f6f5f1);color:#000\">8%</b><b style=\"background:color-mix(in oklab, #2a2925 36%, #f6f5f1);color:#000\">21%</b><b style=\"background:color-mix(in oklab, #2a2925 62%, #f6f5f1);color:#fff\">36%</b></p></div>",
       "css": ".ds-ac { max-width: 420px; font-family: var(--body); } .ds-ac .k { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); } .ds-ac .k span { display: inline-flex; align-items: center; gap: 7px; } .ds-ac .m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; } .ds-ac .solid { background: var(--ink); } .ds-ac .ring { background: var(--sheet); border: 2.5px solid var(--ink); } .ds-ac .grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); } .ds-ac .grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; } .ds-ac .tr { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; } .ds-ac .tr .m { position: absolute; top: 2px; margin-left: -6px; } .ds-ac .h { display: flex; margin: 10px 0 0; } .ds-ac .h b { flex: 1; padding: 8px 0; text-align: center; font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Formation clock bars",
+      "kind": "custom",
+      "refersTo": "formation-clock",
+      "description": "Bars on a shared day axis, ink only: black is a nominee's time, ink-3 the president's or the Knesset's turn, hatched the discretionary extension, ink-2 half-height the any-time line.",
+      "html": "<div class=\"ds-fc\"><p><span class=\"l\">First nominee's 28 days</span><span class=\"t\"><i class=\"b nom\" style=\"left:6%;width:40%\"></i></span></p><p><span class=\"l\">Up to 14 more</span><span class=\"t\"><i class=\"b ext\" style=\"left:46%;width:20%\"></i></span></p><p><span class=\"l\">President's turn</span><span class=\"t\"><i class=\"b pres\" style=\"left:0;width:6%\"></i></span></p><p><span class=\"l\">Sworn in at any point</span><span class=\"t\"><i class=\"b any\" style=\"left:0;width:100%\"></i></span></p></div>",
+      "css": ".ds-fc { max-width: 460px; font-family: var(--body); } .ds-fc p { display: grid; grid-template-columns: 140px 1fr; gap: 12px; align-items: center; margin: 0; padding: 3px 0; font-size: 13px; color: var(--text); } .ds-fc .t { position: relative; height: 22px; } .ds-fc .b { position: absolute; top: 4px; bottom: 4px; } .ds-fc .nom { background: var(--ink); } .ds-fc .pres { background: var(--ink-3); } .ds-fc .ext { background: repeating-linear-gradient(135deg, var(--ink-2) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1.5px var(--ink-2); } .ds-fc .any { top: 9px; bottom: 9px; background: var(--ink-2); }"
+    },
+    {
+      "name": "Threshold watch row",
+      "kind": "custom",
+      "refersTo": "threshold-watch",
+      "description": "A list's polls as dots on a 0 to 10 seat track; the hatched 0 to 4 gap is the threshold itself.",
+      "html": "<div class=\"ds-tw\"><span class=\"n\"><i class=\"sw\"></i>Example list</span><span class=\"t\"><i class=\"gap\"></i><i class=\"d\" style=\"left:0\"></i><i class=\"d\" style=\"left:45%\"></i><i class=\"d h\" style=\"left:52%\"></i></span><span class=\"r\"><b>3</b> of 4</span></div>",
+      "css": ".ds-tw { display: grid; grid-template-columns: 120px 220px auto; gap: 14px; align-items: center; font-family: var(--body); font-size: 14px; color: var(--ink); } .ds-tw .sw { display: inline-block; width: 10px; height: 10px; background: #7d67b3; margin-right: 8px; } .ds-tw .t { position: relative; height: 26px; } .ds-tw .gap { position: absolute; top: 3px; bottom: 3px; left: 0; width: 40%; background: repeating-linear-gradient(135deg, var(--cell) 0 3px, transparent 3px 7px); border-right: 1px solid var(--ink-2); } .ds-tw .d { position: absolute; top: 50%; width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; border-radius: 50%; background: #7d67b3; box-shadow: 0 0 0 1.5px var(--bg); } .ds-tw .d.h { background: var(--bg); box-shadow: inset 0 0 0 2.5px #7d67b3; } .ds-tw .r { color: var(--ink-2); font-variant-numeric: tabular-nums; } .ds-tw .r b { font-family: var(--display); font-size: 17px; color: var(--ink); }"
+    },
+    {
+      "name": "Who votes matrix cells",
+      "kind": "custom",
+      "refersTo": "who-votes-matrix",
+      "description": "Black can vote, hatched cannot, cell grey depends on status.",
+      "html": "<div class=\"ds-vr\"><span class=\"c yes\">Can vote</span><span class=\"c no\">Cannot vote</span><span class=\"c st\">Depends on status</span></div>",
+      "css": ".ds-vr { display: flex; gap: 4px; font-family: var(--body); } .ds-vr .c { flex: 1; padding: 10px; font-size: 13.5px; font-weight: 600; } .ds-vr .yes { background: var(--ink); color: var(--bg); } .ds-vr .no { background: repeating-linear-gradient(135deg, var(--line) 0 1.5px, transparent 1.5px 7px); color: var(--ink-2); box-shadow: inset 0 0 0 1px var(--line-2); } .ds-vr .st { background: var(--cell); color: var(--ink); }"
+    },
+    {
+      "name": "Party family tree marks",
+      "kind": "custom",
+      "refersTo": "party-lanes",
+      "description": "Four ink marks on a lane in the list's colour: circle starts, diamond joins, triangle leaves, bar renames or files the 2026 list.",
+      "html": "<div class=\"ds-pl\"><span class=\"line\"></span><svg viewBox=\"-8 -8 16 16\" width=\"16\" height=\"16\" class=\"s\" style=\"left:6%\"><circle r=\"6\"/></svg><svg viewBox=\"-8 -8 16 16\" width=\"16\" height=\"16\" class=\"j\" style=\"left:36%\"><path d=\"M0 -6.5 L6.5 0 L0 6.5 L-6.5 0 Z\"/></svg><svg viewBox=\"-8 -8 16 16\" width=\"16\" height=\"16\" class=\"l\" style=\"left:62%\"><path d=\"M0 -6.5 L6.5 5.5 L-6.5 5.5 Z\"/></svg><svg viewBox=\"-8 -8 16 16\" width=\"16\" height=\"16\" class=\"b\" style=\"left:88%\"><rect x=\"-2\" y=\"-7.5\" width=\"4\" height=\"15\"/></svg></div>",
+      "css": ".ds-pl { position: relative; max-width: 360px; height: 24px; } .ds-pl .line { position: absolute; left: 0; right: 0; top: 50%; height: 3px; margin-top: -1.5px; background: #245b94; } .ds-pl svg { position: absolute; top: 50%; transform: translate(-50%, -50%); overflow: visible; } .ds-pl .s, .ds-pl .l, .ds-pl .b { fill: var(--ink); stroke: var(--bg); stroke-width: 1.5; } .ds-pl .j { fill: var(--bg); stroke: var(--ink); stroke-width: 2.2; }"
+    },
+    {
+      "name": "Coalition seats step line",
+      "kind": "custom",
+      "refersTo": "coalition-seats",
+      "description": "Ink step line against the 2px ink 61 rule; grey after the Knesset dissolves; a band for a range.",
+      "html": "<svg class=\"ds-cs\" viewBox=\"0 0 360 120\" role=\"img\" aria-label=\"Step line of coalition seats against the 61 majority\"><line class=\"maj\" x1=\"24\" x2=\"352\" y1=\"80\" y2=\"80\"/><text class=\"ml\" x=\"28\" y=\"96\">61, a majority</text><rect class=\"band\" x=\"120\" y=\"34\" width=\"70\" height=\"14\"/><path class=\"seat\" d=\"M24 40 H120 V41 H190 V54 H240\" fill=\"none\"/><path class=\"after\" d=\"M240 54 H352\" fill=\"none\"/><line class=\"mark\" x1=\"240\" x2=\"240\" y1=\"20\" y2=\"104\"/></svg>",
+      "css": ".ds-cs { max-width: 420px; width: 100%; height: auto; font-family: var(--body); } .ds-cs .maj { stroke: var(--ink); stroke-width: 2; } .ds-cs .ml { fill: var(--ink); font-family: var(--display); font-weight: 700; font-size: 13px; } .ds-cs .seat { stroke: var(--ink); stroke-width: 2.5; } .ds-cs .after { stroke: var(--ink-3); stroke-width: 2; } .ds-cs .band { fill: var(--ink-3); opacity: .6; } .ds-cs .mark { stroke: var(--ink-2); stroke-width: 1; }"
+    },
+    {
+      "name": "Open the full profile button",
+      "kind": "custom",
+      "refersTo": "party-map-preview",
+      "description": "The Party Map preview panel's one action: a solid ink button, 44px high.",
+      "html": "<a class=\"ds-open\" href=\"#\">Open the full profile</a>",
+      "css": ".ds-open { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; background: var(--ink); color: var(--bg); font-family: var(--body); font-size: 15px; font-weight: 600; text-decoration: none; } .ds-open:hover { background: var(--text); } .ds-open:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }"
     }
   ],
   "narrative": {
     "northStar": "The Shape of a Majority",
-    "overview": "An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.\n\nColour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where a stance sits on an issue. A page with no data on it is black and white.\n\nDensity is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.",
+    "overview": "An Israeli voter drops a printed slip in an envelope; the count turns slips into 120 seats; 61 is a government. The system makes that arithmetic the identity: a grid of 120 squares with one heavy rule meaning 61, and party cards drawn as ballot slips with real Hebrew letters. Everything else is paper and two inks (black for display, numbers, rules and selected states; dark grey for prose), set ragged right on one left edge.\n\nColour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where a stance sits on an issue; government figures are ink. A page with no data on it is black and white.\n\nDensity is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.\n\nTwo owner rulings (Daniel, 2026-10-06): graphic first, so every page opens with its infographic under a head of title plus at most one short sentence; and Teaching resources dropped, with embeds kept.",
     "keyCharacteristics": [
       "120-seat grid, 12 across, heavy rule under row five so the next cell is the 61st.",
       "Party cards are ballot slips: square sheet, hairline edge, colour bar on top, Hebrew letters in Frank Ruhl 900.",
       "Frank Ruhl Libre carries display, numbers and reading prose; Public Sans carries labels, controls, tables and captions.",
       "Square, flat paper; 4px only on controls; one drawer shadow in the whole system.",
-      "Colour appears only where it encodes data."
+      "Colour appears only where it encodes data.",
+      "Every page opens with its graphic, then the words."
     ],
     "rules": [
       {
         "name": "The Colour Is Data Rule",
         "body": "A colour appears only where it encodes a bloc, a list or a stance position. Chrome, headings, links and buttons are ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Bloc Data Only Rule",
+        "body": "Bloc colours appear only on bloc data. Government figures (the coalition's seats, the formation clock) are ink and greys.",
         "section": "colors"
       },
       {
@@ -439,7 +493,7 @@
       },
       {
         "name": "The Plain Headline Rule",
-        "body": "Headlines carry no eyebrow above them and no single accented word.",
+        "body": "Headlines carry no eyebrow, kicker or crumb above them and no single accented word; no middle dots anywhere.",
         "section": "typography"
       },
       {
@@ -449,7 +503,7 @@
       },
       {
         "name": "The 61 Rule",
-        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and the polls bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong.",
+        "body": "The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and the polls bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong. Every other ink rule is 1px.",
         "section": "shapes"
       },
       {
@@ -461,30 +515,40 @@
         "name": "The Mark Tells The Series Rule",
         "body": "In article charts a series is told apart by its mark (solid, ring, grey diamond, grey ring) and position, in ink and greys, never by colour or dashes; dashed means absent. Heat shades use the fixed endpoints #2a2925 over #f6f5f1 up to 62%, with text black or white by luminance (threshold 0.179).",
         "section": "shapes"
+      },
+      {
+        "name": "The Graphic First Rule",
+        "body": "Every page opens with its infographic. The page head is the title plus at most one short sentence; method, notes and caveats go in captions, folds or below. Hatched means cannot or absent; dashed means out.",
+        "section": "layout"
       }
     ],
     "dos": [
       "Do draw any count of the Knesset as the 120-seat grid or a 120-seat bar, with the heavy ink rule at 61.",
       "Do keep colour to data: bloc colours for blocs, the list's own colour for that list, the stance ramp for stance positions.",
       "Do pick text on a party or bloc fill by luminance (partyInk or the `-ink` tokens).",
+      "Do open every page with its graphic under a head of title plus at most one short sentence.",
       "Do set every page head as title, then standfirst, inside the 1200px wrapper on the shared left edge.",
       "Do put a figure beside the sentences it illustrates, with a label on an ink rule and a dated source line.",
       "Do use 0 radius on paper and 4px on controls.",
       "Do fold sources into the end-of-page disclosure, open by default on single-subject pages.",
       "Do use dashed strokes to mean absent, out or reference.",
-      "Do shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears."
+      "Do shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears.",
+      "Do use hatching to mean cannot or absent."
     ],
     "donts": [
       "Don't set labels in all caps or tracked-out caps.",
-      "Don't put an eyebrow or kicker above a headline.",
+      "Don't put an eyebrow, kicker or crumb above a headline or an article title.",
       "Don't append arrows to links.",
       "Don't build meta lines as middle-dot strings.",
       "Don't number items (01/02/03) unless the content is a sequence; list slot numbers and source citations are data, not markers.",
-      "Don't draw a heavy rule that does not mean 61.",
+      "Don't draw a heavy rule that does not mean 61; every other rule is 1px.",
       "Don't use a coloured left rule anywhere but the 3px party-colour rule on a pull quote.",
       "Don't add shadows to paper; the drawer is the only shadow.",
       "Don't draw the Knesset as a hemicycle.",
-      "Don't colour chrome, headings or buttons."
+      "Don't colour chrome, headings or buttons.",
+      "Don't colour a government figure by bloc; ink and greys only.",
+      "Don't use middle dots anywhere, menu previews included.",
+      "Don't build a teaching surface; embeds stay."
     ]
   }
 }

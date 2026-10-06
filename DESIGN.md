@@ -8,7 +8,7 @@ colors:
   ink: "#000000"
   text: "#2a2925"
   ink-2: "#5f5d57"
-  ink-3: "#8b8880"
+  ink-3: "#706d66"
   line: "#dedcd5"
   line-2: "#bdbab1"
   warn-bg: "#fff4c7"
@@ -190,6 +190,8 @@ An Israeli voter drops a printed slip in an envelope; the count turns slips into
 
 Colour is never decoration. The four bloc colours mark bloc context; each list's editorial colour (lib/party-colors.ts) owns that list's surfaces and figures; a shared ordinal ramp shows where an answer sits in its issue's order. A page with no data on it is black and white.
 
+Two owner rulings (Daniel, 2026-10-06) shape every page. Graphic first: each page opens with its infographic, and the page head is the title plus at most one short sentence; method, notes and caveats go in captions, folds or below. Teaching resources were dropped (the interactive embeds stay), so no surface is designed for a classroom.
+
 Density is a reference work's: figures sit beside the sentences they illustrate, every number dated and sourced, sources folded one tap away at the foot.
 
 **Key Characteristics:**
@@ -197,7 +199,8 @@ Density is a reference work's: figures sit beside the sentences they illustrate,
 - Party cards are ballot slips: square sheet, hairline edge, colour bar on top, Hebrew letters in Frank Ruhl 900.
 - Frank Ruhl Libre carries display, numbers and reading prose; Public Sans carries labels, controls, tables and captions.
 - Square, flat paper; 4px only on controls; one drawer shadow in the whole system.
-- Colour appears only where it encodes data.
+- Colour appears only where it encodes data; government figures are ink, because a coalition is not a bloc.
+- Every page opens with its graphic, then the words.
 
 ## Colors
 
@@ -224,7 +227,7 @@ Paper and two inks, with colour reserved for data.
 - **Sheet White** (sheet): slips, panels, tiles, segmented controls.
 - **Empty Cell** (cell): unfilled seat cells and the empty track of every bar.
 - **Prose Ink** (text): reading prose and standfirsts.
-- **Secondary Ink** (ink-2) / **Tertiary Ink** (ink-3): labels and meta; sources, captions and placeholders.
+- **Secondary Ink** (ink-2) / **Tertiary Ink** (ink-3): labels and meta; sources, captions and placeholders. Light ink-3 is #706d66 (it was #8b8880), darkened so small caption text clears 4.5:1 on paper; dark mode keeps #85817a.
 - **Hairline** (line) / **Strong Hairline** (line-2): row dividers; sheet edges and link underlines.
 - **Notice** (warn-*) and **Info** (info-*) triplets for callouts.
 - Overlay: scrim `rgb(0 0 0 / .45)` light, `/ .6` dark; drawer shadow colour `rgb(0 0 0 / .22)` light, `/ .6` dark.
@@ -234,6 +237,8 @@ Follows `prefers-color-scheme` unless `data-theme` pins it. Swaps every neutral 
 
 ### Named Rules
 **The Colour Is Data Rule.** A colour appears only where it encodes a bloc, a list or a stance position. Chrome, headings, links and buttons are ink.
+
+**The Bloc Data Only Rule.** Bloc colours appear only on bloc data (the polls bloc bar and strips, the Compare group bars). Figures about the government itself, the coalition's seats and the formation clock, are drawn in ink and greys.
 
 **The Fixed Endpoints Rule.** Ramps and tints use fixed endpoints (stance-ramp-start/end, tint-base), not theme variables, so a shade means one thing in light, dark and print. The Compare matrix draws the same ramp with the same endpoints (`shade()` in components/compare/model.ts), as do the profile tiles, so one answer has one shade wherever it appears. The one exception is the locality map's low end, which dims to map-low-dark on dark paper so weak places never outshine strongholds.
 
@@ -267,7 +272,8 @@ Follows `prefers-color-scheme` unless `data-theme` pins it. Swaps every neutral 
 
 - **Wrapper:** one wrapper on every page, max wrap (1200px) with gutter `clamp(16px, 3vw, 40px)`; wide data views (treemap, poll table) may use wide (1320px). Reading column 700px, left-aligned inside the wrapper. Every page title sits on the same left edge. Ragged right; nothing centred.
 - **Masthead:** nameplate row (34px mark, Frank Ruhl 700 26px wordmark, utilities, countdown) over a row of three grouped disclosure menus, closed by a 1px ink rule. Under 900px: brand plus a Menu toggle; groups stack in place.
-- **Page head:** title (display), standfirst 14px below, optional note (14px ink-2, 70ch). Padding 36px top, 24px on phones.
+- **Page head:** title (display), then at most one short standfirst 14px below. Notes, method and caveats move to captions, folds or below the figure; the page's graphic follows the head directly (graphic first). Padding 36px top, 24px on phones. Article titles carry no kicker or breadcrumb above them.
+- **Lead figure:** reference and community pages draw their chart straight under the title and leave it out of the body (`components/article/leads.ts` maps page to chart id; the chart moves, it is not duplicated). Issue pages lead with the Knesset split by answer (PositionsLead). Start here sets one figure inside every step.
 - **Section head:** headline set 44px below the previous block, 14px padding over a 1px ink top rule.
 - **Spread (party profile and home hero):** two columns 5/12 figures + 7/12 text, column gap 56px (home 64px), row gap 44px, each figure on the same grid row as its first sentence. Under 860px one column, figure directly above its text.
 - **Footer:** 1px ink rule, 64px above; brand and about (1.2fr) beside three link columns (2fr); one column under 860px.
@@ -289,9 +295,10 @@ Flat. Depth is conveyed by sheet-on-paper contrast and hairlines, never by shado
 - Radius 4px on controls only (rounded.control): buttons, segmented controls, alphabet and timeline buttons.
 - Circles only for data points: sparkline dots, key dots, locality dots, timeline events. Chart marks may also be a diamond or a square (article charts), still data marks.
 - Hairlines are 1px (line between rows, line-2 on sheet edges); structural rules are 1px ink (masthead, section heads, figure labels, sources, footer).
-- **The 61 Rule.** The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and in the polls page bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong.
+- **The 61 Rule.** The only heavy rule in the system is the majority line: 2.4 units in the seat grid, a 2px ink tick at 61/120 in the majority bar and in the polls page bloc bar, and the 2px tick at 61 on each bloc strip axis. A heavy rule anywhere else is wrong. Every other ink rule is 1px, including the Government page's today and current-step rules and its outgoing-coalition head, which were 2px and are now 1px.
 - **The Pull Quote Rule.** The only left-edge colour rule is the 3px party-colour rule on a pull quote (ink when no party colour applies). Slips and party letter boxes carry their colour as a top bar instead (5px slip, 4px compare chip and drawer letters).
-- Dashed means absent or out: a slip out of a coalition, a tile with no recorded stance, the 2022 reference line, the West Bank line on the map.
+- Dashed means absent or out: a slip out of a coalition, a tile with no recorded stance, the 2022 reference line, the West Bank line on the map, a ballot-tray slip for a list with no poll.
+- Hatched (135-degree lines) means cannot or absent: a status that cannot vote, a declined answer, a discretionary extension that may be refused, the 0 to 4 seat gap no list can occupy.
 
 ## Components
 
@@ -362,6 +369,35 @@ Under "What the polls say now" on the polls page: a bloc bar, two bloc strips, t
 - **Bloc-per-poll strips:** one for the Netanyahu bloc and one for the opposition, each headed by the swatch, the name in 600 and a plain reading of how many polls reach 61 and the range. The axis runs 40 to 70 seats with ticks every 5 (11.5px ink-3) on a line-2 baseline; a 2px ink rule at 61 with "61" in Frank Ruhl 14px beside it. Each poll is a 13px dot in the bloc colour, polls landing on the same number stacked 22px apart. Polls from the pollsters the alternative average excludes are hollow dots (page-ground fill, bloc-colour 2px ring). Each dot carries its pollster's name, 11px ink-2, rotated 40 degrees up from the dot; hidden on phones, where the axis drops from 84px to 54px and the title tooltip carries the name.
 - **List dot table:** each list is a row grouped by bloc and ordered by average seats, with the bloc name over the first row of its group on a 10px swatch. Beside the name, average, range, passes and alternative-average columns sits a chart column: a 22px track on a seat axis (0 to 30 or beyond, ticks every 5) holding a bar at the average, 8px high in the party colour at 55% opacity, drawn only when the list's average is stated; a 14px dot per poll in the party colour with a 2px sheet-white ring; hollow dots (page ground, party-colour ring) for the excluded pollsters; a dashed 1.5px ink-3 ring on an empty dot for a poll that had the list below the threshold; and a dashed line-2 line at 4 seats for the threshold. A key beneath names each mark. Under 760px the chart column narrows to 150px and the list name may wrap.
 
+### Government figures
+Two figures on the Government page, ink and greys only (bloc colours do not apply). Source: components/government/CoalitionSeats.tsx, components/government/FormationClock.tsx, components/government.css.
+- **Coalition seats:** a step chart of the outgoing coalition's seats after each dated change, on a 56 to 80 seat axis, from swearing-in to election day. The line is 2.5px ink; the 61 majority is a 2px ink rule labelled "61, a majority" in Frank Ruhl 700; a change reported as a range ("62 or 63") is a 60% ink-3 band. After the Knesset dissolves the line goes ink-3 (the coalition governs on as a transitional government), with a 1px ink-2 marker for the dissolution and one for election day. Values in Frank Ruhl 700 15px haloed in the page ground. Two SVGs, wide (760 by 230) and narrow (360 by 240, fewer ticks, year labels as two digits), switched at 640px; the caption names the grey and the band.
+- **Formation clock:** one bar per step on a shared day axis from the published results, each a row of a two-column grid (label up to 15.5em, track). Ink bars are a nominee's time to build a coalition; ink-3 bars are the president's or the Knesset's turn; the hatched bar (ink-2 hatch, 1.5px ink-2 frame) is the extension the president may grant or refuse; an ink-2 half-height bar is the any-time line "a government can be sworn in at any point". Step numbers in Frank Ruhl 700 ink-3; day counts inside bars of 21 days or more; 1px line gridlines; a 1px ink rule closes the longest path (day 117, then a new election); once results are published the axis carries dates and a 2px ink "Today" marker. Under 640px each label sits above its track.
+
+### Threshold watch
+On the Results page and in Start here. One row per list that misses the threshold in any current poll or averages six seats or fewer: name with party swatch, a track from 0 to 10 seats, and "k of n" polls in which the list passes in Frank Ruhl 700 17px. A dot per poll (11px, party colour, 1.5px page-ground ring; hollow, page-ground fill and 2.5px party ring, for pollsters the alternative average excludes), polls on the same value stacked 9px apart. The 0 to 4 seat gap is the threshold itself: a cell-colour hatch (135 degrees, 3px on 7px) with a 1px ink-2 right edge, since a list wins none or at least four. A dot at zero is a poll that had the list below the threshold. Source: components/results/ThresholdWatch.tsx, components/results.css.
+
+### Party family tree lanes
+On the party history page, above the full histories. One lane per 2026 list on a shared axis, grouped by political family under a 13px 600 ink-2 name; the lane line is 3px in the list's colour from its first event to the election, the name a link with party swatch to its history below. Four SVG marks, in ink, tell what an event does: filled circle starts a party, diamond (page-ground fill, 2.2px ink ring) joins an alliance or merger, filled triangle is a split or a leader's move, filled bar is a rename or the 2026 filing. An event over several years carries a 3px ink-2 bar beside its mark. The axis is piecewise: 1965 to 2005 gets 30% of the width, 2005 to 2026 the rest, with the change of scale marked by a double ink-2 line at 2005 and explained in the 12.5px source line; the axis is sticky on a 1px ink rule. Under 640px names stack over tracks. Source: components/history/PartyLanes.tsx, components/PartyHistory.css.
+
+### Ballot tray
+On the ballot directory, leading the page: all 38 filed lists as slips, auto-fill columns min 118px, 6px gap, 104px high, Hebrew letters Frank Ruhl 900 30px, name 12px ink-2. A polled list's slip takes its party colour as a 5px top bar and edge, with its average seats in a corner tab in the party colour and paired ink (Frank Ruhl 700 14px tabular); an unpolled list's slip is dashed with no colour. Hover edge goes ink. Source: components/BallotDirectory.tsx, components/BallotDirectory.css.
+
+### Who votes matrix
+A table of legal status down the side against the Knesset and Israeli municipal elections across, with a key above. A black cell (ink, page-ground text) can vote; a hatched cell (line hatch on a line-2 inset edge, ink-2 text) cannot; a cell-grey cell depends on the person's status. Row heads: status 15px 600, place 13px ink-2, detail 12.5px ink-3 (dropped under 620px); cells are 4px apart with the answer's words inside and the kind repeated for screen readers. Source: components/VotingRightsGuide.tsx, components/VotingRightsGuide.css.
+
+### Issue split (PositionsLead and SplitMini)
+One SplitBar, the Positions block's 34px stance bar of the Knesset's 120 seats by answer, drawn twice: PositionsLead under an issue title with a 1px ink rule, a legend of keyed answers and each answer's lists with their seats; SplitMini, a 22px bar with a one-line reading, under each issue's title on the Issues index (and once in Start here). Segments are square, split by 2px page-ground gaps, with the 61 tick. Source: components/article/Article.tsx.
+
+### Timeline prime-minister terms
+The strip's prime-minister bands take the colour of the 2026 list that carries the party on (Likud and Likud/Kadima in likud, Alignment, Labor and One Israel in dem, Yamina and Yesh Atid in byachad) with its paired ink; Kadima has no successor and is ink-2. The selected term is marked by a 2px ink inset ring over a 2px page-ground ring, not a fill. The key says so in words. Source: components/Timeline.tsx, components/timeline.css.
+
+### Start here figures
+Each step of the guided route carries a figure from the site's own charts, 760px max, a 15px 700 caption, a 12.5px ink-3 source line: the who-votes matrix, the threshold watch, each bloc as a stacked bar of its lists in their own colours (a party is not a bloc), the 120-seat grid with its 61 rule, and an issue split. Source: app/start/page.tsx, components/journey.css.
+
+### Party Map preview panel
+Choosing a party on the map opens a preview panel, not the full profile. Its one action is a solid ink "Open the full profile" button (44px high, 15px 600, ink fill, page-ground text; hover fills text colour; 3px ink focus ring) linking to the party page. Method, the minor lists and the colour key sit under the map in a 1px line-ruled "about" block, so the map follows the one-sentence head directly. Source: components/ProfileDetail.tsx, components/interactives.css, components/map.css.
+
 ### Article charts
 A data/charts table in an article is drawn in one of four forms, chosen from its cells and never set by hand; the table itself always stays on the page so every number keeps its printed value. Source: components/article/ChartViz.tsx, components/article/Article.tsx, components/article/article.css.
 - **Which form:** two or more columns are needed for any of them. Every cell a plain percentage, rows that are a run of years or elections (four or more), up to four series: lines. Every cell a plain percentage, two to four series, twelve rows or fewer: a dot plot. Otherwise two or more value columns where at least half the filled cells carry exactly one percentage: a heat table. Anything else is a plain table. The scale maximum is 100 when any value passes 60, else the largest value rounded up to the next 10, never under 20.
@@ -378,20 +414,24 @@ A data/charts table in an article is drawn in one of four forms, chosen from its
 - **Do** draw any count of the Knesset as the 120-seat grid or a 120-seat bar, with the heavy ink rule at 61.
 - **Do** keep colour to data: bloc colours for blocs, the list's own colour for that list, the stance ramp for stance positions.
 - **Do** pick text on a party or bloc fill by luminance (partyInk or the `-ink` tokens).
+- **Do** open every page with its graphic: a head of title plus at most one short sentence, then the figure; method and caveats go in captions, folds or below.
 - **Do** set every page head as title, then standfirst, inside the 1200px wrapper on the shared left edge.
 - **Do** put a figure beside the sentences it illustrates, with a label on an ink rule and a dated source line.
 - **Do** use 0 radius on paper and 4px on controls.
 - **Do** fold sources into the end-of-page disclosure, open by default on single-subject pages.
-- **Do** use dashed strokes to mean absent, out or reference.
+- **Do** use dashed strokes to mean absent, out or reference, and hatching to mean cannot or absent.
 - **Do** shade a stance by its place in the issue's order, with the same ramp everywhere an answer appears.
 
 ### Don't:
 - **Don't** set labels in all caps or tracked-out caps.
-- **Don't** put an eyebrow or kicker above a headline.
+- **Don't** put an eyebrow, kicker or crumb above a headline or an article title.
+- **Don't** colour a government figure by bloc; ink and greys only.
+- **Don't** use middle dots anywhere, menu previews and correction lines included; use commas and full stops.
+- **Don't** build a teaching surface (decks, packets, classroom paths); embeds stay.
 - **Don't** append arrows to links.
 - **Don't** build meta lines as middle-dot strings.
 - **Don't** number items (01/02/03) unless the content is a sequence; list slot numbers and source citations are data, not markers.
-- **Don't** draw a heavy rule that does not mean 61.
+- **Don't** draw a heavy rule that does not mean 61; every other rule is 1px.
 - **Don't** use a coloured left rule anywhere but the 3px party-colour rule on a pull quote.
 - **Don't** add shadows to paper; the drawer is the only shadow.
 - **Don't** draw the Knesset as a hemicycle.
