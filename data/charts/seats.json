@@ -36,7 +36,7 @@
     "note": "Lists as they ran in 2022. In 2026 Hadash–Ta'al and Balad run together as the Joint List, and Labor and Meretz run together as The Democrats."
   },
   "quotas-2022": {
-    "title": "2022, step one: whole seats at 36,227 votes each",
+    "title": "2022, step 3: whole seats at 36,227 votes each",
     "kind": "table",
     "columns": ["List", "Votes", "Whole seats", "Final seats"],
     "rows": [
@@ -59,7 +59,7 @@
     "note": "The same seat price (36,227) and the same 113 whole seats appear in IDI's explainer (Ofer Kenig, March 16, 2026, https://en.idi.org.il/articles/63750). Religious Zionism–Otzma Yehudit was a joint list in 2022; in 2026 Religious Zionism runs with Zehut and Otzma Yehudit runs alone."
   },
   "leftover-2022": {
-    "title": "2022, step two: the seven leftover seats, one round at a time",
+    "title": "2022, step 4: the seven leftover seats, one round at a time",
     "kind": "table",
     "columns": ["Round", "Seat", "Won by", "Votes counted", "Seats before the round", "Votes ÷ (seats + 1)"],
     "rows": [
