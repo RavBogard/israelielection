@@ -35,7 +35,7 @@ export const PARTY_COLOR_FAMILIES = [
   {label:"Netanyahu bloc — nationalist / religious right",ids:["otzma","rz","noam"]},
   {label:"Netanyahu bloc — Haredi lists",ids:["shas","utj"]},
   {label:"Netanyahu bloc — People of Israel",ids:["poi"]},
-  {label:"Anti-Netanyahu bloc (Jewish-majority parties)",ids:["byachad","yashar","dem","yb","bw"]},
+  {label:"Anti-Netanyahu bloc (Zionist parties)",ids:["byachad","yashar","dem","yb","bw"]},
   {label:"Unaligned list",ids:["res"]},
   {label:"Joint List and Ra'am",ids:["jl","raam"]},
 ];
