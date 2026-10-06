@@ -172,22 +172,22 @@
       "stance-ramp-start": {
         "role": "tertiary",
         "displayName": "Stance Ramp, first end of the order",
-        "canonical": "#233f86",
+        "canonical": "#34322d",
         "tonalRamp": [
-          "color-mix(in oklab, #233f86 100%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 89%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 77%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 66%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 54%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 43%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 31%, #dfe6f5)",
-          "color-mix(in oklab, #233f86 20%, #dfe6f5)"
+          "color-mix(in oklab, #34322d 100%, #eae8e1)",
+          "color-mix(in oklab, #34322d 89%, #eae8e1)",
+          "color-mix(in oklab, #34322d 77%, #eae8e1)",
+          "color-mix(in oklab, #34322d 66%, #eae8e1)",
+          "color-mix(in oklab, #34322d 54%, #eae8e1)",
+          "color-mix(in oklab, #34322d 43%, #eae8e1)",
+          "color-mix(in oklab, #34322d 31%, #eae8e1)",
+          "color-mix(in oklab, #34322d 20%, #eae8e1)"
         ]
       },
       "stance-ramp-end": {
         "role": "tertiary",
         "displayName": "Stance Ramp, mix endpoint",
-        "canonical": "#dfe6f5"
+        "canonical": "#eae8e1"
       },
       "stance-numeral-on-dark": {
         "role": "tertiary",
@@ -362,7 +362,7 @@
       "kind": "card",
       "refersTo": "stance-tile",
       "description": "One issue: a bar in the shared ordinal ramp (ink-2 grey when the options are not a scale), the issue, the stance, the basis.",
-      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #233f86 47%, #dfe6f5)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink-2)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
+      "html": "<div class=\"ds-tiles\"><button class=\"ds-tile open\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\"></span><span class=\"ds-issue\">Courts</span><span class=\"ds-stance\">Curb the court's powers</span><span class=\"ds-basis\">Platform, 2026</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:color-mix(in oklab, #34322d 47%, #eae8e1)\"></span><span class=\"ds-issue\">Haredi draft</span><span class=\"ds-stance\">Gradual targets</span><span class=\"ds-basis\">Record</span></button><button class=\"ds-tile\"><span class=\"ds-bar\" style=\"background:var(--ink-2)\"></span><span class=\"ds-issue\">Economy</span><span class=\"ds-stance\">Lower taxes</span><span class=\"ds-basis\">Platform</span></button><button class=\"ds-tile nf\"><span class=\"ds-bar\"></span><span class=\"ds-issue\">Palestinian state</span><span class=\"ds-stance\">No recorded stance</span></button></div>",
       "css": ".ds-tiles { display: grid; grid-template-columns: repeat(4, 150px); gap: 8px; } .ds-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: 0; color: var(--ink); font: inherit; cursor: pointer; transition: border-color .12s; } .ds-tile:hover { border-color: var(--ink); } .ds-tile:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; } .ds-bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); } .ds-issue { font-family: var(--body); font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; } .ds-stance { font-family: var(--display); font-weight: 700; font-size: 16px; line-height: 1.2; } .ds-basis { margin-top: auto; font-family: var(--body); font-size: 11px; color: var(--ink-3); } .ds-tile.open { border: 2px solid var(--ink); padding: 0 8px 9px; } .ds-tile.open .ds-bar { margin: 0 -8px 2px; } .ds-tile.open::after { content: \"\"; position: absolute; left: 50%; bottom: -8px; width: 12px; height: 12px; transform: translateX(-50%) rotate(45deg); background: var(--sheet); border-right: 2px solid var(--ink); border-bottom: 2px solid var(--ink); } .ds-tile.nf { border-style: dashed; } .ds-tile.nf .ds-bar { background: transparent; border-bottom: 1px dashed var(--line-2); height: 8px; } .ds-tile.nf .ds-stance { font-weight: 400; font-style: italic; color: var(--ink-3); font-size: 14px; }"
     },
     {
@@ -386,7 +386,7 @@
       "kind": "custom",
       "refersTo": "matrix-cell",
       "description": "A recorded answer as a square cell: ramp shade with its number, a corner notch for the record, dashed none, hatched declined, sheet with a line-2 edge for recorded-not-classified, ink-2 for coexisting priorities; hover dims the other answers in the row and outlines the matches.",
-      "html": "<div class=\"ds-mx\"><i style=\"background:color-mix(in oklab, #233f86 100%, #dfe6f5)\">1</i><i class=\"l\" style=\"background:color-mix(in oklab, #233f86 40%, #dfe6f5)\">3</i><i class=\"l rec\" style=\"background:color-mix(in oklab, #233f86 20%, #dfe6f5)\">5</i><i class=\"ink\">2</i><i class=\"none\"></i><i class=\"declined\"></i><i class=\"unsorted\"></i></div>",
+      "html": "<div class=\"ds-mx\"><i style=\"background:color-mix(in oklab, #34322d 100%, #eae8e1)\">1</i><i class=\"l\" style=\"background:color-mix(in oklab, #34322d 40%, #eae8e1)\">3</i><i class=\"l rec\" style=\"background:color-mix(in oklab, #34322d 20%, #eae8e1)\">5</i><i class=\"ink\">2</i><i class=\"none\"></i><i class=\"declined\"></i><i class=\"unsorted\"></i></div>",
       "css": ".ds-mx { display: grid; grid-template-columns: repeat(7, 44px); gap: 4px; } .ds-mx i { position: relative; display: block; height: 44px; font: 700 13px var(--body); font-style: normal; font-variant-numeric: tabular-nums; line-height: 44px; text-align: center; color: #fff; } .ds-mx i.l { color: #000; } .ds-mx i.ink { background: var(--ink-2); color: var(--bg); } .ds-mx i.rec::after { content: \"\"; position: absolute; top: 2px; right: 2px; border-top: 6px solid var(--bg); border-left: 6px solid transparent; } .ds-mx i.none { border: 1px dashed var(--line-2); } .ds-mx i.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); } .ds-mx i.unsorted { background: var(--sheet); border: 1px solid var(--line-2); } .ds-mx i.match { outline: 1px solid var(--ink); outline-offset: 1px; } .ds-mx i.dim { opacity: .28; }"
     },
     {

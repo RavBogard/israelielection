@@ -83,6 +83,9 @@ export type Tile = {
   date: string | null;
   basis: "record" | null;
   sameStance: { id: string; name: string }[];
+  /** How many answers the issue offers, and which of them is this party's (0-based), for the slot glyph. */
+  options: number;
+  slot: number | null;
 };
 
 /** Reading order and short names for the tiles; the economy's options coexist, so it is not drawn as a scale. */
@@ -212,6 +215,8 @@ export function tiles(party: Party): Tile[] {
       date: row?.date ?? null,
       basis: row?.basis === "record" ? "record" : null,
       sameStance,
+      options: stances.length,
+      slot: idx >= 0 ? idx : null,
     };
   });
 }

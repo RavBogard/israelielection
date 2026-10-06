@@ -93,5 +93,5 @@ export function shade(position: number | null): string {
   return position === null ? "var(--ink-2)" : `color-mix(in oklab, var(--ramp-start) ${Math.round(100 - position * 80)}%, var(--ramp-end))`;
 }
 
-/** The numeral on a shaded cell: white on the dark half of the ramp, navy ink on the light half, paper on the ink-2 of unordered options. */
+/** The numeral on a shaded cell: white on the dark half of the graphite ramp, black on the light half, paper on the ink-2 of unordered options (each at least 4.5:1, pinned in ramp.test.ts). */
 export const onShade = (position: number | null) => (position === null ? "ink" : position < 0.5 ? "light" : "dark");

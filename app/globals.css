@@ -19,7 +19,7 @@
   /* Fixed data endpoints, the same in light, dark and print (the Fixed Endpoints Rule), so the dark blocks do not redefine them:
      the stance ramp (shade() in components/compare/model.ts), the light end of party-colour tints, and the grey for a list
      with no editorial colour (PARTY_FALLBACK in lib/party-colors.ts, kept equal). */
-  --ramp-start: #233f86; --ramp-end: #dfe6f5; --tint-base: #e9ecf2; --party-fallback: #8c939b;
+  --ramp-start: #34322d; --ramp-end: #eae8e1; --tint-base: #e9ecf2; --party-fallback: #8c939b;
   --r: 4px;
   --display: var(--font-frank), "Frank Ruhl Libre", Georgia, "Times New Roman", serif;
   --body: var(--font-sans), "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -268,3 +268,9 @@ a:hover { text-decoration-color: currentColor; }
 @media (pointer: coarse), (max-width: 640px) {
   .btn, .seg button { min-height: 44px; }
 }
+
+/* Stance ramp edge: on dark paper the dark end of the graphite ramp nearly matches the page, so those cells take a 1px edge. */
+:root { --ramp-edge: transparent; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ramp-edge: var(--ink-3); } }
+:root[data-theme="dark"] { --ramp-edge: var(--ink-3); }
+@media print { :root, :root:not([data-theme="light"]), :root[data-theme="dark"] { --ramp-edge: transparent; } }

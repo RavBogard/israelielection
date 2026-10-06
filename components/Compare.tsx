@@ -269,6 +269,10 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
         </p>
         <p className="tap">{"Open any row for every list’s own words and source."}</p>
         <p className="seatnote">Under each list: its seats in the polling average.</p>
+        <p className="blockey">
+          Bars over the columns mark the blocs:
+          {groups.map((g) => <span key={g.id}><i style={{ background: `var(--b-${g.id})` }} aria-hidden="true" />{g.label}</span>)}
+        </p>
       </div>
 
       <div className="mx-wrap">
@@ -279,7 +283,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
               <td role="cell" className="mx-corner" />
               {groups.map((g, i) => (
                 <th key={g.id} scope="colgroup" role="columnheader" colSpan={g.n} className={`mx-bloc${i > 0 ? " gap" : ""}`} style={{ ...fill(g.id), ["--n" as string]: g.n }}>
-                  <span>{g.label}</span>
+                  <span><span className="bt">{g.label}</span></span>
                 </th>
               ))}
             </tr>
@@ -296,8 +300,8 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
                 <span className="seatlbl">Seats, polling average</span>
               </td>
               {shown.map((p, i) => (
-                <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : ""}`} style={fill(p.bloc)}>
-                  {p.letters && <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${p.letters}`}>{p.letters}</span>}
+                <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : ""}`} style={swatch(p.id)}>
+                  {p.letters ? <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${p.letters}`}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
                   <span className="seats">{seatsOf(p) ? Math.round(seatsOf(p)) : p.out ? "out" : "–"}</span>
                 </td>
               ))}

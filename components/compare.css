@@ -1,6 +1,7 @@
 /* Compare the parties: one matrix. Questions down the side, every list across the top grouped by
    bloc, each cell shaded by the list's recorded answer on the issue's ordered range (the stance ramp
-   the party profiles use). Bloc colour appears only as the bar over each column head. */
+   the party profiles use). Bloc colour appears only as the bar over each bloc's columns; each list's
+   own colour tops its ballot-letter slip. */
 .cmp { margin-top: 28px; font-family: var(--body); color: var(--ink); }
 
 /* Column sets: the segmented control */
@@ -46,7 +47,10 @@
 .cmp .g.rec::after, .cmp .mx-cell .rec { content: ""; position: absolute; top: 2px; right: 2px; width: 0; height: 0; border-top: 6px solid var(--bg); border-left: 6px solid transparent; }
 .cmp .g.ink { background: var(--ink-2); }
 .cmp .g.unsorted, .cmp .key.unsorted { background: var(--sheet); border: 1px solid var(--line-2); }
-.cmp .mx-key .seatnote { display: none; }
+.cmp .mx-key .seatnote, .cmp .mx-key .blockey { display: none; }
+.cmp .mx-key .blockey { flex-wrap: wrap; align-items: center; gap: 6px 16px; }
+.cmp .mx-key .blockey span { display: inline-flex; align-items: center; gap: 7px; }
+.cmp .mx-key .blockey i { width: 16px; height: 3px; display: inline-block; flex: none; }
 
 /* The matrix */
 .cmp .mx-wrap { position: relative; }
@@ -54,7 +58,7 @@
 .cmp .mx-corner { width: 300px; }
 .cmp .mx thead th, .cmp .mx thead td { vertical-align: bottom; padding: 0 2px 6px; background: var(--bg); }
 .cmp .mx thead .mx-bloc { text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.25; padding: 10px 2px 10px; }
-.cmp .mx-bloc span { display: block; padding-top: 6px; border-top: 3px solid var(--fill); }
+.cmp .mx-bloc > span { display: block; padding-top: 6px; border-top: 3px solid var(--fill); }
 .cmp .mx thead .mx-bloc + .mx-bloc { padding-left: 12px; }
 .cmp .mx thead .gap { padding-left: 12px; }
 /* Vertical names, read bottom to top, ending on the ballot letters below. */
@@ -64,7 +68,8 @@
 /* Only the letters and seats stay pinned while the rows scroll under them. */
 .cmp .mx thead .mx-heads > * { position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--ink); padding-top: 6px; }
 .cmp .mx-head { text-align: center; }
-.cmp .mx-head .letters { display: block; font-family: var(--display); font-weight: 900; font-size: 17px; line-height: 1; padding: 6px 0 5px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); }
+.cmp .mx-head .letters { display: block; font-family: var(--display); font-weight: 900; font-size: 17px; line-height: 1; padding: 6px 0 5px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--sw); }
+.cmp .mx-head .letters:empty { height: 17px; box-sizing: content-box; }
 .cmp .mx-head .seats { display: block; margin-top: 4px; font-family: var(--display); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
 .cmp .mx-head.out .seats { font-family: var(--body); font-weight: 500; font-size: 12px; color: var(--ink-3); line-height: 19px; }
 .cmp .mx-corner .seatlbl { display: block; text-align: right; padding-right: 14px; font-size: 12px; color: var(--ink-3); }
@@ -105,6 +110,9 @@
 .cmp .mx-cell.unsorted { background: var(--sheet); border: 1px solid var(--line-2); }
 .cmp .mx-cell.match { outline: 1px solid var(--ink); outline-offset: 1px; }
 .cmp .mx-cell:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+/* The dark half of the ramp takes a 1px edge on dark paper (--ramp-edge is transparent in light). */
+.cmp .mx-cell.on-light, .cmp .key.on-light, .cmp .mx-key .bar i { box-shadow: inset 0 0 0 1px var(--ramp-edge); }
+.cmp .g.rec { box-shadow: inset 0 0 0 1px var(--ramp-edge); }
 
 /* The open row */
 .cmp .mx-panelrow > td { padding: 0 0 22px; }
@@ -149,21 +157,26 @@
   /* Kept in the table, out of sight, so column headers still pair with their cells. */
   .cmp .mx thead tr > .mx-corner { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .cmp .mx-key .seatnote { display: block; }
+  /* The bloc names move to the key; the bars over the columns keep their colour. */
+  .cmp .mx-key .blockey { display: flex; }
+  .cmp .mx-bloc .bt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .cmp .mx thead .mx-bloc { padding-block: 6px 4px; }
+  .cmp .mx-bloc > span { padding-top: 0; }
   .cmp .mx thead th { padding-bottom: 6px; }
   .cmp .mx thead .gap, .cmp .mx-c.gap { padding-left: 4px; }
   .cmp .mx thead th, .cmp .mx thead td { padding-inline: 1px; }
-  .cmp .mx-party a { font-size: 11px; font-weight: 500; max-height: 110px; }
-  .cmp .mx-head .letters { font-size: 11px; padding: 4px 0 3px; border-top-width: 3px; }
+  .cmp .mx-party a { font-size: 12px; font-weight: 500; max-height: 120px; }
+  .cmp .mx-head .letters { font-size: 12px; padding: 4px 0 3px; border-top-width: 3px; }
+  .cmp .mx-head .letters:empty { height: 12px; }
   .cmp .mx-head .seats { font-size: 12.5px; }
-  .cmp .mx thead .mx-bloc { grid-column: span var(--n); font-size: 11px; padding: 6px 1px 6px; }
+  .cmp .mx thead .mx-bloc { grid-column: span var(--n); }
   .cmp .mx thead .mx-bloc + .mx-bloc { padding-left: 4px; }
   .cmp .mx-q { grid-column: 1 / -1; padding: 12px 0 6px; }
   .cmp .mx-row.d1 .mx-q { padding-left: 12px; }
   .cmp .mx-row > .mx-c { border-top: 0; padding: 0 1px 12px; }
   .cmp .mx-cell { height: 34px; }
   .cmp .mx-row.d1 .mx-cell { height: 24px; }
-  .cmp .mx-cell .n { font-size: 11px; }
-  .cmp .legend { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; }
+  .cmp .mx-cell .n { font-size: 12px; }
   .cmp .mx-panelrow { display: block; }
   .cmp .mx-panelrow > td { display: block; }
   .cmp .mx-panel { padding: 14px 14px 16px; }
