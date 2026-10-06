@@ -64,7 +64,7 @@ export default function PartyLanes() {
               return (
                 <div key={h.id} className="ph-lane">
                   <a href={`#${h.id}`} className="ph-name"><span className="sw" style={{ background: c }} aria-hidden="true" />{h.name}</a>
-                  <span className="ph-track" role="img" aria-label={`${h.name}: ${h.events.map(label).join(" ")}`}>
+                  <a href={`#${h.id}`} className="ph-track" aria-label={`${h.name}: ${h.events.map(label).join(" ")} Full history below.`}>
                     {TICKS.map((t) => <i key={t} className="ph-grid-l" style={{ left: `${x(t)}%` }} aria-hidden="true" />)}
                     <span className="ph-line" style={{ left: `${x(first)}%`, right: 0, background: c }} />
                     {h.events.map((e, i) => {
@@ -75,14 +75,14 @@ export default function PartyLanes() {
                         </span>
                       );
                     })}
-                  </span>
+                  </a>
                 </div>
               );
             })}
           </section>
         ))}
       </div>
-      <p className="ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or follow a list&apos;s name to its full history, with sources, below.</p>
+      <p className="ph-src">The axis gives 1965–2005 a third of the width and 2005–2026 the rest, where most of the record falls; the double line on the axis marks the change of scale, at 2005. A bar under a mark is an event that ran over several years. Point at a mark for what happened, or tap a list&apos;s line or name for its full history, with sources, below.</p>
     </figure>
   );
 }

@@ -18,7 +18,8 @@
 .ph-lane { align-items: center; padding: 3px 0; border-top: 1px solid var(--line); }
 .ph-name { display: inline-flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 600; color: var(--ink); text-decoration: none; min-width: 0; }
 .ph-name:hover { text-decoration: underline; }
-.ph-track { position: relative; height: 24px; margin-right: 12px; }
+.ph-track { position: relative; display: block; height: 24px; margin-right: 12px; }
+.ph-lane a.ph-track:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .ph-grid-l { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); }
 .ph-line { position: absolute; top: 50%; height: 3px; margin-top: -1.5px; }
 .ph-ev { position: absolute; top: 50%; height: 0; min-width: 0; }
