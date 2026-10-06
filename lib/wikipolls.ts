@@ -22,6 +22,8 @@ export type RawPoll = {
   ref: { url: string | null; date: string | null; work: string | null };
   /** Reading per header link target (sub-columns of one list are combined). */
   readings: Map<string, Reading>;
+  /** The row is shaded #FFD, the "Exit poll" colour key on these tables (the 2022 page's election-night rows). */
+  shaded: boolean;
 };
 
 export type ParsedTable = { columns: Column[]; polls: RawPoll[]; skippedRows: number };
@@ -98,14 +100,17 @@ function parseCell(raw: string): Cell {
   return { attrs, value: value.trim(), colspan: num("colspan"), rowspan: num("rowspan") };
 }
 
-/** Splits a table body into rows of raw cell strings, joining multi-line cells. */
-function rowsOf(table: string, marker: "|" | "!"): string[][] {
+/**
+ * Splits a table body into rows of raw cell strings, joining multi-line cells. `attrs`, when given, receives
+ * each row's attributes from its "|-" line (style="background:#FFD"), index for index with the rows.
+ */
+function rowsOf(table: string, marker: "|" | "!", attrs?: string[]): string[][] {
   const rows: string[][] = [];
   let row: string[] | null = null;
   for (const line of table.split("\n")) {
-    if (line.startsWith("|-")) { row = []; rows.push(row); continue; }
+    if (line.startsWith("|-")) { row = []; rows.push(row); attrs?.push(line.slice(2)); continue; }
     if (line.startsWith("{|") || line.startsWith("|}") || line.startsWith("|+")) continue;
-    if (!row) { row = []; rows.push(row); }
+    if (!row) { row = []; rows.push(row); attrs?.push(""); }
     if (line.startsWith(marker)) row.push(...topSplit(line.slice(1), marker + marker));
     else if ((line.startsWith("|") || line.startsWith("!")) === false && row.length) row[row.length - 1] += "\n" + line;
   }
@@ -203,12 +208,15 @@ function combine(a: Reading, b: Reading): Reading {
 export function parseTable(table: string): ParsedTable {
   const columns = headerColumns(table);
   const body = table.split(/\n\|-/).slice(1).join("\n|-");
-  const rows = rowsOf("|-\n" + body, "|").filter((r) => r.length);
+  const attrs: string[] = [];
+  const all = rowsOf("|-\n" + body, "|", attrs);
+  const shadedRow = all.map((_, i) => /background:\s*#(?:ffd|ffffdd)\b/i.test(attrs[i] ?? "")).filter((_, i) => all[i].length);
+  const rows = all.filter((r) => r.length);
   // pending[i] = how many more rows column i is filled by a rowspan from above.
   const pending: number[] = new Array(columns.length).fill(0);
   const polls: RawPoll[] = [];
   let skippedRows = 0;
-  for (const raw of rows) {
+  for (const [rowIndex, raw] of rows.entries()) {
     const placed: (Cell | null)[] = new Array(columns.length).fill(null);
     const occupied = pending.map((n) => n > 0);
     const continuation = occupied[0];
@@ -250,6 +258,7 @@ export function parseTable(table: string): ParsedTable {
       sample: /^\d+$/.test(sampleTxt) ? Number(sampleTxt) : null,
       ref: { url: citeField(pub, "url"), date: parseRefDate(citeField(pub, "date")), work: citeField(pub, "work") ?? citeField(pub, "website") ?? citeField(pub, "publisher") },
       readings,
+      shaded: shadedRow[rowIndex],
     });
   }
   return { columns, polls, skippedRows };

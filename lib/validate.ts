@@ -5,8 +5,9 @@ export const KNESSET_SEATS = 120;
 
 export type Problem = { poll: string; rule: string; detail: string };
 
-/** A stable key for "the same poll": publisher + publication date. */
-export const pollKey = (p: Pick<Poll, "pollster" | "published">) => `${p.pollster}|${p.published}`;
+/** A stable key for "the same poll": publisher + publication date; an exit poll's versions also by broadcast time. */
+export const pollKey = (p: Pick<Poll, "pollster" | "published"> & Partial<Pick<Poll, "kind" | "broadcastAt">>) =>
+  p.kind === "exit" ? `${p.pollster}|${p.published}|exit|${p.broadcastAt ?? ""}` : `${p.pollster}|${p.published}`;
 
 const ISO = /^\d{4}-\d{2}-\d{2}$/;
 

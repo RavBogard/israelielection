@@ -21,7 +21,7 @@ describe("full position reference files", () => {
     it("has a bounded set of unique, short options", () => {
       expect(data.question!.length).toBeLessThan(90);
       expect(data.stances!.length).toBeGreaterThanOrEqual(3);
-      expect(data.stances!.length).toBeLessThanOrEqual(5);
+      expect(data.stances!.length).toBeLessThanOrEqual(6);
       for (const stance of data.stances!) {
         expect(stance.id).toMatch(/^[a-z]+(-[a-z]+)*$/);
         expect(stance.label.length).toBeLessThan(40);

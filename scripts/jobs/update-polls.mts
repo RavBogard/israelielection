@@ -1,7 +1,8 @@
 /**
  * Polls job. Reads Wikipedia's 2026 seat-projection tables, validates every new poll, and
  * merges the ones that pass into data/polls.json. Polls that fail go to a review file the
- * workflow turns into a pull request for Daniel.
+ * workflow turns into a pull request for Daniel. On election night the rows dated election day
+ * (or shaded as exit polls) come in as exit polls, each revision a new version (lib/pollimport.ts).
  *
  *   tsx scripts/jobs/update-polls.mts [--wikitext file] [--include-review] [--report out.md]
  *
@@ -36,11 +37,13 @@ const today = new Date().toISOString().slice(0, 10);
 
 const pollsFile = readJson<PollsFile>("data/polls.json");
 const parties = readJson<PartiesFile>("data/parties.json");
-const src = readJson<{ wikipedia: WikiSources }>("data/poll-sources.json").wikipedia;
+// Election day and the close come from the results config: rows on that day are imported as exit polls.
+const night = readJson<{ election: string; pollsClose: string }>("data/results.json");
+const src: WikiSources = { ...readJson<{ wikipedia: WikiSources }>("data/poll-sources.json").wikipedia, election: night.election, pollsClose: night.pollsClose };
 
 const local = opt("--wikitext");
 const { text, revision } = local ? { text: readFileSync(local, "utf8"), revision: "local" } : await fetchWikitext(src.page);
-const report = importFromWikitext(text, revision, src, pollsFile, new Set(parties.parties.map((p) => p.id)), today);
+const report = importFromWikitext(text, revision, src, pollsFile, new Set(parties.parties.map((p) => p.id)), today, new Date().toISOString());
 
 const merged: Poll[] = [...pollsFile.polls, ...report.accepted];
 if (args.includes("--include-review")) merged.push(...report.review.map((r) => r.poll));

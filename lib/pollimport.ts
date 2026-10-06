@@ -10,6 +10,12 @@ export type WikiSources = {
   publisherMap: Record<string, string>;
   /** Poll keys ("Pollster|YYYY-MM-DD") Daniel has rejected; never proposed again. */
   ignore?: string[];
+  /**
+   * Election day and the close (from data/results.json, set by the job). A row on election day, or shaded in the
+   * table's "Exit poll" colour, is an exit poll: no campaign poll may be published that day.
+   */
+  election?: string;
+  pollsClose?: string;
 };
 
 const DAY = 86_400_000;
@@ -46,8 +52,9 @@ export function toPoll(raw: RawPoll, src: WikiSources, revision: number | string
     if ("seats" in r) results[id] = { seats: (prev?.seats ?? 0) + r.seats };
     else if (!prev) results[id] = { seats: 0, belowThreshold: true, ...(r.pct ? { pct: r.pct } : {}) };
   }
-  return {
-    id: `${slug(pollster)}-${published}`,
+  const exit = raw.shaded || (!!src.election && raw.end === src.election);
+  const poll: Poll = {
+    id: exit ? `${slug(pollster)}-exit-${published}` : `${slug(pollster)}-${published}`,
     pollster,
     firm: raw.firm || null,
     fieldwork: raw.fieldwork,
@@ -56,10 +63,30 @@ export function toPoll(raw: RawPoll, src: WikiSources, revision: number | string
     url: safeUrl(raw.ref.url),
     n: raw.sample,
     margin: null,
-    note: `Imported from Wikipedia (revision ${revision}).`,
+    note: `${exit ? "Exit poll imported" : "Imported"} from Wikipedia (revision ${revision}).`,
     results,
     combined: [],
   };
+  return exit ? { ...poll, kind: "exit", ...(src.pollsClose ? { broadcastAt: src.pollsClose } : {}) } : poll;
+}
+
+const sameSeats = (a: Poll, b: Poll) => {
+  const ids = new Set([...Object.keys(a.results), ...Object.keys(b.results)]);
+  return [...ids].every((id) => (a.results[id]?.seats ?? 0) === (b.results[id]?.seats ?? 0) && !!a.results[id]?.belowThreshold === !!b.results[id]?.belowThreshold);
+};
+
+/**
+ * An exit poll as a new version, or null when the channel's latest version already has these numbers. The
+ * channels revise their exit polls through the night (the 2022 updates came near midnight); each revision is
+ * kept with the time this job first saw it, and the site shows the latest (lib/results-phase.ts exitRows).
+ */
+export function exitVersion(p: Poll, existing: Poll[], now: string): Poll | null {
+  const mine = existing.filter((q) => q.kind === "exit" && q.pollster === p.pollster);
+  const at = (q: Poll) => q.broadcastAt ?? q.published;
+  const latest = mine.sort((a, b) => at(b).localeCompare(at(a)))[0];
+  if (!latest) return p;
+  if (sameSeats(latest, p)) return null;
+  return { ...p, id: `${p.id}-${mine.length + 1}`, broadcastAt: now };
 }
 
 /** True when `p` is a poll we already hold: same pollster, within 3 days, and ≥80% of shared readings equal. */
@@ -89,7 +116,9 @@ export function importFromWikitext(
   src: WikiSources,
   file: PollsFile,
   partyIds: Set<string>,
-  today: string
+  today: string,
+  /** When this run happened (ISO), the broadcast time given to a revised exit poll. */
+  now: string = new Date().toISOString()
 ): ImportReport {
   const report: ImportReport = { revision, accepted: [], review: [], blockers: [] };
   const known = new Set([...Object.keys(src.headerMap), ...src.untracked]);
@@ -105,9 +134,10 @@ export function importFromWikitext(
       continue;
     }
     for (const r of recent) {
-      const p = toPoll(r, src, revision);
-      if (ignore.has(pollKey(p)) || alreadyHave(p, [...file.polls, ...candidates])) continue;
-      candidates.push(p);
+      const raw = toPoll(r, src, revision);
+      if (ignore.has(pollKey(raw))) continue;
+      const p = raw.kind === "exit" ? exitVersion(raw, [...file.polls, ...candidates], now) : alreadyHave(raw, [...file.polls, ...candidates]) ? null : raw;
+      if (p) candidates.push(p);
     }
   }
   // Oldest first, so each poll is checked against the reading before it.

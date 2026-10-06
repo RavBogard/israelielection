@@ -12,6 +12,10 @@
       "label": "Annex Area C or chosen areas"
     },
     {
+      "id": "sovereignty-not-bills",
+      "label": "Backs sovereignty, blocks binding bills"
+    },
+    {
       "id": "settle-no-annex",
       "label": "Expand settlements, no pledge to annex"
     },
@@ -28,11 +32,11 @@
   "rows": [
     {
       "party": "likud",
-      "text": "On the October 2025 annexation bills, on which Netanyahu told its MKs to abstain: \"Another provocation by the opposition aimed at damaging our relations with the United States… True sovereignty will be achieved not through a showy law for the record, but through proper work on the ground.\"",
-      "source": "CBS News",
+      "text": "Likud MK Dan Illouz co-sponsored the July 2025 non-binding Knesset motion calling for sovereignty over Judea and Samaria, which passed 71 to 13, and Likud ministers led by Yariv Levin wrote to Netanyahu that it was \"the time to approve in government a decision to apply sovereignty.\" On the binding bills of October 2025 all but one Likud MK stayed away, and the party called them \"another provocation by the opposition aimed at damaging our relations with the United States… True sovereignty will be achieved not through a showy law for the record, but through proper work on the ground.\"",
+      "source": "Times of Israel, Jul 23, 2025; Ynet, Jun 2025; Times of Israel and CBS News, Oct 22, 2025",
       "url": "https://www.cbsnews.com/news/israel-west-bank-annexation-bills-trump-objection-vance-visit/",
       "date": "Oct 22, 2025",
-      "stance": "settle-no-annex",
+      "stance": "sovereignty-not-bills",
       "basis": "record"
     },
     {
@@ -70,12 +74,12 @@
     },
     {
       "party": "shas",
-      "text": "Opposes the establishment of a Palestinian state; says that, as one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit; per Ynet, does not make West Bank settlement policy a central campaign issue. Its MKs co-submitted the July 2025 non-binding motion calling for sovereignty over the areas of Jewish settlement, which passed 71 to 13; like Likud, it stayed away from the October 2025 vote on Maoz's binding bill (Arutz Sheva).",
-      "source": "Ynet, Sept 30, 2026; Ynet, Jul 23, 2025; Arutz Sheva, Oct 22, 2025",
+      "text": "Opposes the establishment of a Palestinian state; says that, as one of the \"founders of the right-wing bloc,\" it has supported initiatives promoted by Religious Zionism and Otzma Yehudit; per Ynet, does not make West Bank settlement policy a central campaign issue. Its MKs voted for the July 2025 non-binding motion calling for sovereignty over Judea and Samaria, which passed 71 to 13, and, like Likud's, were absent from the October 2025 vote on the binding bill (Times of Israel).",
+      "source": "Ynet, Sept 30, 2026; Times of Israel, Jul 23 and Oct 22, 2025",
       "url": "https://www.ynetnews.com/article/h1dpvu9cgl",
       "date": "Sept 30, 2026",
-      "status": "none",
-      "checked": "2026-10-06"
+      "stance": "sovereignty-not-bills",
+      "basis": "record"
     },
     {
       "party": "utj",

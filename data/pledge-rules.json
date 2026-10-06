@@ -76,7 +76,7 @@
       "when": { "all": [{ "party": "yb" }, { "cabinet": "likud" }] },
       "support": true,
       "message": "Liberman on Netanyahu: “Hell will freeze over before we sit with him,” and “he must go home.” He has said he would not reject a Likud no longer led by Netanyahu that accepted his party's principles. Likud in the cabinet is read here as Netanyahu-led.",
-      "source": "Liberman on X via JFeed, Sep 17, 2026; Jerusalem Post, May 6, 2026"
+      "source": "Liberman on X, as reported by JFeed, Sep 17, 2026; Jerusalem Post, May 6, 2026"
     },
     {
       "id": "bw-no-netanyahu",
@@ -108,6 +108,14 @@
       "support": true,
       "message": "Ben-Gvir to Netanyahu: “I will do everything so that you do not form a government with Eisenkot! Only a right-wing government!!!”",
       "source": "Jerusalem Post, Aug 29, 2026"
+    },
+    {
+      "id": "otzma-no-raam",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "otzma" }, { "party": "raam" }] },
+      "support": true,
+      "message": "Ben-Gvir has made no formal pledge on Ra'am, but his party petitioned to bar it from the election, calling Mansour Abbas and his party “Hamas-supporting terrorists” and “wolves in sheep's clothing.” Read here as ruling it out.",
+      "source": "Jerusalem Post, Sep 9, 2026"
     },
     {
       "id": "utj-yeshiva-status-law",
