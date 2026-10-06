@@ -4,6 +4,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "mdx"],
+  // Two root layouts (app/(en) and app/(he)/he), so unmatched URLs render app/global-not-found.tsx.
+  experimental: { globalNotFound: true },
   async redirects() {
     // The Coalition Builder has its own page again; old shared links keep their ?poll=&with= query.
     // The Palestinian-state issue page took its title's address (ruling 108).

@@ -83,6 +83,10 @@
 .cb .scrim { position: fixed; inset: 0; background: var(--scrim); z-index: 40; }
 .cb .drawer { position: fixed; top: 0; inset-inline-end: 0; bottom: 0; width: min(620px, 100%); background: var(--bg); color: var(--text); border-inline-start: 1px solid var(--ink); box-shadow: -16px 0 48px var(--shadow); z-index: 41; display: flex; flex-direction: column; animation: cb-slidein .2s ease-out; }
 @keyframes cb-slidein { from { transform: translateX(32px); opacity: 0; } to { transform: none; opacity: 1; } }
+/* Right to left (the Hebrew edition): the drawer sits at the inline end, the left edge, so its shadow falls right and it slides in
+   from the left. :where() keeps the specificity of .cb .drawer, so the phone and reduced-motion rules below still win. */
+:where([dir="rtl"]) .cb .drawer { box-shadow: 16px 0 48px var(--shadow); animation-name: cb-slidein-rtl; }
+@keyframes cb-slidein-rtl { from { transform: translateX(-32px); opacity: 0; } to { transform: none; opacity: 1; } }
 .cb .dhead { display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding: 12px 22px; border-bottom: 1px solid var(--ink); }
 .cb .dbody { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 22px 22px 32px; }
 @media (max-width: 640px) {

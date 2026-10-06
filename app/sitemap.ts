@@ -16,6 +16,7 @@ import timelineJson from "@/data/timeline.json";
 import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
 import {canonicalNavPath,canonicalNavPaths} from "@/lib/navigation";
 import { NAV } from "@/lib/site";
+import { HE_PUBLIC, hePath } from "@/lib/i18n";
 
 const BASE = "https://www.israelielection.org";
 
@@ -79,8 +80,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...GUIDES.map((s) => `/how-it-works/${s}`),
   ];
   const paths = canonicalNavPaths([...statics, ...dynamic]);
-  return paths.map((path) => ({
-    url: path === "/" ? BASE : `${BASE}${path}`,
-    lastModified: lastModified(path),
-  }));
+  const url = (p: string) => (p === "/" ? BASE : `${BASE}${p}`);
+  // Pages with a Hebrew edition (HE_PATHS in lib/i18n) list both editions, each carrying the same hreflang set.
+  const languages = (en: string, he: string) => ({ languages: { en: url(en), he: url(he), "x-default": url(en) } });
+  return paths.flatMap((path) => {
+    const he = HE_PUBLIC ? hePath(path) : null;
+    const entry = { url: url(path), lastModified: lastModified(path) };
+    if (!he) return [entry];
+    const alternates = languages(path, he);
+    return [{ ...entry, alternates }, { url: url(he), lastModified: lastModified(path), alternates }];
+  });
 }

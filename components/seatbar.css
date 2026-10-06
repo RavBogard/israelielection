@@ -14,7 +14,7 @@
 .sb-rest { background: var(--cell); }
 /* Hatched means cannot or absent. */
 .sb-hatch { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px), var(--cell); }
-.sb-maj { position: absolute; top: calc(-1 * var(--sb-over)); bottom: calc(-1 * var(--sb-over)); width: 2px; margin-left: -1px; background: var(--ink); } /* physical: chart geometry */
+.sb-maj { position: absolute; top: calc(-1 * var(--sb-over)); bottom: calc(-1 * var(--sb-over)); width: 2px; margin-inline-start: -1px; background: var(--ink); } /* logical: the tick's inset-inline-start is set inline, so it mirrors under dir=rtl */
 @media print { .seatbar, .seatbar * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
 /* sb-fit: a segment hides its label when the room left for it (its content box, after any padding that
    moves the label past the 61 tick) is under about 11px, so no figure is cut or crowds the tick; the

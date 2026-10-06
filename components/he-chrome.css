@@ -1,0 +1,11 @@
+/* The Hebrew edition's interim masthead and footer (app/(he)/he/layout.tsx). Logical properties only, so it
+   reads right to left under dir="rtl". Wave 2A replaces this with the full Hebrew chrome. */
+.he-mast { background: var(--bg); border-bottom: 1px solid var(--ink); }
+.he-mast .row { max-width: var(--wrap); margin: 0 auto; padding: 14px var(--gutter); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 28px; }
+.he-mast nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.he-mast nav a { color: var(--ink); font-weight: 600; font-size: 15px; text-decoration: none; }
+.he-mast nav a:hover, .he-mast nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+.he-mast .lang-switch { margin-inline-start: auto; font-size: 14px; font-weight: 600; color: var(--ink); }
+.he-foot .about .foot-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.he-foot .about .foot-links a { color: var(--ink); font-weight: 500; }
+@media print { .he-mast, .he-foot { display: none !important; } }

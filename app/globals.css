@@ -29,6 +29,9 @@
   --fs-sec: clamp(26px, 2.4vw, 32px); --fs-sec3: 22px;
   color-scheme: light;
 }
+/* The Hebrew edition (app/(he)/he/layout.tsx, <html lang="he">): Public Sans keeps Latin and digits, IBM Plex Sans
+   Hebrew (--font-he, loaded only there) sets the Hebrew. Frank Ruhl Libre already has Hebrew, so --display is unchanged. */
+:root:lang(he) { --body: var(--font-sans), var(--font-he), sans-serif; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #121210; --sheet: #1b1a17; --cell: #2b2a26;

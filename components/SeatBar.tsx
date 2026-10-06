@@ -18,7 +18,8 @@ export type SeatBarSegment = {
 
 /**
  * The Knesset as one horizontal bar: segments sized by seats out of `total`, the empty track in cell,
- * and the 2px ink tick at `majority`, the only heavy rule on the site. `rest` draws the remainder as its
+ * and the 2px ink tick at `majority`, the only heavy rule on the site. The bar fills from the inline start, so
+ * under dir="rtl" (the Hebrew edition) it runs right to left and the tick mirrors with it. `rest` draws the remainder as its
  * own segment (hatched means cannot or absent). Without `label` the bar is decorative (aria-hidden), for
  * figures whose numbers are already in text beside it.
  * Sizes: s 10px (meters), m 22px (index minis), l 34px (issue split), xl 44px (the polls bloc bar).
@@ -43,7 +44,7 @@ export default function SeatBar({ segments, total = 120, majority = 61, size = "
         </span>
       ))}
       {rest && remainder > 0 && <span className={`sb-seg sb-rest${rest.hatch ? " sb-hatch" : ""}`} style={{ width: w(remainder) }} title={rest.title} />}
-      {majority != null && <i className="sb-maj" style={{ left: w(majority) }} aria-hidden="true" />}
+      {majority != null && <i className="sb-maj" style={{ insetInlineStart: w(majority) }} aria-hidden="true" />}
     </span>
   );
 }

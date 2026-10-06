@@ -1,11 +1,13 @@
 import {describe,it,expect} from "vitest";
 import {existsSync,readdirSync,readFileSync} from "node:fs";
 import {join} from "node:path";
+// English routes live in the app/(en) route group (two root layouts; Hebrew is app/(he)/he).
+const EN="app/(en)";
 import {NAV,NAV_BAR,NAV_GROUPS,NAV_TOOLS,NAV_UTILITIES} from "./site";
 import {activeNavGroup,canonicalNavPaths,currentNavPage,visibleNavItems,withinNavPage} from "./navigation";
 describe("visitor navigation catalog",()=>{
  it("covers each actual first-level public page once with meaningful labels/descriptions",()=>{
-  const pages=readdirSync("app",{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(join("app",d.name,"page.tsx"))).map(d=>`/${d.name}`);
+  const pages=readdirSync(EN,{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(join(EN,d.name,"page.tsx"))).map(d=>`/${d.name}`);
   expect(new Set(NAV.map(n=>n.href))).toEqual(new Set(pages));expect(NAV).toHaveLength(pages.length);
   expect(NAV_GROUPS.map(g=>g.label)).toEqual(["Polls and news","Parties","Voters and places","How it works"]);
   expect(NAV_UTILITIES.map(n=>n.href)).toEqual(["/start","/search","/resources","/about","/corrections"]);
@@ -15,7 +17,7 @@ describe("visitor navigation catalog",()=>{
  });
  it("section anchor destinations reference actual HTML IDs while XML paths remain canonical",()=>{
   const all=NAV_GROUPS.flatMap(g=>g.items);expect(new Set(all.map(n=>n.href)).size).toBe(all.length);
-  for(const n of all.filter(n=>n.href.includes("#"))){const [path,fragment]=n.href.split("#");expect(readFileSync(join("app",path,"page.tsx"),"utf8")).toContain(`id="${fragment}"`);}
+  for(const n of all.filter(n=>n.href.includes("#"))){const [path,fragment]=n.href.split("#");expect(readFileSync(join(EN,path,"page.tsx"),"utf8")).toContain(`id="${fragment}"`);}
   expect(canonicalNavPaths(["/","/teach#packets","/teach","/teach?role=learner","/news/2026-10-05"])).toEqual(["/","/teach","/news/2026-10-05"]);
  });
  it("marks only exact page links current and locates nested pages in the right section without prefix collisions",()=>{
