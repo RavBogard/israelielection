@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import type { Lang } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 import CorrectionLink from "./CorrectionLink";
-import SourcesCorrection from "./SourcesCorrection";
 
 /**
  * The sources of a page, folded at its end. `children` are the <li> items. Open by default on
@@ -22,7 +21,7 @@ export default function SourcesBox({ children, count, open = false, lang = "en" 
         </span>
       </summary>
       <ol>{children}</ol>
-      <p className="fig-src">{lang === "he" ? <SourcesCorrection label={t.correction} /> : <CorrectionLink />}</p>
+      <p className="fig-src"><CorrectionLink /></p>
     </details>
   );
 }

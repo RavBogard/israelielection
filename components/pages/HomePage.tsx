@@ -31,9 +31,8 @@ import type { Poll } from "@/lib/types";
  * The route files set `revalidate` (every minute: on election night the hero shows the count as it comes in).
  */
 
-/** A briefing sentence; `textHe` is the Hebrew briefing job's checked translation (PLAN.md section 7), when it exists. */
-type BriefSentence = Briefing["sentences"][number] & { textHe?: string | null };
-const briefings = briefingsJson as (Omit<Briefing, "sentences"> & { sentences: BriefSentence[] })[];
+/** Each sentence's `textHe` is the briefing job's checked Hebrew (lib/briefing.ts checkTranslation), when it exists. */
+const briefings = briefingsJson as Briefing[];
 
 /** Links within the edition: the Hebrew home links to the Hebrew pages where they exist. */
 const href = (lang: Lang, en: string, he?: string) => (lang === "he" && he ? he : en);

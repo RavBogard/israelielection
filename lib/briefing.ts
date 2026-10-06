@@ -5,7 +5,8 @@ export type Briefing = {
   date: string;
   generatedAt: string;
   model: string;
-  sentences: { text: string; sources: { outlet: string; title: string; url: string; published: string }[] }[];
+  /** `textHe`: the Hebrew edition's sentence (checkTranslation); null when the checks failed, absent on older files. */
+  sentences: { text: string; textHe?: string | null; sources: { outlet: string; title: string; url: string; published: string }[] }[];
   /** Sentences the grounding check removed before publishing (kept for audit). */
   dropped: { text: string; reason: string }[];
 };
@@ -87,4 +88,61 @@ export function checkDraft(draft: Draft, items: NewsItem[], meta: { date: string
   if (words > 320) problems.push(`Too long: ${words} words.`);
   if (problems.length) return { briefing: null, problems };
   return { briefing: { date: meta.date, generatedAt: new Date().toISOString(), model: meta.model, sentences: kept, dropped }, problems };
+}
+
+/**
+ * The Hebrew briefing (Daniel, 2026-10-06: published unreviewed, labelled "תורגם אוטומטית"). A second call writes each
+ * checked English sentence again in Israeli news Hebrew; `checkTranslation` keeps it only when it is sentence for
+ * sentence, carries the same numbers, and names each party the English names by the site's own Hebrew name.
+ * Otherwise every `textHe` stays null and the Hebrew home shows the English sentences, marked as English.
+ */
+/** `he` is the name the model is told to use; `must` (default `he`) is what the Hebrew sentence must contain: the short name, so a sentence may use either. */
+export type GlossaryEntry = { en: string[]; he: string; must?: string };
+export type HeDraft = { sentences: string[] };
+
+export const HE_SCHEMA = {
+  type: "object",
+  properties: { sentences: { type: "array", items: { type: "string", description: "The Hebrew sentence, in the same position as its English one." } } },
+  required: ["sentences"],
+} as const;
+
+export function hebrewPrompt(sentences: string[], glossary: GlossaryEntry[]): string {
+  return `אתה עורך חדשות בעיתון ישראלי. לפניך תדריך יומי קצר באנגלית על הבחירות לכנסת ב-27 באוקטובר 2026. כתוב כל משפט מחדש בעברית עיתונאית ישראלית טבעית, כמו בכאן חדשות, ynet או הארץ: לא תרגום מילולי, אלא אותה עובדה בניסוח שקורא ישראלי מצפה לו.
+
+כללים:
+- משפט עברי אחד לכל משפט אנגלי, באותו סדר. אל תאחד, אל תפצל, אל תוסיף ואל תשמיט עובדות.
+- כל מספר שכתוב בספרות באנגלית נשאר אותו מספר בספרות. אל תהפוך מילים למספרים או מספרים למילים.
+- קול ניטרלי. בלי דעה ובלי תחזית. ייחוס ("לדברי", "לפי הארץ") כמו במקור.
+- מונחים ישראליים: High Court = בג"ץ או בית המשפט העליון, Central Election Committee = ועדת הבחירות המרכזית, Knesset = הכנסת.
+- שמות כלי תקשורת בעברית: Haaretz = הארץ, Times of Israel = טיימס אוף ישראל, Jerusalem Post = ג'רוזלם פוסט, Ynet = ynet.
+- שמות מפלגות ומנהיגים בדיוק כך:
+${glossary.map((g) => `  ${g.en[0]} = ${g.he}`).join("\n")}
+- טקסט רגיל בלבד: בלי markdown, בלי קישורים.
+
+המשפטים:
+${sentences.map((s, i) => `${i + 1}. ${s}`).join("\n")}`;
+}
+
+/** Numbers as they appear, sorted: "5 petitions, 27 October 2026" → ["2026", "27", "5"]. */
+const numbers = (s: string) => (s.match(/\d+(?:[.,]\d+)*/g) ?? []).map((n) => n.replace(/,/g, "")).sort();
+/** Hebrew quote marks to plain ones, so ש״ס and ש"ס compare equal. */
+const normHe = (s: string) => s.replace(/[״”“]/g, '"').replace(/[׳’]/g, "'");
+/** A Hebrew name's stem: no leading definite article, no "!" (הליכוד → ליכוד, so בליכוד matches). */
+const stem = (he: string) => normHe(he).replace(/^ה(?=\S{3,})/, "").replace(/!$/, "");
+
+/** Keeps the Hebrew sentences when they pass every check; otherwise says why not. */
+export function checkTranslation(en: string[], draft: HeDraft | null, glossary: GlossaryEntry[]): { he: string[] | null; problem: string | null } {
+  const he = (draft?.sentences ?? []).map((s) => String(s ?? "").replace(/\s+/g, " ").trim());
+  if (he.length !== en.length) return { he: null, problem: `${he.length} Hebrew sentences for ${en.length} English` };
+  for (let i = 0; i < en.length; i++) {
+    const h = he[i], n = i + 1;
+    if (!h) return { he: null, problem: `sentence ${n} is empty` };
+    if (/https?:\/\/|\[|\]|\*|#/.test(h)) return { he: null, problem: `sentence ${n} has markup or a link` };
+    const hebrew = (h.match(/[֐-׿]/g) ?? []).length, latin = (h.match(/[A-Za-z]/g) ?? []).length;
+    if (hebrew < 2 * latin || hebrew < 10) return { he: null, problem: `sentence ${n} is not mostly Hebrew` };
+    if (numbers(en[i]).join() !== numbers(h).join()) return { he: null, problem: `sentence ${n}: numbers differ (${numbers(en[i]).join(" ") || "none"} / ${numbers(h).join(" ") || "none"})` };
+    const missing = glossary.filter((g) => g.en.some((e) => en[i].includes(e)) && !normHe(h).includes(stem(g.must ?? g.he)));
+    if (missing.length) return { he: null, problem: `sentence ${n} does not name ${missing.map((g) => g.he).join(", ")}` };
+  }
+  return { he, problem: null };
 }

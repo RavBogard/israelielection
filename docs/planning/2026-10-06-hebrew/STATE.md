@@ -34,3 +34,13 @@ Daniel: "i want version 1. lets do it" — Hebrew versions of home, polls, Coali
 - [x] proxy.ts: 307 from the six English pages with a Hebrew edition to /he when x-vercel-ip-country is IL or the browser's first language is Hebrew; the cookie always wins; clicks within the site, router fetches, crawlers and link previews are never redirected.
 - GATE: HE_PUBLIC on (hreflang, sitemap, indexing) — proceeded because Daniel said to go live when ready; his line-by-line review of the Hebrew copy is still open and edits can land any time.
 - GATE: default rule uses the browser's first language, not any Hebrew in the list — proceeded because Daniel said "hebrew set as their browser's default language".
+- Daniel, 2026-10-06: "approved---do the things that are yours to build. My hebrew isn't good enough to review it, so lets just approve it and move on." The Hebrew copy is approved as written; no line-by-line review is pending.
+- [x] Hebrew daily briefing: scripts/jobs/briefing.mts adds `textHe` after the English source check (lib/briefing.ts hebrewPrompt/checkTranslation: same sentence count, same numbers, each party named in English named by its Hebrew short name, mostly Hebrew, no markup; two tries, else null and the Hebrew home shows English). A day's file without Hebrew gets it on the next run. Home labels it "תורגם אוטומטית".
+- [x] Search: Hebrew party names, short names, leaders and bloc labels come from the Hebrew overlays (app/(en)/search/page.tsx), so the aliases cannot drift from the Hebrew edition.
+- [x] Hebrew share card (app/(he)/he/opengraph-image.tsx): the English card mirrored, lines put in visual order by lib/og-rtl.ts because satori has no bidi. The builder's coalition card (api/card) stays English.
+- [x] CorrectionLink speaks the page's language (PollBrowser on /he/polls showed English); SourcesCorrection folded into it.
+- [x] Pollster spellings: קנטאר kept (Kan's spelling); "פרויקט מדגם" → מדגם, אסקריה → אסקריא (the firm's Hebrew name).
+- [x] Dark mode checked on all Hebrew pages at phone width: only flags are the ones English has by design (selected button, dark labels on orange/teal fills).
+- GATE: logo mark not mirrored — proceeded because a mark is not text; RTL convention mirrors direction-bearing icons only.
+- GATE: OutgoingGovernment "ממשלת מעבר" link needs no work — the section renders only on the English /government page.
+- GATE: pollster spellings changed in data/he without a content-lane ask — proceeded because Daniel approved the Hebrew wholesale and asked me to finish the open Hebrew items.

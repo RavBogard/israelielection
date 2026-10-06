@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { checkDraft } from "./briefing";
+import { checkDraft, checkTranslation } from "./briefing";
 import { parseFeed, toText, type NewsItem } from "./news";
 
 const items: NewsItem[] = [
@@ -53,5 +53,23 @@ describe("feeds", () => {
     </channel></rss>`;
     const got = parseFeed(xml, { outlet: "Times of Israel", url: "", filter: true }, { host: "timesofisrael.com" });
     expect(got.map((i) => i.url)).toEqual(["https://www.timesofisrael.com/knesset-votes/"]);
+  });
+});
+
+describe("checkTranslation", () => {
+  const glossary = [{ en: ["Likud"], he: "הליכוד" }, { en: ["Shas"], he: 'ש"ס' }, { en: ["Otzma Yehudit", "Otzma"], he: "עוצמה יהודית" }];
+  const en = ["Likud gained 2 seats in the Channel 12 poll.", "Shas said it would not join a government without the draft law.", "The High Court let Otzma Yehudit run."];
+  const good = ["הליכוד עלה ב-2 מנדטים בסקר חדשות 12.", "בש״ס אמרו שלא יצטרפו לממשלה בלי חוק הגיוס.", "בג\"ץ אישר לעוצמה יהודית להתמודד."];
+
+  it("keeps Hebrew that matches sentence for sentence, number for number, party for party", () => {
+    expect(checkTranslation(en, { sentences: good }, glossary)).toEqual({ he: good, problem: null });
+  });
+
+  it("refuses a different sentence count, changed numbers, a missing party name, or English left in", () => {
+    expect(checkTranslation(en, { sentences: good.slice(0, 2) }, glossary).he).toBeNull();
+    expect(checkTranslation(en, { sentences: [good[0].replace("2", "3"), good[1], good[2]] }, glossary).problem).toMatch(/numbers differ/);
+    expect(checkTranslation(en, { sentences: [good[0], "המפלגה החרדית אמרה שלא תצטרף לממשלה בלי חוק הגיוס.", good[2]] }, glossary).problem).toMatch(/ש"ס/);
+    expect(checkTranslation(en, { sentences: [good[0], good[1], "The High Court let Otzma Yehudit run."] }, glossary).problem).toMatch(/not mostly Hebrew/);
+    expect(checkTranslation(en, null, glossary).he).toBeNull();
   });
 });
