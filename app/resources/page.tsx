@@ -19,7 +19,7 @@ import {longDate,mediumDate,shortDate} from "@/lib/format";
 import {initialOf} from "@/lib/glossary";
 import {journeys} from "@/lib/journeys";
 import {clip} from "@/lib/nav-facts";
-import {blocTotals,isExit} from "@/lib/polls";
+import {blocTotals,isExit,seatFigure} from "@/lib/polls";
 import {resultsConfig} from "@/lib/results-live";
 import {NAV_GROUPS,NAV_UTILITIES} from "@/lib/site";
 import PageHead from "@/components/PageHead";
@@ -31,7 +31,7 @@ export const metadata:Metadata={title:"All resources",description:"Every section
 export const revalidate=3600;
 
 const IL=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Jerusalem",hour:"numeric",minute:"2-digit"});
-const r=(x:number)=>Math.round(x);
+const r=seatFigure;
 
 function tiles():Record<string,{fig:ReactNode;caption?:string}>{
  const closed=Date.now()>=Date.parse(resultsConfig.pollsClose);

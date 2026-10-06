@@ -4,12 +4,12 @@ import { blocChange, blocSeries, newestPoll, signedSeats } from "@/lib/bloc-chan
 import { allPolls, averagePoll, blocLabel, blocs, parties, pollsData } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
 import { homeRaceModel } from "@/lib/home-race";
-import { pollLabel } from "@/lib/polls";
+import { BLOC_SEAT_ORDER, pollLabel, seatFigure } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 
-/** The bar's order: the two blocs from either end, the lists between them in the middle (as on Polls). */
-const ORDER: BlocId[] = ["net", "mid", "arab", "opp"];
-const one = (x: number) => x.toFixed(1);
+/** The bar's order, as on every 120-seat bar and the home mosaic. */
+const ORDER = BLOC_SEAT_ORDER;
+const one = seatFigure;
 
 /** The home race's average as one compact bar, each bloc's change over the past week, and the newest poll. */
 export default function NewsBlocs() {
@@ -25,7 +25,7 @@ export default function NewsBlocs() {
         ))}
       </ul>
       <figcaption className="fig-src">
-        Seats in the polling average{change && <>, with the change since {shortDate(change.since)}</>}.{newest && <> Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link>.</>} <Link href="/polls">All polls and the method</Link>.
+        Seats in the polling average, scaled to 120{change && <>, with the change since {shortDate(change.since)}</>}.{newest && <> Newest poll: <Link href="/polls#browser">{pollLabel(newest)}, {mediumDate(newest.published)}</Link>.</>} <Link href="/polls">All polls and the method</Link>.
       </figcaption>
     </figure>
   );

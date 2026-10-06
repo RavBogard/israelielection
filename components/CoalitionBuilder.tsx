@@ -18,7 +18,7 @@ import { arrangement, arrangementWarnings, initialVoteDependence, restoreRoles, 
 import scenarioData from "@/data/coalition-scenarios.json";
 import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
-import { AVERAGE_ID, blocTotals, pollLabel } from "@/lib/polls";
+import { AVERAGE_ID, BLOC_ORDER, blocTotals, pollLabel, seatFigure } from "@/lib/polls";
 import { RESULTS_ID } from "@/lib/results";
 import type { Party, Poll } from "@/lib/types";
 
@@ -33,15 +33,19 @@ const fillVars = (p: Party) =>
   ({ "--fill": partyColor(p.id), "--fill-ink": partyInk(p.id) }) as React.CSSProperties;
 const countPhrase = (poll: Poll) => poll.resultState?.freshness === "stale" ? "the saved count (stale)" : "the count so far";
 
+/** Averages print one decimal, as everywhere on the site; a single poll or the count prints its own figures. */
+const seatNum = (poll: Poll) => (poll.id === AVERAGE_ID ? seatFigure : fmt);
+
 function seatLabel(p: Party, poll: Poll) {
   const r = poll.results[p.id];
   if (!r) return { txt: "n/a", na: true, below: false };
-  return { txt: fmt(r.seats), na: false, below: !!r.belowThreshold };
+  const below = !!r.belowThreshold || r.seats === 0;
+  return { txt: below ? "below" : seatNum(poll)(r.seats), na: false, below };
 }
 
 function PollNote({ poll }: { poll: Poll }) {
   const t = blocTotals(poll, parties);
-  const shown = blocs.filter((b) => t[b.id] > 0);
+  const shown = BLOC_ORDER.filter((b) => t[b] > 0).map((b) => blocs.find((x) => x.id === b)!);
   const lumped = poll.combined.map((c) => c.parties.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(" and "));
   return (
     <p className="pollnote">
@@ -64,7 +68,7 @@ function PollNote({ poll }: { poll: Poll }) {
       {shown.map((b, i) => (
         <span key={b.id}>
           {i > 0 && ", "}
-          {b.label} <b>{fmt(t[b.id])}</b>
+          {b.label} <b>{seatNum(poll)(t[b.id])}</b>
         </span>
       ))}
       .{lumped.map((l) => ` ${l} were not reported separately.`)}
@@ -105,7 +109,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole }: { p: Party; po
         <span className="ld">{p.leader}</span>
         <span className={`seats${s.na ? " na" : ""}`}>
           {s.txt}
-          <small>{s.na ? "not reported" : s.below ? "below threshold" : "seats"}</small>
+          <small>{s.na ? "not reported" : s.below ? "the threshold" : "seats"}</small>
         </span>
       </button>
       <div className="foot">
@@ -229,6 +233,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   }, [pollId, sel, roles]);
 
   const poll = choices.find((p) => p.id === pollId) ?? choices[0];
+  const sn = seatNum(poll);
   const t = tally(sel, parties, poll);
   const warns = arrangementWarnings(sel, roles, parties, pledgeRules);
   const vote = arrangement(sel, roles, parties, poll);
@@ -306,7 +311,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         {preset && presetOn && (
           <div className="scenario-reading">
             <p className="thennow">
-              {preset.label[0].toUpperCase() + preset.label.slice(1)} ({presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}) held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{fmt(t.total)}</b> in{" "}
+              {preset.label[0].toUpperCase() + preset.label.slice(1)} ({presetIds.map((id) => parties.find((p) => p.id === id)!.name).join(", ")}) held <b>{preset.seats}</b> seats in {preset.year}; its parties have <b>{sn(t.total)}</b> in{" "}
               {pollPhrase(poll)}.{preset.note ? ` ${preset.note}` : ""}
             </p>
           </div>
@@ -316,13 +321,13 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
 
       <div className="layout">
         <div className="mobile-arrangement" aria-live="polite">
-          <span><b>{fmt(t.total)}</b> cabinet seats, <b>{fmt(vote.yes)}</b> for / <b>{fmt(vote.no)}</b> against</span>
+          <span><b>{sn(t.total)}</b> cabinet seats, <b>{sn(vote.yes)}</b> for / <b>{sn(vote.no)}</b> against</span>
           <a href="#arrangement-result">View the arrangement</a>
           <SeatBar className="ma-bar" total={KNESSET} majority={MAJORITY} segments={segments.map((s) => ({ key: s.id, seats: s.seats, color: s.color }))} />
         </div>
         <div className="blocs">
           <h2 className="sr-only">The lists, by bloc</h2>
-          {blocs.map((b) => (
+          {BLOC_ORDER.map((id) => blocs.find((b) => b.id === id)!).map((b) => (
             <section className="bloc" key={b.id}>
               <h3>
                 <span className="sw" style={{ background: blocColorStrip(b.id) }} />
@@ -343,20 +348,20 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           <h2 className="sr-only">Your coalition</h2>
           <div className="meter">
           <div className="total">
-            <span className="n">{fmt(t.total)}{t.partial ? "+" : ""}</span>
+            <span className="n">{sn(t.total)}{t.partial ? "+" : ""}</span>
             <span className="read">
               {t.total >= MAJORITY ? (
                 <b className="maj">A majority</b>
               ) : t.chosen.length ? (
                 <>
-                  <b>{fmt(short)} short</b> of {MAJORITY}
+                  <b>{sn(short)} short</b> of {MAJORITY}
                 </>
               ) : (
                 <>cabinet seats; {MAJORITY} is a majority</>
               )}
             </span>
           </div>
-          <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${fmt(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
+          <SeatGrid variant="meter" segments={segments} labelRule title={`Your coalition: ${sn(t.total)} of ${KNESSET} seats; ${MAJORITY} is a majority`} />
           </div>
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}
           <ul className="list">
@@ -381,10 +386,10 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           )}
           <section className="confidence" aria-labelledby="confidence-h">
             <h3 id="confidence-h">Hypothetical initial confidence vote</h3>
-            {vote.outcome !== "empty" && <dl><div><dt>For (cabinet + outside support)</dt><dd>{fmt(vote.yes)}</dd></div><div><dt>Against (opposition)</dt><dd>{fmt(vote.no)}</dd></div><div><dt>Abstain (excluded)</dt><dd>{fmt(vote.abstain)}</dd></div></dl>}
+            {vote.outcome !== "empty" && <dl><div><dt>For (cabinet + outside support)</dt><dd>{sn(vote.yes)}</dd></div><div><dt>Against (opposition)</dt><dd>{sn(vote.no)}</dd></div><div><dt>Abstain (excluded)</dt><dd>{sn(vote.abstain)}</dd></div></dl>}
             <p>{vote.outcome === "empty" ? "Choose a cabinet party to simulate an initial vote." : vote.outcome === "incomplete" ? "No verdict: this poll cannot resolve all role totals." : vote.outcome === "passes" ? "More for than against: passes under these hypothetical assignments." : "No majority of votes cast: fails under these hypothetical assignments."}</p>
             {vote.approximate && <p className="naflag">Poll averages can be fractional. These totals illustrate relative support; real MKs cast whole votes. This is not a forecast of their vote.</p>}
-            {!vote.complete && vote.outcome !== "empty" && <p className="naflag">{vote.crossed ? "A combined poll group spans different roles and cannot be divided from the source. " : ""}{vote.notReported.length ? `${vote.notReported.map((p) => p.name).join(", ")} not reported separately. ` : ""}Accounted for: {fmt(vote.represented)} of 120 seats.</p>}
+            {!vote.complete && vote.outcome !== "empty" && <p className="naflag">{vote.crossed ? "A combined poll group spans different roles and cannot be divided from the source. " : ""}{vote.notReported.length ? `${vote.notReported.map((p) => p.name).join(", ")} not reported separately. ` : ""}Accounted for: {sn(vote.represented)} of 120 seats.</p>}
             {Object.entries(roles).length > 0 && <ul>{Object.entries(roles).map(([id, role]) => <li key={id}>{parties.find((p) => p.id === id)?.name ?? id}: {ROLE_LABELS[role]}</li>)}</ul>}
             {voteNeeded.length > 0 && <p>If any one of {voteNeeded.map((id) => parties.find((p) => p.id === id)?.name ?? id).join(", ")} votes against rather than for, this hypothetical initial vote no longer passes.</p>}
             <details className="confidence-more"><summary>What this vote does and does not show</summary>

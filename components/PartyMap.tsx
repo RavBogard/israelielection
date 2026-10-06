@@ -8,9 +8,9 @@ import {partyColor,partyInk,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE
 import {readPartyMapSelection,partyMapSelectionHref} from "@/lib/party-map-state";
 import PageHead from "./PageHead";
 import ProfileDetail from "./ProfileDetail";
-import { averagePoll, blocLabel, blocs, mainPolls, parties } from "@/lib/data";
-import { fmt, shortDate } from "@/lib/format";
-import { average } from "@/lib/polls";
+import { averagePoll, blocLabel, mainPolls, parties } from "@/lib/data";
+import { shortDate } from "@/lib/format";
+import { average, BLOC_ORDER, seatFigure } from "@/lib/polls";
 import { squarify } from "@/lib/treemap";
 import type { BlocId, Party } from "@/lib/types";
 
@@ -53,13 +53,13 @@ function About() {
       <summary>About this map</summary>
       <table className="btable">
         <tbody>
-          {blocs.map((b) => (
-            <tr key={b.id}>
+          {BLOC_ORDER.map((b) => (
+            <tr key={b}>
               <td>
-                <span className="sw" style={{ background: blocColorStrip(b.id), marginRight: 8, verticalAlign: -1 }} />
-                {b.label}
+                <span className="sw" style={{ background: blocColorStrip(b), marginRight: 8, verticalAlign: -1 }} />
+                {blocLabel[b]}
               </td>
-              <td>{fmt(blocSum(b.id))}</td>
+              <td>{seatFigure(blocSum(b))}</td>
             </tr>
           ))}
         </tbody>
@@ -132,14 +132,15 @@ export default function PartyMap() {
 
   const cells: React.ReactNode[] = [];
   if (W && H) {
-    const blocItems = (["net", "opp", "arab", "mid"] as BlocId[]).map((b) => ({ id: b, v: blocSum(b) })).sort((a, b) => b.v - a.v);
+    // Squarify lays out largest first; ties keep the site's bloc order.
+    const blocItems = BLOC_ORDER.map((b) => ({ id: b, v: blocSum(b) })).sort((a, b) => b.v - a.v);
     for (const br of squarify(blocItems, 0, 0, W, H)) {
       const bx = br.x + GAP / 2, by = br.y + GAP / 2, bw = br.w - GAP, bh = br.h - GAP;
       const label = blocLabel[br.id as BlocId];
-      const name = blocName(br.id as BlocId, label, fmt(br.v), bw - 4);
+      const name = blocName(br.id as BlocId, label, seatFigure(br.v), bw - 4);
       cells.push(
-        <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }} title={`${label} ${fmt(br.v)}`}>
-          {name === fmt(br.v) && <><span className="sw" style={{ background: blocColorStrip(br.id), marginRight: 6, verticalAlign: -1 }} aria-hidden="true" /><span className="sr-only">{label} </span></>}
+        <div key={`b-${br.id}`} className="blocname" style={{ left: bx + 2, top: by, width: bw - 4 }} title={`${label} ${seatFigure(br.v)}`}>
+          {name === seatFigure(br.v) && <><span className="sw" style={{ background: blocColorStrip(br.id), marginRight: 6, verticalAlign: -1 }} aria-hidden="true" /><span className="sr-only">{label} </span></>}
           {name}
         </div>
       );
@@ -163,15 +164,15 @@ export default function PartyMap() {
             className={cls}
             aria-pressed={current === p.id}
             data-party={p.id}
-            aria-label={`${p.name}, average ${fmt(r.v)} seats`}
+            aria-label={`${p.name}, ${seatFigure(r.v)} seats, polling average`}
             onClick={() => select(p.id)}
             onPointerMove={(e) => {
               if (e.pointerType !== "mouse") return setTip(null);
               const seats = mainPolls.map((poll) => {
                 const x = poll.results[p.id];
-                return `${poll.pollster} ${shortDate(poll.published)}: ${x ? (x.belowThreshold ? "below" : x.seats) : "n/a"}`;
+                return `${poll.pollster} ${shortDate(poll.published)}: ${x ? (x.belowThreshold || x.seats === 0 ? "below" : x.seats) : "n/a"}`;
               });
-              setTip({ text: `${p.name}, average ${fmt(r.v)}. ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
+              setTip({ text: `${p.name}, ${seatFigure(r.v)} seats, polling average. ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
             }}
             style={{
               left: r.x + 1.5, top: r.y + 1.5, width: cw, height: ch,
@@ -181,8 +182,8 @@ export default function PartyMap() {
             <span className="nm">{p.name}</span>
             <span className="ld">{p.leader.split(" (")[0]}</span>
             <span className="av">
-              {fmt(r.v)}
-              <small>normalized seats</small>
+              {seatFigure(r.v)}
+              <small>seats, polling average</small>
             </span>
           </button>
         );

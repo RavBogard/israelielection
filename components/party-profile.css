@@ -82,10 +82,12 @@
 .pp-spark .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
 .pp-spark .dot { stroke-width: 1.5; }
 .pp-spark .dot.hollow { stroke-width: 1.5; }
+.pp-spark .avg { stroke: var(--ink); stroke-width: 1; }
 .pp-spark .end { font-family: var(--display); font-weight: 700; font-size: 15px; fill: var(--ink); }
 .pp-key { margin: 0; }
 .pp-key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .pp-key i.ring { background: var(--sheet); border: 1.5px solid; width: 9px; height: 9px; }
+.pp-key i.avg { width: 18px; height: 0; border-radius: 0; border-top: 1px solid var(--ink); }
 .pp-key i.dash { width: 18px; height: 0; border-radius: 0; border-top: 1.5px dashed var(--ink); }
 
 /* Voter base: one stacked bar, its key, then the share of each group won. */
@@ -126,12 +128,10 @@
 .pp-tile { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 6px; padding: 0 9px 10px; min-height: 132px; background: var(--sheet); border: 1px solid var(--line-2); color: var(--ink); font: inherit; cursor: pointer; min-width: 0; transition: border-color .12s; }
 .pp-tile .bar { display: block; align-self: stretch; height: 9px; margin: 0 -9px 2px; background: var(--line); }
 .pp-tile .bar.deep { box-shadow: inset 0 0 0 1px var(--ramp-edge); }
+.pp-tile .bar.unordered { box-shadow: inset 0 0 0 1px var(--ink); }
 .pp-tile .issue { font-size: 12px; font-weight: 600; color: var(--ink-2); line-height: 1.25; }
 .pp-tile .stance { font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 1.2; letter-spacing: -.005em; text-wrap: balance; }
 .pp-tile .gly { display: block; margin-top: auto; overflow: visible; }
-.pp-tile .gly .slot { fill: none; stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 2 1.5; }
-.pp-tile .gly .mine { fill: var(--pc); }
-.pp-tile .gly .quiet { fill: var(--cell); }
 .pp-tile .gly + .basis { margin-top: 0; }
 .pp-tile .basis { margin-top: auto; font-size: 12px; color: var(--ink-3); line-height: 1.3; }
 .pp-tile:hover { border-color: var(--ink); }

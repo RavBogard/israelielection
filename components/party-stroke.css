@@ -1,0 +1,5 @@
+/* Party-colour lines and dots (lib/party-colors partyStroke): the list's colour on light paper, a lighter stroke at 3:1 on dark paper. */
+.pstroke { --psx: var(--ps); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pstroke { --psx: var(--ps-dark, var(--ps)); } }
+:root[data-theme="dark"] .pstroke { --psx: var(--ps-dark, var(--ps)); }
+@media print { :root .pstroke, :root:not([data-theme="light"]) .pstroke, :root[data-theme="dark"] .pstroke { --psx: var(--ps); } }

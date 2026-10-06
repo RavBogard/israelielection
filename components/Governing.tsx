@@ -4,6 +4,7 @@ import { cohesion, compareHref, dependence, dependenceText, readingText, type Is
 import { AXES } from "@/lib/compare";
 import type { Party, Poll } from "@/lib/types";
 import { partyColor } from "@/lib/party-colors";
+import StanceSlots, { type SlotColumn } from "./StanceSlots";
 
 /*
  * Can they govern together? In the Builder's panel: for the chosen parties, each of the seven issues
@@ -17,27 +18,9 @@ import { partyColor } from "@/lib/party-colors";
 function Glyph({ r, map }: { r: IssueReading; map: StanceMap }) {
   const slots = map[r.key].stances.length ? map[r.key].stances.map((s) => r.groups.find((g) => g.stance.id === s.id)?.parties ?? []) : [r.unsorted];
   const quiet = [...r.declined, ...r.none];
-  const cols = quiet.length ? [...slots, quiet] : slots;
-  const U = 7, G = 1.5, SLOT = 2 * U + G, GAP = 5;
-  const rows = Math.max(1, ...cols.map((c) => Math.ceil(c.length / 2)));
-  const W = cols.length * SLOT + (cols.length - 1) * GAP, H = rows * (U + G) - G;
-  return (
-    <svg className="gly" viewBox={`0 0 ${W} ${H}`} width={W} height={H} aria-hidden="true">
-      {cols.map((ids, ci) => {
-        const x0 = ci * (SLOT + GAP);
-        const isQuiet = quiet.length > 0 && ci === cols.length - 1;
-        return (
-          <g key={ci}>
-            {ids.length === 0 && <rect className="slot" x={x0} y={H - U} width={SLOT} height={U} />}
-            {ids.map((id, i) => {
-              const x = x0 + (i % 2) * (U + G), y = H - U - Math.floor(i / 2) * (U + G);
-              return <rect key={id} className={isQuiet ? "quiet" : undefined} x={x} y={y} width={U} height={U} style={isQuiet ? undefined : { fill: partyColor(id) }} />;
-            })}
-          </g>
-        );
-      })}
-    </svg>
-  );
+  const cols: SlotColumn[] = slots.map((ids) => ({ marks: ids.map((id) => ({ key: id, color: partyColor(id) })) }));
+  if (quiet.length) cols.push({ quiet: true, marks: quiet.map((id) => ({ key: id, color: "" })) });
+  return <StanceSlots cols={cols} />;
 }
 
 export default function Governing({ sel, parties, poll, map, children, withOutsideSupport = false }: { sel: Set<string>; parties: Party[]; poll: Poll; map: StanceMap; children?: ReactNode; withOutsideSupport?: boolean }) {

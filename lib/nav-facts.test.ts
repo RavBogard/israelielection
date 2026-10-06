@@ -5,7 +5,7 @@ describe("menu facts", () => {
   it("states dated, counted facts and drops a group with nothing to report", () => {
     expect(navFacts({ newestPoll: "2026-10-06", newestBriefing: "2026-10-05", netSeats: 49.6, localities: 1215, elections: ["2022-11-01", "1977-05-17", "1981-06-30"] })).toEqual({
       polls: "Newest poll Oct 6, briefing Oct 5",
-      parties: "Netanyahu bloc 50 of 120, polling average",
+      parties: "Netanyahu bloc 49.6 of 120, polling average",
       places: "1,215 localities in the 2022 count",
       how: "3 elections from 1977 to 2022",
     });

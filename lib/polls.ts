@@ -162,3 +162,19 @@ export function averageAsPoll(polls: Poll[], partyIds: string[], opts: { id?: st
     combined: [],
   };
 }
+
+/** The bloc order for every list, key and table on the site: the two contenders first, as the home race reads. */
+export const BLOC_ORDER: readonly BlocId[] = ["net", "opp", "mid", "arab"];
+/** The same blocs along a 120-seat bar or grid, as the home mosaic draws them: the unaligned list sits between the two blocs. */
+export const BLOC_SEAT_ORDER: readonly BlocId[] = ["net", "mid", "opp", "arab"];
+export const blocRank = (b: BlocId) => BLOC_ORDER.indexOf(b);
+/** What every average seat figure is called. The figures are each list's average scaled to 120 (see `averageAsPoll`). */
+export const SEATS_LABEL = "Seats, polling average";
+/** An average seat figure as the home race prints it: one decimal, always. Single polls print whole seats. */
+export const seatFigure = (n: number) => (Math.round(n * 10) / 10).toFixed(1);
+/** A list's figure in the average poll: "below" when it counts 0 for the threshold, null when no poll reported it separately. */
+export function seatText(poll: Poll, partyId: string, averaged = poll.id === AVERAGE_ID): string | null {
+  const r = poll.results[partyId];
+  if (!r) return null;
+  return r.belowThreshold || r.seats === 0 ? "below" : averaged ? seatFigure(r.seats) : String(r.seats);
+}

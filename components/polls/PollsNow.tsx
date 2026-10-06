@@ -1,21 +1,25 @@
 import Link from "next/link";
 import { averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
-import { fmt, mediumDate, shortDate } from "@/lib/format";
-import { partyColor } from "@/lib/party-colors";
-import { average, blocTotals, inWithoutVariant } from "@/lib/polls";
+import { mediumDate, shortDate } from "@/lib/format";
+import { partyColor, strokeVars } from "@/lib/party-colors";
+import { average, averageAsPoll, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure } from "@/lib/polls";
+import "../party-stroke.css";
 import type { BlocId } from "@/lib/types";
 import SeatBar from "../SeatBar";
 import "./polls-now.css";
 
 const cfg = pollsData.config;
 const MAJORITY = 61, TOTAL = 120;
-const one = (x: number) => fmt(Math.round(x * 10) / 10);
+const one = seatFigure;
 const variantNames = cfg.withoutVariant.pollsters;
 /** Pixels per seat on the 40 to 70 axis at the narrowest width that shows pollster labels (760px). */
 const LABEL_PX_PER_SEAT = 23;
 
-/** The bloc order along the 120-seat bar: the two blocs from either end, the lists between them in the middle. */
-const BAR_ORDER: BlocId[] = ["net", "mid", "arab", "opp"];
+/** The bloc order along the 120-seat bar, as on every 120-seat bar and the home mosaic. */
+const BAR_ORDER = BLOC_SEAT_ORDER;
+const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
+/** What the lists' passing-poll averages add to before they are scaled to 120. */
+const rawSum = Math.round(parties.reduce((s, p) => s + (average(p.id, mainPolls)?.seats ?? 0), 0) * 10) / 10;
 
 /** Where a bloc's total lands in each of the current polls, on a seat axis with the majority line at 61. */
 function BlocStrip({ bloc, label }: { bloc: BlocId; label: string }) {
@@ -76,15 +80,15 @@ export default function PollsNow() {
   const rows = parties
     .map((p) => {
       const a = average(p.id, mainPolls);
-      const w = average(p.id, variantPolls);
+      const w = average(p.id, variantPolls), scaled = averagePoll.results[p.id]?.seats ?? 0, wScaled = variantAverage.results[p.id]?.seats ?? 0;
       const dots = mainPolls
         .filter((poll) => poll.results[p.id])
         .map((poll) => ({ poll, seats: poll.results[p.id].seats, below: poll.results[p.id].seats === 0 || !!poll.results[p.id].belowThreshold, hollow: inWithoutVariant(poll, cfg) }));
       const vals = dots.map((d) => d.seats);
-      return { p, a, w, dots, lo: Math.min(...vals), hi: Math.max(...vals) };
+      return { p, a, w, scaled, wScaled, dots, lo: Math.min(...vals), hi: Math.max(...vals) };
     })
     .filter((r) => r.a)
-    .sort((x, y) => blocs.findIndex((b) => b.id === x.p.bloc) - blocs.findIndex((b) => b.id === y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
+    .sort((x, y) => blocRank(x.p.bloc) - blocRank(y.p.bloc) || y.a!.seats - x.a!.seats || y.a!.avg - x.a!.avg);
   const max = Math.max(30, Math.ceil(Math.max(...rows.flatMap((r) => r.dots.map((d) => d.seats))) / 5) * 5);
   const sx = (s: number) => `${(s / max) * 100}%`;
   const from = mainPolls.map((p) => p.published).sort()[0];
@@ -130,14 +134,14 @@ export default function PollsNow() {
                     {[0, 5, 10, 15, 20, 25, 30, 35].filter((t) => t <= max).map((t) => <i key={t} style={{ left: sx(t) }}>{t}</i>)}
                   </span>
                 </th>
-                <th scope="col" className="num">Average</th>
+                <th scope="col" className="num">{SEATS_LABEL}</th>
                 <th scope="col" className="num">Range</th>
                 <th scope="col" className="num">Passes</th>
                 <th scope="col" className="num">{cfg.withoutVariant.label}</th>
               </tr>
             </thead>
             <tbody>
-              {rows.map(({ p, a, w, dots, lo, hi }, i) => {
+              {rows.map(({ p, a, w, scaled, wScaled, dots, lo, hi }, i) => {
                 const color = partyColor(p.id);
                 const first = i === 0 || rows[i - 1].p.bloc !== p.bloc;
                 const stated = a!.k > 0 && !a!.nearThreshold;
@@ -148,22 +152,22 @@ export default function PollsNow() {
                       <Link href={`/parties/${p.id}`}><span className="sw" style={{ background: color }} aria-hidden="true" />{p.name}</Link>
                     </th>
                     <td className="chart">
-                      <span className="track" aria-hidden="true">
+                      <span className="track pstroke" style={strokeVars(p.id)} aria-hidden="true">
                         <i className="thr" style={{ left: sx(4) }} />
-                        {stated && <i className="bar" style={{ width: sx(a!.avg), background: color }} />}
+                        {stated && <i className="bar" style={{ width: sx(scaled), background: color }} />}
                         {dots.map((d) => (
-                          <i key={d.poll.id} className={`pt${d.hollow ? " hollow" : ""}${d.below ? " below" : ""}`} style={{ left: sx(d.seats), ["--c" as string]: color }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.below ? "below the threshold" : `${d.seats} seats`}`} />
+                          <i key={d.poll.id} className={`pt${d.hollow ? " hollow" : ""}${d.below ? " below" : ""}`} style={{ left: sx(d.seats), ["--c" as string]: "var(--psx)" }} title={`${d.poll.pollster}, ${mediumDate(d.poll.published)}: ${d.below ? "below the threshold" : `${d.seats} seats`}`} />
                         ))}
                       </span>
                       <span className="sr-only">{dots.map((d) => `${d.poll.pollster} ${d.below ? "below the threshold" : d.seats}`).join(", ")}</span>
                     </td>
                     <td className="num avg">
-                      {a!.k === 0 ? <span className="dim">below threshold</span> : a!.nearThreshold ? <span className="dim" title={`${one(a!.avg)} seats in the polls where it passes`}>near threshold</span> : <b>{one(a!.avg)}</b>}
+                      {a!.k === 0 ? <span className="dim">below</span> : a!.nearThreshold ? <span className="dim" title={`Near the threshold: ${one(a!.avg)} seats in the polls where it passes`}>below</span> : <b>{one(scaled)}</b>}
                     </td>
                     <td className="num" data-label="Range">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
                     <td className="num" data-label="Passes in">{a!.k} of {a!.n}</td>
                     <td className="num dim" data-label={cfg.withoutVariant.label} title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
-                      {!w ? "n/a" : w.k === 0 ? "below" : w.nearThreshold ? "near" : one(w.avg)}
+                      {!w ? "n/a" : w.k === 0 || w.nearThreshold || !wScaled ? "below" : one(wScaled)}
                     </td>
                   </tr>
                 );
@@ -174,12 +178,13 @@ export default function PollsNow() {
         <p className="fig-key pn-key">
           <span><i className="k pt" aria-hidden="true" />One poll</span>
           <span><i className="k pt hollow" aria-hidden="true" />{variantNames.join(" or ")}</span>
-          <span><i className="k bar" aria-hidden="true" />Average, over the polls where the list passes</span>
+          <span><i className="k bar" aria-hidden="true" />{SEATS_LABEL}, scaled to 120</span>
           <span><i className="k thr" aria-hidden="true" />Threshold: a list that passes wins at least 4 seats</span>
         </p>
         <p className="fig-src">
-          Averages weight each poll by the square root of its sample size and are shown before scaling to 120, so they can add to more than 120.
-          A point at zero is a poll that had the list below the threshold.
+          Each list&apos;s average weights each poll by the square root of its sample size, over the polls where the list passed. Those averages add to {rawSum}, so
+          every one is scaled down in proportion to 120 seats, the figure every page of the site prints; the alternative average is scaled the same way. &ldquo;Below&rdquo; is a list
+          that passes in fewer than half the polls, which counts 0. A point at zero is a poll that had the list below the threshold.
         </p>
       </figure>
     </section>

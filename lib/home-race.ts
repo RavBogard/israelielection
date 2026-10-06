@@ -1,9 +1,9 @@
 import {allocate} from "../components/SeatGrid";
 import {PARTY_COLOR_FAMILIES} from "./party-colors";
 import {MAJORITY} from "./coalition";
-import {AVERAGE_ID,blocTotals} from "./polls";
+import {AVERAGE_ID,BLOC_ORDER,BLOC_SEAT_ORDER,blocTotals} from "./polls";
 import type {BlocId,Party,Poll} from "./types";
-export const HOME_RACE_ORDER:BlocId[]=["net","opp","mid","arab"];
+export const HOME_RACE_ORDER=BLOC_ORDER;
 export const seatTenths=(value:number)=>Math.round(value*10)/10;
 export const majorityShortfall=(seats:number)=>Math.max(0,seatTenths(MAJORITY-seatTenths(seats)));
 export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:string}[]){
@@ -21,7 +21,7 @@ export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:s
 }
 
 export type HomeRaceModel=ReturnType<typeof homeRaceModel>;
-export const HOME_MOSAIC_ORDER:BlocId[]=["net","mid","opp","arab"];
+export const HOME_MOSAIC_ORDER=BLOC_SEAT_ORDER;
 /** Allocate bloc boundaries once; partition only each bloc's fixed whole-cell budget. */
 export function homeMosaicLayout(model:HomeRaceModel){
  const rows=HOME_MOSAIC_ORDER.map(id=>model.rows.find(row=>row.id===id)!);

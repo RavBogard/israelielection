@@ -12,7 +12,8 @@ import { standingOf, type Stance } from "@/lib/cohesion";
 import { AXES, type AxisKey } from "@/lib/compare";
 import { allPolls, averagePoll, blocLabel, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
 import { lettersOf } from "@/lib/letters";
-import { average, blocTotals, isExit } from "@/lib/polls";
+import { listSeats } from "@/lib/list-seats";
+import { averageAsPoll, blocTotals, isExit } from "@/lib/polls";
 import { ISSUES } from "@/lib/positions";
 import type { Party } from "@/lib/types";
 import type { Places, VoteMapElection } from "@/lib/votemap";
@@ -31,7 +32,12 @@ export type Reading = {
 };
 
 export type Glance = {
+  /** Seats, polling average: the list's average scaled to 120, as everywhere on the site; null when no poll reported it. */
   avg: number | null;
+  /** Counts 0 in the average: below the threshold in every poll, or passing in under half. */
+  below: boolean;
+  /** The unscaled mean over the polls where it passed, for a list near the threshold. */
+  passingAvg: number | null;
   k: number;
   n: number;
   nearThreshold: boolean;
@@ -122,21 +128,25 @@ export function readings(party: Party): Reading[] {
     });
 }
 
+const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
+
 export function glance(party: Party, series: Reading[]): Glance {
-  const av = average(party.id, mainPolls);
-  const wv = average(party.id, variantPolls);
+  const av = listSeats(party.id);
+  const wv = variantAverage.results[party.id];
   const passing = mainPolls.map((p) => p.results[party.id]).filter((r) => r && !r.belowThreshold && r.seats > 0).map((r) => r!.seats);
   const totals = blocTotals(averagePoll, parties);
   const mates = parties.filter((p) => p.bloc === party.bloc).map((p) => ({ id: p.id, seats: averagePoll.results[p.id]?.seats ?? 0 })).sort((a, b) => b.seats - a.seats);
   const reported = series.filter((r) => r.seats !== null);
   return {
-    avg: av && av.k > 0 ? av.avg : null,
-    k: av?.k ?? 0,
-    n: av?.n ?? 0,
-    nearThreshold: !!av?.nearThreshold,
+    avg: av.n ? av.seats : null,
+    below: av.below,
+    passingAvg: av.passing,
+    k: av.k,
+    n: av.n,
+    nearThreshold: av.nearThreshold,
     low: passing.length ? Math.min(...passing) : null,
     high: passing.length ? Math.max(...passing) : null,
-    variantAvg: wv && wv.k > 0 && !wv.nearThreshold ? wv.avg : null,
+    variantAvg: wv && !wv.belowThreshold && wv.seats > 0 ? wv.seats : null,
     variantLabel: pollsData.config.withoutVariant.label,
     variantPollsters: pollsData.config.withoutVariant.pollsters,
     mainFrom: [...mainPolls].map((p) => p.published).sort()[0] ?? pollsData.updated,

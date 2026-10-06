@@ -1,0 +1,3 @@
+/* The shared stance mark (components/StanceSlots.tsx). Empty slots are a solid 1px outline: dashed means out. */
+.gly .slot { fill: none; stroke: var(--line-2); stroke-width: 1; }
+.gly .quiet { fill: var(--cell); }

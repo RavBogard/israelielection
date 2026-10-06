@@ -5,9 +5,10 @@ import {homeMosaicLayout,homeMosaicView,type HomeRaceModel} from "@/lib/home-rac
 import {signedSeats,sparkPath,sparkRange,type BlocChange} from "@/lib/bloc-change";
 import {shortDate} from "@/lib/format";
 import {partyColor,PARTY_FALLBACK} from "@/lib/party-colors";
+import {seatFigure} from "@/lib/polls";
 import type {BlocId} from "@/lib/types";
 import "./seatgrid.css";
-const seats=(n:number)=>n.toLocaleString("en-US",{minimumFractionDigits:1,maximumFractionDigits:1});
+const seats=seatFigure;
 export default function HomeRace({model,change}:{model:HomeRaceModel;change?:BlocChange|null}){
  const range=change?sparkRange(change.points):0;
  const [selected,setSelected]=useState<BlocId|null>(null),buttons=useRef<Partial<Record<BlocId,HTMLButtonElement|null>>>({}),visual=useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export default function HomeRace({model,change}:{model:HomeRaceModel;change?:Blo
   </svg><p id="race-rounding" className="race-model-note">These political groupings do not establish coalition agreements. Cells round fractional seat estimates; the labels keep one decimal place. The 61 marker marks a seat count, not a coalition grouping.{layout.empty.length>0&&<> {layout.empty.length} neutral cells have no assigned seat estimate.</>}</p></div>
   <section id="race-party-panel" className="race-party-panel" hidden={!active} aria-labelledby="race-party-heading" onKeyDown={e=>{if(e.key==="Escape"){e.preventDefault();reset();}}}>
    {active&&<><header><h2 id="race-party-heading">{active.label}: parties</h2><button type="button" className="btn" onClick={reset}>Back to blocs</button></header><p className="race-selection-status" role="status">Only {active.label} is shown in party colors. The other blocs keep their colors and every cell stays in place.</p>
-    <ul className="race-parties">{active.members.map(p=><li key={p.id}><Link href={`/parties/${p.id}`}><span className="sw" style={{background:partyColor(p.id)}} aria-hidden="true"/>{p.name}</Link><span className="race-party-seats">{p.seats===null?p.state==="combined"?"Not separated":"Not separately reported":<>{seats(p.seats)}{p.state==="below"&&<small>{model.isAverage?"Below or near threshold":"Below threshold so far"}</small>}</>}</span></li>)}</ul>
+    <ul className="race-parties">{active.members.map(p=><li key={p.id}><Link href={`/parties/${p.id}`}><span className="sw" style={{background:partyColor(p.id)}} aria-hidden="true"/>{p.name}</Link><span className="race-party-seats">{p.seats===null?p.state==="combined"?"Not separated":"Not separately reported":p.state==="below"?<>below<small>{model.isAverage?"the threshold, or passes in under half the polls":"the threshold so far"}</small></>:seats(p.seats)}</span></li>)}</ul>
     {active.combined.map(c=><p key={c.parties.join(",")} className="race-combined">{c.names.join(" + ")}: {seats(c.seats)} seats reported together{c.withinGroup?"; counted once in this bloc.":"; crosses blocs and is not allocated to one bloc here."} No individual split is reported.</p>)}<p className="race-model-note">{model.isAverage?"The mosaic follows the normalized coalition average.":"The mosaic follows this site’s seat estimate from the count so far."} Unreported parties are not assigned invented seats.</p>
    </>}
   </section>

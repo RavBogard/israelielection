@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { partyColor } from "@/lib/party-colors";
-import { averagePoll, blocLabel, mainPolls } from "@/lib/data";
-import { fmt } from "@/lib/format";
+import { blocLabel } from "@/lib/data";
 import { lettersOf } from "@/lib/letters";
-import { average } from "@/lib/polls";
+import { listSeats } from "@/lib/list-seats";
+import { seatFigure } from "@/lib/polls";
 import type { Party, Sourced } from "@/lib/types";
 
 const Src = ({ s }: { s: string | null }) => (s ? <> <span className="s">({s})</span></> : null);
@@ -23,11 +23,11 @@ function Items({ items }: { items: Sourced[] }) {
 
 /** The list's seats in the current average, in one line. */
 function seatsLine(p: Party): string {
-  const av = average(p.id, mainPolls);
-  if (!av) return p.status ?? "No poll figures";
-  if (av.k === 0) return `Below the threshold in all ${av.n} polls that reported it`;
-  const avg = fmt(Math.round((av.nearThreshold ? av.avg : (averagePoll.results[p.id]?.seats ?? av.avg)) * 10) / 10);
-  return av.nearThreshold ? `Near the threshold: passes in ${av.k} of ${av.n} polls, ${avg} seats where it passes` : `${avg} seats in the average scaled to 120, passing in ${av.k} of ${av.n} polls`;
+  const s = listSeats(p.id);
+  if (!s.n) return p.status ?? "No poll figures";
+  if (s.k === 0) return `Below the threshold in all ${s.n} polls that reported it`;
+  if (s.nearThreshold) return `Below: passes in ${s.k} of ${s.n} polls, ${seatFigure(s.passing!)} seats where it passes`;
+  return `${s.text}, scaled to 120 seats; passes in ${s.k} of ${s.n} polls`;
 }
 
 type Props = {
@@ -64,7 +64,7 @@ export default function ProfileDetail({ party: p, headingId }: Props) {
       <dl className="kv">
         <dt>Leader</dt>
         <dd>{p.leader}</dd>
-        <dt>Polls</dt>
+        <dt>Seats, polling average</dt>
         <dd>{seatsLine(p)}</dd>
       </dl>
       {p.who.length > 0 && (

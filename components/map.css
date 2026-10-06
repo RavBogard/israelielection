@@ -14,6 +14,13 @@
 .pm .cell[aria-pressed="true"] { box-shadow: inset 0 0 0 4px var(--fill-ink); }
 .pm .map.has-sel .cell:not([aria-pressed="true"]) { opacity: .35; }
 .pm .map.has-sel .cell:not([aria-pressed="true"]):hover, .pm .map.has-sel .cell:not([aria-pressed="true"]):focus-visible { opacity: .7; }
+/* Dark paper: opacity muddies the fills and fades the labels, so dimmed cells mix the fill into the cell grey instead and keep the labels in text ink. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pm .map.has-sel .cell:not([aria-pressed="true"]) { opacity: 1; background: color-mix(in oklab, var(--fill) 30%, var(--cell)); color: var(--text); }
+  :root:not([data-theme="light"]) .pm .map.has-sel .cell:not([aria-pressed="true"]):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--fill) 50%, var(--cell)); }
+}
+:root[data-theme="dark"] .pm .map.has-sel .cell:not([aria-pressed="true"]) { opacity: 1; background: color-mix(in oklab, var(--fill) 30%, var(--cell)); color: var(--text); }
+:root[data-theme="dark"] .pm .map.has-sel .cell:not([aria-pressed="true"]):is(:hover, :focus-visible) { background: color-mix(in oklab, var(--fill) 50%, var(--cell)); }
 .pm .cell .nm { font-weight: 600; font-size: clamp(13px, 1.15vw, 19px); line-height: 1.15; }
 .pm .cell .av { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 2.4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; margin-top: auto; }
 .pm .cell .av small { font-family: var(--body); font-weight: 500; font-size: 12px; margin-left: 5px; }

@@ -2,7 +2,8 @@ import Link from "next/link";
 import "./party-profile.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import { partiesData } from "@/lib/data";
-import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { mediumDate, shortDate } from "@/lib/format";
+import { SEATS_LABEL, seatFigure } from "@/lib/polls";
 import { lettersOf } from "@/lib/letters";
 import type { Party, Sourced } from "@/lib/types";
 import { blocLabel, glance, readings, result2022, strongholds, tiles, voterBase } from "./profile/model";
@@ -27,7 +28,7 @@ function Items({ items }: { items: Sourced[] }) {
   );
 }
 
-const one = (n: number) => fmt(Math.round(n * 10) / 10);
+const one = seatFigure;
 const thousands = (n: number) => n.toLocaleString("en-US");
 const MAJORITY = 61, TOTAL = 120;
 
@@ -75,7 +76,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} />{blocLabel[p.bloc]}</span>
-            <span className="total"><b>{one(g.blocSeats)}</b> seats across the bloc, current average</span>
+            <span className="total"><b>{one(g.blocSeats)}</b> seats across the bloc, polling average</span>
           </div>
         </div>
       </header>
@@ -87,9 +88,9 @@ export default function PartyProfile({ party: p }: { party: Party }) {
               <figcaption className="lbl">At a glance</figcaption>
               <dl className="pp-glance">
                 <div>
-                  <dd>{g.avg !== null ? one(g.avg) : <span className="nf">{p.status ?? "Not polled"}</span>}</dd>
-                  <dt>Polling average</dt>
-                  <small>{g.avg !== null && g.low !== null ? `${g.low} to ${g.high} in ${g.n} polls` : "no seat figures"}</small>
+                  <dd>{g.avg === null ? <span className="nf">{p.status ?? "Not polled"}</span> : g.below ? "below" : one(g.avg)}</dd>
+                  <dt>{SEATS_LABEL}</dt>
+                  <small>{g.avg === null ? "no seat figures" : g.below ? (g.passingAvg !== null ? `${one(g.passingAvg)} where it passes` : "the threshold in every poll") : g.low !== null ? `scaled to 120; ${g.low} to ${g.high} in ${g.n} polls` : "scaled to 120"}</small>
                 </div>
                 <div>
                   <dd>{r22 ? r22.seats : <span className="nf">New</span>}</dd>
@@ -105,17 +106,17 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                   <dd>{one(g.blocSeats)}<span className="of"> of {MAJORITY}</span></dd>
                   <dt>{blocLabel[p.bloc]}</dt>
                   <SeatBar className="pp-majority" total={TOTAL} majority={MAJORITY} segments={[{ key: p.bloc, seats: Math.min(TOTAL, g.blocSeats), color: `var(--b-${p.bloc})` }]} label={`${one(g.blocSeats)} of 120 seats; a majority is 61.`} />
-                  <small>{g.avg !== null ? `${g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`}; this list is ${["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} in the bloc` : "this list is not counted in the bloc total"}</small>
+                  <small>{g.avg !== null && !g.below ? `${g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`}; this list is ${["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} in the bloc` : "this list is not counted in the bloc total"}</small>
                 </div>
               </dl>
               <p className="fig-src">
-                Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
+                Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size and scaled to 120 seats.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
               </p>
             </figure>
 
             <figure className="pp-fig o3">
               <figcaption className="lbl">Seats in every poll since the Knesset dissolved</figcaption>
-              <SeatSparkline series={series} result={r22} color={color} name={p.name} />
+              <SeatSparkline series={series} result={r22} id={p.id} name={p.name} avg={g.avg !== null && !g.below ? g.avg : null} />
               <p className="fig-src">
                 {reported.length} polls from {publishers} publishers, {mediumDate(g.firstDate)} to {mediumDate(g.lastDate)}. A dot on the floor is a poll that had the list below the threshold; a gap is a poll that did not report it separately.
               </p>

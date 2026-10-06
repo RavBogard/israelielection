@@ -6,6 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { readIssue, readingText, stanceMap } from "@/lib/cohesion";
 import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } from "@/lib/compare";
 import { partyColor } from "@/lib/party-colors";
+import { blocRank, seatFigure } from "@/lib/polls";
 import { evidenceLabel } from "@/lib/positions";
 import { builderHref } from "@/lib/scenarios";
 import type { BlocId } from "@/lib/types";
@@ -196,11 +197,11 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
       window.removeEventListener("hashchange", read);
     };
   }, [rows]);
-  const order = blocs.map((b) => b.id);
+  const ordered = [...blocs].sort((a, b) => blocRank(a.id) - blocRank(b.id));
   const shown = parties
     .filter((p) => selected.includes(p.id))
-    .sort((a, b) => order.indexOf(a.bloc) - order.indexOf(b.bloc) || Number(!!a.out) - Number(!!b.out) || (b.seats ?? -1) - (a.seats ?? -1));
-  const groups = blocs.map((b) => ({ id: b.id, label: b.label, n: shown.filter((p) => p.bloc === b.id).length })).filter((g) => g.n > 0);
+    .sort((a, b) => blocRank(a.bloc) - blocRank(b.bloc) || Number(!!a.out) - Number(!!b.out) || (b.seats ?? -1) - (a.seats ?? -1));
+  const groups = ordered.map((b) => ({ id: b.id, label: b.label, n: shown.filter((p) => p.bloc === b.id).length })).filter((g) => g.n > 0);
   const isPreset = (ids: string[]) => ids.length === selected.length && ids.every((id) => selected.includes(id));
   const custom = !presets.some((pr) => isPreset(pr.ids));
   const atMin = selected.length <= MIN_PICK;
@@ -235,7 +236,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
       <details className="mx-pick">
         <summary>Choose lists one by one</summary>
         <div className="blocs">
-          {blocs.map((b) => (
+          {ordered.map((b) => (
             <div key={b.id} className="bg">
               <p className="bl"><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{b.label}</p>
               <div className="chips">
@@ -265,7 +266,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
           <span><i className="g declined" aria-hidden="true" />Declined to answer</span>
           <span><i className="g unsorted" aria-hidden="true" />Recorded, not classified</span>
           <span><i className="g rec" aria-hidden="true" />On the record, not a questionnaire answer</span>
-          <span><i className="g ink" aria-hidden="true" />Priorities that can coexist, so no order</span>
+          <span><i className="g ink" aria-hidden="true">1</i>Priorities that can coexist, so no order</span>
         </p>
         <p className="tap">{"Open any row for every list’s own words and source."}</p>
         <p className="seatnote">Under each list: its seats in the polling average.</p>
@@ -300,9 +301,9 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
                 <span className="seatlbl">Seats, polling average</span>
               </td>
               {shown.map((p, i) => (
-                <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : ""}`} style={swatch(p.id)}>
+                <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : !seatsOf(p) ? " below" : ""}`} style={swatch(p.id)}>
                   {p.letters ? <span className="letters" lang="he" dir="rtl" title={`Ballot letters: ${p.letters}`}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
-                  <span className="seats">{seatsOf(p) ? Math.round(seatsOf(p)) : p.out ? "out" : "–"}</span>
+                  <span className="seats">{seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? "out" : p.seats === null ? "–" : "below"}</span>
                 </td>
               ))}
             </tr>
@@ -328,7 +329,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect }: Prop
                             <li key={s.id} className={active === s.id ? "hi" : undefined}>
                               <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position) }} aria-hidden="true">{s.n}</span>
                               <span className="sl">{s.label}</span>
-                              <span className="ss" title="Seats these lists hold in the polling average">{Math.round(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
+                              <span className="ss" title="Seats these lists hold in the polling average">{seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
                             </li>
                           ))}
                         </ul>

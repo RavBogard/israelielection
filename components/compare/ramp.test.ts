@@ -1,11 +1,11 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { onShade, shade } from "./model";
+import { onShade, shade, UNORDERED_EDGE } from "./model";
 
 /*
  * The stance ramp's numerals stay readable: every shade shade() can draw, with the numeral onShade()
  * picks for it (white on the dark half, black on the light half), meets WCAG 4.5:1. The endpoints are
- * fixed, so this holds in both themes; the ink-2 cells of unordered options take the theme's paper.
+ * fixed, so this holds in both themes; unordered options are paper with an ink outline and an ink numeral.
  */
 
 const css = readFileSync(new URL("../../app/globals.css", import.meta.url), "utf8");
@@ -58,11 +58,14 @@ describe("stance ramp", () => {
     }
   });
 
-  it("gives the paper numeral on ink-2 (unordered options) 4.5:1 in light and dark", () => {
-    expect(shade(null)).toBe("var(--ink-2)");
+  it("draws unordered options as paper with an ink outline and an ink numeral, never a ramp step", () => {
+    expect(shade(null)).toBe("var(--sheet)");
+    expect(UNORDERED_EDGE).toContain("var(--ink)");
     expect(onShade(null)).toBe("ink");
-    expect(contrast(hex(token("ink-2")), hex(token("bg")))).toBeGreaterThanOrEqual(4.5);
-    expect(contrast(hex(token("ink-2", dark)), hex(token("bg", dark)))).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(hex(token("ink")), hex(token("sheet")))).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(hex(token("ink", dark)), hex(token("sheet", dark)))).toBeGreaterThanOrEqual(4.5);
+    const cmp = readFileSync(new URL("../compare.css", import.meta.url), "utf8");
+    expect(cmp).toMatch(/\.on-ink[^{]*\{[^}]*color: var\(--ink\);[^}]*box-shadow: inset 0 0 0 1px var\(--ink\)/);
   });
 
   it("edges the dark end on dark paper with a line that reads at 3:1", () => {

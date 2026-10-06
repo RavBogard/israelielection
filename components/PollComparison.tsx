@@ -1,6 +1,7 @@
 "use client";
 import {useLayoutEffect,useRef,useState} from "react";
-import {partyColor,PARTY_COLOR_NOTE} from "@/lib/party-colors";
+import {partyColor,PARTY_COLOR_NOTE,strokeVars} from "@/lib/party-colors";
+import "./party-stroke.css";
 import type {TrendPanel} from "./PollTrends";
 import {alignTrend,lineSegments,nearestDateIndex,seatTicks} from "@/lib/poll-chart";
 import {fmt,mediumDate,shortDate} from "@/lib/format";
@@ -32,7 +33,7 @@ export default function PollComparison({panels,dates,from,to,yMax,hollowNames}:{
  <text x={PAD.l} y={H-8} className="pc-tick">{shortDate(from)}</text><text x={w-PAD.r} y={H-8} className="pc-tick" textAnchor="end">{shortDate(to)}</text>
  {selectedDate&&<line x1={x(selectedDate)} x2={x(selectedDate)} y1={PAD.t} y2={H-PAD.b} className="pt-cross"/>}
  {rest.map((p)=><g key={p.id}>{lineSegments(p.points).map((segment,i)=><path key={i} d={path(segment)} className="pc-grey"/>)}</g>)}
- {picked.map((p)=><g key={p.id}>{p.dots.map((d,i)=><circle key={i} cx={x(d.date)} cy={y(d.seats)} r={3} className={`pc-dot${d.ref?" hollow":""}`} style={{["--c" as string]:p.color}}><title>{`${p.name}, ${d.pollster}, ${shortDate(d.date)}: ${d.seats} seats`}</title></circle>)}{lineSegments(p.points).map((segment,i)=><g key={i}><path d={path(segment)} fill="none" stroke={p.color} strokeWidth={2.5} strokeLinejoin="round"/>{segment.length===1&&<circle cx={x(segment[0].date)} cy={y(segment[0].avg!)} r={3} fill={p.color}/>}</g>)}{p.points[index]?.avg!=null&&<circle cx={x(selectedDate)} cy={y(p.points[index].avg!)} r={5} fill={p.color} stroke="var(--sheet)" strokeWidth={1.5}/>}</g>)}
+ {picked.map((p)=><g key={p.id} className="pstroke" style={strokeVars(p.id)}>{p.dots.map((d,i)=><circle key={i} cx={x(d.date)} cy={y(d.seats)} r={3} className={`pc-dot${d.ref?" hollow":""}`} style={{["--c" as string]:"var(--psx)"}}><title>{`${p.name}, ${d.pollster}, ${shortDate(d.date)}: ${d.seats} seats`}</title></circle>)}{lineSegments(p.points).map((segment,i)=><g key={i}><path d={path(segment)} fill="none" stroke="var(--psx)" strokeWidth={2.5} strokeLinejoin="round"/>{segment.length===1&&<circle cx={x(segment[0].date)} cy={y(segment[0].avg!)} r={3} fill="var(--psx)"/>}</g>)}{p.points[index]?.avg!=null&&<circle cx={x(selectedDate)} cy={y(p.points[index].avg!)} r={5} fill="var(--psx)" stroke="var(--sheet)" strokeWidth={1.5}/>}</g>)}
  {wide&&ends.map(({p,last,ly})=><text key={p.id} x={w-PAD.r+10} y={ly} dominantBaseline="middle" className="pc-label"><tspan className="pc-endv">{value(last!.avg!)}</tspan> {p.short??p.name}</text>)}
  </svg>}</div>
  <p id="pc-reading" className="pc-reading" role="status" aria-live="polite"><b>{mediumDate(selectedDate)}</b>: {reading}.</p>

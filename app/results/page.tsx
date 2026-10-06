@@ -11,7 +11,7 @@ import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
 import { averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
-import { pollLabel, seatsIn } from "@/lib/polls";
+import { BLOC_SEAT_ORDER, pollLabel, seatsIn } from "@/lib/polls";
 import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
 import { countedTurnout, results, rollCounted, versusAverage } from "@/lib/results";
@@ -235,9 +235,8 @@ const DASH = "–";
 function Board({ count }: { count: Count | null }) {
   const r = count ? results(count, cfg) : null;
   const toLetter = Object.fromEntries(Object.entries(cfg.letters).map(([l, id]) => [id, l]));
-  const order = ["net", "mid", "opp", "arab"];
   const blocSeats = [...blocs]
-    .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id))
+    .sort((a, b) => BLOC_SEAT_ORDER.indexOf(a.id) - BLOC_SEAT_ORDER.indexOf(b.id))
     .map((b) => ({ ...b, seats: r ? r.lists.filter((l) => byId(l.partyId)?.bloc === b.id).reduce((s, l) => s + l.seats, 0) : null }));
   const others = r ? r.lists.filter((l) => !l.partyId) : [];
   const untrackedSeats = others.reduce((s, l) => s + l.seats, 0);

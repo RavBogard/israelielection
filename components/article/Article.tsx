@@ -2,7 +2,8 @@ import type { CSSProperties, ReactNode } from "react";
 import { allCharts, allPositions, type Chart as ChartData, type ChartRow, type Positions } from "@/lib/articles";
 import { averagePoll, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
-import { shade } from "../compare/model";
+import { shade, UNORDERED_EDGE } from "../compare/model";
+import { seatFigure } from "@/lib/polls";
 import type { PositionRow } from "@/lib/compare";
 import { DotPlot, Lines, Sparklines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
 import { barRefs, transpose } from "@/lib/chart-form";
@@ -206,15 +207,15 @@ const MAJORITY = 61;
 
 /** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
 function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
-  const ink = (pos: number | null) => (pos === null ? "var(--bg)" : pos < 0.5 ? "#fff" : "#000");
+  const ink = (pos: number | null) => (pos === null ? "var(--ink)" : pos < 0.5 ? "#fff" : "#000");
   return (
     <SeatBar
       className="ps-bar"
       size={size}
       total={SEATS}
-      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${Math.round(g.seats)} seats`, style: clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
+      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${seatFigure(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
       rest={{ title: `No recorded answer, or below the threshold: ${Math.round(rest)} seats` }}
-      label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
+      label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${seatFigure(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
     />
   );
 }
@@ -247,7 +248,7 @@ export function PositionsLead({ issue }: { issue: string }) {
                 ))}
               </span>
             </span>
-            <span className="gs">{Math.round(g.seats)}</span>
+            <span className="gs">{seatFigure(g.seats)}</span>
           </li>
         ))}
       </ul>
@@ -309,7 +310,7 @@ export function Positions({ issue }: { issue: string }) {
           <h3>
             <span className={`key ${onClass(g.pos)}`} style={{ background: shade(g.pos) }} aria-hidden>{g.n}</span>
             {g.st.label}
-            <span className="gs">{Math.round(g.seats)} seats</span>
+            <span className="gs">{seatFigure(g.seats)} seats</span>
           </h3>
           <ul>{g.rows.map((r) => <Entry key={r.party} r={r} />)}</ul>
         </section>

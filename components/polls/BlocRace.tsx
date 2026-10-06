@@ -1,13 +1,14 @@
 "use client";
 import { useLayoutEffect, useRef, useState } from "react";
-import { fmt, mediumDate, shortDate } from "@/lib/format";
+import { mediumDate, shortDate } from "@/lib/format";
 import { nearestDateIndex } from "@/lib/poll-chart";
+import { seatFigure } from "@/lib/polls";
 import type { BlocPoint } from "@/lib/trend";
 import "./bloc-race.css";
 
 export type RaceDot = { id: string; date: string; pollster: string; net: number; opp: number; hollow: boolean };
 const DAY = 86400_000, MAJ = 61, BLOCS = ["net", "opp"] as const;
-const one = (n: number) => fmt(Math.round(n * 10) / 10);
+const one = seatFigure;
 
 /**
  * The bloc race: the Netanyahu and Anti-Netanyahu bloc totals of the site average on each poll

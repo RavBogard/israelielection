@@ -97,8 +97,6 @@
 .cb .together .lbl { grid-area: l; font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.25; }
 .cb .together .read { grid-area: r; font-size: 13px; line-height: 1.35; color: var(--ink-2); }
 .cb .together .gly { grid-area: g; display: block; overflow: visible; }
-.cb .together .gly .slot { fill: none; stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 2 1.5; }
-.cb .together .gly .quiet { fill: var(--cell); }
 .cb .together .dep { font-family: var(--display); font-size: 15.5px; line-height: 1.45; color: var(--ink); margin: 2px 0 0; }
 .cb .together .more { margin: 2px 0 0; font-size: 14px; }
 .cb .together .more a { color: var(--ink); font-weight: 600; }

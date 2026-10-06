@@ -4,32 +4,20 @@ import { useId, useState } from "react";
 import { partyColor } from "@/lib/party-colors";
 import { onShade, shade } from "../compare/model";
 import type { Tile } from "./model";
+import StanceSlots, { type SlotColumn } from "../StanceSlots";
 
 /** Bar colour for a stance: where it sits on the issue's scale, the same for every list that holds it (the Compare matrix's shade). */
 function stanceColor(t: Tile): string | null {
   return t.kind === "stance" ? shade(t.position) : null;
 }
 
-/**
- * The Builder's strip glyph for one list: a slot per answer the issue offers, left to right in the
- * issue's order, this party's square in its slot; a party with no answer sits in the quiet slot at the end.
- * Same metrics as Governing.tsx's Glyph, so a stance looks the same in the Builder and here.
- */
+/** The shared slot glyph for one list: a slot per answer the issue offers, this party's square in its slot; no answer sits in the quiet slot at the end. */
 function Slots({ t }: { t: Tile }) {
   if (!t.options) return null;
-  const U = 7, SLOT = 2 * U + 1.5, GAP = 5;
   const quiet = t.slot === null;
-  const n = t.options + (quiet ? 1 : 0);
-  const W = n * SLOT + (n - 1) * GAP;
-  return (
-    <svg className="gly" viewBox={`0 0 ${W} ${U}`} width={W} height={U} aria-hidden="true">
-      {Array.from({ length: n }, (_, i) => {
-        const x = i * (SLOT + GAP);
-        const mine = quiet ? i === n - 1 : i === t.slot;
-        return mine ? <rect key={i} className={quiet ? "quiet" : "mine"} x={x} y={0} width={U} height={U} /> : <rect key={i} className="slot" x={x} y={0} width={SLOT} height={U} />;
-      })}
-    </svg>
-  );
+  const cols: SlotColumn[] = Array.from({ length: t.options }, (_, i) => ({ marks: i === t.slot ? [{ key: "mine", color: "var(--pc)" }] : [] }));
+  if (quiet) cols.push({ quiet: true, marks: [{ key: "mine", color: "" }] });
+  return <StanceSlots cols={cols} />;
 }
 
 /**
@@ -58,7 +46,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
               aria-controls={`${base}-panel`}
               onClick={() => setOpen(isOpen ? null : t.key)}
             >
-              <span className={`bar${t.kind === "stance" && onShade(t.position) === "light" ? " deep" : ""}`} style={bar ? { background: bar } : undefined} aria-hidden="true" />
+              <span className={`bar${t.kind === "stance" ? (t.position === null ? " unordered" : onShade(t.position) === "light" ? " deep" : "") : ""}`} style={bar ? { background: bar } : undefined} aria-hidden="true" />
               <span className="issue">{t.label}</span>
               <span className="stance">{t.kind === "stance" ? t.stance : t.kind === "declined" ? "Declined to answer" : "No 2026 position found"}</span>
               <Slots t={t} />
@@ -67,7 +55,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is grey. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer."}</p>
+      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is paper with an ink outline, not a shade. Squares: one slot per answer, in the same order, with the party’s square in its own; a square in the last slot means no answer."}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>
