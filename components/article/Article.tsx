@@ -5,9 +5,10 @@ import { partyColor } from "@/lib/party-colors";
 import { shade, UNORDERED_EDGE } from "../compare/model";
 import { seatFigure } from "@/lib/polls";
 import type { PositionRow } from "@/lib/compare";
-import { DotPlot, Lines, Sparklines, Stacks, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
+import { DotPlot, Lines, Pairs, Sparklines, Stacks, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
 import { barRefs, transpose } from "@/lib/chart-form";
 import SeatBar from "../SeatBar";
+import MiniKey from "./MiniKey";
 
 /*
  * The building blocks of a reference page, registered for every MDX file in
@@ -86,7 +87,7 @@ function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
 const PREVIEW_ROWS = 4;
 const NATIONAL = /whole country|all voters|israel as a whole|national/i;
 function previewRows(c: ChartData, form: string) {
-  if (form === "lines" || form === "dots" || form === "trend" || c.rows.length <= PREVIEW_ROWS + 1) return c.rows;
+  if (form === "lines" || form === "dots" || form === "trend" || form === "pairs" || c.rows.length <= PREVIEW_ROWS + 1) return c.rows;
   const head = c.rows.slice(0, PREVIEW_ROWS);
   return [...head, ...c.rows.slice(PREVIEW_ROWS).filter((r) => NATIONAL.test(r.label))];
 }
@@ -102,7 +103,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
   const print = (r: ChartRow) => r.display ?? `${r.value}${unit === "%" ? "%" : unit ? ` ${unit}` : ""}`;
   const bars = c.kind === "bars" ? barRefs(c, print) : null;
   const xOf = (v: number) => Math.max(0, Math.min(100, (v / max) * 100));
-  const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks" || form === "stack";
+  const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks" || form === "pairs" || form === "stack";
   return (
     <figure className="chart">
       <figcaption className="ct">{c.title}</figcaption>
@@ -140,8 +141,8 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
         </ul>
       ) : drawn ? (
         <>
-          {form === "lines" ? <Lines c={c} /> : form === "trend" ? <Lines c={transpose(c)} /> : form === "sparks" ? <Sparklines c={c} /> : form === "stack" ? <Stacks c={c} /> : <DotPlot c={c} />}
-          {!compact && <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
+          {form === "lines" ? <Lines c={c} /> : form === "trend" ? <Lines c={transpose(c)} /> : form === "sparks" ? <Sparklines c={c} /> : form === "pairs" ? <Pairs c={c} /> : form === "stack" ? <Stacks c={c} /> : <DotPlot c={c} />}
+          {!compact && <details className="cv-numbers" open={(form === "lines" || form === "pairs") && c.rows.some((r) => !!r.source)}>
             <summary>The numbers<span className="sr-only">: {c.title}</span></summary>
             <NumbersTable c={c} heat={false} />
           </details>}
@@ -209,14 +210,14 @@ function clearOfTick(start: number, seats: number) {
 const MAJORITY = 61;
 
 /** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
+const inkOn = (pos: number | null) => (pos === null ? "var(--ink)" : pos < 0.5 ? "#fff" : "#000");
 function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
-  const ink = (pos: number | null) => (pos === null ? "var(--ink)" : pos < 0.5 ? "#fff" : "#000");
   return (
     <SeatBar
       className="ps-bar sb-fit"
       size={size}
       total={SEATS}
-      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${seatFigure(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
+      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: inkOn(g.pos), label: g.n, title: `${g.st.label}: ${seatFigure(g.seats)} seats`, style: g.pos === null ? { ...clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats), boxShadow: UNORDERED_EDGE } : clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
       rest={{ title: `No recorded answer, or below the threshold: ${Math.round(rest)} seats` }}
       label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${seatFigure(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
     />
@@ -270,7 +271,9 @@ export function SplitMini({ issue }: { issue: string }) {
   const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
   return (
     <div className="ps-mini">
-      <SplitBar groups={groups} rest={rest} size="m" />
+      <MiniKey items={groups.filter((g) => g.seats > 0).map((g) => ({ n: g.n, label: g.st.label, seats: `${seatFigure(g.seats)} seats`, color: shade(g.pos), ink: inkOn(g.pos) }))}>
+        <SplitBar groups={groups} rest={rest} size="m" />
+      </MiniKey>
       <p className="ps-mini-read">
         Largest answer: <b>{top.st.label}</b>, {Math.round(top.seats)} seats{top.seats >= 61 ? ", a majority" : ""}
       </p>

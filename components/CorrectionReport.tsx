@@ -26,14 +26,14 @@ export default function CorrectionReport() {
   }
   return <section id="report" className="correction-report" aria-labelledby="report-title">
     <h2 id="report-title">Report a correction</h2><p>Point to a specific claim and the evidence that would correct it. {channel.reviewer} is responsible for reviewing corrections. Your report stays on your device until you choose to send it.</p>
-    {email && <p className="note">No account is required. Fill in the claim, then open an email draft to <b>{channel.email}</b>. Review and send it in your email app.</p>}
+    {email && <p className="fig-note">No account is required. Fill in the claim, then open an email draft to <b>{channel.email}</b>. Review and send it in your email app.</p>}
     <label>Page address<input type="url" maxLength={2048} value={page} onChange={(e) => setEditedPage({from:source,page:e.target.value})} /></label>
     <label>Claim or number in question<textarea rows={3} maxLength={2000} value={claim} onChange={(e) => setClaim(e.target.value)} /></label>
     <label>What should it say?<textarea rows={3} maxLength={2000} value={proposed} onChange={(e) => setProposed(e.target.value)} /></label>
     <label>Supporting source and explanation<textarea rows={3} maxLength={4000} value={evidence} onChange={(e) => setEvidence(e.target.value)} /></label>
-    <p className="note">Include a source link if you have one. Avoid personal or confidential information; GitHub reports are public.</p>
+    <p className="fig-note">Include a source link if you have one. Avoid personal or confidential information; GitHub reports are public.</p>
     <div className="correction-actions"><button type="button" disabled={!ready} onClick={copy}>Copy report</button><button type="button" disabled={!ready} onClick={download}>Download report</button>{ready && email && <a href={email} onClick={() => setStatus("Your email app opens a draft. Review it and send it there; this page cannot confirm delivery.")}>Open correction email draft</a>}{ready && <a href={github} target="_blank" rel="noopener">Open GitHub report (account required)</a>}</div>
-    {!email && <p className="note">You can prepare, copy or download a report without an account. Sending through the current GitHub channel requires an account.</p>}
+    {!email && <p className="fig-note">You can prepare, copy or download a report without an account. Sending through the current GitHub channel requires an account.</p>}
     <p role="status" aria-live="polite">{status}</p>
     <details><summary>Preview the report text</summary><pre className="report-preview">{text}</pre></details>
   </section>;

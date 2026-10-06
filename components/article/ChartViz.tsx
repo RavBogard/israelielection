@@ -1,6 +1,6 @@
 
 import type { Chart, ChartRow } from "@/lib/articles";
-import { clearLabels, heatShare, pct, pctIn, scaleMax, sparks, stacks, timeOf, unshaded, wrapWords } from "@/lib/chart-form";
+import { clearLabels, heatShare, pairs, pct, pctIn, scaleMax, sparks, stacks, timeOf, unshaded, wrapWords } from "@/lib/chart-form";
 
 /*
  * Visual forms for a data/charts table; lib/chart-form.ts decides which one a table takes. The
@@ -153,11 +153,11 @@ type Box = { W: number; H: number; P: { l: number; r: number; t: number; b: numb
 const WIDE: Box = { W: 640, H: 260, P: { l: 54, r: 176, t: 14, b: 30 } };
 const NARROW: Box = { W: 360, H: 250, P: { l: 40, r: 52, t: 12, b: 28 } };
 
-function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
+function Plot({ c, box, narrow, top, cls }: { c: Chart; box: Box; narrow: boolean; top?: number; cls?: string }) {
   const cols = c.columns!.slice(1);
   const { W, H, P } = box;
   const vals = c.rows.flatMap((r) => (r.cells ?? []).map(pctIn).filter((v): v is number => v !== null));
-  const max = scaleMax(vals);
+  const max = top ?? scaleMax(vals);
   const n = c.rows.length;
   // Space the points by date when every row names a year, so uneven gaps between surveys stay uneven.
   const when = c.rows.map((r) => timeOf(r.label));
@@ -188,7 +188,7 @@ function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
     return [...acc, { ...e, ly: Math.max(y(e.v), prev ? prev.ly + 14 * prev.lines.length : -Infinity) }];
   }, []);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className={narrow ? "narrow" : "wide"}>
+    <svg viewBox={`0 0 ${W} ${H}`} className={cls ?? (narrow ? "narrow" : "wide")}>
       {ticks.map((t) => (
         <g key={t}>
           <line className="grid" x1={P.l} x2={W - P.r} y1={y(t)} y2={y(t)} />
@@ -225,6 +225,28 @@ export function Lines({ c }: { c: Chart }) {
       <Plot c={c} box={WIDE} narrow={false} />
       <Plot c={c} box={NARROW} narrow />
       <Legend columns={c.columns!.slice(1)} />
+    </div>
+  );
+}
+
+/** A small panel, drawn at about its printed size three across a reading column; it prints values only, like the phone drawing. */
+const PANEL: Box = { W: 220, H: 190, P: { l: 34, r: 52, t: 12, b: 26 } };
+const PANEL_NARROW: Box = { ...NARROW, H: 190 };
+/** Two lines per panel, one panel per pair of percentages (lib/chart-form.ts pairs), all on one scale; phones get the phone drawing, one panel under another. */
+export function Pairs({ c }: { c: Chart }) {
+  const { series, max, panels } = pairs(c);
+  return (
+    <div className="cv-pairs" aria-hidden="true">
+      <Legend columns={series} />
+      <div className="cv-panels">
+        {panels.map((p) => (
+          <div key={p.title} className="cv-lines cv-panel">
+            <p className="cv-pt">{p.title}</p>
+            <Plot c={p.chart} box={PANEL} narrow top={max} cls="wide" />
+            <Plot c={p.chart} box={PANEL_NARROW} narrow top={max} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

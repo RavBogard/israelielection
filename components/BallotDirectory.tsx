@@ -10,6 +10,8 @@ import data from "@/data/ballot-directory.json";
 import "./BallotDirectory.css";
 
 const seatsOf = (id: string | null) => (id ? averagePoll.results[id]?.seats ?? 0 : 0);
+/** A spaced dash in a list name stays with the word before it, so it never starts a line on its own. */
+const keepDash = (name: string) => name.replace(/ ([—–]) /g, " $1 ");
 
 /**
  * The ballot tray first: all 38 published slips as one wall, the lists that win seats in the
@@ -43,7 +45,7 @@ export default function BallotDirectory() {
               <li key={l.id}>
                 <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${seatFigure(s)} seats in the average` : ""}`}>
                   <span className="bd-letters" lang="he" dir="rtl">{l.letters}</span>
-                  <span className="bd-name">{l.name}</span>
+                  <span className="bd-name">{keepDash(l.name)}</span>
                   {s > 0 && <span className="bd-seats">{seatFigure(s)}</span>}
                 </a>
               </li>
@@ -67,7 +69,7 @@ export default function BallotDirectory() {
           <li key={l.id} id={l.id}>
             <span className="ballot-letters" lang="he" dir="rtl" aria-label={`Ballot letters ${l.letters}`}>{l.letters}</span>
             <div>
-              <h2>{l.name}</h2>
+              <h2>{keepDash(l.name)}</h2>
               <p className="bd-he" lang="he" dir="rtl">{l.hebrew}</p>
               <p>{l.leader ? `Leadership named in official list title: ${l.leader}.` : "No current leader named in the published table title."}</p>
               <p className="bd-links">

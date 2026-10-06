@@ -2,3 +2,4 @@
 .media-inquiries { max-width:760px; border-block:1px solid var(--ink); padding:18px 0; margin:24px 0; scroll-margin-top:24px; }
 .media-inquiries h2 { font:700 28px var(--display); margin:0 0 12px; }
 .media-inquiries a { overflow-wrap:anywhere; }
+.correction-report .fig-note,.media-inquiries .fig-note{margin:12px 0}.correction-register>.fig-note{margin:8px 0 18px}

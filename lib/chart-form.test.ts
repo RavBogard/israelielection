@@ -1,13 +1,26 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { allCharts, type Chart } from "./articles";
-import { barRefs, clearLabels, count, formOf, HEAT_TOP, heatShare, isDate, listIn, sparks, stacks, transpose, wrapWords } from "./chart-form";
+import { barRefs, clearLabels, count, formOf, HEAT_TOP, heatShare, isDate, listIn, pairs, sparks, stacks, transpose, wrapWords } from "./chart-form";
 import { stackLanes } from "./timeline";
 
 const charts = allCharts();
 const table = (columns: string[], rows: [string, string[]][]): Chart => ({ title: "t", kind: "table", columns, rows: rows.map(([label, cells]) => ({ label, cells })), source: "s", url: "u", date: "d" });
 
 describe("chart forms", () => {
+  it("draws two-percentage cells as one panel of two lines per column, keeping each printed value", () => {
+    const c = charts["settlers.vote-trend"];
+    expect(formOf(c)).toBe("pairs");
+    const p = pairs(c);
+    expect(p.series).toEqual(["Settlements", "Israel"]);
+    expect(p.panels.map((x) => x.title)).toEqual(["Religious-Zionist lists as they ran", "Likud", "Shas + UTJ"]);
+    expect(p.panels[0].chart.rows[0].cells).toEqual(["33.8%", "9.7%"]);
+    expect(p.max).toBe(40);
+    for (const x of p.panels) expect(formOf(x.chart)).toBe("lines");
+    // A percentage left in another column is not a pair table.
+    expect(formOf(table(["Election", "Note", "A: x / y", "B: x / y", "C"], [["2019", ["n", "1% / 2%", "3% / 4%", "5%"]], ["2020", ["n", "1% / 2%", "3% / 4%", "5%"]], ["2021", ["n", "1% / 2%", "3% / 4%", "5%"]], ["2022", ["n", "1% / 2%", "3% / 4%", "5%"]]]))).not.toBe("pairs");
+  });
+
   it("reads only bare dates as date headings", () => {
     expect(["2022", "Nov 2022", "March 2, 2020", "Apr 2019"].every(isDate)).toBe(true);
     expect(["Likud 2022", "Before the war", "Share"].some(isDate)).toBe(false);

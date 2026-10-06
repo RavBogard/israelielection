@@ -8,6 +8,8 @@ import type { Chart, ChartRow } from "./articles";
  *   - the columns a run of three or more elections or dates, the cells carrying one percentage each
  *     (a list's name may come with it): transposed, so time runs across. Up to four rows become
  *     lines ("trend"); more become one sparkline per row on a shared scale ("sparks");
+ *   - the rows a run of elections, cells carrying two percentages ("33.8% / 9.7%") under headings that
+ *     name both ("Likud: settlements / Israel"): one small panel of two lines per such column ("pairs");
  *   - counts split into parts with a last "Total" column the parts add up to: one stacked bar per row;
  *   - two or more columns, mostly cells carrying one percentage: the table, each such cell shaded
  *     by its size (turnout columns stay unshaded, since turnout is a share of a different whole).
@@ -43,7 +45,7 @@ export function timeOf(label: string): number | null {
 /** A heading that is only a date: "2022", "Nov 2022", "March 2, 2020" (not "Likud 2022"). */
 export const isDate = (h: string) => /^(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(?:\d{1,2},?\s+)?)?(?:19|20)\d{2}$/i.test(h.trim());
 
-export type ChartForm = "lines" | "dots" | "trend" | "sparks" | "stack" | "heat" | "table";
+export type ChartForm = "lines" | "dots" | "trend" | "sparks" | "pairs" | "stack" | "heat" | "table";
 
 /** A plain count ("90,600", "1,215", "42"), or null. */
 export const count = (s: string | undefined): number | null => {
@@ -61,6 +63,7 @@ export function formOf(c: Chart): ChartForm {
   if (share(pct) === 1 && timeRows && series <= 4) return "lines";
   if (share(pct) === 1 && series >= 2 && series <= 4 && c.rows.length <= 12) return "dots";
   if (timeColumns(c) && share(pctIn) >= 0.8 && c.rows.every((r) => (r.cells ?? []).some((x) => pctIn(x) !== null))) return c.rows.length <= 4 ? "trend" : "sparks";
+  if (timeRows && pairCols(c).length) return "pairs";
   if (stackable(c)) return "stack";
   if (series >= 2 && share(pctIn) >= 0.5) return "heat";
   return "table";
@@ -202,4 +205,41 @@ export function barRefs(c: Chart, print: (r: ChartRow) => string): { rows: Chart
   const max = c.max ?? Math.max(...c.rows.map((r) => r.value ?? 0));
   if (c.unit === "seats" && max >= 61) refs.push({ label: "61 seats, a majority", value: 61, heavy: true });
   return { rows: c.rows.filter((r) => !isRef(r)), refs };
+}
+
+const PAIR = /^(\d+(?:\.\d+)?%)\s*\/\s*(\d+(?:\.\d+)?%)$/;
+const PAIR_HEAD = /^(.+?):\s*(.+?)\s*\/\s*(.+)$/;
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+/**
+ * Columns (indexes into a row's cells) whose every filled cell is two percentages and whose heading
+ * names the two ("Likud: settlements / Israel"), all naming the same two; the rest must carry no percentage.
+ */
+export function pairCols(c: Chart): number[] {
+  const cols = c.columns!.slice(1);
+  const idx = cols.flatMap((h, j) => (PAIR_HEAD.test(h) && c.rows.every((r) => blank(r.cells?.[j]) || PAIR.test((r.cells?.[j] ?? "").trim())) && c.rows.some((r) => PAIR.test((r.cells?.[j] ?? "").trim())) ? [j] : []));
+  const names = new Set(idx.map((j) => PAIR_HEAD.exec(cols[j])!.slice(2).map((x) => x.toLowerCase()).join("/")));
+  const others = cols.map((_, j) => j).filter((j) => !idx.includes(j));
+  return names.size === 1 && others.every((j) => c.rows.every((r) => !/\d%/.test(r.cells?.[j] ?? ""))) ? idx : [];
+}
+
+export type Pairs = { series: [string, string]; max: number; panels: { title: string; chart: Chart }[] };
+/**
+ * A panel per pair column, each a two-line chart over the rows on one shared scale. The cells keep
+ * their printed values. A heading that points back ("Those lists") takes its title from the text column before it.
+ */
+export function pairs(c: Chart): Pairs {
+  const cols = c.columns!.slice(1), idx = pairCols(c);
+  const [, , a, b] = PAIR_HEAD.exec(cols[idx[0]])!;
+  const series: [string, string] = [cap(a), cap(b)];
+  const panels = idx.map((j) => {
+    const name = PAIR_HEAD.exec(cols[j])![1];
+    const title = /^(those|these|the same)\b/i.test(name) && j > 0 && !idx.includes(j - 1) ? cols[j - 1] : name;
+    const rows = c.rows.map((r): ChartRow => {
+      const m = PAIR.exec((r.cells?.[j] ?? "").trim());
+      return { label: r.label, cells: m ? [m[1], m[2]] : ["", ""] };
+    });
+    return { title, chart: { ...c, columns: [c.columns![0], ...series], rows } };
+  });
+  const vals = panels.flatMap((p) => p.chart.rows.flatMap((r) => r.cells!.map(pct).filter((v): v is number => v !== null)));
+  return { series, max: scaleMax(vals), panels };
 }

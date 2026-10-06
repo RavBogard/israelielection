@@ -5,7 +5,7 @@
 .article { padding-top: 36px; min-width: 0; }
 .article h1 { font-family: var(--display); font-weight: 700; font-size: clamp(36px, 4.4vw, 54px); line-height: 1.02; letter-spacing: -.018em; margin: 0; text-wrap: balance; }
 .article .dek { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 16px 0 0; }
-.article .checked { font-size: 13px; color: var(--ink-3); margin: 14px 0 0; }
+.article .checked { font-size: 13px; color: var(--ink-3); margin: 14px 0 24px; }
 
 /* A signed foreword (About): the author's own voice, set apart from the reference body by its size and a closing rule. */
 .article .foreword { margin: 26px 0 0; padding: 0 0 24px; border-bottom: 1px solid var(--line); }
@@ -285,3 +285,16 @@
 }
 .article .cv-sparks .pv { position: absolute; transform: translate(8px, -50%); font-size: 13.5px; font-weight: 700; line-height: 1; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .article .cv-sparks .pv.to-l { transform: translate(calc(-100% - 8px), -50%); font-weight: 400; color: var(--ink-2); }
+/* SplitMini's key for segments too narrow to carry their number (MiniKey). */
+.sindex .ps-mini-key { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 6px 0 0 !important; font: 400 13px/1.4 var(--body) !important; color: var(--ink-2); }
+.sindex .ps-mini-key > span { display: inline-flex; align-items: center; gap: 6px; }
+.sindex .ps-mini-key .k { display: inline-block; min-width: 18px; height: 16px; line-height: 16px; text-align: center; font-size: 12px; font-weight: 700; }
+/* A contents list with subsections stays in one column so each group keeps its nesting. */
+.article-contents ul:has(> .subsection) { columns: 1; }
+/* Pairs (ChartViz Pairs): a small panel of two lines per pair of percentages, three across, one scale. */
+.article .cv-panels { display: grid; grid-template-columns: repeat(auto-fill, minmax(212px, 1fr)); gap: 8px 20px; margin-top: 10px; }
+.article .cv-panel svg { margin-top: 4px; }
+.article .cv-panel svg.wide .end .v { font-size: 14px; }
+.article .cv-pt { margin: 0; font: 600 14px/1.3 var(--body); color: var(--ink); }
+.article .cv-pairs .cv-legend { margin: 10px 0 0; }
+@media (max-width: 640px) { .article .cv-panels { grid-template-columns: minmax(0, 1fr); gap: 16px; } }

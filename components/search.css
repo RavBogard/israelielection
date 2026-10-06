@@ -2,3 +2,4 @@
 .suggestion{background:transparent;color:var(--ink);text-decoration:underline;cursor:pointer;font:inherit;border:0;padding:0}
 .search-results .search-kind{font:500 13px var(--body);color:var(--ink-3);white-space:nowrap}
 .search-tools{list-style:none;padding:0;margin:4px 0 18px;display:flex;flex-wrap:wrap;gap:8px}.search-tools a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid var(--line-2);background:var(--sheet);color:var(--ink);font:600 15px var(--body);text-decoration:none}.search-tools a:hover{border-color:var(--ink)}
+.search-controls input,.search-controls select{min-height:44px}.search-controls button{min-height:44px;padding:0 18px;border:1px solid var(--ink);border-radius:var(--r);background:var(--ink);color:var(--bg);font:600 15px var(--body);cursor:pointer}.search-controls button[type=button]{background:var(--sheet);color:var(--ink);border-color:var(--line-2)}.search-controls button:hover{opacity:.88}

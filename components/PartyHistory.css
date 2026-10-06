@@ -38,7 +38,7 @@
   .ph-axis > span:first-child { display: none; }
   .ph-lane { padding: 6px 0 2px; }
   .ph-name { font-size: 13.5px; }
-  .ph-axis i:nth-child(1), .ph-axis i:nth-child(3), .ph-axis i:nth-child(6) { display: none; }
+  .ph-axis i:nth-child(2), .ph-axis i:nth-child(6) { display: none; }
   .ph-name { min-height: 44px; }
 }
 
@@ -74,6 +74,7 @@
   .history-date span { margin: 0; }
   .history-controls label { min-width: 0; flex-basis: 100%; }
 }
+/* Phones label 1968 (where the lines start), 1990, 2005, 2015 and 2026. */
 /* The 2026 filing has its own mark, a ballot slip; 2005 is printed beside the scale break. */
 .ph-m.slip { fill: var(--bg); stroke: var(--ink); stroke-width: 1.6; }
 .ph-axis .ph-break-l { position: absolute; transform: translateX(6px); white-space: nowrap; font-style: normal; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
