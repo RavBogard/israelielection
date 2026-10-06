@@ -29,15 +29,11 @@ export default function Page() {
     <div className="wrap article-page timeline-page">
       <header className="page-head">
         <h1>Timeline, 1977–2026</h1>
-        <p className="standfirst">
-          From Likud&apos;s first win to the election of October 27, 2026: {data.elections.length} Knesset elections, the prime ministers who
-          governed between them, and {data.events.length} events. Drag along the line to see who governed, which Knesset sat, and what had just
-          happened.
-        </p>
-        <p className="note">Facts checked {longDate(data.checked)}. Each event links its source.</p>
+        <p className="standfirst">Every prime minister, every Knesset election and {data.events.length} events since Likud&apos;s first win. Drag along the line.</p>
       </header>
 
       <Timeline data={data} electionDay={results.election} />
+      <p className="tl-checked">Facts checked {longDate(data.checked)}; each event links its source.</p>
 
       <div className="article-grid solo">
         <article className="article tl-list">
