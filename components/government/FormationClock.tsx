@@ -28,7 +28,7 @@ const LABELLED = TICKS.filter((d) => d !== W1);
  * then a new election). Bars are numbered as the list of steps below them. Once the results are
  * published the axis carries dates and a marker for today.
  */
-export default function FormationClock({ steps, published, today }: { steps: Milestone[]; published: string | null; today: string }) {
+export default function FormationClock({ steps, published, today, numbered = true }: { steps: Milestone[]; published: string | null; today: string; /** Off where no numbered list of steps follows (the forming-a-government guide). */ numbered?: boolean }) {
   const pos = (d: number) => `${(d / END) * 100}%`;
   const num = (id: string) => steps.findIndex((m) => m.id === id) + 1;
   const day = published ? Math.round((Date.parse(`${today}T00:00:00Z`) - Date.parse(`${published}T00:00:00Z`)) / 86_400_000) : null;
@@ -51,7 +51,7 @@ export default function FormationClock({ steps, published, today }: { steps: Mil
         {ROWS.map((r) => (
           <li key={r.id} className={`gc-row ${r.kind}`}>
             <span className="gc-lab">
-              <b>{num(r.id) || ""}</b>
+              {numbered && <b>{num(r.id) || ""}</b>}
               <span>{r.label}</span>
             </span>
             <span className="gc-track">

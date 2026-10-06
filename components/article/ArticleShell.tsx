@@ -4,7 +4,7 @@ import "./article.css";
 import type { ArticleMeta } from "@/lib/articles";
 import CorrectionLink from "../CorrectionLink";
 import { Chart } from "./Article";
-import { LEAD_CHARTS } from "./leads";
+import { LEAD_CHARTS, LEAD_FIGURES } from "./leads";
 
 const DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -33,16 +33,19 @@ export default function ArticleShell({
   /** The page's lead figure, set right under the title so the graphic comes before the prose. */
   lead?: ReactNode;
 }) {
-  const leadChart = !lead && current ? LEAD_CHARTS[current] : undefined;
-  // The lead chart moves to the top, so the body leaves it out where the copy places it.
-  const components = leadChart ? { Chart: ({ id }: { id: string }) => (id === leadChart ? null : <Chart id={id} />) } : undefined;
+  const leadFigure = !lead && current ? LEAD_FIGURES[current] : undefined;
+  const leadChart = !lead && !leadFigure && current ? LEAD_CHARTS[current] : undefined;
+  const LeadFigure = leadFigure?.Figure;
+  // The lead moves to the top, so the body leaves it out where the copy places it.
+  const hidden = Object.fromEntries((leadFigure?.hides ?? []).map((name) => [name, () => null]));
+  const components = leadChart ? { Chart: ({ id }: { id: string }) => (id === leadChart ? null : <Chart id={id} />) } : leadFigure?.hides ? hidden : undefined;
   return (
     <div className="wrap article-page">
       <div className={`article-grid${siblings.length ? "" : " solo"}`}>
         <article className="article">
           <h1>{meta.title}</h1>
           <p className="dek">{meta.dek}</p>
-          {lead ?? (leadChart && <div className="lead-fig"><Chart id={leadChart} /></div>)}
+          {lead ?? (LeadFigure ? <div className="lead-fig"><LeadFigure /></div> : leadChart && <div className="lead-fig"><Chart id={leadChart} /></div>)}
           <p className="checked">Facts checked {DATE.format(new Date(meta.checked))}. Every number shows its source and date.</p>
           {foreword}
           <div className="body">

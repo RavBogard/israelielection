@@ -5,6 +5,8 @@ import { partyColor } from "@/lib/party-colors";
 import { shade, UNORDERED_EDGE } from "../compare/model";
 import { seatFigure } from "@/lib/polls";
 import type { PositionRow } from "@/lib/compare";
+import { basisQualifier, isUnstated } from "@/lib/positions";
+import { voteMapLink } from "./votemap-links";
 import { DotPlot, Lines, Pairs, Sparklines, Stacks, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
 import { barRefs, transpose } from "@/lib/chart-form";
 import SeatBar from "../SeatBar";
@@ -107,6 +109,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
   const print = (r: ChartRow) => r.display ?? `${r.value}${unit === "%" ? "%" : unit ? ` ${unit}` : ""}`;
   const bars = c.kind === "bars" ? barRefs(c, print) : null;
   const xOf = (v: number) => Math.max(0, Math.min(100, (v / max) * 100));
+  const vm = compact ? null : voteMapLink(id);
   const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks" || form === "pairs" || form === "stack";
   return (
     <figure className="chart">
@@ -170,6 +173,7 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
         )}
       </p>
       )}
+      {vm && <p className="fig-src cs vm-link"><a href={vm.href}>{vm.text}</a></p>}
     </figure>
   );
 }
@@ -249,9 +253,10 @@ export function PositionsLead({ issue }: { issue: string }) {
               <b>{g.st.label}</b>
               <span className="who">
                 {g.rows.map((r) => (
-                  <a key={r.party} href={`/parties/${r.party}`}>
+                  <a key={r.party} href={`/parties/${r.party}`} className={isUnstated(r as PositionRow) ? "unstated" : undefined} title={isUnstated(r as PositionRow) ? "Not said publicly: read from its record" : undefined}>
                     <span className="sw" style={{ background: partyColor(r.party) }} aria-hidden />
                     {name(r.party)}
+                    {isUnstated(r as PositionRow) && <span className="sr-only"> (not said publicly)</span>}
                   </a>
                 ))}
               </span>
@@ -262,7 +267,7 @@ export function PositionsLead({ issue }: { issue: string }) {
       </ul>
       <p className="fig-note ps-note">
         {scale ? "Answers in order from one end of the debate to the other. " : "These priorities can coexist, so they are not ordered. "}
-        Seats are the current polling average; the tick is 61. <a href="#positions">Each list&apos;s own words and sources</a>.
+        Seats are the current polling average; the tick is 61. {groups.some((g) => g.rows.some((r) => isUnstated(r as PositionRow))) && "A dotted outline marks a list that has not said its position publicly; it is read from the list's votes, deals or ministers' actions. "}<a href="#positions">Each list&apos;s own words and sources</a>.
       </p>
     </figure>
   );
@@ -303,15 +308,16 @@ export function Positions({ issue }: { issue: string }) {
   const name = (id: string) => parties.find((x) => x.id === id)!;
   const Entry = ({ r }: { r: PositionRowData }) => {
     const party = name(r.party);
+    const unstated = isUnstated(r as PositionRow);
     return (
-      <li>
+      <li className={unstated ? "unstated" : undefined}>
         <p className="pn">
           <span className="sw" style={{ background: partyColor(party.id) }} aria-hidden />
           <a href={`/parties/${party.id}`}>{party.name}</a>
           {seats(party.id) > 0 && <span className="ps">{seatFigure(seats(party.id))} seats</span>}
           {((r as PositionRow).declined || r.status === "declined") && <span className="ps">Declined to answer</span>}
         </p>
-        {r.text?.trim() && <p className="pt">{r.text}</p>}
+        {r.text?.trim() && <p className="pt">{unstated ? <><b className="pq">{basisQualifier(r as PositionRow)}</b>{r.text.trim()}</> : r.text}</p>}
         {r.source && (
           <p className="fig-src cs">
             <SourceLine source={r.source} url={r.url!} date={r.date!} />

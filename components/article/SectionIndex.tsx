@@ -10,6 +10,7 @@ export default function SectionIndex({
   items,
   extra,
   foot,
+  band,
 }: {
   title: string;
   intro: string;
@@ -17,11 +18,14 @@ export default function SectionIndex({
   extra?: { href: string; title: string; dek: string; label: string };
   /** A note on the whole section, set after the items rather than above them. */
   foot?: string;
+  /** A figure band between the head and the items (How it works: the election on one page). */
+  band?: ReactNode;
 }) {
   return (
     <div className="wrap article-page">
       <div className="sindex">
         <PageHead title={title} standfirst={intro} />
+        {band}
         <ul className="items">
           {items.map((s) => (
             <li key={s.href}>

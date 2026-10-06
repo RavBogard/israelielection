@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
-import VotingRightsGuide from "@/components/VotingRightsGuide";
 import { GUIDES, type GuideSlug } from "@/lib/articles";
 import { guideIndex, loadGuide } from "@/lib/content";
 
@@ -26,5 +25,5 @@ export default async function Page(props: PageProps<"/how-it-works/[slug]">) {
   if (!known(slug)) notFound();
   const { default: Body, meta } = await loadGuide(slug);
   const siblings = (await guideIndex()).map((s) => ({ href: s.href, title: s.meta.title }));
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} lead={slug === "who-votes" ? <VotingRightsGuide /> : undefined} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} />;
 }

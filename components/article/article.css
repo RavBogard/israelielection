@@ -308,3 +308,89 @@
 .sindex .ps-mini-ends > span:last-child { text-align: right; flex-direction: row-reverse; }
 .sindex .ps-mini-ends .k { display: inline-block; flex: none; min-width: 18px; height: 16px; line-height: 16px; text-align: center; font-size: 12px; font-weight: 700; }
 @media (max-width: 640px) { .sindex .ps-mini-key { display: none; } }
+
+/* W2 explainer pictures (2026-10-06). Unstated positions: a dotted outline (not dashed, which means out) and the qualifier before the text. */
+.article .positions li.unstated { border: 1px dotted var(--ink-2); padding: 10px 12px; margin: 6px 0; }
+.article .positions li.unstated + li { border-top: 0; }
+.article .positions .pq { font-family: var(--body); font-size: 14px; font-weight: 700; color: var(--ink); }
+.article .ps-legend .who a.unstated { outline: 1px dotted var(--ink-2); outline-offset: 2px; padding: 0 3px; }
+/* The vote-map link that ends a community's "how these towns voted" figure. */
+.article .vm-link a { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .article .vm-link a { display: inline-flex; align-items: center; min-height: 44px; } }
+
+/* The seats guide's Bader-Ofer steps: a numbered sequence, each number in a black square, joined by a thin line. */
+.article .body > ol { list-style: none; counter-reset: step; padding: 0; margin: 0 0 1.2em; }
+.article .body > ol > li { counter-increment: step; position: relative; margin: 0; padding: 4px 0 18px 52px; }
+.article .body > ol > li::before { content: counter(step); position: absolute; left: 0; top: 2px; width: 34px; height: 34px; display: grid; place-items: center; background: var(--ink); color: var(--bg); font: 700 19px/1 var(--display); font-variant-numeric: tabular-nums; }
+.article .body > ol > li:not(:last-child)::after { content: ""; position: absolute; left: 16.5px; top: 40px; bottom: 2px; width: 1px; background: var(--ink-3); }
+
+/* The forming guide's lead: the government page's clock, without its step numbers. */
+.lead-gov.gov .gov-clock .gc-row .gc-lab { grid-template-columns: minmax(0, 1fr); }
+.lead-gov .lead-more { margin: -10px 0 0; }
+
+/* The voting guide's lead: the tray of slips, one lifted face down; the envelope; the box; the double envelope. */
+.article .ballot-lead .bl-steps { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+.article .ballot-lead .bl-steps > li { margin: 0; }
+.article .ballot-lead .bl-s1 { grid-column: 1 / -1; }
+.article .ballot-lead .bl-n { display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px; font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.article .ballot-lead .bl-n b { flex: none; width: 26px; height: 26px; display: inline-grid; place-items: center; background: var(--ink); color: var(--bg); font: 700 15px/1 var(--display); transform: translateY(5px); }
+.article .ballot-lead .bl-tray { display: grid; grid-template-columns: minmax(0, 1fr) 76px; gap: 14px; align-items: start; }
+.article .ballot-lead .bl-wall { margin: 0; padding: 8px; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); gap: 4px; background: var(--cell); line-height: 1.2; }
+.article .ballot-lead .bl-wall li { margin: 0; display: flex; }
+.article .ballot-lead .bd-slip { flex: 1; min-height: 40px; padding: 4px 2px; justify-content: center; }
+.article .ballot-lead .bd-letters { font-size: 16px; padding: 0; }
+.article .ballot-lead .bl-lift { position: relative; display: grid; place-items: end center; height: 100px; margin-top: -6px; padding: 0 6px 8px; background: var(--sheet); border: 1px solid var(--ink); transform: rotate(-5deg) translateY(-4px); font-size: 12px; line-height: 1.25; color: var(--ink-2); text-align: center; }
+.article .ballot-lead svg { display: block; width: 100%; max-width: 220px; height: auto; overflow: visible; }
+.article .ballot-lead .bl-paper { fill: var(--sheet); stroke: var(--ink); stroke-width: 1; }
+.article .ballot-lead .bl-paper.soft, .article .ballot-lead .bl-slip { fill: var(--sheet); stroke: var(--ink-3); stroke-width: 1; }
+.article .ballot-lead .bl-ink { fill: none; stroke: var(--ink); stroke-width: 1; }
+.article .ballot-lead .bl-soft { fill: none; stroke: var(--ink-3); stroke-width: 1; }
+.article .ballot-lead .bl-cell { fill: var(--cell); stroke: var(--ink); stroke-width: 1; }
+.article .ballot-lead .bl-slot { fill: var(--ink); }
+.article .ballot-lead svg * { vector-effect: non-scaling-stroke; }
+.article .ballot-lead .bl-double { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.article .ballot-lead .bl-double p { margin: 0; font-size: 14.5px; line-height: 1.45; }
+.article .ballot-lead .bl-double b { font-family: var(--display); font-size: 18px; color: var(--ink); }
+@media (max-width: 560px) {
+  .article .ballot-lead .bl-steps { grid-template-columns: 1fr; }
+  .article .ballot-lead .bl-tray { grid-template-columns: minmax(0, 1fr) 60px; gap: 10px; }
+  .article .ballot-lead .bl-lift { height: 84px; }
+  .article .ballot-lead .bl-double { grid-template-columns: 88px minmax(0, 1fr); }
+}
+
+/* How it works: the election on one page, four small figures in the order things happen, two by two. */
+.onepage { margin: 22px 0 8px; }
+.onepage .op-h { font-family: var(--display); font-weight: 700; font-size: var(--fs-sec3); line-height: 1.12; margin: 0 0 12px; color: var(--ink); }
+.onepage .op-panels { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+.onepage .op-panels > li { padding: 14px 0 18px; border-top: 1px solid var(--ink); min-width: 0; }
+.onepage h3 { margin: 0 0 12px; font-family: var(--body); font-size: 16px; font-weight: 700; line-height: 1.3; }
+.onepage h3 a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; color: var(--ink); text-decoration: none; }
+.onepage h3 a:hover { text-decoration: underline; }
+.onepage h3 b { flex: none; width: 24px; height: 24px; display: inline-grid; place-items: center; background: var(--ink); color: var(--bg); font: 700 14px/1 var(--display); }
+.onepage .op-read { margin: 10px 0 0; font-size: 14px; line-height: 1.45; color: var(--text); }
+.onepage .op-read b { color: var(--ink); }
+.onepage .op-slips { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 3px; }
+.onepage .op-slips li { height: 24px; display: grid; place-items: center; font: 700 12px/1 var(--display); box-sizing: border-box; overflow: hidden; }
+.onepage .op-slips .in { background: var(--ink); color: var(--bg); }
+.onepage .op-slips .out { border: 1px dashed var(--ink-3); color: var(--ink-3); }
+.onepage .op-seats { position: relative; padding-top: 18px; }
+.onepage .op-61 { position: absolute; top: 0; transform: translateX(-50%); font: 700 13px/1 var(--display); color: var(--ink); }
+.onepage .op-clock .op-bar { display: flex; gap: 1px; height: 22px; }
+.onepage .op-clock .op-bar i { display: block; min-width: 2px; }
+.onepage .op-clock .nominee { background: var(--ink); }
+.onepage .op-clock .president, .onepage .op-clock .knesset { background: var(--ink-3); }
+.onepage .op-clock .discretion { background: var(--sheet); box-shadow: inset 0 0 0 1px var(--ink-2); }
+.onepage .op-axis { display: flex; justify-content: space-between; margin-top: 4px; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.onepage .op-rights { border-collapse: separate; border-spacing: 3px; table-layout: fixed; font-size: 12.5px; margin: -3px; width: calc(100% + 6px); }
+.onepage .op-rights thead th { font-size: 12px; font-weight: 600; color: var(--ink-2); text-align: left; padding: 0 2px 2px; }
+.onepage .op-rights thead th:first-child { width: 58%; }
+.onepage .op-rights tbody th { text-align: left; font-weight: 400; color: var(--text); line-height: 1.25; padding: 2px 4px 2px 0; }
+.onepage .op-rights td { height: 22px; }
+.onepage .op-rights td.yes { background: var(--ink); }
+.onepage .op-rights td.status { background: var(--cell); }
+.onepage .op-rights td.no { background: repeating-linear-gradient(135deg, var(--line-2) 0 1.5px, transparent 1.5px 6px); box-shadow: inset 0 0 0 1px var(--line-2); }
+.onepage .op-src { margin: 4px 0 0; }
+@media (max-width: 640px) {
+  .onepage .op-panels { grid-template-columns: minmax(0, 1fr); }
+  .onepage h3 a { min-height: 44px; }
+}

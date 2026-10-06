@@ -1,0 +1,41 @@
+/* Article locator maps: the map in a fixed-width frame (so its marks keep their size), the key beside it on wide screens. Labels are HTML over the SVG, at real pixel sizes. */
+.map-fig .map-body { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 16px 24px; align-items: start; margin-top: 12px; }
+.map-fig .map-frame { position: relative; width: 100%; }
+.map-fig svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.map-fig svg path, .map-fig svg circle { vector-effect: non-scaling-stroke; }
+.map-fig .m-c { fill: var(--cell); stroke: var(--ink-3); stroke-width: 1; }
+.map-fig .m-b { fill: var(--ink-3); }
+.map-fig .m-a { fill: var(--ink); }
+.map-fig .m-ej { fill: var(--bg); stroke: var(--ink); stroke-width: 1; }
+.map-fig .m-nml { fill: var(--bg); stroke: var(--ink-3); stroke-width: 1; }
+.map-fig .m-green { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 5 3; }
+.map-fig .m-dot { fill: var(--bg); stroke: var(--ink); stroke-width: 2; }
+.map-fig .m-vote { stroke: var(--bg); stroke-width: 1; fill-opacity: .92; }
+.map-fig .m-sizekey { fill: none; stroke: var(--ink-2); stroke-width: 1; }
+.map-fig .m-lab { position: absolute; font-family: var(--body); font-size: 12.5px; font-weight: 700; line-height: 1.2; color: var(--ink); white-space: nowrap; pointer-events: none; padding: 0 3px; background: color-mix(in srgb, var(--bg) 82%, transparent); }
+.map-fig .m-lab.r { transform: translate(7px, -50%); }
+.map-fig .m-lab.l { transform: translate(calc(-100% - 7px), -50%); }
+.map-fig .m-lab.t { transform: translate(-50%, calc(-100% - 6px)); }
+.map-fig .m-lab.b { transform: translate(-50%, 6px); }
+.map-fig .m-lab.region { font-weight: 400; color: var(--ink-2); background: none; }
+.map-fig .m-lab.gl { font-weight: 400; font-size: 12px; color: var(--ink-2); transform: translate(-100%, -50%); }
+.map-fig .m-lab.sz { font-weight: 400; font-size: 12px; color: var(--ink-2); background: none; }
+.map-fig .map-key { flex-direction: column; align-items: flex-start; gap: 8px; margin: 0; font-size: 13.5px; line-height: 1.35; color: var(--text); }
+.map-fig .map-key li { display: flex; gap: 8px; align-items: flex-start; }
+.map-fig .mk { flex: none; width: 16px; height: 12px; margin-top: 2px; box-sizing: border-box; }
+.map-fig .mk.m-a { background: var(--ink); }
+.map-fig .mk.m-b { background: var(--ink-3); }
+.map-fig .mk.m-c { background: var(--cell); border: 1px solid var(--ink-3); }
+.map-fig .mk.m-ej { background: var(--bg); border: 1px solid var(--ink); }
+.map-fig .mk.line { height: 0; margin-top: 8px; border-top: 1px dashed var(--ink); }
+.map-fig .mk.dot { width: 12px; border-radius: 50%; background: var(--bg); border: 2px solid var(--ink); }
+.map-fig .mk.sw { width: 12px; border-radius: 50%; }
+.map-fig .map-go { margin: 14px 0 0; font-size: 14px; font-weight: 600; }
+.map-fig .map-go a { color: var(--ink); display: inline-flex; align-items: center; min-height: 44px; }
+.map-fig .cv-numbers { margin-top: 12px; }
+.map-fig .cv-numbers summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); }
+.map-fig .cv-numbers .tw { max-height: 420px; overflow-y: auto; }
+@media (max-width: 640px) {
+  .map-fig .map-body { grid-template-columns: minmax(0, 1fr); }
+  .map-fig .map-frame { max-width: 380px; }
+}
