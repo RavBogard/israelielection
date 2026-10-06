@@ -1,36 +1,34 @@
 import type { Metadata } from "next";
 import "@/components/article/article.css";
 import Compare, { type CompareParty, type Preset } from "@/components/Compare";
+import { matrixRows } from "@/components/compare/model";
 import { averagePoll, blocs, parties } from "@/lib/data";
-import { defaultSelection } from "@/lib/compare";
-import { comparisonIssues } from "@/lib/positions";
 import { lettersOf } from "@/lib/letters";
 import { outgoingGovernment } from "@/lib/outgoing-government";
 
 export const metadata: Metadata = {
   title: "Compare the parties",
   description:
-    "Compare parties' recorded answers on governing policy, including Gaza, with dates, sources and missing evidence kept visible.",
+    "Every list's recorded answer on the draft, the courts, the October 7 inquiry, the West Bank, religion and state, the economy, a Palestinian state and Gaza, in one matrix, with the party's words, dates and sources.",
 };
 
 const pickable: CompareParty[] = parties
   .filter((p) => p.coalitionCard !== "hidden")
-  .map((p) => ({ id: p.id, name: p.name, bloc: p.bloc, letters: lettersOf[p.id] ?? null, seats: averagePoll.results[p.id]?.seats ?? null }));
+  .map((p) => ({ id: p.id, name: p.name, bloc: p.bloc, letters: lettersOf[p.id] ?? null, seats: averagePoll.results[p.id]?.seats ?? null, out: p.coalitionCard === "out" }));
 
 const ids = pickable.map((p) => p.id);
-const defaults = defaultSelection(ids, averagePoll.results);
 
-/** The sets a reader is likely to ask about. The core opposition lists are the four Jewish-majority lists polled into the Knesset. */
+/** The column sets a reader is likely to ask about. The core opposition lists are the four Jewish-majority lists polled into the Knesset. */
 const CORE_OPPOSITION = ["yashar", "byachad", "dem", "yb"];
 const presets: Preset[] = [
-  { label: "Netanyahu's bloc", ids: ids.filter((id) => parties.find((p) => p.id === id)!.bloc === "net") },
-  { label: "the anti-Netanyahu bloc", ids: ids.filter((id) => parties.find((p) => p.id === id)!.bloc === "opp") },
-  { label: "the four core opposition lists", ids: CORE_OPPOSITION.filter((id) => ids.includes(id)) },
-  { label: "the outgoing government", ids: outgoingGovernment.with.filter((id) => ids.includes(id)) },
-  { label: "every list", ids },
+  { label: "Every list", ids },
+  { label: "Netanyahu bloc", ids: ids.filter((id) => parties.find((p) => p.id === id)!.bloc === "net") },
+  { label: "Anti-Netanyahu bloc", ids: ids.filter((id) => parties.find((p) => p.id === id)!.bloc === "opp") },
+  { label: "Core opposition", ids: CORE_OPPOSITION.filter((id) => ids.includes(id)) },
+  { label: "Outgoing government", ids: outgoingGovernment.with.filter((id) => ids.includes(id)) },
 ];
 
-const issueList = comparisonIssues();
+const rows = matrixRows(ids);
 
 export default function Page() {
   return (
@@ -38,12 +36,12 @@ export default function Page() {
       <header className="page-head">
         <h1>Compare the parties</h1>
         <p className="standfirst">
-          Pick any set of parties and compare their recorded answers on the draft, courts, October 7 inquiry, West Bank, religion and state,
-          economy, Palestinian statehood and Gaza. Narrow questions separate compatible aims from different proposals. Missing evidence remains visible.
+          Every list&apos;s recorded answer on the questions that divide this election, in one chart. Read across a row to see who agrees and
+          where the field splits; open a row for each party&apos;s own words and source.
         </p>
       </header>
 
-      <Compare parties={pickable} blocs={blocs} issues={issueList} presets={presets} defaults={defaults} />
+      <Compare parties={pickable} blocs={blocs} rows={rows} presets={presets} defaults={ids} />
     </div>
   );
 }

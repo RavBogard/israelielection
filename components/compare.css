@@ -1,97 +1,157 @@
-/* Compare the parties: a picker grouped by bloc, then seven issue strips. In a strip the issue's
-   stances are columns and the chosen parties sit under theirs as small ballot slips, so agreement
-   reads as a pile and a split as distance. Bloc colour appears only as the bar on each slip. */
-.cmp { margin-top: 24px; font-family: var(--body); color: var(--ink); }
-.cmp .topic-jumps { display: flex; flex-wrap: wrap; gap: 8px 18px; border-block: 1px solid var(--line); padding: 16px 0; margin-bottom: 16px; font-size: 14px; }
-.cmp .compact-control { display: flex; align-items: center; gap: 8px; font-size: 14px; margin-bottom: 12px; }
-.cmp .issue { scroll-margin-top: 100px; }
-.cmp .evidence-age { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 20px; font-size: 12px; line-height: 1.5; color: var(--ink-2); }
-@media (max-width: 760px) { .cmp .evidence-age { grid-template-columns: minmax(0, 1fr); } }
+/* Compare the parties: one matrix. Questions down the side, every list across the top grouped by
+   bloc, each cell shaded by the list's recorded answer on the issue's ordered range (the stance ramp
+   the party profiles use). Bloc colour appears only as the bar over each column head. */
+.cmp { margin-top: 28px; font-family: var(--body); color: var(--ink); }
 
-/* Picker */
-.cmp .picker { border: 0; margin: 0 0 36px; padding: 0; min-width: 0; }
-.cmp .picker legend { font-weight: 700; font-size: 15px; padding: 0; margin-bottom: 6px; }
-.cmp .presets { font-family: var(--display); font-size: 16.5px; line-height: 1.55; color: var(--text); margin: 0 0 18px; max-width: 70ch; }
-.cmp .linkish { font: inherit; font-weight: 700; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.cmp .linkish[aria-pressed="true"] { text-decoration-color: var(--line-2); }
-.cmp .linkish:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cmp .blocs { display: grid; grid-template-columns: repeat(4, minmax(0, auto)); gap: 16px 28px; justify-content: start; }
-.cmp .bl { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
-.cmp .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
-.cmp .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.cmp .chip { font: inherit; font-size: 14px; text-align: left; background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); border-radius: 0; padding: 7px 11px 8px; cursor: pointer; display: inline-flex; align-items: baseline; gap: 8px; }
-.cmp .chip:hover:not(:disabled) { border-color: var(--ink); border-top-color: var(--fill); }
-.cmp .chip[aria-pressed="true"] { background: var(--fill); color: var(--fill-ink); border-color: var(--fill); font-weight: 600; }
-.cmp .chip[aria-pressed="true"] .letters, .cmp .chip[aria-pressed="true"] .nm { color: var(--fill-ink); }
-.cmp .chip:disabled { cursor: default; }
-.cmp .chip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cmp .chip .letters { font-size: 17px; }
-.cmp .hint { margin: 14px 0 0; font-size: 14px; color: var(--ink-2); }
-.cmp .hint a { color: var(--ink); font-weight: 600; }
+/* Column sets: the segmented control */
+.cmp .mx-show { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-bottom: 22px; }
+.cmp .mx-show .lbl { font-size: 14px; font-weight: 600; }
+.cmp .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--ink); border-radius: 4px; background: var(--sheet); overflow: hidden; }
+.cmp .seg button { font: inherit; font-size: 14px; font-weight: 500; color: var(--ink); background: transparent; border: 0; border-left: 1px solid var(--line); padding: 7px 14px 8px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25; }
+.cmp .seg button:first-child { border-left: 0; }
+.cmp .seg button small { font-size: 11.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.cmp .seg button:hover { background: var(--bg); }
+.cmp .seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 600; }
+.cmp .seg button[aria-pressed="true"] small { color: var(--bg); opacity: .75; }
+.cmp .seg button:focus-visible { outline: 2px solid var(--ink); outline-offset: -4px; }
+.cmp .mx-show .build { font-size: 14px; color: var(--ink); }
 
-/* Ballot letters in the display face, as on the slips */
-.cmp .letters { font-family: var(--display); font-weight: 900; line-height: 1; color: var(--ink); }
-.cmp .nm { line-height: 1.2; }
+/* Key */
+.cmp .mx-key { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 32px; align-items: start; border-top: 1px solid var(--ink); padding: 12px 0 18px; font-size: 13px; line-height: 1.45; color: var(--ink-2); }
+.cmp .mx-key p { margin: 0; }
+.cmp .mx-key .ramp { display: flex; align-items: center; gap: 12px; max-width: 70ch; }
+.cmp .mx-key .bar { display: inline-flex; flex: none; }
+.cmp .mx-key .bar i { width: 22px; height: 16px; display: block; }
+.cmp .mx-key .glyphs { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.cmp .mx-key .glyphs span { display: inline-flex; align-items: center; gap: 7px; }
+.cmp .mx-key .tap { grid-row: 1; grid-column: 2; font-weight: 600; color: var(--ink); }
+.cmp .g { width: 16px; height: 16px; display: inline-block; flex: none; position: relative; }
+.cmp .g.none { border: 1px dashed var(--line-2); }
+.cmp .g.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 4px); }
+.cmp .g.rec { background: #233f86; }
+.cmp .g.rec::after, .cmp .mx-cell .rec { content: ""; position: absolute; top: 2px; right: 2px; width: 0; height: 0; border-top: 6px solid var(--bg); border-left: 6px solid transparent; }
+.cmp .g.ink { background: var(--ink-2); }
 
-/* Issue strips */
-.cmp .issues { list-style: none; margin: 0; padding: 0; }
-.cmp .issue { border-top: 2px solid var(--ink); padding: 18px 0 26px; }
-.cmp .issue header { margin-bottom: 18px; max-width: 70ch; }
-.cmp .issue h2 { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1.1; letter-spacing: -.01em; margin: 0; }
-.cmp .issue .q { font-family: var(--display); font-size: 17px; line-height: 1.4; color: var(--text); margin: 4px 0 0; }
-.cmp .issue .verdict { font-size: 14.5px; line-height: 1.45; color: var(--ink-2); margin: 8px 0 0; }
+/* The matrix */
+.cmp .mx-wrap { position: relative; }
+.cmp .mx { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.cmp .mx-corner { width: 300px; }
+.cmp .mx thead th, .cmp .mx thead td { vertical-align: bottom; padding: 0 2px 6px; background: var(--bg); }
+.cmp .mx thead .mx-bloc { text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.25; padding: 10px 2px 10px; }
+.cmp .mx-bloc span { display: block; padding-top: 6px; border-top: 3px solid var(--fill); }
+.cmp .mx thead .mx-bloc + .mx-bloc { padding-left: 12px; }
+.cmp .mx thead .gap { padding-left: 12px; }
+/* Vertical names, read bottom to top, ending on the ballot letters below. */
+.cmp .mx-party { text-align: center; }
+.cmp .mx-party a { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); max-height: 150px; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.15; color: var(--ink); text-decoration: none; }
+.cmp .mx-party a:hover { text-decoration: underline; }
+.cmp .mx-party a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+/* Only the letters and seats stay pinned while the rows scroll under them. */
+.cmp .mx thead .mx-heads > * { position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--ink); padding-top: 6px; }
+.cmp .mx-head { text-align: center; }
+.cmp .mx-head .letters { display: block; font-family: var(--display); font-weight: 900; font-size: 17px; line-height: 1; padding: 6px 0 5px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); }
+.cmp .mx-head .seats { display: block; margin-top: 4px; font-family: var(--display); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+.cmp .mx-head.out .seats { font-family: var(--body); font-weight: 500; font-size: 11.5px; color: var(--ink-3); line-height: 19px; }
+.cmp .mx-corner .seatlbl { display: block; text-align: right; padding-right: 14px; font-size: 12px; color: var(--ink-3); }
 
-.cmp .strip { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 0 18px; }
-.cmp .col { min-width: 0; border-top: 1px solid var(--line-2); padding-top: 8px; }
-.cmp .col .st { margin: 0 0 10px; font-size: 13.5px; font-weight: 600; line-height: 1.3; color: var(--ink); }
-.cmp .col.empty .st { color: var(--ink-3); font-weight: 500; }
-.cmp .col.empty { border-top-style: dashed; }
-.cmp .col.quiet { border-top-color: var(--line); }
-.cmp .col.quiet .st { color: var(--ink-3); font-weight: 500; }
-.cmp .slips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.cmp .ms { width: 72px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--fill); padding: 8px 8px 7px; display: flex; flex-direction: column; gap: 4px; }
-.cmp .ms .letters { font-size: 20px; }
-.cmp .ms .nm { font-size: 11.5px; line-height: 1.2; color: var(--ink); }
-.cmp .col.quiet .ms { background: transparent; border-style: dashed; border-top-style: solid; border-top-color: color-mix(in srgb, var(--fill) 40%, transparent); }
-.cmp .col.quiet .ms .letters, .cmp .col.quiet .ms .nm { color: var(--ink-3); }
+.cmp .mx-row { scroll-margin-top: 84px; }
+.cmp .mx-row > * { border-top: 1px solid var(--line); vertical-align: top; }
+.cmp .mx-row.d0 > * { border-top-color: var(--ink); }
+.cmp .mx-row.d1 > * { border-top-style: dotted; border-top-color: var(--line-2); }
+.cmp .mx-q { text-align: left; font-weight: 400; padding: 12px 16px 14px 0; }
+.cmp .mx-row.d1 .mx-q { padding-left: 18px; }
+.cmp .mx-toggle { font: inherit; text-align: left; color: var(--ink); background: transparent; border: 0; padding: 0; cursor: pointer; display: flex; flex-direction: column; gap: 3px; width: 100%; }
+.cmp .mx-toggle .lab { font-family: var(--display); font-weight: 700; font-size: 18px; line-height: 1.2; }
+.cmp .mx-row.d1 .mx-toggle .lab { font-family: var(--body); font-weight: 600; font-size: 14px; }
+.cmp .mx-toggle .lab::after { content: ""; display: inline-block; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); margin: 0 0 4px 9px; transition: transform .15s; }
+.cmp .mx-row.open .mx-toggle .lab::after { transform: rotate(225deg); margin-bottom: 0; }
+.cmp .mx-toggle .qq { font-size: 13px; color: var(--ink-2); line-height: 1.35; }
+.cmp .mx-toggle:hover .lab { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.cmp .mx-toggle:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.cmp .legend { list-style: none; margin: 9px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; line-height: 1.3; color: var(--ink-2); }
+.cmp .legend li { display: flex; align-items: flex-start; gap: 7px; }
+.cmp .legend li.hi { color: var(--ink); font-weight: 600; }
+.cmp .legend-none { margin: 8px 0 0; font-size: 12.5px; font-style: italic; color: var(--ink-3); }
+.cmp .key { flex: none; width: 17px; height: 15px; font-size: 10.5px; font-weight: 700; line-height: 15px; text-align: center; font-variant-numeric: tabular-nums; }
+.cmp .key.on-light, .cmp .mx-cell.on-light { color: #fff; }
+.cmp .key.on-dark, .cmp .mx-cell.on-dark { color: #10182e; }
+.cmp .key.on-ink, .cmp .mx-cell.on-ink { color: var(--bg); }
+.cmp .key.none { border: 1px dashed var(--line-2); }
 
-/* What each party said */
-.cmp .said { margin-top: 18px; }
-.cmp .said summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; list-style: none; display: inline-block; }
-.cmp .said summary::-webkit-details-marker { display: none; }
-.cmp .said summary:hover { text-decoration-color: currentColor; }
-.cmp .said summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.cmp .said[open] summary { margin-bottom: 8px; }
-.cmp .quotes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
-.cmp .quotes li { padding: 12px 0 14px; border-top: 1px solid var(--line); }
-.cmp .quotes .who { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; margin: 0 0 6px; font-size: 14.5px; }
-.cmp .quotes .who .sw { background: var(--fill); align-self: center; }
-.cmp .quotes .who .st { font-size: 13px; color: var(--ink-2); }
-.cmp .quotes .who .st.quiet { color: var(--ink-3); font-weight: 600; }
-.cmp .pos { font-family: var(--display); font-size: 16px; line-height: 1.5; color: var(--ink); margin: 0; }
-.cmp .src { font-family: var(--body); font-size: 12.5px; line-height: 1.4; color: var(--ink-3); margin: 6px 0 0; }
-.cmp .src a { color: var(--ink-3); }
-.cmp .src a:hover { color: var(--ink); }
-.cmp .said .note { margin: 12px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--ink-2); max-width: 80ch; }
+.cmp .mx-c { padding: 6px 2px; }
+.cmp .mx-row.d1 .mx-c { padding-block: 9px; }
+.cmp .mx-cell { position: relative; display: block; width: 100%; height: 44px; border: 0; padding: 0; cursor: pointer; font: inherit; background: transparent; transition: opacity .12s; }
+.cmp .mx-row.d1 .mx-cell { height: 30px; }
+.cmp .mx-cell .n { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.cmp .mx-cell.none { border: 1px dashed var(--line-2); }
+.cmp .mx-cell.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--ink-3) 0 1px, transparent 1px 5px); }
+.cmp .mx-cell.dim { opacity: .28; }
+.cmp .mx-cell.match { outline: 2px solid var(--ink); outline-offset: 1px; }
+.cmp .mx-cell:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 
-.cmp .foot { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-2); max-width: 70ch; }
+/* The open row */
+.cmp .mx-panelrow > td { padding: 0 0 22px; }
+.cmp .mx-panel { background: var(--sheet); border: 1px solid var(--line-2); border-top: 2px solid var(--ink); padding: 18px 22px 20px; }
+.cmp .mx-panel header { margin-bottom: 6px; }
+.cmp .mx-panel .q { font-family: var(--display); font-size: 19px; line-height: 1.35; margin: 0 0 4px; color: var(--ink); }
+.cmp .mx-panel .verdict { font-size: 14px; color: var(--ink-2); margin: 0; }
+.cmp .grp { margin-top: 18px; }
+.cmp .grp h3 { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 700; margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.cmp .grp h3 .key { width: 20px; height: 18px; line-height: 18px; font-size: 11.5px; }
+.cmp .said { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; }
+.cmp .said li { scroll-margin: 120px 0 40px; }
+.cmp .said .who { display: flex; align-items: center; gap: 8px; margin: 0 0 4px; font-size: 14.5px; }
+.cmp .said .who .sw { width: 10px; height: 10px; background: var(--fill); flex: none; }
+.cmp .said .who .st { font-size: 13px; color: var(--ink-3); font-weight: 400; }
+.cmp .said .pos { font-family: var(--display); font-size: 16px; line-height: 1.55; color: var(--text); margin: 0 0 5px; max-width: 70ch; }
+.cmp .said .src { font-size: 12.5px; line-height: 1.5; color: var(--ink-3); margin: 0; }
+.cmp .said .src a { color: var(--ink-2); }
+.cmp .grp.quiet .said { gap: 8px 32px; }
+.cmp .mx-panel .note { font-size: 13px; line-height: 1.55; color: var(--ink-2); margin: 18px 0 0; padding-top: 12px; border-top: 1px solid var(--line); max-width: 110ch; }
+.cmp .mx-panel .links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 14px 0 0; font-size: 14px; }
+.cmp .mx-panel .links a { color: var(--ink); }
 
-@media (max-width: 1000px) {
-  .cmp .blocs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cmp .quotes { grid-template-columns: minmax(0, 1fr); }
+.cmp .foot { font-size: 13.5px; line-height: 1.55; color: var(--ink-2); max-width: 90ch; margin: 18px 0 0; }
+.cmp .foot a { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .cmp .mx-corner { width: 230px; }
+  .cmp .mx-toggle .lab { font-size: 16.5px; }
 }
+
+/* Phones and narrow tablets: each question's label spans the full width over its row of cells,
+   so all fourteen columns still fit without a sideways scroll. Roles keep the table semantics. */
 @media (max-width: 760px) {
-  .cmp .issue h2 { font-size: 24px; }
-  /* The strip stacks: each stance a row, its slips inline. */
-  .cmp .strip { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .cmp .col { display: grid; grid-template-columns: minmax(96px, 34%) minmax(0, 1fr); gap: 0 14px; align-items: start; border-top: 1px solid var(--line); padding: 10px 0; }
-  .cmp .col .st { margin: 0; }
-  .cmp .col.empty { border-top-style: solid; }
-  .cmp .col.empty .st { font-size: 13px; }
-  .cmp .ms { width: 64px; padding: 6px 7px 6px; }
-  .cmp .ms .letters { font-size: 18px; }
+  .cmp .mx-key { grid-template-columns: minmax(0, 1fr); }
+  .cmp .mx-key .tap { grid-row: auto; grid-column: auto; }
+  .cmp .mx, .cmp .mx tbody { display: block; }
+  /* thead steps aside so the letters row's sticky parent is the whole table. */
+  .cmp .mx thead { display: contents; }
+  .cmp .mx thead th { align-self: end; }
+  .cmp .mx thead tr.mx-heads { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--ink); }
+  .cmp .mx thead .mx-heads > * { position: static; border-bottom: 0; }
+  .cmp .mx thead tr, .cmp .mx-row { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); }
+  .cmp .mx-corner { display: none; }
+  .cmp .mx thead th { padding-bottom: 6px; }
+  .cmp .mx thead .gap, .cmp .mx-c.gap { padding-left: 1px; }
+  .cmp .mx thead th, .cmp .mx thead td { padding-inline: 1px; }
+  .cmp .mx-party a { font-size: 10.5px; font-weight: 500; max-height: 110px; }
+  .cmp .mx-head .letters { font-size: 11px; padding: 4px 0 3px; border-top-width: 3px; }
+  .cmp .mx-head .seats { font-size: 12.5px; }
+  .cmp .mx thead tr.mx-blocs { display: none; }
+  .cmp .mx-q { grid-column: 1 / -1; padding: 12px 0 6px; }
+  .cmp .mx-row.d1 .mx-q { padding-left: 12px; }
+  .cmp .mx-row > .mx-c { border-top: 0; padding: 0 1px 12px; }
+  .cmp .mx-cell { height: 34px; }
+  .cmp .mx-row.d1 .mx-cell { height: 24px; }
+  .cmp .mx-cell .n { font-size: 11px; }
+  .cmp .legend { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; }
+  .cmp .mx-panelrow { display: block; }
+  .cmp .mx-panelrow > td { display: block; }
+  .cmp .mx-panel { padding: 14px 14px 16px; }
+  .cmp .said { grid-template-columns: minmax(0, 1fr); }
 }
-@media (max-width: 480px) {
-  .cmp .blocs { grid-template-columns: minmax(0, 1fr); }
-  .cmp .chip { font-size: 13.5px; padding: 6px 9px 7px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cmp .mx-cell, .cmp .mx-toggle .lab::after { transition: none; }
 }

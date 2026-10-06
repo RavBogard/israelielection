@@ -46,7 +46,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
           );
         })}
       </div>
-      <p className="pp-tilekey">{"Bar shade: where the stance sits on each issue’s scale, shared across all lists. Darker is nearer the governing coalition’s side; the economy’s options coexist, so its bar is ink."}</p>
+      <p className="pp-tilekey">{"Bar shade: the stance’s place in the issue’s range of answers, from one end of the debate to the other, shared across all lists. The economy’s options coexist, so its bar is ink."}</p>
       <div id={`${base}-panel`} className="pp-tilepanel" hidden={!current}>
         {current && (
           <>
@@ -68,7 +68,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
                 ))}
               </p>
             )}
-            <p className="more"><Link href="/compare">Compare every list on this question</Link></p>
+            <p className="more"><Link href={`/compare#issue-${current.key}`}>Compare every list on this question</Link></p>
           </>
         )}
       </div>
