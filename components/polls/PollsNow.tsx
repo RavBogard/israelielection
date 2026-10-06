@@ -144,9 +144,9 @@ export default function PollsNow() {
                     <td className="num avg">
                       {a!.k === 0 ? <span className="dim">below threshold</span> : a!.nearThreshold ? <span className="dim" title={`${one(a!.avg)} seats in the polls where it passes`}>near threshold</span> : <b>{one(a!.avg)}</b>}
                     </td>
-                    <td className="num">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
-                    <td className="num">{a!.k} of {a!.n}</td>
-                    <td className="num dim" title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
+                    <td className="num" data-label="Range">{lo === 0 && hi === 0 ? "" : lo === hi ? lo : `${lo}–${hi}`}</td>
+                    <td className="num" data-label="Passes in">{a!.k} of {a!.n}</td>
+                    <td className="num dim" data-label={cfg.withoutVariant.label} title={w ? `Passes in ${w.k} of ${w.n} polls without ${variantNames.join(" and ")}` : undefined}>
                       {!w ? "n/a" : w.k === 0 ? "below" : w.nearThreshold ? "near" : one(w.avg)}
                     </td>
                   </tr>

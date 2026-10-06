@@ -76,3 +76,26 @@
   .pn-table th[scope="row"] { white-space: normal; min-width: 110px; }
   .pn-table th, .pn-table td { padding-inline: 6px; }
 }
+
+/* Phones: each list is one block, its name and average on a line, the dot strip at full width
+   below, then its range, polls passed and the average without one pollster's firms, labelled. */
+@media (max-width: 560px) {
+  .pn-table, .pn-table thead, .pn-table tbody { display: block; }
+  .pn-table tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 8px; padding: 8px 0 9px; border-bottom: 1px solid var(--line); }
+  .pn-table th, .pn-table td { border-bottom: 0; padding: 0; white-space: normal; }
+  .pn-table thead tr { border-bottom: 0; padding: 0; }
+  .pn-table thead tr > :not(.chart) { display: none; }
+  .pn-table .chart, .pn-table thead .chart { grid-column: 1 / -1; min-width: 0; width: auto; padding: 0; }
+  .pn-table .scale { left: 8px; right: 8px; }
+  .pn-table .track { margin-inline: 8px; }
+  .pn-table tbody th[scope="row"] { grid-column: 1 / 3; min-width: 0; }
+  .pn-table .avg { grid-column: 3; grid-row: 1; white-space: nowrap; }
+  .pn-table tbody .chart { padding-top: 4px; }
+  .pn-table td[data-label] { grid-row: 3; text-align: left; font-size: 12.5px; color: var(--ink-2); }
+  .pn-table td[data-label]::before { content: attr(data-label) " "; color: var(--ink-3); }
+  .pn-table td[data-label]:empty { visibility: hidden; }
+  .pn-table tr.first { position: relative; padding-top: 32px; }
+  .pn-table tr.first > * { padding-top: 0; position: static; }
+  .pn-table tr.first:first-child { border-top: 0; }
+  .pn-table .blocname { left: 0; }
+}
