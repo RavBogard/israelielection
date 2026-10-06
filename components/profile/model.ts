@@ -39,6 +39,11 @@ export type Glance = {
   high: number | null;
   variantAvg: number | null;
   variantLabel: string;
+  /** The pollsters the alternative average leaves out, named for the reader. */
+  variantPollsters: string[];
+  /** Publication dates of the earliest and latest poll in the current average. */
+  mainFrom: string;
+  mainTo: string;
   blocSeats: number;
   blocRank: number;
   blocSize: number;
@@ -130,6 +135,9 @@ export function glance(party: Party, series: Reading[]): Glance {
     high: passing.length ? Math.max(...passing) : null,
     variantAvg: wv && wv.k > 0 && !wv.nearThreshold ? wv.avg : null,
     variantLabel: pollsData.config.withoutVariant.label,
+    variantPollsters: pollsData.config.withoutVariant.pollsters,
+    mainFrom: [...mainPolls].map((p) => p.published).sort()[0] ?? pollsData.updated,
+    mainTo: [...mainPolls].map((p) => p.published).sort().at(-1) ?? pollsData.updated,
     blocSeats: totals[party.bloc],
     blocRank: Math.max(1, mates.findIndex((m) => m.id === party.id) + 1),
     blocSize: mates.filter((m) => m.seats > 0).length,
@@ -167,8 +175,7 @@ export function strongholds(party: Party): Strongholds | null {
   const table: Strongholds["table"] = [
     ...top.map((d) => ({ name: d.name, share: d.share, kind: "top" as const })),
     { name: "Nationally", share: national, kind: "national" as const },
-    ...cities.map((d) => ({ name: d.name, share: d.share, kind: "city" as const })),
-    ...low.map((d) => ({ name: d.name, share: d.share, kind: "low" as const })),
+    ...[...cities.map((d) => ({ name: d.name, share: d.share, kind: "city" as const })), ...low.map((d) => ({ name: d.name, share: d.share, kind: "low" as const }))].sort((a, b) => b.share - a.share),
   ];
   return { national, dots, table };
 }

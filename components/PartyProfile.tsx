@@ -2,7 +2,7 @@ import Link from "next/link";
 import "./party-profile.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import { partiesData } from "@/lib/data";
-import { fmt, mediumDate } from "@/lib/format";
+import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import type { Party, Sourced } from "@/lib/types";
 import { blocLabel, glance, readings, result2022, strongholds, tiles, voterBase } from "./profile/model";
@@ -28,6 +28,7 @@ function Items({ items }: { items: Sourced[] }) {
 
 const one = (n: number) => fmt(Math.round(n * 10) / 10);
 const thousands = (n: number) => n.toLocaleString("en-US");
+const MAJORITY = 61, TOTAL = 120;
 
 /**
  * The party profile as an election-guide spread: figures down one column, the sentences they
@@ -46,7 +47,10 @@ export default function PartyProfile({ party: p }: { party: Party }) {
   const stand = tiles(p);
   const letters = lettersOf[p.id];
   const leaderName = p.leader.split(" (")[0].split(",")[0];
-  const voterText = (p.voters ?? []).filter((v) => !vb || !/self-description|% traditional|% secular/.test(v.text));
+  // The sentences about voters, minus the one the glance block already states and the breakdown the bar draws.
+  const voterText = (p.voters ?? []).filter((v) => !(vb && /self-description|% traditional|% secular/.test(v.text)) && !(r22 && r22.sameName && /^2022: [\d,]+ votes, [\d.]+%, \d+ seats\.$/.test(v.text)));
+  const who: Sourced[] = p.surplusPartner ? [...p.who, { text: `Surplus-vote partner: ${p.surplusPartner.text}`, source: p.surplusPartner.source }] : p.who;
+  const blocPct = Math.min(100, (g.blocSeats / TOTAL) * 100);
   return (
     <article className="pp" style={{ ["--pc" as string]: color, ["--pc-ink" as string]: ink }}>
       <header className="pp-head">
@@ -58,10 +62,7 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           )}
           <div className="who">
             <h1>{p.name}</h1>
-            <p className="lead">
-              Led by <b>{p.leader}</b>
-              {p.surplusPartner && <>. Surplus-vote partner: {p.surplusPartner.text}<Src s={p.surplusPartner.source} /></>}
-            </p>
+            <p className="lead">Led by <b>{p.leader}</b></p>
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} />{blocLabel[p.bloc]}</span>
@@ -91,26 +92,30 @@ export default function PartyProfile({ party: p }: { party: Party }) {
                 <dt>Polls it passes</dt>
                 <small>{g.nearThreshold ? "near the threshold" : g.k === g.n && g.n > 0 ? "never near the threshold" : g.k === 0 ? "below the threshold in all" : "passes in most"}</small>
               </div>
-              <div>
-                <dd><i className="sw" style={{ background: `var(--b-${p.bloc})` }} />{one(g.blocSeats)}</dd>
+              <div className="blocbox">
+                <dd>{one(g.blocSeats)}<span className="of"> of {MAJORITY}</span></dd>
                 <dt>{blocLabel[p.bloc]}</dt>
-                <small>{g.avg !== null ? `${["largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} lists in the bloc` : "not counted in the bloc total"}</small>
+                <span className="pp-majority" role="img" aria-label={`${one(g.blocSeats)} of 120 seats; a majority is 61.`}>
+                  <i style={{ width: `${blocPct}%`, background: `var(--b-${p.bloc})` }} />
+                  <b style={{ left: `${(MAJORITY / TOTAL) * 100}%` }} />
+                </span>
+                <small>{g.avg !== null ? `${g.blocSeats >= MAJORITY ? "a majority" : `${one(MAJORITY - g.blocSeats)} short of 61`}; this list is ${["the largest", "second", "third", "fourth", "fifth", "sixth"][g.blocRank - 1] ?? `${g.blocRank}th`} of ${g.blocSize} in the bloc` : "this list is not counted in the bloc total"}</small>
               </div>
             </dl>
             <p className="src">
-              Average over the latest poll from each of {g.n} pollsters, {mediumDate(g.lastDate)}, weighted by sample size{g.variantAvg !== null ? `; ${g.variantLabel.charAt(0).toLowerCase()}${g.variantLabel.slice(1)}: ${one(g.variantAvg)}` : ""}.{r22 ? ` 2022: Central Elections Committee; ${thousands(r22.votes)} votes.` : ""}
+              Average over the latest poll from each of {g.n} pollsters, {shortDate(g.mainFrom)} to {mediumDate(g.mainTo)}, weighted by sample size.{g.variantAvg !== null ? ` Without ${g.variantPollsters.join(" and ")}, the two the site’s alternative average leaves out: ${one(g.variantAvg)}.` : ""}{r22 ? ` 2022: Central Elections Committee, ${thousands(r22.votes)} votes.` : ""}
             </p>
           </figure>
           <section className="pp-text t r1">
             <h2>Who they are</h2>
-            <Items items={p.who} />
+            <Items items={who} />
             {p.thin && <p className="src">{p.thin}</p>}
           </section>
 
           {/* Row 2: every poll beside where they stand. */}
           <figure className="pp-fig f r2">
             <figcaption className="lbl">Seats in every poll since the Knesset dissolved</figcaption>
-            <SeatSparkline series={series} result={r22} color={color} name={p.name} variantLabel={g.variantLabel} />
+            <SeatSparkline series={series} result={r22} color={color} name={p.name} />
             <p className="src">
               {series.filter((s) => s.seats !== null).length} polls, {mediumDate(g.firstDate)} to {mediumDate(g.lastDate)}. A dot on the floor is a poll that had the list below the threshold; a gap is a poll that did not report it separately.
             </p>
@@ -120,21 +125,21 @@ export default function PartyProfile({ party: p }: { party: Party }) {
             <StanceTiles tiles={stand} partyName={p.name} />
           </section>
 
-          {/* Row 3: who voted for them beside the list and the pledges. */}
-          {(vb || voterText.length > 0) && (
+          {/* Row 3: the voter base beside who votes for them, then the list and the pledges. */}
+          {vb && (
             <figure className="pp-fig f r3">
-              <figcaption className="lbl">Who votes for them</figcaption>
-              {vb && (
-                <>
-                  <p className="pp-figtitle">{vb.listName === p.name ? `${p.name}'s` : `${vb.listName}`} 2022 voters, by religious self-description</p>
-                  <VoterBaseBar base={vb} color={color} />
-                  <p className="src">{vb.source}.</p>
-                </>
-              )}
-              {voterText.length > 0 && <Items items={voterText} />}
+              <figcaption className="lbl">{vb.listName === p.name ? `${p.name}’s` : `${vb.listName}`} 2022 voters, by religious self-description</figcaption>
+              <VoterBaseBar base={vb} color={color} />
+              <p className="src">{vb.source}.</p>
             </figure>
           )}
           <section className="pp-text t r3">
+            {voterText.length > 0 && (
+              <>
+                <h2>Who votes for them</h2>
+                <Items items={voterText} />
+              </>
+            )}
             {p.names && (
               <>
                 <h2>Names on the list</h2>
@@ -160,9 +165,9 @@ export default function PartyProfile({ party: p }: { party: Party }) {
           {/* Row 4: where they were strongest beside their words and the people. */}
           {map && (
             <figure className="pp-fig f r4">
-              <figcaption className="lbl">{r22 && !r22.sameName ? `${r22.listName}'s` : `${p.name}'s`} share of the valid vote, 2022, by locality</figcaption>
+              <figcaption className="lbl">{r22 && !r22.sameName ? `${r22.listName}’s` : `${p.name}’s`} share of the valid vote, 2022, by locality</figcaption>
               <StrongholdsMap data={map} color={color} name={r22 && !r22.sameName ? r22.listName : p.name} />
-              <p className="src">Central Elections Committee, 25th Knesset results by locality. Nationally {(map.national * 100).toFixed(1)}%. Localities with at least 15,000 valid votes qualify as strongest; the three biggest cities are shown for comparison.</p>
+              <p className="src">Central Elections Committee, 25th Knesset results by locality. Nationally {(map.national * 100).toFixed(1)}%. The five strongest localities with at least 15,000 valid votes; below the national line, the three biggest cities and the weakest place with 50,000 or more valid votes, for comparison.</p>
             </figure>
           )}
           <section className="pp-text t r4">

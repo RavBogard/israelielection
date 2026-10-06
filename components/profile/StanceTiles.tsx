@@ -18,11 +18,13 @@ function stanceColor(t: Tile): string | null {
  * their source and the lists that recorded the same answer.
  */
 export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; partyName: string }) {
-  const [open, setOpen] = useState<string | null>(null);
+  // The first recorded stance opens on load, so the panel's job is visible before anyone taps.
+  const [open, setOpen] = useState<string | null>(() => tiles.find((t) => t.kind === "stance")?.key ?? null);
   const base = useId();
   const current = tiles.find((t) => t.key === open) ?? null;
   return (
     <div className="pp-stand">
+      <p className="pp-tilehint">{"Seven questions the site puts to every list. Tap a tile for the party’s words and source."}</p>
       <div className="pp-tiles">
         {tiles.map((t) => {
           const bar = stanceColor(t);

@@ -26,7 +26,8 @@
 }
 
 /* The spread. */
-.pp-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; row-gap: 44px; padding-block: 36px 24px; align-items: start; }
+.pp-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-auto-rows: auto; column-gap: 56px; row-gap: 44px; padding-block: 36px 24px; align-items: start; }
+/* Rows 3 and 4 are shorter on the left than the right; let the text column run on so the figures sit level with their first sentences. */
 .pp-grid .f { grid-column: 1; }
 .pp-grid .t { grid-column: 2; }
 .pp-grid .r1 { grid-row: 1; }
@@ -71,6 +72,11 @@
 .pp-glance dd .nf { font-size: 22px; color: var(--ink-3); font-weight: 500; }
 .pp-glance dt { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--ink); }
 .pp-glance small { display: block; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); margin-top: 2px; }
+/* The bloc against 61: a 120-seat bar with the one heavy rule the site always means by 61. */
+.pp-majority { display: block; position: relative; height: 10px; background: var(--cell); margin-top: 8px; }
+.pp-majority i { display: block; height: 100%; }
+.pp-majority b { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); }
+.pp-tilehint { margin: 0 0 2px; font-size: 13.5px; color: var(--ink-2); }
 
 /* Sparkline. */
 .pp-spark { display: block; width: 100%; height: auto; }

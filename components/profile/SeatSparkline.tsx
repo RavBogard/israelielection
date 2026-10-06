@@ -10,7 +10,7 @@ const W = 520, H = 210, PAD = { l: 30, r: 34, t: 18, b: 26 };
  * hollow, so a list that two publishers read apart from the rest shows it. The 2022 result is a
  * dotted rule. Server-rendered SVG; the readings also ship as a table for assistive technology.
  */
-export default function SeatSparkline({ series, result, color, name, variantLabel }: { series: Reading[]; result: Result2022 | null; color: string; name: string; variantLabel: string }) {
+export default function SeatSparkline({ series, result, color, name }: { series: Reading[]; result: Result2022 | null; color: string; name: string }) {
   const reported = series.filter((r) => r.seats !== null);
   if (reported.length < 2) return null;
   const t0 = Date.parse(series[0].date), t1 = Date.parse(series[series.length - 1].date);
@@ -22,10 +22,12 @@ export default function SeatSparkline({ series, result, color, name, variantLabe
   if (high - low < 10) high = low + 10;
   const x = (t: number) => PAD.l + ((t - t0) / Math.max(864e5, t1 - t0)) * (W - PAD.l - PAD.r);
   const y = (v: number) => PAD.t + ((high - v) / (high - low)) * (H - PAD.t - PAD.b);
-  // Join consecutive reported readings; a poll that did not report the list breaks the line.
+  // The line runs through the main pollsters only; the two the alternative average leaves out stay as unjoined
+  // hollow points, so a swing no single pollster recorded is never drawn. A poll that did not report the list breaks the line.
   const segments: Reading[][] = [];
   let run: Reading[] = [];
   for (const r of series) {
+    if (r.variant) continue;
     if (r.seats === null) {
       if (run.length) segments.push(run);
       run = [];
@@ -35,6 +37,8 @@ export default function SeatSparkline({ series, result, color, name, variantLabe
   const last = reported[reported.length - 1];
   const mid = new Date((t0 + t1) / 2).toISOString().slice(0, 10);
   const hollow = series.some((r) => r.variant && r.seats !== null);
+  const mainPollsters = new Set(series.filter((r) => !r.variant && r.seats !== null).map((r) => r.pollster)).size;
+  const hollowNames = [...new Set(series.filter((r) => r.variant && r.seats !== null).map((r) => r.pollster))];
   return (
     <>
       <svg className="pp-spark" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${name}: seats in each of ${reported.length} polls from ${mediumDate(series[0].date)} to ${mediumDate(series[series.length - 1].date)}, latest ${last.seats}. The readings follow as a table.`}>
@@ -63,13 +67,11 @@ export default function SeatSparkline({ series, result, color, name, variantLabe
         <text className="tick" x={x(Date.parse(mid))} y={H - 6} textAnchor="middle">{shortDate(mid)}</text>
         <text className="tick" x={W - PAD.r} y={H - 6} textAnchor="end">{shortDate(series[series.length - 1].date)}</text>
       </svg>
-      {hollow && (
-        <p className="pp-key">
-          <span className="k"><i className="solid" style={{ background: color }} /> Seven pollsters</span>
-          <span className="k"><i className="ring" style={{ borderColor: color }} /> Channel 14 and i24NEWS, which the “{variantLabel}” average leaves out</span>
-          {ref !== null && <span className="k"><i className="dash" /> 2022 result</span>}
-        </p>
-      )}
+      <p className="pp-key">
+        <span className="k"><i className="solid" style={{ background: color }} /> {mainPollsters} pollsters, joined</span>
+        {hollow && <span className="k"><i className="ring" style={{ borderColor: color }} /> {hollowNames.join(" and ")}, which the site’s alternative average leaves out</span>}
+        {ref !== null && <span className="k"><i className="dash" /> 2022 result</span>}
+      </p>
       <table className="sr-only">
         <caption>{name}: seats in each poll since the Knesset dissolved</caption>
         <thead><tr><th>Published</th><th>Pollster</th><th>Seats</th></tr></thead>
