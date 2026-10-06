@@ -1,5 +1,5 @@
 .cite { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.cite-btn { min-height: 44px; padding: 0 14px; font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 1px solid var(--line-2); border-radius: 2px; cursor: pointer; }
+.cite-btn { min-height: 44px; padding: 0 14px; font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 1px solid var(--line-2); border-radius: 4px; cursor: pointer; }
 .cite-btn:hover { border-color: var(--ink); }
 .cite-status { font-size: 14px; color: var(--ink-2); }
 .cite-status:empty { display: none; }
