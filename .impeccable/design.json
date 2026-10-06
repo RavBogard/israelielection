@@ -396,6 +396,14 @@
       "description": "The 120-seat bloc bar with the 2px ink tick at 61 overhanging 6px, and the per-poll dots: solid, hollow for the excluded pollsters, dashed ring for below the threshold.",
       "html": "<div class=\"ds-pb\"><span style=\"width:44%;background:var(--b-net);color:var(--b-net-ink)\">53</span><span style=\"width:3%;background:var(--b-mid);color:var(--b-mid-ink)\"></span><span style=\"width:11%;background:var(--b-arab);color:var(--b-arab-ink)\">13</span><span style=\"width:42%;background:var(--b-opp);color:var(--b-opp-ink)\">51</span><b></b></div><i class=\"ds-dot\"></i><i class=\"ds-dot hollow\"></i><i class=\"ds-dot below\"></i>",
       "css": ".ds-pb { position: relative; display: flex; width: 420px; height: 44px; background: var(--cell); } .ds-pb span { display: flex; align-items: center; justify-content: center; border-right: 2px solid var(--bg); font: 700 19px var(--display); font-variant-numeric: tabular-nums; } .ds-pb span:last-of-type { border-right: 0; } .ds-pb b { position: absolute; left: 50.83%; top: -6px; bottom: -6px; width: 2px; margin-left: -1px; background: var(--ink); } .ds-dot { display: inline-block; width: 14px; height: 14px; margin: 14px 6px 0 0; border-radius: 50%; background: #245b94; border: 2px solid var(--sheet); box-sizing: border-box; } .ds-dot.hollow { background: var(--bg); border: 2px solid #245b94; } .ds-dot.below { background: var(--bg); border: 1.5px dashed var(--ink-3); }"
+    },
+    {
+      "name": "Article chart marks and heat shade",
+      "kind": "custom",
+      "refersTo": "article-charts",
+      "description": "Article chart forms chosen from the table's cells: lines, dot plot, heat table, plain table. Series are told apart by mark (solid, ring, grey diamond, grey ring square), never by colour or dashes. Heat shades run #2a2925 over #f6f5f1 up to 62% with text by luminance 0.179.",
+      "html": "<div class=\"ds-ac\"><p class=\"k\"><span><i class=\"m solid\"></i>2019</span><span><i class=\"m ring\"></i>2022</span><span><i class=\"m grey\"></i>2026</span><span><i class=\"m grey-ring\"></i>Other</span></p><div class=\"tr\"><i class=\"m solid\" style=\"left:30%\"></i><i class=\"m ring\" style=\"left:55%\"></i></div><p class=\"h\"><b style=\"background:color-mix(in oklab, #2a2925 12%, #f6f5f1);color:#000\">8%</b><b style=\"background:color-mix(in oklab, #2a2925 36%, #f6f5f1);color:#000\">21%</b><b style=\"background:color-mix(in oklab, #2a2925 62%, #f6f5f1);color:#fff\">36%</b></p></div>",
+      "css": ".ds-ac { max-width: 420px; font-family: var(--body); } .ds-ac .k { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0 0 8px; font-size: 13.5px; color: var(--ink-2); } .ds-ac .k span { display: inline-flex; align-items: center; gap: 7px; } .ds-ac .m { display: inline-block; width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; } .ds-ac .solid { background: var(--ink); } .ds-ac .ring { background: var(--sheet); border: 2.5px solid var(--ink); } .ds-ac .grey { background: var(--ink-3); border-radius: 0; transform: rotate(45deg) scale(.85); } .ds-ac .grey-ring { background: var(--sheet); border: 2.5px solid var(--ink-3); border-radius: 0; } .ds-ac .tr { position: relative; height: 16px; background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat; } .ds-ac .tr .m { position: absolute; top: 2px; margin-left: -6px; } .ds-ac .h { display: flex; margin: 10px 0 0; } .ds-ac .h b { flex: 1; padding: 8px 0; text-align: center; font-variant-numeric: tabular-nums; }"
     }
   ],
   "narrative": {
@@ -447,6 +455,11 @@
       {
         "name": "The Pull Quote Rule",
         "body": "The only left-edge colour rule is the 3px party-colour rule on a pull quote (ink when no party colour applies). Slips and party letter boxes carry their colour as a top bar instead (5px slip, 4px compare chip and drawer letters).",
+        "section": "shapes"
+      },
+      {
+        "name": "The Mark Tells The Series Rule",
+        "body": "In article charts a series is told apart by its mark (solid, ring, grey diamond, grey ring) and position, in ink and greys, never by colour or dashes; dashed means absent. Heat shades use the fixed endpoints #2a2925 over #f6f5f1 up to 62%, with text black or white by luminance (threshold 0.179).",
         "section": "shapes"
       }
     ],
