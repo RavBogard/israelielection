@@ -105,7 +105,7 @@ export default async function Page() {
                     {it.title}
                   </a>
                   {it.summary && <span className="nw-sum">{it.summary}</span>}
-                  {sources.length > 1 && <details className="nw-group"><summary>{sources.length} source links · grouped by {basis === "same-url" ? "article URL" : basis === "same-title" ? "identical title" : "URL / identical title"}</summary><ul>{sources.map((s,i)=><li key={`${s.url}-${i}`}><a href={s.url} target="_blank" rel="noopener">{s.outlet}: {s.title}</a> · <time dateTime={s.published}>{IL.format(new Date(s.published))}</time><ChangesSourceLabels url={s.url} /></li>)}</ul></details>}
+                  {sources.length > 1 && <details className="nw-group"><summary>{sources.length} source links, grouped by {basis === "same-url" ? "article URL" : basis === "same-title" ? "identical title" : "URL / identical title"}</summary><ul>{sources.map((s,i)=><li key={`${s.url}-${i}`}><a href={s.url} target="_blank" rel="noopener">{s.outlet}: {s.title}</a>, <time dateTime={s.published}>{IL.format(new Date(s.published))}</time><ChangesSourceLabels url={s.url} /></li>)}</ul></details>}
                 </li>
               ))}
             </ol>

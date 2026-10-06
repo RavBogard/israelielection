@@ -354,7 +354,7 @@ export default function VoteMap() {
                       {[...(infoMix ?? [])]
                         .sort((a, b) => b.votes - a.votes)
                         .map((x) => (
-                          <li key={x.name}><span><i style={{background:x.color}}/>{x.name}</span><span>{num(x.votes)} · {pct(x.share)}</span></li>
+                          <li key={x.name}><span><i style={{background:x.color}}/>{x.name}</span><span>{num(x.votes)}, {pct(x.share)}</span></li>
                         ))}
                     </ol>
                   </>

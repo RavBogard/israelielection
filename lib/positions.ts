@@ -26,11 +26,11 @@ export const ISSUES: Record<AxisKey, IssueFile> = {
 /** Source dates describe the evidence, never the date we accessed it. */
 export function evidenceLabel(row: PositionRow | undefined): string {
   if (!row) return "No recorded answer in these sources";
-  if (row.evidence) return `${row.evidence.kind}${row.evidence.date ? ` · ${row.evidence.date}` : " · date unavailable"} · checked ${row.evidence.checkedAt}`;
+  if (row.evidence) return `${row.evidence.kind}, ${row.evidence.date ?? "date unavailable"}; checked ${row.evidence.checkedAt}`;
   const date = row.date?.trim();
   const accessed = !date || /accessed|checked/i.test(date);
-  const qualifier = row.basis === "record" ? "Record evidence · " : "";
-  return `${qualifier}${accessed ? `evidence date unavailable${date ? ` · ${date}` : ""}` : `Source published ${date}`}`;
+  const qualifier = row.basis === "record" ? "Record evidence: " : "";
+  return `${qualifier}${accessed ? `evidence date unavailable${date ? ` (${date})` : ""}` : `Source published ${date}`}`;
 }
 
 type Question = (typeof questions.questions)[number];
