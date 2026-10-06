@@ -26,18 +26,13 @@
 }
 
 /* The spread. */
-.pp-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-auto-rows: auto; column-gap: 56px; row-gap: 44px; padding-block: 36px 24px; align-items: start; }
-/* Rows 3 and 4 are shorter on the left than the right; let the text column run on so the figures sit level with their first sentences. */
-.pp-grid .f { grid-column: 1; }
-.pp-grid .t { grid-column: 2; }
-.pp-grid .r1 { grid-row: 1; }
-.pp-grid .r2 { grid-row: 2; }
-.pp-grid .r3 { grid-row: 3; }
-.pp-grid .r4 { grid-row: 4; }
+.pp-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 56px; padding-block: 36px 24px; align-items: start; }
+.pp-col { display: flex; flex-direction: column; gap: 44px; min-width: 0; }
+/* Under 860px the two columns dissolve and their children interleave by order: each figure beside its section. */
 @media (max-width: 860px) {
-  .pp-grid { grid-template-columns: minmax(0, 1fr); row-gap: 32px; padding-top: 24px; }
-  .pp-grid .f, .pp-grid .t { grid-column: 1; }
-  .pp-grid .r1, .pp-grid .r2, .pp-grid .r3, .pp-grid .r4 { grid-row: auto; }
+  .pp-grid { display: flex; flex-direction: column; gap: 32px; padding-top: 24px; }
+  .pp-col { display: contents; }
+  .o1 { order: 1; } .o2 { order: 2; } .o3 { order: 3; } .o4 { order: 4; } .o5 { order: 5; } .o6 { order: 6; } .o7 { order: 7; } .o8 { order: 8; } .o9 { order: 9; }
 }
 
 /* Figures: a label on a rule, the figure, the source line. */

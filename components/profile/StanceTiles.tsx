@@ -68,7 +68,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
                 ))}
               </p>
             )}
-            <p className="more"><Link href="/compare">Compare every list on {current.label.toLowerCase() === "economy" ? "the economy" : current.label.toLowerCase()}</Link></p>
+            <p className="more"><Link href="/compare">Compare every list on this question</Link></p>
           </>
         )}
       </div>

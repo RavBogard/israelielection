@@ -68,7 +68,7 @@ export default function SeatSparkline({ series, result, color, name }: { series:
         <text className="tick" x={W - PAD.r} y={H - 6} textAnchor="end">{shortDate(series[series.length - 1].date)}</text>
       </svg>
       <p className="pp-key">
-        <span className="k"><i className="solid" style={{ background: color }} /> {mainPollsters} pollsters, joined</span>
+        <span className="k"><i className="solid" style={{ background: color }} /> {hollow ? `The other ${mainPollsters} publishers, joined` : `${mainPollsters} publishers, joined`}</span>
         {hollow && <span className="k"><i className="ring" style={{ borderColor: color }} /> {hollowNames.join(" and ")}, which the site’s alternative average leaves out</span>}
         {ref !== null && <span className="k"><i className="dash" /> 2022 result</span>}
       </p>
