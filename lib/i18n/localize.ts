@@ -8,14 +8,17 @@ import type { Lang } from "./index";
  * Hebrew is written fresh, not translated sentence by sentence; the hash only records which English item it answers.
  */
 
-/** One translated field. `machine` marks job output awaiting Daniel's review. */
-export type HeField = { text: string; src: string; machine?: boolean };
+/**
+ * One Hebrew field. `machine` marks job output awaiting Daniel's review. `translated` marks a quote whose original
+ * Hebrew wording was not found: the page shows it with "(תרגום)" (Daniel, 2026-10-06).
+ */
+export type HeField = { text: string; src: string; machine?: boolean; translated?: boolean };
 
 /** An overlay file: item id → field path → Hebrew. */
 export type HeOverlay = Record<string, Record<string, HeField>>;
 
 /** A field as shown: the text and the language it is actually in. */
-export type Localized = { text: string; lang: Lang };
+export type Localized = { text: string; lang: Lang; translated?: boolean };
 
 /** FNV-1a 32-bit over the UTF-16 code units, as 8 hex characters. Stable across server, browser and the jobs. */
 export function srcHash(english: string): string {
@@ -39,18 +42,18 @@ export function fieldAt(item: unknown, path: string): string | undefined {
 
 /** The text to show for one field: the Hebrew when asked for and current, else the English. */
 export function localizeText(english: string, he: HeField | undefined, lang: Lang): Localized {
-  if (lang === "he" && he && he.text && he.src === srcHash(english)) return { text: he.text, lang: "he" };
+  if (lang === "he" && he && he.text && he.src === srcHash(english)) return he.translated ? { text: he.text, lang: "he", translated: true } : { text: he.text, lang: "he" };
   return { text: english, lang: "en" };
 }
 
 /** One field of one item, by id and field path. Missing English gives empty English text. */
-export function localize(item: { id: string }, field: string, overlay: HeOverlay | undefined, lang: Lang): Localized {
+export function localize(item: { id: string; [k: string]: unknown }, field: string, overlay: HeOverlay | undefined, lang: Lang): Localized {
   return localizeText(fieldAt(item, field) ?? "", overlay?.[item.id]?.[field], lang);
 }
 
 /** A localizer bound to one data file's overlay: `const t = localizer(partiesHe, lang); t(party, "who")`. */
 export function localizer(overlay: HeOverlay | undefined, lang: Lang) {
-  return (item: { id: string }, field: string): Localized => localize(item, field, overlay, lang);
+  return (item: { id: string; [k: string]: unknown }, field: string): Localized => localize(item, field, overlay, lang);
 }
 
 export type OverlayProblem = { id: string; field: string; problem: "stale" | "orphan" };

@@ -1,4 +1,6 @@
 import type { BlocId, Party, Poll, PollsConfig } from "./types";
+import type { Lang } from "./i18n";
+import { pollsterText } from "./i18n/overlays";
 
 const DAY = 86_400_000;
 
@@ -40,7 +42,14 @@ export function withoutVariantPolls(polls: Poll[], config: PollsConfig): Poll[] 
   return polls.filter((p) => !inWithoutVariant(p, config));
 }
 
-export function pollLabel(p: Poll): string {
+export function pollLabel(p: Poll, lang: Lang = "en"): string {
+  if (lang === "he") {
+    // Israeli desks credit the outlet ("חדשות 12"), the firm after it; an exit poll is the channel's מדגם.
+    const outlet = pollsterText(p.pollster, "he").text;
+    const firm = p.firm ? pollsterText(p.firm, "he").text : null;
+    const heName = isExit(p) ? `מדגם ${outlet}` : outlet;
+    return firm ? `${heName} / ${firm}` : heName;
+  }
   const name = isExit(p) ? `${p.pollster} exit poll` : p.pollster;
   return p.firm ? `${name} / ${p.firm}` : name;
 }
