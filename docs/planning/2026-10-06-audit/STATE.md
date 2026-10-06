@@ -19,7 +19,7 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - [x] Wave 1e Evidence research rounds (positions and comparison questions)
 - [x] Wave 2 Since yesterday home, cite, figures in search; polls desk; lean masthead
 - [x] Wave 3 Explainer pictures, election on one page, locator maps; apply research
-- [ ] Wave 4 Review, DESIGN.md, push
+- [x] Wave 4 Review, DESIGN.md, push
 
 ## Decisions
 - GATE: notation for unstated positions — proceeded with basis "unstated" shown as "Not said publicly" plus its basis line, because Daniel asked for the notation and the existing "record" basis sets the pattern; label is his to change.
@@ -33,3 +33,4 @@ Design health ~26/40; technical 15/20. 0 P0, 10 P1.
 - GATE: community pages say "the issues" instead of a count (their sections cover six of the seven issues); PartyMap now says "seven issues", matching the profile tiles. Content-lane wording only; proceeded because the old counts were wrong.
 - GATE: West Bank areas map uses OCHA oPt / PA Ministry of Planning Oslo areas (HDX, 2004, HDX "Other" licence), attributed in the figure; the file mislabels Area B as A, corrected by point tests (Area A ~18%, B ~21%). E1 placed from Wikipedia coordinates. For Daniel: confirm the licence is acceptable for publication.
 - Open (data lane): seats guide chart titles say "step one/two" for what the numbered list calls steps 3 and 4; Communities index still previews settlers.vote-trend rather than the new map.
+- Wave 4: finish review on 48 fresh captures (finish-review folder); 7 fixes applied; DESIGN.md and design.json updated from shipped code. Audit P1s (Compare chip text, vote-map swipe, hidden chart links) confirmed fixed in wave 1c.
