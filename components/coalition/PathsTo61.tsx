@@ -15,7 +15,8 @@ const PAGE = 6;
 /**
  * Paths to 61: the Builder's opening figure. Every minimal winning combination of lists in the selected
  * poll (lib/paths-to-61.ts), one SeatBar each, with pledge conflicts from the declarative rules counted and
- * notched on the lists they name. Tapping a row loads it into the builder.
+ * notched on the lists they name. Clear paths first, then those with a conflict, numbered as one list.
+ * Tapping a row loads it into the builder.
  */
 export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, open }: {
   poll: Poll; parties: Party[]; rules: PledgeRule[]; pollName: string; sn: (n: number) => string;
@@ -42,6 +43,21 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
   const withL = all.filter((p) => p.ids.includes("likud"));
   const withoutL = all.filter((p) => !p.ids.includes("likud"));
   const cleanCount = side.filter((p) => !p.conflicts.length).length;
+  const shown = rows.slice(0, n);
+  const shownClear = shown.filter((p) => !p.conflicts.length);
+  const shownHit = shown.filter((p) => p.conflicts.length);
+  const row = (p: Path) => (
+    <li key={p.ids.join()}>
+      <button type="button" className="path" onClick={() => onLoad(p.ids, [])}>
+        <span className="pn">{p.ids.map(nameOf).join(", ")}</span>
+        <span className="pv"><b>{sn(p.seats)}</b> seats</span>
+        <SeatBar size="m" className="sb-fit" segments={p.ids.map((id) => seg(id, p.conflictIds.includes(id)))} />
+        <span className={`pc${p.conflicts.length ? " on" : ""}`}>
+          {p.conflicts.length ? `${p.conflicts.length} pledge conflict${p.conflicts.length > 1 ? "s" : ""}, naming ${p.conflictIds.map(nameOf).join(", ")}` : "No pledge conflict on record"}
+        </span>
+      </button>
+    </li>
+  );
 
   return (
     <details className="paths" open={open}>
@@ -49,7 +65,7 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
         <h2 className="sec-h3">Paths to {MAJORITY}</h2>
         <span className="hint">{all.length} ways</span>
       </summary>
-      <p className="fig-note">Every smallest set of lists that reaches {MAJORITY} in {pollName}: drop any one list and it falls short. Fewest lists first, then most seats. Tap one to load it.</p>
+      <p className="fig-note">Every smallest set of lists that reaches {MAJORITY} in {pollName}: drop any one list and it falls short. Paths that break no recorded pledge come first; then fewest lists, then most seats. This is seat arithmetic checked against the pledges on record, not a forecast; Likud in a cabinet is read as led by Netanyahu. Tap one to load it.</p>
       <div className="path-ctl">
         <div className="seg" role="group" aria-label="Likud in the path">
           <button type="button" aria-pressed={likud} onClick={pick(true, setLikud)}>With Likud<small>{withL.length} paths</small></button>
@@ -61,20 +77,16 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
         </div>
       </div>
       {rows.length ? (
-        <ol className="path-list">
-          {rows.slice(0, n).map((p) => (
-            <li key={p.ids.join()}>
-              <button type="button" className="path" onClick={() => onLoad(p.ids, [])}>
-                <span className="pn">{p.ids.map(nameOf).join(", ")}</span>
-                <span className="pv"><b>{sn(p.seats)}</b> seats</span>
-                <SeatBar size="m" className="sb-fit" segments={p.ids.map((id) => seg(id, p.conflictIds.includes(id)))} />
-                <span className={`pc${p.conflicts.length ? " on" : ""}`}>
-                  {p.conflicts.length ? `${p.conflicts.length} pledge conflict${p.conflicts.length > 1 ? "s" : ""}, naming ${p.conflictIds.map(nameOf).join(", ")}` : "No pledge conflict"}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ol>
+        <>
+          {!clean && !cleanCount && <p className="path-break">No path {likud ? "with" : "without"} Likud here is clear of every recorded pledge.</p>}
+          {shownClear.length > 0 && <ol className="path-list">{shownClear.map(row)}</ol>}
+          {shownHit.length > 0 && (
+            <>
+              {shownClear.length > 0 && <p className="path-break">{side.length - cleanCount} with a recorded pledge conflict</p>}
+              <ol className="path-list" start={shownClear.length + 1}>{shownHit.map(row)}</ol>
+            </>
+          )}
+        </>
       ) : (
         <p className="empty">No path {likud ? "with" : "without"} Likud reaches {MAJORITY} here{clean ? " without a pledge conflict" : ""}.</p>
       )}
@@ -92,7 +104,7 @@ export default function PathsTo61({ poll, parties, rules, pollName, sn, onLoad, 
       {sideHelped.length > 0 && (
         <details className="path-support">
           <summary>With outside support <span className="hint">{sideHelped.length} {likud ? "with" : "without"} Likud</span></summary>
-          <p className="fig-note">Paths above with a pledge conflict, rearranged: the fewest seats move from the cabinet to outside support so the cabinet clears every recorded pledge, and the first vote counts the same seats for. A pledge not to join a cabinet is not a promise of outside support; this is arithmetic, not a forecast.</p>
+          <p className="fig-note">Paths above with a pledge conflict, rearranged: the fewest seats move from the cabinet to outside support so the arrangement clears every recorded pledge, and the first vote counts the same seats for. The pledges against keeping Netanyahu in office, and Bennett&rsquo;s not to rely on Arab or Haredi parties, cover outside support as well as a cabinet seat, so they count here too. A pledge not to join a cabinet is not a promise of outside support; this is arithmetic, not a forecast.</p>
           <ol className="path-list">
             {sideHelped.slice(0, m).map((s: SupportPath) => (
               <li key={`${s.cabinet.join()}|${s.support.join()}`}>

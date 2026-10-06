@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { averagePoll, parties, pledgeRules } from "./data";
 import { minimalWinning, pathsTo61, supportPaths, unitsOf } from "./paths-to-61";
-import { pledgeConflicts } from "./coalition";
+import { pledgeConflicts, supportedPledgeConflicts } from "./coalition";
 import type { Poll } from "./types";
 
 const poll = (results: Poll["results"], combined: Poll["combined"] = []): Poll =>
@@ -51,10 +51,32 @@ describe("pathsTo61 on the polling average", () => {
     expect(jl.conflicts.map((c) => c.warning.id)).toContain("joint-list-no-netanyahu");
     expect(jl.conflictIds).toEqual(expect.arrayContaining(["jl", "likud"]));
   });
-  it("outside-support paths leave the cabinet clear of every pledge and keep the same seats for", () => {
-    for (const s of supportPaths(paths, parties, pledgeRules, averagePoll).slice(0, 40)) {
-      expect(pledgeConflicts(new Set(s.cabinet), parties, pledgeRules)).toEqual([]);
+  it("puts every path clear of recorded pledges first, then fewest lists, then most seats, in each group", () => {
+    const firstHit = paths.findIndex((p) => p.conflicts.length);
+    if (firstHit >= 0) expect(paths.slice(firstHit).every((p) => p.conflicts.length)).toBe(true);
+    const size = (p: { ids: string[] }) => p.ids.length;
+    for (const group of [paths.filter((p) => !p.conflicts.length), paths.filter((p) => p.conflicts.length)])
+      for (let i = 1; i < group.length; i++) {
+        const a = group[i - 1], b = group[i];
+        expect(size(a) < size(b) || (size(a) === size(b) && a.seats >= b.seats)).toBe(true);
+      }
+  });
+  it("orders a clear path ahead of a smaller one with a conflict", () => {
+    const p = poll({ likud: { seats: 40 }, byachad: { seats: 25 }, yashar: { seats: 20 }, dem: { seats: 20 }, yb: { seats: 15 } });
+    const keys = pathsTo61(p, parties, pledgeRules).map((x) => x.ids.join("+"));
+    expect(keys[0]).toBe("yashar+byachad+dem");
+    expect(keys.indexOf("likud+byachad")).toBeGreaterThan(keys.indexOf("yashar+byachad+dem"));
+  });
+  it("flags the opposition lists' recorded refusals of a Netanyahu-led cabinet", () => {
+    const top = paths.find((p) => p.ids.join() === "likud,yashar,byachad,dem")!;
+    expect(top.conflicts.map((c) => c.warning.id)).toEqual(expect.arrayContaining(["yashar-no-netanyahu", "byachad-no-netanyahu", "dem-no-likud-rz-otzma"]));
+  });
+  it("outside-support paths clear every pledge, outside support included, and keep the same seats for", () => {
+    const helped = supportPaths(paths, parties, pledgeRules, averagePoll);
+    for (const s of helped) {
+      expect(supportedPledgeConflicts(new Set(s.cabinet), new Set(s.support), parties, pledgeRules)).toEqual([]);
       expect(Math.round((s.cabinetSeats + s.supportSeats) * 10) / 10).toBe(s.seats);
     }
+    expect(helped.some((s) => s.cabinet.includes("likud") && s.support.includes("jl"))).toBe(false);
   });
 });

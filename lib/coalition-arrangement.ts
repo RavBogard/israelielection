@@ -1,4 +1,4 @@
-import { tally, warnings, type Warning } from "./coalition";
+import { tally, warningsWithSupport, type Warning } from "./coalition";
 import type { Party, PledgeRule, Poll } from "./types";
 import { AVERAGE_ID } from "./polls";
 
@@ -46,14 +46,9 @@ export function arrangement(cabinet: Set<string>, overrides: RoleOverrides, part
   return { yes, no, abstain, represented, approximate, complete, outcome, crossed, notReported, cabinet: totals.cabinet.total };
 }
 
-/** Only a recorded refusal to support is extended to outside support; cabinet refusals stay cabinet refusals. */
+/** Only a recorded refusal to support (a rule marked `support`) is extended to outside support; cabinet refusals stay cabinet refusals. */
 export function arrangementWarnings(cabinet: Set<string>, overrides: RoleOverrides, parties: Party[], rules: PledgeRule[]): Warning[] {
-  const out = warnings(cabinet, parties, rules);
-  const supporters = new Set([...cabinet, ...Object.keys(overrides).filter((id) => overrides[id] === "support")]);
-  for (const warning of warnings(supporters, parties, rules)) {
-    if (warning.id === "utj-yeshiva-status-law" && !out.some((w) => w.id === warning.id)) out.push(warning);
-  }
-  return out;
+  return warningsWithSupport(cabinet, new Set(Object.keys(overrides).filter((id) => overrides[id] === "support")), parties, rules);
 }
 
 /** A counterfactual vote, not a prediction that any party will withdraw its backing. */

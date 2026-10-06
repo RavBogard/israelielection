@@ -92,6 +92,8 @@ export type PollsFile = { updated: string; config: PollsConfig; polls: Poll[] };
 
 export type Condition =
   | { party: string }
+  /** The list sits in the cabinet; unlike `party`, never matched by outside support. */
+  | { cabinet: string }
   | { tag: Tag }
   | { all: Condition[] }
   | { any: Condition[] };
@@ -102,6 +104,8 @@ export type PledgeRule = {
   when: Condition;
   message: string;
   source: string;
+  /** The pledge also rules out outside support: `party` and `tag` read the cabinet plus its outside support. */
+  support?: boolean;
 };
 
 export type PledgeRulesFile = { updated: string; about: string; rules: PledgeRule[] };

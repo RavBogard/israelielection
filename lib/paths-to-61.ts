@@ -1,12 +1,12 @@
-import { MAJORITY, pledgeConflicts, type Warning } from "./coalition";
+import { MAJORITY, pledgeConflicts, supportedPledgeConflicts, type Warning } from "./coalition";
 import type { Party, PledgeRule, Poll } from "./types";
 
 /*
  * Paths to 61: every combination of lists that reaches a majority in one poll, kept only when it is a
  * minimal winning coalition (drop any one list and it falls under 61). Supersets add a list nothing
- * needs, so they are left out: every larger majority is one of these plus spare lists. Ranked by fewest
- * lists, then most seats, then the lists' order in the data, so the order is deterministic.
- * Pledge conflicts come only from the declarative rules (data/pledge-rules.json).
+ * needs, so they are left out: every larger majority is one of these plus spare lists. Paths with no pledge
+ * conflict come first; within each group, fewest lists, then most seats, then the lists' order in the data,
+ * so the order is deterministic. Pledge conflicts come only from the declarative rules (data/pledge-rules.json).
  */
 
 /** A list, or a group a poll reported only together, that can hold seats. */
@@ -63,18 +63,21 @@ function cmpOrder(a: number[], b: number[]) {
 }
 
 export function pathsTo61(poll: Poll, parties: Party[], rules: PledgeRule[], majority = MAJORITY): Path[] {
-  return minimalWinning(unitsOf(poll, parties), majority).map(({ units, seats }) => {
+  const paths = minimalWinning(unitsOf(poll, parties), majority).map(({ units, seats }) => {
     const ids = units.flatMap((u) => u.ids);
     const conflicts = pledgeConflicts(new Set(ids), parties, rules);
     return { ids, seats, conflicts, conflictIds: [...new Set(conflicts.flatMap((c) => c.ids))] };
   });
+  // Stable: the minimalWinning order holds within the clear and the conflicted groups.
+  return [...paths.filter((p) => !p.conflicts.length), ...paths.filter((p) => p.conflicts.length)];
 }
 
 /**
  * Outside-support paths: for each path with pledge conflicts, the smallest move (fewest seats, then fewest
  * lists) of named lists from the cabinet to outside support that leaves the cabinet clear of every pledge
- * rule. The first vote then counts the same seats for, so it still reaches 61. A pledge not to join a cabinet
- * is not a promise of outside support; these are arithmetic, not forecasts.
+ * rule, outside support included: a rule marked `support` (a pledge not to rely on, or prop up, such a
+ * government) reads the supporters too. The first vote then counts the same seats for, so it still reaches 61.
+ * A pledge not to join a cabinet is not a promise of outside support; these are arithmetic, not forecasts.
  */
 export function supportPaths(paths: Path[], parties: Party[], rules: PledgeRule[], poll: Poll): SupportPath[] {
   const seatsOf = (ids: string[]) => r1(ids.reduce((a, id) => a + (poll.results[id]?.seats ?? 0), 0));
@@ -88,7 +91,7 @@ export function supportPaths(paths: Path[], parties: Party[], rules: PledgeRule[
     subsets.sort((a, b) => seatsOf(a) - seatsOf(b) || a.length - b.length);
     for (const support of subsets) {
       const cabinet = p.ids.filter((id) => !support.includes(id));
-      if (!cabinet.length || pledgeConflicts(new Set(cabinet), parties, rules).length) continue;
+      if (!cabinet.length || supportedPledgeConflicts(new Set(cabinet), new Set(support), parties, rules).length) continue;
       const key = `${cabinet.join(",")}|${support.join(",")}`;
       if (!seen.has(key)) {
         seen.add(key);

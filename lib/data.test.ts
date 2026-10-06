@@ -49,7 +49,7 @@ describe("data/polls.json", () => {
 
 describe("data/pledge-rules.json", () => {
   const walk = (c: Condition): string[] =>
-    "party" in c ? [c.party] : "tag" in c ? [] : ("all" in c ? c.all : c.any).flatMap(walk);
+    "party" in c ? [c.party] : "cabinet" in c ? [c.cabinet] : "tag" in c ? [] : ("all" in c ? c.all : c.any).flatMap(walk);
   it("references only known parties", () => {
     for (const r of pledgeRules) for (const id of walk(r.when)) expect(ids.has(id), r.id).toBe(true);
   });

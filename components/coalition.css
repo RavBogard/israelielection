@@ -199,6 +199,8 @@
 .cb .k-tick { width: 2px; height: 14px; background: var(--ink); margin-right: 8px; }
 .cb .k-hatch { background: repeating-linear-gradient(135deg, var(--ink-2) 0 3px, color-mix(in srgb, var(--ink-2) 28%, var(--sheet)) 3px 6px); }
 .cb .path-key { margin: 12px 0 0; }
+.cb .path-break { margin: 14px 0 6px; font: 600 13px var(--body); color: var(--ink-2); }
+.cb .path-break:first-child, .cb .path-ctl + .path-break { margin-top: 0; }
 .cb .path-more { display: flex; align-items: center; gap: 12px; margin: 10px 0 0; font-size: 13px; color: var(--ink-2); }
 .cb .path-support { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
 .cb .path-support > summary { cursor: pointer; font: 600 15px var(--body); color: var(--ink); min-height: 32px; }

@@ -98,3 +98,29 @@ describe("pledgeConflicts", () => {
     expect(by.ids.sort()).toEqual(["byachad", "shas"]);
   });
 });
+
+describe("outside support and the Netanyahu pledges", () => {
+  it("reads Likud in the cabinet as Netanyahu-led for each opposition list that refused him", async () => {
+    expect(ruleIds("likud", "yashar")).toEqual(["yashar-no-netanyahu"]);
+    expect(ruleIds("likud", "byachad")).toEqual(["byachad-no-netanyahu"]);
+    expect(ruleIds("likud", "yb")).toEqual(["yb-no-netanyahu"]);
+    expect(ruleIds("likud", "bw")).toEqual(["bw-no-netanyahu"]);
+    expect(ruleIds("likud", "dem")).toEqual(["dem-no-likud-rz-otzma"]);
+    expect(ruleIds("likud", "res")).toEqual([]);
+    expect(ruleIds("likud", "raam")).toEqual([]);
+  });
+  it("extends a rule marked support to outside supporters, and keeps cabinet-only rules to the cabinet", async () => {
+    const { supportedPledgeConflicts } = await import("./coalition");
+    const ids = (cab: string[], sup: string[]) => supportedPledgeConflicts(new Set(cab), new Set(sup), parties, pledgeRules).map((c) => c.warning.id);
+    expect(ids(["likud", "shas"], ["jl"])).toEqual(["joint-list-no-netanyahu"]);
+    expect(ids(["likud"], ["yashar"])).toEqual(["yashar-no-netanyahu"]);
+    // Eisenkot has asked Likud to back him: Likud outside an Eisenkot cabinet is not his conflict.
+    expect(ids(["yashar"], ["likud"])).toEqual([]);
+    expect(ids(["byachad", "yashar"], ["raam"])).toEqual(["byachad-zionist-only"]);
+    // Eisenkot's pledges on Arab parties concern his cabinet; outside support is not covered.
+    expect(ids(["yashar", "dem"], ["raam"])).toEqual([]);
+    expect(ids(["yashar"], ["raam"])).toEqual([]);
+    expect(ids(["dem"], ["shas"])).toEqual([]);
+    expect(ids(["dem"], ["likud"])).toEqual(["dem-no-likud-rz-otzma"]);
+  });
+});

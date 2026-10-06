@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-05",
-  "about": "Coalition Builder warnings. Each rule fires when its `when` condition holds for the selected parties. Conditions: {\"party\": id} selected; {\"tag\": t} any selected party carries tag t; {\"all\": [...]}, {\"any\": [...]}. Message placeholders: {and:tag1,tag2} joins the selected parties with those tags with \" and \"; {comma:tag} joins with \", \".",
+  "updated": "2026-10-06",
+  "about": "Coalition Builder warnings. Each rule fires when its `when` condition holds for the selected parties. Conditions: {\"party\": id} selected; {\"cabinet\": id} selected for the cabinet (never matched by outside support); {\"tag\": t} any selected party carries tag t; {\"all\": [...]}, {\"any\": [...]}. `support: true` means the pledge also rules out outside support (not to rely on, or prop up, such a government): `party` and `tag` then read the cabinet plus its outside support. Without it a rule reads the cabinet only (a pledge not to sit with). The schema cannot tell a Likud led by Netanyahu from one led by someone else: {\"cabinet\": \"likud\"} is read as a Netanyahu-led cabinet, and each message says so. Message placeholders: {and:tag1,tag2} joins the selected parties with those tags with \" and \"; {comma:tag} joins with \", \".",
   "rules": [
     {
       "id": "zionist-opp-no-arab-parties",
@@ -19,8 +19,9 @@
     {
       "id": "byachad-zionist-only",
       "kind": "pledge",
-      "when": { "all": [{ "party": "byachad" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
-      "message": "Bennett's B'Yachad pledged to govern only with Zionist parties: no Arab or Haredi parties. This coalition includes {and:haredi,arab}.",
+      "when": { "all": [{ "cabinet": "byachad" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
+      "support": true,
+      "message": "Bennett's B'Yachad pledged to govern only with Zionist parties and to rely only on them: no Arab or Haredi parties, so their outside support counts too. This coalition includes {and:haredi,arab}.",
       "source": "Times of Israel, Apr 26 and May 27, 2026"
     },
     {
@@ -33,14 +34,86 @@
     {
       "id": "joint-list-no-netanyahu",
       "kind": "pledge",
-      "when": { "all": [{ "party": "jl" }, { "party": "likud" }] },
-      "message": "The Joint List says it won't join Netanyahu.",
-      "source": "Times of Israel, Aug 19, 2026"
+      "when": { "all": [{ "party": "jl" }, { "cabinet": "likud" }] },
+      "support": true,
+      "message": "The Joint List says it won't join Netanyahu; the outside backing it has offered is for a minority government that would “send Netanyahu and Smotrich home.” Likud in the cabinet is read here as Netanyahu-led.",
+      "source": "Times of Israel, Aug 19, 2026; Haaretz, Oct 6, 2026"
+    },
+    {
+      "id": "yashar-no-netanyahu",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "yashar" }, { "cabinet": "likud" }] },
+      "support": true,
+      "message": "Eisenkot says Netanyahu is “unfit to lead” and has ruled out a rotation government with him; his aim, he says, is Netanyahu's retirement. His No. 2, Yoram Cohen, has said Yashar! would consider a Likud no longer led by Netanyahu. Likud in the cabinet is read here as Netanyahu-led.",
+      "source": "Times of Israel, Sep 17, 2026; Zman Yisrael, Oct 6, 2026"
+    },
+    {
+      "id": "byachad-no-netanyahu",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "byachad" }, { "cabinet": "likud" }] },
+      "support": true,
+      "message": "Asked whether he could form a government with Netanyahu, Bennett said: “Clearly not. I'm going to replace him.” He has not said the same of a Likud led by someone else. Likud in the cabinet is read here as Netanyahu-led.",
+      "source": "Ynet (Hebrew), Jul 3, 2026; Times of Israel, Feb 17, 2026"
+    },
+    {
+      "id": "dem-no-likud-rz-otzma",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "dem" }, { "any": [{ "party": "likud" }, { "party": "rz" }, { "party": "otzma" }] }] },
+      "support": true,
+      "message": "Golan: Likud, Religious Zionism and Otzma Yehudit are “fundamentally and decisively unacceptable to me.” Asked about a Likud under another leader, he said “No.” Read here as ruling out their outside support too.",
+      "source": "Ynet, Aug 23, 2026"
+    },
+    {
+      "id": "dem-no-haredi",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "dem" }, { "tag": "haredi" }] },
+      "message": "Golan: “the Haredim will be outside [the government], that is a guarantee.” He said it after a leaked clip in which he would vote for a government that needed a Haredi party “provided that Likud, Smotrich, and Ben Gvir are not there.” This coalition includes {and:haredi}.",
+      "source": "Times of Israel, May 27, 2026"
+    },
+    {
+      "id": "yb-no-netanyahu",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "yb" }, { "cabinet": "likud" }] },
+      "support": true,
+      "message": "Liberman on Netanyahu: “Hell will freeze over before we sit with him,” and “he must go home.” He has said he would not reject a Likud no longer led by Netanyahu that accepted his party's principles. Likud in the cabinet is read here as Netanyahu-led.",
+      "source": "Liberman on X via JFeed, Sep 17, 2026; Jerusalem Post, May 6, 2026"
+    },
+    {
+      "id": "bw-no-netanyahu",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "bw" }, { "cabinet": "likud" }] },
+      "support": true,
+      "message": "Gantz: “Netanyahu should not continue as prime minister, and I will not give him his 61st vote.” Likud in the cabinet is read here as Netanyahu-led.",
+      "source": "Jerusalem Post, Aug 20, 2026"
+    },
+    {
+      "id": "res-zionist-unity-only",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "res" }, { "any": [{ "tag": "arab" }, { "tag": "haredi" }] }] },
+      "message": "Hendel wants a “Zionist unity government without Arab or Haredi parties.” Netanyahu is “not my red line,” he says. This coalition includes {and:haredi,arab}.",
+      "source": "Times of Israel, Nov 20, 2025; Jerusalem Post, Jul 23, 2026"
+    },
+    {
+      "id": "rz-no-arab-parties",
+      "kind": "pledge",
+      "when": { "all": [{ "cabinet": "rz" }, { "tag": "arab" }] },
+      "support": true,
+      "message": "Smotrich has ruled out relying on Arab parties; he called the 2021 government with Ra'am “a thousand times worse” than the October 7 failures. This coalition includes {and:arab}.",
+      "source": "Jerusalem Post, Aug 18, 2026; Times of Israel, May 5, 2026"
+    },
+    {
+      "id": "otzma-no-eisenkot",
+      "kind": "pledge",
+      "when": { "all": [{ "party": "otzma" }, { "party": "yashar" }] },
+      "support": true,
+      "message": "Ben-Gvir to Netanyahu: “I will do everything so that you do not form a government with Eisenkot! Only a right-wing government!!!”",
+      "source": "Jerusalem Post, Aug 29, 2026"
     },
     {
       "id": "utj-yeshiva-status-law",
       "kind": "condition",
       "when": { "party": "utj" },
+      "support": true,
       "message": "UTJ says it will not support or enter any government that does not first regulate the status of Torah learners (a yeshiva-status law), whoever leads it.",
       "source": "Yaakov Asher, Matzav, Sep 28, 2026"
     },
