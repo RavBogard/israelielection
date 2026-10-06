@@ -60,7 +60,7 @@ function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; da
   const model = homeRaceModel(poll, parties, blocs, lang), net = model.rows.find((r) => r.id === "net")!, cite = live || phase !== "before" ? null : citeText(poll, mainPolls.length, net.label, net.seats, undefined, lang);
   return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase, days, lang)}</h1><p className="standfirst">{live ? t.standfirstLive : t.standfirst}{t.majority(MAJORITY, KNESSET)}</p></div><div className="race-meta"><p className="race-basis">{live ? poll.resultState?.freshness === "stale" ? t.basisStale : t.basisLive : t.basis(mainPolls.length)}</p>{newest && <p className="race-newest">{t.newest}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{pollLabel(newest, lang)}, {mediumDate(newest.published, lang)}</Link></p>}{cite && <p className="race-cite"><CiteButton text={cite} /></p>}</div>
   <HomeRace model={model} change={change} />
-  <p className="race-source fig-src">{live ? <>{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(poll.resultState?.capturedAt ?? poll.published, poll.resultState?.sourceUpdatedAt ?? t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</> : <>{t.avgSource(pollsters, mediumDate(mainPolls[0].published, lang))}{change && <>{t.change(mediumDate(change.since, lang))}</>} <Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.</>}</p>
+  <p className="race-source fig-src">{live ? <>{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(countTime(poll.resultState?.capturedAt ?? poll.published, lang), poll.resultState?.sourceUpdatedAt ? countTime(poll.resultState.sourceUpdatedAt, lang) : t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</> : <>{t.avgSource(pollsters, mediumDate(mainPolls[0].published, lang))}{change && <>{t.change(mediumDate(change.since, lang))}</>} <Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.</>}</p>
   <p className="race-context">{t.contextBefore}<Link href={href(lang, "/parties", "/he/compare")}>{t.partyMap}</Link>{t.contextMiddle}<Link href={href(lang, "/coalition-builder", "/he/coalition-builder")}>{t.builder}</Link>.</p>
  </section>;
 }
@@ -111,6 +111,14 @@ function PollSlip({ slip, lang }: { slip: Slip; lang: Lang }) {
       {slip.url && <a className="ss-src" href={slip.url}>{t.source}</a>}
     </li>
   );
+}
+
+/** A count timestamp in Israel time ("Oct 27, 10:30 PM Israel time" / "27.10, 22:30 שעון ישראל"); a bare date passes through. */
+function countTime(iso: string, lang: Lang): string {
+  if (!iso.includes("T")) return iso;
+  const when = new Date(iso);
+  if (lang === "he") return `${new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(when)} שעון ישראל`;
+  return `${new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(when)} Israel time`;
 }
 
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {

@@ -11,7 +11,6 @@ import type {Lang} from "@/lib/i18n";
 import home from "@/lib/i18n/home";
 import type {BlocId} from "@/lib/types";
 import "./seatgrid.css";
-const seats=seatFigure;
 /** A name the Hebrew overlay has not reached yet, marked as English. */
 const nm=(text:string,lang?:Lang):ReactNode=>lang==="en"?<span lang="en" dir="ltr">{text}</span>:text;
 /**
@@ -19,6 +18,8 @@ const nm=(text:string,lang?:Lang):ReactNode=>lang==="en"?<span lang="en" dir="lt
  * mosaic from the top right with "61" left of the rule; SVG ignores dir, so the cells are placed mirrored here.
  */
 export default function HomeRace({model,change,rtl}:{model:HomeRaceModel;change?:BlocChange|null;rtl?:boolean}){
+ // The count gives whole seats; only the polling average keeps a decimal.
+ const seats=(n:number)=>model.isAverage||!Number.isInteger(n)?seatFigure(n):String(n);
  const lang=useLang(),t=home[lang].race,he=lang==="he",flip=rtl??he;
  const range=change?sparkRange(change.points):0;
  const [selected,setSelected]=useState<BlocId|null>(null),buttons=useRef<Partial<Record<BlocId,HTMLButtonElement|null>>>({}),visual=useRef<HTMLDivElement>(null);
