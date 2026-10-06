@@ -1,47 +1,14 @@
+
 import type { Chart, ChartRow } from "@/lib/articles";
+import { clearLabels, pct, pctIn, scaleMax, sparks, timeOf, unshaded } from "@/lib/chart-form";
 
 /*
- * Visual forms for a data/charts table. The table itself always stays on the page (folded under
- * the figure when a figure draws it), so every number keeps its exact printed value. Which form a
- * table takes is decided from its cells, never set by hand:
- *   - every value a plain percentage, the rows a run of years or elections, four or more rows: lines;
- *   - every value a plain percentage, two to four columns: a dot plot, one mark per column;
- *   - two or more columns, mostly cells carrying one percentage: the table, each such cell shaded
- *     by its size (turnout columns stay unshaded, since turnout is a share of a different whole).
- * Anything else stays a plain table.
+ * Visual forms for a data/charts table; lib/chart-form.ts decides which one a table takes. The
+ * table itself always stays on the page (folded under the figure when a figure draws it), so every
+ * number keeps its exact printed value.
  */
 
-const PCT = /^(\d+(?:\.\d+)?)%$/;
-const BLANK = /^(—|–|-|n\/a)?$/i;
-export const pct = (s: string | undefined): number | null => {
-  const m = PCT.exec((s ?? "").trim());
-  return m ? Number(m[1]) : null;
-};
-/** The one percentage a cell carries ("Religious Zionism 17.0%" is 17), or null when it carries none or several. */
-export const pctIn = (s: string | undefined): number | null => {
-  const all = [...(s ?? "").matchAll(/(\d+(?:\.\d+)?)%/g)];
-  return all.length === 1 ? Number(all[0][1]) : null;
-};
-const blank = (s: string | undefined) => BLANK.test((s ?? "").trim());
-/** Columns never shaded in a heat table: turnout is a share of eligible voters, not of the vote. */
-export const unshaded = (header: string) => /turnout/i.test(header);
-
-export type ChartForm = "lines" | "dots" | "heat" | "table";
-
-export function formOf(c: Chart): ChartForm {
-  if (c.kind !== "table" || !c.columns || c.columns.length < 2) return "table";
-  const cells = c.rows.flatMap((r) => r.cells ?? []);
-  const filled = cells.filter((x) => !blank(x));
-  const share = (f: (s: string) => number | null) => (filled.length ? filled.filter((x) => f(x) !== null).length / filled.length : 0);
-  const series = c.columns.length - 1;
-  const timeRows = c.rows.length >= 4 && (/^(year|election|end of year)$/i.test(c.columns[0].trim()) || c.rows.every((r) => /\b(19|20)\d{2}\b/.test(r.label)));
-  if (share(pct) === 1 && timeRows && series <= 4) return "lines";
-  if (share(pct) === 1 && series >= 2 && series <= 4 && c.rows.length <= 12) return "dots";
-  if (series >= 2 && share(pctIn) >= 0.5) return "heat";
-  return "table";
-}
-
-export const scaleMax = (vals: number[]) => (Math.max(...vals) > 60 ? 100 : Math.max(20, Math.ceil(Math.max(...vals) / 10) * 10));
+export { formOf, pct, pctIn, scaleMax, unshaded, type ChartForm } from "@/lib/chart-form";
 
 /** The value a heat table's darkest shade stands for: the scale maximum of the shaded cells. */
 export function heatMax(c: Chart): number {
@@ -67,35 +34,36 @@ function Legend({ columns }: { columns: string[] }) {
   );
 }
 
-const MONTH = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+(?:\d{1,2},?\s+)?((?:19|20)\d{2})\b/i;
-const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
-/** A label as a fractional year ("June 2023" is 2023.42), or null when it names no year. A month counts only directly before its year. */
-function timeOf(label: string): number | null {
-  const m = MONTH.exec(label);
-  if (m) return Number(m[2]) + MONTHS.indexOf(m[1].toLowerCase()) / 12;
-  const y = /\b((?:19|20)\d{2})\b/.exec(label);
-  return y ? Number(y[1]) + 0.4 : null;
-}
 /** A shorter x label: months cut to three letters. */
 const shortLabel = (s: string) => s.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]+\b/gi, "$1");
 
-/** A dot plot: each row a 0-to-max track with one mark per column; every row shares one track width. */
+/** Where a dot plot prints each value beside its mark: the lowest to its left, the highest to its right, any between above, then below. */
+type Side = "l" | "r" | "t" | "b";
+function sidesOf(vs: (number | null)[]) {
+  const known = vs.map((v, i) => ({ v, i })).filter((p): p is { v: number; i: number } => p.v !== null).sort((a, b) => a.v - b.v || a.i - b.i);
+  const side: Record<number, Side> = {};
+  if (known.length === 1) side[known[0].i] = "r";
+  else known.forEach((p, k) => (side[p.i] = k === 0 ? "l" : k === known.length - 1 ? "r" : k === 1 ? "t" : "b"));
+  return side;
+}
+
+/** A dot plot: each row a 0-to-max track with one mark per column, each value printed beside its mark; every row shares one track width. */
 export function DotPlot({ c }: { c: Chart }) {
   const cols = c.columns!.slice(1);
   const vals = c.rows.flatMap((r) => (r.cells ?? []).map(pct).filter((v): v is number => v !== null));
   const max = scaleMax(vals);
   const x = (v: number) => `${(v / max) * 100}%`;
-  // Each column keeps a fixed slot in the values, as wide as its longest cell.
-  const widths = cols.map((_, i) => Math.max(2, ...c.rows.map((r) => (r.cells?.[i] ?? "").length)));
   // Only a run of dates makes lowest-to-highest a change; otherwise the marks stand alone.
   const dated = cols.every((h) => timeOf(h) !== null);
+  const lanes = Math.max(...c.rows.map((r) => (r.cells ?? []).filter((v) => pct(v) !== null).length));
   return (
-    <div className="cv-dots">
+    <div className={`cv-dots${lanes >= 3 ? " up" : ""}${lanes >= 4 ? " down" : ""}`}>
       <Legend columns={cols} />
       <ul>
         {c.rows.map((r: ChartRow) => {
           const vs = (r.cells ?? []).map(pct);
           const known = vs.filter((v): v is number => v !== null);
+          const side = sidesOf(vs);
           return (
             <li key={r.label}>
               <span className="lab">
@@ -103,13 +71,11 @@ export function DotPlot({ c }: { c: Chart }) {
                 {rowSource(r)}
               </span>
               <span className="track" aria-hidden="true">
-                {dated && known.length > 1 && <i className="span" style={{ left: x(Math.min(...known)), width: `${((Math.max(...known) - Math.min(...known)) / max) * 100}%` }} />}
-                {vs.map((v, i) => (v === null ? null : <i key={i} className={`cv-m ${MARKS[i]}`} style={{ left: x(v) }} title={`${cols[i]}: ${r.cells![i]}`} />))}
-              </span>
-              <span className="vals" aria-hidden="true">
-                {cols.map((_, i) => (
-                  <b key={i} className={`v-${MARKS[i]}`} style={{ width: `${widths[i]}ch` }}>{vs[i] === null ? "" : r.cells![i]}</b>
-                ))}
+                <span className="tk">
+                  {dated && known.length > 1 && <i className="span" style={{ left: x(Math.min(...known)), width: `${((Math.max(...known) - Math.min(...known)) / max) * 100}%` }} />}
+                  {vs.map((v, i) => (v === null ? null : <i key={i} className={`cv-m ${MARKS[i]}`} style={{ left: x(v) }} title={`${cols[i]}: ${r.cells![i]}`} />))}
+                  {vs.map((v, i) => (v === null ? null : <b key={i} className={`dv dv-${side[i]} v-${MARKS[i]}`} style={{ left: x(v) }}>{r.cells![i]}</b>))}
+                </span>
               </span>
             </li>
           );
@@ -117,7 +83,63 @@ export function DotPlot({ c }: { c: Chart }) {
         <li className="cv-axis" aria-hidden="true">
           <span className="lab" />
           <span className="ax"><span>0%</span><span>{max}%</span></span>
-          <span />
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+/**
+ * Elections across, one sparkline per row, every row on the same 0-to-max scale so heights compare
+ * down the column. The first and last values are printed at either end; where the cells name the
+ * list (the largest list in a town, say), each change of list is named under the line from its point.
+ */
+export function Sparklines({ c }: { c: Chart }) {
+  const { cols, max, rows } = sparks(c);
+  const at = (a: number) => `${a * 100}%`;
+  const top = (v: number) => `${(1 - v / max) * 100}%`;
+  // X labels: all that keep about 70px clear on a desktop track, the first and last on phones.
+  const shown = new Set(clearLabels(cols.map((h) => h.at), 0.2));
+  return (
+    <div className="cv-sparks" aria-hidden="true">
+      <ul>
+        {rows.map(({ row, pts, runs, labels, lanes }) => (
+          <li key={row.label} className={lanes ? `ln-${lanes}` : undefined}>
+            <span className="lab">
+              {row.label}
+              {rowSource(row)}
+            </span>
+            <span className="v0">{pts.length > 1 ? pts[0].txt : ""}</span>
+            <span className="sp">
+              <span className="tk">
+                {cols.map((h) => <i key={h.label} className="g" style={{ left: at(h.at) }} />)}
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                  {runs.filter((r) => r.length > 1).map((r) => (
+                    <path key={r[0].j} d={r.map((p, k) => `${k ? "L" : "M"}${(cols[p.j].at * 100).toFixed(2)},${((1 - p.v / max) * 100).toFixed(2)}`).join("")} vectorEffect="non-scaling-stroke" />
+                  ))}
+                </svg>
+                {pts.map((p) => <i key={p.j} className="pt" style={{ left: at(cols[p.j].at), top: top(p.v) }} title={`${cols[p.j].label}: ${p.raw}`} />)}
+              </span>
+              {labels.length > 0 && (
+                <span className="lists">
+                  {labels.map((l) => (
+                    <span key={`${l.list}-${l.at}`} className={`ls ln${l.lane}${l.end ? " end" : ""}`} style={l.end ? { right: 0, maxWidth: at(l.width) } : { left: at(l.at), maxWidth: at(l.width) }} title={l.list}>{l.list}</span>
+                  ))}
+                </span>
+              )}
+            </span>
+            <span className="v1">{pts.length ? pts.at(-1)!.txt : ""}</span>
+          </li>
+        ))}
+        <li className="cv-axis">
+          <span className="lab">Every row 0 to {max}%</span>
+          <span className="v0" />
+          <span className="ax">
+            {cols.map((h, j) => (
+              <span key={h.label} className={`${j === 0 ? "first" : j === cols.length - 1 ? "last" : "mid"}${shown.has(j) ? "" : " crowd"}`} style={{ left: at(h.at) }}>{shortLabel(h.label)}</span>
+            ))}
+          </span>
+          <span className="v1" />
         </li>
       </ul>
     </div>
@@ -140,7 +162,7 @@ function fit(s: string, room: number, unit: number) {
 function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
   const cols = c.columns!.slice(1);
   const { W, H, P } = box;
-  const vals = c.rows.flatMap((r) => (r.cells ?? []).map(pct).filter((v): v is number => v !== null));
+  const vals = c.rows.flatMap((r) => (r.cells ?? []).map(pctIn).filter((v): v is number => v !== null));
   const max = scaleMax(vals);
   const n = c.rows.length;
   // Space the points by date when every row names a year, so uneven gaps between surveys stay uneven.
@@ -159,8 +181,9 @@ function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
   // End labels: keep them at least 14 units apart.
   const ends = cols
     .map((h, s) => {
-      const last = [...c.rows.keys()].reverse().find((i) => pct(c.rows[i].cells?.[s]) !== null);
-      return last === undefined ? null : { s, h, v: pct(c.rows[last].cells![s])!, raw: c.rows[last].cells![s], i: last };
+      const last = [...c.rows.keys()].reverse().find((i) => pctIn(c.rows[i].cells?.[s]) !== null);
+      const v = last === undefined ? null : pctIn(c.rows[last].cells![s])!;
+      return last === undefined || v === null ? null : { s, h, v, raw: pct(c.rows[last].cells![s]) !== null ? c.rows[last].cells![s].trim() : (/\d+(?:\.\d+)?%/.exec(c.rows[last].cells![s])?.[0] ?? `${v}%`), i: last };
     })
     .filter((e): e is NonNullable<typeof e> => !!e)
     .sort((a, b) => b.v - a.v);
@@ -177,7 +200,7 @@ function Plot({ c, box, narrow }: { c: Chart; box: Box; narrow: boolean }) {
         <text key={i} className="tick" x={x(i)} y={H - 8} textAnchor={i === 0 ? "start" : i === n - 1 ? "end" : "middle"}>{shortLabel(c.rows[i].label)}</text>
       ))}
       {cols.map((h, s) => {
-        const pts = c.rows.map((r, i) => ({ i, v: pct(r.cells?.[s]) })).filter((p): p is { i: number; v: number } => p.v !== null);
+        const pts = c.rows.map((r, i) => ({ i, v: pctIn(r.cells?.[s]) })).filter((p): p is { i: number; v: number } => p.v !== null);
         return (
           <g key={h} className={`ser ${MARKS[s]}`}>
             <path d={pts.map((p, k) => `${k ? "L" : "M"}${x(p.i).toFixed(1)},${y(p.v).toFixed(1)}`).join("")} />

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import "./seatbar.css";
 
 export type SeatBarSegment = {
@@ -12,6 +12,8 @@ export type SeatBarSegment = {
   label?: ReactNode;
   title?: string;
   className?: string;
+  /** Extra inline style for the segment (e.g. a label's padding moved clear of the 61 tick). */
+  style?: CSSProperties;
 };
 
 /**
@@ -36,7 +38,7 @@ export default function SeatBar({ segments, total = 120, majority = 61, size = "
   return (
     <span className={`seatbar sb-${size}${className ? ` ${className}` : ""}`} {...a11y}>
       {segments.filter((s) => s.seats > 0).map((s) => (
-        <span key={s.key} className={`sb-seg${s.className ? ` ${s.className}` : ""}`} style={{ width: w(s.seats), background: s.color, color: s.ink }} title={s.title}>
+        <span key={s.key} className={`sb-seg${s.className ? ` ${s.className}` : ""}`} style={{ ...s.style, width: w(s.seats), background: s.color, color: s.ink }} title={s.title}>
           {s.label != null && <b>{s.label}</b>}
         </span>
       ))}

@@ -1,10 +1,11 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { allCharts, allPositions, type Chart as ChartData, type ChartRow, type Positions } from "@/lib/articles";
 import { averagePoll, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
 import { shade } from "../compare/model";
 import type { PositionRow } from "@/lib/compare";
-import { DotPlot, Lines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
+import { DotPlot, Lines, Sparklines, formOf, heatMax, heatStyle, rowSource, unshaded } from "./ChartViz";
+import { barRefs, transpose } from "@/lib/chart-form";
 import SeatBar from "../SeatBar";
 
 /*
@@ -82,7 +83,7 @@ function NumbersTable({ c, heat }: { c: ChartData; heat: boolean }) {
 const PREVIEW_ROWS = 4;
 const NATIONAL = /whole country|all voters|israel as a whole|national/i;
 function previewRows(c: ChartData, form: string) {
-  if (form === "lines" || form === "dots" || c.rows.length <= PREVIEW_ROWS + 1) return c.rows;
+  if (form === "lines" || form === "dots" || form === "trend" || c.rows.length <= PREVIEW_ROWS + 1) return c.rows;
   const head = c.rows.slice(0, PREVIEW_ROWS);
   return [...head, ...c.rows.slice(PREVIEW_ROWS).filter((r) => NATIONAL.test(r.label))];
 }
@@ -90,12 +91,15 @@ function previewRows(c: ChartData, form: string) {
 export function Chart({ id, compact }: { id: string; compact?: boolean }) {
   const full = charts[id];
   if (!full) throw new Error(`Unknown chart "${id}" (see data/charts/)`);
-  const c = compact ? { ...full, rows: previewRows(full, formOf(full)) } : full;
+  const form = formOf(full);
+  const c = compact ? { ...full, rows: previewRows(full, form) } : full;
   const cut = full.rows.length - c.rows.length;
   const unit = c.unit ?? "";
   const max = c.max ?? (unit === "%" ? 100 : Math.max(...c.rows.map((r) => r.value ?? 0)));
-  const form = formOf(c);
   const print = (r: ChartRow) => r.display ?? `${r.value}${unit === "%" ? "%" : unit ? ` ${unit}` : ""}`;
+  const bars = c.kind === "bars" ? barRefs(c, print) : null;
+  const xOf = (v: number) => Math.max(0, Math.min(100, (v / max) * 100));
+  const drawn = form === "lines" || form === "dots" || form === "trend" || form === "sparks";
   return (
     <figure className="chart">
       <figcaption className="ct">{c.title}</figcaption>
@@ -104,24 +108,36 @@ export function Chart({ id, compact }: { id: string; compact?: boolean }) {
           <Linked text={c.question} />
         </p>
       )}
-      {c.kind === "bars" ? (
-        <ul className="bars">
-          {c.rows.map((r) => (
+      {bars ? (
+        <ul className={`bars${bars.refs.length ? " has-ref" : ""}`} style={{ "--bv": `${Math.max(4, ...bars.rows.map((r) => print(r).length)) + 0.5}ch` } as CSSProperties}>
+          {bars.refs.length > 0 && (
+            <li className="bref-l">
+              <span className="bl" />
+              <span className="bt">
+                {bars.refs.map((f) => (
+                  <span key={f.label} className={xOf(f.value) > 50 ? "to-l" : "to-r"} style={xOf(f.value) > 50 ? { right: `${100 - xOf(f.value)}%` } : { left: `${xOf(f.value)}%` }}>{f.label}</span>
+                ))}
+              </span>
+              <span className="bv" />
+            </li>
+          )}
+          {bars.rows.map((r) => (
             <li key={r.label} title={`${r.label}: ${print(r)}`}>
               <span className="bl">
                 {r.label}
                 {rowSource(r)}
               </span>
               <span className="bt">
-                <span className="bf" style={{ width: `${Math.max(0, Math.min(100, ((r.value ?? 0) / max) * 100))}%` }} />
+                <span className="bf" style={{ width: `${xOf(r.value ?? 0)}%` }} />
+                {bars.refs.map((f) => <i key={f.label} className={`bref${f.heavy ? " heavy" : ""}`} style={{ left: `${xOf(f.value)}%` }} aria-hidden="true" />)}
               </span>
               <span className="bv">{print(r)}</span>
             </li>
           ))}
         </ul>
-      ) : form === "lines" || form === "dots" ? (
+      ) : drawn ? (
         <>
-          {form === "lines" ? <Lines c={c} /> : <DotPlot c={c} />}
+          {form === "lines" ? <Lines c={c} /> : form === "trend" ? <Lines c={transpose(c)} /> : form === "sparks" ? <Sparklines c={c} /> : <DotPlot c={c} />}
           {!compact && <details className="cv-numbers" open={form === "lines" && c.rows.some((r) => !!r.source)}>
             <summary>The numbers<span className="sr-only">: {c.title}</span></summary>
             <NumbersTable c={c} heat={false} />
@@ -177,6 +193,17 @@ function splitOf(issue: string) {
 
 const onClass = (pos: number | null) => `on-${pos === null ? "ink" : pos < 0.5 ? "light" : "dark"}`;
 
+/**
+ * A segment's label starts at its left edge; when the 61 tick falls just inside that edge, the label
+ * moves to just past the tick instead, if the segment has more room after the tick than before it.
+ * Padding in percent is of the bar's width, so the offset is exact at any width.
+ */
+function clearOfTick(start: number, seats: number) {
+  const before = MAJORITY - start, after = start + seats - MAJORITY;
+  return before > 0 && before < 6 && after >= before ? { paddingLeft: `calc(${(before / SEATS) * 100}% + 5px)` } : undefined;
+}
+const MAJORITY = 61;
+
 /** The 120-seat bar: each answer's lists' seats in the polling average, shaded on the stance ramp, with the 61 tick. */
 function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
   const ink = (pos: number | null) => (pos === null ? "var(--bg)" : pos < 0.5 ? "#fff" : "#000");
@@ -185,7 +212,7 @@ function SplitBar({ groups, rest, size = "l" }: Pick<ReturnType<typeof splitOf>,
       className="ps-bar"
       size={size}
       total={SEATS}
-      segments={groups.map((g) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${Math.round(g.seats)} seats` }))}
+      segments={groups.map((g, i) => ({ key: g.st.id, seats: g.seats, color: shade(g.pos), ink: ink(g.pos), label: g.n, title: `${g.st.label}: ${Math.round(g.seats)} seats`, style: clearOfTick(groups.slice(0, i).reduce((a, x) => a + x.seats, 0), g.seats) }))}
       rest={{ title: `No recorded answer, or below the threshold: ${Math.round(rest)} seats` }}
       label={`Seats in the polling average by answer: ${groups.filter((g) => g.seats > 0).map((g) => `${g.st.label} ${Math.round(g.seats)}`).join(", ")}; no recorded answer or below the threshold ${Math.round(rest)}. A majority is 61.`}
     />

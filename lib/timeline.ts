@@ -73,3 +73,17 @@ export function eventAt(evs: TimelineEvent[], month: number): number {
 
 /** "1970s", "1980s", … for a date. */
 export const decadeOf = (iso: string) => `${Math.floor(Number(iso.slice(0, 4)) / 10) * 10}s`;
+
+/**
+ * Lanes for marks along a track so none overlap: each mark (positions 0–1, in order) takes the lowest
+ * lane whose last mark is at least `gap` (a share of the track) behind it.
+ */
+export function stackLanes(ats: number[], gap: number): number[] {
+  const last: number[] = [];
+  return ats.map((a) => {
+    let lane = last.findIndex((x) => a - x >= gap - 1e-9);
+    if (lane < 0) lane = last.push(a) - 1;
+    else last[lane] = a;
+    return lane;
+  });
+}

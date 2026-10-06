@@ -13,22 +13,22 @@
 .tl-k { font-size: 13px; font-weight: 600; color: var(--ink-2) !important; }
 .tl-src { margin-top: 8px; }
 
-.tl-track { position: relative; height: 92px; margin: 6px 0 0; touch-action: none; cursor: ew-resize; user-select: none; }
+.tl-track { --lanes: var(--ln-w, 0); --pitch: 13px; position: relative; height: calc(92px + var(--lanes) * var(--pitch)); margin: 6px 0 0; touch-action: none; cursor: ew-resize; user-select: none; }
 .tl-row { position: absolute; left: 0; right: 0; }
-.tl-evs { top: 6px; height: 18px; }
-.tl-evs button { position: absolute; top: 3px; width: 12px; height: 12px; margin-left: -6px; padding: 0; border-radius: 50%; border: 2px solid var(--sheet); background: var(--ink-3); cursor: pointer; }
+.tl-evs { top: 6px; height: calc(18px + var(--lanes) * var(--pitch)); }
+.tl-evs button { --l: var(--l-w, 0); position: absolute; top: calc(3px + var(--l) * var(--pitch)); width: 12px; height: 12px; margin-left: -6px; padding: 0; border-radius: 50%; border: 2px solid var(--sheet); background: var(--ink-3); cursor: pointer; }
 .tl-evs button:hover, .tl-evs button:focus-visible { background: var(--ink); }
-.tl-evs button.on { background: var(--ink); width: 14px; height: 14px; margin-left: -7px; top: 2px; }
-.tl-els { top: 30px; height: 12px; }
+.tl-evs button.on { background: var(--ink); width: 14px; height: 14px; margin-left: -7px; top: calc(2px + var(--l) * var(--pitch)); }
+.tl-els { top: calc(30px + var(--lanes) * var(--pitch)); height: 12px; }
 .tl-els span { position: absolute; top: 0; width: 2px; height: 12px; margin-left: -1px; background: var(--ink-2); }
 .tl-els span.on { background: var(--ink); width: 3px; }
 .tl-els span.next { background: none; border-left: 2px dashed var(--ink-2); }
-.tl-pms { top: 46px; height: 24px; }
+.tl-pms { top: calc(46px + var(--lanes) * var(--pitch)); height: 24px; }
 .tl-pms span { position: absolute; top: 0; height: 24px; overflow: hidden; white-space: nowrap; font-size: 12px; font-weight: 600; line-height: 24px; padding-left: 4px; box-sizing: border-box; border-right: 2px solid var(--bg); }
 .tl-pms .a { background: var(--cell); color: var(--ink); }
 .tl-pms .b { background: color-mix(in oklab, var(--ink) 22%, var(--sheet)); color: var(--ink); }
 .tl-pms .on { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px var(--bg); }
-.tl-axis { position: absolute; left: 0; right: 0; top: 74px; height: 16px; border-top: 1px solid var(--line-2); }
+.tl-axis { position: absolute; left: 0; right: 0; top: calc(74px + var(--lanes) * var(--pitch)); height: 16px; border-top: 1px solid var(--line-2); }
 .tl-axis span { position: absolute; top: 2px; transform: translateX(-50%); font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .tl-cursor { position: absolute; top: 0; bottom: 14px; width: 1px; margin-left: -.5px; background: var(--ink); pointer-events: none; }
 
@@ -63,6 +63,10 @@
   .tl-ev { padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--line); margin-top: 8px; }
   .tl-when { font-size: 28px; }
   .tl-pms span { font-size: 0; }
+  /* Phone lanes: smaller marks at a tighter pitch, stacked for the narrower track. */
+  .tl-track { --lanes: var(--ln-n, 0); --pitch: 11px; }
+  .tl-evs button { --l: var(--l-n, 0); width: 10px; height: 10px; margin-left: -5px; }
+  .tl-evs button.on { width: 12px; height: 12px; margin-left: -6px; }
   .tl-controls { grid-template-columns: 1fr 1fr; }
   .tl-controls label { grid-column: 1 / -1; grid-row: 1; }
 }

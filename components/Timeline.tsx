@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, type CSSProperties } from "react";
 import "./timeline.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
-import { electionAt, eventAt, governmentAt, labelOf, longDate, monthOf, type Timeline as Data } from "@/lib/timeline";
+import { electionAt, eventAt, governmentAt, labelOf, longDate, monthOf, stackLanes, type Timeline as Data } from "@/lib/timeline";
 
 const ORD = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] ?? "th"}`;
 const KIND: Record<string, string> = { war: "War and security", peace: "Peace and diplomacy", politics: "Politics", law: "Law and courts", society: "Society" };
@@ -44,6 +44,11 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
     setMonth(start + Math.round(Math.max(0, Math.min(1, (x - r.left) / r.width)) * span));
   };
 
+  // Events close in time stack in lanes instead of overlapping: one set of lanes for a desktop track, one for a phone's.
+  const ats = data.events.map((e) => (monthOf(e.date) - start) / span);
+  const laneW = stackLanes(ats, 13 / 900), laneN = stackLanes(ats, 11 / 358);
+  const lanes = { "--ln-w": Math.max(0, ...laneW), "--ln-n": Math.max(0, ...laneN) } as CSSProperties;
+
   const decades = [];
   for (let y = 1980; y <= 2020; y += 10) decades.push(y);
 
@@ -52,6 +57,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
       <div
         className="tl-track"
         ref={track}
+        style={lanes}
         onPointerDown={(e) => {
           if ((e.target as HTMLElement).closest("button")) return;
           e.currentTarget.setPointerCapture(e.pointerId);
@@ -67,7 +73,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
               key={i}
               type="button"
               className={i === ei ? "on" : undefined}
-              style={{ left: pct(monthOf(e.date)) }}
+              style={{ left: pct(monthOf(e.date)), "--l-w": laneW[i], "--l-n": laneN[i] } as CSSProperties}
               title={`${longDate(e.date)}: ${e.title}`}
               aria-label={`${longDate(e.date)}: ${e.title}`}
               onClick={() => goTo(i)}

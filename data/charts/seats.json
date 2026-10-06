@@ -61,15 +61,15 @@
   "leftover-2022": {
     "title": "2022, step two: the seven leftover seats, one round at a time",
     "kind": "table",
-    "columns": ["Round", "Won by", "Votes counted", "Seats before the round", "Votes ÷ (seats + 1)"],
+    "columns": ["Round", "Seat", "Won by", "Votes counted", "Seats before the round", "Votes ÷ (seats + 1)"],
     "rows": [
-      { "label": "Round 1 (seat 114)", "cells": ["Shas + United Torah Judaism", "673,158", "17", "37,397.67"] },
-      { "label": "Round 2 (seat 115)", "cells": ["National Unity + Yesh Atid", "1,279,917", "34", "36,569.06"] },
-      { "label": "Round 3 (seat 116)", "cells": ["Likud + Religious Zionism", "1,631,806", "44", "36,262.36"] },
-      { "label": "Round 4 (seat 117)", "cells": ["Hadash–Ta'al", "178,735", "4", "35,747.00"] },
-      { "label": "Round 5 (seat 118)", "cells": ["Yisrael Beiteinu", "213,687", "5", "35,614.50"] },
-      { "label": "Round 6 (seat 119)", "cells": ["National Unity + Yesh Atid", "1,279,917", "35", "35,553.25"] },
-      { "label": "Round 7 (seat 120)", "cells": ["Likud + Religious Zionism", "1,631,806", "45", "35,474.04"] }
+      { "label": "1", "cells": ["114", "Shas + United Torah Judaism", "673,158", "17", "37,397.67"] },
+      { "label": "2", "cells": ["115", "National Unity + Yesh Atid", "1,279,917", "34", "36,569.06"] },
+      { "label": "3", "cells": ["116", "Likud + Religious Zionism", "1,631,806", "44", "36,262.36"] },
+      { "label": "4", "cells": ["117", "Hadash–Ta'al", "178,735", "4", "35,747.00"] },
+      { "label": "5", "cells": ["118", "Yisrael Beiteinu", "213,687", "5", "35,614.50"] },
+      { "label": "6", "cells": ["119", "National Unity + Yesh Atid", "1,279,917", "35", "35,553.25"] },
+      { "label": "7", "cells": ["120", "Likud + Religious Zionism", "1,631,806", "45", "35,474.04"] }
     ],
     "question": "Each round, every list or surplus pair divides its votes by (seats it already has + 1); the highest result wins the next seat",
     "source": "Central Elections Committee, results for the 25th Knesset (rounds computed from the committee's totals)",

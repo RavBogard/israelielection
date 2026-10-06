@@ -25,7 +25,7 @@ export default function CoalitionSeats({ events, electionDay }: { events: Events
 
 /** One drawing of the chart; phones get a narrower one of their own so the text stays legible. */
 function Plot({ events, electionDay, narrow }: { events: Events; electionDay: string; narrow: boolean }) {
-  const W = narrow ? 360 : 760, H = narrow ? 240 : 230, P = narrow ? { l: 24, r: 8, t: 30, b: 26 } : { l: 34, r: 16, t: 26, b: 30 };
+  const W = narrow ? 360 : 760, H = narrow ? 240 : 230, P = narrow ? { l: 24, r: 36, t: 30, b: 26 } : { l: 34, r: 86, t: 26, b: 30 };
   const start = t(events[0].date), end = t(electionDay);
   const x = (iso: string) => P.l + ((t(iso) - start) / (end - start)) * (W - P.l - P.r);
   const y = (s: number) => P.t + (1 - (s - LO) / (HI - LO)) * (H - P.t - P.b);
@@ -78,7 +78,8 @@ function Plot({ events, electionDay, narrow }: { events: Events; electionDay: st
           </g>
         )}
         <line className="mark" x1={x(electionDay)} x2={x(electionDay)} y1={P.t - 6} y2={H - P.b} />
-        <text className="gov-ann" x={x(electionDay) - 6} y={H - P.b - 8} textAnchor="end">{narrow ? "Vote" : "Election day"}</text>
+        {/* Right of its line, in the margin kept for it, so it never meets the dissolution line just before. */}
+        <text className="gov-ann" x={x(electionDay) + 5} y={H - P.b - 8}>{narrow ? "Vote" : "Election day"}</text>
       </svg>
   );
 }
