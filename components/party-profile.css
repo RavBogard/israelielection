@@ -4,7 +4,10 @@
   one grid row. Under 860px the grid is one column and the DOM order keeps every figure directly
   above its text. --pc is the party's colour, --pc-ink the black or white that reads on it.
 */
-.pp { --pc: var(--ink); --pc-ink: var(--bg); padding-bottom: 8px; }
+.pp { --pc: var(--ink); --pc-ink: var(--bg); --map-low: #e9ecf2; padding-bottom: 8px; }
+/* On dark paper the ramp's low end is dim, so the strongest localities stay the brightest marks. */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .pp { --map-low: #2a2d33; } }
+:root[data-theme="dark"] .pp { --map-low: #2a2d33; }
 
 /* Running head: the party's colour owns the band. */
 .pp-head { background: var(--pc); color: var(--pc-ink); margin-top: 18px; }

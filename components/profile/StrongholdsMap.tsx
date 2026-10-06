@@ -17,8 +17,9 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
   const ox = (W - (x1 - x0) * s) / 2, oy = (H - (y1 - y0) * s) / 2;
   const px = (x: number) => ox + (x - x0) * s, py = (y: number) => oy + (y - y0) * s;
   const max = Math.max(data.national * 2, ...data.dots.filter((d) => d.valid >= 15000).map((d) => d.share));
-  // Fixed light endpoint: the faint dots stay visible on the dark paper and the scale reads the same in both modes.
-  const tint = (share: number) => `color-mix(in oklab, ${color} ${Math.round(Math.min(1, share / max) * 100)}%, #e9ecf2)`;
+  // The low end of the ramp is --map-low: a pale tint on light paper, a dim one on dark, so the strongest places are
+  // always the most saturated marks and the weakest the quietest, in either mode.
+  const tint = (share: number) => `color-mix(in oklab, ${color} ${Math.round(Math.min(1, share / max) * 100)}%, var(--map-low))`;
   const ring = (rings: [number, number][][]) => rings.map((r) => r.map(([lng, lat], i) => { const [x, y] = project([lng, lat]); return `${i ? "L" : "M"}${px(x).toFixed(1)},${py(y).toFixed(1)}`; }).join("") + "Z").join("");
   const plain = data.dots.filter((d) => !d.labelled);
   // Place each label on the side with more room, then nudge it down past any label already set there.
@@ -65,7 +66,7 @@ export default function StrongholdsMap({ data, color, name }: { data: Stronghold
       </table>
       <p className="pp-scale" aria-hidden="true">
         <span>0%</span>
-        <i style={{ background: `linear-gradient(90deg, #e9ecf2, ${color})` }} />
+        <i style={{ background: `linear-gradient(90deg, var(--map-low), ${color})` }} />
         <span>{Math.round(max * 100)}%</span>
       </p>
     </div>
