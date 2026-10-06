@@ -57,3 +57,60 @@
 .gov .gov-outgoing .gov-more .src { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); }
 .gov .gov-outgoing .gov-more .src a { color: var(--ink-3); font-weight: 400; }
 .gov .gov-clock-h { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; letter-spacing: -.01em; margin: 0 0 12px; }
+
+/* Figures: the outgoing coalition's seats against 61, and the formation clock as bars on one day axis. */
+.gov .gov-fig { margin: 18px 0 22px; max-width: 760px; }
+.gov .gov-fig-h { font-size: 14.5px; font-weight: 700; color: var(--ink); margin: 0 0 8px; }
+.gov .gov-fig-src { font-size: 12.5px; color: var(--ink-3); margin: 8px 0 0; line-height: 1.5; max-width: 70ch; }
+.gov .gov-fig svg { display: block; width: 100%; height: auto; }
+.gov .gov-fig svg.narrow { display: none; }
+.gov .gov-fig .grid { stroke: var(--line); stroke-width: 1; }
+.gov .gov-fig .grid.yr { stroke-dasharray: none; }
+.gov .gov-fig .tick { fill: var(--ink-3); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+.gov .gov-fig .maj { stroke: var(--ink); stroke-width: 2; }
+.gov .gov-fig .maj-l { fill: var(--ink); font-family: var(--display); font-weight: 700; font-size: 13px; }
+.gov .gov-fig .seat { stroke: var(--b-net); stroke-width: 3; stroke-linecap: square; }
+.gov .gov-fig .seat.after { stroke: var(--ink-3); stroke-width: 2; }
+.gov .gov-fig .band { fill: var(--b-net); opacity: .45; }
+.gov .gov-fig .val { paint-order: stroke; stroke: var(--bg); stroke-width: 4px; stroke-linejoin: round; fill: var(--ink); font-family: var(--display); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+.gov .gov-fig .mark { stroke: var(--ink-2); stroke-width: 1; }
+.gov .gov-fig .note { fill: var(--ink-2); font-size: 12px; }
+
+.gov .gov-clock .gc-rows { list-style: none; margin: 0; padding: 0; }
+.gov .gov-clock .gc-row, .gov .gov-clock .gc-axis { display: grid; grid-template-columns: minmax(0, 15.5em) minmax(0, 1fr); column-gap: 14px; align-items: center; }
+.gov .gov-clock .gc-row { padding: 3px 0; }
+.gov .gov-clock .gc-lab { font-size: 14px; line-height: 1.25; color: var(--text); }
+.gov .gov-clock .gc-row .gc-lab { display: grid; grid-template-columns: 1.8em minmax(0, 1fr); }
+.gov .gov-clock .gc-lab b { font-family: var(--display); font-weight: 700; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.gov .gov-clock .gc-track { position: relative; height: 26px; }
+.gov .gov-clock .gc-grid { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--line); }
+.gov .gov-clock .gc-bar { position: absolute; top: 4px; bottom: 4px; min-width: 3px; display: flex; align-items: center; overflow: hidden; }
+.gov .gov-clock .nominee .gc-bar { background: var(--ink); color: var(--bg); }
+.gov .gov-clock .president .gc-bar, .gov .gov-clock .knesset .gc-bar { background: var(--ink-3); color: var(--bg); }
+.gov .gov-clock .discretion .gc-bar { background: repeating-linear-gradient(135deg, var(--ink-2) 0 2px, transparent 2px 6px); box-shadow: inset 0 0 0 1.5px var(--ink-2); color: var(--ink); }
+.gov .gov-clock .any .gc-bar { top: 11px; bottom: 11px; background: var(--b-net); }
+.gov .gov-clock .any .gc-lab { color: var(--ink); font-weight: 600; }
+.gov .gov-clock .gc-len { padding-left: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.gov .gov-clock .discretion .gc-len { background: var(--bg); padding: 0 4px; margin-left: 4px; }
+.gov .gov-clock .gc-axis .gc-track { height: 20px; }
+.gov .gov-clock .gc-tick { position: absolute; bottom: 2px; transform: translateX(-50%); font-size: 11.5px; color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.gov .gov-clock .gc-tick:first-child { transform: none; }
+.gov .gov-clock .gc-foot .gc-track { height: auto; min-height: 36px; }
+.gov .gov-clock .gc-end { position: absolute; top: 4px; transform: translateX(-100%); width: 21em; text-align: right; font-size: 12.5px; color: var(--ink-2); line-height: 1.35; padding-right: 6px; border-right: 2px solid var(--ink); }
+.gov .gov-clock .gc-now { position: absolute; top: -3px; bottom: -3px; width: 2px; margin-left: -1px; background: var(--b-opp); }
+.gov .gov-clock .gc-nowl { position: absolute; top: 4px; font-size: 12.5px; font-weight: 700; color: var(--ink); padding-left: 6px; }
+@media (max-width: 640px) {
+  .gov .gov-clock .gc-row, .gov .gov-clock .gc-axis { grid-template-columns: minmax(0, 1fr); }
+  .gov .gov-clock .gc-axis .gc-lab, .gov .gov-clock .gc-foot .gc-lab { display: none; }
+  .gov .gov-clock .gc-row { padding: 6px 0 2px; }
+  .gov .gov-clock .gc-lab { font-size: 13.5px; }
+  .gov .gov-clock .gc-track { height: 22px; }
+  .gov .gov-clock .gc-tick:nth-child(3) { display: none; }
+  .gov .gov-clock .gc-end { position: static; transform: none; width: auto; text-align: left; border-right: 0; border-left: 2px solid var(--ink); padding: 0 0 0 8px; display: block; }
+  .gov .gov-clock .gc-foot .gc-track { min-height: 0; padding-top: 8px; }
+  .gov .gov-fig svg.wide { display: none; }
+  .gov .gov-fig svg.narrow { display: block; }
+}
+.gov .gov-context { font-family: var(--display); font-size: 16.5px; line-height: 1.5; color: var(--text); margin: 4px 0 6px; max-width: 62ch; }
+.gov .gov-checked { font-size: 12.5px; color: var(--ink-3); margin: 0 0 22px; }
+.gov .gov-checked a { color: var(--ink-3); }

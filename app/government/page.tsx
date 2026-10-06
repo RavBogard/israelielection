@@ -3,6 +3,7 @@ import Link from "next/link";
 import "@/components/article/article.css";
 import "@/components/government.css";
 import OutgoingGovernmentSection from "@/components/OutgoingGovernment";
+import FormationClock from "@/components/government/FormationClock";
 import formationJson from "@/data/formation.json";
 import { type Formation, type Milestone, withDates } from "@/lib/formation";
 import { mediumDate } from "@/lib/format";
@@ -49,10 +50,6 @@ export default function Page() {
     <div className="wrap article-page gov">
       <header className="page-head">
         <h1>{f.title}</h1>
-        <p className="standfirst">{f.standfirst}</p>
-        <p className="note">
-          Checked {mediumDate(f.checked)}. Time limits from <a href={f.rulesSource.url}>Basic Law: The Government, arts. 7 to 13</a>.
-        </p>
       </header>
 
       <OutgoingGovernmentSection />
@@ -75,6 +72,12 @@ export default function Page() {
           </p>
         )}
       </section>
+
+      <FormationClock steps={main} published={published} today={now} />
+      <p className="gov-context">{f.standfirst}</p>
+      <p className="gov-checked">
+        Checked {mediumDate(f.checked)}. Time limits from <a href={f.rulesSource.url}>Basic Law: The Government, arts. 7 to 13</a>.
+      </p>
 
       <ol className="gov-steps">
         {main.map((m, i) => {

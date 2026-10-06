@@ -4,6 +4,8 @@ import { parties } from "@/lib/data";
 import type { Source } from "@/lib/formation";
 import { mediumDate } from "@/lib/format";
 import { outgoingGovernment, outgoingHref } from "@/lib/outgoing-government";
+import formation from "@/data/formation.json";
+import CoalitionSeats from "./government/CoalitionSeats";
 
 const GLOSSARY = "/glossary#transitional-government";
 
@@ -36,6 +38,7 @@ export default function OutgoingGovernmentSection() {
   return (
     <section className="gov-outgoing" aria-labelledby="outgoing-h">
       <h2 id="outgoing-h">Who governs until a new government is sworn in</h2>
+      <CoalitionSeats events={g.events} electionDay={formation.electionDay} />
       <p className="lead">
         {linked(g.status.text)}{" "}
         <span className="src">
