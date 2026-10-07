@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07T17:30:31.523Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "According to Haaretz, Ben-Gvir was excluded from a Save the Right convention featuring Netanyahu and Smotrich ahead of the October election, which Ben-Gvir's party cited as part of a series of worrying signs about his prospects in the next Knesset term.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Ben-Gvir excluded from right-wing convention with Netanyahu and Smotrich ahead of Oct. election",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-07/ty-article/.premium/far-right-ben-gvir-excluded-from-netanyahu-smotrich-save-the-right-convention/000001a1-1693-ddec-a5fb-5eff8dde0000",
+          "published": "2026-10-07T16:27:36.000Z"
+        }
+      ],
+      "textHe": "לפי הארץ, איתמר בן גביר מודר מכנס להצלת הימין בהשתתפות בנימין נתניהו ובצלאל סמוטריץ' לקראת הבחירות באוקטובר, צעד שבמפלגתו של בן גביר הגדירו כחלק משורת סימנים מדאיגים בנוגע לסיכוייו בכנסת הבאה."
+    },
+    {
+      "text": "Likud and aides to Netanyahu deflected the prime minister's avoidance of media appearances by casting rival Eisenkot as media-shy, according to Haaretz, despite Eisenkot previously inviting Netanyahu to debate him.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Likud deflects Netanyahu's press avoidance by casting rival Eisenkot as media-shy",
+          "url": "https://www.haaretz.com/israel-news/israel-politics/2026-10-07/ty-article/.premium/after-three-years-of-netanyahus-media-silence-likud-asks-wheres-eisenkot/000001a1-156d-d28a-a3a5-d77f66210000",
+          "published": "2026-10-07T11:33:35.000Z"
+        }
+      ],
+      "textHe": "לפי הארץ, בליכוד ויועציו של בנימין נתניהו הדפו את הטענות על הימנעותו של ראש הממשלה מהופעות בתקשורת באמצעות הצגת יריבו גדי איזנקוט כמי שנרתע מראיונות, אף שאיזנקוט הזמין בעבר את נתניהו לעימות."
+    },
+    {
+      "text": "The Jerusalem Post reported that Likud withdrew its petition against groups helping Israelis abroad reach the country for Election Day after learning that the initiative was not subsidizing airfare.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Tens of thousands of Israelis abroad expected to fly home to vote in 2026 election",
+          "url": "https://www.jpost.com/israel-election-2026/article-910843",
+          "published": "2026-10-06T22:48:18.000Z"
+        }
+      ],
+      "textHe": "בג'רוזלם פוסט דווח כי הליכוד משך את עתירתו נגד ארגונים המסייעים לישראלים בחו\"ל להגיע לארץ ליום הבחירות, לאחר שהתברר כי היוזמה אינה מסבסדת כרטיסי טיסה."
+    },
+    {
+      "text": "Analysts reported by the Jewish Telegraphic Agency stated that three years after the October 7 attacks, the political map in Israel remains largely unchanged because the conflict has hardened existing political divisions rather than fundamentally changing them.",
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Oct. 7 reshaped Israel. Three years on, its political map remains largely unchanged.",
+          "url": "https://www.jta.org/2026/10/07/israel/oct-7-reshaped-israel-three-years-on-its-political-map-remains-largely-unchanged",
+          "published": "2026-10-07T17:08:50.000Z"
+        }
+      ],
+      "textHe": "פרשנים שדבריהם הובאו בסוכנות הידיעות JTA ציינו כי שלוש שנים לאחר מתקפת 7 באוקטובר, המפה הפוליטית בישראל כמעט שלא השתנתה, מאחר שהעימות רק העמיק את השסעים הפוליטיים הקיימים במקום לשנותם מהיסוד."
+    },
+    {
+      "text": "In its sole statement on the anniversary of October 7, Likud accused Channel 12 of broadcasting false political propaganda against Netanyahu, while the Jewish Telegraphic Agency reported that the prime minister has made New York Mayor Zohran Mamdani a central figure this election season.",
+      "sources": [
+        {
+          "outlet": "Times of Israel",
+          "title": "In sole statement on Oct. 7 anniversary, Likud attacks Channel 12, absolves Netanyahu",
+          "url": "https://www.timesofisrael.com/liveblog_entry/in-sole-statement-on-oct-7-anniversary-likud-attacks-channel-12-absolves-netanyahu/",
+          "published": "2026-10-07T09:16:00.000Z"
+        },
+        {
+          "outlet": "JTA",
+          "title": "Is Netanyahu’s beef with Mamdani helping him politically?",
+          "url": "https://www.jta.org/2026/10/06/israel/israelis-dont-lose-sleep-over-mamdani-why-is-netanyahu-focused-on-him",
+          "published": "2026-10-06T19:44:28.000Z"
+        }
+      ],
+      "textHe": "בהודעתו היחידה ביום השנה ל-7 באוקטובר, האשים הליכוד את ערוץ 12 בשידור תעמולה פוליטית שקרית נגד בנימין נתניהו, בעוד שבסוכנות הידיעות JTA דווח כי ראש הממשלה הפך את ראש עיריית ניו יורק, זוהראן ממדאני, לדמות מרכזית במערכת הבחירות הנוכחית."
+    },
+    {
+      "text": "According to Haaretz, protesters demonstrated outside senior politicians' homes while bereaved families organized a nationwide minute of silence across more than 500 institutions to demand a state commission of inquiry into October 7.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Bereaved Israeli families hold nationwide minute of silence in protest calling for October 7 probe",
+          "url": "https://www.haaretz.com/israel-news/israel-politics/2026-10-07/ty-article/.premium/across-israel-voluntary-minute-of-silence-held-for-october-7-victims/000001a1-157e-d88d-aba1-ddffd5b60000",
+          "published": "2026-10-07T08:52:25.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Protests across Israel mark third anniversary of October 7",
+          "url": "https://www.haaretz.com/israel-news/israel-politics/2026-10-07/ty-article/.premium/protests-across-israel-mark-third-anniversary-of-october-7/000001a1-147a-dd49-a5ff-d6fabcf60000",
+          "published": "2026-10-07T05:52:43.000Z"
+        }
+      ],
+      "textHe": "לפי הארץ, מפגינים מחו מחוץ לבתיהם של פוליטיקאים בכירים, בעוד משפחות שכולות ארגנו דקת דומייה ארצית ביותר מ-500 מוסדות בדרישה להקמת ועדת חקירה ממלכתית לאירועי 7 באוקטובר."
+    }
+  ],
+  "dropped": []
+}
