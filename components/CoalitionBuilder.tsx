@@ -282,6 +282,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const conflictIds = new Set(conflicts.flatMap((c) => c.ids));
   const vote = arrangement(sel, roles, parties, poll);
   const supportIds = Object.keys(roles).filter((id) => roles[id] === "support");
+  const outsideRoles = Object.values(roles).some((r) => r === "support" || r === "abstain");
   const cooperation = new Set([...sel, ...supportIds]);
   const voteNeeded = initialVoteDependence(sel, roles, parties, poll);
   const scenario = scenarioData.scenarios.find((s) => s.id === scenarioId);
@@ -437,17 +438,19 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               <span className="mv">{cabText}</span>
               <SeatBar size="l" segments={cabSegs} label={T.cabLabel(cabText, MAJORITY, KNESSET)} />
             </div>
-            <div className="mrow">
+            {/* The vote row appears only once a list outside the cabinet supports or abstains (Daniel, 2026-10-07): until then it repeats the cabinet. */}
+            {outsideRoles && <div className="mrow">
               <span className="ml">{T.voteRow}</span>
               <span className="mv">{empty ? "" : supportIds.length ? T.voteWithSupport(sn(t.total), sn(vote.yes - t.total)) : vote.abstain ? T.voteAbstaining(sn(vote.abstain)) : T.voteCabinetOnly}</span>
               <SeatBar size="l" segments={empty ? [] : voteSegs} label={empty ? T.voteLabelEmpty : T.voteLabel(voteLine, verdict!)} />
-            </div>
-            <p className="fig-key mkey">
+              <p className="mnote">{T.voteRowNote}</p>
+            </div>}
+            {outsideRoles && <p className="fig-key mkey">
               <span><i className="k" style={{ background: keyColor }} />{T.keyCabinet}</span>
               <span><i className="k" style={{ background: supportFill(supSegs[0] ? partyColor(supSegs[0].key) : "var(--ink)") }} />{T.keyHatched}</span>
               <span><i className="k k-gap" />{T.keyAbstains}</span>
               <span><i className="k" style={{ background: AGAINST }} />{T.keyAgainst}</span>
-            </p>
+            </p>}
           </div>
           <div className="pbody">
           {t.groupNote && <p className="naflag">{t.groupNote}</p>}

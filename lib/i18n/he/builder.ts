@@ -58,6 +58,7 @@ const he: BuilderText = {
   voteWithSupport: (cab, support) => `${cab} + ${support} בתמיכה מבחוץ`,
   voteAbstaining: (n) => `נמנעים: ${n}`,
   voteCabinetOnly: "הקואליציה בלבד",
+  voteRowNote: "בהצבעת האמון הראשונה צריך יותר תומכים ממתנגדים, לא 61: תמיכה מבחוץ מוסיפה קולות, והנמנעים יוצאים מהספירה.",
   voteLabelEmpty: "הצבעת האמון: עדיין אין מפלגות.",
   voteLabel: (line, verdict) => `הצבעת האמון: ${line}. ${verdict}.`,
   segAbstain: (n) => `נמנעים: ${n}`,

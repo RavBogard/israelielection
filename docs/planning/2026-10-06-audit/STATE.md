@@ -59,3 +59,6 @@ Daniel: "the 'paths to 61' part is really confusing and not helpful. Lets just h
 - Paths to 61 removed (component, lib/paths-to-61, its strings in both editions, CSS, DESIGN.md section). The builder opens on the named arrangements and the slips; pledge warnings and "Can they govern together?" are unchanged. The earlier "Paths default: With Likud" ruling is moot.
 - Compare: every answer has a short name (lib/i18n/compare-short.ts, en + he, max 16 characters, distinct within a row; test checks coverage). A cell 76px or wider prints it in place of the number, so choosing a few lists gives a readable row; with all 14 lists the cells keep numbers.
 - GATE: wrote 50 short labels in each edition without review — proceeded because Daniel asked for labels and approved Hebrew wholesale; the full labels stay in the key and the open row.
+
+## Builder meter (2026-10-07)
+Daniel approved: one Cabinet bar by default; the First confidence vote bar, its key and a one-line note ("needs more votes for than against, not 61") appear only once a list outside the cabinet is set to outside support or abstain.

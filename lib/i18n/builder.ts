@@ -74,6 +74,7 @@ const en = {
   voteWithSupport: (cab: string, support: string) => `${cab} + ${support} outside support`,
   voteAbstaining: (n: string) => `Abstaining ${n}`,
   voteCabinetOnly: "Cabinet only",
+  voteRowNote: "The first vote needs more votes for than against, not 61: outside support adds votes, and abstentions take seats out of the count.",
   voteLabelEmpty: "First confidence vote: no parties yet.",
   voteLabel: (line: string, verdict: string) => `First confidence vote: ${line}. ${verdict}.`,
   segAbstain: (n: string) => `Abstain: ${n}`,
