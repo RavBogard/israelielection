@@ -17,18 +17,10 @@ describe("the builder phrasebook", () => {
   });
 
   it("counts with the dual and never says 1 or 2 with a plural noun", () => {
-    expect(he.pathsWays(1)).toBe("דרך אחת");
-    expect(he.pathsWays(2)).toBe("שתי דרכים");
-    expect(he.pathsWays(700)).toBe("700 דרכים");
     expect(he.statusConflicts(0)).toBe("אין פסילות.");
     expect(he.statusConflicts(1)).toBe("פסילה אחת.");
     expect(he.statusConflicts(2)).toBe("שתי פסילות.");
     expect(he.statusConflicts(3)).toBe("3 פסילות.");
-    expect(he.pathConflicts(1, ["ישר!"])).toBe("פסילה אחת: ישר!");
-    expect(he.pathConflicts(3, ["ישר!", "ביחד"])).toBe(`3 פסילות: ${list(["ישר!", "ביחד"])}`);
-    expect(he.withConflict(1)).toBe("דרך אחת נתקלת בפסילה");
-    expect(he.withConflict(2)).toBe("שתי דרכים נתקלות בפסילה");
-    expect(he.withConflict(5)).toBe("5 דרכים נתקלות בפסילה");
     expect(he.rowDifferent(2)).toBe("שתי תשובות שונות.");
     expect(he.rowDifferent(3)).toBe("3 תשובות שונות.");
   });
@@ -50,15 +42,6 @@ describe("the builder phrasebook", () => {
     expect(en.statusVote("passes", "63")).toBe("First vote passes, 63 for");
     expect(he.saidToggle("ש\"ס", true)).toBe("ש\"ס הוסרה.");
     expect(he.saidToggle("ש\"ס", false)).toBe("ש\"ס נוספה.");
-    expect(he.saidPath(["א"], [])).toBe("נטענו: א.");
-    expect(he.saidPath(["א", "ב"], ["ג"])).toBe(`נטענו: ${list(["א", "ב"])}, בתמיכה מבחוץ של ג.`);
-  });
-
-  it("words Paths to 61 with and without Likud", () => {
-    expect(he.pathsHead(61)).toBe("איך מגיעים ל-61");
-    expect(he.noneClear(true)).toBe("אין כאן דרך עם הליכוד שלא נתקלת באף פסילה.");
-    expect(he.noPath(false, 61, true)).toBe("אין כאן דרך בלי הליכוד שמגיעה ל-61 בלי פסילות.");
-    expect(he.noPath(true, 61, false)).toBe("אין כאן דרך עם הליכוד שמגיעה ל-61.");
   });
 });
 

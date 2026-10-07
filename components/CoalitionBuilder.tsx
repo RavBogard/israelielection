@@ -10,7 +10,7 @@ import Governing from "./coalition/Governing";
 import type { StanceMap } from "@/lib/cohesion";
 import ProfileDetail from "./ProfileDetail";
 import PartyPreview from "./coalition/PartyPreview";
-import PathsTo61, { supportFill } from "./coalition/PathsTo61";
+import { supportFill } from "./coalition/support-fill";
 import { En, Loc, rich } from "./coalition/Loc";
 import PageHead from "./PageHead";
 import SeatBar from "./SeatBar";
@@ -330,12 +330,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     setScenarioId(id);
     setSaid(T.saidLoaded(scenarioText(s, "title", lang).text));
   };
-  const loadPath = (cabinet: string[], support: string[]) => {
-    load(cabinet, support);
-    setScenarioId(null);
-    setSaid(T.saidPath(cabinet.map(nameOf), support.map(nameOf)));
-    document.getElementById("builder")?.scrollIntoView({ block: "start" });
-  };
   const closeProfile = useCallback(() => {
     setProfile(null);
     opener.current?.focus();
@@ -375,8 +369,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         } />
       <a className="to-result" href="#arrangement-result">{T.skip}</a>
       <p className="sr-only" role="status">{status}</p>
-
-      <PathsTo61 poll={poll} parties={parties} rules={pledgeRules} pollName={pollPhrase(poll, T, lang)} sn={sn} onLoad={loadPath} open={atRest} />
 
       <section className="arrangement-scenarios" aria-label={T.scenariosLabel}>
         <p>{T.scenariosLead}</p>

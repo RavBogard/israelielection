@@ -170,8 +170,8 @@
 
 /* Can they govern together: the summary leads, the rows fold behind it. */
 .cb .gov-fold > summary { cursor: pointer; list-style: none; display: flex; gap: 12px; align-items: baseline; justify-content: space-between; padding: 4px 0; }
-.cb .gov-fold > summary::-webkit-details-marker, .cb .paths > summary::-webkit-details-marker { display: none; }
-.cb .gov-fold > summary .hint, .cb .paths > summary .hint, .cb .path-support .hint { font: 600 13px var(--body); color: var(--ink-2); white-space: nowrap; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+.cb .gov-fold > summary::-webkit-details-marker { display: none; }
+.cb .gov-fold > summary .hint { font: 600 13px var(--body); color: var(--ink-2); white-space: nowrap; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .cb .gov-fold[open] > summary { margin-bottom: 8px; }
 .cb .gov-fold > .note, .cb .gov-fold > .fig-note { margin: 8px 0 0; }
 .cb .together .thin { font-size: 13px; line-height: 1.45; color: var(--ink-3); margin: 8px 0 0; }
@@ -179,42 +179,5 @@
 .cb .together .uns summary { cursor: pointer; min-height: 24px; }
 .cb .together .uns p { margin: 4px 0 0; font-family: var(--display); font-size: 14.5px; line-height: 1.45; color: var(--text); }
 
-/* Paths to 61: the opening figure. One SeatBar per minimal winning combination, in party colours. */
-.cb .paths { margin: 4px 0 18px; }
-.cb .paths > summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 14px; padding: 12px 0 8px; border-top: 1px solid var(--ink); }
-.cb .paths > summary h2 { margin: 0; }
-.cb .paths .fig-note { max-width: 72ch; margin: 0 0 12px; }
-.cb .path-ctl { display: flex; flex-wrap: wrap; gap: 10px 14px; margin: 0 0 14px; }
-.cb .path-ctl button:disabled { color: var(--ink-3); cursor: default; background: transparent; }
-.cb .path-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); column-gap: 28px; }
-.cb .path-list li { border-top: 1px solid var(--line); }
-.cb .path { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "n v" "b b" "c c"; gap: 6px 14px; align-items: baseline; padding: 10px 0 12px; font: inherit; text-align: start; color: var(--ink); background: transparent; border: 0; cursor: pointer; }
-.cb .path:hover .pn { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
-.cb .path .pn { grid-area: n; font: 600 14px/1.3 var(--body); }
-.cb .path .pv { grid-area: v; font: 13px var(--body); color: var(--ink-2); white-space: nowrap; }
-.cb .path .pv b { font: 700 17px var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
-.cb .path .seatbar { grid-area: b; margin: 4px 0 2px; }
-.cb .path .sb-seg { position: relative; }
-.cb .path .sb-seg b { font: 600 12px var(--body); overflow: hidden; text-overflow: ellipsis; }
-.cb .path .pc { grid-area: c; font-size: 12.5px; line-height: 1.35; color: var(--ink-3); }
-.cb .path .pc.on { color: var(--warn-ink); }
-/* A notched top-right corner in the page ground marks a list named in a pledge conflict. */
-.cb .path .sb-seg.pc-x::after, .cb .k-notch::after { content: ""; position: absolute; top: 0; right: 0; border-style: solid; border-width: 0 8px 8px 0; border-color: transparent var(--bg) transparent transparent; } /* physical: chart geometry */
-.cb .k-notch { position: relative; background: var(--ink-2); }
-.cb .k-tick { width: 2px; height: 14px; background: var(--ink); margin-inline-end: 8px; }
-.cb .k-hatch { background: repeating-linear-gradient(135deg, var(--ink-2) 0 3px, color-mix(in srgb, var(--ink-2) 28%, var(--sheet)) 3px 6px); }
-.cb .path-key { margin: 12px 0 0; }
-.cb .path-break { margin: 14px 0 6px; font: 600 13px var(--body); color: var(--ink-2); }
-.cb .path-break:first-child, .cb .path-ctl + .path-break { margin-top: 0; }
-.cb .path-more { display: flex; align-items: center; gap: 12px; margin: 10px 0 0; font-size: 13px; color: var(--ink-2); }
-.cb .path-support { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
-.cb .path-support > summary { cursor: pointer; font: 600 15px var(--body); color: var(--ink); min-height: 32px; }
-.cb .path-support .fig-note { margin-top: 6px; }
-/* Phones: a segment too narrow for its short name shows none (the row names every list). */
-.cb .path .sb-seg { container-type: inline-size; }
-@container (max-width: 40px) { .cb .path .sb-seg > b { visibility: hidden; } }
-/* Right to left (the Hebrew edition): the bars fill from the right, so the notch marks the segment's top-left corner (its end),
-   and the page-ground gap between segments sits on each segment's right edge, where the previous one ends. Scoped to the builder
-   until seatbar.css carries the same rule. */
-:where([dir="rtl"]) .cb .path .sb-seg.pc-x::after, :where([dir="rtl"]) .cb .k-notch::after { right: auto; left: 0; border-width: 0 0 8px 8px; border-color: transparent transparent transparent var(--bg); } /* physical: chart geometry */
+/* Right to left (the Hebrew edition): the page-ground gap between seat-bar segments sits on each segment's right edge, where the previous one ends. */
 :where([dir="rtl"]) .cb :where(.sb-s) > .sb-seg { padding: 0; }

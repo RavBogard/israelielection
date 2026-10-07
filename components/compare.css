@@ -108,6 +108,14 @@
 .cmp .mx-cell { position: relative; display: block; width: 100%; height: 44px; border: 0; padding: 0; cursor: pointer; font: inherit; background: transparent; transition: opacity .12s; }
 .cmp .mx-row.d1 .mx-cell { height: 30px; }
 .cmp .mx-cell .n { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; }
+/* Short names: a cell 76px or wider (a few lists chosen, or a wide screen) prints the answer's short name instead of its number. */
+.cmp .mx-cell { container-type: inline-size; }
+.cmp .mx-cell .sh { display: none; padding: 0 6px; font-size: 12.5px; font-weight: 600; line-height: 1.15; text-wrap: balance; overflow: hidden; }
+@container (min-width: 76px) {
+  .cmp .mx-cell .n { display: none; }
+  .cmp .mx-cell .sh { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .cmp .mx-row.d1 .mx-cell .sh { -webkit-line-clamp: 1; white-space: nowrap; text-overflow: ellipsis; display: block; }
+}
 .cmp .mx-cell.none { border: 1px dashed var(--line-2); background: transparent; }
 .cmp .mx-cell.declined { border: 1px solid var(--line-2); background: repeating-linear-gradient(135deg, var(--line-2) 0 1px, transparent 1px 5px); }
 .cmp .mx-cell.dim { opacity: .28; }

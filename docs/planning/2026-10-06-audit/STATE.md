@@ -53,3 +53,9 @@ Daniel: the Compare page is "hard to decode, and the blocks of black and grey ar
 - Coexisting options (economy, Gaza) take pale category tints with an ink edge instead of dotted paper.
 - "No position found" is an empty dashed cell instead of grey hatching; declined keeps a lighter hatch.
 - GATE: replaced the graphite ramp DESIGN.md had ruled — proceeded because Daniel asked for colour in place of the greys; hues kept off bloc colours and off red-against-blue so the scale still says only "place in the issue's order". DESIGN.md updated; .impeccable/design.json sidecar left stale (reported, not repaired).
+
+## Builder and Compare labels (2026-10-06, late)
+Daniel: "the 'paths to 61' part is really confusing and not helpful. Lets just have the deal where you can build your coalitions, and it shows you the issues with it." And short labels on Compare, "if it doesn't get too bloated."
+- Paths to 61 removed (component, lib/paths-to-61, its strings in both editions, CSS, DESIGN.md section). The builder opens on the named arrangements and the slips; pledge warnings and "Can they govern together?" are unchanged. The earlier "Paths default: With Likud" ruling is moot.
+- Compare: every answer has a short name (lib/i18n/compare-short.ts, en + he, max 16 characters, distinct within a row; test checks coverage). A cell 76px or wider prints it in place of the number, so choosing a few lists gives a readable row; with all 14 lists the cells keep numbers.
+- GATE: wrote 50 short labels in each edition without review — proceeded because Daniel asked for labels and approved Hebrew wholesale; the full labels stay in the key and the open row.

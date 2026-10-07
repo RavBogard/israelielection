@@ -465,9 +465,6 @@ Each step of the guided route carries a figure from the site's own charts, 760px
 ### Party Map preview panel
 Choosing a party on the map opens a preview panel, not the full profile. Its one action is a solid ink "Open the full profile" button (44px high, 15px 600, ink fill, page-ground text; hover fills text colour; the global focus ring) linking to the party page. Method, the minor lists and the colour key sit under the map in a 1px line-ruled "about" block, so the map follows the one-sentence head directly. Source: components/ProfileDetail.tsx, components/interactives.css, components/map.css.
 
-### Paths to 61
-In the Coalition Builder (components/coalition/PathsTo61.tsx, components/coalition.css): every combination of lists reaching 61, one SeatBar m (`sb-fit`) each in the party colours, with a line saying "No pledge conflict on record" or how many recorded pledge conflicts the path carries and which lists they name; a named list's segment takes a notched corner, keyed below. A segmented control chooses "No pledge conflict" (with its count) or every path. Clear paths come first; the conflicted paths follow in the same numbered list after a count line ("4 with a recorded pledge conflict", Public Sans 600 13px ink-2).
-
 ### Since yesterday (home)
 The home hero's numbers carry one label and one note: the bloc list opens with its header ("Average of 7 polls, to Oct 5", 14px ink 600 over a 2px ink rule); under the grid, after the rounding note, one 12.5px source note names the publishers, links the newest poll and the method, and ends with Cite this. Changes are stated on the rows only.
 

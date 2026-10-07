@@ -8,6 +8,7 @@ import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } f
 import { mediumDate } from "@/lib/format";
 import { hePath, type Lang } from "@/lib/i18n";
 import compareText, { readingHe, type CompareText } from "@/lib/i18n/compare";
+import { shortLabel } from "@/lib/i18n/compare-short";
 import { useLang } from "@/lib/i18n/lang";
 import { partyColor } from "@/lib/party-colors";
 import { blocRank, seatFigure } from "@/lib/polls";
@@ -83,6 +84,8 @@ function Cell({ ed, p, row, c, col, active, gap, isOpen, onOpen, onHover }: Cell
         onBlur={() => onHover(null)}
       >
         {c.kind === "stance" && <span className="n" aria-hidden="true">{c.n}</span>}
+        {/* A wide cell prints the answer's short name in place of its number (compare.css container query). */}
+        {c.kind === "stance" && <span className="sh" aria-hidden="true">{shortLabel(ed.lang, row.key, c.stance) ?? c.n}</span>}
         {c.kind === "stance" && c.record && <span className="rec" aria-hidden="true" />}
       </button>
     </td>

@@ -1,6 +1,6 @@
 /**
  * The Coalition Builder's words in both editions (/coalition-builder and /he/coalition-builder): the poll picker,
- * the slips, the two-row meter and its verdict, pledge notes, the outside-support chips, Paths to 61, the
+ * the slips, the two-row meter and its verdict, pledge notes, the outside-support chips, the
  * governing summary, the party drawer, the threshold what-if and the page's sources.
  * The Hebrew is written fresh in Israeli political-media Hebrew (docs/planning/2026-10-06-hebrew/STYLE.md), doing
  * each English element's job, for Daniel's review in this one file. `he` is typed as `typeof en`, so both editions
@@ -93,7 +93,6 @@ const en = {
   saidRole: (name: string, role: RoleKey) => `${name}: ${en.outsideWord[role].toLowerCase()}.`,
   saidToggle: (name: string, removed: boolean) => `${name} ${removed ? "removed" : "added"}.`,
   saidLoaded: (title: string) => `${title} loaded.`,
-  saidPath: (cabinet: string[], support: string[]) => `Loaded ${cabinet.join(", ")}${support.length ? ` with outside support from ${support.join(", ")}` : ""}.`,
   saidCleared: "Cleared.",
 
   // The panel
@@ -103,7 +102,7 @@ const en = {
   needed: (names: string[]) => `If any one of ${names.join(", ")} votes against rather than for, this first vote no longer passes.`,
   outsideHead: "Partners outside the cabinet",
   outsideNote: "Tap a list to switch it between against, outside support and abstaining.",
-  listEmpty: "Tap a slip, or a path above, to add a party.",
+  listEmpty: "Tap a slip, or load a named arrangement above, to add a party.",
   confidenceSummary: "What the first vote does and does not show",
   approximate: "Poll averages can be fractional. These totals illustrate relative support; real MKs cast whole votes. This is not a forecast of their vote.",
   confidenceNote: "Outside support here concerns the initial vote; it promises no ministers or future budget support. Cabinet refusals do not prove a party will refuse outside support or abstention. Replacing an existing government through constructive no-confidence requires 61 MKs to support an alternative government.",
@@ -131,34 +130,6 @@ const en = {
   noteByBloc: "By bloc: ",
   noteLumped: (names: string[]) => ` ${names.join(" and ")} were not reported separately.`,
 
-  // Paths to 61
-  pathsHead: (majority: number) => `Paths to ${majority}`,
-  pathsWays: (n: number) => `${n} ways`,
-  pathsLead: (majority: number, poll: string) => `Every smallest set of lists that reaches ${majority} in ${poll}. Tap one to load it.`,
-  likudGroup: "Likud in the path",
-  withLikud: "With Likud",
-  withoutLikud: "Without Likud",
-  nPaths: (n: number) => `${n} paths`,
-  conflictGroup: "Pledge conflicts",
-  everyPath: "Every path",
-  noConflict: "No pledge conflict",
-  noneClear: (likud: boolean) => `No path ${likud ? "with" : "without"} Likud here is clear of every recorded pledge.`,
-  withConflict: (n: number) => `${n} with a recorded pledge conflict`,
-  noPath: (likud: boolean, majority: number, clean: boolean) => `No path ${likud ? "with" : "without"} Likud reaches ${majority} here${clean ? " without a pledge conflict" : ""}.`,
-  showMore: (n: number) => `Show ${n} more`,
-  showing: (n: number, of: number) => `Showing ${n} of ${of}`,
-  pathSeats: "seats",
-  pathConflicts: (n: number, names: string[]) => `${n} pledge conflict${n > 1 ? "s" : ""}, naming ${names.join(", ")}`,
-  pathClear: "No pledge conflict on record",
-  keyMajority: (majority: number) => `${majority}, a majority`,
-  keyNotch: "Notched corner: a list named in a recorded pledge conflict",
-  pathsMethod: (majority: number) => `Drop any one list from a path and it falls short of ${majority}. Paths that break no recorded pledge come first; then fewest lists, then most seats. This is seat arithmetic checked against the pledges on record, not a forecast; Likud in a cabinet is read as led by Netanyahu.`,
-  supportHead: "With outside support",
-  supportHint: (n: number, likud: boolean) => `${n} ${likud ? "with" : "without"} Likud`,
-  supportNote: "Paths above with a pledge conflict, rearranged: the fewest seats move from the cabinet to outside support so the arrangement clears every recorded pledge, and the first vote counts the same seats for. The pledges against keeping Netanyahu in office, and Bennett’s not to rely on Arab or Haredi parties, cover outside support as well as a cabinet seat, so they count here too. A pledge not to join a cabinet is not a promise of outside support; this is arithmetic, not a forecast.",
-  supportNames: (cabinet: string[], support: string[]) => `${cabinet.join(", ")}; outside support: ${support.join(", ")}`,
-  supportFor: "for",
-  supportSplit: (cab: string, sup: string) => `Cabinet ${cab}, outside support ${sup}`,
 
   // Can they govern together?
   govHead: "Can they govern together?",
