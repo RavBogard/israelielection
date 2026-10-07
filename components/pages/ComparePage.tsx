@@ -24,6 +24,7 @@ export default function ComparePage({ lang }: { lang: Lang }) {
   const pickable: CompareParty[] = listed.map((p) => ({
     id: p.id,
     name: he ? partyText(p, "name", lang) : p.name,
+    short: he ? partyText(p, "short", lang) : p.short,
     bloc: p.bloc,
     letters: lettersOf[p.id] ?? null,
     seats: averagePoll.results[p.id]?.seats ?? null,

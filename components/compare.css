@@ -73,6 +73,12 @@
 .cmp .mx thead .mx-heads > * { position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--ink); padding-top: 6px; }
 .cmp .mx-head { text-align: center; }
 .cmp .mx-head .letters { display: block; font-family: var(--display); font-weight: 900; font-size: 17px; line-height: 1; padding: 6px 0 5px; background: var(--sheet); border: 1px solid var(--line-2); border-top: 4px solid var(--sw); }
+/* English: the short name in place of the letters, two lines at most. */
+.cmp .mx-head .letters.nm { font-family: var(--body); font-weight: 600; font-size: 12px; letter-spacing: -0.01em; line-height: 1.15; padding: 5px 0 4px; min-height: 2.3em; display: flex; align-items: center; justify-content: center; text-wrap: balance; hyphens: auto; }
+/* Phones: the columns are too narrow for a name across, so it runs bottom to top like the column titles. */
+@media (max-width: 700px) {
+  .cmp .mx-head .letters.nm { writing-mode: vertical-rl; transform: rotate(180deg); height: 76px; min-height: 0; padding: 4px 0; justify-content: flex-start; white-space: nowrap; hyphens: none; } /* physical: vertical label */
+}
 .cmp .mx-head .letters:empty { height: 17px; box-sizing: content-box; }
 .cmp .mx-head .seats { display: block; margin-top: 4px; font-family: var(--display); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
 .cmp .mx-head.out .seats, .cmp .mx-head.below .seats { font-family: var(--body); font-weight: 500; font-size: 12px; color: var(--ink-3); line-height: 19px; }
@@ -187,7 +193,9 @@
   .cmp .mx thead th, .cmp .mx thead td { padding-inline: 1px; }
   .cmp .mx-party a { font-size: 12px; font-weight: 500; max-height: 120px; }
   .cmp .mx-head .letters { font-size: 12px; padding: 4px 0 3px; border-top-width: 3px; }
-  .cmp .mx-head .letters:empty { height: 12px; }
+  /* English: the short name in place of the letters, two lines at most. */
+.cmp .mx-head .letters.nm { font-family: var(--body); font-weight: 600; font-size: 12px; letter-spacing: -0.01em; line-height: 1.15; padding: 5px 0 4px; min-height: 2.3em; display: flex; align-items: center; justify-content: center; text-wrap: balance; }
+.cmp .mx-head .letters:empty { height: 12px; }
   /* One-decimal averages do not fit a column about 23px wide, so on phones they turn like the names above them. */
   .cmp .mx-head .seats { display: inline-block; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12.5px; line-height: 1.1; white-space: nowrap; }
   .cmp .mx thead .mx-bloc { grid-column: span var(--n); }

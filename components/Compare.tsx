@@ -28,7 +28,8 @@ import "./compare.css";
  */
 
 /** `name` and bloc labels are plain strings in English; the Hebrew page passes Localized values (components/compare/Loc). */
-export type CompareParty = { id: string; name: Txt; bloc: BlocId; letters: string | null; seats: number | null; out?: boolean };
+/** `short` labels the pinned column head in English, where the ballot letters would mean nothing to the reader. */
+export type CompareParty = { id: string; name: Txt; short: Txt; bloc: BlocId; letters: string | null; seats: number | null; out?: boolean };
 export type Preset = { label: string; ids: string[] };
 /** `text`: the rows' words in the Hebrew edition (matrixText in ./compare/model); absent in English, which prints the rows' own strings. */
 type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: Txt }[]; rows: MatrixRow[]; presets: Preset[]; defaults: string[]; text?: Record<string, RowText> };
@@ -91,6 +92,9 @@ function Cell({ ed, p, row, c, col, active, gap, isOpen, onOpen, onHover }: Cell
     </td>
   );
 }
+
+/** A single long word (Reservists) gets a soft hyphen at its middle, so a narrow pinned head breaks it with a hyphen rather than overflowing. */
+const breakable = (s: string) => (!s.includes(" ") && s.length > 9 ? `${s.slice(0, Math.ceil(s.length / 2))}­${s.slice(Math.ceil(s.length / 2))}` : s);
 
 /** Left, Right, Home and End move focus along a row's cells; right to left (the Hebrew edition), Left moves on. */
 function onRowKey(e: React.KeyboardEvent<HTMLTableRowElement>) {
@@ -343,7 +347,9 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
               </td>
               {shown.map((p, i) => (
                 <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : !seatsOf(p) ? " below" : ""}`} style={swatch(p.id)}>
-                  {p.letters ? <span className="letters" lang="he" dir="rtl" title={T.letters(p.letters)}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
+                  {/* The pinned head: the ballot letters in Hebrew; in English the list's short name, since the letters are no help to an English reader. */}
+                  {ed.lang === "en" ? <span className="letters nm">{breakable(plain(p.short))}</span>
+                    : p.letters ? <span className="letters" lang="he" dir="rtl" title={T.letters(p.letters)}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
                   <span className="seats">{seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? T.below : p.seats === null ? "–" : T.below}</span>
                 </td>
               ))}
