@@ -1,0 +1,154 @@
+/*
+  Party match (/match). Brief: .impeccable/surfaces/app-match-page-tsx.md. The quiz is one reading column; the
+  answers are stance rows in Compare's ramp shades; the results lead with "Your Knesset", the seat grid with the
+  reader's closest lists in colour. Colour is data only: ramp shades for answers, party colours for lists.
+*/
+
+/* Quiz */
+.mq { max-width: 760px; margin-top: 10px; }
+.mq-progress { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 26px; }
+.mq-mark button { display: block; width: 26px; height: 26px; padding: 0; border: 1px solid var(--line-2); background: var(--sheet); cursor: pointer; position: relative; }
+.mq-mark.deep button { width: 18px; }
+.mq-mark.done button { background: var(--ink); border-color: var(--ink); }
+.mq-mark.skipped button { background: repeating-linear-gradient(135deg, var(--line-2) 0 1px, transparent 1px 5px); }
+.mq-mark.now button { border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.mq-mark.now.done button { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px var(--sheet); }
+.mq-mark button:hover { border-color: var(--ink); }
+.mq-mark.deep:first-of-type, .mq-mark:not(.deep) + .mq-mark.deep { margin-inline-start: 14px; }
+
+.mq-count { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 0 0 8px; display: flex; gap: 12px; flex-wrap: wrap; font-variant-numeric: tabular-nums; }
+.mq-issue { font-weight: 400; color: var(--ink-3); }
+.mq-prompt { font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3vw, 34px); line-height: 1.12; letter-spacing: -.012em; color: var(--ink); margin: 0 0 12px; max-width: 34ch; text-wrap: balance; }
+.mq-context { font-family: var(--display); font-size: 17px; line-height: 1.5; color: var(--text); max-width: 64ch; margin: 0 0 24px; }
+
+.mq-options { display: flex; flex-direction: column; gap: 8px; }
+.mq-opt > button {
+  font: inherit; width: 100%; display: flex; align-items: stretch; gap: 0; text-align: start; cursor: pointer;
+  background: var(--sheet); color: var(--ink); border: 1px solid var(--line-2); padding: 0; min-height: 54px;
+  transition: border-color .12s, box-shadow .12s;
+}
+.mq-opt > button:hover { border-color: var(--ink); }
+.mq-swatch { flex: 0 0 18px; transition: flex-basis .22s cubic-bezier(.2, .8, .2, 1); }
+.mq-label { padding: 14px 16px; font-family: var(--body); font-size: 16px; line-height: 1.35; align-self: center; }
+.mq-opt.on > button { border-color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.mq-opt.on .mq-swatch { flex-basis: 34px; }
+.mq-opt.on .mq-label { font-weight: 600; }
+/* Once answered, the answers not chosen step back so the chosen one and the lists read first. */
+.mq-options.revealed .mq-opt:not(.on) > button { border-color: var(--line); }
+.mq-options.revealed .mq-opt:not(.on) .mq-label { color: var(--ink-2); }
+
+.mq-holders { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 4px 18px; padding: 0; }
+.mq-chip {
+  font-family: var(--body); font-size: 12.5px; font-weight: 600; line-height: 1; color: var(--ink);
+  background: var(--sheet); border: 1px solid var(--line-2); border-top: 3px solid var(--fill); padding: 5px 7px 6px;
+  animation: mq-in .32s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 40ms);
+}
+.mq-chip.inferred { border-style: dotted; border-top-style: solid; }
+.mq-none { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); font-style: italic; padding: 4px 0; animation: mq-in .32s both; }
+@keyframes mq-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.mq-rest { margin: 14px 0 0; }
+.mq-rest p { margin: 0 0 4px; }
+
+.mq-weight { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 26px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
+.mq-weight-label { font-family: var(--body); font-size: 14px; font-weight: 600; color: var(--ink); }
+.mq-weight .seg button:disabled { cursor: default; color: var(--ink-3); }
+.mq-weight .seg button:disabled[aria-pressed="true"] { background: var(--cell); color: var(--ink-2); }
+
+.mq-nav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 26px 0 0; }
+.mq-gap { flex: 1; }
+.mq-nav .btn:disabled { opacity: .45; cursor: default; }
+.mq-nav .btn:disabled:hover { background: transparent; color: var(--ink); }
+.mq-nav .btn.primary:disabled:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.mq-skip { border-color: var(--line-2); }
+.mq-need { margin: 10px 0 0; }
+
+/* Results: Your Knesset */
+.mr-knesset { display: grid; grid-template-columns: minmax(260px, 5fr) 7fr; gap: 20px 56px; align-items: start; margin: 18px 0 0; }
+.mr-knesset .sg { width: 100%; max-width: 440px; height: auto; }
+.mr-lead { font-family: var(--display); font-weight: 700; font-size: clamp(24px, 2.5vw, 32px); line-height: 1.15; letter-spacing: -.01em; color: var(--ink); margin: 0 0 16px; text-wrap: pretty; }
+.mr-lead b { font-variant-numeric: tabular-nums; }
+.mr-key { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0; margin: 0 0 14px; }
+.mr-key li { display: flex; align-items: center; gap: 6px; }
+.mr-key i { width: 12px; height: 12px; display: inline-block; }
+.mr-key i.rest { background: var(--line-2); }
+.mr-knesset .fig-note { margin: 0 0 6px; max-width: 60ch; }
+.mr-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+
+/* Results: ranked lists */
+.mr-basis { margin: 0 0 12px; }
+.mr-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--ink); }
+.mr-row { border-bottom: 1px solid var(--line); }
+.mr-row > details > summary {
+  list-style: none; cursor: pointer; display: grid; align-items: center; gap: 4px 16px; padding: 12px 4px 12px 0;
+  grid-template-columns: 2.2em minmax(0, 15em) minmax(80px, 1fr) 3.4em 5.6em;
+}
+.mr-row > details > summary::-webkit-details-marker { display: none; }
+.mr-row > details > summary:hover .mr-name b { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+.mr-rank { font-family: var(--display); font-weight: 700; font-size: 18px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.mr-name { display: flex; flex-direction: column; border-top: 4px solid var(--fill); padding-top: 5px; }
+.mr-name b { font-family: var(--body); font-size: 16px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.mr-name small { font-size: 13px; color: var(--ink-2); }
+.mr-bar { height: 14px; background: var(--cell); position: relative; }
+.mr-bar i { position: absolute; inset: 0 auto 0 0; background: var(--fill); }
+.mr-pct { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--ink); font-variant-numeric: tabular-nums; text-align: end; }
+.mr-cov { font-family: var(--body); font-size: 12.5px; color: var(--ink-3); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mr-clash { grid-column: 2 / -1; font-family: var(--body); font-size: 13px; color: var(--warn-ink, var(--ink)); background: var(--warn-bg); border: 1px solid var(--warn-line); padding: 3px 8px; justify-self: start; }
+.mr-row.out .mr-name { border-top-style: dashed; }
+.mr-row > details[open] > summary { padding-bottom: 6px; }
+
+.mr-detail { padding: 6px 0 20px 2.2em; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px 40px; }
+.mr-detail > p:last-child { grid-column: 1 / -1; margin: 0; font-family: var(--body); font-size: 14px; font-weight: 600; }
+.mr-q-label { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink); margin: 0 0 22px; }
+.mr-q-read { font-family: var(--body); font-size: 13.5px; line-height: 1.45; color: var(--ink-2); margin: 16px 0 6px; }
+.mr-said { font-family: var(--display); font-size: 15px; line-height: 1.45; color: var(--text); margin: 0; }
+.mr-said .fig-src { display: block; margin-top: 3px; }
+
+.mr-track { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 2px; height: 14px; }
+.mr-step { position: relative; }
+.mr-track.unordered .mr-step { box-shadow: inset 0 0 0 1px var(--ink); }
+.mr-step i { position: absolute; left: 50%; transform: translateX(-50%); }
+.mr-step i.you { bottom: calc(100% + 3px); font-style: normal; font-family: var(--body); font-size: 12px; font-weight: 700; color: var(--ink); line-height: 1; padding-bottom: 2px; border-bottom: 2px solid var(--ink); }
+.mr-step i.them { top: calc(100% + 3px); width: 12px; height: 12px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg); }
+
+.mr-sub { font-family: var(--display); font-weight: 700; font-size: 20px; margin: 28px 0 4px; }
+.mr-thin { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 0; margin: 10px 0 0; font-family: var(--body); font-size: 14.5px; }
+.mr-thin li { border-top: 3px solid var(--fill); padding-top: 4px; }
+.mr-thin span { color: var(--ink-3); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+/* Results: If you were voting in Israel */
+.mr-weigh { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 6px 0 12px; }
+.mr-w { background: var(--sheet); border: 1px solid var(--line-2); border-top: 5px solid var(--fill); padding: 14px 16px 16px; }
+.mr-w.out { border-style: dashed; border-top-style: solid; }
+.mr-w h3 { font-family: var(--body); font-size: 16.5px; font-weight: 700; margin: 0 0 10px; display: flex; justify-content: space-between; gap: 10px; }
+.mr-w h3 span { font-family: var(--display); font-size: 20px; font-variant-numeric: tabular-nums; }
+.mr-w dl { margin: 0; display: grid; grid-template-columns: 4.6em 1fr; gap: 8px 10px; font-family: var(--body); font-size: 13.5px; line-height: 1.45; }
+.mr-w dt { font-weight: 600; color: var(--ink); }
+.mr-w dd { margin: 0; color: var(--text); }
+.mr-w dd .fig-src { display: block; }
+.mr-bloc-line { margin: 0 0 6px; }
+.mr-explain { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px 32px; margin: 26px 0 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.mr-explain h3 { font-family: var(--display); font-weight: 700; font-size: 18px; margin: 0 0 6px; }
+.mr-explain p { font-family: var(--display); font-size: 16px; line-height: 1.5; color: var(--text); margin: 0; }
+
+.mr-method { margin: 40px 0 0; border-top: 1px solid var(--ink); padding-top: 12px; max-width: 760px; }
+.mr-method summary { cursor: pointer; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--ink); }
+.mr-method p { font-family: var(--display); font-size: 16px; line-height: 1.5; color: var(--text); margin: 10px 0 0; }
+
+@media (max-width: 860px) {
+  .mr-knesset { grid-template-columns: 1fr; }
+  .mr-knesset .sg { max-width: 360px; }
+}
+@media (max-width: 640px) {
+  .mq-opt > button { min-height: 52px; }
+  .mq-label { font-size: 15.5px; padding: 12px 14px; }
+  .mr-row > details > summary { grid-template-columns: 1.6em minmax(0, 1fr) auto; }
+  .mr-bar { grid-column: 2 / 3; grid-row: 2; }
+  .mr-cov { grid-column: 3; grid-row: 2; text-align: end; }
+  .mr-detail { padding-left: 0; grid-template-columns: 1fr; }
+  .mr-w dl { grid-template-columns: 1fr; gap: 2px; }
+  .mr-w dd { margin-bottom: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mq-chip, .mq-none { animation: none; }
+  .mq-swatch { transition: none; }
+}

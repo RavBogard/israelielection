@@ -20,6 +20,7 @@ export const NAV_GROUPS: readonly NavGroup[] = [
   {href:"/parties",label:"Party Map",description:"Every list sized by its polling average, with a sourced profile."},
   {href:"/compare",label:"Compare positions",aliases:["Compare party positions"],description:"Recorded positions on major issues, side by side, with sources."},
   {href:"/coalition-builder",label:"Coalition Builder",description:"Pick lists from any poll and try to reach 61 seats."},
+  {href:"/match",label:"Party match",aliases:["Which party matches you","Party quiz"],description:"Answer seven questions and see which lists sit closest to you."},
   {href:"/party-history",label:"Party family tree",description:"Origins, splits, mergers and alliances over time."},
   {href:"/ballot",label:"Every ballot list",aliases:["Submitted ballot lists"],description:"All submitted lists, minor ones included, with their status."},
  ]},

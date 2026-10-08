@@ -1,0 +1,159 @@
+{
+  "about": "The Party match questionnaire (/match). Each question points at a row of the Compare matrix (components/compare/model.ts matrixRows), so every list's answer, shade and basis come from data/positions and data/comparison-questions.json. Options are the reader's version of a row's stances; a stance with no option (a historical record or a split) still places its lists. Spec: docs/planning/2026-10-08-match/SPEC.md.",
+  "core": [
+    {
+      "row": "draft",
+      "prompt": "Should Haredi (ultra-Orthodox) yeshiva students be drafted into the army?",
+      "context": "Most Israeli Jews are conscripted at 18. Haredi men in full-time religious study have largely been exempt since 1948, and the Supreme Court ruled in 2024 that the exemption has no legal basis.",
+      "options": {
+        "no-compulsion": "No one should be compelled to serve",
+        "exempt-learners": "Exempt those who study Torah full time",
+        "draft-leavers": "Draft only those who leave yeshiva",
+        "expand-gradually": "Raise Haredi service step by step",
+        "draft-all": "Everyone serves, in the army or a civilian service"
+      }
+    },
+    {
+      "row": "courts",
+      "prompt": "Should power shift from the courts to the Knesset and the government?",
+      "context": "Israel has no written constitution. Its Supreme Court can strike down laws and government decisions, and the 2023 judicial overhaul, which set out to curb it, brought months of mass protest.",
+      "options": {
+        "curb": "Yes, curb the Supreme Court's powers",
+        "limited-override": "Let the Knesset override the court in limited cases",
+        "codify": "Settle the balance in a Basic Law, a kind of constitution",
+        "independence": "No, keep the courts independent"
+      }
+    },
+    {
+      "row": "war",
+      "prompt": "Who should investigate the failures of October 7?",
+      "context": "Israel's 1968 law sets up a state commission of inquiry whose members are chosen by the president of the Supreme Court. The government has proposed a different commission whose members the court would not choose.",
+      "options": {
+        "other-commission": "A commission set up outside the 1968 law",
+        "independent-unset": "An independent inquiry; the exact form can wait",
+        "state-commission": "A state commission of inquiry under the 1968 law"
+      }
+    },
+    {
+      "row": "wb",
+      "prompt": "Should Israel annex land in the occupied West Bank?",
+      "context": "Israel has held the West Bank since 1967 without annexing it. About half a million Israeli settlers and some three million Palestinians live there. Annexation would apply Israeli law to the land.",
+      "options": {
+        "annex-all": "Annex the whole West Bank",
+        "annex-part": "Annex Area C or chosen areas",
+        "sovereignty-not-bills": "Back sovereignty in principle, but not by law now",
+        "settle-no-annex": "Expand settlements without annexing",
+        "separation": "Separate from the Palestinians",
+        "no-annexation": "No annexation; work toward a Palestinian state"
+      }
+    },
+    {
+      "row": "pstate",
+      "prompt": "Should there be a Palestinian state?",
+      "context": "A Palestinian state beside Israel has been the aim of most international peace plans since the 1990s. Most lists running in 2026 oppose one; a few support it.",
+      "options": {
+        "oppose": "No, oppose a Palestinian state",
+        "not-on-agenda": "Not now; it is not on the agenda",
+        "separation": "Separation as part of a regional deal",
+        "support": "Yes, support a Palestinian state"
+      }
+    },
+    {
+      "row": "relig",
+      "prompt": "Who should run marriage, conversion and the rules for Shabbat?",
+      "context": "Israel has no civil marriage: Jews marry through the Orthodox Chief Rabbinate, and many couples marry abroad instead. The rabbinate also controls conversion, and Shabbat rules such as public transport are set nationally.",
+      "options": {
+        "orthodox": "Keep them in Orthodox hands",
+        "civil-local": "Allow civil marriage, and let towns set Shabbat rules",
+        "civil-pluralist": "Allow civil marriage and recognise non-Orthodox conversion"
+      }
+    },
+    {
+      "row": "econ",
+      "prompt": "What should economic policy put first?",
+      "context": "The cost of living is among Israelis' top worries. The lists' economic priorities can coexist rather than run from one end to another, so the match here is on the priority you put first.",
+      "options": {
+        "market": "Free markets and a smaller state",
+        "living-costs": "Lower living costs and narrower gaps",
+        "reward-service": "Rewarding those who serve in the army or reserves",
+        "own-community": "Budgets for communities that have been left behind"
+      }
+    }
+  ],
+  "deeper": [
+    {
+      "row": "draft-left-yeshiva",
+      "prompt": "Should young Haredi men who have left yeshiva be required to serve?",
+      "context": "Even some lists that defend the exemption for full-time students disagree over men who are no longer studying.",
+      "options": {
+        "require": "Yes, require them to serve",
+        "oppose": "No compulsory service"
+      }
+    },
+    {
+      "row": "draft-exemptions",
+      "prompt": "In a service framework, military or civilian, who should be exempt?",
+      "context": "The draft plans differ most on who would still be exempt.",
+      "options": {
+        "none": "No one: no exemptions or quotas",
+        "outstanding": "A small number of outstanding scholars",
+        "learners": "Everyone studying in yeshiva full time"
+      }
+    },
+    {
+      "row": "courts-appointments",
+      "prompt": "Should the 2025 law that gave politicians more say in choosing judges be repealed?",
+      "context": "The March 2025 law replaced the Israel Bar Association's two seats on the committee that selects judges with public representatives chosen by the coalition and the opposition. It takes effect in the next Knesset.",
+      "options": {
+        "repeal": "Repeal and replace it",
+        "enacted": "Keep it"
+      }
+    },
+    {
+      "row": "courts-override",
+      "prompt": "Should the Knesset be able to pass again a law the Supreme Court has struck down?",
+      "context": "An \"override clause\" was the most contested part of the 2023 overhaul. The answers differ on how large a majority it would need.",
+      "options": {
+        "61": "Yes, with a simple majority of 61",
+        "oppose": "No override",
+        "supermajority": "Only with a special majority, 70 MKs or more"
+      }
+    },
+    {
+      "row": "courts-reasonableness",
+      "prompt": "Should the courts keep \"reasonableness\" as grounds to overturn government decisions?",
+      "context": "In 2023 the Knesset abolished the standard for decisions by the cabinet and ministers; the Supreme Court struck that law down in 2024.",
+      "options": {
+        "narrow": "Keep it, but narrow it",
+        "abolish": "Abolish it for decisions by the cabinet and ministers"
+      }
+    },
+    {
+      "row": "relig-marriage",
+      "prompt": "Should couples be able to marry in a civil ceremony inside Israel?",
+      "context": "Today a civil marriage performed abroad is registered in Israel, but none can be performed in the country.",
+      "options": {
+        "allow": "Yes, allow a civil option",
+        "oppose": "No, keep marriage religious"
+      }
+    },
+    {
+      "row": "relig-shabbat",
+      "prompt": "Should towns be able to run public transport on Shabbat?",
+      "context": "Most buses and trains stop from Friday evening to Saturday evening. A few cities run limited services of their own.",
+      "options": {
+        "local": "Yes, let each town decide",
+        "keep": "No, keep the current Shabbat rules"
+      }
+    },
+    {
+      "row": "relig-conversion",
+      "prompt": "Should Israel recognise conversions to Judaism done outside the Orthodox establishment?",
+      "context": "Recognition decides who is Jewish under Israeli law for marriage and burial, which matters to many Reform and Conservative Jews.",
+      "options": {
+        "extend": "Yes, extend recognition",
+        "orthodox": "No, keep Orthodox authority"
+      }
+    }
+  ]
+}
