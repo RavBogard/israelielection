@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-08",
+  "generatedAt": "2026-10-08T17:29:16.461Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "According to a poll by Zman Yisrael, the anti-Netanyahu bloc regained its lead with Eisenkot's Yashar placing first ahead of Likud, whereas a Channel 13 poll placed Netanyahu's bloc at 55 seats and the opposition bloc at 50 seats.",
+      "sources": [
+        {
+          "outlet": "Times of Israel",
+          "title": "ToI poll: Anti-Netanyahu bloc regains lead, Eisenkot’s Yashar comes 1st with Likud in 2nd place",
+          "url": "https://www.timesofisrael.com/liveblog_entry/toi-poll-anti-netanyahu-bloc-regains-lead-eisenkots-yashar-comes-1st-with-likud-in-2nd-place/",
+          "published": "2026-10-08T07:29:00.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Poll: Netanyahu bloc tops rival bloc by 5 seats, neither secure majority without Arab parties",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-07/ty-article/.premium/poll-netanyahu-bloc-tops-eisenkots-by-5-seats-neither-secure-majority/000001a1-1795-d6bf-abe5-97dd19930000",
+          "published": "2026-10-07T19:16:02.000Z"
+        }
+      ],
+      "textHe": "לפי סקר זמן ישראל, גוש מתנגדי נתניהו החזיר לעצמו את ההובלה כאשר ישר! בראשות גדי איזנקוט הגיעה למקום הראשון לפני הליכוד, בעוד שבסקר חדשות 13 קיבל גוש נתניהו 55 מנדטים וגוש האופוזיציה 50 מנדטים."
+    },
+    {
+      "text": "Netanyahu and Smotrich held a conference titled \"Saving the Right\" to rally right-wing voters alongside Religious Zionist rabbis, excluding National Security Minister Itamar Ben-Gvir.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu, Smotrich hold conference to rally right-wing voters, excluding Ben-Gvir",
+          "url": "https://www.jpost.com/israel-election-2026/article-911094",
+          "published": "2026-10-08T18:52:31.000Z"
+        }
+      ],
+      "textHe": "בנימין נתניהו ובצלאל סמוטריץ' ערכו כנס תחת הכותרת \"מצילים את הימין\" כדי לגייס את מצביעי הימין לצד רבני הציונות הדתית, ללא השר לביטחון לאומי איתמר בן גביר."
+    },
+    {
+      "text": "Reservists-Economic party leader Yoaz Hendel called on Ofer Winter to break with Netanyahu's bloc and the haredi parties to form a joint Zionist bloc.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Hendel calls on Ofer Winter to break with Netanyahu's bloc, form 'Zionist bloc' with Reservists",
+          "url": "https://www.jpost.com/israel-election-2026/article-911020",
+          "published": "2026-10-08T11:18:42.000Z"
+        }
+      ],
+      "textHe": "יו\"ר המילואימניקים והכלכלית יועז הנדל קרא לעופר וינטר להתנתק מגוש נתניהו ומהמפלגות החרדיות כדי להקים גוש ציוני משותף."
+    },
+    {
+      "text": "Yisrael Beiteinu leader Lieberman accused Netanyahu of enabling a future United States move to recognize a Palestinian state encompassing the West Bank, Gaza, and East Jerusalem.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "PM rival Lieberman says Netanyahu 'enabling' future U.S. move to recognize Palestinian state",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-08/ty-article/.premium/lieberman-says-netanyahu-aware-of-u-s-move-to-recognize-palestinian-state/000001a1-1b06-d997-a1e7-7fee19720000",
+          "published": "2026-10-08T11:28:24.000Z"
+        }
+      ],
+      "textHe": "יו\"ר ישראל ביתנו אביגדור ליברמן האשים את בנימין נתניהו בכך שהוא מכשיר מהלך עתידי של ארצות הברית להכרה במדינה פלסטינית שתכלול את הגדה המערבית, עזה ומזרח ירושלים."
+    },
+    {
+      "text": "Hadash MK Ofer Cassif faces the risk of losing his Knesset seat after being convicted of assaulting a police officer at a 2022 West Bank protest.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israeli MK convicted of assaulting police officer in West Bank, risks losing Knesset seat",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-08/ty-article/.premium/israeli-mk-convicted-of-assaulting-policeman-in-west-bank-may-lose-knesset-seat/000001a1-1a90-dbd6-a5a5-9bf7740b0000",
+          "published": "2026-10-08T10:10:13.000Z"
+        }
+      ],
+      "textHe": "ח\"כ עופר כסיף מחד\"ש עומד בפני סכנת הדחה מהכנסת לאחר שהורשע בתקיפת שוטר במהלך הפגנה ביהודה ושומרון ב-2022."
+    },
+    {
+      "text": "Noam LeYisrael candidate Yiscah Haimov stated that shutting down the Shin Bet division tasked with tackling right-wing extremism is a priority for the party.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Shin Bet chief's sister calls on agency to stop investigating Jewish terrorism",
+          "url": "https://www.haaretz.com/israel-news/2026-10-08/ty-article/.premium/shin-bet-chiefs-sister-calls-on-agency-to-stop-investigating-jewish-terrorism/000001a1-1bb7-db4b-abaf-5bb71aa70000",
+          "published": "2026-10-08T14:39:04.000Z"
+        }
+      ],
+      "textHe": "מועמדת נעם לישראל יסכה חיימוב הצהירה כי סגירת האגף בשב\"כ המופקד על הטיפול בקיצוניות בימין היא בעדיפות עליונה עבור המפלגה."
+    },
+    {
+      "text": "In civil unrest, police dispersed hundreds of ultra-Orthodox demonstrators who blocked traffic routes in Jerusalem and around Bnei Brak during protests against the military draft.",
+      "sources": [
+        {
+          "outlet": "Times of Israel",
+          "title": "Police working to disperse Haredi protesters in Jerusalem",
+          "url": "https://www.timesofisrael.com/liveblog_entry/police-working-to-disperse-haredi-protesters-in-jerusalem/",
+          "published": "2026-10-08T07:29:00.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Partial road closures in place around Bnei Brak ahead of large Haredi demonstration",
+          "url": "https://www.timesofisrael.com/liveblog_entry/partial-road-closures-in-place-around-bnei-brak-ahead-of-large-haredi-demonstration/",
+          "published": "2026-10-08T06:03:00.000Z"
+        }
+      ],
+      "textHe": "על רקע הפרות סדר, המשטרה פיזרה מאות מפגינים חרדים שחסמו צירי תנועה בירושלים ובסביבת בני ברק במהלך מחאות נגד חובת הגיוס."
+    }
+  ],
+  "dropped": []
+}
