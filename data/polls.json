@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -2290,6 +2290,182 @@
           "seats": 0,
           "belowThreshold": true,
           "pct": "2.9%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "zman-yisrael-2026-10-08",
+      "pollster": "Zman Yisrael",
+      "firm": "Yossi Tatika",
+      "fieldwork": "Oct 7–8, 2026",
+      "published": "2026-10-08",
+      "via": "Zman Yisrael",
+      "url": "https://www.zman.co.il/731622/",
+      "n": 500,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379386113).",
+      "results": {
+        "likud": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "rz": {
+          "seats": 5
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.2%"
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 10
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yashar": {
+          "seats": 24
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "3.2%"
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "i24news-2026-10-08",
+      "pollster": "i24NEWS",
+      "firm": "Direct Polls",
+      "fieldwork": "Oct 7, 2026",
+      "published": "2026-10-08",
+      "via": "i24 News",
+      "url": "https://www.i24news.tv/he/news/israel-elections-2026/polls/artc-fa0f56f4",
+      "n": 504,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379386113).",
+      "results": {
+        "likud": {
+          "seats": 26
+        },
+        "byachad": {
+          "seats": 11
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "<1%"
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yashar": {
+          "seats": 20
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "maariv-2026-10-09",
+      "pollster": "Maariv",
+      "firm": "LRI+P4A",
+      "fieldwork": "Oct 7–8, 2026",
+      "published": "2026-10-09",
+      "via": "Maariv",
+      "url": "https://www.maariv.co.il/news/politics/article-1375198",
+      "n": 700,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379386113).",
+      "results": {
+        "likud": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.9%"
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 9
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 4
         }
       },
       "combined": []
