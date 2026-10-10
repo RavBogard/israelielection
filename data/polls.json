@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -2466,6 +2466,300 @@
         },
         "poi": {
           "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "s-m-l-t-2026-09-07",
+      "pollster": "S.M.L.T.",
+      "firm": "S.M.L.T.",
+      "fieldwork": "Sep 7, 2026",
+      "published": "2026-09-07",
+      "via": "D.R.I. Consulting",
+      "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/knesset_election59/he/Survey_4135.pdf",
+      "n": 2185,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379550647).",
+      "results": {
+        "likud": {
+          "seats": 25
+        },
+        "byachad": {
+          "seats": 9
+        },
+        "rz": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "bw": {
+          "seats": 4
+        },
+        "shas": {
+          "seats": 10
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 20
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.79%"
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.08%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-16-2026-09-09",
+      "pollster": "Channel 16",
+      "firm": "Maagar Mochot",
+      "fieldwork": "Sep 9, 2026",
+      "published": "2026-09-09",
+      "via": "Channel 16",
+      "url": "https://www.ch16.co.il/vod.html?id=aab4640f-335f-44c1-8f41-c4fbf4671081&title=%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94%20%D7%9E%D7%A8%D7%9B%D7%96%D7%99%D7%AA%2009.09.2026",
+      "n": null,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379550647).",
+      "results": {
+        "likud": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 16
+        },
+        "rz": {
+          "seats": 4
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1%"
+        },
+        "shas": {
+          "seats": 9
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2%"
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-16-2026-09-16",
+      "pollster": "Channel 16",
+      "firm": "Maagar Mochot",
+      "fieldwork": "Sep 16, 2026",
+      "published": "2026-09-16",
+      "via": "Channel 16",
+      "url": "https://themadad.com/allpolls/",
+      "n": 500,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379550647).",
+      "results": {
+        "likud": {
+          "seats": 18
+        },
+        "byachad": {
+          "seats": 16
+        },
+        "rz": {
+          "seats": 5
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "shas": {
+          "seats": 9
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 6
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-16-2026-09-24",
+      "pollster": "Channel 16",
+      "firm": "Maagar Mochot",
+      "fieldwork": "Sep 24, 2026",
+      "published": "2026-09-24",
+      "via": "Channel 16",
+      "url": "https://www.ch16.co.il/player/episode/6ab5727cc711a7bf85e73ac3",
+      "n": 553,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379550647).",
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "rz": {
+          "seats": 5
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "1.0%"
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-16-2026-09-29",
+      "pollster": "Channel 16",
+      "firm": "Maagar Mochot",
+      "fieldwork": "Sep 29, 2026",
+      "published": "2026-09-29",
+      "via": "Channel 16",
+      "url": "https://www.ch16.co.il/player/episode/6abc0121d203dfa22727649b",
+      "n": 550,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379550647).",
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "0.4%"
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 7
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 5
         }
       },
       "combined": []
