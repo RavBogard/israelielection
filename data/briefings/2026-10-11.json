@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-11",
+  "generatedAt": "2026-10-11T16:23:54.043Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "Jewish Insider reported that the bloc backing Prime Minister Benjamin Netanyahu led in four and tied in two of eight polls published over the past week, while a Jerusalem Post polling average placed both the Netanyahu bloc and the Zionist opposition at approximately 52 seats each.",
+      "sources": [
+        {
+          "outlet": "Jewish Insider",
+          "title": "Netanyahu bloc gains on Gadi Eisenkot’s opposition in latest Israeli polls",
+          "url": "https://jewishinsider.com/2026/10/netanyahu-rising-in-weekend-polls/",
+          "published": "2026-10-11T12:45:45.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot leads Netanyahu, but both blocs without clear path to 61-seat majority - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-911262",
+          "published": "2026-10-11T08:42:10.000Z"
+        }
+      ],
+      "textHe": "לפי דיווח ב-Jewish Insider, הגוש התומך בראש הממשלה בנימין נתניהו הוביל בארבעה סקרים והגיע לשוויון בשניים מתוך שמונה סקרים שפורסמו במהלך השבוע האחרון, בעוד שממוצע סקרים של הג'רוזלם פוסט העמיד הן את גוש נתניהו והן את האופוזיציה הציונית על כ-52 מנדטים לכל אחד."
+    },
+    {
+      "text": "Shas and United Torah Judaism announced they signed a surplus vote-sharing agreement ahead of the election and pledged continued cooperation in the next Knesset.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shas, UTJ sign surplus vote-sharing deal, pledge cooperation in next Knesset",
+          "url": "https://www.jpost.com/israel-election-2026/article-911320",
+          "published": "2026-10-11T15:47:07.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Shas and United Torah Judaism sign a surplus vote agreement ahead of Israel's election",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-11/ty-article/.premium/shas-united-torah-judaism-sign-vote-sharing-deal-ahead-of-israeli-election/000001a1-2aea-dfa9-affd-7eeeb6ac0000",
+          "published": "2026-10-11T15:12:07.000Z"
+        }
+      ],
+      "textHe": "ש\"ס ויהדות התורה הודיעו כי חתמו על הסכם עודפים לקראת הבחירות והתחייבו להמשך שיתוף הפעולה בכנסת הבאה."
+    },
+    {
+      "text": "Naftali Bennett said Benjamin Netanyahu could serve as a minister in his government if Netanyahu backs a state inquiry, universal military enlistment, and a constitution for Israel.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Bennett not ruling out possibility of Netanyahu serving as gov't minister under his leadership",
+          "url": "https://www.jpost.com/israel-election-2026/article-911349",
+          "published": "2026-10-11T18:54:11.000Z"
+        }
+      ],
+      "textHe": "נפתלי בנט אמר כי בנימין נתניהו יוכל לכהן כשר בממשלתו אם נתניהו יתמוך בוועדת חקירה ממלכתית, בגיוס לכולם ובכינון חוקה לישראל."
+    },
+    {
+      "text": "Yisrael Beiteinu leader Avigdor Lieberman ruled out including the United Arab List in a future governing coalition, while stating that Arab Israelis must be an integral part of society.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "PM rival Lieberman calls to 'fully integrate' Arab Israelis, yet again rejects Arab party in coalition",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-11/ty-article/.premium/pm-rival-lieberman-urges-arab-israeli-integration-shuns-arab-party-in-coalition/000001a1-2a6b-da9e-a1f9-7febc2ab0000",
+          "published": "2026-10-11T11:05:20.000Z"
+        }
+      ],
+      "textHe": "יו\"ר ישראל ביתנו אביגדור ליברמן שלל את האפשרות לצרף את רע\"ם לקואליציה עתידית, אך ציין כי ערביי ישראל חייבים להיות חלק בלתי נפרד מהחברה."
+    },
+    {
+      "text": "Benny Gantz announced that he will continue his campaign despite polling below the electoral threshold.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Gantz announces he will continue campaign, despite polling below electoral threshold",
+          "url": "https://www.jpost.com/israel-election-2026/article-911242",
+          "published": "2026-10-10T20:21:44.000Z"
+        }
+      ],
+      "textHe": "בני גנץ הודיע כי ימשיך בקמפיין הבחירות שלו אף על פי שאינו עובר את אחוז החסימה בסקרים."
+    },
+    {
+      "text": "Israel Police opened an investigation into whether Otzma Yehudit lawmaker Yitzhak Kroizer and party chief Itiel Neiman assaulted officers while helping a suspect in violence against Palestinians escape detention.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Police suspect top Ben-Gvir party members assaulted officers while aiding suspect getaway",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-11/ty-article/.premium/police-suspect-ben-gvir-party-members-assaulted-officers-aided-suspect-getaway/000001a1-2964-df4e-a9b5-b9e4f38b0000",
+          "published": "2026-10-11T09:12:51.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Report: Police probe indicates Otzma Yehudit MK, CEO helped settler suspect escape",
+          "url": "https://www.timesofisrael.com/report-police-probe-indicates-otzma-yehudit-mk-ceo-helped-settler-suspect-escape/",
+          "published": "2026-10-11T04:57:00.000Z"
+        }
+      ],
+      "textHe": "משטרת ישראל פתחה בבדיקה בחשד שח\"כ יצחק קרויזר מעוצמה יהודית ומנהל המפלגה איתיאל ניימן תקפו שוטרים בעת שסייעו לחשוד באלימות נגד פלסטינים להימלט ממעצר."
+    },
+    {
+      "text": "Deputy attorneys general instructed the prison chief to stop Itamar Ben-Gvir from using prison staff, facilities, or inmates in election campaign videos.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israel's AG tells prison chief to stop Ben-Gvir from using prisons for campaign",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-10/ty-article/.premium/israels-ag-tells-prison-chief-to-stop-ben-gvir-from-using-prisons-for-campaign/000001a1-267b-d90c-a7bd-af7fba050000",
+          "published": "2026-10-10T18:41:32.000Z"
+        }
+      ],
+      "textHe": "המשנים ליועצת המשפטית לממשלה הורו לנציב שב\"ס למנוע מאיתמר בן גביר להשתמש בסגל בתי הסוהר, במתקני כליאה או באסירים בסרטוני תעמולת בחירות."
+    }
+  ],
+  "dropped": []
+}
