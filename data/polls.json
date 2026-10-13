@@ -2530,6 +2530,60 @@
         }
       },
       "combined": []
+    },
+    {
+      "id": "kan-11-2026-10-11",
+      "pollster": "Kan 11",
+      "firm": "Kantar",
+      "fieldwork": "Oct 11, 2026",
+      "published": "2026-10-11",
+      "via": "Kan 11",
+      "url": "https://www.kan.org.il/content/kan-news/politic/1108256/",
+      "n": 553,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1380109781).",
+      "results": {
+        "likud": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 12
+        },
+        "rz": {
+          "seats": 5
+        },
+        "otzma": {
+          "seats": 9
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 8
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 4
+        }
+      },
+      "combined": []
     }
   ]
 }
