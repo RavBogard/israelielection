@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-13",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -2466,6 +2466,67 @@
         },
         "poi": {
           "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-14-2026-10-12",
+      "pollster": "Channel 14",
+      "firm": "SF+ND",
+      "fieldwork": "Oct 12, 2026",
+      "published": "2026-10-12",
+      "via": "Haredim10",
+      "url": "https://ch10.co.il/en/news/1107207/",
+      "n": 538,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1379952737).",
+      "results": {
+        "likud": {
+          "seats": 29
+        },
+        "byachad": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "bw": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "0.6%"
+        },
+        "shas": {
+          "seats": 10
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 5
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 8
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yashar": {
+          "seats": 20
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.9%"
         }
       },
       "combined": []
