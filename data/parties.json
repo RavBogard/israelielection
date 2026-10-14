@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-14",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -346,6 +346,10 @@
         {
           "text": "Reported plan to sit in opposition until a draft law passes; anonymous source, “not a formal decision.”",
           "source": "Maariv via JPost, Sep 17, 2026"
+        },
+        {
+          "text": "“There will be no government in Israel with Shas's support or participation unless the status of yeshiva students is regulated.”",
+          "source": "Jerusalem Post, Oct 14, 2026"
         }
       ],
       "surplusPartner": {
