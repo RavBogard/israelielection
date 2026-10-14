@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-14",
+  "generatedAt": "2026-10-14T15:20:11.709Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "With under two weeks until the October 27 election, Gadi Eisenkot's Yashar party launched its campaign aiming to draw votes from the opposition bloc and overtake Likud.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot's Yashar launches campaign aiming to draw votes from opposition bloc, overtake Likud",
+          "url": "https://www.jpost.com/israel-election-2026/article-911666",
+          "published": "2026-10-14T13:24:35.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Shas leader Arye Deri announced that there will be no government in Israel with his party's support or participation unless the status of yeshiva students is regulated.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Deri demands haredi draft law as condition for next government",
+          "url": "https://www.jpost.com/israel-election-2026/article-911661",
+          "published": "2026-10-14T12:58:27.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Candidate Davidi Ben Zion quit Ofer Winter's People of Israel party amid pressure from Likud and Bezalel Smotrich, who are urging smaller right-wing factions to withdraw from the race.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "People of Israel candidate quits Ofer Winter's party amid mounting pressure from right-wing rivals",
+          "url": "https://www.jpost.com/israel-election-2026/article-911614",
+          "published": "2026-10-14T05:52:16.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Likud, Smotrich pressure smaller parties to quit election race; signs placed outside candidate’s home",
+          "url": "https://www.timesofisrael.com/liveblog_entry/likud-smotrich-pressure-smaller-parties-to-quit-election-race-signs-placed-outside-candidates-home/",
+          "published": "2026-10-14T04:25:00.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Ben-Gvir also refused to sign a surplus vote sharing agreement with People of Israel, calling Winter Bennett II.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'Bennett II': Ben-Gvir refuses to sign vote surplus share agreement with Winter's People of Israel",
+          "url": "https://www.jpost.com/israel-election-2026/article-911592",
+          "published": "2026-10-13T20:10:49.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "According to the Jerusalem Post, both Benjamin Netanyahu's bloc and Eisenkot's opposition camp are struggling to secure a governing majority.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu, Eisenkot blocs struggle to secure majority, raising fears of another election deadlock",
+          "url": "https://www.jpost.com/israel-election-2026/article-911622",
+          "published": "2026-10-14T03:42:00.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Former Shin Bet chief Ronen Bar filed a defamation suit against Prime Minister Benjamin Netanyahu over prewar warnings, prompting opposition leaders to demand a state inquiry and Netanyahu's resignation.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Opposition slams Netanyahu over Oct. 7 after ex-Shin Bet chief's libel suit",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-14/ty-article/.premium/opposition-slams-netanyahu-over-oct-7-after-ex-shin-bet-chiefs-libel-suit/000001a1-3a69-d306-a7bf-3f695ef90000",
+          "published": "2026-10-14T14:39:51.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Ex-Shin Bet chief files defamation suit against Netanyahu, lists warnings given prior to Oct. 7",
+          "url": "https://www.timesofisrael.com/liveblog_entry/ex-shin-bet-chief-files-defamation-suit-against-netanyahu-lists-warnings-given-prior-to-oct-7/",
+          "published": "2026-10-14T04:40:00.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Netanyahu responded by asking why Bar had not called him before the attack, while also telling Army Radio that there are signs adversaries may attempt an attack before the election.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu responds to Ronen Bar's libel suit, says ex-Shin Bet chief could have called him on Oct. 7",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-14/ty-article/.premium/after-libel-suit-netanyahu-says-ex-shin-bet-chief-couldve-called-him-on-oct-7/000001a1-3a63-d72d-ada3-7b6ff48f0000",
+          "published": "2026-10-14T12:54:32.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu repeats claim Israel's enemies seeking to attack before election",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-14/ty-article/.premium/netanyahu-repeats-claim-israels-enemies-seeking-to-attack-before-election/000001a1-39db-d330-a3e5-f9fb9eed0000",
+          "published": "2026-10-14T10:26:16.000Z"
+        }
+      ],
+      "textHe": null
+    }
+  ],
+  "dropped": []
+}
