@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T14:05:39.423Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "With ten days remaining before the October 27 Knesset election, four recent polls show Gadi Eisenkot's Yashar party leading Benjamin Netanyahu's Likud, while neither the Zionist opposition nor Netanyahu's bloc holds a majority.",
+      "sources": [
+        {
+          "outlet": "The Forward",
+          "title": "2026 Israeli Elections: What you need to know",
+          "url": "https://forward.com/fast-forward/856601/2026-israeli-elections-what-you-need-to-know/",
+          "published": "2026-10-18T10:31:42.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot leads Netanyahu in four polls, but neither bloc secures Knesset majority - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-912004",
+          "published": "2026-10-18T08:16:31.000Z"
+        }
+      ],
+      "textHe": "עשרה ימים לפני הבחירות לכנסת ב-27 באוקטובר, ארבעה סקרים מהימים האחרונים מעלים כי מפלגת ישר! בראשות גדי איזנקוט מובילה על פני הליכוד של בנימין נתניהו, בעוד שלאופוזיציה הציונית ולא לגוש נתניהו אין רוב."
+    },
+    {
+      "text": "According to The Forward, Prime Minister Netanyahu and coalition parties are losing support heading into the election, while Itamar Ben-Gvir's Otzma Yehudit party is rising in polls.",
+      "sources": [
+        {
+          "outlet": "The Forward",
+          "title": "As Netanyahu loses support before election, Ben-Gvir rises in polls",
+          "url": "https://forward.com/fast-forward/856421/as-netanyahu-loses-support-before-election-ben-gvir-rises-in-polls/",
+          "published": "2026-10-18T10:53:53.000Z"
+        }
+      ],
+      "textHe": "לפי הפורוורד, ראש הממשלה נתניהו ומפלגות הקואליציה נחלשים לקראת הבחירות, בזמן שמפלגת עוצמה יהודית של איתמר בן גביר מתחזקת בסקרים."
+    },
+    {
+      "text": "Netanyahu stated that he is unsure about an election victory but will not retire, claiming that an alternate government led by Eisenkot, Naftali Bennett, and Avigdor Liberman would depend on Arab parties.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'I am very worried': Netanyahu unsure about victory in Israeli election, says he will not retire",
+          "url": "https://www.jpost.com/israel-election-2026/article-912033",
+          "published": "2026-10-18T13:28:24.000Z"
+        }
+      ],
+      "textHe": "נתניהו הצהיר כי אינו בטוח בניצחון בבחירות אך לא יפרוש, וטען כי ממשלה חלופית בראשות איזנקוט, נפתלי בנט ואביגדור ליברמן תישען על המפלגות הערביות."
+    },
+    {
+      "text": "The Yashar party criticized Netanyahu's initial silence after media commentator Yinon Magal called Eisenkot a monkey, prompting Netanyahu to condemn the remark as highly inappropriate while accusing opponents of despising Likud voters.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu condemns media ally who called Eisenkot a 'monkey,' also blames rivals",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-18/ty-article/.premium/netanyahu-condemns-channel-14-hosts-racist-slur-against-gadi-eisenkot/000001a1-4dd6-ded8-a7eb-4dd69c870000",
+          "published": "2026-10-18T09:42:59.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Netanyahu condemns ‘monkey’ slur against Eisenkot, but says Likud members face worse",
+          "url": "https://www.timesofisrael.com/netanyahu-condemns-monkey-slur-against-eisenkot-but-says-likud-members-face-worse/",
+          "published": "2026-10-18T05:19:00.000Z"
+        }
+      ],
+      "textHe": "במפלגת ישר! מתחו ביקורת על שתיקתו הראשונית של נתניהו לאחר שאיש התקשורת ינון מגל כינה את איזנקוט קוף, מה שהוביל את נתניהו לגנות את ההתבטאות כבלתי ראויה לחלוטין, תוך שהוא מאשים את יריביו בזלזול כלפי מצביעי הליכוד."
+    },
+    {
+      "text": "Meanwhile, police are investigating Otzma Yehudit lawmaker Kroizer and the party's director-general on suspicion of assaulting a police officer and helping a suspect escape in the West Bank settlement of Mitzpe Yericho.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Far-right Israeli lawmaker investigated for assaulting police officer",
+          "url": "https://www.haaretz.com/israel-news/2026-10-18/ty-article/.premium/far-right-israeli-lawmaker-investigated-for-assaulting-police-officer/000001a1-4d88-da52-a3f1-4fde60950000",
+          "published": "2026-10-18T06:06:17.000Z"
+        }
+      ],
+      "textHe": "במקביל, המשטרה חוקרת את חבר הכנסת קרויזר מעוצמה יהודית ואת מנכ\"ל המפלגה בחשד לתקיפת שוטר ולסיוע להימלטות חשוד בהתנחלות מצפה יריחו שבגדה המערבית."
+    },
+    {
+      "text": "Following a West Bank settler attack on a Washington Post photojournalist, The Democrats leader Yair Golan visited the reporter in the hospital, while President Isaac Herzog apologized and Netanyahu's office cautioned against drawing conclusions before inquiries conclude.",
+      "sources": [
+        {
+          "outlet": "Times of Israel",
+          "title": "Golan visits injured journalist Heidi Levine: ‘The heart breaks. And the blood boils’",
+          "url": "https://www.timesofisrael.com/liveblog_entry/golan-visits-injured-journalist-heidi-levine-the-heart-breaks-and-the-blood-boils/",
+          "published": "2026-10-18T04:36:00.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Herzog apologizes to Washington Post photographer attacked by settlers in West Bank",
+          "url": "https://www.haaretz.com/israel-news/israel-politics/2026-10-17/ty-article/.premium/herzog-apologizes-to-washington-post-photojournalist-condemns-settler-violence/000001a1-4ad2-d25a-a7ff-7fdaa3240000",
+          "published": "2026-10-17T17:44:14.000Z"
+        }
+      ],
+      "textHe": "בעקבות תקיפת צלם הוושינגטון פוסט בידי מתנחלים בגדה המערבית, יו\"ר הדמוקרטים יאיר גולן ביקר את העיתונאי בבית החולים, בעוד הנשיא יצחק הרצוג התנצל ולשכת נתניהו הזהירה מפני הסקת מסקנות בטרם יסתיימו הבדיקות."
+    }
+  ],
+  "dropped": []
+}
