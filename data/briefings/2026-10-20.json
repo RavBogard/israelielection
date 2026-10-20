@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T15:15:55.710Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "Benny Gantz announced his withdrawal from the Knesset election eight days before the vote after his Blue and White party repeatedly polled below the electoral threshold.",
+      "sources": [
+        {
+          "outlet": "The Forward",
+          "title": "Israeli party leader Benny Gantz drops out of race",
+          "url": "https://forward.com/fast-forward/856850/israeli-party-leader-benny-gantz-drops-out-of-race/",
+          "published": "2026-10-19T16:05:08.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Benny Gantz pulls out of election race, eight days before Israelis head to the polls",
+          "url": "https://www.jpost.com/israel-election-2026/article-912167",
+          "published": "2026-10-19T15:47:02.000Z"
+        }
+      ],
+      "textHe": "בני גנץ הודיע על פרישתו מהבחירות לכנסת שמונה ימים לפני מועד ההצבעה, לאחר שמפלגתו כחול לבן לא עברה בעקביות את אחוז החסימה בסקרים."
+    },
+    {
+      "text": "Following Gantz's exit, new polls showed Gadi Eisenkot's Yashar widening its lead over Benjamin Netanyahu's Likud, while neither bloc reached a parliamentary majority without Arab parties.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot extends lead over Netanyahu in new poll, but neither bloc reaches majority",
+          "url": "https://www.jpost.com/israel-election-2026/article-912291",
+          "published": "2026-10-20T14:27:22.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Eisenkot bloc leads Netanyahu in two new polls, but falls short of a majority without Arab parties",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-19/ty-article/eisenkot-bloc-leads-in-new-polls-still-short-of-majority-without-arab-parties/000001a1-55d8-d80a-a3b1-dfde2d240000",
+          "published": "2026-10-19T20:54:44.000Z"
+        }
+      ],
+      "textHe": "בעקבות פרישת גנץ, סקרים חדשים הראו כי מפלגת ישר! של גדי איזנקוט מגדילה את הפער מול הליכוד של בנימין נתניהו, בעוד אף גוש אינו מגיע לרוב פרלמנטרי ללא המפלגות הערביות."
+    },
+    {
+      "text": "Former National Security Council head and Likud member Tzachi Hanegbi announced that he plans to break from his political past and vote for Avigdor Liberman.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'I will vote for Liberman,' Netanyahu's ex-NSC head, Likud stalwart Tzachi Hanegbi declares",
+          "url": "https://www.jpost.com/israel-election-2026/article-912239",
+          "published": "2026-10-20T08:39:19.000Z"
+        }
+      ],
+      "textHe": "ראש המל\"ל לשעבר ואיש הליכוד צחי הנגבי הודיע כי בכוונתו לשבור את עברו הפוליטי ולהצביע לאביגדור ליברמן."
+    },
+    {
+      "text": "Netanyahu pledged at a campaign rally in Lod that Itamar Ben-Gvir will serve as a high-ranking minister in his next government.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu promises Ben-Gvir will be minister in next government during Lod campaign rally",
+          "url": "https://www.jpost.com/israel-election-2026/article-912218",
+          "published": "2026-10-20T02:14:12.000Z"
+        }
+      ],
+      "textHe": "נתניהו התחייב בכנס בחירות בלוד כי איתמר בן גביר יכהן כשר בכיר בממשלתו הבאה."
+    },
+    {
+      "text": "Israeli election supervisors stated they have received no instructions to enforce a court ban on turnout-monitoring apps used by Likud, Shas, and United Torah Judaism.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israeli election supervisors say no instructions given on banned voter-tracking apps",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-20/ty-article/.premium/israeli-election-supervisors-get-no-instructions-on-banned-voter-tracking-apps/000001a1-582b-d7ce-a9a1-dbefb6fb0000",
+          "published": "2026-10-20T12:02:46.000Z"
+        }
+      ],
+      "textHe": "מפקחי בחירות בישראל מסרו כי לא קיבלו הנחיות לאכוף את צו בית המשפט האוסר על שימוש באפליקציות למעקב אחר אחוזי הצבעה שבהן משתמשות הליכוד, ש\"ס ויהדות התורה."
+    },
+    {
+      "text": "In a radio interview with Kol Barama, Netanyahu said that arrests of haredi draft evaders are unacceptable and undermine enlistment efforts.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu: Arrests of haredi draft evaders 'unacceptable,' undermine IDF enlistment efforts",
+          "url": "https://www.jpost.com/israel-election-2026/article-912252",
+          "published": "2026-10-20T09:35:38.000Z"
+        }
+      ],
+      "textHe": "בריאיון לתחנת הרדיו קול ברמה אמר נתניהו כי מעצר עריקים ומשתמטים חרדים אינו מקובל ופוגע במאמצי הגיוס."
+    },
+    {
+      "text": "Following President Donald Trump's endorsement of Netanyahu, U.S. Vice President JD Vance declined to back the prime minister, stating he does not get involved in Israeli elections.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "US VP Vance declines to endorse Netanyahu despite Trump’s backing ahead of Israeli election",
+          "url": "https://www.jpost.com/israel-election-2026/article-912220",
+          "published": "2026-10-20T02:23:45.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu insists he offered Trump nothing to secure US president's election endorsement",
+          "url": "https://www.jpost.com/israel-election-2026/article-912196",
+          "published": "2026-10-19T20:58:10.000Z"
+        }
+      ],
+      "textHe": "לאחר שהנשיא דונלד טראמפ הביע תמיכה בנתניהו, סגן נשיא ארה\"ב ג'יי די ואנס סירב לגבות את ראש הממשלה, וציין כי אינו מתערב בבחירות בישראל."
+    }
+  ],
+  "dropped": []
+}
