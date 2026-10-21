@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-21",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -815,6 +815,10 @@
         {
           "text": "On Ra'am: Mansour Abbas “won't be part of my next government.” No Haredi party currently meets his criteria.",
           "source": "Times of Israel, Sep 26, 2026"
+        },
+        {
+          "text": "\"Absolutely not. I will not serve under Netanyahu, not even in a rotation agreement.\" (Jerusalem Post, Oct 21, 2026)",
+          "source": "Jerusalem Post, Oct 21, 2026; Haaretz, Oct 21, 2026"
         }
       ],
       "surplusPartner": {
