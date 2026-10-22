@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -575,6 +575,10 @@
         {
           "text": "Netanyahu for prime minister; rules out Arab parties.",
           "source": "JPost, Aug 18, 2026"
+        },
+        {
+          "text": "Would not rule out forming a government with prime ministerial candidate Gadi Eisenkot, but not at the cost of boycotting his partners in the right-wing bloc.",
+          "source": "Jerusalem Post, Oct 22, 2026"
         }
       ],
       "surplusPartner": {
