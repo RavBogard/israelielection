@@ -3,7 +3,7 @@ import { averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from 
 import { forecast, forecastPoll } from "@/lib/forecast";
 import { mediumDate, shortDate } from "@/lib/format";
 import { partyColor, strokeVars } from "@/lib/party-colors";
-import { average, averageAsPoll, BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure } from "@/lib/polls";
+import { average, averageAsPoll, BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure, VARIANT_ID } from "@/lib/polls";
 import "../party-stroke.css";
 import type { BlocId } from "@/lib/types";
 import SeatBar from "../SeatBar";
@@ -22,7 +22,7 @@ const LABEL_PX_PER_SEAT = 23;
 
 /** The bloc order along the 120-seat bar, as on every 120-seat bar and the home mosaic. */
 const BAR_ORDER = BLOC_SEAT_ORDER;
-const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
+const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: VARIANT_ID });
 /** What the lists' passing-poll averages add to before they are scaled to 120. */
 /** The light paper behind the list chart (--bg, the darker of --bg and --sheet). */
 /** A list's mark colour at 3:1 on either paper: on light paper darkened just far enough, on dark paper partyStroke's lighter stroke. */
