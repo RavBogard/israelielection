@@ -67,10 +67,15 @@ Netanyahu bloc at 61 or more: **6%**. Anti-Netanyahu Zionist bloc at 61 or more:
 Neither: **93%**. Netanyahu bloc larger than the Zionist opposition: 54%. Largest list: Yashar
 56%, Likud 44%.
 
-Per list (central seats, 90% range, passes): Yashar 22 (18–27), Likud 20 (16–26), B'Yachad 14
+Per list (central seats, 90% range, passes): Yashar 23 (18–27), Likud 21 (16–26), B'Yachad 14
 (10–16), Democrats 9 (6–11), Joint List 9 (6–11), Otzma 8 (6–10), UTJ 8 (6–10), Yisrael Beiteinu 8
-(6–10), Shas 7 (6–10), Religious Zionism–Zehut 6 (5–9), Ra'am 5 (0–7, passes 90%), Reservists 4
+(6–10), Shas 8 (6–10), Religious Zionism–Zehut 7 (5–9), Ra'am 5 (0–7, passes 90%), Reservists 0
 (0–5, passes 46%), Amcha Yisrael 0 (0–5, passes 47%).
+
+The two threshold calls are coin flips called by a hair: the Reservists' central share lands just
+under 3.25% once the lean moves a sliver of the non-Netanyahu vote, and Amcha's just under it before
+any shift. The scoring rule treats both as "fails" because `passes` is under 50; the model's real
+statement about each is "about even".
 
 ## Sensitivity: the two dials that matter
 
