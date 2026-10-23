@@ -19,7 +19,7 @@ import type { BlocId } from "@/lib/types";
 import "@/lib/i18n/overlays";
 
 const REPO = "https://github.com/RavBogard/israelielection/blob/main/";
-type HistoryRun = { generated: string; final?: boolean; blocs: Record<BlocId, number>; majority: Forecast["majority"] };
+type HistoryRun = { generated: string; final?: boolean; blocs: Record<BlocId, number>; majority: Forecast["majority"]; parameters?: { version?: number } };
 const history = (historyJson as { runs: HistoryRun[] }).runs;
 const changelog = (changelogJson as { entries: { date: string; en: string; he: string }[] }).entries;
 
@@ -41,6 +41,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
   const checks = he ? list(checkNames) : checkNames.join(" and ");
   const through = mediumDate(f.inputs.field.map((q) => q.published).sort().at(-1)!, lang);
   const lists = Object.entries(f.lists).map(([id, l]) => ({ id, ...l, bloc: parties.find((x) => x.id === id)?.bloc as BlocId })).sort((a, b) => blocRank(a.bloc) - blocRank(b.bloc) || b.share - a.share);
+  const priorEntries = Object.entries(p.listPriors ?? {}).filter((e): e is [string, number] => typeof e[1] === "number" && e[1] !== 0).sort((a, b) => b[1] - a[1]).map(([id, pts]) => t.inputs.priorEntry(nameOf(id), pts));
   const largest = Object.entries(f.largestList).sort((a, b) => b[1] - a[1]).map(([id, pct]) => t.prediction.largestEntry(nameOf(id), pct));
   const thresholdCases = calibration.thresholdLists.cases;
   const cal = calibration.elections.map((e) => ({ ...e, miss: Math.round((e.result - e.field) * 10) / 10 }));
@@ -50,6 +51,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
     <a key="s" href={`${REPO}scripts/forecast/forecast.mjs`} hrefLang={he ? "en" : undefined}>{t.sources.script}</a>,
     <a key="d" href={`${REPO}data/forecast.json`} hrefLang={he ? "en" : undefined}>{t.sources.data}</a>,
     <a key="h" href={`${REPO}data/forecast-history.json`} hrefLang={he ? "en" : undefined}>{t.sources.history}</a>,
+    <a key="b" href={`${REPO}scripts/forecast/backtest/`} hrefLang={he ? "en" : undefined}>{t.sources.backtest}</a>,
     <a key="m" href={`${REPO}docs/research/polls-method/`} hrefLang={he ? "en" : undefined}>{t.sources.memo}</a>,
   ];
   return (
@@ -68,18 +70,18 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         </figure>
         <div className="table-scroll">
           <table className="data-table fc-table">
-            <thead><tr><th scope="col">{t.prediction.cols.bloc}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.chance}</th></tr></thead>
+            <thead><tr><th scope="col">{t.prediction.cols.bloc}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.median}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.chance}</th></tr></thead>
             <tbody>{BLOC_ORDER.map((b) => (
-              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{f.blocs[b].point}</b></td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
+              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{f.blocs[b].point}</b></td><td className="num">{f.blocs[b].median ?? ""}</td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
             ))}</tbody>
           </table>
         </div>
         <p className="note">{t.prediction.majority(f.majority.net, f.majority.oppZionist, f.majority.neither, f.majority.oppWithArabAndMid)} {t.prediction.netLarger(f.netLargerThanOpp)} {t.prediction.largest(he ? list(largest) : largest.join(", "))}</p>
         <div className="table-scroll">
           <table className="data-table fc-table">
-            <thead><tr><th scope="col">{t.prediction.cols.list}</th><th scope="col" className="num">{t.prediction.cols.share}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.passes}</th></tr></thead>
+            <thead><tr><th scope="col">{t.prediction.cols.list}</th><th scope="col" className="num">{t.prediction.cols.share}</th><th scope="col" className="num">{t.prediction.cols.prior}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.passes}</th></tr></thead>
             <tbody>{lists.map((l) => (
-              <tr key={l.id} className={l.passes < 50 ? "dim" : undefined}><th scope="row"><span className="sw" style={{ background: `var(--b-${l.bloc})` }} aria-hidden="true" /> <Tx text={nameOf(l.id)} lang={lang} /></th><td className="num">{l.share.toFixed(1)}%</td><td className="num"><b>{l.point}</b></td><td className="num">{l.mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(l.lo, l.hi)}</Ltr></td><td className="num">{t.prediction.pct(l.passes)}</td></tr>
+              <tr key={l.id} className={l.passes < 50 ? "dim" : undefined}><th scope="row"><span className="sw" style={{ background: `var(--b-${l.bloc})` }} aria-hidden="true" /> <Tx text={nameOf(l.id)} lang={lang} /></th><td className="num">{l.share.toFixed(1)}%</td><td className="num">{l.prior ? <Ltr lang={lang}>{`${l.prior > 0 ? "+" : "−"}${Math.abs(l.prior).toFixed(1)}`}</Ltr> : ""}</td><td className="num"><b>{l.point}</b></td><td className="num">{l.mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(l.lo, l.hi)}</Ltr></td><td className="num">{t.prediction.pct(l.passes)}</td></tr>
             ))}</tbody>
           </table>
         </div>
@@ -91,12 +93,12 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         <p className="note">{t.inputs.field(f.inputs.field.length, through, days)}</p>
         <div className="table-scroll">
           <table className="data-table fc-table fc-inputs">
-            <thead><tr><th scope="col">{t.inputs.cols.publisher}</th><th scope="col">{t.inputs.cols.published}</th><th scope="col" className="num">{t.inputs.cols.sample}</th></tr></thead>
-            <tbody>{f.inputs.field.map((q) => <tr key={q.id}><th scope="row"><Tx text={pollsterName(q.pollster, lang)} lang={lang} /></th><td>{mediumDate(q.published, lang)}</td><td className="num">{q.n ? num(q.n) : t.inputs.noSample}</td></tr>)}</tbody>
+            <thead><tr><th scope="col">{t.inputs.cols.publisher}</th><th scope="col">{t.inputs.cols.firm}</th><th scope="col">{t.inputs.cols.published}</th><th scope="col" className="num">{t.inputs.cols.sample}</th><th scope="col" className="num">{t.inputs.cols.weight}</th></tr></thead>
+            <tbody>{f.inputs.field.map((q) => <tr key={q.id}><th scope="row"><Tx text={pollsterName(q.pollster, lang)} lang={lang} /></th><td>{q.firm ? <Tx text={pollsterName(q.firm, lang)} lang={lang} /> : ""}</td><td>{mediumDate(q.published, lang)}</td><td className="num">{q.n ? num(q.n) : t.inputs.noSample}</td><td className="num">{q.weight ?? ""}</td></tr>)}</tbody>
           </table>
         </div>
         <p className="note">{t.inputs.checks(checks)}</p>
-        <p className="note">{t.inputs.agreements(f.inputs.agreements.length)}{he ? list(f.inputs.agreements.map(([a, b]) => t.inputs.pair(nameOf(a), nameOf(b)))) : f.inputs.agreements.map(([a, b]) => t.inputs.pair(nameOf(a), nameOf(b))).join("; ")}.</p>
+        <p className="note">{t.inputs.agreements(f.inputs.agreements.length)}{he ? list(f.inputs.agreements.map(([a, b]) => t.inputs.pair(nameOf(a), nameOf(b)))) : f.inputs.agreements.map(([a, b]) => t.inputs.pair(nameOf(a), nameOf(b))).join("; ")}.{(f.inputs.withdrawn?.length ?? 0) > 0 && <> {t.inputs.withdrawn(he ? list(f.inputs.withdrawn!.map(nameOf)) : f.inputs.withdrawn!.map(nameOf).join(", "))}</>}</p>
       </section>
 
       <section aria-labelledby="fc-how">
@@ -105,13 +107,15 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         <ol className="fc-steps">
           <li>{t.steps.s1(f.inputs.field.length, checks, days)}</li>
           <li>{t.steps.s2}</li>
-          <li>{t.steps.s3}</li>
-          <li>{t.steps.s4(p.leanSeats, p.historicalResidualSeats)}</li>
-          <li>{t.steps.s5}</li>
-          <li>{t.steps.s6(p.blocSdSeats)}</li>
-          <li>{t.steps.s7(p.listSdPointsAt8pct)}</li>
-          <li>{t.steps.s8(p.consolidateSdSeats)}</li>
-          <li>{t.steps.s9(f.inputs.agreements.length, runs)}</li>
+          <li>{t.steps.s3(p.fringeShare ?? 0)}</li>
+          <li>{t.steps.s4(he ? list(priorEntries) : priorEntries.join(", "))}</li>
+          <li>{t.steps.s5(p.leanSeats, p.historicalResidualSeats)}</li>
+          <li>{t.steps.s6}</li>
+          <li>{t.steps.s7(p.blocSdSeats)}</li>
+          <li>{t.steps.s8(p.listSdPointsAt8pct, p.listSdFloorPoints ?? 0, p.arabSwingSdSeats ?? 0)}</li>
+          <li>{t.steps.s9(p.consolidateSdSeats)}</li>
+          <li>{t.steps.s10(f.inputs.agreements.length, runs)}</li>
+          <li>{t.steps.s11}</li>
         </ol>
       </section>
 
@@ -132,8 +136,8 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         <p className="note">{t.record.intro}</p>
         <div className="table-scroll">
           <table className="data-table fc-table">
-            <thead><tr><th scope="col">{t.record.cols.date}</th><th scope="col" className="num">{t.record.cols.net}</th><th scope="col" className="num">{t.record.cols.opp}</th><th scope="col" className="num">{t.record.cols.arab}</th><th scope="col" className="num">{t.record.cols.mid}</th><th scope="col" className="num">{t.record.cols.chance}</th><th scope="col">{t.record.cols.status}</th></tr></thead>
-            <tbody>{history.map((r, i) => <tr key={i}><th scope="row">{shortDate(r.generated, lang)}</th><td className="num">{r.blocs.net}</td><td className="num">{r.blocs.opp}</td><td className="num">{r.blocs.arab}</td><td className="num">{r.blocs.mid}</td><td className="num">{t.prediction.pct(r.majority.net)}</td><td>{r.final ? <b>{t.record.final}</b> : t.record.draft}</td></tr>)}</tbody>
+            <thead><tr><th scope="col">{t.record.cols.date}</th><th scope="col" className="num">{t.record.cols.version}</th><th scope="col" className="num">{t.record.cols.net}</th><th scope="col" className="num">{t.record.cols.opp}</th><th scope="col" className="num">{t.record.cols.arab}</th><th scope="col" className="num">{t.record.cols.mid}</th><th scope="col" className="num">{t.record.cols.chance}</th><th scope="col">{t.record.cols.status}</th></tr></thead>
+            <tbody>{history.map((r, i) => <tr key={i}><th scope="row">{shortDate(r.generated, lang)}</th><td className="num">{r.parameters?.version ?? 1}</td><td className="num">{r.blocs.net}</td><td className="num">{r.blocs.opp}</td><td className="num">{r.blocs.arab}</td><td className="num">{r.blocs.mid}</td><td className="num">{t.prediction.pct(r.majority.net)}</td><td>{r.final ? <b>{t.record.final}</b> : t.record.draft}</td></tr>)}</tbody>
           </table>
         </div>
         <h3 className="sec-h3 fc-sub">{t.record.changesH}</h3>

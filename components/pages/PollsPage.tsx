@@ -122,7 +122,8 @@ export default function PollsPage({ lang }: { lang: Lang }) {
     <h2 id="forecast-method" className="sec-h">How the forecast is made</h2>
     <p className="note">
       The forecast is the site&apos;s own model, offered beside the two averages and scored against them when the result is in: the field polls
-      ({forecast.inputs.field.length}, without {forecast.inputs.checks.map((p) => p.pollster).join(" and ")}) turned back into vote shares, shifted by {forecast.parameters.leanSeats} seats toward
+      ({forecast.inputs.field.length}, without {forecast.inputs.checks.map((p) => p.pollster).join(" and ")}) read back into vote shares, corrected for the kinds of list the final-week polls have
+      missed in one direction since 2013 (Shas and the Arab lists up, first-time lists near the threshold and Bennett&apos;s list down), shifted by {forecast.parameters.leanSeats} seats toward
       the Netanyahu bloc (the pollsters&apos; average miss on that bloc since 2015) and run through {forecast.runs.toLocaleString("en")} simulated elections with the threshold and Bader-Ofer.
       The Netanyahu bloc reaches 61 in {forecast.majority.net}% of runs, the anti-Netanyahu Zionist bloc in {forecast.majority.oppZionist}%, neither in {forecast.majority.neither}%.{" "}
       <Link href="/forecast">The forecast page</Link> has every step, parameter and input, the record the rules come from, the daily runs and the scoring rule (generated {mediumDate(forecast.generated)}).

@@ -11,14 +11,17 @@ export type Forecast = {
   runs: number;
   seed: number;
   method: string;
-  inputs: { field: { id: string; pollster: string; published: string; n: number | null }[]; checks: { id: string; pollster: string; published: string }[]; agreements: string[][] };
-  parameters: { leanSeats: number; fieldOnly: boolean; historicalResidualSeats: number; blocSdSeats: number; listSdPointsAt8pct: number; consolidateSdSeats: number };
-  blocs: Record<"net" | "opp" | "mid" | "arab", { point: number; mean: number; lo: number; hi: number }>;
+  inputs: { field: { id: string; pollster: string; firm?: string | null; published: string; n: number | null; weight?: number }[]; checks: { id: string; pollster: string; published: string }[]; agreements: string[][]; withdrawn?: string[] };
+  /** Version 2 (2026-10-24): scripts/forecast/model.mjs DEFAULTS, as run. */
+  parameters: { version?: number; windowDays?: number; fieldOnly: boolean; firmWeights?: boolean; sharesMethod?: string; listPriors?: Record<string, number | string>; leanSeats: number; leanNetOfShas?: boolean; historicalResidualSeats: number; blocSdSeats: number; listSdPointsAt8pct: number; listSdFloorPoints?: number; zeroSumWithinBloc?: boolean; arabSwingSdSeats?: number; consolidateSdSeats: number; fringeShare?: number; pointRule?: string };
+  /** `point` is the sum of the bloc's list points (scored); `median` the median of the bloc's simulated total (reported). */
+  blocs: Record<"net" | "opp" | "mid" | "arab", { point: number; median?: number; mean: number; lo: number; hi: number }>;
   /** Share of runs, in whole percent: the Netanyahu bloc at 61+, the anti-Netanyahu Zionist bloc at 61+, neither. */
   majority: { net: number; oppZionist: number; neither: number; oppWithArabAndMid: number };
   netLargerThanOpp: number;
   largestList: Record<string, number>;
-  lists: Record<string, { share: number; point: number; mean: number; lo: number; hi: number; passes: number }>;
+  /** `prior`: the list's class prior in vote-share points; `call`: passes >= 50, the threshold call that is scored. */
+  lists: Record<string, { share: number; prior?: number; point: number; mean: number; lo: number; hi: number; passes: number; call?: boolean }>;
   scoring: string;
 };
 

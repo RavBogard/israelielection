@@ -1,0 +1,2005 @@
+{
+ "election": "2021-03-23",
+ "key": "2021-03",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/2021_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/2021_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud",
+  "ya": "Yesh Atid",
+  "shas": "Shas",
+  "bw": "Blue and White",
+  "yamina": "Yamina",
+  "labor": "Labor",
+  "utj": "United Torah Judaism",
+  "yb": "Yisrael Beiteinu",
+  "rz": "Religious Zionist Party",
+  "jl": "Joint List",
+  "nh": "New Hope",
+  "meretz": "Meretz",
+  "raam": "Ra'am",
+  "nep": "New Economic Party"
+ },
+ "blocs": {
+  "likud": "net",
+  "ya": "opp",
+  "shas": "net",
+  "bw": "opp",
+  "yamina": "mid",
+  "labor": "opp",
+  "utj": "net",
+  "yb": "opp",
+  "rz": "net",
+  "jl": "arab",
+  "nh": "opp",
+  "meretz": "opp",
+  "raam": "arab",
+  "nep": "opp"
+ },
+ "blocNote": "Netanyahu bloc as calibration.json counts it for 2021: Likud, Shas, UTJ, Religious Zionism. Yamina (Bennett, uncommitted) is 'mid'. New Hope is anti-Netanyahu ('opp').",
+ "result": {
+  "validVotes": 4410052,
+  "lists": {
+   "likud": {
+    "votes": 1066892,
+    "pct": 24.192,
+    "seats": 30,
+    "passed": true
+   },
+   "ya": {
+    "votes": 614112,
+    "pct": 13.925,
+    "seats": 17,
+    "passed": true
+   },
+   "shas": {
+    "votes": 316008,
+    "pct": 7.166,
+    "seats": 9,
+    "passed": true
+   },
+   "bw": {
+    "votes": 292257,
+    "pct": 6.627,
+    "seats": 8,
+    "passed": true
+   },
+   "yamina": {
+    "votes": 273836,
+    "pct": 6.209,
+    "seats": 7,
+    "passed": true
+   },
+   "labor": {
+    "votes": 268767,
+    "pct": 6.094,
+    "seats": 7,
+    "passed": true
+   },
+   "utj": {
+    "votes": 248391,
+    "pct": 5.632,
+    "seats": 7,
+    "passed": true
+   },
+   "yb": {
+    "votes": 248370,
+    "pct": 5.632,
+    "seats": 7,
+    "passed": true
+   },
+   "rz": {
+    "votes": 225641,
+    "pct": 5.117,
+    "seats": 6,
+    "passed": true
+   },
+   "jl": {
+    "votes": 212583,
+    "pct": 4.82,
+    "seats": 6,
+    "passed": true
+   },
+   "nh": {
+    "votes": 209161,
+    "pct": 4.743,
+    "seats": 6,
+    "passed": true
+   },
+   "meretz": {
+    "votes": 202218,
+    "pct": 4.585,
+    "seats": 6,
+    "passed": true
+   },
+   "raam": {
+    "votes": 167064,
+    "pct": 3.788,
+    "seats": 4,
+    "passed": true
+   },
+   "nep": {
+    "votes": 34883,
+    "pct": 0.791,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "yamina",
+   "nh"
+  ],
+  [
+   "ya",
+   "yb"
+  ],
+  [
+   "bw",
+   "nep"
+  ],
+  [
+   "likud",
+   "rz"
+  ],
+  [
+   "labor",
+   "meretz"
+  ],
+  [
+   "shas",
+   "utj"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "channel-13-2021-03-19",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "19 Mar 21",
+   "published": "2021-03-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-03-19",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "18–19 Mar 21",
+   "published": "2021-03-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "nh": {
+     "seats": 9
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-2021-03-18",
+   "pollster": "Mako",
+   "firm": "Smith",
+   "fieldwork": "17–18 Mar 21",
+   "published": "2021-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "nh": {
+     "seats": 9
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2021-03-18",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "18 Mar 21",
+   "published": "2021-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 8
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2021-03-18",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "17–18 Mar 21",
+   "published": "2021-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "nh": {
+     "seats": 9
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2021-03-18",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "16–18 Mar 21",
+   "published": "2021-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "direct-polls-2021-03-18",
+   "pollster": "Direct Polls",
+   "firm": "Direct Polls",
+   "fieldwork": "17–18 Mar 21",
+   "published": "2021-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 17
+    },
+    "bw": {
+     "seats": 7
+    },
+    "jl": {
+     "seats": 7
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 9
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "nh": {
+     "seats": 7
+    },
+    "labor": {
+     "seats": 4
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-03-16",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "16 Mar 21",
+   "published": "2021-03-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2021-03-15",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "15 Mar 21",
+   "published": "2021-03-15",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2021-03-14",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "14 Mar 21",
+   "published": "2021-03-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 9
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 6
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2021-03-11",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "11 Mar 21",
+   "published": "2021-03-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 4,
+     "pct": "3.9%"
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 4,
+     "pct": "3.6%"
+    },
+    "raam": {
+     "seats": 4,
+     "pct": "3.5%"
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 4,
+     "pct": "3.4%"
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2021-03-11",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "11 Mar 21",
+   "published": "2021-03-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2021-03-11",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "11 Mar 21",
+   "published": "2021-03-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 10
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-03-10",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "10 Mar 21",
+   "published": "2021-03-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 4,
+     "pct": "3.55%"
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4,
+     "pct": "3.28%"
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.1%"
+    },
+    "yamina": {
+     "seats": 13
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4,
+     "pct": "3.3%"
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2021-03-09",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "9 Mar 21",
+   "published": "2021-03-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 9
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2021-03-08",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "8 Mar 21",
+   "published": "2021-03-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2021-03-04",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "4 Mar 21",
+   "published": "2021-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 9
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2021-03-04",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "4 Mar 21",
+   "published": "2021-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.0%"
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2021-03-04",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "4 Mar 21",
+   "published": "2021-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 17
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 4
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-03-04",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "4 Mar 21",
+   "published": "2021-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 20
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.0%"
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.0%"
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "direct-polls-2021-03-03",
+   "pollster": "Direct Polls",
+   "firm": "Direct Polls",
+   "fieldwork": "3 Mar 21",
+   "published": "2021-03-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 9
+    },
+    "meretz": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "yamina": {
+     "seats": 13
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-20-2021-03-02",
+   "pollster": "Channel 20",
+   "firm": "Maagar Mohot",
+   "fieldwork": "2 Mar 21",
+   "published": "2021-03-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2021-03-02",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "2 Mar 21",
+   "published": "2021-03-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 11
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-03-02",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "2 Mar 21",
+   "published": "2021-03-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 5
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2021-02-28",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "28 Feb 21",
+   "published": "2021-02-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 19
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2021-02-25",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "25 Feb 21",
+   "published": "2021-02-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 17
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2021-02-25",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "25 Feb 21",
+   "published": "2021-02-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2021-02-23",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "23 Feb 21",
+   "published": "2021-02-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2021-02-23",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "23 Feb 21",
+   "published": "2021-02-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2021-02-23",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "23 Feb 21",
+   "published": "2021-02-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2021_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "ya": {
+     "seats": 18
+    },
+    "bw": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "yamina": {
+     "seats": 12
+    },
+    "nh": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 4
+    },
+    "nep": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23"
+}

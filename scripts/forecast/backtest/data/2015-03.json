@@ -1,0 +1,2238 @@
+{
+ "election": "2015-03-17",
+ "key": "2015-03",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/2015_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/2015_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud",
+  "zu": "Zionist Union",
+  "jl": "Joint List",
+  "ya": "Yesh Atid",
+  "kulanu": "Kulanu",
+  "jh": "The Jewish Home",
+  "shas": "Shas",
+  "yb": "Yisrael Beiteinu",
+  "utj": "United Torah Judaism",
+  "meretz": "Meretz",
+  "yachad": "Yachad (with Otzma Yehudit)"
+ },
+ "blocs": {
+  "likud": "net",
+  "zu": "opp",
+  "jl": "arab",
+  "ya": "opp",
+  "kulanu": "mid",
+  "jh": "net",
+  "shas": "net",
+  "yb": "net",
+  "utj": "net",
+  "meretz": "opp",
+  "yachad": "net"
+ },
+ "blocNote": "Netanyahu bloc as calibration.json counts it for 2015: Likud, Jewish Home, Shas, UTJ, Yisrael Beiteinu, Yachad. Kulanu (centrist, joined the government after the vote) is 'mid'.",
+ "result": {
+  "validVotes": 4210884,
+  "lists": {
+   "likud": {
+    "votes": 985408,
+    "pct": 23.401,
+    "seats": 30,
+    "passed": true
+   },
+   "zu": {
+    "votes": 786313,
+    "pct": 18.673,
+    "seats": 24,
+    "passed": true
+   },
+   "jl": {
+    "votes": 446583,
+    "pct": 10.605,
+    "seats": 13,
+    "passed": true
+   },
+   "ya": {
+    "votes": 371602,
+    "pct": 8.825,
+    "seats": 11,
+    "passed": true
+   },
+   "kulanu": {
+    "votes": 315360,
+    "pct": 7.489,
+    "seats": 10,
+    "passed": true
+   },
+   "jh": {
+    "votes": 283910,
+    "pct": 6.742,
+    "seats": 8,
+    "passed": true
+   },
+   "shas": {
+    "votes": 241613,
+    "pct": 5.738,
+    "seats": 7,
+    "passed": true
+   },
+   "yb": {
+    "votes": 214906,
+    "pct": 5.104,
+    "seats": 6,
+    "passed": true
+   },
+   "utj": {
+    "votes": 210143,
+    "pct": 4.99,
+    "seats": 6,
+    "passed": true
+   },
+   "meretz": {
+    "votes": 165529,
+    "pct": 3.931,
+    "seats": 5,
+    "passed": true
+   },
+   "yachad": {
+    "votes": 125158,
+    "pct": 2.972,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "likud",
+   "jh"
+  ],
+  [
+   "yb",
+   "kulanu"
+  ],
+  [
+   "zu",
+   "meretz"
+  ],
+  [
+   "shas",
+   "utj"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "yedioth-ahronoth-2015-03-13",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Midgam",
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 26
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2015-03-13",
+   "pollster": "Walla",
+   "firm": "Teleseker",
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2015-03-13",
+   "pollster": "Reshet Bet",
+   "firm": null,
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "jerusalem-post-2015-03-13",
+   "pollster": "Jerusalem Post",
+   "firm": "Panels",
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2015-03-13",
+   "pollster": "Channel 2",
+   "firm": null,
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 26
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2015-03-13",
+   "pollster": "Channel 10",
+   "firm": null,
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 20
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-1-2015-03-13",
+   "pollster": "Channel 1",
+   "firm": "Teleseker",
+   "fieldwork": "13 Mar",
+   "published": "2015-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2015-03-12",
+   "pollster": "Maariv",
+   "firm": "Panels",
+   "fieldwork": "12 Mar",
+   "published": "2015-03-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kol-bramah-radio-2015-03-12",
+   "pollster": "Kol Bramah Radio",
+   "firm": "Maagar Mochot",
+   "fieldwork": "12 Mar",
+   "published": "2015-03-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2015-03-12",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "12 Mar",
+   "published": "2015-03-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2015-03-12",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "12 Mar",
+   "published": "2015-03-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 20
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-tzahal-2015-03-11",
+   "pollster": "Galei Tzahal",
+   "firm": "Midgam",
+   "fieldwork": "11 Mar",
+   "published": "2015-03-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2015-03-10",
+   "pollster": "Knesset Channel",
+   "firm": "Panels",
+   "fieldwork": "10 Mar",
+   "published": "2015-03-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 14
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2015-03-10",
+   "pollster": "Channel 2",
+   "firm": null,
+   "fieldwork": "10 Mar",
+   "published": "2015-03-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "geocartography-2015-03-08",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "8 Mar",
+   "published": "2015-03-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 26
+    },
+    "yb": {
+     "seats": 7
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 21
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2015-03-06",
+   "pollster": "Walla",
+   "firm": "Teleseker",
+   "fieldwork": "6 Mar",
+   "published": "2015-03-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2015-03-06",
+   "pollster": "Maariv",
+   "firm": "Panels",
+   "fieldwork": "6 Mar",
+   "published": "2015-03-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2015-03-06",
+   "pollster": "Israel Hayom",
+   "firm": null,
+   "fieldwork": "6 Mar",
+   "published": "2015-03-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 121.",
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-1-2015-03-05",
+   "pollster": "Channel 1",
+   "firm": null,
+   "fieldwork": "5 Mar",
+   "published": "2015-03-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2015-03-04",
+   "pollster": "Channel 2",
+   "firm": "Midgam",
+   "fieldwork": "4 Mar",
+   "published": "2015-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2015-03-04",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "4 Mar",
+   "published": "2015-03-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2015-03-03",
+   "pollster": "Knesset Channel",
+   "firm": "Panels",
+   "fieldwork": "3 Mar",
+   "published": "2015-03-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-tzahal-2015-03-03",
+   "pollster": "Galei Tzahal",
+   "firm": null,
+   "fieldwork": "3 Mar",
+   "published": "2015-03-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 7
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kol-bramah-radio-2015-03-02",
+   "pollster": "Kol Bramah Radio",
+   "firm": "Maagar Mochot",
+   "fieldwork": "2 Mar",
+   "published": "2015-03-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "geocartography-2015-03-01",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "1 Mar",
+   "published": "2015-03-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 22
+    },
+    "jh": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2015-02-27",
+   "pollster": "Walla",
+   "firm": "Teleseker",
+   "fieldwork": "27 Feb",
+   "published": "2015-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2015-02-27",
+   "pollster": "Reshet Bet",
+   "firm": null,
+   "fieldwork": "27 Feb",
+   "published": "2015-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2015-02-27",
+   "pollster": "Maariv",
+   "firm": null,
+   "fieldwork": "27 Feb",
+   "published": "2015-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-jerusalem-post-2015-02-26",
+   "pollster": "Maariv-Jerusalem Post",
+   "firm": "Panels",
+   "fieldwork": "26 Feb",
+   "published": "2015-02-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2015-02-26",
+   "pollster": "Channel 10",
+   "firm": null,
+   "fieldwork": "26 Feb",
+   "published": "2015-02-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 21
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 13
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-1-2015-02-26",
+   "pollster": "Channel 1",
+   "firm": null,
+   "fieldwork": "26 Feb",
+   "published": "2015-02-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2015-02-24",
+   "pollster": "Knesset Channel",
+   "firm": "Panels",
+   "fieldwork": "24 Feb",
+   "published": "2015-02-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 13
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2015-02-24",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "24 Feb",
+   "published": "2015-02-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2015-02-24",
+   "pollster": "Channel 2",
+   "firm": "Midgam",
+   "fieldwork": "24 Feb",
+   "published": "2015-02-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "nana-10-2015-02-22",
+   "pollster": "Nana 10",
+   "firm": "Teleseker",
+   "fieldwork": "22 Feb",
+   "published": "2015-02-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 25
+    },
+    "jh": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "geocartography-2015-02-22",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "22 Feb",
+   "published": "2015-02-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "yb": {
+     "seats": 7
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2015-02-20",
+   "pollster": "Walla",
+   "firm": "Teleseker",
+   "fieldwork": "20 Feb",
+   "published": "2015-02-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2015-02-20",
+   "pollster": "Reshet Bet",
+   "firm": "Smith",
+   "fieldwork": "20 Feb",
+   "published": "2015-02-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 10
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2015-02-19",
+   "pollster": "Maariv",
+   "firm": "Panels",
+   "fieldwork": "19 Feb",
+   "published": "2015-02-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-1-2015-02-19",
+   "pollster": "Channel 1",
+   "firm": "Teleseker",
+   "fieldwork": "19 Feb",
+   "published": "2015-02-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 24
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2015-02-18",
+   "pollster": "Channel 10",
+   "firm": null,
+   "fieldwork": "18 Feb",
+   "published": "2015-02-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 22
+    },
+    "yb": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 23
+    },
+    "jh": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2015-02-17",
+   "pollster": "Knesset Channel",
+   "firm": "Panels",
+   "fieldwork": "17 Feb",
+   "published": "2015-02-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 4
+    },
+    "kulanu": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "bizportal-2015-02-17",
+   "pollster": "Bizportal",
+   "firm": "TRI",
+   "fieldwork": "17 Feb",
+   "published": "2015-02-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2015_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 23
+    },
+    "yb": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 12
+    },
+    "zu": {
+     "seats": 24
+    },
+    "jh": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "jl": {
+     "seats": 12
+    },
+    "yachad": {
+     "seats": 5
+    },
+    "kulanu": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23"
+}

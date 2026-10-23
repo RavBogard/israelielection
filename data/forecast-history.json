@@ -96,6 +96,120 @@
           "passes": 90
         }
       }
+    },
+    {
+      "generated": "2026-10-23",
+      "generatedAt": "2026-10-23T22:24:57.936Z",
+      "final": false,
+      "polls": [
+        "zman-yisrael-2026-10-22",
+        "maariv-2026-10-22",
+        "channel-13-2026-10-21",
+        "channel-12-2026-10-21",
+        "walla-2026-10-20",
+        "kan-11-2026-10-18"
+      ],
+      "parameters": {
+        "version": 2,
+        "windowDays": 7,
+        "fieldOnly": true,
+        "firmWeights": true,
+        "sharesMethod": "dhondt",
+        "listPriors": {
+          "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs).",
+          "shas": 0.8,
+          "raam": 0.6,
+          "jl": 0.4,
+          "byachad": -0.8,
+          "res": -0.8,
+          "poi": -0.8
+        },
+        "leanSeats": 1.7,
+        "leanNetOfShas": false,
+        "historicalResidualSeats": 1.5,
+        "blocSdSeats": 3.1,
+        "listSdPointsAt8pct": 1.08,
+        "listSdFloorPoints": 1,
+        "zeroSumWithinBloc": true,
+        "arabSwingSdSeats": 1.7,
+        "consolidateSdSeats": 1.5,
+        "fringeShare": 1.5,
+        "pointRule": "median"
+      },
+      "blocs": {
+        "net": 54,
+        "opp": 51,
+        "mid": 0,
+        "arab": 15
+      },
+      "majority": {
+        "net": 3,
+        "oppZionist": 0,
+        "neither": 97,
+        "oppWithArabAndMid": 95
+      },
+      "largestList": {
+        "likud": 45,
+        "yashar": 55
+      },
+      "lists": {
+        "likud": {
+          "point": 21,
+          "passes": 100
+        },
+        "otzma": {
+          "point": 8,
+          "passes": 99.8
+        },
+        "shas": {
+          "point": 10,
+          "passes": 100
+        },
+        "utj": {
+          "point": 8,
+          "passes": 99.8
+        },
+        "rz": {
+          "point": 7,
+          "passes": 99.2
+        },
+        "poi": {
+          "point": 0,
+          "passes": 18.9
+        },
+        "noam": {
+          "point": 0,
+          "passes": 0
+        },
+        "yashar": {
+          "point": 22,
+          "passes": 100
+        },
+        "byachad": {
+          "point": 12,
+          "passes": 100
+        },
+        "dem": {
+          "point": 9,
+          "passes": 100
+        },
+        "yb": {
+          "point": 8,
+          "passes": 99.9
+        },
+        "res": {
+          "point": 0,
+          "passes": 22.7
+        },
+        "jl": {
+          "point": 9,
+          "passes": 100
+        },
+        "raam": {
+          "point": 6,
+          "passes": 95.8
+        }
+      }
     }
   ]
 }

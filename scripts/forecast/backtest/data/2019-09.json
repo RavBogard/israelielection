@@ -1,0 +1,1481 @@
+{
+ "election": "2019-09-17",
+ "key": "2019-09",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "bw": "Blue and White",
+  "likud": "Likud",
+  "jl": "Joint List",
+  "shas": "Shas",
+  "yb": "Yisrael Beiteinu",
+  "utj": "United Torah Judaism",
+  "yamina": "Yamina",
+  "lg": "Labor–Gesher",
+  "du": "Democratic Union",
+  "otzma": "Otzma Yehudit"
+ },
+ "blocs": {
+  "bw": "opp",
+  "likud": "net",
+  "jl": "arab",
+  "shas": "net",
+  "yb": "mid",
+  "utj": "net",
+  "yamina": "net",
+  "lg": "opp",
+  "du": "opp",
+  "otzma": "mid"
+ },
+ "blocNote": "Netanyahu bloc as Wikipedia's 'Gov.' column and calibration.json count it: Likud, Shas, UTJ, Yamina. Yisrael Beiteinu (Lieberman, in neither bloc) is 'mid'. Otzma Yehudit is right-wing but outside the counted bloc; it is marked 'mid' so the bloc figures match calibration.json (it failed, so the result bloc totals do not depend on this).",
+ "result": {
+  "validVotes": 4436806,
+  "lists": {
+   "bw": {
+    "votes": 1151214,
+    "pct": 25.947,
+    "seats": 33,
+    "passed": true
+   },
+   "likud": {
+    "votes": 1113617,
+    "pct": 25.1,
+    "seats": 32,
+    "passed": true
+   },
+   "jl": {
+    "votes": 470211,
+    "pct": 10.598,
+    "seats": 13,
+    "passed": true
+   },
+   "shas": {
+    "votes": 330199,
+    "pct": 7.442,
+    "seats": 9,
+    "passed": true
+   },
+   "yb": {
+    "votes": 310154,
+    "pct": 6.99,
+    "seats": 8,
+    "passed": true
+   },
+   "utj": {
+    "votes": 268775,
+    "pct": 6.058,
+    "seats": 7,
+    "passed": true
+   },
+   "yamina": {
+    "votes": 260655,
+    "pct": 5.875,
+    "seats": 7,
+    "passed": true
+   },
+   "lg": {
+    "votes": 212782,
+    "pct": 4.796,
+    "seats": 6,
+    "passed": true
+   },
+   "du": {
+    "votes": 192495,
+    "pct": 4.339,
+    "seats": 5,
+    "passed": true
+   },
+   "otzma": {
+    "votes": 83609,
+    "pct": 1.884,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "yamina",
+   "likud"
+  ],
+  [
+   "du",
+   "lg"
+  ],
+  [
+   "utj",
+   "shas"
+  ],
+  [
+   "bw",
+   "yb"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "hot-2019-09-13",
+   "pollster": "HOT",
+   "firm": "Shvakim Panorama",
+   "fieldwork": "10–13 Sep",
+   "published": "2019-09-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 33
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "lg": {
+     "seats": 4
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-09-13",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "13 Sep",
+   "published": "2019-09-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 4
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-09-13",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "12–13 Sep",
+   "published": "2019-09-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 8
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-09-12",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "12 Sep",
+   "published": "2019-09-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 33
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 8
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2019-09-12",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "12 Sep",
+   "published": "2019-09-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 36
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 4
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-09-12",
+   "pollster": "Kan 11",
+   "firm": "KANTAR",
+   "fieldwork": "11–12 Sep",
+   "published": "2019-09-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 7
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-09-12",
+   "pollster": "103fm",
+   "firm": "Smith",
+   "fieldwork": "11–12 Sep",
+   "published": "2019-09-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 33
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 4
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-09-11",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "10–11 Sep",
+   "published": "2019-09-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 33
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 4
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-09-10",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "10 Sep",
+   "published": "2019-09-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-09-10",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "9–10 Sep",
+   "published": "2019-09-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-09-09",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "8–9 Sep",
+   "published": "2019-09-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-09-09",
+   "pollster": "Kan 11",
+   "firm": "KANTAR",
+   "fieldwork": "9 Sep",
+   "published": "2019-09-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-09-05",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "4–5 Sep",
+   "published": "2019-09-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-09-05",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "4–5 Sep",
+   "published": "2019-09-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 11
+    },
+    "du": {
+     "seats": 4
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-09-05",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "5 Sep",
+   "published": "2019-09-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 11
+    },
+    "du": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.76%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-09-05",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "4–5 Sep",
+   "published": "2019-09-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2019-09-04",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "4 Sep",
+   "published": "2019-09-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-09-02",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "1–2 Sep",
+   "published": "2019-09-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "lg": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-09-01",
+   "pollster": "Kan 11",
+   "firm": "KANTAR",
+   "fieldwork": "1 Sep",
+   "published": "2019-09-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-09-01",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "1 Sep",
+   "published": "2019-09-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 11
+    },
+    "du": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-08-29",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "27–29 Aug",
+   "published": "2019-08-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "bw": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 11
+    },
+    "du": {
+     "seats": 6
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-08-28",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "28 Aug",
+   "published": "2019-08-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 7
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-maariv-2019-08-28",
+   "pollster": "103fm/Maariv",
+   "firm": "Smith",
+   "fieldwork": "28 Aug",
+   "published": "2019-08-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 7
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-08-25",
+   "pollster": "Kan 11",
+   "firm": "KANTAR",
+   "fieldwork": "22–25 Aug",
+   "published": "2019-08-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 6
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-08-22",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "20–22 Aug",
+   "published": "2019-08-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 4
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 6
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-08-22",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "22 Aug",
+   "published": "2019-08-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "bw": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 7
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-08-22",
+   "pollster": "103fm",
+   "firm": "Smith",
+   "fieldwork": "22 Aug",
+   "published": "2019-08-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "bw": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "lg": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 10
+    },
+    "du": {
+     "seats": 7
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-08-21",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "21 Aug",
+   "published": "2019-08-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_September_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "bw": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 11
+    },
+    "lg": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "du": {
+     "seats": 7
+    },
+    "zehut": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23"
+}

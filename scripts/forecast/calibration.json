@@ -1,29 +1,151 @@
 {
-  "about": "Final-week polls against results, Netanyahu-aligned bloc, every election under the 3.25% threshold. 'field' is the mean of the final poll of each firm other than Direct Polls / Shlomo Filber's firms; 'directPolls' is that firm's final poll where it published one in the final week. Source: Wikipedia opinion-polling pages for each election, read 2026-10-23. Bloc definitions follow the tables: 2015 Likud+Jewish Home+Shas+UTJ+Yisrael Beiteinu+Yachad; Apr 2019 the right bloc incl. Kulanu and YB; Sep 2019 and Mar 2020 Likud+Shas+UTJ+Yamina; 2021 Likud+Shas+UTJ+RZ; 2022 Likud+Shas+UTJ+RZ.",
+  "about": "Final-week polls against results, Netanyahu-aligned bloc, every election under the 3.25% threshold. 'field' is the mean of the final poll of each firm other than Direct Polls / Shlomo Filber's firms; 'directPolls' is that firm's final poll where it published one in the final week. Source: Wikipedia opinion-polling pages for each election, read 2026-10-23. Bloc definitions follow the tables: 2015 Likud+Jewish Home+Shas+UTJ+Yisrael Beiteinu+Yachad; Apr 2019 the right bloc incl. Kulanu and YB; Sep 2019 and Mar 2020 Likud+Shas+UTJ+Yamina; 2021 Likud+Shas+UTJ+RZ; 2022 Likud+Shas+UTJ+RZ. 'shasError' is Shas's own seat miss (result minus final-week polls) in the same election, from round1/B-list-bias.md; kept for the record: taking the lean net of it was tested in backtest/v2.mjs and rejected (it turns the leave-future-out lean negative and under-predicts the bloc by 3 seats).",
   "elections": [
-    { "date": "2015-03-17", "field": 56.4, "directPolls": null, "result": 57 },
-    { "date": "2019-04-09", "field": 64.7, "directPolls": null, "result": 65 },
-    { "date": "2019-09-17", "field": 55.6, "directPolls": null, "result": 55 },
-    { "date": "2020-03-02", "field": 57.3, "directPolls": 59, "result": 58 },
-    { "date": "2021-03-23", "field": 50.3, "directPolls": 53, "result": 52 },
-    { "date": "2022-11-01", "field": 60.3, "directPolls": 62, "result": 64 }
+    {
+      "date": "2015-03-17",
+      "field": 56.4,
+      "directPolls": null,
+      "result": 57,
+      "shasError": -0.4
+    },
+    {
+      "date": "2019-04-09",
+      "field": 64.7,
+      "directPolls": null,
+      "result": 65,
+      "shasError": 2.7
+    },
+    {
+      "date": "2019-09-17",
+      "field": 55.6,
+      "directPolls": null,
+      "result": 55,
+      "shasError": 2.0
+    },
+    {
+      "date": "2020-03-02",
+      "field": 57.3,
+      "directPolls": 59,
+      "result": 58,
+      "shasError": 0.7
+    },
+    {
+      "date": "2021-03-23",
+      "field": 50.3,
+      "directPolls": 53,
+      "result": 52,
+      "shasError": 0.9
+    },
+    {
+      "date": "2022-11-01",
+      "field": 60.3,
+      "directPolls": 62,
+      "result": 64,
+      "shasError": 2.6
+    }
   ],
   "thresholdLists": {
     "about": "Lists shown at 4-5 seats by most final-week polls, and whether they passed.",
     "cases": [
-      { "election": "2015", "list": "Yachad", "passed": false },
-      { "election": "2019-04", "list": "New Right", "passed": false },
-      { "election": "2019-04", "list": "Zehut", "passed": false },
-      { "election": "2019-09", "list": "Otzma Yehudit", "passed": false },
-      { "election": "2021", "list": "Ra'am", "passed": true },
-      { "election": "2021", "list": "Meretz", "passed": true },
-      { "election": "2021", "list": "Religious Zionism", "passed": true },
-      { "election": "2021", "list": "Blue and White", "passed": true },
-      { "election": "2022", "list": "Meretz", "passed": false },
-      { "election": "2022", "list": "Hadash-Ta'al", "passed": true },
-      { "election": "2022", "list": "Ra'am", "passed": true },
-      { "election": "2022", "list": "Labor", "passed": true }
+      {
+        "election": "2015",
+        "list": "Yachad",
+        "passed": false
+      },
+      {
+        "election": "2019-04",
+        "list": "New Right",
+        "passed": false
+      },
+      {
+        "election": "2019-04",
+        "list": "Zehut",
+        "passed": false
+      },
+      {
+        "election": "2019-09",
+        "list": "Otzma Yehudit",
+        "passed": false
+      },
+      {
+        "election": "2021",
+        "list": "Ra'am",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Meretz",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Religious Zionism",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Blue and White",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Meretz",
+        "passed": false
+      },
+      {
+        "election": "2022",
+        "list": "Hadash-Ta'al",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Ra'am",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Labor",
+        "passed": true
+      }
     ]
   },
-  "perListError": { "about": "theMadad, 2022: mean absolute error per list in polls 0-14 days before the vote.", "meanAbsSeats": 1.16 }
+  "perListError": {
+    "about": "theMadad, 2022: mean absolute error per list in polls 0-14 days before the vote.",
+    "meanAbsSeats": 1.16
+  },
+  "listPriors": {
+    "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs).",
+    "shas": 0.8,
+    "raam": 0.6,
+    "jl": 0.4,
+    "byachad": -0.8,
+    "res": -0.8,
+    "poi": -0.8
+  },
+  "withdrawn": {
+    "about": "Lists that left the race after the ballot was set; still on the ballot, their votes are wasted. Dropped from the model, their polled share folded into the fringe.",
+    "lists": [
+      {
+        "id": "bw",
+        "date": "2026-10-19",
+        "source": "Times of Israel, Oct 19, 2026: Gantz withdraws Blue and White"
+      }
+    ]
+  },
+  "fringe": {
+    "about": "Share of the valid vote for lists the polls do not report (Noam, Haredi Public, micro-lists) plus the withdrawn list's residual: 0.7-1.5% in 2021-22 outside the polled lists (round1/F-review.md F4).",
+    "share": 0.015
+  },
+  "smallList": {
+    "about": "Final-two-week misses of lists polled near the threshold, 2013-2022: sd about 1.0 point, Gaussian (round1/C-threshold.md 1.1).",
+    "sdFloorPoints": 1.0
+  },
+  "arabSwing": {
+    "about": "RMS of the Arab lists' bloc miss in 2020-22, +1.0, -1.7, +2.0 seats: a turnout swing of their own (round1/F-review.md F5, round1/E-context.md 2.2).",
+    "sdSeats": 1.7
+  },
+  "windowDays": {
+    "about": "One latest poll per outlet within this many days of the newest; in 2019-22 the latest poll per firm beat every rule that let older polls back in (round1/D-pollsters.md 3).",
+    "days": 7
+  }
 }

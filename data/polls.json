@@ -3306,7 +3306,7 @@
       "url": "https://www.walla.co.il/news/politics/383958175",
       "n": 601,
       "margin": null,
-      "note": "Imported from Wikipedia (revision 1381477545).",
+      "note": "Imported from Wikipedia (revision 1381477545). Amcha Yisrael 2.9% (below the threshold) added by hand from the Wikipedia row, 2026-10-23; the import had dropped it.",
       "results": {
         "likud": {
           "seats": 19
@@ -3343,6 +3343,11 @@
         },
         "res": {
           "seats": 4
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.9%"
         }
       },
       "combined": []

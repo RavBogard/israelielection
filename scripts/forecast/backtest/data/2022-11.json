@@ -1,0 +1,2034 @@
+{
+ "election": "2022-11-01",
+ "key": "2022-11",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud",
+  "ya": "Yesh Atid",
+  "rz": "Religious Zionism–Otzma Yehudit",
+  "nu": "National Unity",
+  "shas": "Shas",
+  "utj": "United Torah Judaism",
+  "yb": "Yisrael Beiteinu",
+  "raam": "Ra'am",
+  "ht": "Hadash–Ta'al",
+  "labor": "Labor",
+  "meretz": "Meretz",
+  "balad": "Balad",
+  "jh": "The Jewish Home"
+ },
+ "blocs": {
+  "likud": "net",
+  "ya": "opp",
+  "rz": "net",
+  "nu": "opp",
+  "shas": "net",
+  "utj": "net",
+  "yb": "opp",
+  "raam": "arab",
+  "ht": "arab",
+  "labor": "opp",
+  "meretz": "opp",
+  "balad": "arab",
+  "jh": "mid"
+ },
+ "blocNote": "Netanyahu bloc as calibration.json counts it for 2022: Likud, Shas, UTJ, Religious Zionism–Otzma. The Jewish Home (Shaked, uncommitted, failed) is 'mid'. The fringe Pirates–Yesh Kivun agreement is omitted (neither list is polled).",
+ "result": {
+  "validVotes": 4764742,
+  "lists": {
+   "likud": {
+    "votes": 1115336,
+    "pct": 23.408,
+    "seats": 32,
+    "passed": true
+   },
+   "ya": {
+    "votes": 847435,
+    "pct": 17.786,
+    "seats": 24,
+    "passed": true
+   },
+   "rz": {
+    "votes": 516470,
+    "pct": 10.839,
+    "seats": 14,
+    "passed": true
+   },
+   "nu": {
+    "votes": 432482,
+    "pct": 9.077,
+    "seats": 12,
+    "passed": true
+   },
+   "shas": {
+    "votes": 392964,
+    "pct": 8.247,
+    "seats": 11,
+    "passed": true
+   },
+   "utj": {
+    "votes": 280194,
+    "pct": 5.881,
+    "seats": 7,
+    "passed": true
+   },
+   "yb": {
+    "votes": 213687,
+    "pct": 4.485,
+    "seats": 6,
+    "passed": true
+   },
+   "raam": {
+    "votes": 194047,
+    "pct": 4.073,
+    "seats": 5,
+    "passed": true
+   },
+   "ht": {
+    "votes": 178735,
+    "pct": 3.751,
+    "seats": 5,
+    "passed": true
+   },
+   "labor": {
+    "votes": 175992,
+    "pct": 3.694,
+    "seats": 4,
+    "passed": true
+   },
+   "meretz": {
+    "votes": 150793,
+    "pct": 3.165,
+    "seats": 0,
+    "passed": false
+   },
+   "balad": {
+    "votes": 138617,
+    "pct": 2.909,
+    "seats": 0,
+    "passed": false
+   },
+   "jh": {
+    "votes": 56775,
+    "pct": 1.192,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "labor",
+   "meretz"
+  ],
+  [
+   "likud",
+   "rz"
+  ],
+  [
+   "nu",
+   "ya"
+  ],
+  [
+   "shas",
+   "utj"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "channel-13-2022-10-28",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "28 Oct 22",
+   "published": "2022-10-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 27
+    },
+    "nu": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 15
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.75%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2022-10-28",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "28 Oct 22",
+   "published": "2022-10-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2022-10-27",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "26-27 Oct 22",
+   "published": "2022-10-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2022-10-27",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "26-27 Oct 22",
+   "published": "2022-10-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-israel-2022-10-27",
+   "pollster": "Galei Israel",
+   "firm": "Smith",
+   "fieldwork": "27 Oct 22",
+   "published": "2022-10-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-14-2022-10-27",
+   "pollster": "Channel 14",
+   "firm": "Direct Polls",
+   "fieldwork": "27 Oct 22",
+   "published": "2022-10-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2022-10-26",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "23-26 Oct 22",
+   "published": "2022-10-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 15
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-knesset-channel-2022-10-25",
+   "pollster": "Mako/Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "24–25 Oct 22",
+   "published": "2022-10-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-tzahal-2022-10-25",
+   "pollster": "Galei Tzahal",
+   "firm": "Midgam",
+   "fieldwork": "25 Oct 22",
+   "published": "2022-10-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-israel-2022-10-25",
+   "pollster": "Galei Israel",
+   "firm": "Smith",
+   "fieldwork": "25 Oct 22",
+   "published": "2022-10-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2022-10-25",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "25 Oct 22",
+   "published": "2022-10-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 27
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-14-2022-10-24",
+   "pollster": "Channel 14",
+   "firm": "Direct Polls",
+   "fieldwork": "24 Oct 22",
+   "published": "2022-10-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2022-10-24",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "24 Oct 22",
+   "published": "2022-10-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2022-10-23",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "23 Oct 22",
+   "published": "2022-10-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2022-10-23",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "23 Oct 22",
+   "published": "2022-10-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2022-10-20",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "19-20 Oct 22",
+   "published": "2022-10-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-14-2022-10-20",
+   "pollster": "Channel 14",
+   "firm": "Direct Polls",
+   "fieldwork": "20 Oct 22",
+   "published": "2022-10-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2022-10-20",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "20 Oct 22",
+   "published": "2022-10-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 26
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-knesset-channel-2022-10-19",
+   "pollster": "Mako/Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "18–19 Oct 22",
+   "published": "2022-10-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2022-10-19",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "19 Oct 22",
+   "published": "2022-10-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2022-10-18",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "18 Oct 22",
+   "published": "2022-10-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2022-10-18",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "18 Oct 22",
+   "published": "2022-10-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2022-10-13",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "12–13 Oct 22",
+   "published": "2022-10-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.7%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-14-2022-10-13",
+   "pollster": "Channel 14",
+   "firm": "Direct Polls",
+   "fieldwork": "13 Oct 22",
+   "published": "2022-10-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2022-10-13",
+   "pollster": "Channel 13",
+   "firm": "Camil Fuchs",
+   "fieldwork": "13 Oct 22",
+   "published": "2022-10-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 26
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "rz": {
+     "seats": 12
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-knesset-channel-2022-10-12",
+   "pollster": "Mako/Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "11–12 Oct 22",
+   "published": "2022-10-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "labor": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2022-10-11",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "11 Oct 22",
+   "published": "2022-10-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2022-10-11",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "11 Oct 22",
+   "published": "2022-10-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2022-10-11",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "11 Oct 22",
+   "published": "2022-10-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 25
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2022-10-06",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "6 Oct 22",
+   "published": "2022-10-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 14
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-14-2022-10-06",
+   "pollster": "Channel 14",
+   "firm": "Direct Polls",
+   "fieldwork": "6 Oct 22",
+   "published": "2022-10-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 35
+    },
+    "ya": {
+     "seats": 23
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 9
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "labor": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 11
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-knesset-channel-2022-10-04",
+   "pollster": "Mako/Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "3–4 Oct 22",
+   "published": "2022-10-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2022_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "ya": {
+     "seats": 24
+    },
+    "nu": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 8
+    },
+    "jh": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "labor": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "rz": {
+     "seats": 13
+    },
+    "ht": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23"
+}

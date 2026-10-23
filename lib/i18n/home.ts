@@ -38,7 +38,7 @@ const en = {
     pollReport: "Poll report",
     everyPoll: "Every poll",
     variantSource: (without: string): Bits => ["The same average without ", without, ", Shlomo Filber’s firms. "],
-    forecastSource: (net: number, opp: number, neither: number): Bits => ["The site’s model, not an average: the field polls shifted by the pollsters’ historical miss and run through simulated elections. The Netanyahu bloc reaches 61 in ", net, "% of runs, the anti-Netanyahu Zionist bloc in ", opp, "%, neither in ", neither, "%. "],
+    forecastSource: (net: number, opp: number, neither: number): Bits => ["The site’s model, not an average: the field polls, corrected for the kinds of list the polls have historically missed, run through simulated elections. The Netanyahu bloc reaches 61 in ", net, "% of runs, the anti-Netanyahu Zionist bloc in ", opp, "%, neither in ", neither, "%. "],
     forecastMethod: "How the forecast works",
     newest: "Newest: ",
     stale: "Saved count (stale). ",

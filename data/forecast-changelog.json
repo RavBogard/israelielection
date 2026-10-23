@@ -5,6 +5,11 @@
       "date": "2026-10-23",
       "en": "First run: the rules described on this page. Netanyahu bloc 52 seats; 61 or more in 6% of runs.",
       "he": "ריצה ראשונה: הכללים שמתוארים בעמוד הזה. גוש נתניהו 52 מנדטים; 61 ומעלה ב-6% מהריצות."
+    },
+    {
+      "date": "2026-10-24",
+      "en": "Version 2, after a six-memo research round backtested on 2015–2022 (docs/research/polls-method/round1). Poll seats are read back to vote shares by the D'Hondt midpoint, never below the threshold (the old seats/120 rule put every 4-seat list under it). Priors by list class from the record since 2013: Shas +0.8 points, Ra'am +0.6, Joint List +0.4, B'Yachad −0.8, Reservists −0.8, Amcha Yisrael −0.8. Blue and White, withdrawn Oct 19, dropped; 1.5% reserved for lists the polls do not report. Per-list noise sums to zero inside each bloc, with a turnout swing of the Arab lists' own (1.7 seats) and a 1.0-point floor for small lists. Two outlets polled by one firm share its weight; 7-day window. Central seats are each list's median run, reconciled to 120. Backtest, six elections: per-list error 1.77 → 1.36 seats, wrong threshold calls 9 → 4, mean bloc error 2.00 → 1.33; Netanyahu-bloc error 1.00 → 1.83. Netanyahu bloc 54, opposition 51, Arab lists 15; 61 or more in 3% of runs.",
+      "he": "גרסה 2, אחרי סבב מחקר של שישה מסמכים שנבחן לאחור על 2015–2022 (docs/research/polls-method/round1). המנדטים בסקר מומרים חזרה לאחוזי קולות לפי אמצע טווח ד'הונדט, ולעולם לא מתחת לאחוז החסימה (הכלל הישן של מנדטים חלקי 120 הוריד כל רשימה של 4 מנדטים מתחתיו). תיקונים לפי סוג הרשימה מההיסטוריה מאז 2013: ש\"ס +0.8 נקודות, רע\"ם +0.6, הרשימה המשותפת +0.4, ביחד −0.8, המילואימניקים −0.8, עמך ישראל −0.8. כחול לבן, שפרשה ב-19.10, הוסרה; 1.5% שמורים לרשימות שהסקרים לא מודדים. הרעש לכל רשימה מתאפס בתוך כל גוש, עם תנודת הצבעה נפרדת למפלגות הערביות (1.7 מנדטים) ורצפה של נקודה אחת לרשימות קטנות. שני גופים שאותו מכון סוקר עבורם חולקים את משקלו; חלון של 7 ימים. המנדטים המרכזיים הם החציון של כל רשימה, מותאם ל-120. בבחינה לאחור על שש מערכות: טעות לרשימה 1.77 → 1.36 מנדטים, קריאות אחוז חסימה שגויות 9 → 4, טעות ממוצעת לגוש 2.00 → 1.33; טעות בגוש נתניהו 1.00 → 1.83. גוש נתניהו 54, גוש האופוזיציה 51, המפלגות הערביות 15; 61 ומעלה ב-3% מהריצות."
     }
   ]
 }
