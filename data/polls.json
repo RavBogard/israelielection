@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -3619,6 +3619,62 @@
         },
         "yashar": {
           "seats": 23
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "3.0%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "maariv-2026-10-22",
+      "pollster": "Maariv",
+      "firm": "LRI+P4A",
+      "fieldwork": "Oct 19–22, 2026",
+      "published": "2026-10-22",
+      "via": "Maariv",
+      "url": "https://www.maariv.co.il/news/elections-2026/article-1380289",
+      "n": 1048,
+      "margin": null,
+      "note": "Imported from Wikipedia (revision 1381577859).",
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "byachad": {
+          "seats": 15
+        },
+        "rz": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yashar": {
+          "seats": 21
         },
         "res": {
           "seats": 4
