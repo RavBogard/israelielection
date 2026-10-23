@@ -1,0 +1,29 @@
+{
+  "about": "Final-week polls against results, Netanyahu-aligned bloc, every election under the 3.25% threshold. 'field' is the mean of the final poll of each firm other than Direct Polls / Shlomo Filber's firms; 'directPolls' is that firm's final poll where it published one in the final week. Source: Wikipedia opinion-polling pages for each election, read 2026-10-23. Bloc definitions follow the tables: 2015 Likud+Jewish Home+Shas+UTJ+Yisrael Beiteinu+Yachad; Apr 2019 the right bloc incl. Kulanu and YB; Sep 2019 and Mar 2020 Likud+Shas+UTJ+Yamina; 2021 Likud+Shas+UTJ+RZ; 2022 Likud+Shas+UTJ+RZ.",
+  "elections": [
+    { "date": "2015-03-17", "field": 56.4, "directPolls": null, "result": 57 },
+    { "date": "2019-04-09", "field": 64.7, "directPolls": null, "result": 65 },
+    { "date": "2019-09-17", "field": 55.6, "directPolls": null, "result": 55 },
+    { "date": "2020-03-02", "field": 57.3, "directPolls": 59, "result": 58 },
+    { "date": "2021-03-23", "field": 50.3, "directPolls": 53, "result": 52 },
+    { "date": "2022-11-01", "field": 60.3, "directPolls": 62, "result": 64 }
+  ],
+  "thresholdLists": {
+    "about": "Lists shown at 4-5 seats by most final-week polls, and whether they passed.",
+    "cases": [
+      { "election": "2015", "list": "Yachad", "passed": false },
+      { "election": "2019-04", "list": "New Right", "passed": false },
+      { "election": "2019-04", "list": "Zehut", "passed": false },
+      { "election": "2019-09", "list": "Otzma Yehudit", "passed": false },
+      { "election": "2021", "list": "Ra'am", "passed": true },
+      { "election": "2021", "list": "Meretz", "passed": true },
+      { "election": "2021", "list": "Religious Zionism", "passed": true },
+      { "election": "2021", "list": "Blue and White", "passed": true },
+      { "election": "2022", "list": "Meretz", "passed": false },
+      { "election": "2022", "list": "Hadash-Ta'al", "passed": true },
+      { "election": "2022", "list": "Ra'am", "passed": true },
+      { "election": "2022", "list": "Labor", "passed": true }
+    ]
+  },
+  "perListError": { "about": "theMadad, 2022: mean absolute error per list in polls 0-14 days before the vote.", "meanAbsSeats": 1.16 }
+}

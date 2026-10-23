@@ -112,6 +112,10 @@ const en = {
       "Hollow points are the two pollsters the site's alternative average leaves out. Bloc totals in the average are the lists' averages scaled to 120 seats, the values the Coalition Builder starts from; each poll's totals are its own published figures. Lists that pass in fewer than half the polls count zero. ",
     methodLink: "How the average is made",
     siteAverage: "Site average",
+    forecastRow: "Forecast (model)",
+    forecastCaption: (n: number) => `${n} polls, simulated; `,
+    forecastNote: (net: number, opp: number, neither: number, runs: string) => `The forecast is the site's model, not an average: the field polls shifted by the pollsters' historical miss and run through ${runs} simulated elections with the threshold and Bader-Ofer. Netanyahu bloc at 61 or more in ${net}% of runs, the anti-Netanyahu Zionist bloc in ${opp}%, neither in ${neither}%.`,
+    forecastMethod: "How the forecast is made",
     altCaption: (n: number) => `${n} polls; `,
   },
 
@@ -316,6 +320,8 @@ export const HE_METHOD = {
     "מכיוון שרשימות קטנות לפעמים עוברות ולפעמים לא, סכום הממוצעים יכול לעלות על 120. במקרה כזה אנחנו מקטינים את כל הרשימות באופן יחסי עד 120 מנדטים, כמו במרכיבים קואליציה, במפת המפלגות ובעמוד הראשי. כל מספר מנדטים בעמוד הזה, גם בקווי המגמה, הוא הממוצע המשוקלל והמותאם הזה, ולכן הוא לא מספר שלם. ",
   variantNote: "הממוצע החלופי הוא אותו ממוצע בלי הסקרים של החברות של שלמה פילבר: חדשות 14 (NEXT DATA) ו-i24NEWS (דיירקט פולס).",
   variantLabel: (names: string[]) => `בלי ${list(names)}`,
+  forecast: (n: number, checks: string, lean: number, runs: string, sd: number, net: number, opp: number, neither: number, date: string) =>
+    `התחזית היא המודל של האתר, והיא מוצגת לצד שני הממוצעים ותיבחן מולם כשהתוצאות יגיעו. נקודת המוצא היא הסקרים השוטפים בלי ${checks} (${pollsHe(n)}). את המנדטים של כל סקר אנחנו ממירים חזרה לאחוזי קולות, ממצעים באותם משקלות של ממוצע האתר, ומזיזים ב-${lean} מנדטים לטובת גוש נתניהו: הפספוס הממוצע של הסקרים בשבוע האחרון לגבי הגוש הזה בשש מערכות הבחירות שנערכו עם אחוז חסימה של 3.25% (2015 עד 2022), במשקל גבוה יותר לבחירות האחרונות. שני המכונים האלה נשארים בחוץ כי הנטייה שלהם מעל שאר הסקרים (כשני מנדטים ב-2020, 2021 ו-2022) היא בדיוק מה שההזזה הזאת כבר מספקת. אחר כך אנחנו מריצים ${runs} בחירות מדומות: בכל ריצה הגוש כולו זז בתנודה אקראית (סטיית תקן ${sd} מנדטים, כפול מהשארית ההיסטורית, כי השנה הסקרים חלוקים בעשרה מנדטים ובשום מערכה קודמת לא ביותר משלושה), כל רשימה זזה בנפרד, הרשימה הגדולה בכל גוש יכולה לקחת או לאבד מנדט-שניים משותפותיה, מופעל אחוז החסימה, ו-120 המנדטים מחולקים בשיטת באדר-עופר עם הסכמי העודפים שדווחו. המנדטים המרכזיים הם החלוקה של האחוזים המוזזים; "עוברת ב-X% מהריצות" ונתוני ה-61 סופרים את הריצות: גוש נתניהו מגיע ל-61 ב-${net}%, גוש האופוזיציה הציוני ב-${opp}%, אף אחד מהם ב-${neither}%. חושב ב-${date}.`,
   undated: (names: string) =>
     `תאריכים לא ודאיים: במאגר יש נתונים של ${names} שלא נרשם להם תאריך משלהם. בגרפים ובחישובים הם מופיעים בתאריך הפרסום של הרשומה, שאינו תאריך מאומת לכל נתון. בכל הסקרים הם מסומנים ב-†, וכרטיס השיטה של כל סקר מסביר את ההבדל.`,
   sources: { a: "מקורות: ", wiki: "טבלאות הסקרים בוויקיפדיה האנגלית", b: " והדיווחים שכל סקר מפנה אליהם, בקישור מכל שורה ב", every: "כל הסקרים", c: "." },

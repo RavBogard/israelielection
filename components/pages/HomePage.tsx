@@ -3,14 +3,15 @@ import type { ReactNode } from "react";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
-import HomeRace from "@/components/HomeRace";
+import HomeRace, { type RaceOption } from "@/components/HomeRace";
 import { homeRaceModel } from "@/lib/home-race";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
-import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
+import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
+import { forecast, forecastPoll } from "@/lib/forecast";
 import { mediumDate, shortDate } from "@/lib/format";
-import { blocRank, isExit, pollLabel, seatFigure } from "@/lib/polls";
+import { averageAsPoll, blocRank, isExit, pollLabel, seatFigure, VARIANT_ID, withoutVariantPolls } from "@/lib/polls";
 import { citeText, findingSentence, israelDate, noNewLabel, pollSlip, sincePolls, type Slip } from "@/lib/home-since";
 import CiteButton from "@/components/CiteButton";
 import SeatBar from "@/components/SeatBar";
@@ -59,9 +60,18 @@ function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; da
   const model = homeRaceModel(poll, parties, blocs, lang), net = model.rows.find((r) => r.id === "net")!, cite = live || phase !== "before" ? null : citeText(poll, mainPolls.length, net.label, net.seats, undefined, lang);
   // The bloc list's header says what the numbers are; the note under the grid says where they come from, once.
   const basis = live ? poll.resultState?.freshness === "stale" ? t.basisStale : t.basisLive : t.basis(mainPolls.length, shortDate(mainPolls[0].published, lang));
+  const avgSource = <>{t.avgSource(pollsters)}{newest && <>{t.newest}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{pollLabel(newest, lang)}, {mediumDate(newest.published, lang)}</Link>. </>}<Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.{cite && <> <CiteButton text={cite} /></>}</>;
+  // Before the count: the site average, the same average without Filber's firms, and the forecast model, switchable over the bloc list.
+  const cfg = pollsData.config, ids = parties.map((p) => p.id), variantNames = cfg.withoutVariant.pollsters.map((n) => (he ? pollsterText(n, "he").text : n));
+  const without = he ? list(variantNames) : variantNames.join(" and ");
+  const options: RaceOption[] | undefined = live ? undefined : [
+    { id: "avg", label: t.pickAverage, detail: t.pickPolls(mainPolls.length), model, change, heading: basis, source: avgSource },
+    { id: "variant", label: t.pickVariant(without), detail: t.pickPolls(variantPolls.length), model: homeRaceModel(averageAsPoll(variantPolls, ids, { id: VARIANT_ID }), parties, blocs, lang), change: blocChange(blocSeries(withoutVariantPolls(pollsData.polls, cfg), parties, cfg)), heading: t.basisVariant(variantPolls.length, without, shortDate(variantPolls[0].published, lang)), source: <>{t.variantSource(without)}<Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.</> },
+    { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(he ? "he" : "en")), model: homeRaceModel(forecastPoll, parties, blocs, lang), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/polls#forecast-method", "/he/polls#forecast-method")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
+  ];
   return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase, days, lang)}</h1><p className="standfirst">{live ? t.standfirstLive : t.standfirst}{t.majority(MAJORITY, KNESSET)}</p></div>
-  <HomeRace model={model} change={change} heading={basis} />
-  <p className="race-source fig-src">{live ? <>{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(countTime(poll.resultState?.capturedAt ?? poll.published, lang), poll.resultState?.sourceUpdatedAt ? countTime(poll.resultState.sourceUpdatedAt, lang) : t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</> : <>{t.avgSource(pollsters)}{newest && <>{t.newest}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{pollLabel(newest, lang)}, {mediumDate(newest.published, lang)}</Link>. </>}<Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.</>}{cite && <> <CiteButton text={cite} /></>}</p>
+  {options ? <HomeRace options={options} /> : <HomeRace model={model} change={change} heading={basis} />}
+  {live && <p className="race-source fig-src">{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(countTime(poll.resultState?.capturedAt ?? poll.published, lang), poll.resultState?.sourceUpdatedAt ? countTime(poll.resultState.sourceUpdatedAt, lang) : t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</p>}
   <p className="race-context">{t.contextBefore}<Link href={href(lang, "/parties", "/he/compare")}>{t.partyMap}</Link>{t.contextMiddle}<Link href={href(lang, "/coalition-builder", "/he/coalition-builder")}>{t.builder}</Link>.</p>
  </section>;
 }

@@ -135,6 +135,8 @@ export function pollTotal(poll: Poll): number {
 }
 
 export const AVERAGE_ID = "avg";
+/** The second average (without Filber's firms) as a pseudo-poll. */
+export const VARIANT_ID = "avg-variant";
 
 /**
  * The current average expressed as a pseudo-poll, so the Coalition Builder can count with it.
