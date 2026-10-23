@@ -4,6 +4,9 @@ import type { Poll } from "./types";
 /** data/forecast.json: the output of scripts/forecast/forecast.mjs, committed before the vote and scored after it. */
 export type Forecast = {
   generated: string;
+  generatedAt?: string;
+  /** The run the prediction is scored against; once true, the script refuses to regenerate. */
+  final?: boolean;
   election: string;
   runs: number;
   seed: number;

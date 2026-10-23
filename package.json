@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "validate": "vitest run lib/data.test.ts",
     "forecast": "node scripts/forecast/forecast.mjs",
+    "forecast:final": "node scripts/forecast/forecast.mjs --final",
     "prebuild": "node scripts/build-briefings-index.mjs",
     "predev": "node scripts/build-briefings-index.mjs",
     "pretypecheck": "node scripts/build-briefings-index.mjs",

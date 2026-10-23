@@ -1,0 +1,101 @@
+{
+  "about": "Every forecast run that changed the figures, oldest first; the last entry is data/forecast.json. Scored together after the vote.",
+  "runs": [
+    {
+      "generated": "2026-10-23",
+      "generatedAt": "2026-10-23T21:44:54.387Z",
+      "final": false,
+      "polls": [
+        "zman-yisrael-2026-10-22",
+        "channel-13-2026-10-21",
+        "channel-12-2026-10-21",
+        "walla-2026-10-20",
+        "kan-11-2026-10-18",
+        "maariv-2026-10-16",
+        "israel-hayom-2026-10-08"
+      ],
+      "parameters": {
+        "leanSeats": 1.7,
+        "fieldOnly": true,
+        "historicalResidualSeats": 1.5,
+        "blocSdSeats": 3.1,
+        "listSdPointsAt8pct": 1.08,
+        "consolidateSdSeats": 1.5
+      },
+      "blocs": {
+        "net": 52,
+        "opp": 54,
+        "mid": 0,
+        "arab": 14
+      },
+      "majority": {
+        "net": 6,
+        "oppZionist": 1,
+        "neither": 93,
+        "oppWithArabAndMid": 91
+      },
+      "largestList": {
+        "likud": 44,
+        "yashar": 56
+      },
+      "lists": {
+        "likud": {
+          "point": 21,
+          "passes": 100
+        },
+        "otzma": {
+          "point": 8,
+          "passes": 100
+        },
+        "shas": {
+          "point": 8,
+          "passes": 100
+        },
+        "utj": {
+          "point": 8,
+          "passes": 100
+        },
+        "rz": {
+          "point": 7,
+          "passes": 99
+        },
+        "poi": {
+          "point": 0,
+          "passes": 47
+        },
+        "yashar": {
+          "point": 23,
+          "passes": 100
+        },
+        "byachad": {
+          "point": 14,
+          "passes": 100
+        },
+        "dem": {
+          "point": 9,
+          "passes": 100
+        },
+        "yb": {
+          "point": 8,
+          "passes": 100
+        },
+        "bw": {
+          "point": 0,
+          "passes": 0
+        },
+        "res": {
+          "point": 0,
+          "passes": 46
+        },
+        "jl": {
+          "point": 9,
+          "passes": 100
+        },
+        "raam": {
+          "point": 5,
+          "passes": 90
+        }
+      }
+    }
+  ]
+}

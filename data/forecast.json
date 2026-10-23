@@ -1,5 +1,7 @@
 {
   "generated": "2026-10-23",
+  "generatedAt": "2026-10-23T21:44:54.387Z",
+  "final": false,
   "election": "2026-10-27",
   "runs": 50000,
   "seed": 20261027,

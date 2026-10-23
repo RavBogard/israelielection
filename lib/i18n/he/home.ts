@@ -12,7 +12,7 @@ const he: HomeText = {
     basisLive: "הספירה עד כה",
     basis: (n, through) => `ממוצע ${n} סקרים, עד ${through}`,
     basisVariant: (n, without, through) => `ממוצע ${n} סקרים בלי ${without}, עד ${through}`,
-    basisForecast: (date) => `מודל התחזית, ${date}`,
+    basisForecast: (date, final) => `${final ? "התחזית הסופית" : "מודל התחזית"}, ${date}`,
     pick: "המנדטים לפי",
     pickAverage: "ממוצע הסקרים",
     pickVariant: (without) => `בלי ${without}`,

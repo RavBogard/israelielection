@@ -91,6 +91,21 @@ Oct 24: opposition bloc wins more seats 60%; Eisenkot next prime minister 50%, N
 (a market on who governs, not on seats). The model's 6% is the low end of the field. It is the
 number the rules produce, and it is on the record.
 
+## The daily loop, and the final
+
+Israeli law closes poll publication at the end of Friday, October 23, so the poll record is complete
+after the job's imports of October 23 and 24; what changes from here is the algorithm, not the data.
+Each day until Monday: rerun `npm run forecast` (the polls job also reruns it after every import), review
+the change against `data/forecast-history.json`, and record any parameter change below with its reason.
+**Monday, October 26, 9 PM Central** (`npm run forecast:final`): the run is marked final, the script locks,
+and that file is the prediction scored on October 27. Exit polls and the count never touch it.
+
+### Changelog
+
+| Date | Change | Reason |
+|---|---|---|
+| 2026-10-23 | First run: the rules in this memo. Netanyahu bloc 52, P(61) 6%. | — |
+
 ## Scoring, fixed before the result
 
 On the official count (`data/results.json` pipeline), for the forecast and for both site averages:

@@ -23,4 +23,11 @@ describe("data/forecast.json", () => {
     expect(forecast.parameters.fieldOnly).toBe(true);
     expect(forecast.generated <= forecast.election).toBe(true);
   });
+  it("is the last entry of the record", async () => {
+    const history = (await import("@/data/forecast-history.json")).default as { runs: { generated: string; blocs: Record<string, number>; final: boolean }[] };
+    const last = history.runs.at(-1)!;
+    expect(last.generated).toBe(forecast.generated);
+    expect(last.blocs.net).toBe(forecast.blocs.net.point);
+    expect(history.runs.filter((r) => r.final).length).toBeLessThanOrEqual(1);
+  });
 });

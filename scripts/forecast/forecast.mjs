@@ -4,9 +4,18 @@
  * Reads data/polls.json, data/parties.json, data/results.json; writes data/forecast.json.
  * No dependencies; seeded, so the same inputs give the same output. See
  * docs/research/polls-method/2026-10-23-forecast-algorithm.md for the reasoning behind each step.
+ *
+ * Runs daily until the vote (the polls job reruns it after every import). Every run whose figures
+ * differ from the last is appended to data/forecast-history.json, so each day's prediction stays on
+ * the record. `--final` marks the run final; once data/forecast.json is final, later runs are refused
+ * unless `--force`, so exit polls and the count never overwrite the prediction they are scored against.
  */
 import fs from "node:fs";
 const read = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
+const FINAL = process.argv.includes("--final"), FORCE = process.argv.includes("--force");
+const SENSITIVITY = process.env.FILBER !== undefined || process.env.LEAN !== undefined;
+const previous = fs.existsSync("data/forecast.json") ? read("data/forecast.json") : null;
+if (previous?.final && !FORCE && !SENSITIVITY) { console.log(`data/forecast.json is final (${previous.generated}); not regenerated. Pass --force to override.`); process.exit(0); }
 const { polls, config } = read("data/polls.json");
 const parties = (read("data/parties.json").parties ?? read("data/parties.json")).map((p) => ({ id: p.id, bloc: p.bloc, name: p.name }));
 const results = read("data/results.json");
@@ -102,8 +111,9 @@ const r1 = (x) => Math.round(x * 10) / 10, pct = (x) => Math.round((x / RUNS) * 
 const point = allocate(central);
 const lists = Object.fromEntries(ids.filter((id) => id in base).map((id) => [id, { share: Math.round(central[id] * 10000) / 100, point: point[id] ?? 0, mean: r1(mean(seatRuns[id])), lo: q(seatRuns[id], 0.05), hi: q(seatRuns[id], 0.95), passes: pct(seatRuns[id].filter((n) => n > 0).length) }]));
 const blocOut = Object.fromEntries(blocs.map((b) => [b, { point: ids.filter((id) => bloc[id] === b).reduce((a, id) => a + (point[id] ?? 0), 0), mean: r1(mean(blocRuns[b])), lo: q(blocRuns[b], 0.05), hi: q(blocRuns[b], 0.95) }]));
+const now = new Date();
 const out = {
-  generated: new Date().toISOString().slice(0, 10), election: results.election, runs: RUNS, seed: SEED,
+  generated: now.toISOString().slice(0, 10), generatedAt: now.toISOString(), final: FINAL, election: results.election, runs: RUNS, seed: SEED,
   method: "scripts/forecast/forecast.mjs; docs/research/polls-method/2026-10-23-forecast-algorithm.md",
   inputs: { field: field.map((p) => ({ id: p.id, pollster: p.pollster, published: p.published, n: p.n })), checks: checks.map((p) => ({ id: p.id, pollster: p.pollster, published: p.published })), agreements },
   parameters: { leanSeats: r1(leanUsed), fieldOnly: process.env.FILBER !== "1", historicalResidualSeats: r1(resid), blocSdSeats: r1(blocSd), listSdPointsAt8pct: r1(listSd * 1000) / 10, consolidateSdSeats: 1.5 },
@@ -114,6 +124,17 @@ const out = {
   lists,
   scoring: "Score on the official result: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point; threshold calls right (passes >= 50 and passed, or < 50 and failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way.",
 };
-if (process.env.FILBER === undefined && process.env.LEAN === undefined) fs.writeFileSync("data/forecast.json", JSON.stringify(out, null, 2) + "\n");
+if (!SENSITIVITY) {
+  fs.writeFileSync("data/forecast.json", JSON.stringify(out, null, 2) + "\n");
+  // The record: one entry per run whose inputs, parameters or figures changed.
+  const historyFile = "data/forecast-history.json";
+  const history = fs.existsSync(historyFile) ? read(historyFile) : { about: "Every forecast run that changed the figures, oldest first; the last entry is data/forecast.json. Scored together after the vote.", runs: [] };
+  const entry = { generated: out.generated, generatedAt: out.generatedAt, final: out.final, polls: out.inputs.field.map((p) => p.id), parameters: out.parameters, blocs: Object.fromEntries(Object.entries(out.blocs).map(([b, v]) => [b, v.point])), majority: out.majority, largestList: out.largestList, lists: Object.fromEntries(Object.entries(out.lists).map(([id, l]) => [id, { point: l.point, passes: l.passes }])) };
+  const last = history.runs.at(-1), same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  const changed = !last || !same({ ...last, generated: 0, generatedAt: 0, final: 0 }, { ...entry, generated: 0, generatedAt: 0, final: 0 }) || last.final !== entry.final;
+  if (changed) history.runs.push(entry); else history.runs[history.runs.length - 1] = { ...last, generatedAt: entry.generatedAt, generated: entry.generated };
+  fs.writeFileSync(historyFile, JSON.stringify(history, null, 2) + "\n");
+  console.log(`${changed ? "figures changed: recorded" : "figures unchanged"}; ${history.runs.length} run${history.runs.length === 1 ? "" : "s"} on record${FINAL ? "; FINAL" : ""}`);
+}
 console.log(JSON.stringify({ parameters: out.parameters, blocs: out.blocs, majority: out.majority, netLargerThanOpp: out.netLargerThanOpp, largestList: out.largestList }));
 console.table(Object.entries(lists).map(([id, l]) => ({ id, ...l })));

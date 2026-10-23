@@ -20,7 +20,7 @@ const en = {
     basisLive: "Count so far",
     basis: (n: number, through: string) => `Average of ${n} polls, to ${through}`,
     basisVariant: (n: number, without: string, through: string) => `Average of ${n} polls without ${without}, to ${through}`,
-    basisForecast: (date: string) => `Forecast model, ${date}`,
+    basisForecast: (date: string, final: boolean) => `${final ? "Final forecast" : "Forecast model"}, ${date}`,
     /** The segmented control over the bloc list: which figures the hero shows. */
     pick: "Seats from",
     pickAverage: "Site average",
