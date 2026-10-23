@@ -22,13 +22,16 @@ const en = {
   standfirst: (majority: number, knesset: number) => `Tap a ballot slip to add a cabinet partner; **${majority}** of ${knesset} seats is a majority.`,
   pickLabel: "Seats from",
   pickAverage: (n: number) => `Polling average (${n} polls)`,
+  pickForecast: (date: string) => `Forecast model, ${date}`,
   pickCount: (stale: boolean): string => (stale ? "saved count (stale)" : "count so far"),
   skip: "Skip to result",
   countPhrase: (stale: boolean): string => (stale ? "the saved count (stale)" : "the count so far"),
   /** How the current poll is named inside a sentence. */
   averagePhrase: (n: number) => `the polling average (${n} polls)`,
+  forecastPhrase: (date: string) => `the forecast model (${date})`,
   /** The slip tooltip's source. */
   averageSource: (n: number) => `the polling average of ${n} polls`,
+  forecastSource: (date: string) => `the forecast model, ${date}`,
   pollWithDate: (label: string, date: string) => `${label}, ${date}`,
 
   // Slips
@@ -127,6 +130,8 @@ const en = {
   noteSnapshot: (captured: string, updated: string | null) => `Snapshot captured ${captured}. Source update time: ${updated ?? "not supplied by source"}. `,
   noteAverage: (n: number, polls: string) => `Seats are the **polling average** of the latest ${n} polls, one per pollster (${polls}), scaled to 120, so they can be fractional. `,
   noteMethod: "Average method",
+  noteForecast: (date: string, net: number) => `Seats are the **forecast model's central estimate** (${date}): whole seats from simulated elections, not an average; the Netanyahu bloc reaches 61 in ${net}% of runs. `,
+  noteForecastMethod: "Forecast method",
   notePoll: (label: string, date: string) => `Seats are from **${label}, published ${date}**. `,
   noteByBloc: "By bloc: ",
   noteLumped: (names: string[]) => ` ${names.join(" and ")} were not reported separately.`,

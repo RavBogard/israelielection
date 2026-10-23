@@ -15,6 +15,7 @@ import { En, Loc, rich } from "./coalition/Loc";
 import PageHead from "./PageHead";
 import SeatBar from "./SeatBar";
 import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
+import { forecast, FORECAST_ID, forecastPoll } from "@/lib/forecast";
 import { MAJORITY, KNESSET, pledgeConflicts, tally, type TallyText, type Warning, type WarningText } from "@/lib/coalition";
 import type { UnstatedMap } from "@/lib/coalition-governing";
 import { arrangement, arrangementWarnings, initialVoteDependence, restoreRoles, roleOf, ROLE_LABELS, writeRoles, type RoleOverrides, type SupportRole } from "@/lib/coalition-arrangement";
@@ -34,7 +35,7 @@ const POLL_KEY = "cb-poll";
 /** The history note under the panel, keyed "historical" in data/he/coalition-scenarios.json. */
 const HISTORY = { id: "historical", ...scenarioData.historical };
 /** The picker: election results once counting starts, then the current average, then each current poll. */
-const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, averagePoll, ...mainPolls];
+const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, averagePoll, forecastPoll, ...mainPolls];
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
 /** Cards for a poll: a list hidden for lack of polling still appears if the count gives it seats. */
 const cardsFor = (poll: Poll) =>
@@ -73,6 +74,11 @@ function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
         <>
           {rich(T.noteAverage(mainPolls.length, mainPolls.map((p) => `${pollsterText(p.pollster, lang).text} ${shortDate(p.published, lang)}`).join(", ")))}
           <Link href={lang === "he" ? "/he/polls#method" : "/polls#method"}>{T.noteMethod}</Link>. {T.noteByBloc}
+        </>
+      ) : poll.id === FORECAST_ID ? (
+        <>
+          {rich(T.noteForecast(mediumDate(poll.published, lang), forecast.majority.net))}
+          <Link href={lang === "he" ? "/he/polls#forecast-method" : "/polls#forecast-method"}>{T.noteForecastMethod}</Link>. {T.noteByBloc}
         </>
       ) : (
         <>{rich(T.notePoll(pollLabel(poll, lang), mediumDate(poll.published, lang)))}{T.noteByBloc}</>
@@ -115,7 +121,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }
     );
   }
   const s = seatLabel(p, poll, T);
-  const src = poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averageSource(mainPolls.length) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
+  const src = poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averageSource(mainPolls.length) : poll.id === FORECAST_ID ? T.forecastSource(mediumDate(poll.published, lang)) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
   const tip0 = s.na ? T.tipNA(poll.pollster, name, src) : s.below ? T.tipBelow(src) : T.tipSeats(s.txt, src);
   const tip = conflict ? T.tipConflict(tip0) : tip0;
   return (
@@ -208,7 +214,7 @@ export type Preset = { ids: string[]; label: string; seats: number; year: number
 
 /** How the current poll is named in a sentence. */
 const pollPhrase = (poll: Poll, T: BuilderText, lang: Lang) =>
-  poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averagePhrase(mainPolls.length) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
+  poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averagePhrase(mainPolls.length) : poll.id === FORECAST_ID ? T.forecastPhrase(mediumDate(poll.published, lang)) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
 
 /** Against in the first vote: a grey between ink-3 and the empty track, so it reads as filled but not as a list. */
 const AGAINST = "color-mix(in srgb, var(--ink-3) 65%, var(--cell))";
@@ -362,7 +368,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           <select value={pollId} onChange={(e) => choosePoll(e.target.value)}>
             {choices.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
+                {p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : p.id === FORECAST_ID ? T.pickForecast(mediumDate(p.published, lang)) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
               </option>
             ))}
           </select>

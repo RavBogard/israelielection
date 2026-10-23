@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
+import { forecast, forecastPoll } from "@/lib/forecast";
 import { mediumDate, shortDate } from "@/lib/format";
 import { partyColor, strokeVars } from "@/lib/party-colors";
 import { average, averageAsPoll, BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTotals, inWithoutVariant, SEATS_LABEL, seatFigure } from "@/lib/polls";
@@ -130,19 +131,24 @@ export function PollsBlocs({ title, lang = "en" }: { title: string; lang?: Lang 
 export function PollsAlternative({ title, lang = "en" }: { title: string; lang?: Lang }) {
   const N = POLLS[lang].now, he = lang === "he";
   const label = blocLabels(lang);
-  const rows = [{ key: "main", name: N.siteAverage, t: blocTotals(averagePoll, parties), n: mainPolls.length }, { key: "alt", name: altName(lang), t: blocTotals(variantAverage, parties), n: variantPolls.length }];
+  const rows = [
+    { key: "main", name: N.siteAverage, caption: he ? N.altCaption(mainPolls.length) : <>{mainPolls.length} polls; </>, t: blocTotals(averagePoll, parties) },
+    { key: "alt", name: altName(lang), caption: he ? N.altCaption(variantPolls.length) : <>{variantPolls.length} polls; </>, t: blocTotals(variantAverage, parties) },
+    { key: "forecast", name: N.forecastRow, caption: N.forecastCaption(forecast.inputs.field.length), t: blocTotals(forecastPoll, parties) },
+  ];
   return (
     <section className="pn" aria-labelledby="alt-h">
       <h2 id="alt-h" className="sec-h">{title}</h2>
       <div className="pn-alt">
         {rows.map((r) => (
           <figure key={r.key} className="pn-alt-row">
-            <figcaption><b>{r.name}</b> <span>{he ? N.altCaption(r.n) : <>{r.n} polls; </>}{label.net} <b>{one(r.t.net)}</b>, {label.opp} <b>{one(r.t.opp)}</b></span></figcaption>
+            <figcaption><b>{r.name}</b> <span>{r.caption}{label.net} <b>{r.key === "forecast" ? r.t.net : one(r.t.net)}</b>, {label.opp} <b>{r.key === "forecast" ? r.t.opp : one(r.t.opp)}</b></span></figcaption>
             <SeatBar size="m" segments={BAR_ORDER.map((b) => ({ key: b, seats: r.t[b], color: `var(--b-${b})`, title: `${label[b]} ${one(r.t[b])}` }))} />
           </figure>
         ))}
       </div>
       <p className="fig-src">{he ? HE_METHOD.variantNote : cfg.withoutVariant.note}</p>
+      <p className="fig-src">{N.forecastNote(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, forecast.runs.toLocaleString(he ? "he" : "en"))} <Link href="#forecast-method">{N.forecastMethod}</Link>.</p>
     </section>
   );
 }
