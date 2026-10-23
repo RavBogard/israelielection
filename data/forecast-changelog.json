@@ -1,0 +1,10 @@
+{
+  "about": "Every change to the forecast's rules, dated, in both editions; mirrors the Changelog in docs/research/polls-method/2026-10-23-forecast-algorithm.md and is shown on /forecast.",
+  "entries": [
+    {
+      "date": "2026-10-23",
+      "en": "First run: the rules described on this page. Netanyahu bloc 52 seats; 61 or more in 6% of runs.",
+      "he": "ריצה ראשונה: הכללים שמתוארים בעמוד הזה. גוש נתניהו 52 מנדטים; 61 ומעלה ב-6% מהריצות."
+    }
+  ]
+}

@@ -97,7 +97,7 @@ export default function PollsPage({ lang }: { lang: Lang }) {
     {uncertainFigures.length>0&&<p className="note">{HE_METHOD.undated(list(uncertainFigures))}</p>}
     <p className="note">{HE_METHOD.sources.a}<a href={WIKI} hrefLang="en">{HE_METHOD.sources.wiki}</a>{HE_METHOD.sources.b}<a href="#every-poll">{HE_METHOD.sources.every}</a>{HE_METHOD.sources.c}</p>
     <h2 id="forecast-method" className="sec-h">{t.now.forecastMethod}</h2>
-    <p className="note">{HE_METHOD.forecast(forecast.inputs.field.length, list(forecast.inputs.checks.map((p) => pollsterName(p.pollster, lang))), forecast.parameters.leanSeats, forecast.runs.toLocaleString("he"), forecast.parameters.blocSdSeats, forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, mediumDate(forecast.generated, lang))}</p>
+    <p className="note">{t.now.forecastNote(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, forecast.runs.toLocaleString("he"))} <Link href={hePath("/forecast")!}>{HE_METHOD.forecastPage(mediumDate(forecast.generated, lang))}</Link>.</p>
     {sensitivity}
   </> : <>
     <h2 className="sec-h">How the average is made</h2>
@@ -121,20 +121,11 @@ export default function PollsPage({ lang }: { lang: Lang }) {
     <p className="note">Sources: <a href={WIKI}>Wikipedia&apos;s polling tables</a> and the reports each poll cites, linked from every row of <a href="#every-poll">Every poll</a>.</p>
     <h2 id="forecast-method" className="sec-h">How the forecast is made</h2>
     <p className="note">
-      The forecast is the site&apos;s own model, offered beside the two averages and scored against them when the result is in. It starts from the field: the current
-      polls minus {forecast.inputs.checks.map((p) => p.pollster).join(" and ")} ({forecast.inputs.field.length} polls). Each poll&apos;s seats are turned back into vote shares, averaged with the
-      same square-root weights as the site average, and shifted by {forecast.parameters.leanSeats} seats toward the Netanyahu bloc: the field&apos;s average miss on that bloc in the final
-      week of the six elections held under the 3.25% threshold (2015 to 2022), weighted toward the recent ones. Those two firms are left out of the field because their lean over it
-      (about two seats in 2020, 2021 and 2022) is what that shift already supplies; counting both would count it twice.
-    </p>
-    <p className="note">
-      The shifted shares are then run through {forecast.runs.toLocaleString("en")} simulated elections. Each run moves the whole Netanyahu bloc by a random swing
-      ({forecast.parameters.blocSdSeats} seats standard deviation, twice the historical residual, because this year&apos;s pollsters split ten seats where no past campaign split more than three),
-      jitters every list on its own ({forecast.parameters.listSdPointsAt8pct} points at 8%, from the 1.16-seat mean error of polls in the last two weeks of 2022), lets each bloc&apos;s
-      largest list gain or lose up to a couple of seats from its partners (Likud beat its polls by 3 to 9 seats in 2015, 2019 and 2020 while its bloc held), applies the threshold and
-      allocates 120 seats by Bader-Ofer with the {forecast.inputs.agreements.length} surplus agreements reported. The central seats are the allocation of the shifted shares;
-      &ldquo;passes in X% of runs&rdquo; and the 61-seat figures count the runs. Generated {mediumDate(forecast.generated)}; the parameters, inputs and scoring rule are in
-      the data file, and the reasoning in the repository&apos;s research notes.
+      The forecast is the site&apos;s own model, offered beside the two averages and scored against them when the result is in: the field polls
+      ({forecast.inputs.field.length}, without {forecast.inputs.checks.map((p) => p.pollster).join(" and ")}) turned back into vote shares, shifted by {forecast.parameters.leanSeats} seats toward
+      the Netanyahu bloc (the pollsters&apos; average miss on that bloc since 2015) and run through {forecast.runs.toLocaleString("en")} simulated elections with the threshold and Bader-Ofer.
+      The Netanyahu bloc reaches 61 in {forecast.majority.net}% of runs, the anti-Netanyahu Zionist bloc in {forecast.majority.oppZionist}%, neither in {forecast.majority.neither}%.{" "}
+      <Link href="/forecast">The forecast page</Link> has every step, parameter and input, the record the rules come from, the daily runs and the scoring rule (generated {mediumDate(forecast.generated)}).
     </p>
     {sensitivity}
   </>;

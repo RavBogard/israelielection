@@ -3,6 +3,7 @@ import {PARTY_COLOR_FAMILIES} from "./party-colors";
 import {MAJORITY} from "./coalition";
 import {AVERAGE_ID,BLOC_ORDER,BLOC_SEAT_ORDER,blocTotals,VARIANT_ID} from "./polls";
 import {FORECAST_ID} from "./forecast";
+import {RESULTS_ID} from "./results";
 import type {BlocId,Party,Poll} from "./types";
 import type {Lang} from "./i18n";
 import home from "./i18n/home";
@@ -12,8 +13,8 @@ export const seatTenths=(value:number)=>Math.round(value*10)/10;
 export const majorityShortfall=(seats:number)=>Math.max(0,seatTenths(MAJORITY-seatTenths(seats)));
 /** `lang` "he" takes party and bloc names from the Hebrew overlay; then `nameLang`/`labelLang` say which language each name is actually in (absent in English, so the English page's data is unchanged). */
 export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:string}[],lang:Lang="en"){
- /** What the seats are: an average (one decimal), the forecast's central allocation (whole seats) or a count. */
- const kind:"average"|"forecast"|"count"=poll.id===AVERAGE_ID||poll.id===VARIANT_ID?"average":poll.id===FORECAST_ID?"forecast":"count";
+ /** What the seats are: an average (one decimal), the forecast's central allocation (whole seats), the count, or one published poll. */
+ const kind:"average"|"forecast"|"count"|"poll"=poll.id===AVERAGE_ID||poll.id===VARIANT_ID?"average":poll.id===FORECAST_ID?"forecast":poll.id===RESULTS_ID?"count":"poll";
  const totals=blocTotals(poll,parties),isAverage=kind==="average";
  const pname=(p:Party)=>lang==="he"?partyText(p,"name","he"):{text:p.name,lang:"en" as Lang};
  const nameOf=(pid:string)=>{const p=parties.find(x=>x.id===pid);return p?pname(p).text:pid;};
@@ -24,7 +25,8 @@ export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:s
    return {id:p.id,name:n.text,...(lang==="he"?{nameLang:n.lang}:{}) as {nameLang?:Lang},seats:result?result.seats:null,state:result?result.belowThreshold?"below" as const:"reported" as const:combined?"combined" as const:"missing" as const};
   });
   const combined=poll.combined.filter(c=>c.parties.some(pid=>parties.find(p=>p.id===pid)?.bloc===id)).map(c=>({...c,names:c.parties.map(nameOf),withinGroup:c.parties.every(pid=>parties.find(p=>p.id===pid)?.bloc===id)}));
-  const incomplete=kind==="count"&&(members.some(p=>p.state==="missing")||combined.some(c=>!c.withinGroup));
+  // A count is a known subtotal while lists are missing; a published poll simply does not report a list it leaves out.
+  const incomplete=kind==="count"?members.some(p=>p.state==="missing")||combined.some(c=>!c.withinGroup):kind==="poll"&&combined.some(c=>!c.withinGroup);
   const bloc=blocs.find(b=>b.id===id)!,label=lang==="he"?blocText(bloc,"he"):{text:bloc.label,lang:"en" as Lang};
   const seats=seatTenths(totals[id]);return {id,label:label.text,...(lang==="he"?{labelLang:label.lang}:{}) as {labelLang?:Lang},seats,shortfall:majorityShortfall(seats),incomplete,members,combined};
  });

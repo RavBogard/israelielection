@@ -35,7 +35,8 @@ const POLL_KEY = "cb-poll";
 /** The history note under the panel, keyed "historical" in data/he/coalition-scenarios.json. */
 const HISTORY = { id: "historical", ...scenarioData.historical };
 /** The picker: election results once counting starts, then the current average, then each current poll. */
-const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, averagePoll, forecastPoll, ...mainPolls];
+/** The count (election night), the exit polls, then the forecast (the default; Daniel, 2026-10-23), the average and each pollster's newest poll. */
+const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, forecastPoll, averagePoll, ...mainPolls];
 const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
 /** Cards for a poll: a list hidden for lack of polling still appears if the count gives it seats. */
 const cardsFor = (poll: Poll) =>
@@ -78,7 +79,7 @@ function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
       ) : poll.id === FORECAST_ID ? (
         <>
           {rich(T.noteForecast(mediumDate(poll.published, lang), forecast.majority.net))}
-          <Link href={lang === "he" ? "/he/polls#forecast-method" : "/polls#forecast-method"}>{T.noteForecastMethod}</Link>. {T.noteByBloc}
+          <Link href={lang === "he" ? "/he/forecast" : "/forecast"}>{T.noteForecastMethod}</Link>. {T.noteByBloc}
         </>
       ) : (
         <>{rich(T.notePoll(pollLabel(poll, lang), mediumDate(poll.published, lang)))}{T.noteByBloc}</>
@@ -225,7 +226,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const lang = useLang();
   const T = builder[lang];
   const choices = useMemo(() => pickList(results), [results]);
-  const [pollId, setPollId] = useState(results ? RESULTS_ID : AVERAGE_ID);
+  const [pollId, setPollId] = useState(results ? RESULTS_ID : FORECAST_ID);
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [roles, setRoles] = useState<RoleOverrides>({});
   const [scenarioId, setScenarioId] = useState<string | null>(null);
@@ -257,7 +258,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     if (results && !q.get("poll")) p = RESULTS_ID;
     if (p && choices.some((x) => x.id === p)) setPollId(p);
     const restored = restoreRoles(q, (results ? cardsFor(results) : cardParties).map((x) => x.id));
-    const restoredPoll = p && choices.some((x) => x.id === p) ? p : results ? RESULTS_ID : AVERAGE_ID;
+    const restoredPoll = p && choices.some((x) => x.id === p) ? p : results ? RESULTS_ID : FORECAST_ID;
     gate.current.restore(arrangementKey(restoredPoll, restored.cabinet, restored.overrides));
     setPollId(restoredPoll);
     setSel(restored.cabinet);

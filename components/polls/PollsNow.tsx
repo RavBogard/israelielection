@@ -148,7 +148,7 @@ export function PollsAlternative({ title, lang = "en" }: { title: string; lang?:
         ))}
       </div>
       <p className="fig-src">{he ? HE_METHOD.variantNote : cfg.withoutVariant.note}</p>
-      <p className="fig-src">{N.forecastNote(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, forecast.runs.toLocaleString(he ? "he" : "en"))} <Link href="#forecast-method">{N.forecastMethod}</Link>.</p>
+      <p className="fig-src">{N.forecastNote(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, forecast.runs.toLocaleString(he ? "he" : "en"))} <Link href={he ? "/he/forecast" : "/forecast"}>{N.forecastMethod}</Link>.</p>
     </section>
   );
 }

@@ -11,6 +11,7 @@ import historyJson from "@/data/party-history.json";
 import journeysJson from "@/data/journeys.json";
 import partiesJson from "@/data/parties.json";
 import pollsJson from "@/data/polls.json";
+import forecastJson from "@/data/forecast.json";
 import resultsJson from "@/data/results.json";
 import timelineJson from "@/data/timeline.json";
 import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
@@ -37,7 +38,7 @@ const profiles = latest(partiesJson.updated, polls);
 
 /** Each page's date from the data it shows: the polls, the newest briefing, an MDX page's checked date, a data file's checked or updated date. */
 const DATED: Record<string, string | undefined> = {
-  "/": polls, "/polls": polls, "/parties": profiles, "/coalition-builder": polls,
+  "/": polls, "/polls": polls, "/forecast": forecastJson.generated, "/parties": profiles, "/coalition-builder": polls,
   "/news": briefingDates.at(-1),
   "/compare": latest(comparisonJson.updated, partiesJson.updated),
   "/ballot": ballotJson.checked, "/party-history": historyJson.checked, "/timeline": timelineJson.checked, "/glossary": glossaryJson.checked,

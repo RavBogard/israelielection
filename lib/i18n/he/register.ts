@@ -8,5 +8,6 @@ import builder from "./builder";
 import compare from "./compare";
 import profile from "./profile";
 import results from "./results";
+import forecast from "./forecast";
 
-for (const [area, text] of Object.entries({ chrome, home, polls, builder, compare, profile, results })) setHeText(area, text);
+for (const [area, text] of Object.entries({ chrome, home, polls, builder, compare, profile, results, forecast })) setHeText(area, text);

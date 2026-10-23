@@ -8,7 +8,7 @@ export type Lang = "en" | "he";
 export const LANGS: readonly Lang[] = ["en", "he"];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
-export const HE_PATHS = ["/", "/polls", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
+export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of

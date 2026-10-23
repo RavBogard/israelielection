@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import HomeRace from "./HomeRace";
 import { LangProvider } from "@/lib/i18n/lang";
-import { averagePoll, blocs, parties } from "@/lib/data";
+import { averagePoll, mainPolls, blocs, parties } from "@/lib/data";
 import { forecast, forecastPoll } from "@/lib/forecast";
 import { homeRaceModel } from "@/lib/home-race";
 
@@ -23,20 +23,32 @@ describe("the home mosaic", () => {
     expect(html).toContain("בחרו גוש כדי לראות את המפלגות שבו.");
     expect(html).not.toMatch(/seats short of|Show parties/);
   });
-  it("offers the averages and the forecast as a segmented control, the site average first", () => {
+  it("offers the forecast first, then the average, then each pollster's newest poll on a second row", () => {
     const avg = homeRaceModel(averagePoll, parties, blocs), fc = homeRaceModel(forecastPoll, parties, blocs);
-    const html = renderToStaticMarkup(createElement(HomeRace, { options: [
-      { id: "avg", label: "Site average", detail: "9 polls", model: avg, heading: "Average of 9 polls", source: "avg source" },
+    const latest = mainPolls.map((p) => ({ id: p.id, label: p.pollster, detail: p.published, model: homeRaceModel(p, parties, blocs), heading: `${p.pollster} poll`, source: `${p.pollster} source` }));
+    const options = [
       { id: "forecast", label: "Forecast", detail: "50,000 runs", model: fc, heading: "Forecast model", source: "forecast source", forecast: { blocs: forecast.blocs, majority: forecast.majority } },
-    ] }));
+      { id: "avg", label: "Site average", detail: "9 polls", model: avg, heading: "Average of 9 polls", source: "avg source" },
+      { id: "latest", label: "Latest polls", detail: `${mainPolls.length} pollsters`, model: avg, variants: latest, variantsLabel: "Which poll" },
+    ];
+    const html = renderToStaticMarkup(createElement(HomeRace, { options }));
     expect(html).toContain('aria-label="Seats from"');
-    expect(html).toMatch(/aria-pressed="true"[^>]*>Site average<small>9 polls<\/small>/);
-    expect(html).toMatch(/aria-pressed="false"[^>]*>Forecast<small>50,000 runs<\/small>/);
-    expect(html).toContain("Average of 9 polls");
-    expect(html).toContain("avg source");
-    expect(html).not.toContain("of runs");
+    expect(html).toMatch(/aria-pressed="true"[^>]*>Forecast<small>50,000 runs<\/small>/);
+    expect(html).toMatch(/aria-pressed="false"[^>]*>Site average<small>9 polls<\/small>/);
+    expect(html).toContain("Forecast model");
+    expect(html).toContain("forecast source");
+    expect(html).toContain("of runs");
+    expect(html).not.toContain('aria-label="Which poll"');
     expect(fc.kind).toBe("forecast");
     expect(fc.rows.every((r) => !r.incomplete)).toBe(true);
     expect(fc.rows.every((r) => Number.isInteger(r.seats))).toBe(true);
+    // The latest-polls option shows its newest poll by default, with one chip per pollster.
+    const latestFirst = renderToStaticMarkup(createElement(HomeRace, { options: [options[2], options[0]] }));
+    expect(latestFirst).toContain('aria-label="Which poll"');
+    expect(latestFirst.match(/class="race-sub"[\s\S]*?<\/div>/)![0].match(/<button/g)).toHaveLength(mainPolls.length);
+    expect(latestFirst).toContain(`${mainPolls[0].pollster} poll`);
+    expect(latestFirst).toContain(`${mainPolls[0].pollster} source`);
+    expect(latest[0].model.kind).toBe("poll");
+    expect(latest[0].model.rows.every((r) => !r.incomplete)).toBe(true);
   });
 });
