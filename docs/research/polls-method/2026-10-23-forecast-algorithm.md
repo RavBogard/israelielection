@@ -151,6 +151,73 @@ Data fixes made in the same round, each sourced in the files: the five surplus a
 (Central Elections Committee gazette, Oct 19; `data/results.json`), Walla's Amcha Yisrael 2.9% restored
 to `data/polls.json`, Blue and White withdrawn Oct 19 (`calibration.json`).
 
+## Version 3 (2026-10-24): what the second research round changed
+
+Ten memos (`round2/`: `D1` full-campaign poll data 2013–2022, `D2` sector turnout tables, `A` house effects, `B`
+sector turnout, `C` threshold swing, `D` blackout, `E` state-space rebuild, `F` ensembles, `G` uncertainty, `H`
+2026 context) and a red-team review (`R`), under the brief `round2/BRIEF.md`: the yardstick is per-list seat error
+leave-future-out, a change ships only if the backtest improves or with a documented override, a full rebuild was
+allowed, and the model was designed on the polls through October 22 (the October 23 polls were not used; they were,
+however, quoted in `round1/E-context.md`, which the design agents were told to skim, so they count as "not used in
+fitting", not "unseen"). `scripts/forecast/backtest/v3.mjs` scores version 3 against version 2 over several seeds;
+`model.mjs` reproduces version 2 under `opts.v2`.
+
+Most of the round is negative, and the negatives are the result:
+
+| Direction | Memo | Finding | Shipped? |
+|---|---|---|---|
+| Pollster house effects, estimated per firm 2013–2022 and subtracted before pooling | A | The lasting firm component is 0.25–0.45 points against 1.1 of election-to-election drift; no variant beats version 2 (in-sample bound 1.361 = version 2). | No |
+| Trend extrapolation; widening for the four-day publication blackout | D | The final-poll error is a level bias present two weeks out (r 0.92 with the gap 14 days earlier); the 7-day trend raises list error 1.36 → 1.61; version 2's widths were fitted on final polls against results and already span the blackout. | No |
+| State-space poll aggregation with house effects and a trend | E | 1.39 per list against 1.36; within 0.05 points of share of version 2 in every election. Pooling more polls cannot remove a bias every pollster shares. | No |
+| Ensembles and stacking | F | Candidates' errors correlate 0.97–1.00 with version 2's; no ensemble beats the best single model out of sample. | No |
+| Haredi turnout term | B, D2 | Haredi-city turnout moves at most 5% relative to general; Shas's +1.0-point miss does not track it (r −0.13): non-response, not turnout. UTJ misses by 0.0. | No |
+| Strategic desertion, skewed or trend-based threshold swing | C | Desertion coefficient −0.68 ± 1.28 (wrong sign); trend neutral to worse; version 2's P(pass) is calibrated (26.8 expected passes, 28 observed). The only solid fact is the first-time-list shortfall, 8 of 9 negative, which version 2 already carries. | No |
+| **Student-t bloc swing**, scale max(1.5, resid·√(1+1/n)), df max(3, n−1) | G | Version 2's N(0, 3.1) put all six past Netanyahu-bloc results between the 31st and 66th percentiles (p ≈ 0.003); the t swing leaves per-list error identical and improves majority Brier 0.090 → 0.054, list CRPS 2.165 → 2.137. | **Yes** (override: cannot move the yardstick by construction) |
+| **Bloc central = median of the simulated bloc total** | G | Netanyahu-bloc error 1.94 → 1.33 under every seed; on the record the list sum fell short of the bloc by 1.3 seats on average, the median by 0.6. | **Yes** |
+| **Arab-sector turnout term** on the Joint List, mean-reverting index, replacing its +0.4 prior and the Arab swing | B | In hindsight Arab turnout explains 90% of the Arab lists' miss; forecast from the record it halves the sector error (0.54 vs 1.14 points); per-list 1.36 → 1.32–1.31. Narrow, and the Ra'am exclusion was chosen after seeing it fail twice. | **Yes**, history-only centre (the 57%-turnout override memo B offered was not taken: memo H finds version 2 already at the consensus) |
+| Fringe 1.8% (1.5%); unprinted-below fallback 2.5% (2%) | H, C | Neutral on the backtest; from the 2026 polls' own small-list shares and the historical median. | Yes (override) |
+| Priors funded by the bloc's largest list (K1) | C | Passes the 28-day gate (1.307) but fails on the full-campaign build and leave-future-out magnitudes. | No |
+
+Backtest, six elections, leave-future-out, 10,000 runs, mean of three seeds, Filber-firm polls dropped poll by poll
+(`node scripts/forecast/backtest/v3.mjs 10000 3 data`; the version-2 harness dropped a whole outlet when one of its
+polls was by a Filber firm, which cost Kan 11's own April 2019 poll; under that rule version 2 reads 1.361):
+
+| | Per-list error | Netanyahu-bloc error | Mean bloc error | Wrong threshold calls (of 71) | Modal outcome right | Majority Brier | P(pass) Brier |
+|---|---|---|---|---|---|---|---|
+| Version 2 | 1.385 | 2.11 | 1.47 | 4 | 6/6 | 0.091 | 0.0455 |
+| **Version 3** | **1.306** | **0.83** | **1.04** | **4** | 6/6 | **0.071** | **0.0442** |
+| Version 3 without the sector term | 1.385 | 1.50 | 1.38 | 4 | 6/6 | 0.055 | 0.0456 |
+
+**The honest size of the gain** (memo `R`): of 1.385 → 1.306, about three seats over six elections are a real cut
+in Arab-list error (five with priors fitted only from earlier elections); the rest is seat rounding that reverses
+under leave-future-out priors, and April 2019 alone is 60% of it. The per-list gain is 0.04–0.07 seat, inside the
+noise of six elections. What version 3 changes for 2026 is the spread and the bloc headline, on calibration evidence
+(majority Brier, CRPS), not a more accurate list forecast. It is described that way on the site.
+
+### The prediction, version 3 (2026-10-24, on the polls to Oct 22)
+
+Every list's central seats are version 2's: Yashar 22, Likud 21, B'Yachad 12, Shas 10, Democrats 9, Joint List 9,
+Otzma 8, UTJ 8, Yisrael Beiteinu 8, Religious Zionism–Zehut 7, Ra'am 6 (passes 96%), Reservists 0 (23%), Amcha
+Yisrael 0 (19%).
+
+| | Central (scored) | Sum of list centrals | 90% of runs |
+|---|---|---|---|
+| Netanyahu bloc | **53** | 54 | 49 to 58 |
+| Anti-Netanyahu Zionist bloc | 51 | 51 | 47 to 54 |
+| Arab lists | 15 | 15 | 12 to 18 |
+| Reservists (outside the blocs) | 0 | 0 | 0 to 5 |
+
+Netanyahu bloc at 61 or more: **1%** (3% in version 2). Neither bloc: 99%. Netanyahu bloc larger than the Zionist
+opposition: 69%. Largest list: Yashar 55%, Likud 45%. Version 2's figures on the same polls are written to
+`data/forecast-v2.json` on every run and scored beside version 3 under version 2's own rule (bloc point = list sum).
+
+**Red-team findings fixed before shipping** (`round2/R-red-team.md`): the tests and the polls job's gate were
+updated for the bloc median; this record; version 2 rerun on the same polls; `backtest/v2.mjs` pinned to version 2's
+rules; the Arab-swing, "over-shot" and "nine tenths" texts corrected; Ra'am given back its share of the Arab swing
+(pass chance 98.8% → 96.0%, list error unchanged); the hero labels blocs with the scored central while its mosaic
+draws the list centrals. Known and accepted: the polls table and the Coalition Builder count with the list centrals
+(54), the hero and forecast page show the bloc central (53); the forecast page says so.
+
 ## The daily loop, and the final
 
 Israeli law closes poll publication at the end of Friday, October 23, so the poll record is complete
@@ -166,12 +233,13 @@ and that file is the prediction scored on October 27. Exit polls and the count n
 |---|---|---|
 | 2026-10-23 | First run: the rules in this memo. Netanyahu bloc 52, P(61) 6%. | — |
 | 2026-10-24 | Version 2 (section above): D'Hondt-midpoint shares, class priors, zero-sum noise, Arab turnout swing, median point, firm weights, 7-day window, fringe 1.5%, Blue and White dropped. Netanyahu bloc 54, P(61) 3%. | Round-one research, judged on the backtest: per-list error 1.77 → 1.36, wrong calls 9 → 4 on 2015–2022. |
+| 2026-10-24 | Version 3 (section above): Student-t bloc swing (scale 1.7, df 5); bloc central = median of the simulated total, scored; Arab-turnout term on the Joint List in place of its prior and the Arab swing; fringe 1.8%; unprinted-below 2.5%. Netanyahu bloc 53 (lists 54), P(61) 1%. Version 2 rerun daily on the same polls (data/forecast-v2.json). | Round-two research and red team: Netanyahu-bloc error 2.11 → 0.83, majority Brier 0.091 → 0.071; per-list 1.385 → 1.306, of which about three seats are real and the rest rounding (honest size 0.04–0.07 seat, inside the noise). |
 
 ## Scoring, fixed before the result
 
 On the official count (`data/results.json` pipeline), for the forecast and for both site averages:
 1. Mean absolute seat error per list, over the 13 lists above (averages: their scaled figures).
-2. Absolute error on each bloc total.
+2. Absolute error on each bloc's central, `blocs.*.point`: since version 3 (2026-10-24) the median of the bloc's simulated total, which need not sum to 120 across blocs; `blocs.*.listSum` is reported, not scored. Version 2 (`data/forecast-v2.json`) is scored by its own rule, the sum of its list points.
 3. Threshold calls: a list is called passing at `passes` ≥ 50 (averages: by their k/n rule).
 4. Whether the outcome given the highest probability (neither bloc at 61) occurred.
 5. Every current poll's final figures scored the same way, for the pollster record.

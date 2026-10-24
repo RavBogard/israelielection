@@ -114,7 +114,7 @@
     "meanAbsSeats": 1.16
   },
   "listPriors": {
-    "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs).",
+    "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs). Version 3 (round2/B): the Joint List's +0.4 is superseded by the Arab sector turnout term below (sectorTurnout.replacesPriors) and kept here only so version 2 can be reproduced (model.mjs opts.v2).",
     "shas": 0.8,
     "raam": 0.6,
     "jl": 0.4,
@@ -133,12 +133,13 @@
     ]
   },
   "fringe": {
-    "about": "Share of the valid vote for lists the polls do not report (Noam, Haredi Public, micro-lists) plus the withdrawn list's residual: 0.7-1.5% in 2021-22 outside the polled lists (round1/F-review.md F4).",
-    "share": 0.015
+    "about": "Share of the vote going to lists the polls do not report separately, held out of every modelled list's share and counted in the threshold's denominator. 0.4-1.5% in 2013-2022; 1.8% for 2026 from the polls' own printed shares of the small lists outside the 15 modelled (Haredi Public about 0.7%, Noam about 0.5%, others 0.3-0.5%; round2/H-context.md section 5). 1.5% in version 2; neutral on the backtest either way.",
+    "share": 0.018
   },
   "smallList": {
-    "about": "Final-two-week misses of lists polled near the threshold, 2013-2022: sd about 1.0 point, Gaussian (round1/C-threshold.md 1.1).",
-    "sdFloorPoints": 1.0
+    "about": "Final-field misses of lists polled at 2-5%, 2015-2022 (round2/C-threshold-swing.md): Gaussian, sd 0.98 net of the class priors (90% cluster bootstrap 0.71-1.29; 0.91 with 2013), no skew once Blue and White 2021 is set aside, no dependence on the distance from the line or on the final-week trend, no strategic desertion keyed to the line. First-time and first-solo small lists -0.75 (9 cases, 8 negative; 90% -1.16 to -0.20): listPriors keeps -0.8. unprintedBelowShare is the last-resort share for a list a poll prints below the threshold with no percentage, when the outlet printed none in the window and no other current poll did: 2.5%, the median printed share (2015-2022) of such lists that other polls showed passing; 2% in version 2 was below 38 of those 51 figures. It decided no call in the record.",
+    "sdFloorPoints": 1.0,
+    "unprintedBelowShare": 0.025
   },
   "arabSwing": {
     "about": "RMS of the Arab lists' bloc miss in 2020-22, +1.0, -1.7, +2.0 seats: a turnout swing of their own (round1/F-review.md F5, round1/E-context.md 2.2).",
@@ -147,5 +148,23 @@
   "windowDays": {
     "about": "One latest poll per outlet within this many days of the newest; in 2019-22 the latest poll per firm beat every rule that let older polls back in (round1/D-pollsters.md 3).",
     "days": 7
+  },
+  "sectorTurnout": {
+    "about": "Round 2, memo B (round2/B-sector-turnout.md): the polls behave as if anchored on the previous election's Arab-sector turnout; the change in the Arab list-vote index I = Arab turnout x loyalty to Arab lists / general turnout explains about 90% of the Arab lists' final-poll miss in hindsight (R2 0.91, 2013-2022) and, forecast by mean reversion of I (stationary around 0.65 since 1999), beats the fixed priors leave-future-out (sector MAE 0.54 vs 1.14 points; per-list seat error 1.32 vs 1.36, a noise-sized margin). The term is carried by the Joint List (Ra'am keeps its +0.6 class prior: scaling it too pushes it under the threshold in Apr 2019 and 2021). logShift is the history-only centre for 2026: 2022's I sat at its long-run mean, so the expected change is nil (0.008); sdLog 0.196 is the carrier list's spread. Memo B's alternative, centring 2026 Arab turnout at 57% (logShift 0.072), was not taken: memo H finds version 2 already at the pre-blackout turnout consensus. Replaces listPriors.jl and arabSwing for the carrier lists. Backtest values are derived leave-future-out in scripts/forecast/round2/B/common.mjs.",
+    "sectors": [
+      {
+        "name": "arab",
+        "lists": [
+          "jl"
+        ],
+        "logShift": 0.008,
+        "alphaPts": 0,
+        "sdLog": 0.196,
+        "replacesPriors": true
+      }
+    ]
+  },
+  "swing": {
+    "about": "Version 3 (round2/G-uncertainty.md): the Netanyahu-bloc swing is lean + max(1.5, resid x sqrt(1 + 1/n)) x t(max(3, n - 1)) seats, the predictive distribution of the next miss from n past elections; for 2026 scale 1.65, 5 degrees of freedom, sd 2.1. Version 2's N(0, max(3, 2 x resid)) = N(0, 3.1) put all six past results between the 31st and 66th percentiles (probability about 0.003 if calibrated). Leave-future-out the change leaves per-list error identical and improves majority Brier 0.090 to 0.054 and list CRPS 2.165 to 2.137. The bloc point is the median of the simulated bloc total (Netanyahu-bloc error 1.94 to 1.33 under every seed)."
   }
 }

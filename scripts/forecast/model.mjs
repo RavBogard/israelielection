@@ -1,8 +1,12 @@
 /**
- * The forecast model, version 2 (2026-10-24), as a pure function so forecast.mjs (the daily run) and the
+ * The forecast model, version 3 (2026-10-24), as a pure function so forecast.mjs (the daily run) and the
  * backtest (scripts/forecast/backtest/) run the same code. Every step is a rule from the record of the
  * elections under the 3.25% threshold; docs/research/polls-method/2026-10-23-forecast-algorithm.md has the
- * reasoning and the round-one research memos (docs/research/polls-method/round1/) the evidence.
+ * reasoning, the round-one memos (docs/research/polls-method/round1/) the evidence for version 2 and the
+ * round-two memos (round2/) the evidence for what version 3 changed: a Student-t bloc swing scaled by the
+ * record's own residual (G), the bloc point as the bloc median (G), an Arab-sector turnout term in place of the
+ * Joint List prior and the Arab swing (B), the unprinted-below fallback at 2.5% (C), the fringe at 1.8% (H).
+ * Version 2 is reproduced by `opts.v2` (see DEFAULTS).
  *
  *   forecast({ polls, config, parties, agreements, cal, opts }) -> { inputs, parameters, blocs, majority, ..., lists }
  *
@@ -19,7 +23,14 @@ export const DEFAULTS = {
   priors: true,             // cal.listPriors, vote-share points by list
   leanNetOfShas: false,     // the common lean net of Shas's own miss: tested and rejected (backtest/v2.mjs: it turns the lean negative)
   leanHalfLife: 2,
-  blocSd: null,             // seats; null = max(3, 2 × historical residual)
+  blocSd: null,             // seats; null = max(3, 2 × historical residual) (version 2; used when swing is "normal")
+  swing: "t",               // "t": lean + max(swingFloor, resid·√(1+1/n)) · t(max(swingDfMin, n−1)) (round2/G); "normal": lean + N(0, blocSd) (version 2)
+  swingFloor: 1.5,          // seats
+  swingDfMin: 3,
+  blocPoint: "median",      // "median": the bloc point is the median of the simulated bloc total (round2/G); "sum": the sum of the list points (version 2)
+  sectorTurnout: true,      // cal.sectorTurnout.sectors: a sector's lists scaled together by its turnout index, replacing the lists' priors and the Arab swing (round2/B)
+  sectorSdLog: null,        // sensitivity: override every sector's sdLog
+  keepRuns: false,          // return the per-run seat arrays (the backtest's calibration scores)
   listSdAt8: null,          // points at an 8% share; null = from cal.perListError
   listSdFloor: true,        // cal.smallList.sdFloorPoints for small lists
   zeroSum: true,            // per-list noise sums to zero inside each bloc (substitution, not bloc movement)
@@ -31,17 +42,21 @@ export const DEFAULTS = {
   lean: null,               // seats; null = from the calibration record
   includeAll: false,        // sensitivity: every current poll, checks included
 };
+/** Version 2's rules, for the record and the backtest. */
+const members0Arab = (parties, ids, bloc) => ids.filter((id) => bloc[id] === "arab");
+export const V2 = { swing: "normal", blocPoint: "sum", sectorTurnout: false, unprintedBelow: 0.02, fringe: 0.015 };
 
 /** A printed percentage: "3.1%", "<1%" (half of 1%), "~2%". Null when unparseable. */
 export const pctOf = (s) => { if (s == null) return null; const x = parseFloat(String(s).replace(/[<>~%\s]/g, "")); return Number.isFinite(x) ? (String(s).includes("<") ? x / 2 : x) / 100 : null; };
 
 export function forecast({ polls, config, parties, agreements, cal, opts = {} }) {
-  const o = { ...DEFAULTS, ...opts };
+  const o = { ...DEFAULTS, ...(opts.v2 ? V2 : {}), ...opts };
   const withdrawn = new Set(o.withdrawn ? (cal.withdrawn?.lists ?? []).map((w) => w.id) : []);
   const ids = parties.map((p) => p.id).filter((id) => !withdrawn.has(id));
   const bloc = Object.fromEntries(parties.map((p) => [p.id, p.bloc]));
   const blocs = ["net", "opp", "mid", "arab"];
-  const FRINGE = o.fringe ? cal.fringe.share : 0;
+  const FRINGE = o.fringe ? (typeof o.fringe === "number" ? o.fringe : cal.fringe.share) : 0;
+  const UNPRINTED = o.unprintedBelow ?? cal.smallList?.unprintedBelowShare ?? 0.02;
 
   // 1. The field: one latest poll per outlet within the window; the checks left out.
   const campaign = polls.filter((p) => p.kind !== "exit" && config.pollsters.includes(p.pollster)).sort((a, b) => b.published.localeCompare(a.published));
@@ -68,7 +83,7 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
     const s = {}; let below = 0; const pass = [];
     for (const [id, r] of Object.entries(p.results)) {
       if (!ids.includes(id)) { if (r.belowThreshold || r.seats === 0) below += pctOf(r.pct) ?? 0; continue; } // a withdrawn list's residual stays in the denominator
-      if (r.belowThreshold || r.seats === 0) { s[id] = pctOf(r.pct) ?? printedBy(p, id) ?? printedByOthers(id) ?? 0.02; below += s[id]; } else pass.push([id, r.seats]);
+      if (r.belowThreshold || r.seats === 0) { s[id] = pctOf(r.pct) ?? printedBy(p, id) ?? printedByOthers(id) ?? UNPRINTED; below += s[id]; } else pass.push([id, r.seats]);
     }
     for (const c of p.combined) pass.push([c.parties.filter((x) => ids.includes(x)).join("|"), c.seats]);
     const P = 1 - below;
@@ -87,10 +102,22 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
   renorm(base);
   for (const [id, v] of Object.entries(base)) if (!Number.isFinite(v)) throw new Error(`forecast: non-finite share for ${id}; check the pct strings`);
 
-  // 4. Priors by list: the classes the final-week polls have missed in one direction since 2013.
-  const priors = o.priors ? cal.listPriors ?? {} : {};
+  // 4. Priors by list: the classes the final-week polls have missed in one direction since 2013. A sector with
+  //    `replacesPriors` (the Arab sector, step 4b) drops its lists' priors.
+  const sectors = (o.sectorTurnout ? cal.sectorTurnout?.sectors ?? [] : []).map((sc) => ({ ...sc, ids: ids.filter((id) => id in base && (sc.lists ? sc.lists.includes(id) : bloc[id] === sc.bloc)), sdLog: o.sectorSdLog ?? sc.sdLog ?? 0 })).filter((sc) => sc.ids.length);
+  const priors = { ...(o.priors ? cal.listPriors ?? {} : {}) };
+  for (const sc of sectors) if (sc.replacesPriors) for (const id of sc.ids) delete priors[id];
   for (const [id, pts] of Object.entries(priors)) if (typeof pts === "number" && id in base) base[id] = Math.max(0.002, base[id] + pts / 100);
   renorm(base);
+  // 4b. Sector turnout (round2/B): the polls are anchored on the previous election's sector composition; the sector's
+  //     lists are scaled by exp(logShift), the expected change in the sector's list-vote turnout index, plus alphaPts
+  //     points of under-count, and every other list is diluted in proportion. Each run draws exp(N(0, sdLog)) the same way.
+  for (const sc of sectors) {
+    const tot = sc.ids.reduce((a, id) => a + base[id], 0), x = Math.exp(sc.logShift ?? 0), al = (sc.alphaPts ?? 0) / 100;
+    for (const id of sc.ids) base[id] = Math.max(0.002, base[id] * x + (al * base[id]) / tot);
+    renorm(base);
+  }
+  const arabBySector = sectors.some((sc) => sc.replacesPriors && sc.ids.some((id) => bloc[id] === "arab"));
 
   // 5. The lean: the field's miss on the Netanyahu bloc, recency-weighted, net of Shas's own miss when the Shas
   //    prior is in (the same miss must not count twice). The residual after the lean sets the width's floor.
@@ -100,12 +127,19 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
   const lean = o.lean ?? leanCal;
   const resid = W ? Math.sqrt(errs.reduce((s, e) => s + e.w * (e.err - leanCal) ** 2, 0) / W) : 0;
   const blocSd = o.blocSd ?? Math.max(3, 2 * resid);
+  // Version 3 (round2/G): the swing is the predictive distribution of the next miss, Student-t with the record's own
+  //   scale and degrees of freedom; version 2's N(0, max(3, 2·resid)) put all six past results between the 31st and
+  //   66th percentiles.
+  const nRec = errs.length, swingScale = Math.max(o.swingFloor, resid * Math.sqrt(1 + 1 / Math.max(1, nRec))), swingDf = Math.max(o.swingDfMin, nRec - 1);
   // 6. Per-list noise: theMadad's 1.16 mean absolute seats at 0-14 days (2022) → sd in points at 8%, scaled by
   //    √share, with a floor for small lists (their misses run about 1.0 point near the threshold).
   const listSd = (o.listSdAt8 ?? (cal.perListError.meanAbsSeats * 1.25) / KNESSET / Math.sqrt(0.1 / 0.08) * 100) / 100;
   const floor = o.listSdFloor ? cal.smallList.sdFloorPoints / 100 : 0;
   const consolidateSd = o.consolidateSd / KNESSET;
-  const arabSd = o.arabSwing ? cal.arabSwing.sdSeats / KNESSET : 0;
+  // Arab lists outside the sector term (Ra'am) keep their share of version 2's Arab turnout swing (round2/R-red-team.md, finding 8).
+  const inSector = new Set(sectors.flatMap((sc) => sc.ids));
+  const arabFree = members0Arab(parties, ids, bloc).filter((id) => !inSector.has(id));
+  const arabSd = o.arabSwing && arabFree.length ? cal.arabSwing.sdSeats / KNESSET : 0;
 
   // 7. Bader-Ofer: whole quotas, remainders by D'Hondt with a surplus pair as one list (s. 81); the threshold is
   //    3.25% of the whole vote, the fringe included.
@@ -123,6 +157,7 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
   // 8. The simulation.
   let seed = o.seed; const rand = () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   const randn = () => { const u = rand() || 1e-12, v = rand(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
+  const randt = (df) => { let c = 0; for (let k = 0; k < df; k++) { const z = randn(); c += z * z; } return randn() / Math.sqrt(c / df); };
   const of = (b) => ids.filter((id) => bloc[id] === b && id in base);
   const members = Object.fromEntries(blocs.map((b) => [b, of(b)]));
   const zionist = [...members.net, ...members.opp];
@@ -133,7 +168,7 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
   for (let i = 0; i < o.runs; i++) {
     const v = { ...base };
     const netShare = members.net.reduce((a, id) => a + v[id], 0);
-    const swing = (lean + randn() * blocSd) / KNESSET;
+    const swing = (lean + (o.swing === "t" ? randt(swingDf) * swingScale : randn() * blocSd)) / KNESSET;
     for (const id of ids) v[id] *= bloc[id] === "net" ? 1 + swing / netShare : 1 - swing / (1 - FRINGE - netShare);
     for (const b of ["net", "opp"]) { const c = randn() * consolidateSd; const rest = members[b].filter((id) => id !== largest[b]); const tot = rest.reduce((a, id) => a + v[id], 0); if (tot > 0) { for (const id of rest) v[id] -= c * v[id] / tot; v[largest[b]] += c; } }
     const e = {}; for (const id of ids) e[id] = randn() * Math.max(floor, listSd * Math.sqrt(Math.max(v[id], 0.01) / 0.08));
@@ -141,7 +176,11 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
       for (const b of ["net", "opp", "arab"]) { const m = members[b], tot = m.reduce((a, id) => a + v[id], 0), se = m.reduce((a, id) => a + e[id], 0); if (tot > 0) for (const id of m) e[id] -= se * v[id] / tot; }
       const midE = members.mid.reduce((a, id) => a + e[id], 0), zt = zionist.reduce((a, id) => a + v[id], 0); for (const id of zionist) e[id] -= midE * v[id] / zt;
     }
-    if (arabSd && members.arab.length) { const ar = randn() * arabSd, at = members.arab.reduce((a, id) => a + v[id], 0), zt = zionist.reduce((a, id) => a + v[id], 0); for (const id of members.arab) e[id] += ar * v[id] / at; for (const id of zionist) e[id] -= ar * v[id] / zt; }
+    for (const sc of sectors) if (sc.sdLog) { // the sector turnout draw: the sector's lists scale together, the rest are diluted
+      const g = Math.exp(randn() * sc.sdLog) - 1, inS = new Set(sc.ids), st = sc.ids.reduce((a, id) => a + v[id], 0), rest = ids.filter((id) => !inS.has(id)), rt = rest.reduce((a, id) => a + v[id], 0);
+      for (const id of sc.ids) e[id] += g * v[id]; for (const id of rest) e[id] -= (g * st * v[id]) / rt;
+    }
+    if (arabSd && members.arab.length) { const at0 = members.arab.reduce((a, id) => a + v[id], 0), ft = arabFree.reduce((a, id) => a + v[id], 0); if (ft > 0) { const ar = randn() * arabSd * ft / at0, zt = zionist.reduce((a, id) => a + v[id], 0); for (const id of arabFree) e[id] += ar * v[id] / ft; for (const id of zionist) e[id] -= ar * v[id] / zt; } }
     for (const id of ids) v[id] = Math.max(0, v[id] + e[id]);
     const s = allocate(v); const t = { net: 0, opp: 0, mid: 0, arab: 0 };
     for (const id of ids) { const n = s[id] ?? 0; seatRuns[id][i] = n; t[bloc[id]] += n; }
@@ -171,15 +210,18 @@ export function forecast({ polls, config, parties, agreements, cal, opts = {} })
     }
   }
   const lists = Object.fromEntries(ids.map((id) => [id, { share: Math.round(central[id] * 10000) / 100, prior: priors[id] ?? 0, point: point[id] ?? 0, mean: r1(mean(seatRuns[id])), lo: q(sortedSeats[id], 0.05), hi: q(sortedSeats[id], 0.95), passes: Math.round(passRate[id] * 1000) / 10, call: passRate[id] >= 0.5 }]));
-  const blocOut = Object.fromEntries(blocs.map((b) => [b, { point: members[b].reduce((a, id) => a + (point[id] ?? 0), 0), median: q(sortedBlocs[b], 0.5), mean: r1(mean(blocRuns[b])), lo: q(sortedBlocs[b], 0.05), hi: q(sortedBlocs[b], 0.95) }]));
+  // The bloc point: version 3 the median of the simulated bloc total (round2/G: Netanyahu-bloc error 1.94 → 1.33);
+  // the sum of the list points stays beside it as listSum.
+  const blocOut = Object.fromEntries(blocs.map((b) => { const listSum = members[b].reduce((a, id) => a + (point[id] ?? 0), 0), median = q(sortedBlocs[b], 0.5); return [b, { point: o.blocPoint === "median" ? median : listSum, listSum, median, mean: r1(mean(blocRuns[b])), lo: q(sortedBlocs[b], 0.05), hi: q(sortedBlocs[b], 0.95) }]; }));
   return {
     inputs: { field: field.map((p) => ({ id: p.id, pollster: p.pollster, firm: p.firm, published: p.published, n: p.n, weight: r1(weight(p)) })), checks: checks.map((p) => ({ id: p.id, pollster: p.pollster, published: p.published })), agreements: pairs, withdrawn: [...withdrawn] },
-    parameters: { version: 2, windowDays: o.windowDays, fieldOnly: !(o.includeAll || !o.excludeChecks), firmWeights: o.firmWeights, sharesMethod: o.shares, listPriors: priors, leanSeats: r1(lean), leanNetOfShas: !!(o.leanNetOfShas && o.priors), historicalResidualSeats: r1(resid), blocSdSeats: r1(blocSd), listSdPointsAt8pct: r1(listSd * 1000) / 10, listSdFloorPoints: r1(floor * 100), zeroSumWithinBloc: o.zeroSum, arabSwingSdSeats: r1(arabSd * KNESSET), consolidateSdSeats: o.consolidateSd, fringeShare: r1(FRINGE * 1000) / 10, pointRule: o.point },
+    parameters: { version: o.swing === "t" || o.blocPoint === "median" || sectors.length ? 3 : 2, windowDays: o.windowDays, fieldOnly: !(o.includeAll || !o.excludeChecks), firmWeights: o.firmWeights, sharesMethod: o.shares, unprintedBelowShare: r1(UNPRINTED * 1000) / 10, listPriors: priors, sectorTurnout: sectors.map((sc) => ({ name: sc.name, lists: sc.ids, logShift: sc.logShift ?? 0, alphaPts: sc.alphaPts ?? 0, sdLog: sc.sdLog })), leanSeats: r1(lean), leanNetOfShas: !!(o.leanNetOfShas && o.priors), historicalResidualSeats: r1(resid), swing: o.swing, swingScaleSeats: o.swing === "t" ? r1(swingScale) : null, swingDf: o.swing === "t" ? swingDf : null, blocSdSeats: o.swing === "t" ? null : r1(blocSd), blocPoint: o.blocPoint, listSdPointsAt8pct: r1(listSd * 1000) / 10, listSdFloorPoints: r1(floor * 100), zeroSumWithinBloc: o.zeroSum, arabSwingSdSeats: r1(arabSd * KNESSET), arabSwingLists: arabSd ? arabFree : [], consolidateSdSeats: o.consolidateSd, fringeShare: r1(FRINGE * 1000) / 10, pointRule: o.point },
     blocs: blocOut,
     majority: { net: pct(net61), oppZionist: pct(opp61), neither: 100 - pct(net61) - pct(opp61), oppWithArabAndMid: pct(oppArab61) },
     netLargerThanOpp: pct(netLarger),
     largestList: Object.fromEntries(Object.entries(first).map(([k, v]) => [k, pct(v)]).filter(([, v]) => v > 0)),
     lists,
     runs: o.runs, seed: o.seed,
+    ...(o.keepRuns ? { seatRuns, blocRuns, raw: { net61: net61 / o.runs, opp61: opp61 / o.runs, passRate } } : {}),
   };
 }

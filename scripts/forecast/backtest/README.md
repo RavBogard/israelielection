@@ -99,3 +99,14 @@ outside the bloc as Wikipedia's 'Gov.' column and calibration.json count it; it 
 `node scripts/forecast/backtest/v2.mjs [runs]` scores `scripts/forecast/model.mjs` (the model as it runs daily since
 version 2, 2026-10-24) on the same six elections, leave-future-out, against version 1's rules and with each component
 switched off. The 2026 prior classes are mapped to each election's lists by hand in `CLASSES` inside the script.
+
+## Version 3
+
+`node scripts/forecast/backtest/v3.mjs [runs] [seeds] [data|data-full] [--filber=poll|outlet]` scores
+`scripts/forecast/model.mjs` (version 3 since 2026-10-24) against version 2 (`opts.v2`) over several seeds, with the
+calibration columns of round 2 (P(pass) Brier, randomised-PIT coverage, CRPS). `--filber=poll` (the default) drops a
+Filber-firm poll without dropping its outlet's other polls; `--filber=outlet` is the version-2 harness's rule.
+`data-full/` holds whole campaigns 2013–2022 (`build-data-full.py`; round2/D1-data-full.md). `v2.mjs` passes
+`v2: true` and still scores version 2. The round-2 prototype harnesses under `scripts/forecast/round2/` import
+`model.mjs` without that switch and were run against it as committed at `56fee38` (version 2); run them today and
+they score version 3's defaults with the 2026 sector term applied to the past (round2/R-red-team.md, finding 4).

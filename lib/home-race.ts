@@ -28,7 +28,7 @@ export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:s
   // A count is a known subtotal while lists are missing; a published poll simply does not report a list it leaves out.
   const incomplete=kind==="count"?members.some(p=>p.state==="missing")||combined.some(c=>!c.withinGroup):kind==="poll"&&combined.some(c=>!c.withinGroup);
   const bloc=blocs.find(b=>b.id===id)!,label=lang==="he"?blocText(bloc,"he"):{text:bloc.label,lang:"en" as Lang};
-  const seats=seatTenths(totals[id]);return {id,label:label.text,...(lang==="he"?{labelLang:label.lang}:{}) as {labelLang?:Lang},seats,shortfall:majorityShortfall(seats),incomplete,members,combined};
+  const seats=seatTenths(totals[id]);return {id,label:label.text,...(lang==="he"?{labelLang:label.lang}:{}) as {labelLang?:Lang},seats,labelSeats:undefined as number|undefined,shortfall:majorityShortfall(seats),incomplete,members,combined};
  });
  return {rows,isAverage,kind};
 }

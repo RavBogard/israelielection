@@ -78,7 +78,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/polls.json data/forecast.json data/forecast-history.json
+          git add data/polls.json data/forecast.json data/forecast-v2.json data/forecast-history.json
           msg="${{ steps.manual.outputs.accepted == '1' && 'polls: exit poll entered by hand' || format('polls: add {0} from Wikipedia', steps.job.outputs.accepted) }}"
           git commit -m "$msg" -m "$(cat "$RUNNER_TEMP/report.md")"
           git pull --rebase --autostash origin main

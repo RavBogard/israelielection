@@ -27,7 +27,7 @@ const changelog = (changelogJson as { entries: { date: string; en: string; he: s
 const signed = (x: number) => (x === 0 ? "0" : `${x > 0 ? "+" : "−"}${Math.abs(x).toFixed(1)}`);
 
 /**
- * The forecast page, /forecast and /he/forecast: the prediction on the record, what goes in, the nine steps, the record
+ * The forecast page, /forecast and /he/forecast: the prediction on the record, what goes in, the steps, the record
  * the rules come from, the daily runs and the scoring rule. Every figure is read from data/forecast.json, so the page
  * follows each day's run; the words are in lib/i18n/forecast.ts.
  */
@@ -41,6 +41,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
   const checks = he ? list(checkNames) : checkNames.join(" and ");
   const through = mediumDate(f.inputs.field.map((q) => q.published).sort().at(-1)!, lang);
   const lists = Object.entries(f.lists).map(([id, l]) => ({ id, ...l, bloc: parties.find((x) => x.id === id)?.bloc as BlocId })).sort((a, b) => blocRank(a.bloc) - blocRank(b.bloc) || b.share - a.share);
+  const sector = p.sectorTurnout?.find((sc) => sc.name === "arab") ?? null;
   const priorEntries = Object.entries(p.listPriors ?? {}).filter((e): e is [string, number] => typeof e[1] === "number" && e[1] !== 0).sort((a, b) => b[1] - a[1]).map(([id, pts]) => t.inputs.priorEntry(nameOf(id), pts));
   const largest = Object.entries(f.largestList).sort((a, b) => b[1] - a[1]).map(([id, pct]) => t.prediction.largestEntry(nameOf(id), pct));
   const thresholdCases = calibration.thresholdLists.cases;
@@ -72,7 +73,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
           <table className="data-table fc-table">
             <thead><tr><th scope="col">{t.prediction.cols.bloc}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.median}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.chance}</th></tr></thead>
             <tbody>{BLOC_ORDER.map((b) => (
-              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{f.blocs[b].point}</b></td><td className="num">{f.blocs[b].median ?? ""}</td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
+              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{f.blocs[b].point}</b></td><td className="num">{f.blocs[b].listSum ?? f.blocs[b].median ?? ""}</td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
             ))}</tbody>
           </table>
         </div>
@@ -109,9 +110,10 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
           <li>{t.steps.s2}</li>
           <li>{t.steps.s3(p.fringeShare ?? 0)}</li>
           <li>{t.steps.s4(he ? list(priorEntries) : priorEntries.join(", "))}</li>
+          {sector && <li>{t.steps.s4b(Math.round((Math.exp(sector.logShift) - 1) * 1000) / 10, Math.round(sector.sdLog * 1000) / 10)}</li>}
           <li>{t.steps.s5(p.leanSeats, p.historicalResidualSeats)}</li>
           <li>{t.steps.s6}</li>
-          <li>{t.steps.s7(p.blocSdSeats)}</li>
+          <li>{t.steps.s7(p.swingScaleSeats ?? p.blocSdSeats ?? 0, p.swingDf ?? 0)}</li>
           <li>{t.steps.s8(p.listSdPointsAt8pct, p.listSdFloorPoints ?? 0, p.arabSwingSdSeats ?? 0)}</li>
           <li>{t.steps.s9(p.consolidateSdSeats)}</li>
           <li>{t.steps.s10(f.inputs.agreements.length, runs)}</li>

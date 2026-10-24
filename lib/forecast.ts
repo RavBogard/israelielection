@@ -12,10 +12,10 @@ export type Forecast = {
   seed: number;
   method: string;
   inputs: { field: { id: string; pollster: string; firm?: string | null; published: string; n: number | null; weight?: number }[]; checks: { id: string; pollster: string; published: string }[]; agreements: string[][]; withdrawn?: string[] };
-  /** Version 2 (2026-10-24): scripts/forecast/model.mjs DEFAULTS, as run. */
-  parameters: { version?: number; windowDays?: number; fieldOnly: boolean; firmWeights?: boolean; sharesMethod?: string; listPriors?: Record<string, number | string>; leanSeats: number; leanNetOfShas?: boolean; historicalResidualSeats: number; blocSdSeats: number; listSdPointsAt8pct: number; listSdFloorPoints?: number; zeroSumWithinBloc?: boolean; arabSwingSdSeats?: number; consolidateSdSeats: number; fringeShare?: number; pointRule?: string };
-  /** `point` is the sum of the bloc's list points (scored); `median` the median of the bloc's simulated total (reported). */
-  blocs: Record<"net" | "opp" | "mid" | "arab", { point: number; median?: number; mean: number; lo: number; hi: number }>;
+  /** scripts/forecast/model.mjs DEFAULTS, as run (version 2 from 2026-10-24; version 3 adds the swing, blocPoint and sectorTurnout fields). */
+  parameters: { version?: number; windowDays?: number; fieldOnly: boolean; firmWeights?: boolean; sharesMethod?: string; unprintedBelowShare?: number; listPriors?: Record<string, number | string>; sectorTurnout?: { name: string; lists: string[]; logShift: number; alphaPts: number; sdLog: number }[]; leanSeats: number; leanNetOfShas?: boolean; historicalResidualSeats: number; swing?: string; swingScaleSeats?: number | null; swingDf?: number | null; blocSdSeats: number | null; blocPoint?: string; listSdPointsAt8pct: number; listSdFloorPoints?: number; zeroSumWithinBloc?: boolean; arabSwingSdSeats?: number; consolidateSdSeats: number; fringeShare?: number; pointRule?: string };
+  /** `point` is scored: version 3 the median of the bloc's simulated total (version 2: the sum of its list points); `listSum` the sum of the list points, `median` the median, both reported. */
+  blocs: Record<"net" | "opp" | "mid" | "arab", { point: number; listSum?: number; median?: number; mean: number; lo: number; hi: number }>;
   /** Share of runs, in whole percent: the Netanyahu bloc at 61+, the anti-Netanyahu Zionist bloc at 61+, neither. */
   majority: { net: number; oppZionist: number; neither: number; oppWithArabAndMid: number };
   netLargerThanOpp: number;
@@ -43,7 +43,7 @@ export const forecastPoll: Poll = {
   url: null,
   n: null,
   margin: null,
-  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}.`,
+  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}. The list seats add to 120; the forecast's bloc centrals are medians of the runs and can differ from these sums by a seat.`,
   results: Object.fromEntries(Object.entries(forecast.lists).map(([id, l]) => [id, l.point === 0 ? { seats: 0, belowThreshold: true } : { seats: l.point }])),
   combined: [],
 };

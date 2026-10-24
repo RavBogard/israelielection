@@ -210,6 +210,144 @@
           "passes": 95.8
         }
       }
+    },
+    {
+      "generated": "2026-10-24",
+      "generatedAt": "2026-10-24T01:08:30.804Z",
+      "final": false,
+      "polls": [
+        "zman-yisrael-2026-10-22",
+        "maariv-2026-10-22",
+        "channel-13-2026-10-21",
+        "channel-12-2026-10-21",
+        "walla-2026-10-20",
+        "kan-11-2026-10-18"
+      ],
+      "parameters": {
+        "version": 3,
+        "windowDays": 7,
+        "fieldOnly": true,
+        "firmWeights": true,
+        "sharesMethod": "dhondt",
+        "unprintedBelowShare": 2.5,
+        "listPriors": {
+          "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs). Version 3 (round2/B): the Joint List's +0.4 is superseded by the Arab sector turnout term below (sectorTurnout.replacesPriors) and kept here only so version 2 can be reproduced (model.mjs opts.v2).",
+          "shas": 0.8,
+          "raam": 0.6,
+          "byachad": -0.8,
+          "res": -0.8,
+          "poi": -0.8
+        },
+        "sectorTurnout": [
+          {
+            "name": "arab",
+            "lists": [
+              "jl"
+            ],
+            "logShift": 0.008,
+            "alphaPts": 0,
+            "sdLog": 0.196
+          }
+        ],
+        "leanSeats": 1.7,
+        "leanNetOfShas": false,
+        "historicalResidualSeats": 1.5,
+        "swing": "t",
+        "swingScaleSeats": 1.7,
+        "swingDf": 5,
+        "blocSdSeats": null,
+        "blocPoint": "median",
+        "listSdPointsAt8pct": 1.08,
+        "listSdFloorPoints": 1,
+        "zeroSumWithinBloc": true,
+        "arabSwingSdSeats": 1.7,
+        "arabSwingLists": [
+          "raam"
+        ],
+        "consolidateSdSeats": 1.5,
+        "fringeShare": 1.8,
+        "pointRule": "median"
+      },
+      "blocs": {
+        "net": 53,
+        "opp": 51,
+        "mid": 0,
+        "arab": 15
+      },
+      "blocListSums": {
+        "net": 54,
+        "opp": 51,
+        "mid": 0,
+        "arab": 15
+      },
+      "majority": {
+        "net": 1,
+        "oppZionist": 0,
+        "neither": 99,
+        "oppWithArabAndMid": 98
+      },
+      "largestList": {
+        "likud": 45,
+        "yashar": 55
+      },
+      "lists": {
+        "likud": {
+          "point": 21,
+          "passes": 100
+        },
+        "otzma": {
+          "point": 8,
+          "passes": 99.9
+        },
+        "shas": {
+          "point": 10,
+          "passes": 100
+        },
+        "utj": {
+          "point": 8,
+          "passes": 99.8
+        },
+        "rz": {
+          "point": 7,
+          "passes": 99.4
+        },
+        "poi": {
+          "point": 0,
+          "passes": 18.7
+        },
+        "noam": {
+          "point": 0,
+          "passes": 0.1
+        },
+        "yashar": {
+          "point": 22,
+          "passes": 100
+        },
+        "byachad": {
+          "point": 12,
+          "passes": 100
+        },
+        "dem": {
+          "point": 9,
+          "passes": 100
+        },
+        "yb": {
+          "point": 8,
+          "passes": 99.9
+        },
+        "res": {
+          "point": 0,
+          "passes": 22.5
+        },
+        "jl": {
+          "point": 9,
+          "passes": 99.7
+        },
+        "raam": {
+          "point": 6,
+          "passes": 96
+        }
+      }
     }
   ]
 }
