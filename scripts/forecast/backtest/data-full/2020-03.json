@@ -1,0 +1,4004 @@
+{
+ "election": "2020-03-02",
+ "key": "2020-03",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "about": "Every poll in Wikipedia's polling tables for the 2020-03-02 election, from the day after the previous election (2019-09-17) to the day before the vote, newest first: 80 polls by 12 pollsters (6 by Shlomo Filber's firms). The outgoing Knesset was dissolved on 2019-12-12 (60 polls since). Same schema as the 28-day files in data/, with the same lists, blocs, agreements and result as data/2020-03.json; parties that merged, split or withdrew during the campaign have their own ids, listed in otherLists (`into` names the final list they merged into). Built by scripts/forecast/backtest/build-data-full.py; memo docs/research/polls-method/round2/D1-data-full.md.",
+ "previousElection": "2019-09-17",
+ "dissolved": "2019-12-12",
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud",
+  "bw": "Blue and White",
+  "jl": "Joint List",
+  "shas": "Shas",
+  "utj": "United Torah Judaism",
+  "lgm": "Labor–Gesher–Meretz",
+  "yb": "Yisrael Beiteinu",
+  "yamina": "Yamina",
+  "otzma": "Otzma Yehudit"
+ },
+ "blocs": {
+  "likud": "net",
+  "bw": "opp",
+  "jl": "arab",
+  "shas": "net",
+  "utj": "net",
+  "lgm": "opp",
+  "yb": "mid",
+  "yamina": "net",
+  "otzma": "mid"
+ },
+ "blocNote": "Netanyahu bloc as Wikipedia's 'Gov.' column and calibration.json count it: Likud, Shas, UTJ, Yamina. Yisrael Beiteinu is 'mid'; Otzma Yehudit 'mid' as in Sep 2019 (failed).",
+ "otherLists": {
+  "yamina_nr": {
+   "name": "New Right (before Yamina re-formed, Jan 2020)",
+   "bloc": "net",
+   "into": "yamina",
+   "note": null
+  },
+  "yamina_nu": {
+   "name": "National Union–Tkuma (before Yamina re-formed, Jan 2020)",
+   "bloc": "net",
+   "into": "yamina",
+   "note": null
+  },
+  "yamina_jh": {
+   "name": "The Jewish Home (before Yamina re-formed, Jan 2020)",
+   "bloc": "net",
+   "into": "yamina",
+   "note": null
+  },
+  "yamina_jhnu": {
+   "name": "Jewish Home–National Union (the URWP remainder, before Yamina re-formed)",
+   "bloc": "net",
+   "into": "yamina",
+   "note": null
+  },
+  "lgm_lg": {
+   "name": "Labor–Gesher (before Labor–Gesher–Meretz, 13 Jan 2020)",
+   "bloc": "opp",
+   "into": "lgm",
+   "note": null
+  },
+  "du": {
+   "name": "Democratic Union (Meretz, Israel Democratic Party, Green Movement)",
+   "bloc": "opp",
+   "into": null,
+   "note": "Meretz joined Labor–Gesher–Meretz; Stav Shaffir's Green Movement left."
+  },
+  "green": {
+   "name": "Green Movement (Stav Shaffir; withdrew)",
+   "bloc": "opp",
+   "into": null,
+   "note": null
+  }
+ },
+ "result": {
+  "validVotes": 4590062,
+  "lists": {
+   "likud": {
+    "votes": 1352449,
+    "pct": 29.465,
+    "seats": 36,
+    "passed": true
+   },
+   "bw": {
+    "votes": 1220381,
+    "pct": 26.587,
+    "seats": 33,
+    "passed": true
+   },
+   "jl": {
+    "votes": 581507,
+    "pct": 12.669,
+    "seats": 15,
+    "passed": true
+   },
+   "shas": {
+    "votes": 352853,
+    "pct": 7.687,
+    "seats": 9,
+    "passed": true
+   },
+   "utj": {
+    "votes": 274437,
+    "pct": 5.979,
+    "seats": 7,
+    "passed": true
+   },
+   "lgm": {
+    "votes": 267480,
+    "pct": 5.827,
+    "seats": 7,
+    "passed": true
+   },
+   "yb": {
+    "votes": 263365,
+    "pct": 5.738,
+    "seats": 7,
+    "passed": true
+   },
+   "yamina": {
+    "votes": 240689,
+    "pct": 5.244,
+    "seats": 6,
+    "passed": true
+   },
+   "otzma": {
+    "votes": 19402,
+    "pct": 0.423,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "likud",
+   "yamina"
+  ],
+  [
+   "bw",
+   "lgm"
+  ],
+  [
+   "utj",
+   "shas"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "maariv-2020-02-28",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "28 Feb 2020",
+   "published": "2020-02-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-02-28",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "28 Feb 2020",
+   "published": "2020-02-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 15
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-02-28",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "27–28 Feb 2020",
+   "published": "2020-02-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-the-jerusalem-post-2020-02-27",
+   "pollster": "Maariv & The Jerusalem Post",
+   "firm": "Panels Politics",
+   "fieldwork": "27 Feb 2020",
+   "published": "2020-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-02-27",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "27 Feb 2020",
+   "published": "2020-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2020-02-27",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "27 Feb 2020",
+   "published": "2020-02-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "arutz-sheva-2020-02-26",
+   "pollster": "Arutz Sheva",
+   "firm": "Direct Polls",
+   "fieldwork": "26 Feb 2020",
+   "published": "2020-02-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.96%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2020-02-25",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "25 Feb 2020",
+   "published": "2020-02-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2020-02-25",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "25 Feb 2020",
+   "published": "2020-02-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 32
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-02-24",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "24 Feb 2020",
+   "published": "2020-02-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-02-24",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "24 Feb 2020",
+   "published": "2020-02-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 32
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-02-23",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "23 Feb 2020",
+   "published": "2020-02-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-02-23",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "23 Feb 2020",
+   "published": "2020-02-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2020-02-20",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "19–20 Feb 2020",
+   "published": "2020-02-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "arutz-sheva-2020-02-20",
+   "pollster": "Arutz Sheva",
+   "firm": "Direct Polls",
+   "fieldwork": "19–20 Feb 2020",
+   "published": "2020-02-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 31
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2020-02-19",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "19 Feb 2020",
+   "published": "2020-02-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 121.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-02-19",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "19 Feb 2020",
+   "published": "2020-02-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2020-02-17",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "16–17 Feb 2020",
+   "published": "2020-02-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-02-17",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "17 Feb 2020",
+   "published": "2020-02-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2020-02-14",
+   "pollster": "103fm",
+   "firm": "Panels Politics",
+   "fieldwork": "13–14 Feb 2020",
+   "published": "2020-02-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2020-02-13",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "12–13 Feb 2020",
+   "published": "2020-02-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2020-02-13",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "12–13 Feb 2020",
+   "published": "2020-02-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-02-13",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "13 Feb 2020",
+   "published": "2020-02-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "makor-rishon-2020-02-12",
+   "pollster": "Makor Rishon",
+   "firm": "Panels Politics",
+   "fieldwork": "11–12 Feb 2020",
+   "published": "2020-02-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 7
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-02-07",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "7 Feb 2020",
+   "published": "2020-02-07",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2020-02-06",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "5–6 Feb 2020",
+   "published": "2020-02-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-20-2020-02-06",
+   "pollster": "Channel 20",
+   "firm": "Direct Polls",
+   "fieldwork": "6 Feb 2020",
+   "published": "2020-02-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2020-02-05",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "5 Feb 2020",
+   "published": "2020-02-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2020-02-05",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "5 Feb 2020",
+   "published": "2020-02-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2020-01-30",
+   "pollster": "103fm",
+   "firm": "Maagar Mochot",
+   "fieldwork": "30 Jan 2020",
+   "published": "2020-01-30",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2020-01-29",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "29 Jan 2020",
+   "published": "2020-01-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 7
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-01-29",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "29 Jan 2020",
+   "published": "2020-01-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-01-29",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "29 Jan 2020",
+   "published": "2020-01-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 12
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-01-29",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "29 Jan 2020",
+   "published": "2020-01-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2020-01-28",
+   "pollster": "Israel Hayom",
+   "firm": "Direct Polls",
+   "fieldwork": "28 Jan 2020",
+   "published": "2020-01-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 35
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.32%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2020-01-23",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "22–23 Jan 2020",
+   "published": "2020-01-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "makor-rishon-2020-01-23",
+   "pollster": "Makor Rishon",
+   "firm": "Panels Politics",
+   "fieldwork": "22–23 Jan 2020",
+   "published": "2020-01-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-01-21",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "20–21 Jan 2020",
+   "published": "2020-01-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.93%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-01-19",
+   "pollster": "Channel 13",
+   "firm": "Direct Polls",
+   "fieldwork": "19 Jan 2020",
+   "published": "2020-01-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-01-16",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "16 Jan 2020",
+   "published": "2020-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-01-16",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "16 Jan 2020",
+   "published": "2020-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-01-16",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "16 Jan 2020",
+   "published": "2020-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 10
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2020-01-16",
+   "pollster": "103fm",
+   "firm": "Maagar Mochot",
+   "fieldwork": "16 Jan 2020",
+   "published": "2020-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 14
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "arutz-sheva-2020-01-14",
+   "pollster": "Arutz Sheva",
+   "firm": "Direct Polls",
+   "fieldwork": "14 Jan 2020",
+   "published": "2020-01-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 10
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-01-13",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "13 Jan 2020",
+   "published": "2020-01-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 2 more scenario rows for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 13
+    },
+    "lgm": {
+     "seats": 9
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.4%"
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_nu",
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 5
+    }
+   ]
+  },
+  {
+   "id": "makor-rishon-2020-01-09",
+   "pollster": "Makor Rishon",
+   "firm": "Panels Politics",
+   "fieldwork": "8–9 Jan 2020",
+   "published": "2020-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 4 more scenario rows for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "yamina_nr": {
+     "seats": 7
+    },
+    "yamina_nu": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 4
+    }
+   ]
+  },
+  {
+   "id": "israel-hayom-2020-01-09",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "8–9 Jan 2020",
+   "published": "2020-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 4 more scenario rows for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_nr": {
+     "seats": 4
+    },
+    "yamina_nu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.2%"
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 5
+    }
+   ]
+  },
+  {
+   "id": "arutz-sheva-2020-01-09",
+   "pollster": "Arutz Sheva",
+   "firm": "Midgam",
+   "fieldwork": "9 Jan 2020",
+   "published": "2020-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 1 more scenario row for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_nu",
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 4
+    }
+   ]
+  },
+  {
+   "id": "walla-2020-01-08",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "8 Jan 2020",
+   "published": "2020-01-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 1 more scenario row for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "yamina_nu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2020-01-02",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "2 Jan 2020",
+   "published": "2020-01-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 6
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2020-01-02",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "2 Jan 2020",
+   "published": "2020-01-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 1 more scenario row for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 8
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2020-01-02",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "2 Jan 2020",
+   "published": "2020-01-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Wikipedia prints 1 more scenario row for this poll; the first row is kept.",
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "yamina_nu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.9%"
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "0.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2020-01-01",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "1 Jan 2020",
+   "published": "2020-01-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_nu",
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 7
+    }
+   ]
+  },
+  {
+   "id": "channel-12-2019-12-29",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "29 Dec 2019",
+   "published": "2019-12-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 5
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_nu",
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 4
+    }
+   ]
+  },
+  {
+   "id": "103fm-2019-12-19",
+   "pollster": "103fm",
+   "firm": "Smith",
+   "fieldwork": "19 Dec 2019",
+   "published": "2019-12-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 5
+    },
+    "green": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "yamina_nu",
+      "yamina_jh",
+      "otzma"
+     ],
+     "seats": 4
+    }
+   ]
+  },
+  {
+   "id": "makor-rishon-2019-12-18",
+   "pollster": "Makor Rishon",
+   "firm": "Panels Politics",
+   "fieldwork": "18 Dec 2019",
+   "published": "2019-12-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 38
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.7%"
+    },
+    "yamina_nr": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-12-15",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "15 Dec 2019",
+   "published": "2019-12-15",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 6
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-12-12",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "12 Dec 2019",
+   "published": "2019-12-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-12-12",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "12 Dec 2019",
+   "published": "2019-12-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 37
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 6
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "yamina_nr": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-12-12",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "12 Dec 2019",
+   "published": "2019-12-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-12-10",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "9–10 Dec 2019",
+   "published": "2019-12-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.3%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-12-10",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "10 Dec 2019",
+   "published": "2019-12-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 37
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-radio-2019-12-08",
+   "pollster": "Kan Radio",
+   "firm": "Kantar",
+   "fieldwork": "8 Dec 2019",
+   "published": "2019-12-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-12-05",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "5 Dec 2019",
+   "published": "2019-12-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-12-05",
+   "pollster": "103fm",
+   "firm": "Maagar Mochot",
+   "fieldwork": "5 Dec 2019",
+   "published": "2019-12-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 32
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 4
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-11-28",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "28 Nov 2019",
+   "published": "2019-11-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 4
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-11-28",
+   "pollster": "103fm",
+   "firm": "Maagar Mochot",
+   "fieldwork": "28 Nov 2019",
+   "published": "2019-11-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 4
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-11-27",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "26–27 Nov 2019",
+   "published": "2019-11-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-11-26",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "25–26 Nov 2019",
+   "published": "2019-11-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "yamina_nr": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-11-26",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "26 Nov 2019",
+   "published": "2019-11-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-11-25",
+   "pollster": "Channel 12",
+   "firm": "Panels Politics",
+   "fieldwork": "25 Nov 2019",
+   "published": "2019-11-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 37
+    },
+    "likud": {
+     "seats": 30
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-11-22",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "21–22 Nov 2019",
+   "published": "2019-11-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 4
+    },
+    "du": {
+     "seats": 6
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-11-22",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam/Statnet",
+   "fieldwork": "22 Nov 2019",
+   "published": "2019-11-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 36
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "lgm_lg": {
+     "seats": 4
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-11-21",
+   "pollster": "Kan 11",
+   "firm": "Kantar",
+   "fieldwork": "21 Nov 2019",
+   "published": "2019-11-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 8
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-11-21",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "21 Nov 2019",
+   "published": "2019-11-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-11-15",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "15 Nov 2019",
+   "published": "2019-11-15",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 31
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 10
+    },
+    "yb": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 6
+    },
+    "du": {
+     "seats": 6
+    },
+    "yamina": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-11-10",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "10 Nov 2019",
+   "published": "2019-11-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 35
+    },
+    "likud": {
+     "seats": 34
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 4
+    },
+    "yamina_nr": {
+     "seats": 4
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-10-31",
+   "pollster": "103fm",
+   "firm": "Maagar Mochot",
+   "fieldwork": "31 Oct 2019",
+   "published": "2019-10-31",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "lgm_lg": {
+     "seats": 7
+    },
+    "du": {
+     "seats": 5
+    },
+    "yamina": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-10-22",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "22 Oct 2019",
+   "published": "2019-10-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 34
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 5
+    },
+    "du": {
+     "seats": 4
+    },
+    "yamina_jhnu": {
+     "seats": 5
+    },
+    "yamina_nr": {
+     "seats": 4
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-10-06",
+   "pollster": "Walla",
+   "firm": "Midgam",
+   "fieldwork": "3–6 Oct 2019",
+   "published": "2019-10-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2020_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "bw": {
+     "seats": 33
+    },
+    "likud": {
+     "seats": 33
+    },
+    "jl": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 7
+    },
+    "yamina": {
+     "seats": 7
+    },
+    "lgm_lg": {
+     "seats": 6
+    },
+    "du": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23",
+ "wikitextSha256": {
+  "p": "3994416bcbce56bd",
+  "e": "0027f0f41feb9e54"
+ }
+}
