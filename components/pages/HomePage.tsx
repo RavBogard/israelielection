@@ -4,7 +4,7 @@ import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
 import HomeRace, { type RaceOption } from "@/components/HomeRace";
-import { homeRaceModel } from "@/lib/home-race";
+import { homeRaceModel, majorityShortfall, type HomeRaceModel } from "@/lib/home-race";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
@@ -72,7 +72,7 @@ function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; da
       source: <>{t.pollSource(label, firm, p.n, mediumDate(p.published, lang))}{t.latestNote}{p.url && <><a href={p.url} hrefLang={he ? undefined : "en"}>{t.pollReport}</a>. </>}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{t.everyPoll}</Link>.</> };
   };
   const options: RaceOption[] | undefined = live ? undefined : [
-    { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(he ? "he" : "en")), model: homeRaceModel(forecastPoll, parties, blocs, lang), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
+    { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(he ? "he" : "en")), model: forecastRaceModel(homeRaceModel(forecastPoll, parties, blocs, lang)), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
     { id: "avg", label: t.pickAverage, detail: t.pickPolls(mainPolls.length), model, change, heading: basis, source: avgSource },
     { id: "latest", label: t.pickLatest, detail: t.pickPollsters(mainPolls.length), model, variants: mainPolls.map(pollOption), variantsLabel: t.pickPoll },
   ];
@@ -139,6 +139,10 @@ function countTime(iso: string, lang: Lang): string {
   return `${new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(when)} Israel time`;
 }
 
+/** The hero's bloc figures for the forecast are the model's bloc centrals (version 3: the median of each bloc's simulated total), which the scoring uses; the lists keep their own central seats. */
+function forecastRaceModel(model: HomeRaceModel): HomeRaceModel {
+  return { ...model, rows: model.rows.map((row) => { const seats = forecast.blocs[row.id].point; return { ...row, seats, shortfall: majorityShortfall(seats) }; }) };
+}
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const he = lang === "he", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();

@@ -30,16 +30,16 @@ const out0 = forecast({ polls, config, parties, agreements, cal, opts: envOpts }
 const now = new Date();
 const out = {
   generated: now.toISOString().slice(0, 10), generatedAt: now.toISOString(), final: FINAL, election: results.election, runs: out0.runs, seed: out0.seed,
-  method: "scripts/forecast/model.mjs (version 2); docs/research/polls-method/2026-10-23-forecast-algorithm.md",
+  method: `scripts/forecast/model.mjs (version ${out0.parameters.version}); docs/research/polls-method/2026-10-23-forecast-algorithm.md`,
   inputs: out0.inputs, parameters: out0.parameters, blocs: out0.blocs, majority: out0.majority, netLargerThanOpp: out0.netLargerThanOpp, largestList: out0.largestList, lists: out0.lists,
-  scoring: "Score on the official result: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point (the sum of the bloc's list points; blocs.*.median is reported beside it, not scored); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way.",
+  scoring: "Score on the official result: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point (version 3: the median of the bloc's simulated total; blocs.*.listSum, the sum of the bloc's list points, is reported beside it, not scored); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way.",
 };
 if (!SENSITIVITY) {
   fs.writeFileSync("data/forecast.json", JSON.stringify(out, null, 2) + "\n");
   // The record: one entry per run whose inputs, parameters or figures changed.
   const historyFile = "data/forecast-history.json";
   const history = fs.existsSync(historyFile) ? read(historyFile) : { about: "Every forecast run that changed the figures, oldest first; the last entry is data/forecast.json. Scored together after the vote.", runs: [] };
-  const entry = { generated: out.generated, generatedAt: out.generatedAt, final: out.final, polls: out.inputs.field.map((p) => p.id), parameters: out.parameters, blocs: Object.fromEntries(Object.entries(out.blocs).map(([b, v]) => [b, v.point])), majority: out.majority, largestList: out.largestList, lists: Object.fromEntries(Object.entries(out.lists).map(([id, l]) => [id, { point: l.point, passes: l.passes }])) };
+  const entry = { generated: out.generated, generatedAt: out.generatedAt, final: out.final, polls: out.inputs.field.map((p) => p.id), parameters: out.parameters, blocs: Object.fromEntries(Object.entries(out.blocs).map(([b, v]) => [b, v.point])), blocListSums: Object.fromEntries(Object.entries(out.blocs).map(([b, v]) => [b, v.listSum])), majority: out.majority, largestList: out.largestList, lists: Object.fromEntries(Object.entries(out.lists).map(([id, l]) => [id, { point: l.point, passes: l.passes }])) };
   const last = history.runs.at(-1), same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
   const changed = !last || !same({ ...last, generated: 0, generatedAt: 0, final: 0 }, { ...entry, generated: 0, generatedAt: 0, final: 0 }) || last.final !== entry.final;
   if (changed) history.runs.push(entry); else history.runs[history.runs.length - 1] = { ...last, generatedAt: entry.generatedAt, generated: entry.generated };
