@@ -69,3 +69,4 @@ docs/research/HANDOFF-RESEARCH.md
 .impeccable/mocks/
 .impeccable/questions/
 .impeccable/review/
+__pycache__/
