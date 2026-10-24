@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-24",
-  "generatedAt": "2026-10-24T01:08:30.804Z",
+  "generatedAt": "2026-10-24T14:38:01.151Z",
   "final": false,
   "election": "2026-10-27",
   "runs": 50000,
@@ -8,6 +8,30 @@
   "method": "scripts/forecast/model.mjs (version 3); docs/research/polls-method/2026-10-23-forecast-algorithm.md",
   "inputs": {
     "field": [
+      {
+        "id": "kan-11-2026-10-23",
+        "pollster": "Kan 11",
+        "firm": "Kantar",
+        "published": "2026-10-23",
+        "n": 1006,
+        "weight": 15.9
+      },
+      {
+        "id": "channel-12-2026-10-23",
+        "pollster": "Channel 12",
+        "firm": "Midgam R&C",
+        "published": "2026-10-23",
+        "n": 1018,
+        "weight": 31.9
+      },
+      {
+        "id": "channel-13-2026-10-23",
+        "pollster": "Channel 13",
+        "firm": "MP+TM+SN+A",
+        "published": "2026-10-23",
+        "n": 1875,
+        "weight": 43.3
+      },
       {
         "id": "zman-yisrael-2026-10-22",
         "pollster": "Zman Yisrael",
@@ -25,20 +49,12 @@
         "weight": 16.2
       },
       {
-        "id": "channel-13-2026-10-21",
-        "pollster": "Channel 13",
-        "firm": "MP+TM+SN+A",
-        "published": "2026-10-21",
-        "n": 1084,
-        "weight": 32.9
-      },
-      {
-        "id": "channel-12-2026-10-21",
-        "pollster": "Channel 12",
-        "firm": "Midgam R&C",
-        "published": "2026-10-21",
-        "n": 505,
-        "weight": 22.5
+        "id": "israel-hayom-2026-10-22",
+        "pollster": "Israel Hayom",
+        "firm": "Kantar",
+        "published": "2026-10-22",
+        "n": null,
+        "weight": 12.2
       },
       {
         "id": "walla-2026-10-20",
@@ -47,14 +63,6 @@
         "published": "2026-10-20",
         "n": 601,
         "weight": 12.3
-      },
-      {
-        "id": "kan-11-2026-10-18",
-        "pollster": "Kan 11",
-        "firm": "Kantar",
-        "published": "2026-10-18",
-        "n": 554,
-        "weight": 23.5
       }
     ],
     "checks": [
@@ -143,51 +151,51 @@
   "blocs": {
     "net": {
       "point": 53,
-      "listSum": 54,
+      "listSum": 53,
       "median": 53,
-      "mean": 53.3,
-      "lo": 49,
+      "mean": 53,
+      "lo": 48,
       "hi": 58
     },
     "opp": {
       "point": 51,
-      "listSum": 51,
+      "listSum": 52,
       "median": 51,
-      "mean": 50.8,
+      "mean": 51,
       "lo": 47,
-      "hi": 54
+      "hi": 55
     },
     "mid": {
       "point": 0,
       "listSum": 0,
       "median": 0,
-      "mean": 1,
+      "mean": 0.7,
       "lo": 0,
-      "hi": 5
+      "hi": 4
     },
     "arab": {
       "point": 15,
       "listSum": 15,
       "median": 15,
-      "mean": 14.9,
+      "mean": 15.3,
       "lo": 12,
-      "hi": 18
+      "hi": 19
     }
   },
   "majority": {
     "net": 1,
     "oppZionist": 0,
     "neither": 99,
-    "oppWithArabAndMid": 98
+    "oppWithArabAndMid": 99
   },
-  "netLargerThanOpp": 69,
+  "netLargerThanOpp": 66,
   "largestList": {
-    "likud": 45,
-    "yashar": 55
+    "likud": 43,
+    "yashar": 57
   },
   "lists": {
     "likud": {
-      "share": 15.93,
+      "share": 15.98,
       "prior": 0,
       "point": 21,
       "mean": 20.6,
@@ -197,53 +205,53 @@
       "call": true
     },
     "otzma": {
-      "share": 6.27,
+      "share": 6.55,
       "prior": 0,
       "point": 8,
-      "mean": 7.6,
-      "lo": 5,
+      "mean": 8,
+      "lo": 6,
       "hi": 10,
       "passes": 99.9,
       "call": true
     },
     "shas": {
-      "share": 7.34,
+      "share": 7.18,
       "prior": 0.8,
-      "point": 10,
-      "mean": 9.3,
+      "point": 9,
+      "mean": 9.1,
       "lo": 7,
-      "hi": 12,
+      "hi": 11,
       "passes": 100,
       "call": true
     },
     "utj": {
-      "share": 6.25,
+      "share": 6.27,
       "prior": 0,
       "point": 8,
-      "mean": 7.8,
+      "mean": 7.9,
       "lo": 6,
       "hi": 10,
       "passes": 99.8,
       "call": true
     },
     "rz": {
-      "share": 5.77,
+      "share": 5.67,
       "prior": 0,
       "point": 7,
-      "mean": 7.1,
+      "mean": 7,
       "lo": 5,
       "hi": 9,
-      "passes": 99.4,
+      "passes": 99.2,
       "call": true
     },
     "poi": {
-      "share": 2.4,
+      "share": 2.14,
       "prior": -0.8,
       "point": 0,
-      "mean": 0.8,
+      "mean": 0.5,
       "lo": 0,
-      "hi": 5,
-      "passes": 18.7,
+      "hi": 4,
+      "passes": 12.4,
       "call": false
     },
     "noam": {
@@ -257,27 +265,27 @@
       "call": false
     },
     "yashar": {
-      "share": 16.7,
+      "share": 16.84,
       "prior": 0,
       "point": 22,
-      "mean": 21.5,
+      "mean": 21.7,
       "lo": 18,
       "hi": 26,
       "passes": 100,
       "call": true
     },
     "byachad": {
-      "share": 9.55,
+      "share": 9.78,
       "prior": -0.8,
-      "point": 12,
-      "mean": 12.2,
+      "point": 13,
+      "mean": 12.5,
       "lo": 10,
       "hi": 15,
       "passes": 100,
       "call": true
     },
     "dem": {
-      "share": 7.21,
+      "share": 7.17,
       "prior": 0,
       "point": 9,
       "mean": 9,
@@ -287,43 +295,43 @@
       "call": true
     },
     "yb": {
-      "share": 6.44,
+      "share": 6.29,
       "prior": 0,
       "point": 8,
-      "mean": 8.1,
+      "mean": 7.9,
       "lo": 6,
       "hi": 10,
       "passes": 99.9,
       "call": true
     },
     "res": {
-      "share": 2.51,
+      "share": 2.26,
       "prior": -0.8,
       "point": 0,
-      "mean": 1,
+      "mean": 0.7,
       "lo": 0,
-      "hi": 5,
-      "passes": 22.5,
+      "hi": 4,
+      "passes": 15.6,
       "call": false
     },
     "jl": {
-      "share": 6.9,
+      "share": 6.98,
       "prior": 0,
       "point": 9,
-      "mean": 8.9,
+      "mean": 9,
       "lo": 6,
       "hi": 13,
-      "passes": 99.7,
+      "passes": 99.8,
       "call": true
     },
     "raam": {
-      "share": 4.93,
+      "share": 5.1,
       "prior": 0.6,
       "point": 6,
-      "mean": 6,
+      "mean": 6.2,
       "lo": 4,
       "hi": 8,
-      "passes": 96,
+      "passes": 97.3,
       "call": true
     }
   },

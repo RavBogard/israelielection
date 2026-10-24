@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-24",
-  "generatedAt": "2026-10-24T01:08:30.804Z",
+  "generatedAt": "2026-10-24T14:38:01.151Z",
   "final": false,
   "election": "2026-10-27",
   "runs": 50000,
@@ -8,6 +8,30 @@
   "method": "scripts/forecast/model.mjs opts.v2 (version 2's rules, 2026-10-24), run on the same polls as data/forecast.json and scored beside it",
   "inputs": {
     "field": [
+      {
+        "id": "kan-11-2026-10-23",
+        "pollster": "Kan 11",
+        "firm": "Kantar",
+        "published": "2026-10-23",
+        "n": 1006,
+        "weight": 15.9
+      },
+      {
+        "id": "channel-12-2026-10-23",
+        "pollster": "Channel 12",
+        "firm": "Midgam R&C",
+        "published": "2026-10-23",
+        "n": 1018,
+        "weight": 31.9
+      },
+      {
+        "id": "channel-13-2026-10-23",
+        "pollster": "Channel 13",
+        "firm": "MP+TM+SN+A",
+        "published": "2026-10-23",
+        "n": 1875,
+        "weight": 43.3
+      },
       {
         "id": "zman-yisrael-2026-10-22",
         "pollster": "Zman Yisrael",
@@ -25,20 +49,12 @@
         "weight": 16.2
       },
       {
-        "id": "channel-13-2026-10-21",
-        "pollster": "Channel 13",
-        "firm": "MP+TM+SN+A",
-        "published": "2026-10-21",
-        "n": 1084,
-        "weight": 32.9
-      },
-      {
-        "id": "channel-12-2026-10-21",
-        "pollster": "Channel 12",
-        "firm": "Midgam R&C",
-        "published": "2026-10-21",
-        "n": 505,
-        "weight": 22.5
+        "id": "israel-hayom-2026-10-22",
+        "pollster": "Israel Hayom",
+        "firm": "Kantar",
+        "published": "2026-10-22",
+        "n": null,
+        "weight": 12.2
       },
       {
         "id": "walla-2026-10-20",
@@ -47,14 +63,6 @@
         "published": "2026-10-20",
         "n": 601,
         "weight": 12.3
-      },
-      {
-        "id": "kan-11-2026-10-18",
-        "pollster": "Kan 11",
-        "firm": "Kantar",
-        "published": "2026-10-18",
-        "n": 554,
-        "weight": 23.5
       }
     ],
     "checks": [
@@ -134,82 +142,82 @@
   },
   "blocs": {
     "net": {
-      "point": 54,
-      "listSum": 54,
+      "point": 53,
+      "listSum": 53,
       "median": 53,
-      "mean": 53.2,
+      "mean": 52.9,
       "lo": 47,
       "hi": 59
     },
     "opp": {
-      "point": 51,
-      "listSum": 51,
+      "point": 52,
+      "listSum": 52,
       "median": 51,
-      "mean": 50.7,
+      "mean": 50.9,
       "lo": 46,
-      "hi": 55
+      "hi": 56
     },
     "mid": {
       "point": 0,
       "listSum": 0,
       "median": 0,
-      "mean": 1,
+      "mean": 0.7,
       "lo": 0,
-      "hi": 5
+      "hi": 4
     },
     "arab": {
       "point": 15,
       "listSum": 15,
-      "median": 15,
-      "mean": 15.1,
-      "lo": 11,
+      "median": 16,
+      "mean": 15.4,
+      "lo": 12,
       "hi": 19
     }
   },
   "majority": {
-    "net": 3,
+    "net": 2,
     "oppZionist": 0,
-    "neither": 97,
-    "oppWithArabAndMid": 95
+    "neither": 98,
+    "oppWithArabAndMid": 96
   },
-  "netLargerThanOpp": 63,
+  "netLargerThanOpp": 60,
   "largestList": {
-    "likud": 45,
-    "yashar": 55
+    "likud": 44,
+    "yashar": 56
   },
   "lists": {
     "likud": {
-      "share": 15.93,
+      "share": 15.98,
       "prior": 0,
       "point": 21,
-      "mean": 20.5,
+      "mean": 20.6,
       "lo": 16,
       "hi": 25,
       "passes": 100,
       "call": true
     },
     "otzma": {
-      "share": 6.26,
+      "share": 6.55,
       "prior": 0,
       "point": 8,
-      "mean": 7.6,
-      "lo": 5,
+      "mean": 8,
+      "lo": 6,
       "hi": 10,
-      "passes": 99.8,
+      "passes": 99.9,
       "call": true
     },
     "shas": {
-      "share": 7.33,
+      "share": 7.17,
       "prior": 0.8,
-      "point": 10,
-      "mean": 9.3,
+      "point": 9,
+      "mean": 9.1,
       "lo": 7,
       "hi": 12,
       "passes": 100,
       "call": true
     },
     "utj": {
-      "share": 6.25,
+      "share": 6.26,
       "prior": 0,
       "point": 8,
       "mean": 7.8,
@@ -219,23 +227,23 @@
       "call": true
     },
     "rz": {
-      "share": 5.76,
+      "share": 5.67,
       "prior": 0,
       "point": 7,
-      "mean": 7.1,
+      "mean": 6.9,
       "lo": 5,
       "hi": 9,
-      "passes": 99.2,
+      "passes": 99,
       "call": true
     },
     "poi": {
-      "share": 2.4,
+      "share": 2.14,
       "prior": -0.8,
       "point": 0,
-      "mean": 0.8,
+      "mean": 0.5,
       "lo": 0,
-      "hi": 5,
-      "passes": 18.9,
+      "hi": 4,
+      "passes": 12.4,
       "call": false
     },
     "noam": {
@@ -249,73 +257,73 @@
       "call": false
     },
     "yashar": {
-      "share": 16.69,
+      "share": 16.83,
       "prior": 0,
       "point": 22,
-      "mean": 21.5,
+      "mean": 21.7,
       "lo": 17,
       "hi": 26,
       "passes": 100,
       "call": true
     },
     "byachad": {
-      "share": 9.55,
+      "share": 9.78,
       "prior": -0.8,
-      "point": 12,
-      "mean": 12.2,
-      "lo": 9,
+      "point": 13,
+      "mean": 12.5,
+      "lo": 10,
       "hi": 15,
       "passes": 100,
       "call": true
     },
     "dem": {
-      "share": 7.2,
+      "share": 7.17,
       "prior": 0,
       "point": 9,
-      "mean": 9,
+      "mean": 8.9,
       "lo": 7,
       "hi": 11,
       "passes": 100,
       "call": true
     },
     "yb": {
-      "share": 6.44,
+      "share": 6.29,
       "prior": 0,
       "point": 8,
-      "mean": 8,
+      "mean": 7.8,
       "lo": 6,
       "hi": 10,
-      "passes": 99.9,
+      "passes": 99.8,
       "call": true
     },
     "res": {
-      "share": 2.51,
+      "share": 2.26,
       "prior": -0.8,
       "point": 0,
-      "mean": 1,
+      "mean": 0.7,
       "lo": 0,
-      "hi": 5,
-      "passes": 22.7,
+      "hi": 4,
+      "passes": 15.8,
       "call": false
     },
     "jl": {
-      "share": 7.24,
+      "share": 7.31,
       "prior": 0.4,
       "point": 9,
-      "mean": 9.2,
+      "mean": 9.3,
       "lo": 7,
       "hi": 12,
       "passes": 100,
       "call": true
     },
     "raam": {
-      "share": 4.93,
+      "share": 5.09,
       "prior": 0.6,
       "point": 6,
-      "mean": 5.9,
+      "mean": 6.2,
       "lo": 4,
       "hi": 8,
-      "passes": 95.8,
+      "passes": 97,
       "call": true
     }
   },

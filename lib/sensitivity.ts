@@ -1,4 +1,4 @@
-import { average, byNewest, currentPolls, isExit, pollWeights } from "./polls";
+import { average, byNewest, currentPolls, isExit, normalizeTo120, pollWeights } from "./polls";
 import { allocate } from "./results";
 import type { Poll, PollsConfig } from "./types";
 export type Weighting = "sqrt" | "equal";
@@ -46,9 +46,8 @@ export function sensitivityAverages(polls: Poll[], ids: string[], weighting: Wei
     const raw = passing.length ? passing.reduce((sum, p) => sum + p.results[id].seats, 0) / passing.length : 0;
     return { id, average: { ...baseline, avg: raw, seats: baseline.k === 0 || baseline.nearThreshold ? 0 : raw } };
   });
-  const rawSum = rows.reduce((sum, row) => sum + (row.average?.seats ?? 0), 0);
-  const scale = rawSum > 120 ? 120 / rawSum : 1;
-  return { rows: rows.map((row) => ({ ...row, normalized: row.average ? Math.round(row.average.seats * scale * 10) / 10 : null })), rawSum, scale, weights };
+  const { scaled, sum: rawSum, scale } = normalizeTo120(new Map(rows.filter((row) => row.average).map((row) => [row.id, row.average!.seats])));
+  return { rows: rows.map((row) => ({ ...row, normalized: row.average ? scaled.get(row.id)! : null })), rawSum, scale, weights };
 }
 
 /** Entirely fictional vote shares; never derives vote share or uncertainty from real seat polls. */

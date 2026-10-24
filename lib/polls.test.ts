@@ -40,6 +40,12 @@ describe("average (ruling 110)", () => {
     expect(half).toMatchObject({ k: 1, n: 2, nearThreshold: false, seats: 4 });
   });
 
+  it("holds a passing list at 4 when scaling to 120 would take it under, and keeps the total", () => {
+    const ps = [poll("a", "A", 900, { x: 60, y: 60, z: 4 }), poll("b", "B", 900, { x: 60, y: 60, z: 4 })];
+    const avg = averageAsPoll(ps, ["x", "y", "z"]);
+    expect(avg.results.z.seats).toBe(4);
+    expect(Math.abs(avg.results.x.seats + avg.results.y.seats + avg.results.z.seats - 120)).toBeLessThanOrEqual(0.15); // one-decimal rounding per list
+  });
   it("never yields a passing seat count below 4 in the average poll", () => {
     const avg = averageAsPoll(mainPolls, Object.keys(Object.assign({}, ...mainPolls.map((p) => p.results))));
     for (const r of Object.values(avg.results)) if (!r.belowThreshold) expect(r.seats).toBeGreaterThanOrEqual(4);

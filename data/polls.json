@@ -3691,6 +3691,229 @@
         }
       },
       "combined": []
+    },
+    {
+      "id": "israel-hayom-2026-10-22",
+      "pollster": "Israel Hayom",
+      "firm": "Kantar",
+      "fieldwork": "Oct 22, 2026",
+      "published": "2026-10-22",
+      "via": "Israel Hayom",
+      "url": "https://www.israelhayom.co.il/news/politics/article/21694000",
+      "n": null,
+      "margin": null,
+      "note": "Entered by hand 2026-10-24 from Israel Hayom's publication of Oct 23 (fieldwork Oct 22) as listed on Wikipedia's polling page and in ice.co.il's report (https://www.ice.co.il/research/news/article/1134739); no sample size published. Amcha Yisrael not reported.",
+      "results": {
+        "likud": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "res": {
+          "seats": 4
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "kan-11-2026-10-23",
+      "pollster": "Kan 11",
+      "firm": "Kantar",
+      "fieldwork": "Oct 23, 2026",
+      "published": "2026-10-23",
+      "via": "Kan 11",
+      "url": "https://www.zman.co.il/live/735892/",
+      "n": 1006,
+      "margin": null,
+      "note": "The final Kan 11 poll (Kantar), published Friday Oct 23 before the blackout; entered by hand 2026-10-24 from Zman Yisrael's live report, ynet's roundup (https://www.ynet.co.il/news/elections2026/article/hy500sxt2mx; sample 1,006, margin 3%, Amcha Yisrael 2.9%) and Haaretz's live blog (sample given there as 1,106; its Democrats figure of 9 makes 121 seats and is a transcription error: Kan's table has 8, and the Eisenkot bloc total of 52 that every source reports requires it). Not yet on Wikipedia.",
+      "results": {
+        "likud": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "rz": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 8
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "res": {
+          "seats": 4
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.9%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-12-2026-10-23",
+      "pollster": "Channel 12",
+      "firm": "Midgam R&C",
+      "fieldwork": "Oct 22–23, 2026",
+      "published": "2026-10-23",
+      "via": "Channel 12",
+      "url": "https://www.mako.co.il/news-israel-elections/2026/Article-8ea5e45ec2961a1027.htm",
+      "n": 1018,
+      "margin": null,
+      "note": "The final Channel 12 poll (Midgam with iPanel), published Friday Oct 23 before the blackout; entered by hand 2026-10-24 from Channel 12's own report (1,018 respondents, margin 4.4%; Haredi Public 0.5%, Noam 0.5%). Not yet on Wikipedia.",
+      "results": {
+        "likud": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 15
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 8
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 5
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.4%"
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "2.5%"
+        }
+      },
+      "combined": []
+    },
+    {
+      "id": "channel-13-2026-10-23",
+      "pollster": "Channel 13",
+      "firm": "MP+TM+SN+A",
+      "fieldwork": "Oct 23, 2026",
+      "published": "2026-10-23",
+      "via": "Channel 13",
+      "url": "https://www.zman.co.il/live/735899/",
+      "n": 1875,
+      "margin": null,
+      "note": "The final Channel 13 poll (the HaMadad consortium), published Friday Oct 23 before the blackout; entered by hand 2026-10-24 from Zman Yisrael's live report and ynet's roundup (https://www.ynet.co.il/news/elections2026/article/hy500sxt2mx; 1,875 respondents, margin 2.3%; Haredi Public 1.3%). Haaretz's live blog gives the sample as 1,084. Not yet on Wikipedia.",
+      "results": {
+        "likud": {
+          "seats": 19
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "rz": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 8
+        },
+        "yb": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 7
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "3.0%"
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true,
+          "pct": "3.1%"
+        }
+      },
+      "combined": []
     }
   ]
 }
