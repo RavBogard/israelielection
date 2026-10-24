@@ -1,0 +1,654 @@
+{
+ "about": "Turnout by sector, Knesset elections 2013-2022, and 2026 expectations published before 2026-10-23 that are not vote-intention polls. Turnout = voters / registered. 'arab' = Arab and Druze localities (CBS locality religion code 2 or 3), the Dayan Center / IDI definition used in the literature (recomputed here from the CEC locality files; it matches the published 2022 counts exactly and the published percentages to 0.2 points). 'haredi' = Haredi cities only. 'generalImplied' = the rest. Built by scripts/forecast/round2/D2/build-turnout.mjs from turnout-cec.json (sector_turnout.py) and sector-gaps.json (gaps.mjs). See docs/research/polls-method/round2/D2-sector-data.md.",
+ "sources": {
+  "cecLocalityResults": "https://data.gov.il/dataset/votes-knesset (Central Elections Committee final results by locality, 19th-25th Knesset)",
+  "cbsLocalities": "https://www.cbs.gov.il/he/publications/doclib/2019/ishuvim/bycode2022.xlsx",
+  "arabSeries": [
+   "https://dayan.org/file-download/download/public/17864",
+   "https://www.inss.org.il/wp-content/uploads/2022/11/No.-1661.pdf",
+   "https://en.idi.org.il/articles/47297",
+   "https://en.idi.org.il/articles/28660",
+   "https://en.idi.org.il/articles/34420",
+   "https://dayan.org/file-download/download/public/15393",
+   "https://dayan.org/file-download/download/public/16721",
+   "https://dayan.org/file-download/download/public/17378",
+   "https://dayan.org/file-download/download/public/15451"
+  ],
+  "overall": "English Wikipedia election articles, {{Election results}} templates (CEC figures)"
+ },
+ "definitions": {
+  "arab": "Arab and Druze localities: registered voters and voters in localities the CBS classes as non-Jewish (2) or Bedouin tribes (3). Excludes mixed cities (Haifa, Jerusalem, Lod, Ramla, Akko, Tel Aviv-Jaffa, Nof HaGalil, Ma'alot-Tarshiha), Arabs living in Jewish localities and double envelopes. Druze localities are included (they vote mostly for Zionist lists). About 83-87% of all Arab-list votes are cast in these localities.",
+  "haredi": "Haredi cities: Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim. About 3% of registered voters; 35-40% of UTJ's votes and 11-16% of Shas's are cast there.",
+  "general": "Everything else, double envelopes included."
+ },
+ "elections": {
+  "2013-01-22": {
+   "overall": {
+    "registered": 5656705,
+    "voters": 3833646,
+    "valid": 3792742,
+    "turnout": 67.77,
+    "source": "https://en.wikipedia.org/wiki/2013_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 56.31,
+    "registered": 696998,
+    "voters": 392445,
+    "changeFromPrevious": 2.91,
+    "arabListsShareOfArabLocalityVote": 77.17,
+    "arabListVotesCastInArabLocalities": 86.99,
+    "published": {
+     "turnout": 56.5,
+     "arabListsShareOfArabVote": 77.2,
+     "source": "https://dayan.org/file-download/download/public/15451"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource c20cdcef-4d42-4241-a41b-6ca7ae51002d)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 81.61,
+    "registered": 159519,
+    "voters": 130176,
+    "shasUtjShareOfValid": 86.7,
+    "shasUtjVotesCastInHarediCities": 22.15,
+    "utjVotesCastInHarediCities": 40.01,
+    "shasVotesCastInHarediCities": 11.37,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource c20cdcef-4d42-4241-a41b-6ca7ae51002d)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 245167,
+    "voters": 149553,
+    "turnout": 61,
+    "shasShareOfValid": 23.36,
+    "turnoutMinusGeneralLocalities": -3.48,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 68.98,
+    "registered": 4800188,
+    "voters": 3311025,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 64.48,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2015-03-17": {
+   "overall": {
+    "registered": 5881696,
+    "voters": 4254738,
+    "valid": 4210884,
+    "turnout": 72.34,
+    "source": "https://en.wikipedia.org/wiki/2015_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 63.51,
+    "registered": 747658,
+    "voters": 474844,
+    "changeFromPrevious": 7.2,
+    "arabListsShareOfArabLocalityVote": 82.4,
+    "arabListVotesCastInArabLocalities": 86.84,
+    "published": {
+     "turnout": 63.5,
+     "registered": 747658,
+     "voters": 474844,
+     "arabListsShareOfArabVote": 83.2,
+     "source": "https://dayan.org/file-download/download/public/15393"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 929b50c6-f455-4be2-b438-ec6af01421f2)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 82.71,
+    "registered": 170730,
+    "voters": 141203,
+    "shasUtjShareOfValid": 83.44,
+    "shasUtjVotesCastInHarediCities": 25.33,
+    "utjVotesCastInHarediCities": 37.93,
+    "shasVotesCastInHarediCities": 14.38,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 929b50c6-f455-4be2-b438-ec6af01421f2)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 254519,
+    "voters": 169661,
+    "turnout": 66.66,
+    "shasShareOfValid": 15.62,
+    "turnoutMinusGeneralLocalities": -1.93,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 73.31,
+    "registered": 4963308,
+    "voters": 3638691,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 68.59,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2019-04-09": {
+   "overall": {
+    "registered": 6339729,
+    "voters": 4340253,
+    "valid": 4309270,
+    "turnout": 68.46,
+    "source": "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 49.21,
+    "registered": 848869,
+    "voters": 417749,
+    "changeFromPrevious": -14.3,
+    "arabListsShareOfArabLocalityVote": 70.79,
+    "arabListVotesCastInArabLocalities": 86.77,
+    "published": {
+     "turnout": 49.2,
+     "arabListsShareOfArabVote": 71.6,
+     "source": "https://dayan.org/file-download/download/public/16721"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 1a1c7b2b-e819-4ba9-b159-d68e3566c58b)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 79.7,
+    "registered": 192425,
+    "voters": 153363,
+    "shasUtjShareOfValid": 89.02,
+    "shasUtjVotesCastInHarediCities": 26.49,
+    "utjVotesCastInHarediCities": 37.14,
+    "shasVotesCastInHarediCities": 16.22,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 1a1c7b2b-e819-4ba9-b159-d68e3566c58b)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 277995,
+    "voters": 180984,
+    "turnout": 65.1,
+    "shasShareOfValid": 15.96,
+    "turnoutMinusGeneralLocalities": -1.49,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 71.14,
+    "registered": 5298435,
+    "voters": 3769141,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 66.59,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2019-09-17": {
+   "overall": {
+    "registered": 6394030,
+    "voters": 4465168,
+    "valid": 4436806,
+    "turnout": 69.83,
+    "source": "https://en.wikipedia.org/wiki/September_2019_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 59.16,
+    "registered": 857661,
+    "voters": 507354,
+    "changeFromPrevious": 9.95,
+    "arabListsShareOfArabLocalityVote": 80.56,
+    "arabListVotesCastInArabLocalities": 86.01,
+    "published": {
+     "turnout": 59.2,
+     "arabListsShareOfArabVote": 81.6,
+     "source": "https://en.idi.org.il/articles/28660"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource bd22cd14-138c-4917-931a-ef628c2a5a30)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 80.12,
+    "registered": 195531,
+    "voters": 156664,
+    "shasUtjShareOfValid": 90.44,
+    "shasUtjVotesCastInHarediCities": 23.37,
+    "utjVotesCastInHarediCities": 35.16,
+    "shasVotesCastInHarediCities": 13.78,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource bd22cd14-138c-4917-931a-ef628c2a5a30)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 280951,
+    "voters": 184229,
+    "turnout": 65.57,
+    "shasShareOfValid": 19.75,
+    "turnoutMinusGeneralLocalities": -0.35,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 71.17,
+    "registered": 5340838,
+    "voters": 3801150,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 65.92,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2020-03-02": {
+   "overall": {
+    "registered": 6453255,
+    "voters": 4615135,
+    "valid": 4590062,
+    "turnout": 71.52,
+    "source": "https://en.wikipedia.org/wiki/2020_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 64.81,
+    "registered": 872585,
+    "voters": 565542,
+    "changeFromPrevious": 5.65,
+    "arabListsShareOfArabLocalityVote": 87.64,
+    "arabListVotesCastInArabLocalities": 84.73,
+    "published": {
+     "turnout": 64.8,
+     "arabListsShareOfArabVote": 87.6,
+     "source": "https://en.idi.org.il/articles/34420"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 3dc36e20-25d6-4496-ba6a-71d9bc917349)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 79.72,
+    "registered": 198990,
+    "voters": 158640,
+    "shasUtjShareOfValid": 91.34,
+    "shasUtjVotesCastInHarediCities": 22.87,
+    "utjVotesCastInHarediCities": 34.89,
+    "shasVotesCastInHarediCities": 13.53,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 3dc36e20-25d6-4496-ba6a-71d9bc917349)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 284714,
+    "voters": 189135,
+    "turnout": 66.43,
+    "shasShareOfValid": 20.4,
+    "turnoutMinusGeneralLocalities": 0.27,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 72.3,
+    "registered": 5381680,
+    "voters": 3890953,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 66.16,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2021-03-23": {
+   "overall": {
+    "registered": 6578084,
+    "voters": 4436365,
+    "valid": 4410052,
+    "turnout": 67.44,
+    "source": "https://en.wikipedia.org/wiki/2021_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 44.59,
+    "registered": 900183,
+    "voters": 401435,
+    "changeFromPrevious": -20.22,
+    "arabListsShareOfArabLocalityVote": 80.23,
+    "arabListVotesCastInArabLocalities": 83.87,
+    "published": {
+     "turnout": 44.6,
+     "registered": 897184,
+     "voters": 399954,
+     "arabListsShareOfArabVote": 80.1,
+     "source": "https://dayan.org/file-download/download/public/17378"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 9921a347-8466-4ef4-81f9-22523c5c4632)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 76.36,
+    "registered": 205381,
+    "voters": 156826,
+    "shasUtjShareOfValid": 88.83,
+    "shasUtjVotesCastInHarediCities": 24.45,
+    "utjVotesCastInHarediCities": 37.44,
+    "shasVotesCastInHarediCities": 14.23,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource 9921a347-8466-4ef4-81f9-22523c5c4632)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 292836,
+    "voters": 179405,
+    "turnout": 61.26,
+    "shasShareOfValid": 19.54,
+    "turnoutMinusGeneralLocalities": -1.83,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 70.87,
+    "registered": 5472520,
+    "voters": 3878104,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 63.09,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  },
+  "2022-11-01": {
+   "overall": {
+    "registered": 6788804,
+    "voters": 4794593,
+    "valid": 4764742,
+    "turnout": 70.63,
+    "source": "https://en.wikipedia.org/wiki/2022_Israeli_legislative_election#Results"
+   },
+   "arab": {
+    "turnout": 53.16,
+    "registered": 938401,
+    "voters": 498894,
+    "changeFromPrevious": 8.57,
+    "arabListsShareOfArabLocalityVote": 85.81,
+    "arabListVotesCastInArabLocalities": 82.89,
+    "published": {
+     "turnout": 53.2,
+     "registered": 938401,
+     "voters": 498894,
+     "arabListsShareOfArabVote": 85.8,
+     "source": "https://dayan.org/file-download/download/public/17864"
+    },
+    "source": "https://data.gov.il/dataset/votes-knesset (resource b392b8ee-ba45-4ea0-bfed-f03a1a36e99c)"
+   },
+   "haredi": {
+    "harediCitiesTurnout": 79.15,
+    "registered": 214269,
+    "voters": 169593,
+    "shasUtjShareOfValid": 90.3,
+    "shasUtjVotesCastInHarediCities": 22.56,
+    "utjVotesCastInHarediCities": 35.28,
+    "shasVotesCastInHarediCities": 13.48,
+    "source": "https://data.gov.il/dataset/votes-knesset (resource b392b8ee-ba45-4ea0-bfed-f03a1a36e99c)",
+    "note": "Haredi cities only (Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim). Jerusalem, Beit Shemesh and other cities' Haredi neighbourhoods are not included; no published per-election Haredi-sector turnout series was found."
+   },
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 310570,
+    "voters": 207563,
+    "turnout": 66.83,
+    "shasShareOfValid": 22.09,
+    "turnoutMinusGeneralLocalities": 1.83,
+    "note": "11 Jewish non-Haredi localities, >=5,000 registered, Shas >=12% of valid votes in 2015: Beit She'an, Beit Shemesh, Dimona, Migdal HaEmek, Netivot, Ofakim, Or Yehuda, Kiryat Malachi, Tiberias, Yeruham, Safed. Beit Shemesh has a large Haredi population. turnoutMinusGeneralLocalities = stronghold turnout minus the general-sector locality turnout."
+   },
+   "generalImplied": {
+    "turnout": 73.21,
+    "registered": 5636134,
+    "voters": 4126106,
+    "note": "National minus Arab and Druze localities minus Haredi cities, with every double-envelope vote (soldiers, diplomats, prisoners, hospitals...) assigned to the general sector. Registered includes about 10% of voters living abroad, nearly all in this sector, so resident general-sector turnout is several points higher."
+   },
+   "generalLocalitiesOnly": {
+    "turnout": 65,
+    "note": "The same without double envelopes (locality ballot boxes only)."
+   }
+  }
+ },
+ "analysis": {
+  "rows": [
+   {
+    "election": "2013-01-22",
+    "arabTurnout": 56.31,
+    "arabChange": 2.91,
+    "arabListsShare": 9.05,
+    "atPreviousTurnout": 8.63,
+    "mechanicalEffectPts": 0.42,
+    "arabPollMissPts": 0.05,
+    "arabPollMissSeats": 0.45,
+    "harediCitiesTurnout": 81.61,
+    "harediChange": null,
+    "harediPollMissPts": 0.76,
+    "shasPollMissPts": 0.4,
+    "utjPollMissPts": 0.36,
+    "shasStrongholdRelTurnout": -3.48,
+    "shasStrongholdRelChange": null
+   },
+   {
+    "election": "2015-03-17",
+    "arabTurnout": 63.51,
+    "arabChange": 7.2,
+    "arabListsShare": 10.61,
+    "atPreviousTurnout": 9.54,
+    "mechanicalEffectPts": 1.07,
+    "arabPollMissPts": 0.29,
+    "arabPollMissSeats": 0.32,
+    "harediCitiesTurnout": 82.71,
+    "harediChange": 1.1,
+    "harediPollMissPts": -0.96,
+    "shasPollMissPts": -0.45,
+    "utjPollMissPts": -0.51,
+    "shasStrongholdRelTurnout": -1.93,
+    "shasStrongholdRelChange": 1.55
+   },
+   {
+    "election": "2019-04-09",
+    "arabTurnout": 49.21,
+    "arabChange": -14.3,
+    "arabListsShare": 7.82,
+    "atPreviousTurnout": 9.79,
+    "mechanicalEffectPts": -1.97,
+    "arabPollMissPts": -1,
+    "arabPollMissSeats": -0.38,
+    "harediCitiesTurnout": 79.7,
+    "harediChange": -3.01,
+    "harediPollMissPts": 2.16,
+    "shasPollMissPts": 1.63,
+    "utjPollMissPts": 0.53,
+    "shasStrongholdRelTurnout": -1.49,
+    "shasStrongholdRelChange": 0.44
+   },
+   {
+    "election": "2019-09-17",
+    "arabTurnout": 59.16,
+    "arabChange": 9.95,
+    "arabListsShare": 10.6,
+    "atPreviousTurnout": 9.01,
+    "mechanicalEffectPts": 1.59,
+    "arabPollMissPts": 1.55,
+    "arabPollMissSeats": 1.93,
+    "harediCitiesTurnout": 80.12,
+    "harediChange": 0.42,
+    "harediPollMissPts": 1.45,
+    "shasPollMissPts": 1.64,
+    "utjPollMissPts": -0.19,
+    "shasStrongholdRelTurnout": -0.35,
+    "shasStrongholdRelChange": 1.14
+   },
+   {
+    "election": "2020-03-02",
+    "arabTurnout": 64.81,
+    "arabChange": 5.65,
+    "arabListsShare": 12.67,
+    "atPreviousTurnout": 11.71,
+    "mechanicalEffectPts": 0.96,
+    "arabPollMissPts": 1.36,
+    "arabPollMissSeats": 1,
+    "harediCitiesTurnout": 79.72,
+    "harediChange": -0.4,
+    "harediPollMissPts": 0.74,
+    "shasPollMissPts": 0.87,
+    "utjPollMissPts": -0.13,
+    "shasStrongholdRelTurnout": 0.27,
+    "shasStrongholdRelChange": 0.62
+   },
+   {
+    "election": "2021-03-23",
+    "arabTurnout": 44.59,
+    "arabChange": -20.22,
+    "arabListsShare": 8.61,
+    "atPreviousTurnout": 11.95,
+    "mechanicalEffectPts": -3.34,
+    "arabPollMissPts": -1.35,
+    "arabPollMissSeats": -1.66,
+    "harediCitiesTurnout": 76.36,
+    "harediChange": -3.36,
+    "harediPollMissPts": 0.57,
+    "shasPollMissPts": 0.61,
+    "utjPollMissPts": -0.04,
+    "shasStrongholdRelTurnout": -1.83,
+    "shasStrongholdRelChange": -2.1
+   },
+   {
+    "election": "2022-11-01",
+    "arabTurnout": 53.16,
+    "arabChange": 8.57,
+    "arabListsShare": 10.73,
+    "atPreviousTurnout": 9.18,
+    "mechanicalEffectPts": 1.55,
+    "arabPollMissPts": 1.89,
+    "arabPollMissSeats": 2,
+    "harediCitiesTurnout": 79.15,
+    "harediChange": 2.79,
+    "harediPollMissPts": 1.82,
+    "shasPollMissPts": 1.53,
+    "utjPollMissPts": 0.29,
+    "shasStrongholdRelTurnout": 1.83,
+    "shasStrongholdRelChange": 3.66
+   }
+  ],
+  "arabMissOnTurnoutChange_7": {
+   "a": 0.4,
+   "b": 0.095,
+   "r": 0.91
+  },
+  "arabMissOnTurnoutChange_6": {
+   "a": 0.51,
+   "b": 0.097,
+   "r": 0.93
+  },
+  "arabMissOnMechanicalEffect_7": {
+   "a": 0.37,
+   "b": 0.604,
+   "r": 0.92
+  },
+  "shasMissOnStrongholdRelTurnoutChange_6": {
+   "a": 0.89,
+   "b": 0.091,
+   "r": 0.21
+  },
+  "harediMissOnHarediCityTurnoutChange_6": {
+   "a": 0.94,
+   "b": -0.06,
+   "r": -0.13
+  },
+  "leaveOneOutArab": {
+   "rows": [
+    {
+     "election": "2015-03-17",
+     "predicted": 1.49,
+     "actual": 0.29
+    },
+    {
+     "election": "2019-04-09",
+     "predicted": -0.8,
+     "actual": -1
+    },
+    {
+     "election": "2019-09-17",
+     "predicted": 1.45,
+     "actual": 1.55
+    },
+    {
+     "election": "2020-03-02",
+     "predicted": 0.98,
+     "actual": 1.36
+    },
+    {
+     "election": "2021-03-23",
+     "predicted": -1.64,
+     "actual": -1.35
+    },
+    {
+     "election": "2022-11-01",
+     "predicted": 1.14,
+     "actual": 1.89
+    }
+   ],
+   "mae": 0.49,
+   "maeOfZero": 1.24
+  }
+ },
+ "expectations2026": {
+  "note": "Published before 2026-10-23. None is an official forecast (the CEC publishes none). Items marked survey-based come from survey questions on turnout intention, not from vote-intention seat polls.",
+  "overall": [
+   {
+    "what": "Registered voters about 7.3 million; about 810,000 live abroad",
+    "source": "https://www.ynetnews.com/article/hk5ryml3fl ; https://www.aljazeera.com/amp/news/2026/10/20/israels-elections-2026-explained-in-maps-and-charts",
+    "kind": "official count via press"
+   },
+   {
+    "what": "Diplomatic-mission voting 86.7% (4,218 voters), up 17.1 points from 2022",
+    "source": "https://www.timesofisrael.com/israeli-emissaries-abroad-end-voting-with-turnout-17-percentage-points-higher-than-2022/",
+    "kind": "official, tiny n"
+   },
+   {
+    "what": "Polymarket turnout market: 74%+ at 37%, 72-74% at 25% (thin market)",
+    "source": "https://polymarket.com/politics/israel-election",
+    "kind": "prediction market (via round1/E-context.md)"
+   },
+   {
+    "what": "Next Data's CEC filings project 67.8% turnout by scaling 2022's 69.6%",
+    "source": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/knesset_election126/he/Surveyl_4236-4233.pdf",
+    "kind": "pollster assumption (round1/D-pollsters.md)"
+   }
+  ],
+  "arab": [
+   {
+    "what": "Stat-Net projects Arab turnout of 63% (vs 56% in 2022 on its own measure; 53.2% on the definition used here)",
+    "source": "https://www.timesofisrael.com/turnout-among-israels-arab-voters-could-make-or-break-hopes-to-unseat-netanyahu/",
+    "date": "2026-10-21",
+    "kind": "survey-based projection"
+   },
+   {
+    "what": "Konrad Adenauer Program (Dayan Center), May 2026: 53% expected as things stood, 67% if the Joint List reunited (Hadash-Ta'al-Balad did reunite in August; Ra'am runs separately)",
+    "source": "https://www.acitaskforce.org/resource/arab-society-and-israels-2026-elections-between-electoral-power-and-political-influence/",
+    "kind": "survey-based projection"
+   },
+   {
+    "what": "Konrad Adenauer Program, Nov 2025: 52.4%, or 61.8% with a reunified list",
+    "source": "https://dayan.org/content/integration-and-influence-survey-arab-citizens-israel",
+    "kind": "survey-based projection"
+   },
+   {
+    "what": "Pre-election projections in 2022 were 40.5% (Makan), 49% (Konrad Adenauer Program) and below 40% (Al-Monitor); the result was 53.2%. Projections have missed by 4-13 points.",
+    "source": "https://www.al-monitor.com/originals/2022/09/polls-predict-new-lows-arab-israeli-voter-turnout ; https://www.inss.org.il/wp-content/uploads/2022/11/No.-1661.pdf",
+    "kind": "track record"
+   }
+  ],
+  "haredi": [
+   {
+    "what": "Gerrer Rebbe's directive to vote UTJ is a bare request, no mobilisation; UTJ officials fear Ger abstention (Ger is a large Hasidic court)",
+    "source": "https://www.israelnationalnews.com/news/434775",
+    "date": "2026-10-18",
+    "kind": "qualitative"
+   },
+   {
+    "what": "Shas rabbis campaign against defections to Likud and Otzma; UTJ builds a workaround for the ban on turnout data (booths, Agudah tents)",
+    "source": "https://www.ynetnews.com/article/sk400k2v2ml",
+    "date": "2026-10-22",
+    "kind": "qualitative"
+   },
+   {
+    "what": "No numeric Haredi turnout projection was found. Haredi-city turnout has been 76-83% in every election since 2013 (this file).",
+    "source": null,
+    "kind": "absence"
+   }
+  ]
+ }
+}
