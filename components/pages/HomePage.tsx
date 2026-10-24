@@ -139,9 +139,9 @@ function countTime(iso: string, lang: Lang): string {
   return `${new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(when)} Israel time`;
 }
 
-/** The hero's bloc figures for the forecast are the model's bloc centrals (version 3: the median of each bloc's simulated total), which the scoring uses; the lists keep their own central seats. */
+/** The hero labels each bloc with the forecast's bloc central (version 3: the median of the bloc's simulated total, the scored figure) while the mosaic is drawn from the list centrals, which add to 120. */
 function forecastRaceModel(model: HomeRaceModel): HomeRaceModel {
-  return { ...model, rows: model.rows.map((row) => { const seats = forecast.blocs[row.id].point; return { ...row, seats, shortfall: majorityShortfall(seats) }; }) };
+  return { ...model, rows: model.rows.map((row) => { const labelSeats = forecast.blocs[row.id].point; return { ...row, labelSeats, shortfall: majorityShortfall(labelSeats) }; }) };
 }
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const he = lang === "he", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;

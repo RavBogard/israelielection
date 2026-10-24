@@ -43,7 +43,7 @@ export const forecastPoll: Poll = {
   url: null,
   n: null,
   margin: null,
-  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}.`,
+  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}. The list seats add to 120; the forecast's bloc centrals are medians of the runs and can differ from these sums by a seat.`,
   results: Object.fromEntries(Object.entries(forecast.lists).map(([id, l]) => [id, l.point === 0 ? { seats: 0, belowThreshold: true } : { seats: l.point }])),
   combined: [],
 };

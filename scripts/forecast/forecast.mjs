@@ -36,6 +36,9 @@ const out = {
 };
 if (!SENSITIVITY) {
   fs.writeFileSync("data/forecast.json", JSON.stringify(out, null, 2) + "\n");
+  // Version 2 on the same polls, so the two versions are scored on the same data (round2/R-red-team.md, finding 3).
+  const v2 = forecast({ polls, config, parties, agreements, cal, opts: { v2: true } });
+  fs.writeFileSync("data/forecast-v2.json", JSON.stringify({ generated: out.generated, generatedAt: out.generatedAt, final: FINAL, election: results.election, runs: v2.runs, seed: v2.seed, method: "scripts/forecast/model.mjs opts.v2 (version 2's rules, 2026-10-24), run on the same polls as data/forecast.json and scored beside it", inputs: v2.inputs, parameters: v2.parameters, blocs: v2.blocs, majority: v2.majority, netLargerThanOpp: v2.netLargerThanOpp, largestList: v2.largestList, lists: v2.lists, scoring: "As version 2 was pre-registered: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point = the sum of the bloc's list points; threshold calls (`call`); the modal majority outcome." }, null, 2) + "\n");
   // The record: one entry per run whose inputs, parameters or figures changed.
   const historyFile = "data/forecast-history.json";
   const history = fs.existsSync(historyFile) ? read(historyFile) : { about: "Every forecast run that changed the figures, oldest first; the last entry is data/forecast.json. Scored together after the vote.", runs: [] };

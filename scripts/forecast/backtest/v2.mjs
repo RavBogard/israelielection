@@ -43,7 +43,8 @@ function run(e, opts) {
   const filber = [...new Set(e.polls.filter((p) => p.filber).map((p) => p.pollster))];
   const parties = Object.keys(e.lists).map((id) => ({ id, bloc: e.blocs[id] }));
   const config = { pollsters, withoutVariant: { pollsters: filber }, currentWindowDays: 14 };
-  return forecast({ polls: e.polls, config, parties, agreements: e.agreements, cal: c, opts: { runs: RUNS, ...opts } });
+  // model.mjs is version 3 since 2026-10-24; `v2: true` restores version 2's rules, which this script's VARIANTS switch (backtest/v3.mjs scores version 3).
+  return forecast({ polls: e.polls, config, parties, agreements: e.agreements, cal: c, opts: { runs: RUNS, v2: true, ...opts } });
 }
 function score(e, f) {
   const lists = Object.keys(e.lists), res = e.result.lists;
