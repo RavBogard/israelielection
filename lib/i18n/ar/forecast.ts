@@ -2,7 +2,7 @@
 import type { ForecastText } from "../forecast";
 const en: ForecastText = {
     meta: {
-        title: "توقعات",
+        title: "التوقعات",
         description: "توقعات مقاعد الموقع لانتخابات أكتوبر 27: محاكاة للاستطلاعات الميدانية، كل معلمة تحددها قاعدة، يتم إنشاؤها يوميًا ويتم تسجيلها مقابل النتيجة.",
     },
     title: "التوقعات",

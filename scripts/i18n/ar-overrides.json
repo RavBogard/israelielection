@@ -273,5 +273,15 @@
   "Average of ZXPH0XZ polls, to ZXPH1XZ": "متوسط ZXPH0XZ استطلاعات حتى ZXPH1XZ",
   "Israel votes in {0} days.": "تُجرى الانتخابات في إسرائيل بعد {0} يومًا.",
   "Israel votes tomorrow.": "غدًا الانتخابات في إسرائيل.",
-  "Israel votes today.": "اليوم الانتخابات في إسرائيل."
+  "Israel votes today.": "اليوم الانتخابات في إسرائيل.",
+  "Forecast": "التوقعات",
+  "ZXPH0XZ runs": "ZXPH0XZ محاكاة",
+  "ZXPH0XZ pollsters": "ZXPH0XZ جهات استطلاع",
+  " to ": " إلى ",
+  " in 9 of 10 runs": " في 9 من كل 10 محاكاة",
+  "61 or more in ": "61 مقعدًا أو أكثر في ",
+  "% of runs": "% من المحاكاة",
+  "% of runs, the anti-Netanyahu Zionist bloc in ": "% من المحاكاة، وتصل الكتلة الصهيونية المعارضة لنتنياهو إلى الأغلبية في ",
+  "%, neither in ": "%، ولا تصل أيّ منهما إلى الأغلبية في ",
+  "The site’s model, not an average: the field polls, corrected for the kinds of list the polls have historically missed, run through simulated elections. The Netanyahu bloc reaches 61 in ": "نموذج الموقع وليس متوسطًا: تُصحَّح الاستطلاعات الميدانية وفق أنواع القوائم التي أخطأت في تقديرها تاريخيًا، ثم تُجرى محاكاة للانتخابات. تصل كتلة نتنياهو إلى 61 مقعدًا في "
 }
