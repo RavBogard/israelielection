@@ -38,5 +38,8 @@ Vercel preview deployed and confirmed Ready on 2026-10-25:
 https://israelielection-jmmhyok18-ravbogards-projects.vercel.app
 Deployment ID: `dpl_BxN6uSdivFpaw1Zi8erRsjKo96VE`; source commit: `a95640d`.
 The deployment used a clean archive of committed source, excluding unrelated untracked local files.
-Production was not changed; the deployment-target question is awaiting the user's choice.
-The feature and integration commits are on local `main` and have not been pushed.
+The user authorized deployment to `main`; pushed through commit `3b172d6` on 2026-10-25.
+Vercel's Git integration built production successfully: `dpl_7FDa2szVFhY9KmMAWfenhPcYAYuk`.
+`vercel inspect www.israelielection.org` confirmed Ready and assigned to this deployment.
+Live editions: https://www.israelielection.org/ar and https://www.israelielection.org/fa.
+The runtime is unchanged from the verified preview. This deployment record is a documentation-only follow-up.
