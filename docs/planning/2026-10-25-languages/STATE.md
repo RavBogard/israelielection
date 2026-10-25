@@ -27,7 +27,16 @@ polls, current party/results data and forecast v3, and added the forecast to the
 Translations were regenerated against the updated source data; no newer polling data was replaced.
 
 Verification before integration: 810 tests, type check, production build and browser checks.
-After integration: 818 tests and type check pass; production deployment validation is in progress.
+After integration: 818 tests, type check and production build pass. Lint has no errors;
+the remaining warnings are in existing research/skill files. The integrated Arabic home shows
+the final polls and forecast controls correctly in the browser.
 Browser checks at desktop and 375px: RTL layouts, no page overflow, chart drill-down links,
 Arabic tab keyboard direction, Arabic/Persian coalition state preservation, and switching back to
-English/Hebrew. No browser console errors. No deployment performed.
+English/Hebrew. No browser console errors.
+
+Vercel preview deployed and confirmed Ready on 2026-10-25:
+https://israelielection-jmmhyok18-ravbogards-projects.vercel.app
+Deployment ID: `dpl_BxN6uSdivFpaw1Zi8erRsjKo96VE`; source commit: `a95640d`.
+The deployment used a clean archive of committed source, excluding unrelated untracked local files.
+Production was not changed; the deployment-target question is awaiting the user's choice.
+The feature and integration commits are on local `main` and have not been pushed.
