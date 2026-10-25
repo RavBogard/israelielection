@@ -1,4 +1,5 @@
 "use client";
+import { isRtl } from "@/lib/i18n";
 import { type KeyboardEvent, type ReactNode, useEffect, useRef, useState } from "react";
 import { type DeskTab, initialTab } from "@/lib/polls-desk";
 import { useLang } from "@/lib/i18n/lang";
@@ -12,7 +13,7 @@ import POLLS from "@/lib/i18n/polls";
 export default function PollTabs({ tabs }: { tabs: { id: DeskTab; label: string; content: ReactNode }[] }) {
   const lang = useLang(), t = POLLS[lang];
   // The tabs run from the inline start, so in Hebrew the next tab is to the left.
-  const next = lang !== "en" ? "ArrowLeft" : "ArrowRight", prev = lang !== "en" ? "ArrowRight" : "ArrowLeft";
+  const next = isRtl(lang) ? "ArrowLeft" : "ArrowRight", prev = isRtl(lang) ? "ArrowRight" : "ArrowLeft";
   const [on, setOn] = useState(false), [active, setActive] = useState<DeskTab>("parties");
   const refs = useRef<Record<string, HTMLButtonElement | null>>({}), pending = useRef<string | null>(null), [tick, setTick] = useState(0);
   // Scroll to a linked id once its panel is shown, after the stacked fallback has collapsed into tabs.

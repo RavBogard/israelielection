@@ -158,6 +158,10 @@ const profileText = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): ProfileText { return editionText<ProfileText>("ar", "profile"); },
   get fa(): ProfileText { return editionText<ProfileText>("fa", "profile"); },
+  get de(): ProfileText { return editionText<ProfileText>("de", "profile"); },
+  get fr(): ProfileText { return editionText<ProfileText>("fr", "profile"); },
+  get zh(): ProfileText { return editionText<ProfileText>("zh", "profile"); },
+
   get he(): ProfileText {
     return heText<ProfileText>("profile");
   },

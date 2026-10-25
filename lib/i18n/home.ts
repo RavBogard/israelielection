@@ -148,6 +148,10 @@ const home = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): HomeText { return editionText<HomeText>("ar", "home"); },
   get fa(): HomeText { return editionText<HomeText>("fa", "home"); },
+  get de(): HomeText { return editionText<HomeText>("de", "home"); },
+  get fr(): HomeText { return editionText<HomeText>("fr", "home"); },
+  get zh(): HomeText { return editionText<HomeText>("zh", "home"); },
+
   get he(): HomeText {
     return heText<HomeText>("home");
   },

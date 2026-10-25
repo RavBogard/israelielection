@@ -1,0 +1,121 @@
+{
+  "zionist-opp-no-arab-parties": {
+    "message": {
+      "text": "已记录承诺在没有阿拉伯政党的情况下执政的选定政党：{comma:noArabPledge}。该联盟包括{and:arab}。",
+      "src": "a75b44d5",
+      "machine": true
+    }
+  },
+  "eisenkot-no-raam": {
+    "message": {
+      "text": "艾森科特于 9 月 26 表示曼苏尔·阿巴斯“不会成为我下一届政府的成员”。",
+      "src": "47407bf9",
+      "machine": true
+    }
+  },
+  "byachad-zionist-only": {
+    "message": {
+      "text": "贝内特的比亚查德承诺只与犹太复国主义政党一起执政，并且只依赖他们：没有阿拉伯或正统政党，因此他们的外部支持也很重要。该联盟包括{and:haredi,arab}。",
+      "src": "a4b5f9e2",
+      "machine": true
+    }
+  },
+  "lieberman-no-arab-no-haredi": {
+    "message": {
+      "text": "利伯曼：“不适合阿拉伯政党，也不适合正统派政党。”该联盟包括{and:haredi,arab}。",
+      "src": "12835c45",
+      "machine": true
+    }
+  },
+  "joint-list-no-netanyahu": {
+    "message": {
+      "text": "联合名单表示不会加入内塔尼亚胡；它提供的外部支持是组建一个少数派政府，“将内塔尼亚胡和斯莫特里奇送回家”。内阁中的利库德集团在这里被理解为内塔尼亚胡领导的。",
+      "src": "9ef6508e",
+      "machine": true
+    }
+  },
+  "yashar-no-netanyahu": {
+    "message": {
+      "text": "艾森科特表示内塔尼亚胡“不适合领导”，并排除了与他轮流领导政府的可能性；他说，他的目标是让内塔尼亚胡退休。他的编号 2，约拉姆·科恩 (Yoram Cohen) 说过，亚沙尔！会考虑不再由内塔尼亚胡领导的利库德集团。内阁中的利库德集团在这里被理解为内塔尼亚胡领导的。",
+      "src": "97a130c7",
+      "machine": true
+    }
+  },
+  "byachad-no-netanyahu": {
+    "message": {
+      "text": "当被问及是否可以与内塔尼亚胡组建政府时，贝内特说：“显然不行。我要取代他。”他没有对其他人领导的利库德集团说过同样的话。内阁中的利库德集团在这里被理解为内塔尼亚胡领导的。",
+      "src": "d50214ec",
+      "machine": true
+    }
+  },
+  "dem-no-likud-rz-otzma": {
+    "message": {
+      "text": "戈兰：利库德集团、宗教犹太复国主义和奥兹玛·耶胡迪特“对我来说从根本上和绝对是不可接受的”。当被问及另一位领导人领导下的利库德集团时，他说“不”。阅读此处也排除了他们的外部支持。",
+      "src": "92230ba4",
+      "machine": true
+    }
+  },
+  "dem-no-haredi": {
+    "message": {
+      "text": "戈兰：“正统派将在[政府]之外，这是一个保证。”他是在一段被泄露的视频后说这番话的，视频中他将投票支持一个需要正统派政党的政府，“前提是利库德集团、斯莫特里奇和本·格维尔不在那里”。该联盟包括{and:haredi}。",
+      "src": "29494330",
+      "machine": true
+    }
+  },
+  "yb-no-netanyahu": {
+    "message": {
+      "text": "利伯曼评价内塔尼亚胡：“在我们和他坐在一起之前，地狱就会结冰”，“他必须回家”。他表示，他不会拒绝不再由内塔尼亚胡领导的利库德集团接受该党的原则。内阁中的利库德集团在这里被理解为内塔尼亚胡领导的。",
+      "src": "cc830af2",
+      "machine": true
+    }
+  },
+  "bw-no-netanyahu": {
+    "message": {
+      "text": "甘茨：“内塔尼亚胡不应该继续担任总理，我不会给他第61票。”内阁中的利库德集团在这里被理解为内塔尼亚胡领导的。",
+      "src": "5253a71c",
+      "machine": true
+    }
+  },
+  "res-zionist-unity-only": {
+    "message": {
+      "text": "亨德尔希望建立一个“没有阿拉伯或正统政党的犹太复国主义联合政府”。内塔尼亚胡“不是我的红线，”他说。该联盟包括{and:haredi,arab}。",
+      "src": "d94ce0f6",
+      "machine": true
+    }
+  },
+  "rz-no-arab-parties": {
+    "message": {
+      "text": "斯莫特里奇已经排除了依赖阿拉伯政党的可能性。他称拉姆领导的2021政府比十月7的失败“糟糕一千倍”。该联盟包括{and:arab}。",
+      "src": "94ad4577",
+      "machine": true
+    }
+  },
+  "otzma-no-eisenkot": {
+    "message": {
+      "text": "本-格维尔对内塔尼亚胡说：“我将尽一切努力，让你不要与艾森科特组建政府！只有右翼政府！！！”",
+      "src": "e01ec0b5",
+      "machine": true
+    }
+  },
+  "utj-yeshiva-status-law": {
+    "message": {
+      "text": "UTJ 表示，它不会支持或加入任何不首先规范托拉学习者地位（犹太地位法）的政府，无论谁领导它。",
+      "src": "aa0aa057",
+      "machine": true
+    }
+  },
+  "poi-draft-law-first": {
+    "message": {
+      "text": "奥弗·温特表示，如果政府在组建之前没有通过一项法律来终止逃兵并要求每个人报到服役，那么以色列人民就不会加入这样的政府。",
+      "src": "bc7c8da3",
+      "machine": true
+    }
+  },
+  "otzma-no-raam": {
+    "message": {
+      "text": "本-格维尔没有对拉姆做出正式承诺，但他的政党请求阻止其参加选举，称曼苏尔·阿巴斯和他的政党是“支持哈马斯的恐怖分子”和“披着羊皮的狼”。请阅读此处以排除这种情况。",
+      "src": "74c66eb6",
+      "machine": true
+    }
+  }
+}

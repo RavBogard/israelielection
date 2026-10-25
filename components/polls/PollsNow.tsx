@@ -1,3 +1,4 @@
+import { isRtl } from "@/lib/i18n";
 import { editionPath, locale } from "@/lib/i18n";
 import { ui } from "@/lib/i18n/ui";
 import Link from "next/link";
@@ -34,7 +35,7 @@ const blocLabels = (lang: Lang) => Object.fromEntries(blocs.map((b) => [b.id, bl
 /** The alternative average's name: the data's English label, or the Hebrew built from the outlets it leaves out. */
 const altName = (lang: Lang) => (lang === "he" ? HE_METHOD.variantLabel(variantNames.map((n) => pollsterName(n, lang))) : lang === "en" ? cfg.withoutVariant.label : ui(lang, "Average without {0}", new Intl.ListFormat(lang).format(variantNames.map(n => pollsterName(n, lang)))));
 /** Seat axes are magnitudes, so in Hebrew they run from the right (PLAN.md section 5): positions mirror, widths do not. */
-const flip = (pct: number, lang: Lang) => (lang !== "en" ? 100 - pct : pct);
+const flip = (pct: number, lang: Lang) => (isRtl(lang) ? 100 - pct : pct);
 const rawSum = Math.round(parties.reduce((s, p) => s + (average(p.id, mainPolls)?.seats ?? 0), 0) * 10) / 10;
 
 /** Where a bloc's total lands in each of the current polls, on a seat axis with the majority line at 61. */

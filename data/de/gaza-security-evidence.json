@@ -1,0 +1,76 @@
+{
+  "_": {
+    "title": {
+      "text": "Gaza: Zivilverwaltung",
+      "src": "b06f2b77",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollte Israel die zivilen Angelegenheiten des Gazastreifens verwalten?",
+      "src": "d6ee801b",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Sicherheitskontrolle, ohne zivile Angelegenheiten zu regeln",
+      "src": "d77e2f94",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Israelische Kontrolle, mit Militärregierung oder Siedlung",
+      "src": "bd443df7",
+      "machine": true
+    },
+    "note": {
+      "text": "Diese eng gefasste Frage ist kein Stellvertreter für Waffenstillstandsbedingungen, Geiseln, palästinensische Eigenstaatlichkeit, Vertreibung oder die gesamte Sicherheitsagenda. Listen ohne Antwort fehlen hier, es wird nicht davon ausgegangen, dass sie zustimmen oder ablehnen. Shas, UTJ, Noam und Yashar haben sich nicht damit befasst, wer die zivilen Angelegenheiten im Gazastreifen regeln soll. Die Gemeinsame Liste und Ra'am lehnen die israelische Kontrolle über Gaza ab, was in keiner ihrer Positionen beschrieben wird.",
+      "src": "2ec97e99",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Ben Gvir hat keinen Regierungsplan vorgelegt, sagt aber, dass wir als Verteidigungsminister „nach Nisanit, in den gesamten nördlichen Umkreis und nach ganz Gaza zurückkehren werden“, um die Angelegenheit zu regeln.",
+      "src": "33e25e03",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Im Sicherheitsplan der Partei heißt es, sie strebe nicht die Verwaltung von Gaza an. Es würde die derzeitige militärische Linie beibehalten, bis die Hamas oder Israel sie entwaffnet. Dies ist eine übersetzte Zusammenfassung der erklärten Politik der Partei, keine Prognose oder Billigung.",
+      "src": "bb7487ad",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Netanjahu kündigt die Übernahme von Gaza-Stadt an: „Wir wollen es nicht behalten. Wir wollen einen Sicherheitsbereich haben. Wir wollen es nicht regieren.“ Er sagte, Israel werde Gaza „einer zivilen Regierung übergeben, die nicht Hamas ist“.",
+      "src": "82c38ae5",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Smotrich: „Der Staat Israel muss zustimmen, die Verantwortung für Gaza zu übernehmen. Um es vollständig zu erobern, dort eine Militärregierung einzurichten und dort eine jüdische Siedlung zu errichten.“",
+      "src": "2ea7733d",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "Libermans Plan: Die IDF eliminiert die Hamas, dann geht die Kontrolle über Gaza an „eine externe Partei über, die die Verantwortung für die Verwaltung übernimmt“, während Israel die Verantwortung für die Sicherheit behält.",
+      "src": "ee25137b",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "Golan nannte die schnelle Installation einer technokratischen palästinensischen Verwaltung in Gaza einen ersten Schritt für eine neue Regierung (Bloombergs Darstellung).",
+      "src": "013192a7",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Als Mitglied des Kriegskabinetts forderte Gantz neben der israelischen Sicherheitskontrolle „einen internationalen zivilen Governance-Mechanismus für Gaza, der amerikanische, europäische, arabische und palästinensische Elemente umfasst“.",
+      "src": "1e4581ad",
+      "machine": true
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Lang } from "@/lib/i18n";
+import { isRtl, type Lang } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 
 /**
@@ -37,7 +37,7 @@ export default function Logo({ className, lang = "en" }: { className?: string; l
   if (lang !== "en")
     return (
       <Link href={`/${lang}`} className={`brand${className ? ` ${className}` : ""}`} aria-label={chrome[lang].homeLabel}>
-        <Mark className="mark" rtl />
+        <Mark className="mark" rtl={isRtl(lang)} />
         <span className="word">
           {chrome[lang].siteName.replace(/\s*2026$/, "")} <span className="yr">2026</span>
         </span>

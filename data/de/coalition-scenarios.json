@@ -1,0 +1,115 @@
+{
+  "opposition-support": {
+    "title": {
+      "text": "Kernopposition mit Unterstützung von außen",
+      "src": "f3c786be",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Erkunden Sie den Entwurf und die Untersuchung vom Oktober 7 als mögliche Gemeinsamkeiten. Diese Rollen sind hypothetisch; es wird keine Einigung geltend gemacht.",
+      "src": "d27eaea9",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Der allgemeine Wehr- oder Zivildienst wird in den Kernantworten der Opposition unterstützt, während Ra'am sich dagegen ausspricht, von arabischen Bürgern zu verlangen, dass sie beide leisten. Welche Servicerichtlinien würde ein externer Unterstützer akzeptieren?",
+      "src": "225e8cd6",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "Aufgezeichnete Partnerzusagen schränken einige Kabinettkombinationen ein. Eine Beitrittsverweigerung ist nicht automatisch ein Versprechen, sich zu enthalten oder externe Unterstützung zu leisten.",
+      "src": "c05083b2",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Ein Premier- und jeder Rotationsvertrag bräuchte eine Einigung. Der Wahlrang ernennt gesetzlich keinen Premierminister, und dieses Szenario sieht keine vereinbarte Rotation vor.",
+      "src": "6188390c",
+      "machine": true
+    },
+    "source": {
+      "text": "Party-Antworten, Ynet, Sep 16, 2026; Die aufgezeichneten Zusagen sind unten aufgeführt",
+      "src": "e4c612ae",
+      "machine": true
+    }
+  },
+  "opposition-haredi": {
+    "title": {
+      "text": "Kerngegner mit einem Haredi-Partner",
+      "src": "2841e9c4",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Testen Sie, ob ein zusätzlicher Kabinettspartner die Sitzlücke schließt und wie sich seine politischen Anforderungen auf die Vereinbarung auswirken. Dies ist eine hypothetische Kombination.",
+      "src": "9cde0a80",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Kernantworten der Opposition befürworten Militär- oder Zivildienst für alle; Shas unterscheidet Schüler, die in der Jeschiwa bleiben, von denen, die sie verlassen. Ein gemeinsamer Gesetzentwurf müsste diesen Unterschied beheben.",
+      "src": "c4ee594e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "Die standesamtliche Trauung wird in den aufgezeichneten Positionen der Kernparteien unterstützt, während die Quellenzusammenfassung besagt, dass Shas zivile Alternativen ablehnt. Das erfordert einen konkreten Kompromiss und nicht den Anspruch, dass alle Religionspolitiken übereinstimmen.",
+      "src": "08b621d4",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Die Führung, die Zuteilung der Ministerien und die Reihenfolge der Verabschiedung erforderlicher Gesetze bleiben unvereinbar. Durch das Hinzufügen von Sitzen werden diese Bedingungen nicht geregelt.",
+      "src": "c6348254",
+      "machine": true
+    },
+    "source": {
+      "text": "Ynet-Fragebogenentwurf, Sep 16, 2026; Zusammenfassung der Religion/des Staates der Jerusalem Post, September 10, 2026",
+      "src": "925fc043",
+      "machine": true
+    }
+  },
+  "netanyahu-arrangement": {
+    "title": {
+      "text": "Von Netanyahu geführte Parteien",
+      "src": "cd939fe2",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Testen Sie die Sitzmehrheit der ausgewählten Umfrage und überprüfen Sie dann die aufgezeichneten Amtszeiten der Parteien. Dabei handelt es sich um eine hypothetische Vereinbarung nach der Wahl, nicht um eine Koalitionsvereinbarung.",
+      "src": "f6c43ef1",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Shas akzeptiert die Aufnahme von Studenten, die die Jeschiwa verlassen; Die gemeldete Antwort von UTJ lehnt ihre Einstellung weiterhin ab. Die Koalitionsmitgliedschaft beseitigt diesen Gesetzesentwurfsstreit nicht.",
+      "src": "8fa8987e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "Die Gerichtsantwort des religiösen Zionismus beinhaltet eine Aufhebung der 61-Stimme; Otzma gab im selben Fragebogen keine detaillierte Gerichtsplattform an. Fehlende Beweise können keine koalitionsweite Einigung über diesen Mechanismus herbeiführen.",
+      "src": "de0dc57b",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Netanyahu ist der vorgeschlagene Ministerpräsident des Szenarios. Für die Ernennung sind noch das rechtliche Gründungsverfahren und eine erste Vertrauensabstimmung erforderlich. Ministerien und schriftliche Bedingungen werden hier nicht angegeben.",
+      "src": "23c1735e",
+      "machine": true
+    },
+    "source": {
+      "text": "Ynet-Fragebogenentwurf, Sep 16, 2026; Gerichtsfragebogen, Sep 22, 2026",
+      "src": "7585e36c",
+      "machine": true
+    }
+  },
+  "historical": {
+    "title": {
+      "text": "Externe Unterstützung hat eine Geschichte",
+      "src": "d69a9d3c",
+      "machine": true
+    },
+    "text": {
+      "text": "Rabins 1992 Koalition begann mit 62 Sitzen. Nachdem Shas im September 1993 abreiste, hatte es 56 und war auf die Unterstützung arabischer Fraktionen von außen angewiesen. Kabinettssitze und parlamentarische Unterstützung waren unterschiedlich groß.",
+      "src": "ca236030",
+      "machine": true
+    },
+    "source": {
+      "text": "IDI, Assaf Shapira, Nov. 12, 2019",
+      "src": "7e206d89",
+      "machine": true
+    }
+  }
+}

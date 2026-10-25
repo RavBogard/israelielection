@@ -1,0 +1,144 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien zur Wirtschaft sagen",
+      "src": "7760fb13",
+      "machine": true
+    },
+    "question": {
+      "text": "Was sollte in der Wirtschaftspolitik an erster Stelle stehen?",
+      "src": "be1b5c99",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Freie Märkte, ein kleinerer Staat",
+      "src": "543efbe4",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Geringere Lebenshaltungskosten, geringere Lücken",
+      "src": "de2586d3",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Belohnen Sie diejenigen, die dienen",
+      "src": "5aac37f8",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Budgets für die Gemeinden, denen es dient",
+      "src": "59be820f",
+      "machine": true
+    },
+    "note": {
+      "text": "Keine veröffentlichte 2026 Wirtschaftsplattform für Otzma Yehudit oder Noam gefunden (geprüft im Oktober 2026); Ihre Reihen geben wieder, was sie gesagt haben, was keinen Standpunkt vorgibt. Der Streit von Blau und Weiß beruht auf der Antwort auf den Entwurf und nicht auf einer wirtschaftlichen Plattform. Zeilen, in denen der Parteileitfaden der IDI zitiert wird, enthalten eine Beschreibung der Plattform der Partei durch IDI, kein 2026-Kampagnendokument.",
+      "src": "19e9aae1",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Keine geschriebene 2026-Plattform gefunden. Im IDI-Leitfaden heißt es, dass sich die Eröffnung der Likud-Charta neben nationalistischen Zielen auch auf die „Unterstützung eines wettbewerbsfähigen freien Marktes mit begrenzter staatlicher Beteiligung an der Wirtschaft“ beziehe.",
+      "src": "9de01055",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Parteichef und Finanzminister Bezalel Smotrich sagte, der 2026-Haushalt „sorgt für alle und bekämpft die Lebenshaltungskosten“.",
+      "src": "d447a9e6",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Aryeh Deri: „Es ist inakzeptabel, dass ein armes Haredi-Kind nicht die Mindestunterstützung erhält, die ein armes arabisches Kind erhält, wie vom Finanzministerium gefordert.“ Dies wurde gesagt, als Shas drohte, die Unterstützung für den 2026-Budget wegen der Berechtigung für Lebensmittelmarken zurückzuhalten.",
+      "src": "be707c40",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "IDI-Leitfaden: UTJ „fördert die Interessen der Haredi-Gemeinschaft in Israel in den Bereichen Bildung und Wohlfahrt.“",
+      "src": "b6976f44",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Ofer Winter: „Je mehr man dient, desto mehr bekommt man.“ Seiner Meinung nach dürften der Kampf- und Reservedienst größere Vorteile bringen.",
+      "src": "dbe74706",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "„Wir werden die Lebensmittelpreise innerhalb von drei Jahren um 30 % senken.“ Die Partei sagt, sie werde „einen umfassenden Krieg führen, um die Lebensmittelkartelle zu zerschlagen“.",
+      "src": "b8f9668d",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "IDI-Leitfaden: „Entwicklung der Peripherie Israels und Verringerung der sozialen Kluft, damit alle Israelis gleiche Chancen, gleiche Rechte und gleiche Verantwortung genießen.“",
+      "src": "bce87240",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "IDI-Leitfaden zum Thema Sozioökonomie: „Senken Sie die Lebenshaltungskosten, verbessern Sie die sozialen Dienste und bauen Sie den öffentlichen Sektor wieder auf.“",
+      "src": "f133a89d",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "IDI-Leitfaden: Die Partei „vertritt rechtsgerichtete Finanzpositionen, und ihre Plattform zeugt von ihrem Engagement für die Förderung privater Unternehmen.“",
+      "src": "8a331f81",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Als er sich mit Yoaz Hendel zusammenschloss, versprach Yaron Zelekha in der Zusammenfassung der Times of Israel, gegen Wirtschaftsmagnaten und die Lebenshaltungskosten zu kämpfen.",
+      "src": "f946aef1",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Yousef Jabareen sagte der Jerusalem Post, dass die Partei „Maßnahmen gegen die organisierte Kriminalität und höhere Budgets für die arabische Gesellschaft und lokale Behörden“ anstreben werde (Zusammenfassung der Post). Keine gemeinsame Wirtschaftsplattform gefunden.",
+      "src": "c19ea9e7",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Mansour Abbas hat argumentiert, dass „arabische politische Beteiligung genutzt werden sollte, um Kriminalität, Wohnungsbau, wirtschaftliche Entwicklung und andere Probleme anzugehen, mit denen die arabische Gesellschaft konfrontiert ist“ (Zusammenfassung der Jerusalem Post). Kein vollständiges Manifest gefunden.",
+      "src": "010219c6",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Noch keine detaillierte Wirtschaftsplattform; Die Partei sagt, eines davon werde „separat veröffentlicht“. Seine Plattform fordert die Öffnung der Wirtschaft durch „jüdischen Kapitalismus“, den Abbau von Regulierung und Bürokratie, Ausgaben für Verteidigungseinsparungen in Infrastruktur, Industrie und Kleinunternehmen sowie mehr Ressourcen für schwächere Gruppen (übersetzt).",
+      "src": "4d35ecdd",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Keine Wirtschaftsplattform gefunden. Avi Maoz stimmte in erster Lesung gegen den 2026-Haushalt und sagte, er ignoriere „völlig die jüdische Identität des Staates Israel“ und verwies auf religiös-nationale Schulen, den Milchsektor und die Lebenshaltungskosten (übersetzt).",
+      "src": "20efec49",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Keine Wirtschaftsplattform gefunden. In ihrer Antwort an Ynet zum Entwurf heißt es: „Sozialleistungen werden in erster Linie denen gewährt, die dienen“ (übersetzt).",
+      "src": "ae85dad2",
+      "machine": true
+    }
+  }
+}

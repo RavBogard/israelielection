@@ -1,3 +1,4 @@
+import { isRtl } from "@/lib/i18n";
 import type { ReactNode } from "react";
 import { ballotLists } from "@/lib/ballot";
 import type { Lang } from "@/lib/i18n";
@@ -54,6 +55,6 @@ export function configText(config: ResultsConfig, field: string, lang: Lang): Lo
 
 /** Shows a Localized: as is when it is in the page's language, else marked as English inside the Hebrew page. */
 export function T({ v, lang }: { v: Localized; lang: Lang }): ReactNode {
-  if (lang === "en" || v.lang === lang) return v.translated ? `${v.text} ${{en:"(translation)", he:"(תרגום)",ar:"(ترجمة)",fa:"(ترجمه)"}[lang]}` : v.text;
-  return <span lang={v.lang} dir={v.lang === "en" ? "ltr" : "rtl"}>{v.text}</span>;
+  if (lang === "en" || v.lang === lang) return v.translated ? `${v.text} ${{en:"(translation)", he:"(תרגום)",ar:"(ترجمة)",fa:"(ترجمه)",de:"(Übersetzung)",fr:"(traduction)",zh:"（译文）"}[lang]}` : v.text;
+  return <span lang={v.lang} dir={isRtl(v.lang) ? "rtl" : "ltr"}>{v.text}</span>;
 }

@@ -1,0 +1,458 @@
+{
+  "draft-left-yeshiva": {
+    "label": {
+      "text": "Conscription haredi : des hommes qui quittent la yeshiva",
+      "src": "e986cbd9",
+      "machine": true
+    },
+    "question": {
+      "text": "Exiger le service des jeunes Haredi qui ont quitté la yeshiva ?",
+      "src": "81926059",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Exiger un service",
+      "src": "4f9c721f",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "S'opposer au service obligatoire",
+      "src": "3b3f71ff",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Smotrich a posé une condition à tout projet de loi : « Quiconque n'étudie pas la Torah doit s'enrôler ».",
+      "src": "af582960",
+      "machine": true
+    },
+    "answerSources.yashar.text": {
+      "text": "Service national pour tous, où « le seul mécanisme de report du service sera une allocation allant jusqu'à 3 % de chaque cohorte annuelle pour les individus exceptionnels ».",
+      "src": "c3840df7",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "\"Un cadre de service pour tous : chaque jeune homme et chaque jeune femme servira l'Etat\", a ajouté Haredim.",
+      "src": "e65df3a8",
+      "machine": true
+    },
+    "answerSources.res.text": {
+      "text": "\"Chaque citoyen se présentera au centre d'intégration.\"",
+      "src": "6f33338c",
+      "machine": true
+    },
+    "answerSources.poi.text": {
+      "text": "Winter : \"Tout jeune en âge de servir devra rendre compte à l'Etat. Aucun secteur n'est au-dessus des lois.\"",
+      "src": "e4d830fb",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Le Likud a refusé de répondre, mais le projet de loi 2025 de son député Boaz Bismuth visait à enrôler la moitié des hommes Haredi ne faisant pas partie de la yeshiva d'ici cinq ans.",
+      "src": "002ddded",
+      "machine": true
+    },
+    "note": {
+      "text": "Le Shas et l’UTJ diffèrent sur les hommes qui ont quitté la yeshiva. Les propositions de service militaire ou civil universel couvrent également ce groupe ; la même réponse ici n'établit pas d'accord sur la poursuite des étudiants.",
+      "src": "98d04a8e",
+      "machine": true
+    }
+  },
+  "draft-exemptions": {
+    "label": {
+      "text": "Projet haredi : exemptions de service",
+      "src": "1a480774",
+      "machine": true
+    },
+    "question": {
+      "text": "Autoriser des exemptions dans le cadre du service militaire ou civil ?",
+      "src": "8cf4f577",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Pas d'exemptions ni de quotas",
+      "src": "55ccde00",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Exceptions pour les personnes exceptionnelles",
+      "src": "c72820c4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Étudiants de yeshiva à temps plein exemptés",
+      "src": "9e85c3d2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "Le résumé du Shas et de l’UTJ publié par le Jerusalem Post : « l’étude de la Torah à plein temps est une valeur religieuse centrale qui devrait bénéficier d’une protection juridique ».",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "Le résumé du Shas et de l’UTJ publié par le Jerusalem Post : « l’étude de la Torah à plein temps est une valeur religieuse centrale qui devrait bénéficier d’une protection juridique ».",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Smotrich accepte des exemptions pour les hommes inscrits à plein temps dans une yeshiva, à condition que les dirigeants Haredi soutiennent que « quiconque n'étudie pas doit s'enrôler ».",
+      "src": "c1582d53",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Le Likud a refusé de répondre, mais le projet de loi 2025 de son député Boaz Bismuth permet aux étudiants de yeshiva à temps plein de continuer à différer leur service, l'âge d'exemption étant laissé à 26.",
+      "src": "8656b6d3",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Avi Maoz a déclaré qu’il soutiendrait uniquement un projet de loi non coercitif approuvé par les rabbins Haredi, et ces rabbins soutiennent l’exemption de la yeshiva.",
+      "src": "db1f5d9d",
+      "machine": true
+    },
+    "note": {
+      "text": "Yashar précise jusqu'à 3 % de chaque cohorte nationale annuelle ; Kakhol lavan propose des quotas et des exceptions individuelles exceptionnelles sans la même limite quantifiée. L’exonération des étudiants à temps plein d’une yeshiva est un mécanisme différent des deux. Un engagement général en faveur du service pour tous n’établit pas de mécanisme d’exemption.",
+      "src": "6e822187",
+      "machine": true
+    }
+  },
+  "courts-appointments": {
+    "label": {
+      "text": "Tribunaux : nominations judiciaires",
+      "src": "33cb190a",
+      "machine": true
+    },
+    "question": {
+      "text": "Abroger la loi 2025 sur les nominations judiciaires ?",
+      "src": "dd61f9f4",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Abroger et remplacer la loi",
+      "src": "70674438",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Adopté la loi (document historique)",
+      "src": "b2fa75fc",
+      "machine": true
+    },
+    "answerSources.dem.text": {
+      "text": "Golan, avec Lapid, Gantz et Liberman, dans une déclaration commune : « Dans le prochain gouvernement, nous veillerons à ce que la loi modifiant la Commission de sélection judiciaire soit abrogée » (traduit).",
+      "src": "314a97c5",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "Liberman, avec Lapid, Gantz et Golan, dans une déclaration commune : « Dans le prochain gouvernement, nous veillerons à ce que la loi modifiant la Commission de sélection judiciaire soit abrogée » (traduit).",
+      "src": "dd2cfceb",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "Gantz, avec Lapid, Liberman et Golan, dans une déclaration commune : « Dans le prochain gouvernement, nous veillerons à ce que la loi modifiant la Commission de sélection judiciaire soit abrogée » (traduit).",
+      "src": "71ef50cb",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Le Shas faisait partie de la coalition qui a adopté la loi 67 à 1 en mars 2025, tandis que l'opposition a boycotté le vote.",
+      "src": "afa74aab",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ faisait partie de la coalition qui a adopté la loi 67 à 1 en mars 2025, tandis que l'opposition a boycotté le vote.",
+      "src": "8a5b68f3",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "Le sionisme religieux faisait partie de la coalition qui a adopté la loi 67 à 1 en mars 2025, tandis que l'opposition a boycotté le vote.",
+      "src": "35c9acc8",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Ben Gvir a salué la loi lorsqu'elle a été adoptée en mars 2025 et a déclaré que le gouvernement devrait poursuivre le reste de la refonte.",
+      "src": "c2b5abae",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "La liste souhaite \"une nouvelle composition équilibrée\" pour la Commission de sélection judiciaire, qui remplacerait celle fixée par la loi 2025.",
+      "src": "96682d9d",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "La liste souhaite un mécanisme de nomination qui « préserve l’indépendance judiciaire », ce qui, selon elle, n’est pas le cas du mécanisme actuel.",
+      "src": "8ca0d7a5",
+      "machine": true
+    },
+    "note": {
+      "text": "La réponse du Likoud est un bilan législatif de mars 2025, et non une nouvelle réponse de campagne. L'engagement des dirigeants de l'opposition à abroger la loi date du jour où la loi a été adoptée. L'abrogation de la même loi ne constitue pas un accord sur son remplacement.",
+      "src": "098ea9db",
+      "machine": true
+    }
+  },
+  "courts-override": {
+    "label": {
+      "text": "Tribunaux : dérogation législative",
+      "src": "c9257edc",
+      "machine": true
+    },
+    "question": {
+      "text": "La Knesset devrait-elle pouvoir réadopter une loi invalidée par la Cour suprême ?",
+      "src": "b9918024",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "S'opposer à une clause dérogatoire",
+      "src": "ae2eaa9b",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Remplacer uniquement avec une majorité spéciale (70 MK ou plus)",
+      "src": "8e956759",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Remplacer par 61 MK",
+      "src": "d2dc0f25",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "Liberman a proposé une cour constitutionnelle et « une clause de dérogation avec une majorité de 70 députés » (traduit).",
+      "src": "425b1b54",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Les partis Haredi ont été les principaux partisans d’une victoire par une simple majorité à la Knesset au début du 2023, bien qu’ils soient restés silencieux sur ce sujet au printemps et ne l’aient pas réitéré.",
+      "src": "19f18c66",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UJT a fait de la clause de dérogation une condition pour rejoindre la coalition 2022, et les partis Haredi ont soutenu une dérogation par une simple majorité à la Knesset au début de 2023.",
+      "src": "e3358606",
+      "machine": true
+    },
+    "note": {
+      "text": "Les seuils sont des différences substantielles : les réservistes disent plus que 72 députés, selon la proposition 2023 d'Yisrael Beytenu 70. La codification constitutionnelle à elle seule ne fournit aucune réponse en cas de dérogation.",
+      "src": "58633d4c",
+      "machine": true
+    }
+  },
+  "courts-reasonableness": {
+    "label": {
+      "text": "Tribunaux : examen du caractère raisonnable",
+      "src": "c04c2500",
+      "machine": true
+    },
+    "question": {
+      "text": "Réduire la norme du caractère raisonnable tout en la conservant ?",
+      "src": "983dbc21",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Réduire plutôt que supprimer",
+      "src": "c47891a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Supprimez-le pour les décisions du cabinet et des ministres",
+      "src": "6edb36c8",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Le Likoud a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "6409b36e",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Le Shas a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "665dbd02",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "6ecae05a",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "Le sionisme religieux a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "027ebe2d",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "2e582b84",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Noam a voté pour la loi 2023 de juillet interdisant aux tribunaux de contrôler le caractère raisonnable des décisions du cabinet et des ministres, adoptée 64 à 0 avec le boycott de l'opposition.",
+      "src": "d5003350",
+      "machine": true
+    },
+    "note": {
+      "text": "S'opposer à l'abolition lors d'un vote 2023 ne répond pas nécessairement à une proposition visant à restreindre la norme dans 2026. Les réponses d'abolition reposent sur le même vote 2023 ; aucun de ces partis ne l’a réitéré dans cette campagne.",
+      "src": "762c56ff",
+      "machine": true
+    }
+  },
+  "relig-marriage": {
+    "label": {
+      "text": "Religion et État : mariage civil",
+      "src": "83d5e189",
+      "machine": true
+    },
+    "question": {
+      "text": "Autoriser une option de mariage civil en Israël ?",
+      "src": "87248cfc",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Autoriser une option civile",
+      "src": "dd46a4a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "S'opposer aux alternatives civiles",
+      "src": "df2215b0",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Le programme de Noam appelle à un Grand Rabbinat plus fort, qui gère tous les mariages juifs en Israël.",
+      "src": "36ec86c5",
+      "machine": true
+    },
+    "unstated.bw.text": {
+      "text": "Kakhol lavan n’a donné aucune réponse 2026, mais Gantz a demandé l’enregistrement du mariage civil en 2021, affirmant que « beaucoup se voient retirer leur droit fondamental de se marier ».",
+      "src": "c1efb0d6",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "La liste n'a donné aucune réponse, mais Yoaz Hendel a déclaré en tant que ministre en 2021 : \"Nous devons offrir une alternative à ceux qui ne peuvent pas se marier\" (traduit).",
+      "src": "0deac5df",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "Le programme de la liste appelle à la séparation de la religion et de l'État.",
+      "src": "d9ba291a",
+      "machine": true
+    },
+    "note": {
+      "text": "Certaines réponses sont des résumés secondaires. Une plate-forme de parti plus ancienne ne constitue pas un engagement actuel de l’ensemble de sa liste commune.",
+      "src": "83232c18",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Scission : les accords de coalition maintiennent le monopole du rabbinat ; Les hauts députés votent pour le mariage civil",
+      "src": "e3ee9761",
+      "machine": true
+    }
+  },
+  "relig-shabbat": {
+    "label": {
+      "text": "Religion et État : transport de Shabbat",
+      "src": "4c11f64a",
+      "machine": true
+    },
+    "question": {
+      "text": "Autoriser les transports publics le jour du Shabbat par choix local ?",
+      "src": "d914e556",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Permettre un choix local / un service limité",
+      "src": "fd165203",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Gardez les règles actuelles du Shabbat",
+      "src": "e1051f62",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "Kakhol lavan gèrerait les transports publics pendant Shabbat « dans le cadre d'une réforme transférant les pouvoirs aux autorités locales » (traduit).",
+      "src": "1c6a5d2d",
+      "machine": true
+    },
+    "answerSources.jl.text": {
+      "text": "La Liste arabe unie soutient la gestion des transports publics urbains et interurbains pendant le Shabbat, y compris les transports en commun (traduit) ; il veut plus qu'un choix local.",
+      "src": "a40e9ce2",
+      "machine": true
+    },
+    "answerSources.likud.text": {
+      "text": "Likoud : « Nous voulons connecter Israël pendant les six jours ouvrables, tout en respectant le Shabbat » (traduit), ce que Ynet considère comme le maintien du statu quo.",
+      "src": "dc0e72ce",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Ynet rapporte que le sionisme religieux s’aligne pleinement sur 83% de ses partisans qui s’opposent à tout changement.",
+      "src": "b643aeb2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "\"Les deux partis se sont historiquement opposés au développement des transports publics et à d'autres activités soutenues par l'État pendant le Shabbat.\"",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "\"Les deux partis se sont historiquement opposés au développement des transports publics et à d'autres activités soutenues par l'État pendant le Shabbat.\"",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "Le programme de Noam : « Un Shabbat public, un Grand Rabbinat plus fort et une politique conservatrice de conversion et de cacherout. »",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit n’a pas répondu à Ynet en 2026 ; sa liste commune 2022 avec le sionisme religieux a déclaré que les deux partis s'opposent aux transports publics le jour du Shabbat.",
+      "src": "f2d1347a",
+      "machine": true
+    },
+    "note": {
+      "text": "La déclaration de transport de Bennett date du 20 avril 2026, avant la liste commune de B'Yachad. La réponse affichée enregistre cette déclaration du leader, et non une plateforme de liste commune adoptée. Les Démocrates et la Liste arabe unie ont déclaré à Ynet en août 2026 qu’ils voulaient un service dans tout le pays, et pas seulement un choix local.",
+      "src": "1fb42393",
+      "machine": true
+    }
+  },
+  "relig-conversion": {
+    "label": {
+      "text": "Religion et État : conversion",
+      "src": "2ae46528",
+      "machine": true
+    },
+    "question": {
+      "text": "Reconnaître la conversion au-delà de l’establishment religieux orthodoxe ?",
+      "src": "93ab9615",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Étendre la reconnaissance",
+      "src": "8effc3fe",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Gardez l'autorité orthodoxe",
+      "src": "d8d4387c",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Sa liste commune 2022 s'est engagée à « ancrer dans la loi le statut exclusif de conversion d'État sous le Rabbinat » (traduit), et son accord de coalition de décembre disait la même chose.",
+      "src": "b863444f",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "Le programme de Noam : « Un Shabbat public, un Grand Rabbinat plus fort et une politique conservatrice de conversion et de cacherout. »",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Le Likoud a signé des accords de coalition 2022 avec le sionisme religieux et l'UTJ pour reconnaître uniquement les conversions effectuées sous le grand rabbinat orthodoxe.",
+      "src": "652293d2",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit n'a pas répondu ; sa liste commune 2022 avec le sionisme religieux s'est engagée à faire de la conversion de l'État dirigée par le rabbinat la seule voie reconnue.",
+      "src": "d6bb10d0",
+      "machine": true
+    },
+    "note": {
+      "text": "Le soutien au mariage civil n’implique pas une opinion sur la conversion. Yisrael Beytenu a poussé les rabbins orthodoxes municipaux à se convertir, ce qui n’est pas une position ici.",
+      "src": "3f975c84",
+      "machine": true
+    }
+  }
+}

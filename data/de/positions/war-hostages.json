@@ -1,0 +1,132 @@
+{
+  "_": {
+    "title": {
+      "text": "Wie die Parteien im Okt. 7 ermitteln würden",
+      "src": "39a4d92b",
+      "machine": true
+    },
+    "question": {
+      "text": "Wer sollte Oktober 7 untersuchen?",
+      "src": "d5749e09",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Eine Provision außerhalb des 1968-Gesetzes",
+      "src": "8a43fa1b",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Eine unabhängige Anfrage, Formular nicht festgelegt",
+      "src": "6dcd4a86",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Eine staatliche Kommission nach dem 1968-Gesetz",
+      "src": "93c04b59",
+      "machine": true
+    },
+    "note": {
+      "text": "Parteiantworten auf eine Umfrage von Ynet und Yedioth Ahronoth unter allen Parteien (Okt 4, 2026). Der Likud gab keine offizielle Antwort; Seine Zeile ist Ynets Bericht über seinen Gesetzentwurf für eine „nationale“ Kommission. Otzma Yehudit, Shas und United Torah Judaism lehnten eine Antwort ab; Die Streitparteien Shas und UTJ fügen den Koalitionsentwurf hinzu, den sie in erster Lesung unterstützt hatten (Times of Israel, Juli 7, 2026), und die Streitpartei Otzma Yehudit die Worte ihres Führers im Kabinett im November 2025. Für Noam wurde keine veröffentlichte Stelle gefunden (geprüft im Oktober 2026).",
+      "src": "c62624ec",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Keine offizielle Antwort. Der Likud „versuchte später, einen privaten Gesetzentwurf zur Schaffung eines alternativen Gremiums vorzulegen, das als ‚nationale‘ Kommission bezeichnet wird, aber die Bemühungen wurden vor dem Ende der Knesset-Amtsperiode nicht abgeschlossen“ (Ynets Bericht).",
+      "src": "d3319fb0",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Religiöser Zionismus: „unterstützt die Einrichtung einer nationalen, unabhängigen, echten und fairen Untersuchungskommission … Wir werden unter keinen Umständen eine ‚staatliche‘ Untersuchungskommission unterstützen …“ Zehut, sein Listenpartner: „Eine neutrale Kommission mit unbegrenzten Befugnissen … Koalition und Opposition werden ihre Mitglieder zu gleichen Teilen ernennen.“",
+      "src": "5627199e",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "„Unmittelbar nach der Bildung der nächsten Regierung wird eine Untersuchungskommission gebildet ... eine geheime Abstimmung in der neuen Knesset zur Ernennung des Vorsitzenden und des stellvertretenden Vorsitzenden der Kommission sowie pensionierter Richter, die die verbleibenden Mitglieder der Kommission auswählen werden.“",
+      "src": "a8ff40f3",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "„Die erste Entscheidung unserer Regierung wird darin bestehen, eine staatliche Untersuchungskommission zum Massaker vom Oktober 7 einzurichten. Die Kommission wird gemäß Abschnitt 1 des Gesetzes über Untersuchungskommissionen, 1968, eingesetzt.“",
+      "src": "92c6ac0a",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "„Wir werden in Übereinstimmung mit dem Gesetz innerhalb der ersten fünf Minuten nach der ersten Regierungssitzung, am Tag der Vereidigung der Regierung, eine staatliche Untersuchungskommission einsetzen.“",
+      "src": "d1cfb971",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "„Die Einrichtung einer staatlichen Untersuchungskommission wird die erste Entscheidung sein, die die Partei in der nächsten Regierung trifft … Die Mitglieder der Kommission werden vom Präsidenten des Obersten Gerichtshofs ernannt, wie es das Gesetz über Untersuchungskommissionen vorschreibt, 1968.“",
+      "src": "acc109b3",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "„Wir unterstützen die Einrichtung einer staatlichen Untersuchungskommission genau nach dem geltenden Recht im Staat Israel. Dies wird die erste Entscheidung sein, die wir in der von uns eingesetzten Regierung treffen.“",
+      "src": "3a037789",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "„Blue and White hat die Einrichtung einer unabhängigen und unparteiischen staatlichen Untersuchungskommission für Oktober 7 unterstützt und unterstützt dies auch weiterhin … der derzeitige Mechanismus ist gut.“",
+      "src": "c83654a4",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "„Wir unterstützen eine staatliche Untersuchungskommission. Über deren Zusammensetzung sollte man sich lieber weitgehend einigen. Wer soll sie ernennen? Der Oberste Gerichtshof, mit Vorliebe für Sohlberg.“",
+      "src": "877103e9",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "„Wir unterstützen die Einrichtung einer staatlichen Untersuchungskommission nach geltendem Recht, die von einem Richter des Obersten Gerichtshofs geleitet und vom Präsidenten des Obersten Gerichtshofs ernannt wird.“ Möchte, dass sein Mandat „die Politik der Besatzung, Blockade und Ablehnung des Friedens unter Netanyahu-Regierungen“ umfasst.",
+      "src": "87df1a72",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Eine Kommission „steht derzeit nicht im Mittelpunkt von Ra'ams Agenda“, aber „es besteht Bedarf an einer umfassenden, unabhängigen und unparteiischen Untersuchung der Ereignisse vom Oktober 7.“",
+      "src": "10bbb66b",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Ynets Umfrage abgelehnt. Zu den Akten: Unterstützte den Gesetzentwurf der Koalition für ein Gremium vom Oktober 7, das von der Knesset ernannt wurde, und nicht von einer Staatskommission, die ihre erste Lesung 59 bis 0 am 7, 2026 Juli verabschiedete, wobei die Opposition boykottierte.",
+      "src": "8bc66abe",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Ynets Umfrage abgelehnt. Zu den Akten: Unterstützte den Gesetzentwurf der Koalition für ein Gremium vom Oktober 7, das von der Knesset ernannt wurde, und nicht von einer Staatskommission, die ihre erste Lesung 59 bis 0 am 7, 2026 Juli verabschiedete, wobei die Opposition boykottierte.",
+      "src": "8bc66abe",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Ynets Umfrage abgelehnt. Zu den Akten: Als das Kabinett anstelle einer staatlichen Kommission ein Ministergremium einsetzte, um seine eigene Untersuchung im Oktober 7 zu gestalten, sagte Ben-Gvir, ein Mitglied des Gremiums, „der Rahmen muss national sein, ohne Personen aus dem Rechtssystem; diejenigen, die auf der Bank sitzen, gehören zu den Untersuchten“ (übersetzt).",
+      "src": "c0104580",
+      "machine": true
+    }
+  }
+}

@@ -279,3 +279,7 @@ a:hover { text-decoration-color: currentColor; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ramp-edge: var(--ink-3); } }
 :root[data-theme="dark"] { --ramp-edge: var(--ink-3); }
 @media print { :root, :root:not([data-theme="light"]), :root[data-theme="dark"] { --ramp-edge: transparent; } }
+
+/* System CJK fonts cover Simplified Chinese without downloading a large font bundle. */
+:root:lang(zh) { --body: var(--font-sans), "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; --display: var(--body); }
+:lang(zh) :is(h1, h2, h3, .brand .word, .nav-panel-label) { letter-spacing: 0; }

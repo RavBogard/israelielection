@@ -1,0 +1,54 @@
+{
+  "_": {
+    "source.label": {
+      "text": "Zentraler Wahlausschuss, Ergebnisse nach Ort",
+      "src": "964fa0a1",
+      "machine": true
+    },
+    "source.note": {
+      "text": "Die Akte des Ausschusses am Wahlabend. Zuvor werden Testdaten gespeichert, die auf der Website nicht angezeigt werden.",
+      "src": "bcf7c544",
+      "machine": true
+    },
+    "thresholdSource": {
+      "text": "Knesset-Wahlgesetz, s. 81: 3.25 % der gültigen Stimmen.",
+      "src": "942d0e19",
+      "machine": true
+    },
+    "lettersSource": {
+      "text": "Genehmigt vom Zentralen Wahlausschuss Sep 27, 2026: Ynet und Emess (Sep 27), vollständige Liste von 38 in Ice (Sep 2026).",
+      "src": "80f8b9cb",
+      "machine": true
+    },
+    "agreements.0.source": {
+      "text": "Times of Israel, Sep 10, 2026; offiziell: Bekanntmachung des Zentralen Wahlausschusses gemäß Abschnitt 67(c), Jalkut HaPirsumim 15045 p. 1098, Okt 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "e126a1c9",
+      "machine": true
+    },
+    "agreements.1.source": {
+      "text": "Times of Israel, Sep 10, 2026; offiziell: Bekanntmachung des Zentralen Wahlausschusses gemäß Abschnitt 67(c), Jalkut HaPirsumim 15045 p. 1098, Okt 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "e126a1c9",
+      "machine": true
+    },
+    "agreements.2.source": {
+      "text": "Walla, Sep 12, 2026 (signiert Sep 11); Ynet, Sep 11; Jerusalem Post, September 13; offiziell: Bekanntmachung des Zentralen Wahlausschusses gemäß Abschnitt 67(c), Jalkut HaPirsumim 15045 p. 1098, Okt 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "96c530b2",
+      "machine": true
+    },
+    "agreementsNote": {
+      "text": "Sitzschätzungen basieren auf den fünf Überstimmenvereinbarungen, die das Zentrale Wahlkomitee am 19, 2026 im Amtsblatt veröffentlicht hat (Yalkut HaPirsumim 15045, S. 1098): Yashar–The Democrats, B'Yachad–Yisrael Beiteinu, Joint List–Ra'am, Likud–Religious Zionism, Shas–UTJ. Ein sechstes Paar Randlisten wird nicht modelliert. Otzma Yehudit, Amcha Yisrael, die Reservisten, Blue and White und Noam reichten keine ein. Verifiziert anhand des Amtsblatts Okt. 23.",
+      "src": "70372cc4",
+      "machine": true
+    },
+    "agreements.3.source": {
+      "text": "Unterzeichnet Okt. 6 (Times of Israel); offiziell: Bekanntmachung des Zentralen Wahlausschusses gemäß Abschnitt 67(c), Jalkut HaPirsumim 15045 p. 1098, Okt 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "92881429",
+      "machine": true
+    },
+    "agreements.4.source": {
+      "text": "Unterzeichnet Okt. 11 (Jerusalem Post); offiziell: Bekanntmachung des Zentralen Wahlausschusses gemäß Abschnitt 67(c), Jalkut HaPirsumim 15045 p. 1098, Okt 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "a36aa9e0",
+      "machine": true
+    }
+  }
+}

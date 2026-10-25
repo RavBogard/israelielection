@@ -1,0 +1,149 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les partis à propos d’un État palestinien",
+      "src": "e35a7344",
+      "machine": true
+    },
+    "question": {
+      "text": "Faut-il créer un État palestinien ?",
+      "src": "5e321b58",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "S'opposer à un État palestinien",
+      "src": "89843895",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Pas à l'ordre du jour maintenant",
+      "src": "3914d0b4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Séparation dans un accord régional",
+      "src": "d614fdde",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Soutenir un État palestinien",
+      "src": "fea28a56",
+      "machine": true
+    },
+    "note": {
+      "text": "La plupart des lignes sont les réponses des partis au questionnaire d'Ynet du 30 septembre 2026, qui posait des questions sur la Cisjordanie. Le Likoud l’a refusé ; sa ligne ajoute la vidéo de campagne de Netanyahu. La réponse de la Liste arabe unie n’a pas abordé la question de la création d’un État ; sa ligne ajoute le rapport du Jerusalem Post sur la position de Jabareen. Les rangs des Réservistes-Économiques, Kakhol lavan et Noam citent leurs dirigeants en dehors du questionnaire ; Hendel est antérieur à la fusion de sa liste. UTJ n’a pas dit où il en était ; sa ligne n’est pas dite publiquement et repose sur la résolution de la Knesset qu’elle a co-parrainée dans 2024.",
+      "src": "348e195b",
+      "machine": true
+    },
+    "columnNote": {
+      "text": "Position : une courte étiquette pour le tableau de comparaison, tirée uniquement du texte de la ligne. « A refusé de répondre » : le parti a refusé le questionnaire. \"Aucune position trouvée\" : aucune position publiée sur un Etat palestinien n'a été trouvée (vérifié en octobre 2026).",
+      "src": "352c53d7",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "A refusé le questionnaire d'Ynet (\"ne participe pas aux questionnaires\"). Vidéo de campagne de Netanyahu : « Voulez-vous un État palestinien ? (ou) voulez-vous un État juif ? »",
+      "src": "153c709a",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "S'oppose à la création d'un État palestinien ; ne fait pas de la politique d’implantation en Cisjordanie un thème central de la campagne. En tant que l'un des « fondateurs du bloc de droite », il a soutenu les initiatives promues par le sionisme religieux et Otzma Yehudit.",
+      "src": "1012dd4a",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "N'a pas répondu sur un Etat palestinien ; il a déclaré à Ynet qu’il n’avait pas de politique unifiée en Cisjordanie. UJT a co-sponsorisé la résolution de la Knesset du 18 2024 juillet qui « s'oppose à la création d'un État palestinien sur tout terrain à l'ouest du Jourdain », qui a été adoptée 68 par 9. En juillet 2025, ses députés ont voté pour la motion non contraignante appelant à la souveraineté sur les zones de colonies juives.",
+      "src": "95eae674",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "\"Nous avons mené une révolution énorme et sans précédent dans la colonisation en Judée-Samarie qui a, en pratique, éliminé l'idée d'un Etat palestinien.\" Soutient \"l'application de la pleine souveraineté israélienne sur la Judée et la Samarie\".",
+      "src": "08eed86d",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "\"Nous travaillerons à appliquer la pleine souveraineté israélienne, à démanteler l'Autorité palestinienne de ses actifs et de ses armes, et à utiliser tous les mécanismes de sécurité et gouvernementaux pour encourager la migration volontaire depuis la Judée-Samarie et Gaza.\" \"Otzma Yehudit soutient l'établissement de nouvelles communautés dans toutes les régions de Judée-Samarie et s'oppose certainement à l'évacuation des communautés et des fermes.\"",
+      "src": "71270dbb",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "\"Notre position est qu'un Etat palestinien ne sera jamais établi à nos côtés.\"",
+      "src": "5501061c",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz : « L'établissement d'un État palestinien au cœur du pays conduira à la production de la terreur dans tout Israël » (traduit). Il a appelé à un gouvernement de droite qui empêcherait la création d’un État palestinien et annexerait la Cisjordanie.",
+      "src": "1676f32d",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "\"La création d'un Etat palestinien n'est pas à l'ordre du jour en ce qui nous concerne.\" Soutient le renforcement légal des blocs de colonies et des nouvelles communautés.",
+      "src": "f08726e6",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "\"Nous soutenons la colonisation juive partout où elle est effectuée légalement. Nous nous opposons à un Etat palestinien et au transfert de territoire.\" \"La zone C est considérée comme une future partie souveraine de l'État d'Israël. De toute évidence, la discrétion doit être exercée quant au calendrier.\"",
+      "src": "4fc1ab4a",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "\"Israël est un Etat juif et démocratique, et pour le rester, nous devons lutter vers la séparation dans le cadre d'un mouvement régional\", avec les Etats-Unis et les Etats arabes modérés. Évacuerait les avant-postes illégaux.",
+      "src": "da59c50a",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "\"L'Autorité palestinienne est devenue une organisation terroriste spécialisée dans le terrorisme diplomatique, et nous devons réfléchir intelligemment à la manière d'annuler les accords d'Oslo et de démanteler l'Autorité palestinienne.\" \"Nous soutenons l'application de la souveraineté israélienne à la zone C.\"",
+      "src": "d9e07d35",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Benny Gantz, dans un éditorial du New York Times : « l'opposition à la reconnaissance d'un État palestinien est au cœur du consensus [israélien] » ; « toute voie à suivre vers une autonomie civile palestinienne plus large » doit d'abord démontrer « un historique avéré à long terme de gouvernance responsable ». Dans la campagne (Arutz Sheva, septembre 28, 2026) : « Ces élections ne concernent pas un État palestinien. »",
+      "src": "23ed3a08",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Yoaz Hendel, en août 2026, avant que sa liste ne fusionne avec le parti de Yaron Zelekha : \"Nous ne permettrons pas la création d'un Etat palestinien et nous soutenons une économie libre.\"",
+      "src": "be13ac7b",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "soutient l'avancement d'une solution négociée à deux États dans laquelle un État palestinien serait établi aux côtés d'Israël ; s’oppose à l’extension de la souveraineté israélienne sur le territoire de Cisjordanie.",
+      "src": "019d27e9",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Jabareen a déclaré que la liste encouragerait la reprise des négociations avec les dirigeants palestiniens pour faire progresser la création d’un État palestinien aux côtés d’Israël (comme le rapporte le Jerusalem Post). Pour Ynet : « Toutes les colonies qui constituent une violation du droit international et sont même définies comme un crime de guerre doivent être évacuées immédiatement et sans délai. »",
+      "src": "dbdd9863",
+      "machine": true
+    }
+  }
+}

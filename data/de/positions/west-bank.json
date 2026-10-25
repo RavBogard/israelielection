@@ -1,0 +1,154 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien zum Westjordanland sagen",
+      "src": "51157c10",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollte Israel Land im Westjordanland annektieren?",
+      "src": "aa9c6041",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Annexion des gesamten Westjordanlandes",
+      "src": "0bc8d4a6",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Anhang Bereich C oder ausgewählte Bereiche",
+      "src": "359c23e4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Unterstützt die Souveränität und blockiert verbindliche Gesetzesentwürfe",
+      "src": "4208a149",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Siedlungen ausbauen, kein Annexionsversprechen",
+      "src": "d2c82cc6",
+      "machine": true
+    },
+    "stances.4.label": {
+      "text": "Getrennt von den Palästinensern",
+      "src": "45c66544",
+      "machine": true
+    },
+    "note": {
+      "text": "Die meisten Zeilen stammen aus den Antworten der Parteien auf einen Ynet-Fragebogen (September 30, 2026). Likud beteiligt sich nicht an Umfragen; seine Zeile ist seine Stellungnahme zu den Oktober-2025-Rechnungen. Noams Streit ist die Wahlkampferklärung seines Anführers vom September 2026. „Judäa und Samaria“ erscheint hier so, wie es die Parteien geschrieben haben. Shas und UTJ antworteten, ohne Stellung zur Annexion zu beziehen; In ihren Zeilen wird angegeben, wie sie in 2025 abgestimmt haben, was keine Einigung ergibt. Geprüft im Oktober 2026.",
+      "src": "a61a545e",
+      "machine": true
+    },
+    "stances.5.label": {
+      "text": "Keine Annexion, ein palästinensischer Staat",
+      "src": "f828e441",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Der Likud-Abgeordnete Dan Illouz unterstützte im Juli 2025 den unverbindlichen Antrag der Knesset, die Souveränität über Judäa und Samaria zu fordern, der von 71 bis 13 angenommen wurde, und Likud-Minister unter der Führung von Yariv Levin schrieben an Netanjahu, dass es „an der Zeit sei, in der Regierung eine Entscheidung zur Anwendung der Souveränität zu verabschieden“. Zu den verbindlichen Gesetzesentwürfen vom Oktober 2025 blieben alle bis auf einen Likud-Abgeordneten weg, und die Partei nannte sie „eine weitere Provokation der Opposition, die darauf abzielt, unsere Beziehungen zu den Vereinigten Staaten zu schädigen … Wahre Souveränität wird nicht durch ein auffälliges Gesetz für die Öffentlichkeit erreicht, sondern durch ordnungsgemäße Arbeit vor Ort.“",
+      "src": "4748b069",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Sagt, es habe „die Idee eines palästinensischen Staates beseitigt“; unterstützt „die Anwendung der vollen israelischen Souveränität über Judäa und Samaria“.",
+      "src": "5f55347b",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "„Die volle israelische Souveränität anwenden, die Palästinensische Autonomiebehörde ihrer Vermögenswerte und Waffen berauben“ und „die freiwillige Migration aus Judäa, Samaria und Gaza fördern“; neue Gemeinden in allen Teilen des Territoriums; von Außenposten: „Wir werden sie regulieren.“",
+      "src": "7d8c10ae",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Amcha Yisrael: „Ein palästinensischer Staat wird niemals an unserer Seite entstehen“; „Souveränität in Judäa und Samaria anwenden.“",
+      "src": "fdbcbc2e",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz: „Nur eine völlig rechte Regierung mit einem starken Noam für Israel wird die Gründung eines palästinensischen Staates verhindern und die Souveränität in Judäa und Samaria durchsetzen“ (übersetzt). Er unterstützte das Souveränitätsgesetz vom Oktober 2025, dessen vorläufige Lesung 25 bis 24 bestand.",
+      "src": "9fca7178",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "lehnt die Gründung eines palästinensischen Staates ab; sagt, dass es als einer der „Gründer des rechten Blocks“ Initiativen unterstützt hat, die vom religiösen Zionismus und Otzma Yehudit gefördert wurden; laut Ynet macht die Siedlungspolitik im Westjordanland nicht zu einem zentralen Wahlkampfthema. Seine Abgeordneten stimmten für den unverbindlichen Antrag vom Juli 2025, der die Souveränität über Judäa und Samaria forderte, der von 71 zu 13 angenommen wurde, und waren wie die Likud-Partei bei der Abstimmung über den verbindlichen Gesetzentwurf im Oktober 2025 nicht anwesend (Times of Israel).",
+      "src": "78e2a4eb",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Gab keine einheitliche Position vor. Ynet berichtet, dass Agudat Yisrael im Allgemeinen weiter nach rechts tendiert, Degel HaTorah eine gemäßigtere Position vertritt und keiner von beiden das Thema in den Mittelpunkt seiner Kampagne stellt. Die Abstimmungen zeigen die gleiche Spaltung: Beide Fraktionen unterstützten den unverbindlichen Souveränitätsantrag vom Juli 2025, aber UTJ spaltete sich im Oktober 2025 über Maoz' verbindlichen Gesetzentwurf. Agudat Yisrael stimmte dafür, wie die Times of Israel berichtete, um die Heuchelei der Regierung hervorzuheben; Degel HaTorah stimmte dagegen und sagte, dass Souveränitätsvorschläge „zu diesem Zeitpunkt“ Israel in einen Konflikt mit den Vereinigten Staaten bringen würden.",
+      "src": "b55f0485",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Ein palästinensischer Staat „steht nicht auf der Tagesordnung“; „Stärkung der Siedlungsblöcke und legale Gründung neuer Gemeinden“; „Israel hat kein Interesse daran, Verantwortung für das zivile Leben von etwa 2 Millionen Palästinensern zu übernehmen.“",
+      "src": "1d72cf21",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "„Gegen einen palästinensischen Staat und die Gebietsübertragung“; „Gebiet C wird als künftiger souveräner Teil des Staates Israel angesehen.“",
+      "src": "e6f7d425",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "„Wir unterstützen die Anwendung der israelischen Souveränität auf Gebiet C“; „Fortschreitende Bauarbeiten im Bereich E1“; „33 Jahre nach dem Oslo-Abkommen ist klar, dass das Experiment gescheitert ist.“",
+      "src": "99d46d80",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "„Die Partei unterstützt die Souveränität durch Taten, nicht durch Worte“; „Die Strategie besteht darin, beherrschendes Gelände und landwirtschaftliche Flächen zu erobern.“",
+      "src": "7ab300c4",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "„Stärkung der Siedlungen in Judäa und Samaria, mit Schwerpunkt auf dem Jordantal …“; Laut Ynet handelt es sich um einen Rahmen ähnlich dem Trump-Plan, der keine Räumung von Siedlungen erfordern würde.",
+      "src": "1d0748bf",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "„Wir müssen eine Trennung als Teil einer regionalen Bewegung anstreben“ mit den Vereinigten Staaten; „Wir werden illegale Außenposten räumen, die Reibungspunkte schaffen.“",
+      "src": "75829724",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Per Ynet unterstützt eine ausgehandelte Zwei-Staaten-Lösung mit einem palästinensischen Staat neben Israel; lehnt eine Ausweitung der israelischen Souveränität ab.",
+      "src": "c05e563c",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "„Alle Siedlungen … müssen sofort und ohne Verzögerung evakuiert werden“; „Die Besatzung ist die Wurzel allen Übels“; Ich habe darum gebeten, dass in der Frage „das besetzte Westjordanland“ steht.",
+      "src": "e026bc86",
+      "machine": true
+    }
+  }
+}

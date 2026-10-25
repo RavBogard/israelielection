@@ -78,6 +78,10 @@ const chrome = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): Chrome { return editionText<Chrome>("ar", "chrome"); },
   get fa(): Chrome { return editionText<Chrome>("fa", "chrome"); },
+  get de(): Chrome { return editionText<Chrome>("de", "chrome"); },
+  get fr(): Chrome { return editionText<Chrome>("fr", "chrome"); },
+  get zh(): Chrome { return editionText<Chrome>("zh", "chrome"); },
+
   get he(): Chrome {
     return heText<Chrome>("chrome");
   },

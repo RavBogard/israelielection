@@ -15,6 +15,11 @@ describe("the browser's first language", () => {
 });
 
 describe("the default edition", () => {
+  it.each(["de-DE", "fr-FR", "zh-CN"])("honors %s before geography and remembers the choice", tag => {
+    const lang = tag.slice(0, 2);
+    expect(defaultLang(visit({country: "IL", acceptLanguage: tag}))).toBe(lang);
+    expect(defaultLang(visit({cookie: lang, acceptLanguage: "he"}))).toBe(lang);
+  });
   it("honors Arabic and Persian browser preferences ahead of geography", () => {
     expect(defaultLang(visit({ country: "IL", acceptLanguage: "ar-IL,en;q=0.8" }))).toBe("ar");
     expect(defaultLang(visit({ acceptLanguage: "fa-IR,en;q=0.8" }))).toBe("fa");

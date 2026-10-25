@@ -26,7 +26,7 @@ const HEBREW = /[֐-׿]/;
  * is marked lang="en" and isolated left to right, as OVERLAYS.md asks for English fallbacks. English pages render the plain text.
  */
 export function Tx({ text, lang }: { text: string; lang: Lang }) {
-  if (lang === "en" || (lang === "he" ? HEBREW : /[\u0600-\u06ff]/).test(text)) return <>{text}</>;
+  if (["en", "de", "fr"].includes(lang) || (lang === "he" ? HEBREW : lang === "zh" ? /[\u3400-\u9fff]/ : /[\u0600-\u06ff]/).test(text)) return <>{text}</>;
   return (
     <span lang="en" dir="ltr">
       {text}

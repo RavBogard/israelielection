@@ -1,0 +1,71 @@
+{
+  "likud": {
+    "listName": {
+      "text": "Likoud",
+      "src": "957f8de6",
+      "machine": true
+    },
+    "source": {
+      "text": "IDI, juin 28, 2026",
+      "src": "73142d8c",
+      "machine": true
+    },
+    "groups.0.label": {
+      "text": "traditionnel",
+      "src": "6b31b8c2",
+      "machine": true
+    },
+    "groups.1.label": {
+      "text": "laïque",
+      "src": "79f5cd44",
+      "machine": true
+    },
+    "groups.2.label": {
+      "text": "national-religieux",
+      "src": "1acb30c9",
+      "machine": true
+    },
+    "groups.3.label": {
+      "text": "Harédi",
+      "src": "e31c2348",
+      "machine": true
+    },
+    "won.0.label": {
+      "text": "électeurs traditionnels",
+      "src": "6f7ab491",
+      "machine": true
+    },
+    "won.1.label": {
+      "text": "électeurs laïcs",
+      "src": "6ef8559f",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "listName": {
+      "text": "Ouih Atid (2022)",
+      "src": "cc00207d",
+      "machine": true
+    },
+    "source": {
+      "text": "IDI, juin 28, 2026",
+      "src": "73142d8c",
+      "machine": true
+    },
+    "groups.0.label": {
+      "text": "laïque",
+      "src": "79f5cd44",
+      "machine": true
+    },
+    "groups.1.label": {
+      "text": "traditionnel",
+      "src": "6b31b8c2",
+      "machine": true
+    },
+    "won.0.label": {
+      "text": "électeurs laïcs",
+      "src": "6ef8559f",
+      "machine": true
+    }
+  }
+}

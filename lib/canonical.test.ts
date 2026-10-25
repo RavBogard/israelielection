@@ -10,12 +10,12 @@ describe("alternates", () => {
     expect(alternates("/parties")).toEqual({ canonical: "/parties", types: RSS });
   });
   it("adds hreflang to pages with a Hebrew edition", () => {
-    expect(alternates("/polls")).toEqual({ canonical: "/polls", languages: { en: "/polls", he: "/he/polls", ar: "/ar/polls", fa: "/fa/polls", "x-default": "/polls" }, types: RSS });
-    expect(alternates("/")).toEqual({ canonical: "/", languages: { en: "/", he: "/he", ar: "/ar", fa: "/fa", "x-default": "/" }, types: RSS });
-    expect(alternates("/parties/likud")?.languages).toEqual({ en: "/parties/likud", he: "/he/parties/likud", ar: "/ar/parties/likud", fa: "/fa/parties/likud", "x-default": "/parties/likud" });
+    expect(alternates("/polls")).toEqual({ canonical: "/polls", languages: { en: "/polls", he: "/he/polls", ar: "/ar/polls", fa: "/fa/polls", de: "/de/polls", fr: "/fr/polls", zh: "/zh/polls", "x-default": "/polls" }, types: RSS });
+    expect(alternates("/")).toEqual({ canonical: "/", languages: { en: "/", he: "/he", ar: "/ar", fa: "/fa", de: "/de", fr: "/fr", zh: "/zh", "x-default": "/" }, types: RSS });
+    expect(alternates("/parties/likud")?.languages).toEqual({ en: "/parties/likud", he: "/he/parties/likud", ar: "/ar/parties/likud", fa: "/fa/parties/likud", de: "/de/parties/likud", fr: "/fr/parties/likud", zh: "/zh/parties/likud", "x-default": "/parties/likud" });
   });
   it("gives Hebrew pages their own canonical and the same hreflang set", () => {
-    expect(heAlternates("/he/polls")).toEqual({ canonical: "/he/polls", languages: { en: "/polls", he: "/he/polls", ar: "/ar/polls", fa: "/fa/polls", "x-default": "/polls" } });
-    expect(heAlternates("/he")).toEqual({ canonical: "/he", languages: { en: "/", he: "/he", ar: "/ar", fa: "/fa", "x-default": "/" } });
+    expect(heAlternates("/he/polls")).toEqual({ canonical: "/he/polls", languages: { en: "/polls", he: "/he/polls", ar: "/ar/polls", fa: "/fa/polls", de: "/de/polls", fr: "/fr/polls", zh: "/zh/polls", "x-default": "/polls" } });
+    expect(heAlternates("/he")).toEqual({ canonical: "/he", languages: { en: "/", he: "/he", ar: "/ar", fa: "/fa", de: "/de", fr: "/fr", zh: "/zh", "x-default": "/" } });
   });
 });

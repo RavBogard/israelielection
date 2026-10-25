@@ -1,0 +1,149 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les partis du projet",
+      "src": "64c68786",
+      "machine": true
+    },
+    "question": {
+      "text": "Les étudiants de la yeshiva Haredi devraient-ils être recrutés ?",
+      "src": "f78d619e",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Aucun service obligatoire pour personne",
+      "src": "786a1653",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Exonérer ceux qui étudient la Torah",
+      "src": "d8688012",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Rédigez ceux qui quittent la yeshiva",
+      "src": "bc70cdf3",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Augmenter le service Haredi étape par étape",
+      "src": "3620d8b6",
+      "machine": true
+    },
+    "stances.4.label": {
+      "text": "Enrôlez tout le monde, militaire ou civil",
+      "src": "daeee2a4",
+      "machine": true
+    },
+    "note": {
+      "text": "Le parti répond au questionnaire 2026 de Ynet de septembre, à moins qu'une autre source ne soit indiquée. Le Likoud a décliné le questionnaire ; sa position vient de la description faite par un ministre du projet de loi 2025 de la coalition. Ra'am n'a répondu qu'en enrôlant les citoyens arabes. La ligne de Kakhol lavan est tirée du rapport en hébreu publié par Ynet sur le même questionnaire. La dispute de Noam est la déclaration de son leader à la Knesset en juillet 2026.",
+      "src": "f837f3c6",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "\"Le Likoud a choisi de ne pas répondre aux demandes d'Ynet et de Yedioth Ahronoth concernant le projet de loi.\" En juillet 2025, le ministre des Communications Shlomo Karhi a déclaré que la coalition « se battait ici pour une loi de conscription historique qui enrôlera 17,000 jeunes hommes Haredi d'ici trois ans ».",
+      "src": "d1b66d01",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Résumé de la réponse d'Ynet : \"Le Shas reconnaît qu'il ne sera plus possible d'éviter de recruter des étudiants de yeshiva qui ont abandonné leurs études.\"",
+      "src": "7a5cf10e",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Résumé de Ynet : les deux factions « continuent de s'opposer à l'enrôlement des étudiants qui ont abandonné les yeshivas » et s'opposent à un projet de loi universel. Le parti \"affirme que la loi qu'il cherche à faire adopter vise uniquement à réglementer le statut de ceux qui étudient la Torah\".",
+      "src": "6ba874a6",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "\"Adopter une loi fondamentale pour les militaires selon le principe du 'premier dans l'égalité' : ceux qui servent reçoivent tout.\" Soutient « l'élargissement du bassin de ceux qui servent » ; n'a pas répondu à la question sur les sanctions.",
+      "src": "4dca4034",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Le chef du parti Ben-Gvir : « Nous avons ouvert des voies dédiées au sein de la police et de la police des frontières, avec le plein respect du Shabbat, de la cacherout, des prières et de l'étude de la Torah, une séparation appropriée entre les sexes et la création de la société ultra-orthodoxe « Avnet » au sein de la police des frontières.",
+      "src": "470605ae",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Le chef du parti Winter : \"Nous ne rejoindrons pas un gouvernement qui n'adopte pas, avant sa formation, une loi qui met fin à l'évasion fiscale et oblige tout le monde à se présenter au service… Point final.\"",
+      "src": "b7cd66bc",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Service national pour tous ; le « seul mécanisme de report du service sera une allocation allant jusqu'à 3 % de chaque cohorte annuelle pour les individus exceptionnels ». Eisenkot estime cela à environ 2,200 par an sur une cohorte nationale de 70,000 personnes (tous Israéliens, pas seulement Haredim), et « révoquerait toute incitation de l’État accordée à ceux qui échappent au service ».",
+      "src": "fe4bbc95",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "« Chaque citoyen… s’enrôlera dans l’armée israélienne ou effectuera son service civil national… sans exemption – cela s’applique aussi bien aux Arabes qu’aux ultra-orthodoxes. »",
+      "src": "63a75310",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "\"L'obligation de servir l'Etat doit s'appliquer à tous les citoyens, dans un cadre national et égalitaire.\"",
+      "src": "f6a1be87",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "\"Tous les jeunes hommes et femmes d'âge 18 - juifs, musulmans, chrétiens, druzes et circassiens - seront tenus d'effectuer leur service militaire ou civil. Aucune exemption, aucun quota et aucun accord.\"",
+      "src": "de89c3fb",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "\"Chaque citoyen se présentera au centre d'intégration.\" Ceux qui ne serviront pas s'exposeront à « la révocation de leur permis de conduire, à une interdiction de quitter le pays, à l'exclusion des emplois du secteur public et du gouvernement », et à la perte des allocations fiscales, de logement et de garde d'enfants.",
+      "src": "c2d9515a",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Ynet rapporte qu’il s’oppose à l’enrôlement d’hommes Haredi ou à toute forme d’enrôlement obligatoire. Le parti : \"aucune sanction ne devrait être imposée à quelqu'un qui choisit de ne pas s'enrôler\".",
+      "src": "9f47c644",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Ynet rapporte qu’il s’oppose à un projet de loi qui obligerait les jeunes citoyens arabes à servir dans l’armée israélienne ou à effectuer un service civil, et qu’il a refusé de répondre sur l’enrôlement des Haredi, bien que trois députés de Ra’am aient voté en janvier 2022, au sein de la coalition Bennett-Lapid, pour un projet de loi fixant des objectifs annuels d’enrôlement des Haredi. Ce vote de coalition ne définit aucune position actuelle.",
+      "src": "af386460",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz a voté pour la loi 2026 de juillet gelant les arrestations des étudiants de yeshiva qui ne se sont pas présentés, la qualifiant de « pansement avant les élections ». Sa position : « Celui qui étudie doit continuer à étudier, et celui qui n'étudie pas doit s'enrôler et partager avec nous le grand commandement de la défense de la patrie » (traduit).",
+      "src": "2fb01e97",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "\"Un cadre de service pour tous : chaque jeune homme et chaque jeune femme servira l'Etat\", Haredim, Arabes, Druzes, religieux et laïcs. Le cadre doit être adopté « avant la formation du gouvernement, comme condition de son investiture » ; les quotas remplacent les objectifs, de sorte que « seules les personnes exceptionnelles bénéficieront d'exemptions » ; les bénéfices vont en premier à ceux qui servent (traduit).",
+      "src": "038c2354",
+      "machine": true
+    }
+  }
+}

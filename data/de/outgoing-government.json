@@ -1,0 +1,79 @@
+{
+  "_": {
+    "title": {
+      "text": "Wer regiert, bis eine neue Regierung vereidigt wird?",
+      "src": "b5fe7df3",
+      "machine": true
+    },
+    "seatsNote": {
+      "text": "Sitze nach jedem Schritt zählen die Parteien in der Koalition formell, wie ihnen die zitierten Berichte geben oder wie sich aus ihren Zählungen ergibt.",
+      "src": "22b626a3",
+      "machine": true
+    },
+    "events.0.text": {
+      "text": "Netanyahus Regierung aus Likud, Shas, der Religiösen Zionistischen Partei, UTJ, Otzma Yehudit und Noam wird mit 64 Sitzen vereidigt. Die Knesset stimmt dem zu 63 bis 54.",
+      "src": "08224b92",
+      "machine": true
+    },
+    "events.1.text": {
+      "text": "Vier Tage nach dem von der Hamas angeführten Angriff stimmt die Nationale Einheit von Benny Gantz zu, einer Notstandsregierung für den Krieg beizutreten.",
+      "src": "32e738e9",
+      "machine": true
+    },
+    "events.2.text": {
+      "text": "Gideon Sa'ars New Hope, die sich von der Nationalen Einheit abgespalten hatte, tritt aus der Koalition aus, nachdem Netanyahu ihn nicht in das Kriegskabinett berufen hat.",
+      "src": "82297181",
+      "machine": true
+    },
+    "events.3.text": {
+      "text": "Gantz tritt aus der Notstandsregierung aus und ruft zu Neuwahlen auf.",
+      "src": "565bfb1b",
+      "machine": true
+    },
+    "events.4.text": {
+      "text": "New Hope tritt wieder der Regierung bei.",
+      "src": "d20aec67",
+      "machine": true
+    },
+    "events.5.text": {
+      "text": "Otzma Yehudit von Itamar Ben-Gvir tritt aus Protest gegen das Waffenstillstandsabkommen im Gazastreifen aus der Koalition aus.",
+      "src": "12cd6b05",
+      "machine": true
+    },
+    "events.5.seatsText": {
+      "text": "62 oder 63",
+      "src": "d78571a9",
+      "machine": true
+    },
+    "events.6.text": {
+      "text": "Otzma Yehudit kehrt zurück, nachdem der Krieg in Gaza wieder aufgenommen wurde, und Ben-Gvir wird erneut zum Polizeiminister ernannt.",
+      "src": "1cbb2971",
+      "machine": true
+    },
+    "events.7.text": {
+      "text": "UTJ tritt aus Protest gegen den Gesetzesentwurf für Haredi-Männer aus der Regierung und der Koalition aus.",
+      "src": "6bdaf2d2",
+      "machine": true
+    },
+    "events.8.text": {
+      "text": "Der Shas verlässt die Regierung wegen desselben Gesetzesentwurfs, bleibt aber in der Koalition und sagt, dass er nicht für den Sturz der Regierung stimmen werde.",
+      "src": "0571e325",
+      "machine": true
+    },
+    "events.9.text": {
+      "text": "Die Knesset löst sich 62 zu 0 auf und legt die Wahl für Oktober 27 fest.",
+      "src": "3dca5e63",
+      "machine": true
+    },
+    "status.text": {
+      "text": "Netanjahus Regierung bleibt bis zur Vereidigung einer neuen Übergangsregierung im Amt. Das Gesetz begrenzt seine Befugnisse nicht, doch die Gerichte und der Generalstaatsanwalt erwarten Zurückhaltung. Im Mai 2026 war UTJ außerhalb der Koalition und Shas, der keine Ministerien innehatte, unterstützte sie weiterhin in der Knesset.",
+      "src": "8f71eaf6",
+      "machine": true
+    },
+    "noam.text": {
+      "text": "Noam, die einsitzige Partei von Avi Maoz, war das sechste Mitglied der 2022-Regierung. Maoz trat im März als stellvertretender Minister zurück 2025. Keine Umfrage meldet eine Zahl für Noam, daher lässt der Coalition Builder diese Zahl weg.",
+      "src": "2a36436b",
+      "machine": true
+    }
+  }
+}

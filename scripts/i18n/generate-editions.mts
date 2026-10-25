@@ -1,6 +1,6 @@
 /** Explicit authoring tool, never run during builds or page requests.
- * Seeds Arabic/Persian static copy with Google Translate; review generated copy before release.
- * Usage: npx tsx scripts/i18n/generate-editions.mts [ar|fa]
+ * Seeds static edition copy with Google Translate; review generated copy before release.
+ * Usage: npx tsx scripts/i18n/generate-editions.mts [ar|fa|de|fr|zh]
  * Public site text only. Placeholders, URLs, numbers and data source hashes are preserved.
  */
 import fs from "node:fs";
@@ -11,7 +11,7 @@ import { fieldAt, srcHash } from "../../lib/i18n/localize";
 
 const areas = { chrome: "Chrome", home: "HomeText", polls: "PollsText", builder: "BuilderText", compare: "CompareText", profile: "ProfileText", results: "ResultsText", forecast: "ForecastText" };
 const languages = process.argv[2] ? [process.argv[2]] : ["ar", "fa"];
-if (languages.some(l => l !== "ar" && l !== "fa")) throw new Error("Use ar or fa");
+if (languages.some(l => !["ar", "fa", "de", "fr", "zh"].includes(l))) throw new Error("Use ar, fa, de, fr or zh");
 const read = (p: string) => fs.readFileSync(p, "utf8");
 const json = (p: string) => JSON.parse(read(p));
 const write = (p: string, s: string) => { fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, s); };
@@ -45,7 +45,7 @@ for (const area of Object.keys(areas)) collect(initializer(area).value);
 function scan(directory: string) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     const file = path.join(directory, entry.name);
-    if (entry.isDirectory()) { if (!["ar", "fa", "he"].includes(entry.name)) scan(file); continue; }
+    if (entry.isDirectory()) { if (!["ar", "fa", "he", "de", "fr", "zh"].includes(entry.name)) scan(file); continue; }
     if (!/\.tsx?$/.test(file) || /\.test\./.test(file)) continue;
     const sf = ts.createSourceFile(file, read(file), ts.ScriptTarget.Latest, true);
     function visit(n: ts.Node) {
@@ -110,6 +110,7 @@ function protect(s: string, numbers = true) {
 }
 
 for (const lang of languages) {
+  const targetLanguage = lang === "zh" ? "zh-CN" : lang;
   const cacheFile = path.join(os.tmpdir(), `israelielection-${lang}-translations.json`);
   const persistedMessages = `lib/i18n/${lang}/messages.json`;
   const cache: Record<string, string> = { ...(fs.existsSync(cacheFile) ? json(cacheFile) : {}), ...(fs.existsSync(persistedMessages) ? json(persistedMessages) : {}) };
@@ -138,7 +139,7 @@ for (const lang of languages) {
   async function translateOne(source: string): Promise<string> {
     async function request(q: string) {
       const url = new URL("https://translate.googleapis.com/translate_a/single");
-      for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: lang, dt: "t", q })) url.searchParams.set(k, v);
+      for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: targetLanguage, dt: "t", q })) url.searchParams.set(k, v);
       const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
       if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
       const result = await response.json() as [([string, string])[]];
@@ -169,7 +170,7 @@ for (const lang of languages) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
         const url = new URL("https://translate.googleapis.com/translate_a/single");
-        for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: lang, dt: "t", q })) url.searchParams.set(k, v);
+        for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: targetLanguage, dt: "t", q })) url.searchParams.set(k, v);
         const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
         if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
         const result = await response.json() as [([string, string])[]];
@@ -192,7 +193,7 @@ for (const lang of languages) {
       const first = pending.shift()!;
       const one = protect(first, false);
       const url = new URL("https://translate.googleapis.com/translate_a/single");
-      for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: lang, dt: "t", q: one.text })) url.searchParams.set(k, v);
+      for (const [k, v] of Object.entries({ client: "gtx", sl: "en", tl: targetLanguage, dt: "t", q: one.text })) url.searchParams.set(k, v);
       const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
       if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
       const result = await response.json() as [([string, string])[]];
@@ -208,7 +209,7 @@ for (const lang of languages) {
     fs.writeFileSync(cacheFile, JSON.stringify(cache));
     if (completed % 100 < batch.length || !pending.length) console.log(`${lang}: ${completed} translated, ${pending.length} remaining`);
   }
-  const tr = (s: string) => lang === "fa" ? (cache[s] ?? s).replaceAll("صندلی", "کرسی").replaceAll("مهمانی", "حزب") : (cache[s] ?? s).replaceAll("حفلات", "أحزاب").replaceAll("الحفلات", "الأحزاب");
+  const tr = (s: string) => lang === "fa" ? (cache[s] ?? s).replaceAll("صندلی", "کرسی").replaceAll("مهمانی", "حزب") : lang === "ar" ? (cache[s] ?? s).replaceAll("حفلات", "أحزاب").replaceAll("الحفلات", "الأحزاب") : cache[s] ?? s;
   let area = "";
   function transform(n: ts.Node, context: ts.TransformationContext): ts.Node {
     if (ts.isPropertyAssignment(n)) {
@@ -216,9 +217,15 @@ for (const lang of languages) {
       const manual: Record<string, string> = lang === "ar" ? {
         inEnglish: "(بالإنجليزية)", english: "(بالإنجليزية)", machine: "ترجمة آلية",
         pollsLine: "جميع استطلاعات الرأي ومصادرها", profiles: "بيانات الأحزاب: المصادر والتواريخ مذكورة بجانب كل بند.", bios: "السير الذاتية: المصادر مذكورة في صفحات الأحزاب.",
-      } : {
+      } : lang === "fa" ? {
         inEnglish: "(به انگلیسی)", english: "(به انگلیسی)", machine: "ترجمهٔ ماشینی",
         pollsLine: "همهٔ نظرسنجی‌ها و منابع آن‌ها", profiles: "اطلاعات احزاب: منابع و تاریخ‌ها در کنار هر مورد آمده است.", bios: "زندگی‌نامه‌ها: منابع در صفحات احزاب آمده است.",
+      } : lang === "de" ? {
+        inEnglish: "(auf Englisch)", english: "(auf Englisch)", machine: "Maschinelle Übersetzung",
+      } : lang === "fr" ? {
+        inEnglish: "(en anglais)", english: "(en anglais)", machine: "Traduction automatique",
+      } : {
+        inEnglish: "（英文）", english: "（英文）", machine: "机器翻译",
       };
       if (manual[key] && ((area === "chrome" && key === "inEnglish") || (area === "home" && ["english", "machine"].includes(key)) || (area === "profile" && ["pollsLine", "profiles", "bios"].includes(key)))) return ts.factory.updatePropertyAssignment(n, n.name, ts.factory.createStringLiteral(manual[key]));
     }

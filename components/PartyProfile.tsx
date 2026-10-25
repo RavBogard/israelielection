@@ -255,7 +255,7 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
                   <h2>{P.text.words}</h2>
                   <blockquote className="pp-quote">
                     {P.text.quoteOpen}{typeof quote === "string" ? quote : <Loc v={{ ...quote, translated: undefined }} />}{P.text.quoteClose}
-                    {typeof quote !== "string" && quote.translated ? ` ${{en:"(translation)",he:"(תרגום)",ar:"(ترجمة)",fa:"(ترجمه)"}[lang]}` : null}
+                    {typeof quote !== "string" && quote.translated ? ` ${{en:"(translation)",he:"(תרגום)",ar:"(ترجمة)",fa:"(ترجمه)",de:"(Übersetzung)",fr:"(traduction)",zh:"（译文）"}[lang]}` : null}
                     <footer><Loc v={speaker} />. {he ? <span lang="en" dir="ltr">{p.quote.source}</span> : p.quote.source}</footer>
                   </blockquote>
                 </>

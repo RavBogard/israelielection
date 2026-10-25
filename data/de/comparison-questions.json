@@ -1,0 +1,458 @@
+{
+  "draft-left-yeshiva": {
+    "label": {
+      "text": "Haredi-Entwurf: Männer, die die Jeschiwa verlassen",
+      "src": "e986cbd9",
+      "machine": true
+    },
+    "question": {
+      "text": "Benötigen Sie Dienste von jungen Haredi-Männern, die die Jeschiwa verlassen haben?",
+      "src": "81926059",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Service erforderlich",
+      "src": "4f9c721f",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Widersetzen Sie sich der Wehrpflicht",
+      "src": "3b3f71ff",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Smotrich stellte für jeden Gesetzesentwurf eine Bedingung: „Wer nicht die Thora studiert, muss sich melden.“",
+      "src": "af582960",
+      "machine": true
+    },
+    "answerSources.yashar.text": {
+      "text": "Wehrdienst für alle, wobei „der einzige Mechanismus zur Aufschiebung des Dienstes eine Zuweisung von bis zu 3 % jeder Jahreskohorte für herausragende Personen sein wird.“",
+      "src": "c3840df7",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "„Ein Dienstrahmen für alle: Jeder junge Mann und jede junge Frau wird dem Staat dienen“, fügte Haredim hinzu.",
+      "src": "e65df3a8",
+      "machine": true
+    },
+    "answerSources.res.text": {
+      "text": "„Jeder Bürger wird sich im Einweisungszentrum melden.“",
+      "src": "6f33338c",
+      "machine": true
+    },
+    "answerSources.poi.text": {
+      "text": "Winter: „Jeder junge Mensch im dienstfähigen Alter meldet sich beim Staat. Kein Sektor steht über dem Gesetz.“",
+      "src": "e4d830fb",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Der Likud lehnte eine Antwort ab, aber der 2025-Gesetzentwurf seines Abgeordneten Boaz Bismuth zielte darauf ab, innerhalb von fünf Jahren die Hälfte der Haredi-Männer zu rekrutieren, die nicht der Jeschiwa angehören.",
+      "src": "002ddded",
+      "machine": true
+    },
+    "note": {
+      "text": "Shas und UTJ unterscheiden sich hinsichtlich der Männer, die die Jeschiwa verlassen haben. Auch Vorschläge für den allgemeinen Wehr- oder Zivildienst decken diese Gruppe ab; Die gleiche Antwort hier stellt keine Einigung über die Fortsetzung von Studierenden her.",
+      "src": "98d04a8e",
+      "machine": true
+    }
+  },
+  "draft-exemptions": {
+    "label": {
+      "text": "Haredi-Entwurf: Dienstausnahmen",
+      "src": "1a480774",
+      "machine": true
+    },
+    "question": {
+      "text": "Ausnahmen im Rahmen des Militär- oder Zivildienstes zulassen?",
+      "src": "8cf4f577",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Keine Ausnahmen oder Quoten",
+      "src": "55ccde00",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Ausnahmen für herausragende Einzelpersonen",
+      "src": "c72820c4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Vollzeitstudierende der Jeschiwa sind davon ausgenommen",
+      "src": "9e85c3d2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "Die Zusammenfassung der Jerusalem Post zu Shas und UTJ: „Das Vollzeitstudium der Thora ist ein zentraler religiöser Wert, der rechtlichen Schutz erhalten sollte.“",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "Die Zusammenfassung der Jerusalem Post zu Shas und UTJ: „Das Vollzeitstudium der Thora ist ein zentraler religiöser Wert, der rechtlichen Schutz erhalten sollte.“",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Smotrich akzeptiert Ausnahmen für Männer, die Vollzeit in der Jeschiwa eingeschrieben sind, unter der Bedingung, dass die Haredi-Führer befürworten, dass „jeder, der nicht studiert, sich einschreiben muss“.",
+      "src": "c1582d53",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Der Likud lehnte eine Antwort ab, aber der Gesetzesentwurf 2025 seines Abgeordneten Boaz Bismuth ermöglichte Vollzeitstudenten der Jeschiwa weiterhin, ihren Dienst aufzuschieben, wobei das Befreiungsalter bei 26 belassen wurde.",
+      "src": "8656b6d3",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Avi Maoz sagte, er würde nur einen Gesetzesentwurf ohne Zwang unterstützen, den Haredi-Rabbiner genehmigen, und diese Rabbiner unterstützen die Jeschiwa-Ausnahme.",
+      "src": "db1f5d9d",
+      "machine": true
+    },
+    "note": {
+      "text": "Yashar gibt bis zu 3 % jeder jährlichen nationalen Kohorte an; Blau und Weiß schlägt Quoten und ausstehende Einzelausnahmen ohne die gleiche quantifizierte Grenze vor. Die Befreiung von Vollzeit-Jeschiwa-Studenten ist ein anderer Mechanismus. Eine allgemeine Verpflichtung zum Dienst für alle begründet den Befreiungsmechanismus nicht.",
+      "src": "6e822187",
+      "machine": true
+    }
+  },
+  "courts-appointments": {
+    "label": {
+      "text": "Gerichte: Richterernennungen",
+      "src": "33cb190a",
+      "machine": true
+    },
+    "question": {
+      "text": "Das 2025-Gesetz zur Ernennung von Richtern aufheben?",
+      "src": "dd61f9f4",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Das Gesetz aufheben und ersetzen",
+      "src": "70674438",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Das Gesetz erlassen (historische Aufzeichnung)",
+      "src": "b2fa75fc",
+      "machine": true
+    },
+    "answerSources.dem.text": {
+      "text": "Golan, mit Lapid, Gantz und Liberman, in einer gemeinsamen Erklärung: „In der nächsten Regierung werden wir dafür sorgen, dass das Gesetz zur Änderung des Richterauswahlausschusses aufgehoben wird“ (übersetzt).",
+      "src": "314a97c5",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "Liberman, mit Lapid, Gantz und Golan, in einer gemeinsamen Erklärung: „In der nächsten Regierung werden wir dafür sorgen, dass das Gesetz zur Änderung des Richterauswahlausschusses aufgehoben wird“ (übersetzt).",
+      "src": "dd2cfceb",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "Gantz, mit Lapid, Liberman und Golan, in einer gemeinsamen Erklärung: „In der nächsten Regierung werden wir dafür sorgen, dass das Gesetz zur Änderung des Richterauswahlausschusses aufgehoben wird“ (übersetzt).",
+      "src": "71ef50cb",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Shas war Teil der Koalition, die im März 2025 das Gesetz 67 bis 1 verabschiedete, während die Opposition die Abstimmung boykottierte.",
+      "src": "afa74aab",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ war Teil der Koalition, die im März 2025 das Gesetz 67 bis 1 verabschiedete, während die Opposition die Abstimmung boykottierte.",
+      "src": "8a5b68f3",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "Der religiöse Zionismus war Teil der Koalition, die im März 2025 das Gesetz 67 bis 1 verabschiedete, während die Opposition die Abstimmung boykottierte.",
+      "src": "35c9acc8",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Ben Gvir begrüßte das Gesetz, als es im März 2025 verabschiedet wurde, und sagte, die Regierung solle die restliche Überarbeitung vorantreiben.",
+      "src": "c2b5abae",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "Die Liste fordert „eine neue ausgewogene Zusammensetzung“ für den Richterauswahlausschuss, die die durch das 2025-Gesetz festgelegte Zusammensetzung ersetzen würde.",
+      "src": "96682d9d",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "Die Liste fordert einen Ernennungsmechanismus, der „die richterliche Unabhängigkeit wahrt“, was im aktuellen nicht der Fall sei.",
+      "src": "8ca0d7a5",
+      "machine": true
+    },
+    "note": {
+      "text": "Bei der Antwort des Likud handelt es sich um eine Legislaturbilanz vom März 2025, nicht um eine neue Wahlkampfreaktion. Das Aufhebungsversprechen der Oppositionsführer stammt vom Tag der Verabschiedung des Gesetzes. Die Aufhebung desselben Gesetzes begründet keine Einigung über dessen Ersetzung.",
+      "src": "098ea9db",
+      "machine": true
+    }
+  },
+  "courts-override": {
+    "label": {
+      "text": "Gerichte: gesetzgeberische Außerkraftsetzung",
+      "src": "c9257edc",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollte die Knesset in der Lage sein, ein vom Obersten Gerichtshof abgelehntes Gesetz wieder in Kraft zu setzen?",
+      "src": "b9918024",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Lehnen Sie sich gegen eine Override-Klausel",
+      "src": "ae2eaa9b",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Außerkraftsetzen nur mit einer besonderen Mehrheit (70 MKs oder mehr)",
+      "src": "8e956759",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Mit 61 MKs überschreiben",
+      "src": "d2dc0f25",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "Liberman schlug ein Verfassungsgericht und „eine Außerkraftsetzungsklausel mit einer Mehrheit von 70 MKs“ vor (übersetzt).",
+      "src": "425b1b54",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Die Haredi-Parteien waren die Hauptbefürworter einer Aufhebung durch eine knappe Knesset-Mehrheit Anfang 2023, obwohl sie im Frühjahr dazu geschwiegen und es nicht erneut formuliert haben.",
+      "src": "19f18c66",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ machte die Außerkraftsetzungsklausel zu einer Bedingung für den Beitritt zur 2022-Koalition, und die Haredi-Parteien unterstützten eine Außerkraftsetzung Anfang 2023 mit einer knappen Mehrheit in der Knesset.",
+      "src": "e3358606",
+      "machine": true
+    },
+    "note": {
+      "text": "Die Schwellenwerte sind wesentliche Unterschiede: Reservisten sagen mehr als 72 MKs, Yisrael Beytenus 2023 Vorschlag sagte 70. Die Verfassungskodifizierung allein liefert keine Antwort auf eine Außerkraftsetzung.",
+      "src": "58633d4c",
+      "machine": true
+    }
+  },
+  "courts-reasonableness": {
+    "label": {
+      "text": "Gerichte: Angemessenheitsprüfung",
+      "src": "c04c2500",
+      "machine": true
+    },
+    "question": {
+      "text": "Den Angemessenheitsstandard einschränken und gleichzeitig beibehalten?",
+      "src": "983dbc21",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Enger machen statt abschaffen",
+      "src": "c47891a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Abschaffung für Kabinetts- und Ministerentscheidungen",
+      "src": "6edb36c8",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Der Likud stimmte im Juli 2023 für das Gesetz, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde 64 bis 0 verabschiedet, wobei die Opposition boykottierte.",
+      "src": "6409b36e",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Shas stimmte für das Gesetz vom Juli 2023, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde 64 bis 0 verabschiedet, wobei die Opposition boykottierte.",
+      "src": "665dbd02",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ stimmte im Juli 2023 für das Gesetz, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde 64 bis 0 verabschiedet, wobei die Opposition boykottierte.",
+      "src": "6ecae05a",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "Der religiöse Zionismus stimmte im Juli 2023 für das Gesetz, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde 64 bis 0 unter Boykott der Opposition verabschiedet.",
+      "src": "027ebe2d",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit stimmte für das Gesetz vom Juli 2023, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde 64 bis 0 verabschiedet, wobei die Opposition boykottierte.",
+      "src": "2e582b84",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Noam stimmte für das Gesetz vom Juli 2023, das es Gerichten verbietet, die Angemessenheit von Kabinetts- und Ministerentscheidungen zu überprüfen, und wurde von 64 bis 0 verabschiedet, wobei die Opposition boykottierte.",
+      "src": "d5003350",
+      "machine": true
+    },
+    "note": {
+      "text": "Die Ablehnung der Abschaffung in einer 2023-Abstimmung ist nicht unbedingt eine Antwort auf einen Vorschlag zur Einschränkung des Standards in 2026. Die Abschaffungsantworten basieren auf derselben 2023-Abstimmung; Keine dieser Parteien hat dies in diesem Wahlkampf wiederholt.",
+      "src": "762c56ff",
+      "machine": true
+    }
+  },
+  "relig-marriage": {
+    "label": {
+      "text": "Religion und Staat: standesamtliche Trauung",
+      "src": "83d5e189",
+      "machine": true
+    },
+    "question": {
+      "text": "Eine standesamtliche Trauung in Israel zulassen?",
+      "src": "87248cfc",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Erlauben Sie eine zivile Option",
+      "src": "dd46a4a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Lehnen Sie sich gegen zivile Alternativen",
+      "src": "df2215b0",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "Noams Programm fordert ein stärkeres Oberrabbinat, das alle jüdischen Ehen in Israel verwaltet.",
+      "src": "36ec86c5",
+      "machine": true
+    },
+    "unstated.bw.text": {
+      "text": "Blue and White hat keine 2026-Antwort gegeben, aber Gantz beantragte in 2021 die Registrierung einer standesamtlichen Trauung und sagte: „Vielen wird das Grundrecht auf Heirat entzogen.“",
+      "src": "c1efb0d6",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "Die Liste hat keine Antwort gegeben, aber Yoaz Hendel sagte als Minister in 2021: „Wir müssen eine Alternative für diejenigen bieten, die nicht heiraten können“ (übersetzt).",
+      "src": "0deac5df",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "Die Plattform der Liste fordert die Trennung von Religion und Staat.",
+      "src": "d9ba291a",
+      "machine": true
+    },
+    "note": {
+      "text": "Einige Antworten sind sekundäre Zusammenfassungen. Eine ältere Komponenten-Partei-Plattform ist keine aktuelle Verpflichtung ihrer gesamten gemeinsamen Liste.",
+      "src": "83232c18",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Spaltung: Koalitionsabkommen behalten Monopol des Rabbinats; Hochrangige Abgeordnete stimmen für die standesamtliche Trauung",
+      "src": "e3ee9761",
+      "machine": true
+    }
+  },
+  "relig-shabbat": {
+    "label": {
+      "text": "Religion und Staat: Schabbattransport",
+      "src": "4c11f64a",
+      "machine": true
+    },
+    "question": {
+      "text": "Öffentliche Verkehrsmittel am Schabbat durch lokale Wahl zulassen?",
+      "src": "d914e556",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Lokale Auswahl/einen eingeschränkten Service zulassen",
+      "src": "fd165203",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Halten Sie die aktuellen Schabbatregeln ein",
+      "src": "e1051f62",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "Blau und Weiß würden am Schabbat öffentliche Verkehrsmittel betreiben, „im Rahmen einer Reform, die Befugnisse auf die lokalen Behörden überträgt“ (übersetzt).",
+      "src": "1c6a5d2d",
+      "machine": true
+    },
+    "answerSources.jl.text": {
+      "text": "Die Gemeinsame Liste unterstützt den Betrieb des öffentlichen Nah- und Fernverkehrs am Schabbat, einschließlich des Nahverkehrs (übersetzt); es will mehr als nur lokale Auswahl.",
+      "src": "a40e9ce2",
+      "machine": true
+    },
+    "answerSources.likud.text": {
+      "text": "Likud: „Wir wollen Israel an den sechs Arbeitstagen verbinden und dabei den Schabbat einhalten“ (übersetzt), was Ynet als Beibehaltung des Status quo interpretiert.",
+      "src": "dc0e72ce",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Ynet berichtet, dass der religiöse Zionismus voll und ganz mit den 83 % seiner Unterstützer übereinstimmt, die jede Veränderung ablehnen.",
+      "src": "b643aeb2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "„Beide Parteien haben sich in der Vergangenheit gegen die Ausweitung öffentlicher Verkehrsmittel und anderer staatlich geförderter Aktivitäten am Schabbat ausgesprochen.“",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "„Beide Parteien haben sich in der Vergangenheit gegen die Ausweitung öffentlicher Verkehrsmittel und anderer staatlich geförderter Aktivitäten am Schabbat ausgesprochen.“",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "Noams Programm: „Ein öffentlicher Schabbat, ein stärkeres Oberrabbinat und eine konservative Konversions- und Kaschrut-Politik.“",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit antwortete Ynet in 2026 nicht; In der gemeinsamen Liste 2022 mit dem religiösen Zionismus heißt es, beide Parteien seien am Schabbat gegen öffentliche Verkehrsmittel.",
+      "src": "f2d1347a",
+      "machine": true
+    },
+    "note": {
+      "text": "Bennetts Transporterklärung stammt vom April 20, 2026, vor der gemeinsamen B'Yachad-Liste. Die angezeigte Antwort dokumentiert die Aussage des Führers, nicht eine angenommene gemeinsame Listenplattform. Die Demokraten und die Gemeinsame Liste teilten Ynet im August 2026 mit, dass sie einen Dienst im ganzen Land und nicht nur eine lokale Auswahl wünschen.",
+      "src": "1fb42393",
+      "machine": true
+    }
+  },
+  "relig-conversion": {
+    "label": {
+      "text": "Religion und Staat: Konversion",
+      "src": "2ae46528",
+      "machine": true
+    },
+    "question": {
+      "text": "Erkennen Sie eine Konversion außerhalb des orthodoxen religiösen Establishments?",
+      "src": "93ab9615",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Erweitern Sie die Anerkennung",
+      "src": "8effc3fe",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Behalten Sie die orthodoxe Autorität",
+      "src": "d8d4387c",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Die gemeinsame Liste 2022 versprach, „den ausschließlichen Status der Staatsumwandlung unter dem Rabbinat gesetzlich zu verankern“ (übersetzt), und in ihrem Koalitionsabkommen vom Dezember hieß es dasselbe.",
+      "src": "b863444f",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "Noams Programm: „Ein öffentlicher Schabbat, ein stärkeres Oberrabbinat und eine konservative Konversions- und Kaschrut-Politik.“",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "Der Likud unterzeichnete 2022-Koalitionsabkommen mit dem religiösen Zionismus und der UTJ, um nur Konvertierungen anzuerkennen, die unter dem orthodoxen Oberrabbinat durchgeführt wurden.",
+      "src": "652293d2",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit hat nicht geantwortet; Ihre gemeinsame Liste 2022 mit dem religiösen Zionismus verpflichtete sich, die vom Rabbinat geführte Staatsumwandlung zum einzigen anerkannten Weg zu machen.",
+      "src": "d6bb10d0",
+      "machine": true
+    },
+    "note": {
+      "text": "Die Unterstützung einer standesamtlichen Eheschließung impliziert keine Meinung zur Konvertierung. Yisrael Beytenu drängte auf die Konvertierung städtischer orthodoxer Rabbiner, was hier keine der beiden Positionen ist.",
+      "src": "3f975c84",
+      "machine": true
+    }
+  }
+}

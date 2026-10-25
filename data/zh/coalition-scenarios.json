@@ -1,0 +1,115 @@
+{
+  "opposition-support": {
+    "title": {
+      "text": "核心反对派，有外部支持",
+      "src": "f3c786be",
+      "machine": true
+    },
+    "agenda": {
+      "text": "探索草案和 10 月 7 调查可能的共同点。这些角色是假设的；没有声称达成任何协议。",
+      "src": "d27eaea9",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "核心反对派的答案支持普遍军事或民事服务，而拉姆则反对要求阿拉伯公民履行其中任何一项。外部支持者会接受什么服务政策？",
+      "src": "225e8cd6",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "记录的合作伙伴承诺限制了某些内阁组合。拒绝加入并不自动意味着放弃或提供外部支持。",
+      "src": "c05083b2",
+      "machine": true
+    },
+    "leadership": {
+      "text": "总理和任何轮换协议都需要达成协议。民意调查排名并不合法地任命总理，并且这种情况不提供商定的轮换。",
+      "src": "6188390c",
+      "machine": true
+    },
+    "source": {
+      "text": "各方答案，Ynet，9 月 16、2026；记录的认捐如下所示",
+      "src": "e4c612ae",
+      "machine": true
+    }
+  },
+  "opposition-haredi": {
+    "title": {
+      "text": "核心反对派，与正统派伙伴",
+      "src": "2841e9c4",
+      "machine": true
+    },
+    "agenda": {
+      "text": "测试增加的内阁伙伴是否会缩小席位差距以及其政策要求如何改变谈判。这是一个假设的组合。",
+      "src": "9cde0a80",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "核心反对派的答案是支持所有人服兵役或民事；沙斯将留在犹太学院的学生与离开的学生区分开来。共同的法案草案必须解决这一分歧。",
+      "src": "c4ee594e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "核心政党记录的立场支持民事婚姻，而消息来源摘要称沙斯反对民事替代方案。这需要具体的妥协，而不是所有宗教政策都同意的主张。",
+      "src": "08b621d4",
+      "machine": true
+    },
+    "leadership": {
+      "text": "领导层、部门分配以及通过任何先决条件法律的命令仍未达成一致。增加席位并不能解决这些条款。",
+      "src": "c6348254",
+      "machine": true
+    },
+    "source": {
+      "text": "Ynet 调查问卷草案，9 月 16、2026；耶路撒冷邮报宗教/国家摘要，9 月 10、2026",
+      "src": "925fc043",
+      "machine": true
+    }
+  },
+  "netanyahu-arrangement": {
+    "title": {
+      "text": "内塔尼亚胡领导的政党",
+      "src": "cd939fe2",
+      "machine": true
+    },
+    "agenda": {
+      "text": "测试所选民意调查的席位多数，然后检查各方记录的条款。这是一个假设的选举后安排，而不是联合政府协议。",
+      "src": "f6c43ef1",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Shas接受离开犹太学院的学生入伍；据报道，UTJ 的答复仍然反对他们入伍。联盟成员身份并不能消除这一法律草案争议。",
+      "src": "8fa8987e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "宗教犹太复国主义的法庭答复包括推翻61投票；奥兹玛在同一份调查问卷中没有给出详细的法庭平台。缺乏证据无法在整个联盟范围内就该机制达成一致。",
+      "src": "de0dc57b",
+      "machine": true
+    },
+    "leadership": {
+      "text": "内塔尼亚胡是该方案提议的总理。任命仍需要法律形成程序和初步信任投票；这里不提供部委和书面条款。",
+      "src": "23c1735e",
+      "machine": true
+    },
+    "source": {
+      "text": "Ynet 调查问卷草案，9 月 16、2026；法庭调查问卷，9 月 22、2026",
+      "src": "7585e36c",
+      "machine": true
+    }
+  },
+  "historical": {
+    "title": {
+      "text": "外部支持有历史",
+      "src": "d69a9d3c",
+      "machine": true
+    },
+    "text": {
+      "text": "拉宾的 1992 联盟以 62 个席位开始。沙斯于九月1993离开后，它有了56并依赖阿拉伯派系的外部支持。内阁席位和议会支持的数量不同。",
+      "src": "ca236030",
+      "machine": true
+    },
+    "source": {
+      "text": "IDI，阿萨夫·夏皮拉，11 月 12、2019",
+      "src": "7e206d89",
+      "machine": true
+    }
+  }
+}

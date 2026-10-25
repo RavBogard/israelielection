@@ -3,7 +3,7 @@ import type { ComponentType, ReactNode } from "react";
 import Link from "next/link";
 import { Noto_Sans_Arabic } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { editionPath } from "@/lib/i18n";
+import { editionPath, isRtl } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 import { ui } from "@/lib/i18n/ui";
 import { blocText, partyText } from "@/lib/i18n/overlays";
@@ -26,14 +26,14 @@ import "./site-nav.css";
 import "./he-chrome.css";
 
 const arabic = Noto_Sans_Arabic({ variable: "--font-arabic", subsets: ["arabic"], weight: ["400", "500", "600", "700"] });
-type Edition = "ar" | "fa";
+type Edition = "ar" | "fa" | "de" | "fr" | "zh";
 
 export function toolMetadata(lang: Edition): Metadata {
   const t = chrome[lang];
   return {
     metadataBase: new URL("https://www.israelielection.org"),
     title: { default: t.siteName, template: `%s | ${t.siteName}` }, description: t.description, applicationName: t.siteName,
-    openGraph: { type: "website", siteName: t.siteName, locale: lang === "ar" ? "ar_AR" : "fa_IR" },
+    openGraph: { type: "website", siteName: t.siteName, locale: ({ ar: "ar_AR", fa: "fa_IR", de: "de_DE", fr: "fr_FR", zh: "zh_CN" })[lang] },
     twitter: { card: "summary_large_image" }, appleWebApp: { title: t.siteName },
   };
 }
@@ -57,7 +57,7 @@ export default function RtlLayout({ children, lang, provider: Provider }: { chil
   const facts = navFacts({ newestPoll: allPolls.find(p => !isExit(p))?.published, newestBriefing: briefingsJson.map(b => b.date).sort().at(-1) }, lang);
   const meter = { average: averageMeter(blocTotals(averagePoll, parties), mainPolls.map(p => p.published).sort().at(-1)!, lang), exit: firstExit(exitPolls, parties) };
   const english = (n: NavItem) => n.hrefLang === "en" ? ` ${t.inEnglish}` : "";
-  return <html lang={lang} dir="rtl" className={`${frank.variable} ${sans.variable} ${arabic.variable}`}>
+  return <html lang={lang} dir={isRtl(lang) ? "rtl" : "ltr"} className={`${frank.variable} ${sans.variable} ${isRtl(lang) ? arabic.variable : ""}`}>
     <body className="min-h-screen flex flex-col">
       <Provider>
         <a href="#main" className="skip">{t.skip}</a>

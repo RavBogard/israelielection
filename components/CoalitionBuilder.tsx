@@ -79,7 +79,7 @@ function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
       ) : poll.id === FORECAST_ID ? (
         <>
           {rich(T.noteForecast(mediumDate(poll.published, lang), forecast.majority.net))}
-          <Link href={lang === "he" ? "/he/forecast" : "/forecast"}>{T.noteForecastMethod}</Link>. {T.noteByBloc}
+          <Link href={lang !== "en" ? `/${lang}/forecast` : "/forecast"}>{T.noteForecastMethod}</Link>. {T.noteByBloc}
         </>
       ) : (
         <>{rich(T.notePoll(pollLabel(poll, lang), mediumDate(poll.published, lang)))}{T.noteByBloc}</>

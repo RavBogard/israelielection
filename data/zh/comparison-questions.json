@@ -1,0 +1,458 @@
+{
+  "draft-left-yeshiva": {
+    "label": {
+      "text": "正统选秀：离开犹太学院的男人",
+      "src": "e986cbd9",
+      "machine": true
+    },
+    "question": {
+      "text": "需要离开犹太学院的年轻正统派男子提供服务吗？",
+      "src": "81926059",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "需要服务",
+      "src": "4f9c721f",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "反对强制服役",
+      "src": "3b3f71ff",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "斯莫特里奇为任何法律草案设定了一个条件：“任何不学习托拉的人都必须入伍。”",
+      "src": "af582960",
+      "machine": true
+    },
+    "answerSources.yashar.text": {
+      "text": "全民国民服役，其中“推迟服役的唯一机制是为杰出个人分配每年每年队列的3%”。",
+      "src": "c3840df7",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "哈雷迪姆补充道：“为所有人提供服务框架：每个年轻男女都将为国家服务。”",
+      "src": "e65df3a8",
+      "machine": true
+    },
+    "answerSources.res.text": {
+      "text": "“每个公民都会到入职中心报到。”",
+      "src": "6f33338c",
+      "machine": true
+    },
+    "answerSources.poi.text": {
+      "text": "温特：“每个服役年龄的年轻人都会向国家报告。任何部门都不能凌驾于法律之上。”",
+      "src": "e4d830fb",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "利库德集团拒绝回答，但其议员博阿斯·比斯穆特 (Boaz Bismuth) 的2025法案草案旨在五年内招募一半不在犹太学院的正统派成员。",
+      "src": "002ddded",
+      "machine": true
+    },
+    "note": {
+      "text": "Shas 和 UTJ 对离开犹太学院的男性的看法不同。普遍军事或民事服务提案也涵盖了这一群体；这里的相同答案并不能就继续学生达成一致。",
+      "src": "98d04a8e",
+      "machine": true
+    }
+  },
+  "draft-exemptions": {
+    "label": {
+      "text": "正统草案：服务豁免",
+      "src": "1a480774",
+      "machine": true
+    },
+    "question": {
+      "text": "允许军事或民事服务框架中的豁免？",
+      "src": "8cf4f577",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "无豁免或配额",
+      "src": "55ccde00",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "杰出个人的例外",
+      "src": "c72820c4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "豁免全日制犹太学院学生",
+      "src": "9e85c3d2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "《耶路撒冷邮报》对 Shas 和 UTJ 的总结是：“全日制托拉研究是核心宗教价值观，应该受到法律保护。”",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "《耶路撒冷邮报》对 Shas 和 UTJ 的总结是：“全日制托拉研究是核心宗教价值观，应该受到法律保护。”",
+      "src": "579f09f1",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "斯莫特里奇接受在犹太学院全日制就读的男性的豁免，条件是正统派领导人认可“任何不学习的人都必须入伍”。",
+      "src": "c1582d53",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "利库德集团拒绝回答，但其议员 Boaz Bismuth 的2025法案草案允许全日制犹太学院学生继续推迟服役，豁免年龄仍为26。",
+      "src": "8656b6d3",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "阿维·毛兹表示，他只会支持正统派拉比批准的非强制性法案草案，而这些拉比则支持犹太教的豁免。",
+      "src": "db1f5d9d",
+      "machine": true
+    },
+    "note": {
+      "text": "Yashar 指定每个年度全国队列中最多 3%；蓝白提出配额和突出个人例外，但没有相同的量化限制。豁免全日制犹太学院学生是一种与这两种机制不同的机制。为所有人提供服务的一般承诺并未建立豁免机制。",
+      "src": "6e822187",
+      "machine": true
+    }
+  },
+  "courts-appointments": {
+    "label": {
+      "text": "法院：司法任命",
+      "src": "33cb190a",
+      "machine": true
+    },
+    "question": {
+      "text": "废除2025司法任命法？",
+      "src": "dd61f9f4",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "废除并取代该法律",
+      "src": "70674438",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "颁布法律（历史记录）",
+      "src": "b2fa75fc",
+      "machine": true
+    },
+    "answerSources.dem.text": {
+      "text": "戈兰与拉皮德、甘茨和利伯曼在一份联合声明中表示：“在下一届政府中，我们将确保废除改变司法遴选委员会的法律”（翻译）。",
+      "src": "314a97c5",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "利伯曼与拉皮德、甘茨和戈兰在一份联合声明中表示：“在下一届政府中，我们将确保废除改变司法遴选委员会的法律”（翻译）。",
+      "src": "dd2cfceb",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "甘茨与拉皮德、利伯曼和戈兰在一份联合声明中表示：“在下一届政府中，我们将确保废除改变司法遴选委员会的法律”（翻译）。",
+      "src": "71ef50cb",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Shas 所在的联盟于 3 月 2025 通过了法律 67 至 1，而反对派抵制了投票。",
+      "src": "afa74aab",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ 是于 3 月 2025 通过法律 67 至 1 的联盟之一，而反对派抵制了投票。",
+      "src": "8a5b68f3",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "宗教犹太复国主义联盟是在三月 2025 通过法律 67 至 1 的联盟，而反对派抵制了投票。",
+      "src": "35c9acc8",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Ben Gvir 对 3 月份通过的法律表示欢迎2025，并表示政府应该推进其余的改革。",
+      "src": "c2b5abae",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "该名单希望司法遴选委员会有“新的平衡组成”，以取代 2025 法律规定的组成。",
+      "src": "96682d9d",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "该名单希望建立一种“维护司法独立”的任命机制，但目前的机制并没有做到这一点。",
+      "src": "8ca0d7a5",
+      "machine": true
+    },
+    "note": {
+      "text": "利库德集团的答案是进军 2025 立法记录，而不是新的竞选回应。反对派领导人的废除承诺是从该法律通过之日起生效的。废除同一法律并不意味着就替代法律达成一致。",
+      "src": "098ea9db",
+      "machine": true
+    }
+  },
+  "courts-override": {
+    "label": {
+      "text": "法院：立法优先",
+      "src": "c9257edc",
+      "machine": true
+    },
+    "question": {
+      "text": "议会是否应该能够重新制定被最高法院推翻的法律？",
+      "src": "b9918024",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "反对优先条款",
+      "src": "ae2eaa9b",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "仅以特殊多数覆盖（70 MK 或更多）",
+      "src": "8e956759",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "使用 61 MK 覆盖",
+      "src": "d2dc0f25",
+      "machine": true
+    },
+    "answerSources.yb.text": {
+      "text": "利伯曼提出了一个宪法法院和“一项由 70 MK 多数票支持的优先条款”（翻译）。",
+      "src": "425b1b54",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "正统派政党是 2023 早期议会多数派推翻的主要支持者，尽管他们在那年春天对此保持沉默，也没有重申这一点。",
+      "src": "19f18c66",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ 将推翻条款作为加入 2022 联盟的条件，正统派政党在 2023 初期以议会多数席位支持推翻条款。",
+      "src": "e3358606",
+      "machine": true
+    },
+    "note": {
+      "text": "阈值是实质性差异：预备役军人说超过72 MK，Yisrael Beytenu 的2023提案说70。仅靠宪法编纂并不能解决推翻宪法的问题。",
+      "src": "58633d4c",
+      "machine": true
+    }
+  },
+  "courts-reasonableness": {
+    "label": {
+      "text": "法院：合理性审查",
+      "src": "c04c2500",
+      "machine": true
+    },
+    "question": {
+      "text": "在保留合理性标准的同时缩小合理性标准？",
+      "src": "983dbc21",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "缩小而不是废除",
+      "src": "c47891a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "废除内阁和部长决策权",
+      "src": "6edb36c8",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "利库德集团投票支持 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，在反对派抵制下通过了64至0。",
+      "src": "6409b36e",
+      "machine": true
+    },
+    "unstated.shas.text": {
+      "text": "Shas 投票支持 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，在反对派抵制下通过了64至0。",
+      "src": "665dbd02",
+      "machine": true
+    },
+    "unstated.utj.text": {
+      "text": "UTJ 投票支持了 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，并在反对派抵制下通过了64至0。",
+      "src": "6ecae05a",
+      "machine": true
+    },
+    "unstated.rz.text": {
+      "text": "宗教犹太复国主义投票支持 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，在反对派的抵制下通过了64至0。",
+      "src": "027ebe2d",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit 投票支持 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，在反对派抵制下通过了64至0。",
+      "src": "2e582b84",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "诺姆投票支持 7 月的2023法律，禁止法院审查内阁和部长决定的合理性，在反对派抵制下通过了64至0。",
+      "src": "d5003350",
+      "machine": true
+    },
+    "note": {
+      "text": "在 2023 投票中反对废除并不一定会回应在 2026 中缩小标准的提案。废除答案取决于同一次2023投票；这些政党都没有在这次竞选活动中重申这一点。",
+      "src": "762c56ff",
+      "machine": true
+    }
+  },
+  "relig-marriage": {
+    "label": {
+      "text": "宗教与国家：公证婚姻",
+      "src": "83d5e189",
+      "machine": true
+    },
+    "question": {
+      "text": "允许以色列境内的公证婚姻选择吗？",
+      "src": "87248cfc",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "允许民事选择",
+      "src": "dd46a4a7",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "反对民事替代方案",
+      "src": "df2215b0",
+      "machine": true
+    },
+    "unstated.noam.text": {
+      "text": "诺姆的纲领呼吁建立一个更强大的首席拉比，负责管理以色列所有的犹太婚姻。",
+      "src": "36ec86c5",
+      "machine": true
+    },
+    "unstated.bw.text": {
+      "text": "蓝与白没有给出2026答案，但甘茨在2021寻求民事婚姻登记，并表示“许多人的基本结婚权利被剥夺了。”",
+      "src": "c1efb0d6",
+      "machine": true
+    },
+    "unstated.res.text": {
+      "text": "该名单没有给出答案，但 Yoaz Hendel 作为部长在2021中表示：“我们必须为那些无法结婚的人提供另一种选择”（翻译）。",
+      "src": "0deac5df",
+      "machine": true
+    },
+    "unstated.jl.text": {
+      "text": "该名单的纲领呼吁宗教与国家分离。",
+      "src": "d9ba291a",
+      "machine": true
+    },
+    "note": {
+      "text": "有些答案是二次总结。较旧的组件方平台并不是其整个联合列表当前的承诺。",
+      "src": "83232c18",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "分裂：联盟协议保持了拉比的垄断；资深议员投票支持民事婚姻",
+      "src": "e3ee9761",
+      "machine": true
+    }
+  },
+  "relig-shabbat": {
+    "label": {
+      "text": "宗教与国家：安息日交通",
+      "src": "4c11f64a",
+      "machine": true
+    },
+    "question": {
+      "text": "通过当地选择允许在安息日使用公共交通吗？",
+      "src": "d914e556",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "允许本地选择/有限服务",
+      "src": "fd165203",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "保留现行的安息日规则",
+      "src": "e1051f62",
+      "machine": true
+    },
+    "answerSources.bw.text": {
+      "text": "蓝白队将在安息日运营公共交通，“作为向地方当局移交权力改革的一部分”（翻译）。",
+      "src": "1c6a5d2d",
+      "machine": true
+    },
+    "answerSources.jl.text": {
+      "text": "联合列表支持在安息日运行城市和城际公共交通，包括公共交通（已翻译）；它想要的不仅仅是本地选择。",
+      "src": "a40e9ce2",
+      "machine": true
+    },
+    "answerSources.likud.text": {
+      "text": "利库德集团：“我们希望在六个工作日内与以色列建立联系，同时保持安息日”（翻译），Ynet 将其解读为保持现状。",
+      "src": "dc0e72ce",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "Ynet 报道称，宗教犹太复国主义与其反对任何变革的 83% 支持者完全一致。",
+      "src": "b643aeb2",
+      "machine": true
+    },
+    "answerSources.shas.text": {
+      "text": "“两党历来都反对在安息日扩大公共交通和其他国家支持的活动。”",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.utj.text": {
+      "text": "“两党历来都反对在安息日扩大公共交通和其他国家支持的活动。”",
+      "src": "a9e99570",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "诺姆的政纲是：“公共安息日、更强大的首席拉比、保守的皈依和犹太洁食政策。”",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Otzma Yehudit 没有在 2026 年回复 Ynet；其与宗教犹太复国主义的2022年联合名单称，双方都反对安息日公共交通。",
+      "src": "f2d1347a",
+      "machine": true
+    },
+    "note": {
+      "text": "Bennett 的运输声明来自 4 月 20、2026，位于 B'Yachad 联合列表之前。显示的答案记录了领导者的声明，而不是采用的联合列表平台。民主党和联合名单在 8 月告诉 Ynet 2026，他们希望在全国范围内提供服务，而不仅仅是本地选择。",
+      "src": "1fb42393",
+      "machine": true
+    }
+  },
+  "relig-conversion": {
+    "label": {
+      "text": "宗教与国家：皈依",
+      "src": "2ae46528",
+      "machine": true
+    },
+    "question": {
+      "text": "承认东正教宗教机构之外的皈依吗？",
+      "src": "93ab9615",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "扩大认可范围",
+      "src": "8effc3fe",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "保持东正教权威",
+      "src": "d8d4387c",
+      "machine": true
+    },
+    "answerSources.rz.text": {
+      "text": "它的2022联合名单承诺“在法律上锚定拉比领导下的国家皈依的排他性地位”（翻译），其12月的联盟协议也说了同样的话。",
+      "src": "b863444f",
+      "machine": true
+    },
+    "answerSources.noam.text": {
+      "text": "诺姆的政纲是：“公共安息日、更强大的首席拉比、保守的皈依和犹太洁食政策。”",
+      "src": "93b4af10",
+      "machine": true
+    },
+    "unstated.likud.text": {
+      "text": "利库德集团与宗教犹太复国主义和UTJ签署了2022联盟协议，仅承认东正教首席拉比领导下的皈依。",
+      "src": "652293d2",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "奥兹玛·耶胡迪特 (Otzma Yehudit) 尚未回复；其2022与宗教犹太复国主义联合名单承诺使拉比管理的国家转换成为唯一公认的路线。",
+      "src": "d6bb10d0",
+      "machine": true
+    },
+    "note": {
+      "text": "支持民事婚姻并不意味着对皈依的看法。以色列·贝特努（Yisrael Beytenu）推动市政东正教拉比皈依基督教，但这两者都不是这里的立场。",
+      "src": "3f975c84",
+      "machine": true
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "zionist-opp-no-arab-parties": {
+    "message": {
+      "text": "Ausgewählte Parteien mit aufgezeichneten Zusagen, ohne arabische Parteien zu regieren: {comma:noArabPledge}. Zu dieser Koalition gehört {and:arab}.",
+      "src": "a75b44d5",
+      "machine": true
+    }
+  },
+  "eisenkot-no-raam": {
+    "message": {
+      "text": "Eisenkot sagte im September 26, dass Mansour Abbas „nicht Teil meiner nächsten Regierung sein wird“.",
+      "src": "47407bf9",
+      "machine": true
+    }
+  },
+  "byachad-zionist-only": {
+    "message": {
+      "text": "Bennetts B'Yachad versprach, nur mit zionistischen Parteien zu regieren und sich nur auf sie zu verlassen: keine arabischen oder hareditischen Parteien, daher zählt auch ihre Unterstützung von außen. Zu dieser Koalition gehört {and:haredi,arab}.",
+      "src": "a4b5f9e2",
+      "machine": true
+    }
+  },
+  "lieberman-no-arab-no-haredi": {
+    "message": {
+      "text": "Liberman: „Nicht für die arabischen Parteien und nicht für die Haredi-Parteien.“ Zu dieser Koalition gehört {and:haredi,arab}.",
+      "src": "12835c45",
+      "machine": true
+    }
+  },
+  "joint-list-no-netanyahu": {
+    "message": {
+      "text": "Die Gemeinsame Liste sagt, sie werde sich Netanyahu nicht anschließen; Die angebotene Unterstützung von außen bezieht sich auf eine Minderheitsregierung, die „Netanjahu und Smotrich nach Hause schicken“ würde. Der Likud im Kabinett wird hier als von Netanyahu geführt angesehen.",
+      "src": "9ef6508e",
+      "machine": true
+    }
+  },
+  "yashar-no-netanyahu": {
+    "message": {
+      "text": "Eisenkot sagt, Netanjahu sei „nicht führungsfähig“ und schließt eine Rotationsregierung mit ihm aus; Sein Ziel sei Netanyahus Rücktritt, sagt er. Seine Nr. 2, Yoram Cohen, hat Yashar gesagt! würde einen Likud in Betracht ziehen, der nicht länger von Netanjahu geführt wird. Der Likud im Kabinett wird hier als von Netanyahu geführt angesehen.",
+      "src": "97a130c7",
+      "machine": true
+    }
+  },
+  "byachad-no-netanyahu": {
+    "message": {
+      "text": "Auf die Frage, ob er mit Netanjahu eine Regierung bilden könne, sagte Bennett: „Ganz klar nicht. Ich werde ihn ersetzen.“ Er hat nicht dasselbe über einen Likud gesagt, der von jemand anderem geführt wird. Der Likud im Kabinett wird hier als von Netanyahu geführt angesehen.",
+      "src": "d50214ec",
+      "machine": true
+    }
+  },
+  "dem-no-likud-rz-otzma": {
+    "message": {
+      "text": "Golan: Likud, religiöser Zionismus und Otzma Yehudit sind „grundsätzlich und entschieden inakzeptabel für mich.“ Auf die Frage nach einem Likud unter einem anderen Führer antwortete er: „Nein.“ Lesen Sie hier, dass auch ihre Unterstützung von außen ausgeschlossen ist.",
+      "src": "92230ba4",
+      "machine": true
+    }
+  },
+  "dem-no-haredi": {
+    "message": {
+      "text": "Golan: „Die Charedim werden außerhalb [der Regierung] sein, das ist eine Garantie.“ Er sagte dies nach einem durchgesickerten Clip, in dem er für eine Regierung stimmen würde, die eine Haredi-Partei brauche, „vorausgesetzt, dass Likud, Smotrich und Ben Gvir nicht da sind“. Zu dieser Koalition gehört {and:haredi}.",
+      "src": "29494330",
+      "machine": true
+    }
+  },
+  "yb-no-netanyahu": {
+    "message": {
+      "text": "Liberman über Netanyahu: „Die Hölle wird zufrieren, bevor wir bei ihm sitzen“, und „er muss nach Hause.“ Er sagte, er würde einen Likud nicht ablehnen, der nicht mehr von Netanjahu geführt wird und die Prinzipien seiner Partei akzeptiert. Der Likud im Kabinett wird hier als von Netanyahu geführt angesehen.",
+      "src": "cc830af2",
+      "machine": true
+    }
+  },
+  "bw-no-netanyahu": {
+    "message": {
+      "text": "Gantz: „Netanjahu sollte nicht als Premierminister weitermachen, und ich werde ihm nicht seine 61. Stimme geben.“ Der Likud im Kabinett wird hier als von Netanyahu geführt angesehen.",
+      "src": "5253a71c",
+      "machine": true
+    }
+  },
+  "res-zionist-unity-only": {
+    "message": {
+      "text": "Hendel will eine „zionistische Einheitsregierung ohne arabische oder charedische Parteien“. Netanyahu sei „nicht meine rote Linie“, sagt er. Zu dieser Koalition gehört {and:haredi,arab}.",
+      "src": "d94ce0f6",
+      "machine": true
+    }
+  },
+  "rz-no-arab-parties": {
+    "message": {
+      "text": "Smotrich hat ausgeschlossen, sich auf arabische Parteien zu verlassen; Er nannte die 2021-Regierung mit Ra'am „tausendmal schlimmer“ als die Misserfolge im Oktober 7. Zu dieser Koalition gehören {and:arab}.",
+      "src": "94ad4577",
+      "machine": true
+    }
+  },
+  "otzma-no-eisenkot": {
+    "message": {
+      "text": "Ben-Gvir zu Netanyahu: „Ich werde alles tun, damit Sie mit Eisenkot keine Regierung bilden! Nur eine rechte Regierung!!!“",
+      "src": "e01ec0b5",
+      "machine": true
+    }
+  },
+  "utj-yeshiva-status-law": {
+    "message": {
+      "text": "UTJ sagt, dass es keine Regierung unterstützen oder ihr beitreten wird, die nicht zunächst den Status von Tora-Lernenden regelt (ein Jeschiwa-Statusgesetz), unabhängig davon, wer sie leitet.",
+      "src": "aa0aa057",
+      "machine": true
+    }
+  },
+  "poi-draft-law-first": {
+    "message": {
+      "text": "Ofer Winter sagt, dass das Volk Israel keiner Regierung beitreten wird, die nicht vor ihrer Bildung ein Gesetz verabschiedet, das die Wehrdienstverweigerung beendet und von jedem verlangt, sich zum Dienst zu melden.",
+      "src": "bc7c8da3",
+      "machine": true
+    }
+  },
+  "otzma-no-raam": {
+    "message": {
+      "text": "Ben-Gvir hat gegenüber Ra'am keine formelle Zusage gemacht, aber seine Partei beantragte, ihn von der Wahl auszuschließen, und nannte Mansour Abbas und seine Partei „Hamas-unterstützende Terroristen“ und „Wölfe im Schafspelz“. Lesen Sie hier, wie Sie es ausschließen.",
+      "src": "74c66eb6",
+      "machine": true
+    }
+  }
+}

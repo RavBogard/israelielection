@@ -300,6 +300,10 @@ const polls = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): PollsText { return editionText<PollsText>("ar", "polls"); },
   get fa(): PollsText { return editionText<PollsText>("fa", "polls"); },
+  get de(): PollsText { return editionText<PollsText>("de", "polls"); },
+  get fr(): PollsText { return editionText<PollsText>("fr", "polls"); },
+  get zh(): PollsText { return editionText<PollsText>("zh", "polls"); },
+
   get he(): PollsText {
     return heText<PollsText>("polls");
   },

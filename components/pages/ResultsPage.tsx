@@ -1,3 +1,4 @@
+import { isRtl } from "@/lib/i18n";
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import "@/components/interactives.css";
@@ -41,7 +42,7 @@ const HE_DAY = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", we
 const HE_STAMP = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 const IL_TIME = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 /** A moment as the page prints it: English "Oct 27, 10:00 PM"; Hebrew "27.10, 22:00", or with `long` "יום שלישי, 27 באוקטובר, 22:00". */
-const when = (d: Date, lang: Lang, long = false) => (lang === "ar" || lang === "fa" ? new Intl.DateTimeFormat(locale(lang), {timeZone:"Asia/Jerusalem", day:"numeric", month:long ? "long" : "numeric", hour:"2-digit", minute:"2-digit", hourCycle:"h23"}).format(d) : lang === "en" ? IL.format(d) : long ? `${HE_DAY.format(d)}, ${IL_TIME.format(d)}` : HE_STAMP.format(d));
+const when = (d: Date, lang: Lang, long = false) => (lang !== "en" && lang !== "he" ? new Intl.DateTimeFormat(locale(lang), {timeZone:"Asia/Jerusalem", day:"numeric", month:long ? "long" : "numeric", hour:"2-digit", minute:"2-digit", hourCycle:"h23"}).format(d) : lang === "en" ? IL.format(d) : long ? `${HE_DAY.format(d)}, ${IL_TIME.format(d)}` : HE_STAMP.format(d));
 const byId = (id: string | null) => parties.find((p) => p.id === id);
 const name = (id: string, lang: Lang) => listName(byId(id) ?? { id, name: id }, lang);
 const pairName = (ids: string[], lang: Lang) =>
@@ -275,7 +276,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
       {early && r && <p className="rs-early-flag"><b>{flag[0]}</b>{flag[1]}</p>}
       <section className={`rs-count${r ? "" : " rs-await"}${early && r ? " rs-early" : ""}`} aria-label={t.aria(!!(early && r))}>
         <div className="rs-grid">
-          <SeatGrid segments={segments} labelRule rtl={lang !== "en"} title={r ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
+          <SeatGrid segments={segments} labelRule rtl={isRtl(lang)} title={r ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
         </div>
         <div>
           <ul className="rs-legend">

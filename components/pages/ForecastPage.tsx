@@ -48,7 +48,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
   const thresholdCases = calibration.thresholdLists.cases;
   const cal = calibration.elections.map((e) => ({ ...e, miss: Math.round((e.result - e.field) * 10) / 10 }));
   const year = (iso: string) => (he ? new Intl.DateTimeFormat(locale(lang), { month: "long", year: "numeric", timeZone: "UTC" }) : new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" })).format(new Date(`${iso}T12:00:00Z`));
-  const num = (x: number) => x.toLocaleString(he ? "he" : "en");
+  const num = (x: number) => x.toLocaleString(locale(lang));
   const sourceLinks = [
     <a key="s" href={`${REPO}scripts/forecast/forecast.mjs`} hrefLang={he ? "en" : undefined}>{t.sources.script}</a>,
     <a key="d" href={`${REPO}data/forecast.json`} hrefLang={he ? "en" : undefined}>{t.sources.data}</a>,

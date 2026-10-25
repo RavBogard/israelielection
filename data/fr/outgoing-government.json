@@ -1,0 +1,79 @@
+{
+  "_": {
+    "title": {
+      "text": "Qui gouverne jusqu'à ce qu'un nouveau gouvernement prête serment",
+      "src": "b5fe7df3",
+      "machine": true
+    },
+    "seatsNote": {
+      "text": "Les sièges après chaque étape comptent les partis formellement membres de la coalition, comme le donnent les rapports cités ou comme il ressort de leurs décomptes.",
+      "src": "22b626a3",
+      "machine": true
+    },
+    "events.0.text": {
+      "text": "Le gouvernement de Netanyahu composé du Likoud, du Shas, du Parti sioniste religieux, de l'UTJ, d'Otzma Yehudit et de Noam prête serment avec 64 sièges. La Knesset l’approuve 63 à 54.",
+      "src": "08224b92",
+      "machine": true
+    },
+    "events.1.text": {
+      "text": "Quatre jours après l'attaque menée par le Hamas, le parti d'unité nationale de Benny Gantz accepte de rejoindre un gouvernement d'urgence pour la guerre.",
+      "src": "32e738e9",
+      "machine": true
+    },
+    "events.2.text": {
+      "text": "Le parti Nouvel Espoir de Gideon Saar, qui s'était séparé de l'Unité nationale, quitte la coalition après que Netanyahu ne l'a pas nommé au cabinet de guerre.",
+      "src": "82297181",
+      "machine": true
+    },
+    "events.3.text": {
+      "text": "Gantz quitte le gouvernement d'urgence et appelle à des élections.",
+      "src": "565bfb1b",
+      "machine": true
+    },
+    "events.4.text": {
+      "text": "New Hope rejoint le gouvernement.",
+      "src": "d20aec67",
+      "machine": true
+    },
+    "events.5.text": {
+      "text": "Otzma Yehudit d'Itamar Ben-Gvir quitte la coalition pour protester contre l'accord de cessez-le-feu à Gaza.",
+      "src": "12cd6b05",
+      "machine": true
+    },
+    "events.5.seatsText": {
+      "text": "62 ou 63",
+      "src": "d78571a9",
+      "machine": true
+    },
+    "events.6.text": {
+      "text": "Otzma Yehudit revient après la reprise de la guerre à Gaza et Ben-Gvir est reconduit dans ses fonctions de ministre de la Police.",
+      "src": "1cbb2971",
+      "machine": true
+    },
+    "events.7.text": {
+      "text": "UJT quitte le gouvernement et la coalition pour protester contre le projet de loi pour les hommes Haredi.",
+      "src": "6bdaf2d2",
+      "machine": true
+    },
+    "events.8.text": {
+      "text": "Le Shas quitte le gouvernement à cause du même projet de loi, mais reste dans la coalition et déclare qu'il ne votera pas pour renverser le gouvernement.",
+      "src": "0571e325",
+      "machine": true
+    },
+    "events.9.text": {
+      "text": "La Knesset se dissout 62 en 0 et fixe les élections à octobre 27.",
+      "src": "3dca5e63",
+      "machine": true
+    },
+    "status.text": {
+      "text": "Le gouvernement de Netanyahu continue de servir jusqu'à ce qu'un nouveau soit assermenté, en tant que gouvernement de transition. La loi ne fixe aucune limite à ses pouvoirs, mais les tribunaux et le procureur général attendent de la retenue. Depuis le 2026 mai, UTJ était en dehors de la coalition et le Shas, ne détenant aucun ministère, a continué à le soutenir à la Knesset.",
+      "src": "8f71eaf6",
+      "machine": true
+    },
+    "noam.text": {
+      "text": "Noam, le parti à un siège d'Avi Maoz, était le sixième membre du gouvernement 2022. Maoz a démissionné de son poste de vice-ministre en mars 2025. Aucun sondage ne donne de chiffre pour Noam, donc Coalition Builder le laisse de côté.",
+      "src": "2a36436b",
+      "machine": true
+    }
+  }
+}

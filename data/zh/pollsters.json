@@ -1,0 +1,163 @@
+{
+  "Channel 12": {
+    "name": {
+      "text": "通道12",
+      "src": "5bde2ecf",
+      "machine": true
+    }
+  },
+  "Channel 13": {
+    "name": {
+      "text": "通道13",
+      "src": "5ade2d3c",
+      "machine": true
+    }
+  },
+  "Channel 14": {
+    "name": {
+      "text": "通道14",
+      "src": "59de2ba9",
+      "machine": true
+    }
+  },
+  "Kan 11": {
+    "name": {
+      "text": "坎11",
+      "src": "8830eed9",
+      "machine": true
+    }
+  },
+  "Maariv": {
+    "name": {
+      "text": "马里夫",
+      "src": "1eb86123",
+      "machine": true
+    }
+  },
+  "Zman Yisrael": {
+    "name": {
+      "text": "兹曼·以色列",
+      "src": "fa401430",
+      "machine": true
+    }
+  },
+  "Israel Hayom": {
+    "name": {
+      "text": "伊斯雷尔·哈约姆",
+      "src": "cfd45c27",
+      "machine": true
+    }
+  },
+  "i24NEWS": {
+    "name": {
+      "text": "我24新闻",
+      "src": "051febed",
+      "machine": true
+    }
+  },
+  "Walla": {
+    "name": {
+      "text": "瓦拉",
+      "src": "21884a3c",
+      "machine": true
+    }
+  },
+  "Yedioth Ahronoth": {
+    "name": {
+      "text": "新消息报",
+      "src": "1812f282",
+      "machine": true
+    }
+  },
+  "Ynet": {
+    "name": {
+      "text": "互联网",
+      "src": "e751195f",
+      "machine": true
+    }
+  },
+  "Makor Rishon": {
+    "name": {
+      "text": "马科尔·里雄",
+      "src": "7301c2bc",
+      "machine": true
+    }
+  },
+  "Haaretz": {
+    "name": {
+      "text": "国土报",
+      "src": "90d47026",
+      "machine": true
+    }
+  },
+  "Lazar": {
+    "name": {
+      "text": "拉扎尔",
+      "src": "71f90e3f",
+      "machine": true
+    }
+  },
+  "LRI+P4A": {
+    "name": {
+      "text": "LRI+P4A",
+      "src": "998ac776",
+      "machine": true
+    }
+  },
+  "Midgam R&C": {
+    "name": {
+      "text": "米德加姆研发中心",
+      "src": "bfc22f61",
+      "machine": true
+    }
+  },
+  "MP+TM+SN+A": {
+    "name": {
+      "text": "MP+TM+SN+A",
+      "src": "938dbc1a",
+      "machine": true
+    }
+  },
+  "Kantar": {
+    "name": {
+      "text": "坎塔尔",
+      "src": "3e7c57d4",
+      "machine": true
+    }
+  },
+  "Next Data / Filber": {
+    "name": {
+      "text": "下一个数据/光纤",
+      "src": "d0f4179b",
+      "machine": true
+    }
+  },
+  "SF+ND": {
+    "name": {
+      "text": "SF+ND",
+      "src": "d4dae18f",
+      "machine": true
+    }
+  },
+  "Direct Polls": {
+    "name": {
+      "text": "直接民意调查",
+      "src": "029321fe",
+      "machine": true
+    }
+  },
+  "Tatika": {
+    "name": {
+      "text": "塔蒂卡",
+      "src": "ab53bec9",
+      "machine": true
+    }
+  },
+  "Yossi Tatika": {
+    "name": {
+      "text": "约西·塔蒂卡",
+      "src": "895b0afa",
+      "machine": true
+    }
+  }
+}

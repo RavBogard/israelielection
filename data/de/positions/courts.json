@@ -1,0 +1,144 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien vor Gericht sagen",
+      "src": "cc3f8315",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollte sich die Macht von den Gerichten auf die Knesset und die Regierung verlagern?",
+      "src": "6b47cbb6",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Beschränken Sie die Befugnisse des Obersten Gerichtshofs",
+      "src": "21f646ce",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Erlauben Sie eine begrenzte Außerkraftsetzung",
+      "src": "a620e061",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Schreiben Sie die Regeln in Grundgesetze",
+      "src": "56c20a45",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Halten Sie die Gerichte unabhängig",
+      "src": "09743b47",
+      "machine": true
+    },
+    "note": {
+      "text": "Aus Ynets parteiweiser Umfrage zur Justiz, September 22, 2026. Der Likud lehnte es ab; In seiner Zeile wird das Gesetz 2025 seines Justizministers hinzugefügt. Ra'am gab keine aktuelle Position an; seine Reihe beruht auf seinen 2023-Stimmen. Otzma Yehudit antwortete ohne Stellung; Sein Streit beruht auf der Unterstützung seines Anführers für die Gesetze 2023 und 2025. Noams Streit ist der Bericht der Jerusalem Post über ihren Relaunch, ohne Einzelheiten.",
+      "src": "35fb81c5",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "lehnte es ab, Ynets Fragen zu beantworten, mit der Begründung, dass die Partei „nicht an Fragebögen teilnimmt“. Zu den Akten: Das Gesetz von Justizminister Yariv Levin, das der israelischen Anwaltskammer zwei Sitze im Richterauswahlausschuss entzieht und der Koalition und der Opposition ein Vetorecht bei Ernennungen zum Obersten Gerichtshof einräumt, wurde am 27, 2025 März 67 bis 1 verabschiedet, wobei die Opposition die Abstimmung boykottierte.",
+      "src": "c86f8fe7",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Der Präsident und der stellvertretende Präsident des Obersten Gerichtshofs werden in geheimer Abstimmung der Richter gewählt. die Rolle des Generalstaatsanwalts in einen Rechtsberater und einen Chefankläger aufteilen; öffentliche Anhörungen für Nominierte; eine 61-Abstimmungsüberschreibung; Beschränkungen für einstweilige Anordnungen und die Frage, wer Petitionen einreichen kann; Gesetze wurden nur durch eine erweiterte Kammer und eine Sondermehrheit niedergeschlagen. Zehut, Feiglins Partei auf der gemeinsamen Liste, würde den Auswahlausschuss abschaffen und die Wähler die Richter direkt wählen lassen.",
+      "src": "f8d10831",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Ich teilte Ynet mit, dass man noch an der Vorbereitung einer detaillierten gerichtlichen Plattform arbeite. Zu den Akten: Die Jerusalem Post berichtet, dass Ben-Gvir die 2023-Überarbeitung unterstützte und sich dagegen aussprach, sie abzuschwächen. Er bezeichnete das 2023-Gesetz vom Juli, das den Angemessenheitsstandard einschränkt, als „erst den Anfang“. Als das Gesetz zur Richterauswahl im März 2025 verabschiedet wurde, sagte er, die Regierung müsse den Rest der Überarbeitung vorantreiben (Times of Israel).",
+      "src": "baeffe34",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Deri: „Das Justizsystem grundlegend reformieren und die Macht dem Volk und seinen gewählten Vertretern zurückgeben.“ Keine detaillierte neue Plattform.",
+      "src": "9c14eddb",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Der Oberste Gerichtshof habe übermäßige Macht angehäuft und seine Befugnisse müssten überdacht und klarer definiert werden.",
+      "src": "e775406f",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Das Gleichgewicht hat sich zu sehr in Richtung der Gerichte verschoben; eine zusätzliche Gerichtsebene; die israelische Anwaltskammer aus dem Auswahlausschuss entfernen; den Angemessenheitsmaßstab einschränken.",
+      "src": "b30ea62b",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Aufhebung des Richterwahlgesetzes und Ersetzung durch ein Grundgesetz; lehnt eine Außerkraftsetzungsklausel ab; klarere Regeln für die gerichtliche Kontrolle durch ein Grundgesetz für die Justiz sowie ein Grundgesetz für die Gesetzgebung.",
+      "src": "a941fd80",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Die Befugnisse der Knesset, der Regierung und des Obersten Gerichtshofs formell festlegen; ein Grundgesetz zur Gesetzgebung, das festlegt, wie Grundgesetze erlassen werden und wann das Gericht eingreifen kann; Aufhebung des Ernennungsgesetzes, das das Gerichtssystem politisieren würde; die Unabhängigkeitserklärung als Grundgesetz.",
+      "src": "6fd36b1b",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "Eine schriftliche Verfassung, die einem nationalen Referendum unterzogen wird; Für Änderungsanträge wären mindestens 80 der 120 Mitglieder der Knesset erforderlich.",
+      "src": "3c27e2bb",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "Das dringende Problem sind Verzögerungen, überlastete Gerichte und ein Mangel an Richtern, nicht eine übermäßige richterliche Macht; ein mittleres Berufungsgericht; eine umfassende Definition der Gewaltenteilung.",
+      "src": "1108b508",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Die Justiz hat zu viel Macht; die Grundgesetze klarer regeln und gleichzeitig die Eingriffsmöglichkeiten des Obersten Gerichtshofs in Regierungsentscheidungen einschränken; mehr Kontrolle über Staatsanwälte; eine stärkere Rolle der Knesset bei der Überwachung der Exekutive.",
+      "src": "2f825cb7",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Zunächst ein Grundgesetz zur Gesetzgebung; eine Überschreibung nur bei mehr als 72 Gesetzgebern; den Angemessenheitsstandard einschränken, nicht abschaffen; mindestens 61 Stimmen für die Verabschiedung eines Grundgesetzes.",
+      "src": "10fa4c72",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "unterstützt Reformen, die den demokratischen Schutz stärken und die Rechte aller Bürger schützen; ein Ernennungsmechanismus, der die Unabhängigkeit der Justiz wahrt.",
+      "src": "b5db0f0e",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Weigerte sich, eine aktuelle Position anzugeben; in 2023 lehnte es das Gesetz zur Abschaffung des Angemessenheitsmaßstabs und andere Maßnahmen zur Machtverlagerung von den Gerichten ab.",
+      "src": "74b27441",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Die Jerusalem Post berichtet, dass die Partei bei ihrem Neustart als Noam für Israel im Juli 2026 die Verabschiedung der Justizreform als eines ihrer Hauptziele nannte. Es wurden keine Einzelheiten zu den gewünschten Änderungen genannt.",
+      "src": "3c24d5be",
+      "machine": true
+    }
+  }
+}

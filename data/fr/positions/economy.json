@@ -1,0 +1,144 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les partis sur l'économie",
+      "src": "7760fb13",
+      "machine": true
+    },
+    "question": {
+      "text": "Que devrait donner la priorité à la politique économique ?",
+      "src": "be1b5c99",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Des marchés libres, un État plus petit",
+      "src": "543efbe4",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Coût de la vie réduit, écarts réduits",
+      "src": "de2586d3",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Récompenser ceux qui servent",
+      "src": "5aac37f8",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Budgets pour les communautés qu’il dessert",
+      "src": "59be820f",
+      "machine": true
+    },
+    "note": {
+      "text": "Aucune plateforme économique publiée 2026 trouvée pour Otzma Yehudit ou Noam (vérifiée en octobre 2026) ; leurs rangées donnent ce qu'ils ont dit, ce qui ne fixe aucune position. Le différend de Kakhol lavan porte sur sa réponse au projet et non sur une plateforme économique. Les lignes citant le guide du parti de l'IDI donnent la description de la plateforme du parti par l'IDI, et non un document de campagne 2026.",
+      "src": "19e9aae1",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Aucune plate-forme 2026 écrite trouvée. Le guide de l'IDI indique que l'ouverture de la charte du Likoud fait référence, aux côtés des objectifs nationalistes, au « soutien à un marché libre et compétitif avec une implication limitée du gouvernement dans l'économie ».",
+      "src": "9de01055",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Le chef du parti et ministre des Finances, Bezalel Smotrich, a déclaré que le budget 2026 \"prenait soin de tout le monde et luttait contre le coût de la vie\".",
+      "src": "d447a9e6",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Aryeh Deri : « Il est inacceptable qu'un enfant Haredi pauvre ne reçoive pas le minimum de soutien comme le fait un enfant arabe pauvre, comme l'exige le ministère des Finances. » Dit lorsque le Shas a menacé de refuser son soutien au budget 2026 en raison de l'éligibilité aux bons d'alimentation.",
+      "src": "be707c40",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Guide de l'IDI : UTJ « promeut les intérêts de la communauté Haredi en Israël dans les domaines de l'éducation et du bien-être ».",
+      "src": "b6976f44",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Ofer Winter : « Plus vous servez, plus vous recevez. » Il affirme que le service de combat et de réserve devrait apporter de plus grands avantages.",
+      "src": "dbe74706",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "\"Nous réduirons les prix des denrées alimentaires de 30% d'ici trois ans.\" Le parti affirme qu'il « mènera une guerre totale pour briser les cartels alimentaires ».",
+      "src": "b8f9668d",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Guide de l'IDI : « Développer la périphérie d'Israël et réduire les écarts sociaux afin que tous les Israéliens bénéficient des mêmes chances, des mêmes droits et des mêmes responsabilités. »",
+      "src": "bce87240",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "Guide de l'IDI, sur la socio-économie : « réduire le coût de la vie ; améliorer les services sociaux ; et reconstruire le secteur public ».",
+      "src": "f133a89d",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "Guide de l'IDI : le parti « occupe des positions fiscales de droite et son programme atteste de son engagement à encourager l'entreprise privée ».",
+      "src": "8a331f81",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "En s'associant à Yoaz Hendel, Yaron Zelekha s'est engagé, dans le résumé du Times of Israel, à lutter contre les magnats et le coût de la vie.",
+      "src": "f946aef1",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Yousef Jabareen a déclaré au Jerusalem Post que le parti chercherait « à agir contre le crime organisé et à augmenter les budgets pour la société arabe et les autorités locales » (résumé du Post). Aucune plateforme économique commune trouvée.",
+      "src": "c19ea9e7",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Mansour Abbas a soutenu que « la participation politique arabe devrait être utilisée pour lutter contre la criminalité, le logement, le développement économique et d'autres problèmes auxquels est confrontée la société arabe » (résumé du Jerusalem Post). Aucun manifeste complet trouvé.",
+      "src": "010219c6",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Pas encore de plateforme économique détaillée ; le parti affirme qu'un \"sera publié séparément\". Son programme appelle à ouvrir l'économie par le « capitalisme juif », à réduire la réglementation et la bureaucratie, à consacrer les économies de défense aux infrastructures, à l'industrie et aux petites entreprises, et à davantage de ressources pour les groupes les plus faibles (traduit).",
+      "src": "4d35ecdd",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Aucune plateforme économique trouvée. Avi Maoz a voté contre le budget 2026 en première lecture, affirmant qu'il « ignore complètement l'identité juive de l'État d'Israël » et citant les écoles religieuses et nationales, le secteur laitier et le coût de la vie (traduit).",
+      "src": "20efec49",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Aucune plateforme économique trouvée. Dans sa réponse à Ynet sur le projet : « Les prestations sociales seront accordées en premier lieu à ceux qui servent » (traduit).",
+      "src": "ae85dad2",
+      "machine": true
+    }
+  }
+}

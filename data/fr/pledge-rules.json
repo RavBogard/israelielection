@@ -1,0 +1,121 @@
+{
+  "zionist-opp-no-arab-parties": {
+    "message": {
+      "text": "Partis sélectionnés avec des engagements enregistrés à gouverner sans partis arabes : {comma:noArabPledge}. Cette coalition comprend {and:arab}.",
+      "src": "a75b44d5",
+      "machine": true
+    }
+  },
+  "eisenkot-no-raam": {
+    "message": {
+      "text": "Eizenkot a déclaré le 26 septembre que Mansour Abbas « ne ferait pas partie de mon prochain gouvernement ».",
+      "src": "47407bf9",
+      "machine": true
+    }
+  },
+  "byachad-zionist-only": {
+    "message": {
+      "text": "B'Yachad de Bennett s'est engagé à gouverner uniquement avec des partis sionistes et à ne compter que sur eux : pas de partis arabes ou haredi, donc leur soutien extérieur compte aussi. Cette coalition comprend {and:haredi,arab}.",
+      "src": "a4b5f9e2",
+      "machine": true
+    }
+  },
+  "lieberman-no-arab-no-haredi": {
+    "message": {
+      "text": "Liberman : « ni pour les partis arabes, ni pour les partis ultra-orthodoxes ». Cette coalition comprend {and:haredi,arab}.",
+      "src": "12835c45",
+      "machine": true
+    }
+  },
+  "joint-list-no-netanyahu": {
+    "message": {
+      "text": "La Liste arabe unie dit qu’elle ne rejoindra pas Netanyahu ; le soutien extérieur qu’il a offert est destiné à un gouvernement minoritaire qui « renverrait Netanyahu et Smotrich chez eux ». Le Likoud au sein du cabinet est interprété ici comme étant dirigé par Netanyahu.",
+      "src": "9ef6508e",
+      "machine": true
+    }
+  },
+  "yashar-no-netanyahu": {
+    "message": {
+      "text": "Eizenkot déclare que Netanyahu est « inapte à diriger » et a exclu une rotation gouvernementale avec lui ; son objectif, dit-il, est la retraite de Netanyahu. Son numéro 2, Yoram Cohen, a dit Yashar ! considérerait un Likoud qui ne serait plus dirigé par Netanyahu. Le Likoud au sein du cabinet est interprété ici comme étant dirigé par Netanyahu.",
+      "src": "97a130c7",
+      "machine": true
+    }
+  },
+  "byachad-no-netanyahu": {
+    "message": {
+      "text": "Lorsqu'on lui a demandé s'il pourrait former un gouvernement avec Netanyahu, Bennett a répondu : \"Clairement non. Je vais le remplacer.\" Il n’a pas dit la même chose d’un Likoud dirigé par quelqu’un d’autre. Le Likoud au sein du cabinet est interprété ici comme étant dirigé par Netanyahu.",
+      "src": "d50214ec",
+      "machine": true
+    }
+  },
+  "dem-no-likud-rz-otzma": {
+    "message": {
+      "text": "Golan : Le Likoud, le sionisme religieux et Otzma Yehudit sont « fondamentalement et résolument inacceptables pour moi ». Interrogé sur un Likoud dirigé par un autre dirigeant, il a répondu « non ». Lisez ici comme excluant également leur soutien extérieur.",
+      "src": "92230ba4",
+      "machine": true
+    }
+  },
+  "dem-no-haredi": {
+    "message": {
+      "text": "Golan : « les Haredim seront en dehors [du gouvernement], c’est une garantie. » Il a déclaré cela après une fuite d’un clip dans lequel il voterait pour un gouvernement qui aurait besoin d’un parti Haredi « à condition que le Likoud, Smotrich et Ben Gvir ne soient pas là ». Cette coalition comprend {and:haredi}.",
+      "src": "29494330",
+      "machine": true
+    }
+  },
+  "yb-no-netanyahu": {
+    "message": {
+      "text": "Liberman à propos de Netanyahu : « L’enfer gèlera avant que nous nous asseyions avec lui » et « il doit rentrer chez lui ». Il a déclaré qu'il ne rejetterait pas un Likoud qui ne serait plus dirigé par Netanyahu et qui accepterait les principes de son parti. Le Likoud au sein du cabinet est interprété ici comme étant dirigé par Netanyahu.",
+      "src": "cc830af2",
+      "machine": true
+    }
+  },
+  "bw-no-netanyahu": {
+    "message": {
+      "text": "Gantz : « Netanyahu ne devrait pas rester Premier ministre, et je ne lui donnerai pas sa 61ère voix. » Le Likoud au sein du cabinet est interprété ici comme étant dirigé par Netanyahu.",
+      "src": "5253a71c",
+      "machine": true
+    }
+  },
+  "res-zionist-unity-only": {
+    "message": {
+      "text": "Hendel souhaite un « gouvernement d’unité sioniste sans partis arabes ou haredi ». Netanyahu n’est « pas ma ligne rouge », dit-il. Cette coalition comprend {and:haredi,arab}.",
+      "src": "d94ce0f6",
+      "machine": true
+    }
+  },
+  "rz-no-arab-parties": {
+    "message": {
+      "text": "Smotrich a exclu de s'appuyer sur les partis arabes ; il a qualifié le gouvernement 2021 avec Ra'am de « mille fois pire » que les échecs 7 d'octobre. Cette coalition comprend {and:arab}.",
+      "src": "94ad4577",
+      "machine": true
+    }
+  },
+  "otzma-no-eisenkot": {
+    "message": {
+      "text": "Ben-Gvir à Netanyahu : \"Je ferai tout pour que vous ne formiez pas un gouvernement avec Eizenkot ! Seulement un gouvernement de droite !!!\"",
+      "src": "e01ec0b5",
+      "machine": true
+    }
+  },
+  "utj-yeshiva-status-law": {
+    "message": {
+      "text": "UTJ déclare qu’il ne soutiendra ni n’entrera dans un gouvernement qui ne réglemente pas d’abord le statut des apprenants de la Torah (une loi sur le statut de yeshiva), quel que soit celui qui le dirige.",
+      "src": "aa0aa057",
+      "machine": true
+    }
+  },
+  "poi-draft-law-first": {
+    "message": {
+      "text": "Ofer Winter affirme que le peuple d’Israël ne rejoindra pas un gouvernement qui n’adoptera pas, avant sa formation, une loi mettant fin à l’évasion fiscale et exigeant que chacun se présente au service.",
+      "src": "bc7c8da3",
+      "machine": true
+    }
+  },
+  "otzma-no-raam": {
+    "message": {
+      "text": "Ben-Gvir n'a pris aucun engagement formel concernant Raam, mais son parti a déposé une pétition pour l'exclure des élections, qualifiant Mansour Abbas et son parti de « terroristes soutenant le Hamas » et de « loups déguisés en mouton ». Lire ici comme l'excluant.",
+      "src": "74c66eb6",
+      "machine": true
+    }
+  }
+}

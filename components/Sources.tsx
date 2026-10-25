@@ -70,7 +70,7 @@ function PollSourcesHe() {
 
 /** Profile provenance lines shared by every page that shows party profiles. */
 export function ProfileSources({ lang = "en" }: { lang?: Lang }) {
-  if (lang === "ar" || lang === "fa") return <>
+  if (lang !== "en" && lang !== "he") return <>
     <li>{ui(lang, "Party profiles: research registers updated {0}. Sources are named beside each item; translated quotations are marked.", mediumDate(partiesData.updated, lang))}</li>
     <li>{ui(lang, "Leader biographies")}: <En>{partiesData.bioSource}</En></li>
   </>;

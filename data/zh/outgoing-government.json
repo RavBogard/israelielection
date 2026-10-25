@@ -1,0 +1,79 @@
+{
+  "_": {
+    "title": {
+      "text": "新政府宣誓就职之前由谁执政",
+      "src": "b5fe7df3",
+      "machine": true
+    },
+    "seatsNote": {
+      "text": "每一步之后的席位都会按照所引用的报告给出的结果或根据其计数得出的结果，正式计算政党在联盟中的席位数。",
+      "src": "22b626a3",
+      "machine": true
+    },
+    "events.0.text": {
+      "text": "内塔尼亚胡领导的利库德集团、沙斯党、宗教犹太复国主义党、联合正义联盟、奥兹玛·耶胡迪特和诺姆组成的政府宣誓就职，拥有 64 个席位。议会批准它63至54。",
+      "src": "08224b92",
+      "machine": true
+    },
+    "events.1.text": {
+      "text": "哈马斯领导的袭击发生四天后，本尼·甘茨领导的民族团结组织同意加入紧急政府以应对战争。",
+      "src": "32e738e9",
+      "machine": true
+    },
+    "events.2.text": {
+      "text": "吉迪恩·萨尔领导的新希望党从民族团结党分裂出来，在内塔尼亚胡没有任命他为战时内阁成员后退出了联盟。",
+      "src": "82297181",
+      "machine": true
+    },
+    "events.3.text": {
+      "text": "甘茨退出紧急政府并呼吁举行选举。",
+      "src": "565bfb1b",
+      "machine": true
+    },
+    "events.4.text": {
+      "text": "新希望重新加入政府。",
+      "src": "d20aec67",
+      "machine": true
+    },
+    "events.5.text": {
+      "text": "伊塔马尔·本·格维尔的奥兹玛·耶胡迪特退出联盟，以抗议加沙停火协议。",
+      "src": "12cd6b05",
+      "machine": true
+    },
+    "events.5.seatsText": {
+      "text": "62 或 63",
+      "src": "d78571a9",
+      "machine": true
+    },
+    "events.6.text": {
+      "text": "加沙战争重新爆发后，奥兹玛·耶胡迪特回归，本·格维尔再次被任命为警察部长。",
+      "src": "1cbb2971",
+      "machine": true
+    },
+    "events.7.text": {
+      "text": "UTJ 退出政府和联盟，以抗议针对正统派男性的法案草案。",
+      "src": "6bdaf2d2",
+      "machine": true
+    },
+    "events.8.text": {
+      "text": "沙斯因同一法案退出政府，但仍留在联盟中，并表示不会投票推翻政府。",
+      "src": "0571e325",
+      "machine": true
+    },
+    "events.9.text": {
+      "text": "议会将62解散为0，并将选举日期定为10月27。",
+      "src": "3dca5e63",
+      "machine": true
+    },
+    "status.text": {
+      "text": "内塔尼亚胡政府将作为过渡政府继续执政，直至新政府宣誓就职。法律对其权力没有限制，但法院和总检察长希望对其权力进行限制。截至 5 月 2026，UTJ 已脱离联盟，而沙斯没有担任任何部委，继续在议会中支持它。",
+      "src": "8f71eaf6",
+      "machine": true
+    },
+    "noam.text": {
+      "text": "诺姆 (Noam) 是阿维·毛兹 (Avi Maoz) 的一席政党，是 2022 政府的第六位成员。 Maoz 于 3 月辞去副部长职务 2025。没有民意调查报告诺姆的数字，因此联盟建立者将其遗漏了。",
+      "src": "2a36436b",
+      "machine": true
+    }
+  }
+}

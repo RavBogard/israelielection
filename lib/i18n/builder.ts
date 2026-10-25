@@ -231,6 +231,10 @@ const builder = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): BuilderText { return editionText<BuilderText>("ar", "builder"); },
   get fa(): BuilderText { return editionText<BuilderText>("fa", "builder"); },
+  get de(): BuilderText { return editionText<BuilderText>("de", "builder"); },
+  get fr(): BuilderText { return editionText<BuilderText>("fr", "builder"); },
+  get zh(): BuilderText { return editionText<BuilderText>("zh", "builder"); },
+
   get he(): BuilderText {
     return heText<BuilderText>("builder");
   },

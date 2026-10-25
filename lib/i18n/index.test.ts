@@ -1,11 +1,14 @@
 import { describe, expect, it } from "vitest";
-import { editionPath, pathLang, enPath, hasHebrew, hePath, isHePath, otherEdition } from "./index";
+import { editionPath, pathLang, enPath, hasHebrew, hePath, isHePath, otherEdition, LANGS, isRtl } from "./index";
 
 describe("edition paths", () => {
+  it("keeps Latin and Chinese editions left to right", () => {
+    for (const lang of LANGS) expect(isRtl(lang)).toBe(["he", "ar", "fa"].includes(lang));
+  });
   it("switches directly between every edition and preserves tool state", () => {
-    for (const from of ["en", "he", "ar", "fa"] as const) {
+    for (const from of LANGS) {
       const source = editionPath("/coalition-builder?with=likud,shas&poll=results#seats", from)!;
-      for (const to of ["en", "he", "ar", "fa"] as const) {
+      for (const to of LANGS) {
         expect(editionPath(source, to)).toBe(`${to === "en" ? "" : `/${to}`}/coalition-builder?with=likud,shas&poll=results#seats`);
       }
     }

@@ -87,6 +87,10 @@ const compareText = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): CompareText { return editionText<CompareText>("ar", "compare"); },
   get fa(): CompareText { return editionText<CompareText>("fa", "compare"); },
+  get de(): CompareText { return editionText<CompareText>("de", "compare"); },
+  get fr(): CompareText { return editionText<CompareText>("fr", "compare"); },
+  get zh(): CompareText { return editionText<CompareText>("zh", "compare"); },
+
   get he(): CompareText {
     return heText<CompareText>("compare");
   },
@@ -155,7 +159,7 @@ export const EVIDENCE_KINDS_HE: Record<string, string> = {
   "Leader statement, reported": "הצהרה של ראש המפלגה, כפי שדווחה",
 };
 
-function evidenceFor(lang: "ar" | "fa") {
+function evidenceFor(lang: "ar" | "fa" | "de" | "fr" | "zh") {
   return {
     noRow: ui(lang, "No recorded answer in these sources"),
     kind: (k: string) => ui(lang, k),
@@ -181,6 +185,10 @@ export const EVIDENCE = {
   },
   get ar() { return evidenceFor("ar"); },
   get fa() { return evidenceFor("fa"); },
+  get de() { return evidenceFor("de"); },
+  get fr() { return evidenceFor("fr"); },
+  get zh() { return evidenceFor("zh"); },
+
   he: {
     noRow: "אין תשובה מתועדת במקורות האלה",
     kind: (k: string) => EVIDENCE_KINDS_HE[k] ?? k,

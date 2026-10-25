@@ -178,6 +178,10 @@ const resultsText = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): ResultsText { return editionText<ResultsText>("ar", "results"); },
   get fa(): ResultsText { return editionText<ResultsText>("fa", "results"); },
+  get de(): ResultsText { return editionText<ResultsText>("de", "results"); },
+  get fr(): ResultsText { return editionText<ResultsText>("fr", "results"); },
+  get zh(): ResultsText { return editionText<ResultsText>("zh", "results"); },
+
   get he(): ResultsText {
     return heText<ResultsText>("results");
   },

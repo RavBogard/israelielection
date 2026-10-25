@@ -107,6 +107,10 @@ const FORECAST = {
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
   get ar(): ForecastText { return editionText<ForecastText>("ar", "forecast"); },
   get fa(): ForecastText { return editionText<ForecastText>("fa", "forecast"); },
+  get de(): ForecastText { return editionText<ForecastText>("de", "forecast"); },
+  get fr(): ForecastText { return editionText<ForecastText>("fr", "forecast"); },
+  get zh(): ForecastText { return editionText<ForecastText>("zh", "forecast"); },
+
   get he(): ForecastText {
     return heText<ForecastText>("forecast");
   },

@@ -1,4 +1,5 @@
 "use client";
+import { isRtl } from "@/lib/i18n";
 import {useLayoutEffect,useRef,useState} from "react";
 import {partyColor,PARTY_COLOR_NOTE,strokeVars} from "@/lib/party-colors";
 import "./party-stroke.css";
@@ -34,7 +35,7 @@ export default function PollComparison({panels,dates,from,to,yMax,hollowNames,ti
  return <section className="pc" aria-labelledby="pc-title"><h2 id="pc-title" className="sec-h">{title}</h2>
  <fieldset className="pc-pick"><legend>{t.pick}</legend><div className="pc-pick-list">{series.map((p)=>{const on=picks.includes(p.id);const q=p.points[index];return <button type="button" key={p.id} aria-pressed={on} className={on?"on":undefined} onClick={()=>toggle(p.id)}><span className="sw" style={{background:on?p.color:"var(--line-2)"}} aria-hidden="true"/><span className="pc-pick-name">{p.name}</span><span className="pc-value">{q?.avg==null?"–":v(q.avg)}</span></button>;})}</div><p className="sr-only" role="status" aria-live="polite">{status}</p></fieldset>
  <div className="pc-plot" ref={ref}>{w>0&&<svg width={w} height={H} role="img" tabIndex={0} aria-label={t.aria(picked.map((p)=>p.name),yMax)} aria-describedby="pc-reading" onPointerMove={(e)=>inspect(e.clientX)} onPointerDown={(e)=>inspect(e.clientX)} onKeyDown={(e)=>{if(e.key==="ArrowLeft"||e.key==="ArrowRight"){e.preventDefault();setIndex((i)=>Math.max(0,Math.min(dates.length-1,i+(e.key==="ArrowRight"?1:-1))));}if(e.key==="Home"||e.key==="End"){e.preventDefault();setIndex(e.key==="Home"?0:dates.length-1);}}}>
- {seatTicks(0,yMax).map((n)=><g key={n}><line x1={PAD.l} x2={w-PAD.r} y1={y(n)} y2={y(n)} className="pt-grid"/><text x={PAD.l-8} y={y(n)} textAnchor="end" dominantBaseline="middle" className="pc-tick">{n}</text></g>)}<text x={PAD.l} y={12} {...svgText(he)} className="pc-tick">{he?T.now.seatsLabel:SEATS_LABEL}</text>
+ {seatTicks(0,yMax).map((n)=><g key={n}><line x1={PAD.l} x2={w-PAD.r} y1={y(n)} y2={y(n)} className="pt-grid"/><text x={PAD.l-8} y={y(n)} textAnchor="end" dominantBaseline="middle" className="pc-tick">{n}</text></g>)}<text x={PAD.l} y={12} {...svgText(isRtl(lang))} className="pc-tick">{he?T.now.seatsLabel:SEATS_LABEL}</text>
  <text x={PAD.l} y={H-8} className="pc-tick">{shortDate(from,lang)}</text><text x={w-PAD.r} y={H-8} className="pc-tick" textAnchor="end">{shortDate(to,lang)}</text>
  {selectedDate&&<line x1={x(selectedDate)} x2={x(selectedDate)} y1={PAD.t} y2={H-PAD.b} className="pt-cross"/>}
  {rest.map((p)=><g key={p.id}>{lineSegments(p.points).map((segment,i)=><path key={i} d={path(segment)} className="pc-grey"/>)}</g>)}

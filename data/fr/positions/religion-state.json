@@ -1,0 +1,139 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les partis sur la religion et l’État",
+      "src": "3e7f7c03",
+      "machine": true
+    },
+    "question": {
+      "text": "Qui doit gérer les règles du mariage, de la conversion et du Shabbat ?",
+      "src": "ddcb6c9d",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Gardez-les sous la direction orthodoxe",
+      "src": "263e21d3",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Mariage civil, règles locales du Shabbat",
+      "src": "dec810eb",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Mariage civil, conversion non orthodoxe",
+      "src": "354a1ead",
+      "machine": true
+    },
+    "note": {
+      "text": "Les articles du Shas et d'UTJ citent le résumé du Jerusalem Post sur les positions des deux partis, et le article de Yashar celui du Jewish Chronicle ; le texte du parti ne l'est pas non plus. Sionisme religieux – Zehut, Kakhol lavan, le Likud et la Liste arabe unie utilisent leurs réponses à Ynet sur les transports de Shabbat (août 31, 2026). Le Likud n’a pas dit quelle était sa position sur le mariage ou la conversion ; sa dispute n’est pas dite publiquement et repose sur les accords de coalition et les lois adoptées par son gouvernement. La ligne d'Otzma Yehudit est la déclaration 2022 de son leader ; Noam vient d'israel2026.co.il, un site agrégateur. Aucun poste trouvé pour le peuple d'Israël, les réservistes-économiques ou Ra'am, et la réponse de la Liste arabe unie ne correspond pas à ces options (vérifiée en octobre 2026) ; leurs rangées donnent du matériel plus ancien ou adjacent, ce qui ne définit aucune position.",
+      "src": "070c3fad",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Résumé du Jerusalem Post du Shas et de l'UTJ : « Ils se sont fermement opposés à l'expansion des alternatives à la loi religieuse, y compris le mariage civil » ; en matière de conversion, ils « privilégient le maintien de l'autorité pour le faire au sein de l'establishment religieux orthodoxe » ; ils « s’opposent aux changements qui élargiraient les formes de culte non orthodoxes au Mur Occidental ». Le Shas a défendu la loi de juillet 2026 rendant la certification casher au grand rabbinat (Times of Israel).",
+      "src": "e7808ce2",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Mêmes positions que Shas dans le résumé du Jerusalem Post. Le député Moshe Gafni, parrain de l'étude de la Torah sur la Loi fondamentale : « Cette Loi fondamentale servira de boussole morale à l'État. »",
+      "src": "5e005580",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Il n'a pas dit où il en était concernant le mariage ou la conversion. Concernant le mariage, son accord de coalition avec UTJ maintient le statu quo religieux, mais le président de la Knesset, Amir Ohana, du Likud, a voté pour un projet de loi sur le mariage civil le 24 2025 décembre, et le député du Likud Dan Illouz l'a défendu. Concernant le transport du Shabbat, il a déclaré à Ynet qu'il souhaitait « relier Israël pendant les six jours ouvrables tout en respectant le Shabbat », s'en tenant au statu quo depuis la création de l'État (traduit). Son accord de coalition 2022 avec le sionisme religieux ne reconnaît que les conversions sous le Grand Rabbinat orthodoxe, et son gouvernement a adopté la loi Shas rétablissant le contrôle exclusif du Rabbinat sur la certification casher, 46 à 41, le 15 2026 juillet.",
+      "src": "526907e8",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Itamar Ben-Gvir dans 2022 : « L'État est juif ; les mariages doivent être conformes à la loi de Moïse et d'Israël » (traduit). Sa plateforme publiée ne dit rien sur le mariage, la conversion ou le Shabbat. Son député Limor Son Har-Melech a parrainé la loi 2026 de juillet autorisant la ségrégation des programmes d'études supérieures selon le sexe.",
+      "src": "306bdb34",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Concernant les transports du Shabbat, le sionisme religieux a déclaré à Ynet qu'il s'opposait à tout changement, affirmant que le maintien du Shabbat dans la vie publique exprime le caractère d'Israël en tant qu'État juif (résumé de Ynet, traduit). Son accord de coalition 2022 prévoit que « seules les conversions effectuées par le tribunal de conversion de l’État sous les auspices du grand rabbinat orthodoxe seront reconnues par l’État » (Times of Israel).",
+      "src": "656dc9c1",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "\"Préserver le Shabbat dans l'espace public et renforcer le rabbinat orthodoxe, la conversion et la cacherout.\" Son chef, Avi Maoz, a parrainé le projet de loi sur le Mur Occidental.",
+      "src": "27d3ca82",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Le résumé du Jewish Chronicle : « un parti laïc, mais pas antireligieux » qui « soutient le mariage civil, le divorce et le mariage homosexuel », avec une « approche « vivre et laisser vivre » de l’observance du Shabbat, en déléguant les décisions aux municipalités ». Eizenkot (Jerusalem Post, septembre 24, 2026) : « Je ne suis pas religieux, mais j'ai grandi dans une famille traditionnelle et j'ai un profond respect pour le judaïsme et la tradition. »",
+      "src": "d0a8dc02",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Lapid : « Dans l'État d'Israël, il devrait y avoir une option parallèle de mariage civil pour tous ceux qui le souhaitent », avec une législation sur l'égalité des droits pour chaque couple recherchée dans les 100 premiers jours du prochain gouvernement (septembre 15, 2026). Bennett, avril 20, 2026, avant la fusion de B'Yachad : « Nous devrions permettre aux villes de choisir si elles veulent ou non des transports publics le jour du Shabbat. »",
+      "src": "5cb194bd",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "« Promouvoir le mariage civil » ; « promouvoir l'exploitation des transports publics le jour du Shabbat dans un format limité dans les localités laïques » ; \"étendre la reconnaissance de la conversion à d'autres organismes religieux en plus du Grand Rabbinat.\"",
+      "src": "d01818f9",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "« Nous exigerons la mise en œuvre des options de mariage civil et de divorce en Israël » ; « Tel Aviv n'imposera pas les transports de Shabbat à Bnei Brak, et Bnei Brak n'imposera pas son mode de vie à Tel Aviv » ; le compromis du Mur Occidental tel que rédigé par Avichai Mandelblit et Natan Sharansky.",
+      "src": "cf29683d",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Aucune position trouvée sur le mariage, la conversion, le Shabbat ou le Rabbinat. Les principes fondateurs du parti appellent à « un État où le judaïsme invite et ne contraint pas, inclut et ne dicte pas » (traduit).",
+      "src": "d352ee51",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Benny Gantz soutient les transports publics pendant Shabbat dans le cadre du transfert de pouvoirs aux autorités locales, qui définiraient les itinéraires et la fréquence (Ynet, traduit). Aucune déclaration 2026 sur le mariage trouvée. Dans 2019, il s'est engagé à « légiférer sur le pacte de partenariat », une union civile pour les couples qui le souhaitent, tout en qualifiant le mariage selon la tradition juive de « la voie principale du peuple juif » (traduit).",
+      "src": "567a423e",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Aucun poste trouvé pour la liste. Yoaz Hendel, ministre de la Communication en 2021 : « Nous devons offrir une alternative à ceux qui ne peuvent pas se marier » (traduit).",
+      "src": "f01818ae",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Il a déclaré à Ynet qu'il soutenait les transports publics urbains et interurbains pendant Shabbat, y compris l'aéroport et les hôpitaux, « en tant que service de base et égal pour l'ensemble de la population » (traduit). Aucune position commune 2026 sur le mariage ou la conversion trouvée. Le programme de Hadash, cité dans 2019, appelle à « la séparation de la religion de l'État » ainsi qu'au mariage civil et au divorce (traduit).",
+      "src": "8d482a4e",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Aucune position trouvée sur le mariage, la conversion ou le Shabbat. Mansour Abbas, à propos de la rupture des liens du parti avec son conseil religieux : « Raam évolue aujourd'hui vers un parti entièrement civique, avec des institutions distinctes. »",
+      "src": "54915cd8",
+      "machine": true
+    }
+  }
+}

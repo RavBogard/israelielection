@@ -49,7 +49,7 @@ export function defaultLang(v: Visit): Lang | null {
   if (v.userAgent && BOT.test(v.userAgent)) return null;
   if (v.referer && sameSite(v.referer, v.origin)) return null;
   const browser = firstLanguage(v.acceptLanguage);
-  if (browser === "ar" || browser === "fa" || browser === "he") return browser;
+  if (browser && browser !== "en" && isLang(browser)) return browser;
   if (v.country?.toUpperCase() === "IL") return "he";
   return null;
 }

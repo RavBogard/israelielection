@@ -1,16 +1,17 @@
 /**
- * English is the full site. Hebrew, Arabic and Persian cover home, polls, Coalition Builder,
- * Compare, party profiles and results, under /he, /ar and /fa. Other reference pages stay English.
+ * English is the full site. The other editions cover home, polls, forecast, Coalition Builder,
+ * Compare, party profiles and results. Other reference pages stay English.
  */
-export type Lang = "en" | "he" | "ar" | "fa";
+export type Lang = "en" | "he" | "ar" | "fa" | "de" | "fr" | "zh";
 export type ToolLang = Exclude<Lang, "en">;
 
-export const LANGS: readonly Lang[] = ["en", "he", "ar", "fa"];
+export const LANGS: readonly Lang[] = ["en", "he", "ar", "fa", "de", "fr", "zh"];
 export const RTL_LANGS: readonly ToolLang[] = ["he", "ar", "fa"];
 export const isLang = (value: string): value is Lang => LANGS.includes(value as Lang);
-export const isRtl = (lang: Lang) => lang !== "en";
+export const TOOL_LANGS = LANGS.filter((lang): lang is ToolLang => lang !== "en");
+export const isRtl = (lang: Lang) => RTL_LANGS.includes(lang as ToolLang);
 /** Gregorian dates and Latin digits keep election figures consistent across editions. */
-export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn" })[lang];
+export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn", de: "de-DE", fr: "fr-FR", zh: "zh-CN" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
 export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
@@ -65,7 +66,7 @@ export function hePath(enHref: string): string | null {
 /** The English edition of a Hebrew path, keeping its query and fragment: "/he" → "/", "/he/polls" → "/polls". English paths pass through. */
 export function enPath(heHref: string): string {
   const [path, rest] = split(heHref);
-  const prefix = /^\/(he|ar|fa)(?=\/|$)/.exec(path)?.[0];
+  const prefix = /^\/(he|ar|fa|de|fr|zh)(?=\/|$)/.exec(path)?.[0];
   return prefix ? `${trim(path.slice(prefix.length))}${rest}` : heHref;
 }
 
@@ -80,7 +81,7 @@ export function editionPath(href: string, lang: Lang): string | null {
 }
 
 export function pathLang(href: string): Lang {
-  return (/^\/(he|ar|fa)(?=\/|[?#]|$)/.exec(href)?.[1] as ToolLang | undefined) ?? "en";
+  return (/^\/(he|ar|fa|de|fr|zh)(?=\/|[?#]|$)/.exec(href)?.[1] as ToolLang | undefined) ?? "en";
 }
 
 /** The same page in the other edition, or null when it has none. */

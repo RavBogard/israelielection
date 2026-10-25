@@ -116,7 +116,7 @@ const he: Record<string, string> = {
   "gaza-civilian:control": "שליטה ישראלית",
 };
 
-export const SHORT: Record<Lang, Record<string, string>> = { en, he, ar: en, fa: en };
+export const SHORT: Record<Lang, Record<string, string>> = { en, he, ar: en, fa: en, de: en, fr: en, zh: en };
 
 /** The answer's short name in the edition, or null when it has none. */
 export const shortLabel = (lang: Lang, row: string, stance: string): string | null => { const text = SHORT[lang][`${row}:${stance}`]; return text ? ui(lang, text) : null; };

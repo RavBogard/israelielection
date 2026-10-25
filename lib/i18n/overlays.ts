@@ -17,3 +17,13 @@ setOverlays(AR_DATA, "ar");
 setOverlays(FA_DATA, "fa");
 
 export * from "./overlay-text";
+
+import "./de/register";
+import { OVERLAY_DATA as DE_DATA } from "./de/overlay-data";
+setOverlays(DE_DATA, "de");
+import "./fr/register";
+import { OVERLAY_DATA as FR_DATA } from "./fr/overlay-data";
+setOverlays(FR_DATA, "fr");
+import "./zh/register";
+import { OVERLAY_DATA as ZH_DATA } from "./zh/overlay-data";
+setOverlays(ZH_DATA, "zh");

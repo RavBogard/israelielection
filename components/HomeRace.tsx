@@ -1,4 +1,5 @@
 "use client";
+import { isRtl } from "@/lib/i18n";
 import Link from "next/link";
 import {useMemo,useRef,useState,type ReactNode} from "react";
 import {homeMosaicLayout,homeMosaicView,type HomeRaceModel} from "@/lib/home-race";
@@ -27,7 +28,7 @@ export type RaceOption={id:string;label:ReactNode;detail?:ReactNode;model:HomeRa
  * sets of figures with a segmented control over the list to switch between them; the first is shown by default.
  */
 export default function HomeRace({model:single,change:singleChange,rtl,heading:singleHeading,options}:{model?:HomeRaceModel;change?:BlocChange|null;rtl?:boolean;heading?:ReactNode;options?:RaceOption[]}){
- const lang=useLang(),t=home[lang].race,th=home[lang].hero,he=lang!=="en",flip=rtl??he;
+ const lang=useLang(),t=home[lang].race,th=home[lang].hero,he=lang!=="en",flip=rtl??isRtl(lang);
  const opts=useMemo<RaceOption[]>(()=>options??[{id:"only",label:null,model:single!,change:singleChange,heading:singleHeading}],[options,single,singleChange,singleHeading]);
  const [pick,setPick]=useState(opts[0].id),cur=opts.find(o=>o.id===pick)??opts[0];
  const [sub,setSub]=useState<string|null>(null),variant=cur.variants?cur.variants.find(v=>v.id===sub)??cur.variants[0]:null,shown=variant??cur,{model,change,heading,forecast}=shown;

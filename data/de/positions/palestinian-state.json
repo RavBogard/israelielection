@@ -1,0 +1,149 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien über einen palästinensischen Staat sagen",
+      "src": "e35a7344",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollte es einen palästinensischen Staat geben?",
+      "src": "5e321b58",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Gegen einen palästinensischen Staat",
+      "src": "89843895",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Steht jetzt nicht auf der Tagesordnung",
+      "src": "3914d0b4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Trennung in einem regionalen Deal",
+      "src": "d614fdde",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Unterstützen Sie einen palästinensischen Staat",
+      "src": "fea28a56",
+      "machine": true
+    },
+    "note": {
+      "text": "Die meisten Zeilen sind die Antworten der Parteien auf Ynets Fragebogen vom 30, 2026 September, in dem es um das Westjordanland ging. Der Likud lehnte es ab; Seine Reihe fügt Netanyahus Wahlkampfvideo hinzu. Die Antwort der Gemeinsamen Liste befasste sich nicht mit der Staatlichkeit; seine Zeile fügt den Bericht der Jerusalem Post über Jabareens Position hinzu. Die Reihen „Reservisten – Wirtschaft“, „Blau und Weiß“ und „Noam“ zitieren ihre Anführer außerhalb des Fragebogens; Hendels Eintrag stammt aus der Zeit vor der Zusammenlegung seiner Liste. UTJ hat nicht gesagt, wo es steht; Ihr Streit ist als „nicht öffentlich gesagt“ gekennzeichnet und basiert auf der Knesset-Resolution, die sie in 2024 mit eingebracht hat.",
+      "src": "348e195b",
+      "machine": true
+    },
+    "columnNote": {
+      "text": "Haltung: eine kurze Bezeichnung für die Vergleichstabelle, die nur aus dem Zeilentext stammt. „Antwort abgelehnt“: Die Partei lehnte den Fragebogen ab. „Keine Position gefunden“: Es wurde keine veröffentlichte Position zu einem palästinensischen Staat gefunden (geprüft im Oktober 2026).",
+      "src": "352c53d7",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Hat Ynets Fragebogen abgelehnt („nimmt nicht an Fragebögen teil“). Netanjahus Wahlkampfvideo: „Wollen Sie einen palästinensischen Staat? (oder) wollen Sie einen jüdischen Staat?“",
+      "src": "153c709a",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "lehnt die Gründung eines palästinensischen Staates ab; macht die Siedlungspolitik im Westjordanland nicht zu einem zentralen Wahlkampfthema. Als einer der „Gründer des rechten Blocks“ hat es Initiativen unterstützt, die vom religiösen Zionismus und Otzma Yehudit gefördert wurden.",
+      "src": "1012dd4a",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Hat nicht zu einem palästinensischen Staat geantwortet; Es teilte Ynet mit, dass es keine einheitliche Westjordanland-Politik gebe. UTJ war Mitunterstützer der Knesset-Resolution vom Juli 18, 2024, die „die Gründung eines palästinensischen Staates auf irgendeinem Stück Land westlich des Jordan ablehnt“, die von 68 bis 9 verabschiedet wurde. Im Juli 2025 stimmten ihre Abgeordneten für den unverbindlichen Antrag, der die Souveränität über die Gebiete jüdischer Siedlungen forderte.",
+      "src": "95eae674",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "„Wir haben eine enorme, beispiellose Revolution in der Besiedlung von Judäa und Samaria durchgeführt, die praktisch die Idee eines palästinensischen Staates zunichte gemacht hat.“ Unterstützt „die Anwendung der vollen israelischen Souveränität über Judäa und Samaria“.",
+      "src": "08eed86d",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "„Wir werden daran arbeiten, die volle israelische Souveränität auszuüben, die Palästinensische Autonomiebehörde ihrer Vermögenswerte und Waffen zu berauben und alle Sicherheits- und Regierungsmechanismen zu nutzen, um die freiwillige Migration aus Judäa, Samaria und Gaza zu fördern.“ „Otzma Yehudit unterstützt die Gründung neuer Gemeinden in allen Teilen von Judäa und Samaria und lehnt die Evakuierung von Gemeinden und Bauernhöfen auf jeden Fall ab.“",
+      "src": "71270dbb",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "„Unser Standpunkt ist, dass an unserer Seite niemals ein palästinensischer Staat gegründet werden wird.“",
+      "src": "5501061c",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz: „Die Gründung eines palästinensischen Staates im Herzen des Landes wird zur Produktion von Terror in ganz Israel führen“ (übersetzt). Er forderte eine rechte Regierung, die einen palästinensischen Staat verhindern und das Westjordanland annektieren würde.",
+      "src": "1676f32d",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "„Die Gründung eines palästinensischen Staates steht für uns nicht auf der Tagesordnung.“ Unterstützt die rechtliche Stärkung der Siedlungsblöcke und neuen Gemeinden.",
+      "src": "f08726e6",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "„Wir unterstützen die jüdische Besiedlung überall dort, wo sie legal durchgeführt wird. Wir sind gegen einen palästinensischen Staat und die Übertragung von Territorium.“ „Gebiet C wird als zukünftiger souveräner Teil des Staates Israel angesehen. Offensichtlich muss hinsichtlich des Zeitpunkts Ermessensspielraum bestehen.“",
+      "src": "4fc1ab4a",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "„Israel ist ein jüdischer und demokratischer Staat, und um das zu bleiben, müssen wir eine Trennung als Teil einer regionalen Bewegung anstreben“, gemeinsam mit den Vereinigten Staaten und gemäßigten arabischen Staaten. Würde illegale Außenposten evakuieren.",
+      "src": "da59c50a",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "„Die Palästinensische Autonomiebehörde ist zu einer Terrororganisation geworden, die sich auf diplomatischen Terrorismus spezialisiert hat, und wir müssen intelligent darüber nachdenken, wie wir die Oslo-Abkommen kündigen und die Palästinensische Autonomiebehörde auflösen können.“ „Wir unterstützen die Anwendung der israelischen Souveränität auf Gebiet C.“",
+      "src": "d9e07d35",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Benny Gantz in einem Kommentar der New York Times: „Der Widerstand gegen die Anerkennung der palästinensischen Eigenstaatlichkeit steht im Mittelpunkt des [israelischen] Konsenses“; „Jeder Weg zu einer umfassenderen palästinensischen Zivilautonomie“ muss zunächst „eine nachgewiesene langfristige Erfolgsbilanz verantwortungsvoller Regierungsführung“ vorweisen. Im Wahlkampf (Arutz Sheva, Sep 28, 2026): „Bei diesen Wahlen geht es nicht um einen palästinensischen Staat.“",
+      "src": "23ed3a08",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Yoaz Hendel, im August 2026, bevor seine Liste mit der Partei von Yaron Zelekha fusionierte: „Wir werden nicht zulassen, dass ein palästinensischer Staat gegründet wird, und wir unterstützen eine freie Wirtschaft.“",
+      "src": "be13ac7b",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "unterstützt die Förderung einer ausgehandelten Zwei-Staaten-Lösung, bei der neben Israel ein palästinensischer Staat gegründet würde; lehnt eine Ausweitung der israelischen Souveränität über das Westjordanland ab.",
+      "src": "019d27e9",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Jabareen sagte, die Liste werde auf erneute Verhandlungen mit der palästinensischen Führung drängen, um die Gründung eines palästinensischen Staates an der Seite Israels voranzutreiben (wie von der Jerusalem Post berichtet). An Ynet: „Alle Siedlungen, die einen Verstoß gegen das Völkerrecht darstellen und sogar als Kriegsverbrechen gelten, müssen sofort und ohne Verzögerung evakuiert werden.“",
+      "src": "dbdd9863",
+      "machine": true
+    }
+  }
+}

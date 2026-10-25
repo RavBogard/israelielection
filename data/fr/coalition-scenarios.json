@@ -1,0 +1,115 @@
+{
+  "opposition-support": {
+    "title": {
+      "text": "Une opposition de base, avec un soutien extérieur",
+      "src": "f3c786be",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Explorez le projet et l'enquête d'octobre 7 comme terrain d'entente possible. Ces rôles sont hypothétiques ; aucun accord n’est affirmé.",
+      "src": "d27eaea9",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Le service militaire ou civil universel est soutenu par les principales réponses de l'opposition, tandis que Raam s'oppose à ce que les citoyens arabes soient obligés d'effectuer l'un ou l'autre. Quelle politique de service un supporter extérieur accepterait-il ?",
+      "src": "225e8cd6",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "Les engagements enregistrés des partenaires restreignent certaines combinaisons de cabinets. Un refus d’adhésion n’équivaut pas automatiquement à une promesse de s’abstenir ou de fournir un soutien extérieur.",
+      "src": "c05083b2",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Un premier ministre et tout accord de rotation nécessiteraient un accord. Le classement électoral ne nomme pas légalement un Premier ministre, et ce scénario ne prévoit aucune rotation convenue.",
+      "src": "6188390c",
+      "machine": true
+    },
+    "source": {
+      "text": "Réponses du parti, Ynet, septembre 16, 2026 ; promesses de dons enregistrées indiquées ci-dessous",
+      "src": "e4c612ae",
+      "machine": true
+    }
+  },
+  "opposition-haredi": {
+    "title": {
+      "text": "Opposition centrale, avec un partenaire ultra-orthodoxe",
+      "src": "2841e9c4",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Vérifiez si un partenaire ministériel supplémentaire comble l’écart de sièges et comment ses exigences politiques modifient l’accord. Il s’agit d’une combinaison hypothétique.",
+      "src": "9cde0a80",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Les principales réponses de l’opposition sont en faveur du service militaire ou civil pour tous ; Shas fait la distinction entre les étudiants qui restent dans la yeshiva et ceux qui la quittent. Un projet de loi partagé devrait résoudre cette différence.",
+      "src": "c4ee594e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "Le mariage civil est soutenu dans les positions enregistrées des principaux partis, tandis que le résumé de la source indique que le Shas s'oppose aux alternatives civiles. Cela nécessite un compromis spécifique, et non une affirmation selon laquelle toutes les politiques religieuses sont d’accord.",
+      "src": "08b621d4",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Le leadership, l’attribution des ministères et l’ordre d’adoption de toute loi préalable restent en suspens. L'ajout de sièges ne règle pas ces conditions.",
+      "src": "c6348254",
+      "machine": true
+    },
+    "source": {
+      "text": "Projet de questionnaire Ynet, septembre 16, 2026 ; Résumé de la religion et de l'État du Jerusalem Post, septembre 10, 2026",
+      "src": "925fc043",
+      "machine": true
+    }
+  },
+  "netanyahu-arrangement": {
+    "title": {
+      "text": "Partis dirigés par Netanyahu",
+      "src": "cd939fe2",
+      "machine": true
+    },
+    "agenda": {
+      "text": "Testez la majorité des sièges du scrutin sélectionné, puis inspectez les mandats enregistrés des partis. Il s’agit d’un hypothétique arrangement post-électoral, et non d’un accord de coalition.",
+      "src": "f6c43ef1",
+      "machine": true
+    },
+    "obstacles.0": {
+      "text": "Le Shas accepte l'enrôlement des étudiants qui quittent la yeshiva ; La réponse rapportée par UTJ continue de s'opposer à leur enrôlement. L’adhésion à la coalition n’efface pas ce différend sur le projet de loi.",
+      "src": "8fa8987e",
+      "machine": true
+    },
+    "obstacles.1": {
+      "text": "La réponse du tribunal du sionisme religieux inclut une dérogation au vote 61 ; Otzma n'a donné aucune plateforme judiciaire détaillée dans le même questionnaire. Les preuves manquantes ne peuvent pas établir un accord à l’échelle de la coalition sur ce mécanisme.",
+      "src": "de0dc57b",
+      "machine": true
+    },
+    "leadership": {
+      "text": "Netanyahu est le Premier ministre proposé dans le scénario. La nomination nécessite toujours le processus de formation juridique et un premier vote de confiance ; les ministères et les termes écrits ne sont pas fournis ici.",
+      "src": "23c1735e",
+      "machine": true
+    },
+    "source": {
+      "text": "Projet de questionnaire Ynet, septembre 16, 2026 ; questionnaire sur les tribunaux, septembre 22, 2026",
+      "src": "7585e36c",
+      "machine": true
+    }
+  },
+  "historical": {
+    "title": {
+      "text": "Le soutien extérieur a une histoire",
+      "src": "d69a9d3c",
+      "machine": true
+    },
+    "text": {
+      "text": "La coalition 1992 de Rabin a commencé avec 62 sièges. Après le départ du Shas en septembre 1993, il en avait 56 et comptait sur le soutien extérieur des factions arabes. Les sièges ministériels et le soutien parlementaire étaient en quantités différentes.",
+      "src": "ca236030",
+      "machine": true
+    },
+    "source": {
+      "text": "IDI, Assaf Shapira, novembre 12, 2019",
+      "src": "7e206d89",
+      "machine": true
+    }
+  }
+}

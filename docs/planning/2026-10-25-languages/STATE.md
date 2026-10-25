@@ -43,3 +43,28 @@ Vercel's Git integration built production successfully: `dpl_7FDa2szVFhY9KmMAWfe
 `vercel inspect www.israelielection.org` confirmed Ready and assigned to this deployment.
 Live editions: https://www.israelielection.org/ar and https://www.israelielection.org/fa.
 The runtime is unchanged from the verified preview. This deployment record is a documentation-only follow-up.
+
+## German, French and Mandarin follow-up
+
+Added `/de`, `/fr` and `/zh` (Simplified Chinese) with the same seven tools and English reference-page
+fallbacks. All seven languages appear in the selector, footer, canonical/hreflang metadata and sitemap.
+The new editions use LTR, locale dates/numbers, translated data overlays and search aliases. RTL detection
+is independent of translation selection, including charts, seat mosaics, logo and tab keyboard direction.
+Chinese uses installed system CJK fonts. Translations remain static, disclosed machine translations with
+terminology corrections; native-speaker editorial review has not been claimed.
+
+Maintain copy in `scripts/i18n/{de,fr,zh}-overrides.json`, then run the generator with that language and
+`--offline`. Generator support includes all five machine-seeded editions; builds never translate remotely.
+
+Verification: 840 tests passed (79 files), type check and production build passed, changed files lint clean.
+Full lint: no errors, 144 existing research/skill warnings. A limited-worker run with a longer timeout was
+used after the busy machine caused cold page-render tests to time out. After copy corrections, the 44
+dictionary, routing, preference and canonical checks passed again.
+Local production HTTP checks: all 21 new tool URLs return 200 with correct language, LTR, canonical,
+eight alternate-language entries, seven selector choices and translated machine notices. Existing RTL
+roots and all three preference redirects pass. Browser visual/interactive QA was unavailable: the
+in-app browser repeatedly timed out attaching its webview; no other browser surface was available.
+
+The user explicitly authorized pushing this release to `main` and deploying production.
+Release destinations: https://www.israelielection.org/de, https://www.israelielection.org/fr,
+https://www.israelielection.org/zh. Next action: push the verified release and confirm Vercel Ready.

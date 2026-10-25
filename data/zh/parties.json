@@ -1,0 +1,2040 @@
+{
+  "bloc:net": {
+    "label": {
+      "text": "内塔尼亚胡阵营",
+      "src": "f187747a",
+      "machine": true
+    }
+  },
+  "bloc:opp": {
+    "label": {
+      "text": "反内塔尼亚胡阵营（犹太复国主义政党）",
+      "src": "91b616f4",
+      "machine": true
+    }
+  },
+  "bloc:mid": {
+    "label": {
+      "text": "集团之间",
+      "src": "70a348fd",
+      "machine": true
+    }
+  },
+  "bloc:arab": {
+    "label": {
+      "text": "联合名单与拉阿姆党",
+      "src": "66cb0afc",
+      "machine": true
+    }
+  },
+  "issue:draft": {
+    "label": {
+      "text": "极端正统派兵役问题",
+      "src": "c771af2b",
+      "machine": true
+    }
+  },
+  "issue:courts": {
+    "label": {
+      "text": "法院",
+      "src": "0cada761",
+      "machine": true
+    }
+  },
+  "issue:war": {
+    "label": {
+      "text": "战争与加沙",
+      "src": "c8239818",
+      "machine": true
+    }
+  },
+  "issue:wb": {
+    "label": {
+      "text": "约旦河西岸",
+      "src": "689bc30c",
+      "machine": true
+    }
+  },
+  "issue:relig": {
+    "label": {
+      "text": "宗教与国家",
+      "src": "8fa4f4c9",
+      "machine": true
+    }
+  },
+  "issue:econ": {
+    "label": {
+      "text": "经济",
+      "src": "52daa997",
+      "machine": true
+    }
+  },
+  "likud": {
+    "name": {
+      "text": "利库德集团",
+      "src": "957f8de6",
+      "machine": true
+    },
+    "short": {
+      "text": "利库德集团",
+      "src": "957f8de6",
+      "machine": true
+    },
+    "leader": {
+      "text": "本杰明·内塔尼亚胡",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：宗教犹太复国主义（10 月 6 签署；官方，CEC 公报 10 月 19）",
+      "src": "b5e9642f",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "由 Begin 和 Sharon 于 9 月 13、1973 创立；在 1977 中赢得权力并拥有 43 个席位。",
+      "src": "8a3738f4",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "内塔尼亚胡自2005（和1993-99）以来一直领导着它。 8 月 17、2026 初选将伊莱·科恩 (Eli Cohen) 推向首位；内塔尼亚胡利用保留的空档来打压强硬派。",
+      "src": "39f71946",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "无书面2026平台；利库德集团“不参与调查问卷”。",
+      "src": "a98a3a5e",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：1,115,336 票，23.4%，32 席位。",
+      "src": "f6f1a0d7",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "其2022选民为57%传统派、32%世俗派、10%民族宗教派、1%正统派。它赢得了 46.5% 的传统选民和 20% 的世俗选民。",
+      "src": "28cabe18",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "周边城市表现强劲：2021 的贝尔谢巴 42%、埃拉特 42%、阿什凯隆 40%。",
+      "src": "434e5aba",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "首次投票者 (18–22)：14%，落后于 Yashar 的 16%。",
+      "src": "55d99711",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "随着联盟的瓦解，内塔尼亚胡恢复了正统豁免法案；利库德集团的莎伦·哈斯克尔发誓要与之斗争。",
+      "src": "91a46b57",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "莱文在公布此次改革时表示：“我们去投票站、投票、选举，然后一次又一次，我们没有选举的人为我们做出选择……这不是民主。”八月播出2026：“我们将等待下一届任期，届时最高法院法官三分之二的席位空缺……你就会灭绝。”根据新的法官选举法，专业成员失去了否决权。",
+      "src": "f19f3857",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "拒绝了特朗普的15点计划； “在哈马斯真正解除武装之前”不会撤军。",
+      "src": "c20d12c2",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "“只要我担任总理，巴勒斯坦国就不会出现。” （7 月 2025 所有利库德集团部长都敦促行使主权。）",
+      "src": "0b1144fc",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "伊莱·科恩",
+      "src": "093e1f22",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "赢得初选",
+      "src": "67b9a45a",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "塔利克·格维利",
+      "src": "27d97c61",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "最后一名返回的人质兰·格维利的母亲",
+      "src": "da41d024",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "雅科夫·巴尔杜戈",
+      "src": "2dbbb84e",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "频道 14 评论员",
+      "src": "2595fac0",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "“由我领导的强大右翼政府。”",
+      "src": "1a56a985",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "请愿禁止联合名单；利库德集团、沙斯党和联合正义联盟的代表投票禁止联合名单和拉姆。",
+      "src": "e2e51642",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "宗教犹太复国主义（10 月 6 签名）。",
+      "src": "fcd87358",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "没有直的。亚沙尔是在虚张声势。要么左，要么右……你想要一个巴勒斯坦国吗？ （或者）你想要一个犹太国家吗？",
+      "src": "644d5047",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "本杰明·内塔尼亚胡",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "本杰明·内塔尼亚胡",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "出生于1949。总理1996-99、2009-21以及自12月2022以来，以色列历史上任职时间最长的总理。首位在法庭面临刑事指控的现任总理；他的审判于 5 月 24、2020 开始，并于 11 月 30、2025 请求赦免（半岛电视台，12 月 29、2022；5 月 24、2020；11 月 30、2025）。",
+      "src": "03483223",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "本-格维尔将成为未来政府的高级部长。",
+      "src": "d535b233",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "name": {
+      "text": "犹太力量党",
+      "src": "b7a73b48",
+      "machine": true
+    },
+    "short": {
+      "text": "奥兹玛",
+      "src": "ce39a0d6",
+      "machine": true
+    },
+    "leader": {
+      "text": "伊塔玛·本·格维尔",
+      "src": "74aadf75",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：未发现",
+      "src": "56aac96d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "成立2012。 JTA 将其描述为一个“遵循被禁止的极端分子卡赫及其已故领导人梅厄·卡哈内 (Meir Kahane) 信条的政党”；以色列在1994中宣布卡赫为非法。",
+      "src": "84509b6e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "由伊塔玛·本·格维尔 (Itamar Ben-Gvir) 领导。它在宗教犹太复国主义联合名单中的 2022 中赢得了 6 个席位。它于一月2025因人质停火协议而离开政府；本-格维尔 (Ben-Gvir) 于 3 月恢复担任国家安全部长 2025。",
+      "src": "6c184566",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：6 个席位，作为宗教犹太复国主义联合名单的一部分（516,470 票，10.8%，14 个席位）。",
+      "src": "192d8cb2",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "吸引“来自外围的传统米兹拉希选民”（芬克尔斯坦）。",
+      "src": "997a4b7f",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "13% 的正统派首次选民。",
+      "src": "288c387d",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "求爱令利库德集团和沙斯党选民感到失望。",
+      "src": "2e77b134",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "支持 7 月的14法律，禁止逮捕逃兵者；提议警察和边防警察中的正统派路线：“以正统派的身份服役，并以正统派的身份离开。”",
+      "src": "d9f75eec",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Ben-Gvir“支持政府的2023司法改革并反对软化立法的努力”；奥兹玛“寻求对司法任命产生更大的政治影响力”（JPost 的总结）。",
+      "src": "ceebe670",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“脱离接触710”计划：移民部和每年250,000名巴勒斯坦人离开加沙，费用为10十亿新谢克尔。 “这是一个自由选择；我们不会强迫任何人离开，但有鼓励。”",
+      "src": "cd124556",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "反对巴勒斯坦建国和撤离定居者。关于圣殿山的祈祷：犹太人“觉得他们是这个地方的合法所有者”。",
+      "src": "c40e1cd3",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "塔利·戈特利夫",
+      "src": "423ecf76",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "前利库德集团成员",
+      "src": "4cdae54b",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "阿米凯·埃利亚胡",
+      "src": "8980ef7a",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "伊赛·弗莱舍",
+      "src": "dd225396",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "希伯伦发言人",
+      "src": "bd0bbe0c",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "“完全右翼政府”；不与中间派团结，不与阿拉伯政党合作；要求国防部或司法部；没有巴勒斯坦国谈判。",
+      "src": "368ffc35",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "没有人签字。据 Ynet 报道，本-格维尔对与奥弗·温特签约“不感兴趣”。",
+      "src": "133daa6c",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "我们从法老王中幸存下来，我们也将从凯尔·斯塔默中幸存下来。",
+      "src": "b2c83651",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "伊塔马尔·本·格维尔 (Itamar Ben-Gvir) 谈英国制裁",
+      "src": "8d488e72",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "伊塔玛·本·格维尔",
+      "src": "74aadf75",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "自称是梅厄·卡哈内 (Meir Kahane) 的弟子；因2007煽动种族主义和支持恐怖组织而被定罪。 12 月起任国家安全部长 2022；因加沙停火于 1 月 2025 离开，并于 3 月 2025 返回（《以色列时报》，9 月 15、2026；半岛电视台，3 月 18、2025）。",
+      "src": "e2aa4956",
+      "machine": true
+    }
+  },
+  "shas": {
+    "name": {
+      "text": "沙斯党",
+      "src": "3d96e01a",
+      "machine": true
+    },
+    "short": {
+      "text": "沙斯党",
+      "src": "3d96e01a",
+      "machine": true
+    },
+    "leader": {
+      "text": "阿耶·德里",
+      "src": "7abc9b62",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "盈余：UTJ（10 月 11 签署；官方，CEC 公报 10 月 19）",
+      "src": "bda049c0",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "成立1984，名为“Shomrei Sefarad”，以抗议在拉夫·奥瓦迪亚·约瑟夫 (Rav Ovadia Yosef) 托拉贤者委员会领导下的阿古达·以色列 (Agudat Yisrael) 的塞法迪代表人数。高峰期：1999 中的 17 个席位。",
+      "src": "fe5495ba",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Deri 自 2013（以及 1990–99）以来一直处于领先地位。前首席拉比伊扎克·约瑟夫 (Yitzhak Yosef) 被选为“领导”2026。",
+      "src": "6dd09177",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：392,964 票，8.2%，11 席位。",
+      "src": "aa19b338",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "在 2022 中赢得了 28% 的正统派选民和 10.5% 的民族宗教选民。",
+      "src": "00f23928",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "IDI 的马拉赫：“议会中至少有三四个席位的选民根本不是正统派。”",
+      "src": "d46509e7",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "首次投票者：总体 3%，正统派首次投票者的 20%。",
+      "src": "327927c5",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "德里：“军队不想要正统派士兵，记住这一点。”法案将托拉研究奉为基本价值观。",
+      "src": "e9616271",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "“从根本上改革司法制度，将权力归还给人民及其选出的代表。”",
+      "src": "a5629f74",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "支持解散哈马斯；反对以色列无限期的控制（JPost 的摘要）。",
+      "src": "81827099",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "反对巴勒斯坦建国；其竞选活动“并非核心”。",
+      "src": "7e2c2303",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "正统对婚姻、皈依和犹太洁食的控制；反对民事婚姻和扩大科泰尔的非东正教祈祷。",
+      "src": "6ba70233",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "德里：“一个贫穷的正统派儿童得不到像一个贫穷的阿拉伯儿童那样的最低限度的支持，这是不可接受的。”",
+      "src": "47b9a6bc",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "伊农·阿祖莱",
+      "src": "ee366f05",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "中校（res.）德罗·阿莫斯",
+      "src": "3ee023ee",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "海法宗教委员会主席；在以色列国防军服役 25 年",
+      "src": "c7eeb663",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "约瑟夫·阿尔纳塔诺夫",
+      "src": "74330109",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "布哈拉社区",
+      "src": "1e04b2ea",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "“我们支持内塔尼亚胡，就这样。”",
+      "src": "3af20131",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "据报道，计划在法律草案通过之前继续反对；匿名消息人士称，“不是正式决定。”",
+      "src": "7949e009",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "UTJ，“预计”。未找到签名。",
+      "src": "3df4b6a9",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "比比·内塔尼亚胡会悔改吗？没有机会……艾森科特，也许他会的。",
+      "src": "b3d2635d",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "拉比·伊扎克·约瑟夫",
+      "src": "299e3d49",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "阿耶·德里",
+      "src": "7abc9b62",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "1999 年因贿赂罪被定罪并服刑 22 个月。在提出2022税务欺诈抗辩后，高等法院于一月2023下令解除他的部长职务（半岛电视台，12月29、2022和一月22、2023；JTA，二月14、2018）。",
+      "src": "afeee875",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "“除非犹太学院学生的地位受到监管，否则以色列不会有任何政府得到沙斯的支持或参与。”",
+      "src": "2e7197d6",
+      "machine": true
+    }
+  },
+  "utj": {
+    "name": {
+      "text": "UTJ",
+      "src": "b76e4852",
+      "machine": true
+    },
+    "short": {
+      "text": "UTJ",
+      "src": "b76e4852",
+      "machine": true
+    },
+    "leader": {
+      "text": "雅科夫·阿舍尔（Goldknopf 编号 2）",
+      "src": "67b8e877",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "盈余：Shas（10 月 11 签署；官方，CEC 公报 10 月 19）",
+      "src": "c5d30a58",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "自1992以来，Agudat Yisrael（哈西德派）和 Degel HaTorah（立陶宛人）的联合名单。两派都因草案于 7 月 2025 退出政府。",
+      "src": "b4234a81",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "9 月 5、2026：拉夫·多夫·兰道 (Rav Dov Landau) 通过信件除掉了加夫尼 (Gafni) 和马克列夫 (Maklev)，并任命雅科夫·阿舍 (Yaakov Asher) 为首。九月8：Porush和Stark在名单中组建了第三个派系，Homat Torat Yisrael，这是自1992以来的第一个派系。",
+      "src": "ed0b6fa1",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：280,194 票，5.9%，7 席位。",
+      "src": "7eeae54c",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "58% 的正统派在 2022 中投票给 UTJ； 86% 投票给 UTJ 或 Shas。",
+      "src": "f0bbb603",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "2021：78% 在莫迪因伊利特，60.9% 在布内布拉克。",
+      "src": "ca5d350b",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "首次投票者：总体 9%，正统派首次投票者的 45%。",
+      "src": "41ad4db0",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "“联合托拉犹太教及其所有组成部分，在不规范托拉学习者地位的情况下，不会支持或加入任何政府。”",
+      "src": "748d48bb",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "“最高法院积累了过多的权力。”",
+      "src": "fc60a973",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“主要关注国内问题。”",
+      "src": "5428e36c",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "没有统一的政策；阿古达向右倾斜，德格尔“更温和”。",
+      "src": "38e93a4e",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "与沙斯相同：正统控制婚姻、皈依和犹太洁食。",
+      "src": "6b8a2f18",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "雅科夫·阿舍尔",
+      "src": "cd2a4585",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "德格尔·哈托拉",
+      "src": "026a00cb",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "伊扎克·戈德克诺夫",
+      "src": "a3bea2e9",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "以色列阿古达特 (Gur)",
+      "src": "5254a353",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "梅厄·波拉什",
+      "src": "5a33c963",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "以色列霍马特·托拉特",
+      "src": "841c34c1",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "没有犹太教地位法的政府，无论由谁领导。",
+      "src": "26902cfe",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "波鲁什派系需要单独谈判。",
+      "src": "1cbe0e49",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "拉夫·兰道：“我们不再信任内塔尼亚胡。”",
+      "src": "97fa3752",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "沙斯，“预料之中”。未找到签名。",
+      "src": "190b2ef1",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "很多东西看起来都像 etrogim——但这不是 etrogim。",
+      "src": "8eb1ef91",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "雅科夫·阿舍尔（Yaakov Asher）谈宗教犹太复国主义和奥兹玛讨好正统派选民",
+      "src": "e6836b31",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "雅科夫·阿舍尔",
+      "src": "cd2a4585",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "接替 Moshe Gafni 担任 Degel HaTorah 董事长（以色列时报，9 月 9、2026）。",
+      "src": "bc64848d",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "伊扎克·戈德克诺普夫（编号 2）",
+      "src": "86d320ad",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "UTJ 以色列阿古达特派系的领导人。 6 月 2025 因犹太学院学生征兵而辞去住房部长职务（《以色列时报》，9 月 14、2025；9 月 9、2026）。",
+      "src": "d6c12d94",
+      "machine": true
+    }
+  },
+  "rz": {
+    "name": {
+      "text": "宗教犹太复国主义——Zehut",
+      "src": "0fd5dfe6",
+      "machine": true
+    },
+    "short": {
+      "text": "RZ-泽胡特",
+      "src": "e2acaaec",
+      "machine": true
+    },
+    "leader": {
+      "text": "贝扎雷尔·斯莫特里奇和摩西·费格林",
+      "src": "19e0c0d5",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "盈余：利库德集团（10 月 6 签署；官方，CEC 公报 10 月 19）",
+      "src": "50fbbd28",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "更名为民族联盟-库马党。本-格维尔拒绝了新的联合竞选：“斯莫特里奇必须在一个政党中竞选，而我们必须在另一个政党中竞选。”",
+      "src": "a7134a28",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "9 月 1，2026 与 Moshe Feiglin 的 Zehut 组成了一个“技术集团”，该集团可能在选举后分离。费格林：“我们是一个完全独立的政党。”",
+      "src": "65ae9e81",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022（与 Otzma 和 Noam 联合列表）：516,470 票，10.8%，14 席位； RZ 保留7。",
+      "src": "9fb9cb22",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "2022 联合名单占据了 45% 的民族宗教选民（高于 30%）和 14% 的传统选民。",
+      "src": "dc9e8e41",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "在和解中赢得了 22%，而在全国范围内赢得了约 11%。",
+      "src": "572f642f",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "定居者对选秀感到愤怒：“我今天没有政治家。”",
+      "src": "561de38d",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "大多数 RZ MK 投票支持 7 月的14法律，禁止逮捕逃兵者。斯莫特里奇：逮捕“只会让犹太人互相争斗”。",
+      "src": "ea25e1f3",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "“这些选举涉及司法部门。”计划：所有法官通过无记名投票选出法官，AG 角色一分为二，61-投票推翻。",
+      "src": "561aee65",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“大规模回归整个加沙”，军事统治先于主权。",
+      "src": "4f8ee4bb",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "E1 批准（~3,400 单位）“实际上消除了两国错觉。” 103 在他任职期间批准的新定居点。",
+      "src": "9d6b1912",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "“国家机构和教育中的犹太人身份。”",
+      "src": "e83f4912",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "合作伙伴泽胡特的平台是：“尽可能低”的统一税、家长控制的公共资助的学校优惠券以及对大麻的“深思熟虑的监管”。",
+      "src": "45e61849",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "摩西·费格林",
+      "src": "24af9741",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "泽胡特领袖",
+      "src": "7056eece",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "奥里特·斯特罗克",
+      "src": "c38913d5",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "西姆查·罗斯曼",
+      "src": "89ac83e7",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "内塔尼亚胡当选总理；排除阿拉伯政党。",
+      "src": "354b170b",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "利库德集团（10 月签署6）。",
+      "src": "cb2d5a19",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "每一个和解……都是这个危险想法棺材上的又一颗钉子。",
+      "src": "caea9b67",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Bezalel Smotrich，关于巴勒斯坦国",
+      "src": "d7a95384",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "贝扎雷·斯莫特里奇",
+      "src": "f713cdf7",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "财政部长和负责监督约旦河西岸 C 区犹太人和巴勒斯坦建筑的国防部长。3 月 1、2023 表示，Huwara“需要被消灭”。自 6 月 2025 起受到英国、加拿大、澳大利亚、新西兰和挪威的制裁（《以色列时报》，12 月 29、2022；半岛电视台，3 月 1、2023；6 月 10、2025）。",
+      "src": "4418cf27",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "不排除与总理候选人加迪·艾森科特组建政府，但不以抵制右翼集团伙伴为代价。",
+      "src": "4e2a1888",
+      "machine": true
+    }
+  },
+  "poi": {
+    "name": {
+      "text": "以色列人民",
+      "src": "15f727e1",
+      "machine": true
+    },
+    "short": {
+      "text": "以色列人。",
+      "src": "3dd4c6f5",
+      "machine": true
+    },
+    "leader": {
+      "text": "奥弗·温特",
+      "src": "04645e34",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：未发现",
+      "src": "56aac96d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "阿姆查·以色列。 8 月 25、2026 由奥弗·温特 (Ofer Winter) 在耶路撒冷发起，他是一名退休准将，拒绝了利库德集团的席位。",
+      "src": "29d38b06",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "尽管受到拉比的压力，还是拒绝了斯莫特里奇的合并提议。冬天：公众想要“新人”。",
+      "src": "1f88ebca",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "新列表，8 月推出 25、2026；没有 2022 结果。",
+      "src": "1b462d4c",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "针对年轻选民、预备役军人和无法支持现任政府的右翼分子。",
+      "src": "1008257d",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "“我们不会加入一个在组建之前没有通过一项法律来结束逃兵行为的政府……完全停止。”",
+      "src": "36ee3aaa",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "增加一个具有“更平衡”任命制度的司法层级；将律师协会代表从司法遴选委员会中剔除；缩小“合理性”标准。",
+      "src": "e88a1c4d",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“加沙只有一个解决方案：移民。”",
+      "src": "555dc103",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "“这里永远不会有巴勒斯坦国。”",
+      "src": "ea7c2679",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "双倍战斗士兵的工资。",
+      "src": "d79baba4",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "约瑟夫·哈达德",
+      "src": "f4ddc575",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "阿拉伯东正教； Golani 志愿者在 2006 中受伤",
+      "src": "b5a37f9f",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "内塔利·谢姆·托夫",
+      "src": "ecf42150",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "记者",
+      "src": "63392b6c",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "芙蓉·哈桑·纳胡姆",
+      "src": "8e134466",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "耶路撒冷副市长 2018–24",
+      "src": "9dd354ba",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "只推荐内塔尼亚胡；想要国防部；不会与 Bennett 或 Eisenkot 合作（JPost 报道存在冲突）。",
+      "src": "6720aa36",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "将与正统党派一起服务，但不会在草案确定之前：“在这个问题得到解决之前，我不会加入[政府]。”",
+      "src": "c417676d",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "没有人签字。利库德集团的一名高级官员：“我们不会与温特签约，就这样。”据 Ynet 报道，本-格维尔对与温特的交易“不感兴趣”。",
+      "src": "0e55a038",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "新人，那些没有参与导致我们走向十月7的事件的人。",
+      "src": "c71b1d49",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "奥弗·温特（Ofer Winter），关于公众的需求",
+      "src": "e581d5c8",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "奥弗·温特",
+      "src": "04645e34",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "指挥吉瓦提旅（包括在2014加沙战争中）和98师；国防部长利伯曼的军事秘书。在未能晋升后于 2024 离开以色列国防军（《以色列时报》，8 月 27 和 9 月 6、2026）。",
+      "src": "2608aee5",
+      "machine": true
+    }
+  },
+  "noam": {
+    "name": {
+      "text": "诺姆",
+      "src": "08610224",
+      "machine": true
+    },
+    "short": {
+      "text": "诺姆",
+      "src": "08610224",
+      "machine": true
+    },
+    "leader": {
+      "text": "阿维·毛兹",
+      "src": "a41d6edc",
+      "machine": true
+    },
+    "status": {
+      "text": "未找到投票",
+      "src": "01951895",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "阿维·毛兹的政党。在与宗教犹太复国主义和 Otzma Yehudit 联合提名的 2022 中赢得 1 席位；在 2026 中提交了自己的列表。",
+      "src": "9ebdbdea",
+      "machine": true
+    },
+    "thin": {
+      "text": "我们的研究登记册没有 Noam 或 Avi Maoz 的 2026 个人资料、民意调查或简历。",
+      "src": "b91017c2",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "name": {
+      "text": "亚沙尔！",
+      "src": "84c78212",
+      "machine": true
+    },
+    "short": {
+      "text": "亚沙尔！",
+      "src": "84c78212",
+      "machine": true
+    },
+    "leader": {
+      "text": "加迪·艾森科特",
+      "src": "dac05998",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "盈余：民主党（9 月签署10）",
+      "src": "a9474322",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "离开议会后，由 Gadi Eisenkot 与大约 120 位联合创始人于 9 月 16、2025 创立。",
+      "src": "cf471c39",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "以被释放的人质伊莱·沙拉比 (Eli Sharabi) 的名言命名，将俘虏带回家“不是左右，而是直线 (yashar)”。",
+      "src": "fa3a4b7e",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "新招募的成员包括前 Shin Bet 主席 Yoram Cohen（编号 2）、Orit Farkash-Hacohen 和 Elazar Stern（编号 12）。",
+      "src": "4db30376",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "新名单；没有 2022 结果。艾森科特在《民族团结》中竞选2022个席位，赢得了12个席位。",
+      "src": "028f5f92",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "目标“路线4”通勤郊区：佩塔提克瓦、基里亚特奥诺、霍隆；还拉拢前利库德集团选民。",
+      "src": "7300707e",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "“有安全意识、中间派或中右派、世俗或宗教传统。”",
+      "src": "79bfdbd0",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "首次投票者的最大比例 (18–22)：16%。",
+      "src": "9e3525e9",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "“全民服务”；每个队列的延期上限为 3%，大约为 2,200 人；逃税者失去利益。",
+      "src": "8ecc058c",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "废除司法选举法；反对优先条款；基本法对司法审查有更明确的规定。",
+      "src": "f532729c",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“以色列国绝不能接受哈马斯生存、重新武装并等待的现实。”希望成立一个州调查委员会。",
+      "src": "b7ebd714",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "反对巴勒斯坦建国；将使民政管理局重新接受军事协调。",
+      "src": "0ffe42cc",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "“一个世俗政党，但不反宗教”；支持民事婚姻和同性婚姻（JC 的总结）。",
+      "src": "fd3a26b2",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "15所有应征入伍者加薪%；承租人保护；储备税每年上限为 50 天。",
+      "src": "e09e1652",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "约拉姆·科恩",
+      "src": "196aa72a",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "前辛贝特酋长",
+      "src": "113e693e",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "奥里特·法卡什-哈科恩",
+      "src": "475456b2",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "阿迪·阿尔茨舒勒",
+      "src": "99762390",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "指定教育部长",
+      "src": "c7274938",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "合作伙伴必须接受四项原则，包括为所有人服务和哈马斯“被瓦解和摧毁”。 “我不排除任何犹太复国主义政党。”",
+      "src": "e6d3631b",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "关于拉姆：曼苏尔·阿巴斯“不会成为我的下一届政府的一部分。”目前没有正统派政党符合他的标准。",
+      "src": "f1cb671a",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "民主党（9 月签署10）。",
+      "src": "6703081a",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "内塔尼亚胡最初反对纳入这一目标，我在战争的第九天强迫他这么做。",
+      "src": "95eb77b7",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "加迪·艾森科特 (Gadi Eisenkot)，谈将人质作为战争目标",
+      "src": "2efdf6bf",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "加迪·艾森科特",
+      "src": "dac05998",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "来自摩洛哥的移民的儿子；在提比里亚和埃拉特长大。通过戈拉尼旅崛起；以色列国防军参谋长直至2019。他的儿子 Gal 于 12 月在加沙被杀 2023。 JTA：他将成为以色列第一位 Mizrahi 总理（JTA，9 月 9、2026）。",
+      "src": "165524ad",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "“绝对不会。我不会在内塔尼亚胡手下任职，即使是轮换协议也不会。” （耶路撒冷邮报，10 月21，2026）",
+      "src": "cecc44c7",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "name": {
+      "text": "巴亚查德",
+      "src": "f1636ff2",
+      "machine": true
+    },
+    "short": {
+      "text": "巴亚查德",
+      "src": "f1636ff2",
+      "machine": true
+    },
+    "leader": {
+      "text": "Naftali Bennett（Yair Lapid 编号 2）",
+      "src": "438baf9d",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：Yisrael Beiteinu（9 月签署10）",
+      "src": "325d814d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "“在一起——由贝内特领导。” Yesh Atid 根据 4 月 25–26、2026 签署的协议模拟在此列表中；拉皮德不是。 2 和 Yesh Atid 占据顶部 24 插槽中的 10。不是正式合并。",
+      "src": "e925fcc0",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "民意调查从 5 月份的大约 25 个席位下降到大约一半；该名单已转向自由犹太复国主义中间派。",
+      "src": "96d6090a",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：Yesh Atid 847,435 票，17.8%，24 个席位；贝内特没有跑。",
+      "src": "110ca60f",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Yesh Atid 的 2022 选民为 78.5% 世俗人士，20% 传统人士；它获得了39%的世俗选票。",
+      "src": "31150f73",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "俄语使用者：Bennett 17%。",
+      "src": "8fbd5fc9",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "首次投票者：10%。",
+      "src": "6d836578",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Bennett：“Bibi 正在谈论 50% 豁免，Gadi 正在谈论 30% 豁免，我正在谈论 0 豁免。”已婚犹太学院学生的最终津贴。",
+      "src": "5719e6eb",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "关于基本法如何制定以及法院何时可以介入的基本法；废除司法任命法；总理的8年任期限制。",
+      "src": "354585e9",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“在哈马斯解除武装之前，我们决不能离开红线一厘米。” 10 月 7 支持国家委员会。",
+      "src": "88fd42ac",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "反对“在任何情况下”建立巴勒斯坦国；返回 E1；将拆除非法前哨基地，同时支持“C区的合法解决”。",
+      "src": "aad21f01",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "民事婚姻；城市选择安息日交通； “保护 LGBTQ 群体的完全平等权利。”",
+      "src": "38aee591",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "“我们将在三年内将食品价格降低 30%。”",
+      "src": "7965c48a",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "亚尔·拉皮德",
+      "src": "969fca68",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "耶什·阿提德领袖",
+      "src": "a850f749",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "凯伦·特尔纳",
+      "src": "6d69591e",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "前财政和运输总干事",
+      "src": "8906646f",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "尤纳坦·沙莱夫",
+      "src": "ca35f73c",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "23岁的预备役积极分子",
+      "src": "d9a8bf04",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "仅限犹太复国主义政党：无阿拉伯或正统政党； “在草案问题上不妥协。”",
+      "src": "4b1bec52",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "他的联盟将只依赖犹太复国主义政党，不再依赖拉姆：与他的2021政府的明确决裂。",
+      "src": "b5772451",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Yisrael Beiteinu（9 月签署10）。",
+      "src": "0f183701",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "我是一个右翼分子，我不会改变我的观点。但我不是一个笨蛋。",
+      "src": "bf282d48",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "纳夫塔利·贝内特",
+      "src": "f2c03d82",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "纳夫塔利·贝内特",
+      "src": "f2c03d82",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "出生于海法的美国移民家庭。共同创立了欺诈检测公司 Cyota 并领导 Yesha 委员会。首相 June 2021 – June 2022，第一个定期佩戴 kippah 的人（JTA、Jun 1、2021）。",
+      "src": "a0032a6f",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "亚尔·拉皮德（编号：2）",
+      "src": "93bc6b18",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "一位前电视记者，在 2012 创立了 Yesh Atid；它成为2013议会第二大党。 7 月至 12 月总理 2022，然后是反对党领袖（JTA，3 月 2、2015；7 月 1、2022）。",
+      "src": "5217f1f4",
+      "machine": true
+    }
+  },
+  "dem": {
+    "name": {
+      "text": "民主党",
+      "src": "56621f58",
+      "machine": true
+    },
+    "short": {
+      "text": "民主党",
+      "src": "11dcc60a",
+      "machine": true
+    },
+    "leader": {
+      "text": "亚伊尔·戈兰",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：亚沙尔！ （9 月签署10）",
+      "src": "a3d1bd14",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "工党（成立1968；总理梅厄、拉宾、佩雷斯）和梅雷茨 (1992) 一起竞选。部分合并：双方保留自己的机构。",
+      "src": "0ea40193",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "亚伊尔·戈兰 (Yair Golan) 5 月赢得工党党魁 2024 和 95% 的选票。这 2026 名单中包括反政府抗议领袖摩西·拉德曼 (Moshe Radman) 和前梅雷茨议员加比·拉斯基 (Gaby Lasky)。",
+      "src": "453d7b4f",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：工党175,992票，3.7%，4个席位； Meretz 150,793、3.2%、0 个席位（首次脱离议会）。",
+      "src": "90bdd63e",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "工党和梅雷茨在 2022 中获得了 16% 的世俗选票，低于 19%。",
+      "src": "42f09673",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "首次投票者：7%。声称拥有超过 100,000 个成员。",
+      "src": "fcd283a5",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "“在国家和平等的框架内”提供普遍服务。戈兰称大规模正统征兵“不切实际”。",
+      "src": "6b637501",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "紧迫的问题是“延误、法院超负荷运转和法官短缺”；中级上诉法院；反对2023改革。",
+      "src": "39bff9cb",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“推翻哈马斯政权。”",
+      "src": "32c4d7f6",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "反对吞并；取消前哨基地的资金。戈兰高地：以色列安全控制下的民事隔离。",
+      "src": "14b48433",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "民事婚姻；世俗城镇的安息日公共交通有限；修改民族国家法。",
+      "src": "02918fb1",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "“降低生活成本，改善社会服务，重建公共部门”； JPost 称这一细节“定义不太明确”。",
+      "src": "c26b85ca",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "纳马·拉齐米",
+      "src": "a249016f",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "吉拉德·卡里夫",
+      "src": "530cad63",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "盖比·拉斯基",
+      "src": "c934a848",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "前梅雷茨 MK",
+      "src": "9a73a7bb",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "没有正统派政党：“正统派将在[政府]之外，这是一个保证。”戈兰在一段被泄露的视频中表示，他将支持一个需要正统派政党的政府，“前提是利库德集团、斯莫特里奇和本·格维尔不在那里”。",
+      "src": "316a373d",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "对阿拉伯政党开放：“这是自然、正确、适当和民主的”（该政党称这是其自己的平台，而不是集团的平台）。",
+      "src": "6f5852da",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "亚沙尔！ （9 月 10 签署）。",
+      "src": "b8e36518",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "在我们的政府中，刑事被告将为零。零。",
+      "src": "e6c21c05",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "亚伊尔·戈兰",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "亚伊尔·戈兰",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "前以色列国防军副参谋长。 10 月7，他开车前往 Nova 节日地区并营救了人们。 5 月 2024 以 95% 的选票赢得工党领导地位（《以色列时报》，5 月 28、2024；9 月 10、2026）。",
+      "src": "b70273a7",
+      "machine": true
+    }
+  },
+  "yb": {
+    "name": {
+      "text": "以色列是我们的家园党",
+      "src": "0c5a4587",
+      "machine": true
+    },
+    "short": {
+      "text": "以色列 B.",
+      "src": "c2d9b028",
+      "machine": true
+    },
+    "leader": {
+      "text": "阿维格多·利伯曼",
+      "src": "67322d01",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：B'Yachad（9 月签署10）",
+      "src": "46dc4ce4",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "由阿维格多·利伯曼 (Avigdor Liberman) 创立1999；首先针对苏联移民，后来针对“右翼世俗选民”。高峰期：2009 中的 15 个席位。",
+      "src": "6d6bc42e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "在2019中，利伯曼“反对有关法律草案的任何妥协”，这导致联盟谈判失败并迫使重新举行选举。",
+      "src": "8f060242",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：213,687 票，4.5%，6 席位。",
+      "src": "d4de6491",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "俄语使用者：Yisrael Beiteinu 23%； 94% 的人支持通用草案。",
+      "src": "067b2bde",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "首次投票者：6%。",
+      "src": "8f3830fb",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "18 的每个人：“犹太人、穆斯林、基督徒、德鲁兹人和切尔克斯人”；制裁包括旅行禁令。",
+      "src": "2705376a",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "提交全国公民投票的成文宪法；修改需要 80 个 MK。",
+      "src": "81ef2dbf",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "和平委员会的安排是“对恐怖的投降”。 10 月 7 的州委员会是一个条件。",
+      "src": "8d4fd2c2",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "“巴勒斯坦权力机构必须解散。”",
+      "src": "feb9a903",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "民事结婚和离婚；西墙妥协；安息日交通的当地选择；必修核心课程。",
+      "src": "c7919aa8",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "“右翼财政状况。”",
+      "src": "b9915160",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "拉菲·本·希特里特",
+      "src": "dc810ed1",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "贝特谢安前市长",
+      "src": "cf130f64",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "莎朗·沙拉比",
+      "src": "a4dae5ea",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "获释人质伊莱·沙拉比的兄弟",
+      "src": "a83a01fb",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "丹·伊卢兹",
+      "src": "e8b8013b",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "前利库德集团成员",
+      "src": "4cdae54b",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "没有内塔尼亚胡，没有阿拉伯政党，没有正统政党：“不适合阿拉伯政党，也不适合正统政党。”",
+      "src": "65ea865b",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "条件：10 月 7 查询、普遍服务、总理任期限制、核心课程、全民公投宪法。",
+      "src": "d5422911",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "B'Yachad（9 月签署10）。",
+      "src": "8ca56d38",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "我们是昔日的利库德集团。",
+      "src": "87280fc9",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "以色列贝泰努口号",
+      "src": "af48a93f",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "阿维格多·利伯曼",
+      "src": "67322d01",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "出生于现在的摩尔多瓦；已于 19 迁移至 1978。于 1999 创立 Yisrael Beiteinu。在2019中，他因正统法草案拒绝加入内塔尼亚胡政府，迫使当年举行第二次选举（JTA，Jun 6，2019）。",
+      "src": "576c2857",
+      "machine": true
+    }
+  },
+  "bw": {
+    "name": {
+      "text": "蓝白党",
+      "src": "3d76c18d",
+      "machine": true
+    },
+    "short": {
+      "text": "黑白",
+      "src": "b81c374a",
+      "machine": true
+    },
+    "leader": {
+      "text": "本尼·甘茨",
+      "src": "55774b27",
+      "machine": true
+    },
+    "status": {
+      "text": "最近的每一次民意调查均低于阈值",
+      "src": "be024347",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "叛逃后减少至 3 个 MK。如果该党没有跨过门槛，甘茨将在上周退出。",
+      "src": "20b07dc0",
+      "machine": true
+    },
+    "thin": {
+      "text": "我们的政党登记册不会描述除此之外的蓝色和白色。",
+      "src": "b5503ca1",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "本尼·甘茨",
+      "src": "55774b27",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "大屠杀幸存者的儿子；以色列国防军参谋长。蓝白相间主持； 2020的候补总理。离开战时内阁 六月 9、2024（JTA、一月 27、2021；六月 10、2024）。",
+      "src": "26ec61a8",
+      "machine": true
+    }
+  },
+  "res": {
+    "name": {
+      "text": "预备役人员-经济",
+      "src": "7ee5176b",
+      "machine": true
+    },
+    "short": {
+      "text": "预备役军人",
+      "src": "d209f699",
+      "machine": true
+    },
+    "leader": {
+      "text": "尤兹·亨德尔",
+      "src": "32a1f07a",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：未确认",
+      "src": "c5b79734",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Yoaz Hendel 于 18 年 9 月 2025 创立了预备役军人组织。 9 月6、2026，即截止日期前两天，他与 Yaron Zelekha 的经济党联手。",
+      "src": "ba8d3e10",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "将自己定位为“第三集团”。其阵营存在争议：IsraelEd 表示将加入内塔尼亚胡；以色列时报称之为不结盟。",
+      "src": "61adfc1b",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "新名单；没有 2022 个席位。 Zelekha 的政党在 2022 选举中赢得了 0.29%（13,920 票）。",
+      "src": "c53c28db",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "亨德尔：“那些希望由极端正统政党组成政府的人知道该投票给谁……那些对依赖阿拉伯政党的少数派政府感到满意的人有他们的反对派选择。我们必须提供替代方案。”",
+      "src": "8733996c",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "在 9 月 23、2026 的频道 13 投票中首次跨过门槛，获得 4 个席位。",
+      "src": "7faddb79",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "“那些不任职的人不能投票或被选入议会。”政府宣誓就职之前必须通过一项法律草案。",
+      "src": "e8d4874d",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "首先是关于立法的基本法，以及一个新的、平衡的司法遴选委员会；仅当超过 72 个 MK 时，议会才会覆盖。其政纲限制总理任期为八年或两届。",
+      "src": "f0bb5de4",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "亨德尔早些时候提议将约1.5百万巴勒斯坦人从加沙转移到“加沙地带外的一个帐篷城”；威尔夫支持“加沙自愿移民局”。",
+      "src": "35915a2d",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "“我们支持在以色列国各地建立定居点。”纲领：“我们将通过外交和政治渠道采取行动，阻止巴勒斯坦建国。”",
+      "src": "f1fa1aa2",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "泽莱卡加入其中，承诺对抗“大亨和生活成本”；该平台承诺“打击垄断”，以增加竞争并降低生活成本。",
+      "src": "251aa4b2",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "亚龙·泽莱卡教授",
+      "src": "1affa30d",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "总会计师 2003–07",
+      "src": "2af37e49",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "埃纳特·威尔夫",
+      "src": "823a9048",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "前工党议员； 9 月加入 7",
+      "src": "f309e9ed",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "哈维夫·沃利博维奇",
+      "src": "f12d3480",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "“没有阿拉伯或正统政党的犹太复国主义联合政府”；支持国家调查委员会。",
+      "src": "2ec421eb",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "对于内塔尼亚胡，意见不一：“内塔尼亚胡不是我的红线”（8月11），而“任何对10月7负责的人都需要回家，其中包括内塔尼亚胡”（8月23）。",
+      "src": "2bc0f896",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "没有人签字。亨德尔向奥弗·温特提供了一份剩余交易；冬没有回应。",
+      "src": "a1d939d3",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "我们的使命只是建立一个犹太复国主义政府。",
+      "src": "aac61379",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "预备役军人",
+      "src": "147920bc",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "尤兹·亨德尔",
+      "src": "32a1f07a",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "政治学家、前内塔尼亚胡助手和以色列国防军预备队营长。在2019中与蓝白党一起进入政界；后来担任通讯部长（《以色列时报》，9 月 18、2025；8 月 6、2026）。",
+      "src": "a4f4285b",
+      "machine": true
+    }
+  },
+  "jl": {
+    "name": {
+      "text": "联合名单",
+      "src": "a0e699b1",
+      "machine": true
+    },
+    "short": {
+      "text": "联合名单",
+      "src": "a0e699b1",
+      "machine": true
+    },
+    "leader": {
+      "text": "Yousef Jabareen（艾哈迈德·提比编号 2）",
+      "src": "f7b8270f",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：Ra'am（9 月签署11）",
+      "src": "4cbc6834",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "首先由所有四个阿拉伯领导的政党于 2015 组成（13 席位；15 的高峰在 2020）。 8 月 19、2026 重组为哈达什-塔阿尔-巴拉德，拉姆缺席。",
+      "src": "47e3080e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "哈达什（Hadash）和平与平等民主阵线将自己概括为“民主、和平、平等”。首先列出了“公正、全面和稳定的以色列-巴勒斯坦和以色列-阿拉伯和平”。 《耶路撒冷邮报》：哈达什“历来强调犹太与阿拉伯的伙伴关系”。",
+      "src": "37a61643",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "根据《基本法》：以色列议会，第 7A，如果名单或候选人否认以色列是一个犹太民主国家、煽动种族主义或支持针对以色列的武装斗争，则可能会被禁止。中央选举委员会就利库德集团的请愿书进行了投票 23 禁止列表， 18–5;最高法院于 10 月一致恢复该规定 2.",
+      "src": "43783e0a",
+      "machine": true
+    },
+    "who.3.text": {
+      "text": "奥费尔·卡西夫（Ofer Cassif）（编号6）在利库德集团的请愿书中被禁止19-5，并有两次弃权（《耶路撒冷邮报》计数；半岛电视台援引阿达拉报道18-5），因为他否认以色列是一个犹太民主国家并支持武装斗争。利库德集团的律师引用了卡西夫在加沙战争中对以色列的指控，用《华盛顿邮报》的话说，他“支持国际诉讼和制裁，呼吁抵制和发表有关巴勒斯坦抵抗的声明”；卡西夫说，他“明确表示反对暴力并支持非暴力斗争”。最高法院恢复了他的职位7-2（明茨法官和斯坦因法官持反对意见）：证据尚未达到所需的“临界质量”。",
+      "src": "fadf62dd",
+      "machine": true
+    },
+    "who.4.text": {
+      "text": "第 3 号萨米·阿布·谢哈德 (Balad) 在 Otzma Yehudit 的请愿书中被禁止参加 31-4，原因是他在 10 月 8、2023 发表了一篇文章，支持针对以色列的武装斗争。在法院院长告诉他“法官席上的多数人禁止”他后，他退出了。",
+      "src": "7e500add",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022（分裂）：哈达什-塔阿尔 178,735 票，3.8%，5 个席位；巴拉德 138,617、2.9%、0 席位。",
+      "src": "ebc4f7f6",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "在2022的阿拉伯和德鲁兹城镇：哈达什-塔阿尔28.8%，巴拉德21.7%。阿拉伯投票率 53.2%。",
+      "src": "eba623ea",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "77.2% 的阿拉伯公民支持阿拉伯政党加入政府。",
+      "src": "1f4c8940",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "反对征召正统男子或任何形式的强制入伍：“不应对选择不入伍的人实施制裁。”",
+      "src": "c4443647",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "支持加强民主保护和保障所有公民、特别是少数群体权利的改革；维护司法独立的任命机制。",
+      "src": "47d4c9c6",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "“结束加沙的破坏和西岸的种族清洗。”",
+      "src": "82b80d29",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "贾巴林：重新启动“与以色列并肩建立巴勒斯坦国”的谈判。",
+      "src": "d713d557",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "“阿拉伯公民享有完全的公民和民族平等。”",
+      "src": "9c79fff4",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Jabareen：该清单将寻求“打击有组织犯罪的行动，并增加阿拉伯社会和地方当局的预算”（邮报的摘要）。",
+      "src": "22758aab",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "尤瑟夫·贾巴林",
+      "src": "5eb71118",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "哈达什",
+      "src": "47b6a732",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "艾哈迈德·蒂比",
+      "src": "3b9530e0",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "塔阿尔",
+      "src": "81c6764e",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "奥弗·卡西夫",
+      "src": "be24ea9c",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "哈达什；由法院恢复7–2",
+      "src": "e5778dcd",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "不会加入内塔尼亚胡。",
+      "src": "0ea51445",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "支持艾森科特集团的条件：平等、发展计划、打击犯罪的实际行动、“反对定居点的明确立场”；不排除“议会安全网”。",
+      "src": "91a5d1a8",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Ra'am（9 月签署11）。",
+      "src": "b3ca86e2",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "这是一项政治、种族主义和反民主的决定……试图排除超过一百万选民的政治代表权。",
+      "src": "3132a10a",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "联合名单，关于委员会投票禁止的情况",
+      "src": "9814db52",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "尤瑟夫·贾巴林",
+      "src": "5eb71118",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "来自乌姆法赫姆；一位法律学者。 MK 2015–21。以 82% 当选哈达什主席 May 16、2026，取代自 2015 以来一直领导哈达什的艾曼·奥德 (Ayman Odeh)，并且没有寻求连任（《以色列时报》，5 月 16、2026）。",
+      "src": "e1e56683",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "艾哈迈德·蒂比（编号2）",
+      "src": "c8755e80",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "塔阿尔长期董事长；联合名单上的第 2 号（以色列时报，9 月 20、2026）。",
+      "src": "3396676b",
+      "machine": true
+    }
+  },
+  "raam": {
+    "name": {
+      "text": "拉阿姆党",
+      "src": "418c2537",
+      "machine": true
+    },
+    "short": {
+      "text": "拉阿姆党",
+      "src": "418c2537",
+      "machine": true
+    },
+    "leader": {
+      "text": "曼苏尔·阿巴斯（Yoav Segalovitz no. 2）",
+      "src": "b9f890c8",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "剩余：联合清单（9 月 11 签署）",
+      "src": "d27ca45a",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "成立于1996；扎根于伊斯兰运动的南方分支。 2021它成为第一个正式加入以色列执政联盟的阿拉伯政党。",
+      "src": "8731b986",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "十二月 2025 阿巴斯表示，拉姆正在成为“一个完全公民的政党，拥有独立的机构”，并切断与伊斯兰舒拉委员会的联系：“我们不是穆斯林兄弟会的一部分。”",
+      "src": "4a5c25d7",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "被选举委员会禁止 9 月 23、18–5； 10 月 2 被最高法院一致恢复。",
+      "src": "0423aabc",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022：194,047 票，4.1%，5 席位。",
+      "src": "565d41dc",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "在 2022 中获得 35.2% 的阿拉伯人和德鲁兹人选票，在内盖夫获得 73.9% 的选票。",
+      "src": "72ea985d",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "要塞：内盖夫和三角地区；现在正在寻求基督教和德鲁兹选民，目标是7-8席位。",
+      "src": "eaf222c7",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "反对一项要求阿拉伯年轻公民在以色列国防军服役或从事民事服务的法律草案；拒绝就正统派入伍一事做出回应。",
+      "src": "a3f30567",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "拒绝就司法改革发表当前立场；在2023阿巴斯中说“任何政府部门都不应拥有绝对权力。”",
+      "src": "b41b89b8",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "阿巴斯，12月2023：巴勒斯坦武装团体“需要放下武器”并与巴勒斯坦权力机构合作，以“与以色列国和平解决巴勒斯坦国”。 Ra'am 在 10 月 7 的 2026 中表示：“需要进行全面、独立和公正的调查。”",
+      "src": "2cc79271",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "阿巴斯：巴勒斯坦国是“一个现实，世界上大多数国家都承认这一点，除了美国和以色列。我们希望他们承认这一点，我们将努力实现和平。”支持通过谈判达成两国解决方案；反对扩大以色列主权。",
+      "src": "bbfcdb96",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "早些时候：“以色列诞生时就是一个犹太国家，而且也将如此。”总检察长告诉委员会，阿巴斯承认以色列的犹太性格。",
+      "src": "64e303ab",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "阿拉伯城镇的预算、规划、住房和就业；寻求暴力和犯罪组合。没有完整的宣言。",
+      "src": "7c882a97",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "曼苏尔·阿巴斯",
+      "src": "bcaffdf5",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "约夫·塞加洛维茨",
+      "src": "b4805520",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "犹太裔前警察指挥官； 8 月加入 31",
+      "src": "9cd17a1b",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "瓦利德·塔哈",
+      "src": "a7e5f726",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "在 8 月 22 石板上；最终位置尚未确定",
+      "src": "35b0035e",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "对任何联盟开放，包括利库德集团领导的联盟。",
+      "src": "90424d0c",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "艾森科特于 9 月 26 表示，阿巴斯“不会成为我下一届政府的成员”。塞加洛维茨：“没有拉姆，艾森科特就不会有政府。”",
+      "src": "fd3be613",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "联合名单（9 月 11 签署）。",
+      "src": "75a30cf0",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "我要去参加一个阿拉伯聚会。他们不会来找我。",
+      "src": "f100723f",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "约夫·塞加洛维茨",
+      "src": "b4805520",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "曼苏尔·阿巴斯",
+      "src": "bcaffdf5",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "拉姆椅子； 2021 中第一位加入以色列政府的阿拉伯人占多数的政党领导人（JTA，7 月 19、2022）。",
+      "src": "abd0d16c",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "约夫·塞加洛维茨（No.2）",
+      "src": "c620afc0",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "犹太人，67。成立并指挥警察的 Lahav 433 部队并领导其调查和情报部门；公安部副部长2021-22。 Ra'am 名单上排名第二（《以色列时报》，8 月 16、8 月 31 和 9 月 17、2026）。",
+      "src": "1f4d0895",
+      "machine": true
+    }
+  }
+}

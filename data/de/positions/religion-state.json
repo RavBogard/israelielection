@@ -1,0 +1,139 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien zu Religion und Staat sagen",
+      "src": "3e7f7c03",
+      "machine": true
+    },
+    "question": {
+      "text": "Wer sollte die Regeln für Ehe, Konversion und Schabbat festlegen?",
+      "src": "ddcb6c9d",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Halten Sie sie unter orthodoxer Führung",
+      "src": "263e21d3",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Standesamtliche Trauung, örtliche Schabbatregeln",
+      "src": "dec810eb",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Standesamtliche Trauung, nicht-orthodoxe Konvertierung",
+      "src": "354a1ead",
+      "machine": true
+    },
+    "note": {
+      "text": "Die Reihen der Shas und UTJ zitieren die Zusammenfassung der Positionen der beiden Parteien in der Jerusalem Post, und die Reihen der Yashar zitieren die des Jewish Chronicle; auch nicht der eigene Text der Partei. Religiöser Zionismus – Zehut, Blau-Weiß, Likud und die Reihen der Gemeinsamen Liste nutzen ihre Antworten auf Ynet zum Schabbat-Transport (August 31, 2026). Der Likud hat nicht gesagt, wo er zu Heirat oder Konvertierung steht; Ihr Streit wird nicht öffentlich geäußert und beruht auf den Koalitionsverträgen und den von der Regierung verabschiedeten Gesetzen. Der Streit von Otzma Yehudit ist die 2022-Aussage seines Anführers; Noams stammt von israel2026.co.il, einer Aggregator-Site. Keine Position für „People of Israel“, „Reservists–Economic“ oder „Ra'am“ gefunden, und die Antwort der Gemeinsamen Liste passt nicht zu diesen Optionen (geprüft im Oktober 2026); Ihre Reihen ergeben älteres oder angrenzendes Material, das keinen Stand vorgibt.",
+      "src": "070c3fad",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Zusammenfassung von Shas und UTJ in der Jerusalem Post: „Sie haben sich entschieden gegen die Ausweitung von Alternativen zum Religionsrecht, einschließlich der Zivilehe, ausgesprochen“; Was die Konvertierung anbelangt, „befürworten sie, dass die Autorität dazu im orthodoxen religiösen Establishment verbleibt“; Sie „lehnen Änderungen ab, die nicht-orthodoxe Formen des Gottesdienstes an der Klagemauer ausweiten würden.“ Shas setzte sich für das Gesetz vom Juli 2026 ein, das dem Oberrabbinat die Koscher-Zertifizierung zurückgibt (Times of Israel).",
+      "src": "e7808ce2",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Dieselben Positionen wie Shas in der Zusammenfassung der Jerusalem Post. MK Moshe Gafni, Sponsor der Tora-Studie Grundgesetz: „Dieses Grundgesetz wird als moralischer Kompass des Staates dienen.“",
+      "src": "5e005580",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Hat nicht gesagt, wo es um Heirat oder Konvertierung steht. In Bezug auf die Ehe behält der Koalitionsvertrag mit der UTJ den religiösen Status quo bei, aber Knesset-Sprecher Amir Ohana von der Likud-Partei stimmte im Dezember 24, 2025 für einen Gesetzentwurf zur standesamtlichen Trauung, und der Likud-Abgeordnete Dan Illouz verteidigte ihn. Auf dem Shabbat-Transport teilte es Ynet mit, dass es „Israel an den sechs Arbeitstagen unter Wahrung des Schabbats verbinden“ wolle und dabei am Status quo seit der Staatsgründung festhalte (übersetzt). Sein 2022 Koalitionsabkommen mit dem religiösen Zionismus erkennt nur Konvertierungen unter dem orthodoxen Oberrabbinat an, und seine Regierung verabschiedete am 15, 2026 das Shas-Gesetz, das die ausschließliche Kontrolle des Rabbinats über die Koscher-Zertifizierung 46 bis 41 wiederherstellt.",
+      "src": "526907e8",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Itamar Ben-Gvir in 2022: „Der Staat ist jüdisch; Ehen sollten nach dem Gesetz Moses und Israels erfolgen“ (übersetzt). Die veröffentlichte Plattform sagt nichts über Ehe, Konvertierung oder Schabbat. Sein MK Limor Son Har-Melech unterstützte das Gesetz vom Juli 2026, das nach Geschlechtern getrennte Graduiertenprogramme ermöglicht.",
+      "src": "306bdb34",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Zum Thema Shabbat-Transport erklärte der Religiöse Zionismus gegenüber Ynet, dass er jede Änderung ablehne und sagte, dass die Einhaltung des Shabbat im öffentlichen Leben den Charakter Israels als jüdischer Staat zum Ausdruck bringe (Ynets Zusammenfassung, übersetzt). Der 2022-Koalitionsvertrag sieht vor, dass „nur Konvertierungen, die vom staatlichen Konvertierungsgericht unter der Schirmherrschaft des orthodoxen Oberrabbinats durchgeführt werden, staatliche Anerkennung erhalten“ (Times of Israel).",
+      "src": "656dc9c1",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "„Bewahrung des Schabbats im öffentlichen Raum und Stärkung des orthodoxen Rabbinats, der Bekehrung und der Kaschrut.“ Ihr Anführer, Avi Maoz, unterstützte den Gesetzentwurf zur Klagemauer.",
+      "src": "27d3ca82",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Die Zusammenfassung des Jewish Chronicle: „Eine säkulare Partei, aber nicht antireligiös“, die „standesamtliche Trauung, Scheidung und gleichgeschlechtliche Ehe unterstützt“, mit einem „Leben und Leben lassen“-Ansatz bei der Einhaltung des Schabbats, bei dem Entscheidungen den Kommunen übertragen werden. Eisenkot (Jerusalem Post, Sep 24, 2026): „Ich bin nicht religiös, aber ich bin in einer traditionellen Familie aufgewachsen und habe großen Respekt vor dem Judentum und der Tradition.“",
+      "src": "d0a8dc02",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Lapid: „Im Staat Israel sollte es eine parallele Möglichkeit zur standesamtlichen Trauung für jeden geben, der dies wünscht“, mit Gesetzen zur Gleichberechtigung aller Paare, die innerhalb der ersten 100 Tage der nächsten Regierung (September 15, 2026) angestrebt werden. Bennett, April 20, 2026, vor der B'Yachad-Fusion: „Wir sollten den Städten die Wahl lassen, ob sie am Schabbat öffentliche Verkehrsmittel wollen.“",
+      "src": "5cb194bd",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "„Förderung der standesamtlichen Trauung“; „Förderung des Betriebs öffentlicher Verkehrsmittel am Schabbat in begrenztem Umfang an säkularen Orten“; „Ausweitung der Anerkennung der Konvertierung auf andere religiöse Körperschaften außer dem Oberrabbinat.“",
+      "src": "d01818f9",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "„Wir werden die Einführung standesamtlicher Ehe- und Scheidungsmöglichkeiten in Israel fordern“; „Tel Aviv wird Bnei Berak keinen Schabbat-Transport aufzwingen, und Bnei Berak wird Tel Aviv seine Lebensweise nicht aufzwingen“; der Kompromiss zur Klagemauer, wie er von Avichai Mandelblit und Natan Sharansky entworfen wurde.",
+      "src": "cf29683d",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Es wurde keine Position zu Ehe, Konvertierung, Schabbat oder Rabbinat gefunden. Die Gründungsprinzipien der Partei fordern „einen Staat, in dem das Judentum einlädt und nicht zwingt, einschließt und nicht diktiert“ (übersetzt).",
+      "src": "d352ee51",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Benny Gantz unterstützt den öffentlichen Nahverkehr am Schabbat im Rahmen der Übertragung von Befugnissen an lokale Behörden, die Routen und Häufigkeit festlegen würden (Ynet, übersetzt). Keine 2026 Aussage zur Ehe gefunden. In 2019 versprach es, „den Partnerschaftsvertrag gesetzlich zu verabschieden“, eine Lebenspartnerschaft für Paare, die einen solchen wünschen, und bezeichnete gleichzeitig die Ehe nach jüdischer Tradition als „den Hauptweg des jüdischen Volkes“ (übersetzt).",
+      "src": "567a423e",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Für die Liste wurde keine Position gefunden. Yoaz Hendel, als Kommunikationsminister in 2021: „Wir müssen eine Alternative für diejenigen bieten, die nicht heiraten können“ (übersetzt).",
+      "src": "f01818ae",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Ynet erklärte, es unterstütze am Schabbat den öffentlichen Nah- und Überlandverkehr, einschließlich des Flughafens und der Krankenhäuser, „als grundlegende und gleichberechtigte Dienstleistung für die gesamte Bevölkerung“ (übersetzt). Keine gemeinsame 2026-Position zu Heirat oder Konvertierung gefunden. Hadashs Plattform fordert, wie in 2019 zitiert, die „Trennung von Religion und Staat“ sowie standesamtliche Trauung und Scheidung (übersetzt).",
+      "src": "8d482a4e",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Keine Position zu Heirat, Konvertierung oder Schabbat gefunden. Mansour Abbas über den Abbruch der Verbindung der Partei mit ihrem Religionsrat: „Ra'am bewegt sich heute in die Richtung, eine völlig bürgerliche Partei mit separaten Institutionen zu sein.“",
+      "src": "54915cd8",
+      "machine": true
+    }
+  }
+}

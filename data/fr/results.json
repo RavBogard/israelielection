@@ -1,0 +1,54 @@
+{
+  "_": {
+    "source.label": {
+      "text": "Commission centrale des élections, résultats par localité",
+      "src": "964fa0a1",
+      "machine": true
+    },
+    "source.note": {
+      "text": "Le dossier du comité le soir des élections. Avant cela, il contient des données de test, que le site ne montre pas.",
+      "src": "bcf7c544",
+      "machine": true
+    },
+    "thresholdSource": {
+      "text": "Loi sur les élections à la Knesset, art. 81 : 3.25% de votes valides.",
+      "src": "942d0e19",
+      "machine": true
+    },
+    "lettersSource": {
+      "text": "Approuvé par la Commission centrale des élections septembre 27, 2026 : Ynet et Emess (septembre 27), liste complète des 38 dans Ice (septembre 2026).",
+      "src": "80f8b9cb",
+      "machine": true
+    },
+    "agreements.0.source": {
+      "text": "Times of Israel, septembre 10, 2026 ; officiel : avis du Comité central des élections en vertu de l'art. 67(c), Yalkout HaPirsumim 15045 p. 1098, octobre 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "e126a1c9",
+      "machine": true
+    },
+    "agreements.1.source": {
+      "text": "Times of Israel, septembre 10, 2026 ; officiel : avis du Comité central des élections en vertu de l'art. 67(c), Yalkout HaPirsumim 15045 p. 1098, octobre 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "e126a1c9",
+      "machine": true
+    },
+    "agreements.2.source": {
+      "text": "Walla, septembre 12, 2026 (signé septembre 11) ; Ynet, septembre 11 ; Jerusalem Post, septembre 13 ; officiel : avis du Comité central des élections en vertu de l'art. 67(c), Yalkout HaPirsumim 15045 p. 1098, octobre 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "96c530b2",
+      "machine": true
+    },
+    "agreementsNote": {
+      "text": "Les estimations de sièges utilisent les cinq accords d'excédent de voix publiés par la Commission électorale centrale dans le Journal officiel le 19 octobre 2026 (Yalkut HaPirsumim 15045, p. 1098) : Yashar-Les Démocrates, B'Yachad-Yisrael Beiteinu, Liste arabe unie-Ra'am, Likoud-Sionisme religieux, Shas-UTJ. Une sixième paire de listes marginales n’est pas modélisée. Otzma Yehudit, Amcha Yisrael, les réservistes, Kakhol lavan et Noam n’en ont déposé aucune. Vérifié par rapport à la gazette octobre 23.",
+      "src": "70372cc4",
+      "machine": true
+    },
+    "agreements.3.source": {
+      "text": "Signé en octobre 6 (Times of Israel) ; officiel : avis du Comité central des élections en vertu de l'art. 67(c), Yalkout HaPirsumim 15045 p. 1098, octobre 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "92881429",
+      "machine": true
+    },
+    "agreements.4.source": {
+      "text": "Signé en octobre 11 (Jerusalem Post) ; officiel : avis du Comité central des élections en vertu de l'art. 67(c), Yalkout HaPirsumim 15045 p. 1098, octobre 19, 2026 (https://www.gov.il/BlobFolder/guide/candidates-lists-26/he/yp15045.pdf)",
+      "src": "a36aa9e0",
+      "machine": true
+    }
+  }
+}

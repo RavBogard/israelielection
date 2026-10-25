@@ -1,0 +1,149 @@
+{
+  "_": {
+    "title": {
+      "text": "Was die Parteien zum Entwurf sagen",
+      "src": "64c68786",
+      "machine": true
+    },
+    "question": {
+      "text": "Sollten Haredi-Jeschiwa-Studenten eingezogen werden?",
+      "src": "f78d619e",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Kein Pflichtdienst für irgendjemanden",
+      "src": "786a1653",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Befreien Sie diejenigen, die die Thora studieren",
+      "src": "d8688012",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Werde diejenigen einberufen, die die Jeschiwa verlassen",
+      "src": "bc70cdf3",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Steigern Sie den Haredi-Dienst Schritt für Schritt",
+      "src": "3620d8b6",
+      "machine": true
+    },
+    "stances.4.label": {
+      "text": "Rekrutieren Sie jeden, ob Militär oder Zivilist",
+      "src": "daeee2a4",
+      "machine": true
+    },
+    "note": {
+      "text": "Die Partei beantwortet Ynets Fragebogen vom September 2026, sofern keine andere Quelle angegeben wird. Der Likud lehnte den Fragebogen ab; Seine Haltung ergibt sich aus der Beschreibung des 2025-Gesetzentwurfs der Koalition durch einen Minister. Ra'am antwortete nur auf die Einberufung arabischer Bürger. Die Zeile von Blue and White stammt aus Ynets hebräischem Bericht über denselben Fragebogen. Noams Streit ist die Erklärung seines Anführers in der Knesset im Juli 2026.",
+      "src": "f837f3c6",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "„Der Likud hat sich entschieden, nicht auf Anfragen von Ynet und Yedioth Ahronoth bezüglich des Gesetzesentwurfs zu antworten.“ Im Juli 2025 sagte Kommunikationsminister Shlomo Karhi, die Koalition kämpfe „hier für ein historisches Wehrpflichtgesetz, das innerhalb von drei Jahren etwa 17,000 junge Haredi-Männer einberufen wird“.",
+      "src": "d1b66d01",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Ynets Zusammenfassung seiner Antwort: „Shas erkennt an, dass es nicht länger möglich sein wird, die Einberufung von Jeschiwa-Studenten zu vermeiden, die ihr Studium abgebrochen haben.“",
+      "src": "7a5cf10e",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Ynets Zusammenfassung: Beide Fraktionen „lehnen weiterhin die Einstellung von Studenten ab, die die Jeschiwas verlassen haben“ und lehnen einen universellen Gesetzesentwurf ab. Die Partei „sagt, dass das Gesetz, das sie verabschieden will, ausschließlich dazu gedacht ist, den Status derjenigen zu regeln, die die Thora studieren.“",
+      "src": "6ba874a6",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "„Verabschiedung eines Grundgesetzes für Militärangehörige nach dem Prinzip ‚An erster Stelle in Gleichheit‘ – diejenigen, die dienen, erhalten alles.“ Unterstützt „die Erweiterung des Pools derjenigen, die dienen“; hat die Frage zu den Sanktionen nicht beantwortet.",
+      "src": "4dca4034",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Parteichef Ben-Gvir: „Wir haben spezielle Gleise bei der Polizei und der Grenzpolizei eröffnet, unter vollständiger Einhaltung von Schabbat, Kaschrut, Gebeten und Thora-Studium, angemessener Geschlechtertrennung und der Gründung der ultraorthodoxen ‚Avnet‘-Firma in der Grenzpolizei.“",
+      "src": "470605ae",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Parteichef Winter: „Wir werden keiner Regierung beitreten, die nicht vor ihrer Bildung ein Gesetz verabschiedet, das der Wehrdienstverweigerung ein Ende setzt und von jedem verlangt, sich zum Dienst zu melden … Schluss damit.“",
+      "src": "b7cd66bc",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Nationaler Dienst für alle; Der „einzige Mechanismus zur Verschiebung des Dienstes wird eine Zuweisung von bis zu 3 % jeder Jahreskohorte für herausragende Personen sein.“ Eisenkot beziffert dies auf etwa 2,200 pro Jahr einer nationalen Kohorte von 70,000 Personen (alle Israelis, nicht nur Charedim) und würde „alle staatlichen Anreize für diejenigen widerrufen, die sich dem Dienst entziehen“.",
+      "src": "fe4bbc95",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "„Jeder Bürger … wird sich der IDF anschließen oder nationalen Zivildienst leisten … ohne Ausnahmen – das gilt für Araber und Ultraorthodoxe gleichermaßen.“",
+      "src": "63a75310",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "„Die Pflicht zum Dienst am Staat soll für alle Bürger in einem bundesweit gleichen Rahmen gelten.“",
+      "src": "f6a1be87",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "„Jeder junge Mann und jede junge Frau im Alter 18 – Juden, Muslime, Christen, Drusen und Tscherkessen – wird verpflichtet, Militär- oder Zivildienst zu leisten. Keine Ausnahmen, keine Quoten und keine Geschäfte.“",
+      "src": "de89c3fb",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "„Jeder Bürger wird sich im Einweisungszentrum melden.“ Denjenigen, die nicht im Amt sind, droht „der Entzug des Führerscheins, ein Ausreiseverbot, der Ausschluss aus öffentlichen und staatlichen Stellen“ sowie der Verlust von Steuer-, Wohn- und Kinderbetreuungsgeldern.",
+      "src": "c2d9515a",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "Ynet berichtet, dass es sich gegen die Einberufung von Haredi-Männern oder jede Form der Zwangsrekrutierung ausspricht. Die Partei: „Sanktionen sollten nicht gegen jemanden verhängt werden, der sich dafür entscheidet, sich nicht anzumelden.“",
+      "src": "9f47c644",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Ynet berichtet, dass es einen Gesetzesentwurf ablehnt, der junge arabische Bürger dazu verpflichten würde, in der IDF zu dienen oder Zivildienst zu leisten, und dass es sich geweigert hat, zur Rekrutierung der Haredi zu antworten, obwohl drei Ra'am-Abgeordnete im Januar 2022 innerhalb der Bennett-Lapid-Koalition für einen Gesetzesentwurf mit jährlichen Rekrutierungszielen für die Haredi gestimmt haben. Diese Koalitionsabstimmung legt keinen aktuellen Standpunkt fest.",
+      "src": "af386460",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz stimmte für das Gesetz vom Juli 2026, das die Festnahmen von Jeschiwa-Studenten einfriert, die sich nicht gemeldet haben, und nannte es „einen Verband vor den Wahlen“. Seine Position: „Wer studiert, soll weiter studieren, und wer nicht studiert, soll sich für das große Gebot der Verteidigung des Vaterlandes einsetzen und es mit uns teilen“ (übersetzt).",
+      "src": "2fb01e97",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "„Ein Dienstrahmen für alle: Jeder junge Mann und jede junge Frau wird dem Staat dienen“, Charedim, Araber, Drusen, Ordensleute und Säkulare. Der Rahmen muss verabschiedet werden, „bevor die Regierung als Bedingung für ihre Vereidigung gebildet wird“; Quoten ersetzen Zielvorgaben, so dass „nur herausragende Personen Ausnahmen erhalten“; Vorteile kommen zuerst denjenigen zugute, die dienen (übersetzt).",
+      "src": "038c2354",
+      "machine": true
+    }
+  }
+}

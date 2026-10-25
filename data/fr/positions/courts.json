@@ -1,0 +1,144 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les parties devant les tribunaux",
+      "src": "cc3f8315",
+      "machine": true
+    },
+    "question": {
+      "text": "Le pouvoir devrait-il passer des tribunaux à la Knesset et au gouvernement ?",
+      "src": "6b47cbb6",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Limiter les pouvoirs de la Cour suprême",
+      "src": "21f646ce",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Autoriser un remplacement limité",
+      "src": "a620e061",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Écrivez les règles dans les lois fondamentales",
+      "src": "56c20a45",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Gardez les tribunaux indépendants",
+      "src": "09743b47",
+      "machine": true
+    },
+    "note": {
+      "text": "D'après l'enquête parti par parti de Ynet sur le système judiciaire, septembre 22 2026. Le Likoud l’a refusé ; sa ligne ajoute la loi 2025 de son ministre de la Justice. Ra'am n'a donné aucune position actuelle ; sa ligne repose sur ses 2023 votes. Otzma Yehudit a répondu sans position ; sa position repose sur le soutien de son chef aux lois 2023 et 2025. Le discours de Noam est le rapport du Jerusalem Post sur sa relance, sans aucun détail.",
+      "src": "35fb81c5",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "A refusé de répondre aux questions de Ynet, affirmant que le parti « ne participe pas aux questionnaires ». Dans les archives : la loi du ministre de la Justice Yariv Levin supprimant les deux sièges de l'Association du barreau israélien au sein du comité de sélection judiciaire et donnant à la coalition et à l'opposition un veto sur les nominations à la Cour suprême a été adoptée 67 à 1 le 27 2025 mars, l'opposition boycottant le vote.",
+      "src": "c86f8fe7",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Le président et le vice-président de la Cour suprême sont choisis au scrutin secret des juges ; diviser le rôle du procureur général en conseiller juridique et procureur en chef ; audiences publiques pour les candidats ; un remplacement de vote 61 ; les limites imposées aux ordonnances provisoires et aux personnes pouvant présenter une requête ; les lois ne sont annulées que par un siège élargi et une majorité spéciale. Zehut, le parti de Feiglin sur la liste commune, supprimerait le comité de sélection et permettrait aux électeurs d'élire directement les juges.",
+      "src": "f8d10831",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "Il a déclaré à Ynet qu’il préparait encore une plate-forme judiciaire détaillée. Pour information : le Jerusalem Post rapporte que Ben-Gvir a soutenu la refonte 2023 et s'est opposé à son assouplissement, qualifiant la loi 2023 de juillet limitant la norme du caractère raisonnable de « juste un début ». Lorsque la loi sur la sélection des juges a été adoptée en mars 2025, il a déclaré que le gouvernement devait poursuivre le reste de la refonte (Times of Israel).",
+      "src": "baeffe34",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "Deri : « réformer en profondeur le système judiciaire et rendre le pouvoir au peuple et à ses représentants élus ». Aucune nouvelle plateforme détaillée.",
+      "src": "9c14eddb",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "Il affirme que la Cour suprême a accumulé un pouvoir excessif et que son autorité doit être reconsidérée et définie plus clairement.",
+      "src": "e775406f",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "La balance s’est déplacée trop vers les tribunaux ; un niveau judiciaire supplémentaire ; retirer l'Association du Barreau d'Israël du comité de sélection ; restreindre la norme du caractère raisonnable.",
+      "src": "b30ea62b",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Abroger la loi sur la sélection des juges et la remplacer par une loi fondamentale ; s'oppose à une clause dérogatoire; des règles plus claires en matière de contrôle judiciaire grâce à une loi fondamentale régissant le pouvoir judiciaire, parallèlement à une loi fondamentale sur la législation.",
+      "src": "a941fd80",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Définir formellement les pouvoirs de la Knesset, du gouvernement et de la Cour suprême ; une loi fondamentale sur la législation fixant la manière dont les lois fondamentales sont promulguées et le moment où le tribunal peut intervenir ; abroger la loi sur les nominations, qui politiserait le système judiciaire ; la Déclaration d'Indépendance comme Loi fondamentale.",
+      "src": "6fd36b1b",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "Une constitution écrite soumise à un référendum national ; les amendements nécessiteraient au moins 80 des 120 membres de la Knesset.",
+      "src": "3c27e2bb",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "Le problème urgent est celui des retards, des tribunaux surchargés et du manque de juges, et non d’un pouvoir judiciaire excessif ; une cour d'appel intermédiaire ; une définition globale de la séparation des pouvoirs.",
+      "src": "1108b508",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Le pouvoir judiciaire détient trop de pouvoir ; réglementer plus clairement les Lois fondamentales tout en limitant la capacité de la Cour suprême à intervenir dans les décisions du gouvernement ; davantage de contrôle sur les procureurs ; un rôle plus fort de la Knesset dans la supervision de l’exécutif.",
+      "src": "2f825cb7",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "Premièrement, une loi fondamentale sur la législation ; un remplacement uniquement avec plus de 72 législateurs ; restreindre, et non abolir, la norme du caractère raisonnable ; au moins 61 vote pour promulguer une loi fondamentale.",
+      "src": "10fa4c72",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "soutient les réformes qui renforcent les protections démocratiques et sauvegardent les droits de tous les citoyens ; un mécanisme de nomination qui préserve l’indépendance judiciaire.",
+      "src": "b5db0f0e",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "A refusé de donner un poste actuel ; en 2023, il s'est opposé à la loi abolissant la norme du caractère raisonnable et à d'autres mesures visant à déplacer le pouvoir des tribunaux.",
+      "src": "74b27441",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Le Jerusalem Post rapporte que lors de sa relance sous le nom de Noam pour Israël en juillet 2026, le parti a désigné l’adoption de la refonte judiciaire comme l’un de ses principaux objectifs. Il n'a donné aucun détail sur les changements souhaités.",
+      "src": "3c24d5be",
+      "machine": true
+    }
+  }
+}

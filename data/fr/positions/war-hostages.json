@@ -1,0 +1,132 @@
+{
+  "_": {
+    "title": {
+      "text": "Comment les parties enquêteraient en octobre 7",
+      "src": "39a4d92b",
+      "machine": true
+    },
+    "question": {
+      "text": "Qui devrait enquêter sur octobre 7 ?",
+      "src": "d5749e09",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Une commission hors loi 1968",
+      "src": "8a43fa1b",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Une enquête indépendante, formulaire non défini",
+      "src": "6dcd4a86",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Une commission d'État en vertu de la loi 1968",
+      "src": "93c04b59",
+      "machine": true
+    },
+    "note": {
+      "text": "Réponses du parti à une enquête de Ynet et Yedioth Ahronoth auprès de tous les partis (octobre 4, 2026). Le Likoud n’a donné aucune réponse officielle ; sa ligne est le compte rendu d'Ynet de son projet de loi pour une commission « nationale ». Otzma Yehudit, le Shas et le Judaïsme unifié de la Torah ont refusé de répondre ; les querelles du Shas et de l'UTJ ajoutent le projet de loi de la coalition qu'ils ont soutenu en première lecture (Times of Israel, juillet 7, 2026), et l'Otzma Yehudit ramène les propos de son chef au cabinet en novembre 2025. Aucun poste publié trouvé pour Noam (vérifié en octobre 2026).",
+      "src": "c62624ec",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Aucune réponse officielle. Le Likoud « a ensuite cherché à présenter un projet de loi privé créant un organe alternatif décrit comme une commission « nationale », mais cet effort n’a pas été achevé avant la fin du mandat de la Knesset » (récit de Ynet).",
+      "src": "d3319fb0",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Le sionisme religieux : \"soutient la création d'une commission d'enquête nationale, indépendante, authentique et équitable... Nous ne soutiendrons en aucun cas une commission d'enquête \"étatique\"...\" Zehut, son partenaire de liste : \"une commission neutre avec des pouvoirs illimités... La coalition et l'opposition nommeront ses membres à parts égales.\"",
+      "src": "5627199e",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "\"Immédiatement après la mise en place du prochain gouvernement, une commission d'enquête sera formée... un vote secret à la nouvelle Knesset pour nommer le président et le vice-président de la commission, ainsi que des juges à la retraite qui sélectionneront les membres restants de la commission.\"",
+      "src": "a8ff40f3",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "\"La première décision de notre gouvernement sera de créer une commission d'enquête d'État sur le massacre d'octobre 7. La commission sera créée conformément à l'article 1 de la loi sur les commissions d'enquête, 1968.\"",
+      "src": "92c6ac0a",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "\"Nous établirons une commission d'enquête d'Etat conformément à la loi dans les cinq premières minutes de la première réunion du gouvernement, le jour de la prestation de serment du gouvernement.\"",
+      "src": "d1cfb971",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "\"La création d'une commission d'enquête d'État sera la première décision que le parti avancera dans le prochain gouvernement... Les membres de la commission seront nommés par le président de la Cour suprême, comme l'exige la loi sur les commissions d'enquête, 1968.\"",
+      "src": "acc109b3",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "\"Nous soutenons la création d'une commission d'enquête d'État exactement conformément à la loi en vigueur dans l'État d'Israël. Ce sera la première décision que nous prendrons dans le gouvernement que nous établirons.\"",
+      "src": "3a037789",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "« Kakhol lavan a soutenu et continue de soutenir la création d’une commission d’enquête indépendante et impartiale sur les événements d’octobre 7… le mécanisme actuel est bon. »",
+      "src": "c83654a4",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "\"Nous soutenons la création d'une commission d'enquête d'Etat. Il est préférable de parvenir à un large accord sur sa composition. Qui devrait la nommer ? La Cour suprême, avec une préférence pour Sohlberg.\"",
+      "src": "877103e9",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "\"Nous soutenons la création d'une commission d'enquête d'État en vertu de la loi en vigueur, dirigée par un juge de la Cour suprême et nommée par le président de la Cour suprême.\" Veut que son mandat inclue « les politiques d’occupation, de blocus et de rejet de la paix sous les gouvernements de Netanyahu ».",
+      "src": "87df1a72",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Une commission « n’est pas actuellement au centre de l’agenda de Ra’am », mais « une enquête approfondie, indépendante et impartiale est nécessaire sur les événements d’octobre 7 ».",
+      "src": "10bbb66b",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "A refusé l'enquête de Ynet. Officiellement : a soutenu le projet de loi de la coalition pour un panel d'octobre 7 nommé par la Knesset, et non par une commission d'État, qui a passé sa première lecture 59 à 0 le 7 2026 juillet, avec le boycott de l'opposition.",
+      "src": "8bc66abe",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "A refusé l'enquête de Ynet. Officiellement : a soutenu le projet de loi de la coalition pour un panel d'octobre 7 nommé par la Knesset, et non par une commission d'État, qui a passé sa première lecture 59 à 0 le 7 2026 juillet, avec le boycott de l'opposition.",
+      "src": "8bc66abe",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "A refusé l'enquête de Ynet. Pour mémoire : lorsque le cabinet a mis en place un panel ministériel pour élaborer sa propre enquête en octobre 7 au lieu d'une commission d'État, Ben-Gvir, membre du panel, a déclaré que « le cadre doit être national, sans personnes issues du système judiciaire ; ceux qui siègent sur le banc font partie des personnes enquêtées » (traduit).",
+      "src": "c0104580",
+      "machine": true
+    }
+  }
+}

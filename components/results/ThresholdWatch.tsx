@@ -1,3 +1,4 @@
+import { isRtl } from "@/lib/i18n";
 import Link from "next/link";
 import { mainPolls, parties } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
@@ -21,7 +22,7 @@ const FLOOR = 4;
  */
 export default function ThresholdWatch({ closed = false, lang = "en" }: { closed?: boolean; lang?: Lang }) {
   const t = resultsText[lang].pollThreshold;
-  const side = lang !== "en" ? "right" : "left";
+  const side = isRtl(lang) ? "right" : "left";
   const who = (pollster: string) => pollsterName(pollster, lang).text;
   const said = (seats: number) => (seats ? t.seats(seats) : t.below);
   const rows = parties

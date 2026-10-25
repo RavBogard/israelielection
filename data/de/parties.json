@@ -1,0 +1,2040 @@
+{
+  "bloc:net": {
+    "label": {
+      "text": "Netanjahu-Block",
+      "src": "f187747a",
+      "machine": true
+    }
+  },
+  "bloc:opp": {
+    "label": {
+      "text": "Anti-Netanjahu-Block (zionistische Parteien)",
+      "src": "91b616f4",
+      "machine": true
+    }
+  },
+  "bloc:mid": {
+    "label": {
+      "text": "Zwischen den Blöcken",
+      "src": "70a348fd",
+      "machine": true
+    }
+  },
+  "bloc:arab": {
+    "label": {
+      "text": "Gemeinsame Liste und Ra'am",
+      "src": "66cb0afc",
+      "machine": true
+    }
+  },
+  "issue:draft": {
+    "label": {
+      "text": "Wehrpflicht für Ultraorthodoxe",
+      "src": "c771af2b",
+      "machine": true
+    }
+  },
+  "issue:courts": {
+    "label": {
+      "text": "Gerichte",
+      "src": "0cada761",
+      "machine": true
+    }
+  },
+  "issue:war": {
+    "label": {
+      "text": "Krieg & Gaza",
+      "src": "c8239818",
+      "machine": true
+    }
+  },
+  "issue:wb": {
+    "label": {
+      "text": "Westjordanland",
+      "src": "689bc30c",
+      "machine": true
+    }
+  },
+  "issue:relig": {
+    "label": {
+      "text": "Religion & Staat",
+      "src": "8fa4f4c9",
+      "machine": true
+    }
+  },
+  "issue:econ": {
+    "label": {
+      "text": "Wirtschaft",
+      "src": "52daa997",
+      "machine": true
+    }
+  },
+  "likud": {
+    "name": {
+      "text": "Likud",
+      "src": "957f8de6",
+      "machine": true
+    },
+    "short": {
+      "text": "Likud",
+      "src": "957f8de6",
+      "machine": true
+    },
+    "leader": {
+      "text": "Benjamin Netanjahu",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Religiöser Zionismus (unterzeichnet Okt. 6; offiziell, CEC Gazette Okt. 19)",
+      "src": "b5e9642f",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet im September 13, 1973 von Begin und Sharon; gewann die Macht in 1977 mit 43 Sitzen.",
+      "src": "8a3738f4",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Netanyahu führt es seit 2005 (und 1993–99) an. Bei den Vorwahlen im August 17, 2026 stand Eli Cohen an erster Stelle; Netanyahu nutzte reservierte Plätze, um Hardliner nach unten zu bewegen.",
+      "src": "39f71946",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "Keine geschriebene 2026-Plattform; Likud „nimmt nicht an Fragebögen teil.“",
+      "src": "a98a3a5e",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 1,115,336 Stimmen, 23.4 %, 32 Sitze.",
+      "src": "f6f1a0d7",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Seine 2022 Wähler waren 57 % traditionell, 32 % säkular, 10 % national-religiös und 1 % Haredi. Es gewann 46.5 % der traditionellen Wähler und 20 % der säkularen Wähler.",
+      "src": "28cabe18",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Stark in Randstädten: Beerscheba 42 %, Eilat 42 %, Aschkelon 40 % in 2021.",
+      "src": "434e5aba",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Erstwähler (18–22): 14 %, hinter Yashars 16 %.",
+      "src": "55d99711",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Netanyahu belebte das Haredi-Ausnahmegesetz wieder, als die Koalition auseinanderfiel; Likud-Abgeordneter Sharren Haskel versprach, dagegen anzukämpfen.",
+      "src": "91a46b57",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Levin enthüllt die Neugestaltung: „Wir gehen zur Wahl, stimmen ab, wählen, und immer wieder wählen Menschen, die wir nicht gewählt haben, für uns … Das ist keine Demokratie.“ Ausstrahlung im August 2026: „Wir werden auf die nächste Amtszeit warten, wenn zwei Drittel der Sitze der Richter des Obersten Gerichtshofs frei werden … Sie werden einfach aussterben.“ Berufsmitglieder verlieren nach dem neuen Richterauswahlgesetz ihr Vetorecht.",
+      "src": "f19f3857",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "Trumps 15-Punkte-Plan wurde abgelehnt; kein Rückzug, „bis die Hamas wirklich entwaffnet ist“.",
+      "src": "c20d12c2",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "„Solange ich Premierminister bin, wird kein palästinensischer Staat entstehen.“ (Im Juli 2025 forderten alle Likud-Minister die Anwendung der Souveränität.)",
+      "src": "0b1144fc",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Eli Cohen",
+      "src": "093e1f22",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "gewann die Vorwahl",
+      "src": "67b9a45a",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Talik Gvili",
+      "src": "27d97c61",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Mutter von Ran Gvili, der letzten zurückgekehrten Geisel",
+      "src": "da41d024",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Yaakov Bardugo",
+      "src": "2dbbb84e",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Kommentator des Kanals 14",
+      "src": "2595fac0",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "„Eine starke rechte Regierung unter meiner Führung.“",
+      "src": "1a56a985",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Antrag auf Ausschluss der Gemeinsamen Liste gestellt; Vertreter von Likud, Shas und UTJ stimmten dafür, die Gemeinsame Liste und Ra'am zu verbieten.",
+      "src": "e2e51642",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Religiöser Zionismus (unterzeichnet Okt. 6).",
+      "src": "fcd87358",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Es gibt keine Gerade. Yashar ist ein Bluff. Es gibt entweder links oder rechts ... Wollen Sie einen palästinensischen Staat? (oder) wollen Sie einen jüdischen Staat?",
+      "src": "644d5047",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Benjamin Netanjahu",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Benjamin Netanjahu",
+      "src": "21fbe850",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Geboren 1949. Premierminister 1996–99, 2009–21 und seit Dezember 2022 der dienstälteste in der Geschichte Israels. Der erste amtierende Premierminister, der vor Gericht strafrechtlich verfolgt wurde; sein Prozess begann im Mai 24, 2020, und er bat am November 30, 2025 um Begnadigung (Al Jazeera, Dez. 29, 2022; Mai 24, 2020; Nov. 30, 2025).",
+      "src": "03483223",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "Ben-Gvir wird in der künftigen Regierung ein hochrangiger Minister sein.",
+      "src": "d535b233",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "name": {
+      "text": "Otzma Yehudit",
+      "src": "b7a73b48",
+      "machine": true
+    },
+    "short": {
+      "text": "Otzma",
+      "src": "ce39a0d6",
+      "machine": true
+    },
+    "leader": {
+      "text": "Itamar Ben-Gvir",
+      "src": "74aadf75",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: keiner gefunden",
+      "src": "56aac96d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet 2012. JTA beschreibt sie als eine Partei, „die den Grundsätzen des verbotenen Extremisten Kach und seines verstorbenen Anführers Meir Kahane folgt“; Israel verbot Kach im 1994.",
+      "src": "84509b6e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Unter der Leitung von Itamar Ben-Gvir. Es gewann 6 Sitze in 2022 innerhalb der gemeinsamen Liste „Religiöser Zionismus“. Sie verließ die Regierung im Januar 2025 wegen des Geisel-Waffenstillstandsabkommens; Ben-Gvir wurde im März 2025 wieder als nationaler Sicherheitsminister eingesetzt.",
+      "src": "6c184566",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 6 Sitze als Teil der gemeinsamen Liste „Religiöser Zionismus“ (516,470 Stimmen, 10.8 %, 14 Sitze insgesamt).",
+      "src": "192d8cb2",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Zieht „traditionelle Mizrahi-Wähler aus der Peripherie“ an (Finkelstein).",
+      "src": "997a4b7f",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "13 % der Haredi-Erstwähler.",
+      "src": "288c387d",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Die Werbung enttäuschte die Likud- und Shas-Wähler.",
+      "src": "2e77b134",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Unterstützte das Gesetz vom Juli 14, das die Verhaftung von Wehrdienstverweigerern verbietet; schlägt Haredi-Spuren bei Polizei und Grenzpolizei vor: „Als Haredi in den Dienst eintreten und ihn als Haredi verlassen.“",
+      "src": "d9f75eec",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Ben-Gvir „hat die Justizreform der Regierung im Jahr 2023 unterstützt und sich den Bemühungen zur Lockerung der Gesetzgebung widersetzt“; Otzma „strebte nach größerem politischen Einfluss auf die Ernennung von Richtern“ (Zusammenfassung von JPost).",
+      "src": "ceebe670",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Abzugsplan 710“: ein Auswanderungsministerium und 250,000 Abzüge von Palästinensern aus Gaza pro Jahr, 10 Milliarden NIS. „Dies ist eine freie Entscheidung; wir zwingen niemanden, zu gehen, aber es gibt Ermutigung.“",
+      "src": "cd124556",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "Widersetzt sich einem palästinensischen Staat und der Evakuierung von Siedlern. Zum Gebet auf dem Tempelberg: Juden „spüren, dass sie die rechtmäßigen Besitzer dieses Ortes sind.“",
+      "src": "c40e1cd3",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Tally Gotliv",
+      "src": "423ecf76",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "ehemaliger Likud-Abgeordneter",
+      "src": "4cdae54b",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Amichai Eliyahu",
+      "src": "8980ef7a",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Yishai Fleisher",
+      "src": "dd225396",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Hebron-Sprecher",
+      "src": "bd0bbe0c",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Eine „völlig rechte Regierung“; keine Einheit mit der Mitte, keine arabischen Parteien; fordert das Verteidigungs- oder Justizministerium; keine Gespräche mit dem palästinensischen Staat.",
+      "src": "368ffc35",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Keiner unterschrieben. Ynet berichtete, dass Ben-Gvir „kein Interesse“ daran habe, bei Ofer Winter zu unterschreiben.",
+      "src": "133daa6c",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Wir haben Pharao überlebt, wir werden auch Keir Starmer überleben.",
+      "src": "b2c83651",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Itamar Ben-Gvir zu den britischen Sanktionen",
+      "src": "8d488e72",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Itamar Ben-Gvir",
+      "src": "74aadf75",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Ein selbsternannter Schüler von Meir Kahane; im 2007 wegen Anstiftung zu Rassismus und Unterstützung einer terroristischen Organisation verurteilt. Nationaler Sicherheitsminister seit Dezember 2022; reisten im Januar 2025 aufgrund des Waffenstillstands in Gaza ab und kehrten im März 2025 zurück (Times of Israel, Sep 15, 2026; Al Jazeera, März 18, 2025).",
+      "src": "e2aa4956",
+      "machine": true
+    }
+  },
+  "shas": {
+    "name": {
+      "text": "Shas",
+      "src": "3d96e01a",
+      "machine": true
+    },
+    "short": {
+      "text": "Shas",
+      "src": "3d96e01a",
+      "machine": true
+    },
+    "leader": {
+      "text": "Aryeh Deri",
+      "src": "7abc9b62",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: UTJ (unterzeichnet Okt. 11; offiziell, CEC Gazette Okt. 19)",
+      "src": "bda049c0",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet 1984 als „Shomrei Sefarad“ aus Protest gegen Agudat Yisraels dünne sephardische Vertretung unter Rav Ovadia Yosefs Rat der Tora-Weisen. Spitzenwert: 17 Sitze in 1999.",
+      "src": "fe5495ba",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Deri leitet es seit 2013 (und 1990–99). Der ehemalige Oberrabbiner Yitzhak Yosef wurde in 2026 zum „Führer“ gewählt.",
+      "src": "6dd09177",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 392,964 Stimmen, 8.2 %, 11 Sitze.",
+      "src": "aa19b338",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Gewann 28 % der Haredi-Wähler und 10.5 % der national-religiösen Wähler im 2022.",
+      "src": "00f23928",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Malach von IDI: „Mindestens drei oder vier Knessetsitze von Wählern, die einfach keine Haredi sind.“",
+      "src": "d46509e7",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Erstwähler: 3 % insgesamt, 20 % der Haredi-Erstwähler.",
+      "src": "327927c5",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Deri: „Die Armee will keine Haredi-Soldaten, denken Sie daran.“ Gesetzentwurf zur Verankerung des Thorastudiums als Grundwert.",
+      "src": "e9616271",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "„Das Justizsystem grundlegend reformieren und die Macht dem Volk und seinen gewählten Vertretern zurückgeben.“",
+      "src": "a5629f74",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "Unterstützt die Auflösung der Hamas; lehnt eine unbefristete israelische Kontrolle ab (Zusammenfassung von JPost).",
+      "src": "81827099",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "lehnt einen palästinensischen Staat ab; „nicht im Mittelpunkt“ seiner Kampagne.",
+      "src": "7e2c2303",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Orthodoxe Kontrolle von Ehe, Konversion und Kaschrut; lehnt die standesamtliche Trauung und die Ausweitung des nicht-orthodoxen Gebets im Kotel ab.",
+      "src": "6ba70233",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Deri: „Es ist inakzeptabel, dass ein armes Haredi-Kind nicht die Mindestunterstützung erhält, die ein armes arabisches Kind erhält.“",
+      "src": "47b9a6bc",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Yinon Azoulay",
+      "src": "ee366f05",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Oberstleutnant (res.) Dror Amos",
+      "src": "3ee023ee",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Vorsitzender des Religionsrats von Haifa; 25 Jahre in der IDF",
+      "src": "c7eeb663",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Josef Alnathanow",
+      "src": "74330109",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Buchara-Gemeinschaft",
+      "src": "1e04b2ea",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "„Wir unterstützen Netanyahu, Punkt.“",
+      "src": "3af20131",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Berichteter Plan, in der Opposition zu bleiben, bis ein Gesetzesentwurf verabschiedet wird; anonyme Quelle, „keine formelle Entscheidung.“",
+      "src": "7949e009",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "UTJ, „erwartet.“ Signatur nicht gefunden.",
+      "src": "3df4b6a9",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Wird Bibi Netanjahu Buße tun? Keine Chance ... Eisenkot, vielleicht wird er es tun.",
+      "src": "b3d2635d",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Rabbi Yitzhak Yosef",
+      "src": "299e3d49",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Aryeh Deri",
+      "src": "7abc9b62",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "In 1999 wegen Bestechung verurteilt und 22 Monate verbüßt. Nach einem 2022 Vorwurf des Steuerbetrugs ordnete der Oberste Gerichtshof im Januar 2023 seine Absetzung als Minister an (Al Jazeera, Dez. 29, 2022 und Jan. 22, 2023; JTA, Feb. 14, 2018).",
+      "src": "afeee875",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "„Es wird in Israel keine Regierung mit Unterstützung oder Beteiligung des Schas geben, solange der Status der Jeschiwa-Studenten nicht geregelt ist.“",
+      "src": "2e7197d6",
+      "machine": true
+    }
+  },
+  "utj": {
+    "name": {
+      "text": "UTJ",
+      "src": "b76e4852",
+      "machine": true
+    },
+    "short": {
+      "text": "UTJ",
+      "src": "b76e4852",
+      "machine": true
+    },
+    "leader": {
+      "text": "Yaakov Asher (Goldknopf Nr. 2)",
+      "src": "67b8e877",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Shas (unterzeichnet Okt. 11; offiziell, CEC Gazette Okt. 19)",
+      "src": "c5d30a58",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Eine gemeinsame Liste von Agudat Yisrael (chassidisch) und Degel HaTorah (litauisch) seit 1992. Beide Fraktionen traten im Juli 2025 wegen des Entwurfs aus der Regierung aus.",
+      "src": "b4234a81",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "September 5, 2026: Rav Dov Landau entfernte Gafni und Maklev per Brief und ernannte Yaakov Asher zum Oberhaupt. September 8: Porush und Stark bildeten eine dritte Fraktion innerhalb der Liste, Homat Torat Yisrael, die erste seit 1992.",
+      "src": "ed0b6fa1",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 280,194 Stimmen, 5.9 %, 7 Sitze.",
+      "src": "7eeae54c",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "58 % der Haredim haben in 2022 für UTJ gestimmt; 86 % stimmten für UTJ oder Shas.",
+      "src": "f0bbb603",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "2021: 78 % in Modi'in Illit, 60.9 % in Bnei Berak.",
+      "src": "ca5d350b",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Erstwähler: 9 % insgesamt, 45 % der Haredi-Erstwähler.",
+      "src": "41ad4db0",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "„Das Vereinigte Tora-Judentum mit all seinen Komponenten wird keine Regierung unterstützen oder ihr beitreten, ohne den Status von Tora-Lernenden zu regeln.“",
+      "src": "748d48bb",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "„Der Oberste Gerichtshof hat übermäßige Macht angesammelt.“",
+      "src": "fc60a973",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Konzentriert sich hauptsächlich auf innenpolitische Themen.“",
+      "src": "5428e36c",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "Keine einheitliche Richtlinie; Agudah lehnt sich nach rechts, Degel „gemäßigter“.",
+      "src": "38e93a4e",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Dasselbe wie Shas: Orthodoxe Kontrolle über Ehe, Konvertierung und Kaschrut.",
+      "src": "6b8a2f18",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Yaakov Asher",
+      "src": "cd2a4585",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Degel HaTorah",
+      "src": "026a00cb",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Yitzhak Goldknopf",
+      "src": "a3bea2e9",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Agudat Yisrael (Gur)",
+      "src": "5254a353",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Meir Porush",
+      "src": "5a33c963",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Homat Torat Yisrael",
+      "src": "841c34c1",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Keine Regierung ohne ein Jeschiwa-Statusgesetz, wer auch immer sie führt.",
+      "src": "26902cfe",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Porushs Fraktion erfordert separate Verhandlungen.",
+      "src": "1cbe0e49",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "Rav Landau: „Wir haben kein Vertrauen mehr in Netanyahu.“",
+      "src": "97fa3752",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Shas, „erwartet“. Signatur nicht gefunden.",
+      "src": "190b2ef1",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Viele Dinge sehen wie Etrogim aus – aber das ist kein Etrog.",
+      "src": "8eb1ef91",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Yaakov Asher über religiösen Zionismus und Otzma, der Haredi-Wähler umwirbt",
+      "src": "e6836b31",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Yaakov Asher",
+      "src": "cd2a4585",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Ersetzte Moshe Gafni als Vorsitzender von Degel HaTorah (Times of Israel, Sep 9, 2026).",
+      "src": "bc64848d",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "Yitzhak Goldknopf (Nr. 2)",
+      "src": "86d320ad",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "Anführer der Agudat Yisrael-Fraktion der UTJ. Im Juni 2025 wegen der Einberufung von Jeschiwa-Studenten als Wohnungsbauminister zurückgetreten (Times of Israel, Sep 14, 2025; Sep 9, 2026).",
+      "src": "d6c12d94",
+      "machine": true
+    }
+  },
+  "rz": {
+    "name": {
+      "text": "Religiöser Zionismus – Zehut",
+      "src": "0fd5dfe6",
+      "machine": true
+    },
+    "short": {
+      "text": "RZ–Zehut",
+      "src": "e2acaaec",
+      "machine": true
+    },
+    "leader": {
+      "text": "Bezalel Smotrich, mit Moshe Feiglin",
+      "src": "19e0c0d5",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Likud (unterzeichnet Okt. 6; offiziell, CEC Gazette Okt. 19)",
+      "src": "50fbbd28",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Die umbenannte National Union-Tkuma-Partei. Ben-Gvir lehnte eine erneute gemeinsame Kandidatur ab: „Smotrich muss in einer Partei kandidieren und wir müssen in einer anderen Partei kandidieren.“",
+      "src": "a7134a28",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Im September 1 bildete 2026 mit Moshe Feiglins Zehut einen „technischen Block“, der sich nach der Wahl trennen kann. Feiglin: „Wir sind eine völlig getrennte Partei.“",
+      "src": "65ae9e81",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022 (gemeinsame Liste mit Otzma und Noam): 516,470 Stimmen, 10.8 %, 14 Sitze; RZ hat 7 behalten.",
+      "src": "9fb9cb22",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Die gemeinsame Liste 2022 umfasste 45 % der national-religiösen Wähler (vorher 30 %) und 14 % der traditionellen Wähler.",
+      "src": "dc9e8e41",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "22 % in Siedlungen gewonnen, im Vergleich zu etwa 11 % landesweit.",
+      "src": "572f642f",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Siedler-Wut über den Entwurf: „Ich habe heute keine politische Heimat.“",
+      "src": "561de38d",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Die meisten Abgeordneten der RZ stimmten für das Gesetz vom Juli 14, das die Verhaftung von Wehrdienstverweigerern verbietet. Smotrich: Verhaftungen „führen nur dazu, dass Juden gegeneinander kämpfen.“",
+      "src": "ea25e1f3",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "„Diese Wahlen betreffen die Justiz.“ Plan: Richter werden durch geheime Abstimmung aller Richter ausgewählt, AG-Rolle wird in zwei Teile geteilt, 61-Stimmenüberschreibung.",
+      "src": "561aee65",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Kehren Sie im großen Stil zu ganz Gaza zurück“, mit Militärherrschaft vor Souveränität.",
+      "src": "4f8ee4bb",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "E1-Genehmigung (~3,400 Einheiten) „löscht praktisch die Zwei-Staaten-Täuschung aus.“ 103 neue Siedlungen wurden während seiner Amtszeit genehmigt.",
+      "src": "9d6b1912",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "„Jüdische Identität in staatlichen Institutionen und Bildung.“",
+      "src": "e83f4912",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Die Plattform von Partner Zehut: eine Pauschalsteuer „so niedrig wie möglich“, öffentlich finanzierte Schulgutscheine, die von den Eltern kontrolliert werden, und eine „durchdachte Regulierung“ von Cannabis.",
+      "src": "45e61849",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Moshe Feiglin",
+      "src": "24af9741",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Zehut-Anführer",
+      "src": "7056eece",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Orit Strock",
+      "src": "c38913d5",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Simcha Rothman",
+      "src": "89ac83e7",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Netanyahu wird Premierminister; schließt arabische Parteien aus.",
+      "src": "354b170b",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Likud (unterzeichnet Okt. 6).",
+      "src": "cb2d5a19",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Jede Siedlung… ist ein weiterer Nagel im Sarg dieser gefährlichen Idee.",
+      "src": "caea9b67",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Bezalel Smotrich über einen palästinensischen Staat",
+      "src": "d7a95384",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Bezalel Smotrich",
+      "src": "f713cdf7",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Finanzminister und Minister im Verteidigungsministerium, der den jüdischen und palästinensischen Bau im Gebiet C des Westjordanlandes überwacht. Sagte am 1, 2023 März, dass Huwara „ausgelöscht werden muss“. Seit Juni 2025 von Großbritannien, Kanada, Australien, Neuseeland und Norwegen sanktioniert (Times of Israel, Dezember 29, 2022; Al Jazeera, März 1, 2023; Jun 10, 2025).",
+      "src": "4418cf27",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Würde eine Regierungsbildung mit dem Premierministerkandidaten Gadi Eisenkot nicht ausschließen, allerdings nicht um den Preis eines Boykotts seiner Partner im rechten Block.",
+      "src": "4e2a1888",
+      "machine": true
+    }
+  },
+  "poi": {
+    "name": {
+      "text": "Volk Israel",
+      "src": "15f727e1",
+      "machine": true
+    },
+    "short": {
+      "text": "Leute von Isr.",
+      "src": "3dd4c6f5",
+      "machine": true
+    },
+    "leader": {
+      "text": "Ofer Winter",
+      "src": "04645e34",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: keiner gefunden",
+      "src": "56aac96d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Amcha Yisrael. Gegründet im August 25, 2026 in Jerusalem von Ofer Winter, einem pensionierten Brigadegeneral, der einen Likud-Platz abgelehnt hatte.",
+      "src": "29d38b06",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Lehnte Smotrichs Fusionsangebot trotz des Drucks der Rabbiner ab. Winter: Die Öffentlichkeit will „neue Leute“.",
+      "src": "1f88ebca",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "Neue Liste, gestartet im August 25, 2026; kein 2022 Ergebnis.",
+      "src": "1b462d4c",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Zielgruppe sind jüngere Wähler, Reservisten und Rechte, die die aktuelle Regierung nicht unterstützen können.",
+      "src": "1008257d",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "„Wir werden keiner Regierung beitreten, die nicht vor ihrer Bildung ein Gesetz verabschiedet, das der Wehrdienstumgehung ein Ende setzt … Schluss damit.“",
+      "src": "36ee3aaa",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Eine zusätzliche Gerichtsebene mit einem „ausgewogeneren“ Ernennungssystem; Vertreter der Anwaltskammer aus dem Richterauswahlausschuss entfernen; den Maßstab der „Angemessenheit“ einschränken.",
+      "src": "e88a1c4d",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„In Gaza gibt es eine Lösung: Migration.“",
+      "src": "555dc103",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "„Hier wird es nie einen palästinensischen Staat geben.“",
+      "src": "ea7c2679",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Doppelter Soldatenlohn.",
+      "src": "d79baba4",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Josef Haddad",
+      "src": "f4ddc575",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Arabisch-orthodoxer Christ; Golani-Freiwilliger im 2006 verwundet",
+      "src": "b5a37f9f",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Netali Shem Tov",
+      "src": "ecf42150",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Journalist",
+      "src": "63392b6c",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Fleur Hassan-Nahoum",
+      "src": "8e134466",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Stellvertretender Bürgermeister von Jerusalem 2018–24",
+      "src": "9dd354ba",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Empfiehlt nur Netanyahu; will das Verteidigungsministerium; wird nicht mit Bennett oder Eisenkot zusammenarbeiten (JPost meldet Konflikt).",
+      "src": "6720aa36",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Würde an der Seite der Haredi-Parteien dienen, aber nicht bevor der Entwurf geklärt ist: „Ich werde keiner Regierung beitreten, bis diese Angelegenheit geklärt ist.“",
+      "src": "c417676d",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Keiner unterschrieben. Ein hochrangiger Likud-Funktionär: „Wir werden nicht mit Winter unterschreiben, Punkt.“ Ynet berichtete, dass Ben-Gvir „kein Interesse“ an einem Deal mit Winter habe.",
+      "src": "0e55a038",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Neue Leute, diejenigen, die nicht Teil der Ereignisse waren, die uns in den Oktober 7 führten.",
+      "src": "c71b1d49",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Ofer Winter, darüber, was die Öffentlichkeit will",
+      "src": "e581d5c8",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Ofer Winter",
+      "src": "04645e34",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Kommandierte die Givati-Brigade, auch im 2014 Gaza-Krieg, und die 98-te Division; Militärsekretär des Verteidigungsministers Liberman. Verließ die IDF im 2024, nachdem er bei der Beförderung übergangen wurde (Times of Israel, August 27 und September 6, 2026).",
+      "src": "2608aee5",
+      "machine": true
+    }
+  },
+  "noam": {
+    "name": {
+      "text": "Noam",
+      "src": "08610224",
+      "machine": true
+    },
+    "short": {
+      "text": "Noam",
+      "src": "08610224",
+      "machine": true
+    },
+    "leader": {
+      "text": "Avi Maoz",
+      "src": "a41d6edc",
+      "machine": true
+    },
+    "status": {
+      "text": "Umfrage nicht gefunden",
+      "src": "01951895",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Avi Maozs Party. Gewann 1 Sitz in 2022 auf der gemeinsamen Liste mit Religious Zionism und Otzma Yehudit; hat eine eigene Liste in 2026 abgelegt.",
+      "src": "9ebdbdea",
+      "machine": true
+    },
+    "thin": {
+      "text": "Unsere Forschungsregister enthalten kein 2026-Profil, keine Umfrage oder Biografie für Noam oder Avi Maoz.",
+      "src": "b91017c2",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "name": {
+      "text": "Yashar!",
+      "src": "84c78212",
+      "machine": true
+    },
+    "short": {
+      "text": "Yashar!",
+      "src": "84c78212",
+      "machine": true
+    },
+    "leader": {
+      "text": "Gadi Eisenkot",
+      "src": "dac05998",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Die Demokraten (unterzeichnet im September 10)",
+      "src": "a9474322",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet im September 16, 2025 von Gadi Eisenkot mit etwa 120 Mitbegründern, nachdem er die Knesset verlassen hatte.",
+      "src": "cf471c39",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Benannt nach der Aussage der befreiten Geisel Eli Sharabi, dass es beim Heimbringen der Gefangenen „nicht um rechts oder links, sondern geradeaus (yashar)“ ging.",
+      "src": "fa3a4b7e",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "Zu den Rekruten zählen der ehemalige Shin Bet-Chef Yoram Cohen (Nr. 2), Orit Farkash-Hacohen und Elazar Stern (Nr. 12).",
+      "src": "4db30376",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "Neue Liste; kein 2022 Ergebnis. Eisenkot kandidierte in 2022 für National Unity, das 12 Sitze gewann.",
+      "src": "028f5f92",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Zielt auf Pendlervororte der „Route 4“: Petah Tikva, Kiryat Ono, Holon; wirbt auch um ehemalige Likud-Wähler.",
+      "src": "7300707e",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "„Sicherheitsorientiert, zentristisch oder gemäßigt rechts, säkular oder religiös traditionell.“",
+      "src": "79bfdbd0",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Größter Anteil Erstwähler (18–22): 16%.",
+      "src": "9e3525e9",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "„Nationaler Dienst für alle“; Aufschiebungen sind auf 3 % jeder Kohorte begrenzt, etwa 2,200 Personen; Hinterzieher verlieren Vorteile.",
+      "src": "8ecc058c",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Aufhebung des Gerichtsauswahlgesetzes; lehnt eine Außerkraftsetzungsklausel ab; klarere Regeln für die gerichtliche Kontrolle in einem Grundgesetz.",
+      "src": "f532729c",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Der Staat Israel darf eine Realität nicht akzeptieren, in der die Hamas überlebt, aufrüstet und abwartet.“ Will eine staatliche Untersuchungskommission.",
+      "src": "b7ebd714",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "lehnt einen palästinensischen Staat ab; würde die Zivilverwaltung wieder der militärischen Koordination unterstellen.",
+      "src": "0ffe42cc",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "„Eine säkulare Partei, aber nicht antireligiös“; unterstützt die standesamtliche und gleichgeschlechtliche Ehe (Zusammenfassung von JC).",
+      "src": "fd3a26b2",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "15% Erhöhung für alle Wehrpflichtigen; Mieterschutz; Der Reservezoll ist auf 50 Tage im Jahr begrenzt.",
+      "src": "e09e1652",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Yoram Cohen",
+      "src": "196aa72a",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "ehemaliger Chef von Shin Bet",
+      "src": "113e693e",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Orit Farkash-Hacohen",
+      "src": "475456b2",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Adi Altschuler",
+      "src": "99762390",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "designierter Bildungsminister",
+      "src": "c7274938",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Die Partner müssen vier Grundsätze akzeptieren, darunter den Dienst für alle und die „Demontage und Zerstörung der Hamas“. „Ich schließe keine zionistische Partei aus.“",
+      "src": "e6d3631b",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Zu Ra'am: Mansour Abbas „wird nicht Teil meiner nächsten Regierung sein.“ Derzeit erfüllt keine Haredi-Partei seine Kriterien.",
+      "src": "f1cb671a",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Die Demokraten (unterzeichnet im September 10).",
+      "src": "6703081a",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Netanjahu lehnte die Aufnahme dieses Ziels zunächst ab, und ich zwang es ihm am neunten Kriegstag auf.",
+      "src": "95eb77b7",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Gadi Eisenkot, wie er die Geiseln zu einem Kriegsziel machte",
+      "src": "2efdf6bf",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Gadi Eisenkot",
+      "src": "dac05998",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Sohn von Einwanderern aus Marokko; wuchs in Tiberias und Eilat auf. Aufstieg durch die Golani-Brigade; IDF-Stabschef bis 2019. Sein Sohn Gal wurde im Dezember 2023 in Gaza getötet. JTA: Er wäre Israels erster Mizrahi-Premierminister (JTA, Sep 9, 2026).",
+      "src": "165524ad",
+      "machine": true
+    },
+    "pledges.2.text": {
+      "text": "„Absolut nicht. Ich werde nicht unter Netanyahu dienen, nicht einmal im Rahmen einer Rotationsvereinbarung.“ (Jerusalem Post, Okt. 21, 2026)",
+      "src": "cecc44c7",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "name": {
+      "text": "B'Yachad",
+      "src": "f1636ff2",
+      "machine": true
+    },
+    "short": {
+      "text": "B'Yachad",
+      "src": "f1636ff2",
+      "machine": true
+    },
+    "leader": {
+      "text": "Naftali Bennett (Yair Lapid Nr. 2)",
+      "src": "438baf9d",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Yisrael Beiteinu (unterzeichnet im September 10)",
+      "src": "325d814d",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "„Gemeinsam – unter der Leitung von Bennett.“ Yesh Atid läuft in dieser Liste im Rahmen eines Vertrags, der im April 25–26, 2026 unterzeichnet wurde; Lapid ist nein. 2 und Yesh Atid hält 10 der obersten 24 Plätze. Keine formelle Fusion.",
+      "src": "e925fcc0",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Die Umfragewerte sanken von etwa 25 Sitzen im Mai auf etwa die Hälfte; Die Liste hat sich der liberal-zionistischen Mitte zugewandt.",
+      "src": "96d6090a",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: Yesh Atid 847,435 Stimmen, 17.8 %, 24 Sitze; Bennett rannte nicht.",
+      "src": "110ca60f",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Yesh Atids 2022 Wähler waren 78.5 % säkular, 20 % traditionell; Es benötigte 39 % der säkularen Stimmen.",
+      "src": "31150f73",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Russischsprachige: Bennett 17%.",
+      "src": "8fbd5fc9",
+      "machine": true
+    },
+    "voters.3.text": {
+      "text": "Erstwähler: 10%.",
+      "src": "6d836578",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Bennett: „Bibi spricht von einer 50 %-Befreiung, Gadi spricht von einer 30 %-Befreiung, ich spreche von 0 %-Befreiung.“ Abschlussstipendien für verheiratete Jeschiwa-Studenten.",
+      "src": "5719e6eb",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Ein Grundgesetz darüber, wie Grundgesetze erlassen werden und wann Gerichte eingreifen können; Aufhebung des Gesetzes über die Ernennung von Richtern; 8-jährige Amtszeitbegrenzung für Premierminister.",
+      "src": "354585e9",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Wir dürfen keinen Zentimeter von der roten Linie abweichen, bis die Hamas entwaffnet ist.“ Unterstützt eine staatliche Kommission am Okt. 7.",
+      "src": "88fd42ac",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "lehnt einen palästinensischen Staat „in jeder Konstellation“ ab; unterstützt E1; würde illegale Außenposten abbauen und gleichzeitig eine „legale Siedlung in Gebiet C“ unterstützen.",
+      "src": "aad21f01",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Standesamtliche Trauung; Städte entscheiden sich für den Schabbat-Transit; „völlige Gleichberechtigung zum Schutz der LGBTQ-Gemeinschaft.“",
+      "src": "38aee591",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "„Wir werden die Lebensmittelpreise innerhalb von drei Jahren um 30 % senken.“",
+      "src": "7965c48a",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Yair Lapid",
+      "src": "969fca68",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Anführer von Yesh Atid",
+      "src": "a850f749",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Keren Terner",
+      "src": "6d69591e",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "ehemaliger Generaldirektor für Finanzen und Verkehr",
+      "src": "8906646f",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Yonatan Shalev",
+      "src": "ca35f73c",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "23-jähriger Reservistenaktivist",
+      "src": "d9a8bf04",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Nur zionistische Parteien: keine arabischen oder charedischen Parteien; „Keine Kompromisse bei Entwurfsfragen.“",
+      "src": "4b1bec52",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Wird sich für seine Koalition nur auf zionistische Parteien verlassen, nicht wieder auf Ra'am: ein expliziter Bruch mit seiner 2021-Regierung.",
+      "src": "b5772451",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Yisrael Beiteinu (unterzeichnet im September 10).",
+      "src": "0f183701",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Ich bin ein rechter Typ, ich ändere meine Meinung nicht. Aber ich bin kein Idiot.",
+      "src": "bf282d48",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Naftali Bennett",
+      "src": "f2c03d82",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Naftali Bennett",
+      "src": "f2c03d82",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Geboren in Haifa als Kind amerikanischer Einwanderer. Mitbegründer des Betrugserkennungsunternehmens Cyota und Leiter des Yesha Council. Premierminister June 2021–June 2022, der erste, der regelmäßig eine Kippa trug (JTA, Jun 1, 2021).",
+      "src": "a0032a6f",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "Yair Lapid (Nr. 2)",
+      "src": "93bc6b18",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "Ein ehemaliger Fernsehjournalist, der Yesh Atid im 2012 gründete; Sie wurde im 2013 zur zweitgrößten Partei der Knesset. Premierminister Juli–Dezember 2022, dann Oppositionsführer (JTA, März 2, 2015; Juli 1, 2022).",
+      "src": "5217f1f4",
+      "machine": true
+    }
+  },
+  "dem": {
+    "name": {
+      "text": "Die Demokraten",
+      "src": "56621f58",
+      "machine": true
+    },
+    "short": {
+      "text": "Demokraten",
+      "src": "11dcc60a",
+      "machine": true
+    },
+    "leader": {
+      "text": "Yair Golan",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Yashar! (signiert Sep 10)",
+      "src": "a3d1bd14",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Labour (gegründet 1968; Premierminister Meir, Rabin, Peres) und Meretz (1992) kandidieren gemeinsam. Eine teilweise Fusion: Beide behalten ihre eigenen Institutionen.",
+      "src": "0ea40193",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Yair Golan gewann im Mai 2024 mit 95 % der Stimmen die Führung der Labour-Partei. Auf der 2026-Liste stehen der regierungsfeindliche Protestführer Moshe Radman und die ehemalige Meretz-Abgeordnete Gaby Lasky.",
+      "src": "453d7b4f",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: Labour 175,992 Stimmen, 3.7 %, 4 Sitze; Meretz 150,793, 3.2%, 0 Sitze (erstmals nicht in der Knesset vertreten).",
+      "src": "90bdd63e",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Labour und Meretz erhielten 16 % der säkularen Stimmen in 2022, gegenüber 19 %.",
+      "src": "42f09673",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Erstwähler: 7%. Beansprucht mehr als 100,000 Mitglieder.",
+      "src": "fcd283a5",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Universaldienst „im nationalen und gleichen Rahmen“. Golan bezeichnete die massenhafte Wehrpflicht der Haredi als „undurchführbar“.",
+      "src": "6b637501",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Dringende Probleme seien „Verzögerungen, überlastete Gerichte und Richtermangel“; ein Zwischenberufungsgericht; ist gegen die 2023-Reform.",
+      "src": "39bff9cb",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Stürzen Sie das Hamas-Regime.“",
+      "src": "32c4d7f6",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "Widersetzt sich der Annexion; Außenposten entwerten. Golan: zivile Trennung mit israelischer Sicherheitskontrolle.",
+      "src": "14b48433",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Standesamtliche Trauung; eingeschränkter öffentlicher Nahverkehr am Schabbat in säkularen Städten; das Nationalstaatsgesetz ändern.",
+      "src": "02918fb1",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "„Lebenshaltungskosten senken, soziale Dienste verbessern, den öffentlichen Sektor wieder aufbauen“; JPost nennt die Details „weniger klar definiert“.",
+      "src": "c26b85ca",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Naama Lazimi",
+      "src": "a249016f",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Gilad Kariv",
+      "src": "530cad63",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Gaby Lasky",
+      "src": "c934a848",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "ehemaliger Meretz MK",
+      "src": "9a73a7bb",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Keine Charedi-Parteien: „Die Charedim werden außerhalb [der Regierung] sein, das ist eine Garantie.“ Golan sagte dies nach einem durchgesickerten Clip, in dem er eine Regierung unterstützen würde, die eine Haredi-Partei brauche, „vorausgesetzt, dass Likud, Smotrich und Ben Gvir nicht da sind“.",
+      "src": "316a373d",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Offen für eine arabische Partei: „Es ist natürlich, richtig, angemessen und demokratisch“ (die Partei sagt, dies sei ihre eigene Plattform, nicht die des Blocks).",
+      "src": "6f5852da",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Yashar! (unterzeichnet Sept. 10).",
+      "src": "b8e36518",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "In unserer Regierung wird es keine Angeklagten geben. Null.",
+      "src": "e6c21c05",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Yair Golan",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Yair Golan",
+      "src": "eb730c21",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Ein ehemaliger stellvertretender Stabschef der IDF. Im Oktober 7 fuhr er zum Nova-Festivalgelände und rettete Menschen. Gewann Labour im Mai 2024 mit 95 % der Stimmen die Führung (Times of Israel, Mai 28, 2024; Sep 10, 2026).",
+      "src": "b70273a7",
+      "machine": true
+    }
+  },
+  "yb": {
+    "name": {
+      "text": "Israel Beiteinu",
+      "src": "0c5a4587",
+      "machine": true
+    },
+    "short": {
+      "text": "Israel B.",
+      "src": "c2d9b028",
+      "machine": true
+    },
+    "leader": {
+      "text": "Avigdor Liberman",
+      "src": "67322d01",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: B'Yachad (unterzeichnet im September 10)",
+      "src": "46dc4ce4",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet 1999 von Avigdor Liberman; richtete sich zunächst an sowjetische Einwanderer, später an „rechte säkulare Wähler“. Spitzenwert: 15 Sitze in 2009.",
+      "src": "6d6bc42e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "In 2019 lehnte Liberman „jeden Kompromiss bezüglich des Gesetzesentwurfs ab“, was die Koalitionsverhandlungen scheiterte und eine Neuwahl erzwang.",
+      "src": "8f060242",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 213,687 Stimmen, 4.5 %, 6 Sitze.",
+      "src": "d4de6491",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Russischsprachige: Yisrael Beiteinu 23%; 94 % von ihnen unterstützen einen universellen Entwurf.",
+      "src": "067b2bde",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Erstwähler: 6%.",
+      "src": "8f3830fb",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Alle bei 18: „Juden, Muslime, Christen, Drusen und Tscherkessen“; Sanktionen einschließlich Reiseverboten.",
+      "src": "2705376a",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Eine schriftliche Verfassung, die einem nationalen Referendum unterzogen wird; Änderungen würden 80 MKs erfordern.",
+      "src": "81ef2dbf",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "Die Vereinbarungen des Friedensausschusses seien „eine Kapitulation vor dem Terror“. Eine staatliche Kommission am Okt. 7 ist Voraussetzung.",
+      "src": "8d4fd2c2",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "„Die Palästinensische Autonomiebehörde muss aufgelöst werden.“",
+      "src": "feb9a903",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Standesamtliche Trauung und Scheidung; ein Kompromiss zur Klagemauer; lokale Auswahl beim Schabbat-Transit; ein verbindliches Kerncurriculum.",
+      "src": "c7919aa8",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "„Rechte Finanzpositionen.“",
+      "src": "b9915160",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Rafi Ben Shitrit",
+      "src": "dc810ed1",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "ehemaliger Bürgermeister von Beit She'an",
+      "src": "cf130f64",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Sharon Sharabi",
+      "src": "a4dae5ea",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Bruder der befreiten Geisel Eli Sharabi",
+      "src": "a83a01fb",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Dan Illouz",
+      "src": "e8b8013b",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "ehemaliger Likud-Abgeordneter",
+      "src": "4cdae54b",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Kein Netanyahu, keine arabischen Parteien, keine Haredi-Parteien: „nicht für die arabischen Parteien und nicht für die Haredi-Parteien.“",
+      "src": "65ea865b",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Bedingungen: Untersuchung im Oktober 7, Universaldienst, Amtszeitbeschränkung des Premierministers, Kernlehrplan, Verfassung durch Referendum.",
+      "src": "d5422911",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "B'Yachad (unterzeichnet im September 10).",
+      "src": "8ca56d38",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Wir sind der Likud von gestern.",
+      "src": "87280fc9",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Slogan von Israel Beiteinu",
+      "src": "af48a93f",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Avigdor Liberman",
+      "src": "67322d01",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Geboren im heutigen Moldawien; eingewandert in 1978 um 19. Gegründet wurde Yisrael Beiteinu im 1999. Im 2019 erzwang seine Weigerung, Netanyahus Regierung wegen des Haredi-Gesetzentwurfs beizutreten, eine zweite Wahl in diesem Jahr (JTA, Juni 6, 2019).",
+      "src": "576c2857",
+      "machine": true
+    }
+  },
+  "bw": {
+    "name": {
+      "text": "Blau und Weiß",
+      "src": "3d76c18d",
+      "machine": true
+    },
+    "short": {
+      "text": "Schwarzweiß",
+      "src": "b81c374a",
+      "machine": true
+    },
+    "leader": {
+      "text": "Benny Gantz",
+      "src": "55774b27",
+      "machine": true
+    },
+    "status": {
+      "text": "In jeder aktuellen Umfrage unter dem Schwellenwert",
+      "src": "be024347",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Bis zu 3 MKs nach Überläufern. Gantz wird in der letzten Woche aussteigen, wenn die Partei die Schwelle nicht überschreitet.",
+      "src": "20b07dc0",
+      "machine": true
+    },
+    "thin": {
+      "text": "Unsere Parteiregister erfassen Blau und Weiß darüber hinaus nicht.",
+      "src": "b5503ca1",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Benny Gantz",
+      "src": "55774b27",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Sohn von Holocaust-Überlebenden; IDF-Stabschef. Vorsitz Blau und Weiß; stellvertretender Premierminister in 2020. Verließ das Kriegskabinett im Juni 9, 2024 (JTA, Jan 27, 2021; Jun 10, 2024).",
+      "src": "26ec61a8",
+      "machine": true
+    }
+  },
+  "res": {
+    "name": {
+      "text": "Reservisten – Wirtschaft",
+      "src": "7ee5176b",
+      "machine": true
+    },
+    "short": {
+      "text": "Reservisten",
+      "src": "d209f699",
+      "machine": true
+    },
+    "leader": {
+      "text": "Yoaz Hendel",
+      "src": "32a1f07a",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: keiner bestätigt",
+      "src": "c5b79734",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Yoaz Hendel gründete The Reservists am 18, 2025 September. Am 6, 2026 September, zwei Tage vor Ablauf der geplanten Frist, schloss er sich mit der Wirtschaftspartei von Yaron Zelekha zusammen.",
+      "src": "ba8d3e10",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Stellt sich selbst als „dritten Block“ dar. Sein Block ist umstritten: IsraelEd sagt, es würde sich Netanyahu anschließen; Times of Israel nennt es blockfrei.",
+      "src": "61adfc1b",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "Neue Liste; keine 2022 Plätze. Zelekhas Partei gewann 0.29 % (13,920 Stimmen) im 2022.",
+      "src": "c53c28db",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Hendel: „Wer eine Regierung mit ultraorthodoxen Parteien will, weiß, wen er wählen muss … Wer sich mit einer auf arabische Parteien angewiesenen Minderheitsregierung wohlfühlt, hat die Wahl der Opposition. Wir müssen die Alternative bieten.“",
+      "src": "8733996c",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Erstmals den Schwellenwert in der Umfrage von Kanal 13 am 23, 2026 September, mit 4 Sitzen überschritten.",
+      "src": "7faddb79",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "„Wer sein Amt nicht antritt, kann weder wählen noch in die Knesset gewählt werden.“ Bevor eine Regierung vereidigt wird, muss ein Gesetzesentwurf verabschiedet werden.",
+      "src": "e8d4874d",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Erstens ein Grundgesetz zur Gesetzgebung mit einem neuen, ausgewogenen Richterauswahlausschuss; eine Knesset-Überschreibung nur mit mehr als 72 MKs. Sein Programm begrenzt die Amtszeit eines Premierministers auf acht oder zwei Jahre.",
+      "src": "f0bb5de4",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "Hendel schlug zuvor vor, etwa 1.5 Millionen Palästinenser aus Gaza in „eine Zeltstadt außerhalb des Gazastreifens“ zu verlegen; Wilf unterstützt eine „freiwillige Auswanderungsbehörde für Gaza“.",
+      "src": "35915a2d",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "„Wir unterstützen die Besiedlung in allen Teilen des Staates Israel.“ Plattform: „Wir werden handeln, um einen palästinensischen Staat auf diplomatischem und politischem Weg zu verhindern.“",
+      "src": "f1fa1aa2",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Zelekha trat bei und versprach, „Tycoons und die Lebenshaltungskosten“ zu bekämpfen; Die Plattform verspricht „einen Kampf gegen Monopole“, um den Wettbewerb zu erhöhen und die Lebenshaltungskosten zu senken.",
+      "src": "251aa4b2",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Prof. Yaron Zelekha",
+      "src": "1affa30d",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Buchhalter-General 2003–07",
+      "src": "2af37e49",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Einat Wilf",
+      "src": "823a9048",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "ehemaliger Labour-Abgeordneter; ist im September 7 beigetreten",
+      "src": "f309e9ed",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Haviv Volibovich",
+      "src": "f12d3480",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Eine „zionistische Einheitsregierung ohne arabische oder charedische Parteien“; unterstützt eine staatliche Untersuchungskommission.",
+      "src": "2ec421eb",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Zu Netanyahu gemischt: „Netanyahu ist nicht meine rote Linie“ (Aug 11) vs. „Wer auch immer für Oktober 7 verantwortlich ist, muss nach Hause gehen, und dazu gehört auch Netanyahu“ (Aug 23).",
+      "src": "2bc0f896",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Keiner unterschrieben. Hendel bot Ofer Winter ein Zusatzangebot an; Winter antwortete nicht.",
+      "src": "a1d939d3",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Unsere Mission besteht ausschließlich darin, eine zionistische Regierung zu errichten.",
+      "src": "aac61379",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Die Reservisten",
+      "src": "147920bc",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Yoaz Hendel",
+      "src": "32a1f07a",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Ein Politikwissenschaftler, ehemaliger Netanyahu-Adjutant und Bataillonskommandeur in den IDF-Reserven. Eintritt in die Politik mit Blau und Weiß in 2019; später Kommunikationsminister (Times of Israel, Sep 18, 2025; Aug 6, 2026).",
+      "src": "a4f4285b",
+      "machine": true
+    }
+  },
+  "jl": {
+    "name": {
+      "text": "Gemeinsame Liste",
+      "src": "a0e699b1",
+      "machine": true
+    },
+    "short": {
+      "text": "Gemeinsame Liste",
+      "src": "a0e699b1",
+      "machine": true
+    },
+    "leader": {
+      "text": "Yousef Jabareen (Ahmad Tibi Nr. 2)",
+      "src": "f7b8270f",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Ra'am (unterzeichnet im September 11)",
+      "src": "4cbc6834",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Erstmals im 2015 von allen vier arabisch geführten Parteien gegründet (13 Sitze; Höchstwert von 15 im 2020). Neugründung im August 19, 2026 als Hadash–Ta'al–Balad, ohne Ra'am.",
+      "src": "47e3080e",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Hadash, die Demokratische Front für Frieden und Gleichheit, fasst sich selbst zusammen als „Demokratie. Frieden. Gleichheit.“ und nennt zunächst „einen gerechten, umfassenden und stabilen israelisch-palästinensischen und israelisch-arabischen Frieden“. The Jerusalem Post: Hadash „hat in der Vergangenheit die jüdisch-arabische Partnerschaft betont.“",
+      "src": "37a61643",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "Nach dem Grundgesetz: Abschnitt 7A der Knesset kann eine Liste oder ein Kandidat ausgeschlossen werden, wenn sie Israel als jüdischen und demokratischen Staat negieren, zu Rassismus aufstacheln oder den bewaffneten Kampf gegen Israel unterstützen. Auf Likud-Petition stimmte der Zentrale Wahlausschuss am 23. September mit 18 zu 5 Stimmen für die Sperrung der Liste; Der Oberste Gerichtshof hat es am 2. Oktober einstimmig wieder eingeführt.",
+      "src": "43783e0a",
+      "machine": true
+    },
+    "who.3.text": {
+      "text": "Ofer Cassif (Nr. 6) wurde 19–5 bei zwei Enthaltungen (Zählung der Jerusalem Post; Al Jazeera unter Berufung auf Adalah, berichtet 18–5) aufgrund der Likud-Petition gesperrt, weil er Israel als jüdischen und demokratischen Staat ablehnte und den bewaffneten Kampf unterstützte. Der Anwalt des Likud zitierte Cassifs Anschuldigungen gegen Israel wegen des Krieges in Gaza und, in den Worten der Post, seine „Unterstützung für internationale Verfahren und Sanktionen, Boykottaufrufe und Erklärungen zum palästinensischen Widerstand“; Cassif sagte, er habe „ausdrücklich erklärt, dass er Gewalt ablehnt und gewaltlosen Kampf unterstützt“. Der Oberste Gerichtshof setzte ihn 7–2 wieder ein (die Richter Mintz und Stein widersprachen): Die Beweise hatten nicht die erforderliche „kritische Masse“ erreicht.",
+      "src": "fadf62dd",
+      "machine": true
+    },
+    "who.4.text": {
+      "text": "Nein. 3 Sami Abu Shehadeh (Balad) wurde 31–4 aufgrund der Petition von Otzma Yehudit wegen Unterstützung des bewaffneten Kampfes gegen Israel wegen eines Artikels, den er am 8, 2023 veröffentlichte, gesperrt. Er zog sich zurück, nachdem ihm der Gerichtspräsident mitgeteilt hatte, dass es „eine Mehrheit auf der Richterbank gäbe, die ihn ausschließen“ würde.",
+      "src": "7e500add",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022 (strittig): Hadash–Ta'al 178,735 Stimmen, 3.8 %, 5 Sitze; Balad 138,617, 2.9%, 0 Sitze.",
+      "src": "ebc4f7f6",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "In arabischen und drusischen Städten in 2022: Hadash–Ta'al 28.8 %, Balad 21.7 %. Arabische Wahlbeteiligung 53.2 %.",
+      "src": "eba623ea",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "77.2 % der arabischen Bürger unterstützen den Regierungseintritt einer arabischen Partei.",
+      "src": "1f4c8940",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "Widersetzt sich der Einberufung von Haredi-Männern oder jeglicher Form der Zwangsrekrutierung: „Es sollten keine Sanktionen gegen jemanden verhängt werden, der sich gegen eine Rekrutierung entscheidet.“",
+      "src": "c4443647",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "unterstützt Reformen, die den demokratischen Schutz stärken und die Rechte aller Bürger, insbesondere Minderheitengemeinschaften, schützen; ein Ernennungsmechanismus, der die Unabhängigkeit der Justiz wahrt.",
+      "src": "47d4c9c6",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "„Beenden Sie die Zerstörung von Gaza und die ethnische Säuberung im Westjordanland.“",
+      "src": "82b80d29",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "Jabareen: Erneute Verhandlungen über „einen palästinensischen Staat an der Seite Israels“.",
+      "src": "d713d557",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "„Vollständige bürgerliche und nationale Gleichheit für arabische Bürger.“",
+      "src": "9c79fff4",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Jabareen: Die Liste würde „Maßnahmen gegen die organisierte Kriminalität und höhere Budgets für die arabische Gesellschaft und lokale Behörden“ anstreben (Zusammenfassung der Post).",
+      "src": "22758aab",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Yousef Jabareen",
+      "src": "5eb71118",
+      "machine": true
+    },
+    "names.0.note": {
+      "text": "Hadash",
+      "src": "47b6a732",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Ahmad Tibi",
+      "src": "3b9530e0",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "Ta'al",
+      "src": "81c6764e",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Ofer Cassif",
+      "src": "be24ea9c",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "Hadash; vom Gericht wieder eingesetzt 7–2",
+      "src": "e5778dcd",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Wird sich Netanyahu nicht anschließen.",
+      "src": "0ea51445",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Bedingungen für die Unterstützung eines Eisenkot-Blocks: Gleichberechtigung, ein Entwicklungsplan, echte Maßnahmen gegen Kriminalität, „eine klare Position gegen Siedlungen“; schloss „ein parlamentarisches Sicherheitsnetz“ nicht aus.",
+      "src": "91a5d1a8",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Ra'am (signiert Sept. 11).",
+      "src": "b3ca86e2",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Eine politische, rassistische und antidemokratische Entscheidung … ein Versuch, die politische Vertretung von mehr als einer Million Wählern auszuschließen.",
+      "src": "3132a10a",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Die Gemeinsame Liste, über die Abstimmung des Ausschusses, sie zu verbieten",
+      "src": "9814db52",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Yousef Jabareen",
+      "src": "5eb71118",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Von Umm al-Fahm; ein Rechtswissenschaftler. MK 2015–21. Wurde im Mai 16, 2026 mit 82 % zum Hadash-Vorsitzenden gewählt und ersetzte Ayman Odeh, der seit 2015 an der Spitze stand und keine Wiederwahl anstrebte (Times of Israel, Mai 16, 2026).",
+      "src": "e1e56683",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "Ahmad Tibi (Nr. 2)",
+      "src": "c8755e80",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "Langjähriger Vorsitzender von Ta'al; Nr. 2 auf der gemeinsamen Liste (Times of Israel, Sep 20, 2026).",
+      "src": "3396676b",
+      "machine": true
+    }
+  },
+  "raam": {
+    "name": {
+      "text": "Ra'am",
+      "src": "418c2537",
+      "machine": true
+    },
+    "short": {
+      "text": "Ra'am",
+      "src": "418c2537",
+      "machine": true
+    },
+    "leader": {
+      "text": "Mansour Abbas (Yoav Segalovitz Nr. 2)",
+      "src": "b9f890c8",
+      "machine": true
+    },
+    "surplusLine": {
+      "text": "Überschuss: Gemeinsame Liste (unterzeichnet im September 11)",
+      "src": "d27ca45a",
+      "machine": true
+    },
+    "who.0.text": {
+      "text": "Gegründet in 1996; verwurzelt im südlichen Zweig der Islamischen Bewegung. Im 2021 trat sie als erste arabische Partei offiziell einer israelischen Regierungskoalition bei.",
+      "src": "8731b986",
+      "machine": true
+    },
+    "who.1.text": {
+      "text": "Im Dezember 2025 sagte Abbas, Ra'am werde „zu einer völlig bürgerlichen Partei mit getrennten Institutionen“ und kappte die Verbindungen zum Islamischen Shura-Rat: „Wir sind kein Teil der Muslimbruderschaft.“",
+      "src": "4a5c25d7",
+      "machine": true
+    },
+    "who.2.text": {
+      "text": "Vom Wahlausschuss ausgeschlossen Sept. 23, 18–5; vom Obersten Gerichtshof im Okt. 2 einstimmig wieder eingesetzt.",
+      "src": "0423aabc",
+      "machine": true
+    },
+    "voters.0.text": {
+      "text": "2022: 194,047 Stimmen, 4.1 %, 5 Sitze.",
+      "src": "565d41dc",
+      "machine": true
+    },
+    "voters.1.text": {
+      "text": "Erlangte 35.2 % der Stimmen der Araber und Drusen in 2022 und 73.9 % im Negev.",
+      "src": "72ea985d",
+      "machine": true
+    },
+    "voters.2.text": {
+      "text": "Hochburgen: der Negev und das Dreieck; sucht nun christliche und drusische Wähler mit einem Sitzziel von 7–8.",
+      "src": "eaf222c7",
+      "machine": true
+    },
+    "issues.draft.text": {
+      "text": "lehnt einen Gesetzesentwurf ab, der junge arabische Bürger dazu verpflichten würde, in der IDF zu dienen oder Zivildienst zu leisten; lehnte es ab, auf die Rekrutierung der Haredi zu antworten.",
+      "src": "a3f30567",
+      "machine": true
+    },
+    "issues.courts.text": {
+      "text": "Weigerte sich, eine aktuelle Stellungnahme zur Justizreform abzugeben; In 2023 sagte Abbas: „Kein Regierungszweig sollte die absolute Macht haben.“",
+      "src": "b41b89b8",
+      "machine": true
+    },
+    "issues.war.text": {
+      "text": "Abbas, Dezember 2023: Palästinensische bewaffnete Gruppen „müssen ihre Waffen niederwerfen“ und mit der Palästinensischen Autonomiebehörde zusammenarbeiten, um „einen Staat Palästina in einer friedlichen Lösung neben dem Staat Israel zu schaffen“. Ra'am in 2026 am Okt. 7: Es besteht „Bedarf an einer umfassenden, unabhängigen und unparteiischen Untersuchung“.",
+      "src": "2cc79271",
+      "machine": true
+    },
+    "issues.wb.text": {
+      "text": "Abbas: Ein palästinensischer Staat ist „eine Realität, die der Großteil der Welt anerkennt, mit Ausnahme der Vereinigten Staaten und Israels. Wir wollen, dass sie ihn anerkennen, und wir werden daran arbeiten, Frieden zu erreichen.“ Unterstützt eine ausgehandelte Zwei-Staaten-Lösung; lehnt eine Ausweitung der israelischen Souveränität ab.",
+      "src": "bbfcdb96",
+      "machine": true
+    },
+    "issues.relig.text": {
+      "text": "Früher: „Israel wurde als jüdischer Staat geboren und wird es auch bleiben.“ Die AG teilte dem Komitee mit, dass Abbas den jüdischen Charakter Israels anerkenne.",
+      "src": "64e303ab",
+      "machine": true
+    },
+    "issues.econ.text": {
+      "text": "Budgets, Planung, Wohnraum und Arbeitsplätze für arabische Städte; sucht das Portfolio Gewalt und Kriminalität. Kein vollständiges Manifest.",
+      "src": "7c882a97",
+      "machine": true
+    },
+    "names.0.name": {
+      "text": "Mansour Abbas",
+      "src": "bcaffdf5",
+      "machine": true
+    },
+    "names.1.name": {
+      "text": "Yoav Segalovitz",
+      "src": "b4805520",
+      "machine": true
+    },
+    "names.1.note": {
+      "text": "jüdischer ehemaliger Polizeikommandant; ist im August 31 beigetreten",
+      "src": "9cd17a1b",
+      "machine": true
+    },
+    "names.2.name": {
+      "text": "Walid Taha",
+      "src": "a7e5f726",
+      "machine": true
+    },
+    "names.2.note": {
+      "text": "auf der Aug.-Schiefertafel 22; Endgültiger Slot nicht bestätigt",
+      "src": "35b0035e",
+      "machine": true
+    },
+    "pledges.0.text": {
+      "text": "Offen für jede Koalition, auch für eine vom Likud geführte.",
+      "src": "90424d0c",
+      "machine": true
+    },
+    "pledges.1.text": {
+      "text": "Eisenkot sagte im September 26, dass Abbas „nicht Teil meiner nächsten Regierung sein wird“. Segalovitz: „Ohne Ra'am wird Eisenkot keine Regierung haben.“",
+      "src": "fd3be613",
+      "machine": true
+    },
+    "surplusPartner.text": {
+      "text": "Gemeinsame Liste (unterzeichnet im September 11).",
+      "src": "75a30cf0",
+      "machine": true
+    },
+    "quote.text": {
+      "text": "Ich gehe zu einer arabischen Party. Sie kommen nicht zu mir.",
+      "src": "f100723f",
+      "machine": true,
+      "translated": true
+    },
+    "quote.speaker": {
+      "text": "Yoav Segalovitz",
+      "src": "b4805520",
+      "machine": true
+    },
+    "bios.0.name": {
+      "text": "Mansour Abbas",
+      "src": "bcaffdf5",
+      "machine": true
+    },
+    "bios.0.text": {
+      "text": "Ra'am-Stuhl; der erste Führer einer mehrheitlich arabischen Partei, der einer israelischen Regierung beitrat, im 2021 (JTA, Jul 19, 2022).",
+      "src": "abd0d16c",
+      "machine": true
+    },
+    "bios.1.name": {
+      "text": "Yoav Segalovitz (Nr. 2)",
+      "src": "c620afc0",
+      "machine": true
+    },
+    "bios.1.text": {
+      "text": "Jüdisch, 67. Er gründete und befehligte die Polizeieinheit Lahav 433 und leitete deren Ermittlungs- und Geheimdienstabteilung. Stellvertretender Minister für öffentliche Sicherheit 2021–22. Zweiter auf Ra'ams Liste (Times of Israel, Aug 16, Aug 31 und Sep 17, 2026).",
+      "src": "1f4d0895",
+      "machine": true
+    }
+  }
+}

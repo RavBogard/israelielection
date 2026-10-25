@@ -1,0 +1,11 @@
+import { setEditionText } from "../edition-text";
+import chrome from "./chrome";
+import home from "./home";
+import polls from "./polls";
+import builder from "./builder";
+import compare from "./compare";
+import profile from "./profile";
+import results from "./results";
+import forecast from "./forecast";
+import messages from "./messages.json";
+for (const [area, text] of Object.entries({chrome, home, polls, builder, compare, profile, results, forecast, messages})) setEditionText("fr", area, text);

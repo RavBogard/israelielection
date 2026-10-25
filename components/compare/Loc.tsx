@@ -16,7 +16,7 @@ export const plain = (t: Txt): string => (typeof t === "string" ? t : t.text);
 export default function Loc({ v }: { v: Txt }) {
   if (typeof v === "string") return <>{v}</>;
   if (v.lang === "en") return <span lang="en" dir="ltr">{v.text}</span>;
-  return <>{v.translated ? `${v.text} ${{he: "(תרגום)", ar: "(ترجمة)", fa: "(ترجمه)", en: "(translation)"}[v.lang]}` : v.text}</>;
+  return <>{v.translated ? `${v.text} ${{he: "(תרגום)", ar: "(ترجمة)", fa: "(ترجمه)", en: "(translation)", de: "(Übersetzung)", fr: "(traduction)", zh: "（译文）"}[v.lang]}` : v.text}</>;
 }
 
 /** English that stays English inside a Hebrew page (an outlet's name, a source line); a plain string in English. */

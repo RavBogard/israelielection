@@ -1,4 +1,5 @@
 "use client";
+import { isRtl } from "@/lib/i18n";
 import { type ReactNode, useLayoutEffect, useRef, useState } from "react";
 import { mediumDate, shortDate } from "@/lib/format";
 import { nearestDateIndex } from "@/lib/poll-chart";
@@ -67,10 +68,10 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
               return <g key={t}><line x1={xt(t)} x2={xt(t)} y1={H - PAD.b} y2={H - PAD.b + 5} className="br-wk" />{label && <text x={xt(t)} y={H - 8} className="br-tick" textAnchor={i === weeks.length - 1 ? "end" : "middle"}>{sd(new Date(t).toISOString().slice(0, 10))}</text>}</g>;
             })}
             <line x1={xt(Date.parse(until))} x2={xt(Date.parse(until))} y1={PAD.t} y2={H - PAD.b} className="br-eday" />
-            <text x={xt(Date.parse(until)) - 6} y={PAD.t + 12} {...svgText(he, "end")} className="br-edaylbl">{R.electionDay}</text>
+            <text x={xt(Date.parse(until)) - 6} y={PAD.t + 12} {...svgText(isRtl(lang), "end")} className="br-edaylbl">{R.electionDay}</text>
             {BLOCS.map((b) => <g key={b} style={{ stroke: `var(--b-${b})` }}><path d={path((t) => t.hi[b])} className="br-edge" /><path d={path((t) => t.lo[b])} className="br-edge" /></g>)}
             <line x1={PAD.l} x2={w - PAD.r} y1={y(MAJ)} y2={y(MAJ)} className="br-maj" />
-            <text x={PAD.l + 6} y={y(MAJ) - 6} {...svgText(he)} className="br-majlbl">{R.majority}</text>
+            <text x={PAD.l + 6} y={y(MAJ) - 6} {...svgText(isRtl(lang))} className="br-majlbl">{R.majority}</text>
             {sel && <line x1={x(sel.date)} x2={x(sel.date)} y1={PAD.t} y2={H - PAD.b} className="br-cross" />}
             {BLOCS.map((b) => dots.map((d) => (
               <circle key={`${b}-${d.id}`} cx={x(d.date)} cy={y(d[b])} r={3.5} className={`br-dot${d.hollow ? " hollow" : ""}`} style={{ ["--c" as string]: `var(--b-${b})` }}>
@@ -79,7 +80,7 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
             )))}
             {BLOCS.map((b) => <path key={b} d={path((t) => t.avg[b])} className="br-line" style={{ stroke: `var(--b-${b})` }} />)}
             {sel && BLOCS.map((b) => <circle key={b} cx={x(sel.date)} cy={y(sel.avg[b])} r={5} className="br-sel" style={{ fill: `var(--b-${b})` }} />)}
-            {wide && <text x={x(last.date) - 4} y={y(last.hi.net) - 7} {...svgText(he, "end")} className="br-bandlbl">{R.band}</text>}
+            {wide && <text x={x(last.date) - 4} y={y(last.hi.net) - 7} {...svgText(isRtl(lang), "end")} className="br-bandlbl">{R.band}</text>}
             {showEnd && BLOCS.map((b) => (
               <g key={b} transform={`translate(${x(last.date) + 12},${endY[b]})`}>
                 <rect x={0} y={-6} width={10} height={10} style={{ fill: `var(--b-${b})` }} />

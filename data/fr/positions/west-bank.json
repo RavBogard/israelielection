@@ -1,0 +1,154 @@
+{
+  "_": {
+    "title": {
+      "text": "Ce que disent les partis en Cisjordanie",
+      "src": "51157c10",
+      "machine": true
+    },
+    "question": {
+      "text": "Israël devrait-il annexer les terres de Cisjordanie ?",
+      "src": "aa9c6041",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Annexer toute la Cisjordanie",
+      "src": "0bc8d4a6",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Zone annexe C ou zones choisies",
+      "src": "359c23e4",
+      "machine": true
+    },
+    "stances.2.label": {
+      "text": "Soutient la souveraineté et bloque les projets de loi contraignants",
+      "src": "4208a149",
+      "machine": true
+    },
+    "stances.3.label": {
+      "text": "Étendre les colonies, pas d’engagement d’annexer",
+      "src": "d2c82cc6",
+      "machine": true
+    },
+    "stances.4.label": {
+      "text": "Séparé des Palestiniens",
+      "src": "45c66544",
+      "machine": true
+    },
+    "note": {
+      "text": "La plupart des lignes proviennent des réponses des partis à un questionnaire Ynet (septembre 30, 2026). Le Likoud ne participe pas aux questionnaires ; sa ligne est son relevé sur les factures 2025 d'octobre. La ligne de Noam est la déclaration de campagne de son chef de septembre 2026. « Judée et Samarie » apparaît ici tel que les parties l'ont écrit. Le Shas et l’UTJ ont répondu sans prendre position sur l’annexion ; leurs lignes ajoutent comment ils ont voté dans 2025, ce qui n'en règle pas un. Vérifié en octobre 2026.",
+      "src": "a61a545e",
+      "machine": true
+    },
+    "stances.5.label": {
+      "text": "Pas d’annexion, un État palestinien",
+      "src": "f828e441",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Le député du Likud Dan Illouz a co-sponsorisé la motion non contraignante de la Knesset 2025 de juillet appelant à la souveraineté sur la Judée et la Samarie, qui a été adoptée 71 par 13, et les ministres du Likud dirigés par Yariv Levin ont écrit à Netanyahu que c'était « le moment d'approuver au sein du gouvernement une décision d'appliquer la souveraineté ». Concernant les projets de loi contraignants d'octobre 2025, tous les députés du Likud sauf un sont restés à l'écart, et le parti les a qualifiés de « nouvelle provocation de l'opposition visant à nuire à nos relations avec les États-Unis… La véritable souveraineté ne sera pas obtenue par une loi ostentatoire, mais par un travail approprié sur le terrain ».",
+      "src": "4748b069",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Il dit que cela « a éliminé l'idée d'un État palestinien » ; soutient « l’application de la pleine souveraineté israélienne sur la Judée et la Samarie ».",
+      "src": "5f55347b",
+      "machine": true
+    }
+  },
+  "otzma": {
+    "text": {
+      "text": "« Appliquer la pleine souveraineté israélienne, démanteler l'Autorité palestinienne de ses actifs et de ses armes » et « encourager la migration volontaire depuis la Judée-Samarie et Gaza » ; de nouvelles communautés dans toutes les parties du territoire ; des avant-postes : \"Nous allons les régulariser.\"",
+      "src": "7d8c10ae",
+      "machine": true
+    }
+  },
+  "poi": {
+    "text": {
+      "text": "Amcha Yisrael : « Un État palestinien ne sera jamais établi à nos côtés » ; \"appliquer la souveraineté en Judée et Samarie.\"",
+      "src": "fdbcbc2e",
+      "machine": true
+    }
+  },
+  "noam": {
+    "text": {
+      "text": "Avi Maoz : « Seul un gouvernement pleinement à droite avec un Noam fort pour Israël empêchera la création d'un État palestinien et appliquera la souveraineté en Judée et en Samarie » (traduit). Il a parrainé le projet de loi sur la souveraineté 2025 d'octobre qui a passé sa lecture préliminaire 25 à 24.",
+      "src": "9fca7178",
+      "machine": true
+    }
+  },
+  "shas": {
+    "text": {
+      "text": "S'oppose à la création d'un État palestinien ; affirme que, en tant que l'un des \"fondateurs du bloc de droite\", il a soutenu les initiatives promues par le sionisme religieux et Otzma Yehudit ; selon Ynet, cela ne fait pas de la politique d’implantation en Cisjordanie un thème central de la campagne. Ses députés ont voté pour la motion non contraignante 2025 de juillet appelant à la souveraineté sur la Judée et la Samarie, qui a été adoptée 71 par 13, et, comme ceux du Likoud, étaient absents lors du vote 2025 d'octobre sur le projet de loi contraignant (Times of Israel).",
+      "src": "78e2a4eb",
+      "machine": true
+    }
+  },
+  "utj": {
+    "text": {
+      "text": "N'a donné aucune position unifiée. Ynet rapporte qu’Agudat Yisrael penche généralement plus à droite, Degel HaTorah adopte une position plus modérée et aucun des deux ne place cette question au cœur de sa campagne. Les votes montrent la même division : les deux factions ont soutenu la motion non contraignante de juillet 2025 sur la souveraineté, mais l'UTJ s'est divisée sur le projet de loi contraignant de Maoz en octobre 2025. Agudat Yisrael a voté pour, selon le Times of Israel pour souligner l'hypocrisie du gouvernement ; Degel HaTorah a voté contre, affirmant que les propositions de souveraineté « à l'heure actuelle » mettaient Israël en conflit avec les États-Unis.",
+      "src": "b55f0485",
+      "machine": true
+    }
+  },
+  "yashar": {
+    "text": {
+      "text": "Un État palestinien « n'est pas à l'ordre du jour » ; « renforcer les blocs de colonies et établir de nouvelles communautés légalement » ; \"Israël n'a aucun intérêt à assumer la responsabilité de la vie civile de quelque 2 millions de Palestiniens.\"",
+      "src": "1d72cf21",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "« S'opposer à un État palestinien et au transfert de territoire » ; \"La zone C est considérée comme une future partie souveraine de l'État d'Israël.\"",
+      "src": "e6f7d425",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "« Nous soutenons l'application de la souveraineté israélienne à la zone C » ; \"faire avancer la construction dans la zone E1\" ; \"Trente-trois ans après les accords d'Oslo, force est de constater que l'expérience a échoué.\"",
+      "src": "99d46d80",
+      "machine": true
+    }
+  },
+  "res": {
+    "text": {
+      "text": "« Le parti soutient la souveraineté par des actions et non par des paroles » ; \"La stratégie consiste à s'emparer du terrain dominant et des terres agricoles.\"",
+      "src": "7ab300c4",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "« Renforcement de la colonisation en Judée-Samarie, en mettant l'accent sur la vallée du Jourdain… » ; selon Ynet, un cadre similaire au plan Trump qui ne nécessiterait pas l’évacuation des colonies.",
+      "src": "1d0748bf",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "« Nous devons lutter pour la séparation dans le cadre d'un mouvement régional » avec les États-Unis ; \"Nous évacuons les avant-postes illégaux qui créent des points de friction\".",
+      "src": "75829724",
+      "machine": true
+    }
+  },
+  "raam": {
+    "text": {
+      "text": "Selon Ynet, il soutient une solution négociée à deux États, avec un État palestinien aux côtés d’Israël ; s’oppose à l’extension de la souveraineté israélienne.",
+      "src": "c05e563c",
+      "machine": true
+    }
+  },
+  "jl": {
+    "text": {
+      "text": "« Toutes les colonies… doivent être évacuées immédiatement et sans délai » ; « L'occupation est la racine de tous les maux » ; a demandé que la question dise « la Cisjordanie occupée ».",
+      "src": "e026bc86",
+      "machine": true
+    }
+  }
+}

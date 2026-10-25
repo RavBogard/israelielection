@@ -1,0 +1,76 @@
+{
+  "_": {
+    "title": {
+      "text": "Gaza : administration civile",
+      "src": "b06f2b77",
+      "machine": true
+    },
+    "question": {
+      "text": "Israël devrait-il administrer les affaires civiles de Gaza ?",
+      "src": "d6ee801b",
+      "machine": true
+    },
+    "stances.0.label": {
+      "text": "Contrôler la sécurité sans gérer les affaires civiles",
+      "src": "d77e2f94",
+      "machine": true
+    },
+    "stances.1.label": {
+      "text": "Contrôle israélien, avec gouvernement militaire ou colonie",
+      "src": "bd443df7",
+      "machine": true
+    },
+    "note": {
+      "text": "Cette question étroite n’est pas un indicateur des termes du cessez-le-feu, des otages, de la création d’un État palestinien, du déplacement ou de l’ensemble du programme de sécurité. Les listes sans réponse en manquent ici, ce qui n'est pas censé être d'accord ou contre. Le Shas, UTJ, Noam et Yashar n’ont pas abordé la question de savoir qui devrait diriger les affaires civiles de Gaza. La Liste arabe unie et Raam s’opposent au contrôle israélien de Gaza, ce qu’aucune des deux positions ne décrit.",
+      "src": "2ec97e99",
+      "machine": true
+    },
+    "unstated.otzma.text": {
+      "text": "Ben Gvir n'a pas présenté de plan de gouvernance, mais affirme qu'en tant que ministre de la Défense, \"nous retournerons à Nsanit, dans tout le périmètre nord et dans tout Gaza\", pour régler le problème.",
+      "src": "33e25e03",
+      "machine": true
+    }
+  },
+  "byachad": {
+    "text": {
+      "text": "Le plan de sécurité du parti indique qu'il ne cherche pas à administrer Gaza. Il conserverait la ligne militaire actuelle jusqu’à ce que le Hamas ou Israël le désarme. Il s’agit d’un résumé traduit de la politique déclarée du parti, et non d’une prévision ou d’une approbation.",
+      "src": "bb7487ad",
+      "machine": true
+    }
+  },
+  "likud": {
+    "text": {
+      "text": "Netanyahu, annonçant la prise de contrôle de la ville de Gaza : \"Nous ne voulons pas la conserver. Nous voulons avoir un périmètre de sécurité. Nous ne voulons pas la gouverner.\" Il a déclaré qu'Israël confierait Gaza « à une gouvernance civile qui n'est pas celle du Hamas ».",
+      "src": "82c38ae5",
+      "machine": true
+    }
+  },
+  "rz": {
+    "text": {
+      "text": "Smotrich : \"L'État d'Israël doit accepter d'assumer la responsabilité de Gaza. Pour la conquérir complètement, il doit y établir un gouvernement militaire et y établir des colonies juives.\"",
+      "src": "2ea7733d",
+      "machine": true
+    }
+  },
+  "yb": {
+    "text": {
+      "text": "Le plan de Liberman : Tsahal élimine le Hamas, puis le contrôle de Gaza passe à « une partie extérieure qui assumera la responsabilité de sa gestion », tandis qu'Israël conserve la responsabilité de la sécurité.",
+      "src": "ee25137b",
+      "machine": true
+    }
+  },
+  "dem": {
+    "text": {
+      "text": "Golan a cité l'installation rapide d'une administration palestinienne technocratique à Gaza comme une première étape vers un nouveau gouvernement (récit de Bloomberg).",
+      "src": "013192a7",
+      "machine": true
+    }
+  },
+  "bw": {
+    "text": {
+      "text": "Gantz, en tant que membre du cabinet de guerre, a exigé « un mécanisme de gouvernance civile internationale pour Gaza, incluant des éléments américains, européens, arabes et palestiniens », parallèlement au contrôle de sécurité israélien.",
+      "src": "1e4581ad",
+      "machine": true
+    }
+  }
+}
