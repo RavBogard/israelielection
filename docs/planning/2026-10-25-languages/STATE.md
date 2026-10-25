@@ -67,4 +67,7 @@ in-app browser repeatedly timed out attaching its webview; no other browser surf
 
 The user explicitly authorized pushing this release to `main` and deploying production.
 Release destinations: https://www.israelielection.org/de, https://www.israelielection.org/fr,
-https://www.israelielection.org/zh. Next action: push the verified release and confirm Vercel Ready.
+https://www.israelielection.org/zh.
+Pushed release `56abce2` to `main` on 2026-10-25. Production deployment
+`dpl_HipYaK4v2RdJLZ6riJfXRQohhsqt` is Ready; inspecting `www.israelielection.org` confirmed
+the live domain is assigned to it. This record is a documentation-only follow-up; no runtime changes remain.
