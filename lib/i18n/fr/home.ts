@@ -81,7 +81,7 @@ const en: HomeText = {
         across: "; traverse des blocs et n’est pas allou\u00E9 \u00E0 un seul bloc ici.",
         noSplit: " Aucune r\u00E9partition individuelle n’est signal\u00E9e.",
         followsAvg: "La mosa\u00EFque suit la moyenne normalis\u00E9e de la coalition.",
-        followsForecast: "La mosa\u00EFque suit les si\u00E8ges centraux du mod\u00E8le de pr\u00E9vision\u00A0: si\u00E8ges entiers par liste, s'ajoutant \u00E0 120\u00A0; l’\u00E9tiquette de chaque bloc est sa centrale, la m\u00E9diane de son total simul\u00E9, qui peut diff\u00E9rer de la somme de ses listes par un si\u00E8ge.",
+        followsForecast: "La mosaïque représente les sièges entiers prévus pour chaque parti. Chaque chiffre de bloc est la somme de ses partis ; l’ensemble des blocs totalise 120 sièges.",
         belowForecast: "le seuil dans l'allocation centrale",
         range: (lo: number, hi: number): Bits => [lo, " \u00E0 ", hi, " dans 9\u00A0sur 10 ex\u00E9cutions"],
         chance: (pct: number): Bits => ["61 ou plus dans ", pct, "% de simulations"],

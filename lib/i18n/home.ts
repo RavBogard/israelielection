@@ -93,7 +93,7 @@ const en = {
     across: "; crosses blocs and is not allocated to one bloc here.",
     noSplit: " No individual split is reported.",
     followsAvg: "The mosaic follows the normalized coalition average.",
-    followsForecast: "The mosaic follows the forecast model’s central seats: whole seats per list, adding to 120; each bloc’s label is its central, the median of its simulated total, which can differ from the sum of its lists by a seat.",
+    followsForecast: "The mosaic shows the forecast's whole seats per party. Each bloc label sums its parties, and all blocs together total 120 seats.",
     belowForecast: "the threshold in the central allocation",
     range: (lo: number, hi: number): Bits => [lo, " to ", hi, " in 9 of 10 runs"],
     chance: (pct: number): Bits => ["61 or more in ", pct, "% of runs"],

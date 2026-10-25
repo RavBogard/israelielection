@@ -7,9 +7,9 @@ import calibration from "@/scripts/forecast/calibration.json";
 import changelogJson from "@/data/forecast-changelog.json";
 import historyJson from "@/data/forecast-history.json";
 import { blocs, parties, pollsData } from "@/lib/data";
-import { forecast, type Forecast } from "@/lib/forecast";
+import { forecast, forecastPoll, type Forecast } from "@/lib/forecast";
 import { mediumDate, shortDate } from "@/lib/format";
-import { BLOC_ORDER, BLOC_SEAT_ORDER, blocRank } from "@/lib/polls";
+import { BLOC_ORDER, BLOC_SEAT_ORDER, blocRank, blocTotals } from "@/lib/polls";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { ui } from "@/lib/i18n/ui";
 import FORECAST from "@/lib/i18n/forecast";
@@ -19,7 +19,7 @@ import type { BlocId } from "@/lib/types";
 import "@/lib/i18n/overlays";
 
 const REPO = "https://github.com/RavBogard/israelielection/blob/main/";
-type HistoryRun = { generated: string; final?: boolean; blocs: Record<BlocId, number>; majority: Forecast["majority"]; parameters?: { version?: number } };
+type HistoryRun = { generated: string; final?: boolean; blocs: Record<BlocId, number>; blocListSums?: Record<BlocId, number>; majority: Forecast["majority"]; parameters?: { version?: number } };
 const history = (historyJson as { runs: HistoryRun[] }).runs;
 const changelog = (changelogJson as { entries: { date: string; en: string; he: string }[] }).entries;
 
@@ -34,6 +34,7 @@ const signed = (x: number) => (x === 0 ? "0" : `${x > 0 ? "+" : "−"}${Math.abs
 export default function ForecastPage({ lang }: { lang: Lang }) {
   const t = FORECAST[lang], he = lang !== "en", f = forecast, p = f.parameters, days = pollsData.config.currentWindowDays;
   const runs = f.runs.toLocaleString(locale(lang));
+  const totals = blocTotals(forecastPoll, parties);
   const date = mediumDate(f.generated, lang);
   const label = Object.fromEntries(blocs.map((b) => [b.id, blocName(b, lang)])) as Record<BlocId, string>;
   const nameOf = (id: string) => { const party = parties.find((x) => x.id === id); return party ? partyName(party, lang) : id; };
@@ -67,14 +68,14 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         <figure className="pn-fig fc-bar">
           <figcaption className="pn-lbl">{t.prediction.barCaption}</figcaption>
           <SeatBar size="xl" total={120} majority={61}
-            segments={BLOC_SEAT_ORDER.map((b) => ({ key: b, seats: f.blocs[b].point, color: `var(--b-${b})`, ink: `var(--b-${b}-ink)`, label: f.blocs[b].point || undefined, className: `pn-seg pn-seg-${b}` }))}
-            label={BLOC_ORDER.map((b) => `${label[b]} ${f.blocs[b].point}`).join(", ")} />
+            segments={BLOC_SEAT_ORDER.map((b) => ({ key: b, seats: totals[b], color: `var(--b-${b})`, ink: `var(--b-${b}-ink)`, label: totals[b] || undefined, className: `pn-seg pn-seg-${b}` }))}
+            label={BLOC_ORDER.map((b) => `${label[b]} ${totals[b]}`).join(", ")} />
         </figure>
         <div className="table-scroll">
           <table className="data-table fc-table">
             <thead><tr><th scope="col">{t.prediction.cols.bloc}</th><th scope="col" className="num">{t.prediction.cols.central}</th><th scope="col" className="num">{t.prediction.cols.median}</th><th scope="col" className="num">{t.prediction.cols.mean}</th><th scope="col" className="num">{t.prediction.cols.range}</th><th scope="col" className="num">{t.prediction.cols.chance}</th></tr></thead>
             <tbody>{BLOC_ORDER.map((b) => (
-              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{f.blocs[b].point}</b></td><td className="num">{f.blocs[b].listSum ?? f.blocs[b].median ?? ""}</td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
+              <tr key={b}><th scope="row"><span className="sw" style={{ background: `var(--b-${b})` }} aria-hidden="true" /> {label[b]}</th><td className="num"><b>{totals[b]}</b></td><td className="num">{f.blocs[b].median ?? f.blocs[b].point}</td><td className="num">{f.blocs[b].mean}</td><td className="num"><Ltr lang={lang}>{t.prediction.range(f.blocs[b].lo, f.blocs[b].hi)}</Ltr></td><td className="num">{b === "net" ? t.prediction.pct(f.majority.net) : b === "opp" ? t.prediction.pct(f.majority.oppZionist) : ""}</td></tr>
             ))}</tbody>
           </table>
         </div>
@@ -140,7 +141,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
         <div className="table-scroll">
           <table className="data-table fc-table">
             <thead><tr><th scope="col">{t.record.cols.date}</th><th scope="col" className="num">{t.record.cols.version}</th><th scope="col" className="num">{t.record.cols.net}</th><th scope="col" className="num">{t.record.cols.opp}</th><th scope="col" className="num">{t.record.cols.arab}</th><th scope="col" className="num">{t.record.cols.mid}</th><th scope="col" className="num">{t.record.cols.chance}</th><th scope="col">{t.record.cols.status}</th></tr></thead>
-            <tbody>{history.map((r, i) => <tr key={i}><th scope="row">{shortDate(r.generated, lang)}</th><td className="num">{r.parameters?.version ?? 1}</td><td className="num">{r.blocs.net}</td><td className="num">{r.blocs.opp}</td><td className="num">{r.blocs.arab}</td><td className="num">{r.blocs.mid}</td><td className="num">{t.prediction.pct(r.majority.net)}</td><td>{r.final ? <b>{t.record.final}</b> : t.record.draft}</td></tr>)}</tbody>
+            <tbody>{history.map((r, i) => <tr key={i}><th scope="row">{shortDate(r.generated, lang)}</th><td className="num">{r.parameters?.version ?? 1}</td><td className="num">{(r.blocListSums ?? r.blocs).net}</td><td className="num">{(r.blocListSums ?? r.blocs).opp}</td><td className="num">{(r.blocListSums ?? r.blocs).arab}</td><td className="num">{(r.blocListSums ?? r.blocs).mid}</td><td className="num">{t.prediction.pct(r.majority.net)}</td><td>{r.final ? <b>{t.record.final}</b> : t.record.draft}</td></tr>)}</tbody>
           </table>
         </div>
         <h3 className="sec-h3 fc-sub">{t.record.changesH}</h3>

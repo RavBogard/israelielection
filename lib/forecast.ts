@@ -30,8 +30,8 @@ export const FORECAST_ID = "forecast";
 
 /**
  * The forecast's central seats as a pseudo-poll, so the polls page and the Coalition Builder can count
- * with it beside the two averages. Whole seats that add to 120 (the allocation of the central vote
- * shares); a list the central allocation leaves under the threshold is marked below.
+ * with it beside the two averages. Party medians reconciled to 120 whole seats; a list whose point
+ * prediction is zero is marked below. Headline bloc totals sum these party predictions.
  */
 export const forecastPoll: Poll = {
   id: FORECAST_ID,
@@ -43,7 +43,7 @@ export const forecastPoll: Poll = {
   url: null,
   n: null,
   margin: null,
-  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}. The list seats add to 120; the forecast's bloc centrals are medians of the runs and can differ from these sums by a seat.`,
+  note: `Central seats of the site's forecast model (${forecast.runs.toLocaleString("en")} simulated elections over ${forecast.inputs.field.length} polls), generated ${forecast.generated}. Bloc totals sum the party predictions; together they add to 120 seats. Simulated bloc medians are shown separately on the forecast page.`,
   results: Object.fromEntries(Object.entries(forecast.lists).map(([id, l]) => [id, l.point === 0 ? { seats: 0, belowThreshold: true } : { seats: l.point }])),
   combined: [],
 };

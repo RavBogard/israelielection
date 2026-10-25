@@ -17,14 +17,14 @@ const en = {
     final
       ? `The site's own prediction for October 27, locked ${date}: a seat simulation over the field polls, every parameter set by a rule from the six elections held under the 3.25% threshold. It is scored against the official result beside the two polling averages.`
       : `The site's own prediction for October 27, generated ${date}: a seat simulation over the field polls, every parameter set by a rule from the six elections held under the 3.25% threshold. It is regenerated daily until Monday night, then locked and scored against the official result beside the two polling averages.`,
-  meta2: (runs: string, n: number) => `${runs} simulated elections over ${n} polls. Whole seats: the list centrals add to 120; a bloc's central is the median of its simulated total, so the bloc centrals can add to 119 or 121.`,
+  meta2: (runs: string, n: number) => `${runs} simulated elections over ${n} polls. Party predictions and their bloc totals add to 120 seats. Simulated bloc medians are shown separately.`,
   prediction: {
     h: (date: string, final: boolean) => `${final ? "The final prediction" : "The prediction"}, ${date}`,
     barCaption: "Central seats by bloc; 61 is an absolute majority",
-    cols: { bloc: "Bloc", list: "List", share: "Vote share", prior: "Prior", central: "Central", median: "Sum of list centrals", mean: "Mean of runs", range: "90% of runs", chance: "61 or more", passes: "Passes" },
+    cols: { bloc: "Bloc", list: "List", share: "Vote share", prior: "Prior", central: "Forecast seats", median: "Simulated bloc median", mean: "Mean of runs", range: "90% of runs", chance: "61 or more", passes: "Passes" },
     pct: (n: number) => `${n}%`,
     range: (lo: number, hi: number) => `${lo} to ${hi}`,
-    centralNote: "Central: each list's median run, reconciled to 120, the whole seats the forecast is scored on; for a bloc, the median of its simulated total (version 3: on the record the sum of the list centrals fell short of the Netanyahu bloc by 1.3 seats on average, the median by 0.6), with the sum of its lists' centrals beside it. Vote share: the field mean after the priors and the lean. Prior: the class correction in vote-share points. Mean, range and the percentages count the runs.",
+    centralNote: "Forecast seats: whole-number party predictions reconciled to 120; each bloc is the sum of its parties. The simulated bloc median is a separate summary and can differ from that sum. Vote share includes the model's adjustments; prior is the party-class adjustment in percentage points. Means, ranges and probabilities summarize the simulations.",
     majority: (net: number, opp: number, neither: number, withArab: number) =>
       `The Netanyahu bloc reaches 61 in ${net}% of runs, the anti-Netanyahu Zionist bloc in ${opp}%, neither in ${neither}%. The anti-Netanyahu bloc with the Arab lists and the lists between the blocs reaches 61 in ${withArab}%.`,
     largest: (entries: string) => `Largest list: ${entries}.`,
@@ -56,7 +56,7 @@ const en = {
     s8: (sd: number, floor: number, arab: number) => `List noise. Every list is moved on its own, ${sd} points at an 8% share scaling with the square root of the share, never under ${floor} point for a small list (the misses of lists near the threshold run about a point). Inside each bloc the moves sum to zero: history shows lists trading votes within a bloc while the bloc total holds, so the noise is substitution, not a second bloc movement.${arab ? ` Ra'am, outside the turnout term, keeps its share of a turnout swing of ${arab} seats, the size of the Arab lists' misses in 2020 to 2022.` : ""}`,
     s9: (sd: number) => `Consolidation (judgment on the size). One draw per bloc, ${sd} seats standard deviation, moved between the bloc's largest list and its partners: in 2015, April 2019 and 2020 Likud beat its polls by 3 to 9 seats while its bloc moved under one.`,
     s10: (agreements: number, runs: string) => `Count. The 3.25% threshold on the whole vote, the reserve included, then 120 seats by Bader-Ofer with the ${agreements} surplus-vote agreements the Central Elections Committee published on October 19, in ${runs} runs.`,
-    s11: "Central seats. Each list's median seat count across the runs, the figure that minimises expected seat error and always agrees with the threshold call (a list passes when it does so in half the runs or more), reconciled to 120 among the lists that pass in 95% of runs. A bloc's central is the median of its simulated total, the figure the bloc error is scored on; the sum of its lists' centrals is shown beside it (on the record the sum fell short of the Netanyahu bloc by 1.3 seats on average, the median by 0.6). The polls table and the Coalition Builder count with the list centrals.",
+    s11: "Central seats. Each party's median simulated seat count is reconciled to a total of 120. Headline bloc totals sum those party predictions across the homepage, forecast, polls and Coalition Builder. Simulated bloc medians, uncertainty ranges and probabilities are separate summaries.",
   },
   calibration: {
     h: "The record the rules come from",
@@ -67,7 +67,7 @@ const en = {
   },
   record: {
     h: "The daily record",
-    intro: "Every run whose figures changed, oldest first. The last row is the prediction shown on the site; after Monday night it is the final one, and exit polls and the count never touch it. The first row is version 1, kept on the record.",
+    intro: "Every run that changed the figures, oldest first. Bloc totals here sum the recorded party predictions; the original simulated bloc summaries remain in the data record. The final prediction is preserved through exit polls and the count.",
     cols: { date: "Generated", version: "Version", net: "Netanyahu bloc", opp: "Anti-Netanyahu bloc", arab: "Arab lists", mid: "Between", chance: "Netanyahu bloc at 61", status: "Status" },
     final: "Final",
     draft: "Daily run",
@@ -78,7 +78,7 @@ const en = {
     h: "How it will be scored",
     intro: "Fixed before the result. On the official count, for the forecast and for both site averages:",
     r1: "Mean absolute seat error per list, over the lists above (the averages: their scaled figures).",
-    r2: "Absolute error on each bloc's central (the median of its simulated total).",
+    r2: "Secondary diagnostic: absolute error of each simulated bloc median, retained under version 3's recorded scoring rule.",
     r3: "Threshold calls: a list is called passing at 50% of runs or more (the averages: by their passes-in-k-of-n rule).",
     r4: "Whether the outcome given the highest probability above occurred.",
     r5: "Every current poll's final figures, scored the same way, for the pollster record.",

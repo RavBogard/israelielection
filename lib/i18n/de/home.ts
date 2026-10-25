@@ -81,7 +81,7 @@ const en: HomeText = {
         across: "; block\u00FCbergreifend und ist hier keinem Block zugeordnet.",
         noSplit: " Es wird keine individuelle Aufteilung gemeldet.",
         followsAvg: "Das Mosaik folgt dem normalisierten Koalitionsdurchschnitt.",
-        followsForecast: "Das Mosaik folgt den zentralen Sitzen des Prognosemodells: ganze Sitze pro Liste, addiert zu 120; Die Bezeichnung jedes Blocks ist sein Zentralwert, der Median seiner simulierten Gesamtsumme, die sich um einen Sitzplatz von der Summe seiner Listen unterscheiden kann.",
+        followsForecast: "Das Mosaik zeigt die prognostizierten ganzen Sitze jeder Partei. Jede Blockbeschriftung addiert die Sitze ihrer Parteien; alle Blöcke zusammen ergeben 120 Sitze.",
         belowForecast: "der Schwellenwert in der zentralen Vergabe",
         range: (lo: number, hi: number): Bits => [lo, " zu ", hi, " in 9 von 10 L\u00E4ufen"],
         chance: (pct: number): Bits => ["61 oder mehr in ", pct, "% der L\u00E4ufe"],

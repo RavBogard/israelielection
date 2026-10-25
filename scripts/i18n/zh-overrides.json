@@ -164,5 +164,13 @@
   "parties": "政党",
   "Party map": "政党图谱",
   "Which poll": "选择民调",
-  "Build a coalition from any poll. Can you reach 61?": "根据任一民调模拟组阁。能否达到61席？"
+  "Build a coalition from any poll. Can you reach 61?": "根据任一民调模拟组阁。能否达到61席？",
+  "ZXPH0XZ simulated elections over ZXPH1XZ polls. Party predictions and their bloc totals add to 120 seats. Simulated bloc medians are shown separately.": "基于 ZXPH1XZ 项民调模拟了 ZXPH0XZ 次选举。各党预测席位及其阵营合计均为120席。模拟阵营席位的中位数另行列出。",
+  "Forecast seats": "预测席位",
+  "Simulated bloc median": "模拟阵营席位中位数",
+  "Forecast seats: whole-number party predictions reconciled to 120; each bloc is the sum of its parties. The simulated bloc median is a separate summary and can differ from that sum. Vote share includes the model's adjustments; prior is the party-class adjustment in percentage points. Means, ranges and probabilities summarize the simulations.": "预测席位：各党的整数席位预测经调整后合计为120席；每个阵营的席位是其各党预测之和。模拟阵营席位的中位数是单独的统计指标，可能与该总和不同。得票率包含模型调整；按政党类别进行的调整以百分点表示。均值、区间和概率概括模拟结果。",
+  "Central seats. Each party's median simulated seat count is reconciled to a total of 120. Headline bloc totals sum those party predictions across the homepage, forecast, polls and Coalition Builder. Simulated bloc medians, uncertainty ranges and probabilities are separate summaries.": "中心席位。各党模拟席位的中位数经调整后合计为120席。首页、预测页、民调页和组阁工具中突出显示的阵营席位均为各党预测之和。模拟阵营席位中位数、不确定性区间及概率作为单独指标显示。",
+  "Secondary diagnostic: absolute error of each simulated bloc median, retained under version 3's recorded scoring rule.": "次要评估指标：各阵营模拟席位中位数的绝对误差，沿用第三版已记录的评分规则。",
+  "Every run that changed the figures, oldest first. Bloc totals here sum the recorded party predictions; the original simulated bloc summaries remain in the data record. The final prediction is preserved through exit polls and the count.": "按时间先后列出所有改变数字的运行记录。此处阵营总数为已记录的各党预测之和；原始模拟阵营统计仍保留在数据记录中。最终预测在出口民调和计票期间保持不变。",
+  "The mosaic shows the forecast's whole seats per party. Each bloc label sums its parties, and all blocs together total 120 seats.": "马赛克图显示各党预测的整数席位。每个阵营的标签为其各党席位之和，全部阵营合计120席。"
 }

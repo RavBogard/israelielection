@@ -81,7 +81,7 @@ const en: HomeText = {
         across: ";跨集团，这里不分配给一个集团。",
         noSplit: " 没有个别分裂的报道。",
         followsAvg: "马赛克遵循标准化联盟平均值。",
-        followsForecast: "马赛克遵循预测模型的中心席位：每个列表的全部席位，添加到 120；每个集团的标签是其中心，即其模拟总数的中位数，该数字可能与其列表的总和相差一个席位。",
+        followsForecast: "马赛克图显示各党预测的整数席位。每个阵营的标签为其各党席位之和，全部阵营合计120席。",
         belowForecast: "集中分配门槛",
         range: (lo: number, hi: number): Bits => [lo, " 到 ", hi, " 在 9 中模拟 10 次"],
         chance: (pct: number): Bits => ["61 或更多 ", pct, "模拟百分比"],
