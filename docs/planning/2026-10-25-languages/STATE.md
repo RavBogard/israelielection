@@ -1,6 +1,6 @@
 # Arabic and Persian editions
 
-Added `/ar` and `/fa` with the same scope as Hebrew: home, polls, coalition builder,
+Added `/ar` and `/fa` with the same scope as Hebrew: home, polls, forecast, coalition builder,
 comparison, party profiles and results. Longer guides and daily briefings link to English.
 
 - Each edition has its own root layout, `lang`, RTL direction, font, metadata and hreflang/sitemap entries.
@@ -22,7 +22,12 @@ can be translated during explicit authoring; builds and visitors never call the 
 The existing scheduled Hebrew refresh remains Hebrew-only; changed Arabic/Persian fields fall back
 until refreshed with the authoring script.
 
-Verification: 810 tests; type check and production build; lint with no errors (existing warnings).
+Deployment preparation found the checkout 54 commits behind origin/main. Integrated the final
+polls, current party/results data and forecast v3, and added the forecast to the new editions.
+Translations were regenerated against the updated source data; no newer polling data was replaced.
+
+Verification before integration: 810 tests, type check, production build and browser checks.
+After integration: 818 tests and type check pass; production deployment validation is in progress.
 Browser checks at desktop and 375px: RTL layouts, no page overflow, chart drill-down links,
 Arabic tab keyboard direction, Arabic/Persian coalition state preservation, and switching back to
 English/Hebrew. No browser console errors. No deployment performed.

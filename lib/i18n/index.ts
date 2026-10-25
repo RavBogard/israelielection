@@ -13,7 +13,7 @@ export const isRtl = (lang: Lang) => lang !== "en";
 export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
-export const HE_PATHS = ["/", "/polls", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
+export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of

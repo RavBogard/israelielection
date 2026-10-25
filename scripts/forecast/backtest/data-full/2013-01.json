@@ -1,0 +1,5634 @@
+{
+ "election": "2013-01-22",
+ "key": "2013-01",
+ "knesset": 120,
+ "threshold": 0.02,
+ "about": "Every poll in Wikipedia's polling tables for the 2013-01-22 election, from the day after the previous election (2009-02-10) to the day before the vote, newest first: 102 polls by 27 pollsters (0 by Shlomo Filber's firms). The outgoing Knesset was dissolved on 2012-10-15 (62 polls since). Same schema as the 28-day files in data/ (2013 has no 28-day file; its lists, blocs and agreements are judgments written out in the build script); parties that merged, split or withdrew during the campaign have their own ids, listed in otherLists (`into` names the final list they merged into). Built by scripts/forecast/backtest/build-data-full.py; memo docs/research/polls-method/round2/D1-data-full.md.",
+ "previousElection": "2009-02-10",
+ "dissolved": "2012-10-15",
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/2013_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/2013_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud Yisrael Beiteinu",
+  "ya": "Yesh Atid",
+  "labor": "Labor",
+  "jh": "The Jewish Home",
+  "shas": "Shas",
+  "utj": "United Torah Judaism",
+  "hatnuah": "Hatnuah",
+  "meretz": "Meretz",
+  "raam": "Ra'am–Ta'al",
+  "hadash": "Hadash",
+  "balad": "Balad",
+  "kadima": "Kadima",
+  "otzma": "Otzma LeYisrael",
+  "amshalem": "Am Shalem"
+ },
+ "blocs": {
+  "likud": "net",
+  "ya": "mid",
+  "labor": "opp",
+  "jh": "net",
+  "shas": "net",
+  "utj": "net",
+  "hatnuah": "opp",
+  "meretz": "opp",
+  "raam": "arab",
+  "hadash": "arab",
+  "balad": "arab",
+  "kadima": "opp",
+  "otzma": "net",
+  "amshalem": "mid"
+ },
+ "blocNote": "2013 judgments (made for this file; no calibration.json entry): the Netanyahu bloc is the right-religious bloc that won 61 seats and recommended Netanyahu: Likud Yisrael Beiteinu, Jewish Home, Shas, UTJ, plus Otzma LeYisrael (far right, failed). Yesh Atid (centrist, first run, uncommitted, joined the government after the vote) is 'mid' as Kulanu 2015 is; Am Shalem (moderate Haredi split from Shas, failed) is 'mid'. Labor, Hatnuah, Meretz and Kadima are 'opp'; Ra'am-Ta'al, Hadash and Balad 'arab'. Counting Yesh Atid as 'opp' instead gives the usual 61-59 split; the 'net' total is the same either way.",
+ "otherLists": {
+  "likud_likud": {
+   "name": "Likud (before the merger with Yisrael Beiteinu, 25 Oct 2012)",
+   "bloc": "net",
+   "into": "likud",
+   "note": null
+  },
+  "likud_yb": {
+   "name": "Yisrael Beiteinu (before the merger with Likud, 25 Oct 2012)",
+   "bloc": "net",
+   "into": "likud",
+   "note": null
+  },
+  "jh_jh": {
+   "name": "The Jewish Home (before the joint list with the National Union)",
+   "bloc": "net",
+   "into": "jh",
+   "note": null
+  },
+  "jh_nu": {
+   "name": "National Union (before the joint list with the Jewish Home)",
+   "bloc": "net",
+   "into": "jh",
+   "note": "Its Otzma LeYisrael faction left on 12 Oct 2012."
+  }
+ },
+ "result": {
+  "validVotes": 3792742,
+  "lists": {
+   "likud": {
+    "votes": 885054,
+    "pct": 23.335,
+    "seats": 31,
+    "passed": true
+   },
+   "ya": {
+    "votes": 543458,
+    "pct": 14.329,
+    "seats": 19,
+    "passed": true
+   },
+   "labor": {
+    "votes": 432118,
+    "pct": 11.393,
+    "seats": 15,
+    "passed": true
+   },
+   "jh": {
+    "votes": 345985,
+    "pct": 9.122,
+    "seats": 12,
+    "passed": true
+   },
+   "shas": {
+    "votes": 331868,
+    "pct": 8.75,
+    "seats": 11,
+    "passed": true
+   },
+   "utj": {
+    "votes": 195892,
+    "pct": 5.165,
+    "seats": 7,
+    "passed": true
+   },
+   "hatnuah": {
+    "votes": 189167,
+    "pct": 4.988,
+    "seats": 6,
+    "passed": true
+   },
+   "meretz": {
+    "votes": 172403,
+    "pct": 4.546,
+    "seats": 6,
+    "passed": true
+   },
+   "raam": {
+    "votes": 138450,
+    "pct": 3.65,
+    "seats": 4,
+    "passed": true
+   },
+   "hadash": {
+    "votes": 113439,
+    "pct": 2.991,
+    "seats": 4,
+    "passed": true
+   },
+   "balad": {
+    "votes": 97030,
+    "pct": 2.558,
+    "seats": 3,
+    "passed": true
+   },
+   "kadima": {
+    "votes": 79081,
+    "pct": 2.085,
+    "seats": 2,
+    "passed": true
+   },
+   "otzma": {
+    "votes": 66775,
+    "pct": 1.761,
+    "seats": 0,
+    "passed": false
+   },
+   "amshalem": {
+    "votes": 45690,
+    "pct": 1.205,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "likud",
+   "jh"
+  ],
+  [
+   "hatnuah",
+   "meretz"
+  ],
+  [
+   "labor",
+   "ya"
+  ],
+  [
+   "amshalem",
+   "kadima"
+  ],
+  [
+   "hadash",
+   "balad"
+  ],
+  [
+   "utj",
+   "shas"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "yedioth-ahronoth-2013-01-18",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Dahaf",
+   "fieldwork": "18 Jan",
+   "published": "2013-01-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 12
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 13
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2013-01-17",
+   "pollster": "Maariv",
+   "firm": "Maagar Mochot",
+   "fieldwork": "17 Jan",
+   "published": "2013-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 37
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 7
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 1
+    },
+    "hatnuah": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2013-01-17",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "17 Jan",
+   "published": "2013-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2013-01-17",
+   "pollster": "Israel Hayom",
+   "firm": "New Wave",
+   "fieldwork": "17 Jan",
+   "published": "2013-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2013-01-17",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "17 Jan",
+   "published": "2013-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 5
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2013-01-16",
+   "pollster": "Walla",
+   "firm": "TNS-Teleseker",
+   "fieldwork": "16 Jan",
+   "published": "2013-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2013-01-16",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "16 Jan",
+   "published": "2013-01-16",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2013-01-15",
+   "pollster": "Channel 2",
+   "firm": "Dahaf",
+   "fieldwork": "15 Jan",
+   "published": "2013-01-15",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 119.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 12
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2013-01-14",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "14 Jan",
+   "published": "2013-01-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-1-2013-01-12",
+   "pollster": "Channel 1",
+   "firm": "Midgam",
+   "fieldwork": "12 Jan",
+   "published": "2013-01-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 10
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yisrael-post-sof-hashavua-2013-01-11",
+   "pollster": "Yisrael Post & Sof Hashavua",
+   "firm": null,
+   "fieldwork": "11 Jan",
+   "published": "2013-01-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2013-01-11",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Dahaf",
+   "fieldwork": "11 Jan",
+   "published": "2013-01-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2013-01-11",
+   "pollster": "Maariv",
+   "firm": "Maagar Mochot",
+   "fieldwork": "11 Jan",
+   "published": "2013-01-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 38
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 1
+    },
+    "amshalem": {
+     "seats": 1
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "jerusalem-post-2013-01-11",
+   "pollster": "Jerusalem Post",
+   "firm": "Smith",
+   "fieldwork": "11 Jan",
+   "published": "2013-01-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 10
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2013-01-11",
+   "pollster": "Israel Hayom",
+   "firm": "New Wave",
+   "fieldwork": "11 Jan",
+   "published": "2013-01-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2013-01-10",
+   "pollster": "Reshet Bet",
+   "firm": "Sarid",
+   "fieldwork": "10 Jan",
+   "published": "2013-01-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 116.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 1
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-channel-2-2013-01-10",
+   "pollster": "Mako & Channel 2",
+   "firm": "Panels Politics",
+   "fieldwork": "10 Jan",
+   "published": "2013-01-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 10
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "geocartography-2013-01-10",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "10 Jan",
+   "published": "2013-01-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 117.",
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 16.5
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 5.5
+    },
+    "ya": {
+     "seats": 12
+    },
+    "hatnuah": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2013-01-10",
+   "pollster": "Channel 2",
+   "firm": "Dahaf",
+   "fieldwork": "10 Jan",
+   "published": "2013-01-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 123.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "news1-reshet-bet-2013-01-09",
+   "pollster": "News1 & Reshet Bet",
+   "firm": "Sarid",
+   "fieldwork": "9 Jan",
+   "published": "2013-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 115.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2013-01-08",
+   "pollster": "Walla",
+   "firm": "TNS-Teleseker",
+   "fieldwork": "8 Jan",
+   "published": "2013-01-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "times-of-israel-2013-01-07",
+   "pollster": "Times of Israel",
+   "firm": null,
+   "fieldwork": "7 Jan",
+   "published": "2013-01-07",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 21
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "hatnuah": {
+     "seats": 5
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 12
+    }
+   ]
+  },
+  {
+   "id": "mako-2013-01-07",
+   "pollster": "Mako",
+   "firm": "Panels Politics",
+   "fieldwork": "7 Jan",
+   "published": "2013-01-07",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 16
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 10
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "channel-10-2013-01-07",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "7 Jan",
+   "published": "2013-01-07",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2013-01-03",
+   "pollster": "Reshet Bet",
+   "firm": "Geocartography",
+   "fieldwork": "3 Jan",
+   "published": "2013-01-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 121.",
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 7
+    },
+    "jh": {
+     "seats": 18
+    },
+    "meretz": {
+     "seats": 7
+    },
+    "ya": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 6
+    },
+    "hatnuah": {
+     "seats": 6
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-post-globes-2013-01-03",
+   "pollster": "Jerusalem Post & Globes",
+   "firm": "Smith",
+   "fieldwork": "3 Jan",
+   "published": "2013-01-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 16
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 10
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2013-01-02",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "2 Jan",
+   "published": "2013-01-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2013-01-01",
+   "pollster": "Channel 2",
+   "firm": "Dahaf",
+   "fieldwork": "1 Jan",
+   "published": "2013-01-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2012-12-27",
+   "pollster": "Reshet Bet",
+   "firm": "Midgam",
+   "fieldwork": "27 Dec",
+   "published": "2012-12-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 16
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 15
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 9
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-12-27",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "27 Dec",
+   "published": "2012-12-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 34
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 14
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 10
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "dialog-2012-12-25",
+   "pollster": "Dialog",
+   "firm": "Dialog",
+   "fieldwork": "25 Dec",
+   "published": "2012-12-25",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-12-21",
+   "pollster": "Maariv",
+   "firm": "Maagar Mochot",
+   "fieldwork": "21 Dec",
+   "published": "2012-12-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 37
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 12
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2012-12-20",
+   "pollster": "Reshet Bet",
+   "firm": null,
+   "fieldwork": "20 Dec",
+   "published": "2012-12-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-2-2012-12-18",
+   "pollster": "Channel 2",
+   "firm": "Dahaf",
+   "fieldwork": "18 Dec",
+   "published": "2012-12-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 12
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2012-12-14",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Dahaf",
+   "fieldwork": "14 Dec",
+   "published": "2012-12-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2012-12-14",
+   "pollster": "Maariv",
+   "firm": "Maagar Mochot",
+   "fieldwork": "14 Dec",
+   "published": "2012-12-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 1
+    },
+    "likud": {
+     "seats": 38
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 1
+    },
+    "amshalem": {
+     "seats": 1
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-post-2012-12-14",
+   "pollster": "Jerusalem Post",
+   "firm": "Geocartography",
+   "fieldwork": "14 Dec",
+   "published": "2012-12-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 16
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 12
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2012-12-13",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "13 Dec",
+   "published": "2012-12-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 119.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "jerusalem-post-2012-12-12",
+   "pollster": "Jerusalem Post",
+   "firm": "Smith",
+   "fieldwork": "12 Dec",
+   "published": "2012-12-12",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 10
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2012-12-11",
+   "pollster": "Walla",
+   "firm": "TNS-Teleseker",
+   "fieldwork": "11 Dec",
+   "published": "2012-12-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 4
+    },
+    "likud": {
+     "seats": 38
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 9
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "hatnuah": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2012-12-10",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "10 Dec",
+   "published": "2012-12-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 6
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "reshet-bet-2012-12-06",
+   "pollster": "Reshet Bet",
+   "firm": "Midgam",
+   "fieldwork": "6 Dec",
+   "published": "2012-12-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "knesset-channel-2012-12-06",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "6 Dec",
+   "published": "2012-12-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 12
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 6
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "channel-2-2012-12-06",
+   "pollster": "Channel 2",
+   "firm": null,
+   "fieldwork": "6 Dec",
+   "published": "2012-12-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 38
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 12
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 2
+    },
+    "ya": {
+     "seats": 5
+    },
+    "otzma": {
+     "seats": 1
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-10-2012-12-05",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "5 Dec",
+   "published": "2012-12-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 37
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 7
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2012-11-29",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Dahaf",
+   "fieldwork": "29 Nov",
+   "published": "2012-11-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 37
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 10
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 9
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2012-11-29",
+   "pollster": "Israel Hayom",
+   "firm": "New Wave",
+   "fieldwork": "29 Nov",
+   "published": "2012-11-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 10
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 10
+    },
+    "otzma": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "amshalem": {
+     "seats": 2
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-11-29",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "29 Nov",
+   "published": "2012-11-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 37
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 11
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 10
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2012-11-28",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "28 Nov",
+   "published": "2012-11-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 8
+    },
+    "otzma": {
+     "seats": 2
+    },
+    "amshalem": {
+     "seats": 3
+    },
+    "hatnuah": {
+     "seats": 7
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "knesset-channel-2012-11-22",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "22 Nov",
+   "published": "2012-11-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 33
+    },
+    "labor": {
+     "seats": 24
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 13
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 11
+    },
+    "otzma": {
+     "seats": 4
+    },
+    "amshalem": {
+     "seats": 3
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "panels-politics-2012-11-18",
+   "pollster": "Panels Politics",
+   "firm": "Panels Politics",
+   "fieldwork": "18 Nov",
+   "published": "2012-11-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 38
+    },
+    "labor": {
+     "seats": 22
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 11
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "otzma": {
+     "seats": 3
+    },
+    "amshalem": {
+     "seats": 4
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-11-18",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "18 Nov",
+   "published": "2012-11-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 41
+    },
+    "labor": {
+     "seats": 21
+    },
+    "shas": {
+     "seats": 12
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 8
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 9
+    },
+    "amshalem": {
+     "seats": 3
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "mako-2012-11-13",
+   "pollster": "Mako",
+   "firm": "Panels Politics",
+   "fieldwork": "13 Nov",
+   "published": "2012-11-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 2
+    },
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 21
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 12
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 15
+    },
+    "amshalem": {
+     "seats": 3
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 9
+    }
+   ]
+  },
+  {
+   "id": "knesset-channel-2012-11-08",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "8 Nov",
+   "published": "2012-11-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 36
+    },
+    "labor": {
+     "seats": 23
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 13
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 13
+    },
+    "amshalem": {
+     "seats": 4
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maagar-mochot-2012-11-06",
+   "pollster": "Maagar Mochot",
+   "firm": "Maagar Mochot",
+   "fieldwork": "5–6 Nov",
+   "published": "2012-11-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 114.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 4
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 22
+    },
+    "shas": {
+     "seats": 15
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 2
+    },
+    "ya": {
+     "seats": 10
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 9
+    }
+   ]
+  },
+  {
+   "id": "channel-2-2012-11-06",
+   "pollster": "Channel 2",
+   "firm": "Maagar Mochot",
+   "fieldwork": "6 Nov",
+   "published": "2012-11-06",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 114.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 39
+    },
+    "labor": {
+     "seats": 22
+    },
+    "shas": {
+     "seats": 14
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 7
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 10
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "yedioth-ahronoth-2012-11-04",
+   "pollster": "Yedioth Ahronoth",
+   "firm": null,
+   "fieldwork": "4 Nov",
+   "published": "2012-11-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 115.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 24
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 15
+    },
+    "otzma": {
+     "seats": 2
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-10-28",
+   "pollster": "Maariv",
+   "firm": "Teleseker",
+   "fieldwork": "28 Oct",
+   "published": "2012-10-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 4
+    },
+    "likud": {
+     "seats": 43
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 15
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "channel-2-2012-10-28",
+   "pollster": "Channel 2",
+   "firm": "Maagar Mochot",
+   "fieldwork": "28 Oct",
+   "published": "2012-10-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 116.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud": {
+     "seats": 42
+    },
+    "labor": {
+     "seats": 23
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 9
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "channel-10-2012-10-28",
+   "pollster": "Channel 10",
+   "firm": "Panels Politics",
+   "fieldwork": "28 Oct",
+   "published": "2012-10-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 5
+    },
+    "likud": {
+     "seats": 35
+    },
+    "labor": {
+     "seats": 23
+    },
+    "shas": {
+     "seats": 14
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 9
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 13
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-10-18",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "18 Oct",
+   "published": "2012-10-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 121.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 9
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 6
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-10-17",
+   "pollster": "Globes",
+   "firm": null,
+   "fieldwork": "17 Oct",
+   "published": "2012-10-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud_likud": {
+     "seats": 25
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 14
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-10-11",
+   "pollster": "Maariv",
+   "firm": "Teleseker",
+   "fieldwork": "11 Oct",
+   "published": "2012-10-11",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 6
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 2
+    },
+    "jh_jh": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 3
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 17
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2012-10-10",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "10 Oct",
+   "published": "2012-10-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 7
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 8
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2012-09-28",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "28 Sept",
+   "published": "2012-09-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 8
+    },
+    "likud_likud": {
+     "seats": 28
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 7
+    },
+    "jh": {
+     "seats": 6
+    },
+    "raam": {
+     "seats": 5
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-08-01",
+   "pollster": "Globes",
+   "firm": null,
+   "fieldwork": "1 Aug",
+   "published": "2012-08-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 117.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 4
+    },
+    "likud_likud": {
+     "seats": 27
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 13
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-07-31",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "31 Jul",
+   "published": "2012-07-31",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 7
+    },
+    "likud_likud": {
+     "seats": 25
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 21
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 7
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 12
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-07-26",
+   "pollster": "Globes",
+   "firm": null,
+   "fieldwork": "26 Jul",
+   "published": "2012-07-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 117.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 7
+    },
+    "likud_likud": {
+     "seats": 28
+    },
+    "likud_yb": {
+     "seats": 16
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 3
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "yedioth-ahronoth-2012-07-20",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Dahaf",
+   "fieldwork": "20 Jul",
+   "published": "2012-07-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 7
+    },
+    "likud_likud": {
+     "seats": 25
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 21
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 4
+    },
+    "jh_nu": {
+     "seats": 6
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 13
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-07-17",
+   "pollster": "Maariv",
+   "firm": "Maagar Mochot",
+   "fieldwork": "17 Jul",
+   "published": "2012-07-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 113.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 7
+    },
+    "likud_likud": {
+     "seats": 27
+    },
+    "likud_yb": {
+     "seats": 16
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 3
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "knesset-channel-2012-05-17",
+   "pollster": "Knesset Channel",
+   "firm": "Panels Politics",
+   "fieldwork": "17 May",
+   "published": "2012-05-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 3
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 6
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 17
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-05-13",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "13 May",
+   "published": "2012-05-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 113.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 9
+    },
+    "likud_likud": {
+     "seats": 31
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 3
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-05-08",
+   "pollster": "Maariv",
+   "firm": "TNS",
+   "fieldwork": "8 May",
+   "published": "2012-05-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 10
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 20
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 12
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-05-08",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "8 May",
+   "published": "2012-05-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 119.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 11
+    },
+    "likud_likud": {
+     "seats": 33
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ya": {
+     "seats": 6
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "maariv-2012-05-01",
+   "pollster": "Maariv",
+   "firm": "TNS",
+   "fieldwork": "1 May",
+   "published": "2012-05-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 11
+    },
+    "likud_likud": {
+     "seats": 31
+    },
+    "likud_yb": {
+     "seats": 12
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-05-01",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "1 May",
+   "published": "2012-05-01",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 11
+    },
+    "likud_likud": {
+     "seats": 32
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 4
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 10
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "ynet-2012-04-30",
+   "pollster": "Ynet",
+   "firm": "Dahaf",
+   "fieldwork": "30 Apr",
+   "published": "2012-04-30",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 116.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 11
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 2
+    },
+    "jh_jh": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "israel-hayom-2012-04-26",
+   "pollster": "Israel Hayom",
+   "firm": "New Wave",
+   "fieldwork": "26 Apr",
+   "published": "2012-04-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 13
+    },
+    "likud_likud": {
+     "seats": 31
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 3
+    },
+    "jh_jh": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 12
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "jerusalem-post-2012-04-23",
+   "pollster": "Jerusalem Post",
+   "firm": "Smith",
+   "fieldwork": "22–23 Apr",
+   "published": "2012-04-23",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 13
+    },
+    "likud_likud": {
+     "seats": 31
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "tns-2012-03-29",
+   "pollster": "TNS",
+   "firm": "TNS",
+   "fieldwork": "29 Mar",
+   "published": "2012-03-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 13
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "dahaf-2012-03-28",
+   "pollster": "Dahaf",
+   "firm": "Dahaf",
+   "fieldwork": "28 Mar",
+   "published": "2012-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 118.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 12
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 12
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "channel-10-2012-03-28",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "28 Mar",
+   "published": "2012-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 109.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 15
+    },
+    "likud_likud": {
+     "seats": 32
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 9
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2012-03-21",
+   "pollster": "Yedioth Ahronoth",
+   "firm": null,
+   "fieldwork": "21 Mar",
+   "published": "2012-03-21",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 116.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 12
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 3
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 14
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "teleseker-2012-03-09",
+   "pollster": "Teleseker",
+   "firm": "Teleseker",
+   "fieldwork": "9 Mar",
+   "published": "2012-03-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 115.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 14
+    },
+    "likud_likud": {
+     "seats": 27
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 4
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-03-05",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "4–5 Mar",
+   "published": "2012-03-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 12
+    },
+    "likud_likud": {
+     "seats": 35
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 7
+    },
+    "jh": {
+     "seats": 5
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 5
+    },
+    "balad": {
+     "seats": 2
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2012-02-29",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "29 Feb",
+   "published": "2012-02-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 15
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "geocartography-2012-02-17",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "17 Feb",
+   "published": "2012-02-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 12
+    },
+    "likud_likud": {
+     "seats": 39
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh": {
+     "seats": 10
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 6
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "globes-2012-01-27",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "27 Jan",
+   "published": "2012-01-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 13
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 10
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 5
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "raam": {
+     "seats": 3
+    },
+    "hadash": {
+     "seats": 4
+    },
+    "balad": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 11
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maagar-mochot-2012-01-18",
+   "pollster": "Maagar Mochot",
+   "firm": "Maagar Mochot",
+   "fieldwork": "18 Jan",
+   "published": "2012-01-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 113.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 9
+    },
+    "likud_likud": {
+     "seats": 28
+    },
+    "likud_yb": {
+     "seats": 17
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 5
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 8
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "geocartography-2012-01-17",
+   "pollster": "Geocartography",
+   "firm": "Geocartography",
+   "fieldwork": "17 Jan",
+   "published": "2012-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 11
+    },
+    "likud_likud": {
+     "seats": 33
+    },
+    "likud_yb": {
+     "seats": 16
+    },
+    "labor": {
+     "seats": 13
+    },
+    "shas": {
+     "seats": 8
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 2
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 13
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "new-wave-2012-01-10",
+   "pollster": "New Wave",
+   "firm": "New Wave",
+   "fieldwork": "10 Jan",
+   "published": "2012-01-10",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 14
+    },
+    "likud_likud": {
+     "seats": 28
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 15
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 2
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ya": {
+     "seats": 15
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "teleseker-2012-01-09",
+   "pollster": "Teleseker",
+   "firm": "Teleseker",
+   "fieldwork": "9 Jan",
+   "published": "2012-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 116.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 15
+    },
+    "likud_likud": {
+     "seats": 26
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 17
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 4
+    },
+    "jh": {
+     "seats": 8
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 12
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "panels-politics-2012-01-09",
+   "pollster": "Panels Politics",
+   "firm": "Panels Politics",
+   "fieldwork": "9 Jan",
+   "published": "2012-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 91.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 9
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 13
+    },
+    "labor": {
+     "seats": 12
+    },
+    "shas": {
+     "seats": 8
+    },
+    "ya": {
+     "seats": 20
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "dahaf-2012-01-09",
+   "pollster": "Dahaf",
+   "firm": "Dahaf",
+   "fieldwork": "9 Jan",
+   "published": "2012-01-09",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 113.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 8
+    },
+    "likud_likud": {
+     "seats": 28
+    },
+    "likud_yb": {
+     "seats": 16
+    },
+    "labor": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 2
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 14
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "maagar-mochot-2012-01-08",
+   "pollster": "Maagar Mochot",
+   "firm": "Maagar Mochot",
+   "fieldwork": "8 Jan",
+   "published": "2012-01-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 113.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 12
+    },
+    "likud_likud": {
+     "seats": 27
+    },
+    "likud_yb": {
+     "seats": 17
+    },
+    "labor": {
+     "seats": 14
+    },
+    "shas": {
+     "seats": 7
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 5
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 3
+    },
+    "ya": {
+     "seats": 7
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 11
+    }
+   ]
+  },
+  {
+   "id": "haaretz-2012-01-08",
+   "pollster": "Haaretz",
+   "firm": null,
+   "fieldwork": "8 Jan",
+   "published": "2012-01-08",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 78.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 10
+    },
+    "likud_likud": {
+     "seats": 24
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 15
+    },
+    "ya": {
+     "seats": 15
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "globes-2011-12-29",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "29 Dec",
+   "published": "2011-12-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 19
+    },
+    "likud_likud": {
+     "seats": 31
+    },
+    "likud_yb": {
+     "seats": 14
+    },
+    "labor": {
+     "seats": 18
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "channel-2-2011-10-27",
+   "pollster": "Channel 2",
+   "firm": "Sarid",
+   "fieldwork": "27 Oct",
+   "published": "2011-10-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 91.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 17
+    },
+    "likud_likud": {
+     "seats": 37
+    },
+    "likud_yb": {
+     "seats": 15
+    },
+    "labor": {
+     "seats": 22
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maagar-mochot-2011-09-26",
+   "pollster": "Maagar Mochot",
+   "firm": "Maagar Mochot",
+   "fieldwork": "26 Sept",
+   "published": "2011-09-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 117.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 17
+    },
+    "likud_likud": {
+     "seats": 27
+    },
+    "likud_yb": {
+     "seats": 17
+    },
+    "labor": {
+     "seats": 19
+    },
+    "shas": {
+     "seats": 9
+    },
+    "utj": {
+     "seats": 6
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ya": {
+     "seats": 2
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 9
+    }
+   ]
+  },
+  {
+   "id": "maagar-mochot-2011-08-05",
+   "pollster": "Maagar Mochot",
+   "firm": "Maagar Mochot",
+   "fieldwork": "5 Aug",
+   "published": "2011-08-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 119.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 25
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 16
+    },
+    "labor": {
+     "seats": 11
+    },
+    "shas": {
+     "seats": 13
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 4
+    },
+    "jh_jh": {
+     "seats": 3
+    },
+    "meretz": {
+     "seats": 4
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 9
+    }
+   ]
+  },
+  {
+   "id": "globes-2011-05-02",
+   "pollster": "Globes",
+   "firm": "Smith",
+   "fieldwork": "2 May",
+   "published": "2011-05-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 119.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 26
+    },
+    "likud_likud": {
+     "seats": 29
+    },
+    "likud_yb": {
+     "seats": 18
+    },
+    "labor": {
+     "seats": 8
+    },
+    "shas": {
+     "seats": 11
+    },
+    "utj": {
+     "seats": 5
+    },
+    "jh_nu": {
+     "seats": 5
+    },
+    "jh_jh": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 3
+    }
+   },
+   "combined": [
+    {
+     "parties": [
+      "raam",
+      "hadash",
+      "balad"
+     ],
+     "seats": 10
+    }
+   ]
+  },
+  {
+   "id": "channel-10-2011-01-17",
+   "pollster": "Channel 10",
+   "firm": "Dialog",
+   "fieldwork": "17 Jan",
+   "published": "2011-01-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2013_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": "Seats as printed sum to 86.",
+   "filber": false,
+   "results": {
+    "kadima": {
+     "seats": 27
+    },
+    "likud_likud": {
+     "seats": 30
+    },
+    "likud_yb": {
+     "seats": 17
+    },
+    "labor": {
+     "seats": 6
+    },
+    "jh_jh": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23",
+ "wikitextSha256": {
+  "p": "a286a9b8bbd2689d",
+  "e": "d833fcd645a7e43b"
+ }
+}

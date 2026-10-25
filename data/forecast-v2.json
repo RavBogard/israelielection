@@ -1,0 +1,331 @@
+{
+  "generated": "2026-10-25",
+  "generatedAt": "2026-10-25T14:31:43.245Z",
+  "final": false,
+  "election": "2026-10-27",
+  "runs": 50000,
+  "seed": 20261027,
+  "method": "scripts/forecast/model.mjs opts.v2 (version 2's rules, 2026-10-24), run on the same polls as data/forecast.json and scored beside it",
+  "inputs": {
+    "field": [
+      {
+        "id": "kan-11-2026-10-23",
+        "pollster": "Kan 11",
+        "firm": "Kantar",
+        "published": "2026-10-23",
+        "n": 1006,
+        "weight": 15.9
+      },
+      {
+        "id": "channel-12-2026-10-23",
+        "pollster": "Channel 12",
+        "firm": "Midgam R&C",
+        "published": "2026-10-23",
+        "n": 1018,
+        "weight": 31.9
+      },
+      {
+        "id": "channel-13-2026-10-23",
+        "pollster": "Channel 13",
+        "firm": "MP+TM+SN+A",
+        "published": "2026-10-23",
+        "n": 1875,
+        "weight": 43.3
+      },
+      {
+        "id": "zman-yisrael-2026-10-22",
+        "pollster": "Zman Yisrael",
+        "firm": "Yossi Tatika",
+        "published": "2026-10-22",
+        "n": 500,
+        "weight": 22.4
+      },
+      {
+        "id": "maariv-2026-10-22",
+        "pollster": "Maariv",
+        "firm": "LRI+P4A",
+        "published": "2026-10-22",
+        "n": 1048,
+        "weight": 16.2
+      },
+      {
+        "id": "israel-hayom-2026-10-22",
+        "pollster": "Israel Hayom",
+        "firm": "Kantar",
+        "published": "2026-10-22",
+        "n": null,
+        "weight": 12.2
+      },
+      {
+        "id": "walla-2026-10-20",
+        "pollster": "Walla",
+        "firm": "LRI+P4A",
+        "published": "2026-10-20",
+        "n": 601,
+        "weight": 12.3
+      }
+    ],
+    "checks": [
+      {
+        "id": "channel-14-2026-10-22",
+        "pollster": "Channel 14",
+        "published": "2026-10-22"
+      },
+      {
+        "id": "i24news-2026-10-20",
+        "pollster": "i24NEWS",
+        "published": "2026-10-20"
+      }
+    ],
+    "agreements": [
+      [
+        "yashar",
+        "dem"
+      ],
+      [
+        "byachad",
+        "yb"
+      ],
+      [
+        "jl",
+        "raam"
+      ],
+      [
+        "likud",
+        "rz"
+      ],
+      [
+        "shas",
+        "utj"
+      ]
+    ],
+    "withdrawn": [
+      "bw"
+    ]
+  },
+  "parameters": {
+    "version": 2,
+    "windowDays": 7,
+    "fieldOnly": true,
+    "firmWeights": true,
+    "sharesMethod": "dhondt",
+    "unprintedBelowShare": 2,
+    "listPriors": {
+      "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs). Version 3 (round2/B): the Joint List's +0.4 is superseded by the Arab sector turnout term below (sectorTurnout.replacesPriors) and kept here only so version 2 can be reproduced (model.mjs opts.v2).",
+      "shas": 0.8,
+      "raam": 0.6,
+      "jl": 0.4,
+      "byachad": -0.8,
+      "res": -0.8,
+      "poi": -0.8
+    },
+    "sectorTurnout": [],
+    "leanSeats": 1.7,
+    "leanNetOfShas": false,
+    "historicalResidualSeats": 1.5,
+    "swing": "normal",
+    "swingScaleSeats": null,
+    "swingDf": null,
+    "blocSdSeats": 3.1,
+    "blocPoint": "sum",
+    "listSdPointsAt8pct": 1.08,
+    "listSdFloorPoints": 1,
+    "zeroSumWithinBloc": true,
+    "arabSwingSdSeats": 1.7,
+    "arabSwingLists": [
+      "jl",
+      "raam"
+    ],
+    "consolidateSdSeats": 1.5,
+    "fringeShare": 1.5,
+    "pointRule": "median"
+  },
+  "blocs": {
+    "net": {
+      "point": 53,
+      "listSum": 53,
+      "median": 53,
+      "mean": 52.9,
+      "lo": 47,
+      "hi": 59
+    },
+    "opp": {
+      "point": 52,
+      "listSum": 52,
+      "median": 51,
+      "mean": 50.9,
+      "lo": 46,
+      "hi": 56
+    },
+    "mid": {
+      "point": 0,
+      "listSum": 0,
+      "median": 0,
+      "mean": 0.7,
+      "lo": 0,
+      "hi": 4
+    },
+    "arab": {
+      "point": 15,
+      "listSum": 15,
+      "median": 16,
+      "mean": 15.4,
+      "lo": 12,
+      "hi": 19
+    }
+  },
+  "majority": {
+    "net": 2,
+    "oppZionist": 0,
+    "neither": 98,
+    "oppWithArabAndMid": 96
+  },
+  "netLargerThanOpp": 60,
+  "largestList": {
+    "likud": 44,
+    "yashar": 56
+  },
+  "lists": {
+    "likud": {
+      "share": 15.98,
+      "prior": 0,
+      "point": 21,
+      "mean": 20.6,
+      "lo": 16,
+      "hi": 25,
+      "passes": 100,
+      "call": true
+    },
+    "otzma": {
+      "share": 6.55,
+      "prior": 0,
+      "point": 8,
+      "mean": 8,
+      "lo": 6,
+      "hi": 10,
+      "passes": 99.9,
+      "call": true
+    },
+    "shas": {
+      "share": 7.17,
+      "prior": 0.8,
+      "point": 9,
+      "mean": 9.1,
+      "lo": 7,
+      "hi": 12,
+      "passes": 100,
+      "call": true
+    },
+    "utj": {
+      "share": 6.26,
+      "prior": 0,
+      "point": 8,
+      "mean": 7.8,
+      "lo": 6,
+      "hi": 10,
+      "passes": 99.8,
+      "call": true
+    },
+    "rz": {
+      "share": 5.67,
+      "prior": 0,
+      "point": 7,
+      "mean": 6.9,
+      "lo": 5,
+      "hi": 9,
+      "passes": 99,
+      "call": true
+    },
+    "poi": {
+      "share": 2.14,
+      "prior": -0.8,
+      "point": 0,
+      "mean": 0.5,
+      "lo": 0,
+      "hi": 4,
+      "passes": 12.4,
+      "call": false
+    },
+    "noam": {
+      "share": 0,
+      "prior": 0,
+      "point": 0,
+      "mean": 0,
+      "lo": 0,
+      "hi": 0,
+      "passes": 0,
+      "call": false
+    },
+    "yashar": {
+      "share": 16.83,
+      "prior": 0,
+      "point": 22,
+      "mean": 21.7,
+      "lo": 17,
+      "hi": 26,
+      "passes": 100,
+      "call": true
+    },
+    "byachad": {
+      "share": 9.78,
+      "prior": -0.8,
+      "point": 13,
+      "mean": 12.5,
+      "lo": 10,
+      "hi": 15,
+      "passes": 100,
+      "call": true
+    },
+    "dem": {
+      "share": 7.17,
+      "prior": 0,
+      "point": 9,
+      "mean": 8.9,
+      "lo": 7,
+      "hi": 11,
+      "passes": 100,
+      "call": true
+    },
+    "yb": {
+      "share": 6.29,
+      "prior": 0,
+      "point": 8,
+      "mean": 7.8,
+      "lo": 6,
+      "hi": 10,
+      "passes": 99.8,
+      "call": true
+    },
+    "res": {
+      "share": 2.26,
+      "prior": -0.8,
+      "point": 0,
+      "mean": 0.7,
+      "lo": 0,
+      "hi": 4,
+      "passes": 15.8,
+      "call": false
+    },
+    "jl": {
+      "share": 7.31,
+      "prior": 0.4,
+      "point": 9,
+      "mean": 9.3,
+      "lo": 7,
+      "hi": 12,
+      "passes": 100,
+      "call": true
+    },
+    "raam": {
+      "share": 5.09,
+      "prior": 0.6,
+      "point": 6,
+      "mean": 6.2,
+      "lo": 4,
+      "hi": 8,
+      "passes": 97,
+      "call": true
+    }
+  },
+  "scoring": "As version 2 was pre-registered: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point = the sum of the bloc's list points; threshold calls (`call`); the modal majority outcome."
+}

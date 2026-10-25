@@ -9,7 +9,7 @@ import os from "node:os";
 import ts from "typescript";
 import { fieldAt, srcHash } from "../../lib/i18n/localize";
 
-const areas = { chrome: "Chrome", home: "HomeText", polls: "PollsText", builder: "BuilderText", compare: "CompareText", profile: "ProfileText", results: "ResultsText" };
+const areas = { chrome: "Chrome", home: "HomeText", polls: "PollsText", builder: "BuilderText", compare: "CompareText", profile: "ProfileText", results: "ResultsText", forecast: "ForecastText" };
 const languages = process.argv[2] ? [process.argv[2]] : ["ar", "fa"];
 if (languages.some(l => l !== "ar" && l !== "fa")) throw new Error("Use ar or fa");
 const read = (p: string) => fs.readFileSync(p, "utf8");
@@ -28,6 +28,7 @@ function initializer(area: string) {
 function visible(n: ts.StringLiteral | ts.NoSubstitutionTemplateLiteral): boolean {
   if (!/[A-Za-z]/.test(n.text) || /^(?:https?:|\/|#[a-z]|en-US$)/.test(n.text)) return false;
   const p = n.parent;
+  if (ts.isCallExpression(p) && ts.isPropertyAccessExpression(p.expression) && p.expression.name.text === "toLocaleString") return false;
   if ((ts.isPropertyAssignment(p) || ts.isPropertySignature(p)) && p.name === n) return false;
   if (ts.isBinaryExpression(p) && [ts.SyntaxKind.EqualsEqualsEqualsToken, ts.SyntaxKind.ExclamationEqualsEqualsToken, ts.SyntaxKind.EqualsEqualsToken, ts.SyntaxKind.ExclamationEqualsToken].includes(p.operatorToken.kind)) return false;
   if (ts.isElementAccessExpression(p) || ts.isLiteralTypeNode(p)) return false;
@@ -260,5 +261,5 @@ for (const lang of languages) {
     }
     write(`data/${lang}/${file}`, JSON.stringify(out, null, 2) + "\n");
   }
-  console.log(`${lang}: saved seven dictionaries and ${files.length} data overlays`);
+  console.log(`${lang}: saved ${Object.keys(areas).length} dictionaries and ${files.length} data overlays`);
 }

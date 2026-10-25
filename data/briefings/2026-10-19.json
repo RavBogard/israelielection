@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T17:04:27.738Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "Eight days before the October 27 election, Benny Gantz dropped out of the race after his Blue and White party consistently polled below the electoral threshold.",
+      "sources": [
+        {
+          "outlet": "The Forward",
+          "title": "Israeli party leader Benny Gantz drops out of race",
+          "url": "https://forward.com/fast-forward/856850/israeli-party-leader-benny-gantz-drops-out-of-race/",
+          "published": "2026-10-19T16:05:08.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Benny Gantz pulls out of election race, eight days before Israelis head to the polls",
+          "url": "https://www.jpost.com/israel-election-2026/article-912167",
+          "published": "2026-10-19T15:47:02.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Benny Gantz quits Israeli election race as polls show party wins no seats",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-19/ty-article/.premium/former-idf-defense-chief-benny-gantz-says-he-wont-run-in-next-weeks-election/000001a1-5451-d2ed-a9ad-dcd526fe0000",
+          "published": "2026-10-19T14:20:02.000Z"
+        }
+      ],
+      "textHe": "שמונה ימים לפני הבחירות ב-27 באוקטובר, בני גנץ פרש מהמרוץ לאחר שמפלגתו כחול לבן לא עברה בעקביות את אחוז החסימה בסקרים."
+    },
+    {
+      "text": "His withdrawal prompted warnings from Gideon Sa'ar and Bezalel Smotrich regarding wasted right-wing votes, while left-wing faction leaders welcomed the move.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Right 'sounds alarm' over Gantz withdrawal as Left consolidates ahead of elections",
+          "url": "https://www.jpost.com/israel-election-2026/article-912178",
+          "published": "2026-10-19T17:55:54.000Z"
+        }
+      ],
+      "textHe": "פרישתו עוררה אזהרות מצד גדעון סער ובצלאל סמוטריץ' מפני אובדן קולות בימין, בעוד ראשי סיעות השמאל בירכו על המהלך."
+    },
+    {
+      "text": "Party leaders seeking to replace Prime Minister Benjamin Netanyahu criticized United States President Donald Trump's endorsement of the prime minister, alleging Trump wanted a puppet.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu's rivals criticize Trump's endorsement: 'He wants a Bibi puppet'",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-19/ty-article/israeli-opposition-leaders-push-back-against-trumps-endorsement-of-netanyahu/000001a1-535f-da52-a3f1-5f5f89ab0000",
+          "published": "2026-10-19T15:07:21.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Trump endorses Netanyahu days before Israeli election, warns US could face Iran alone if PM loses",
+          "url": "https://www.jpost.com/israel-election-2026/article-912080",
+          "published": "2026-10-18T18:01:39.000Z"
+        }
+      ],
+      "textHe": "ראשי מפלגות השואפים להחליף את ראש הממשלה בנימין נתניהו מתחו ביקורת על הבעת התמיכה של נשיא ארצות הברית דונלד טראמפ בראש הממשלה, וטענו כי טראמפ מעוניין בבובה."
+    },
+    {
+      "text": "Addressing future coalition possibilities, Netanyahu announced that Itamar Ben-Gvir would serve as a senior minister, while Education Minister Yoav Kisch stated that Likud is open to Avigdor Liberman joining a government.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud open to Liberman joining coalition, Education Minister Kisch tells ‘Post’ - interview",
+          "url": "https://www.jpost.com/israel-election-2026/article-912101",
+          "published": "2026-10-19T10:00:16.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu says Ben-Gvir will be senior minister in future government",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-19/ty-article-live/.free/israel-elections-2026/000001a1-52a9-d9e4-a1bd-57a9dc950000",
+          "published": "2026-10-19T05:56:24.000Z"
+        }
+      ],
+      "textHe": "בהתייחסו לאפשרויות הקואליציוניות בעתיד, הודיע נתניהו כי איתמר בן גביר יכהן כשר בכיר, בעוד שר החינוך יואב קיש הצהיר כי הליכוד פתוח להצטרפותו של אביגדור ליברמן לממשלה."
+    },
+    {
+      "text": "To bolster the anti-Netanyahu bloc, Ra'am and the Joint List began pushing for higher voter turnout within the Arab community.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Ra'am, Joint List push community for high voter turnout in hopes of boosting anti-Netanyahu bloc",
+          "url": "https://www.jpost.com/israel-election-2026/article-912145",
+          "published": "2026-10-19T11:51:05.000Z"
+        }
+      ],
+      "textHe": "במטרה לחזק את גוש מתנגדי נתניהו, רע\"ם והרשימה המשותפת החלו לפעול להעלאת שיעור ההצבעה בחברה הערבית."
+    },
+    {
+      "text": "According to a Kan poll, 30 percent of Israeli voters remain undecided, with respondents citing the economy and national security as their primary issues.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Some 30% of Israeli voters are undecided, while 39% say nothing could change their mind - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-912137",
+          "published": "2026-10-19T11:47:12.000Z"
+        }
+      ],
+      "textHe": "לפי סקר כאן, 30 אחוזים מהמצביעים בישראל עדיין מתלבטים, כאשר הנסקרים ציינו את הכלכלה ואת הביטחון הלאומי כנושאים המרכזיים עבורם."
+    },
+    {
+      "text": "Ahead of the election, the military chief suspended soldiers' leave and reinforced forces in the West Bank as balloting for troops begins on Tuesday.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "IDF chief suspends soldiers' leave ahead of Knesset election, reinforces presence in West Bank",
+          "url": "https://www.haaretz.com/israel-news/israel-politics/2026-10-19/ty-article/.premium/idf-suspends-soldiers-leave-ahead-of-election-reinforces-presence-in-west-bank/000001a1-5487-d2a4-a3e3-75bf3a430000",
+          "published": "2026-10-19T16:39:06.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "IDF restricts soldiers' leave, increases its numbers ahead of Knesset elections",
+          "url": "https://www.jpost.com/israel-election-2026/article-912157",
+          "published": "2026-10-19T13:50:02.000Z"
+        }
+      ],
+      "textHe": "לקראת הבחירות, הרמטכ\"ל השעה את חופשות החיילים ותגבר כוחות ביהודה ושומרון, כאשר ההצבעה בקרב החיילים מתחילה ביום שלישי."
+    }
+  ],
+  "dropped": []
+}

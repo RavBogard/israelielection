@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T15:20:09.627Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "According to a Maariv poll published by The Jerusalem Post, the opposition bloc expanded its lead to 54 seats while Prime Minister Benjamin Netanyahu's bloc dropped to 48 seats, leaving both sides short of a Knesset majority.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu bloc falls to 48 seats as opposition reaches 54, days before election - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-912649",
+          "published": "2026-10-23T13:27:45.000Z"
+        },
+        {
+          "outlet": "Jewish Insider",
+          "title": "Final Israeli polls point to stalemate ahead of Tuesday’s election",
+          "url": "https://jewishinsider.com/2026/10/final-israeli-polls-stalemate-tuesdays-election/",
+          "published": "2026-10-22T18:28:07.000Z"
+        }
+      ],
+      "textHe": "לפי סקר מעריב שפורסם בג'רוזלם פוסט, גוש האופוזיציה הגדיל את יתרונו ל-54 מנדטים בעוד גוש ראש הממשלה בנימין נתניהו ירד ל-48 מנדטים, כך ששני הגושים רחוקים מרוב בכנסת."
+    },
+    {
+      "text": "Israel's elections committee rejected a petition from the Likud party seeking to block television networks from broadcasting a rally held by bereaved families demanding an October 7 commission of inquiry.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Elections committee denies Likud request to bar broadcasting of October 7 probe rally ahead of election",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-23/ty-article/.premium/elections-committee-denies-likud-request-to-bar-october-7-probe-rally-broadcast/000001a1-67f4-d6e1-abb7-77fe24980000",
+          "published": "2026-10-23T09:38:38.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Elections committee denies Likud request to bar October 7 probe rally broadcast",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-23/ty-article-live/.free/netanyahu-cancels-all-friday-campaign-events-due-to-west-bank-shooting-attack/000001a1-65f1-d6e1-abb7-77ffe02e0002",
+          "published": "2026-10-23T07:01:49.000Z"
+        }
+      ],
+      "textHe": "ועדת הבחירות המרכזית דחתה עתירה של הליכוד שביקשה למנוע מערוצי הטלוויזיה לשדר עצרת של משפחות שכולות שדרשו ועדת חקירה לאירועי 7 באוקטובר."
+    },
+    {
+      "text": "Itamar Ben-Gvir told The Jerusalem Post in an interview that Netanyahu must form a government with him on the right instead of aligning with Gadi Eisenkot.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Ben-Gvir to 'Post': Netanyahu should stand with me rather than Eisenkot -interview",
+          "url": "https://www.jpost.com/israel-election-2026/article-912643",
+          "published": "2026-10-23T10:01:55.000Z"
+        }
+      ],
+      "textHe": "איתמר בן גביר אמר בריאיון לג'רוזלם פוסט כי נתניהו חייב להקים איתו ממשלה מימין במקום לחבור לגדי איזנקוט."
+    },
+    {
+      "text": "In polling reported by Haaretz, 56 percent of religious Zionists who backed Likud in 2022 plan to support Ben-Gvir or Bezalel Smotrich, while Shas faces a challenge to its status in Netivot.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "How did a key religious party lose its faithful in one of its most loyal strongholds?",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-23/ty-article-magazine/.premium/how-did-shas-lose-its-faithful-in-one-of-its-most-loyal-strongholds/000001a1-58ec-d7ce-a9a1-dbeff87b0000",
+          "published": "2026-10-23T14:41:30.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Religious Israelis turning away from Likud for far-right alternatives, pollsters say",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-23/ty-article/.premium/religious-israelis-turning-away-from-likud-for-far-right-alternatives-polls-say/000001a1-64b2-db9a-a5a3-f5b2a23f0000",
+          "published": "2026-10-22T21:46:42.000Z"
+        }
+      ],
+      "textHe": "לפי נתוני סקרים שפורסמו בהארץ, 56 אחוזים מקרב הציונות הדתית שהצביעו לליכוד ב-2022 מתכוונים לתמוך בבן גביר או בבצלאל סמוטריץ', בעוד ש\"ס מתמודדת עם קריאת תיגר על מעמדה בנתיבות."
+    },
+    {
+      "text": "Ahmad Tibi presented steps aimed at preventing Netanyahu from continuing in office as head of a caretaker government if neither bloc achieves a parliamentary majority.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Ahmad Tibi outlines plan to oust Netanyahu after elections if neither bloc forms majority",
+          "url": "https://www.jpost.com/israel-election-2026/article-912624",
+          "published": "2026-10-22T22:44:40.000Z"
+        }
+      ],
+      "textHe": "אחמד טיבי הציג צעדים שנועדו למנוע מנתניהו להמשיך לכהן בראשות ממשלת מעבר אם אף גוש לא ישיג רוב בכנסת."
+    },
+    {
+      "text": "Following an attack near Hebron in which two Israeli soldiers were killed, Netanyahu ordered preparations for a full West Bank lockdown and promised a major military campaign.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu threatens to clear West Bank shooters' neighborhood as IDF demolishes nearby homes",
+          "url": "https://www.haaretz.com/west-bank/2026-10-23/ty-article/.premium/after-west-bank-shooting-netanyahu-says-idf-to-evacuate-gunmens-neighborhood/000001a1-688d-d6e1-abb7-7ecfda150000",
+          "published": "2026-10-23T12:03:33.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "2 soldiers killed in shooting attack at West Bank checkpoint this morning, IDF says",
+          "url": "https://www.timesofisrael.com/liveblog_entry/2-soldiers-killed-in-shooting-attack-at-west-bank-checkpoint-this-morning-idf-says/",
+          "published": "2026-10-23T05:23:00.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Five Israelis wounded in West Bank shooting near Hebron: Two Palestinian assailants killed",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-23/ty-article/idf-two-israelis-wounded-in-west-bank-shooting-attack-near-hebron/000001a1-670e-d29a-a1a5-e7af44bc0000",
+          "published": "2026-10-23T04:58:08.000Z"
+        }
+      ],
+      "textHe": "בעקבות פיגוע ליד חברון שבו נהרגו שני חיילים ישראלים, נתניהו הורה להיערך לסגר מלא ביהודה ושומרון והבטיח מבצע צבאי נרחב."
+    }
+  ],
+  "dropped": []
+}

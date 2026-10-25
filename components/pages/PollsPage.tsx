@@ -24,9 +24,9 @@ import HouseEffects from "@/components/polls/HouseEffects";
 import PageHead from "@/components/PageHead";
 import { blocName as blocLabel, partyName, pollsterName, Tx } from "@/components/polls/names";
 import { editionPath, type Lang } from "@/lib/i18n";
-import { list } from "@/lib/i18n/he-grammar";
 import { toolMethod } from "@/lib/i18n/tool-method";
 import POLLS, { dayMonthHe, HE_METHOD } from "@/lib/i18n/polls";
+import { forecast } from "@/lib/forecast";
 // Server component: loads the Hebrew overlays that pollLabel, lib/polls-desk and polls/names read in the Hebrew edition.
 import "@/lib/i18n/overlays";
 
@@ -89,14 +89,17 @@ export default function PollsPage({ lang }: { lang: Lang }) {
     <h2 className="sec-h">{t.method.h}</h2>
     <p className="note">{methodText.intake(cfg.maxSeatMove)}</p>
     <p className="note">
-      {methodText.window(cfg.currentWindowDays, mediumDate(to, lang), mainPolls.length, list(mainPolls.map((p) => `${pollsterName(p.pollster, lang)} ${shortDate(p.published, lang)}`)))}
+      {methodText.window(cfg.currentWindowDays, mediumDate(to, lang), mainPolls.length, new Intl.ListFormat(lang).format(mainPolls.map((p) => `${pollsterName(p.pollster, lang)} ${shortDate(p.published, lang)}`)))}
       {methodText.sameIn.a}<Link href={editionPath("/coalition-builder", lang)!}>{methodText.sameIn.builder}</Link>{methodText.sameIn.mid}
       <Link href="/parties" hrefLang="en">{methodText.sameIn.map}</Link>{methodText.sameIn.b}{methodText.inclusionRule}
     </p>
     <p className="note">{methodText.average}</p>
     <p className="note">{methodText.scaling}{methodText.variantNote}</p>
-    {uncertainFigures.length>0&&<p className="note">{methodText.undated(list(uncertainFigures))}</p>}
+    {uncertainFigures.length>0&&<p className="note">{methodText.undated(new Intl.ListFormat(lang).format(uncertainFigures))}</p>}
     <p className="note">{methodText.sources.a}<a href={WIKI} hrefLang="en">{methodText.sources.wiki}</a>{methodText.sources.b}<a href="#every-poll">{methodText.sources.every}</a>{methodText.sources.c}</p>
+    <h2 id="forecast-method" className="sec-h">{t.now.forecastMethod}</h2>
+    <p className="note">{t.now.forecastNote(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither, forecast.runs.toLocaleString(lang))} <Link href={editionPath("/forecast", lang)!}>{methodText.forecastPage(mediumDate(forecast.generated, lang))}</Link>.</p>
+
     {sensitivity}
   </> : <>
     <h2 className="sec-h">How the average is made</h2>
@@ -118,6 +121,15 @@ export default function PollsPage({ lang }: { lang: Lang }) {
     </p>
     {uncertainFigures.length>0&&<p className="note">Figure-date uncertainty: the register includes figures for {uncertainFigures.join(", ")} whose own dates were not recorded. They retain the register entry’s publication date in these charts and calculations; that date is not a confirmed date for each figure. The poll browser marks them † and its method card explains the distinction.</p>}
     <p className="note">Sources: <a href={WIKI}>Wikipedia&apos;s polling tables</a> and the reports each poll cites, linked from every row of <a href="#every-poll">Every poll</a>.</p>
+    <h2 id="forecast-method" className="sec-h">How the forecast is made</h2>
+    <p className="note">
+      The forecast is the site&apos;s own model, offered beside the two averages and scored against them when the result is in: the field polls
+      ({forecast.inputs.field.length}, without {forecast.inputs.checks.map((p) => p.pollster).join(" and ")}) read back into vote shares, corrected for the kinds of list the final-week polls have
+      missed in one direction since 2013 (Shas and the Arab lists up, first-time lists near the threshold and Bennett&apos;s list down), shifted by {forecast.parameters.leanSeats} seats toward
+      the Netanyahu bloc (the pollsters&apos; average miss on that bloc since 2015) and run through {forecast.runs.toLocaleString("en")} simulated elections with the threshold and Bader-Ofer.
+      The Netanyahu bloc reaches 61 in {forecast.majority.net}% of runs, the anti-Netanyahu Zionist bloc in {forecast.majority.oppZionist}%, neither in {forecast.majority.neither}%.{" "}
+      <Link href="/forecast">The forecast page</Link> has every step, parameter and input, the record the rules come from, the daily runs and the scoring rule (generated {mediumDate(forecast.generated)}).
+    </p>
     {sensitivity}
   </>;
 

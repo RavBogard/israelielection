@@ -1,0 +1,170 @@
+{
+  "about": "Final-week polls against results, Netanyahu-aligned bloc, every election under the 3.25% threshold. 'field' is the mean of the final poll of each firm other than Direct Polls / Shlomo Filber's firms; 'directPolls' is that firm's final poll where it published one in the final week. Source: Wikipedia opinion-polling pages for each election, read 2026-10-23. Bloc definitions follow the tables: 2015 Likud+Jewish Home+Shas+UTJ+Yisrael Beiteinu+Yachad; Apr 2019 the right bloc incl. Kulanu and YB; Sep 2019 and Mar 2020 Likud+Shas+UTJ+Yamina; 2021 Likud+Shas+UTJ+RZ; 2022 Likud+Shas+UTJ+RZ. 'shasError' is Shas's own seat miss (result minus final-week polls) in the same election, from round1/B-list-bias.md; kept for the record: taking the lean net of it was tested in backtest/v2.mjs and rejected (it turns the leave-future-out lean negative and under-predicts the bloc by 3 seats).",
+  "elections": [
+    {
+      "date": "2015-03-17",
+      "field": 56.4,
+      "directPolls": null,
+      "result": 57,
+      "shasError": -0.4
+    },
+    {
+      "date": "2019-04-09",
+      "field": 64.7,
+      "directPolls": null,
+      "result": 65,
+      "shasError": 2.7
+    },
+    {
+      "date": "2019-09-17",
+      "field": 55.6,
+      "directPolls": null,
+      "result": 55,
+      "shasError": 2.0
+    },
+    {
+      "date": "2020-03-02",
+      "field": 57.3,
+      "directPolls": 59,
+      "result": 58,
+      "shasError": 0.7
+    },
+    {
+      "date": "2021-03-23",
+      "field": 50.3,
+      "directPolls": 53,
+      "result": 52,
+      "shasError": 0.9
+    },
+    {
+      "date": "2022-11-01",
+      "field": 60.3,
+      "directPolls": 62,
+      "result": 64,
+      "shasError": 2.6
+    }
+  ],
+  "thresholdLists": {
+    "about": "Lists shown at 4-5 seats by most final-week polls, and whether they passed.",
+    "cases": [
+      {
+        "election": "2015",
+        "list": "Yachad",
+        "passed": false
+      },
+      {
+        "election": "2019-04",
+        "list": "New Right",
+        "passed": false
+      },
+      {
+        "election": "2019-04",
+        "list": "Zehut",
+        "passed": false
+      },
+      {
+        "election": "2019-09",
+        "list": "Otzma Yehudit",
+        "passed": false
+      },
+      {
+        "election": "2021",
+        "list": "Ra'am",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Meretz",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Religious Zionism",
+        "passed": true
+      },
+      {
+        "election": "2021",
+        "list": "Blue and White",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Meretz",
+        "passed": false
+      },
+      {
+        "election": "2022",
+        "list": "Hadash-Ta'al",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Ra'am",
+        "passed": true
+      },
+      {
+        "election": "2022",
+        "list": "Labor",
+        "passed": true
+      }
+    ]
+  },
+  "perListError": {
+    "about": "theMadad, 2022: mean absolute error per list in polls 0-14 days before the vote.",
+    "meanAbsSeats": 1.16
+  },
+  "listPriors": {
+    "about": "Vote-share points added to the field mean before the lean, each a class of list the final-week polls have missed in one direction in both halves of 2013-2022 (round1/B-list-bias.md; the direction confirmed independently in round1/C-threshold.md and round1/E-context.md). Shrunk 20-40% toward zero. The common lean stays gross: netting it of the Shas miss scored worse out of sample (backtest/v2.mjs). Version 3 (round2/B): the Joint List's +0.4 is superseded by the Arab sector turnout term below (sectorTurnout.replacesPriors) and kept here only so version 2 can be reproduced (model.mjs opts.v2).",
+    "shas": 0.8,
+    "raam": 0.6,
+    "jl": 0.4,
+    "byachad": -0.8,
+    "res": -0.8,
+    "poi": -0.8
+  },
+  "withdrawn": {
+    "about": "Lists that left the race after the ballot was set; still on the ballot, their votes are wasted. Dropped from the model, their polled share folded into the fringe.",
+    "lists": [
+      {
+        "id": "bw",
+        "date": "2026-10-19",
+        "source": "Times of Israel, Oct 19, 2026: Gantz withdraws Blue and White"
+      }
+    ]
+  },
+  "fringe": {
+    "about": "Share of the vote going to lists the polls do not report separately, held out of every modelled list's share and counted in the threshold's denominator. 0.4-1.5% in 2013-2022; 1.8% for 2026 from the polls' own printed shares of the small lists outside the 15 modelled (Haredi Public about 0.7%, Noam about 0.5%, others 0.3-0.5%; round2/H-context.md section 5). 1.5% in version 2; neutral on the backtest either way.",
+    "share": 0.018
+  },
+  "smallList": {
+    "about": "Final-field misses of lists polled at 2-5%, 2015-2022 (round2/C-threshold-swing.md): Gaussian, sd 0.98 net of the class priors (90% cluster bootstrap 0.71-1.29; 0.91 with 2013), no skew once Blue and White 2021 is set aside, no dependence on the distance from the line or on the final-week trend, no strategic desertion keyed to the line. First-time and first-solo small lists -0.75 (9 cases, 8 negative; 90% -1.16 to -0.20): listPriors keeps -0.8. unprintedBelowShare is the last-resort share for a list a poll prints below the threshold with no percentage, when the outlet printed none in the window and no other current poll did: 2.5%, the median printed share (2015-2022) of such lists that other polls showed passing; 2% in version 2 was below 38 of those 51 figures. It decided no call in the record.",
+    "sdFloorPoints": 1.0,
+    "unprintedBelowShare": 0.025
+  },
+  "arabSwing": {
+    "about": "RMS of the Arab lists' bloc miss in 2020-22, +1.0, -1.7, +2.0 seats: a turnout swing of their own (round1/F-review.md F5, round1/E-context.md 2.2).",
+    "sdSeats": 1.7
+  },
+  "windowDays": {
+    "about": "One latest poll per outlet within this many days of the newest; in 2019-22 the latest poll per firm beat every rule that let older polls back in (round1/D-pollsters.md 3).",
+    "days": 7
+  },
+  "sectorTurnout": {
+    "about": "Round 2, memo B (round2/B-sector-turnout.md): the polls behave as if anchored on the previous election's Arab-sector turnout; the change in the Arab list-vote index I = Arab turnout x loyalty to Arab lists / general turnout explains about 90% of the Arab lists' final-poll miss in hindsight (R2 0.91, 2013-2022) and, forecast by mean reversion of I (stationary around 0.65 since 1999), beats the fixed priors leave-future-out (sector MAE 0.54 vs 1.14 points; per-list seat error 1.32 vs 1.36, a noise-sized margin). The term is carried by the Joint List (Ra'am keeps its +0.6 class prior: scaling it too pushes it under the threshold in Apr 2019 and 2021). logShift is the history-only centre for 2026: 2022's I sat at its long-run mean, so the expected change is nil (0.008); sdLog 0.196 is the carrier list's spread. Memo B's alternative, centring 2026 Arab turnout at 57% (logShift 0.072), was not taken: memo H finds version 2 already at the pre-blackout turnout consensus. Replaces listPriors.jl and arabSwing for the carrier lists. Backtest values are derived leave-future-out in scripts/forecast/round2/B/common.mjs.",
+    "sectors": [
+      {
+        "name": "arab",
+        "lists": [
+          "jl"
+        ],
+        "logShift": 0.008,
+        "alphaPts": 0,
+        "sdLog": 0.196,
+        "replacesPriors": true
+      }
+    ]
+  },
+  "swing": {
+    "about": "Version 3 (round2/G-uncertainty.md): the Netanyahu-bloc swing is lean + max(1.5, resid x sqrt(1 + 1/n)) x t(max(3, n - 1)) seats, the predictive distribution of the next miss from n past elections; for 2026 scale 1.65, 5 degrees of freedom, sd 2.1. Version 2's N(0, max(3, 2 x resid)) = N(0, 3.1) put all six past results between the 31st and 66th percentiles (probability about 0.003 if calibrated). Leave-future-out the change leaves per-list error identical and improves majority Brier 0.090 to 0.054 and list CRPS 2.165 to 2.137. The bloc point is the median of the simulated bloc total (Netanyahu-bloc error 1.94 to 1.33 under every seed)."
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-22",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -56,7 +56,7 @@
       "tags": [],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Religious Zionism (signed Oct 6)",
+      "surplusLine": "Surplus: Religious Zionism (signed Oct 6; official, CEC gazette Oct 19)",
       "who": [
         {
           "text": "Founded Sept 13, 1973 by Begin and Sharon; won power in 1977 with 43 seats.",
@@ -136,6 +136,10 @@
         {
           "text": "Petitioned to bar the Joint List; Likud, Shas and UTJ representatives voted to bar the Joint List and Ra'am.",
           "source": "Times of Israel, Sep 23, 2026"
+        },
+        {
+          "text": "Ben-Gvir will be a senior minister in future government.",
+          "source": "Haaretz, Oct 19, 2026"
         }
       ],
       "surplusPartner": {
@@ -264,7 +268,7 @@
       ],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: UTJ (expected; signing not found)",
+      "surplusLine": "Surplus: UTJ (signed Oct 11; official, CEC gazette Oct 19)",
       "who": [
         {
           "text": "Founded 1984 as “Shomrei Sefarad” in protest at Agudat Yisrael's thin Sephardi representation, under Rav Ovadia Yosef's Council of Torah Sages. Peak: 17 seats in 1999.",
@@ -346,6 +350,10 @@
         {
           "text": "Reported plan to sit in opposition until a draft law passes; anonymous source, “not a formal decision.”",
           "source": "Maariv via JPost, Sep 17, 2026"
+        },
+        {
+          "text": "“There will be no government in Israel with Shas's support or participation unless the status of yeshiva students is regulated.”",
+          "source": "Jerusalem Post, Oct 14, 2026"
         }
       ],
       "surplusPartner": {
@@ -375,7 +383,7 @@
       ],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Shas (expected; signing not found)",
+      "surplusLine": "Surplus: Shas (signed Oct 11; official, CEC gazette Oct 19)",
       "who": [
         {
           "text": "A joint list of Agudat Yisrael (Hasidic) and Degel HaTorah (Lithuanian) since 1992. Both factions quit the government in July 2025 over the draft.",
@@ -489,7 +497,7 @@
       "tags": [],
       "status": null,
       "coalitionCard": "active",
-      "surplusLine": "Surplus: Likud (signed Oct 6)",
+      "surplusLine": "Surplus: Likud (signed Oct 6; official, CEC gazette Oct 19)",
       "who": [
         {
           "text": "The renamed National Union–Tkuma party. Ben-Gvir refused a new joint run: “Smotrich must run in one party and we must run in another party.”",
@@ -567,6 +575,10 @@
         {
           "text": "Netanyahu for prime minister; rules out Arab parties.",
           "source": "JPost, Aug 18, 2026"
+        },
+        {
+          "text": "Would not rule out forming a government with prime ministerial candidate Gadi Eisenkot, but not at the cost of boycotting his partners in the right-wing bloc.",
+          "source": "Jerusalem Post, Oct 22, 2026"
         }
       ],
       "surplusPartner": {
@@ -807,6 +819,10 @@
         {
           "text": "On Ra'am: Mansour Abbas “won't be part of my next government.” No Haredi party currently meets his criteria.",
           "source": "Times of Israel, Sep 26, 2026"
+        },
+        {
+          "text": "\"Absolutely not. I will not serve under Netanyahu, not even in a rotation agreement.\" (Jerusalem Post, Oct 21, 2026)",
+          "source": "Jerusalem Post, Oct 21, 2026; Haaretz, Oct 21, 2026"
         }
       ],
       "surplusPartner": {

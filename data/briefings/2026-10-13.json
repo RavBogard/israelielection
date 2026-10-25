@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-13",
+  "generatedAt": "2026-10-13T17:42:24.305Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "A Channel 12 News poll showed the bloc led by former IDF Chief of Staff Gadi Eisenkot holding at 54 seats, falling short of a 60-seat Knesset majority due to refusal among some allied parties to cooperate with Arab factions.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Poll: Eisenkot bloc holds at 54 seats as hard-line ex-general's party falls short",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-13/ty-article/poll-eisenkot-bloc-holds-at-54-seats-hard-line-ex-generals-party-falls-short/000001a1-346a-d36f-a9fd-75ead18b0000",
+          "published": "2026-10-13T10:56:39.000Z"
+        },
+        {
+          "outlet": "Jewish Insider",
+          "title": "Could these two small parties be Israel’s kingmakers?",
+          "url": "https://jewishinsider.com/2026/10/israeli-elections-yoaz-hendel-ofer-winter-threshold-polls/",
+          "published": "2026-10-13T10:22:59.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Ben-Gvir refused to sign a surplus vote agreement with Ofer Winter's People of Israel party, calling Winter Bennett II and prompting Winter to accuse him of wasting right-wing votes ahead of the election.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'Bennett II': Ben-Gvir refuses to sign vote surplus share agreement with Winter's People of Israel",
+          "url": "https://www.jpost.com/israel-election-2026/article-911592",
+          "published": "2026-10-13T20:10:49.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Ben-Gvir rules out surplus vote agreement with ex-general hardliner's new far-right party",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-13/ty-article/.premium/ben-gvir-rules-out-surplus-vote-agreement-with-hardliners-new-far-right-party/000001a1-356c-da18-a5bb-3fec359a0000",
+          "published": "2026-10-13T16:30:48.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Winter also accused Prime Minister Benjamin Netanyahu of prioritizing political survival over security by focusing on the electoral threshold rather than reducing trucks entering Gaza.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'Focus on Hamas, not me': Winter accuses Netanyahu of prioritizing political survival over security",
+          "url": "https://www.jpost.com/israel-election-2026/article-911562",
+          "published": "2026-10-13T14:28:44.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "According to sources, Haredi parties may refuse to endorse both Netanyahu and Eisenkot, while Avigdor Liberman announced that mandatory universal conscription and an expert-drafted constitution are nonnegotiable conditions for joining a government.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Haredi parties may refuse to endorse both Netanyahu, Eisenkot after Israeli election, sources say",
+          "url": "https://www.jpost.com/israel-election-2026/article-911533",
+          "published": "2026-10-13T11:50:25.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Universal conscription, constitution plan: Liberman reveals requirements to form government",
+          "url": "https://www.jpost.com/israel-election-2026/article-911475",
+          "published": "2026-10-12T20:59:18.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Naftali Bennett unveiled a plan for the B'Yachad party aimed at cutting bureaucracy and increasing support for immigrants.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Naftali Bennett unveils B’Yachad party plan to cut bureaucracy, boost support for olim - interview",
+          "url": "https://www.jpost.com/israel-election-2026/article-911604",
+          "published": "2026-10-13T20:30:53.000Z"
+        }
+      ],
+      "textHe": null
+    },
+    {
+      "text": "Additionally, United States President Donald Trump stated that he may endorse a candidate in Israel's upcoming election.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Trump says he 'may' endorse a candidate in Israel's upcoming election",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-13/ty-article/.premium/trump-says-he-may-endorse-a-candidate-in-israels-upcoming-election/000001a1-362f-d610-a5bb-373f42510000",
+          "published": "2026-10-13T16:59:22.000Z"
+        }
+      ],
+      "textHe": null
+    }
+  ],
+  "dropped": []
+}

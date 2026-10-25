@@ -11,6 +11,7 @@ export function toolMethod(lang: Lang) {
     average: ui(lang, "Each list's average uses only polls where it passes the 3.25% threshold, so a passing list never averages below 4 seats. A list passing in fewer than half its reports is marked near the threshold and excluded from the coalition builder's default count. Polls are weighted by the square root of sample size; a missing sample size is replaced with the median of known sample sizes."),
     scaling: ui(lang, "When the sum of the averages exceeds 120, every list is reduced proportionally to 120 seats. Every average on this page, including the trend lines, uses this weighted and adjusted figure. "),
     variantNote: ui(lang, "The alternative average excludes Shlomo Filber's firms: Channel 14 (NEXT DATA) and i24NEWS (Direct Polls)."),
+    forecastPage: (date: string) => ui(lang, "The forecast and its method, generated {0}", date),
     undated: (names: string) => ui(lang, "Uncertain dates: {0} includes figures without their own publication date. Charts and calculations use the report's date, which is not verified for every figure. Such figures are marked †; the poll's method card explains the difference.", names),
     sources: { a: ui(lang, "Sources: "), wiki: ui(lang, "Wikipedia's English polling tables"), b: ui(lang, " and the original reports linked from "), every: ui(lang, "Every poll"), c: "." },
   };

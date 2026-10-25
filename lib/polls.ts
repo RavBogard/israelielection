@@ -138,12 +138,27 @@ export function pollTotal(poll: Poll): number {
 }
 
 export const AVERAGE_ID = "avg";
+/** The second average (without Filber's firms) as a pseudo-poll. */
+export const VARIANT_ID = "avg-variant";
 
 /**
  * The current average expressed as a pseudo-poll, so the Coalition Builder can count with it.
  * Seats are each list's average (see `average`) to one decimal; a list below the threshold in
  * every poll, or near it (passing in under half), is marked below and counts 0.
  */
+/**
+ * Scale per-list averages down in proportion when they add to more than 120, to one decimal. Scaling must not take a
+ * passing list under 4 (ruling 110): such a list is held at 4.0 and the tenths come off the largest list.
+ */
+export function normalizeTo120(raw: Map<string, number>): { scaled: Map<string, number>; sum: number; scale: number } {
+  const sum = [...raw.values()].reduce((s, v) => s + v, 0);
+  const scale = sum > 120 ? 120 / sum : 1;
+  const scaled = new Map([...raw].map(([id, v]) => [id, Math.round(v * scale * 10) / 10]));
+  const largest = [...scaled].sort((a, b) => b[1] - a[1])[0]?.[0];
+  for (const [id, v] of scaled) if (v > 0 && v < 4 && largest && id !== largest) { scaled.set(largest, Math.round((scaled.get(largest)! - (4 - v)) * 10) / 10); scaled.set(id, 4); }
+  return { scaled, sum, scale };
+}
+
 export function averageAsPoll(polls: Poll[], partyIds: string[], opts: { id?: string; label?: string } = {}): Poll {
   const raw = new Map<string, number>();
   for (const id of partyIds) {
@@ -152,13 +167,9 @@ export function averageAsPoll(polls: Poll[], partyIds: string[], opts: { id?: st
   }
   // Averaging each list only where it passed overcounts when small lists sometimes fail, so the
   // lists can add to more than 120. Coalition arithmetic needs 120: scale down in proportion.
-  const sum = [...raw.values()].reduce((s, v) => s + v, 0);
-  const scale = sum > 120 ? 120 / sum : 1;
+  const { scaled, sum, scale } = normalizeTo120(raw);
   const results: Poll["results"] = {};
-  for (const [id, v] of raw) {
-    const seats = Math.round(v * scale * 10) / 10;
-    results[id] = seats === 0 ? { seats: 0, belowThreshold: true } : { seats };
-  }
+  for (const [id, seats] of scaled) results[id] = seats === 0 ? { seats: 0, belowThreshold: true } : { seats };
   return {
     id: opts.id ?? AVERAGE_ID,
     pollster: opts.label ?? "Average",

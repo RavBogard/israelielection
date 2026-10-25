@@ -1,0 +1,2425 @@
+{
+ "election": "2019-04-09",
+ "key": "2019-04",
+ "knesset": 120,
+ "threshold": 0.0325,
+ "sources": {
+  "polls": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+  "result": "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election#Results",
+  "agreements": "https://en.wikipedia.org/wiki/April_2019_Israeli_legislative_election#Surplus-vote_agreements"
+ },
+ "lists": {
+  "likud": "Likud",
+  "bw": "Blue and White",
+  "shas": "Shas",
+  "utj": "United Torah Judaism",
+  "ht": "Hadash–Ta'al",
+  "labor": "Labor",
+  "yb": "Yisrael Beiteinu",
+  "urwp": "Union of Right-Wing Parties",
+  "meretz": "Meretz",
+  "kulanu": "Kulanu",
+  "raambalad": "Ra'am–Balad",
+  "nr": "New Right",
+  "zehut": "Zehut",
+  "gesher": "Gesher"
+ },
+ "blocs": {
+  "likud": "net",
+  "bw": "opp",
+  "shas": "net",
+  "utj": "net",
+  "ht": "arab",
+  "labor": "opp",
+  "yb": "net",
+  "urwp": "net",
+  "meretz": "opp",
+  "kulanu": "net",
+  "raambalad": "arab",
+  "nr": "net",
+  "zehut": "net",
+  "gesher": "opp"
+ },
+ "blocNote": "The right bloc as Wikipedia's 'R' column and calibration.json count it: Likud, Kulanu, Shas, UTJ, URWP, Yisrael Beiteinu, New Right, Zehut. Gesher is counted with the opposition (centre-left, Orly Levy).",
+ "result": {
+  "validVotes": 4309270,
+  "lists": {
+   "likud": {
+    "votes": 1140370,
+    "pct": 26.463,
+    "seats": 35,
+    "passed": true
+   },
+   "bw": {
+    "votes": 1125881,
+    "pct": 26.127,
+    "seats": 35,
+    "passed": true
+   },
+   "shas": {
+    "votes": 258275,
+    "pct": 5.993,
+    "seats": 8,
+    "passed": true
+   },
+   "utj": {
+    "votes": 249049,
+    "pct": 5.779,
+    "seats": 8,
+    "passed": true
+   },
+   "ht": {
+    "votes": 193442,
+    "pct": 4.489,
+    "seats": 6,
+    "passed": true
+   },
+   "labor": {
+    "votes": 190870,
+    "pct": 4.429,
+    "seats": 6,
+    "passed": true
+   },
+   "yb": {
+    "votes": 173004,
+    "pct": 4.015,
+    "seats": 5,
+    "passed": true
+   },
+   "urwp": {
+    "votes": 159468,
+    "pct": 3.701,
+    "seats": 5,
+    "passed": true
+   },
+   "meretz": {
+    "votes": 156473,
+    "pct": 3.631,
+    "seats": 4,
+    "passed": true
+   },
+   "kulanu": {
+    "votes": 152756,
+    "pct": 3.545,
+    "seats": 4,
+    "passed": true
+   },
+   "raambalad": {
+    "votes": 143666,
+    "pct": 3.334,
+    "seats": 4,
+    "passed": true
+   },
+   "nr": {
+    "votes": 138598,
+    "pct": 3.216,
+    "seats": 0,
+    "passed": false
+   },
+   "zehut": {
+    "votes": 118031,
+    "pct": 2.739,
+    "seats": 0,
+    "passed": false
+   },
+   "gesher": {
+    "votes": 74701,
+    "pct": 1.733,
+    "seats": 0,
+    "passed": false
+   }
+  }
+ },
+ "agreements": [
+  [
+   "urwp",
+   "likud"
+  ],
+  [
+   "nr",
+   "yb"
+  ],
+  [
+   "meretz",
+   "labor"
+  ],
+  [
+   "utj",
+   "shas"
+  ],
+  [
+   "ht",
+   "raambalad"
+  ]
+ ],
+ "polls": [
+  {
+   "id": "maariv-2019-04-05",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "5 Apr",
+   "published": "2019-04-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 29
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-04-05",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam/Statnet",
+   "fieldwork": "5 Apr",
+   "published": "2019-04-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 11
+    },
+    "bw": {
+     "seats": 28
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-04-05",
+   "pollster": "103fm",
+   "firm": "Maagar Mohot",
+   "fieldwork": "5 Apr",
+   "published": "2019-04-05",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 6
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "meretz": {
+     "seats": 7
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2019-04-04",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Midgam",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 26
+    },
+    "labor": {
+     "seats": 11
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "miskar-2019-04-04",
+   "pollster": "Miskar",
+   "firm": "Miskar",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 28
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.18%"
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.2%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "zehut": {
+     "seats": 8
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-04-04",
+   "pollster": "Kan 11",
+   "firm": "TNS",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "jerusalem-post-2019-04-04",
+   "pollster": "Jerusalem Post",
+   "firm": "Smith",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 28
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 4
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-04-04",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 6
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 8
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "meretz": {
+     "seats": 8
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-04-04",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "4 Apr",
+   "published": "2019-04-04",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 26
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-04-03",
+   "pollster": "Walla",
+   "firm": "Panels Politics",
+   "fieldwork": "3 Apr",
+   "published": "2019-04-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "haaretz-2019-04-03",
+   "pollster": "Haaretz",
+   "firm": "Dialog",
+   "fieldwork": "2-3 Apr",
+   "published": "2019-04-03",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 27
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-04-02",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam/Statnet",
+   "fieldwork": "2 Apr",
+   "published": "2019-04-02",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "labor": {
+     "seats": 14
+    },
+    "bw": {
+     "seats": 28
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 5
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-03-31",
+   "pollster": "Channel 12",
+   "firm": "Panels Politics",
+   "fieldwork": "31 Mar",
+   "published": "2019-03-31",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 9
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-03-31b",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "31 Mar",
+   "published": "2019-03-31",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "103fm-2019-03-29",
+   "pollster": "103fm",
+   "firm": "Maagar Mohot",
+   "fieldwork": "29 Mar",
+   "published": "2019-03-29",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "yedioth-ahronoth-2019-03-28",
+   "pollster": "Yedioth Ahronoth",
+   "firm": "Midgam",
+   "fieldwork": "28 Mar",
+   "published": "2019-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.7%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "makor-rishon-2019-03-28",
+   "pollster": "Makor Rishon",
+   "firm": "Direct Polls",
+   "fieldwork": "28 Mar",
+   "published": "2019-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 29
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.5%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-03-28",
+   "pollster": "Maariv",
+   "firm": "Smith",
+   "fieldwork": "28 Mar",
+   "published": "2019-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.0%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-03-28",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mohot",
+   "fieldwork": "28 Mar",
+   "published": "2019-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.0%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-03-28",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam/Statnet",
+   "fieldwork": "28 Mar",
+   "published": "2019-03-28",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 30
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "zehut": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-03-27",
+   "pollster": "Walla",
+   "firm": "Panels Politics",
+   "fieldwork": "27 Mar",
+   "published": "2019-03-27",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.9%"
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "miskar-2019-03-26",
+   "pollster": "Miskar",
+   "firm": "Miskar",
+   "fieldwork": "24-26 Mar",
+   "published": "2019-03-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 7
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "3.1%"
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "zehut": {
+     "seats": 7
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-03-26",
+   "pollster": "Kan 11",
+   "firm": "TNS",
+   "fieldwork": "26 Mar",
+   "published": "2019-03-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 6
+    },
+    "raambalad": {
+     "seats": 5
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "galei-tzahal-2019-03-26",
+   "pollster": "Galei Tzahal",
+   "firm": "Midgam",
+   "fieldwork": "26 Mar",
+   "published": "2019-03-26",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 4
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-03-24",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam/Statnet",
+   "fieldwork": "24 Mar",
+   "published": "2019-03-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 8
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.4%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-03-24",
+   "pollster": "Channel 12",
+   "firm": "Midgam",
+   "fieldwork": "24 Mar",
+   "published": "2019-03-24",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 4
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "maariv-2019-03-22",
+   "pollster": "Maariv",
+   "firm": "Panels Politics",
+   "fieldwork": "22 Mar",
+   "published": "2019-03-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 9
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "jerusalem-post-2019-03-22",
+   "pollster": "Jerusalem Post",
+   "firm": "Smith",
+   "fieldwork": "22 Mar",
+   "published": "2019-03-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.8%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-03-22",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "22 Mar",
+   "published": "2019-03-22",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 26
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 5
+    },
+    "nr": {
+     "seats": 5
+    },
+    "gesher": {
+     "seats": 4
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-13-2019-03-20",
+   "pollster": "Channel 13",
+   "firm": "Panel Project HaMidgam",
+   "fieldwork": "20 Mar",
+   "published": "2019-03-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 29
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.2%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-03-20",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "20 Mar",
+   "published": "2019-03-20",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 27
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 5
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.6%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "walla-2019-03-19",
+   "pollster": "Walla",
+   "firm": "Panels Politics",
+   "fieldwork": "19 Mar",
+   "published": "2019-03-19",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 29
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.5%"
+    },
+    "shas": {
+     "seats": 4
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 9
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "miskar-2019-03-18",
+   "pollster": "Miskar",
+   "firm": "Miskar",
+   "fieldwork": "16-18 Mar",
+   "published": "2019-03-18",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 8
+    },
+    "bw": {
+     "seats": 29
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "raambalad": {
+     "seats": 5
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 9
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.4%"
+    },
+    "meretz": {
+     "seats": 5
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 8
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "zehut": {
+     "seats": 6
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "kan-11-2019-03-17",
+   "pollster": "Kan 11",
+   "firm": "Direct Polls",
+   "fieldwork": "17 Mar",
+   "published": "2019-03-17",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 31
+    },
+    "labor": {
+     "seats": 9
+    },
+    "bw": {
+     "seats": 30
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.1%"
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 6
+    },
+    "urwp": {
+     "seats": 6
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 8
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.1%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "israel-hayom-2019-03-14",
+   "pollster": "Israel Hayom",
+   "firm": "Maagar Mochot",
+   "fieldwork": "14 Mar",
+   "published": "2019-03-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 26
+    },
+    "labor": {
+     "seats": 7
+    },
+    "bw": {
+     "seats": 33
+    },
+    "kulanu": {
+     "seats": 5
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "shas": {
+     "seats": 5
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 5
+    },
+    "meretz": {
+     "seats": 8
+    },
+    "ht": {
+     "seats": 6
+    },
+    "nr": {
+     "seats": 6
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.0%"
+    },
+    "zehut": {
+     "seats": 5
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "channel-12-2019-03-14",
+   "pollster": "Channel 12",
+   "firm": "Midgam/iPanel",
+   "fieldwork": "14 Mar",
+   "published": "2019-03-14",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": false,
+   "results": {
+    "likud": {
+     "seats": 28
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 31
+    },
+    "kulanu": {
+     "seats": 4
+    },
+    "raambalad": {
+     "seats": 4
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 4
+    },
+    "meretz": {
+     "seats": 4
+    },
+    "ht": {
+     "seats": 7
+    },
+    "nr": {
+     "seats": 4
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.3%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  },
+  {
+   "id": "makor-rishon-2019-03-13",
+   "pollster": "Makor Rishon",
+   "firm": "Direct Polls",
+   "fieldwork": "13 Mar",
+   "published": "2019-03-13",
+   "via": "Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_April_2019_Israeli_legislative_election",
+   "n": null,
+   "margin": null,
+   "note": null,
+   "filber": true,
+   "results": {
+    "likud": {
+     "seats": 32
+    },
+    "labor": {
+     "seats": 10
+    },
+    "bw": {
+     "seats": 32
+    },
+    "kulanu": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.7%"
+    },
+    "raambalad": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.6%"
+    },
+    "shas": {
+     "seats": 6
+    },
+    "utj": {
+     "seats": 7
+    },
+    "urwp": {
+     "seats": 7
+    },
+    "yb": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "2.9%"
+    },
+    "meretz": {
+     "seats": 6
+    },
+    "ht": {
+     "seats": 9
+    },
+    "nr": {
+     "seats": 7
+    },
+    "gesher": {
+     "seats": 0,
+     "belowThreshold": true,
+     "pct": "1.7%"
+    },
+    "zehut": {
+     "seats": 4
+    }
+   },
+   "combined": []
+  }
+ ],
+ "retrieved": "2026-10-23"
+}

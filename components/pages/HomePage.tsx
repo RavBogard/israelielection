@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
-import HomeRace from "@/components/HomeRace";
-import { homeRaceModel } from "@/lib/home-race";
+import HomeRace, { type RaceOption } from "@/components/HomeRace";
+import { homeRaceModel, majorityShortfall, type HomeRaceModel } from "@/lib/home-race";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
 import { KNESSET, MAJORITY } from "@/lib/coalition";
 import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
+import { forecast, forecastPoll } from "@/lib/forecast";
 import { mediumDate, shortDate } from "@/lib/format";
 import { blocRank, isExit, pollLabel, seatFigure } from "@/lib/polls";
 import { citeText, findingSentence, israelDate, noNewLabel, pollSlip, sincePolls, type Slip } from "@/lib/home-since";
@@ -60,9 +61,25 @@ function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; da
   const model = homeRaceModel(poll, parties, blocs, lang), net = model.rows.find((r) => r.id === "net")!, cite = live || phase !== "before" ? null : citeText(poll, mainPolls.length, net.label, net.seats, undefined, lang);
   // The bloc list's header says what the numbers are; the note under the grid says where they come from, once.
   const basis = live ? poll.resultState?.freshness === "stale" ? t.basisStale : t.basisLive : t.basis(mainPolls.length, shortDate(mainPolls[0].published, lang));
+  const avgSource = <>{t.avgSource(pollsters)}{newest && <>{t.newest}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{pollLabel(newest, lang)}, {mediumDate(newest.published, lang)}</Link>. </>}<Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.{cite && <> <CiteButton text={cite} /></>}</>;
+  // Before the count: the forecast model first (Daniel, 2026-10-23), then the site average, then each pollster's newest
+  // poll on a second row, switchable over the bloc list. The average without Filber's firms stays on the polls page.
+  const cfg = pollsData.config;
+  const pollOption = (p: Poll): RaceOption => {
+    const label = he ? pollsterText(p.pollster, lang).text : p.pollster, firm = p.firm ? (he ? pollsterText(p.firm, lang).text : p.firm) : null;
+    // The change row is this pollster's own movement: its series of polls, against the one about a week before.
+    const own = blocChange(blocSeries(pollsData.polls.filter((q) => q.pollster === p.pollster), parties, cfg));
+    return { id: p.id, label, detail: shortDate(p.published, lang), model: homeRaceModel(p, parties, blocs, lang), change: own, heading: t.basisPoll(label, mediumDate(p.published, lang)),
+      source: <>{t.pollSource(label, firm, p.n, mediumDate(p.published, lang))}{t.latestNote}{p.url && <><a href={p.url} hrefLang={he ? undefined : "en"}>{t.pollReport}</a>. </>}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{t.everyPoll}</Link>.</> };
+  };
+  const options: RaceOption[] | undefined = live ? undefined : [
+    { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(locale(lang))), model: forecastRaceModel(homeRaceModel(forecastPoll, parties, blocs, lang)), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
+    { id: "avg", label: t.pickAverage, detail: t.pickPolls(mainPolls.length), model, change, heading: basis, source: avgSource },
+    { id: "latest", label: t.pickLatest, detail: t.pickPollsters(mainPolls.length), model, variants: mainPolls.map(pollOption), variantsLabel: t.pickPoll },
+  ];
   return <section className="hero" aria-labelledby="hero-h"><div className="text"><h1 id="hero-h">{headline(phase, days, lang)}</h1><p className="standfirst">{live ? t.standfirstLive : t.standfirst}{t.majority(MAJORITY, KNESSET)}</p></div>
-  <HomeRace model={model} change={change} heading={basis} />
-  <p className="race-source fig-src">{live ? <>{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(countTime(poll.resultState?.capturedAt ?? poll.published, lang), poll.resultState?.sourceUpdatedAt ? countTime(poll.resultState.sourceUpdatedAt, lang) : t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</> : <>{t.avgSource(pollsters)}{newest && <>{t.newest}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{pollLabel(newest, lang)}, {mediumDate(newest.published, lang)}</Link>. </>}<Link href={href(lang, "/polls#method", "/he/polls#method")}>{t.method}</Link>.</>}{cite && <> <CiteButton text={cite} /></>}</p>
+  {options ? <HomeRace options={options} /> : <HomeRace model={model} change={change} heading={basis} />}
+  {live && <p className="race-source fig-src">{poll.resultState?.freshness === "stale" && <b>{t.stale}</b>}{t.liveSource(countTime(poll.resultState?.capturedAt ?? poll.published, lang), poll.resultState?.sourceUpdatedAt ? countTime(poll.resultState.sourceUpdatedAt, lang) : t.unrecorded)}<Link href={href(lang, "/results", "/he/results")}>{t.fullResults}</Link>.</p>}
   <p className="race-context">{t.contextBefore}<Link href={href(lang, "/parties", "/he/compare")}>{t.partyMap}</Link>{t.contextMiddle}<Link href={href(lang, "/coalition-builder", "/he/coalition-builder")}>{t.builder}</Link>.</p>
  </section>;
 }
@@ -123,6 +140,10 @@ function countTime(iso: string, lang: Lang): string {
   return `${new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(when)} Israel time`;
 }
 
+/** The hero labels each bloc with the forecast's bloc central (version 3: the median of the bloc's simulated total, the scored figure) while the mosaic is drawn from the list centrals, which add to 120. */
+function forecastRaceModel(model: HomeRaceModel): HomeRaceModel {
+  return { ...model, rows: model.rows.map((row) => { const labelSeats = forecast.blocs[row.id].point; return { ...row, labelSeats, shortfall: majorityShortfall(labelSeats) }; }) };
+}
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();

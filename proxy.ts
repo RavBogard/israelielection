@@ -32,5 +32,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/polls", "/coalition-builder", "/compare", "/parties/:id", "/results"],
+  matcher: ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/:id", "/results"],
 };

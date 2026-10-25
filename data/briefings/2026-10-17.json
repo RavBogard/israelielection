@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-17",
+  "generatedAt": "2026-10-17T13:50:27.024Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "With eleven days remaining before the election, polls show Otzma Yehudit surging while Prime Minister Benjamin Netanyahu has dropped, according to coverage by The Jerusalem Post and JTA.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu wants security chiefs to tell him the truth? Yalla, it's time",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-17/ty-article-magazine/.premium/netanyahu-wants-security-chiefs-to-tell-him-the-truth-its-now-or-never/000001a1-48c3-ddef-a5b7-dcff79bf0000",
+          "published": "2026-10-17T10:11:50.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Ben-Gvir surges in polls as election campaign exposes deep divisions in Israel",
+          "url": "https://www.jpost.com/israel-election-2026/article-911940",
+          "published": "2026-10-17T00:16:39.000Z"
+        },
+        {
+          "outlet": "JTA",
+          "title": "As Netanyahu drops in polls, Ben-Gvir’s star rises",
+          "url": "https://www.jta.org/2026/10/16/israel/as-netanyahus-coalition-faces-election-test-ben-gvirs-star-rises",
+          "published": "2026-10-16T17:56:35.000Z"
+        }
+      ],
+      "textHe": "לפי סיקור בג'רוזלם פוסט וב-JTA, כאשר נותרו אחד עשר ימים לבחירות, הסקרים מראים כי עוצמה יהודית מזנקת בעוד שראש הממשלה בנימין נתניהו נחלש."
+    },
+    {
+      "text": "Speaking on 103FM, pollster Lazar said that the People of Israel and Reservists-Economic Party could determine the outcome of the vote.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "People of Israel, Reservists-Economic Party could be deciders of election result, pollster says",
+          "url": "https://www.jpost.com/israel-election-2026/article-911923",
+          "published": "2026-10-16T14:32:34.000Z"
+        }
+      ],
+      "textHe": "בראיון ברדיו 103FM אמר הסוקר לזר כי מפלגת עם ישראל ומפלגת המילואימניקים והכלכלית עשויות להכריע את תוצאות הבחירות."
+    },
+    {
+      "text": "The Democrats party leader Yair Golan raised concerns over Shin Bet chief David Zini's ability to protect the elections, accusing him of failing to address Qatargate and Jewish terrorism in the West Bank.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Democrats party's Golan questions Shin Bet chief Zini's ability to safeguard Israeli elections",
+          "url": "https://www.jpost.com/israel-election-2026/article-911952",
+          "published": "2026-10-17T06:16:49.000Z"
+        }
+      ],
+      "textHe": "יו\"ר מפלגת הדמוקרטים יאיר גולן העלה חששות באשר ליכולתו של ראש השב\"כ דוד זיני לאבטח את הבחירות, והאשים אותו בהימנעות מטיפול בפרשת קטארגייט ובטרור יהודי ביהודה ושומרון."
+    },
+    {
+      "text": "Former Shin Bet chief Yoram Cohen also warned that Netanyahu could deliberately escalate security tensions ahead of the vote, stating that political motives have influenced the prime minister's decisions.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Ex-Shin Bet chief warns Netanyahu could deliberately escalate tensions ahead of elections",
+          "url": "https://www.jpost.com/israel-election-2026/article-911944",
+          "published": "2026-10-17T01:58:18.000Z"
+        }
+      ],
+      "textHe": "ראש השב\"כ לשעבר יורם כהן הזהיר אף הוא כי נתניהו עלול להסלים באופן מכוון את המתיחות הביטחונית לקראת הבחירות, וטען כי שיקולים פוליטיים השפיעו על החלטות ראש הממשלה."
+    },
+    {
+      "text": "Netanyahu demanded answers from security chiefs during an appearance on Channel 14, saying he wants the truth regarding the events of October 7.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Netanyahu wants security chiefs to tell him the truth? Yalla, it's time",
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-10-17/ty-article-magazine/.premium/netanyahu-wants-security-chiefs-to-tell-him-the-truth-its-now-or-never/000001a1-48c3-ddef-a5b7-dcff79bf0000",
+          "published": "2026-10-17T10:11:50.000Z"
+        }
+      ],
+      "textHe": "נתניהו דרש תשובות מראשי מערכת הביטחון במהלך הופעה בערוץ 14, ואמר כי הוא רוצה את האמת בנוגע לאירועי 7 באוקטובר."
+    },
+    {
+      "text": "Masked settlers injured a Washington Post photographer and Palestinians in the West Bank, prompting a response in which Netanyahu stopped short of directly condemning the assailants.",
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Masked settlers injure Washington Post photographer, Palestinians",
+          "url": "https://www.jta.org/2026/10/16/israel/masked-settlers-injure-washington-post-photographer-palestinians",
+          "published": "2026-10-16T21:11:10.000Z"
+        }
+      ],
+      "textHe": "מתנחלים רעולי פנים פצעו צלם של הוושינגטון פוסט ופלסטינים ביהודה ושומרון, מה שהוביל לתגובה שבה נתניהו נמנע מלגנות ישירות את התוקפים."
+    },
+    {
+      "text": "According to Haaretz, around twenty settlers armed with clubs and bottles of gasoline entered the Palestinian community of Safa, setting cars on fire and attempting to torch homes.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "From their homes, they watched Israeli settlers try to burn them alive",
+          "url": "https://www.haaretz.com/israel-news/twilight-zone/2026-10-17/ty-article-magazine/.highlight/from-their-homes-they-watched-settlers-try-to-burn-them-alive/000001a1-3fc1-dc43-abbb-fff32fbb0000",
+          "published": "2026-10-17T06:37:27.000Z"
+        }
+      ],
+      "textHe": "לפי הארץ, כעשרים מתנחלים חמושים באלות ובבקבוקי בנזין נכנסו לכפר הפלסטיני צפא, הציתו מכוניות וניסו להעלות בתים באש."
+    }
+  ],
+  "dropped": []
+}

@@ -9,6 +9,7 @@ import builder from "./builder";
 import compare from "./compare";
 import profile from "./profile";
 import results from "./results";
+import forecast from "./forecast";
 import { overlays, partyText } from "./overlay-text";
 import { localizeText, srcHash } from "./localize";
 import { longDate } from "../format";
@@ -16,7 +17,7 @@ import partiesJson from "@/data/parties.json";
 import { averagePoll, parties, blocs } from "../data";
 import { homeRaceModel } from "../home-race";
 
-const dictionaries = { chrome, home, polls, builder, compare, profile, results };
+const dictionaries = { chrome, home, polls, builder, compare, profile, results, forecast };
 function shape(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(shape);
   if (value && typeof value === "object" && "src" in value && "text" in value) return "translated field";

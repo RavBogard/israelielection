@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-22",
+  "generatedAt": "2026-10-22T15:27:42.065Z",
+  "model": "gemini-3.8-flash",
+  "sentences": [
+    {
+      "text": "Recent television and media polls show candidate Gadi Eisenkot leading Prime Minister Benjamin Netanyahu, though both Eisenkot's bloc and Netanyahu's right-wing bloc remain short of the 61 seats needed for a parliamentary majority.",
+      "sources": [
+        {
+          "outlet": "Times of Israel",
+          "title": "Final ToI election poll shows blocs in dead heat, neither has majority if campaign promises kept",
+          "url": "https://www.timesofisrael.com/liveblog_entry/final-toi-election-poll-shows-blocs-in-dead-heat-neither-has-majority-if-campaign-promises-kept/",
+          "published": "2026-10-22T08:14:00.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "New polls show Eisenkot ahead, two parties at edge of electoral threshold",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-22/ty-article/new-polls-show-eisenkot-bloc-leading-netanyahus-but-short-of-majority/000001a1-61de-d3a9-a9bb-69ff31b00000",
+          "published": "2026-10-22T06:44:17.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot leads Netanyahu as Winter, Hendel-Zelekha may not cross electoral threshold - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-912482",
+          "published": "2026-10-22T06:04:53.000Z"
+        }
+      ],
+      "textHe": "סקרים אחרונים בטלוויזיה ובכלי התקשורת מראים כי המועמד גדי איזנקוט מוביל על ראש הממשלה בנימין נתניהו, אם כי הן הגוש של איזנקוט והן גוש הימין של נתניהו רחוקים מ-61 המנדטים הדרושים לרוב בכנסת."
+    },
+    {
+      "text": "Ofer Winter's People of Israel party and the Reservists/Economic Party are hovering near the 3.25 percent electoral threshold, while Hendel stated his party will only join a coalition of Zionist parties and does not rule out Netanyahu.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Hendel: Reservists/Economic Party may not the biggest, but it will be most important - interview",
+          "url": "https://www.jpost.com/israel-election-2026/article-912595",
+          "published": "2026-10-22T17:50:16.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot leads Netanyahu as Winter, Hendel-Zelekha may not cross electoral threshold - poll",
+          "url": "https://www.jpost.com/israel-election-2026/article-912482",
+          "published": "2026-10-22T06:04:53.000Z"
+        }
+      ],
+      "textHe": "מפלגת עם ישראל של עופר וינטר ומפלגת המילואימניקים והכלכלית נעות סביב אחוז החסימה העומד על 3.25 אחוזים, בעוד שהנדל הצהיר כי מפלגתו תצטרף אך ורק לקואליציה של מפלגות ציוניות ואינו פוסל את נתניהו."
+    },
+    {
+      "text": "Smotrich said he would not rule out forming a government with Eisenkot as long as his partners in the right-wing bloc are not boycotted, while Netanyahu stated that the next defense minister should come from Likud and not Itamar Ben-Gvir.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Smotrich says Netanyahu, Ben-Gvir previously backed Knesset coalition with Ra'am that he shut down",
+          "url": "https://www.jpost.com/israel-election-2026/article-912494",
+          "published": "2026-10-22T09:02:20.000Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'Not Ben-Gvir': Next defense minister should come from Likud, Netanyahu tells ‘Post’",
+          "url": "https://www.jpost.com/israel-election-2026/article-912462",
+          "published": "2026-10-21T21:26:45.000Z"
+        }
+      ],
+      "textHe": "סמוטריץ' אמר כי אינו פוסל הקמת ממשלה עם איזנקוט כל עוד שותפיו בגוש הימין לא יוחרמו, בעוד נתניהו הצהיר כי שר הביטחון הבא צריך לבוא משורות הליכוד ולא יהיה איתמר בן גביר."
+    },
+    {
+      "text": "Israel's High Court of Justice barred political parties from tracking voter turnout, while Haaretz reported that Likud and opposition factions have used smartphone apps to monitor voters who have yet to cast ballots.",
+      "sources": [
+        {
+          "outlet": "Haaretz",
+          "title": "Israel's High Court of Justice bars political parties from tracking voter turnout",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-22/ty-article/.premium/israeli-elections-panel-to-monitor-likud-voter-tracking-app-officials-say/000001a1-6306-d3bb-a3b7-f7c62e610000",
+          "published": "2026-10-22T14:17:56.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "How Likud plans to bypass court restrictions and track voters",
+          "url": "https://www.haaretz.com/israel-news/elections/2026-10-22/ty-article/.premium/how-likud-plans-to-bypass-court-restrictions-and-track-voters/000001a1-6264-dc69-a1ff-77ec11aa0000",
+          "published": "2026-10-22T11:20:32.000Z"
+        }
+      ],
+      "textHe": "בג\"ץ אסר על מפלגות פוליטיות לעקוב אחר שיעורי ההצבעה, בעוד שבהארץ דווח כי הליכוד וסיעות אופוזיציה השתמשו באפליקציות בטלפונים חכמים כדי לנטר מצביעים שטרם שלשלו את הפתק לקלפי."
+    },
+    {
+      "text": "The Shin Bet removed social media accounts to block foreign election interference, while reports indicated that fake accounts previously used against Iran's regime have begun amplifying Netanyahu's campaign messaging.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet removes social media accounts to block foreign interference in upcoming election",
+          "url": "https://www.jpost.com/israel-election-2026/article-912497",
+          "published": "2026-10-22T09:13:58.000Z"
+        },
+        {
+          "outlet": "Haaretz",
+          "title": "Fake accounts used against Iran's regime now amplify Netanyahu's attacks on rivals",
+          "url": "https://www.haaretz.com/israel-news/security-aviation/2026-10-22/ty-article-magazine/.premium/fake-accounts-used-against-irans-regime-now-amplify-netanyahus-attacks/000001a1-62bb-d64b-a1ff-7fffaa440000",
+          "published": "2026-10-22T09:00:59.000Z"
+        },
+        {
+          "outlet": "Times of Israel",
+          "title": "Report: Social media accounts used in campaign to promote Iran regime change are now amplifying pro-Netanyahu election messaging",
+          "url": "https://www.timesofisrael.com/liveblog_entry/report-social-media-accounts-used-in-campaign-to-promote-iran-regime-change-are-now-amplifying-pro-netanyahu-election-messaging/",
+          "published": "2026-10-22T07:05:00.000Z"
+        }
+      ],
+      "textHe": "השב\"כ הסיר חשבונות ברשתות החברתיות כדי לבלום התערבות זרה בבחירות, בעוד מדיווחים עולה כי חשבונות מזויפים ששימשו בעבר נגד המשטר באיראן החלו להדהד את מסרי הקמפיין של נתניהו."
+    },
+    {
+      "text": "Addressing defense matters ahead of the vote, Yair Lapid stated that available intelligence does not justify a strike against Iran before election day, following warnings that an attack could constitute political interference.",
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Striking Iran ahead of elections could constitute political interference, officials warn - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-912507",
+          "published": "2026-10-22T11:12:00.000Z"
+        }
+      ],
+      "textHe": "בהתייחסו לנושאים ביטחוניים לקראת ההצבעה, יאיר לפיד הצהיר כי המודיעין הקיים אינו מצדיק תקיפה באיראן לפני יום הבחירות, וזאת בעקבות אזהרות שלפיהן מתקפה כזו עלולה להוות התערבות פוליטית."
+    }
+  ],
+  "dropped": []
+}

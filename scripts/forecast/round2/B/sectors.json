@@ -1,0 +1,145 @@
+{
+  "about": "Sector turnout calibration for the round-2 sector model (agent B; docs/research/polls-method/round2/B-sector-turnout.md). Turnout is voters / registered electors (the official definition). 'arabListLoyalty' is the share of Arab citizens' votes cast for Arab-led lists. The Arab index used by the model is I = arabTurnout x arabListLoyalty / generalTurnout: Arab-list votes per Arab elector, relative to the whole electorate's turnout.",
+  "sources": {
+    "generalTurnout": "English Wikipedia election articles (infobox turnout, from CEC figures), read 2026-10-24: https://en.wikipedia.org/wiki/<year>_Israeli_legislative_election ; 2019-2022 cross-checked against the CEC locality files (media21..25.bechirot.gov.il/files/expc.csv: voters / registered).",
+    "arabTurnout": "IDI (Arik Rudnitzky) series as tabulated in Wikimedia Commons Data:Israeli-Arab_voter_turnout_in_Knesset_elections.tab (https://commons.wikimedia.org/wiki/Data:Israeli-Arab_voter_turnout_in_Knesset_elections.tab), cited to https://en.idi.org.il/articles/46271 ; 2022 also https://en.idi.org.il/articles/47297. Cross-check: localities where Arab lists won 50%+ of the vote, CEC expc.csv files, turnout 49.1 / 60.1 / 65.8 / 44.5 / 53.8 for 2019-04 .. 2022 (scripts/forecast/round2/B/cec-sectors.py). D2's turnout-cec.json (CBS Arab and Druze localities) reproduces every figure 2013-2022 within 0.1 point.",
+    "arabListLoyalty": "IDI, Statistical Report on Arab Society in Israel 2021, and https://en.idi.org.il/articles/46271 (2022), as tabulated in https://en.wikipedia.org/wiki/Arab_citizens_of_Israel#Arab_Voting",
+    "harediCityTurnout": "scripts/forecast/round2/data/turnout-cec.json (agent D2: CEC final results by locality from data.gov.il, Haredi cities Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rekhasim, Kiryat Ye'arim). Agent B's own computation from the CEC expc.csv files for 2019-2022 without Kiryat Ye'arim (scripts/forecast/round2/B/cec-sectors.py) agrees within 0.1 point."
+  },
+  "series": [
+    {
+      "key": "1999-05",
+      "generalTurnout": 78.71,
+      "arabTurnout": 75.0,
+      "arabListLoyalty": 0.69
+    },
+    {
+      "key": "2003-01",
+      "generalTurnout": 67.81,
+      "arabTurnout": 62.0,
+      "arabListLoyalty": 0.69
+    },
+    {
+      "key": "2006-03",
+      "generalTurnout": 63.55,
+      "arabTurnout": 56.3,
+      "arabListLoyalty": 0.72
+    },
+    {
+      "key": "2009-02",
+      "generalTurnout": 64.72,
+      "arabTurnout": 53.4,
+      "arabListLoyalty": 0.82
+    },
+    {
+      "key": "2013-01",
+      "generalTurnout": 67.77,
+      "arabTurnout": 56.5,
+      "arabListLoyalty": 0.77,
+      "arabGap": {
+        "pollPct": 8.85,
+        "resultPct": 9.2,
+        "source": "round1/B-list-bias.md appendix and round1/C-threshold.md table (Balad 2.70->2.56, Hadash 3.21->2.99, Ra'am-Ta'al 2.94->3.65)"
+      },
+      "harediCityTurnout": 81.61
+    },
+    {
+      "key": "2015-03",
+      "generalTurnout": 72.34,
+      "arabTurnout": 63.5,
+      "arabListLoyalty": 0.83,
+      "harediCityTurnout": 82.71
+    },
+    {
+      "key": "2019-04",
+      "generalTurnout": 68.46,
+      "arabTurnout": 49.2,
+      "arabListLoyalty": 0.72,
+      "harediCityTurnout": 79.7
+    },
+    {
+      "key": "2019-09",
+      "generalTurnout": 69.83,
+      "arabTurnout": 59.2,
+      "arabListLoyalty": 0.82,
+      "harediCityTurnout": 80.12
+    },
+    {
+      "key": "2020-03",
+      "generalTurnout": 71.52,
+      "arabTurnout": 64.8,
+      "arabListLoyalty": 0.88,
+      "harediCityTurnout": 79.72
+    },
+    {
+      "key": "2021-03",
+      "generalTurnout": 67.44,
+      "arabTurnout": 44.6,
+      "arabListLoyalty": 0.8,
+      "harediCityTurnout": 76.36
+    },
+    {
+      "key": "2022-11",
+      "generalTurnout": 70.63,
+      "arabTurnout": 53.2,
+      "arabListLoyalty": 0.86,
+      "harediCityTurnout": 79.15
+    }
+  ],
+  "model": {
+    "about": "Agent B's recommended Arab sector term (B2 in the memo). Polls are taken to be anchored on the previous election's sector composition; the expected change in the Arab list-vote index I comes from mean reversion (k fitted leave-future-out on the 1999-2022 series; it clamps at 1 every year); the change is carried by the Arab lists other than Ra'am (Ra'am keeps its +0.6 class prior). No sector intercept (alpha), no Haredi term: see the memo for why.",
+    "index": "I = arabTurnout x arabListLoyalty / generalTurnout",
+    "k": 1,
+    "alphaPts": 0,
+    "sdLogSector": {
+      "backtest": 0.12,
+      "y2026": 0.14
+    },
+    "carriersExclude": [
+      "raam",
+      "raambalad"
+    ],
+    "y2026": {
+      "anchorI2022": 0.6478,
+      "historyOnly": {
+        "expectedI": 0.6512,
+        "logShiftSector": 0.005,
+        "effect": "same seats as version 2 (jl 9, raam 6)"
+      },
+      "recommended": {
+        "arabTurnoutCentre": 57,
+        "generalTurnout": 71,
+        "loyalty": 0.86,
+        "passThrough": 0.7,
+        "expectedI": 0.6904,
+        "logShiftSector": 0.0446,
+        "polledShares": {
+          "jl": 6.99,
+          "raam": 4.43
+        },
+        "calSectorTurnout": {
+          "sectors": [
+            {
+              "name": "arab",
+              "lists": [
+                "jl"
+              ],
+              "logShift": 0.0719,
+              "alphaPts": 0,
+              "sdLog": 0.2287,
+              "replacesPriors": true
+            }
+          ]
+        },
+        "keepListPriors": {
+          "shas": 0.8,
+          "raam": 0.6
+        },
+        "dropListPriors": [
+          "jl"
+        ],
+        "why": "override of the history-only centre (memo section 6): three pre-Oct-23 indicators point to Arab turnout above 2022's 53.2%"
+      }
+    }
+  }
+}

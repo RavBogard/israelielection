@@ -1,0 +1,592 @@
+{
+ "about": "Sector turnout from the official per-locality results (round 2, agent D2).\n\n    python3 -I scripts/forecast/round2/D2/sector_turnout.py CACHE_DIR [--write]\n\nDownloads (once, into CACHE_DIR) the Central Elections Committee's final results by locality for the 19th-25th\nKnesset from data.gov.il (dataset votes-knesset, CKAN datastore API) and the Central Bureau of Statistics locality\nfile (bycode2022.xlsx), then computes per election:\n  - national: registered (בזב), voters (מצביעים), valid (כשרים), with the double-envelope row (code 9999 / 0) kept;\n  - Arab and Druze localities: CBS 'דת יישוב' (locality religion) 2 (non-Jewish locality) or 3 (Bedouin tribe).\n    This is the Dayan Center / IDI (Rudnitzky) definition: it reproduces their 2022 figures exactly\n    (938,401 registered, 498,894 voters, 53.2%). Mixed cities (code 4: Haifa, Jerusalem, Lod, Ramla, Akko, Tel\n    Aviv-Jaffa, Nof HaGalil, Ma'alot-Tarshiha) and double envelopes are outside it;\n  - Haredi cities: Bnei Brak, Modi'in Illit, Beitar Illit, El'ad, Immanuel, Rechasim, Kiryat Ye'arim (the IDI's\n    Haredi-locality set; Jerusalem's and other cities' Haredi neighbourhoods are not in it);\n  - the rest ('general'): national minus the two sectors, double envelopes included (all assigned here).\nTurnout is voters / registered. Registered includes ~10% living abroad (almost all in the general sector), so\nevery official turnout figure understates resident turnout. Writes scripts/forecast/round2/data/turnout-cec.json\nwith --write (merged into turnout.json by hand-curated fields; see the memo).",
+ "sources": {
+  "results": "https://data.gov.il/dataset/votes-knesset (Central Elections Committee final results by locality, 19th-25th Knesset)",
+  "localities": "https://www.cbs.gov.il/he/publications/doclib/2019/ishuvim/bycode2022.xlsx"
+ },
+ "elections": {
+  "2013-01-22": {
+   "knesset": 19,
+   "national": {
+    "registered": 5656705,
+    "voters": 3833646,
+    "valid": 3792742,
+    "turnout": 67.77,
+    "arabListsShareOfValid": 9.05,
+    "shasUtjShareOfValid": 13.37
+   },
+   "arabDruzeLocalities": {
+    "registered": 696998,
+    "voters": 392445,
+    "valid": 386940,
+    "turnout": 56.31,
+    "arabListsShareOfValid": 77.17,
+    "shasUtjShareOfValid": 3.9
+   },
+   "harediCities": {
+    "registered": 159519,
+    "voters": 130176,
+    "valid": 129556,
+    "turnout": 81.61,
+    "arabListsShareOfValid": 0.03,
+    "shasUtjShareOfValid": 86.7
+   },
+   "generalImplied": {
+    "registered": 4800188,
+    "voters": 3311025,
+    "valid": 3276246,
+    "turnout": 68.98,
+    "arabListsShareOfValid": 1.36,
+    "shasUtjShareOfValid": 11.59
+   },
+   "generalLocalitiesOnly": {
+    "registered": 4800188,
+    "voters": 3095236,
+    "valid": 3063297,
+    "turnout": 64.48,
+    "arabListsShareOfValid": 1.46,
+    "shasUtjShareOfValid": 12.4
+   },
+   "doubleEnvelopes": {
+    "voters": 215789,
+    "valid": 212949
+   },
+   "arabListVotesFromArabLocalities": 86.99,
+   "shasUtjVotesFromHarediCities": 22.15,
+   "utjVotesFromHarediCities": 40.01,
+   "shasVotesFromHarediCities": 11.37,
+   "arabLocalitiesShareOfRegistered": 12.32,
+   "harediCitiesShareOfRegistered": 2.82,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     281
+    ],
+    [
+     1417,
+     "מחנה עדי",
+     181
+    ],
+    [
+     3637,
+     "מעלה שומרון",
+     513
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     601
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3240
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource c20cdcef-4d42-4241-a41b-6ca7ae51002d)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 245167,
+    "voters": 149553,
+    "turnout": 61.0,
+    "shasShareOfValid": 23.36,
+    "turnoutMinusGeneralLocalities": -3.48
+   }
+  },
+  "2015-03-17": {
+   "knesset": 20,
+   "national": {
+    "registered": 5881696,
+    "voters": 4254738,
+    "valid": 4210884,
+    "turnout": 72.34,
+    "arabListsShareOfValid": 10.61,
+    "shasUtjShareOfValid": 10.73
+   },
+   "arabDruzeLocalities": {
+    "registered": 747658,
+    "voters": 474844,
+    "valid": 470657,
+    "turnout": 63.51,
+    "arabListsShareOfValid": 82.4,
+    "shasUtjShareOfValid": 1.6
+   },
+   "harediCities": {
+    "registered": 170730,
+    "voters": 141203,
+    "valid": 137156,
+    "turnout": 82.71,
+    "arabListsShareOfValid": 0.01,
+    "shasUtjShareOfValid": 83.44
+   },
+   "generalImplied": {
+    "registered": 4963308,
+    "voters": 3638691,
+    "valid": 3603071,
+    "turnout": 73.31,
+    "arabListsShareOfValid": 1.63,
+    "shasUtjShareOfValid": 9.15
+   },
+   "generalLocalitiesOnly": {
+    "registered": 4963308,
+    "voters": 3404092,
+    "valid": 3370390,
+    "turnout": 68.59,
+    "arabListsShareOfValid": 1.53,
+    "shasUtjShareOfValid": 9.29
+   },
+   "doubleEnvelopes": {
+    "voters": 234599,
+    "valid": 232681
+   },
+   "arabListVotesFromArabLocalities": 86.84,
+   "shasUtjVotesFromHarediCities": 25.33,
+   "utjVotesFromHarediCities": 37.93,
+   "shasVotesFromHarediCities": 14.38,
+   "arabLocalitiesShareOfRegistered": 12.71,
+   "harediCitiesShareOfRegistered": 2.9,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     271
+    ],
+    [
+     1417,
+     "מחנה עדי",
+     177
+    ],
+    [
+     3637,
+     "מעלה שומרון",
+     567
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     955
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3533
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource 929b50c6-f455-4be2-b438-ec6af01421f2)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 254519,
+    "voters": 169661,
+    "turnout": 66.66,
+    "shasShareOfValid": 15.62,
+    "turnoutMinusGeneralLocalities": -1.93
+   }
+  },
+  "2019-04-09": {
+   "knesset": 21,
+   "national": {
+    "registered": 6339729,
+    "voters": 4340253,
+    "valid": 4309270,
+    "turnout": 68.46,
+    "arabListsShareOfValid": 7.82,
+    "shasUtjShareOfValid": 11.77
+   },
+   "arabDruzeLocalities": {
+    "registered": 848869,
+    "voters": 417749,
+    "valid": 413166,
+    "turnout": 49.21,
+    "arabListsShareOfValid": 70.79,
+    "shasUtjShareOfValid": 2.11
+   },
+   "harediCities": {
+    "registered": 192425,
+    "voters": 153363,
+    "valid": 150955,
+    "turnout": 79.7,
+    "arabListsShareOfValid": 0.02,
+    "shasUtjShareOfValid": 89.02
+   },
+   "generalImplied": {
+    "registered": 5298435,
+    "voters": 3769141,
+    "valid": 3745149,
+    "turnout": 71.14,
+    "arabListsShareOfValid": 1.19,
+    "shasUtjShareOfValid": 9.73
+   },
+   "generalLocalitiesOnly": {
+    "registered": 5298435,
+    "voters": 3528358,
+    "valid": 3506327,
+    "turnout": 66.59,
+    "arabListsShareOfValid": 1.07,
+    "shasUtjShareOfValid": 9.87
+   },
+   "doubleEnvelopes": {
+    "voters": 240783,
+    "valid": 238822
+   },
+   "arabListVotesFromArabLocalities": 86.77,
+   "shasUtjVotesFromHarediCities": 26.49,
+   "utjVotesFromHarediCities": 37.14,
+   "shasVotesFromHarediCities": 16.22,
+   "arabLocalitiesShareOfRegistered": 13.39,
+   "harediCitiesShareOfRegistered": 3.04,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     285
+    ],
+    [
+     3637,
+     "מעלה שומרון",
+     593
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3868
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     1298
+    ],
+    [
+     99999,
+     "מעטפות חיצוניות",
+     0
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource 1a1c7b2b-e819-4ba9-b159-d68e3566c58b)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 277995,
+    "voters": 180984,
+    "turnout": 65.1,
+    "shasShareOfValid": 15.96,
+    "turnoutMinusGeneralLocalities": -1.49
+   }
+  },
+  "2019-09-17": {
+   "knesset": 22,
+   "national": {
+    "registered": 6394030,
+    "voters": 4465168,
+    "valid": 4436806,
+    "turnout": 69.83,
+    "arabListsShareOfValid": 10.6,
+    "shasUtjShareOfValid": 13.5
+   },
+   "arabDruzeLocalities": {
+    "registered": 857661,
+    "voters": 507354,
+    "valid": 502027,
+    "turnout": 59.16,
+    "arabListsShareOfValid": 80.56,
+    "shasUtjShareOfValid": 1.35
+   },
+   "harediCities": {
+    "registered": 195531,
+    "voters": 156664,
+    "valid": 154781,
+    "turnout": 80.12,
+    "arabListsShareOfValid": 0.01,
+    "shasUtjShareOfValid": 90.44
+   },
+   "generalImplied": {
+    "registered": 5340838,
+    "voters": 3801150,
+    "valid": 3779998,
+    "turnout": 71.17,
+    "arabListsShareOfValid": 1.74,
+    "shasUtjShareOfValid": 11.96
+   },
+   "generalLocalitiesOnly": {
+    "registered": 5338026,
+    "voters": 3518708,
+    "valid": 3499782,
+    "turnout": 65.92,
+    "arabListsShareOfValid": 1.54,
+    "shasUtjShareOfValid": 12.09
+   },
+   "doubleEnvelopes": {
+    "voters": 282442,
+    "valid": 280216
+   },
+   "arabListVotesFromArabLocalities": 86.01,
+   "shasUtjVotesFromHarediCities": 23.37,
+   "utjVotesFromHarediCities": 35.16,
+   "shasVotesFromHarediCities": 13.78,
+   "arabLocalitiesShareOfRegistered": 13.41,
+   "harediCitiesShareOfRegistered": 3.06,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     296
+    ],
+    [
+     3637,
+     "מעלה שומרון",
+     585
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3896
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     1326
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource bd22cd14-138c-4917-931a-ef628c2a5a30)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 280951,
+    "voters": 184229,
+    "turnout": 65.57,
+    "shasShareOfValid": 19.75,
+    "turnoutMinusGeneralLocalities": -0.35
+   }
+  },
+  "2020-03-02": {
+   "knesset": 23,
+   "national": {
+    "registered": 6453255,
+    "voters": 4615135,
+    "valid": 4590062,
+    "turnout": 71.52,
+    "arabListsShareOfValid": 12.67,
+    "shasUtjShareOfValid": 13.67
+   },
+   "arabDruzeLocalities": {
+    "registered": 872585,
+    "voters": 565542,
+    "valid": 562158,
+    "turnout": 64.81,
+    "arabListsShareOfValid": 87.64,
+    "shasUtjShareOfValid": 0.85
+   },
+   "harediCities": {
+    "registered": 198990,
+    "voters": 158640,
+    "valid": 157072,
+    "turnout": 79.72,
+    "arabListsShareOfValid": 0.02,
+    "shasUtjShareOfValid": 91.34
+   },
+   "generalImplied": {
+    "registered": 5381680,
+    "voters": 3890953,
+    "valid": 3870832,
+    "turnout": 72.3,
+    "arabListsShareOfValid": 2.29,
+    "shasUtjShareOfValid": 12.38
+   },
+   "generalLocalitiesOnly": {
+    "registered": 5381680,
+    "voters": 3560744,
+    "valid": 3543130,
+    "turnout": 66.16,
+    "arabListsShareOfValid": 2.0,
+    "shasUtjShareOfValid": 12.49
+   },
+   "doubleEnvelopes": {
+    "voters": 330209,
+    "valid": 327702
+   },
+   "arabListVotesFromArabLocalities": 84.73,
+   "shasUtjVotesFromHarediCities": 22.87,
+   "utjVotesFromHarediCities": 34.89,
+   "shasVotesFromHarediCities": 13.53,
+   "arabLocalitiesShareOfRegistered": 13.52,
+   "harediCitiesShareOfRegistered": 3.08,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     297
+    ],
+    [
+     3637,
+     "מעלה שומרון",
+     572
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     1356
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3911
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource 3dc36e20-25d6-4496-ba6a-71d9bc917349)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 284714,
+    "voters": 189135,
+    "turnout": 66.43,
+    "shasShareOfValid": 20.4,
+    "turnoutMinusGeneralLocalities": 0.27
+   }
+  },
+  "2021-03-23": {
+   "knesset": 24,
+   "national": {
+    "registered": 6578084,
+    "voters": 4436365,
+    "valid": 4410052,
+    "turnout": 67.44,
+    "arabListsShareOfValid": 8.61,
+    "shasUtjShareOfValid": 12.8
+   },
+   "arabDruzeLocalities": {
+    "registered": 900183,
+    "voters": 401435,
+    "valid": 396896,
+    "turnout": 44.59,
+    "arabListsShareOfValid": 80.23,
+    "shasUtjShareOfValid": 1.32
+   },
+   "harediCities": {
+    "registered": 205381,
+    "voters": 156826,
+    "valid": 155342,
+    "turnout": 76.36,
+    "arabListsShareOfValid": 0.02,
+    "shasUtjShareOfValid": 88.83
+   },
+   "generalImplied": {
+    "registered": 5472520,
+    "voters": 3878104,
+    "valid": 3857814,
+    "turnout": 70.87,
+    "arabListsShareOfValid": 1.59,
+    "shasUtjShareOfValid": 10.92
+   },
+   "generalLocalitiesOnly": {
+    "registered": 5472520,
+    "voters": 3452592,
+    "valid": 3436195,
+    "turnout": 63.09,
+    "arabListsShareOfValid": 1.26,
+    "shasUtjShareOfValid": 11.16
+   },
+   "doubleEnvelopes": {
+    "voters": 425512,
+    "valid": 421619
+   },
+   "arabListVotesFromArabLocalities": 83.87,
+   "shasUtjVotesFromHarediCities": 24.45,
+   "utjVotesFromHarediCities": 37.44,
+   "shasVotesFromHarediCities": 14.23,
+   "arabLocalitiesShareOfRegistered": 13.68,
+   "harediCitiesShareOfRegistered": 3.12,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     309
+    ],
+    [
+     3778,
+     "עץ אפרים",
+     1389
+    ],
+    [
+     3720,
+     "שערי תקווה",
+     3954
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource 9921a347-8466-4ef4-81f9-22523c5c4632)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 292836,
+    "voters": 179405,
+    "turnout": 61.26,
+    "shasShareOfValid": 19.54,
+    "turnoutMinusGeneralLocalities": -1.83
+   }
+  },
+  "2022-11-01": {
+   "knesset": 25,
+   "national": {
+    "registered": 6788804,
+    "voters": 4794593,
+    "valid": 4764742,
+    "turnout": 70.63,
+    "arabListsShareOfValid": 10.73,
+    "shasUtjShareOfValid": 14.13
+   },
+   "arabDruzeLocalities": {
+    "registered": 938401,
+    "voters": 498894,
+    "valid": 493995,
+    "turnout": 53.16,
+    "arabListsShareOfValid": 85.81,
+    "shasUtjShareOfValid": 0.51
+   },
+   "harediCities": {
+    "registered": 214269,
+    "voters": 169593,
+    "valid": 168144,
+    "turnout": 79.15,
+    "arabListsShareOfValid": 0.02,
+    "shasUtjShareOfValid": 90.3
+   },
+   "generalImplied": {
+    "registered": 5636134,
+    "voters": 4126106,
+    "valid": 4102603,
+    "turnout": 73.21,
+    "arabListsShareOfValid": 2.13,
+    "shasUtjShareOfValid": 12.65
+   },
+   "generalLocalitiesOnly": {
+    "registered": 5636134,
+    "voters": 3663299,
+    "valid": 3643889,
+    "turnout": 65.0,
+    "arabListsShareOfValid": 1.77,
+    "shasUtjShareOfValid": 12.91
+   },
+   "doubleEnvelopes": {
+    "voters": 462807,
+    "valid": 458714
+   },
+   "arabListVotesFromArabLocalities": 82.89,
+   "shasUtjVotesFromHarediCities": 22.56,
+   "utjVotesFromHarediCities": 35.28,
+   "shasVotesFromHarediCities": 13.48,
+   "arabLocalitiesShareOfRegistered": 13.82,
+   "harediCitiesShareOfRegistered": 3.16,
+   "unmatchedLocalities": [
+    [
+     3400,
+     "חברון",
+     338
+    ]
+   ],
+   "source": "https://data.gov.il/dataset/votes-knesset (resource b392b8ee-ba45-4ea0-bfed-f03a1a36e99c)",
+   "shasStrongholds": {
+    "localities": 11,
+    "registered": 310570,
+    "voters": 207563,
+    "turnout": 66.83,
+    "shasShareOfValid": 22.09,
+    "turnoutMinusGeneralLocalities": 1.83
+   }
+  }
+ }
+}

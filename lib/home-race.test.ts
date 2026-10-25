@@ -21,7 +21,9 @@ describe("homepage mosaic arithmetic and evidence",()=>{
   const layout=homeMosaicLayout(homeRaceModel(base(),parties,blocs));expect(layout.empty).toHaveLength(120);expect(homeMosaicView(layout,"net")).toEqual([]);expect(layout.blocks.every(b=>b.parts.every(p=>p.cells.length===0))).toBe(true);
  });
  it("retains missing versus thresholdzero without calling the normalized model a raw incomplete subtotal",()=>{
-  const poll=base();poll.results.likud={seats:54.5};delete poll.results.noam;const raw=homeRaceModel(poll,parties,blocs);expect(raw.rows[0].members.find(p=>p.id==="noam")).toMatchObject({seats:null,state:"missing"});expect(raw.rows[0].incomplete).toBe(true);expect(raw.rows[0].members.find(p=>p.id==="shas")).toMatchObject({seats:0,state:"below"});expect(homeRaceModel({...poll,id:"avg"},parties,blocs).rows[0].incomplete).toBe(false);
+  const poll=base();poll.id="results";poll.results.likud={seats:54.5};delete poll.results.noam;const raw=homeRaceModel(poll,parties,blocs);expect(raw.kind).toBe("count");expect(raw.rows[0].members.find(p=>p.id==="noam")).toMatchObject({seats:null,state:"missing"});expect(raw.rows[0].incomplete).toBe(true);expect(raw.rows[0].members.find(p=>p.id==="shas")).toMatchObject({seats:0,state:"below"});expect(homeRaceModel({...poll,id:"avg"},parties,blocs).rows[0].incomplete).toBe(false);
+  // A published poll that leaves a list out is not a known subtotal: it did not report that list.
+  const single=homeRaceModel({...poll,id:"channel-12-fixture"},parties,blocs);expect(single.kind).toBe("poll");expect(single.rows[0].incomplete).toBe(false);expect(single.rows[0].members.find(p=>p.id==="noam")).toMatchObject({seats:null,state:"missing"});
   const layout=homeMosaicLayout(raw);expect(layout.blocks[0].parts.some(p=>p.id==="noam")).toBe(false);expect(layout.blocks[0].parts.find(p=>p.id==="shas")?.cells).toEqual([]);
  });
  it("counts a within-group combined report once and never invents its individual split or a cross-group allocation",()=>{

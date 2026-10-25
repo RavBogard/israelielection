@@ -1,0 +1,5 @@
+/** Agent R: does B's pollShares (common.mjs) now pick up version 3's defaults, including 2026's Joint List sector term? */
+import { forecast } from "../../model.mjs";
+import { cal, elections } from "../B/common.mjs";
+const ps = (e, opts) => { const pollsters = [...new Set(e.polls.map((p) => p.pollster))], filber = [...new Set(e.polls.filter((p) => p.filber).map((p) => p.pollster))]; const parties = Object.keys(e.lists).map((id) => ({ id, bloc: e.blocs[id] })); const f = forecast({ polls: e.polls, config: { pollsters, withoutVariant: { pollsters: filber } }, parties, agreements: e.agreements, cal: { ...cal, elections: [], listPriors: {}, withdrawn: { lists: [] } }, opts: { runs: 100, priors: false, lean: 0, withdrawn: false, ...opts } }); return Object.fromEntries(Object.keys(e.lists).map((id) => [id, f.lists[id].share])); };
+for (const e of elections) { const a = ps(e, {}), b = ps(e, { v2: true }), ar = Object.keys(e.lists).filter((id) => e.blocs[id] === "arab"); console.log(e.key, ar.map((id) => `${id} now ${a[id]} v2-model ${b[id]}`).join("; ")); }
