@@ -34,12 +34,12 @@ export function Mark({ className, title, rtl = false }: { className?: string; ti
 
 /** Mark + wordmark, linking home. The Hebrew wordmark is פתק 2026, its mark filling from the right. */
 export default function Logo({ className, lang = "en" }: { className?: string; lang?: Lang }) {
-  if (lang === "he")
+  if (lang !== "en")
     return (
-      <Link href="/he" className={`brand${className ? ` ${className}` : ""}`} aria-label={chrome.he.homeLabel}>
+      <Link href={`/${lang}`} className={`brand${className ? ` ${className}` : ""}`} aria-label={chrome[lang].homeLabel}>
         <Mark className="mark" rtl />
         <span className="word">
-          פתק <span className="yr">2026</span>
+          {chrome[lang].siteName.replace(/\s*2026$/, "")} <span className="yr">2026</span>
         </span>
       </Link>
     );

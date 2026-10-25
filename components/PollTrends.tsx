@@ -14,7 +14,7 @@ export type TrendPanel={id:string;name:string;short?:string;bloc:BlocId;trend:{d
 const H=176,PAD={l:34,r:12,t:14,b:26},DAY=86400_000;
 const value=(n:number,below="below")=>n===0?below:seatFigure(n);
 function Panel({p,dates,from,to,yMax,zoomed,lang}:{p:TrendPanel;dates:string[];from:string;to:string;yMax:number;zoomed:boolean;lang:Lang}){
- const he=lang==="he",T=POLLS[lang],t=T.trends,v=(n:number)=>value(n,T.common.below),sd=(d:string)=>shortDate(d,lang);
+ const he=lang!=="en",T=POLLS[lang],t=T.trends,v=(n:number)=>value(n,T.common.below),sd=(d:string)=>shortDate(d,lang);
  const ref=useRef<HTMLDivElement>(null);const [w,setW]=useState(0);const [inspection,setInspection]=useState(dates.length-1);
  useLayoutEffect(()=>{const el=ref.current;if(!el)return;const ro=new ResizeObserver(()=>setW(el.clientWidth));ro.observe(el);return()=>ro.disconnect();},[]);
  const points=alignTrend(p.trend,dates);const summary=trendSummary(points);const shown=points[Math.min(inspection,points.length-1)];
@@ -37,7 +37,7 @@ function Panel({p,dates,from,to,yMax,zoomed,lang}:{p:TrendPanel;dates:string[];f
 export default function PollTrends({groups,dates,from,to,yMax,refLabel}:{groups:{bloc:BlocId;label:string;panels:TrendPanel[]}[];dates:string[];from:string;to:string;yMax:number;refLabel:string}){
  const lang=useLang(),T=POLLS[lang],t=T.trends;
  const [zoomed,setZoomed]=useState(true);
- return <div className="pt"><fieldset className="pt-scale"><legend>{t.legend}</legend><label><input type="radio" name="trend-scale" checked={zoomed} onChange={()=>setZoomed(true)}/>{t.zoom}</label><label><input type="radio" name="trend-scale" checked={!zoomed} onChange={()=>setZoomed(false)}/>{lang==="he"?t.sharedRadio(yMax):<> Shared 0–{yMax} seats (compare size)</>}</label></fieldset>
+ return <div className="pt"><fieldset className="pt-scale"><legend>{t.legend}</legend><label><input type="radio" name="trend-scale" checked={zoomed} onChange={()=>setZoomed(true)}/>{t.zoom}</label><label><input type="radio" name="trend-scale" checked={!zoomed} onChange={()=>setZoomed(false)}/>{lang!=="en"?t.sharedRadio(yMax):<> Shared 0–{yMax} seats (compare size)</>}</label></fieldset>
  <div className="fig-key pt-legend"><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="var(--ink-2)"/></svg>{t.keyPoll}</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="3.5" className="pt-dot-ref"/></svg>{refLabel}</span><span><svg width="20" height="12" aria-hidden="true"><line x1="1" x2="19" y1="6" y2="6" stroke="var(--ink-2)" strokeWidth="2"/></svg>{t.keyLine}</span></div>
  {groups.map((g)=><section key={g.bloc} className="pt-group"><h3 className="lbl"><span className="sw" style={{background:`var(--b-${g.bloc})`}}/>{g.label}</h3><div className="pt-grid-wrap">{g.panels.map((p)=><Panel key={p.id} p={p} dates={dates} from={from} to={to} yMax={yMax} zoomed={zoomed} lang={lang}/>)}</div></section>)}</div>;
 }

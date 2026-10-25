@@ -20,7 +20,7 @@ function earlyFixture(n = 40): string {
   return path;
 }
 
-async function render(lang: "en" | "he", env: Record<string, string>, fetcher?: typeof fetch) {
+async function render(lang: "en" | "he" | "ar" | "fa", env: Record<string, string>, fetcher?: typeof fetch) {
   vi.stubEnv("NODE_ENV", "development");
   for (const [k, v] of Object.entries(env)) vi.stubEnv(k, v);
   if (fetcher) vi.stubGlobal("fetch", fetcher);
@@ -35,6 +35,15 @@ async function render(lang: "en" | "he", env: Record<string, string>, fetcher?: 
 afterEach(() => {
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
+});
+
+describe.each(["ar", "fa"] as const)("/%s/results on election night", lang => {
+  it("uses the same count fixture and keeps coalition links in its edition", async () => {
+    const html = await render(lang, { RESULTS_NOW: AFTER, RESULTS_FIXTURE: FIXTURE });
+    expect(html).toContain(`/${lang}/coalition-builder?poll=results`);
+    expect(html).toMatch(/[\u0600-\u06ff]/);
+    expect(html).not.toContain("The committee’s early count");
+  });
 });
 
 describe("/he/results through the night", () => {

@@ -15,6 +15,12 @@ describe("the browser's first language", () => {
 });
 
 describe("the default edition", () => {
+  it("honors Arabic and Persian browser preferences ahead of geography", () => {
+    expect(defaultLang(visit({ country: "IL", acceptLanguage: "ar-IL,en;q=0.8" }))).toBe("ar");
+    expect(defaultLang(visit({ acceptLanguage: "fa-IR,en;q=0.8" }))).toBe("fa");
+    expect(defaultLang(visit({ cookie: "ar", acceptLanguage: "he" }))).toBe("ar");
+    expect(defaultLang(visit({ cookie: "fa", country: "IL" }))).toBe("fa");
+  });
   it("sends readers in Israel and Hebrew-first browsers to Hebrew", () => {
     expect(defaultLang(visit({ country: "IL" }))).toBe("he");
     expect(defaultLang(visit({ acceptLanguage: "he-IL,en;q=0.8" }))).toBe("he");

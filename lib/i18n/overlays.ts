@@ -1,3 +1,7 @@
+import "./ar/register";
+import "./fa/register";
+import { OVERLAY_DATA as AR_DATA } from "./ar/overlay-data";
+import { OVERLAY_DATA as FA_DATA } from "./fa/overlay-data";
 import "./he/register";
 import { OVERLAY_DATA } from "./overlay-data";
 import { setOverlays } from "./overlay-text";
@@ -9,5 +13,7 @@ import { setOverlays } from "./overlay-text";
  * pages ship no Hebrew; the Hebrew root layout loads the data on the client through lib/i18n/HebrewProvider.
  */
 setOverlays(OVERLAY_DATA);
+setOverlays(AR_DATA, "ar");
+setOverlays(FA_DATA, "fa");
 
 export * from "./overlay-text";

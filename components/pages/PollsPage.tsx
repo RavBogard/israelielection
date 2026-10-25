@@ -23,8 +23,9 @@ import BlocRace from "@/components/polls/BlocRace";
 import HouseEffects from "@/components/polls/HouseEffects";
 import PageHead from "@/components/PageHead";
 import { blocName as blocLabel, partyName, pollsterName, Tx } from "@/components/polls/names";
-import { hePath, type Lang } from "@/lib/i18n";
+import { editionPath, type Lang } from "@/lib/i18n";
 import { list } from "@/lib/i18n/he-grammar";
+import { toolMethod } from "@/lib/i18n/tool-method";
 import POLLS, { dayMonthHe, HE_METHOD } from "@/lib/i18n/polls";
 // Server component: loads the Hebrew overlays that pollLabel, lib/polls-desk and polls/names read in the Hebrew edition.
 import "@/lib/i18n/overlays";
@@ -37,7 +38,8 @@ const WIKI = "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli
 
 /** The polls desk, /polls and /he/polls: the bloc race and the facts line, then four tabs. All words in lib/i18n/polls.ts. */
 export default function PollsPage({ lang }: { lang: Lang }) {
-  const he = lang === "he";
+  const he = lang !== "en";
+  const methodText = lang === "he" ? HE_METHOD : toolMethod(lang);
   const t = POLLS[lang];
   // Lists by their name in this edition; the English objects stay for the arithmetic.
   const named = parties.map((p) => ({ ...p, name: partyName(p, lang) }));
@@ -85,16 +87,16 @@ export default function PollsPage({ lang }: { lang: Lang }) {
 
   const method = he ? <>
     <h2 className="sec-h">{t.method.h}</h2>
-    <p className="note">{HE_METHOD.intake(cfg.maxSeatMove)}</p>
+    <p className="note">{methodText.intake(cfg.maxSeatMove)}</p>
     <p className="note">
-      {HE_METHOD.window(cfg.currentWindowDays, mediumDate(to, lang), mainPolls.length, list(mainPolls.map((p) => `${pollsterName(p.pollster, lang)} ${shortDate(p.published, lang)}`)))}
-      {HE_METHOD.sameIn.a}<Link href={hePath("/coalition-builder")!}>{HE_METHOD.sameIn.builder}</Link>{HE_METHOD.sameIn.mid}
-      <Link href="/parties" hrefLang="en">{HE_METHOD.sameIn.map}</Link>{HE_METHOD.sameIn.b}{HE_METHOD.inclusionRule}
+      {methodText.window(cfg.currentWindowDays, mediumDate(to, lang), mainPolls.length, list(mainPolls.map((p) => `${pollsterName(p.pollster, lang)} ${shortDate(p.published, lang)}`)))}
+      {methodText.sameIn.a}<Link href={editionPath("/coalition-builder", lang)!}>{methodText.sameIn.builder}</Link>{methodText.sameIn.mid}
+      <Link href="/parties" hrefLang="en">{methodText.sameIn.map}</Link>{methodText.sameIn.b}{methodText.inclusionRule}
     </p>
-    <p className="note">{HE_METHOD.average}</p>
-    <p className="note">{HE_METHOD.scaling}{HE_METHOD.variantNote}</p>
-    {uncertainFigures.length>0&&<p className="note">{HE_METHOD.undated(list(uncertainFigures))}</p>}
-    <p className="note">{HE_METHOD.sources.a}<a href={WIKI} hrefLang="en">{HE_METHOD.sources.wiki}</a>{HE_METHOD.sources.b}<a href="#every-poll">{HE_METHOD.sources.every}</a>{HE_METHOD.sources.c}</p>
+    <p className="note">{methodText.average}</p>
+    <p className="note">{methodText.scaling}{methodText.variantNote}</p>
+    {uncertainFigures.length>0&&<p className="note">{methodText.undated(list(uncertainFigures))}</p>}
+    <p className="note">{methodText.sources.a}<a href={WIKI} hrefLang="en">{methodText.sources.wiki}</a>{methodText.sources.b}<a href="#every-poll">{methodText.sources.every}</a>{methodText.sources.c}</p>
     {sensitivity}
   </> : <>
     <h2 className="sec-h">How the average is made</h2>

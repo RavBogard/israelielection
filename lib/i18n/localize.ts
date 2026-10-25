@@ -42,7 +42,7 @@ export function fieldAt(item: unknown, path: string): string | undefined {
 
 /** The text to show for one field: the Hebrew when asked for and current, else the English. */
 export function localizeText(english: string, he: HeField | undefined, lang: Lang): Localized {
-  if (lang === "he" && he && he.text && he.src === srcHash(english)) return he.translated ? { text: he.text, lang: "he", translated: true } : { text: he.text, lang: "he" };
+  if (lang !== "en" && he && he.text && he.src === srcHash(english)) return he.translated ? { text: he.text, lang, translated: true } : { text: he.text, lang };
   return { text: english, lang: "en" };
 }
 

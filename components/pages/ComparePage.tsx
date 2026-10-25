@@ -20,7 +20,7 @@ const rows = matrixRows(ids);
 /** The comparison page (/compare, /he/compare). Hebrew reads every data string through lib/i18n/overlays. */
 export default function ComparePage({ lang }: { lang: Lang }) {
   const T = compareText[lang];
-  const he = lang === "he";
+  const he = lang !== "en";
   const pickable: CompareParty[] = listed.map((p) => ({
     id: p.id,
     name: he ? partyText(p, "name", lang) : p.name,

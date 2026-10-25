@@ -20,7 +20,7 @@ import { averageLabel, night, PRIOR_ROLL, priorRollLabel, sections, type Counted
 import PageHead from "@/components/PageHead";
 import PhaseStrip from "@/components/results/PhaseStrip";
 import ExitPollBars from "@/components/results/ExitPollBars";
-import type { Lang } from "@/lib/i18n";
+import { locale, type Lang } from "@/lib/i18n";
 import { partyText } from "@/lib/i18n/overlays";
 import resultsText from "@/lib/i18n/results";
 import { blocName, configText, listName, T } from "@/components/results/names";
@@ -41,15 +41,15 @@ const HE_DAY = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", we
 const HE_STAMP = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 const IL_TIME = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
 /** A moment as the page prints it: English "Oct 27, 10:00 PM"; Hebrew "27.10, 22:00", or with `long` "יום שלישי, 27 באוקטובר, 22:00". */
-const when = (d: Date, lang: Lang, long = false) => (lang === "en" ? IL.format(d) : long ? `${HE_DAY.format(d)}, ${IL_TIME.format(d)}` : HE_STAMP.format(d));
+const when = (d: Date, lang: Lang, long = false) => (lang === "ar" || lang === "fa" ? new Intl.DateTimeFormat(locale(lang), {timeZone:"Asia/Jerusalem", day:"numeric", month:long ? "long" : "numeric", hour:"2-digit", minute:"2-digit", hourCycle:"h23"}).format(d) : lang === "en" ? IL.format(d) : long ? `${HE_DAY.format(d)}, ${IL_TIME.format(d)}` : HE_STAMP.format(d));
 const byId = (id: string | null) => parties.find((p) => p.id === id);
 const name = (id: string, lang: Lang) => listName(byId(id) ?? { id, name: id }, lang);
 const pairName = (ids: string[], lang: Lang) =>
   lang === "en" ? ids.map((id) => byId(id)?.name ?? id).join(" and ") : resultsText.he.method.pair(name(ids[0], lang).text, name(ids[1], lang).text);
 /** A table row's swatch, spaced from the name on the inline end side (English keeps its physical margin). */
-const swatch = (id: string, lang: Lang) => (lang === "he" ? { background: partyColor(id), marginInlineEnd: 8 } : { background: partyColor(id), marginRight: 8 });
+const swatch = (id: string, lang: Lang) => (lang !== "en" ? { background: partyColor(id), marginInlineEnd: 8 } : { background: partyColor(id), marginRight: 8 });
 /** A signed figure; in Hebrew it runs left to right inside the line. */
-const bdi = (s: string, lang: Lang): ReactNode => (lang === "he" ? <bdi dir="ltr">{s}</bdi> : s);
+const bdi = (s: string, lang: Lang): ReactNode => (lang !== "en" ? <bdi dir="ltr">{s}</bdi> : s);
 
 function Letters({ lang }: { lang: Lang }) {
   const t = resultsText[lang].letters;
@@ -275,7 +275,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
       {early && r && <p className="rs-early-flag"><b>{flag[0]}</b>{flag[1]}</p>}
       <section className={`rs-count${r ? "" : " rs-await"}${early && r ? " rs-early" : ""}`} aria-label={t.aria(!!(early && r))}>
         <div className="rs-grid">
-          <SeatGrid segments={segments} labelRule rtl={lang === "he"} title={r ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
+          <SeatGrid segments={segments} labelRule rtl={lang !== "en"} title={r ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
         </div>
         <div>
           <ul className="rs-legend">

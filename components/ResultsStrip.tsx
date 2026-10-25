@@ -53,7 +53,7 @@ export function useCountSummary(pollsClose: string): CountSummary | null {
 export default function ResultsStrip({ pollsClose, blocLabels }: { pollsClose: string; /** Hebrew edition: the bloc labels to show, from the overlay (English ones are marked lang="en"). */ blocLabels?: Record<string, Localized> }) {
   const data = useCountSummary(pollsClose);
   const lang = useLang();
-  if (lang === "he") return <HebrewStrip data={data} labels={blocLabels ?? {}} />;
+  if (lang !== "en") return <HebrewStrip data={data} labels={blocLabels ?? {}} />;
   if (data?.state === "error" && data.phase === "exit")
     return (
       <div className="live-strip" role="status" aria-live="polite">
@@ -90,12 +90,13 @@ export default function ResultsStrip({ pollsClose, blocLabels }: { pollsClose: s
 
 /** The same line in the Hebrew edition, linking to /he/results. */
 function HebrewStrip({ data, labels }: { data: CountSummary | null; labels: Record<string, Localized> }) {
-  const t = chrome.he.strip;
+  const lang = useLang();
+  const t = chrome[lang].strip;
   if (data?.state === "error" && data.phase === "exit")
     return (
       <div className="live-strip" role="status" aria-live="polite">
         <div className="row">
-          <Link href="/he/results" className="lead">{t.closed}</Link>
+          <Link href={`/${lang}/results`} className="lead">{t.closed}</Link>
           <span>{t.closedNote}</span>
         </div>
       </div>
@@ -105,14 +106,14 @@ function HebrewStrip({ data, labels }: { data: CountSummary | null; labels: Reco
   return (
     <div className="live-strip" role="status" aria-live="polite">
       <div className="row">
-        <Link href="/he/results" className="lead">
+        <Link href={`/${lang}/results`} className="lead">
           {data.freshness === "stale" ? t.stale : data.phase === "early" ? t.early : t.count}
         </Link>
         <ul>
           {[...data.blocs].sort((a, b) => blocRank(a.id as BlocId) - blocRank(b.id as BlocId)).map((b) => (
             <li key={b.id}>
               <span className="sw" style={{ background: `var(--b-${b.id})` }} />
-              {labels[b.id] ? labels[b.id].lang === "he" ? labels[b.id].text : <span lang="en" dir="ltr">{labels[b.id].text}</span> : <span lang="en" dir="ltr">{b.label}</span>} <b>{b.seats}</b>
+              {labels[b.id] ? labels[b.id].lang === lang ? labels[b.id].text : <span lang="en" dir="ltr">{labels[b.id].text}</span> : <span lang="en" dir="ltr">{b.label}</span>} <b>{b.seats}</b>
             </li>
           ))}
         </ul>

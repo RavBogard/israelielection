@@ -26,7 +26,7 @@ export default function ProfilePage({ party, lang }: { party: Party; lang: Lang 
         ) : (
           <SourcesBox count={3} lang={lang}>
             <li>
-              <b>{S.polls}:</b> <Link href="/he/polls">{S.pollsLine}</Link>
+              <b>{S.polls}:</b> <Link href={`/${lang}/polls`}>{S.pollsLine}</Link>
             </li>
             <li>{S.profiles}</li>
             <li>{S.bios}</li>

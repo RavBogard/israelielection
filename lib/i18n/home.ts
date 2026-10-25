@@ -6,6 +6,7 @@
  * element's job. Daniel reviews it here. Generated sentences (the finding, the citation) are in lib/home-since.ts,
  * the headline in lib/results-phase.ts.
  */
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 type Bits = (string | number)[];
@@ -118,6 +119,8 @@ const en = {
 const home = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): HomeText { return editionText<HomeText>("ar", "home"); },
+  get fa(): HomeText { return editionText<HomeText>("fa", "home"); },
   get he(): HomeText {
     return heText<HomeText>("home");
   },

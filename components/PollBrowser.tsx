@@ -14,7 +14,7 @@ const dash = (label: string) => <><span aria-hidden="true">–</span><span class
 
 type Props = { polls: Poll[]; parties: Pick<Party, "id" | "name" | "short">[]; currentIds: string[]; config: PollsConfig; title?: string };
 export default function PollBrowser({ polls, parties, currentIds, config, title = "Browse every poll" }: Props) {
-  const lang = useLang(), he = lang === "he", t = POLLS[lang].browser, c = t.card, pn = (name: string) => pollsterName(name, lang);
+  const lang = useLang(), he = lang !== "en", t = POLLS[lang].browser, c = t.card, pn = (name: string) => pollsterName(name, lang);
   const DASH = dash(t.notReported);
   const params = useSearchParams(); const router = useRouter();
   const query = params.toString();
@@ -39,7 +39,7 @@ export default function PollBrowser({ polls, parties, currentIds, config, title 
     for (const key of ["from", "to", "pollster", "party"]) next.delete(key);
     if (clear) setFilter({ from: "", to: "", pollster: "", parties: [] });
     else { if (filter.from) next.set("from", filter.from); if (filter.to) next.set("to", filter.to); if (filter.pollster) next.set("pollster", filter.pollster); if (filter.parties.length) next.set("party", filter.parties.join(",")); }
-    router.push(`${he ? "/he/polls" : "/polls"}${next.size ? `?${next}` : ""}#browser`, { scroll: false });
+    router.push(`${he ? `/${lang}/polls` : "/polls"}${next.size ? `?${next}` : ""}#browser`, { scroll: false });
   }
   return <section id="browser" className="poll-browser" aria-labelledby="browser-h"><h2 id="browser-h" className="sec-h">{title}</h2>
     <form className="poll-controls" onSubmit={(event) => { event.preventDefault(); apply(); }}>

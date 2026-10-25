@@ -1,3 +1,4 @@
+import { ui } from "./i18n/ui";
 /**
  * Election night as phases, one model for /results, the home hero and the masthead strip.
  * before: until polls close. exit: closed, the channels' exit polls, no usable count yet.
@@ -30,12 +31,12 @@ export const PHASES_HE = [
   { id: "count", label: "ספירת הקולות" },
 ] as const;
 /** The phase labels in the given edition. */
-export const phases = (lang: Lang = "en") => (lang === "he" ? PHASES_HE : PHASES);
+export const phases = (lang: Lang = "en") => (lang === "he" ? PHASES_HE : lang === "en" ? PHASES : [{id:"exit",label:ui(lang,"Exit polls 22:00")},{id:"early",label:ui(lang,"Early count")},{id:"count",label:ui(lang,"The count")}] as const);
 
 /** The committee's 2022 roll, 6,788,804 eligible in 1,215 localities (lib/fixtures/cec-2022-expc.csv): the denominator until the 2026 roll is published. */
 export const PRIOR_ROLL = { eligible: 6_788_804, localities: 1_215, label: "the 2022 roll" };
 /** PRIOR_ROLL.label in the given edition. */
-export const priorRollLabel = (lang: Lang = "en") => (lang === "he" ? "פנקס הבוחרים של 2022" : PRIOR_ROLL.label);
+export const priorRollLabel = (lang: Lang = "en") => (lang === "he" ? "פנקס הבוחרים של 2022" : ui(lang, "the 2022 roll"));
 /** A count is early while its localities hold under a tenth of the roll: too few places to read seats from. */
 export const EARLY_SHARE = 0.1;
 /** Until 02:00 Israel time (four hours after close) a file with no usable figures means waiting, not failure. */
@@ -80,16 +81,16 @@ export function headline(phase: Phase, days: number, lang: Lang = "en"): string 
     if (phase !== "before") return "ישראל הצביעה.";
     return days > 1 ? `עוד ${plural(days, { one: "יום אחד", two: "יומיים", other: `${days} ימים` })} לבחירות.` : days === 1 ? "הבחירות מחר." : "הבחירות היום.";
   }
-  if (phase === "exit") return "Polls have closed.";
-  if (phase !== "before") return "Israel voted.";
-  return days > 1 ? `Israel votes in ${days} days.` : days === 1 ? "Israel votes tomorrow." : "Israel votes today.";
+  if (phase === "exit") return ui(lang, "Polls have closed.");
+  if (phase !== "before") return ui(lang, "Israel voted.");
+  return days > 1 ? ui(lang, "Israel votes in {0} days.", days) : days === 1 ? ui(lang, "Israel votes tomorrow.") : ui(lang, "Israel votes today.");
 }
 
 /** The average beside the count: dated until election eve, "final" from then on (no new polls are published). */
 export function averageLabel(config: ResultsConfig, latest: string, now: number, lang: Lang = "en"): string {
-  const eve = Date.parse(`${config.election}T00:00:00+02:00`) - 86_400_000;
+  const eve = Date.parse(ui(lang, "{0}T00:00:00+02:00", config.election)) - 86_400_000;
   if (lang === "he") return now >= eve ? "ממוצע הסקרים הסופי" : `ממוצע הסקרים, ${shortDate(latest, "he")}`;
-  return now >= eve ? "Final poll average" : `Polling average, ${shortDate(latest)}`;
+  return now >= eve ? ui(lang, "Final poll average") : ui(lang, "Polling average, {0}", shortDate(latest, lang));
 }
 
 /** One row per channel: its latest exit poll, or null until it is added; other exit pollsters follow. */

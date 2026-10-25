@@ -7,6 +7,7 @@
  * always carry the same keys and template signatures.
  * `**x**` marks bold inside a sentence (components/coalition/Rich.tsx renders it).
  */
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 /** Party names joined as the English sentences join them: "A and B", "A, B or C". */
@@ -223,6 +224,8 @@ function lowerFirst(s: string): string {
 const builder = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): BuilderText { return editionText<BuilderText>("ar", "builder"); },
+  get fa(): BuilderText { return editionText<BuilderText>("fa", "builder"); },
   get he(): BuilderText {
     return heText<BuilderText>("builder");
   },

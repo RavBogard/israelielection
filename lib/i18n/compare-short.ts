@@ -1,3 +1,4 @@
+import { ui } from "./ui";
 /**
  * Short names for every answer in the Compare matrix (Daniel, 2026-10-06: short labels, "if it doesn't get too
  * bloated"). A cell wide enough to hold one prints it in place of the answer's number, so a reader with a few lists
@@ -115,7 +116,7 @@ const he: Record<string, string> = {
   "gaza-civilian:control": "שליטה ישראלית",
 };
 
-export const SHORT: Record<Lang, Record<string, string>> = { en, he };
+export const SHORT: Record<Lang, Record<string, string>> = { en, he, ar: en, fa: en };
 
 /** The answer's short name in the edition, or null when it has none. */
-export const shortLabel = (lang: Lang, row: string, stance: string): string | null => SHORT[lang][`${row}:${stance}`] ?? null;
+export const shortLabel = (lang: Lang, row: string, stance: string): string | null => { const text = SHORT[lang][`${row}:${stance}`]; return text ? ui(lang, text) : null; };

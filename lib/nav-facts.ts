@@ -1,6 +1,7 @@
+import { ui } from "./i18n/ui";
 import type { CountSummary } from "@/app/api/count/route";
 import { shortDate } from "./format";
-import type { Lang } from "./i18n";
+import { editionPath, type Lang } from "./i18n";
 import { pollsterText } from "./i18n/overlay-text";
 import { blocTotals, seatFigure } from "./polls";
 import { exitRows } from "./results-phase";
@@ -11,7 +12,7 @@ export type NavFactInput = { newestPoll?: string; newestBriefing?: string };
 /** A live line under a menu group, only where it changes: Polls and news carries the newest poll and briefing dates. */
 export function navFacts(i: NavFactInput, lang: Lang = "en"): Record<string, string> {
   const out: Record<string, string> = {};
-  const [poll, briefing] = lang === "he" ? ["סקר", "תדריך"] : ["poll", "briefing"];
+  const [poll, briefing] = lang === "he" ? ["סקר", "תדריך"] : [ui(lang, "poll"), ui(lang, "briefing")];
   const dated = [i.newestPoll && `${poll} ${shortDate(i.newestPoll, lang)}`, i.newestBriefing && `${briefing} ${shortDate(i.newestBriefing, lang)}`].filter(Boolean).join(", ");
   if (dated) out.polls = dated[0].toUpperCase() + dated.slice(1);
   return out;
@@ -25,7 +26,7 @@ export type ExitMeter = { pollster: string; seats: Record<BlocId, number> };
 export const averageMeter = (seats: Record<BlocId, number>, date: string, lang: Lang = "en"): Meter =>
   lang === "he"
     ? { href: "/he/polls", value: seatFigure(seats.net), text: `גוש נתניהו, ממוצע ${shortDate(date, "he")}`, seats }
-    : { href: "/polls", value: seatFigure(seats.net), text: `Netanyahu bloc, average ${shortDate(date)}`, seats };
+    : { href: editionPath("/polls", lang)!, value: seatFigure(seats.net), text: ui(lang, "Netanyahu bloc, average {0}", shortDate(date, lang)), seats };
 
 /** The first channel's exit poll on the night (Kan 11, then Channel 12, then Channel 13), as bloc seats. */
 export function firstExit(polls: Poll[], parties: Party[]): ExitMeter | null {
@@ -50,11 +51,11 @@ export function nightMeter(closed: boolean, summary: CountSummary | null, exit: 
   }
   if (summary?.state === "open") {
     const seats = Object.fromEntries(summary.blocs.map((b) => [b.id, b.seats])) as Record<BlocId, number>;
-    const what = summary.freshness === "stale" ? "saved count (stale)" : summary.phase === "early" ? "early count" : "count so far";
-    return { href: "/results", value: String(seats.net ?? 0), text: `Netanyahu bloc, ${what}`, seats, hatch: summary.phase === "early" };
+    const what = summary.freshness === "stale" ? ui(lang, "saved count (stale)") : summary.phase === "early" ? ui(lang, "early count") : ui(lang, "count so far");
+    return { href: editionPath("/results", lang)!, value: String(seats.net ?? 0), text: ui(lang, "Netanyahu bloc, {0}", what), seats, hatch: summary.phase === "early" };
   }
-  if (exit) return { href: "/results", value: String(exit.seats.net), text: `Netanyahu bloc, ${exit.pollster} exit poll`, seats: exit.seats };
-  return { href: "/results", value: null, text: "Polls have closed", seats: null };
+  if (exit) return { href: editionPath("/results", lang)!, value: String(exit.seats.net), text: ui(lang, "Netanyahu bloc, {0} exit poll", pollsterText(exit.pollster, lang).text), seats: exit.seats };
+  return { href: editionPath("/results", lang)!, value: null, text: ui(lang, "Polls have closed"), seats: null };
 }
 
 /** Cut at a word boundary, with an ellipsis, for one-line captions. */

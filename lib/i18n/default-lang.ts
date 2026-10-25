@@ -1,4 +1,4 @@
-import type { Lang } from "./index";
+import { isLang, type Lang } from "./index";
 
 /**
  * Which edition a visitor gets by default (proxy.ts). Readers in Israel, and readers whose browser puts Hebrew
@@ -45,11 +45,13 @@ export type Visit = {
 
 /** The edition this visit should get, or null to serve the page asked for. */
 export function defaultLang(v: Visit): Lang | null {
-  if (v.cookie === "en" || v.cookie === "he") return v.cookie;
+  if (v.cookie && isLang(v.cookie)) return v.cookie;
   if (v.userAgent && BOT.test(v.userAgent)) return null;
   if (v.referer && sameSite(v.referer, v.origin)) return null;
+  const browser = firstLanguage(v.acceptLanguage);
+  if (browser === "ar" || browser === "fa" || browser === "he") return browser;
   if (v.country?.toUpperCase() === "IL") return "he";
-  return firstLanguage(v.acceptLanguage) === "he" ? "he" : null;
+  return null;
 }
 
 function sameSite(referer: string, origin: string): boolean {

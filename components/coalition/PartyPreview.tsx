@@ -20,7 +20,7 @@ export default function PartyPreview({ party: p, headingId, lang }: { party: Par
   const color = partyColor(p.id);
   const bloc = blocs.find((b) => b.id === p.bloc);
   const name = partyText(p, "name", lang);
-  const href = `${lang === "he" ? "/he" : ""}/parties/${p.id}`;
+  const href = `${lang !== "en" ? `/${lang}` : ""}/parties/${p.id}`;
   const items = (key: "who" | "pledges", list: Sourced[]) => (
     <ul>
       {list.map((x, i) => (

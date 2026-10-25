@@ -1,3 +1,4 @@
+import { ui } from "./i18n/ui";
 import type { BlocId, Party, Poll, PollsConfig } from "./types";
 import type { Lang } from "./i18n";
 import { pollsterText } from "./i18n/overlay-text";
@@ -50,8 +51,10 @@ export function pollLabel(p: Poll, lang: Lang = "en"): string {
     const heName = isExit(p) ? `מדגם ${outlet}` : outlet;
     return firm ? `${heName} / ${firm}` : heName;
   }
-  const name = isExit(p) ? `${p.pollster} exit poll` : p.pollster;
-  return p.firm ? `${name} / ${p.firm}` : name;
+  const outlet = lang === "en" ? p.pollster : pollsterText(p.pollster, lang).text;
+  const name = isExit(p) ? ui(lang, "{0} exit poll", outlet) : outlet;
+  const firm = p.firm ? (lang === "en" ? p.firm : pollsterText(p.firm, lang).text) : null;
+  return firm ? `${name} / ${firm}` : name;
 }
 
 /** Seats for a party in a poll, or null when the poll did not report it separately. */

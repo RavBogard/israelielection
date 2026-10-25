@@ -26,7 +26,7 @@ export default function Countdown({ className, lang = "en" }: { className?: stri
       </>
     ) : (
       <>
-        {t.after}<Link href="/government" hrefLang={lang === "he" ? "en" : undefined}>{t.formation}</Link>
+        {t.after}<Link href="/government" hrefLang={lang !== "en" ? "en" : undefined}>{t.formation}</Link>
       </>
     );
   return <p className={`countdown${className ? ` ${className}` : ""}`}>{text}</p>;

@@ -14,7 +14,7 @@ const tick = (n: number) => (n > 0 ? `+${n}` : n < 0 ? `−${Math.abs(n)}` : "0"
 
 /** Each pollster's average gap from the site's bloc average, as a bar either side of zero. */
 export default function HouseEffects({ rows, labels, hollowNames, title, lang = "en" }: { rows: HouseEffect[]; labels: Record<"net" | "opp", string>; hollowNames: string[]; title: string; lang?: Lang }) {
-  const T = POLLS[lang], t = T.house, he = lang === "he";
+  const T = POLLS[lang], t = T.house, he = lang !== "en";
   // The gap scale is a signed number line, so it stays left to right in Hebrew, like the numerals on it.
   const M = Math.max(2, Math.ceil(Math.max(...rows.flatMap((r) => [Math.abs(r.gap.net), Math.abs(r.gap.opp)])) / 2) * 2);
   const pos = (n: number) => 50 + (n / M) * 50;

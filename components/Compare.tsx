@@ -6,8 +6,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { readIssue, readingText, stanceMap } from "@/lib/cohesion";
 import { DECLINED, MIN_PICK, isUrl, parseSelection, toggle, type PositionRow } from "@/lib/compare";
 import { mediumDate } from "@/lib/format";
-import { hePath, type Lang } from "@/lib/i18n";
-import compareText, { readingHe, type CompareText } from "@/lib/i18n/compare";
+import { editionPath, type Lang } from "@/lib/i18n";
+import compareText, { readingHe, readingLocalized, type CompareText } from "@/lib/i18n/compare";
 import { shortLabel } from "@/lib/i18n/compare-short";
 import { useLang } from "@/lib/i18n/lang";
 import { partyColor } from "@/lib/party-colors";
@@ -36,7 +36,7 @@ type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: Txt }[]; row
 
 /** What one edition prints: its UI strings, where its links go, and (Hebrew) the rows' words. */
 type Ed = { lang: Lang; T: CompareText; href: (en: string) => string; text?: Record<string, RowText> };
-const edition = (lang: Lang, text?: Record<string, RowText>): Ed => ({ lang, T: compareText[lang], href: (en) => (lang === "he" ? hePath(en) ?? en : en), text });
+const edition = (lang: Lang, text?: Record<string, RowText>): Ed => ({ lang, T: compareText[lang], href: (en) => (lang !== "en" ? editionPath(en, lang) ?? en : en), text });
 const rowLabel = (ed: Ed, row: MatrixRow): Txt => ed.text?.[row.key]?.label ?? row.label;
 const rowQuestion = (ed: Ed, row: MatrixRow): Txt | null => (ed.text ? ed.text[row.key]?.question ?? null : row.question);
 const stanceLabel = (ed: Ed, row: MatrixRow, id: string): Txt => ed.text?.[row.key]?.stances[id] ?? row.stances.find((s) => s.id === id)!.label;
@@ -135,7 +135,7 @@ function Entry({ ed, p, row, said }: { ed: Ed; p: CompareParty; row: MatrixRow; 
       <Who p={p} />
       {text && <p className="pos"><Said ed={ed} row={row} said={said} /></p>}
       <p className="fig-src">
-        {ed.text ? <>{src.text && ed.T.sourcePrefix}{said && <SourceHe source={said.source} url={said.url} date={said.date} />}</> : src.url ? <a href={src.url} rel="noopener">{src.text ?? src.url}</a> : src.text}
+        {ed.text ? <>{src.text && ed.T.sourcePrefix}{said && <SourceHe lang={ed.lang} source={said.source} url={said.url} date={said.date} />}</> : src.url ? <a href={src.url} rel="noopener">{src.text ?? src.url}</a> : src.text}
         {said?.basis === "record" && <>{ed.T.recordNote}</>}
         {src.text || said?.basis === "record" ? ". " : ""}
         {evidenceLabel(said, ed.lang)}
@@ -164,7 +164,7 @@ function Panel({ ed, row, shown, colSpan }: { ed: Ed; row: MatrixRow; shown: Com
         <div className="mx-panel" id={`panel-${row.key}`}>
           <header>
             {row.depth === 1 && question && <p className="q"><Loc v={question} /></p>}
-            <p className="verdict">{ed.lang === "he" ? readingHe(reading, nameOf, (id) => plain(stanceLabel(ed, row, id))) : readingText(reading, nameOf)}</p>
+            <p className="verdict">{ed.lang === "he" ? readingHe(reading, nameOf, (id) => plain(stanceLabel(ed, row, id))) : ed.lang === "en" ? readingText(reading, nameOf) : readingLocalized(reading, id => plain(stanceLabel(ed, row, id)), ed.lang)}</p>
           </header>
           {row.stances.map((s) => {
             const holders = shown.filter((p) => {

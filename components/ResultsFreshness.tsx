@@ -1,10 +1,10 @@
 import type { Live } from "@/lib/results-live";
-import type { Lang } from "@/lib/i18n";
+import { locale, type Lang } from "@/lib/i18n";
 import resultsText from "@/lib/i18n/results";
 const EN = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
 // Hebrew: day first, 24-hour, Israel time understood ("27.10, 23:41").
 const HE = new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" });
-export const freshnessTime = (value: string, lang: Lang = "en") => (lang === "he" ? HE : EN).format(new Date(value));
+export const freshnessTime = (value: string, lang: Lang = "en") => (lang === "he" ? HE : lang === "en" ? EN : new Intl.DateTimeFormat(locale(lang), {timeZone:"Asia/Jerusalem", day:"numeric", month:"numeric", hour:"2-digit", minute:"2-digit", hourCycle:"h23"})).format(new Date(value));
 export default function ResultsFreshness({ live, lang = "en" }: { live: Extract<Live, { state: "open" }>; lang?: Lang }) {
   const t = resultsText[lang].freshness;
   const time = (value: string) => freshnessTime(value, lang);

@@ -25,6 +25,10 @@
 .nav-mobile-toggle { display: none; }
 /* The language toggle: two cells, EN and עב, ruled in ink like the Menu button; the current edition filled. */
 .lang-toggle { grid-area: lang; align-self: center; display: flex; border: 1px solid var(--ink); }
+.lang-toggle select { max-width: 115px; min-height: 34px; padding: 4px 6px; font: 600 13px var(--body); color: var(--ink); background: var(--bg); border: 0; border-radius: 0; cursor: pointer; }
+.lang-toggle select:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.language-links { display: inline-flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 767px) { .lang-toggle select { min-height: 44px; } }
 .lt-cell { display: flex; align-items: center; justify-content: center; min-width: 36px; min-height: 34px; padding: 0 8px; font: 600 13px var(--body); letter-spacing: 0; color: var(--ink); text-decoration: none; }
 .lt-cell + .lt-cell { border-inline-start: 1px solid var(--ink); }
 .lt-cell[aria-current] { background: var(--ink); color: var(--bg); }

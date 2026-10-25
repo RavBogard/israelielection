@@ -10,6 +10,7 @@
  * href is given in its English form and the page maps it to the Hebrew edition when there is one. Figures arrive already
  * formatted (dates, times, percentages, signed numbers), so Hebrew digits and order stay as the desk writes them.
  */
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 /** Hebrew seats: "מנדט אחד", "שני מנדטים", "4 מנדטים", "4.2 מנדטים" (STYLE.md: never "1 מנדטים"). */
@@ -175,6 +176,8 @@ const en = {
 const resultsText = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): ResultsText { return editionText<ResultsText>("ar", "results"); },
+  get fa(): ResultsText { return editionText<ResultsText>("fa", "results"); },
   get he(): ResultsText {
     return heText<ResultsText>("results");
   },

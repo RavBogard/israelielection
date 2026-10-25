@@ -21,11 +21,11 @@ const nm=(text:string,lang?:Lang):ReactNode=>lang==="en"?<span lang="en" dir="lt
 export default function HomeRace({model,change,rtl,heading}:{model:HomeRaceModel;change?:BlocChange|null;rtl?:boolean;heading?:ReactNode}){
  // The count gives whole seats; only the polling average keeps a decimal.
  const seats=(n:number)=>model.isAverage||!Number.isInteger(n)?seatFigure(n):String(n);
- const lang=useLang(),t=home[lang].race,he=lang==="he",flip=rtl??he;
+ const lang=useLang(),t=home[lang].race,he=lang!=="en",flip=rtl??he;
  const range=change?sparkRange(change.points):0;
  const [selected,setSelected]=useState<BlocId|null>(null),buttons=useRef<Partial<Record<BlocId,HTMLButtonElement|null>>>({}),visual=useRef<HTMLDivElement>(null);
  const layout=useMemo(()=>homeMosaicLayout(model,lang),[model,lang]),view=homeMosaicView(layout,selected),active=model.rows.find(row=>row.id===selected);
- const profile=(id:string)=>he?`/he/parties/${id}`:`/parties/${id}`;
+ const profile=(id:string)=>he?`/${lang}/parties/${id}`:`/parties/${id}`;
  function choose(id:BlocId,fromGrid=false){const next=selected===id?null:id;setSelected(next);if(fromGrid)buttons.current[id]?.focus({preventScroll:true});if(next&&window.innerWidth<=1000)requestAnimationFrame(()=>{const element=visual.current;if(element&&(element.getBoundingClientRect().bottom>window.innerHeight||element.getBoundingClientRect().top<0))element.scrollIntoView({block:"nearest",behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});}
  function reset(){setSelected(null);if(selected)buttons.current[selected]?.focus();}
  // Hebrew: cells from the right, the grid moved right by the label's 20 units.

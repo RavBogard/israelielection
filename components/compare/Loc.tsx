@@ -1,3 +1,4 @@
+import type { Lang } from "@/lib/i18n";
 import { isUrl } from "@/lib/compare";
 import { heDateText } from "@/lib/i18n/compare";
 import type { Localized } from "@/lib/i18n/localize";
@@ -15,23 +16,23 @@ export const plain = (t: Txt): string => (typeof t === "string" ? t : t.text);
 export default function Loc({ v }: { v: Txt }) {
   if (typeof v === "string") return <>{v}</>;
   if (v.lang === "en") return <span lang="en" dir="ltr">{v.text}</span>;
-  return <>{v.translated ? `${v.text} (תרגום)` : v.text}</>;
+  return <>{v.translated ? `${v.text} ${{he: "(תרגום)", ar: "(ترجمة)", fa: "(ترجمه)", en: "(translation)"}[v.lang]}` : v.text}</>;
 }
 
 /** English that stays English inside a Hebrew page (an outlet's name, a source line); a plain string in English. */
-export function En({ children, lang }: { children: string; lang: "en" | "he" }) {
-  return lang === "he" ? <span lang="en" dir="ltr">{children}</span> : <>{children}</>;
+export function En({ children, lang }: { children: string; lang: Lang }) {
+  return lang !== "en" ? <span lang="en" dir="ltr">{children}</span> : <>{children}</>;
 }
 
 /**
  * A source line in Hebrew: the outlet as the data writes it (English, marked), then the date in Hebrew when it reads
  * whole ("Sep 22, 2026" → "22 בספטמבר 2026"). The link goes on the outlet, or on the date when there is no outlet.
  */
-export function SourceHe({ source: s, url: u, date: d0 }: { source?: string | null; url?: string | null; date?: string | null }) {
+export function SourceHe({ source: s, url: u, date: d0, lang = "he" }: { source?: string | null; url?: string | null; date?: string | null; lang?: Lang }) {
   const source = s?.trim() || null;
   const date = d0?.trim() || null;
   const url = isUrl(u) ? u.trim() : null;
-  const d = date && !(source ?? "").includes(date) ? heDateText(date) : null;
+  const d = date && !(source ?? "").includes(date) ? (lang === "he" ? heDateText(date) : { text: date, lang: "en" as const }) : null;
   if (!source && !d) return url ? <a href={url} rel="noopener" lang="en" dir="ltr">{url}</a> : null;
   return (
     <>

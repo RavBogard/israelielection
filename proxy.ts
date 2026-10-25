@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { hePath } from "@/lib/i18n";
+import { editionPath } from "@/lib/i18n";
 import { defaultLang, LANG_COOKIE } from "@/lib/i18n/default-lang";
 
 /**
@@ -22,7 +22,7 @@ export function proxy(request: NextRequest) {
     referer: h.get("referer"),
     origin: request.nextUrl.origin,
   });
-  const to = lang === "he" ? hePath(request.nextUrl.pathname) : null;
+  const to = lang && lang !== "en" ? editionPath(request.nextUrl.pathname, lang) : null;
   if (!to) return;
   const url = request.nextUrl.clone();
   url.pathname = to;

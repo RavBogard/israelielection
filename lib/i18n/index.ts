@@ -1,11 +1,16 @@
 /**
- * The two editions. English is the site; Hebrew covers the tools (PLAN.md, docs/planning/2026-10-06-hebrew):
- * home, polls, Coalition Builder, Compare, party profiles and results, each at /he + the English path.
- * Everything else stays English, and Hebrew pages link to it.
+ * English is the full site. Hebrew, Arabic and Persian cover home, polls, Coalition Builder,
+ * Compare, party profiles and results, under /he, /ar and /fa. Other reference pages stay English.
  */
-export type Lang = "en" | "he";
+export type Lang = "en" | "he" | "ar" | "fa";
+export type ToolLang = Exclude<Lang, "en">;
 
-export const LANGS: readonly Lang[] = ["en", "he"];
+export const LANGS: readonly Lang[] = ["en", "he", "ar", "fa"];
+export const RTL_LANGS: readonly ToolLang[] = ["he", "ar", "fa"];
+export const isLang = (value: string): value is Lang => LANGS.includes(value as Lang);
+export const isRtl = (lang: Lang) => lang !== "en";
+/** Gregorian dates and Latin digits keep election figures consistent across editions. */
+export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
 export const HE_PATHS = ["/", "/polls", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
@@ -59,14 +64,28 @@ export function hePath(enHref: string): string | null {
 
 /** The English edition of a Hebrew path, keeping its query and fragment: "/he" → "/", "/he/polls" → "/polls". English paths pass through. */
 export function enPath(heHref: string): string {
-  if (!isHePath(heHref)) return heHref;
   const [path, rest] = split(heHref);
-  return `${trim(path.slice(HE_PREFIX.length))}${rest}`;
+  const prefix = /^\/(he|ar|fa)(?=\/|$)/.exec(path)?.[0];
+  return prefix ? `${trim(path.slice(prefix.length))}${rest}` : heHref;
+}
+
+/** The same tool in any edition; guides without a translated edition return null. */
+export function editionPath(href: string, lang: Lang): string | null {
+  const english = enPath(href);
+  if (lang === "en") return english;
+  const [path, suffix] = split(english);
+  if (!hasHebrew(path)) return null;
+  const normalized = trim(path);
+  return `/${lang}${normalized === "/" ? "" : normalized}${suffix}`;
+}
+
+export function pathLang(href: string): Lang {
+  return (/^\/(he|ar|fa)(?=\/|[?#]|$)/.exec(href)?.[1] as ToolLang | undefined) ?? "en";
 }
 
 /** The same page in the other edition, or null when it has none. */
 export function otherEdition(href: string): { lang: Lang; href: string } | null {
-  if (isHePath(href)) return { lang: "en", href: enPath(href) };
+  if (pathLang(href) !== "en") return { lang: "en", href: enPath(href) };
   const he = hePath(href);
   return he ? { lang: "he", href: he } : null;
 }

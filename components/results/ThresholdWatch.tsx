@@ -21,7 +21,7 @@ const FLOOR = 4;
  */
 export default function ThresholdWatch({ closed = false, lang = "en" }: { closed?: boolean; lang?: Lang }) {
   const t = resultsText[lang].pollThreshold;
-  const side = lang === "he" ? "right" : "left";
+  const side = lang !== "en" ? "right" : "left";
   const who = (pollster: string) => pollsterName(pollster, lang).text;
   const said = (seats: number) => (seats ? t.seats(seats) : t.below);
   const rows = parties

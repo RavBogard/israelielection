@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { hePath, type Lang } from "@/lib/i18n";
+import { editionPath, type Lang } from "@/lib/i18n";
 
 /**
  * Draws a lib/i18n/results.ts string: plain text with links written [text](href). Internal hrefs are written in their
@@ -15,10 +15,10 @@ export function rich(s: string, lang: Lang): ReactNode {
     const [, text, href] = m;
     if (!href.startsWith("/")) return <a key={i} href={href}>{text}</a>;
     if (lang === "en") return <Link key={i} href={href}>{text}</Link>;
-    const he = hePath(href);
+    const he = editionPath(href, lang);
     return he ? <Link key={i} href={he}>{text}</Link> : <Link key={i} href={href} hrefLang="en">{text}</Link>;
   });
 }
 
 /** An internal link's address in the given edition: "/parties/likud" → "/he/parties/likud" in Hebrew. */
-export const edHref = (href: string, lang: Lang) => (lang === "he" ? (hePath(href) ?? href) : href);
+export const edHref = (href: string, lang: Lang) => (lang !== "en" ? (editionPath(href, lang) ?? href) : href);

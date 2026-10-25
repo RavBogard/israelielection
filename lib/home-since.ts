@@ -1,3 +1,4 @@
+import { ui } from "./i18n/ui";
 /** Home "Since yesterday": the newest polls as slips, one computed finding, and the hero's citation. */
 import { MAJORITY } from "./coalition";
 import { longDate, shortDate } from "./format";
@@ -52,18 +53,18 @@ export function findingSentence(polls: Poll[], parties: Party[], blocs: Bloc[], 
   let short = 0;
   for (const p of polls) {
     const seats = blocTotals(p, parties)[id];
-    if (seats >= MAJORITY) over.push(p.pollster);
-    else if (seats + crossBloc(p, parties) >= MAJORITY) unclear.push(p.pollster);
+    if (seats >= MAJORITY) over.push(pollsterText(p.pollster, lang).text);
+    else if (seats + crossBloc(p, parties) >= MAJORITY) unclear.push(pollsterText(p.pollster, lang).text);
     else short++;
   }
   const n = polls.length - unclear.length;
-  const all = n === 1 ? "the one current poll" : n === 2 ? "both current polls" : `all ${n} current polls`;
+  const all = n === 1 ? ui(lang, "the one current poll") : n === 2 ? ui(lang, "both current polls") : ui(lang, "all {0} current polls", n);
   let s: string;
-  if (!n) s = `No current poll separates the ${label} clearly enough to compare with ${MAJORITY}`;
-  else if (!over.length) s = `The ${label} is short of ${MAJORITY} in ${all}`;
-  else if (!short) s = `The ${label} has ${MAJORITY} or more in ${all}`;
-  else s = `The ${label} is short of ${MAJORITY} in ${short} of ${n} current ${pollWord(n)}; ${over.length === 1 ? "only " : ""}${names(over)} ${over.length === 1 ? "has" : "have"} it at ${MAJORITY} or more`;
-  if (unclear.length && n) s += `. ${names(unclear)} ${unclear.length === 1 ? "reports" : "report"} lists from different blocs together and ${unclear.length === 1 ? "is" : "are"} left out`;
+  if (!n) s = ui(lang, "No current poll separates the {0} clearly enough to compare with {1}", label, MAJORITY);
+  else if (!over.length) s = ui(lang, "The {0} is short of {1} in {2}", label, MAJORITY, all);
+  else if (!short) s = ui(lang, "The {0} has {1} or more in {2}", label, MAJORITY, all);
+  else s = ui(lang, "The {0} is short of {1} in {2} of {3} current {4}; {5}{6} {7} it at {8} or more", label, MAJORITY, short, n, ui(lang, pollWord(n)), over.length === 1 ? ui(lang, "only ") : "", names(over), over.length === 1 ? ui(lang, "has") : ui(lang, "have"), MAJORITY);
+  if (unclear.length && n) s += ui(lang, ". {0} {1} lists from different blocs together and {2} left out", names(unclear), unclear.length === 1 ? ui(lang, "reports") : ui(lang, "report"), unclear.length === 1 ? ui(lang, "is") : ui(lang, "are"));
   return `${s}.`;
 }
 
@@ -104,9 +105,9 @@ export function citeText(average: Poll, count: number, blocLabel: string, seats:
   if (lang === "he")
     return `ממוצע הסקרים של פתק 2026, ${longDate(average.published, "he")}: ${blocLabel} ${seatFigure(seats)} מתוך 120 מנדטים (${plural(count, { one: "סקר אחד", two: "שני סקרים", other: `${count} סקרים` })}). ${site ?? "israelielection.org/he/polls"}`;
   site ??= "israelielection.org/polls";
-  return `Israel Votes 2026 polling average, ${longDate(average.published)}: ${blocLabel} ${seatFigure(seats)} of 120 seats (${count} ${pollWord(count)}). ${site}`;
+  return ui(lang, "Israel Votes 2026 polling average, {0}: {1} {2} of 120 seats ({3} {4}). {5}", longDate(average.published, lang), blocLabel, seatFigure(seats), count, ui(lang, pollWord(count)), site);
 }
 
 /** "No new polls since Oct 5", dated by the newest poll. */
 export const noNewLabel = (newest: Poll | undefined, lang: Lang = "en") =>
-  lang === "he" ? (newest ? `אין סקרים חדשים מאז ${shortDate(newest.published, "he")}` : "עדיין אין סקרים") : newest ? `No new polls since ${shortDate(newest.published)}` : "No polls yet";
+  lang === "he" ? (newest ? `אין סקרים חדשים מאז ${shortDate(newest.published, "he")}` : "עדיין אין סקרים") : newest ? ui(lang, "No new polls since {0}", shortDate(newest.published, lang)) : ui(lang, "No polls yet");

@@ -5,7 +5,7 @@ import gaza from "@/data/gaza-security-evidence.json";
 import type { Lang } from "@/lib/i18n";
 import compareText from "@/lib/i18n/compare";
 import type { Localized } from "@/lib/i18n/localize";
-import { OVERLAYS, overlayText, positionText, questionText } from "@/lib/i18n/overlay-text";
+import { overlays, overlayText, positionText, questionText } from "@/lib/i18n/overlay-text";
 import { comparisonIssues, isRecord, isUnstated, ISSUES } from "@/lib/positions";
 import { CATEGORY_TINTS, rampColor, whiteOn } from "./ramp";
 
@@ -125,7 +125,7 @@ export type RowText = {
 /** The data/positions file each of the seven issues reads (its overlay is data/he/positions/<file>.json). */
 const FILES: Record<AxisKey, string> = { ...PAGES, econ: "economy" };
 
-const local = (text: string): Localized => ({ text, lang: "he" });
+
 const subLabel = (s: string) => s.replace(/^[^:]+:\s*/, "");
 
 /**
@@ -135,6 +135,7 @@ const subLabel = (s: string) => s.replace(/^[^:]+:\s*/, "");
  */
 export function matrixText(rows: MatrixRow[], lang: Lang): Record<string, RowText> {
   const T = compareText[lang];
+  const local = (text: string): Localized => ({ text, lang });
   const out: Record<string, RowText> = {};
   for (const row of rows) {
     const axis = AXES.find((a) => a.key === row.key);
@@ -164,11 +165,11 @@ export function matrixText(rows: MatrixRow[], lang: Lang): Record<string, RowTex
       if (data.note) note.push(positionText(file, data, "note", lang));
     } else {
       // Gaza: the evidence file is its own positions file, keyed "_" for its header and by party for its rows.
-      const head = OVERLAYS.gaza["_"];
+      const head = overlays(lang).gaza["_"];
       label = overlayText(gaza.title, head?.title, lang);
       if (gaza.question?.trim()) question = overlayText(gaza.question, head?.question, lang);
       gaza.stances.forEach((s, i) => (stances[s.id] = overlayText(s.label, head?.[`stances.${i}.label`], lang)));
-      for (const r of gaza.rows) if (r.text?.trim()) said[r.party] = overlayText(r.text, OVERLAYS.gaza[r.party]?.text, lang);
+      for (const r of gaza.rows) if (r.text?.trim()) said[r.party] = overlayText(r.text, overlays(lang).gaza[r.party]?.text, lang);
       if (gaza.note) note.push(overlayText(gaza.note, head?.note, lang));
     }
     out[row.key] = { label, question, note, stances, said };

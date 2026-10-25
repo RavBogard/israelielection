@@ -172,4 +172,4 @@ export function dependenceText(d: Dependence, nameOf: (id: string) => string, P:
 }
 
 /** The Compare page with these parties picked, in the given edition. */
-export const compareHref = (ids: string[], lang: Lang = "en") => `${lang === "he" ? "/he" : ""}/compare?p=${ids.join(",")}`;
+export const compareHref = (ids: string[], lang: Lang = "en") => `${lang !== "en" ? `/${lang}` : ""}/compare?p=${ids.join(",")}`;

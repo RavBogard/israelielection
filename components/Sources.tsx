@@ -2,6 +2,7 @@ import { partiesData, pollsData } from "@/lib/data";
 import { httpUrl, mediumDate } from "@/lib/format";
 import { pollLabel } from "@/lib/polls";
 import type { Lang } from "@/lib/i18n";
+import { ui } from "@/lib/i18n/ui";
 // Server only: loads the Hebrew overlays pollLabel reads for the Hebrew source lines.
 import "@/lib/i18n/overlays";
 
@@ -11,6 +12,15 @@ const En = ({ children }: { children: string }) => <span lang="en" dir="ltr">{ch
 /** Poll source lines, generated from data/polls.json. */
 export function PollSources({ lang = "en" }: { lang?: Lang }) {
   if (lang === "he") return <PollSourcesHe />;
+  if (lang !== "en") return <>{pollsData.polls.map(p => <li key={p.id}>
+    <b>{pollLabel(p, lang)}</b>{" "}{ui(lang, "Published {0}", mediumDate(p.published, lang))}
+    {p.fieldwork && <>, {ui(lang, "Fieldwork")}: <En>{p.fieldwork}</En></>}
+    {p.n && <>; {ui(lang, "Sample: {0}", p.n)}</>}
+    {p.margin && <>; {ui(lang, "Margin of error")}: <bdi dir="ltr">{p.margin}</bdi></>}
+    {p.via && <>, <En>{p.via}</En></>}
+    {httpUrl(p.url) && <>: <a href={httpUrl(p.url)!} target="_blank" rel="noopener" lang="en" dir="ltr">{p.url!.replace(/^https?:\/\/(www\.)?/, "")}</a></>}
+    {p.note && <>. <En>{p.note}</En></>}
+  </li>)}</>;
   return (
     <>
       {pollsData.polls.map((p) => (
@@ -60,6 +70,10 @@ function PollSourcesHe() {
 
 /** Profile provenance lines shared by every page that shows party profiles. */
 export function ProfileSources({ lang = "en" }: { lang?: Lang }) {
+  if (lang === "ar" || lang === "fa") return <>
+    <li>{ui(lang, "Party profiles: research registers updated {0}. Sources are named beside each item; translated quotations are marked.", mediumDate(partiesData.updated, lang))}</li>
+    <li>{ui(lang, "Leader biographies")}: <En>{partiesData.bioSource}</En></li>
+  </>;
   if (lang === "he")
     return (
       <>

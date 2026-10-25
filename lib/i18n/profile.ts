@@ -6,6 +6,7 @@
  * Data text (who, voters, bios, pledges, the quote, the parties' words) comes from lib/i18n/overlays.ts, not from here.
  */
 import type { AxisKey } from "@/lib/compare";
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 /** Hebrew ordinals for a list's size rank in its bloc. */
@@ -155,6 +156,8 @@ const en = {
 const profileText = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): ProfileText { return editionText<ProfileText>("ar", "profile"); },
+  get fa(): ProfileText { return editionText<ProfileText>("fa", "profile"); },
   get he(): ProfileText {
     return heText<ProfileText>("profile");
   },

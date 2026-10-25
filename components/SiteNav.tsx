@@ -1,4 +1,5 @@
 "use client";
+import type { Lang } from "@/lib/i18n";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import {type MouseEvent,useCallback,useEffect,useRef,useState,useSyncExternalStore} from "react";
@@ -23,9 +24,9 @@ function usePollsClosed(pollsClose:string,atRender:boolean){
  * utilities sit at the foot of every open panel; the phone menu lists the groups, then every utility.
  */
 /** A menu label: marked when still in English, with "(באנגלית)" after a Hebrew menu's link to an English-only page. English menus render the bare label. */
-function Label({n,text,lang}:{n:NavItem;text:string;lang:"en"|"he"}){
- const words=n.lang&&n.lang!==lang?<span lang={n.lang} dir={n.lang==="he"?"rtl":"ltr"}>{text}</span>:text;
- return lang==="he"&&n.hrefLang==="en"?<>{words} {chrome.he.inEnglish}</>:<>{words}</>;
+function Label({n,text,lang}:{n:NavItem;text:string;lang:Lang}){
+ const words=n.lang&&n.lang!==lang?<span lang={n.lang} dir={n.lang!=="en"?"rtl":"ltr"}>{text}</span>:text;
+ return lang!=="en"&&n.hrefLang==="en"?<>{words} {chrome[lang].inEnglish}</>:<>{words}</>;
 }
 
 export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,groups=NAV_GROUPS,utilities=NAV_UTILITIES,bar=NAV_BAR,home="/"}:{facts?:Record<string,string>;pollsClose:string;closedAtRender?:boolean;meter:{average:Meter;exit:ExitMeter|null};groups?:readonly NavGroup[];utilities?:readonly NavItem[];bar?:readonly string[];home?:string}){

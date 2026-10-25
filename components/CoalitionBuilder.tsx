@@ -72,7 +72,7 @@ function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
       ) : poll.id === AVERAGE_ID ? (
         <>
           {rich(T.noteAverage(mainPolls.length, mainPolls.map((p) => `${pollsterText(p.pollster, lang).text} ${shortDate(p.published, lang)}`).join(", ")))}
-          <Link href={lang === "he" ? "/he/polls#method" : "/polls#method"}>{T.noteMethod}</Link>. {T.noteByBloc}
+          <Link href={lang !== "en" ? `/${lang}/polls#method` : "/polls#method"}>{T.noteMethod}</Link>. {T.noteByBloc}
         </>
       ) : (
         <>{rich(T.notePoll(pollLabel(poll, lang), mediumDate(poll.published, lang)))}{T.noteByBloc}</>

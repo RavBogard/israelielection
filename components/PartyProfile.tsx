@@ -4,9 +4,9 @@ import "./party-profile.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import { partiesData } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
-import { hePath, type Lang } from "@/lib/i18n";
+import { editionPath, type Lang } from "@/lib/i18n";
 import type { Localized } from "@/lib/i18n/localize";
-import { OVERLAYS, blocText, overlayText, partyText, pollsterText } from "@/lib/i18n/overlays";
+import { overlays, blocText, overlayText, partyText, pollsterText } from "@/lib/i18n/overlays";
 import profileText from "@/lib/i18n/profile";
 import { seatFigure } from "@/lib/polls";
 import { lettersOf } from "@/lib/letters";
@@ -64,8 +64,8 @@ const MAJORITY = 61, TOTAL = 120;
  */
 export default function PartyProfile({ party: p, lang = "en" }: { party: Party; lang?: Lang }) {
   const P = profileText[lang];
-  const he = lang === "he";
-  const href = (en: string) => (he ? hePath(en) ?? en : en);
+  const he = lang !== "en";
+  const href = (en: string) => (he ? editionPath(en, lang) ?? en : en);
   /** A party field in the page's edition: the English string as is, or the Hebrew overlay's Localized. */
   const pt = (field: string, english: string): Txt => (he ? partyText(p, field, lang) : english);
   const color = partyColor(p.id);
@@ -255,7 +255,7 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
                   <h2>{P.text.words}</h2>
                   <blockquote className="pp-quote">
                     {P.text.quoteOpen}{typeof quote === "string" ? quote : <Loc v={{ ...quote, translated: undefined }} />}{P.text.quoteClose}
-                    {typeof quote !== "string" && quote.translated ? " (תרגום)" : null}
+                    {typeof quote !== "string" && quote.translated ? ` ${{en:"(translation)",he:"(תרגום)",ar:"(ترجمة)",fa:"(ترجمه)"}[lang]}` : null}
                     <footer><Loc v={speaker} />. {he ? <span lang="en" dir="ltr">{p.quote.source}</span> : p.quote.source}</footer>
                   </blockquote>
                 </>
@@ -290,7 +290,7 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
 
 /** The voter-base entry with its words in the page's edition (data/he/voter-base.json, keyed by party id). */
 function localVoterBase(id: string, vb: VoterBase, lang: Lang): VoterBase {
-  const o = OVERLAYS.voterBase[id];
+  const o = overlays(lang).voterBase[id];
   const t = (english: string, field: string): string => {
     const l: Localized = overlayText(english, o?.[field], lang);
     return l.text;

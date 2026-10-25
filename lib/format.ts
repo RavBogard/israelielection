@@ -1,4 +1,4 @@
-import type { Lang } from "./i18n";
+import { locale, type Lang } from "./i18n";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -18,6 +18,7 @@ const heDate = (iso: string, style: keyof typeof HE) => HE[style].format(new Dat
 /** "2026-10-02" → "Oct 2"; Hebrew "2.10" */
 export function shortDate(iso: string, lang: Lang = "en"): string {
   if (lang === "he") return heDate(iso, "short");
+  if (lang !== "en") return editionDate(iso, lang, "short");
   const [, m, d] = iso.split("-").map(Number);
   return `${MONTHS[m - 1]} ${d}`;
 }
@@ -25,12 +26,14 @@ export function shortDate(iso: string, lang: Lang = "en"): string {
 /** "2026-10-02" → "Oct 2, 2026"; Hebrew "2.10.26" */
 export function mediumDate(iso: string, lang: Lang = "en"): string {
   if (lang === "he") return heDate(iso, "medium");
+  if (lang !== "en") return editionDate(iso, lang, "medium");
   return `${shortDate(iso)}, ${iso.slice(0, 4)}`;
 }
 
 /** "2026-10-02" → "October 2, 2026"; Hebrew "2 באוקטובר 2026" */
 export function longDate(iso: string, lang: Lang = "en"): string {
   if (lang === "he") return heDate(iso, "long");
+  if (lang !== "en") return editionDate(iso, lang, "long");
   const [y, m, d] = iso.split("-").map(Number);
   return `${LONG[m - 1]} ${d}, ${y}`;
 }
@@ -44,3 +47,5 @@ export function fmt(x: number): string {
 export function httpUrl(u: string | null): string | null {
   return u && /^https?:\/\//i.test(u) ? u : null;
 }
+
+function editionDate(iso: string, lang: Lang, style: "short" | "medium" | "long"): string { return new Intl.DateTimeFormat(locale(lang), { timeZone: "UTC", day: "numeric", month: style === "long" ? "long" : "numeric", ...(style === "short" ? {} : {year: "numeric" as const}) }).format(new Date(`${iso.slice(0,10)}T12:00:00Z`)); }

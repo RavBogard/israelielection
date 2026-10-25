@@ -6,6 +6,12 @@ import { HE_PATHS } from "./lib/i18n";
 const req = (path: string, headers: Record<string, string> = {}) => new NextRequest(new URL(path, "https://www.israelielection.org"), { headers: { "user-agent": "Mozilla/5.0", ...headers } });
 
 describe("proxy", () => {
+  it("redirects to Arabic or Persian with the query intact", () => {
+    for (const lang of ["ar", "fa"]) {
+      expect(proxy(req("/polls?poll=latest", { "accept-language": `${lang}-XX` }))?.headers.get("location")).toBe(`https://www.israelielection.org/${lang}/polls?poll=latest`);
+      expect(proxy(req("/", { cookie: `lang=${lang}`, "x-vercel-ip-country": "IL" }))?.headers.get("location")).toBe(`https://www.israelielection.org/${lang}`);
+    }
+  });
   it("runs on exactly the English pages with a Hebrew edition", () => {
     expect(config.matcher).toEqual(HE_PATHS.map((p) => p.replace("[id]", ":id")));
   });

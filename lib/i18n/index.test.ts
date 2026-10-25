@@ -1,7 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { enPath, hasHebrew, hePath, isHePath, otherEdition } from "./index";
+import { editionPath, pathLang, enPath, hasHebrew, hePath, isHePath, otherEdition } from "./index";
 
 describe("edition paths", () => {
+  it("switches directly between every edition and preserves tool state", () => {
+    for (const from of ["en", "he", "ar", "fa"] as const) {
+      const source = editionPath("/coalition-builder?with=likud,shas&poll=results#seats", from)!;
+      for (const to of ["en", "he", "ar", "fa"] as const) {
+        expect(editionPath(source, to)).toBe(`${to === "en" ? "" : `/${to}`}/coalition-builder?with=likud,shas&poll=results#seats`);
+      }
+    }
+    expect(editionPath("/ar", "fa")).toBe("/fa");
+    expect(editionPath("/fa/parties/likud/", "ar")).toBe("/ar/parties/likud");
+    expect(editionPath("/about", "fa")).toBeNull();
+    expect(pathLang("/ar?x=1")).toBe("ar");
+    expect(pathLang("/faraway")).toBe("en");
+  });
   it("knows which English pages have a Hebrew edition", () => {
     for (const p of ["/", "/polls", "/coalition-builder", "/compare", "/parties/likud", "/results", "/polls?poll=x", "/compare/"]) expect(hasHebrew(p)).toBe(true);
     for (const p of ["/about", "/parties", "/parties/likud/extra", "/how-it-works", "/news/2026-10-05", "/pollsx"]) expect(hasHebrew(p)).toBe(false);

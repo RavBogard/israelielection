@@ -15,7 +15,7 @@ const ctx = context as unknown as { gaza: [number, number][][]; westBank: [numbe
  */
 export default function StrongholdsMap({ data, color, name, lang = "en" }: { data: Strongholds; color: string; name: string; lang?: Lang }) {
   const P = profileText[lang].map;
-  const he = lang === "he";
+  const he = lang !== "en";
   const xs = data.dots.map((d) => d.x), ys = data.dots.map((d) => d.y);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
   // The country fills a central band; the named places are set in the margins either side of it, so no label sits on a dot.

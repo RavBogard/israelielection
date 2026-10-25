@@ -14,7 +14,7 @@ type Props = { polls: Poll[]; parties: Pick<Party, "id" | "name" | "bloc">[]; bl
 /** A poll's own seat total (whole seats as printed); averaged figures use seatFigure. */
 const number = (value: number) => (Math.round(value * 10) / 10).toLocaleString("en-US");
 export default function PollSensitivity({ polls, parties, blocs, config }: Props) {
-  const lang = useLang(), he = lang === "he", t = POLLS[lang].sens, pn = (name: string) => pollsterName(name, lang);
+  const lang = useLang(), he = lang !== "en", t = POLLS[lang].sens, pn = (name: string) => pollsterName(name, lang);
   const params = useSearchParams(); const router = useRouter(); const query = params.toString();
   const defaults = parties.filter((p) => p.bloc === "net" && polls.some((poll) => poll.results[p.id] || poll.combined.some((group) => group.parties.includes(p.id)))).map((p) => p.id);
   function read() { const q = new URLSearchParams(query); return { fiction:readSyntheticShare(q.get("synthetic")), selected: q.has("with") ? [...new Set((q.get("with") ?? "").split(",").filter((id) => parties.some((p) => p.id === id)))] : defaults, days: [7, 14, 28].includes(Number(q.get("window"))) ? Number(q.get("window")) : config.currentWindowDays, weighting: q.get("weight") === "equal" ? "equal" as Weighting : "sqrt" as Weighting, excluded: [...new Set((q.get("exclude") ?? "").split(",").filter((name) => config.pollsters.includes(name)))] }; }
@@ -35,7 +35,7 @@ export default function PollSensitivity({ polls, parties, blocs, config }: Props
   const hypothetical = syntheticThresholdSeats(fiction);
   async function share() {
     const q = writeSensitivityView(new URLSearchParams(params),settings);
-    const path = `${he ? "/he/polls" : "/polls"}?${q}#sensitivity`; const url = `https://www.israelielection.org${path}`; setShareUrl(url); router.push(path, { scroll: false });
+    const path = `${he ? `/${lang}/polls` : "/polls"}?${q}#sensitivity`; const url = `https://www.israelielection.org${path}`; setShareUrl(url); router.push(path, { scroll: false });
     try { await navigator.clipboard.writeText(url); setShareStatus(t.copied); } catch { setShareStatus(t.copyFailed); }
   }
   return <section id="sensitivity" className="poll-sensitivity" aria-labelledby="sensitivity-h"><h2 id="sensitivity-h" className="sec-h">{t.title}</h2><p>{t.intro}</p>

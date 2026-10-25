@@ -1,3 +1,4 @@
+import { RTL_LANGS } from "@/lib/i18n";
 import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import { Suspense } from "react";
@@ -21,13 +22,13 @@ export default async function Page() {
   // Seat lines from the current average, so a search for a party or bloc answers with its number first.
   const asOf = averagePoll.published ? shortDate(averagePoll.published) : null, totals = blocTotals(averagePoll, parties);
   const figure = (name: string, id: string) => { const r = averagePoll.results[id]; return asOf && r ? figureLine(name, r.belowThreshold || r.seats === 0 ? "below" : r.seats, asOf) : undefined; };
-  // Hebrew names from the Hebrew edition's own text, so "ליכוד" or "דרעי" finds the party without a hand-kept list.
-  const he = (x: { text: string; lang: string }) => (x.lang === "he" ? [x.text] : []);
-  const heParty = (p: (typeof parties)[number]) => ["name", "short", "leader"].flatMap((f) => he(partyText(p, f, "he")));
-  const entries: SearchEntry[] = parties.map((p) => ({ href: `/parties/${p.id}`, title: p.name, description: `${p.leader}. ${p.who[0]?.text ?? ""}`, kind: "party", aliases: [p.short, p.leader, ...(p.names ?? []).map((n) => n.name), ...heParty(p), ...(aliases[`/parties/${p.id}`] ?? [])], figure: figure(p.name, p.id) }));
+  // Names from every edition, so readers can search in their own script.
+  const local = (x: { text: string; lang: string }) => (x.lang !== "en" ? [x.text] : []);
+  const localParty = (p: (typeof parties)[number]) => RTL_LANGS.flatMap(lang => ["name", "short", "leader"].flatMap(f => local(partyText(p, f, lang))));
+  const entries: SearchEntry[] = parties.map((p) => ({ href: `/parties/${p.id}`, title: p.name, description: `${p.leader}. ${p.who[0]?.text ?? ""}`, kind: "party", aliases: [p.short, p.leader, ...(p.names ?? []).map((n) => n.name), ...localParty(p), ...(aliases[`/parties/${p.id}`] ?? [])], figure: figure(p.name, p.id) }));
   for (const id of BLOC_ORDER) {
     const b = blocs.find((x) => x.id === id)!, members = parties.filter((p) => p.bloc === id).map((p) => p.name);
-    entries.push({ href: "/polls", title: b.label, description: `A grouping, not a coalition agreement: ${members.join(", ")}. Summed in the average of ${mainPolls.length} current polls.`, kind: "bloc", aliases: [...he(blocText(b, "he")), ...(aliases[`bloc:${id}`] ?? [])], figure: asOf ? figureLine(b.label, totals[id], asOf) : undefined });
+    entries.push({ href: "/polls", title: b.label, description: `A grouping, not a coalition agreement: ${members.join(", ")}. Summed in the average of ${mainPolls.length} current polls.`, kind: "bloc", aliases: [...RTL_LANGS.flatMap(lang => local(blocText(b, lang))), ...(aliases[`bloc:${id}`] ?? [])], figure: asOf ? figureLine(b.label, totals[id], asOf) : undefined });
   }
   for (const [kind, index] of [["issue", await issueIndex()], ["community", await communityIndex()], ["guide", await guideIndex()]] as const) {
     for (const a of index) entries.push({ href: a.href, title: a.meta.title, description: a.meta.dek, kind, aliases: aliases[a.href] ?? [] });

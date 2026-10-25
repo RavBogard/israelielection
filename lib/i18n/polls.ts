@@ -7,6 +7,7 @@
  * The generated findings that head each section are in lib/polls-desk.ts (English) and HE_FIND below (Hebrew).
  */
 import { list, plural } from "./he-grammar";
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 /** Isolates a left-to-right figure inside Hebrew text (a signed change, a range): LRI … PDI, the plain-text <bdi dir="ltr">. */
@@ -293,6 +294,8 @@ const en = {
 const polls = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): PollsText { return editionText<PollsText>("ar", "polls"); },
+  get fa(): PollsText { return editionText<PollsText>("fa", "polls"); },
   get he(): PollsText {
     return heText<PollsText>("polls");
   },

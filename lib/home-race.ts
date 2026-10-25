@@ -12,18 +12,18 @@ export const majorityShortfall=(seats:number)=>Math.max(0,seatTenths(MAJORITY-se
 /** `lang` "he" takes party and bloc names from the Hebrew overlay; then `nameLang`/`labelLang` say which language each name is actually in (absent in English, so the English page's data is unchanged). */
 export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:string}[],lang:Lang="en"){
  const totals=blocTotals(poll,parties),isAverage=poll.id===AVERAGE_ID;
- const pname=(p:Party)=>lang==="he"?partyText(p,"name","he"):{text:p.name,lang:"en" as Lang};
+ const pname=(p:Party)=>lang!=="en"?partyText(p,"name",lang):{text:p.name,lang:"en" as Lang};
  const nameOf=(pid:string)=>{const p=parties.find(x=>x.id===pid);return p?pname(p).text:pid;};
  const rows=HOME_RACE_ORDER.map(id=>{
   const members=parties.filter(p=>p.bloc===id).map(p=>{
    const result=poll.results[p.id],combined=poll.combined.find(c=>c.parties.includes(p.id));
    const n=pname(p);
-   return {id:p.id,name:n.text,...(lang==="he"?{nameLang:n.lang}:{}) as {nameLang?:Lang},seats:result?result.seats:null,state:result?result.belowThreshold?"below" as const:"reported" as const:combined?"combined" as const:"missing" as const};
+   return {id:p.id,name:n.text,...(lang!=="en"?{nameLang:n.lang}:{}) as {nameLang?:Lang},seats:result?result.seats:null,state:result?result.belowThreshold?"below" as const:"reported" as const:combined?"combined" as const:"missing" as const};
   });
   const combined=poll.combined.filter(c=>c.parties.some(pid=>parties.find(p=>p.id===pid)?.bloc===id)).map(c=>({...c,names:c.parties.map(nameOf),withinGroup:c.parties.every(pid=>parties.find(p=>p.id===pid)?.bloc===id)}));
   const incomplete=!isAverage&&(members.some(p=>p.state==="missing")||combined.some(c=>!c.withinGroup));
-  const bloc=blocs.find(b=>b.id===id)!,label=lang==="he"?blocText(bloc,"he"):{text:bloc.label,lang:"en" as Lang};
-  const seats=seatTenths(totals[id]);return {id,label:label.text,...(lang==="he"?{labelLang:label.lang}:{}) as {labelLang?:Lang},seats,shortfall:majorityShortfall(seats),incomplete,members,combined};
+  const bloc=blocs.find(b=>b.id===id)!,label=lang!=="en"?blocText(bloc,lang):{text:bloc.label,lang:"en" as Lang};
+  const seats=seatTenths(totals[id]);return {id,label:label.text,...(lang!=="en"?{labelLang:label.lang}:{}) as {labelLang?:Lang},seats,shortfall:majorityShortfall(seats),incomplete,members,combined};
  });
  return {rows,isAverage};
 }

@@ -9,5 +9,5 @@ import { useLang } from "@/lib/i18n/lang";
  */
 export default function CorrectionLink({ page }: { page?: string }) {
   const path = usePathname(), lang = useLang();
-  return <a href={correctionHref(page ?? path)} hrefLang={lang === "he" ? "en" : undefined} onClick={(event) => { if (!page) event.currentTarget.href = correctionHref(window.location.href); }}>{chrome[lang].sources.correction}</a>;
+  return <a href={correctionHref(page ?? path)} hrefLang={lang !== "en" ? "en" : undefined} onClick={(event) => { if (!page) event.currentTarget.href = correctionHref(window.location.href); }}>{chrome[lang].sources.correction}</a>;
 }

@@ -13,7 +13,7 @@ const DAY=86400_000,MAX_PICKS=3;
 const value=(n:number,below="below")=>n===0?below:seatFigure(n);
 /** Pick-a-party: every list's polling average (scaled to 120, as printed site-wide) in grey, up to three picked lists in their own colour with their polls as dots. */
 export default function PollComparison({panels,dates,from,to,yMax,hollowNames,title}:{panels:TrendPanel[];dates:string[];from:string;to:string;yMax:number;hollowNames:string[];title:string}){
- const lang=useLang(),he=lang==="he",T=POLLS[lang],t=T.comp,v=(n:number)=>value(n,T.common.below);
+ const lang=useLang(),he=lang!=="en",T=POLLS[lang],t=T.comp,v=(n:number)=>value(n,T.common.below);
  const ref=useRef<HTMLDivElement>(null);const [w,setW]=useState(0);const [index,setIndex]=useState(dates.length-1);
  const series=panels.map((p)=>({...p,points:alignTrend(p.trend,dates),color:partyColor(p.id)}));
  const [picks,setPicks]=useState<string[]>(()=>[...series].sort((a,b)=>(b.trend.at(-1)?.avg??0)-(a.trend.at(-1)?.avg??0)).slice(0,MAX_PICKS).map((p)=>p.id));

@@ -5,12 +5,14 @@
  * `he` is typed as `typeof en`, so both editions carry the same keys and template signatures.
  * Data text (party names, stances, the parties' words) comes from lib/i18n/overlays.ts, not from here.
  */
+import { ui } from "./ui";
 import { longDate } from "@/lib/format";
 import type { AxisKey } from "@/lib/compare";
 import type { IssueReading } from "@/lib/cohesion";
 import { plural } from "./he-grammar";
 import type { Lang } from "./index";
 import type { Localized } from "./localize";
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 
@@ -83,12 +85,21 @@ const en = {
 const compareText = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): CompareText { return editionText<CompareText>("ar", "compare"); },
+  get fa(): CompareText { return editionText<CompareText>("fa", "compare"); },
   get he(): CompareText {
     return heText<CompareText>("compare");
   },
 };
 export default compareText;
 export type CompareText = typeof en;
+
+export function readingLocalized(r: IssueReading, stanceOf: (id: string) => string, lang: Lang): string {
+  if (r.verdict === "agree") return ui(lang, "Shared position: {0} ({1} of {2} recorded answers).", stanceOf(r.groups[0].stance.id), r.known, r.selected);
+  if (r.verdict === "unsorted") return ui(lang, "These priorities can coexist; they are not classified as agreement or disagreement.");
+  if (r.verdict === "silent") return ui(lang, "No recorded answers to this question.");
+  return ui(lang, "{0} recorded positions; {1} of {2} lists have no recorded answer.", r.groups.length, r.selected - r.known, r.selected);
+}
 
 /**
  * The reading of one row in Hebrew (the English is readingText in lib/cohesion): whether the lists shown share an
@@ -144,6 +155,18 @@ export const EVIDENCE_KINDS_HE: Record<string, string> = {
   "Leader statement, reported": "הצהרה של ראש המפלגה, כפי שדווחה",
 };
 
+function evidenceFor(lang: "ar" | "fa") {
+  return {
+    noRow: ui(lang, "No recorded answer in these sources"),
+    kind: (k: string) => ui(lang, k),
+    date: (d: string) => d,
+    checkedAt: (date: string) => longDate(date, lang),
+    evidence: (kind: string, date: string | null, checked: string) => ui(lang, "{0}, {1}; checked {2}", kind, date ?? ui(lang, "date unavailable"), checked),
+    record: ui(lang, "Record evidence: "),
+    unavailable: (date: string | null) => ui(lang, "Evidence date unavailable{0}", date ? ` (${date})` : ""),
+    published: (date: string) => ui(lang, "Source published {0}", date),
+  };
+}
 /** The evidence line's words (lib/positions evidenceLabel). English is the existing output, byte for byte. */
 export const EVIDENCE = {
   en: {
@@ -156,6 +179,8 @@ export const EVIDENCE = {
     unavailable: (date: string | null) => `evidence date unavailable${date ? ` (${date})` : ""}`,
     published: (date: string) => `Source published ${date}`,
   },
+  get ar() { return evidenceFor("ar"); },
+  get fa() { return evidenceFor("fa"); },
   he: {
     noRow: "אין תשובה מתועדת במקורות האלה",
     kind: (k: string) => EVIDENCE_KINDS_HE[k] ?? k,

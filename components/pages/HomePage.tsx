@@ -19,9 +19,10 @@ import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsNow, resultsConfig } from "@/lib/results-live";
 import { headline, homeHero, night, type Night } from "@/lib/results-phase";
 import ExitPollBars from "@/components/results/ExitPollBars";
-import type { Lang } from "@/lib/i18n";
-import { list } from "@/lib/i18n/he-grammar";
+import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { blocText, pollsterText } from "@/lib/i18n/overlays";
+import chrome from "@/lib/i18n/chrome";
+import resultsText from "@/lib/i18n/results";
 import HOME from "@/lib/i18n/home";
 import type { Poll } from "@/lib/types";
 
@@ -35,12 +36,12 @@ import type { Poll } from "@/lib/types";
 const briefings = briefingsJson as Briefing[];
 
 /** Links within the edition: the Hebrew home links to the Hebrew pages where they exist. */
-const href = (lang: Lang, en: string, he?: string) => (lang === "he" && he ? he : en);
+const href = (lang: Lang, en: string, _he?: string) => lang === "en" ? en : editionPath(_he ?? en, lang) ?? en;
 /** English text on the Hebrew home (an English-only page's name, the briefing), marked as such. */
 const En = ({ children }: { children: ReactNode }) => <span lang="en" dir="ltr">{children}</span>;
 
 /** Bloc labels in this edition, for the slips and the finding. */
-const blocsIn = (lang: Lang) => (lang === "he" ? blocs.map((b) => ({ ...b, label: blocText(b, "he").text })) : blocs);
+const blocsIn = (lang: Lang) => (lang !== "en" ? blocs.map((b) => ({ ...b, label: blocText(b, lang).text })) : blocs);
 
 /** After close and before the count is past early: the channels' exit polls, never the pre-election average. */
 function ExitHero({ n, lang }: { n: Night; lang: Lang }) {
@@ -54,8 +55,8 @@ function ExitHero({ n, lang }: { n: Night; lang: Lang }) {
 
 /** Current modeled seats, with election-night freshness preserved. */
 function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; days: number; phase: Night["phase"]; lang: Lang }) {
-  const t = HOME[lang].hero, he = lang === "he";
-  const pollsters = new Intl.ListFormat(lang, { type: "conjunction" }).format(mainPolls.map((p) => (he ? pollsterText(p.pollster, "he").text : p.pollster))), newest = live ? null : newestPoll(allPolls), change = live ? null : blocChange(blocSeries(pollsData.polls, parties, pollsData.config));
+  const t = HOME[lang].hero, he = lang !== "en";
+  const pollsters = new Intl.ListFormat(lang, { type: "conjunction" }).format(mainPolls.map((p) => (he ? pollsterText(p.pollster, lang).text : p.pollster))), newest = live ? null : newestPoll(allPolls), change = live ? null : blocChange(blocSeries(pollsData.polls, parties, pollsData.config));
   const model = homeRaceModel(poll, parties, blocs, lang), net = model.rows.find((r) => r.id === "net")!, cite = live || phase !== "before" ? null : citeText(poll, mainPolls.length, net.label, net.seats, undefined, lang);
   // The bloc list's header says what the numbers are; the note under the grid says where they come from, once.
   const basis = live ? poll.resultState?.freshness === "stale" ? t.basisStale : t.basisLive : t.basis(mainPolls.length, shortDate(mainPolls[0].published, lang));
@@ -68,13 +69,13 @@ function Race({ poll, live, days, phase, lang }: { poll: Poll; live: boolean; da
 
 /** Since yesterday: the newest polls as slips with one finding from the current polls, then the briefing's first two sentences. */
 function Since({ now, lang }: { now: number; lang: Lang }) {
-  const t = HOME[lang].since, he = lang === "he", bl = blocsIn(lang);
+  const t = HOME[lang].since, he = lang !== "en", bl = blocsIn(lang);
   const today = israelDate(now), { polls, fresh } = sincePolls(allPolls, today);
   const finding = findingSentence(mainPolls, parties, bl, "net", lang), b = briefings[0];
-  const briefDate = b ? new Intl.DateTimeFormat(he ? "he-IL" : "en-US", { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${b.date}T12:00:00Z`)) : "";
+  const briefDate = b ? new Intl.DateTimeFormat(locale(lang), { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${b.date}T12:00:00Z`)) : "";
   // The Hebrew home shows the checked Hebrew briefing, labelled as machine-translated, once the job writes `textHe`;
   // until then (or when its checks fail) the English sentences, marked as English.
-  const shown = b ? b.sentences.slice(0, 2) : [], heBrief = he && shown.length > 0 && shown.every((s) => s.textHe);
+  const shown = b ? b.sentences.slice(0, 2) : [], heBrief = lang === "he" && shown.length > 0 && shown.every((s) => s.textHe);
   return (
     <section className="since" aria-labelledby="since-h">
       <h2 id="since-h">{t.heading}</h2>
@@ -98,7 +99,7 @@ const slipLabel = (label: string) => label.replace(/\s*\(.*\)$/, "");
 /** A single poll reports whole seats; keep a decimal only where a poll itself has one. */
 const pollSeats = (s: number) => (Number.isInteger(s) ? String(s) : seatFigure(s));
 function PollSlip({ slip, lang }: { slip: Slip; lang: Lang }) {
-  const t = HOME[lang].since, he = lang === "he";
+  const t = HOME[lang].since, he = lang !== "en";
   // The bar runs in seat order (slip.blocs); the list under it runs in the site's bloc order.
   const listed = [...slip.blocs].sort((a, b) => blocRank(a.id) - blocRank(b.id));
   const label = `${slip.label}, ${mediumDate(slip.date, lang)}: ${listed.map((b) => `${slipLabel(b.label)} ${pollSeats(b.seats)}`).join(", ")}`;
@@ -108,7 +109,7 @@ function PollSlip({ slip, lang }: { slip: Slip; lang: Lang }) {
       <p className="ss-head"><b>{slip.label}</b> <span>{shortDate(slip.date, lang)}</span></p>
       <SeatBar segments={slip.blocs.map((b) => ({ key: b.id, seats: b.seats, color: `var(--b-${b.id})` }))} label={label} />
       <ul className="ss-blocs">{listed.map((b) => <li key={b.id} className={b.majority ? "maj" : undefined}><span className="sw" style={{ background: `var(--b-${b.id})` }} aria-hidden="true" />{slipLabel(b.label)}<b>{pollSeats(b.seats)}</b></li>)}</ul>
-      {slip.majority.length > 0 && <p className="ss-maj">{t.atMajority(he ? list(majority) : majority.join(t.and), MAJORITY)}</p>}
+      {slip.majority.length > 0 && <p className="ss-maj">{t.atMajority(he ? new Intl.ListFormat(lang).format(majority) : majority.join(t.and), MAJORITY)}</p>}
       {slip.url && <a className="ss-src" href={slip.url}>{t.source}</a>}
     </li>
   );
@@ -118,12 +119,12 @@ function PollSlip({ slip, lang }: { slip: Slip; lang: Lang }) {
 function countTime(iso: string, lang: Lang): string {
   if (!iso.includes("T")) return iso;
   const when = new Date(iso);
-  if (lang === "he") return `${new Intl.DateTimeFormat("he-IL", { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(when)} שעון ישראל`;
+  if (lang !== "en") return resultsText[lang].israelTime(new Intl.DateTimeFormat(locale(lang), { timeZone: "Asia/Jerusalem", day: "numeric", month: "numeric", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(when));
   return `${new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(when)} Israel time`;
 }
 
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
-  const he = lang === "he", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
+  const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
   const live = await fetchCount(revalidate, { now });
   const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
@@ -141,7 +142,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
 
         {he ? (
           <p className="start">
-            {s.lead}<Link href="/start" hrefLang="en">{s.route}</Link>{s.middle}<Link href="/how-it-works" hrefLang="en">{s.how}</Link>{s.middle}<Link href="/parties" hrefLang="en">{s.parties}</Link>{s.and}<Link href="/how-it-works/who-votes" hrefLang="en">{s.who}</Link> (באנגלית).
+            {s.lead}<Link href="/start" hrefLang="en">{s.route}</Link>{s.middle}<Link href="/how-it-works" hrefLang="en">{s.how}</Link>{s.middle}<Link href="/parties" hrefLang="en">{s.parties}</Link>{s.and}<Link href="/how-it-works/who-votes" hrefLang="en">{s.who}</Link> {chrome[lang].inEnglish}.
           </p>
         ) : (
           <p className="start">

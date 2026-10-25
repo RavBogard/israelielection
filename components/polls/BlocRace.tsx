@@ -20,7 +20,7 @@ const one = seatFigure;
  * still to come are left plain. `children` sit under the key (the counter and the cite line).
  */
 export default function BlocRace({ trend, dots, labels, hollowNames, windowDays, until, title, children }: { trend: BlocPoint[]; dots: RaceDot[]; labels: Record<"net" | "opp", string>; hollowNames: string[]; windowDays: number; until: string; title: string; children?: ReactNode }) {
-  const lang = useLang(), he = lang === "he", T = POLLS[lang], R = T.race, END = R.end;
+  const lang = useLang(), he = lang !== "en", T = POLLS[lang], R = T.race, END = R.end;
   const sd = (d: string) => shortDate(d, lang), md = (d: string) => mediumDate(d, lang);
   const ref = useRef<HTMLDivElement>(null);
   const [w, setW] = useState(0);

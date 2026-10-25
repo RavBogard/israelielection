@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useId, useState } from "react";
-import { hePath } from "@/lib/i18n";
+import { editionPath } from "@/lib/i18n";
 import { useLang } from "@/lib/i18n/lang";
 import profileText from "@/lib/i18n/profile";
 import { partyColor } from "@/lib/party-colors";
@@ -33,7 +33,7 @@ function Slots({ t }: { t: Tile }) {
 export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; partyName: string }) {
   const lang = useLang();
   const T = profileText[lang].tiles;
-  const href = (en: string) => (lang === "he" ? hePath(en) ?? en : en);
+  const href = (en: string) => (lang !== "en" ? editionPath(en, lang) ?? en : en);
   // The first recorded stance opens on load, so the panel's job is visible before anyone taps.
   const [open, setOpen] = useState<string | null>(() => tiles.find((t) => t.kind === "stance")?.key ?? null);
   const base = useId();
@@ -77,7 +77,7 @@ export default function StanceTiles({ tiles, partyName }: { tiles: Tile[]; party
               {current.basis === "record" && T.recordNote}
               {current.basis === "unstated" && T.unstatedNote}
               {current.loc ? (
-                <>{(current.source || current.date) && T.sourcePrefix}<SourceHe source={current.source} url={current.url} date={current.date} /></>
+                <>{(current.source || current.date) && T.sourcePrefix}<SourceHe lang={lang} source={current.source} url={current.url} date={current.date} /></>
               ) : (
                 <>
                   {current.url ? <a href={current.url} rel="noopener">{current.source}</a> : current.source}

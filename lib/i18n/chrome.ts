@@ -5,6 +5,7 @@
  * element's job. Daniel reviews it here, in one place. `he` is typed as `typeof en`, so both carry the same keys.
  */
 import type { Lang } from "./index";
+import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 const en = {
@@ -75,6 +76,8 @@ const en = {
 const chrome = {
   en,
   /** Loaded on Hebrew pages only (lib/i18n/he/register.ts). */
+  get ar(): Chrome { return editionText<Chrome>("ar", "chrome"); },
+  get fa(): Chrome { return editionText<Chrome>("fa", "chrome"); },
   get he(): Chrome {
     return heText<Chrome>("chrome");
   },

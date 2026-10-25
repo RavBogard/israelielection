@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HE_PUBLIC, enPath, hePath } from "./i18n";
+import { HE_PUBLIC, LANGS, enPath, editionPath } from "./i18n";
 
 /** The daily briefing's feed, linked from every English page. The feed is English only. */
 export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] };
@@ -7,8 +7,8 @@ export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Is
 /** hreflang links for a page with both editions; undefined for English-only pages. */
 function languages(en: string, announce = HE_PUBLIC): Record<string, string> | undefined {
   if (!announce) return undefined;
-  const he = hePath(en);
-  return he ? { en, he, "x-default": en } : undefined;
+  if (!editionPath(en, "he")) return undefined;
+  return { ...Object.fromEntries(LANGS.map(lang => [lang, editionPath(en, lang)!])), "x-default": en };
 }
 
 /**
@@ -26,3 +26,5 @@ export const heAlternates = (path: string): Metadata["alternates"] => {
   const langs = languages(enPath(path));
   return langs ? { canonical: path, languages: langs } : { canonical: path };
 };
+
+export const localizedAlternates = heAlternates;

@@ -1,3 +1,4 @@
+import { ui } from "@/lib/i18n/ui";
 import Link from "next/link";
 import { averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
@@ -29,9 +30,9 @@ const markVars = strokeVars;
 /** The bloc labels in an edition. */
 const blocLabels = (lang: Lang) => Object.fromEntries(blocs.map((b) => [b.id, blocName(b, lang)])) as Record<BlocId, string>;
 /** The alternative average's name: the data's English label, or the Hebrew built from the outlets it leaves out. */
-const altName = (lang: Lang) => (lang === "he" ? HE_METHOD.variantLabel(variantNames.map((n) => pollsterName(n, lang))) : cfg.withoutVariant.label);
+const altName = (lang: Lang) => (lang === "he" ? HE_METHOD.variantLabel(variantNames.map((n) => pollsterName(n, lang))) : lang === "en" ? cfg.withoutVariant.label : ui(lang, "Average without {0}", new Intl.ListFormat(lang).format(variantNames.map(n => pollsterName(n, lang)))));
 /** Seat axes are magnitudes, so in Hebrew they run from the right (PLAN.md section 5): positions mirror, widths do not. */
-const flip = (pct: number, lang: Lang) => (lang === "he" ? 100 - pct : pct);
+const flip = (pct: number, lang: Lang) => (lang !== "en" ? 100 - pct : pct);
 const rawSum = Math.round(parties.reduce((s, p) => s + (average(p.id, mainPolls)?.seats ?? 0), 0) * 10) / 10;
 
 /** Where a bloc's total lands in each of the current polls, on a seat axis with the majority line at 61. */
@@ -66,7 +67,7 @@ function BlocStrip({ bloc, label, lang }: { bloc: BlocId; label: string; lang: L
       <p className="pn-strip-h">
         <span className="sw" style={{ background: `var(--b-${bloc})` }} aria-hidden="true" />
         <b>{label}</b>
-        <span className="pn-strip-read">{lang === "he" ? t.stripRead(at, pts.length, pts[0].seats, pts[pts.length - 1].seats) : <>{at === 0 ? `under 61 in all ${pts.length} polls` : `61 or more in ${at} of ${pts.length} polls`}, from {pts[0].seats} to {pts[pts.length - 1].seats}</>}</span>
+        <span className="pn-strip-read">{lang !== "en" ? t.stripRead(at, pts.length, pts[0].seats, pts[pts.length - 1].seats) : <>{at === 0 ? `under 61 in all ${pts.length} polls` : `61 or more in ${at} of ${pts.length} polls`}, from {pts[0].seats} to {pts[pts.length - 1].seats}</>}</span>
       </p>
       <div className="pn-axis" style={{ ["--h" as string]: `${height}px` }} role="img" aria-label={t.stripAria(label, pts.map((q) => `${pn(q.p.pollster)} ${q.seats}`).join(", "))}>
         {[40, 45, 50, 55, 60, 65, 70].map((t) => (
@@ -85,7 +86,7 @@ function BlocStrip({ bloc, label, lang }: { bloc: BlocId; label: string; lang: L
 
 /** Where each bloc lands: the bloc totals of the current average on the 120-seat bar with 61 marked, then each bloc in each current poll. */
 export function PollsBlocs({ title, lang = "en" }: { title: string; lang?: Lang }) {
-  const T = POLLS[lang], t = T.now, he = lang === "he";
+  const T = POLLS[lang], t = T.now, he = lang !== "en";
   const totals = blocTotals(averagePoll, parties);
   const label = blocLabels(lang);
   const from = mainPolls.map((p) => p.published).sort()[0];
@@ -128,7 +129,7 @@ export function PollsBlocs({ title, lang = "en" }: { title: string; lang?: Lang 
 
 /** The alternative average beside the site average: the same 120-seat bar for each, the Netanyahu bloc's figure stated. */
 export function PollsAlternative({ title, lang = "en" }: { title: string; lang?: Lang }) {
-  const N = POLLS[lang].now, he = lang === "he";
+  const N = POLLS[lang].now, he = lang !== "en";
   const label = blocLabels(lang);
   const rows = [{ key: "main", name: N.siteAverage, t: blocTotals(averagePoll, parties), n: mainPolls.length }, { key: "alt", name: altName(lang), t: blocTotals(variantAverage, parties), n: variantPolls.length }];
   return (
@@ -149,7 +150,7 @@ export function PollsAlternative({ title, lang = "en" }: { title: string; lang?:
 
 /** Every list as a dot per current poll over a bar at its average; the numbers the old table carried stay as columns. */
 export default function PollsLists({ title, lang = "en" }: { title: string; lang?: Lang }) {
-  const T = POLLS[lang], t = T.now, he = lang === "he", pn = (name: string) => pollsterName(name, lang);
+  const T = POLLS[lang], t = T.now, he = lang !== "en", pn = (name: string) => pollsterName(name, lang);
   const label = blocLabels(lang);
   const rows = parties
     .map((p) => {
