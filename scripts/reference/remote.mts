@@ -1,7 +1,7 @@
 import { createHash, createHmac, randomUUID } from "node:crypto";
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import { referenceDocuments } from "../../lib/reference/catalog";
+import { generationDocuments } from "../../lib/reference/catalog";
 import {
   validateTranslation,
   type TranslationDocument,
@@ -19,7 +19,7 @@ if (
   !url ||
   !id ||
   !out ||
-  !referenceDocuments.some((s) => s.id === id) ||
+  !generationDocuments.some((s) => s.id === id) ||
   !["he", "ar", "fa", "de", "fr", "zh"].includes(lang)
 )
   throw Error(
@@ -111,7 +111,7 @@ if (!response.ok) {
   console.log(JSON.stringify(report));
   process.exitCode = 1;
 } else {
-  const source = referenceDocuments.find((s) => s.id === id)!;
+  const source = generationDocuments.find((s) => s.id === id)!;
   validateTranslation(body.translation, source);
   if (body.writes !== 0) throw Error("unexpected_remote_write");
   const file = stem + `.${source.revision.slice(0, 12)}.json`;

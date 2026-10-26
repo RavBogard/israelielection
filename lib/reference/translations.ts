@@ -18,6 +18,7 @@ export type SourceBlock = {
   text: string;
   names: string[];
   negated: boolean;
+  field?: string;
   widget?: { name: string; attrs: Record<string, string> };
 };
 export type SourceDocument = {

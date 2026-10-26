@@ -1,5 +1,5 @@
 import { verifyQStash } from "@/lib/live-forecast/auth";
-import { referenceDocuments } from "@/lib/reference/catalog";
+import { generationDocuments } from "@/lib/reference/catalog";
 import {
   generateReferenceTranslation,
   reviewReferenceTranslation,
@@ -63,7 +63,7 @@ export async function POST(request: Request) {
   }
   if (
     !["generate", "review"].includes(body?.mode) ||
-    !referenceDocuments.some((d) => d.id === body.id) ||
+    !generationDocuments.some((d) => d.id === body.id) ||
     !["he", "ar", "fa", "de", "fr", "zh"].includes(body.lang) ||
     Object.keys(body).some(
       (k) =>

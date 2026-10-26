@@ -1,6 +1,9 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve, join } from "node:path";
-import { referenceDocuments } from "../../lib/reference/catalog";
+import {
+  referenceDocuments,
+  generationDocuments,
+} from "../../lib/reference/catalog";
 import ledgerJson from "../../lib/reference/published-translations.json";
 import type { TranslationDocument } from "../../lib/reference/translations";
 import {
@@ -22,7 +25,7 @@ const ids =
       : (arg("--ids") ?? "").split(",").filter(Boolean),
   langs = (arg("--langs") ?? "").split(",").filter(Boolean);
 const plan = referenceBatchPlan(
-  referenceDocuments,
+  generationDocuments,
   ledgerJson.documents as TranslationDocument[],
   { ids, langs, maxEditions, maxMinutes },
 );

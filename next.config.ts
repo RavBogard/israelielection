@@ -4,7 +4,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/api/reference/worker": ["./content/**/*.mdx", "./content/*.mdx"],
+    "/api/reference/worker": [
+      "./content/**/*.mdx",
+      "./content/*.mdx",
+      "./data/charts/*.json",
+    ],
   },
   pageExtensions: ["ts", "tsx", "mdx"],
   // Two root layouts (app/(en) and app/(he)/he), so unmatched URLs render app/global-not-found.tsx.

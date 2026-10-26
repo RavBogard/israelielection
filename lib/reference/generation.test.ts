@@ -13,7 +13,7 @@ const source = vi.hoisted(() => ({
     },
   ],
 }));
-vi.mock("./catalog", () => ({ referenceDocuments: [source] }));
+vi.mock("./catalog", () => ({ generationDocuments: [source] }));
 vi.mock("node:fs", () => ({ readFileSync: () => "source" }));
 vi.mock("./source.mjs", () => ({ sourceRevision: () => "revision" }));
 import {
