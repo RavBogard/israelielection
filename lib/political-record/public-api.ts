@@ -278,6 +278,10 @@ export async function publicApi(request: Request, collection: string) {
                 ? "historical_records"
                 : "qualified_current_or_withheld",
             asOfCursor: page.asOf,
+            snapshotCursor: encodeCursor(
+              { ...next, after: cursor?.after ?? "0" },
+              secret,
+            ),
             nextCursor: page.more ? encodeCursor(next, secret) : null,
             records: publicRecord(records),
             rights: API_RIGHTS,
@@ -366,6 +370,7 @@ export async function publicApi(request: Request, collection: string) {
           collection === "events" ? "redis_current_only" : "reference_registry",
         historyReady: false,
         asOfCursor: asOf,
+        snapshotCursor: encodeCursor({ ...next, after: String(after) }, secret),
         nextCursor:
           after + limit < records.length ? encodeCursor(next, secret) : null,
         records: publicRecord(records.slice(after, after + limit)),

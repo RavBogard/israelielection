@@ -28,6 +28,7 @@ export async function bulkApi(request: Request, collection: string) {
     records: unknown[];
     asOfCursor: string;
     nextCursor: string | null;
+    snapshotCursor?: string;
     electionId: string;
     rights: unknown;
     storage: string;
@@ -65,6 +66,8 @@ export async function bulkApi(request: Request, collection: string) {
     );
   const download = new URL(url);
   download.searchParams.set("format", "ndjson");
+  if (page.snapshotCursor)
+    download.searchParams.set("cursor", page.snapshotCursor);
   download.searchParams.set("digest", digest);
   if (format === "manifest")
     return revalidatedJson(

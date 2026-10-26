@@ -15,6 +15,7 @@ const page = {
   ],
   asOfCursor: "12",
   nextCursor: "signed-next",
+  snapshotCursor: "signed-start",
   electionId: "il-knesset-26",
   rights: { rawCaptures: false, sourceQuotes: false },
   storage: "postgres",
@@ -31,6 +32,9 @@ it("exports only projected records with a fixed as-of cursor, rights and verifie
     recordCount: 1,
   });
   expect(manifest.nextManifestUrl).toContain("cursor=signed-next");
+  expect(new URL(manifest.downloadUrl).searchParams.get("cursor")).toBe(
+    "signed-start",
+  );
   const response = await bulkApi(new Request(manifest.downloadUrl), "events"),
     text = await response.text();
   expect(response.headers.get("content-type")).toContain("ndjson");
@@ -64,4 +68,25 @@ it("retains capability/source failures instead of emitting an empty successful a
       )
     ).status,
   ).toBe(503);
+});
+
+it("pins a first-page download before ordinary later inserts arrive", async () => {
+  let updated = false;
+  mocks.api.mockImplementation(async (request: Request) =>
+    Response.json(
+      updated && !new URL(request.url).searchParams.has("cursor")
+        ? { ...page, asOfCursor: "13", records: [] }
+        : page,
+    ),
+  );
+  const manifest = await (
+    await bulkApi(
+      new Request("https://example.org/api/v2/bulk/events?view=history"),
+      "events",
+    )
+  ).json();
+  updated = true;
+  const download = await bulkApi(new Request(manifest.downloadUrl), "events");
+  expect(download.status).toBe(200);
+  expect(await download.text()).toContain('"asOfCursor":"12"');
 });

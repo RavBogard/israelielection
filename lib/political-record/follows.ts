@@ -1,3 +1,6 @@
+import { partyText, issueText } from "../i18n/overlays";
+import { ui } from "../i18n/ui";
+import { LANGS, type Lang } from "../i18n";
 import parties from "../../data/parties.json";
 import places from "../../public/vote-map/places.json";
 import { ISSUES } from "../articles";
@@ -159,22 +162,69 @@ export function followCatalog(kind: string, query: string, lang: string) {
     query.length > 100
   )
     throw new Error("invalid_catalog_query");
+  const selectedLang = lang as Lang;
+  const issueKeys: Record<string, string> = {
+    "haredi-draft": "draft",
+    courts: "courts",
+    "war-hostages": "war",
+    "west-bank": "wb",
+    "religion-state": "relig",
+    economy: "econ",
+  };
   const rows =
     kind === "party"
-      ? parties.parties.map((party) => ({ id: party.id, label: party.name }))
+      ? parties.parties.map((party) => {
+          const label = partyText(party, "name", selectedLang);
+          return {
+            id: party.id,
+            label: label.text,
+            labelLocale: label.lang,
+            aliases: LANGS.flatMap((language) => [
+              partyText(party, "name", language).text,
+              partyText(party, "short", language).text,
+              partyText(party, "leader", language).text,
+            ]),
+          };
+        })
       : kind === "issue"
-        ? ISSUES.map((id) => ({ id, label: id.replaceAll("-", " ") }))
+        ? ISSUES.map((id) => {
+            const issue = parties.issues.find(
+              (row) => row.key === issueKeys[id],
+            );
+            const english = issue?.label ?? "Palestinian state";
+            const localized = (language: Lang) =>
+              issue
+                ? issueText(issue, language)
+                : {
+                    text: ui(language, english),
+                    lang: ui(language, english) === english ? "en" : language,
+                  };
+            const label = localized(selectedLang);
+            return {
+              id,
+              label: label.text,
+              labelLocale: label.lang,
+              aliases: LANGS.map((language) => localized(language).text),
+            };
+          })
         : Object.entries(places).map(([id, value]) => ({
             id,
             label: value[0] as string,
+            labelLocale: "en",
+            aliases: [],
           }));
   const normalized = query.trim().toLocaleLowerCase();
   return rows
     .filter(
       (row) =>
         !normalized ||
-        `${row.id} ${row.label}`.toLocaleLowerCase().includes(normalized),
+        [row.id, row.label, ...row.aliases].some((alias) =>
+          alias.toLocaleLowerCase().includes(normalized),
+        ),
     )
     .slice(0, 50)
-    .map((row) => ({ ...row, kind, labelLocale: "en", sourceLocale: "en" }));
+    .map(({ aliases, ...row }) => {
+      void aliases;
+      return { ...row, kind, sourceLocale: "en" };
+    });
 }

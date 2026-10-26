@@ -1,3 +1,7 @@
+import {
+  storedSourceMonitor,
+  privateMonitorStatus,
+} from "@/lib/political-record/monitor-operations";
 import { runConfiguredWorkspaceCycle } from "@/lib/political-record/workspace-operations";
 import { scheduledCycle } from "@/lib/election-lifecycle/scheduled-cycle";
 import { runSubscriptionWorker } from "@/lib/political-record/subscription-routes";
@@ -78,6 +82,14 @@ export async function POST(request: Request) {
   if (!store)
     return Response.json({ error: "store_unconfigured" }, { status: 503 });
   const payload = JSON.parse(body);
+  if (payload.mode === "platform_monitor_sources")
+    return Response.json(await storedSourceMonitor(), {
+      headers: { "Cache-Control": "no-store" },
+    });
+  if (payload.mode === "platform_monitor_status")
+    return Response.json(await privateMonitorStatus(), {
+      headers: { "Cache-Control": "no-store" },
+    });
   if (payload.mode === "platform_deliver")
     return Response.json(await runSubscriptionWorker(), {
       headers: { "Cache-Control": "no-store" },

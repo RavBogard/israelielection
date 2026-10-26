@@ -33,7 +33,7 @@ it("validates explicit party/issue/place identifiers and caps private follows", 
     id: "likud",
     kind: "party",
     sourceLocale: "en",
-    labelLocale: "en",
+    labelLocale: "he",
   });
 });
 it("keeps legacy preferences distinct from explicit new channels", () => {
@@ -106,4 +106,19 @@ it("ETags revalidate changed visibility and never mask error responses", async (
   expect(withdrawn.headers.get("cache-control")).toBe(
     "public,max-age=0,must-revalidate",
   );
+});
+
+it("searches verified party and issue aliases across seven editions", () => {
+  expect(followCatalog("party", "הליכוד", "en")[0]?.id).toBe("likud");
+  expect(followCatalog("party", "Likud", "he")[0]).toMatchObject({
+    id: "likud",
+    labelLocale: "he",
+    sourceLocale: "en",
+  });
+  for (const lang of ["en", "he", "ar", "fa", "de", "fr", "zh"]) {
+    const row = followCatalog("issue", "economy", lang)[0];
+    expect(row.id).toBe("economy");
+    expect(row.label).toBeTruthy();
+  }
+  expect(followCatalog("place", "3000", "he")[0].labelLocale).toBe("en");
 });

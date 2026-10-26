@@ -19,6 +19,7 @@ import SeatBasis from "../seat-context/SeatBasis";
 import { forecastPresentation } from "../live-forecast/LiveForecast";
 import SuggestedReading from "./SuggestedReading";
 import ReferenceDocument from "./ReferenceDocument";
+import QualifiedRecords from "./QualifiedRecords";
 import "../article/article.css";
 import "./reference.css";
 export type ReferenceKind =
@@ -126,7 +127,15 @@ export default async function ReferenceHub({
         introduction={
           <>
             <p>{t.policyNote}</p>
-            <p>{t.noMilestones}</p>
+            {id === "economy" ? (
+              <QualifiedRecords
+                global={model.global}
+                lang={lang}
+                view="economy"
+              />
+            ) : (
+              <p>{t.noMilestones}</p>
+            )}
             <Link href={href("/policies")}>{t.allPolicies}</Link>
           </>
         }
@@ -209,7 +218,14 @@ export default async function ReferenceHub({
       {kind === "parliament" && (
         <>
           <p>{t.allocationNote}</p>
-          <p>{t.noMembership}</p>
+          {!model.global.parliament.memberships.length && (
+            <p>{t.noMembership}</p>
+          )}
+          <QualifiedRecords
+            global={model.global}
+            lang={lang}
+            view="parliament"
+          />
           {context ? (
             <CurrentParliament
               initial={context}
@@ -226,6 +242,7 @@ export default async function ReferenceHub({
       {kind === "policies" && (
         <>
           <p>{t.policyNote}</p>
+          <QualifiedRecords global={model.global} lang={lang} view="policies" />
           <ul>
             {policyIds.map((slug, i) => (
               <li key={slug}>

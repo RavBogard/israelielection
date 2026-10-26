@@ -131,7 +131,7 @@ async function buildSourceExport(
         asOf: c.publishedAt ?? "Publication time not supplied",
         assumptions: [
           `${LIFECYCLE.en[c.basis]} · ${LIFECYCLE.en[c.seatStatus]} · ${LIFECYCLE.en[c.freshness.status]}. Revision ${c.revision}. Checked ${c.freshness.checkedAt ?? "not recorded"}.`,
-          "All roles are hypothetical. Unknown lists have no inferred bloc, policy or pledge. More yes than no is required for initial confidence; abstentions can permit passage below61.",
+          "All roles are hypothetical. Unknown lists have no inferred bloc, policy or pledge. More yes than no is required for initial confidence; abstentions can permit passage below 61.",
           `Cabinet ${vote.cabinet}; yes ${vote.yes}; no ${vote.no}; abstain ${vote.abstain}.`,
         ],
         headers: ["List", "Assigned role", "Seats"],
