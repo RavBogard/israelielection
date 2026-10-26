@@ -214,7 +214,7 @@ function Panel({ ed, row, shown, colSpan }: { ed: Ed; row: MatrixRow; shown: Com
           {notes.length > 0 && <p className="fig-note">{notes.map((n, i) => <Fragment key={i}>{i > 0 && " "}<Loc v={n} /></Fragment>)}</p>}
           <p className="links">
             {row.page && <Link href={row.page}>{T.issuePage}</Link>}
-            <Link href={`/export/issue?${new URLSearchParams({ issue: row.key, p: ids.join(",") })}`}>{T.exportQuestion}</Link>
+            <Link href={editionPath(`/export/issue?${new URLSearchParams({ issue: row.key, p: ids.join(",") })}`,ed.lang)!}>{T.exportQuestion}</Link>
           </p>
         </div>
       </td>
@@ -417,7 +417,7 @@ function CompareView({ context, unavailable, parties, blocs, rows, presets, sele
       <p className="foot">
         {T.foot}
       </p>
-      <p className="foot"><Link href={`/export/issue?${new URLSearchParams({ p: selected.join(",") })}`}>{T.exportAll}</Link></p>
+      <p className="foot"><Link href={editionPath(`/export/issue?${new URLSearchParams({ p: selected.join(",") })}`,ed.lang)!}>{T.exportAll}</Link></p>
     </div>
   );
 }

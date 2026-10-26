@@ -30,7 +30,7 @@ import { lettersOf } from "@/lib/letters";
 import { AVERAGE_ID, BLOC_ORDER, blocTotals, pollLabel, seatFigure } from "@/lib/polls";
 import { RESULTS_ID } from "@/lib/results";
 import type { Party, Poll } from "@/lib/types";
-import type { Lang } from "@/lib/i18n";
+import { editionPath, type Lang } from "@/lib/i18n";
 import builder, { type BuilderText, type VerdictKey } from "@/lib/i18n/builder";
 import { list } from "@/lib/i18n/he-grammar";
 import { useLang } from "@/lib/i18n/lang";
@@ -542,7 +542,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
         </aside>
       </div>
       {!selectedContext && <PollNote poll={poll} lang={lang} />}
-      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id,...(selectedContext ? {context:selectedContext.revision} : {})}),sel,roles,allPartyIds)}`}>{T.exportLink}</Link></p>
+      <p><Link href={editionPath(`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id,...(selectedContext ? {context:selectedContext.revision} : {})}),sel,roles,allPartyIds)}`,lang)!}>{T.exportLink}</Link></p>
 
       {profileParty && <Drawer context={selectedContext} party={profileParty} onClose={closeProfile} lang={lang} />}
     </div>
