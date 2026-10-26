@@ -1,3 +1,5 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
+import ElectionRecord from "@/components/seat-context/ElectionRecord";
 import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import SeatBar from "@/components/SeatBar";
@@ -31,7 +33,8 @@ const signed = (x: number) => (x === 0 ? "0" : `${x > 0 ? "+" : "−"}${Math.abs
  * the rules come from, the daily runs and the scoring rule. Every figure is read from data/forecast.json, so the page
  * follows each day's run; the words are in lib/i18n/forecast.ts.
  */
-export default function ForecastPage({ lang }: { lang: Lang }) {
+export default async function ForecastPage({ lang }: { lang: Lang }) {
+  const context = await seatContextForRender();
   const t = FORECAST[lang], he = lang !== "en", f = forecast, p = f.parameters, days = pollsData.config.currentWindowDays;
   const runs = f.runs.toLocaleString(locale(lang));
   const totals = blocTotals(forecastPoll, parties);
@@ -59,6 +62,7 @@ export default function ForecastPage({ lang }: { lang: Lang }) {
   ];
   return (
     <div className="wrap forecast-page">
+      <ElectionRecord context={context} lang={lang}/>
       <PageHead title={t.title} standfirst={t.standfirst(date, !!f.final)}>
         <p className="ph-meta">{t.meta2(runs, f.inputs.field.length)}</p>
       </PageHead>

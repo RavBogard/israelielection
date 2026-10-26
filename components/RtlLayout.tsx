@@ -1,3 +1,5 @@
+import SeatContextProvider from "./seat-context/SeatContextProvider";
+import { seatContextForRender } from "@/lib/seat-context-server";
 import type { Metadata } from "next";
 import type { ComponentType, ReactNode } from "react";
 import Link from "next/link";
@@ -40,7 +42,8 @@ export function toolMetadata(lang: Edition): Metadata {
 
 const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
 
-export default function RtlLayout({ children, lang, provider: Provider }: { children: ReactNode; lang: Edition; provider: ComponentType<{ children: ReactNode }> }) {
+export default async function RtlLayout({ children, lang, provider: Provider }: { children: ReactNode; lang: Edition; provider: ComponentType<{ children: ReactNode }> }) {
+  const seatContext = await seatContextForRender();
   const t = chrome[lang];
   const translateItem = (n: NavItem): NavItem => {
     const href = editionPath(n.href, lang);
@@ -59,7 +62,7 @@ export default function RtlLayout({ children, lang, provider: Provider }: { chil
   const english = (n: NavItem) => n.hrefLang === "en" ? ` ${t.inEnglish}` : "";
   return <html lang={lang} dir={isRtl(lang) ? "rtl" : "ltr"} className={`${frank.variable} ${sans.variable} ${isRtl(lang) ? arabic.variable : ""}`}>
     <body className="min-h-screen flex flex-col">
-      <Provider>
+      <Provider><SeatContextProvider initial={seatContext}>
         <a href="#main" className="skip">{t.skip}</a>
         <header className="masthead he-masthead">
           <div className="row"><Logo lang={lang} /><Countdown lang={lang} /><SiteNav facts={facts} meter={meter} pollsClose={pollsClose} closedAtRender={closed} groups={groups} utilities={utilities} bar={[`/${lang}`, "/search", "/about"]} home={`/${lang}`} /></div>
@@ -74,7 +77,7 @@ export default function RtlLayout({ children, lang, provider: Provider }: { chil
           </div>
           <nav className="cols" aria-label={t.siteMapLabel}>{groups.map(g => <div key={g.id}><p className="lbl">{g.label}</p><ul>{visibleNavItems(g.items, closed, "").map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.lang === "en" ? <span lang="en" dir="ltr">{n.label}</span> : n.label}{english(n)}</Link></li>)}</ul></div>)}</nav>
         </div></footer>
-      </Provider>
+      </SeatContextProvider></Provider>
     </body>
     {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
   </html>;

@@ -1,3 +1,7 @@
+"use client";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import Link from "next/link";
 import { partyColor } from "@/lib/party-colors";
 import { blocLabel } from "@/lib/data";
@@ -33,6 +37,7 @@ function seatsLine(p: Party): string {
 type Props = {
   party: Party;
   headingId?: string;
+  context?: SharedSeatContext|null;
 };
 
 /**
@@ -40,7 +45,8 @@ type Props = {
  * its seats, its coalition pledges, and a prominent way into the full profile page, which carries
  * everything else (stances, every poll, the names on the list, bios, sources).
  */
-export default function ProfileDetail({ party: p, headingId }: Props) {
+export default function ProfileDetail({ party: p, headingId,context:initial }: Props) {
+  const {context,refreshFailed}=useSeatContext(initial,!!initial);
   const color = partyColor(p.id);
   return (
     <div className="profile preview" style={{ ["--qc" as string]: color }}>
@@ -65,7 +71,7 @@ export default function ProfileDetail({ party: p, headingId }: Props) {
         <dt>Leader</dt>
         <dd>{p.leader}</dd>
         <dt>Seats, polling average</dt>
-        <dd>{seatsLine(p)}</dd>
+        <dd>{!context&&refreshFailed ? LIFECYCLE.en.sourceUnavailable : context ? `${context.pointSeats[p.id] ?? 0} seats · ${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]}` : seatsLine(p)}</dd>
       </dl>
       {p.who.length > 0 && (
         <div className="sec">

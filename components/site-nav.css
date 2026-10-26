@@ -9,7 +9,7 @@
 .masthead:has(.site-nav[data-home]) .brand, .masthead:has(.site-nav[data-closed]) .brand { padding-block: 16px; }
 .site-nav,.nav-menu { display: contents; }
 
-.mast-meter { grid-area: meter; align-self: center; display: flex; flex-direction: column; gap: 6px; width: 140px; padding-block: 8px; color: var(--ink-2); text-decoration: none; }
+.mast-meter { min-width:0; grid-area: meter; align-self: center; display: flex; flex-direction: column; gap: 6px; width: 140px; padding-block: 8px; color: var(--ink-2); text-decoration: none; }
 .mm-text { font-size: 13px; line-height: 1.3; }
 .mm-text b { font: 700 17px var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
 .mast-meter:hover .mm-text { text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
@@ -80,8 +80,8 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
  .masthead .brand .word { font-size: 22px; }
  .masthead > .row > .countdown { padding: 0 0 10px; }
  .mast-meter { width: auto; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; padding: 0 0 6px; }
- .mm-text { flex: none; }
- .mm-bar { flex: 1; min-width: 60px; }
+ .mm-text { flex: 1; min-width:0; overflow-wrap:anywhere; }
+ .mm-bar { flex: 0 0 60px; min-width: 60px; }
  .nav-mobile-toggle { grid-area: toggle; display: block; min-height: 44px; padding: 10px 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); font: 600 14px var(--body); cursor: pointer; }
  .nav-mobile-toggle[aria-expanded="true"] { color: var(--bg); background: var(--ink); }
  .nav-menu { grid-area: menu; display: none; border-top: 1px solid var(--line); padding-bottom: 6px; }

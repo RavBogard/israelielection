@@ -1,3 +1,4 @@
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { MatrixCell } from "@/components/compare/model";
 import type { BlocId } from "@/lib/types";
 
@@ -39,4 +40,4 @@ export type MatchParty = {
   pledge: { text: string; source: string } | null;
 };
 export type MatchBloc = { id: BlocId; label: string; seats: number };
-export type MatchData = { questions: MatchQuestion[]; parties: MatchParty[]; blocs: MatchBloc[]; asOf: string };
+export type MatchData = { context?: SharedSeatContext | null; questions: MatchQuestion[]; parties: MatchParty[]; blocs: MatchBloc[]; asOf: string };

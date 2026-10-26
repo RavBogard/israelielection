@@ -1,5 +1,7 @@
 "use client";
 
+import { geographyToElection } from "@/lib/geography-view";
+import type { GeographySnapshot } from "@/lib/election-lifecycle/types";
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./votemap.css";
 import LocalityHistory from "./LocalityHistory";
@@ -50,6 +52,9 @@ function boxOf(rings: [number, number][][]): [number, number, number, number] {
 }
 
 export default function VoteMap() {
+  const [geography,setGeography]=useState<{revision:string;election:VoteMapElection}|null>(null);
+  const [geographyFailed,setGeographyFailed]=useState(false);
+  const [geographyChecked,setGeographyChecked]=useState(false);
   const [shapes, setShapes] = useState<Shape[] | null>(null);
   const [context, setContext] = useState<{ wb: string; gaza: string } | null>(null);
   const [places, setPlaces] = useState<Places | null>(null);
@@ -74,11 +79,17 @@ export default function VoteMap() {
   // The scroll wheel zooms only with Ctrl or Cmd held, or once the map has been clicked, so it never traps the page's scroll.
   const active=useRef(false);
 
+  useEffect(()=>{let disposed=false;let controller:AbortController|null=null,timer:ReturnType<typeof setTimeout>|undefined;const pin=new URLSearchParams(window.location.search).get("geography");
+    const load=async()=>{if(disposed||document.visibilityState==="hidden")return;controller?.abort();const request=new AbortController();controller=request;const timeout=setTimeout(()=>request.abort(),10000);
+      try{const response=await fetch(`/api/election-lifecycle/geography${pin?`?revision=${encodeURIComponent(pin)}`:""}`,{signal:request.signal,cache:"no-store"});if(!response.ok)throw new Error("unavailable");const body=await response.json();const snapshot=body.snapshot as GeographySnapshot;
+        if(!snapshot?.officialSeatRevision)throw new Error("unreconciled");const seats=await fetch(`/api/election-lifecycle?view=seats&revision=${snapshot.officialSeatRevision}`,{signal:request.signal});if(!seats.ok)throw new Error("seats unavailable");const selected=await seats.json();const election=geographyToElection(snapshot,selected.seatContext);if(!election)throw new Error("unreconciled");if(!disposed&&!request.signal.aborted){setGeographyFailed(false);setGeography({revision:snapshot.revision,election});setCache(c=>({...c,"2026":election}));if(!new URLSearchParams(window.location.search).has("election"))setElectionId("2026");setGeographyChecked(true);}
+      }catch{if(!disposed){setGeographyChecked(true);setGeographyFailed(true);}}finally{clearTimeout(timeout);if(!disposed&&!pin)timer=setTimeout(load,60000);}};
+    const visible=()=>{clearTimeout(timer);if(document.visibilityState==="visible")void load();else controller?.abort();};void load();document.addEventListener("visibilitychange",visible);return()=>{disposed=true;clearTimeout(timer);controller?.abort();document.removeEventListener("visibilitychange",visible);};},[]);
   useEffect(() => {
     const restore = () => { const state = readMapState(new URLSearchParams(window.location.search)); setElectionId(state.election); setListName(state.list); setMode(state.mode); setSelected(state.locality); setQuery(""); };
     restore(); window.addEventListener("popstate", restore); return () => window.removeEventListener("popstate", restore);
   }, []);
-  function save(id: string, name: string, code: number | null,nextMode=mode) { const path = mapHref(id,name,code,nextMode); if (`${location.pathname}${location.search}` !== path) history.pushState(history.state,"",path); setCopied(false); }
+  function save(id: string, name: string, code: number | null,nextMode=mode) { let path = mapHref(id,name,code,nextMode);if(id==="2026"&&geography&&new URLSearchParams(window.location.search).has("geography"))path+=`&geography=${geography.revision}`; if (`${location.pathname}${location.search}` !== path) history.pushState(history.state,"",path); setCopied(false); }
 
   useEffect(() => {
     Promise.all([getJson<Topology>("/vote-map/boundaries.topo.json"), getJson<Context>("/vote-map/context.json"), getJson<Places>("/vote-map/places.json")])
@@ -104,7 +115,7 @@ export default function VoteMap() {
   }, []);
 
   useEffect(() => {
-    if (cache[electionId]) return;
+    if (cache[electionId] || electionId === "2026") return;
     getJson<VoteMapElection>(`/vote-map/${electionId}.json`)
       .then((e) => setCache((c) => ({ ...c, [electionId]: e })))
       .catch(() => setError(true));
@@ -197,6 +208,7 @@ export default function VoteMap() {
   });
 
   if (error) return <p className="vm-msg">The map&apos;s data could not be loaded. Reload the page to try again.</p>;
+  if(electionId==="2026"&&!geography&&geographyChecked)return <div className="vm-msg"><p>The selected2026 locality snapshot is unavailable or has not reconciled with published official totals. Historical data has not been substituted.</p><a href="/vote-map?election=2022">View2022 history</a></div>;
   if (!shapes || !context || !places || !view || !election || !list) return <p className="vm-msg">Loading the map…</p>;
 
   const info = hover ?? selected;
@@ -225,12 +237,14 @@ export default function VoteMap() {
 
   return (
     <div className="vm" style={mode==="single" ? {["--vm-hue" as string]:listColor(list.name),["--vm-deep" as string]:`${rampDeep(listColor(list.name))}%`} : undefined}>
+      {geography&&geographyFailed&&<p className="fig-note" role="status">Source refresh unavailable. The last verified published locality snapshot remains visible.</p>}
+      <p className="fig-note">{geography ? `2026 localities verified against published official totals. Snapshot ${geography.revision.slice(0,12)}. Places without coordinates remain in tables; special envelopes remain separate.` : geographyChecked ? "2026 localities await a validated complete source reconciled with official totals. The map below is historical." : "Checking availability of validated2026 locality results…"}</p>
       <div className="vm-controls">
         <label><span>View</span><select aria-label="View" value={mode} onChange={e=>{const next=e.target.value as MapMode;setMode(next);save(electionId,list.name,selected,next);}}>{Object.entries(MODE_LABELS).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select></label>
         <label>
           <span>Election</span>
           <select aria-label="Election" value={electionId} onChange={(e) => { const id = e.target.value; setElectionId(id); save(id,listName,selected); }}>
-            {ELECTIONS.map((e) => (
+            {(geography ? [{id:"2026",label:geography.election.label},...ELECTIONS] : ELECTIONS).map((e) => (
               <option key={e.id} value={e.id}>{e.label}</option>
             ))}
           </select>
@@ -257,7 +271,7 @@ export default function VoteMap() {
       </div>
 
       <p className="vm-fallback" role="status">{asked < 0 ? `${listName} did not run in the ${election.label} election, so the map shows ${list.name}.` : ""}</p>
-      <p className="vm-share"><button type="button" className="btn" onClick={async () => { const path = mapHref(electionId,list.name,selected,mode); history.replaceState(history.state,"",path); try { await navigator.clipboard.writeText(`https://www.israelielection.org${path}`); setCopied(true); } catch { setCopied(false); } }}>Copy link</button><span role="status">{copied ? "Link copied." : ""}</span></p>
+      <p className="vm-share"><button type="button" className="btn" onClick={async () => { const path = mapHref(electionId,list.name,selected,mode)+(electionId==="2026"&&geography?`&geography=${geography.revision}`:""); try { await navigator.clipboard.writeText(`https://www.israelielection.org${path}`); setCopied(true); } catch { setCopied(false); } }}>Copy link</button><span role="status">{copied ? "Link copied." : ""}</span></p>
       <div className="vm-body">
         <div className="vm-mapwrap">
           <svg
@@ -426,8 +440,9 @@ export default function VoteMap() {
         </aside>
       </div>
 
-      <p className="fig-note vm-mode-note vm-method">{mode==="single" ? `Deeper ${list.name} color means a larger share of valid votes for that list.` : mode==="leader" ? "Color shows the local plurality among named lists, not a majority or individual voters. A tie or a grouped Other total large enough to conceal the leader is marked separately. Land area is not vote count." : "Each pie shows a town's vote mix; circle area is proportional to valid votes. Larger towns are prioritized when markers overlap. Zoom in or find any town for its full recorded breakdown."} Named lists reached at least 1% nationally in that election. Other lists are combined; their individual results are not in this map file. Lists that run on under the same party in 2026 take that list&apos;s color; other colors identify historical lists, not today&apos;s political blocs. Hatched localities have no result in the file; plain land lies outside any voting locality.</p>
-      {selected !== null && places[selected] && <LocalityHistory code={selected} name={places[selected][0]} election={electionId} list={list.name} mode={mode} />}
+      {electionId==="2026"&&<details><summary>All published2026 locality rows, including places without mapped coordinates</summary><div className="vm-tw"><table><thead><tr><th>Locality</th><th>Eligible</th><th>Voted</th><th>Valid</th><th>{list.name}</th></tr></thead><tbody>{election.rows.map(r=><tr key={r[0]}><th>{places[r[0]]?.[0]??`Locality code ${r[0]}`}</th><td>{num(r[1])}</td><td>{num(r[2])}</td><td>{num(r[3])}</td><td>{num(r[4+listIdx])}</td></tr>)}</tbody></table></div></details>}
+      <p className="fig-note vm-mode-note vm-method">{mode==="single" ? `Deeper ${list.name} color means a larger share of valid votes for that list.` : mode==="leader" ? "Color shows the local plurality among named lists, not a majority or individual voters. A tie or a grouped Other total large enough to conceal the leader is marked separately. Land area is not vote count." : "Each pie shows a town's vote mix; circle area is proportional to valid votes. Larger towns are prioritized when markers overlap. Zoom in or find any town for its full recorded breakdown."} {electionId==="2026" ? "All lists in the reconciled2026 publication are named separately." : "Named lists reached at least1% nationally in that election. Other lists are combined; their individual results are not in this map file."} Lists that run on under the same party in 2026 take that list&apos;s color; other colors identify historical lists, not today&apos;s political blocs. Hatched localities have no result in the file; plain land lies outside any voting locality.</p>
+      {selected !== null && places[selected] && <LocalityHistory code={selected} name={places[selected][0]} election={electionId} list={list.name} mode={mode} current={geography?.election} geographyRevision={geography?.revision} />}
       <details className="vm-table">
         <summary>Table: the 25 localities where {list.name} did best, {election.label} (1,000 valid votes or more)</summary>
         <div className="vm-tw">

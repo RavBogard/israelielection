@@ -1,0 +1,7 @@
+{
+  "source": "https://votes25.bechirot.gov.il/nationalresults",
+  "capturedAt": "2026-10-26",
+  "format": "normalized_primary_table_excerpt",
+  "note": "Actual CEC25 official final table values verified with primary page web reader and the repository CEC archive. HTML table wrapper is normalized for parser testing; direct raw HTML fetch returned403 here. This is not proof of a successful current26 source fetch.",
+  "html": "<h1>בחירות לכנסת ה-25</h1><p>1 בנובמבר 2022</p><h3>תוצאות סופיות רשמיות</h3><table><tr><th>שם הרשימה</th><th>אותיות הרשימה</th><th>מנדטים</th><th>מספר הקולות הכשרים לרשימה</th></tr><tr><td>Likud</td><td>מחל</td><td>32</td><td>1,115,336</td></tr><tr><td>Yesh Atid</td><td>פה</td><td>24</td><td>847,435</td></tr><tr><td>Religious Zionism–Otzma Yehudit</td><td>ט</td><td>14</td><td>516,470</td></tr><tr><td>National Unity</td><td>כן</td><td>12</td><td>432,482</td></tr><tr><td>Shas</td><td>שס</td><td>11</td><td>392,964</td></tr><tr><td>United Torah Judaism</td><td>ג</td><td>7</td><td>280,194</td></tr><tr><td>Yisrael Beiteinu</td><td>ל</td><td>6</td><td>213,687</td></tr><tr><td>Ra'am (United Arab List)</td><td>עם</td><td>5</td><td>194,047</td></tr><tr><td>Hadash–Ta'al</td><td>ום</td><td>5</td><td>178,735</td></tr><tr><td>Labor</td><td>אמת</td><td>4</td><td>175,992</td></tr><tr><td>Meretz</td><td>מרצ</td><td>0</td><td>150,793</td></tr><tr><td>Balad</td><td>ד</td><td>0</td><td>138,617</td></tr><tr><td>Jewish Home</td><td>ב</td><td>0</td><td>56,775</td></tr></table>"
+}

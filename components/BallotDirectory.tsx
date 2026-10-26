@@ -1,15 +1,16 @@
 "use client";
 
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import SeatBasis from "./seat-context/SeatBasis";
 import { useState } from "react";
 import Link from "next/link";
 import { ballotLists, filterBallot, orderSlips, type SlipOrder } from "@/lib/ballot";
-import { averagePoll } from "@/lib/data";
 import { seatFigure } from "@/lib/polls";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import data from "@/data/ballot-directory.json";
 import "./BallotDirectory.css";
 
-const seatsOf = (id: string | null) => (id ? averagePoll.results[id]?.seats ?? 0 : 0);
+
 /** A spaced dash in a list name stays with the word before it, so it never starts a line on its own. */
 const keepDash = (name: string) => name.replace(/ ([—–]) /g, " $1 ");
 /** On a slip, the part of a name after a spaced dash is its second line. */
@@ -24,6 +25,8 @@ const slipName = (name: string) => {
  * sees how many lists run and how few the polls count. Then the searchable directory.
  */
 export default function BallotDirectory() {
+  const {context}=useSeatContext();
+  const seatsOf=(id:string|null)=>id&&context ? context.pointSeats[id]??0 : 0;
   const [query, setQuery] = useState("");
   const [coverage, setCoverage] = useState<"all" | "profiled" | "other">("all");
   const [order, setOrder] = useState<SlipOrder>("roster");
@@ -31,10 +34,11 @@ export default function BallotDirectory() {
   const polled = ballotLists.filter((l) => seatsOf(l.profile) > 0).length;
   return (
     <section className="ballot-directory">
+      <SeatBasis context={context} lang="en" share/>
       <figure className="bd-tray">
         <figcaption className="bd-head">
           <span className="bd-h">
-            The {ballotLists.length} slips on the roster; <b>{polled}</b> win seats in the polling average
+            The {ballotLists.length} slips on the roster{context&&<>; <b>{polled}</b> hold seats in this allocation</>}
           </span>
           <div className="seg bd-order" role="group" aria-label="Order the slips">
             {([["roster", "Roster order"], ["polled", "Polled first"]] as const).map(([k, t]) => (
@@ -48,7 +52,7 @@ export default function BallotDirectory() {
             const c = l.profile ? partyColor(l.profile) : null;
             return (
               <li key={l.id}>
-                <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${seatFigure(s)} seats in the average` : ""}`}>
+                <a href={`#${l.id}`} className={`bd-slip${s > 0 ? " polled" : ""}`} style={s > 0 && c ? { ["--c" as string]: c, ["--ci" as string]: partyInk(l.profile!) } : undefined} title={`${l.name}${s > 0 ? `: ${seatFigure(s)} seats in this allocation` : ""}`}>
                   <span className="bd-letters" lang="he" dir="rtl">{l.letters}</span>
                   <span className="bd-name">{slipName(l.name)}</span>
                   {s > 0 && <span className="bd-seats">{seatFigure(s)}</span>}
@@ -58,7 +62,7 @@ export default function BallotDirectory() {
           })}
         </ol>
         <p className="fig-src bd-src">
-          Coloured slips are the lists that pass the threshold in the polling average, with their seats; plain slips poll below it or are not polled. {order === "roster" ? "Order as in the published roster." : "Polled lists first, by seats; the rest in roster order."} {data.caveat}
+          Coloured slips are profiled lists holding seats in this allocation. A plain slip has no mapped seat total; this does not establish official approval, withdrawal or current eligibility. {order === "roster" ? "Order as in the published roster." : "Polled lists first, by seats; the rest in roster order."} {data.caveat}
         </p>
       </figure>
 

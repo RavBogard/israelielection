@@ -3,7 +3,7 @@ import {mapMode,type MapMode} from "./votemap-visual";
 export const HISTORY_ELECTIONS = ["2019a", "2019b", "2020", "2021", "2022"] as const;
 export function readMapState(q: URLSearchParams, places?: Places, election?: VoteMapElection) {
   const requested = q.get("election") ?? "2022";
-  const id = HISTORY_ELECTIONS.includes(requested as typeof HISTORY_ELECTIONS[number]) ? requested : "2022";
+  const id = (requested === "2026" || HISTORY_ELECTIONS.includes(requested as typeof HISTORY_ELECTIONS[number])) ? requested : "2022";
   const raw = q.get("locality"); const code = raw && /^\d{1,5}$/.test(raw) ? Number(raw) : null;
   const locality = code && (!places || places[code]) && code !== 9999 && code !== 99999 ? code : null;
   const list = q.get("list") ?? "Likud";

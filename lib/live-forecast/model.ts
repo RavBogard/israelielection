@@ -6,7 +6,7 @@ import scenarios from "../../data/coalition-scenarios.json";
 import type { Poll } from "../types";
 import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 
-export const MODEL_VERSION = "live-v1-conservative-joint";
+export const MODEL_VERSION = "live-v2-joint-representative";
 const canonical = (v: unknown): unknown => Array.isArray(v) ? v.map(canonical) : v !== null && typeof v === "object" ? Object.fromEntries(Object.entries(v).sort(([a], [b]) => a.localeCompare(b)).map(([k, x]) => [k, canonical(x)])) : v;
 export const hash = (value: unknown) => createHash("sha256").update(typeof value === "string" ? value : JSON.stringify(canonical(value))).digest("hex");
 export const SCENARIO_VERSION = hash(scenarios.scenarios).slice(0, 16);
@@ -53,6 +53,15 @@ export function summarizeDraws(seats: Draws, blocs: Draws) {
   return { largestParty: categorical(first), partySeats: ids.map((id) => ({ id, seats: interval(Array.from(seats[id])) })), blocMargin: interval(Array.from({length:n}, (_, i) => blocs.net[i] - blocs.opp[i])), blocLead: categorical(lead), arrangements, thresholds, stable };
 }
 
+export function representativeJointDraw(seats: Draws) {
+  const ids=Object.keys(seats),n=seats[ids[0]]?.length??0;
+  if(!n)throw new Error("Missing joint draws");
+  const means=Object.fromEntries(ids.map((id)=>[id,Array.from(seats[id]).reduce((a,b)=>a+b,0)/n]));
+  let drawIndex=0,best=Infinity;
+  for(let i=0;i<n;i++){const loss=ids.reduce((v,id)=>v+Math.abs(seats[id][i]-means[id]),0);if(loss<best){best=loss;drawIndex=i;}}
+  return {method:"representative_joint_draw" as const,drawIndex,seats:Object.fromEntries(ids.map((id)=>[id,seats[id][drawIndex]]))};
+}
+
 export function buildSnapshot({ prior, revision, now, exits = [], sources = [], runs = 30000 }: { prior: LiveForecastSnapshot["prior"]; revision: string; now: string; exits?: Poll[]; sources?: LiveSource[]; runs?: number }): LiveForecastSnapshot {
   // Exit estimates retain the pre-election model's broad shared bloc and sector errors. No independent poll multiplication.
   const polls = exits.length ? exits.map((p) => ({ ...p, kind: undefined })) : pollFile.polls;
@@ -60,5 +69,5 @@ export function buildSnapshot({ prior, revision, now, exits = [], sources = [], 
   const out = forecast({ polls, config: pollFile.config, parties: partyFile.parties, agreements: [...results.agreements, ...results.unconfirmedAgreements].map((a) => a.parties), cal: liveCalibration, opts: { keepRuns: true, runs, seed: 20261027, ...(exits.length ? { lean: 0, priors: false } : {}) } });
   if (!out.seatRuns || !out.blocRuns) throw new Error("Joint draws unavailable");
   const summary = summarizeDraws(out.seatRuns, out.blocRuns);
-  return { schemaVersion: 1, modelVersion: MODEL_VERSION, scenarioVersion: SCENARIO_VERSION, revision, generatedAt: now, mode: exits.length ? "exit" : "prior", experimental: true, prior, freshness: { status: sources.some((s) => s.status === "valid") ? "current" : "baseline", lastSuccessfulAcquisitionAt: sources.some((s) => s.status === "valid") ? now : null, lastAttemptAt: now }, sources, largestParty: summary.largestParty, partySeats: summary.partySeats, blocMargin: summary.blocMargin, changeReason: exits.length ? "source_revision" : "baseline", history: [], blocLead: summary.blocLead, arrangements: summary.arrangements, thresholds: summary.thresholds, diagnostics: { runs, seed: out.seed, stable: summary.stable, countGate: "blocked", limitations: ["Experimental conditional arithmetic, not probabilities that parties agree to govern.", "Threshold comparisons are conditional associations, not causal effects.", "Exit-poll error has no fitted 2026 historical calibration; broad prior shared errors are retained.", "Official count publication is blocked pending source semantics and verified reporting-coverage metadata and replay checks.", "Direct Channel13 timeline extraction is supported; complete structured N12/Kan ingestion remains unverified, with validated Wikipedia as fallback.", "Special envelopes remain separate from geographic turnout."] } };
+  return { schemaVersion: 1, modelVersion: MODEL_VERSION, scenarioVersion: SCENARIO_VERSION, revision, generatedAt: now, mode: exits.length ? "exit" : "prior", experimental: true, prior, freshness: { status: sources.some((s) => s.status === "valid") ? "current" : "baseline", lastSuccessfulAcquisitionAt: sources.some((s) => s.status === "valid") ? now : null, lastAttemptAt: now }, sources, largestParty: summary.largestParty, partySeats: summary.partySeats, representativePoint: representativeJointDraw(out.seatRuns), blocMargin: summary.blocMargin, changeReason: exits.length ? "source_revision" : "baseline", history: [], blocLead: summary.blocLead, arrangements: summary.arrangements, thresholds: summary.thresholds, diagnostics: { runs, seed: out.seed, stable: summary.stable, countGate: "blocked", limitations: ["Experimental conditional arithmetic, not probabilities that parties agree to govern.", "Threshold comparisons are conditional associations, not causal effects.", "Exit-poll error has no fitted 2026 historical calibration; broad prior shared errors are retained.", "Official count publication is blocked pending source semantics and verified reporting-coverage metadata and replay checks.", "Direct Channel13 timeline extraction is supported; complete structured N12/Kan ingestion remains unverified, with validated Wikipedia as fallback.", "Special envelopes remain separate from geographic turnout."] } };
 }

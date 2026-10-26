@@ -1,5 +1,8 @@
+import { getSharedSeatContext } from "@/lib/election-lifecycle/server";
+import { contextToPoll } from "@/lib/seat-context";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { ImageResponse } from "next/og";
-import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
+import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 import { COLS, MAJORITY, ROWS, TOTAL, allocate } from "@/components/SeatGrid";
 import { KNESSET } from "@/lib/coalition";
 import { averagePoll, blocs, mainPolls, parties } from "@/lib/data";
@@ -36,11 +39,14 @@ const Line = ({ text, style }: { text: string; style?: React.CSSProperties }) =>
 
 export default async function Image() {
   const live = await fetchCount(revalidate);
-  const poll = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : averagePoll;
+  const selected=await getSharedSeatContext();const context=selected.state==="ready"?selected.context:null;
+  if(!context)return new ImageResponse(<div style={{display:"flex",background:PAPER,color:INK,width:"100%",height:"100%",padding:64,fontSize:40,fontFamily:"Frank Ruhl Libre"}}>{LIFECYCLE.he.sourceUnavailable}</div>,{...size,fonts:await ogFonts()});
+  const poll = context ? contextToPoll(context) : live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : averagePoll;
   const isLive = live.state === "open";
   const totals = blocTotals(poll, parties);
-  const ordered = GRID_ORDER.map((id) => { const b = blocs.find((x) => x.id === id)!; return { id, label: blocText(b, "he").text, seats: totals[id] }; });
-  const counts = allocate(ordered.map((b) => ({ id: b.id, seats: b.seats, color: BLOC[b.id], label: b.label })));
+  const ordered: {id:string;label:string;seats:number;color:string}[] = GRID_ORDER.map((id) => { const b = blocs.find((x) => x.id === id)!; return { id, label: blocText(b, "he").text, seats: totals[id],color:BLOC[id] }; });
+  const unclassified = 120-ordered.reduce((n,b)=>n+b.seats,0);if(unclassified>0)ordered.push({id:"unclassified",label:LIFECYCLE.he.unknown,seats:unclassified,color:CELL});
+  const counts = allocate(ordered.map((b) => ({ id: b.id, seats: b.seats, color: b.color, label: b.label })));
 
   // The grid mirrored: the first seat at the top right, the "61" to its left.
   const W = COLS * P - 6, H = ROWS * P - 6, ruleY = 5 * P - 3;
@@ -48,16 +54,16 @@ export default async function Image() {
   const cells: React.ReactNode[] = [];
   let i = 0;
   ordered.forEach((b, k) => {
-    for (let n = 0; n < counts[k]; n++, i++) cells.push(<rect key={i} x={x(i)} y={Math.floor(i / COLS) * P} width={S} height={S} fill={BLOC[b.id]} />);
+    for (let n = 0; n < counts[k]; n++, i++) cells.push(<rect key={i} x={x(i)} y={Math.floor(i / COLS) * P} width={S} height={S} fill={b.color} />);
   });
   for (; i < TOTAL; i++) cells.push(<rect key={i} x={x(i)} y={Math.floor(i / COLS) * P} width={S} height={S} fill={CELL} />);
 
   // Broken by hand at the phrase boundaries; the numbers are short enough not to move a break.
-  const standfirst = isLive
+  const standfirst = context ? [`${LIFECYCLE.he[context.basis]}`, `${LIFECYCLE.he[context.seatStatus]} · 120`] : isLive
     ? [`הספירה עד כה, ב-${KNESSET} המושבים`, `בכנסת. ${MAJORITY} מנדטים הם רוב.`]
     : [`תמונת המרוץ לפי ממוצע ${mainPolls.length} הסקרים`, `האחרונים, ב-${KNESSET} המושבים בכנסת.`, `${MAJORITY} מנדטים הם רוב.`];
   const newest = new Intl.DateTimeFormat("he-IL", { day: "numeric", month: "long", timeZone: "Asia/Jerusalem" }).format(new Date(mainPolls[0].published));
-  const dateline = isLive ? live.state === "open" && live.freshness === "stale" ? "ספירה שמורה, לא מעודכנת" : "ספירת ועדת הבחירות המרכזית" : `סקרים עד ${newest}`;
+  const dateline = context ? `${LIFECYCLE.he[context.freshness.status]} · ${context.publishedAt??LIFECYCLE.he.noTime}` : isLive ? live.state === "open" && live.freshness === "stale" ? "ספירה שמורה, לא מעודכנת" : "ספירת ועדת הבחירות המרכזית" : `סקרים עד ${newest}`;
 
   return new ImageResponse(
     (
@@ -73,7 +79,7 @@ export default async function Image() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", width: 480, flexShrink: 0 }}>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 64, fontWeight: 700, lineHeight: 1.05 }}>
-            {headline(daysUntil(ELECTION_DAY), isLive).map((line) => <Line key={line} text={line} />)}
+            {(context ? (context.seatStatus==="official" ? ["פורסמו המנדטים.","הכנסת שנבחרה."] : ["המנדטים כעת.",LIFECYCLE.he[context.seatStatus]]) : headline(daysUntil(ELECTION_DAY), isLive)).map((line) => <Line key={line} text={line} />)}
           </div>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 23, lineHeight: 1.4, color: TEXT, marginTop: 20 }}>
             {standfirst.map((line) => <Line key={line} text={line} />)}
@@ -83,7 +89,7 @@ export default async function Image() {
               <div key={b.id} style={{ display: "flex", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${LINE}`, fontSize: 21, color: TEXT }}>
                 <div style={{ display: "flex", marginRight: "auto", fontWeight: 700, fontSize: 26, color: INK }}>{String(Math.round(b.seats * 10) / 10)}</div>
                 <Line text={b.label} />
-                <div style={{ width: 14, height: 14, background: BLOC[b.id], marginLeft: 10 }} />
+                <div style={{ width: 14, height: 14, background: b.color, marginLeft: 10 }} />
               </div>
             ))}
           </div>

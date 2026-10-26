@@ -1,3 +1,5 @@
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import { contextToPoll } from "@/lib/seat-context";
 /**
  * The party profile's figures, computed once per page from the site's data: the at-a-glance
  * numbers, the seat series across every poll since dissolution, the 2022 result and the
@@ -140,15 +142,16 @@ export function readings(party: Party): Reading[] {
 
 const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
 
-export function glance(party: Party, series: Reading[]): Glance {
-  const av = listSeats(party.id);
+export function glance(party: Party, series: Reading[], context?: SharedSeatContext | null): Glance {
+  const av = listSeats(party.id, context);
   const wv = variantAverage.results[party.id];
   const passing = mainPolls.map((p) => p.results[party.id]).filter((r) => r && !r.belowThreshold && r.seats > 0).map((r) => r!.seats);
-  const totals = blocTotals(averagePoll, parties);
-  const mates = parties.filter((p) => p.bloc === party.bloc).map((p) => ({ id: p.id, seats: averagePoll.results[p.id]?.seats ?? 0 })).sort((a, b) => b.seats - a.seats);
+  const current = context ? contextToPoll(context) : averagePoll;
+  const totals = blocTotals(current, parties);
+  const mates = parties.filter((p) => p.bloc === party.bloc).map((p) => ({ id: p.id, seats: current.results[p.id]?.seats ?? 0 })).sort((a, b) => b.seats - a.seats);
   const reported = series.filter((r) => r.seats !== null);
   return {
-    avg: av.n ? av.seats : null,
+    avg: context || av.n ? av.seats : null,
     below: av.below,
     passingAvg: av.passing,
     k: av.k,

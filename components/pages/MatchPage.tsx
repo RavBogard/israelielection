@@ -1,3 +1,5 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
+import SeatBasis from "@/components/seat-context/SeatBasis";
 import "@/components/article/article.css";
 import { matrixRows, shade } from "@/components/compare/model";
 import MatchQuiz from "@/components/match/MatchQuiz";
@@ -67,11 +69,15 @@ const data: MatchData = {
 };
 
 /** Party match (/match): a short questionnaire on the seven issues, matched against Compare's recorded answers. English only. */
-export default function MatchPage() {
+export default async function MatchPage() {
+  const context = await seatContextForRender();
+  if(!context)return <div className="wrap match-page"><PageHead title="Which Israeli party matches you?"/><SeatBasis context={null} lang="en"/></div>;
+  const current = context ? { ...data, context, parties:data.parties.map(p=>({...p,seats:context.pointSeats[p.id]??0,seatsText:String(context.pointSeats[p.id]??0),below:!(context.pointSeats[p.id]??0)})),blocs:data.blocs.map(b=>({...b,seats:blocSeats(b.id,context)})) } : data;
   return (
     <div className="wrap match-page">
       <PageHead title="Which Israeli party matches you?" standfirst="Answer seven questions from this campaign and see which lists sit closest to you, and what an Israeli voter would weigh next." />
-      <MatchQuiz data={data} />
+      <SeatBasis context={context} lang="en" share />
+      <MatchQuiz data={current} />
     </div>
   );
 }

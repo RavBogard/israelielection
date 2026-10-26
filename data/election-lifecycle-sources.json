@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "election": "2026-10-27",
+  "note": "Only primary sources may change confirmed state. No party source is presumed verified by its hostname; add registry entries only with ownership evidence. Unconfigured parties remain undecided.",
+  "sources": [
+    {
+      "id": "president",
+      "publisher": "President of Israel",
+      "authority": "president",
+      "index": "https://www.president.gov.il/en/category/news/",
+      "hosts": [
+        "www.president.gov.il",
+        "president.gov.il"
+      ],
+      "partyIds": []
+    },
+    {
+      "id": "knesset-agreements",
+      "publisher": "Knesset",
+      "authority": "knesset",
+      "index": "https://main.knesset.gov.il/mk/government/pages/coalitionagreements.aspx",
+      "hosts": [
+        "main.knesset.gov.il",
+        "m.knesset.gov.il",
+        "www.knesset.gov.il",
+        "knesset.gov.il"
+      ],
+      "partyIds": []
+    },
+    {
+      "id": "knesset-government",
+      "publisher": "Knesset",
+      "authority": "knesset",
+      "index": "https://main.knesset.gov.il/EN/mk/government/Pages/governments.aspx",
+      "hosts": [
+        "main.knesset.gov.il",
+        "m.knesset.gov.il",
+        "www.knesset.gov.il",
+        "knesset.gov.il"
+      ],
+      "partyIds": []
+    },
+    {
+      "id": "party-likud",
+      "publisher": "Likud",
+      "authority": "party",
+      "index": "https://www.likud.org.il/",
+      "hosts": [
+        "www.likud.org.il",
+        "likud.org.il"
+      ],
+      "partyIds": [
+        "likud"
+      ],
+      "ownershipEvidence": "https://www.likud.org.il/"
+    },
+    {
+      "id": "party-yashar",
+      "publisher": "Yashar",
+      "authority": "party",
+      "index": "https://yasharwitheisenkot.com/",
+      "hosts": [
+        "yasharwitheisenkot.com",
+        "www.yasharwitheisenkot.com"
+      ],
+      "partyIds": [
+        "yashar"
+      ],
+      "ownershipEvidence": "https://yasharwitheisenkot.com/"
+    },
+    {
+      "id": "party-byachad",
+      "publisher": "B'Yachad",
+      "authority": "party",
+      "index": "https://be-yahad.org.il/",
+      "hosts": [
+        "be-yahad.org.il",
+        "www.be-yahad.org.il"
+      ],
+      "partyIds": [
+        "byachad"
+      ],
+      "ownershipEvidence": "https://be-yahad.org.il/"
+    },
+    {
+      "id": "party-dem",
+      "publisher": "The Democrats",
+      "authority": "party",
+      "index": "https://democrats.org.il/media/",
+      "hosts": [
+        "democrats.org.il",
+        "www.democrats.org.il"
+      ],
+      "partyIds": [
+        "dem"
+      ],
+      "ownershipEvidence": "https://democrats.org.il/media/"
+    },
+    {
+      "id": "party-yb",
+      "publisher": "Yisrael Beiteinu",
+      "authority": "party",
+      "index": "https://beytenu.org.il/isreal-beyten-news/",
+      "hosts": [
+        "beytenu.org.il",
+        "www.beytenu.org.il"
+      ],
+      "partyIds": [
+        "yb"
+      ],
+      "ownershipEvidence": "https://beytenu.org.il/isreal-beyten-news/"
+    }
+  ]
+}

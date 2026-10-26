@@ -105,7 +105,7 @@ export const HE_NAV_GROUPS: { id: string; label: string; items: HeItem[] }[] = [
       { href: "/he/forecast", label: "התחזית", description: "תחזית המנדטים של האתר, איך חישבנו אותה ואיך היא תיבחן." },
       { href: "/news", label: "התדריך היומי", hrefLang: "en", description: "תדריך מתוארך בכל יום, עם קישורים לדיווחים המקוריים." },
       { href: "/he/results", label: "תוצאות", afterClose: true, description: "ספירת הקולות בליל הבחירות, עם המקור ושעת העדכון." },
-      { href: "/government", label: "הרכבת הממשלה", hrefLang: "en", afterClose: true, description: "המגעים להרכבת הממשלה הבאה והממשלה היוצאת." },
+      { href: "/he/government", label: "הרכבת הממשלה", description: "המגעים להרכבת הממשלה הבאה והממשלה היוצאת." },
     ],
   },
   {

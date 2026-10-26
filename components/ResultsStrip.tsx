@@ -1,5 +1,8 @@
 "use client";
 import Link from "next/link";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { editionPath } from "@/lib/i18n";
 import { useCallback, useSyncExternalStore } from "react";
 import { nextCountSummary } from "@/lib/results-summary";
 import type { CountSummary } from "@/app/api/count/route";
@@ -37,12 +40,13 @@ function start(pollsClose: string) {
   };
   tick();
 }
-export function useCountSummary(pollsClose: string): CountSummary | null {
+export function useCountSummary(pollsClose: string, enabled = true): CountSummary | null {
   const subscribe = useCallback((cb: () => void) => {
+    if(!enabled)return ()=>{};
     listeners.add(cb);
     start(pollsClose);
     return () => { listeners.delete(cb); if (!listeners.size) { running = false; gen++; if (timer) clearTimeout(timer); } };
-  }, [pollsClose]);
+  }, [pollsClose,enabled]);
   return useSyncExternalStore(subscribe, () => summary, () => null);
 }
 
@@ -51,8 +55,10 @@ export function useCountSummary(pollsClose: string): CountSummary | null {
  * far, how much is counted, and when it was fetched. Polls the count summary every minute.
  */
 export default function ResultsStrip({ pollsClose, blocLabels }: { pollsClose: string; /** Hebrew edition: the bloc labels to show, from the overlay (English ones are marked lang="en"). */ blocLabels?: Record<string, Localized> }) {
-  const data = useCountSummary(pollsClose);
+  const {context,refreshFailed}=useSeatContext();
+  const data = useCountSummary(pollsClose,!context);
   const lang = useLang();
+  if(context){if(context.evidenceStage==="campaign")return null;const t=LIFECYCLE[lang];return <div className="live-strip"><div className="row"><Link href={editionPath("/results",lang)??"/results"} className="lead">{t[context.basis]} · {t[context.seatStatus]}</Link><span>{refreshFailed?t.stale:t[context.freshness.status]}</span><Link className="lead" href={editionPath("/government",lang)??"/government"}>{t.negotiations}</Link></div></div>;}
   if (lang !== "en") return <HebrewStrip data={data} labels={blocLabels ?? {}} />;
   if (data?.state === "error" && data.phase === "exit")
     return (

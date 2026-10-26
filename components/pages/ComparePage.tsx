@@ -1,8 +1,10 @@
 import "@/components/article/article.css";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import SeatBasis from "@/components/seat-context/SeatBasis";
 import Compare, { type CompareParty, type Preset } from "@/components/Compare";
 import { matrixRows, matrixText } from "@/components/compare/model";
 import PageHead from "@/components/PageHead";
-import { averagePoll, blocs, parties } from "@/lib/data";
+import { blocs, parties } from "@/lib/data";
 import type { Lang } from "@/lib/i18n";
 import compareText from "@/lib/i18n/compare";
 import { blocText, partyText } from "@/lib/i18n/overlays";
@@ -18,7 +20,8 @@ const CORE_OPPOSITION = ["yashar", "byachad", "dem", "yb"];
 const rows = matrixRows(ids);
 
 /** The comparison page (/compare, /he/compare). Hebrew reads every data string through lib/i18n/overlays. */
-export default function ComparePage({ lang }: { lang: Lang }) {
+export default async function ComparePage({ lang }: { lang: Lang }) {
+  const context = await seatContextForRender();
   const T = compareText[lang];
   const he = lang !== "en";
   const pickable: CompareParty[] = listed.map((p) => ({
@@ -27,7 +30,7 @@ export default function ComparePage({ lang }: { lang: Lang }) {
     short: he ? partyText(p, "short", lang) : p.short,
     bloc: p.bloc,
     letters: lettersOf[p.id] ?? null,
-    seats: averagePoll.results[p.id]?.seats ?? null,
+    seats: context ? context.pointSeats[p.id] ?? 0 : null,
     out: p.coalitionCard === "out",
   }));
   // The column sets a reader is likely to ask about.
@@ -42,7 +45,10 @@ export default function ComparePage({ lang }: { lang: Lang }) {
     <div className="wrap article-page">
       <PageHead title={T.title} standfirst={<>{T.standfirst}</>} />
 
+      <SeatBasis context={context} lang={lang} share />
       <Compare
+        context={context}
+        unavailable={!context}
         parties={pickable}
         blocs={he ? blocs.map((b) => ({ id: b.id, label: blocText(b, lang) })) : blocs}
         rows={rows}

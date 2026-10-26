@@ -1,3 +1,5 @@
+import { lifecycleForRender } from "@/lib/seat-context-server";
+import { FORMATION } from "@/lib/i18n/formation-live";
 import scenarioData from "@/data/coalition-scenarios.json";
 import { parties, pledgeRules } from "@/lib/data";
 import { arrangementWarnings, type RoleOverrides } from "@/lib/coalition-arrangement";
@@ -6,7 +8,7 @@ import { partyText, pledgeText, scenarioText } from "@/lib/i18n/overlays";
 import { LIVE_FORECAST } from "@/lib/i18n/live-forecast";
 import { getLiveForecast, liveForecastEnabled } from "@/lib/live-forecast/server";
 import { partyColor } from "@/lib/party-colors";
-import ForecastClient from "./ForecastClient";
+import ForecastClient, { ForecastDisplay } from "./ForecastClient";
 import type { ForecastProps } from "./presentation";
 import "./live-forecast.css";
 
@@ -35,5 +37,7 @@ export function forecastPresentation(lang: Lang): Pick<ForecastProps, "text" | "
 /** Resolve beside each page's count fetch, keeping its returned tree synchronous for HTML renderers. */
 export default async function renderLiveForecast({ lang, compact = false }: { lang: Lang; compact?: boolean }) {
   if (!liveForecastEnabled()) return null;
-  return <ForecastClient initial={await getLiveForecast()} lang={lang} compact={compact} {...forecastPresentation(lang)} />;
+  const [initial,lifecycle]=await Promise.all([getLiveForecast(),lifecycleForRender()]);
+  if(lifecycle?.archive.electionForecast==="complete"||lifecycle?.seatContext.seatStatus==="official")return <details><summary>{FORMATION[lang].archive}</summary><ForecastDisplay initial={initial} lang={lang} compact={compact} {...forecastPresentation(lang)}/></details>;
+  return <ForecastClient initial={initial} lang={lang} compact={compact} {...forecastPresentation(lang)} />;
 }

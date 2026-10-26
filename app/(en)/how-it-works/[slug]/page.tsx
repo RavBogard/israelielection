@@ -1,3 +1,6 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
+import SeatBasis from "@/components/seat-context/SeatBasis";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
@@ -25,5 +28,6 @@ export default async function Page(props: PageProps<"/how-it-works/[slug]">) {
   if (!known(slug)) notFound();
   const { default: Body, meta } = await loadGuide(slug);
   const siblings = (await guideIndex()).map((s) => ({ href: s.href, title: s.meta.title }));
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} />;
+  const context=await seatContextForRender();
+  return <>{context&&<aside className="wrap"><SeatBasis context={context} lang="en"/><p><Link href="/results">Current evidence</Link> · <Link href="/government">Coalition scenarios and sourced negotiations</Link></p></aside>}<ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} /></>;
 }

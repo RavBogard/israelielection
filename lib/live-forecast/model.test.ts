@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { summarizeDraws } from "./model";
+import { summarizeDraws, representativeJointDraw } from "./model";
 import { completeSeatParagraph, channel13Candidates, PARTY_ALIASES } from "./direct";
 import { inputRevision, latestPublisherRevisions, selectPublisherInputs, validExit } from "./sources";
 import { verifyQStash } from "./auth";
@@ -9,6 +9,7 @@ import captured from "./fixtures/channel13-2022.json";
 
 const poll = (seats = { likud: { seats: 60 }, dem: { seats: 60 } }): Poll => ({ id: "x", pollster: "Channel 13", published: "2026-10-27", broadcastAt: "2026-10-27T20:00:00Z", kind: "exit", results: seats, combined: [], firm: null, fieldwork: null, via: null, url: null, n: null, margin: null, note: null });
 describe("live joint summaries", () => {
+  it("chooses one actual joint parliament instead of incompatible party medians",()=>{const draws={a:[70,60,10],b:[50,20,70],c:[0,40,40]},point=representativeJointDraw(draws);expect(Object.values(point.seats).reduce((a,b)=>a+b,0)).toBe(120);expect(point.seats).toEqual(Object.fromEntries(Object.entries(draws).map(([id,x])=>[id,x[point.drawIndex]])));expect(point).toEqual(representativeJointDraw(draws));});
   it("classifies unique winners and ties exhaustively without choosing a tie winner", () => {
     const s = summarizeDraws({ likud: [60, 61, 59], dem: [60, 59, 61] }, { net: [60, 61, 59], opp: [60, 59, 61] });
     expect(s.largestParty.map((p) => p.probability).reduce((a,b)=>a+b,0)).toBeCloseTo(1);

@@ -1,5 +1,7 @@
 "use client";
 
+import { useSeatContext } from "../seat-context/SeatContextProvider";
+import { FORMATION } from "@/lib/i18n/formation-live";
 import { useEffect, useState } from "react";
 import { editionPath, isRtl, locale } from "@/lib/i18n";
 import type { Interval, LiveForecastSnapshot } from "@/lib/live-forecast/types";
@@ -66,9 +68,11 @@ export function ForecastDisplay({ initial: snapshot, lang, text: t, names, scena
 }
 
 export default function ForecastClient(props: ForecastProps) {
+  const {context,forecastComplete}=useSeatContext();const archived=forecastComplete||context?.seatStatus==="official"||context?.freshness.status==="complete";
   const [snapshot, setSnapshot] = useState(props.initial);
   const [refreshError, setRefreshError] = useState(false);
   useEffect(() => {
+    if(archived)return;
     let disposed = false;
     let controller: AbortController | null = null;
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -97,6 +101,7 @@ export default function ForecastClient(props: ForecastProps) {
     document.addEventListener("visibilitychange", visible);
     void refresh();
     return () => { disposed = true; clearTimeout(timer); controller?.abort(); document.removeEventListener("visibilitychange", visible); };
-  }, []);
+  }, [archived]);
+  if(archived)return <details><summary>{FORMATION[props.lang].archive}</summary><ForecastDisplay {...props} initial={snapshot}/></details>;
   return <ForecastDisplay {...props} initial={snapshot} refreshError={refreshError} />;
 }

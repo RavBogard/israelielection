@@ -1,3 +1,5 @@
+import SeatBasis from "@/components/seat-context/SeatBasis";
+import { seatContextForRender } from "@/lib/seat-context-server";
 import "@/components/interactives.css";
 import "@/components/coalition.css";
 import CoalitionBuilder, { type Preset } from "@/components/CoalitionBuilder";
@@ -86,14 +88,15 @@ function SourceItems({ items, lang }: { items: { head: string; text: string }[];
 }
 
 /** The Coalition Builder page body, in either edition. The route files hold only the metadata. */
-export default async function BuilderPage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
+export default async function BuilderPage({ lang, revalidate, revision }: { lang: Lang; revalidate: number; revision?: string }) {
   const T = builder[lang];
-  const live = await fetchCount(revalidate);
+  const [live, context] = await Promise.all([fetchCount(revalidate), seatContextForRender(revision)]);
+  if (revision && !context) return <div className="wrap"><SeatBasis context={null} lang={lang} pinned={!!revision} /></div>;
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   return (
     <div className="ix builder-page">
       <div className="wrap">
-        <CoalitionBuilder results={results} preset={presetIn(lang)} stances={stancesIn(lang)} unstated={unstatedIn(lang)} />
+        <CoalitionBuilder initialContext={context} pinned={!!revision} results={results} preset={presetIn(lang)} stances={stancesIn(lang)} unstated={unstatedIn(lang)} />
 
         <SourcesBox count={allPolls.length + 10} lang={lang}>
           <PollSources lang={lang} />

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
 import { useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { longDate } from "@/lib/format";
@@ -17,6 +18,7 @@ function Check({ step }: { step: JourneyStep }) {
 }
 /** Each step leads with a figure from the site (passed in from the server page), then its text. */
 export default function GuidedJourney({ figures = {} }: { figures?: Record<string, ReactNode> }) {
+  const {context}=useSeatContext();
   const params = useSearchParams();
   const router = useRouter();
   const { route, index } = journeyState(params.get("route"), params.get("step"));
@@ -34,6 +36,7 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
         </figcaption>
         {figures[key]}
       </figure>
+      {context&&context.evidenceStage!=="campaign"&&<p className="fig-note">{context.seatStatus==="official"?"Official seats are published. Follow coalition scenarios and sourced negotiations; a seat majority is not a government agreement.":"The election is under way. Seat estimates remain provisional until an authoritative seat publication."} <Link href="/government">Current government formation</Link> · <Link href="/results">Current seat evidence</Link>.</p>}
       <p>{step.text}</p>
       <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
       <Check key={`${route.id}-${key}`} step={step} />

@@ -1,3 +1,5 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
+import ElectionRecord from "@/components/seat-context/ElectionRecord";
 import Link from "next/link";
 import { Suspense } from "react";
 import { undatedListNames } from "@/lib/poll-browser";
@@ -37,7 +39,8 @@ const filber = (poll: (typeof allPolls)[number]) => inWithoutVariant(poll, cfg);
 const WIKI = "https://en.wikipedia.org/wiki/Opinion_polling_for_the_2026_Israeli_legislative_election";
 
 /** The polls desk, /polls and /he/polls: the bloc race and the facts line, then four tabs. All words in lib/i18n/polls.ts. */
-export default function PollsPage({ lang }: { lang: Lang }) {
+export default async function PollsPage({ lang }: { lang: Lang }) {
+  const context = await seatContextForRender();
   const he = lang !== "en";
   const methodText = lang === "he" ? HE_METHOD : toolMethod(lang);
   const t = POLLS[lang];
@@ -161,7 +164,8 @@ export default function PollsPage({ lang }: { lang: Lang }) {
   return (
     <div className="ix pl">
       <div className="wrap">
-        <PageHead title={t.title} standfirst={averageFinding(avg, lang)} />
+        <ElectionRecord context={context} lang={lang}/>
+      <PageHead title={t.title} standfirst={averageFinding(avg, lang)} />
 
         <BlocRace title={raceFinding(race, lang)} trend={race} dots={raceDots} labels={blocName} hollowNames={variant.pollsters} windowDays={cfg.currentWindowDays} until={resultsConfig.election}>
           <div className="pd-facts">

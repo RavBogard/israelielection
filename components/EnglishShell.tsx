@@ -1,3 +1,5 @@
+import SeatContextProvider from "@/components/seat-context/SeatContextProvider";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
@@ -46,12 +48,12 @@ const METER = { average: averageMeter(blocTotals(averagePoll, parties), mainPoll
 /** Whether polls have closed as this page renders; the menus re-check in the browser. */
 const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
 
-export default function EnglishShell({ children }: { children: ReactNode }) {
+export default function EnglishShell({ children, seatContext = null }: { children: ReactNode; seatContext?: SharedSeatContext | null }) {
   // RESULTS_FIXTURE (next dev only) rehearses the night: the strip and the menus treat the polls as closed.
   const pollsClose = process.env.NODE_ENV === "development" && process.env.RESULTS_FIXTURE ? "2000-01-01T00:00:00Z" : resultsConfig.pollsClose;
   return (
     <html lang="en" className={`${frank.variable} ${sans.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col"><SeatContextProvider initial={seatContext}>
         <a href="#main" className="skip">
           Skip to content
         </a>
@@ -99,7 +101,7 @@ export default function EnglishShell({ children }: { children: ReactNode }) {
             </nav>
           </div>
         </footer>
-      </body>
+      </SeatContextProvider></body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
       {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
     </html>

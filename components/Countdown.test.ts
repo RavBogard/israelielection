@@ -20,6 +20,6 @@ describe("the masthead countdown", () => {
     expect(at("2026-10-25T09:00:00+02:00", "he")).toContain("<b>יומיים</b> לבחירות");
     expect(at("2026-10-26T09:00:00+02:00", "he")).toContain("<b>הבחירות מחר</b>, יום שלישי, 27 באוקטובר");
     expect(at("2026-10-27T09:00:00+02:00", "he")).toContain("<b>יום הבחירות.</b> הקלפיות נסגרות ב-22:00");
-    expect(at("2026-10-29T09:00:00+02:00", "he")).toMatch(/הבחירות התקיימו ב-27 באוקטובר\. <a hrefLang="en" href="\/government">הרכבת הממשלה \(באנגלית\)<\/a>/);
+    expect(at("2026-10-29T09:00:00+02:00", "he")).toContain('href="/he/government"');
   });
 });

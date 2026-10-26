@@ -1,3 +1,6 @@
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import SeatBasis from "./seat-context/SeatBasis";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "./party-profile.css";
@@ -50,7 +53,7 @@ function joined(nodes: { key: string; text: string; node: ReactNode }[], and: st
   });
 }
 
-const one = seatFigure;
+
 const thousands = (n: number) => n.toLocaleString("en-US");
 const MAJORITY = 61, TOTAL = 120;
 
@@ -62,7 +65,8 @@ const MAJORITY = 61, TOTAL = 120;
  * everything else is paper and ink. Both editions: the words are lib/i18n/profile's, and in Hebrew the
  * data text is read through lib/i18n/overlays (English where no current Hebrew exists, marked lang="en").
  */
-export default function PartyProfile({ party: p, lang = "en" }: { party: Party; lang?: Lang }) {
+export default function PartyProfile({ party: p, lang = "en", context,unavailable=false }: { party: Party; lang?: Lang; context?: SharedSeatContext | null;unavailable?:boolean }) {
+  const one=context ? (n:number)=>String(n) : seatFigure;
   const P = profileText[lang];
   const he = lang !== "en";
   const href = (en: string) => (he ? editionPath(en, lang) ?? en : en);
@@ -71,7 +75,7 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
   const color = partyColor(p.id);
   const ink = partyInk(p.id);
   const series = readings(p);
-  const g = glance(p, series);
+  const g = glance(p, series, context);
   const r22 = result2022(p);
   const map = strongholds(p);
   const vb = voterBase(p);
@@ -127,21 +131,22 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} /><Loc v={bloc} /></span>
-            <span className="total">{g.avg === null ? (unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.head.notPolledSeparately) : g.below ? P.head.belowAverage : <><b>{one(g.avg)}</b>{P.head.seatsAverage}</>}</span>
+            <span className="total">{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? <><b>{context.pointSeats[p.id] ?? 0}</b> {LIFECYCLE[lang].seats} · {LIFECYCLE[lang][context.seatStatus]}</> : g.avg === null ? (unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.head.notPolledSeparately) : g.below ? P.head.belowAverage : <><b>{one(g.avg)}</b>{P.head.seatsAverage}</>}</span>
           </div>
         </div>
       </header>
 
       <div className="wrap">
+        {(context||unavailable) && <SeatBasis context={context??null} lang={lang} />}
         <div className="pp-grid">
           <div className="pp-col pp-col-f">
             <figure className="pp-fig o1">
               <figcaption className="lbl">{P.glance.title}</figcaption>
               <dl className="pp-glance">
                 <div className={unpolled ? "pp-none" : undefined}>
-                  <dd>{g.avg === null ? <span className="nf">{unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.glance.notPolled}</span> : g.below ? P.glance.below : one(g.avg)}</dd>
-                  <dt>{P.glance.seatsLabel}</dt>
-                  <small>{g.avg === null ? P.glance.noSeatFigures : g.below ? (g.passingAvg !== null ? P.glance.wherePasses(one(g.passingAvg)) : P.glance.belowEvery) : g.low !== null ? P.glance.range(g.low, g.high!, g.n) : P.glance.scaled}</small>
+                  <dd>{unavailable ? "—" : context ? context.pointSeats[p.id] ?? 0 : g.avg === null ? <span className="nf">{unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.glance.notPolled}</span> : g.below ? P.glance.below : one(g.avg)}</dd>
+                  <dt>{context ? LIFECYCLE[lang][context.basis] : P.glance.seatsLabel}</dt>
+                  <small>{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? LIFECYCLE[lang][context.seatStatus] : g.avg === null ? P.glance.noSeatFigures : g.below ? (g.passingAvg !== null ? P.glance.wherePasses(one(g.passingAvg)) : P.glance.belowEvery) : g.low !== null ? P.glance.range(g.low, g.high!, g.n) : P.glance.scaled}</small>
                 </div>
                 <div>
                   <dd>{r22 ? r22.seats : <span className="nf">{P.glance.newList}</span>}</dd>
@@ -150,20 +155,20 @@ export default function PartyProfile({ party: p, lang = "en" }: { party: Party; 
                 </div>
                 <div className={unpolled ? "pp-none" : undefined}>
                   <dd>{unpolled ? <span className="nf">{P.head.noPolls}</span> : <>{g.k}<span className="of">{P.glance.of}{g.n}</span></>}</dd>
-                  <dt>{P.glance.pollsPasses}</dt>
+                  <dt>{(context||unavailable)&&`${LIFECYCLE[lang].archive} · `}{P.glance.pollsPasses}</dt>
                   <small>{unpolled ? P.glance.notReported : g.nearThreshold ? P.glance.near : g.k === g.n && g.n > 0 ? P.glance.never : g.k === 0 ? P.glance.belowAll : P.glance.most}</small>
                 </div>
                 <div className="blocbox">
-                  <dd>{one(g.blocSeats)}<span className="of">{P.glance.blocUnit}</span></dd>
+                  <dd>{unavailable ? "—" : one(g.blocSeats)}<span className="of">{P.glance.blocUnit}</span></dd>
                   <dt><Loc v={bloc} /></dt>
-                  <SeatBar className="pp-majority" total={TOTAL} majority={MAJORITY} segments={[{ key: p.bloc, seats: Math.min(TOTAL, g.blocSeats), color: `var(--b-${p.bloc})` }]} label={P.glance.blocBar(one(g.blocSeats))} />
-                  <small>{note}</small>
+                  {!unavailable&&<SeatBar className="pp-majority" total={TOTAL} majority={MAJORITY} segments={[{ key: p.bloc, seats: Math.min(TOTAL, g.blocSeats), color: `var(--b-${p.bloc})` }]} label={P.glance.blocBar(one(g.blocSeats))} />}
+                  <small>{unavailable ? LIFECYCLE[lang].sourceUnavailable : note}</small>
                 </div>
               </dl>
               <p className="fig-src">
                 {g.n > 0 && (
                   <>
-                    {P.glance.avgSource(g.n, shortDate(g.mainFrom, lang), mediumDate(g.mainTo, lang))}
+                    {(context||unavailable)&&`${LIFECYCLE[lang].archive}: `}{P.glance.avgSource(g.n, shortDate(g.mainFrom, lang), mediumDate(g.mainTo, lang))}
                     {g.variantAvg !== null ? (he ? <>{P.glance.variantPre}{joined(variant.map((v) => ({ key: plain(v), text: plain(v), node: <Loc v={v} /> })), P.glance.and)}{P.glance.variantPost(one(g.variantAvg))}</> : `${P.glance.variantPre}${g.variantPollsters.join(P.glance.and)}${P.glance.variantPost(one(g.variantAvg))}`) : ""}
                   </>
                 )}

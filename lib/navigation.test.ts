@@ -33,11 +33,11 @@ describe("visitor navigation catalog",()=>{
   for(const reach of [[...menus,...NAV_BAR,...more],[...menus,...NAV_UTILITIES.map(n=>n.href)]]){expect(new Set(reach).size).toBe(reach.length);expect(new Set(reach)).toEqual(new Set(NAV.map(n=>n.href)));}
   expect(menus.filter(h=>h==="/polls")).toHaveLength(1);
  });
- it("holds election-night pages out of the menus until polls close, unless the reader is on one",()=>{
+ it("gates the count until close while formation stays independently accessible",()=>{
   const items=NAV_GROUPS.find(g=>g.id==="polls")!.items,hrefs=(closed:boolean,path:string)=>visibleNavItems(items,closed,path).map(n=>n.href);
-  expect(hrefs(false,"/polls")).toEqual(["/polls","/forecast","/news"]);
+  expect(hrefs(false,"/polls")).toEqual(["/polls","/forecast","/news","/government"]);
   expect(hrefs(true,"/polls")).toEqual(["/polls","/forecast","/news","/results","/government"]);
-  expect(hrefs(false,"/results")).toContain("/results");expect(hrefs(false,"/results")).not.toContain("/government");
+  expect(hrefs(false,"/results")).toContain("/results");expect(hrefs(false,"/results")).toContain("/government");
   expect(NAV.map(n=>n.href)).toEqual(expect.arrayContaining(["/results","/government"]));
  });
 });

@@ -14,7 +14,7 @@ export const isRtl = (lang: Lang) => RTL_LANGS.includes(lang as ToolLang);
 export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn", de: "de-DE", fr: "fr-FR", zh: "zh-CN" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
-export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results"] as const;
+export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results", "/government"] as const;
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of

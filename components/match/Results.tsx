@@ -1,4 +1,7 @@
 "use client";
+import { pinnedSeatHref } from "@/lib/seat-context";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+
 
 import Link from "next/link";
 import { useMemo, useState, type CSSProperties } from "react";
@@ -42,12 +45,12 @@ export default function Results({ data, answers, deeperDone, onEdit, onDeeper, o
   return (
     <div className="mr">
       <figure className="mr-knesset">
-        <SeatGrid segments={segments} labelRule title={`Your Knesset: lists matching you at ${pct(CLOSE)} or more hold ${one(closeSeats)} of 120 seats in the polling average; ${MAJORITY} make a majority.`} />
+        <SeatGrid segments={segments} labelRule title={`Your Knesset: lists matching you at ${pct(CLOSE)} or more hold ${one(closeSeats)} of 120 seats in the shared seat allocation; ${MAJORITY} make a majority.`} />
         <figcaption>
           <h2 className="mr-lead">
             {close.length === 0
               ? <>No list matches you at {pct(CLOSE)} or more.</>
-              : <>Lists that match you at {pct(CLOSE)} or more hold <b>{one(closeSeats)}</b> seats in the polling average{gap > 0 ? <>, {one(gap)} short of the {MAJORITY} that make a government.</> : <>, enough for the {MAJORITY} that make a government.</>}</>}
+              : <>Lists that match you at {pct(CLOSE)} or more hold <b>{one(closeSeats)}</b> seats in the shared seat allocation{gap > 0 ? <>, {one(gap)} short of the {MAJORITY} that make a government.</> : <>, enough for the {MAJORITY} that make a government.</>}</>}
           </h2>
           {close.length > 0 && (
             <ul className="mr-key fig-key">
@@ -57,8 +60,8 @@ export default function Results({ data, answers, deeperDone, onEdit, onDeeper, o
               <li><i className="rest" />Further from you</li>
             </ul>
           )}
-          <p className="fig-note">The grid is the Knesset as the polls see it today; your closest lists are drawn in colour. Your answers set the colours, not the seats.</p>
-          <p className="fig-src">Seats: polling average{data.asOf ? `, ${data.asOf}` : ""}, <Link href="/polls">Polls</Link>. Positions: <Link href="/compare">Compare positions</Link>, with every list&apos;s sources.</p>
+          <p className="fig-note">The grid uses the shared seat allocation; your closest lists are drawn in colour. Your answers set the colours, not the seats.</p>
+          <p className="fig-src">Seats: {data.context ? LIFECYCLE.en[data.context.basis] : "polling average"}{data.asOf ? `, ${data.asOf}` : ""}, <Link href="/polls">Polls</Link>. Positions: <Link href="/compare">Compare positions</Link>, with every list&apos;s sources.</p>
           <div className="mr-actions">
             <button type="button" className="btn" onClick={onEdit}>Change answers</button>
             {!deeperDone && <button type="button" className="btn" onClick={onDeeper}>Answer 8 more questions</button>}
@@ -91,11 +94,11 @@ export default function Results({ data, answers, deeperDone, onEdit, onDeeper, o
       <div className="mr-explain">
         <section>
           <h3>The threshold</h3>
-          <p>A list needs 3.25% of valid votes, about four seats, to enter the Knesset. Votes for a list that falls short elect no one, so supporters of a small list near the line weigh whether it will pass.</p>
+          <p>{data.context?.seatStatus==="official" && <strong>Campaign context: </strong>}A list needs3.25% of valid votes, about four seats, to enter the Knesset. Votes for a list that falls short elect no one, so supporters of a small list near the line weigh whether it will pass.</p>
         </section>
         <section>
           <h3>Blocs, not only lists</h3>
-          <p>No list has ever won 61 seats alone. After the vote the president asks the member of Knesset with the best chance of forming a government, so many voters think about which bloc reaches 61 as much as which list they like best.</p>
+          <p>No list has ever won61 seats alone. After the vote the president asks the member of Knesset with the best chance of forming a government, so many voters think about which bloc reaches 61 as much as which list they like best.</p>
         </section>
         <section>
           <h3>The biggest list and its partners</h3>
@@ -107,7 +110,7 @@ export default function Results({ data, answers, deeperDone, onEdit, onDeeper, o
         </section>
       </div>
       <p className="fig-src">
-        <Link href="/how-it-works">How the vote and the count work</Link>. Try your closest lists in the <Link href={`/coalition-builder?with=${top.filter((s) => party(s.id).seats > 0).map((s) => s.id).join(",")}`}>Coalition Builder</Link>.
+        <Link href="/how-it-works">How the vote and the count work</Link>. Try your closest lists in the <Link href={data.context ? pinnedSeatHref(`/coalition-builder?poll=current&with=${top.filter((s)=>party(s.id).seats>0).map(s=>s.id).join(",")}`,data.context) : `/coalition-builder?with=${top.filter((s) => party(s.id).seats > 0).map((s) => s.id).join(",")}`}>Coalition Builder</Link>.
       </p>
 
       <details className="mr-method">
@@ -180,10 +183,10 @@ function Weigh({ s, p, data }: { s: PartyScore; p: MatchParty; data: MatchData }
     <article className={`mr-w${p.below ? " out" : ""}`} style={{ "--fill": p.color } as CSSProperties}>
       <h3>{p.name} <span>{pct(s.match!)}</span></h3>
       <dl>
-        <dt>Polls</dt>
-        <dd>{p.below || p.seats === 0 ? "Below the threshold in the polling average" : `${p.seatsText} seats in the polling average`}{n > 0 && k < n ? `; passes the threshold in ${k} of ${n} current polls` : n > 0 ? `; passes the threshold in every current poll` : ""}.</dd>
+        <dt>{data.context ? "Seat evidence" : "Polls"}</dt>
+        <dd>{p.below || p.seats === 0 ? (data.context ? "No seats in this allocation" : "Below the threshold in the polling average") : `${p.seatsText} seats in the shared seat allocation`}{!data.context && n > 0 && k < n ? `; passes the threshold in ${k} of ${n} current polls` : !data.context && n > 0 ? `; passes the threshold in every current poll` : ""}.</dd>
         <dt>Bloc</dt>
-        <dd>{bloc.label}: {one(bloc.seats)} seats in the average{p.bloc === "net" || p.bloc === "opp" ? (blocGap > 0 ? `, ${one(blocGap)} short of ${MAJORITY}` : `, past ${MAJORITY}`) : ""}.</dd>
+        <dd>{bloc.label}: {one(bloc.seats)} seats in this allocation{p.bloc === "net" || p.bloc === "opp" ? (blocGap > 0 ? `, ${one(blocGap)} short of ${MAJORITY}` : `, past ${MAJORITY}`) : ""}.</dd>
         <dt>Surplus</dt>
         <dd>{p.surplus ?? "No surplus agreement found."}</dd>
         {p.pledge && (<><dt>Pledge</dt><dd>{p.pledge.text} <span className="fig-src">{p.pledge.source}</span></dd></>)}

@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import { pinnedSeatHref } from "@/lib/seat-context";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { Fragment, Suspense, useEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { readIssue, readingText, stanceMap } from "@/lib/cohesion";
@@ -32,7 +36,7 @@ import "./compare.css";
 export type CompareParty = { id: string; name: Txt; short: Txt; bloc: BlocId; letters: string | null; seats: number | null; out?: boolean };
 export type Preset = { label: string; ids: string[] };
 /** `text`: the rows' words in the Hebrew edition (matrixText in ./compare/model); absent in English, which prints the rows' own strings. */
-type Props = { parties: CompareParty[]; blocs: { id: BlocId; label: Txt }[]; rows: MatrixRow[]; presets: Preset[]; defaults: string[]; text?: Record<string, RowText> };
+type Props = { unavailable?:boolean;context?: SharedSeatContext | null; parties: CompareParty[]; blocs: { id: BlocId; label: Txt }[]; rows: MatrixRow[]; presets: Preset[]; defaults: string[]; text?: Record<string, RowText> };
 
 /** What one edition prints: its UI strings, where its links go, and (Hebrew) the rows' words. */
 type Ed = { lang: Lang; T: CompareText; href: (en: string) => string; text?: Record<string, RowText> };
@@ -218,7 +222,7 @@ function Panel({ ed, row, shown, colSpan }: { ed: Ed; row: MatrixRow; shown: Com
   );
 }
 
-function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
+function CompareView({ context, unavailable, parties, blocs, rows, presets, selected, onSelect, text }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
   const ed = edition(useLang(), text);
   const { T } = ed;
   const [open, setOpen] = useState<string | null>(null);
@@ -253,6 +257,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
 
   return (
     <div className="cmp">
+      {context&&Object.entries(context.pointSeats).some(([id,seats])=>seats>0&&!parties.some(p=>p.id===id))&&<p className="fig-note">{LIFECYCLE[ed.lang].unknown}: {Object.entries(context.pointSeats).filter(([id,seats])=>seats>0&&!parties.some(p=>p.id===id)).map(([id,seats])=>`${context.parties.find(p=>p.id===id)?.label??id} (${seats})`).join(" · ")}</p>}
       <div className="mx-show" role="group" aria-label={T.showGroup}>
         <label className="lbl" htmlFor="mx-showsel">{T.show}</label>
         {/* Phones get one select in place of the segmented control, which would wrap into uneven rows. */}
@@ -274,7 +279,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
             </button>
           )}
         </div>
-        <Link className="build" href={ed.href(builderHref(selected))}>{T.build}</Link>
+        <Link className="build" href={context ? pinnedSeatHref(ed.href(`/coalition-builder?with=${selected.join(",")}&poll=current`),context) : ed.href(builderHref(selected))}>{T.build}</Link>
       </div>
 
       <details className="mx-pick">
@@ -343,14 +348,14 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
             </tr>
             <tr role="row" className="mx-heads">
               <td role="cell" className="mx-corner">
-                <span className="seatlbl">{T.seatsLabel}</span>
+                <span className="seatlbl">{unavailable ? LIFECYCLE[ed.lang].sourceUnavailable : context ? LIFECYCLE[ed.lang][context.basis] : T.seatsLabel}</span>
               </td>
               {shown.map((p, i) => (
                 <td key={p.id} role="cell" className={`mx-head${gapAt(i) ? " gap" : ""}${p.out ? " out" : !seatsOf(p) ? " below" : ""}`} style={swatch(p.id)}>
                   {/* The pinned head: the ballot letters in Hebrew; in English the list's short name, since the letters are no help to an English reader. */}
                   {ed.lang === "en" ? <span className="letters nm">{breakable(plain(p.short))}</span>
                     : p.letters ? <span className="letters" lang="he" dir="rtl" title={T.letters(p.letters)}>{p.letters}</span> : <span className="letters" aria-hidden="true" />}
-                  <span className="seats">{seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? T.below : p.seats === null ? "–" : T.below}</span>
+                  <span className="seats">{context ? String(seatsOf(p)) : seatsOf(p) ? seatFigure(seatsOf(p)) : p.out ? T.below : p.seats === null ? "–" : T.below}</span>
                 </td>
               ))}
             </tr>
@@ -377,7 +382,7 @@ function CompareView({ parties, blocs, rows, presets, selected, onSelect, text }
                             <li key={s.id} className={active === s.id ? "hi" : undefined}>
                               <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position, s.n) }} aria-hidden="true">{s.n}</span>
                               <span className="sl"><Loc v={stanceLabel(ed, row, s.id)} /></span>
-                              <span className="ss" title={T.heldTitle}>{seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
+                              <span className="ss" title={context ? LIFECYCLE[ed.lang][context.basis] : T.heldTitle}>{context ? String(holders.reduce((a,p)=>a+seatsOf(p),0)) : seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
                             </li>
                           ))}
                         </ul>
@@ -434,9 +439,11 @@ function CompareLive(props: Props) {
 
 /** The comparison. The column set lives in `?p=`; until the URL is read, every list is shown. */
 export default function Compare(props: Props) {
+  const { context } = useSeatContext(props.context);
+  const current = context ? { ...props, context, parties: props.parties.map(p => ({...p,seats:context.pointSeats[p.id] ?? 0,out:(context.pointSeats[p.id] ?? 0) === 0 && p.out})) } : props;
   return (
-    <Suspense fallback={<CompareView {...props} selected={props.defaults} />}>
-      <CompareLive {...props} />
+    <Suspense fallback={<CompareView {...current} selected={props.defaults} />}>
+      <CompareLive {...current} />
     </Suspense>
   );
 }

@@ -1,5 +1,10 @@
 "use client";
 
+import SeatBasis from "./seat-context/SeatBasis";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { contextToPoll, contextRoleTotals, contextVoteDependence, unmappedLists } from "@/lib/seat-context";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {partyColor,partyInk,blocColorStrip,PARTY_FALLBACK} from "@/lib/party-colors";
@@ -36,11 +41,10 @@ const POLL_KEY = "cb-poll";
 const HISTORY = { id: "historical", ...scenarioData.historical };
 /** The picker: election results once counting starts, then the current average, then each current poll. */
 /** The count (election night), the exit polls, then the forecast (the default; Daniel, 2026-10-23), the average and each pollster's newest poll. */
-const pickList = (results: Poll | null) => [...(results ? [results] : []), ...exitPolls, forecastPoll, averagePoll, ...mainPolls];
-const cardParties = parties.filter((p) => p.coalitionCard !== "hidden");
+const pickList = (results: Poll | null, context: SharedSeatContext | null) => [...(context ? [{ ...contextToPoll(context), id: "current" }] : []), ...(results ? [results] : []), ...exitPolls, forecastPoll, averagePoll, ...mainPolls];
 /** Cards for a poll: a list hidden for lack of polling still appears if the count gives it seats. */
 const cardsFor = (poll: Poll) =>
-  parties.filter((p) => p.coalitionCard !== "hidden" || (poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0));
+  parties.filter((p) => p.coalitionCard !== "hidden" || ((poll.id === RESULTS_ID || poll.id === "current") && (poll.results[p.id]?.seats ?? 0) > 0));
 const fillVars = (p: Party) =>
   ({ "--fill": partyColor(p.id), "--fill-ink": partyInk(p.id) }) as React.CSSProperties;
 const countPhrase = (poll: Poll, T: BuilderText) => T.countPhrase(poll.resultState?.freshness === "stale");
@@ -50,6 +54,7 @@ const seatNum = (poll: Poll) => (poll.id === AVERAGE_ID ? seatFigure : fmt);
 
 function seatLabel(p: Party, poll: Poll, T: BuilderText = builder.en) {
   const r = poll.results[p.id];
+  if(poll.id==="current")return {txt:String(r?.seats??0),na:false,below:(r?.seats??0)===0};
   if (!r) return { txt: T.seatNA, na: true, below: false };
   const below = !!r.belowThreshold || r.seats === 0;
   return { txt: below ? T.seatBelow : seatNum(poll)(r.seats), na: false, below };
@@ -96,7 +101,7 @@ function PollNote({ poll, lang }: { poll: Poll; lang: Lang }) {
 }
 
 /** A party card drawn as its ballot slip: the letters a voter picks, the name, the seats. */
-function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }: { p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void; role: SupportRole; onRole: (role: SupportRole) => void; conflict: boolean; lang: Lang }) {
+function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang, context }: { p: Party; poll: Poll; on: boolean; onToggle: () => void; onProfile: (el: HTMLButtonElement) => void; role: SupportRole; onRole: (role: SupportRole) => void; conflict: boolean; lang: Lang;context?:SharedSeatContext|null }) {
   const T = builder[lang];
   const letters = lettersOf[p.id];
   const name = nameIn(p, lang);
@@ -108,7 +113,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }
     </button>
   );
   // A list written off in the polls gets a normal slip if the count gives it seats.
-  if (p.coalitionCard === "out" && !(poll.id === RESULTS_ID && (poll.results[p.id]?.seats ?? 0) > 0)) {
+  if (p.coalitionCard === "out" && poll.id!=="current" && !((poll.id === RESULTS_ID || poll.id === "current") && (poll.results[p.id]?.seats ?? 0) > 0)) {
     return (
       <div className="slip out" style={fillVars(p)}>
         <div className="face">
@@ -122,7 +127,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }
     );
   }
   const s = seatLabel(p, poll, T);
-  const src = poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averageSource(mainPolls.length) : poll.id === FORECAST_ID ? T.forecastSource(mediumDate(poll.published, lang)) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
+  const src = context ? `${LIFECYCLE[lang][context.basis]} · ${LIFECYCLE[lang][context.seatStatus]}` : poll.id === RESULTS_ID ? countPhrase(poll, T) : poll.id === AVERAGE_ID ? T.averageSource(mainPolls.length) : poll.id === FORECAST_ID ? T.forecastSource(mediumDate(poll.published, lang)) : T.pollWithDate(pollLabel(poll, lang), mediumDate(poll.published, lang));
   const tip0 = s.na ? T.tipNA(poll.pollster, name, src) : s.below ? T.tipBelow(src) : T.tipSeats(s.txt, src);
   const tip = conflict ? T.tipConflict(tip0) : tip0;
   return (
@@ -133,7 +138,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }
         {ld}
         <span className={`seats${s.na ? " na" : ""}`}>
           {s.txt}
-          <small>{s.na ? T.seatSmall.na : s.below ? T.seatSmall.below : T.seatSmall.seats}</small>
+          <small>{context ? LIFECYCLE[lang].seats : s.na ? T.seatSmall.na : s.below ? T.seatSmall.below : T.seatSmall.seats}</small>
         </span>
       </button>
       <div className="foot">
@@ -151,7 +156,7 @@ function Slip({ p, poll, on, onToggle, onProfile, role, onRole, conflict, lang }
   );
 }
 
-function Drawer({ party, onClose, lang }: { party: Party; onClose: () => void; lang: Lang }) {
+function Drawer({ party, onClose, lang, context }: { party: Party; onClose: () => void; lang: Lang;context?:SharedSeatContext|null }) {
   const ref = useRef<HTMLElement>(null);
   const closeBtn = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -186,7 +191,7 @@ function Drawer({ party, onClose, lang }: { party: Party; onClose: () => void; l
           </button>
         </div>
         <div className="dbody">
-          {lang === "en" ? <ProfileDetail party={party} headingId="dtitle" /> : <PartyPreview party={party} headingId="dtitle" lang={lang} />}
+          {lang === "en" ? <ProfileDetail party={party} headingId="dtitle" context={context}/> : <PartyPreview party={party} headingId="dtitle" lang={lang} context={context}/>}
         </div>
       </aside>
     </>
@@ -221,12 +226,18 @@ const pollPhrase = (poll: Poll, T: BuilderText, lang: Lang) =>
 const AGAINST = "color-mix(in srgb, var(--ink-3) 65%, var(--cell))";
 const OUTSIDE_NEXT: Record<SupportRole, SupportRole> = { opposition: "support", support: "abstain", abstain: "opposition", cabinet: "cabinet" };
 
-export default function CoalitionBuilder({ results = null, embedded = false, preset, stances, unstated }: { results?: Poll | null; embedded?: boolean; preset?: Preset; stances?: StanceMap; unstated?: UnstatedMap }) {
+export default function CoalitionBuilder({ results = null, embedded = false, preset, stances, unstated, initialContext = null, pinned = false }: { results?: Poll | null; embedded?: boolean; preset?: Preset; stances?: StanceMap; unstated?: UnstatedMap; initialContext?: SharedSeatContext | null; pinned?: boolean }) {
   // On the home page the builder sits under the page's own heading, so its title is an h2.
   const lang = useLang();
   const T = builder[lang];
-  const choices = useMemo(() => pickList(results), [results]);
-  const [pollId, setPollId] = useState(results ? RESULTS_ID : FORECAST_ID);
+  const shared = useSeatContext(initialContext, pinned);
+  const context = shared.context;
+  const C = LIFECYCLE[lang];
+  const allPartyIds = useMemo(() => [...new Set([...parties.map((party) => party.id), ...Object.keys(context?.pointSeats ?? {})])], [context]);
+  const choices = useMemo(() => pickList(results, context), [results, context]);
+  const choicesRef = useRef(choices);
+  useEffect(() => { choicesRef.current = choices; }, [choices]);
+  const [pollId, setPollId] = useState("current");
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [roles, setRoles] = useState<RoleOverrides>({});
   const [scenarioId, setScenarioId] = useState<string | null>(null);
@@ -252,13 +263,14 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   useEffect(() => {
     const restore = () => {
     const q = new URLSearchParams(window.location.search);
+    const choices = choicesRef.current;
     let p = q.get("poll");
     if (!p) try { p = localStorage.getItem(POLL_KEY); } catch {}
     // On results night the count wins over a remembered poll; a shared link still picks its own.
-    if (results && !q.get("poll")) p = RESULTS_ID;
+    if (context && !q.get("poll")) p = "current";
     if (p && choices.some((x) => x.id === p)) setPollId(p);
-    const restored = restoreRoles(q, (results ? cardsFor(results) : cardParties).map((x) => x.id));
-    const restoredPoll = p && choices.some((x) => x.id === p) ? p : results ? RESULTS_ID : FORECAST_ID;
+    const restored = restoreRoles(q, allPartyIds);
+    const restoredPoll = p && choices.some((x) => x.id === p) ? p : context ? "current" : FORECAST_ID;
     gate.current.restore(arrangementKey(restoredPoll, restored.cabinet, restored.overrides));
     setPollId(restoredPoll);
     setSel(restored.cabinet);
@@ -268,36 +280,43 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     restore();
     window.addEventListener("popstate", restore);
     return () => window.removeEventListener("popstate", restore);
-  }, [choices, results]);
+  // Context refreshes update figures; only browser navigation restores selections.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Keep the URL shareable.
   useEffect(() => {
     if (!ready.current || !gate.current.shouldWrite(arrangementKey(pollId, sel, roles))) return;
-    const q = writeRoles(new URLSearchParams(window.location.search), sel, roles, parties.map((p) => p.id));
+    const q = writeRoles(new URLSearchParams(window.location.search), sel, roles, allPartyIds);
     q.set("poll", pollId);
     history.replaceState(history.state, "", `${window.location.pathname}?${q.toString().replace(/%2C/g, ",")}${window.location.hash}`);
-  }, [pollId, sel, roles]);
+  }, [pollId, sel, roles, allPartyIds]);
 
   const poll = choices.find((p) => p.id === pollId) ?? choices[0];
   const sn = seatNum(poll);
   // The Hebrew edition's words for the tally's group note and the pledge notes; English passes none, so its output is unchanged.
   const tallyText: TallyText | undefined = lang === "en" ? undefined : { P: T, name: (p) => nameIn(p, lang), pollster: pollsterText(poll.pollster, lang).text };
   const warnText: WarningText | undefined = lang === "en" ? undefined : { message: (r) => pledgeText(r, lang), name: (p) => nameIn(p, lang), and: (n) => list(n) };
-  const t = tally(sel, parties, poll, tallyText);
+  const selectedContext = pollId === "current" ? context : null;
+  const unknown = selectedContext ? unmappedLists(selectedContext, parties) : [];
+  const raw = selectedContext ? contextRoleTotals(selectedContext, sel, roles) : null;
+  const baseTally = tally(sel, parties, poll, tallyText);
+  const t = raw ? { ...baseTally, total: raw.cabinet, partial: false } : baseTally;
   const warns = arrangementWarnings(sel, roles, parties, pledgeRules, warnText);
   const conflicts = pledgeConflicts(sel, parties, pledgeRules);
   const conflictIds = new Set(conflicts.flatMap((c) => c.ids));
-  const vote = arrangement(sel, roles, parties, poll);
+  const baseVote = arrangement(sel, roles, parties, poll);
+  const vote = raw ? { ...baseVote, yes: raw.yes, no: raw.no, abstain: raw.abstain, cabinet: raw.cabinet, represented: 120, complete: raw.complete, approximate: false, outcome: (raw.cabinet === 0 ? "empty" : raw.passes ? "passes" : "fails") as typeof baseVote.outcome } : baseVote;
   const supportIds = Object.keys(roles).filter((id) => roles[id] === "support");
   const outsideRoles = Object.values(roles).some((r) => r === "support" || r === "abstain");
   const cooperation = new Set([...sel, ...supportIds]);
-  const voteNeeded = initialVoteDependence(sel, roles, parties, poll);
+  const voteNeeded = selectedContext ? contextVoteDependence(selectedContext,sel,roles) : initialVoteDependence(sel, roles, parties, poll);
   const scenario = scenarioData.scenarios.find((s) => s.id === scenarioId);
-  const segsOf = (ids: Set<string>, hatched = false) => tally(ids, parties, poll).segments.map((s) => {
+  const segsOf = (ids: Set<string>, hatched = false) => [...tally(ids, parties, poll).segments.map((s) => {
     const party = parties.find((p) => p.name === s.name);
     const c = party ? partyColor(party.id) : PARTY_FALLBACK;
     return { key: party?.id ?? s.name, seats: s.seats, color: hatched ? supportFill(c) : c, title: `${party ? nameIn(party, lang) : s.name}: ${sn(s.seats)}` };
-  });
+  }), ...unknown.filter((row) => ids.has(row.id)).map((row) => ({ key: row.id, seats: row.seats, color: hatched ? supportFill(PARTY_FALLBACK) : PARTY_FALLBACK, title: `${row.label}: ${row.seats}` }))];
   const cabSegs = segsOf(sel);
   const supSegs = segsOf(new Set(supportIds), true);
   const voteSegs = [...cabSegs, ...supSegs.map((s) => ({ ...s, key: `s-${s.key}` })),
@@ -310,7 +329,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const cabText = empty ? "" : t.total >= MAJORITY ? T.cabMajority(sn(t.total), t.partial) : T.cabShort(sn(t.total), t.partial, sn(short), MAJORITY);
   const voteLine = T.voteLine(sn(vote.yes), sn(vote.no), vote.abstain ? sn(vote.abstain) : null);
   const status = said && `${said} ${empty ? T.statusEmpty : `${T.statusCabinet(sn(t.total))} ${vk === "majority" ? T.statusMajority(sn(vote.yes)) : vk === "none" ? T.statusNoVerdict : T.statusVote(vk!, sn(vote.yes))}. ${T.statusConflicts(conflicts.length)}`}`;
-  const nameOf = (id: string) => { const p = parties.find((x) => x.id === id); return p ? nameIn(p, lang) : id; };
+  const nameOf = (id: string) => { const p = parties.find((x) => x.id === id); return p ? nameIn(p, lang) : selectedContext?.parties.find(p=>p.id===id)?.label ?? id; };
 
   const choosePoll = (id: string) => {
     setPollId(id);
@@ -345,7 +364,9 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   }, []);
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      const url = new URL(window.location.href);
+      if (selectedContext) { url.searchParams.set("context", selectedContext.revision); url.searchParams.set("poll", "current"); }
+      await navigator.clipboard.writeText(url.href);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {}
@@ -358,9 +379,10 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const presetLabel = preset ? preset.label[0].toUpperCase() + preset.label.slice(1) : "";
   const atRest = !sel.size && !Object.keys(roles).length;
   // Lists outside the cabinet that hold seats here: the ones a reader may give outside support or an abstention.
-  const outside = cardsFor(poll).filter((p) => !sel.has(p.id) && p.coalitionCard !== "out" && !seatLabel(p, poll).na && !seatLabel(p, poll).below);
+  const outside = cardsFor(poll).filter((p) => !sel.has(p.id) && (p.coalitionCard !== "out" || (poll.id==="current"||poll.id===RESULTS_ID)&&(poll.results[p.id]?.seats??0)>0) && !seatLabel(p, poll).na && !seatLabel(p, poll).below);
   const keyColor = cabSegs[0]?.color ?? "var(--ink)";
 
+  if(!context&&pollId==="current")return <SeatBasis context={null} lang={lang} pinned={pinned}/>;
   return (
     <div className="cb">
       <PageHead as={embedded ? "h2" : "h1"} title={T.title} standfirst={<>{rich(T.standfirst(MAJORITY, KNESSET))}</>}
@@ -369,7 +391,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           <select value={pollId} onChange={(e) => choosePoll(e.target.value)}>
             {choices.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : p.id === FORECAST_ID ? T.pickForecast(mediumDate(p.published, lang)) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
+                {p.id === "current" && context ? C[context.basis] : p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : p.id === FORECAST_ID ? T.pickForecast(mediumDate(p.published, lang)) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
               </option>
             ))}
           </select>
@@ -378,6 +400,8 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
       <a className="to-result" href="#arrangement-result">{T.skip}</a>
       <p className="sr-only" role="status">{status}</p>
 
+      {selectedContext && <SeatBasis context={selectedContext} lang={lang} pinned={pinned} />}
+      {selectedContext && shared.changes.length > 0 && <p className="seat-change-note" role="status">{C.changes}: {shared.changes.map((change) => `${nameOf(change.id)} ${change.change > 0 ? "+" : ""}${change.change}`).join(" · ")}</p>}
       <section className="arrangement-scenarios" aria-label={T.scenariosLabel}>
         <p>{T.scenariosLead}</p>
         <div>
@@ -425,13 +449,14 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               </h3>
               <div className="slips">
                 {cardsFor(poll).filter((p) => p.bloc === b.id).map((p) => (
-                  <Slip key={p.id} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
+                  <div key={p.id} className={selectedContext && shared.changes.some((change) => change.id === p.id) ? "seat-changed" : undefined}><Slip context={selectedContext} p={p} poll={poll} on={sel.has(p.id)} onToggle={() => toggle(p.id)}
                     role={roleOf(p.id, sel, roles)} onRole={(role) => assignRole(p.id, role)} conflict={conflictIds.has(p.id)}
-                    onProfile={(el) => { opener.current = el; setProfile(p.id); }} lang={lang} />
+                    onProfile={(el) => { opener.current = el; setProfile(p.id); }} lang={lang} /></div>
                 ))}
               </div>
             </section>
           ))}
+          {unknown.length > 0 && <section className="seat-unknown"><h3>{C.unknown}</h3>{unknown.map((row) => <p key={row.id}><b>{row.label}</b> · {row.seats} {C.seats} <select aria-label={row.label} value={roleOf(row.id, sel, roles)} onChange={(event) => assignRole(row.id, event.target.value as SupportRole)}>{(Object.keys(ROLE_LABELS) as SupportRole[]).map((role) => <option key={role} value={role}>{T.roles[role]}</option>)}</select></p>)}</section>}
         </div>
 
         <aside className="panel" id="arrangement-result" tabIndex={-1}>
@@ -503,7 +528,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
             <p className="fig-src">{T.lawLinks.map((l, i) => <Fragment key={l.href}>{i > 0 && "; "}<a href={l.href}>{l.text}</a></Fragment>)}.</p>
           </details>
           <details className="arrangement-history"><summary><Loc v={scenarioText(HISTORY, "title", lang)} page={lang} /></summary><p><Loc v={scenarioText(HISTORY, "text", lang)} page={lang} /></p><a href={HISTORY.url}><En page={lang}>{HISTORY.source}</En></a></details>
-          {t.chosen.length > 0 && (
+          {sel.size > 0 && (
             <div className="share">
               <button className="btn" type="button" onClick={copyLink}>{T.copyLink}</button>
               <span aria-live="polite">{copied ? T.copied : ""}</span>
@@ -516,10 +541,10 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           </div>
         </aside>
       </div>
-      <PollNote poll={poll} lang={lang} />
-      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id}),sel,roles,parties.map((p)=>p.id))}`}>{T.exportLink}</Link></p>
+      {!selectedContext && <PollNote poll={poll} lang={lang} />}
+      <p><Link href={`/export/coalition?${writeRoles(new URLSearchParams({poll:poll.id,...(selectedContext ? {context:selectedContext.revision} : {})}),sel,roles,allPartyIds)}`}>{T.exportLink}</Link></p>
 
-      {profileParty && <Drawer party={profileParty} onClose={closeProfile} lang={lang} />}
+      {profileParty && <Drawer context={selectedContext} party={profileParty} onClose={closeProfile} lang={lang} />}
     </div>
   );
 }

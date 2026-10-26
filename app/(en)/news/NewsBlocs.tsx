@@ -1,3 +1,7 @@
+import SeatBasis from "@/components/seat-context/SeatBasis";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import CurrentParliament from "@/components/seat-context/CurrentParliament";
+import { forecastPresentation } from "@/components/live-forecast/LiveForecast";
 import Link from "next/link";
 import SeatBar from "@/components/SeatBar";
 import { blocChange, blocSeries, newestPoll, signedSeats } from "@/lib/bloc-change";
@@ -12,7 +16,10 @@ const ORDER = BLOC_SEAT_ORDER, KEY = BLOC_ORDER;
 const one = seatFigure;
 
 /** The home race's average as one compact bar, each bloc's change over the past week, and the newest poll. */
-export default function NewsBlocs() {
+export default async function NewsBlocs() {
+  const context = await seatContextForRender();
+  if(context) return <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")} />;
+  if(!context)return <SeatBasis context={null} lang="en"/>;
   const rows = homeRaceModel(averagePoll, parties, blocs).rows, seats = (b: BlocId) => rows.find((r) => r.id === b)!.seats;
   const change = blocChange(blocSeries(pollsData.polls, parties, pollsData.config)), newest = newestPoll(allPolls);
   return (

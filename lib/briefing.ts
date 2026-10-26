@@ -1,4 +1,6 @@
 import type { NewsItem } from "./news";
+import type { ElectionLifecycleSnapshot } from "./election-lifecycle/types";
+import { phaseBriefingGuidance } from "./election-lifecycle/briefing-context";
 
 /** A published daily briefing: every sentence carries the headlines it rests on. */
 export type Briefing = {
@@ -34,7 +36,7 @@ export const DRAFT_SCHEMA = {
   required: ["sentences"],
 } as const;
 
-export function briefingPrompt(items: NewsItem[], date: string): string {
+export function briefingPrompt(items: NewsItem[], date: string, lifecycle: ElectionLifecycleSnapshot | null = null): string {
   const list = items
     .map((it, i) => `[${i + 1}] ${it.outlet}, ${it.published.slice(0, 16).replace("T", " ")} UTC | ${it.title}${it.summary ? ` | ${it.summary}` : ""}`)
     .join("\n");
@@ -42,11 +44,13 @@ export function briefingPrompt(items: NewsItem[], date: string): string {
 
 Today is ${date}. Below are the last day's headlines from English-language outlets, numbered.
 
-Write about 200 words (150–250) in 4–8 sentences on what changed in the campaign and in the events voters are reacting to. Rules:
+${phaseBriefingGuidance(lifecycle)}
+
+Write about 200 words (150–250) in 4–8 sentences on what changed in the current election/formation context. Rules:
 - Every sentence states only facts found in the headlines and summaries you cite by number. Cite 1–3 numbers per sentence.
 - Neutral reference voice. No opinion, no prediction, no adjectives of judgment, no "notably" or "importantly".
 - Attribute claims: "X said", "according to Haaretz". Party names as written in the headlines.
-- Lead with election news (parties, polls, lists, courts, coalition talk); then major events only if they bear on the campaign.
+- Lead with phase-appropriate election or government-formation news; include other major events only when their relevance is supported by the cited headlines.
 - Plain sentences: no markdown, no links, no bullet points, no headings.
 
 Headlines:

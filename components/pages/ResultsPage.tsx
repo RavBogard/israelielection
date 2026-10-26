@@ -1,3 +1,8 @@
+import CurrentUnavailable from "@/components/seat-context/CurrentUnavailable";
+import EvidenceGate, {ResultsHeading} from "@/components/seat-context/EvidenceGate";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import CurrentParliament from "@/components/seat-context/CurrentParliament";
+import { forecastPresentation } from "@/components/live-forecast/LiveForecast";
 import { isRtl } from "@/lib/i18n";
 import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
@@ -358,7 +363,8 @@ function noCount(n: Night, at: string, lang: Lang): string {
 export default async function ResultsPage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const t = resultsText[lang];
   const now = resultsNow();
-  const [live, liveForecast] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang })]);
+  const [live, liveForecast, context] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang }), seatContextForRender()]);
+  if(!context)return <CurrentUnavailable lang={lang} {...forecastPresentation(lang)}/>;
   const n = night(live, cfg, now);
   const close = new Date(cfg.pollsClose);
   const refresh = <ResultsRefresh pollsClose={cfg.pollsClose} button={n.phase !== "before"} />;
@@ -387,12 +393,14 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
   return (
     <div className="ix rs">
       <div className="wrap">
-        <PageHead title={t.title} aside={n.phase === "before" ? undefined : refresh} standfirst={standfirst}>
+        <ResultsHeading initial={context} lang={lang} title={t.title}><PageHead title={t.title} aside={n.phase === "before" ? undefined : refresh} standfirst={standfirst}>
           {n.phase === "before" && refresh}
           <PhaseStrip phase={n.phase} lang={lang} />
-        </PageHead>
+        </PageHead></ResultsHeading>
+        {context && <CurrentParliament initial={context} lang={lang} {...forecastPresentation(lang)} />}
         {liveForecast}
-        {sections(n.phase).map((k) => part[k])}
+        <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>
+        <EvidenceGate initial={context} official>{(["exitTable","letters","method"] as Section[]).map(k=>part[k])}</EvidenceGate>
       </div>
     </div>
   );

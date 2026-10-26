@@ -1,48 +1,41 @@
+import { resolveSeatSelection } from "@/lib/seat-selection";
+import { contextRoleTotals } from "@/lib/seat-context";
+import { restoreRoles, arrangement } from "@/lib/coalition-arrangement";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { ImageResponse } from "next/og";
 import type { NextRequest } from "next/server";
-import { MAJORITY, tally, warnings } from "@/lib/coalition";
-import { averagePoll, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
+import { tally, warnings } from "@/lib/coalition";
+import { parties, pledgeRules } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import { BLOC, Grid, INK, INK2, INK3, LINE, PAPER, SIZE, TEXT, ogFonts } from "@/lib/og";
-import { AVERAGE_ID, pollLabel } from "@/lib/polls";
-import { RESULTS_ID, resultsAsPoll } from "@/lib/results";
-import { fetchCount, resultsConfig } from "@/lib/results-live";
+import { pollLabel } from "@/lib/polls";
 
 // Satori has no bidi: Hebrew ballot letters are reversed by hand so they read right to left.
 const rtl = (s: string) => [...s].reverse().join("");
 
 // A reader's coalition as a card, for links copied from the Builder: /api/card?with=likud,shas&poll=avg
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export async function GET(req: NextRequest) {
   const q = req.nextUrl.searchParams;
-  const pollId = q.get("poll") || AVERAGE_ID;
-  const ids = (q.get("with") ?? "").split(",").filter((id) => parties.some((p) => p.id === id));
-  let poll = [averagePoll, ...exitPolls, ...mainPolls].find((p) => p.id === pollId) ?? averagePoll;
-  if (pollId === RESULTS_ID) {
-    const live = await fetchCount(60);
-    if (live.state === "open") poll = resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live);
-  }
+  const selection=await resolveSeatSelection(q);
+  if(!selection)return Response.json({error:"Selected seat evidence unavailable"},{status:404});
+  const {poll,context}=selection;
+  const ids=(q.get("with")??"").split(",").filter(id=>parties.some(p=>p.id===id)||!!context&&id in context.pointSeats);
+  const roles=restoreRoles(q,[...new Set([...parties.map(p=>p.id),...Object.keys(context?.pointSeats??{})])]);
   const sel = new Set(ids);
   const t = tally(sel, parties, poll);
   const warns = warnings(sel, parties, pledgeRules).filter((w) => w.kind === "pledge");
-  const whole = Math.round(t.total);
+  const vote=context?contextRoleTotals(context,sel,roles.overrides):arrangement(sel,roles.overrides,parties,poll);
+  const whole = Math.round(vote.cabinet);
   const fills = t.chosen
     .map((p) => ({ count: Math.round(poll.results[p.id]?.seats ?? 0), color: BLOC[p.bloc] }))
     .filter((f) => f.count > 0);
+  for(const id of ids)if(!parties.some(p=>p.id===id))fills.push({count:context?.pointSeats[id]??0,color:"#777777"});
   const title = ids.length ? `${whole} seats` : "Build a coalition";
-  const read = !ids.length
-    ? `Pick parties from any poll and see whether they reach ${MAJORITY}.`
-    : whole >= MAJORITY
-      ? `An absolute seat majority; initial confidence depends on votes for and against.`
-      : `${MAJORITY - whole} short of the ${MAJORITY}-seat absolute-majority target.`;
-  const source =
-    poll.id === RESULTS_ID
-      ? poll.resultState?.freshness === "stale" ? "Saved committee count (stale)" : "The committee's count so far"
-      : poll.id === AVERAGE_ID
-        ? `Normalized average of the latest ${mainPolls.length} polls, to ${mediumDate(mainPolls[0].published)}`
-        : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+  const read = !ids.length ? "Choose cabinet, outside support and abstention roles." : `Hypothetical initial confidence: ${vote.yes} yes, ${vote.no} no, ${vote.abstain} abstain. More yes than no is required;61 is an absolute-majority target.`;
+  const source = context ? `${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]} · ${context.publishedAt??"Publication time not supplied"}` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
 
   return new ImageResponse(
     (
@@ -76,6 +69,6 @@ export async function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { ...SIZE, fonts: await ogFonts() }
+    { ...SIZE, fonts: await ogFonts(),headers:{"Cache-Control":q.has("context")?"public, max-age=0, s-maxage=31536000, immutable":"public, max-age=0, s-maxage=30"} }
   );
 }

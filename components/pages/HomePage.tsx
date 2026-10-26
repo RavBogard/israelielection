@@ -1,7 +1,13 @@
+import CurrentUnavailable from "@/components/seat-context/CurrentUnavailable";
+import GovernmentLive from "@/components/government/GovernmentLive";
+import { lifecycleForRender } from "@/lib/seat-context-server";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import CurrentParliament from "@/components/seat-context/CurrentParliament";
+import { forecastPresentation } from "@/components/live-forecast/LiveForecast";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import "@/components/home.css";
-import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
+import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
 import HomeRace, { type RaceOption } from "@/components/HomeRace";
 import renderLiveForecast from "@/components/live-forecast/LiveForecast";
@@ -144,7 +150,8 @@ function countTime(iso: string, lang: Lang): string {
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
-  const [live, liveForecast] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true })]);
+  const [live, liveForecast, context, lifecycle] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true }), seatContextForRender(), lifecycleForRender()]);
+  if(!context)return <CurrentUnavailable lang={lang} {...forecastPresentation(lang)}/>;
   const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
@@ -154,10 +161,11 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
   return (
     <div className="home">
       <div className="wrap">
-        {hero === "exit" ? <ExitHero n={n} lang={lang} /> : <Race poll={poll} live={!!results} days={days} phase={n.phase} lang={lang} />}
+        {context ? <CurrentParliament initial={context} lang={lang} compact showScenarios={false} {...forecastPresentation(lang)} /> : hero === "exit" ? <ExitHero n={n} lang={lang} /> : <Race poll={poll} live={!!results} days={days} phase={n.phase} lang={lang} />}
+        {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
         {liveForecast}
 
-        {n.phase === "before" && <Since now={now} lang={lang} />}
+        {context?.evidenceStage === "campaign" && n.phase === "before" && <Since now={now} lang={lang} />}
 
         {he ? (
           <p className="start">

@@ -1,3 +1,6 @@
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import SeatBasis from "@/components/seat-context/SeatBasis";
 import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import "@/components/interactives.css";
@@ -15,11 +18,12 @@ export const metadata: Metadata = {
   alternates: alternates("/embed/builder"),
 };
 
-export default function Page() {
+export default async function Page({searchParams}:{searchParams:Promise<Record<string,string|string[]|undefined>>}) {
+  const q=await searchParams;const revision=typeof q.context==="string"?q.context:undefined;const context=await seatContextForRender(revision);if(revision&&!context)return <SeatBasis context={null} lang="en" pinned/>;
   return (
     <div className="ix">
-      <CoalitionBuilder />
-      <EmbedFooter dateLine={`Polls to ${mediumDate(mainPolls[0].published)}`} />
+      <CoalitionBuilder initialContext={context} pinned={!!revision} />
+      <EmbedFooter dateLine={context?`${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]} · ${context.publishedAt??LIFECYCLE.en.noTime}`:`Polls to ${mediumDate(mainPolls[0].published)}`} />
     </div>
   );
 }

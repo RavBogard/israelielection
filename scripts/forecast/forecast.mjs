@@ -12,16 +12,20 @@
  */
 import fs from "node:fs";
 import { forecast } from "./model.mjs";
+import { campaignWritePolicy } from "./write-policy.mjs";
 const read = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
 const FINAL = process.argv.includes("--final"), FORCE = process.argv.includes("--force");
 const envOpts = {}; for (const [k, v] of Object.entries(process.env)) if (k.startsWith("FC_")) { const key = k.slice(3).replace(/_([a-z])/g, (_, c) => c.toUpperCase()).replace(/^([A-Z])/, (c) => c.toLowerCase()); envOpts[key] = v === "true" ? true : v === "false" ? false : v === "null" ? null : Number.isFinite(Number(v)) ? Number(v) : v; }
 if (process.env.FILBER === "1") envOpts.includeAll = true;
 const SENSITIVITY = Object.keys(envOpts).length > 0;
+const electionConfig = read("data/results.json");
+const writePolicy = campaignWritePolicy({ now: Date.now(), pollsClose: electionConfig.pollsClose, sensitivity: SENSITIVITY, final: FINAL, historicalOverride: process.argv.includes("--allow-historical-regeneration") });
+if (!writePolicy.allowed) { console.error(`Campaign forecast write refused: ${writePolicy.reason}. The existing record is retained. Historical regeneration requires --allow-historical-regeneration and cannot register a new final prediction after close.`); process.exit(1); }
 const previous = fs.existsSync("data/forecast.json") ? read("data/forecast.json") : null;
 if (previous?.final && !FORCE && !SENSITIVITY) { console.log(`data/forecast.json is final (${previous.generated}); not regenerated. Pass --force to override.`); process.exit(0); }
 const { polls, config } = read("data/polls.json");
 const parties = (read("data/parties.json").parties ?? read("data/parties.json")).map((p) => ({ id: p.id, bloc: p.bloc }));
-const results = read("data/results.json");
+const results = electionConfig;
 const cal = read("scripts/forecast/calibration.json");
 // The surplus-vote agreements: every pair in data/results.json (the five the committee published Oct 19).
 const agreements = [...results.agreements, ...(results.unconfirmedAgreements ?? [])].map((a) => a.parties);

@@ -1,3 +1,7 @@
+import SeatBasis from "@/components/seat-context/SeatBasis";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import CurrentParliament from "@/components/seat-context/CurrentParliament";
+import { forecastPresentation } from "@/components/live-forecast/LiveForecast";
 import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import { Suspense } from "react";
@@ -9,9 +13,8 @@ import SeatGrid from "@/components/SeatGrid";
 import VotingRightsGuide from "@/components/VotingRightsGuide";
 import { SplitMini } from "@/components/article/Article";
 import PollThresholdWatch from "@/components/results/ThresholdWatch";
-import { averagePoll, blocs, parties } from "@/lib/data";
+import { averagePoll, parties } from "@/lib/data";
 import { partyColor } from "@/lib/party-colors";
-import { blocTotals } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 import PageHead from "@/components/PageHead";
 
@@ -21,41 +24,15 @@ const ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
 const seats = (id: string) => averagePoll.results[id]?.seats ?? 0;
 const segments = ORDER.flatMap((b) => parties.filter((p) => p.bloc === b && seats(p.id) > 0).map((p) => ({ id: p.id, seats: seats(p.id), color: partyColor(p.id), label: p.name, href: `/parties/${p.id}` })));
 
-/** "A party is not a bloc": each bloc as a bar of the separate lists it groups, in their own colours. */
-function BlocStack() {
-  const totals = blocTotals(averagePoll, parties);
-  const max = Math.max(...ORDER.map((b) => totals[b]));
-  return (
-    <figure className="js-blocs">
-      <figcaption className="js-h">Each bloc is several lists, each its own ballot choice</figcaption>
-      {ORDER.map((b) => (
-        <div key={b} className="js-bloc">
-          <p className="js-lab">{blocs.find((x) => x.id === b)!.label} <b>{Math.round(totals[b] * 10) / 10}</b></p>
-          <div className="js-bar" style={{ width: `${(totals[b] / max) * 100}%` }}>
-            {parties.filter((p) => p.bloc === b && seats(p.id) > 0).sort((x, y) => seats(y.id) - seats(x.id)).map((p) => (
-              <span key={p.id} style={{ flexGrow: seats(p.id), background: partyColor(p.id) }} title={`${p.name}: ${Math.round(seats(p.id) * 10) / 10} seats`} />
-            ))}
-          </div>
-          <p className="js-lists">
-            {parties.filter((p) => p.bloc === b && seats(p.id) > 0).sort((x, y) => seats(y.id) - seats(x.id)).map((p) => (
-              <span key={p.id}><i style={{ background: partyColor(p.id) }} aria-hidden="true" />{p.name} {Math.round(seats(p.id) * 10) / 10}</span>
-            ))}
-          </p>
-        </div>
-      ))}
-      <p className="fig-src js-src">Seats in the polling average, scaled to 120.</p>
-    </figure>
-  );
-}
-
-export default function Page() {
+export default async function Page() {
+  const context = await seatContextForRender();
   const figures = {
     voters: <VotingRightsGuide />,
-    seats: <div className="rs"><PollThresholdWatch /></div>,
-    parties: <BlocStack />,
-    govern: (
+    seats: context?.seatStatus==="official" ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : <div className="rs"><PollThresholdWatch /></div>,
+    parties: context ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : <SeatBasis context={null} lang="en"/>,
+    govern: context ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : (
       <figure className="js-grid">
-        <figcaption className="js-h">The 120 seats in the polling average; 61 is a majority</figcaption>
+        <figcaption className="js-h">Campaign example: the120 seats in the saved polling average;61 is a majority</figcaption>
         <SeatGrid segments={segments} labelRule />
       </figure>
     ),
@@ -63,7 +40,7 @@ export default function Page() {
   };
   return (
     <div className="wrap ix">
-      <PageHead title="Start here" standfirst="A short path through the election, one figure at a time." />
+      <SeatBasis context={context} lang="en"/><PageHead title="Start here" standfirst="A short path through the election, one figure at a time." />
       <Suspense fallback={<p>Loading the routes…</p>}>
         <GuidedJourney figures={figures} />
       </Suspense>

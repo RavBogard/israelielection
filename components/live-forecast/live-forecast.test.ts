@@ -8,7 +8,7 @@ import { ForecastDisplay } from "./ForecastClient";
 import LiveForecast, { forecastPresentation } from "./LiveForecast";
 import { acceptSnapshot, mergeSnapshot, primaryThresholds, probability } from "./presentation";
 
-afterEach(() => vi.unstubAllEnvs());
+afterEach(() => {vi.unstubAllEnvs();vi.useRealTimers();});
 
 describe.each(LANGS)("%s live balance", (lang) => {
   it("renders three equally ranked questions, actual prior and conditional semantics", () => {
@@ -90,3 +90,5 @@ it("renders only actual history points, with a matching accessible table", () =>
   expect(html).toContain("40%");
   expect(html).toContain("<caption>");
 });
+
+it("archives the election forecast after its window even before official seats publish",async()=>{vi.useFakeTimers();vi.setSystemTime(new Date("2026-11-03T00:01:00Z"));vi.stubEnv("LIVE_FORECAST_ENABLED","true");vi.stubEnv("ELECTION_LIFECYCLE_ENABLED","false");const view=await LiveForecast({lang:"en"});expect(view?.type).toBe("details");const html=renderToStaticMarkup(view);expect(html).toContain("Saved campaign forecast");expect(html).toContain("lf-history");expect(html).not.toContain("Published election result");});

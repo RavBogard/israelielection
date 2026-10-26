@@ -1,0 +1,174 @@
+.seat-basis {
+  border-block: 1px solid var(--line);
+  margin-block: 14px 22px;
+  padding-block: 10px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.seat-basis p {
+  margin: 3px 0;
+}
+.seat-basis strong {
+  color: var(--ink);
+}
+.seat-basis .seat-times {
+  font-size: 12px;
+}
+.seat-basis summary {
+  cursor: pointer;
+  width: fit-content;
+  padding-block: 5px;
+}
+.seat-basis button {
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 6px 0;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.seat-basis ul {
+  padding-inline-start: 18px;
+}
+.seat-basis li {
+  margin-block: 6px;
+}
+.seat-unavailable {
+  color: var(--warn-ink);
+  border-color: var(--warn-line);
+}
+.seat-changed {
+  background: var(--warn-bg);
+  outline: 1px solid var(--warn-line);
+  outline-offset: 2px;
+}
+.seat-change-note {
+  color: var(--warn-ink);
+  background: var(--warn-bg);
+  padding: 8px 12px;
+  font-size: 13px;
+}
+.seat-unknown {
+  border-block-start: 1px solid var(--line);
+  margin-block: 18px;
+  padding-block-start: 12px;
+}
+.seat-unknown li {
+  margin-block: 7px;
+}
+
+.current-parliament {
+  padding-block: 2rem;
+  border-block-start: 2px solid var(--ink);
+  margin-block: 1.5rem;
+}
+.current-parliament h2 {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.08;
+  margin: 0 0 1rem;
+}
+.current-parliament h3 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  margin-block: 2rem 1rem;
+}
+.parliament-lists {
+  display: flex;
+  gap: 0.6rem 1.2rem;
+  flex-wrap: wrap;
+  margin-block: 1rem;
+  font-size: 0.9rem;
+}
+.parliament-lists span {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.parliament-lists i {
+  width: 0.65rem;
+  height: 0.65rem;
+}
+.parliament-scenarios {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.parliament-scenarios article {
+  border-block-start: 1px solid var(--line);
+  padding-block: 0.8rem;
+}
+.parliament-scenarios h4 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  margin: 0 0 0.7rem;
+}
+.parliament-scenarios p {
+  font-size: 0.85rem;
+}
+.parliament-vote b {
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+.current-parliament table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 40rem;
+}
+.current-parliament td,
+.current-parliament th {
+  padding: 0.4rem;
+  border-block-end: 1px solid var(--line);
+  text-align: start;
+}
+.current-parliament td {
+  font-variant-numeric: tabular-nums;
+}
+.current-parliament caption {
+  text-align: start;
+}
+.current-parliament summary {
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+@media (max-width: 650px) {
+  .parliament-scenarios {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .current-parliament {
+    padding-block: 1.2rem;
+  }
+}
+
+.election-record {
+  margin-block: 1rem 2rem;
+  padding-block: 1.2rem;
+  border-block: 2px solid var(--ink);
+}
+.election-record h2 {
+  font-family: var(--display);
+  font-size: 1.7rem;
+}
+.election-record table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.85rem;
+}
+.election-record th,
+.election-record td {
+  padding: 0.55rem;
+  text-align: start;
+  border-block-end: 1px solid var(--line);
+}
+.election-record td {
+  font-variant-numeric: tabular-nums;
+}
+.record-table {
+  overflow: auto;
+}
+.record-table th {
+  min-width: 7rem;
+}

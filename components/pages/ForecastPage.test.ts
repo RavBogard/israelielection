@@ -1,3 +1,5 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
+import { contextToPoll } from "@/lib/seat-context";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
@@ -13,8 +15,8 @@ const cellText = (row: string) => [...row.matchAll(/<td\b[^>]*>(.*?)<\/td>/g)].m
 afterEach(() => vi.unstubAllEnvs());
 
 describe.each(["en", "he", "ar", "fa", "de", "fr", "zh"] as const)("%s forecast display", (lang) => {
-  it("shows party totals as the forecast, with the bloc median explicitly separate", () => {
-    const html = renderToStaticMarkup(createElement(LangProvider, { lang }, createElement(ForecastPage, { lang })));
+  it("shows party totals as the forecast, with the bloc median explicitly separate", async () => {
+    const html = renderToStaticMarkup(createElement(LangProvider, { lang }, await ForecastPage({ lang })));
     const table = html.match(/<table\b[^>]*>[\s\S]*?<\/table>/)![0];
     const rows = [...table.matchAll(/<tr\b[^>]*>[\s\S]*?<\/tr>/g)].map((m) => m[0]);
     expect(table).toContain(FORECAST[lang].prediction.cols.median);
@@ -31,14 +33,19 @@ describe.each(["en", "he", "ar", "fa", "de", "fr", "zh"] as const)("%s forecast 
   });
 });
 
-it("renders the homepage opposition headline and majority gap from the same party total", async () => {
-  vi.stubEnv("NODE_ENV", "development");
+it("renders the shared coherent allocation on home and preserves the forecast party totals", async () => {
+  vi.stubEnv("NODE_ENV", "development");vi.stubEnv("ELECTION_LIFECYCLE_ENABLED","false");
   vi.stubEnv("RESULTS_NOW", "2026-10-25T12:00:00+02:00");
   const { default: HomePage } = await import("./HomePage");
+  const context=await seatContextForRender();expect(context).not.toBeNull();
   const page = await HomePage({ lang: "en", revalidate: 60 });
   const html = renderToStaticMarkup(createElement(LangProvider, { lang: "en" }, page));
-  const row = html.match(/class="race-row[^\"]*"[^>]*>[\s\S]*?var\(--b-opp\)[\s\S]*?class="race-row-caption"[\s\S]*?<\/button>/)?.[0];
-  expect(row).toBeDefined();
-  expect(row).toContain(`class="race-value">${totals.opp}<small>`);
-  expect(row).toContain(`${61 - totals.opp}`);
+  expect(html).toContain(`data-seat-revision="${context!.revision}"`);
+  const legend=html.match(/class="parliament-lists">([\s\S]*?)<\/div>/)![1];
+  const visibleSeats=[...legend.matchAll(/<b>(\d+)<\/b>/g)].map(match=>Number(match[1]));
+  expect(visibleSeats.reduce((sum,n)=>sum+n,0)).toBe(120);
+  const current=blocTotals(contextToPoll(context!),parties);
+  expect(current.opp).toBe(totals.opp);
+  expect(61-current.opp).toBe(61-totals.opp);
+  expect(html).toContain("Current seat context");
 });

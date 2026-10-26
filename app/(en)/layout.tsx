@@ -1,3 +1,4 @@
+import { seatContextForRender } from "@/lib/seat-context-server";
 import EnglishShell, { EN_METADATA, VIEWPORT } from "@/components/EnglishShell";
 import "../globals.css";
 
@@ -8,6 +9,6 @@ export const metadata = EN_METADATA;
 
 export const viewport = VIEWPORT;
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  return <EnglishShell>{children}</EnglishShell>;
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  return <EnglishShell seatContext={await seatContextForRender()}>{children}</EnglishShell>;
 }

@@ -63,10 +63,18 @@ const items = news.items.slice(0, 60);
 console.log(`${items.length} headlines${news.failed.length ? `; feeds that failed: ${news.failed.join(", ")}` : ""}`);
 if (items.length < 4) throw new Error("Too few headlines to write a briefing.");
 
+let lifecycle: import("../../lib/election-lifecycle/types").ElectionLifecycleSnapshot | null = null;
+if (date === new Date().toISOString().slice(0, 10)) {
+  try {
+    const base = process.env.ELECTION_LIFECYCLE_BASE_URL ?? "https://www.israelielection.org";
+    const response = await fetch(new URL("/api/election-lifecycle", base), { cache: "no-store", signal: AbortSignal.timeout(8000) });
+    if (response.ok) { const candidate = await response.json(); if (candidate.schemaVersion === 1 && candidate.seatContext && Array.isArray(candidate.politics?.events)) lifecycle = candidate; }
+  } catch { /* Unavailable context is explicit in the prompt; never assume campaign or publish withdrawn facts. */ }
+}
 let briefing: Briefing | null = null;
 let problems: string[] = [];
 for (let attempt = 1; attempt <= 2 && !briefing; attempt++) {
-  const draft = await generateJson<Draft>(briefingPrompt(items, date), DRAFT_SCHEMA);
+  const draft = await generateJson<Draft>(briefingPrompt(items, date, lifecycle), DRAFT_SCHEMA);
   ({ briefing, problems } = checkDraft(draft, items, { date, model: GEMINI_MODEL }));
   if (!briefing) console.log(`Attempt ${attempt} rejected: ${problems.join(" ")}`);
 }

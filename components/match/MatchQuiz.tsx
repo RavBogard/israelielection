@@ -1,5 +1,6 @@
 "use client";
 
+import { useSeatContext } from "../seat-context/SeatContextProvider";
 import { useEffect, useMemo, useState } from "react";
 import { decodeAnswers, encodeAnswers, MIN_ANSWERS, type Answers, type Importance } from "@/lib/match";
 import QuestionStep from "./QuestionStep";
@@ -11,7 +12,9 @@ import "./match.css";
  * The Party match client: one question at a time, then the results. Answers live in the URL (?a=),
  * so a result can be shared as a link; nothing is stored or sent anywhere.
  */
-export default function MatchQuiz({ data }: { data: MatchData }) {
+export default function MatchQuiz({ data: initial }: { data: MatchData }) {
+  const {context} = useSeatContext(initial.context);
+  const data = useMemo(()=>context ? {...initial,context,parties:initial.parties.map(p=>({...p,seats:context.pointSeats[p.id]??0,seatsText:String(context.pointSeats[p.id]??0),below:!(context.pointSeats[p.id]??0)})),blocs:initial.blocs.map(b=>({...b,seats:initial.parties.filter(p=>p.bloc===b.id).reduce((n,p)=>n+(context.pointSeats[p.id]??0),0)}))} : initial,[context,initial]);
   const order = useMemo(() => data.questions.map((q) => ({ key: q.key, options: q.offered })), [data]);
   const core = data.questions.filter((q) => q.round === "core");
   const [answers, setAnswers] = useState<Answers>({});

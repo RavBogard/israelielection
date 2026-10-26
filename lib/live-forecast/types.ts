@@ -8,6 +8,7 @@ export type LiveForecastSnapshot = {
   sources: LiveSource[];
   largestParty: { id: string; probability: number }[];
   partySeats: { id: string; seats: Interval }[];
+  representativePoint?: { method: "representative_joint_draw"; drawIndex: number; seats: Record<string, number> };
   blocMargin: Interval;
   changeReason: "baseline" | "source_revision" | "source_unchanged" | "acquisition_failed";
   history: { generatedAt: string; revision: string; mode: "prior" | "exit" | "count"; arrangements: { id: string; probability: number }[] }[];

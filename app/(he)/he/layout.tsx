@@ -1,3 +1,5 @@
+import SeatContextProvider from "@/components/seat-context/SeatContextProvider";
+import { seatContextForRender } from "@/lib/seat-context-server";
 // Loads the Hebrew interface words before this module reads them (lib/i18n/he-text.ts).
 import "@/lib/i18n/he/register";
 import type { Metadata } from "next";
@@ -80,13 +82,14 @@ const BLOC_LABELS = Object.fromEntries(blocs.map((b) => [b.id, blocText(b, "he")
 const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
 const inEnglish = (lang?: string) => (lang === "en" ? ` ${t.inEnglish}` : "");
 
-export default function HebrewLayout({ children }: { children: ReactNode }) {
+export default async function HebrewLayout({ children }: { children: ReactNode }) {
   // RESULTS_FIXTURE (next dev only) rehearses the night, as in the English shell.
+  const seatContext = await seatContextForRender();
   const pollsClose = process.env.NODE_ENV === "development" && process.env.RESULTS_FIXTURE ? "2000-01-01T00:00:00Z" : resultsConfig.pollsClose;
   return (
     <html lang="he" dir="rtl" className={`${frank.variable} ${sans.variable} ${heSans.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <HebrewProvider>
+        <HebrewProvider><SeatContextProvider initial={seatContext}>
           <a href="#main" className="skip">
             {t.skip}
           </a>
@@ -143,7 +146,7 @@ export default function HebrewLayout({ children }: { children: ReactNode }) {
               </nav>
             </div>
           </footer>
-        </HebrewProvider>
+        </SeatContextProvider></HebrewProvider>
       </body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
       {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}

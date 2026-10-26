@@ -1,0 +1,61 @@
+.government-live {
+  padding-block-end: 3rem;
+}
+.government-live > section {
+  margin-block: 2rem;
+  border-block-start: 2px solid var(--ink);
+  padding-block: 1.5rem;
+}
+.government-live h2 {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.government-live h3 {
+  font-family: var(--display);
+  font-size: 1.3rem;
+}
+.government-events {
+  list-style: none;
+  padding: 0;
+  max-width: 55rem;
+}
+.government-events > li {
+  border-block-start: 1px solid var(--line);
+  padding-block: 1rem;
+}
+.government-events p {
+  font-size: 0.9rem;
+}
+.government-events blockquote {
+  margin-inline: 0;
+  padding-inline: 1rem;
+  border-inline-start: 2px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.government-clock {
+  border-block: 2px solid var(--ink);
+  padding: 1rem 0;
+  margin-block: 2rem;
+  max-width: 40rem;
+}
+.government-clock dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+}
+.government-clock dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.government-notice {
+  border-inline-start: 3px solid var(--ink);
+  padding-inline: 1rem;
+}
+.proposal {
+  border-block-start: 1px solid var(--line);
+  margin-block: 1rem;
+  padding-block: 1rem;
+}
+.government-live a {
+  overflow-wrap: anywhere;
+}

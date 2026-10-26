@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "modelVersion": "live-v1-conservative-joint",
+  "modelVersion": "live-v2-joint-representative",
   "scenarioVersion": "b2a4f927ac18ec9a",
-  "revision": "2964f08bb9943775bf3695b04e67b7a2673d5036ca7bdd71f72e5dc8880426aa",
+  "revision": "1e4d415688a00c9096a798980c53e4ede7bcb5178e0ac7ae0e3aafac68c4d919",
   "generatedAt": "2026-10-25T14:31:43.245Z",
   "mode": "prior",
   "experimental": true,
@@ -194,6 +194,26 @@
       }
     }
   ],
+  "representativePoint": {
+    "method": "representative_joint_draw",
+    "drawIndex": 17016,
+    "seats": {
+      "likud": 21,
+      "otzma": 8,
+      "shas": 9,
+      "utj": 8,
+      "rz": 8,
+      "poi": 0,
+      "noam": 0,
+      "yashar": 21,
+      "byachad": 13,
+      "dem": 9,
+      "yb": 8,
+      "res": 0,
+      "jl": 9,
+      "raam": 6
+    }
+  },
   "blocMargin": {
     "lo": -3,
     "median": 2,
@@ -203,7 +223,7 @@
   "history": [
     {
       "generatedAt": "2026-10-25T14:31:43.245Z",
-      "revision": "2964f08bb9943775bf3695b04e67b7a2673d5036ca7bdd71f72e5dc8880426aa",
+      "revision": "1e4d415688a00c9096a798980c53e4ede7bcb5178e0ac7ae0e3aafac68c4d919",
       "mode": "prior",
       "arrangements": [
         {

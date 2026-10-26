@@ -1,3 +1,7 @@
+"use client";
+import { useSeatContext } from "../seat-context/SeatContextProvider";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import Link from "next/link";
 import { partyColor } from "@/lib/party-colors";
 import { blocs } from "@/lib/data";
@@ -15,7 +19,8 @@ import { En, Loc } from "./Loc";
  * pledges and a way into the full profile. The same job as components/ProfileDetail.tsx (which the English builder
  * and the Party Map keep), with every field read through the Hebrew overlays and each fallback marked English.
  */
-export default function PartyPreview({ party: p, headingId, lang }: { party: Party; headingId?: string; lang: Lang }) {
+export default function PartyPreview({ party: p, headingId, lang, context:initial }: { party: Party; headingId?: string; lang: Lang;context?:SharedSeatContext|null }) {
+  const {context,refreshFailed}=useSeatContext(initial,!!initial);
   const T = builder[lang];
   const color = partyColor(p.id);
   const bloc = blocs.find((b) => b.id === p.bloc);
@@ -57,8 +62,8 @@ export default function PartyPreview({ party: p, headingId, lang }: { party: Par
       <dl className="kv">
         <dt>{T.leader}</dt>
         <dd><Loc v={partyText(p, "leader", lang)} page={lang} /></dd>
-        <dt>{T.seatsAverage}</dt>
-        <dd>{seats}</dd>
+        <dt>{context?LIFECYCLE[lang][context.basis]:T.seatsAverage}</dt>
+        <dd>{!context&&refreshFailed?LIFECYCLE[lang].sourceUnavailable:context?`${context.pointSeats[p.id]??0} · ${LIFECYCLE[lang][context.seatStatus]}`:seats}</dd>
       </dl>
       {p.who.length > 0 && (
         <div className="sec">

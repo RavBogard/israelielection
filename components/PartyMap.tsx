@@ -4,6 +4,10 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./interactives.css";
 import "./map.css";
 import Link from "next/link";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import SeatBasis from "./seat-context/SeatBasis";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { unmappedLists } from "@/lib/seat-context";
 import {partyColor,partyInk,blocColorStrip,PARTY_COLOR_FAMILIES,PARTY_COLOR_NOTE} from "@/lib/party-colors";
 import {readPartyMapSelection,partyMapSelectionHref} from "@/lib/party-map-state";
 import PageHead from "./PageHead";
@@ -21,7 +25,6 @@ const averaged = parties
 const seatsOf = (id: string) => averagePoll.results[id]?.seats ?? 0;
 const avgOf = new Map(averaged.map(({ p }) => [p.id, seatsOf(p.id)]));
 const blocSum = (b: BlocId) => Math.round(averaged.filter(({ p }) => p.bloc === b).reduce((s, { p }) => s + seatsOf(p.id), 0) * 10) / 10;
-const offMap = parties.filter((p) => !avgOf.has(p.id) || seatsOf(p.id) === 0);
 const fewerPolls = averaged.filter(({ a }) => a.n < mainPolls.length).map(({ p }) => p.name);
 
 const GAP = 6, LBL = 22, LINE = 16;
@@ -115,6 +118,11 @@ function About() {
 }
 
 export default function PartyMap() {
+  const {context,refreshFailed}=useSeatContext();
+  const seatsOf = (id:string)=>context ? context.pointSeats[id]??0 : averagePoll.results[id]?.seats??0;
+  const averaged = parties.map(p=>({p,a:average(p.id,mainPolls)})).filter(x=>context ? seatsOf(x.p.id)>0 : x.a!==null);
+  const blocSum = (b:BlocId)=>averaged.filter(({p})=>p.bloc===b).reduce((n,{p})=>n+seatsOf(p.id),0);
+  const offMap=parties.filter(p=>seatsOf(p.id)===0);
   const [current, setCurrent] = useState<string | null>(null);
   const [tip, setTip] = useState<{ text: string; x: number; y: number } | null>(null);
   const mapRef = useRef<HTMLDivElement>(null);
@@ -157,10 +165,13 @@ export default function PartyMap() {
   }, [tip]);
 
   const cells: React.ReactNode[] = [];
+  const unclassified = context?unmappedLists(context,parties).reduce((n,p)=>n+p.seats,0):0;
   if (W && H) {
+    const knownHeight=H*(120-unclassified)/120;
+    if(unclassified)cells.push(<div key="unclassified" role="note" title={`${LIFECYCLE.en.unknown}: ${unclassified}`} style={{position:"absolute",left:0,top:knownHeight,width:W,height:H-knownHeight,background:"var(--ink-3)"}}><span className="sr-only">{LIFECYCLE.en.unknown}: {unclassified}</span></div>);
     // Squarify lays out largest first; ties keep the site's bloc order.
     const blocItems = BLOC_ORDER.map((b) => ({ id: b, v: blocSum(b) })).sort((a, b) => b.v - a.v);
-    for (const br of squarify(blocItems, 0, 0, W, H)) {
+    for (const br of squarify(blocItems, 0, 0, W, knownHeight)) {
       const bx = br.x + GAP / 2, by = br.y + GAP / 2, bw = br.w - GAP, bh = br.h - GAP;
       const label = blocLabel[br.id as BlocId];
       const total = seatFigure(br.v);
@@ -203,7 +214,7 @@ export default function PartyMap() {
             className={cls}
             aria-pressed={current === p.id}
             data-party={p.id}
-            aria-label={`${p.name}, ${seatFigure(r.v)} seats, polling average`}
+            aria-label={`${p.name}, ${seatFigure(r.v)} seats, shared allocation`}
             onClick={() => select(p.id)}
             onPointerMove={(e) => {
               if (e.pointerType !== "mouse") return setTip(null);
@@ -211,7 +222,7 @@ export default function PartyMap() {
                 const x = poll.results[p.id];
                 return `${poll.pollster} ${shortDate(poll.published)}: ${x ? (x.belowThreshold || x.seats === 0 ? "below" : x.seats) : "n/a"}`;
               });
-              setTip({ text: `${p.name}, ${seatFigure(r.v)} seats, polling average. ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
+              setTip({ text: `${p.name}, ${seatFigure(r.v)} seats, shared allocation. ${seats.join(" / ")}`, x: e.clientX, y: e.clientY });
             }}
             style={{
               left: r.x + 1.5, top: r.y + 1.5, width: cw, height: ch,
@@ -222,7 +233,7 @@ export default function PartyMap() {
             <span className="ld">{p.leader.split(" (")[0]}</span>
             <span className="av">
               {seatFigure(r.v)}
-              <small>seats, polling average</small>
+              <small>seats, shared allocation</small>
             </span>
           </button>
         );
@@ -232,13 +243,16 @@ export default function PartyMap() {
 
   const party = parties.find((p) => p.id === current);
 
+  if(!context&&refreshFailed)return <SeatBasis context={null} lang="en"/>;
   return (
     <div className="pm" onKeyDown={(e) => { if (e.key === "Escape" && current) { e.preventDefault(); close(); } }}>
-      <PageHead title="The Party Map" standfirst="Every list, sized by its seats in the polling average. Tap one for its profile." />
+      <SeatBasis context={context} lang="en" share />
+      {context && unmappedLists(context,parties).length>0 && <p>{LIFECYCLE.en.unknown}: {unmappedLists(context,parties).map(p=>`${p.label} ${p.seats}`).join(" · ")}</p>}
+      <PageHead title="The Party Map" standfirst="Every profiled list, sized by its seats in the shared allocation. Tap one for its profile." />
 
       <div className={`layout${party ? " open" : ""}`}>
         <div className="mapcol">
-          <div className={`map${party ? " has-sel" : ""}`} ref={mapRef} role="group" aria-label="Parties sized by average seats" onPointerLeave={() => setTip(null)}>
+          <div className={`map${party ? " has-sel" : ""}`} ref={mapRef} role="group" aria-label="Profiled parties sized by shared seats" onPointerLeave={() => setTip(null)}>
             {cells}
           </div>
           <div className="offmap">
@@ -250,7 +264,7 @@ export default function PartyMap() {
               </button>
             ))}
           </div>
-          <About />
+          {!context && <About />}
         </div>
         {party && (
           <aside className="panel" ref={panelRef} aria-label={`${party.name} profile`}>
