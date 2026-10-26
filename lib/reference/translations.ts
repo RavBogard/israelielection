@@ -76,7 +76,7 @@ export const renderedLinks = (text: string) =>
 const same = (a: string[], b: string[]) =>
   JSON.stringify(a) === JSON.stringify(b);
 const negative: Record<Exclude<Lang, "en">, RegExp> = {
-  he: /לא|אין|אינ[והםן]|בלי|אלא/,
+  he: /לא|אין|אינ[והםן]|בלי|אלא|(?:^|\s)טרם(?:\s|$)/,
   ar: /لا|ليس|لم|لن|غير|دون/,
   fa: /نیست|نمی|نه|بدون|نبود|هیچ|نخواهد|ندارد/,
   de: /\b(?:nicht|kein\w*|nie|niemals|niemand(?:en|em|es)?|nichts|keineswegs|weder|ohne|unabhängig)\b/i,

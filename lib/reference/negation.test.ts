@@ -24,6 +24,11 @@ const source = {
   ],
 } satisfies SourceDocument;
 describe("German negative morphology guard", () => {
+  it("recognizes Hebrew not-yet without accepting an affirmative statement", () => {
+    const candidate = (text: string) => ({id:"test",lang:"he",sourceRevision:"revision",publishedAt:"2026-10-26T00:00:00Z",status:"published",blocks:[{id:"b",text}]}) as TranslationDocument;
+    expect(() => validateRenderedTranslation(candidate("סוכם; טרם נחתם"),source)).not.toThrow();
+    expect(() => validateRenderedTranslation(candidate("סוכם; נחתם"),source)).toThrow("rendered_negation_missing");
+  });
   for (const text of [
     "Stimmen werden an niemanden weitergegeben.",
     "Niemand erhält diese Stimmen.",
