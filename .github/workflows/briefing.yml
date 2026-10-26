@@ -48,7 +48,7 @@ on:
         default: false
 
 concurrency:
-  group: briefing
+  group: ${{ startsWith(inputs.task, 'reference') && 'reference-validation' || 'briefing' }}
   cancel-in-progress: false
 
 permissions:
