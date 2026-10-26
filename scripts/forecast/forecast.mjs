@@ -32,7 +32,7 @@ const out = {
   generated: now.toISOString().slice(0, 10), generatedAt: now.toISOString(), final: FINAL, election: results.election, runs: out0.runs, seed: out0.seed,
   method: `scripts/forecast/model.mjs (version ${out0.parameters.version}); docs/research/polls-method/2026-10-23-forecast-algorithm.md`,
   inputs: out0.inputs, parameters: out0.parameters, blocs: out0.blocs, majority: out0.majority, netLargerThanOpp: out0.netLargerThanOpp, largestList: out0.largestList, lists: out0.lists,
-  scoring: "Score on the official result: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point (version 3: the median of the bloc's simulated total; blocs.*.listSum, the sum of the bloc's list points, is reported beside it, not scored); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way.",
+  scoring: "Score on the official result: per-list absolute seat error of `point`; bloc absolute error two ways, both reported: blocs.*.listSum (the headline bloc total, the sum of the bloc's list points, shown on the site and compared with the averages) and blocs.*.point (version 3: the median of the bloc's simulated total, round2/G); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way.",
 };
 if (!SENSITIVITY) {
   fs.writeFileSync("data/forecast.json", JSON.stringify(out, null, 2) + "\n");

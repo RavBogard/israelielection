@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-26",
-  "generatedAt": "2026-10-26T14:35:12.664Z",
+  "generatedAt": "2026-10-26T14:36:31.834Z",
   "final": false,
   "election": "2026-10-27",
   "runs": 50000,
@@ -335,5 +335,5 @@
       "call": true
     }
   },
-  "scoring": "Score on the official result: per-list absolute seat error of `point`; bloc absolute error of blocs.*.point (version 3: the median of the bloc's simulated total; blocs.*.listSum, the sum of the bloc's list points, is reported beside it, not scored); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way."
+  "scoring": "Score on the official result: per-list absolute seat error of `point`; bloc absolute error two ways, both reported: blocs.*.listSum (the headline bloc total, the sum of the bloc's list points, shown on the site and compared with the averages) and blocs.*.point (version 3: the median of the bloc's simulated total, round2/G); threshold calls right (`call`, i.e. passes >= 50, and the list passed, or not and it failed); whether the outcome with the highest probability in `majority` occurred. Compare with the two site averages scored the same way."
 }
