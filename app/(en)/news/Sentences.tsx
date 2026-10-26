@@ -1,3 +1,4 @@
+import BriefingEvidence from "@/components/reference/BriefingEvidence";
 import type { Briefing } from "@/lib/briefing";
 import { groupBriefing } from "@/lib/news-grouping";
 import { AccessLabels } from "./access";
@@ -17,6 +18,7 @@ function Sentence({ s }: { s: Briefing["sentences"][number] }) {
 
 /** A briefing's sentences; with `topics`, under topic subheads (at `level`, h3 by default) when there is more than one topic. */
 export default function Sentences({ b, topics = false, level = 3 }: { b: Briefing; topics?: boolean; level?: 2 | 3 }) {
+  if(b.evidenceVersion===2)return <BriefingEvidence briefing={b} lang="en"/>;
   const H = level === 2 ? "h2" : "h3";
   const groups = topics ? groupBriefing(b.sentences) : [];
   if (groups.length < 2) return <>{b.sentences.map((s, i) => <Sentence key={i} s={s} />)}</>;

@@ -34,5 +34,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/:id", "/results", "/government", "/elections", "/elections/:id", "/parliament", "/policies", "/policies/:id", "/changes", "/reference", "/issues", "/issues/:slug", "/communities", "/communities/:slug", "/how-it-works", "/how-it-works/:slug", "/about", "/american-lens", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe"],
+  matcher: ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/:id", "/results", "/government", "/elections", "/elections/:id", "/parliament", "/policies", "/policies/:id", "/changes", "/reference", "/issues", "/issues/:slug", "/communities", "/communities/:slug", "/how-it-works", "/how-it-works/:slug", "/about", "/american-lens", "/news", "/news/:date", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe"],
 };

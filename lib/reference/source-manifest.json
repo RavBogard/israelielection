@@ -5,7 +5,7 @@
       "id": "about",
       "path": "/about",
       "file": "content/about.mdx",
-      "revision": "e2dffee7aabd4a1181890fb59c063cca80b1a3aa9d63a0a1da5e1bd1982f0955",
+      "revision": "16814c1707d56ab924705e0fe3473bd6b2c0de20bbc9b4e287c809aca96ea20d",
       "title": "About this site",
       "checked": "2026-10-05",
       "blocks": [
@@ -233,9 +233,29 @@
           "negated": false
         },
         {
+          "kind": "text",
+          "text": "Reading suggestions are off by default. If you turn them on, this browser stores known public page identifiers and reading times for up to 30 days. They are used to suggest related reading, not to infer political affiliation or reorder the main headlines and evidence. You can reset the reading history, or turn suggestions off and erase it, from the Suggested reading controls. This history is not an email subscription.",
+          "id": "block-21-cf1284721aaa",
+          "numbers": [
+            "30"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "kind": "text",
+          "text": "Where email updates are available, a separate opt-in and confirmation are required. The service stores your verified email address, selected language and topics, confirmation and consent records, and delivery or suppression records needed to manage the subscription. Private links let you change preferences or unsubscribe. Unsubscribing stops future subscription messages; it does not promise deletion of every delivery, consent or suppression record. Confirmation and preference pages exclude analytics and use a no-referrer policy. Do not share their private links.",
+          "id": "block-22-e749cd7c4632",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
           "kind": "heading",
           "text": "Corrections",
-          "id": "block-21-443b744e50f5",
+          "id": "block-23-443b744e50f5",
           "numbers": [],
           "links": [],
           "names": [],
@@ -244,7 +264,7 @@
         {
           "kind": "text",
           "text": "Please [report a correction on GitHub](https://github.com/RavBogard/israelielection/issues). Include the page address, the wording or number in question, and a supporting source where possible.",
-          "id": "block-22-8c7121ab98a6",
+          "id": "block-24-8c7121ab98a6",
           "numbers": [],
           "links": [
             "https://github.com/RavBogard/israelielection/issues"
@@ -255,7 +275,7 @@
         {
           "kind": "text",
           "text": "—Rabbi Daniel Bogard",
-          "id": "block-23-8e5e1752ede9",
+          "id": "block-25-8e5e1752ede9",
           "numbers": [],
           "links": [],
           "names": [
@@ -286,6 +306,7 @@
         "2026",
         "24",
         "3.8",
+        "30",
         "4.0",
         "4.0",
         "5.1",

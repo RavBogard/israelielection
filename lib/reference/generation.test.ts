@@ -16,7 +16,10 @@ const source = vi.hoisted(() => ({
 vi.mock("./catalog", () => ({ referenceDocuments: [source] }));
 vi.mock("node:fs", () => ({ readFileSync: () => "source" }));
 vi.mock("./source.mjs", () => ({ sourceRevision: () => "revision" }));
-import { generateReferenceTranslation } from "./generation";
+import {
+  generateReferenceTranslation,
+  reviewReferenceTranslation,
+} from "./generation";
 const response = (value: unknown) =>
   new Response(
     JSON.stringify({
@@ -64,6 +67,8 @@ describe("bounded reference generation", () => {
       (call) => JSON.parse(call[1].body).contents[0].parts[0].text,
     );
     expect(prompts[0]).toContain("expectedNumbers");
+    expect(prompts[0]).toContain("ungrouped ASCII integer digits");
+    expect(prompts[1]).toContain("154,855 becomes 154855");
     expect(prompts[1]).toContain("actualNumbers");
     expect(prompts[2]).toContain("Independently verify");
   });
@@ -100,4 +105,42 @@ describe("bounded reference generation", () => {
     ).rejects.toThrow("provider_deadline");
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
+});
+
+it("reviews a narrowly corrected full candidate without regenerating or repairing it", async () => {
+  vi.stubEnv("GEMINI_API_KEY", "test-only");
+  const fetcher = vi
+    .fn()
+    .mockResolvedValue(
+      response({
+        verdict: "supported",
+        blocks: [
+          {
+            id: "block-1",
+            supported: true,
+            complete: true,
+            negationPreserved: true,
+            namesPreserved: true,
+            reasonCode: "none",
+          },
+        ],
+      }),
+    );
+  vi.stubGlobal("fetch", fetcher);
+  const result = await reviewReferenceTranslation("guides:test", "fr", {
+    sourceRevision: "revision",
+    blocks: [{ id: "block-1", text: "61 sièges" }],
+  });
+  expect(result.translation.review.verdict).toBe("supported");
+  expect(fetcher).toHaveBeenCalledTimes(1);
+  expect(
+    JSON.parse(fetcher.mock.calls[0][1].body).contents[0].parts[0].text,
+  ).toContain("Independently verify");
+  await expect(
+    reviewReferenceTranslation("guides:test", "fr", {
+      sourceRevision: "old",
+      blocks: [{ id: "block-1", text: "61 sièges" }],
+    }),
+  ).rejects.toThrow("source_revision_changed");
+  expect(fetcher).toHaveBeenCalledTimes(1);
 });

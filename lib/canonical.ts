@@ -1,3 +1,6 @@
+import briefingsJson from "@/data/briefings/_index.json";
+import type {Briefing} from "./briefing";
+import {briefingSentence} from "./briefing-locale";
 import type { Metadata } from "next";
 import { HE_PUBLIC, LANGS, enPath, editionPath } from "./i18n";
 import { sourceForPath,translatedReference } from "./reference/catalog";
@@ -11,6 +14,7 @@ function languages(en: string, announce = HE_PUBLIC): Record<string, string> | u
   if (!editionPath(en, "he")) return undefined;
   const sourcePath=en.startsWith("/policies/")?en.replace("/policies/","/issues/"):en;
   const source=sourceForPath(sourcePath);
+  if(en==="/news"||en.startsWith("/news/")){const b=en==="/news"?(briefingsJson as Briefing[])[0]:(briefingsJson as Briefing[]).find(b=>b.date===en.slice(6));const ready=LANGS.filter(lang=>lang==="en"||b?.sentences.every(s=>briefingSentence(s,lang).text));return ready.length>1?{...Object.fromEntries(ready.map(lang=>[lang,editionPath(en,lang)!])),"x-default":en}:undefined;}
   const ready=source?LANGS.filter(lang=>lang==="en"||translatedReference(sourcePath,lang)?.state==="ready"):LANGS;
   if(ready.length===1)return undefined;
   return { ...Object.fromEntries(ready.map(lang => [lang, editionPath(en, lang)!])), "x-default": en };

@@ -1,5 +1,5 @@
 import { createHash, createHmac, randomUUID } from "node:crypto";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { referenceDocuments } from "../../lib/reference/catalog";
 import {
@@ -31,7 +31,23 @@ const { destination, signingSubject } = referenceRemoteTarget(
 );
 const key = process.env.QSTASH_CURRENT_SIGNING_KEY;
 if (!key) throw Error("signing_key_unconfigured");
-const raw = JSON.stringify({ mode: "generate", id, lang }),
+const reviewFile = arg("--review");
+const candidate = reviewFile
+  ? JSON.parse(readFileSync(reviewFile, "utf8"))
+  : null;
+if (candidate && (candidate.id !== id || candidate.lang !== lang))
+  throw Error("candidate_identity_mismatch");
+const raw = JSON.stringify(
+    candidate
+      ? {
+          mode: "review",
+          id,
+          lang,
+          sourceRevision: candidate.sourceRevision,
+          blocks: candidate.blocks,
+        }
+      : { mode: "generate", id, lang },
+  ),
   now = Math.floor(Date.now() / 1000),
   head = Buffer.from(JSON.stringify({ alg: "HS256", typ: "JWT" })).toString(
     "base64url",

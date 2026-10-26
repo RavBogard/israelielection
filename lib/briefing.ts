@@ -1,3 +1,5 @@
+import type { VerifiedSentenceTranslation } from "./briefing-verified";
+import type { ToolLang } from "./i18n";
 import type { NewsItem } from "./news";
 import type { ElectionLifecycleSnapshot } from "./election-lifecycle/types";
 import { phaseBriefingGuidance } from "./election-lifecycle/briefing-context";
@@ -7,8 +9,51 @@ export type Briefing = {
   date: string;
   generatedAt: string;
   model: string;
+  evidenceVersion?: 2;
+  capture?: {
+    state: "archived" | "in_memory_only";
+    captureHash?: string;
+    privateStored: boolean;
+  };
+  verification?: {
+    model: string;
+    reviewedAt: string;
+    claims: {
+      id: string;
+      contentHash: string;
+      supported: true;
+      atomic: true;
+      attributionPreserved: true;
+      noAddedInference: true;
+    }[];
+  };
   /** `textHe`: the Hebrew edition's sentence (checkTranslation); null when the checks failed, absent on older files. */
-  sentences: { text: string; textHe?: string | null; sources: { outlet: string; title: string; url: string; published: string }[] }[];
+  sentences: {
+    text: string;
+    textHe?: string | null;
+    claimId?: string;
+    kind?: "change" | "context" | "attributed_perspective";
+    sourceHash?: string;
+    evidenceClass?: "corroborated_reporting" | "attributed_perspective";
+    translations?: Partial<Record<ToolLang, VerifiedSentenceTranslation>>;
+    evidence?: {
+      url: string;
+      bodyHash: string;
+      capturedAt: string;
+      quoteHash: string;
+      origin: {
+        id: string | null;
+        kind: "newsroom" | "wire" | "unknown";
+        byline: string | null;
+      };
+    }[];
+    sources: {
+      outlet: string;
+      title: string;
+      url: string;
+      published: string;
+    }[];
+  }[];
   /** Sentences the grounding check removed before publishing (kept for audit). */
   dropped: { text: string; reason: string }[];
 };
@@ -26,8 +71,18 @@ export const DRAFT_SCHEMA = {
       items: {
         type: "object",
         properties: {
-          text: { type: "string", description: "One plain sentence, no markdown, no links." },
-          sources: { type: "array", minItems: 1, maxItems: 3, items: { type: "integer" }, description: "Numbers of the headlines this sentence states facts from." },
+          text: {
+            type: "string",
+            description: "One plain sentence, no markdown, no links.",
+          },
+          sources: {
+            type: "array",
+            minItems: 1,
+            maxItems: 3,
+            items: { type: "integer" },
+            description:
+              "Numbers of the headlines this sentence states facts from.",
+          },
         },
         required: ["text", "sources"],
       },
@@ -36,9 +91,16 @@ export const DRAFT_SCHEMA = {
   required: ["sentences"],
 } as const;
 
-export function briefingPrompt(items: NewsItem[], date: string, lifecycle: ElectionLifecycleSnapshot | null = null): string {
+export function briefingPrompt(
+  items: NewsItem[],
+  date: string,
+  lifecycle: ElectionLifecycleSnapshot | null = null,
+): string {
   const list = items
-    .map((it, i) => `[${i + 1}] ${it.outlet}, ${it.published.slice(0, 16).replace("T", " ")} UTC | ${it.title}${it.summary ? ` | ${it.summary}` : ""}`)
+    .map(
+      (it, i) =>
+        `[${i + 1}] ${it.outlet}, ${it.published.slice(0, 16).replace("T", " ")} UTC | ${it.title}${it.summary ? ` | ${it.summary}` : ""}`,
+    )
     .join("\n");
   return `You write the daily "what changed" briefing for israelielection.org, an English-language reference site on Israel's October 27, 2026 Knesset election for American readers.
 
@@ -57,7 +119,11 @@ Headlines:
 ${list}`;
 }
 
-const STOP = new Set("the a an and or of to in on for with at by from as is are was were be been it its that this he she they his her their after before over into than who what which said says will would not no new more israel israeli israelis".split(" "));
+const STOP = new Set(
+  "the a an and or of to in on for with at by from as is are was were be been it its that this he she they his her their after before over into than who what which said says will would not no new more israel israeli israelis".split(
+    " ",
+  ),
+);
 export const terms = (s: string) =>
   new Set(
     s
@@ -65,33 +131,75 @@ export const terms = (s: string) =>
       .replace(/[^\p{L}\p{N}' -]/gu, " ")
       .split(/\s+/)
       .map((w) => w.replace(/^'+|'+$/g, "").replace(/'s$/, ""))
-      .filter((w) => w.length > 2 && !STOP.has(w))
+      .filter((w) => w.length > 2 && !STOP.has(w)),
   );
 
 /**
  * Turns a model draft into a publishable briefing, or explains why not. A sentence is dropped
  * when it cites no real item or shares fewer than two content words with what it cites.
  */
-export function checkDraft(draft: Draft, items: NewsItem[], meta: { date: string; model: string }): { briefing: Briefing | null; problems: string[] } {
+export function checkDraft(
+  draft: Draft,
+  items: NewsItem[],
+  meta: { date: string; model: string },
+): { briefing: Briefing | null; problems: string[] } {
   const problems: string[] = [];
   const kept: Briefing["sentences"] = [];
   const dropped: Briefing["dropped"] = [];
   for (const s of draft.sentences ?? []) {
-    const text = String(s.text ?? "").replace(/\s+/g, " ").trim();
+    const text = String(s.text ?? "")
+      .replace(/\s+/g, " ")
+      .trim();
     if (!text) continue;
-    if (/https?:\/\/|\[|\]|\*|#/.test(text)) { dropped.push({ text, reason: "markup or link in text" }); continue; }
-    const cited = [...new Set(s.sources ?? [])].filter((n) => Number.isInteger(n) && n >= 1 && n <= items.length).map((n) => items[n - 1]);
-    if (!cited.length) { dropped.push({ text, reason: "cites no valid headline" }); continue; }
-    const have = terms(cited.map((c) => `${c.title} ${c.summary} ${c.outlet}`).join(" "));
+    if (/https?:\/\/|\[|\]|\*|#/.test(text)) {
+      dropped.push({ text, reason: "markup or link in text" });
+      continue;
+    }
+    const cited = [...new Set(s.sources ?? [])]
+      .filter((n) => Number.isInteger(n) && n >= 1 && n <= items.length)
+      .map((n) => items[n - 1]);
+    if (!cited.length) {
+      dropped.push({ text, reason: "cites no valid headline" });
+      continue;
+    }
+    const have = terms(
+      cited.map((c) => `${c.title} ${c.summary} ${c.outlet}`).join(" "),
+    );
     const overlap = [...terms(text)].filter((w) => have.has(w)).length;
-    if (overlap < 2) { dropped.push({ text, reason: "shares too little with its cited headlines" }); continue; }
-    kept.push({ text, sources: cited.map(({ outlet, title, url, published }) => ({ outlet, title, url, published })) });
+    if (overlap < 2) {
+      dropped.push({
+        text,
+        reason: "shares too little with its cited headlines",
+      });
+      continue;
+    }
+    kept.push({
+      text,
+      sources: cited.map(({ outlet, title, url, published }) => ({
+        outlet,
+        title,
+        url,
+        published,
+      })),
+    });
   }
   const words = kept.reduce((n, s) => n + s.text.split(/\s+/).length, 0);
-  if (kept.length < 3) problems.push(`Only ${kept.length} sentences survived the source check (need 3).`);
+  if (kept.length < 3)
+    problems.push(
+      `Only ${kept.length} sentences survived the source check (need 3).`,
+    );
   if (words > 320) problems.push(`Too long: ${words} words.`);
   if (problems.length) return { briefing: null, problems };
-  return { briefing: { date: meta.date, generatedAt: new Date().toISOString(), model: meta.model, sentences: kept, dropped }, problems };
+  return {
+    briefing: {
+      date: meta.date,
+      generatedAt: new Date().toISOString(),
+      model: meta.model,
+      sentences: kept,
+      dropped,
+    },
+    problems,
+  };
 }
 
 /**
@@ -106,11 +214,23 @@ export type HeDraft = { sentences: string[] };
 
 export const HE_SCHEMA = {
   type: "object",
-  properties: { sentences: { type: "array", items: { type: "string", description: "The Hebrew sentence, in the same position as its English one." } } },
+  properties: {
+    sentences: {
+      type: "array",
+      items: {
+        type: "string",
+        description:
+          "The Hebrew sentence, in the same position as its English one.",
+      },
+    },
+  },
   required: ["sentences"],
 } as const;
 
-export function hebrewPrompt(sentences: string[], glossary: GlossaryEntry[]): string {
+export function hebrewPrompt(
+  sentences: string[],
+  glossary: GlossaryEntry[],
+): string {
   return `אתה עורך חדשות בעיתון ישראלי. לפניך תדריך יומי קצר באנגלית על הבחירות לכנסת ב-27 באוקטובר 2026. כתוב כל משפט מחדש בעברית עיתונאית ישראלית טבעית, כמו בכאן חדשות, ynet או הארץ: לא תרגום מילולי, אלא אותה עובדה בניסוח שקורא ישראלי מצפה לו.
 
 כללים:
@@ -128,25 +248,57 @@ ${sentences.map((s, i) => `${i + 1}. ${s}`).join("\n")}`;
 }
 
 /** Numbers as they appear, sorted: "5 petitions, 27 October 2026" → ["2026", "27", "5"]. */
-const numbers = (s: string) => (s.match(/\d+(?:[.,]\d+)*/g) ?? []).map((n) => n.replace(/,/g, "")).sort();
+const numbers = (s: string) =>
+  (s.match(/\d+(?:[.,]\d+)*/g) ?? []).map((n) => n.replace(/,/g, "")).sort();
 /** Hebrew quote marks to plain ones, so ש״ס and ש"ס compare equal. */
 const normHe = (s: string) => s.replace(/[״”“]/g, '"').replace(/[׳’]/g, "'");
 /** A Hebrew name's stem: no leading definite article, no "!" (הליכוד → ליכוד, so בליכוד matches). */
-const stem = (he: string) => normHe(he).replace(/^ה(?=\S{3,})/, "").replace(/!$/, "");
+const stem = (he: string) =>
+  normHe(he)
+    .replace(/^ה(?=\S{3,})/, "")
+    .replace(/!$/, "");
 
 /** Keeps the Hebrew sentences when they pass every check; otherwise says why not. */
-export function checkTranslation(en: string[], draft: HeDraft | null, glossary: GlossaryEntry[]): { he: string[] | null; problem: string | null } {
-  const he = (draft?.sentences ?? []).map((s) => String(s ?? "").replace(/\s+/g, " ").trim());
-  if (he.length !== en.length) return { he: null, problem: `${he.length} Hebrew sentences for ${en.length} English` };
+export function checkTranslation(
+  en: string[],
+  draft: HeDraft | null,
+  glossary: GlossaryEntry[],
+): { he: string[] | null; problem: string | null } {
+  const he = (draft?.sentences ?? []).map((s) =>
+    String(s ?? "")
+      .replace(/\s+/g, " ")
+      .trim(),
+  );
+  if (he.length !== en.length)
+    return {
+      he: null,
+      problem: `${he.length} Hebrew sentences for ${en.length} English`,
+    };
   for (let i = 0; i < en.length; i++) {
-    const h = he[i], n = i + 1;
+    const h = he[i],
+      n = i + 1;
     if (!h) return { he: null, problem: `sentence ${n} is empty` };
-    if (/https?:\/\/|\[|\]|\*|#/.test(h)) return { he: null, problem: `sentence ${n} has markup or a link` };
-    const hebrew = (h.match(/[֐-׿]/g) ?? []).length, latin = (h.match(/[A-Za-z]/g) ?? []).length;
-    if (hebrew < 2 * latin || hebrew < 10) return { he: null, problem: `sentence ${n} is not mostly Hebrew` };
-    if (numbers(en[i]).join() !== numbers(h).join()) return { he: null, problem: `sentence ${n}: numbers differ (${numbers(en[i]).join(" ") || "none"} / ${numbers(h).join(" ") || "none"})` };
-    const missing = glossary.filter((g) => g.en.some((e) => en[i].includes(e)) && !normHe(h).includes(stem(g.must ?? g.he)));
-    if (missing.length) return { he: null, problem: `sentence ${n} does not name ${missing.map((g) => g.he).join(", ")}` };
+    if (/https?:\/\/|\[|\]|\*|#/.test(h))
+      return { he: null, problem: `sentence ${n} has markup or a link` };
+    const hebrew = (h.match(/[֐-׿]/g) ?? []).length,
+      latin = (h.match(/[A-Za-z]/g) ?? []).length;
+    if (hebrew < 2 * latin || hebrew < 10)
+      return { he: null, problem: `sentence ${n} is not mostly Hebrew` };
+    if (numbers(en[i]).join() !== numbers(h).join())
+      return {
+        he: null,
+        problem: `sentence ${n}: numbers differ (${numbers(en[i]).join(" ") || "none"} / ${numbers(h).join(" ") || "none"})`,
+      };
+    const missing = glossary.filter(
+      (g) =>
+        g.en.some((e) => en[i].includes(e)) &&
+        !normHe(h).includes(stem(g.must ?? g.he)),
+    );
+    if (missing.length)
+      return {
+        he: null,
+        problem: `sentence ${n} does not name ${missing.map((g) => g.he).join(", ")}`,
+      };
   }
   return { he, problem: null };
 }

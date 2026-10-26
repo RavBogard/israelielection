@@ -8,6 +8,24 @@ on:
     - cron: "30 10 * * *"
   workflow_dispatch:
     inputs:
+      task:
+        description: "Bounded verification task"
+        type: choice
+        options: [briefing, reference]
+        default: briefing
+      reference_id:
+        description: "Registered reference ID (reference task only)"
+        type: string
+        default: guides:seats
+      reference_lang:
+        description: "Target locale (reference task only)"
+        type: choice
+        options: [he, ar, fa, de, fr, zh]
+        default: he
+      dry_run:
+        description: "Verify captured article claims and translations without publishing or notifying"
+        type: boolean
+        default: false
       force:
         description: "Regenerate today's briefing even if it exists"
         type: boolean
@@ -24,10 +42,12 @@ permissions:
 
 jobs:
   brief:
+    if: github.event_name != 'workflow_dispatch' || inputs.task != 'reference'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      POLITICAL_RECORD_BLOB_TOKEN: ${{ secrets.POLITICAL_RECORD_BLOB_TOKEN }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -38,14 +58,19 @@ jobs:
 
       - name: Write briefing
         id: job
-        run: npx tsx scripts/jobs/briefing.mts --report "$RUNNER_TEMP/briefing.md" ${{ inputs.force && '--force' || '' }}
+        run: npx tsx scripts/jobs/briefing.mts --report "$RUNNER_TEMP/briefing.md" ${{ inputs.force && '--force' || '' }} ${{ (inputs.dry_run || github.ref != 'refs/heads/main') && '--dry-run' || '' }}
+
+      - name: Verification report
+        if: always()
+        run: |
+          [ ! -f "$RUNNER_TEMP/briefing.md" ] || cat "$RUNNER_TEMP/briefing.md" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Gate (build with the new file)
-        if: steps.job.outputs.published == '1'
+        if: github.ref == 'refs/heads/main' && !inputs.dry_run && steps.job.outputs.published == '1'
         run: npm run build
 
       - name: Commit
-        if: steps.job.outputs.published == '1'
+        if: github.ref == 'refs/heads/main' && !inputs.dry_run && steps.job.outputs.published == '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -55,7 +80,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Notify Daniel
-        if: always()
+        if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run
         run: |
           [ -f "$RUNNER_TEMP/briefing.md" ] || exit 0
           gh label create briefing --color 233f86 --description "Daily briefing notifications" 2>/dev/null || true
@@ -68,7 +93,7 @@ jobs:
   # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
     needs: brief
-    if: always()
+    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && inputs.task != 'reference'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -129,3 +154,32 @@ jobs:
           git push -f origin "$branch"
           gh pr create --base main --head "$branch" --title "Party register: ${{ steps.job.outputs.review }} change(s) for review, $day" \
             --body-file "$RUNNER_TEMP/review.md" --label party-text --assignee RavBogard
+
+  reference:
+    if: github.event_name == 'workflow_dispatch' && inputs.task == 'reference'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      REFERENCE_ID: ${{ inputs.reference_id }}
+      REFERENCE_LANG: ${{ inputs.reference_lang }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - name: Validate one registered reference edition
+        run: npx tsx scripts/reference/generate.mts --id "$REFERENCE_ID" --lang "$REFERENCE_LANG" --out "$RUNNER_TEMP/reference-validated" --report "$RUNNER_TEMP/reference-usage.json" --extended-budget
+      - name: Retain validated translation and safe usage only
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-validated-${{ inputs.reference_lang }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/reference-validated/*.json
+            ${{ runner.temp }}/reference-usage.json
+          if-no-files-found: error
+          retention-days: 7

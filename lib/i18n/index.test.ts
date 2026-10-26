@@ -19,8 +19,8 @@ describe("edition paths", () => {
     expect(pathLang("/faraway")).toBe("en");
   });
   it("knows which English pages have a Hebrew edition", () => {
-    for (const p of ["/", "/polls", "/coalition-builder", "/compare", "/parties/likud", "/results", "/polls?poll=x", "/compare/", "/about", "/how-it-works", "/elections/il-knesset-26", "/policies/courts"]) expect(hasHebrew(p)).toBe(true);
-    for (const p of ["/parties", "/parties/likud/extra", "/news/2026-10-05", "/pollsx"]) expect(hasHebrew(p)).toBe(false);
+    for (const p of ["/", "/polls", "/coalition-builder", "/compare", "/parties/likud", "/results", "/polls?poll=x", "/compare/", "/about", "/how-it-works", "/elections/il-knesset-26", "/policies/courts", "/news/2026-10-05", "/subscriptions/confirm"]) expect(hasHebrew(p)).toBe(true);
+    for (const p of ["/parties", "/parties/likud/extra", "/pollsx"]) expect(hasHebrew(p)).toBe(false);
   });
   it("maps English to Hebrew, keeping query and fragment", () => {
     expect(hePath("/")).toBe("/he");

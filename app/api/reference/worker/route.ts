@@ -1,6 +1,9 @@
 import { verifyQStash } from "@/lib/live-forecast/auth";
 import { referenceDocuments } from "@/lib/reference/catalog";
-import { generateReferenceTranslation } from "@/lib/reference/generation";
+import {
+  generateReferenceTranslation,
+  reviewReferenceTranslation,
+} from "@/lib/reference/generation";
 import { ReferenceValidationError } from "@/lib/reference/translations";
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -19,7 +22,7 @@ export async function POST(request: Request) {
     const { value, done } = await reader.read();
     if (done) break;
     size += value.byteLength;
-    if (size > 2048) {
+    if (size > 196608) {
       await reader.cancel();
       return Response.json(
         { error: "request_too_large" },
@@ -59,10 +62,30 @@ export async function POST(request: Request) {
     );
   }
   if (
-    body?.mode !== "generate" ||
+    !["generate", "review"].includes(body?.mode) ||
     !referenceDocuments.some((d) => d.id === body.id) ||
     !["he", "ar", "fa", "de", "fr", "zh"].includes(body.lang) ||
-    Object.keys(body).some((k) => !["mode", "id", "lang"].includes(k))
+    Object.keys(body).some(
+      (k) =>
+        !(
+          body.mode === "review"
+            ? ["mode", "id", "lang", "sourceRevision", "blocks"]
+            : ["mode", "id", "lang"]
+        ).includes(k),
+    ) ||
+    (body.mode === "review" &&
+      (typeof body.sourceRevision !== "string" ||
+        !Array.isArray(body.blocks) ||
+        body.blocks.length > 200 ||
+        body.blocks.some(
+          (b: unknown) =>
+            !b ||
+            typeof b !== "object" ||
+            typeof (b as { id?: unknown }).id !== "string" ||
+            typeof (b as { text?: unknown }).text !== "string" ||
+            (b as { text: string }).text.length > 24000 ||
+            Object.keys(b).some((k) => !["id", "text"].includes(k)),
+        )))
   )
     return Response.json(
       { error: "invalid_request" },
@@ -72,7 +95,12 @@ export async function POST(request: Request) {
     return Response.json(
       {
         state: "validated",
-        ...(await generateReferenceTranslation(body.id, body.lang)),
+        ...(await (body.mode === "review"
+          ? reviewReferenceTranslation(body.id, body.lang, {
+              sourceRevision: body.sourceRevision,
+              blocks: body.blocks,
+            })
+          : generateReferenceTranslation(body.id, body.lang))),
         writes: 0,
       },
       { headers },
