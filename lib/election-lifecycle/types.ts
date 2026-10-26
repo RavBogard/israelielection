@@ -37,6 +37,15 @@ export type SourceRef = {
   captureHash: string;
   partyIds?: string[];
 };
+export type ProviderFailureCategory =
+  | "provider_auth"
+  | "provider_billing"
+  | "provider_quota"
+  | "provider_schema"
+  | "provider_model"
+  | "provider_transient"
+  | "provider_request"
+  | "provider_unconfigured";
 export type SourceHealth = {
   sourceId: string;
   authority: Authority;
@@ -44,6 +53,12 @@ export type SourceHealth = {
   checkedAt: string;
   lastSuccessfulAt: string | null;
   reason: ReasonCode | null;
+  diagnostic?: {
+    stage: "extraction";
+    code: ProviderFailureCategory;
+    httpStatus: number | null;
+    providerStatus: string | null;
+  };
 };
 export type Interval = { lo: number; median: number; hi: number };
 export type SharedSeatContext = {

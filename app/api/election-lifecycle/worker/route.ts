@@ -2,7 +2,10 @@ import { createHash } from "node:crypto";
 import { verifyQStash } from "@/lib/live-forecast/auth";
 import { lifecycleEnabled } from "@/lib/election-lifecycle/core";
 import { lifecycleStore } from "@/lib/election-lifecycle/store";
-import { probeLifecycleSources } from "@/lib/election-lifecycle/probe";
+import {
+  probeLifecycleSources,
+  probePrimaryExtraction,
+} from "@/lib/election-lifecycle/probe";
 import {
   runLifecycleWorker,
   type WorkerMode,
@@ -27,6 +30,10 @@ export async function POST(request: Request) {
   )
     return Response.json({ error: "unauthorized" }, { status: 401 });
   try {
+    if (JSON.parse(body).mode === "extraction_probe")
+      return Response.json(await probePrimaryExtraction(), {
+        headers: { "Cache-Control": "no-store" },
+      });
     if (JSON.parse(body).mode === "probe")
       return Response.json(
         { status: "probe", results: await probeLifecycleSources() },

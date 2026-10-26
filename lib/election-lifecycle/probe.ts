@@ -122,3 +122,67 @@ export async function probeLifecycleSources(now = new Date().toISOString()) {
     }),
   );
 }
+
+/** Same production request/schema/validator, a fixed real primary article, and no publication or raw output. */
+export async function probePrimaryExtraction(now = new Date().toISOString()) {
+  const { extractEvents, PrimaryExtractionError } = await import("./extract");
+  const { GEMINI_MODEL } = await import("../ai");
+  const { sourceRecord } = await import("./acquisition");
+  const url =
+    "https://beytenu.org.il/%d7%aa%d7%95%d7%9b%d7%a0%d7%99%d7%aa-%d7%a9%d7%a9%d7%aa-%d7%94%d7%a1%d7%a2%d7%99%d7%a4%d7%99%d7%9d-%d7%a9%d7%9c-%d7%90%d7%91%d7%99%d7%92%d7%93%d7%95%d7%a8-%d7%9c%d7%99%d7%91%d7%a8%d7%9e%d7%9f-%d7%94/";
+  let stage = "acquisition";
+  try {
+    const html = await fetchPrimary(url, [
+        "beytenu.org.il",
+        "www.beytenu.org.il",
+      ]),
+      article = articleOf(html);
+    if (!article.body || !article.publishedAt)
+      throw new Error("source_unusable");
+    stage = "extraction";
+    const source = {
+      ...sourceRecord(
+        "party-yb:read-only-probe",
+        "Yisrael Beiteinu",
+        url,
+        "party",
+        html,
+        now,
+        article.title,
+      ),
+      publishedAt: article.publishedAt,
+      partyIds: ["yb"],
+    };
+    const events = await extractEvents(source, article.body, now);
+    return {
+      status: "accepted",
+      stage,
+      model: GEMINI_MODEL,
+      configured: !!process.env.GEMINI_API_KEY,
+      httpStatus: 200,
+      bodyCharacters: article.body.length,
+      acceptedEventCount: events.length,
+      writes: 0,
+    };
+  } catch (error) {
+    return {
+      status: "failed",
+      stage,
+      model: GEMINI_MODEL,
+      configured: !!process.env.GEMINI_API_KEY,
+      category:
+        error instanceof PrimaryExtractionError
+          ? error.category
+          : error instanceof Error && error.name === "TimeoutError"
+            ? "timeout"
+            : error instanceof PrimaryAcquisitionError
+              ? error.code
+              : "invalid_response",
+      httpStatus:
+        error instanceof PrimaryExtractionError ? error.httpStatus : null,
+      providerStatus:
+        error instanceof PrimaryExtractionError ? error.providerStatus : null,
+      writes: 0,
+    };
+  }
+}

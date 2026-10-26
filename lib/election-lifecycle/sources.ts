@@ -13,7 +13,7 @@ import {
   linksOf,
   textOf,
 } from "./html";
-import { extractEvents } from "./extract";
+import { extractEvents, PrimaryExtractionError } from "./extract";
 import { mergeEvents } from "./events";
 import { officialOptions, OFFICIAL_URLS, parseOfficialSeats } from "./official";
 import type {
@@ -273,16 +273,22 @@ export async function acquirePoliticalSources(
               ),
             );
             captures.push({ source: ref, body: html });
-          } catch {
-            health.push(
-              healthRecord(
-                id,
-                source.authority,
-                "unavailable",
-                now,
-                ledger.health.find((h) => h.sourceId === id),
-              ),
+          } catch (error) {
+            const failed = healthRecord(
+              id,
+              source.authority,
+              "unavailable",
+              now,
+              ledger.health.find((h) => h.sourceId === id),
             );
+            if (error instanceof PrimaryExtractionError)
+              failed.diagnostic = {
+                stage: "extraction",
+                code: error.category,
+                httpStatus: error.httpStatus,
+                providerStatus: error.providerStatus,
+              };
+            health.push(failed);
           }
         }),
       );

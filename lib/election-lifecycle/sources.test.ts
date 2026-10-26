@@ -4,7 +4,10 @@ vi.mock("./acquisition", async (importOriginal) => ({
   ...(await importOriginal<typeof import("./acquisition")>()),
   fetchPrimary: mocks.fetch,
 }));
-vi.mock("./extract", () => ({ extractEvents: mocks.extract }));
+vi.mock("./extract", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("./extract")>()),
+  extractEvents: mocks.extract,
+}));
 import { acquirePoliticalSources } from "./sources";
 import { emptyLedger } from "./resolver";
 afterEach(() => {
@@ -32,4 +35,26 @@ it("caps model extraction, caches successful zero-event article bodies, and rese
   expect(
     mocks.extract.mock.calls.slice(3).every((c) => !firstIds.includes(c[0].id)),
   ).toBe(true);
+});
+
+it("reports provider billing distinctly without caching a failed extraction or publishing claims", async () => {
+  vi.stubEnv("ELECTION_FORMATION_ENABLED", "true");
+  const { PrimaryExtractionError } = await import("./extract");
+  mocks.extract.mockRejectedValue(
+    new PrimaryExtractionError("provider_billing", 402, "RESOURCE_EXHAUSTED"),
+  );
+  mocks.fetch.mockImplementation(async (url: string) =>
+    url.includes("statement")
+      ? `<article>Real primary statement about government formation.</article><meta property="article:published_time" content="2026-11-04T10:00:00Z">`
+      : '<a href="/statement">government statement</a>',
+  );
+  const result = await acquirePoliticalSources(
+    emptyLedger(),
+    "2026-11-04T12:00Z",
+  );
+  expect(
+    result.health.filter((h) => h.diagnostic?.code === "provider_billing"),
+  ).toHaveLength(3);
+  expect(result.events).toEqual([]);
+  expect(Object.keys(result.extractionCache)).toHaveLength(0);
 });
