@@ -1,9 +1,10 @@
+import {numericTokens} from "../../lib/reference/numeric.mjs";
 import {canonicalSource} from "../../lib/reference/source.mjs";
 import {createHash} from 'node:crypto';
 const hash=text=>createHash('sha256').update(text).digest('hex');
 const names=['Benjamin Netanyahu','Netanyahu','Yair Lapid','Naftali Bennett','Yair Golan','Avigdor Liberman','Liberman','Benny Gantz','Yariv Levin','Aharon Barak','Yitzhak Rabin','Rabbi Daniel Bogard','Daniel Bogard'];
 const unique=a=>[...new Set(a)].sort();
-export function invariants(text){return {numbers:unique(text.match(/\b\d+(?:[,.]\d+)*(?:%|\b)/g)??[]),links:unique(text.match(/https?:\/\/[^\s)"<>]+/g)??[]),names:names.filter(n=>text.includes(n)),negated:/\b(?:not|never|neither|cannot|no|doesn't|isn't|don't|won't)\b/i.test(text)}}
+export function invariants(text){return {numbers:numericTokens(text),links:unique(text.match(/https?:\/\/[^\s)"<>]+/g)??[]),names:names.filter(n=>text.includes(n)),negated:/\b(?:not|never|neither|cannot|no|doesn't|isn't|don't|won't)\b/i.test(text)}}
 /** Only existing, trusted source creates widget descriptors. Model output never creates components. */
 export function sourceBlocks(raw,meta){
  raw=canonicalSource(raw);
