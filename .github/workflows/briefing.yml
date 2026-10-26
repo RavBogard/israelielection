@@ -11,8 +11,17 @@ on:
       task:
         description: "Bounded verification task"
         type: choice
-        options: [briefing, reference, reference_batch]
+        options: [briefing, reference, reference_batch, monitor]
         default: briefing
+      monitor_target:
+        description: "Owned deployment for monitor task only"
+        type: choice
+        options: [public, preview]
+        default: public
+      monitor_regions:
+        description: "Free public regional probes for monitor task only"
+        type: boolean
+        default: false
       reference_id:
         description: "Registered reference ID (reference task only)"
         type: string
@@ -48,7 +57,7 @@ on:
         default: false
 
 concurrency:
-  group: ${{ startsWith(inputs.task, 'reference') && 'reference-validation' || 'briefing' }}
+  group: ${{ inputs.task == 'monitor' && 'monitor-rehearsal' || startsWith(inputs.task, 'reference') && 'reference-validation' || 'briefing' }}
   cancel-in-progress: false
 
 permissions:
@@ -58,7 +67,7 @@ permissions:
 
 jobs:
   brief:
-    if: github.event_name != 'workflow_dispatch' || !startsWith(inputs.task, 'reference')
+    if: github.event_name != 'workflow_dispatch' || inputs.task == 'briefing'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -109,7 +118,7 @@ jobs:
   # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
     needs: brief
-    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference')
+    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference') && inputs.task != 'monitor'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -232,3 +241,15 @@ jobs:
             ${{ runner.temp }}/reference-batch/summary.json
           if-no-files-found: error
           retention-days: 7
+
+  monitor:
+    if: github.event_name == 'workflow_dispatch' && inputs.task == 'monitor'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/platform-monitor.yml
+    with:
+      target: ${{ inputs.monitor_target }}
+      public_regions: ${{ inputs.monitor_regions }}
+    secrets:
+      PLATFORM_MONITOR_PREVIEW_BYPASS: ${{ secrets.PLATFORM_MONITOR_PREVIEW_BYPASS }}
+      POLITICAL_RECORD_DATABASE_URL: ${{ secrets.POLITICAL_RECORD_DATABASE_URL }}

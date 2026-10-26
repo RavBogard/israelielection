@@ -1,5 +1,18 @@
 name: Platform read-only monitor
 on:
+  workflow_call:
+    inputs:
+      target:
+        type: string
+        default: public
+      public_regions:
+        type: boolean
+        default: false
+    secrets:
+      PLATFORM_MONITOR_PREVIEW_BYPASS:
+        required: false
+      POLITICAL_RECORD_DATABASE_URL:
+        required: false
   workflow_dispatch:
     inputs:
       target:
