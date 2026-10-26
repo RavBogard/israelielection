@@ -71,3 +71,17 @@
 @media (max-width: 950px) { .lf .lf-questions { gap: 22px; } .lf .lf-question h3 { font-size: 23px; } }
 @media (max-width: 740px) { .lf { margin-block: 28px; } .lf .lf-questions { grid-template-columns: 1fr; gap: 28px; } .lf .lf-question h3 { min-height: 0; font-size: 28px; } .lf .lf-question { padding-block-start: 16px; } .lf .lf-provenance { grid-template-columns: 1fr; } .lf .lf-history-key { display: grid; } }
 @media print { .lf .lf-questions { grid-template-columns: 1fr; } .lf details > * { display: revert; } }
+
+/* Seat intervals share a parliamentary scale; the fixed rule is 61 of 120. */
+.lf .lf-seat-axis { position:relative; display:flex; justify-content:space-between; font-size:11px; color:var(--ink-2); margin-block:0 12px; }
+.lf .lf-seat-axis b { position:absolute; inset-inline-start:50.8333%; transform:translateX(-50%); font-weight:600; white-space:nowrap; }
+.lf .lf-ranges li { margin-block:0 17px; }
+.lf .lf-range-label { display:flex; align-items:baseline; justify-content:space-between; gap:8px; font-size:13px; }
+.lf .lf-range-label b { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.lf .lf-seat-track { position:relative; height:18px; margin-block-start:7px; background:var(--cell); }
+.lf .lf-seat-range { position:absolute; top:6px; height:6px; opacity:.65; min-width:1px; }
+.lf .lf-seat-point { position:absolute; top:0; height:18px; width:3px; transform:translateX(-50%); }
+.lf .lf-sixty-one { position:absolute; inset-inline-start:50.8333%; inset-block:0; border-inline-start:1px dashed var(--ink); z-index:1; }
+.lf[dir=rtl] .lf-seat-point,.lf[dir=rtl] .lf-seat-axis b { transform:translateX(50%); }
+.lf .lf-threshold-head>b { font:700 32px/1 var(--display); color:var(--ink); }
+.lf .lf-bloc>div { border-inline-start:0; padding-inline-start:0; }

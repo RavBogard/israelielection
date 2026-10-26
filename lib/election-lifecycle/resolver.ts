@@ -1,3 +1,4 @@
+import { cadenceFresh, cadenceMetadata } from "./cadence";
 import forecast from "../../data/forecast.json";
 import parties from "../../data/parties.json";
 import {
@@ -139,7 +140,12 @@ export function publicPolitics(
       .filter(
         (h) =>
           h.status === "healthy" &&
-          Date.parse(now) - Date.parse(h.checkedAt) <= 30 * 60000,
+          cadenceFresh(
+            now,
+            h.lastSuccessfulAt ?? h.checkedAt,
+            h.checkedAt,
+            h.status !== "healthy",
+          ),
       )
       .map((h) => h.sourceId),
   );
@@ -304,7 +310,10 @@ export function resolveLifecycle(
     seats.sourceRefs.some((s) => s.id === h.sourceId),
   );
   const unavailable = matching.some(
-    (h) => h.status !== "healthy" && h.status !== "complete",
+    (h) =>
+      (h.status !== "healthy" && h.status !== "complete") ||
+      (h.status === "healthy" &&
+        !cadenceFresh(now, h.lastSuccessfulAt ?? h.checkedAt, h.checkedAt)),
   );
   const checkedAt =
     matching
@@ -393,6 +402,29 @@ export function resolveLifecycle(
     geographyRevision: ledger.geography?.revision ?? null,
   });
   return {
+    cadence: cadenceMetadata(
+      now,
+      ledger.health
+        .filter((h) => h.status === "healthy")
+        .map((h) => h.lastSuccessfulAt ?? h.checkedAt)
+        .sort()
+        .at(-1) ?? null,
+      ledger.health
+        .map((h) => h.checkedAt)
+        .sort()
+        .at(-1) ?? null,
+      ledger.health.length > 0 &&
+        ledger.health.every(
+          (h) =>
+            (h.status !== "healthy" && h.status !== "complete") ||
+            (h.status === "healthy" &&
+              !cadenceFresh(
+                now,
+                h.lastSuccessfulAt ?? h.checkedAt,
+                h.checkedAt,
+              )),
+        ),
+    ),
     selection: {
       mode: "current",
       seatRevision: seatContext.revision,

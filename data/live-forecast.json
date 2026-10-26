@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "modelVersion": "live-v2-joint-representative",
+  "modelVersion": "live-v3-joint-blocs",
   "scenarioVersion": "b2a4f927ac18ec9a",
-  "revision": "1e4d415688a00c9096a798980c53e4ede7bcb5178e0ac7ae0e3aafac68c4d919",
+  "revision": "d996979bcccdcec0471a2224cc76426990cb73c62874326d9194af46a44a83c9",
   "generatedAt": "2026-10-25T14:31:43.245Z",
   "mode": "prior",
   "experimental": true,
@@ -18,6 +18,48 @@
     "lastAttemptAt": null
   },
   "sources": [],
+  "blocSeats": [
+    {
+      "id": "net",
+      "seats": {
+        "lo": 50,
+        "median": 53,
+        "hi": 56
+      }
+    },
+    {
+      "id": "opp",
+      "seats": {
+        "lo": 48,
+        "median": 51,
+        "hi": 54
+      }
+    },
+    {
+      "id": "mid",
+      "seats": {
+        "lo": 0,
+        "median": 0,
+        "hi": 4
+      }
+    },
+    {
+      "id": "arab",
+      "seats": {
+        "lo": 13,
+        "median": 15,
+        "hi": 18
+      }
+    },
+    {
+      "id": "other",
+      "seats": {
+        "lo": 0,
+        "median": 0,
+        "hi": 0
+      }
+    }
+  ],
   "largestParty": [
     {
       "id": "likud",
@@ -223,8 +265,170 @@
   "history": [
     {
       "generatedAt": "2026-10-25T14:31:43.245Z",
-      "revision": "1e4d415688a00c9096a798980c53e4ede7bcb5178e0ac7ae0e3aafac68c4d919",
+      "revision": "d996979bcccdcec0471a2224cc76426990cb73c62874326d9194af46a44a83c9",
       "mode": "prior",
+      "largestParty": [
+        {
+          "id": "likud",
+          "probability": 0.3281
+        },
+        {
+          "id": "otzma",
+          "probability": 0
+        },
+        {
+          "id": "shas",
+          "probability": 0
+        },
+        {
+          "id": "utj",
+          "probability": 0
+        },
+        {
+          "id": "rz",
+          "probability": 0
+        },
+        {
+          "id": "poi",
+          "probability": 0
+        },
+        {
+          "id": "noam",
+          "probability": 0
+        },
+        {
+          "id": "yashar",
+          "probability": 0.5647666666666666
+        },
+        {
+          "id": "byachad",
+          "probability": 0.00013333333333333334
+        },
+        {
+          "id": "dem",
+          "probability": 0
+        },
+        {
+          "id": "yb",
+          "probability": 0
+        },
+        {
+          "id": "res",
+          "probability": 0
+        },
+        {
+          "id": "jl",
+          "probability": 0.000033333333333333335
+        },
+        {
+          "id": "raam",
+          "probability": 0
+        },
+        {
+          "id": "tie",
+          "probability": 0.10696666666666667
+        }
+      ],
+      "blocSeats": [
+        {
+          "id": "net",
+          "seats": {
+            "lo": 50,
+            "median": 53,
+            "hi": 56
+          }
+        },
+        {
+          "id": "opp",
+          "seats": {
+            "lo": 48,
+            "median": 51,
+            "hi": 54
+          }
+        },
+        {
+          "id": "mid",
+          "seats": {
+            "lo": 0,
+            "median": 0,
+            "hi": 4
+          }
+        },
+        {
+          "id": "arab",
+          "seats": {
+            "lo": 13,
+            "median": 15,
+            "hi": 18
+          }
+        },
+        {
+          "id": "other",
+          "seats": {
+            "lo": 0,
+            "median": 0,
+            "hi": 0
+          }
+        }
+      ],
+      "thresholds": [
+        {
+          "id": "res",
+          "passProbability": 0.15617812739575349
+        },
+        {
+          "id": "poi",
+          "passProbability": 0.12371254291523616
+        },
+        {
+          "id": "raam",
+          "passProbability": 0.9718509383020566
+        },
+        {
+          "id": "rz",
+          "passProbability": 0.9922835905469818
+        },
+        {
+          "id": "likud",
+          "passProbability": 0.9999833338888704
+        },
+        {
+          "id": "otzma",
+          "passProbability": 0.9993166894436852
+        },
+        {
+          "id": "shas",
+          "passProbability": 0.9998166727775741
+        },
+        {
+          "id": "utj",
+          "passProbability": 0.9982833905536482
+        },
+        {
+          "id": "noam",
+          "passProbability": 0.0006166461117962735
+        },
+        {
+          "id": "yashar",
+          "passProbability": 0.9999833338888704
+        },
+        {
+          "id": "byachad",
+          "passProbability": 0.9999833338888704
+        },
+        {
+          "id": "dem",
+          "passProbability": 0.9999166694443519
+        },
+        {
+          "id": "yb",
+          "passProbability": 0.9986500449985001
+        },
+        {
+          "id": "jl",
+          "passProbability": 0.9977167427752408
+        }
+      ],
       "arrangements": [
         {
           "id": "opposition-support",

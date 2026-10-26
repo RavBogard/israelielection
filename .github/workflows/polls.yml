@@ -2,15 +2,12 @@ name: Polls
 
 # Twice a day: import new polls from Wikipedia. Polls that pass the validator are committed to
 # main (Vercel redeploys). Polls that fail go to one rolling review PR assigned to Daniel.
-# Election night (Daniel, 2026-10-06: an import job): every 10 minutes from the 22:00 close to 04:00
-# Israel time, rows dated Oct 27 or shaded as exit polls come in as exit polls, revisions included.
+# Election-night acquisition is coordinated by signed QStash cycles; no independent10-minute importer.
 # Fallback by hand: Run workflow with a pollster and its seats (scripts/jobs/add-exit-poll.mts).
 on:
   schedule:
     - cron: "0 5 * * *"   # 08:00 Israel
     - cron: "0 18 * * *"  # 21:00 Israel, after the evening TV polls
-    - cron: "*/10 20-23 27 10 *"  # election night, 22:00–01:50 Israel (UTC+2 after Oct 25)
-    - cron: "*/10 0-1 28 10 *"    # 02:00–03:50 Israel
   workflow_dispatch:
     inputs:
       pollster:
@@ -41,15 +38,28 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REVIEW_BRANCH: polls/review
     steps:
+      - name: Automatic acquisition stops at polls close; signed cycles take over
+        id: window
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          if [ "$MANUAL" = true ] || [ "$(date -u +%s)" -lt "$(date -u -d '2026-10-27T20:00:00Z' +%s)" ]; then
+            echo 'allowed=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'allowed=false' >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v5
+        if: steps.window.outputs.allowed == 'true'
       - uses: actions/setup-node@v5
+        if: steps.window.outputs.allowed == 'true'
         with:
           node-version: 24
           cache: npm
       - run: npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
+        if: steps.window.outputs.allowed == 'true'
 
       - name: Exit poll by hand
-        if: inputs.pollster != ''
+        if: steps.window.outputs.allowed == 'true' && (inputs.pollster != '')
         env:
           POLLSTER: ${{ inputs.pollster }}
           SEATS: ${{ inputs.seats }}
@@ -60,21 +70,26 @@ jobs:
         id: manual
 
       - name: Import and validate
-        if: inputs.pollster == ''
+        if: steps.window.outputs.allowed == 'true' && (inputs.pollster == '')
         id: job
         run: npx tsx scripts/jobs/update-polls.mts --report "$RUNNER_TEMP/report.md"
 
+      - name: Campaign forecast write window
+        if: steps.window.outputs.allowed == 'true'
+        id: campaign
+        run: node -e "require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'open='+(Date.now()<Date.parse('2026-10-27T20:00:00Z'))+'\n')"
+
       - name: Regenerate the forecast on the new polls
         # scripts/forecast/forecast.mjs: refuses to run once data/forecast.json is marked final, so exit polls never change the prediction.
-        if: steps.job.outputs.accepted != '0'
+        if: steps.window.outputs.allowed == 'true' && (steps.job.outputs.accepted != '0' && steps.campaign.outputs.open == 'true')
         run: npm run forecast
 
       - name: Gate (tests and build on the new data)
-        if: steps.job.outputs.accepted != '0' || steps.manual.outputs.accepted == '1'
+        if: steps.window.outputs.allowed == 'true' && (steps.job.outputs.accepted != '0' || steps.manual.outputs.accepted == '1')
         run: npm test && npm run build
 
       - name: Commit accepted polls
-        if: steps.job.outputs.accepted != '0' || steps.manual.outputs.accepted == '1'
+        if: steps.window.outputs.allowed == 'true' && (steps.job.outputs.accepted != '0' || steps.manual.outputs.accepted == '1')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -85,7 +100,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Open or update the review PR
-        if: steps.job.outputs.review != '0' || steps.job.outputs.blockers != '0'
+        if: steps.window.outputs.allowed == 'true' && (steps.job.outputs.review != '0' || steps.job.outputs.blockers != '0')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

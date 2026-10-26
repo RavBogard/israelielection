@@ -1,3 +1,4 @@
+import { cadenceFresh } from "./cadence";
 import { configuredStore } from "../live-forecast/store";
 import partyData from "../../data/parties.json";
 import { ELECTION, fingerprint, POLLS_CLOSE, validSeats } from "./core";
@@ -13,10 +14,12 @@ export async function acquireLiveBridge(now: string) {
   const live = await store.read();
   if (!live) return { snapshots: [], health: [] };
   const inputs = await store.inputs(live.revision),
-    fresh =
-      !!live.freshness.lastSuccessfulAcquisitionAt &&
-      Date.parse(now) - Date.parse(live.freshness.lastSuccessfulAcquisitionAt) <
-        300000;
+    fresh = cadenceFresh(
+      now,
+      live.freshness.lastSuccessfulAcquisitionAt,
+      live.freshness.lastAttemptAt,
+      live.changeReason === "acquisition_failed",
+    );
   const snapshots: SharedSeatContext[] = [],
     health: SourceHealth[] = [];
   for (const p of inputs?.exits ?? []) {

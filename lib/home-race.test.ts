@@ -1,10 +1,44 @@
 import {describe,it,expect} from "vitest";
 import {averagePoll,parties,blocs} from "./data";
-import {homeRaceModel,majorityShortfall,homeMosaicLayout,homeMosaicView} from "./home-race";
+import {contextRaceModel,homeRaceModel,majorityShortfall,homeMosaicLayout,homeMosaicView} from "./home-race";
+import type {SharedSeatContext} from "./election-lifecycle/types";
 import type {BlocId,Poll} from "./types";
 const base=():Poll=>({...averagePoll,id:"fixture",results:Object.fromEntries(parties.map(p=>[p.id,{seats:0,belowThreshold:true}])),combined:[]});
 const owners=(layout:ReturnType<typeof homeMosaicLayout>,selected:BlocId|null)=>homeMosaicView(layout,selected).flatMap(g=>g.cells.map(cell=>[cell,g.bloc] as const)).sort((a,b)=>a[0]-b[0]);
 describe("homepage mosaic arithmetic and evidence",()=>{
+  it("keeps unknown elected lists neutral and all120 cells through current-point updates", () => {
+    const context = {
+      seatStatus: "official",
+      pointSeats: { likud: 50, yashar: 50, new: 20 },
+      parties: [{ id: "new", label: "New list", profiled: false }],
+    } satisfies Pick<SharedSeatContext,"pointSeats"|"parties"|"seatStatus">;
+    const template = homeRaceModel(averagePoll, parties, blocs),
+      model = contextRaceModel(template, context, "Unclassified"),
+      layout = homeMosaicLayout(model);
+    expect(model.rows.reduce((n, row) => n + row.seats, 0)).toBe(120);
+    expect(model.rows.find((row) => row.id === "other")).toMatchObject({
+      seats: 20,
+      members: [{ id: "new", seats: 20 }],
+    });
+    expect(layout.blocks.find((row) => row.id === "other")?.cells).toHaveLength(
+      20,
+    );
+    expect(layout.empty).toHaveLength(0);
+    expect(
+      new Set(homeMosaicView(layout, "other").flatMap((row) => row.cells)).size,
+    ).toBe(120);
+    const update = contextRaceModel(
+      model,
+      { ...context, pointSeats: { likud: 48, yashar: 51, new: 21 } },
+      "Unclassified",
+    );
+    expect(update.rows.reduce((n, row) => n + row.seats, 0)).toBe(120);
+    expect(template.rows.some((row) => (row.id as string) === "other")).toBe(
+      false,
+    );
+    expect(update.rows.find((row) => row.id === "other")?.seats).toBe(21);
+  });
+
  it("preserves fractional totals and exact shortfalls independently of rounded cells",()=>{
   const poll=base();poll.results.likud={seats:31};poll.results.shas={seats:23.5};poll.results.yashar={seats:48.9};
   const model=homeRaceModel(poll,parties,blocs);expect(model.rows.map(r=>r.id)).toEqual(["net","opp","mid","arab"]);expect(model.rows[0].seats).toBe(54.5);expect(model.rows[0].shortfall).toBe(6.5);expect(model.rows[1].shortfall).toBe(12.1);expect(majorityShortfall(61)).toBe(0);expect(majorityShortfall(75)).toBe(0);

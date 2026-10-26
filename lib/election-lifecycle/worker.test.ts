@@ -1,25 +1,32 @@
 import { afterEach, expect, it, vi } from "vitest";
+const calls = vi.hoisted(() => ({ official: 0, political: 0 }));
 vi.mock("./sources", () => ({
-  acquireOfficial: async () => ({
-    snapshot: null,
-    capture: null,
-    health: {
-      sourceId: "cec-official",
-      authority: "cec",
-      status: "unavailable",
-      checkedAt: "2026-11-04T12:00Z",
-      lastSuccessfulAt: null,
-      reason: "source_unavailable",
-    },
-  }),
+  acquireOfficial: async () => {
+    calls.official++;
+    return {
+      snapshot: null,
+      capture: null,
+      health: {
+        sourceId: "cec-official",
+        authority: "cec",
+        status: "unavailable",
+        checkedAt: "2026-11-04T12:00Z",
+        lastSuccessfulAt: null,
+        reason: "source_unavailable",
+      },
+    };
+  },
   acquirePoliticalSources: async (
     ledger: import("./types").LifecycleLedger,
-  ) => ({
-    events: ledger.events,
-    health: [],
-    captures: [],
-    extractionCache: {},
-  }),
+  ) => {
+    calls.political++;
+    return {
+      events: ledger.events,
+      health: [],
+      captures: [],
+      extractionCache: {},
+    };
+  },
 }));
 vi.mock("./bridge", async (original) => ({
   ...(await original<typeof import("./bridge")>()),
@@ -63,6 +70,8 @@ it("continues official/formation acquisition and daily briefing after election m
     (await runLifecycleWorker(store, "two", "formation", "2026-11-04T12:00Z"))
       .status,
   ).toBe("duplicate");
+  const before = { ...calls };
   await runLifecycleWorker(store, "three", "briefing", "2026-11-04T12:00Z");
+  expect(calls).toEqual(before);
   expect((ledger as unknown as LifecycleLedger).briefings).toHaveLength(1);
 });

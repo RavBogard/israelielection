@@ -1,9 +1,6 @@
 name: Save election count
 on:
-  # Bounded calendar dates; the policy guard also pins the 2026 election and seven-day window.
-  schedule:
-    - cron: "7,22,37,52 * 27-31 10 *"
-    - cron: "7,22,37,52 * 1-3 11 *"
+  # Automatic count acquisition now uses coordinated QStash cycles. Manual archive recovery remains.
   workflow_dispatch:
 concurrency:
   group: results-snapshot

@@ -1,3 +1,4 @@
+import { readCountRecord } from "./count-store";
 import { randomUUID } from "node:crypto";
 import { ELECTION_END, formationEnabled, officialEnabled } from "./core";
 import { campaignContext, emptyLedger, resolveLifecycle } from "./resolver";
@@ -6,7 +7,7 @@ import { acquireOfficial, acquirePoliticalSources } from "./sources";
 import { acquireGeography } from "./geography";
 import { healthRecord } from "./acquisition";
 import type { LifecycleStore } from "./store";
-export type WorkerMode = "election" | "formation" | "briefing";
+export type WorkerMode = "election" | "formation" | "briefing" | "cycle";
 export async function runLifecycleWorker(
   store: LifecycleStore,
   delivery: string,
@@ -28,11 +29,13 @@ export async function runLifecycleWorker(
     if (await store.delivered(delivery)) return { status: "duplicate" };
     const ledger = (await store.load()) ?? emptyLedger();
     const [official, bridge, political] = await Promise.all([
-      acquireOfficial(ledger, now),
-      mode === "election"
+      mode !== "briefing"
+        ? acquireOfficial(ledger, now)
+        : Promise.resolve({ snapshot: null, capture: null, health: null }),
+      mode === "election" || mode === "cycle"
         ? acquireLiveBridge(now)
         : Promise.resolve({ snapshots: [], health: [] }),
-      mode !== "election"
+      mode !== "election" && mode !== "briefing"
         ? acquirePoliticalSources(ledger, now)
         : Promise.resolve({
             events: ledger.events,
@@ -55,14 +58,22 @@ export async function runLifecycleWorker(
       ...(official.capture ? [official.capture] : []),
     );
     const byId = new Map(ledger.health.map((h) => [h.sourceId, h]));
-    for (const h of [official.health, ...bridge.health, ...political.health])
+    for (const h of [
+      ...(official.health ? [official.health] : []),
+      ...bridge.health,
+      ...political.health,
+    ])
       byId.set(h.sourceId, h);
     ledger.health = [...byId.values()];
     if (
-      official.snapshot ||
-      ledger.seatSnapshots.some((s) => s.basis === "official_seats")
+      mode !== "briefing" &&
+      (official.snapshot ||
+        ledger.seatSnapshots.some((s) => s.basis === "official_seats"))
     ) {
       try {
+        const storedCount = mode === "cycle" ? await readCountRecord() : null;
+        if (mode === "cycle" && (!storedCount?.raw || storedCount.health.error))
+          throw new Error("current_count_unavailable");
         const geo = await acquireGeography(
           now,
           official.snapshot ??
@@ -70,6 +81,7 @@ export async function runLifecycleWorker(
               .filter((s) => s.basis === "official_seats")
               .at(-1) ??
             null,
+          storedCount?.raw ?? undefined,
         );
         if (geo) {
           ledger.geography = geo.snapshot;

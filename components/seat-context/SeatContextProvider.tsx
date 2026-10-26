@@ -10,6 +10,7 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import type {CadenceMetadata} from "@/lib/election-lifecycle/cadence";
 import { acceptsSeatContext, changedSeats } from "@/lib/seat-context";
 
 type SeatState = {
@@ -17,6 +18,7 @@ type SeatState = {
   changes: ReturnType<typeof changedSeats>;
   refreshFailed: boolean;
   forecastComplete?:boolean;
+  cadence?:CadenceMetadata;
 };
 const SeatStore = createContext<SeatState | null>(null);
 
@@ -48,6 +50,7 @@ export default function SeatContextProvider({
           : state.changes,
       refreshFailed: false,
       forecastComplete:state.forecastComplete||initial.freshness.status==="complete",
+      cadence:state.cadence,
     }));
   }, [initial]);
   useEffect(() => {
@@ -89,6 +92,7 @@ export default function SeatContextProvider({
               : [],
           refreshFailed: false,
           forecastComplete:body.archive?.electionForecast==="complete"||next.freshness.status==="complete",
+          cadence:body.cadence,
         });
         if (!previous || previous.revision !== next.revision) router.refresh();
       } catch {
@@ -130,6 +134,7 @@ export function useSeatContext(
           context: initial,
           changes: shared?.changes ?? [],
           refreshFailed: shared?.refreshFailed ?? false,
+          cadence:shared?.cadence,
         }
       : (shared ?? {
           context: initial ?? null,

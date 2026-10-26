@@ -1,10 +1,49 @@
 import fs from "node:fs";
 import frozen from "../../data/live-forecast-prior.json";
 import { buildSnapshot, modelRevision } from "../../lib/live-forecast/model";
-const prior = { version: frozen.version, sha256: frozen.sha256, generatedAt: frozen.forecast.generatedAt, final: frozen.forecast.final };
-const snapshot = buildSnapshot({ prior, revision: modelRevision([]), now: frozen.forecast.generatedAt });
-if (!snapshot.diagnostics.stable) throw new Error("Baseline simulation unstable");
-snapshot.history = [{generatedAt:snapshot.generatedAt,revision:snapshot.revision,mode:snapshot.mode,arrangements:snapshot.arrangements.map(({id,probability})=>({id,probability}))}];
-snapshot.freshness = { status: "baseline", lastSuccessfulAcquisitionAt: null, lastAttemptAt: null };
-fs.writeFileSync("data/live-forecast.json", JSON.stringify(snapshot, null, 2) + "\n");
-console.log(JSON.stringify({ revision: snapshot.revision, runs: snapshot.diagnostics.runs, stable: snapshot.diagnostics.stable }));
+const prior = {
+  version: frozen.version,
+  sha256: frozen.sha256,
+  generatedAt: frozen.forecast.generatedAt,
+  final: frozen.forecast.final,
+};
+const snapshot = buildSnapshot({
+  prior,
+  revision: modelRevision([]),
+  now: frozen.forecast.generatedAt,
+});
+if (!snapshot.diagnostics.stable)
+  throw new Error("Baseline simulation unstable");
+snapshot.history = [
+  {
+    generatedAt: snapshot.generatedAt,
+    revision: snapshot.revision,
+    mode: snapshot.mode,
+    largestParty: snapshot.largestParty,
+    blocSeats: snapshot.blocSeats,
+    thresholds: snapshot.thresholds.map(({ id, passProbability }) => ({
+      id,
+      passProbability,
+    })),
+    arrangements: snapshot.arrangements.map(({ id, probability }) => ({
+      id,
+      probability,
+    })),
+  },
+];
+snapshot.freshness = {
+  status: "baseline",
+  lastSuccessfulAcquisitionAt: null,
+  lastAttemptAt: null,
+};
+fs.writeFileSync(
+  "data/live-forecast.json",
+  JSON.stringify(snapshot, null, 2) + "\n",
+);
+console.log(
+  JSON.stringify({
+    revision: snapshot.revision,
+    runs: snapshot.diagnostics.runs,
+    stable: snapshot.diagnostics.stable,
+  }),
+);

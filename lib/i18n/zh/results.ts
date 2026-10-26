@@ -18,9 +18,9 @@ const en: ResultsText = {
         early: "委员会的早期统计",
         count: "委员会迄今为止的统计",
         open: (lead: string, il: string, et: string) => `${lead}，捕获${il}以色列时间(${et})；席位数是本网站的估计。`,
-        waiting: (t: string) => `等待委员会的第一个数据。最后检查时间为 ${t} 以色列时间；该页面每分钟再次检查一次。`,
-        unusable: (t: string) => `上次检查（以色列时间${t}）时，委员会的文件没有可用的数据；该页面每分钟都会重试一次。`,
-        unreachable: (t: string) => `此次刷新无法达到委员会的计数（${t} 以色列时间）；该页面每分钟都会重试一次。`,
+        waiting: (t: string) => `等待委员会首次数据。最近检查时间为以色列时间${t}。页面每分钟检查已保存的更新。投票结束后最初10小时每15分钟检查来源，之后每3小时检查一次。`,
+        unusable: (t: string) => `最近检查（以色列时间${t}）时，委员会文件没有可用数据。页面每分钟检查已保存的更新。投票结束后最初10小时每15分钟检查来源，之后每3小时检查一次。`,
+        unreachable: (t: string) => `最近一次来源检查（以色列时间${t}）无法访问委员会计票。页面每分钟检查已保存的更新。投票结束后最初10小时每15分钟检查来源，之后每3小时检查一次。`,
     },
     letters: {
         h: "选票字母",
@@ -41,7 +41,7 @@ const en: ResultsText = {
     watch: {
         h: "看什么",
         closeDt: (il: string, et: string) => `${il} 以色列时间，${et}`,
-        closeDd: "此页面显示委员会的计数，每分钟刷新一次，并且 [Coalition Builder](/coalition-builder) 将其添加为选项。民意调查结束，Kan、频道 12 和频道 13 随即广播了他们的出口民意调查（[Ynet，11 月 1、2022](https://www.ynetnews.com/article/h1tyl0a4s)）。出口民意调查为估计值：在2022中，早期出口民意调查给​​了梅雷茨5席位（[耶路撒冷邮报，11月1，2022](https://www.jpost.com/israel-elections/article-721230)），最终计票结果为3.16％，低于阈值，没有席位（[中央选举委员会](https://votes25.bechirot.gov.il/nationalresults)）。 [选举之夜如何变成计数](/how-it-works/voting)",
+        closeDd: "本页每分钟检查已保存计票更新，[联盟构建器](/coalition-builder)也提供该选项。投票结束后最初10小时每15分钟检查来源，之后每3小时检查一次。民意调查结束，Kan、频道 12 和频道 13 随即广播了他们的出口民意调查（[Ynet，11 月 1、2022](https://www.ynetnews.com/article/h1tyl0a4s)）。出口民意调查为估计值：在2022中，早期出口民意调查给​​了梅雷茨5席位（[耶路撒冷邮报，11月1，2022](https://www.jpost.com/israel-elections/article-721230)），最终计票结果为3.16％，低于阈值，没有席位（[中央选举委员会](https://votes25.bechirot.gov.il/nationalresults)）。 [选举之夜如何变成计数](/how-it-works/voting)",
         thresholdDt: (pct: string, seats: number) => `阈值，${pct}％的有效选票，大约${seats}个席位`,
         thresholdDd: (closed: boolean) => `错过的名单将没有席位；它的选票没有被转移。席位在通过的名单中分配。在 ${closed ? "最终投票" : "当前"} 平均值中，这些列表最接近该行：`,
         nearSeats: (n: number, figure: string) => `${figure} 个席位`,

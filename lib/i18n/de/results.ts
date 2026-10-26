@@ -18,9 +18,9 @@ const en: ResultsText = {
         early: "Die erste Z\u00E4hlung des Komitees",
         count: "Die bisherige Z\u00E4hlung des Ausschusses",
         open: (lead: string, il: string, et: string) => `${lead}, erfasste ${il} israelische Zeit (${et}); Sitze sind Sch\u00E4tzungen dieser Website.`,
-        waiting: (t: string) => `Warten auf die ersten Zahlen des Ausschusses. Zuletzt \u00FCberpr\u00FCft um ${t} israelische Zeit; Die Seite \u00FCberpr\u00FCft jede Minute erneut.`,
-        unusable: (t: string) => `Die Akte des Ausschusses enthielt bei der letzten \u00DCberpr\u00FCfung um ${t} israelische Zeit keine verwertbaren Zahlen; Die Seite versucht es jede Minute erneut.`,
-        unreachable: (t: string) => `Die Z\u00E4hlung des Komitees konnte bei dieser Aktualisierung (${t} israelische Zeit) nicht erreicht werden; Die Seite versucht es jede Minute erneut.`,
+        waiting: (t: string) => `Warten auf die ersten Zahlen des Ausschusses. Letzte Prüfung um ${t} israelischer Zeit; Die Seite prüft gespeicherte Aktualisierungen jede Minute. Quellen werden in den ersten 10 Stunden nach Wahlschluss alle 15 Minuten geprüft, danach alle 3 Stunden.`,
+        unusable: (t: string) => `Die Datei des Ausschusses enthielt bei der letzten Prüfung um ${t} israelischer Zeit keine nutzbaren Zahlen; Die Seite prüft gespeicherte Aktualisierungen jede Minute. Quellen werden in den ersten 10 Stunden nach Wahlschluss alle 15 Minuten geprüft, danach alle 3 Stunden.`,
+        unreachable: (t: string) => `Die Zählung des Ausschusses war bei der letzten Quellenprüfung (${t} israelischer Zeit) nicht erreichbar; Die Seite prüft gespeicherte Aktualisierungen jede Minute. Quellen werden in den ersten 10 Stunden nach Wahlschluss alle 15 Minuten geprüft, danach alle 3 Stunden.`,
     },
     letters: {
         h: "Die Wahlbriefe",
@@ -41,7 +41,7 @@ const en: ResultsText = {
     watch: {
         h: "Was Sie sehen sollten",
         closeDt: (il: string, et: string) => `${il} Israelische Zeit, ${et}`,
-        closeDd: "Auf dieser Seite wird die Zahl des Ausschusses angezeigt, sobald sie eingeht, jede Minute aktualisiert und vom [Coalition Builder](/coalition-builder)“ als Auswahl hinzugef\u00FCgt. Die Umfragen werden geschlossen und Kan, Kanal 12 und Kanal 13 \u00FCbertragen zu diesem Zeitpunkt ihre Abstimmungen zum Austritt ([Ynet, Nov 1, 2022](https://www.ynetnews.com/article/h1tyl0a4s)). Bei den Wahlumfragen handelt es sich um Sch\u00E4tzungen: Im Jahr 2022 gaben die fr\u00FChen Wahlumfragen Meretz 5 Sitze ([Jerusalem Post, November 1, 2022](https://www.jpost.com/israel-elections/article-721230)), und die endg\u00FCltige Z\u00E4hlung ergab, dass sie 3.16 % unter dem Schwellenwert lag, ohne dass es keine Sitze gab ([Zentraler Wahlausschuss](https://votes25.bechirot.gov.il/nationalresults)). [Wie der Wahlabend zur Z\u00E4hlung wird](/how-it-works/voting)",
+        closeDd: "Die Seite prüft gespeicherte Zählergebnisse jede Minute; der [Koalitionsrechner](/coalition-builder) bietet sie zur Auswahl an. Quellen werden in den ersten 10 Stunden nach Wahlschluss alle 15 Minuten geprüft, danach alle 3 Stunden. Die Umfragen werden geschlossen und Kan, Kanal 12 und Kanal 13 \u00FCbertragen zu diesem Zeitpunkt ihre Abstimmungen zum Austritt ([Ynet, Nov 1, 2022](https://www.ynetnews.com/article/h1tyl0a4s)). Bei den Wahlumfragen handelt es sich um Sch\u00E4tzungen: Im Jahr 2022 gaben die fr\u00FChen Wahlumfragen Meretz 5 Sitze ([Jerusalem Post, November 1, 2022](https://www.jpost.com/israel-elections/article-721230)), und die endg\u00FCltige Z\u00E4hlung ergab, dass sie 3.16 % unter dem Schwellenwert lag, ohne dass es keine Sitze gab ([Zentraler Wahlausschuss](https://votes25.bechirot.gov.il/nationalresults)). [Wie der Wahlabend zur Z\u00E4hlung wird](/how-it-works/voting)",
         thresholdDt: (pct: string, seats: number) => `Der Schwellenwert betr\u00E4gt ${pct} % der g\u00FCltigen Stimmen, etwa ${seats} Sitze`,
         thresholdDd: (closed: boolean) => `Eine Liste, die ihr Ziel verfehlt, bekommt keine Pl\u00E4tze; seine Stimmen werden nicht \u00FCbertragen. Die Pl\u00E4tze werden unter den bestandenen Listen vergeben. Im ${closed ? "letzte Abstimmung" : "aktuell"}-Durchschnitt liegen diese Listen am n\u00E4chsten an der Zeile:`,
         nearSeats: (n: number, figure: string) => `${figure} Sitze`,

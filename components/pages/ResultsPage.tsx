@@ -397,7 +397,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           {n.phase === "before" && refresh}
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead></ResultsHeading>
-        {context && <CurrentParliament initial={context} lang={lang} {...forecastPresentation(lang)} />}
+        {context && <CurrentParliament initial={context} lang={lang} showScenarios={false} {...forecastPresentation(lang)} />}
         {liveForecast}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>
         <EvidenceGate initial={context} official>{(["exitTable","letters","method"] as Section[]).map(k=>part[k])}</EvidenceGate>

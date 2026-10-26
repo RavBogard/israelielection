@@ -8,22 +8,24 @@ if (!new URL(base).hostname.endsWith(".upstash.io"))
   throw new Error("Unrecognized QStash host");
 const schedules = [
   {
-    mode: "election",
-    id: `lifecycle-${environment}-election-2026`,
-    cron: "* * * * *",
-    note: "Worker self-bounds to October26-November2UTC; pause this schedule November3.",
+    mode: "cycle",
+    window: "night",
+    id: `lifecycle-${environment}-night-2026`,
+    cron: "*/15 * * * *",
+    note: "Self-gates to2026-10-27T20Z through2026-10-28T05:45Z. Pause after that one-night window.",
   },
   {
-    mode: "formation",
-    id: `lifecycle-${environment}-formation-2026`,
-    cron: process.env.ELECTION_FORMATION_CRON ?? "*/15 * * * *",
-    note: "Independent15-minute authoritative acquisition continues after November3, including CEC official publication.",
+    mode: "cycle",
+    window: "regular",
+    id: `lifecycle-${environment}-regular-2026`,
+    cron: "0 */3 * * *",
+    note: "Self-gates until2026-10-28T06Z, then every3hoursUTC; official/formation continue afterNov3.",
   },
   {
     mode: "briefing",
     id: `lifecycle-${environment}-briefing-2026`,
     cron: "0 6 * * *",
-    note: "Daily structured briefing, UTC; current public reads reapply redaction.",
+    note: "Daily stored-state briefing only; no upstream acquisition.",
   },
 ];
 const apply = process.argv.includes("--apply"),
@@ -50,6 +52,13 @@ for (const s of schedules) {
     headers: {
       Authorization: `Bearer ${process.env.QSTASH_TOKEN}`,
       "Content-Type": "application/json",
+      ...(process.env.VERCEL_ENV === "preview" &&
+      process.env.ELECTION_PREVIEW_PROTECTION_BYPASS
+        ? {
+            "Upstash-Forward-x-vercel-protection-bypass":
+              process.env.ELECTION_PREVIEW_PROTECTION_BYPASS,
+          }
+        : {}),
       ...(!pause
         ? {
             "Upstash-Cron": s.cron,
@@ -58,12 +67,62 @@ for (const s of schedules) {
           }
         : {}),
     },
-    ...(!pause ? { body: JSON.stringify({ mode: s.mode }) } : {}),
+    ...(!pause
+      ? {
+          body: JSON.stringify({
+            mode: s.mode,
+            ...("window" in s ? { window: s.window } : {}),
+          }),
+        }
+      : {}),
     signal: AbortSignal.timeout(10000),
   });
   if (!response.ok)
     throw new Error(`Schedule ${s.id}: HTTP ${response.status}`);
   console.log(
     JSON.stringify({ id: s.id, status: pause ? "paused" : "upserted" }),
+  );
+}
+
+// The one-night schedule pauses itself after its40slots; continuation/briefing IDs are never targeted.
+const pauseAt = Date.parse("2026-10-28T06:00:00Z");
+if (!apply)
+  console.log(
+    JSON.stringify({
+      action: "delayed_night_pause",
+      notBefore: new Date(pauseAt).toISOString(),
+      body: { mode: "pause_night" },
+      destination,
+    }),
+  );
+else if (!pause) {
+  const response = await fetch(`${base}/v2/publish/${destination}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.QSTASH_TOKEN}`,
+      "Content-Type": "application/json",
+      ...(process.env.VERCEL_ENV === "preview" &&
+      process.env.ELECTION_PREVIEW_PROTECTION_BYPASS
+        ? {
+            "Upstash-Forward-x-vercel-protection-bypass":
+              process.env.ELECTION_PREVIEW_PROTECTION_BYPASS,
+          }
+        : {}),
+      "Upstash-Not-Before": String(
+        Math.max(Math.floor(Date.now() / 1000), pauseAt / 1000),
+      ),
+      "Upstash-Retries": "3",
+    },
+    body: JSON.stringify({ mode: "pause_night" }),
+    signal: AbortSignal.timeout(10000),
+  });
+  if (!response.ok) throw new Error("Unable to schedule bounded-night pause");
+  const receipt = await response.json();
+  console.log(
+    JSON.stringify({
+      action: "delayed_night_pause",
+      messageId: receipt.messageId,
+      notBefore: new Date(pauseAt).toISOString(),
+    }),
   );
 }

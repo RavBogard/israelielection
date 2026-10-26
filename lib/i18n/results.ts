@@ -36,9 +36,9 @@ const en = {
     early: "The committee’s early count",
     count: "The committee’s count so far",
     open: (lead: string, il: string, et: string) => `${lead}, captured ${il} Israel time (${et}); seats are this site's estimate.`,
-    waiting: (t: string) => `Waiting for the committee's first figures. Last checked at ${t} Israel time; the page checks again every minute.`,
-    unusable: (t: string) => `The committee's file had no usable figures when last checked, at ${t} Israel time; the page tries again every minute.`,
-    unreachable: (t: string) => `The committee's count could not be reached on this refresh (${t} Israel time); the page tries again every minute.`,
+    waiting: (t: string) => `Waiting for the committee's first figures. Last checked at ${t} Israel time; The page checks saved updates every minute. Sources are checked every 15 minutes for 10 hours after polls close, then every 3 hours.`,
+    unusable: (t: string) => `The committee's file had no usable figures when last checked, at ${t} Israel time; The page checks saved updates every minute. Sources are checked every 15 minutes for 10 hours after polls close, then every 3 hours.`,
+    unreachable: (t: string) => `The committee's count could not be reached on the last source check (${t} Israel time); The page checks saved updates every minute. Sources are checked every 15 minutes for 10 hours after polls close, then every 3 hours.`,
   },
   letters: {
     h: "The ballot letters",
@@ -64,7 +64,7 @@ const en = {
     h: "What to watch",
     closeDt: (il: string, et: string) => `${il} Israel time, ${et}`,
     closeDd:
-      "This page shows the committee's count as it comes in, refreshed every minute, and the [Coalition Builder](/coalition-builder) adds it as a choice. Polls close, and Kan, Channel 12 and Channel 13 broadcast their exit polls at that moment ([Ynet, Nov 1, 2022](https://www.ynetnews.com/article/h1tyl0a4s)). Exit polls are estimates: in 2022 the early exit polls gave Meretz 5 seats ([Jerusalem Post, Nov 1, 2022](https://www.jpost.com/israel-elections/article-721230)), and the final count put it at 3.16%, below the threshold, with none ([Central Elections Committee](https://votes25.bechirot.gov.il/nationalresults)). [How election night turns into a count](/how-it-works/voting)",
+      "This page checks saved count updates every minute, and the [Coalition Builder](/coalition-builder) offers them as a choice. Sources are checked every 15 minutes for 10 hours after polls close, then every 3 hours. Polls close, and Kan, Channel 12 and Channel 13 broadcast their exit polls at that moment ([Ynet, Nov 1, 2022](https://www.ynetnews.com/article/h1tyl0a4s)). Exit polls are estimates: in 2022 the early exit polls gave Meretz 5 seats ([Jerusalem Post, Nov 1, 2022](https://www.jpost.com/israel-elections/article-721230)), and the final count put it at 3.16%, below the threshold, with none ([Central Elections Committee](https://votes25.bechirot.gov.il/nationalresults)). [How election night turns into a count](/how-it-works/voting)",
     thresholdDt: (pct: string, seats: number) => `The threshold, ${pct}% of valid votes, about ${seats} seats`,
     thresholdDd: (closed: boolean) =>
       `A list that misses it gets no seats; its votes are not transferred. Seats are allocated among lists that passed. In the ${closed ? "final polling" : "current"} average these lists sit nearest the line:`,

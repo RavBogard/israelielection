@@ -1,3 +1,4 @@
+import type { CadenceMetadata } from "./cadence";
 export type EvidenceStage = "campaign" | "exit" | "counting" | "official";
 export type SeatBasis =
   | "campaign_forecast"
@@ -178,6 +179,7 @@ export type Alternative = {
   sourceRefs: SourceRef[];
 };
 export type ElectionLifecycleSnapshot = {
+  cadence?: CadenceMetadata;
   selection: {
     mode: "current" | "pinned";
     seatRevision: string;

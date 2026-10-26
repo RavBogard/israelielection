@@ -6,6 +6,11 @@ import { join } from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 
+const stored = vi.hoisted(() => ({ read: vi.fn() }));
+vi.mock("@/lib/election-lifecycle/count-store", () => ({
+  readCountRecord: stored.read,
+}));
+
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh() {} }) }));
 
 const FIXTURE = join(process.cwd(), "lib/fixtures/cec-2022-expc.csv");
@@ -20,60 +25,108 @@ function earlyFixture(n = 40): string {
   return path;
 }
 
-async function render(lang: "en" | "he" | "ar" | "fa" | "de" | "fr" | "zh", env: Record<string, string>, fetcher?: typeof fetch) {
+async function render(
+  lang: "en" | "he" | "ar" | "fa" | "de" | "fr" | "zh",
+  env: Record<string, string>,
+  sourceFailure?: "unusable" | "unreachable",
+) {
   vi.stubEnv("NODE_ENV", "development");
   for (const [k, v] of Object.entries(env)) vi.stubEnv(k, v);
-  if (fetcher) vi.stubGlobal("fetch", fetcher);
+  stored.read.mockResolvedValue(
+    sourceFailure
+      ? {
+          current: null,
+          previous: null,
+          raw: null,
+          health: {
+            lastAttemptAt: env.RESULTS_NOW,
+            lastSuccessfulAt: null,
+            error: sourceFailure,
+          },
+        }
+      : null,
+  );
   vi.resetModules();
   const { default: ResultsPage } = await import("./ResultsPage");
   const LangMod = await import("@/lib/i18n/lang");
   const React = await import("react");
   const page = await ResultsPage({ lang, revalidate: 60 });
-  return renderToStaticMarkup(React.createElement(LangMod.LangProvider, { lang }, page));
+  return renderToStaticMarkup(
+    React.createElement(LangMod.LangProvider, { lang }, page),
+  );
 }
 
 afterEach(() => {
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
+  stored.read.mockReset();
 });
 
-describe.each(["ar", "fa", "de", "fr", "zh"] as const)("/%s/results on election night", lang => {
-  it("uses the same count fixture and keeps coalition links in its edition", async () => {
-    const html = await render(lang, { RESULTS_NOW: AFTER, RESULTS_FIXTURE: FIXTURE });
-    expect(html).toContain(`/${lang}/coalition-builder?poll=results`);
-    if (lang === "ar" || lang === "fa") expect(html).toMatch(/[\u0600-\u06ff]/);
-    if (lang === "zh") expect(html).toMatch(/[\u3400-\u9fff]/);
-    expect(html).not.toContain("The committee’s early count");
-  });
-});
+describe.each(["ar", "fa", "de", "fr", "zh"] as const)(
+  "/%s/results on election night",
+  (lang) => {
+    it("uses the same count fixture and keeps coalition links in its edition", async () => {
+      const html = await render(lang, {
+        RESULTS_NOW: AFTER,
+        RESULTS_FIXTURE: FIXTURE,
+      });
+      expect(html).toContain(`/${lang}/coalition-builder?poll=results`);
+      if (lang === "ar" || lang === "fa")
+        expect(html).toMatch(/[\u0600-\u06ff]/);
+      if (lang === "zh") expect(html).toMatch(/[\u3400-\u9fff]/);
+      expect(html).not.toContain("The committee’s early count");
+    });
+  },
+);
 
 describe("/he/results through the night", () => {
   it("before close: the count's start, the hatched board, nothing marked", async () => {
     const html = await render("he", { RESULTS_NOW: BEFORE });
-    expect(html).toContain("ספירת הקולות מתחילה עם סגירת הקלפיות, ביום שלישי, 27 באוקטובר, 22:00.");
+    expect(html).toContain(
+      "ספירת הקולות מתחילה עם סגירת הקלפיות, ביום שלישי, 27 באוקטובר, 22:00.",
+    );
     expect(html).toContain("ממתינים לספירה");
     expect(html).toContain("על מה להסתכל");
     expect(html).not.toContain('aria-current="step"');
     expect(html).not.toContain("Israel time");
   });
   it("after close, no file yet: waiting, exit polls lead, the refresh button", async () => {
-    const html = await render("he", { RESULTS_NOW: AFTER }, (async () => new Response("", { status: 404 })) as typeof fetch);
-    expect(html).toContain("ממתינים לנתונים הראשונים של ועדת הבחירות המרכזית. בדיקה אחרונה ב-22:20");
+    const fetcher = vi.fn(() => {
+      throw new Error("Viewer must not fetch upstream sources");
+    });
+    vi.stubGlobal("fetch", fetcher);
+    const html = await render("he", { RESULTS_NOW: AFTER }, "unusable");
+    expect(fetcher).not.toHaveBeenCalled();
+    expect(html).toContain(
+      "ממתינים לנתונים הראשונים של ועדת הבחירות המרכזית. בדיקה אחרונה ב-22:20",
+    );
     expect(html).toMatch(/aria-current="step"[^>]*>מדגמי הערוצים 22:00/);
     expect(html).toContain("בדקו אם יש עדכון");
-    expect(html.indexOf("מדגמי הערוצים</h2>")).toBeLessThan(html.indexOf("לפי רשימה"));
+    expect(html.indexOf("מדגמי הערוצים</h2>")).toBeLessThan(
+      html.indexOf("לפי רשימה"),
+    );
   });
   it("early count: the early flag over the board, Hebrew names, threshold watch", async () => {
-    const html = await render("he", { RESULTS_NOW: AFTER, RESULTS_FIXTURE: earlyFixture() });
+    const html = await render("he", {
+      RESULTS_NOW: AFTER,
+      RESULTS_FIXTURE: earlyFixture(),
+    });
     expect(html).toMatch(/aria-current="step"[^>]*>תוצאות אמת ראשונות/);
-    expect(html).toContain("<b>תוצאות אמת ראשונות.</b> נספרו עד כה יישובים שבהם");
-    expect(html).toContain("תוצאות אמת ראשונות של ועדת הבחירות המרכזית, נכון ל-");
+    expect(html).toContain(
+      "<b>תוצאות אמת ראשונות.</b> נספרו עד כה יישובים שבהם",
+    );
+    expect(html).toContain(
+      "תוצאות אמת ראשונות של ועדת הבחירות המרכזית, נכון ל-",
+    );
     expect(html).toContain("קובץ חזרה מקומי, לא ספירת הקולות של 2026.");
     expect(html).toContain("הליכוד");
     expect(html).toContain("/he/coalition-builder?poll=results");
   });
   it("full count: the count is current, differences in <bdi>, envelopes line", async () => {
-    const html = await render("he", { RESULTS_NOW: AFTER, RESULTS_FIXTURE: FIXTURE });
+    const html = await render("he", {
+      RESULTS_NOW: AFTER,
+      RESULTS_FIXTURE: FIXTURE,
+    });
     expect(html).toMatch(/aria-current="step"[^>]*>ספירת הקולות/);
     expect(html).toContain("ספירת הקולות של ועדת הבחירות המרכזית, נכון ל-");
     expect(html).toMatch(/<bdi dir="ltr">[+−0]/);
@@ -83,8 +136,13 @@ describe("/he/results through the night", () => {
   });
   it("English keeps its own words in the same states", async () => {
     const before = await render("en", { RESULTS_NOW: BEFORE });
-    expect(before).toContain("The count starts when polls close, Oct 27, 10:00 PM Israel time (4:00 PM EDT).");
-    const count = await render("en", { RESULTS_NOW: AFTER, RESULTS_FIXTURE: FIXTURE });
+    expect(before).toContain(
+      "The count starts when polls close, Oct 27, 10:00 PM Israel time (4:00 PM EDT).",
+    );
+    const count = await render("en", {
+      RESULTS_NOW: AFTER,
+      RESULTS_FIXTURE: FIXTURE,
+    });
     expect(count).toContain("The committee’s count so far, captured");
     expect(count).not.toMatch(/[א-ת]{2,} [א-ת]{2,} [א-ת]{2,} מנדטים/);
     expect(count).not.toContain("<bdi");

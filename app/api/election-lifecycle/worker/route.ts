@@ -1,3 +1,14 @@
+import { scheduledCycle } from "@/lib/election-lifecycle/scheduled-cycle";
+import {
+  rehearsalEnabled,
+  runRehearsal,
+} from "@/lib/election-lifecycle/rehearsal";
+import { acquireDurableCount } from "@/lib/election-lifecycle/count-store";
+import {
+  configuredCycleStore,
+  runCycle,
+  pauseNightSchedule,
+} from "@/lib/election-lifecycle/coordinator";
 import { createHash } from "node:crypto";
 import { verifyQStash } from "@/lib/live-forecast/auth";
 import { lifecycleEnabled } from "@/lib/election-lifecycle/core";
@@ -30,6 +41,17 @@ export async function POST(request: Request) {
   )
     return Response.json({ error: "unauthorized" }, { status: 401 });
   try {
+    if (JSON.parse(body).mode === "cycle_rehearsal") {
+      if (!rehearsalEnabled())
+        return Response.json({ error: "not_found" }, { status: 404 });
+      return Response.json(await runRehearsal(JSON.parse(body)), {
+        headers: { "Cache-Control": "no-store" },
+      });
+    }
+    if (JSON.parse(body).mode === "pause_night")
+      return Response.json(await pauseNightSchedule(), {
+        headers: { "Cache-Control": "no-store" },
+      });
     if (JSON.parse(body).mode === "extraction_probe")
       return Response.json(await probePrimaryExtraction(), {
         headers: { "Cache-Control": "no-store" },
@@ -46,6 +68,63 @@ export async function POST(request: Request) {
   const store = lifecycleStore();
   if (!store)
     return Response.json({ error: "store_unconfigured" }, { status: 503 });
+  const payload = JSON.parse(body);
+  if (payload.mode === "count_recovery") {
+    if (
+      typeof payload.operator !== "string" ||
+      !payload.operator.trim() ||
+      typeof payload.reason !== "string" ||
+      !payload.reason.trim() ||
+      payload.reason.length > 2000
+    )
+      return Response.json(
+        { error: "recovery_audit_required" },
+        { status: 400 },
+      );
+    try {
+      return Response.json(
+        await acquireDurableCount(new Date().toISOString(), {
+          operator: payload.operator,
+          reason: payload.reason,
+        }),
+        { headers: { "Cache-Control": "no-store" } },
+      );
+    } catch {
+      return Response.json({ error: "count_recovery_failed" }, { status: 503 });
+    }
+  }
+  if (payload.mode === "cycle") {
+    const cycles = configuredCycleStore();
+    if (!cycles)
+      return Response.json({ error: "store_unconfigured" }, { status: 503 });
+    try {
+      if (payload.window && !payload.cycleAt) {
+        if (!["night", "regular"].includes(payload.window))
+          throw new Error("invalid_window");
+        const bound = await scheduledCycle(
+          request.headers.get("upstash-message-id"),
+          payload.window,
+        );
+        if (!bound.cycleAt)
+          return Response.json(
+            {
+              status: "outside_schedule_window",
+              scheduleId: bound.scheduleId,
+              triggerAt: new Date(bound.createdAt).toISOString(),
+            },
+            { headers: { "Cache-Control": "no-store" } },
+          );
+        payload.cycleAt = bound.cycleAt;
+      } else if (!payload.cycleAt) throw new Error("explicit_cycle_required");
+      const result = await runCycle(cycles, payload);
+      return Response.json(result, {
+        status: result.status === "busy" ? 503 : 200,
+        headers: { "Cache-Control": "no-store" },
+      });
+    } catch {
+      return Response.json({ error: "cycle_retry_required" }, { status: 503 });
+    }
+  }
   let mode: WorkerMode;
   try {
     mode = JSON.parse(body).mode ?? "election";

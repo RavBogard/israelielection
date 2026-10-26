@@ -20,6 +20,7 @@ export async function GET(request: Request) {
   const body =
     q.get("view") === "seats"
       ? {
+          cadence: snapshot.cadence,
           selection: snapshot.selection,
           schemaVersion: snapshot.schemaVersion,
           election: snapshot.election,

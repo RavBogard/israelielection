@@ -180,3 +180,9 @@
 .home .since-brief-lang { font-size: 12.5px; font-weight: 500; color: var(--ink-2); }
 /* The tool pictures are drawn in SVG coordinates, left to right; keep their text anchors from flipping under dir="rtl". */
 .home .tools .gl { direction: ltr; }
+
+.home .race-pick { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.home .race-pick button { padding-inline:8px; }
+.home .race-source { line-height:1.6; }
+
+@media(max-width:560px){.home .race-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}.home .race-pick button:nth-child(n+3){border-block-start:1px solid var(--line);}.home .race-pick button:nth-child(odd){border-inline-start:0;}}

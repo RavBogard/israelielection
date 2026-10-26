@@ -8,6 +8,7 @@ import type {BlocId,Party,Poll} from "./types";
 import type {Lang} from "./i18n";
 import home from "./i18n/home";
 import {blocText,partyText} from "./i18n/overlay-text";
+import type {SharedSeatContext} from "./election-lifecycle/types";
 export const HOME_RACE_ORDER=BLOC_ORDER;
 export const seatTenths=(value:number)=>Math.round(value*10)/10;
 export const majorityShortfall=(seats:number)=>Math.max(0,seatTenths(MAJORITY-seatTenths(seats)));
@@ -33,12 +34,71 @@ export function homeRaceModel(poll:Poll,parties:Party[],blocs:{id:BlocId;label:s
  return {rows,isAverage,kind};
 }
 
-export type HomeRaceModel=ReturnType<typeof homeRaceModel>;
+export type HomeBlocId = BlocId | "other";
+type RaceRow = ReturnType<typeof homeRaceModel>["rows"][number];
+export type HomeRaceModel = Omit<ReturnType<typeof homeRaceModel>, "rows"> & {
+  rows: (Omit<RaceRow, "id"> & { id: HomeBlocId })[];
+};
+/** Update only the coherent current point; campaign comparison models remain untouched. */
+export function contextRaceModel(
+  template: HomeRaceModel,
+  context: Pick<SharedSeatContext,"pointSeats"|"parties"|"seatStatus">,
+  unknownLabel: string,
+): HomeRaceModel {
+  const known = new Set(
+    template.rows
+      .filter((row) => row.id !== "other")
+      .flatMap((row) => row.members.map((p) => p.id)),
+  );
+  const rows: HomeRaceModel["rows"] = template.rows
+    .filter((row) => row.id !== "other")
+    .map((row) => {
+      const members = row.members.map((p) => ({
+          ...p,
+          seats: context.pointSeats[p.id] ?? 0,
+          state: "reported" as const,
+        })),
+        seats = members.reduce((n, p) => n + p.seats, 0);
+      return {
+        ...row,
+        members,
+        seats,
+        labelSeats: undefined,
+        shortfall: majorityShortfall(seats),
+        incomplete: false,
+        combined: [],
+      };
+    });
+  const members = Object.entries(context.pointSeats)
+    .filter(([id, seats]) => seats > 0 && !known.has(id))
+    .map(([id, seats]) => ({
+      id,
+      name: context.parties.find((p) => p.id === id)?.label ?? id,
+      seats,
+      state: "reported" as const,
+    }));
+  if (members.length)
+    rows.push({
+      id: "other",
+      label: unknownLabel,
+      seats: members.reduce((n, p) => n + p.seats, 0),
+      labelSeats: undefined,
+      shortfall: 0,
+      incomplete: false,
+      members,
+      combined: [],
+    });
+  return {
+    rows,
+    isAverage: false,
+    kind: context.seatStatus === "official" ? "count" : "forecast",
+  };
+}
 export const HOME_MOSAIC_ORDER=BLOC_SEAT_ORDER;
 /** Allocate bloc boundaries once; partition only each bloc's fixed whole-cell budget. */
 export function homeMosaicLayout(model:HomeRaceModel,lang:Lang="en"){
  const t=home[lang].race;
- const rows=HOME_MOSAIC_ORDER.map(id=>model.rows.find(row=>row.id===id)!);
+ const rows=[...HOME_MOSAIC_ORDER,"other" as const].flatMap(id=>{const row=model.rows.find(row=>row.id===id);return row?[row]:[];});
  const counts=allocate(rows.map(row=>({id:row.id,seats:row.seats,label:row.label,color:""})));
  const order=PARTY_COLOR_FAMILIES.flatMap(f=>f.ids);let next=0;
  const blocks=rows.map((row,i)=>{
@@ -55,4 +115,4 @@ export function homeMosaicLayout(model:HomeRaceModel,lang:Lang="en"){
  return {blocks,empty:Array.from({length:120-next},(_,i)=>next+i)};
 }
 /** Revealing is a presentation change only: every index keeps the same bloc owner. */
-export function homeMosaicView(layout:ReturnType<typeof homeMosaicLayout>,selected:BlocId|null){return layout.blocks.flatMap(block=>selected===block.id?block.parts.filter(p=>p.cells.length).map(p=>({...p,bloc:block.id,revealed:true})):block.cells.length?[{id:block.id,partyId:null,label:block.label,seats:block.seats,cells:block.cells,bloc:block.id,revealed:false}]:[]);}
+export function homeMosaicView(layout:ReturnType<typeof homeMosaicLayout>,selected:HomeBlocId|null){return layout.blocks.flatMap(block=>selected===block.id?block.parts.filter(p=>p.cells.length).map(p=>({...p,bloc:block.id,revealed:true})):block.cells.length?[{id:block.id,partyId:null,label:block.label,seats:block.seats,cells:block.cells,bloc:block.id,revealed:false}]:[]);}

@@ -5,6 +5,7 @@ import type { Lang } from "@/lib/i18n";
 import { editionPath, locale } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { FORMATION } from "@/lib/i18n/formation-live";
+import {DASHBOARD} from "@/lib/i18n/election-dashboard";
 import { acceptsSeatContext } from "@/lib/seat-context";
 import type { ForecastProps } from "../live-forecast/presentation";
 import { useSeatContext } from "../seat-context/SeatContextProvider";
@@ -19,6 +20,7 @@ type Props = {
   names: ForecastProps["names"];
   scenarios: ForecastProps["scenarios"];
 };
+export const claimsExpired=(snapshot:Pick<ElectionLifecycleSnapshot,"cadence">,now:number)=>!!snapshot.cadence&&snapshot.cadence.phase!=="before_close"&&now>Date.parse(snapshot.cadence.expiresAt);
 export default function GovernmentLive({
   initial,
   lang,
@@ -89,7 +91,7 @@ export default function GovernmentLive({
       } else controller?.abort();
     };
     const expiry = setInterval(() => {
-      if (Date.now() - lastSuccess.current > 90000)
+      if (Date.now() - lastSuccess.current > 90000||claimsExpired(latest.current,Date.now()))
         setState((s) => ({ ...s, failed: true }));
     }, 15000);
     void load();
@@ -145,6 +147,7 @@ export default function GovernmentLive({
       )}
       <section aria-labelledby="negotiations">
         <h2 id="negotiations">{t.negotiations}</h2>
+        {snapshot.cadence&&<p className="seat-times">{DASHBOARD[lang].last}: {date(snapshot.cadence.lastSuccessfulAt)} · {DASHBOARD[lang].next}: {date(snapshot.cadence.nextCheckAt)}</p>}
         <p>{f.caution}</p>
         {hidden && (
           <p className="government-notice" role="status">

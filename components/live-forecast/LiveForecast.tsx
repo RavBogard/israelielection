@@ -1,5 +1,4 @@
 import { lifecycleForRender } from "@/lib/seat-context-server";
-import { FORMATION } from "@/lib/i18n/formation-live";
 import scenarioData from "@/data/coalition-scenarios.json";
 import { parties, pledgeRules } from "@/lib/data";
 import { arrangementWarnings, type RoleOverrides } from "@/lib/coalition-arrangement";
@@ -17,7 +16,7 @@ export function forecastPresentation(lang: Lang): Pick<ForecastProps, "text" | "
   const text = LIVE_FORECAST[lang];
   const names = Object.fromEntries(parties.map((party) => {
     const name = partyText(party, "name", lang);
-    return [party.id, { name: name.text, lang: name.lang, color: partyColor(party.id) }];
+    return [party.id, { name: name.text, lang: name.lang, color: partyColor(party.id), bloc:party.bloc }];
   }));
   const list = new Intl.ListFormat(locale(lang), { style: "long", type: "conjunction" });
   const scenarios = scenarioData.scenarios.map((scenario) => {
@@ -37,7 +36,8 @@ export function forecastPresentation(lang: Lang): Pick<ForecastProps, "text" | "
 /** Resolve beside each page's count fetch, keeping its returned tree synchronous for HTML renderers. */
 export default async function renderLiveForecast({ lang, compact = false }: { lang: Lang; compact?: boolean }) {
   if (!liveForecastEnabled()) return null;
+  const presentation=forecastPresentation(lang),dashboard={text:presentation.text,names:presentation.names,scenarios:[]};
   const [initial,lifecycle]=await Promise.all([getLiveForecast(),lifecycleForRender()]);
-  if(lifecycle?.archive.electionForecast==="complete"||lifecycle?.seatContext.seatStatus==="official")return <details><summary>{FORMATION[lang].archive}</summary><ForecastDisplay initial={initial} lang={lang} compact={compact} {...forecastPresentation(lang)}/></details>;
-  return <ForecastClient initial={initial} lang={lang} compact={compact} {...forecastPresentation(lang)} />;
+  if(lifecycle?.archive.electionForecast==="complete"||lifecycle?.seatContext.seatStatus==="official")return <ForecastDisplay initial={initial} context={lifecycle.seatContext} cadence={lifecycle.cadence} archived lang={lang} compact={compact} {...dashboard}/>;
+  return <ForecastClient initial={initial} context={lifecycle?.seatContext} cadence={lifecycle?.cadence} lang={lang} compact={compact} {...dashboard} />;
 }

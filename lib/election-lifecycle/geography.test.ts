@@ -1,5 +1,5 @@
-import { expect, it } from "vitest";
-import { parseGeography } from "./geography";
+import { expect, it, vi } from "vitest";
+import { parseGeography, acquireGeography } from "./geography";
 import { campaignContext } from "./resolver";
 const csv =
   "סמל ישוב,בזב,מצביעים,פסולים,כשרים,מחל,חדש\n1,150,90,0,90,80,10\n9999,0,10,0,10,2,8";
@@ -30,4 +30,18 @@ it("retains unknown lists and separates envelopes; only reconciliation to publis
   expect(() =>
     parseGeography(csv.replace("80,10", "81,10"), now, null),
   ).toThrow();
+});
+
+it("reuses the cycle's complete CSV for geography without another official-source fetch", async () => {
+  const fetch = vi.fn(() => {
+    throw new Error("duplicate source fetch");
+  });
+  vi.stubGlobal("fetch", fetch);
+  try {
+    const result = await acquireGeography("2026-10-28T06:00Z", null, csv);
+    expect(result?.snapshot.rows).toHaveLength(1);
+    expect(fetch).not.toHaveBeenCalled();
+  } finally {
+    vi.unstubAllGlobals();
+  }
 });

@@ -106,10 +106,11 @@ export function parseGeography(
 export async function acquireGeography(
   now: string,
   official: SharedSeatContext | null,
+  acquiredCsv?: string,
 ) {
   if (Date.parse(now) < Date.parse(POLLS_CLOSE)) return null;
-  const csv = await fetchPrimary(config.source.url, [
-    "media26.bechirot.gov.il",
-  ]);
+  const csv =
+    acquiredCsv ??
+    (await fetchPrimary(config.source.url, ["media26.bechirot.gov.il"]));
   return { snapshot: parseGeography(csv, now, official), body: csv };
 }

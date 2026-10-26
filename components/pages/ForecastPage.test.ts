@@ -41,11 +41,12 @@ it("renders the shared coherent allocation on home and preserves the forecast pa
   const page = await HomePage({ lang: "en", revalidate: 60 });
   const html = renderToStaticMarkup(createElement(LangProvider, { lang: "en" }, page));
   expect(html).toContain(`data-seat-revision="${context!.revision}"`);
-  const legend=html.match(/class="parliament-lists">([\s\S]*?)<\/div>/)![1];
-  const visibleSeats=[...legend.matchAll(/<b>(\d+)<\/b>/g)].map(match=>Number(match[1]));
+  const visibleSeats=[...html.matchAll(/class="race-value">(\d+)/g)].map(match=>Number(match[1]));
   expect(visibleSeats.reduce((sum,n)=>sum+n,0)).toBe(120);
   const current=blocTotals(contextToPoll(context!),parties);
   expect(current.opp).toBe(totals.opp);
   expect(61-current.opp).toBe(61-totals.opp);
-  expect(html).toContain("Current seat context");
+  expect(html).toContain("home-mosaic");
+  expect((html.match(/data-cell=/g)??[])).toHaveLength(120);
+  expect(html).not.toContain("Current seat context");
 });
