@@ -1,12 +1,12 @@
 # Live Balance of Power — release state
 
-Updated 2026-10-26 16:02 UTC. Implementation and release actions performed by GPT-6.1 Sol agents. No task commit or push yet; repository publication awaits the user's pending approval.
+Updated 2026-10-26 16:09 UTC. Implementation and release actions performed by GPT-6.1 Sol agents. **Released and enabled.** Implementation commit [42eca9022c86964230a5315f85ae9ada8dfe02a5](https://github.com/RavBogard/israelielection/commit/42eca9022c86964230a5315f85ae9ada8dfe02a5) is on main; [GitHub CI](https://github.com/RavBogard/israelielection/actions/runs/40355575405) completed successfully.
 
 ## Current state
 
-- Canonical production: https://www.israelielection.org/results. New backend deployed **behind the disabled flag**; `GET /api/live-forecast` returns `enabled:false`, results shows no live panel, unsigned worker requests return 401.
-- Current production deployment: `dpl_4FjTh58Ccz37ugMz6nM8sFKe5kDA`, https://israelielection-8s14f35nm-ravbogards-projects.vercel.app. Based on production commit `31b43a0ce100ad3322b8fedb6f35e1efb73d01c3` plus the 32 files below. All six newer forecast metadata/scoring documentation changes are preserved. Shared checkout was fast-forwarded safely to that same commit.
-- Original production rollback target: `dpl_9GKS3RtQXJKNUefE3RBMs7Ej3tDK`, https://israelielection-d1f9513ti-ravbogards-projects.vercel.app. An initial deployment from the older checkout was immediately rolled back after detecting newer production metadata; the corrected deployment above preserves it.
+- Canonical production: https://www.israelielection.org/results, with a compact view on https://www.israelielection.org/. `GET /api/live-forecast` returns `enabled:true` with a stable pre-election snapshot and current source health; unsigned worker requests return 401.
+- Verified activation deployment: `dpl_6xvcn4E8vY8qEqTSigRqS928DGte`, https://israelielection-bb96msd29-ravbogards-projects.vercel.app, from implementation commit `42eca90`. It includes production base `31b43a0ce100ad3322b8fedb6f35e1efb73d01c3` and preserves all six newer forecast metadata/scoring documentation changes. Subsequent documentation-only builds may have newer deployment IDs.
+- Original production rollback target: `dpl_9GKS3RtQXJKNUefE3RBMs7Ej3tDK`, https://israelielection-d1f9513ti-ravbogards-projects.vercel.app. Normal future Git deployment domain assignment is restored and verified: the Git-triggered implementation build automatically received every canonical production alias.
 - Review preview: https://israelielection-live-forecast-preview.vercel.app/results; deployment `dpl_p6QUEqHAXMfagzV8JdFWomBVJFgq`. Protected by Vercel authentication; a private automation credential was used for machine checks. Preview predates only the six preserved metadata/doc updates, which do not change numeric forecasts.
 - Home compact view and full results view cover all seven editions, with three equally prominent questions, explicit ties, conditional confidence-vote probabilities, pledge cautions, threshold associations, actual history, source health, and 80% intervals. Last-good data survives failed or out-of-order refreshes.
 
@@ -17,6 +17,7 @@ Updated 2026-10-26 16:02 UTC. Implementation and release actions performed by GP
 - UI: 13 focused tests; backend: 23 focused tests. Historical plumbing replay: 30 synthetic-order checks across five actual historical final-count archives; this is not accuracy calibration.
 - Headless render QA inspected desktop English results/home, mobile English, and mobile Hebrew dark/RTL screenshots. All seven locales render three questions and working details at 320px; no feature overflow or browser exceptions. An existing German results seatbar exceeds 320px outside this feature.
 - True QStash signed preview delivery published a stable snapshot to Redis. Two subsequent minute deliveries succeeded; acquisition time advanced while unchanged input retained one history point. Public preview read returned 200/current; unsigned worker returned 401.
+- Production signed delivery published at `2026-10-26T16:07:25.596Z`; the minute schedule succeeded at `16:08:00.870Z`. Acquisition time advanced, model generation time stayed fixed, and durable/public history retained one point. Preview data stayed in its separate namespace. Public API, home, results, and Hebrew mobile RTL rendered all three questions with no feature overflow or browser exceptions; actual production screenshots were inspected.
 - Preview minute schedule `live-forecast-preview-2026` is **paused**. Its documented delayed QStash PATCH cleanup automatically paused it at `2026-10-26T15:56:43Z`; cleanup message `msg_7YoJxFpwkEy56tfzhppAEMVcyyxdUHxjeVa3KMwHFPMZP8DtWjEbJ`. This proves the shutdown mechanism.
 
 ## Durable infrastructure
@@ -28,15 +29,15 @@ Vercel team `ravbogards-projects`, project `prj_yCbAJvShotcDd7gaV1jbYHZ5H8lh` (`
 - Integration configuration: `icfg_HzLrR6WZzdSuhEj3PT6eMF1j`.
 - Credentials present in Vercel: `KV_REST_API_URL`, `KV_REST_API_TOKEN`, `KV_REST_API_READ_ONLY_TOKEN`, `QSTASH_TOKEN`, `QSTASH_URL`, `QSTASH_CURRENT_SIGNING_KEY`, `QSTASH_NEXT_SIGNING_KEY`. No credential values belong in this note or Git.
 - Preview: `LIVE_FORECAST_ENABLED=true`, worker URL `https://israelielection-live-forecast-preview.vercel.app/api/live-forecast/worker`; namespace `live-forecast:2026:v1:preview:`.
-- Production: `LIVE_FORECAST_ENABLED=false`, worker URL `https://www.israelielection.org/api/live-forecast/worker`; namespace `live-forecast:2026:v1:production:`. No active production schedule exists.
+- Production: `LIVE_FORECAST_ENABLED=true`, worker URL `https://www.israelielection.org/api/live-forecast/worker`; namespace `live-forecast:2026:v1:production:`. Minute schedule `live-forecast-production-2026` is active, POST body `{}`, 60-second timeout, two retries.
+- Production auto-pause message `msg_7YoJxFpwkEy3LJPujzJv3THzG8v9EMnNtSdzLTTtkHDBYf1HW6su9` is durably queued for **2026-11-03T00:00:00Z**. A GET of the stored message verified method PATCH, the regional schedule-pause endpoint, and `notBefore:1793664000000` (milliseconds). The private forwarded provider Authorization header is not recorded here.
 
-## Next release actions
+## Operations and rollback
 
-1. After the pending user approval, commit/push only the 32 files below plus this note. Existing scheduled Git pushes would otherwise remove the CLI-only feature on their next deployment. Do not include unrelated untracked material.
-2. Update the production flag to `true`, deploy the tested stage/current committed source, and explicitly promote if Vercel's rollback state prevents automatic domain assignment. Verify the canonical URL, source base, and signed worker delivery before starting the production schedule.
-3. Create `live-forecast-production-2026` with one-minute UTC cron, raw body `{}`, destination exactly the production worker URL, POST, 60-second timeout, and retries. Production uses the public canonical domain and needs no preview protection-bypass header. Verify signed delivery, durable production publication, public read, and no preview/production key crossover.
-4. Bound that schedule with a one-off QStash message to `https://qstash-us-east-1.upstash.io/v2/schedules/live-forecast-production-2026/pause`: HTTP PATCH, `Upstash-Not-Before` for **2026-11-03T00:00:00Z**, retries, and a privately forwarded QStash Authorization header. Record its message ID and verify the stored deadline. [Paid QStash permits delays up to one year](https://upstash.com/docs/qstash/features/delay); the analogous preview cleanup was tested successfully. The worker separately rejects work outside October 26–November 2 UTC.
-5. Rollback: pause the production schedule first, set production flag false, then redeploy or `vercel rollback` to the original deployment above. A Vercel rollback can require an explicit subsequent `vercel promote` to resume normal domain assignment.
+- The feature is committed on main, so existing poll/results/briefing Git pushes preserve it. No remaining release approval is pending.
+- QStash schedule `live-forecast-production-2026` calls the exact canonical worker URL once per minute. The independently queued one-off message calls `https://qstash-us-east-1.upstash.io/v2/schedules/live-forecast-production-2026/pause` at **2026-11-03T00:00:00Z**, with PATCH and five retries. [Paid QStash permits delays up to one year](https://upstash.com/docs/qstash/features/delay); the analogous preview shutdown was verified, and the actual production delay was accepted and read back. The worker separately rejects work outside October 26–November 2 UTC.
+- Rollback: pause the production schedule first, set production flag false, then redeploy or `vercel rollback` to the original deployment above. A Vercel rollback can require an explicit subsequent `vercel promote` to resume normal domain assignment. Pause/delete the already queued cleanup message too if replacing the schedule under the same ID with a different lifetime.
+- Secrets remain in Vercel and ignored local environment files only. Provider billing is usage based; Redis snapshots/history persist after the scheduler stops.
 
 ## Limits to preserve
 
