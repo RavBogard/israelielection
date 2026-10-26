@@ -2005,6 +2005,875 @@
           }
         ]
       }
+    },
+    {
+      "id": "charts:seats",
+      "lang": "he",
+      "sourceRevision": "205b9664dfe5280089f35e24e94b8d43b694e8ad4476f9d0df839fec61ff99fe",
+      "status": "published",
+      "publishedAt": "2026-10-26T23:38:01.479Z",
+      "blocks": [
+        {
+          "id": "chart-label-e41cf4278725ff49",
+          "text": "אחוז החסימה של ישראל, 1949–2026"
+        },
+        {
+          "id": "chart-label-b406bcbf12f2bb93",
+          "text": "שיעור הקולות הכשרים שרשימה זקוקה לו כדי לזכות במושבים כלשהם"
+        },
+        {
+          "id": "chart-label-1b48cf1f537cc659",
+          "text": "Ofer Kenig מ-IDI מציג את אותם שלבים (1% עד 1988, 1.5% מ-1992 עד 2003, 2% עבור שלוש מערכות הבחירות הבאות) ומתארך את המעבר ל-3.25% לחוק שעבר במרץ 2014, אשר יושם לראשונה בבחירות 2015 (IDI,‏ 26 בינואר 2015, https://en.idi.org.il/articles/5225). שני מאמרי IDI מתיישבים זה עם זה ברגע שמפרידים בין שנת קבלת החוק לשנה שבה נעשה בו שימוש לראשונה."
+        },
+        {
+          "id": "chart-label-35cec31c784390d6",
+          "text": "הבחירות הראשונות שנערכו לפיו"
+        },
+        {
+          "id": "chart-label-62ed940f9875ba5f",
+          "text": "אחוז החסימה (שיעור מקולות כשרים)"
+        },
+        {
+          "id": "chart-label-b7c959730f63f838",
+          "text": "אין אחוז חסימה בחוק; מושב אחד מתוך 120 מיתרגם ל-0.83%"
+        },
+        {
+          "id": "chart-label-2520c5095adf101b",
+          "text": "3.25% (עבר בכנסת במרץ 2014)"
+        },
+        {
+          "id": "chart-label-3b440c7329e31bce",
+          "text": "רשימות קרובות לאחוז החסימה ב-2022, שיעור מהקולות הכשרים"
+        },
+        {
+          "id": "chart-label-7a3e89f03ce6ddb5",
+          "text": "קולותיה של כל רשימה כשיעור מתוך 4764742 קולות כשרים. אחוז החסימה עמד על 154855 קולות; למרצ חסרו 4062 קולות ולבל\"ד חסרו 16238 קולות."
+        },
+        {
+          "id": "chart-label-6227320600f48b7e",
+          "text": "הרשימות כפי שהתמודדו ב-2022. ב-2026 חד\"ש–תע\"ל ובל\"ד מתמודדות יחד בתור הרשימה המשותפת, ומפלגת העבודה ומרצ מתמודדות יחד בתור הדמוקרטים."
+        },
+        {
+          "id": "chart-label-07a51451e3926e0e",
+          "text": "חד\"ש–תע\"ל (5 מושבים)"
+        },
+        {
+          "id": "chart-label-c7165818433ceebb",
+          "text": "העבודה (4 מושבים)"
+        },
+        {
+          "id": "chart-label-c3f365fdda55c204",
+          "text": "אחוז החסימה"
+        },
+        {
+          "id": "chart-label-0cf0374e3da76504",
+          "text": "מרצ (ללא מושבים)"
+        },
+        {
+          "id": "chart-label-d12dd1dc907e20fd",
+          "text": "בל\"ד (ללא מושבים)"
+        },
+        {
+          "id": "chart-label-d69d920ec7557849",
+          "text": "הבית היהודי (ללא מושבים)"
+        },
+        {
+          "id": "chart-label-4de2f77b72f6e9b7",
+          "text": "2022, שלב 3: מושבים שלמים לפי 36227 קולות כל אחד"
+        },
+        {
+          "id": "chart-label-8d456c3a8f3d9bac",
+          "text": "קולות עשר הרשימות שעברו את אחוז החסימה, מחולקים ב-36227 (4347342 ÷ 120), מספרים שלמים בלבד"
+        },
+        {
+          "id": "chart-label-c61d08d5dcb1cb22",
+          "text": "אותו מחיר מושב (36227) ואותם 113 מושבים שלמים מופיעים במאמר ההסבר של IDI‏ (Ofer Kenig,‏ 16 במרץ 2026, https://en.idi.org.il/articles/63750). הציונות הדתית–עוצמה יהודית הייתה רשימה משותפת ב-2022; ב-2026 הציונות הדתית מתמודדת עם זהות ועוצמה יהודית מתמודדת לבדה."
+        },
+        {
+          "id": "chart-label-f38eeea7d1595242",
+          "text": "רשימה"
+        },
+        {
+          "id": "chart-label-f6e860f495d57095",
+          "text": "קולות"
+        },
+        {
+          "id": "chart-label-eba25076ebc0ffaf",
+          "text": "מושבים שלמים"
+        },
+        {
+          "id": "chart-label-669047cb973f8676",
+          "text": "מושבים סופיים"
+        },
+        {
+          "id": "chart-label-089aeabde2912c39",
+          "text": "הליכוד"
+        },
+        {
+          "id": "chart-label-1f7a956275720b39",
+          "text": "יש עתיד"
+        },
+        {
+          "id": "chart-label-3a0075cdf99010ef",
+          "text": "הציונות הדתית–עוצמה יהודית"
+        },
+        {
+          "id": "chart-label-29659e7b17922393",
+          "text": "המחנה הממלכתי"
+        },
+        {
+          "id": "chart-label-afc77e6828b13b11",
+          "text": "ש\"ס"
+        },
+        {
+          "id": "chart-label-24cc418232b3f6c5",
+          "text": "יהדות התורה"
+        },
+        {
+          "id": "chart-label-a30316700dbe1131",
+          "text": "ישראל ביתנו"
+        },
+        {
+          "id": "chart-label-fafe8b93a0dc2261",
+          "text": "רע\"ם"
+        },
+        {
+          "id": "chart-label-a5066a61af9e5a75",
+          "text": "חד\"ש–תע\"ל"
+        },
+        {
+          "id": "chart-label-5fe8cfce2a97dd00",
+          "text": "העבודה"
+        },
+        {
+          "id": "chart-label-1ebcf162d1937b7c",
+          "text": "סך הכול"
+        },
+        {
+          "id": "chart-label-aac0002b2b6daf7b",
+          "text": "2022, שלב 4: שבעת המושבים העודפים, סבב אחד בכל פעם"
+        },
+        {
+          "id": "chart-label-b4f64a1d0e56bc62",
+          "text": "בכל סבב, כל רשימה או צמד עודפים מחלקים את קולותיהם ב-(מושבים שכבר יש להם + 1); התוצאה הגבוהה ביותר זוכה במושב הבא"
+        },
+        {
+          "id": "chart-label-f9b14ff62ccf789d",
+          "text": "צמדים בעלי הסכמי עודפים נספרים כרשימה אחת בשלב זה. למפלגת העבודה (הנתון הטוב ביותר 35198.40) ולרע\"ם (32341.17) מעולם לא היה המספר הגבוה ביותר. אותם סבבים, שחושבו מתוך אותם סכומי קולות, מופיעים אצל Matthew Shugart,‏ Fruits and Votes,‏ 8 בספטמבר 2026 (https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/). "
+        },
+        {
+          "id": "chart-label-5bcb2a0fd0b60ec5",
+          "text": "סבב"
+        },
+        {
+          "id": "chart-label-e6afdc14cfac576d",
+          "text": "מושב"
+        },
+        {
+          "id": "chart-label-58d356b46cb6639f",
+          "text": "הזוכה"
+        },
+        {
+          "id": "chart-label-d98fbde8b1c8e144",
+          "text": "קולות שנספרו"
+        },
+        {
+          "id": "chart-label-17cb3a56bb4f787a",
+          "text": "מושבים לפני הסבב"
+        },
+        {
+          "id": "chart-label-aa466595f23f23a0",
+          "text": "קולות ÷ (מושבים + 1)"
+        },
+        {
+          "id": "chart-label-ad49826da3bc35db",
+          "text": "ש\"ס + יהדות התורה"
+        },
+        {
+          "id": "chart-label-376f51605a0a8da0",
+          "text": "המחנה הממלכתי + יש עתיד"
+        },
+        {
+          "id": "chart-label-a94009e739724c62",
+          "text": "הליכוד + הציונות הדתית"
+        },
+        {
+          "id": "chart-label-3e6f1b6b12f31b89",
+          "text": "חד\"ש–תע\"ל"
+        },
+        {
+          "id": "chart-label-f7498b16d1ed2121",
+          "text": "ישראל ביתנו"
+        },
+        {
+          "id": "chart-label-0a1086e7d183f8b4",
+          "text": "המחנה הממלכתי + יש עתיד"
+        },
+        {
+          "id": "chart-label-b1747257ad9a5b45",
+          "text": "הליכוד + הציונות הדתית"
+        },
+        {
+          "id": "chart-label-0885241c71872950",
+          "text": "הסכמי עודפים לקראת בחירות 2026"
+        },
+        {
+          "id": "chart-label-4a67765292238f76",
+          "text": "צמדי רשימות שהסכימו להיספר כרשימה אחת בעת חלוקת המושבים העודפים"
+        },
+        {
+          "id": "chart-label-0d4587ddc49420c8",
+          "text": "לכל שורה מקור משלה. ניתן להגיש הסכמים עד 11 ימים לפני הבחירות, 16 באוקטובר (AIJAC,‏ 14 בספטמבר 2026, https://aijac.org.au/australia-israel-review/a-game-of-margins/)."
+        },
+        {
+          "id": "chart-label-ef9bea92f1fa0312",
+          "text": "צמד"
+        },
+        {
+          "id": "chart-label-6f544428846b3e78",
+          "text": "סטטוס"
+        },
+        {
+          "id": "chart-label-b07174a26f077249",
+          "text": "דווח"
+        },
+        {
+          "id": "chart-label-7831b0f9a23ec3b3",
+          "text": "ישר! + הדמוקרטים"
+        },
+        {
+          "id": "chart-label-17fe82c7f6ad4ad2",
+          "text": "נחתם"
+        },
+        {
+          "id": "chart-label-32ac0c2aa14bcf61",
+          "text": "נחתם ב-10 בספטמבר"
+        },
+        {
+          "id": "chart-label-e4d904796b0a73c0",
+          "text": "ביחד + ישראל ביתנו"
+        },
+        {
+          "id": "chart-label-f349d37f151b3a4e",
+          "text": "נחתם"
+        },
+        {
+          "id": "chart-label-d719cbe7aa2e040b",
+          "text": "נחתם ב-10 בספטמבר"
+        },
+        {
+          "id": "chart-label-17c28ff0b5685bdd",
+          "text": "הרשימה המשותפת + רע\"ם"
+        },
+        {
+          "id": "chart-label-4477b28d42707a17",
+          "text": "נחתם"
+        },
+        {
+          "id": "chart-label-f315780cfbf0314c",
+          "text": "נחתם ביום שישי, 11 בספטמבר"
+        },
+        {
+          "id": "chart-label-38f74844e0ae2752",
+          "text": "הליכוד + הציונות הדתית–זהות"
+        },
+        {
+          "id": "chart-label-0a0e1037946fd832",
+          "text": "סוכם; טרם נחתם נכון ל-15 בספטמבר"
+        },
+        {
+          "id": "chart-label-b3ae1d9cbcf061c4",
+          "text": "סוכם ב-8 בספטמבר; עדיין לא נחתם כעבור שבוע"
+        },
+        {
+          "id": "chart-label-8f743f265fca8495",
+          "text": "ש\"ס + יהדות התורה"
+        },
+        {
+          "id": "chart-label-8cff0e58d0a6bff1",
+          "text": "צפוי"
+        },
+        {
+          "id": "chart-label-7b3c267f6037cf63",
+          "text": "\"צפויות לפי הדיווחים\" לחתום"
+        }
+      ],
+      "review": {
+        "sourceRevision": "205b9664dfe5280089f35e24e94b8d43b694e8ad4476f9d0df839fec61ff99fe",
+        "contentHash": "0d60ed47a72eb97042c79aa55a4194da0ad4c02513d569ece40d45ec35ab547a",
+        "model": "gemini-3.8-flash",
+        "verdict": "supported",
+        "blocks": [
+          {
+            "id": "chart-label-e41cf4278725ff49",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b406bcbf12f2bb93",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-1b48cf1f537cc659",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-35cec31c784390d6",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-62ed940f9875ba5f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b7c959730f63f838",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-2520c5095adf101b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-3b440c7329e31bce",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-7a3e89f03ce6ddb5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-6227320600f48b7e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-07a51451e3926e0e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-c7165818433ceebb",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-c3f365fdda55c204",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-0cf0374e3da76504",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-d12dd1dc907e20fd",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-d69d920ec7557849",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-4de2f77b72f6e9b7",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-8d456c3a8f3d9bac",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-c61d08d5dcb1cb22",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f38eeea7d1595242",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f6e860f495d57095",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-eba25076ebc0ffaf",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-669047cb973f8676",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-089aeabde2912c39",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-1f7a956275720b39",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-3a0075cdf99010ef",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-29659e7b17922393",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-afc77e6828b13b11",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-24cc418232b3f6c5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-a30316700dbe1131",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-fafe8b93a0dc2261",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-a5066a61af9e5a75",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-5fe8cfce2a97dd00",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-1ebcf162d1937b7c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-aac0002b2b6daf7b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b4f64a1d0e56bc62",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f9b14ff62ccf789d",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-5bcb2a0fd0b60ec5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-e6afdc14cfac576d",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-58d356b46cb6639f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-d98fbde8b1c8e144",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-17cb3a56bb4f787a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-aa466595f23f23a0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-ad49826da3bc35db",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-376f51605a0a8da0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-a94009e739724c62",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-3e6f1b6b12f31b89",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f7498b16d1ed2121",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-0a1086e7d183f8b4",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b1747257ad9a5b45",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-0885241c71872950",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-4a67765292238f76",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-0d4587ddc49420c8",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-ef9bea92f1fa0312",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-6f544428846b3e78",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b07174a26f077249",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-7831b0f9a23ec3b3",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-17fe82c7f6ad4ad2",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-32ac0c2aa14bcf61",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-e4d904796b0a73c0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f349d37f151b3a4e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-d719cbe7aa2e040b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-17c28ff0b5685bdd",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-4477b28d42707a17",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-f315780cfbf0314c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-38f74844e0ae2752",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-0a0e1037946fd832",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-b3ae1d9cbcf061c4",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-8f743f265fca8495",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-8cff0e58d0a6bff1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "chart-label-7b3c267f6037cf63",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          }
+        ]
+      }
     }
   ]
 }
