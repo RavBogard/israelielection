@@ -3,8 +3,14 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { editionPath, LANGS, type Lang } from "@/lib/i18n";
 import "./subscriptions.css";
 import { subscriptionText } from "@/lib/i18n/subscriptions";
+import { followsText } from "@/lib/i18n/follows";
+import type { Follows, DeliveryChannels } from "@/lib/political-record/follows";
+import FollowPicker from "./FollowPicker";
 import {
   privateToken,
+  emptyFollows,
+  readDistribution,
+  hasSubscriptionSelection,
   tokenFreeUrl,
   TOPICS,
   validTopics,
@@ -19,11 +25,18 @@ export default function SubscriptionControls({
   mode?: SubscriptionMode;
 }) {
   const t = subscriptionText(lang),
+    f = followsText(lang),
     token = useRef<string | null>(null),
     captured = useRef<SubscriptionMode | null>(null);
   const [email, setEmail] = useState(""),
     [selectedLang, setLang] = useState(lang),
     [topics, setTopics] = useState<Topic[]>(["digest"]),
+    [follows, setFollows] = useState<Follows>(emptyFollows),
+    [delivery, setDelivery] = useState<DeliveryChannels>({
+      dailyDigest: true,
+      majorEvents: false,
+      corrections: true,
+    }),
     [consent, setConsent] = useState(false),
     [busy, setBusy] = useState(false),
     [message, setMessage] = useState(""),
@@ -51,9 +64,16 @@ export default function SubscriptionControls({
     if (busy) return;
     if (
       (mode === "signup" || (mode === "preferences" && loaded)) &&
-      !topics.length
+      !hasSubscriptionSelection(topics, follows)
     ) {
-      setMessage(t.choose);
+      setMessage(f.choose);
+      return;
+    }
+    if (
+      (mode === "signup" || (mode === "preferences" && loaded)) &&
+      !Object.values(delivery).some(Boolean)
+    ) {
+      setMessage(f.chooseDelivery);
       return;
     }
     setBusy(true);
@@ -61,9 +81,15 @@ export default function SubscriptionControls({
     try {
       const body =
         mode === "signup"
-          ? { email, locale: selectedLang, topics, consent }
+          ? { email, locale: selectedLang, topics, follows, delivery, consent }
           : mode === "preferences" && loaded
-            ? { token: token.current, locale: selectedLang, topics }
+            ? {
+                token: token.current,
+                locale: selectedLang,
+                topics,
+                follows,
+                delivery,
+              }
             : { token: token.current };
       const response = await fetch(
         mode === "signup" ? "/api/subscriptions" : `/api/subscriptions/${mode}`,
@@ -86,7 +112,15 @@ export default function SubscriptionControls({
       }
       const data = await response.json();
       if (mode === "preferences" && !loaded) {
-        setTopics(validTopics(data.topics));
+        const restoredTopics = validTopics(data.topics),
+          restored = readDistribution(data, restoredTopics);
+        if (!restored) {
+          setMessage(t.unavailable);
+          return;
+        }
+        setTopics(restoredTopics);
+        setFollows(restored.follows);
+        setDelivery(restored.delivery);
         if (LANGS.includes(data.locale)) setLang(data.locale);
         setLoaded(true);
         return;
@@ -179,7 +213,7 @@ export default function SubscriptionControls({
               </label>
             </p>
             <fieldset>
-              <legend>{t.title}</legend>
+              <legend>{f.topics}</legend>
               {TOPICS.map((topic) => (
                 <label
                   key={topic}
@@ -196,9 +230,43 @@ export default function SubscriptionControls({
                       )
                     }
                   />{" "}
-                  {t[topic]}
+                  {topic === "digest" ? f.general : t[topic]}
                 </label>
               ))}
+            </fieldset>
+            <h2>{f.follows}</h2>
+            <p>{f.explanation}</p>
+            <p>{f.limit}</p>
+            {(["parties", "issues", "places"] as const).map((kind) => (
+              <FollowPicker
+                key={kind}
+                kind={kind}
+                lang={lang}
+                value={follows[kind]}
+                onChange={(ids) =>
+                  setFollows((old) => ({ ...old, [kind]: ids }))
+                }
+              />
+            ))}
+            <fieldset>
+              <legend>{f.delivery}</legend>
+              {(["dailyDigest", "majorEvents", "corrections"] as const).map(
+                (key) => (
+                  <label className="delivery-choice" key={key}>
+                    <input
+                      type="checkbox"
+                      checked={delivery[key]}
+                      onChange={(e) =>
+                        setDelivery((old) => ({
+                          ...old,
+                          [key]: e.target.checked,
+                        }))
+                      }
+                    />{" "}
+                    {f[key]}
+                  </label>
+                ),
+              )}
             </fieldset>
           </>
         )}
