@@ -78,7 +78,7 @@ const negative: Record<Exclude<Lang, "en">, RegExp> = {
   he: /לא|אין|אינ[והםן]|בלי|אלא/,
   ar: /لا|ليس|لم|لن|غير|دون/,
   fa: /نیست|نمی|نه|بدون|نبود|هیچ|نخواهد|ندارد/,
-  de: /\b(?:nicht|kein\w*|nie|niemals|weder|ohne|unabhängig)\b/i,
+  de: /\b(?:nicht|kein\w*|nie|niemals|niemand(?:en|em|es)?|nichts|keineswegs|weder|ohne|unabhängig)\b/i,
   fr: /\b(?:pas|ne|n’|n'|aucun\w*|jamais|ni|sans|non)\b/i,
   zh: /不|无|没有|未|非|并非|不能/,
 };

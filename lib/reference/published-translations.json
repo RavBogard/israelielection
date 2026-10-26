@@ -802,6 +802,407 @@
           }
         ]
       }
+    },
+    {
+      "id": "guides:seats",
+      "lang": "zh",
+      "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+      "status": "published",
+      "publishedAt": "2026-10-26T22:55:38.166Z",
+      "blocks": [
+        {
+          "id": "block-0-b25c97e728d0",
+          "text": "从选票到席位"
+        },
+        {
+          "id": "block-1-9acf4b523e2f",
+          "text": "以色列如何将全国选票转化为 120 个议会（Knesset）席位：封闭式政党名单、3.25% 门槛、巴德-奥弗计票法（Bader-Ofer count）以及余票协议。"
+        },
+        {
+          "id": "block-2-daaa625612d0",
+          "text": "一个国家，一张选票，120 个席位"
+        },
+        {
+          "id": "block-3-9d877b481301",
+          "text": "议会有 120 名议员，他们是在“一个单一的全国性选区”中选举产生的。选民“选举的是政党名单，而不是议会议员”，席位按得票比例进行分配（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)）。"
+        },
+        {
+          "id": "block-4-7b5333e0e001",
+          "text": "这里没有地方选区。海法（Haifa）的选民和埃拉特（Eilat）的选民从相同的名单中进行选择，每张有效选票都进入同一个全国统一票池。每个名单在选举前提交一份排序的候选人名单，选民无法重新排列其顺序。“如果一个政党赢得 10 个席位，名单上的前 10 人就会成为议会议员”（[Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)）。对于美国读者来说，最贴近的情景是争夺全部 120 个席位的一场全区（at-large）竞选，人们投票给政党的名单而不是个人。"
+        },
+        {
+          "id": "block-5-f9e7fb8b7a80",
+          "text": "共有三十八个名单获得了 2026 年 10 月 27 日选票的资格（[Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)）。每个名单在选票上都以希伯来字母的简短代码出现；[结果页面](/results)将它们与各政党对应起来。"
+        },
+        {
+          "id": "block-6-301d162730f0",
+          "text": "3.25% 门槛"
+        },
+        {
+          "id": "block-7-14a4fa786faf",
+          "text": "一个名单需要获得至少 3.25% 的有效选票才能赢得任何席位；这“自 2015 年大选以来”一直是一项规则（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)）。该门槛已经提高过数次。对这段历史的概述有时会在最后一步给出不同的年份；一旦将法律与选举区分开来，IDI 的两种说法便达成一致：Ofer Kenig 写道议会于 2014 年 3 月通过了 3.25% 的法律（[IDI, Jan 26, 2015](https://en.idi.org.il/articles/5225)），而 Assaf Shapira 则将其定在 2015 年，即在其之下举行的第一次选举（[IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)）。"
+        },
+        {
+          "id": "block-8-f54ccd463cc1",
+          "text": "<Chart id=\"seats.threshold-history\" />"
+        },
+        {
+          "id": "block-9-7bc765093016",
+          "text": "3.25% 意味着多少张选票取决于投票率，因此确切数字只有在计票后才能得知。在 2022 年，该数字为 154,855 票，即 4,764,742 张有效选票的 3.25%（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)；[Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)）。对于拥有约 7.56 百万合资格选民的 2026 年，以色列教育中心（Center for Israel Education）估计一个名单“将需要 172,000 张选票”（[Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)）。"
+        },
+        {
+          "id": "block-10-47a475e86b3c",
+          "text": "投给未达门槛的名单的选票不会转给任何人。它们在分配任何席位之前就会从计票中排除（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)）。在 2022 年，低于门槛的名单总共获得了 417,400 票（[Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)）。IDI 将被浪费的选票比例定在大约 8.7%，创历史新高（[IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)）。Meretz 赢得了 150,793 票（3.16%），相差 4,062 票。Balad 赢得了 138,617 票（2.91%），Jewish Home 赢得了 56,775 票（1.19%）（[Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)）。Shapira 指出，两个阵营的总得票数“几乎相同”，但 Netanyahu 阵营赢得了“64 个席位的明显多数”（[IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)）。"
+        },
+        {
+          "id": "block-11-cf02ecfde1e9",
+          "text": "<Chart id=\"seats.threshold-2022\" />"
+        },
+        {
+          "id": "block-12-208d3e82ed80",
+          "text": "<WhatIf />"
+        },
+        {
+          "id": "block-13-ade4fc80c1aa",
+          "text": "席位如何计算"
+        },
+        {
+          "id": "block-14-b0bc19abf004",
+          "text": "该方法被称为巴德-奥弗法（Bader-Ofer），以议会议员 Yohanan Bader 和 Avraham Ofer 的名字命名。它起源于 1973 年出台的巴德-奥弗法案，该法案的部分目的是“加强较大的政党”（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。实际上它是汉狄法（D'Hondt method），分两个阶段计算得出（[Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)）。以下步骤使用 2022 年的数据。这里的算术根据中央选举委员会的总数重新计算，与 IDI 公布的数据相符（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)）。"
+        },
+        {
+          "id": "block-15-ef5f4f65377f",
+          "text": "1. **计算有效选票**并剔除投给门槛以下名单的选票。在 2022 年，剩余 4,347,342 票。\n2. **确定每个席位的票价。**将剩余选票除以 120。在 2022 年，一个席位耗费 36,227 票。\n3. **分配完整席位。**每个名单每满 36,227 票获得一个席位。在 2022 年，这分配了 113 个席位，剩下 7 个。\n4. **逐一分配剩余席位。**将每个名单的选票除以其已获得的席位加一。结果最高者赢得下一个席位。然后重新计算该名单的数据，并重复该过程。在此步骤中，拥有余票协议的两个名单按一个名单计算。\n5. 按相同规则在两个伙伴之间**拆分结对名单的额外席位**。"
+        },
+        {
+          "id": "block-16-0de6f38d37d1",
+          "text": "<Chart id=\"seats.quotas-2022\" />"
+        },
+        {
+          "id": "block-17-14ded3081c6b",
+          "text": "<Chart id=\"seats.leftover-2022\" />"
+        },
+        {
+          "id": "block-18-517a60abc0a5",
+          "text": "在 Likud–Religious Zionism 结对中，Likud 的数据（1,115,336 ÷ 31 = 35,978.58）击败了其伙伴的数据（516,470 ÷ 15 = 34,431.33），因此 Likud 获得了第一个额外席位。它的新数据 34,854.25 仍击败了 Religious Zionism，因此 Likud 也获得了第二个额外席位，最终获得 32 个席位。在其他结对中，Shas 获得了 Shas–UTJ 的席位，National Unity 和 Yesh Atid 各获得了一个席位（[Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)；[Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)）。"
+        },
+        {
+          "id": "block-19-0fbc813e9b4e",
+          "text": "根据第二届至第七届议会使用的最大余额法规则，七个剩余席位本应归属于七个最大的未使用余数。那将把席位分配给 Labor 和 United Torah Judaism，而不是 Likud 的第二个额外席位和 Yesh Atid 的席位（根据[中央选举委员会的总数](https://votes25.bechirot.gov.il/nationalresults)计算）。偏向大党的倾向几乎完全出现在这个阶段。IDI 的 Shapira 和 Gideon Rahat 写道，除了剩余席位之外，“大名单几乎没有任何选举优势”（[IDI, April 27, 2026](https://en.idi.org.il/articles/64020)）。"
+        },
+        {
+          "id": "block-20-bb8781350e44",
+          "text": "余票协议"
+        },
+        {
+          "id": "block-21-8b613186f714",
+          "text": "在选举前，两个名单可以签署一份余票（或共享选票）协议。在分配剩余席位时，这对名单“被视为单一名单”：它们的选票相加，然后除以它们合并后的席位数加一（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。一对名单是一个更大的名单，而该方法偏向于更大的名单，因此其获得额外席位的机会上升。只有两个名单可以一起签署协议（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。"
+        },
+        {
+          "id": "block-22-8a4d309e6a70",
+          "text": "较大的伙伴通常会获得额外席位，但并非总是如此。在 2021 年，较小的伙伴在三对结对中赢得了席位：Meretz 胜过 Labor，New Hope 胜过 Yamina，以及 Yisrael Beiteinu 胜过 Yesh Atid（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。"
+        },
+        {
+          "id": "block-23-5b2286a1dead",
+          "text": "协议仅在两个名单都通过门槛时才有效。如果一方失败，其伙伴“被视为根本没有签署协议”（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。这发生在 2022 年的 Labor 身上。当 Meretz 未达门槛时，其与 Meretz 的协议失效（[IDI, April 27, 2026](https://en.idi.org.il/articles/64020)），因此 Labor 单独竞争剩余席位且未获席位。"
+        },
+        {
+          "id": "block-24-715e97ad931a",
+          "text": "对于 2026 年，媒体报道称已签署了三份协议：[Yashar!](/parties/yashar) 与 [The Democrats](/parties/dem)，[B'Yachad](/parties/byachad) 与 [Yisrael Beiteinu](/parties/yb)，以及 [Joint List](/parties/jl) 与 [Ra'am](/parties/raam)。《耶路撒冷邮报》报道称 [Shas](/parties/shas) 和 [United Torah Judaism](/parties/utj) 预计将签署一份协议（[Sept 10, 2026](https://www.jpost.com/israel-election-2026/article-908296)）。以色列政策论坛（Israel Policy Forum）报道称 [Likud](/parties/likud) 和 [Religious Zionism–Zehut](/parties/rz) 计划签署协议（[120 Project, Sept 10 entry](https://israelpolicyforum.org/onetwenty/)）；在两党就协议达成一致一周后，第 14 频道报道称尚未签署（[Channel 14, Sept 15, 2026](https://www.c14.co.il/article/1702522)）。协议可以在 10 月 16 日之前提交（[AIJAC, Sept 14, 2026](https://aijac.org.au/australia-israel-review/a-game-of-margins/)）。临时[结果估计](/results)仅假定这三对媒体报道已签署的组合；排除了两对未确认的组合。官方备案尚未确定。"
+        },
+        {
+          "id": "block-25-6ab0424abe2a",
+          "text": "<Chart id=\"seats.agreements-2026\" />"
+        },
+        {
+          "id": "block-26-9b610ba5d1fc",
+          "text": "误读"
+        },
+        {
+          "id": "block-27-e022ca48de4a",
+          "text": "**“投给小党的票就是投给选民所在选区该小党候选人的票。”** 这里没有地方选区。每张选票都进入同一个全国计票，名单的席位归属于其排位名单前列的名字（[IDI, March 16, 2026](https://en.idi.org.il/articles/63750)；[Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)）。低于 3.25%，该选票选不出任何人。"
+        },
+        {
+          "id": "block-28-84ac307aabc0",
+          "text": "**“投给未达到门槛的名单的选票会转给其盟友。”** 它们会被废弃。余票协议无法挽救它们，因为只有在双方都通过门槛时协议才起作用（[IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)）。在 2022 年，Meretz 的 150,793 张选票对 Labor 毫无助益。"
+        },
+        {
+          "id": "block-29-9b7cb19a6f76",
+          "text": "**“门槛与席位有关。”** 它是有效选票的份额，而不是席位数量。在 2022 年，一个正好获得 154,855 票的名单以每个席位 36,227 票计算，仍然相当于整整四个席位（[Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)）。因此在那一年，没有名单能够通过门槛却只赢得一个、两个或三个席位。获得 3.69% 的 Labor 赢得了四个。获得 3.16% 的 Meretz 一个也没赢得。"
+        },
+        {
+          "id": "block-30-68857eb6b145",
+          "text": "**“最大的党组建政府。”** 重要的是能够获得初步信任的安排，而不是最大的名单。六十一个是绝对席位多数，也是一个切合实际的规划目标。2009 年选举后，Netanyahu 组建了政府，“尽管 Kadima 比 Likud 多赢了一个席位”，而 Naftali Bennett 后来领导小党派 Yamina 组建了政府（[IDI, April 27, 2026](https://en.idi.org.il/articles/64020)）。选举日之后的步骤见[组建政府](/how-it-works/forming-a-government)。"
+        },
+        {
+          "id": "block-31-9d95737038ab",
+          "text": "**“席位与选票完全对应。”** 它们很接近，但并不完全对应。门槛剔除了一些选票。剩余席位阶段略微偏向大名单和结对名单，并在 2022 年为 Likud 带来了第 32 个席位（[Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)）。"
+        }
+      ],
+      "review": {
+        "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+        "contentHash": "51ebd85dbe36a611d972d9bd7031a5f873338b7bd974931dacd7aee915fe2a29",
+        "model": "gemini-3.8-flash",
+        "verdict": "supported",
+        "blocks": [
+          {
+            "id": "block-0-b25c97e728d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-1-9acf4b523e2f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-2-daaa625612d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-3-9d877b481301",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-4-7b5333e0e001",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-5-f9e7fb8b7a80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-6-301d162730f0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-7-14a4fa786faf",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-8-f54ccd463cc1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-9-7bc765093016",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-10-47a475e86b3c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-11-cf02ecfde1e9",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-12-208d3e82ed80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-13-ade4fc80c1aa",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-14-b0bc19abf004",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-15-ef5f4f65377f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-16-0de6f38d37d1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-17-14ded3081c6b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-18-517a60abc0a5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-19-0fbc813e9b4e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-20-bb8781350e44",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-21-8b613186f714",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-22-8a4d309e6a70",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-23-5b2286a1dead",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-24-715e97ad931a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-25-6ab0424abe2a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-26-9b610ba5d1fc",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-27-e022ca48de4a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-28-84ac307aabc0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-29-9b7cb19a6f76",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-30-68857eb6b145",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-31-9d95737038ab",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          }
+        ]
+      }
     }
   ]
 }

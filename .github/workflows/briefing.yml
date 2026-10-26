@@ -11,7 +11,7 @@ on:
       task:
         description: "Bounded verification task"
         type: choice
-        options: [briefing, reference]
+        options: [briefing, reference, reference_batch]
         default: briefing
       reference_id:
         description: "Registered reference ID (reference task only)"
@@ -22,6 +22,22 @@ on:
         type: choice
         options: [he, ar, fa, de, fr, zh]
         default: he
+      batch_ids:
+        description: "Registered IDs, comma-separated, or all"
+        type: string
+        default: all
+      batch_langs:
+        description: "Closed locale list, comma-separated"
+        type: string
+        default: he,ar,fa,de,fr,zh
+      max_editions:
+        description: "Maximum pending editions to attempt (1–132)"
+        type: number
+        default: 12
+      max_minutes:
+        description: "Overall batch cap in minutes (10–120)"
+        type: number
+        default: 60
       dry_run:
         description: "Verify captured article claims and translations without publishing or notifying"
         type: boolean
@@ -42,7 +58,7 @@ permissions:
 
 jobs:
   brief:
-    if: github.event_name != 'workflow_dispatch' || inputs.task != 'reference'
+    if: github.event_name != 'workflow_dispatch' || !startsWith(inputs.task, 'reference')
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -93,7 +109,7 @@ jobs:
   # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
     needs: brief
-    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && inputs.task != 'reference'
+    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference')
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -181,5 +197,38 @@ jobs:
           path: |
             ${{ runner.temp }}/reference-validated/*.json
             ${{ runner.temp }}/reference-usage.json
+          if-no-files-found: error
+          retention-days: 7
+
+  reference_batch:
+    if: github.event_name == 'workflow_dispatch' && inputs.task == 'reference_batch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    permissions:
+      contents: read
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      BATCH_IDS: ${{ inputs.batch_ids }}
+      BATCH_LANGS: ${{ inputs.batch_langs }}
+      MAX_EDITIONS: ${{ inputs.max_editions }}
+      MAX_MINUTES: ${{ inputs.max_minutes }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - name: Generate bounded validated editions
+        id: batch
+        run: npx tsx scripts/reference/batch.mts --ids "$BATCH_IDS" --langs "$BATCH_LANGS" --max-editions "$MAX_EDITIONS" --max-minutes "$MAX_MINUTES" --out "$RUNNER_TEMP/reference-batch"
+      - name: Retain validated documents and safe failure summary
+        if: steps.batch.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-batch-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/reference-batch/validated/*.json
+            ${{ runner.temp }}/reference-batch/summary.json
           if-no-files-found: error
           retention-days: 7

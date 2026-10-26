@@ -14,7 +14,7 @@ export const isRtl = (lang: Lang) => RTL_LANGS.includes(lang as ToolLang);
 export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn", de: "de-DE", fr: "fr-FR", zh: "zh-CN" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
-export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results", "/government", "/elections", "/elections/[id]", "/parliament", "/policies", "/policies/[id]", "/changes", "/reference", "/issues", "/issues/[slug]", "/communities", "/communities/[slug]", "/how-it-works", "/how-it-works/[slug]", "/about", "/american-lens", "/news", "/news/[date]", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe"] as const;
+export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results", "/government", "/elections", "/elections/[id]", "/parliament", "/policies", "/policies/[id]", "/changes", "/reference", "/issues", "/issues/[slug]", "/communities", "/communities/[slug]", "/how-it-works", "/how-it-works/[slug]", "/about", "/american-lens", "/search", "/news", "/news/[date]", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe"] as const;
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of
