@@ -1,6 +1,6 @@
 # Election lifecycle release state
 
-October 26, 2026. All roadmap waves implemented and released. Automated negotiation extraction is externally blocked by the configured provider returning HTTP402 RESOURCE_EXHAUSTED; published seats/history and safe schedules remain available. [Plan](PLAN.md) · [source and operator runbook](../../../scripts/election-lifecycle/README.md).
+October 26, 2026. All roadmap waves implemented and released. Provider billing was restored and actual production extraction verified on October 26 at 18:46 UTC; qualified article health recovered. Published seats/history and safe schedules remain available. [Plan](PLAN.md) · [source and operator runbook](../../../scripts/election-lifecycle/README.md).
 
 ## Behavior and scope
 
@@ -59,8 +59,12 @@ All destinations are exactly https://www.israelielection.org/api/election-lifecy
 
 ## External provider action and recovery
 
-The fixed real-article extraction probe in preview and production confirms a configured Gemini gemini-3.8-flash provider request returns 402 RESOURCE_EXHAUSTED. This is an external billing/quota failure, not a successful empty extraction, unavailable article or schema bug. Model/key/billing configuration was not silently changed. User provider-path decision is pending; current provider is retained. Automatic negotiation publication cannot be described as operational until this is resolved. Authoritative government feeds also retain the distinct access limits listed above. Safe workers retry within their budgets and hide affected claims; official result acquisition and published history do not depend on model extraction.
+The fixed real-article extraction probe in preview and production confirms a configured Gemini gemini-3.8-flash provider request returns 402 RESOURCE_EXHAUSTED. This is an external billing/quota failure, not a successful empty extraction, unavailable article or schema bug. Model/key/billing configuration was not silently changed. The original provider/key were retained; billing recovery is verified below. Authoritative government feeds also retain the distinct access limits listed above. Safe workers retry within their budgets and hide affected claims; official result acquisition and published history do not depend on model extraction.
 
 After restoring the approved provider account/quota, publish signed body {"mode":"extraction_probe"} through QStash to the exact canonical worker URL. Expected result: status accepted, stage extraction, HTTP 200, writes0; zero accepted events is valid for this historical real article. Then publish {"mode":"formation"}, verify article health and immutable capture/publication behavior, and recheck source probe {"mode":"probe"}. Use existing server-only QStash credentials; never paste keys into commands or public logs. An alternative provider/model requires the user's chosen path and compatibility verification.
 
 Rollback: pause the three lifecycle schedules; disable the three lifecycle flags and redeploy, or restore dpl_BXbojmJuvW7MuZHWRdkQHjkQftpo (129d931). Preserve immutable published records/correction history and the original live-forecast service. Restoring a prior Vercel deployment can disable automatic domain assignment; explicitly promote the intended release and verify autoAssignCustomDomains before returning to unattended Git deployments.
+
+## Provider recovery · October 26, 18:46 UTC
+
+After the user restored Gemini payment, a fresh signed production extraction_probe returned status accepted, provider HTTP 200, gemini-3.8-flash, 1,291 real article characters, zero validated events and writes0. The signed formation retry returned200/published. Public lifecycleAPI verified all three previously failing Democrats/YB article records healthy at18:46:18Z with no provider diagnostics; the same coherent120-seat revision, one saved seat snapshot, zero events and null clock were retained. Original live-forecast API remained200/current at18:46:00Z. No key, model, environment or application code change/redeployment was needed for recovery. Automatic extraction can run again on available qualified sources; the distinct Presidency/Knesset/currentCEC/Byachad access limitations above remain.
