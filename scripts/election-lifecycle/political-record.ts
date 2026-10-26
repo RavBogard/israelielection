@@ -36,6 +36,7 @@ async function main() {
           "001-political-record.sql",
           "002-subscriptions.sql",
           "003-platform-workspaces.sql",
+          "004-distribution.sql",
         ].map((file) => readFile(path.resolve("db", file), "utf8")),
       )
     ).join("\n");

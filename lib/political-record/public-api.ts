@@ -1,3 +1,6 @@
+import { projectPublication } from "./publications";
+import { revalidatedJson } from "./http-cache";
+import { EMAIL_LOCALES, type EmailLocale } from "./email";
 import { getWorkspaceRegistry } from "./workspace-server";
 import { projectPublic as publicRecord } from "./public-projection";
 import { createHmac, timingSafeEqual } from "node:crypto";
@@ -30,6 +33,7 @@ type Cursor = {
   after: string;
   basis: "postgres" | "bridge";
   limit: number;
+  locale?: EmailLocale;
 };
 export const API_RIGHTS = {
   structuredData: "attribution_and_source_terms_required",
@@ -140,6 +144,12 @@ export async function publicApi(request: Request, collection: string) {
         workspace.registry?.currentElectionId ??
         currentElection().id,
       view = url.searchParams.get("view") ?? "latest";
+    const locale = url.searchParams.get("lang") ?? "en";
+    if (!EMAIL_LOCALES.includes(locale as EmailLocale))
+      return Response.json(
+        { error: "invalid_locale" },
+        { status: 400, headers },
+      );
     if (
       !elections.some((election) => election.id === electionId) ||
       !["history", "latest"].includes(view)
@@ -150,9 +160,20 @@ export async function publicApi(request: Request, collection: string) {
       );
     const limit = Math.max(
       1,
-      Math.min(100, Number(url.searchParams.get("limit") ?? 50)),
+      Math.min(
+        100,
+        Number(
+          url.searchParams.get("limit") ??
+            (collection === "publications" ? 10 : 50),
+        ),
+      ),
     );
     if (!Number.isInteger(limit))
+      return Response.json(
+        { error: "invalid_limit" },
+        { status: 400, headers },
+      );
+    if (collection === "publications" && limit > 20)
       return Response.json(
         { error: "invalid_limit" },
         { status: 400, headers },
@@ -164,7 +185,8 @@ export async function publicApi(request: Request, collection: string) {
       (cursor.collection !== collection ||
         cursor.electionId !== electionId ||
         cursor.view !== view ||
-        cursor.limit !== limit)
+        cursor.limit !== limit ||
+        (cursor.locale ?? "en") !== locale)
     )
       throw new Error("invalid_cursor");
     const repository =
@@ -195,48 +217,59 @@ export async function publicApi(request: Request, collection: string) {
           after: page.after,
           basis: "postgres",
           limit,
+          locale: locale as EmailLocale,
         };
         const current =
           collection === "events" && view === "latest"
             ? await getElectionLifecycle({ electionId })
             : null;
-        const records = page.records.map((record) => {
-          if (view === "history") return { ...record, currentState: false };
-          if (collection === "events") {
-            const event = (
-              record.payload as { event?: Partial<PoliticalEvent> }
-            ).event;
-            const currentEvent = current?.politics.events.find(
-              (item) =>
-                item.id === event?.id && item.revision === event?.revision,
-            );
-            const visible =
-              record.status === "confirmed" &&
-              !!event?.id &&
-              !!currentEvent &&
-              Array.isArray(event.sources) &&
-              event.sources.length > 0 &&
-              sourceBinding(event.sources) ===
-                sourceBinding(currentEvent.sources);
-            return visible
-              ? { ...record, currentState: true }
-              : { ...record, payload: { withheld: true }, currentState: false };
-          }
-          // Publication promotion is a separate source/edition gate; archive metadata never claims a live assertion.
-          return {
-            ...record,
-            payload: {
-              recordRevisionIds:
-                (record.payload as { recordRevisionIds?: unknown })
-                  .recordRevisionIds ?? [],
-              currentTextUnavailable: true,
-            },
-            currentState: false,
-          };
-        });
-        return Response.json(
+        const records = await Promise.all(
+          page.records.map(async (record) => {
+            if (collection === "publications")
+              return projectPublication(
+                repository,
+                record,
+                locale as EmailLocale,
+                new Date().toISOString(),
+                view as "latest" | "history",
+              );
+            if (view === "history") return { ...record, currentState: false };
+            if (collection === "events") {
+              const event = (
+                record.payload as { event?: Partial<PoliticalEvent> }
+              ).event;
+              const currentEvent = current?.politics.events.find(
+                (item) =>
+                  item.id === event?.id && item.revision === event?.revision,
+              );
+              const visible =
+                record.status === "confirmed" &&
+                !!event?.id &&
+                !!currentEvent &&
+                Array.isArray(event.sources) &&
+                event.sources.length > 0 &&
+                sourceBinding(event.sources) ===
+                  sourceBinding(currentEvent.sources);
+              return visible
+                ? { ...record, currentState: true }
+                : {
+                    ...record,
+                    payload: { withheld: true },
+                    currentState: false,
+                  };
+            }
+            return {
+              ...record,
+              payload: { withheld: true },
+              currentState: false,
+            };
+          }),
+        );
+        return revalidatedJson(
+          request,
           {
             schemaVersion: 2,
+            locale,
             electionId,
             storage: "postgres",
             historyReady: true,
@@ -249,7 +282,7 @@ export async function publicApi(request: Request, collection: string) {
             records: publicRecord(records),
             rights: API_RIGHTS,
           },
-          { headers },
+          headers,
         );
       } finally {
         try {
@@ -321,10 +354,13 @@ export async function publicApi(request: Request, collection: string) {
       after: String(after + limit),
       basis: "bridge",
       limit,
+      locale: locale as EmailLocale,
     };
-    return Response.json(
+    return revalidatedJson(
+      request,
       {
         schemaVersion: 2,
+        locale,
         electionId,
         storage:
           collection === "events" ? "redis_current_only" : "reference_registry",
@@ -335,7 +371,7 @@ export async function publicApi(request: Request, collection: string) {
         records: publicRecord(records.slice(after, after + limit)),
         rights: API_RIGHTS,
       },
-      { headers },
+      headers,
     );
   } catch (error) {
     unstable_rethrow(error);

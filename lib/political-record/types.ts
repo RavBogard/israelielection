@@ -7,6 +7,7 @@ export type RecordKind =
   | "claim"
   | "event"
   | "snapshot"
+  | "publication_review"
   | "publication"
   | "edition"
   | "source_health"

@@ -109,6 +109,8 @@ export async function subscriptionRoute(
           data.locale,
           data.topics,
           data.consent,
+          undefined,
+          { follows: data.follows, delivery: data.delivery },
         ),
         { status: 202, headers },
       );
@@ -140,8 +142,16 @@ export async function subscriptionRoute(
           ? await service.unsubscribe(data.token)
           : await service.preferences(
               data.token,
-              data.locale !== undefined || data.topics !== undefined
-                ? { locale: data.locale, topics: data.topics }
+              data.locale !== undefined ||
+                data.topics !== undefined ||
+                data.follows !== undefined ||
+                data.delivery !== undefined
+                ? {
+                    locale: data.locale,
+                    topics: data.topics,
+                    follows: data.follows,
+                    delivery: data.delivery,
+                  }
                 : undefined,
             );
     return Response.json(result, { headers });

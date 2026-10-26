@@ -49,7 +49,7 @@ npx tsx scripts/political-platform/run.ts collect --run --target=preview
 npx tsx scripts/political-platform/run.ts deliver --run --target=preview
 ```
 
-The schema command covers001,002 and003. CLI commands refuse production targets/environments and emit only counts/status, never keys, addresses, tokens, raw provider messages or source assertions. Signed production worker modes remain off until reviewed configuration/activation; these commands do not authorize production migrations.
+The schema command covers001 through004. CLI commands refuse production targets/environments and emit only counts/status, never keys, addresses, tokens, raw provider messages or source assertions. Signed production worker modes remain off until reviewed configuration/activation; these commands do not authorize production migrations.
 
 For a later real PostgreSQL backup/restore rehearsal, use separately restricted libpq service entries (no credentials in command text), a private destination and an isolated restore database:
 
@@ -86,3 +86,38 @@ npx tsx scripts/political-platform/run.ts workspaces --run --target=preview
 All new flags remain unset/off. The site origin is deployment configuration, never caller input. Preview protection bypass is forwarded only in preview and never returned. Local/PGlite rehearsal uses `captureElectionAnnouncement(..., rehearsal=true)` and separate rehearsal pointer; production rejects rehearsal activation. Tests exercise synthetic27→28 succession, retained dynamic historical workspace pins, missing locale markers, private capture outage, idempotence and CAS conflicts. These are executable local rehearsals, not authentic future announcements or production readiness proof. No schedules or production pointers were changed. Read-only registry outages expose unavailable state and retain a process last-good registry when present; a cold enabled outage never silently claims26 as current.
 
 Current bounded limits are explicit: registry/projector queries disclose incomplete windows rather than certifying an unbounded history, route probes examine at most50 historical routes per candidate, and automatic collection requires signed invocations to be operationally scheduled later. A draft basic edition has no automatically qualified future party list, exit calibration, CEC finality contract, count model, or live formation claims. Public v2 rejects unqualified future party entities. Existing API bulk archives/embeds, topic follows and public publication-text promotion remain follow-on work.
+
+
+## Distribution, reviewed editions and projected archives
+
+Migration004 adds nullable private `follows`/`delivery_channels` and the append-only publication-review kind. Existing subscribers retain `preferenceVersion:1` defaults derived from their topics; explicit typed preferences return version2. Subscribe/preferences accept `follows:{parties,issues,places}` (known IDs, max20 each) and `delivery:{dailyDigest,majorEvents,corrections}`. Follows-only subscriptions can select `topics:[]`; no selections are inferred from browsing. Locale and consent remain explicit. Public `/api/subscriptions/catalog?kind=party|issue|place&q=...&lang=...` returns at most50 reference IDs/labels. Catalog labels currently disclose an English fallback (`labelLocale/sourceLocale:en`) rather than claiming unavailable translations. Human bearer URLs use locale-prefixed pages and fragments; provider one-click unsubscribe remains a root API POST.
+
+Publication distribution uses `major_event`, `daily_digest` with explicit `digestDate`, or `correction` with an exact `correctsRevisionId`; legacy `digest` remains understood. Topic/follow relevance and channel consent are rechecked immediately before sending. A correction may reach a still-consented previous recipient even after their followed topic changed; disabling corrections or unsubscribing suppresses it. A subscriber/day advisory lock and prior queued/sent receipt cap daily digests at one per digest date. This does not add any acquisition or email schedules. Missing translations remain resumable per locale and do not block a ready edition. Single-session PGlite tests do not prove production concurrent-lock behavior.
+
+`storeReviewedPublicationEdition` is a private callable authoring boundary: primary exact-current evidence (max10 facts), retained source capture receipts, matching publication/content/locale/fact hashes, a separate independent review run, and a real private review capture are required. It writes an edition and deterministic outbox intents atomically. A revoked review run cannot be reused to reactivate text. This module validates a review artifact; it does not call or bill a new model/provider. The existing generation/review pipeline must supply an actual independent approved artifact. No reviewed production publications or mail sends were created during development.
+
+```
+npx tsx scripts/political-platform/publication.ts
+npx tsx scripts/political-platform/publication.ts --run --target=preview --input=C:\private\reviewed-edition.json
+```
+
+The private JSON artifact has `publicationRevisionId`, `locale`, `content:{subject,text}` and `review:{decision,publicationRevisionId,locale,contentHash,factRevisionIds,generationRunId,reviewRunId,provider,model}`. Subject/text are generated publication copy, never raw source bodies. The CLI is preview/development only, refuses production, and prints only the resulting safe revision. The actual private archive and source qualifications must be configured first. Do not fabricate an approved review to clear readiness.
+
+`/api/v2/publications?lang=en|he|ar|fa|de|fr|zh` returns text only for the matching reviewed exact edition. Current requests recheck source visibility and fact/review/edition revisions. Historical previously reviewed text remains labeled with publication/dependency correction or withdrawal state, never as current support. Unreviewed/missing translations retain metadata with `currentTextUnavailable:true`. Good editions can publish independently. Publication page size is bounded20 (default10). Public exports use explicit per-kind allowlists; no raw captures, source quotes, operator details, review prompts, provider responses or subscriber data are exported. Delivery additionally pins the queued edition/review revisions and suppresses the email if either changes before send.
+
+Successful v2 responses have content-derived ETags after current eligibility checks and `max-age=0,must-revalidate`; errors remain uncached. A 304 cannot preserve a withdrawn claim. Public bulk parts at `/api/v2/bulk/{elections|entities|events|publications}?format=manifest&view=history` reuse exactly the same rate-limited, qualified projection. Each part includes fixed cursor/as-of identity, rights, provenance IDs, byte length, SHA256, a download URL and next-part manifest. Downloads are NDJSON. Historical correction labels are revalidated; if visibility/correction labels change, an earlier manifest digest returns409 rather than different bytes. These are paginated archive parts, not a claim of complete history when `historyReady:false`.
+
+```
+# Dry-run by default; use an empty private/local destination for an actual public projected export.
+npx tsx scripts/political-platform/export.ts
+npx tsx scripts/political-platform/export.ts --run --collection=events --election=il-knesset-26 --out=C:\private\public-archive
+```
+
+Set `PUBLIC_ARCHIVE_SITE_ORIGIN` to the intended public HTTPS site. The script follows only same-origin/same-collection manifest/download links, verifies each checksum and writes a complete manifest only after all parts succeed. Rate limits, source unavailability, changed exports or errors stop with an incomplete artifact and require a fresh-directory retry. No private headers, service keys or contact records are included. Full live incremental/bulk storage scaling and monitored incident recovery remain later operational work. None of these capabilities enables production flags or provisions a service.
+
+
+### Delivery activation proposal (not scheduled)
+
+After PostgreSQL/private archive, verified sender domain, suppression webhook, consent copy, reviewed editions and private delivery gates pass, configure a **separate signed `platform_deliver` QStash delivery every minute**. Do not reuse or change the15 minute/3 hour source-acquisition cadence. This worker only reads stored facts/editions and private pending mail. Confirmations have priority over corrections, then ordinary publication emails, so a digest backlog does not delay verification until the next3 hour source cycle. Current bounded throughput is at most5 sends per invocation (7200/day at one minute), with fanout/checkpoint resumption and the provider idempotency window retained. Larger batches/cadence require a separate cost and provider-rate review; do not silently remove those bounds.
+
+No schedule was created. First rehearse a synthetic opted-in test recipient and authenticated provider webhook in preview, verify confirmation/unsubscribe/correction suppression and repeated delivery idempotence, then inspect actual costs before production activation. No contacts or test mail are authorized by this runbook alone. A missing worker schedule is an explicit blocker for subscription activation; do not expose an apparently working opt-in form while confirmations wait indefinitely. Existing source collection and daily stored-data briefing cadence remain unchanged.

@@ -1,3 +1,8 @@
+import { collectCbs } from "./cbs";
+import { storeReviewedPublicationEdition } from "./publications";
+import { recordHash } from "./hash";
+import { makeCapture } from "./records";
+import { contentHash, type CaptureArchive } from "./captures";
 import { beforeAll, afterAll, afterEach, expect, it, vi } from "vitest";
 import { PGlite } from "@electric-sql/pglite";
 import { readFile } from "node:fs/promises";
@@ -13,6 +18,18 @@ import {
 } from "./email";
 import { PostgresPoliticalRecords, type SqlPool } from "./postgres";
 import { makeRecord, publicationIntent } from "./records";
+const fixtureArchive: CaptureArchive = {
+  put: async (source, body, mediaType) =>
+    makeCapture({
+      sourceRevisionId: source.revisionId,
+      contentSha256: contentHash(body),
+      storageKey: `private/${contentHash(body)}`,
+      mediaType,
+      byteLength: body.length,
+      observedAt: source.observedAt,
+    }),
+  read: async () => new Uint8Array(),
+};
 let db: PGlite,
   service: SubscriptionService,
   repository: PostgresPoliticalRecords;
@@ -28,6 +45,7 @@ beforeAll(async () => {
   await db.exec(
     await readFile(path.resolve("db/002-subscriptions.sql"), "utf8"),
   );
+  await db.exec(await readFile("db/004-distribution.sql", "utf8"));
   const pool: SqlPool = {
     connect: async () => ({
       query: async (text, values) => {
@@ -41,6 +59,17 @@ beforeAll(async () => {
     end: async () => {},
   };
   repository = new PostgresPoliticalRecords(pool);
+  const raw = await readFile(
+    "lib/political-record/fixtures/cbs-price-120010.json",
+    "utf8",
+  );
+  await collectCbs(
+    repository,
+    fixtureArchive,
+    now,
+    async () =>
+      new Response(raw, { headers: { "content-type": "application/json" } }),
+  );
   service = new SubscriptionService(
     pool,
     new PrivateCrypto(Buffer.alloc(32, 1), "test-secret-".repeat(4)),
@@ -69,7 +98,10 @@ async function subscribeConfirmed(email: string) {
   const token = new URLSearchParams(new URL(url).hash.slice(1)).get("token")!;
   return { token, confirmed: await service.confirm(token, now) };
 }
-async function publication(suffix: string) {
+async function publication(
+  suffix: string,
+  data: Record<string, unknown> = { topics: ["formation"] },
+) {
   const base = {
     electionId: "il-knesset-26",
     effectiveAt: null,
@@ -83,11 +115,16 @@ async function publication(suffix: string) {
       parserVersion: "cbs-price-v1",
     },
   };
+  const template = (
+    await repository.latest({ kind: "indicator_observation", globalOnly: true })
+  ).records.find((record) => record.recordId.startsWith("indicator:cbs:"))!;
   const fact = makeRecord({
     ...base,
+    provenance: template.provenance,
+    electionId: null,
     recordId: `synthetic-test-fact:${suffix}`,
     kind: "indicator_observation",
-    payload: { synthetic: true },
+    payload: template.payload,
   });
   const pub = makeRecord({
     ...base,
@@ -97,30 +134,38 @@ async function publication(suffix: string) {
       recordRevisionIds: [fact.revisionId],
       category: "fact_change",
       titleKey: "test",
-      data: { topics: ["formation"] },
-    },
-  });
-  const edition = makeRecord({
-    ...base,
-    recordId: `synthetic-edition:${suffix}:en`,
-    kind: "edition",
-    payload: {
-      publicationRevisionId: pub.revisionId,
-      translatedFromRevisionId: pub.revisionId,
-      locale: "en",
-      state: "ready",
-      content: {
-        subject: "Synthetic fixture update",
-        text: "This is a test fixture, not a political assertion.",
-      },
+      data,
     },
   });
   await repository.append({
-    records: [fact, pub, edition],
+    records: [fact, pub],
     sources: [],
     captures: [],
     outbox: [publicationIntent(pub, "publication_committed")],
   });
+  const content = {
+    subject: "Synthetic fixture update",
+    text: "This is a test fixture, not a political assertion.",
+  };
+  await storeReviewedPublicationEdition(
+    repository,
+    pub.revisionId,
+    "en",
+    content,
+    {
+      decision: "approve",
+      publicationRevisionId: pub.revisionId,
+      locale: "en",
+      contentHash: recordHash(content),
+      factRevisionIds: [fact.revisionId],
+      generationRunId: "generation-test",
+      reviewRunId: "review-test",
+      provider: "fixture",
+      model: "fixture",
+    },
+    fixtureArchive,
+    now,
+  );
   return { fact, pub };
 }
 async function fanout(revision: string) {
@@ -325,4 +370,109 @@ it("confirmation landing follows the selected language with a fragment-only bear
     url = new URL(link);
   expect(url.search).toBe("");
   expect(url.hash).toContain("token=");
+});
+
+it("follows-only preferences are verified, can change independently and suppress queued alerts", async () => {
+  const email = "follow-only@example.org",
+    channels = { dailyDigest: false, majorEvents: true, corrections: true };
+  mail.mockResolvedValue({ id: "typed-follow-confirm" });
+  await service.subscribe(email, "en", [], true, now, {
+    follows: { parties: ["likud"], issues: ["economy"], places: ["3000"] },
+    delivery: channels,
+  });
+  await service.deliver(now);
+  const link = mail.mock.calls
+    .find(([message]) => message.to === email)![0]
+    .text.match(/https:\/\/example\.org\/subscriptions\/confirm#token=\S+/)![0];
+  const confirmed = await service.confirm(
+    new URLSearchParams(new URL(link).hash.slice(1)).get("token")!,
+    now,
+  );
+  expect(confirmed.preferenceVersion).toBe(2);
+  expect(confirmed.follows.parties).toEqual(["likud"]);
+  const { pub } = await publication("follow-alert", {
+    topics: [],
+    delivery: "major_event",
+    follows: { parties: ["likud"], issues: [], places: [] },
+  });
+  await fanout(pub.revisionId);
+  await service.preferences(
+    confirmed.preferencesToken,
+    {
+      locale: "en",
+      topics: [],
+      follows: { parties: ["likud"], issues: [], places: [] },
+      delivery: { ...channels, majorEvents: false },
+    },
+    later,
+  );
+  mail.mockClear();
+  await service.deliver(later);
+  expect(mail.mock.calls.some(([message]) => message.to === email)).toBe(false);
+});
+it("requires the queued edition and independent review to remain current before delivery", async () => {
+  const email = "edition-correction@example.org";
+  await subscribeConfirmed(email);
+  const { pub } = await publication("edition-changed");
+  await fanout(pub.revisionId);
+  const edition = await repository.getLatest(
+    `publication-edition:${pub.revisionId}:en`,
+  );
+  const withdrawal = makeRecord({
+    ...edition!,
+    status: "withdrawn",
+    previousRevisionId: edition!.revisionId,
+    observedAt: later,
+  });
+  await repository.append({
+    records: [withdrawal],
+    sources: [],
+    captures: [],
+    outbox: [],
+  });
+  mail.mockClear();
+  await service.deliver(later);
+  expect(mail.mock.calls.some(([message]) => message.to === email)).toBe(false);
+});
+it("queues at most one digest per date while a major alert remains a separate channel", async () => {
+  const email = "daily-only@example.org";
+  mail.mockResolvedValue({ id: "daily-confirm" });
+  await service.subscribe(email, "en", ["digest"], true, now, {
+    delivery: { dailyDigest: true, majorEvents: false, corrections: true },
+  });
+  await service.deliver(now);
+  const link = mail.mock.calls
+    .find(([message]) => message.to === email)![0]
+    .text.match(/https:\/\/example\.org\/subscriptions\/confirm#token=\S+/)![0];
+  await service.confirm(
+    new URLSearchParams(new URL(link).hash.slice(1)).get("token")!,
+    now,
+  );
+  for (const suffix of ["daily-first", "daily-second"]) {
+    const { pub } = await publication(suffix, {
+      topics: ["digest"],
+      delivery: "daily_digest",
+      digestDate: "2026-11-04",
+    });
+    for (let attempt = 0; attempt < 16; attempt++)
+      await service.queuePublication(pub.revisionId, later);
+  }
+  const rows = await db.query<{ count: number }>(
+    "SELECT count(*)::int AS count FROM political_private.deliveries d JOIN political_private.subscribers s ON s.id=d.subscriber_id WHERE s.email_hash=$1 AND d.kind='publication'",
+    [
+      new PrivateCrypto(Buffer.alloc(32, 1), "test-secret-".repeat(4)).hash(
+        `email:${email}`,
+      ),
+    ],
+  );
+  expect(rows.rows[0].count).toBe(1);
+});
+
+it("prioritizes a new confirmation over an older queued publication", async () => {
+  const email = "priority-confirm@example.org";
+  mail.mockResolvedValue({ id: "priority-confirm" });
+  await service.subscribe(email, "en", ["formation"], true, now);
+  mail.mockClear();
+  await service.deliver(later, 1);
+  expect(mail.mock.calls[0][0].to).toBe(email);
 });

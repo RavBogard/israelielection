@@ -86,21 +86,21 @@ it("requires one authoritative non-proposed term/date and rejects tests or confl
   ).toThrow();
   expect(() =>
     parseElectionAnnouncement(
-      "Test environment. Elections to Knesset 27 on 2027-02-02.",
+      "Test environment. Elections to Knesset 27 will be held on 2027-02-02.",
       url,
       now,
     ),
   ).toThrow("test_environment");
   expect(() =>
     parseElectionAnnouncement(
-      "Elections to Knesset 27 on 2027-02-02. Elections to Knesset 27 on 2027-03-03.",
+      "Elections to Knesset 27 will be held on 2027-02-02. Elections to Knesset 27 will be held on 2027-03-03.",
       url,
       now,
     ),
   ).toThrow("conflict");
   expect(() =>
     parseElectionAnnouncement(
-      "Elections to Knesset 27 on 2027-02-02.",
+      "Elections to Knesset 27 will be held on 2027-02-02.",
       "https://untrusted.example/elections",
       now,
     ),
@@ -113,7 +113,7 @@ it("stages a basic date-only workspace without inventing a closing time or enabl
     archive,
     now,
     false,
-    async () => "Elections to the 27th Knesset on 2027-02-02.",
+    async () => "Elections to the 27th Knesset will be held on 2027-02-02.",
   );
   expect(
     (
@@ -123,7 +123,7 @@ it("stages a basic date-only workspace without inventing a closing time or enabl
         archive,
         now,
         false,
-        async () => "Elections to the 27th Knesset on 2027-02-02.",
+        async () => "Elections to the 27th Knesset will be held on 2027-02-02.",
       )
     ).revisionId,
   ).toBe(notice.revisionId);
@@ -192,7 +192,7 @@ it("rapid repeat edition preserves the earlier dynamic archive and pins", async 
     archive,
     now,
     false,
-    async () => "Elections to Knesset 28 on 2027-08-08.",
+    async () => "Elections to Knesset 28 will be held on 2027-08-08.",
   );
   await stageAnnouncedWorkspaces(repo, now);
   const config = await repo.getLatest("workspace:il-knesset-28");
@@ -226,7 +226,7 @@ it("synthetic rehearsal uses a separate pointer and production rejects it", asyn
     archive,
     now,
     true,
-    async () => "Elections to Knesset 29 on 2028-03-03.",
+    async () => "Elections to Knesset 29 will be held on 2028-03-03.",
   );
   await stageAnnouncedWorkspaces(repo, now, true);
   await probeWorkspaceReadiness(
@@ -247,4 +247,17 @@ it("synthetic rehearsal uses a separate pointer and production rejects it", asyn
   await expect(activateReadyWorkspace(repo, now, true)).rejects.toThrow(
     "rehearsal_forbidden",
   );
+});
+
+it("rejects negated, cancelled, reported and non-operative date pairs", () => {
+  for (const body of [
+    "Elections to Knesset 27 will not be held on 2028-01-01.",
+    "Elections to Knesset 27 scheduled for 2028-01-01 have been cancelled.",
+    "Reports say elections to Knesset 27 will be held on 2028-01-01.",
+    "Elections to Knesset 27 on 2028-01-01.",
+    "הבחירות לכנסת ה27 לא יתקיימו ב2028-01-01.",
+    "הבחירות לכנסת ה27 נדחו ויתקיימו ב2028-01-01.",
+  ]) {
+    expect(() => parseElectionAnnouncement(body, url, now)).toThrow();
+  }
 });

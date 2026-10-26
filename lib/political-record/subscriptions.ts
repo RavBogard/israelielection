@@ -1,3 +1,11 @@
+import {
+  selectedDistribution,
+  matchesDistribution,
+  publicationDistribution,
+  validateFollows,
+  type Follows,
+  type DeliveryChannels,
+} from "./follows";
 import { randomUUID } from "node:crypto";
 import { Pool } from "pg";
 import type { SqlPool, SqlSession } from "./postgres";
@@ -22,6 +30,9 @@ type Preference = {
   locale: EmailLocale;
   topics: string[];
   consentVersion: string;
+  preferenceVersion?: number;
+  follows?: Follows;
+  delivery?: DeliveryChannels;
 };
 type DeliveryPayload = {
   subject: string;
@@ -30,16 +41,21 @@ type DeliveryPayload = {
   tokenHash?: string;
   locale?: EmailLocale;
   topics?: string[];
+  distribution?: ReturnType<typeof publicationDistribution>;
+  previousRecipient?: boolean;
+  editionRevisionId?: string;
+  reviewRevisionId?: string;
 };
 export function validatePreferences(
   locale: unknown,
   topics: unknown,
+  allowEmpty = false,
 ): { locale: EmailLocale; topics: string[] } {
   if (
     typeof locale !== "string" ||
     !EMAIL_LOCALES.includes(locale as EmailLocale) ||
     !Array.isArray(topics) ||
-    !topics.length ||
+    (!topics.length && !allowEmpty) ||
     topics.length > 4 ||
     topics.some(
       (topic) =>
@@ -133,8 +149,27 @@ export class SubscriptionService {
     topics: unknown,
     consent: unknown,
     now = new Date().toISOString(),
+    extension?: { follows?: unknown; delivery?: unknown },
   ) {
-    const preferences = validatePreferences(locale, topics);
+    if (extension?.follows === null || extension?.delivery === null)
+      throw new Error("invalid_preferences");
+    const follows =
+      extension?.follows === undefined
+        ? undefined
+        : validateFollows(extension.follows);
+    const base = validatePreferences(
+      locale,
+      topics,
+      !!follows && Object.values(follows).some((ids) => ids.length),
+    );
+    const preferences = {
+      ...base,
+      ...selectedDistribution(
+        base.topics,
+        extension?.follows,
+        extension?.delivery,
+      ),
+    };
     if (
       consent !== true ||
       typeof email !== "string" ||
@@ -231,7 +266,20 @@ export class SubscriptionService {
       const preferences = this.crypto.decrypt<Preference>(
         String(token.payload_ciphertext),
       );
-      validatePreferences(preferences.locale, preferences.topics);
+      validatePreferences(
+        preferences.locale,
+        preferences.topics,
+        !!preferences.follows &&
+          Object.values(preferences.follows).some((ids) => ids.length),
+      );
+      const distribution = {
+        ...selectedDistribution(
+          preferences.topics,
+          preferences.follows,
+          preferences.delivery,
+        ),
+        preferenceVersion: preferences.preferenceVersion ?? 1,
+      };
       await client.query(
         "UPDATE political_private.subscribers SET consent_state='confirmed',locale=$2,topics=$3,consent_version=$4,confirmed_at=$5,suppressed_at=NULL,suppression_reason=NULL WHERE id=$1",
         [
@@ -240,6 +288,18 @@ export class SubscriptionService {
           JSON.stringify(preferences.topics),
           preferences.consentVersion,
           now,
+        ],
+      );
+      await client.query(
+        "UPDATE political_private.subscribers SET follows=$2,delivery_channels=$3 WHERE id=$1",
+        [
+          id,
+          distribution.preferenceVersion === 1
+            ? null
+            : JSON.stringify(distribution.follows),
+          distribution.preferenceVersion === 1
+            ? null
+            : JSON.stringify(distribution.delivery),
         ],
       );
       await client.query(
@@ -268,12 +328,18 @@ export class SubscriptionService {
         unsubscribeToken: unsubscribe.raw,
         locale: preferences.locale,
         topics: preferences.topics,
+        ...distribution,
       };
     });
   }
   async preferences(
     raw: string,
-    update?: { locale: unknown; topics: unknown },
+    update?: {
+      locale: unknown;
+      topics: unknown;
+      follows?: unknown;
+      delivery?: unknown;
+    },
     now = new Date().toISOString(),
   ) {
     return this.tx(async (client) => {
@@ -286,14 +352,50 @@ export class SubscriptionService {
       ).rows[0];
       if (row.consent_state !== "confirmed") throw new Error("invalid_token");
       if (update) {
-        const preferences = validatePreferences(update.locale, update.topics);
+        if (update.follows === null || update.delivery === null)
+          throw new Error("invalid_preferences");
+        const selectedFollows =
+          update.follows === undefined
+            ? row.follows
+            : validateFollows(update.follows);
+        const base = validatePreferences(
+          update.locale === undefined ? row.locale : update.locale,
+          update.topics === undefined ? row.topics : update.topics,
+          !!selectedFollows &&
+            Object.values(selectedFollows as Follows).some((ids) => ids.length),
+        );
+        const preferences = {
+          ...base,
+          ...selectedDistribution(
+            base.topics,
+            selectedFollows,
+            update.delivery === undefined
+              ? row.delivery_channels
+              : update.delivery,
+          ),
+        };
         await client.query(
-          "UPDATE political_private.subscribers SET locale=$2,topics=$3 WHERE id=$1",
-          [row.id, preferences.locale, JSON.stringify(preferences.topics)],
+          "UPDATE political_private.subscribers SET locale=$2,topics=$3,follows=$4,delivery_channels=$5 WHERE id=$1",
+          [
+            row.id,
+            preferences.locale,
+            JSON.stringify(preferences.topics),
+            JSON.stringify(preferences.follows),
+            JSON.stringify(preferences.delivery),
+          ],
         );
         return { status: "updated", ...preferences };
       }
-      return { status: "ready", locale: row.locale, topics: row.topics };
+      return {
+        status: "ready",
+        locale: row.locale,
+        topics: row.topics,
+        ...selectedDistribution(
+          row.topics as string[],
+          row.follows,
+          row.delivery_channels,
+        ),
+      };
     });
   }
   private async suppress(
@@ -415,6 +517,7 @@ export class SubscriptionService {
           correctsRevisionId?: unknown;
         };
       };
+      const distribution = publicationDistribution(payload.data ?? {});
       const topics = Array.isArray(payload.data?.topics)
         ? payload.data.topics.filter(
             (topic): topic is string =>
@@ -424,7 +527,10 @@ export class SubscriptionService {
               ),
           )
         : [];
-      if (!topics.length) {
+      if (
+        !topics.length &&
+        !Object.values(distribution.follows).some((ids) => ids.length)
+      ) {
         for (const locale of EMAIL_LOCALES)
           await client.query(
             "INSERT INTO political_private.publication_fanout(publication_revision_id,locale,completed,last_attempt_at) VALUES($1,$2,true,$3) ON CONFLICT(publication_revision_id,locale) DO UPDATE SET completed=true,last_attempt_at=$3",
@@ -479,6 +585,47 @@ export class SubscriptionService {
         content.text.length > 30000
       )
         return { status: "translation_pending", queued: 0 };
+      const reviewId = (edition?.payload as { reviewRevisionId?: unknown })
+        ?.reviewRevisionId;
+      const review =
+        typeof reviewId === "string"
+          ? (
+              await client.query(
+                "SELECT * FROM political_record.record_revisions WHERE revision_id=$1 AND kind='publication_review'",
+                [reviewId],
+              )
+            ).rows[0]
+          : null;
+      const reviewed = review?.payload as
+        | {
+            decision?: unknown;
+            contentHash?: unknown;
+            publicationRevisionId?: unknown;
+            locale?: unknown;
+            factRevisionIds?: unknown;
+            eligibilityCheckedAt?: unknown;
+          }
+        | undefined;
+      if (
+        (edition?.provenance as { parserVersion?: unknown })?.parserVersion !==
+          "publication-edition-v1" ||
+        review?.assertion_status !== "confirmed" ||
+        reviewed?.decision !== "approve" ||
+        reviewed.contentHash !==
+          recordHash({ subject: content.subject, text: content.text }) ||
+        reviewed.publicationRevisionId !== revision ||
+        reviewed.locale !== fanout.locale ||
+        !reviewed.eligibilityCheckedAt ||
+        !Array.isArray(reviewed.factRevisionIds) ||
+        recordHash([...reviewed.factRevisionIds].sort()) !==
+          recordHash(
+            [
+              ...(publication.payload as { recordRevisionIds: string[] })
+                .recordRevisionIds,
+            ].sort(),
+          )
+      )
+        return { status: "review_pending", queued: 0 };
       const subscribers = (
         await client.query(
           "SELECT * FROM political_private.subscribers WHERE consent_state='confirmed' AND locale=$1 AND confirmed_at<=$2 AND ($3::uuid IS NULL OR id>$3) ORDER BY id LIMIT 26",
@@ -487,16 +634,47 @@ export class SubscriptionService {
       ).rows;
       const page = subscribers.slice(0, 25);
       for (const subscriber of page) {
-        const selected = subscriber.topics as string[];
+        const selectedTopics = subscriber.topics as string[],
+          selected = selectedDistribution(
+            selectedTopics,
+            subscriber.follows,
+            subscriber.delivery_channels,
+          );
+        const corrected =
+          typeof payload.data?.correctsRevisionId === "string"
+            ? (
+                await client.query(
+                  "SELECT id FROM political_private.deliveries WHERE subscriber_id=$1 AND publication_revision_id=$2 AND status='sent' LIMIT 1",
+                  [subscriber.id, payload.data.correctsRevisionId],
+                )
+              ).rows.length > 0
+            : false;
         if (
-          !selected.some((topic) => topics.includes(topic)) ||
-          (selected.includes("digest") &&
-            !selected.some(
-              (topic) => topic !== "digest" && topics.includes(topic),
-            ) &&
-            payload.data?.delivery !== "digest")
+          !matchesDistribution(
+            { topics: selectedTopics, ...selected },
+            distribution,
+            corrected,
+          )
         )
           continue;
+        if (distribution.kind === "daily_digest") {
+          const date =
+            distribution.digestDate ??
+            new Intl.DateTimeFormat("en-CA", {
+              timeZone: "Asia/Jerusalem",
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+            }).format(new Date(publication.observed_at as string));
+          await client.query("SELECT pg_advisory_xact_lock(hashtext($1))", [
+            `digest:${subscriber.id}:${date}`,
+          ]);
+          const priorDigest = await client.query(
+            "SELECT d.id FROM political_private.deliveries d JOIN political_record.record_revisions r ON r.revision_id=d.publication_revision_id WHERE d.subscriber_id=$1 AND d.kind='publication' AND d.status IN ('queued','sending','sent') AND r.payload#>>'{data,delivery}' IN ('digest','daily_digest') AND COALESCE(r.payload#>>'{data,digestDate}',to_char(r.observed_at AT TIME ZONE 'Asia/Jerusalem','YYYY-MM-DD'))=$2 LIMIT 1",
+            [subscriber.id, date],
+          );
+          if (priorDigest.rows.length) continue;
+        }
         const kind =
           typeof payload.data?.correctsRevisionId === "string"
             ? "correction"
@@ -550,7 +728,15 @@ export class SubscriptionService {
             subscriber.id,
             revision,
             kind,
-            this.crypto.encrypt({ ...copy, locale: subscriber.locale, topics }),
+            this.crypto.encrypt({
+              ...copy,
+              locale: subscriber.locale,
+              topics,
+              distribution,
+              previousRecipient: corrected,
+              editionRevisionId: String(edition!.revision_id),
+              reviewRevisionId: String(review!.revision_id),
+            }),
             now,
             new Date(Date.parse(now) + 23 * 3600000).toISOString(),
           ],
@@ -598,7 +784,7 @@ export class SubscriptionService {
       const result = await this.tx(async (client) => {
         const delivery = (
           await client.query(
-            "SELECT * FROM political_private.deliveries WHERE (status='queued' OR status='sending' AND lease_until<$1) AND next_attempt_at<=$1 ORDER BY created_at FOR UPDATE SKIP LOCKED LIMIT 1",
+            "SELECT * FROM political_private.deliveries WHERE (status='queued' OR status='sending' AND lease_until<$1) AND next_attempt_at<=$1 ORDER BY CASE kind WHEN 'confirm' THEN 0 WHEN 'correction' THEN 1 ELSE 2 END,created_at FOR UPDATE SKIP LOCKED LIMIT 1",
             [now],
           )
         ).rows[0];
@@ -628,16 +814,56 @@ export class SubscriptionService {
                 )
               ).rows[0]
             : null;
+        const queuedEdition =
+          delivery.kind !== "confirm" && payload.editionRevisionId
+            ? (
+                await client.query(
+                  "SELECT * FROM political_record.record_revisions WHERE revision_id=$1 AND kind='edition'",
+                  [payload.editionRevisionId],
+                )
+              ).rows[0]
+            : null;
+        const currentEdition = queuedEdition
+          ? (
+              await client.query(
+                "SELECT revision_id,assertion_status FROM political_record.record_revisions WHERE record_id=$1 ORDER BY insertion_cursor DESC LIMIT 1",
+                [queuedEdition.record_id],
+              )
+            ).rows[0]
+          : null;
+        const currentReview =
+          delivery.kind !== "confirm" && payload.reviewRevisionId
+            ? (
+                await client.query(
+                  "SELECT latest.revision_id,latest.assertion_status FROM political_record.record_revisions original JOIN LATERAL (SELECT revision_id,assertion_status FROM political_record.record_revisions WHERE record_id=original.record_id ORDER BY insertion_cursor DESC LIMIT 1) latest ON true WHERE original.revision_id=$1 AND original.kind='publication_review'",
+                  [payload.reviewRevisionId],
+                )
+              ).rows[0]
+            : null;
         const blocked =
           delivery.kind === "confirm"
             ? !confirmToken ||
               ["bounce", "complaint"].includes(
                 String(subscriber.suppression_reason),
               )
-            : subscriber.consent_state !== "confirmed" ||
+            : currentEdition?.revision_id !== payload.editionRevisionId ||
+              currentEdition?.assertion_status !== "confirmed" ||
+              currentReview?.revision_id !== payload.reviewRevisionId ||
+              currentReview?.assertion_status !== "confirmed" ||
+              subscriber.consent_state !== "confirmed" ||
               payload.locale !== subscriber.locale ||
-              !payload.topics?.some((topic) =>
-                (subscriber.topics as string[]).includes(topic),
+              !matchesDistribution(
+                {
+                  topics: subscriber.topics as string[],
+                  ...selectedDistribution(
+                    subscriber.topics as string[],
+                    subscriber.follows,
+                    subscriber.delivery_channels,
+                  ),
+                },
+                payload.distribution ??
+                  publicationDistribution({ topics: payload.topics }),
+                payload.previousRecipient === true,
               ) ||
               !(await this.currentPublication(
                 client,

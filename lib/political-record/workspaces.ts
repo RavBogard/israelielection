@@ -121,6 +121,24 @@ export function parseElectionAnnouncement(
     ),
   ];
   const candidates = matches.flatMap((match) => {
+    const context = text.slice(
+      Math.max(0, (match.index ?? 0) - 100),
+      (match.index ?? 0) + match[0].length + 80,
+    );
+    if (
+      /\bnot\b|never|cancel|postpon|reschedul|no longer|according to|report(?:ed|s)|rumou?r|[“”"]|לא\s+(?:יתקיימו|ייערכו|יוחזקו)|בוטל|בוטלו|נדח|דחיית|לפי\s+דיווח|דווח|שמוע/iu.test(
+        context,
+      )
+    )
+      return [];
+    if (
+      !/^יום\s+הבחירות/u.test(match[0]) &&
+      !/will\s+(?:be\s+held|take\s+place)|(?:are|is)\s+scheduled|יתקיימו|ייערכו|נקבעו/iu.test(
+        match[0],
+      )
+    )
+      return [];
+
     if (
       /propos|draft|may|might|could|טיוטה|הצעת|ייתכן|עשוי|צפוי/i.test(match[0])
     )

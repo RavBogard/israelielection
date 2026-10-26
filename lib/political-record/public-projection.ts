@@ -74,6 +74,7 @@ export function projectPublic(value: unknown): unknown {
       "evidenceClass",
       "previousRevisionId",
       "currentState",
+      "historicalState",
     ]);
     const payload = object(row.payload);
     let visible: ObjectValue = {};
@@ -96,7 +97,17 @@ export function projectPublic(value: unknown): unknown {
           "titleKey",
           "recordRevisionIds",
           "currentTextUnavailable",
+          "locale",
+          "editionRevisionId",
         ]),
+        ...(payload.currentTextUnavailable === false
+          ? {
+              content: fields(payload.content, ["subject", "text"]),
+              sourceRefs: Array.isArray(payload.sourceRefs)
+                ? payload.sourceRefs.map(source)
+                : [],
+            }
+          : {}),
         data: fields(payload.data, [
           "topics",
           "delivery",
