@@ -1,4 +1,406 @@
 {
   "schemaVersion": 1,
-  "documents": []
+  "documents": [
+    {
+      "id": "guides:seats",
+      "lang": "fa",
+      "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+      "status": "published",
+      "publishedAt": "2026-10-26T22:30:52.492Z",
+      "blocks": [
+        {
+          "id": "block-0-b25c97e728d0",
+          "text": "از آرا تا کرسی‌ها"
+        },
+        {
+          "id": "block-1-9acf4b523e2f",
+          "text": "چگونه اسرائیل آرای ملی را به 120 کرسی کنست تبدیل می‌کند: فهرست‌های حزبی بسته، آستانه انتخاباتی 3.25%، شمارش بادر-اوفر و توافق‌های مازاد آرا."
+        },
+        {
+          "id": "block-2-daaa625612d0",
+          "text": "یک کشور، یک برگه رأی، 120 کرسی"
+        },
+        {
+          "id": "block-3-9d877b481301",
+          "text": "کنست دارای 120 عضو است و آنها در «یک حوزه انتخاباتی واحد و سراسری» انتخاب می‌شوند. رأی‌دهندگان «فهرست‌های حزبی را انتخاب می‌کنند، نه اعضای کنست را»، و کرسی‌ها به نسبت آرا تقسیم می‌شوند ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-4-7b5333e0e001",
+          "text": "هیچ حوزه‌ای وجود ندارد. یک رأی‌دهنده در حیفا و یک رأی‌دهنده در ایلات از بین همان فهرست‌ها انتخاب می‌کنند و هر رأی معتبر به یک سبد ملی واحد وارد می‌شود. هر فهرست قبل از انتخابات یک فهرست رتبه‌بندی‌شده از نامزدها ارائه می‌دهد و رأی‌دهندگان نمی‌توانند ترتیب آن را تغییر دهند. «اگر حزبی 10 کرسی به دست آورد، 10 نفر اول فهرست عضو کنست می‌شوند» ([Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). برای یک خواننده آمریکایی، نزدیک‌ترین تصویر، یک رقابت کلی (at-large) برای تمام 120 کرسی است که در آن افراد به فهرست یک حزب رأی می‌دهند نه به یک شخص."
+        },
+        {
+          "id": "block-5-f9e7fb8b7a80",
+          "text": "سی و هشت فهرست برای برگه رأی 27 اکتبر 2026 واجد شرایط شدند ([Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). هر کدام تحت یک کد کوتاه از حروف عبری روی برگه رأی ظاهر می‌شوند؛ [صفحه نتایج](/results) آنها را به احزاب مرتبط می‌کند."
+        },
+        {
+          "id": "block-6-301d162730f0",
+          "text": "آستانه 3.25%"
+        },
+        {
+          "id": "block-7-14a4fa786faf",
+          "text": "یک فهرست برای به دست آوردن هرگونه کرسی، حداقل به 3.25% از آرای معتبر نیاز دارد؛ این قاعده «از زمان انتخابات 2015» حاکم بوده است ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)). آستانه چندین بار افزایش یافته است. خلاصه‌های آن پیشینه گاهی سال‌های متفاوتی را برای گام آخر ذکر می‌کنند؛ دو گزارش IDI به محض تفکیک قانون از انتخابات، همسو می‌شوند: Ofer Kenig می‌نویسد که کنست قانون 3.25% را در مارس 2014 تصویب کرد ([IDI, Jan 26, 2015](https://en.idi.org.il/articles/5225))، و Assaf Shapira تاریخ آن را 2015 ذکر می‌کند، یعنی اولین انتخاباتی که بر اساس آن برگزار شد ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-8-f54ccd463cc1",
+          "text": "<Chart id=\"seats.threshold-history\" />"
+        },
+        {
+          "id": "block-9-7bc765093016",
+          "text": "میزان آرایی که 3.25% به معنای آن است به مشارکت بستگی دارد، بنابراین تعداد دقیق آن تنها پس از شمارش مشخص می‌شود. در سال 2022 این رقم 154,855 رأی بود، یعنی 3.25% از 4,764,742 رأی معتبر ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)؛ [Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). برای سال 2026، با حدود 7.56 میلیون رأی‌دهنده واجد شرایط، مرکز آموزش اسرائیل تخمین می‌زند که یک فهرست «به 172,000 رأی نیاز خواهد داشت» ([Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/))."
+        },
+        {
+          "id": "block-10-47a475e86b3c",
+          "text": "آرای یک فهرست که به حد نصاب نمی‌رسد به هیچ‌کس انتقال داده نمی‌شود. آنها قبل از تخصیص هر کرسی از شمارش خارج می‌شوند ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)). در سال 2022، فهرست‌های زیر آستانه در مجموع 417,400 رأی کسب کردند ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). IDI سهم هدر رفته را حدود 8.7% برآورد کرد که رکورد بی‌سابقه‌ای در تمام دوران‌ها بود ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256)). مرتز 150,793 رأی (3.16%) کسب کرد و با اختلاف 4,062 رأی بازماند. بلد 138,617 (2.91%) به دست آورد و خانه یهودی 56,775 (1.19%) کسب کرد ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). Shapira خاطرنشان می‌کند که مجموع آرای دو بلوک «تقریباً یکسان» بود، اما اردوگاه Netanyahu «اکثریت قاطع 64 کرسی» را به دست آورد ([IDI, Nov 8, 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-11-cf02ecfde1e9",
+          "text": "<Chart id=\"seats.threshold-2022\" />"
+        },
+        {
+          "id": "block-12-208d3e82ed80",
+          "text": "<WhatIf />"
+        },
+        {
+          "id": "block-13-ade4fc80c1aa",
+          "text": "کرسی‌ها چگونه شمرده می‌شوند"
+        },
+        {
+          "id": "block-14-b0bc19abf004",
+          "text": "این روش به نام نمایندگان کنست Yohanan Bader و Avraham Ofer، بادر-اوفر نامیده می‌شود. تاریخچه آن به قانون بادر-اوفر بازمی‌گردد که در سال 1973 معرفی شد، و تا حدودی به منظور «تقویت احزاب بزرگتر» بود ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). در عمل این همان روش دوند (D'Hondt) است که در دو مرحله اجرا می‌شود ([Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)). مراحل زیر از ارقام 2022 استفاده می‌کنند. محاسبات در اینجا بر اساس مجموع ارقام کمیته مرکزی انتخابات بازآفرینی شده و با ارقام منتشر شده IDI همخوانی دارد ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-15-ef5f4f65377f",
+          "text": "1. **شمارش آرای معتبر** و حذف آرای داده شده به فهرست‌های زیر آستانه. در سال 2022، 4,347,342 رأی باقی ماند.\n2. **تعیین بهای یک کرسی.** تقسیم آرای باقی‌مانده بر 120. در سال 2022 بهای یک کرسی 36,227 رأی بود.\n3. **توزیع کرسی‌های کامل.** هر فهرست به ازای هر 36,227 رأی کامل، یک کرسی دریافت می‌کند. در سال 2022 این روش 113 کرسی را اختصاص داد و 7 کرسی باقی ماند.\n4. **توزیع کرسی‌های باقی‌مانده یکی پس از دیگری.** تقسیم آرای هر فهرست بر تعداد کرسی‌هایی که از قبل دارد به علاوه یک. بالاترین نتیجه، کرسی بعدی را برنده می‌شود. سپس رقم آن فهرست دوباره محاسبه می‌شود و فرآیند تکرار می‌گردد. در این مرحله، دو فهرست با یک توافق مازاد، به عنوان یک فهرست محسوب می‌شوند.\n5. **تقسیم کرسی‌های اضافی یک جفت** بین دو شریک آن با همان قاعده."
+        },
+        {
+          "id": "block-16-0de6f38d37d1",
+          "text": "<Chart id=\"seats.quotas-2022\" />"
+        },
+        {
+          "id": "block-17-14ded3081c6b",
+          "text": "<Chart id=\"seats.leftover-2022\" />"
+        },
+        {
+          "id": "block-18-517a60abc0a5",
+          "text": "درون جفت لیکود–صهیونیسم مذهبی، رقم لیکود (1,115,336 ÷ 31 = 35,978.58) بر شریک خود (516,470 ÷ 15 = 34,431.33) غلبه کرد، بنابراین لیکود اولین کرسی اضافی را گرفت. رقم جدید آن، 34,854.25، هنوز از صهیونیسم مذهبی بالاتر بود، بنابراین لیکود کرسی دوم را نیز به دست آورد و با 32 کرسی به پایان رساند. درون جفت‌های دیگر، شاس کرسی شاس–یهودیت توراتی (UTJ) را گرفت و اردوگاه ملی و یش عتید هرکدام یک کرسی گرفتند ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)؛ [Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        },
+        {
+          "id": "block-19-0fbc813e9b4e",
+          "text": "بر اساس قاعده بزرگترین باقیمانده که برای کنست‌های دوم تا هفتم استفاده می‌شد، هفت کرسی باقیمانده به هفت مورد از بزرگترین باقیمانده‌های استفاده‌نشده می‌رسید. این کار باعث می‌شد که به جای کرسی اضافی دوم لیکود و کرسی اضافی یش عتید، به حزب کارگر و یهودیت توراتی متحد کرسی تعلق گیرد (محاسبه شده از [مجموع ارقام کمیته مرکزی انتخابات](https://votes25.bechirot.gov.il/nationalresults)). تمایل به نفع احزاب بزرگ تقریباً به طور کامل در این مرحله رخ می‌دهد. Shapira و Gideon Rahat از IDI می‌نویسند که به غیر از کرسی‌های باقی‌مانده، «تقریباً هیچ مزیت انتخاباتی برای فهرست‌های بزرگ وجود ندارد» ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020))."
+        },
+        {
+          "id": "block-20-bb8781350e44",
+          "text": "توافق‌های مازاد آرا"
+        },
+        {
+          "id": "block-21-8b613186f714",
+          "text": "پیش از انتخابات، دو فهرست ممکن است یک توافق مازاد آرا (یا اشتراک آرا) امضا کنند. هنگام توزیع کرسی‌های باقیمانده، با این جفت «به عنوان یک فهرست واحد رفتار می‌شود»: آرای آنها جمع شده و بر مجموع کرسی‌هایشان به علاوه یک تقسیم می‌شود ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). یک جفتْ فهرستی بزرگتر است، و این روش به نفع فهرست‌های بزرگتر عمل می‌کند، بنابراین شانس آن برای یک کرسی اضافی بالا می‌رود. تنها دو فهرست می‌توانند با هم توافقنامه امضا کنند ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-22-8a4d309e6a70",
+          "text": "شریک بزرگتر معمولاً کرسی اضافی را می‌گیرد، اما نه همیشه. در سال 2021 شریک کوچکتر در سه جفت آن را به دست آورد: مرتز نسبت به کارگر، امید نو نسبت به یمینا، و یسرائیل بیتنو نسبت به یش عتید ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-23-5b2286a1dead",
+          "text": "یک توافق تنها در صورتی معتبر است که هر دو فهرست از آستانه عبور کنند. اگر یکی شکست بخورد، با شریک آن «به گونه‌ای برخورد می‌شود که گویی اصلاً توافقنامه‌ای امضا نکرده است» ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). این اتفاق در سال 2022 برای حزب کارگر افتاد. توافق آن با مرتز زمانی که مرتز به حد نصاب نرسید، باطل شد ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020))، بنابراین حزب کارگر به تنهایی برای کرسی‌های باقیمانده رقابت کرد و هیچ کرسی‌ای به دست نیاورد."
+        },
+        {
+          "id": "block-24-715e97ad931a",
+          "text": "برای سال 2026، گزارش‌های مطبوعاتی سه توافق را امضا شده توصیف می‌کنند: [Yashar!](/parties/yashar) با [The Democrats](/parties/dem)، [B'Yachad](/parties/byachad) با [Yisrael Beiteinu](/parties/yb)، و [Joint List](/parties/jl) با [Ra'am](/parties/raam). روزنامه جروزالم پست گزارش داد که انتظار می‌رفت [Shas](/parties/shas) و [United Torah Judaism](/parties/utj) یکی امضا کنند ([Sept 10, 2026](https://www.jpost.com/israel-election-2026/article-908296)). انجمن سیاست اسرائیل گزارش داد که [Likud](/parties/likud) و [Religious Zionism–Zehut](/parties/rz) قصد امضا داشتند ([پست 10 سپتامبر، 120 Project](https://israelpolicyforum.org/onetwenty/))؛ یک هفته پس از توافق این دو حزب بر سر معامله، کانال 14 گزارش داد که این توافق هنوز امضا نشده است ([Channel 14, Sept 15, 2026](https://www.c14.co.il/article/1702522)). توافق‌ها تا 16 اکتبر قابل ثبت هستند ([AIJAC, Sept 14, 2026](https://aijac.org.au/australia-israel-review/a-game-of-margins/)). [برآوردهای موقت نتایج](/results) تنها آن سه جفت امضاشده بر اساس گزارش مطبوعات را فرض می‌گیرند؛ دو جفت تاییدنشده مستثنی شده‌اند. ثبت رسمی محرز نشده است."
+        },
+        {
+          "id": "block-25-6ab0424abe2a",
+          "text": "<Chart id=\"seats.agreements-2026\" />"
+        },
+        {
+          "id": "block-26-9b610ba5d1fc",
+          "text": "برداشت‌های نادرست"
+        },
+        {
+          "id": "block-27-e022ca48de4a",
+          "text": "**«رأی دادن به یک حزب کوچک، رأی به نامزدهای آن در حوزه انتخاباتی خود رأی‌دهنده است.»** هیچ حوزه‌ای وجود ندارد. هر رأی به یک شمارش ملی واحد وارد می‌شود، و کرسی‌های یک فهرست به اسامی بالای فهرست رتبه‌بندی‌شده آن اختصاص می‌یابد ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750)؛ [Center for Israel Education, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). زیر 3.25%، آن رأی هیچ‌کس را انتخاب نمی‌کند."
+        },
+        {
+          "id": "block-28-84ac307aabc0",
+          "text": "**«آرای فهرستی که به آستانه نمی‌رسد به متحدانش می‌رسد.»** آنها کنار گذاشته می‌شوند. یک توافق مازاد آنها را نجات نمی‌دهد، زیرا فقط زمانی به حساب می‌آید که هر دو شریک عبور کنند ([IDI, Oct 30, 2022](https://en.idi.org.il/articles/47485)). در سال 2022، 150,793 رأی مرتز هیچ کمکی به حزب کارگر نکرد."
+        },
+        {
+          "id": "block-29-9b7cb19a6f76",
+          "text": "**«آستانه مربوط به کرسی‌ها است.»** این سهمی از آرای معتبر است، نه تعدادی کرسی. در سال 2022، یک فهرست با دقیقاً 154,855 رأی هنوز معادل چهار کرسی کامل به ازای هر 36,227 رأی ارزش داشت ([Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). بنابراین در آن سال هیچ فهرستی نمی‌توانست از آستانه عبور کند و تنها یک، دو یا سه کرسی به دست آورد. حزب کارگر، با 3.69%، چهار کرسی برد. مرتز، با 3.16%، هیچ کرسی‌ای کسب نکرد."
+        },
+        {
+          "id": "block-30-68857eb6b145",
+          "text": "**«بزرگترین حزب دولت را تشکیل می‌دهد.»** آنچه اهمیت دارد ترتیبی است که بتواند رأی اعتماد اولیه را به دست آورد، نه بزرگترین فهرست. شصت و یک اکثریت مطلق کرسی‌ها و یک هدف برنامه‌ریزی عملی است. پس از انتخابات 2009، Netanyahu تشکیل دولت داد «اگرچه کادیما یک کرسی بیشتر از لیکود به دست آورده بود»، و Naftali Bennett بعداً در رأس فراکسیون کوچک یمینا تشکیل دولت داد ([IDI, April 27, 2026](https://en.idi.org.il/articles/64020)). مراحلی که پس از روز انتخابات دنبال می‌شوند در [تشکیل دولت](/how-it-works/forming-a-government) آمده است."
+        },
+        {
+          "id": "block-31-9d95737038ab",
+          "text": "**«کرسی‌ها دقیقاً آرا را دنبال می‌کنند.»** آنها نزدیک می‌شوند، اما نه دقیقاً. آستانه برخی از آرا را حذف می‌کند. مرحله کرسی‌های باقیمانده اندکی به سود فهرست‌ها و جفت‌های بزرگ است، و در سال 2022 این امر کرسی 32م را به لیکود اختصاص داد ([Fruits and Votes, Sept 8, 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        }
+      ],
+      "review": {
+        "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+        "contentHash": "5c3c15cc96d213039dcef941a029cc4f10ba034a79a10474036590d5ee0a8ee8",
+        "model": "gemini-3.8-flash",
+        "verdict": "supported",
+        "blocks": [
+          {
+            "id": "block-0-b25c97e728d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-1-9acf4b523e2f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-2-daaa625612d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-3-9d877b481301",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-4-7b5333e0e001",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-5-f9e7fb8b7a80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-6-301d162730f0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-7-14a4fa786faf",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-8-f54ccd463cc1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-9-7bc765093016",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-10-47a475e86b3c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-11-cf02ecfde1e9",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-12-208d3e82ed80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-13-ade4fc80c1aa",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-14-b0bc19abf004",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-15-ef5f4f65377f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-16-0de6f38d37d1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-17-14ded3081c6b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-18-517a60abc0a5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-19-0fbc813e9b4e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-20-bb8781350e44",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-21-8b613186f714",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-22-8a4d309e6a70",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-23-5b2286a1dead",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-24-715e97ad931a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-25-6ab0424abe2a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-26-9b610ba5d1fc",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-27-e022ca48de4a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-28-84ac307aabc0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-29-9b7cb19a6f76",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-30-68857eb6b145",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-31-9d95737038ab",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          }
+        ]
+      }
+    }
+  ]
 }

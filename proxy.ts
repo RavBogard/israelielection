@@ -9,6 +9,8 @@ import { defaultLang, LANG_COOKIE } from "@/lib/i18n/default-lang";
  * the router's own fetches, prefetches and HEAD requests pass straight through.
  */
 export function proxy(request: NextRequest) {
+  // A deliberate original-source link must work even when a translated edition is preferred.
+  if(request.nextUrl.searchParams.get("original")==="en")return;
   if (request.method !== "GET") return;
   const h = request.headers;
   if (h.has("rsc") || h.has("next-router-prefetch") || h.get("purpose") === "prefetch") return;
@@ -32,5 +34,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/:id", "/results", "/government", "/elections", "/elections/:id", "/parliament", "/policies", "/policies/:id", "/changes", "/reference", "/issues", "/issues/:slug", "/communities", "/communities/:slug", "/how-it-works", "/how-it-works/:slug", "/about", "/american-lens"],
+  matcher: ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/:id", "/results", "/government", "/elections", "/elections/:id", "/parliament", "/policies", "/policies/:id", "/changes", "/reference", "/issues", "/issues/:slug", "/communities", "/communities/:slug", "/how-it-works", "/how-it-works/:slug", "/about", "/american-lens", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe"],
 };

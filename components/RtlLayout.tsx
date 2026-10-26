@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import type { ComponentType, ReactNode } from "react";
 import Link from "next/link";
 import { Noto_Sans_Arabic } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import { editionPath, isRtl } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 import { ui } from "@/lib/i18n/ui";
@@ -79,6 +79,6 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
         </div></footer>
       </SeatContextProvider></Provider>
     </body>
-    {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
+    {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}
   </html>;
 }

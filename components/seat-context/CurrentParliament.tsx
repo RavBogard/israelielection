@@ -95,7 +95,7 @@ export default function CurrentParliament({
               </thead>
               <tbody>
                 {rows.map(([id, seats]) => (
-                  <tr key={id}>
+                  <tr key={id} id={`list-${encodeURIComponent(id)}`}>
                     <th scope="row">{name(id)}</th>
                     <td>{seats}</td>
                     {context.uncertainty && (

@@ -15,7 +15,7 @@ export default function TranslatedBody({source,translation,lang,title}:{source:S
   if(block.kind==="heading")return <h2 key={block.id}>{inline(text)}</h2>;
   if(block.kind==="quote")return <figure key={block.id}><blockquote>{inline(text)}</blockquote><figcaption>{quotationNotice(lang)}</figcaption></figure>;
   if(block.kind==="attribution")return <p className="fig-src" key={block.id}>{inline(text)}</p>;
-  if(block.kind==="widget"){const w=block.widget!;return <figure key={block.id}><figcaption><a href={source.path} hrefLang="en">{t.original}</a>. {widgetNotice(lang)}</figcaption><div lang="en" dir="ltr">{w.name==="Chart"?<Chart id={w.attrs.id}/>:w.name==="Positions"?<Positions issue={w.attrs.issue}/>:w.name==="WhatIf"?<WhatIf/>:null}</div></figure>}
+  if(block.kind==="widget"){const w=block.widget!;return <figure key={block.id}><figcaption><a href={source.path+"?original=en"} hrefLang="en">{t.original}</a>. {widgetNotice(lang)}</figcaption><div lang="en" dir="ltr">{w.name==="Chart"?<Chart id={w.attrs.id}/>:w.name==="Positions"?<Positions issue={w.attrs.issue}/>:w.name==="WhatIf"?<WhatIf/>:null}</div></figure>}
   return <p key={block.id} style={{whiteSpace:"pre-line"}}>{inline(text)}</p>;
  })}</article>;
 }

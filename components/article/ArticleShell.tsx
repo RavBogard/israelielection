@@ -1,3 +1,4 @@
+import SuggestedReading from "../reference/SuggestedReading";
 import Link from "next/link";
 import type { ComponentType, ReactNode } from "react";
 import "./article.css";
@@ -53,6 +54,7 @@ export default function ArticleShell({
           </div>
           {current && current.startsWith("/issues/") && <p className="article-export"><Link href={`/export/issue?issue=${({"haredi-draft":"draft",courts:"courts","war-hostages":"war","west-bank":"wb","religion-state":"relig",economy:"econ","palestinian-state":"pstate"} as Record<string,string>)[current.split("/").at(-1)!] ?? ""}`}>Print or export recorded party positions on this issue</Link></p>}
           <p className="article-correction"><CorrectionLink page={current} />. <Link href="/corrections">Correction history and verification</Link></p>
+          <SuggestedReading lang="en"/>
         </article>
         {siblings.length > 0 && (
           <nav className="rail" aria-label={`More in ${section.title}`}>

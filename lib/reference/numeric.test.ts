@@ -28,3 +28,22 @@ describe("source numeric invariants", () => {
     );
   });
 });
+
+it("normalizes written Gregorian months only in explicit date context", () => {
+  for (const text of [
+    "in March 2014",
+    "im März 2014",
+    "en mars 2014",
+    "במרץ 2014",
+    "في مارس 2014",
+    "مارس 2014",
+    "2014年3月",
+  ]) {
+
+    expect(numericTokens(text)).toEqual(["2014", "3"]);
+  }
+  expect(numericTokens("May provide 61 seats")).toEqual(["61"]);
+  expect(numericTokens("March 2014 99")).not.toEqual(
+    numericTokens("March 2014"),
+  );
+});

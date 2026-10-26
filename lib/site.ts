@@ -43,6 +43,7 @@ export const NAV_GROUPS: readonly NavGroup[] = [
  ]},
 ];
 export const NAV_UTILITIES: readonly NavItem[] = [
+ {href:"/subscriptions",label:"Email updates",description:"Choose email topics and confirm your subscription."},
  {href:"/start",label:"Start here",description:"A short guided route through the election."},
  {href:"/search",label:"Search",description:"Find parties, leaders, issues and terms by name or alias."},
  {href:"/resources",label:"All resources",description:"Every section and tool on one page, with a picture of each."},

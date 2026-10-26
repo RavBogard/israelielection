@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { IBM_Plex_Sans_Hebrew } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
 import Countdown from "@/components/Countdown";
 import ResultsStrip from "@/components/ResultsStrip";
@@ -149,7 +149,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
         </SeatContextProvider></HebrewProvider>
       </body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
-      {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
+      {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}
     </html>
   );
 }

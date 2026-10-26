@@ -1,4 +1,5 @@
 "use client";
+import {referenceText} from "@/lib/i18n/reference";
 import { useEffect, useRef, useState } from "react";
 import type { ElectionLifecycleSnapshot } from "@/lib/election-lifecycle/types";
 import type { Lang } from "@/lib/i18n";
@@ -16,6 +17,7 @@ type Props = {
   initial: ElectionLifecycleSnapshot;
   lang: Lang;
   compact?: boolean;
+  view?: "formation"|"chronology";
   hideSeats?: boolean;
   onlyWhenRelevant?: boolean;
   names: ForecastProps["names"];
@@ -28,6 +30,7 @@ export default function GovernmentLive({
   names,
   scenarios,
   compact = false,
+  view = "formation",
   hideSeats = false,
   onlyWhenRelevant = false,
 }: Props) {
@@ -147,7 +150,7 @@ export default function GovernmentLive({
         />
       )}
       <section aria-labelledby="negotiations">
-        <h2 id="negotiations">{t.negotiations}</h2>
+        <h2 id="negotiations">{view==="chronology"?referenceText(lang).changes:t.negotiations}</h2>
         {snapshot.cadence&&<p className="seat-times">{DASHBOARD[lang].last}: {date(snapshot.cadence.lastSuccessfulAt)} · {DASHBOARD[lang].next}: {date(snapshot.cadence.nextCheckAt)}</p>}
         <p>{f.caution}</p>
         {hidden && (
@@ -155,7 +158,7 @@ export default function GovernmentLive({
             {t.noClaims}
           </p>
         )}
-        {!hidden &&
+        {!hidden &&view!=="chronology"&&
           p.proposals.map((proposal) => {
             const confirmed = proposal.decisions.filter(
                 (d) => d.decision !== "undecided",
@@ -202,7 +205,7 @@ export default function GovernmentLive({
               </section>
             );
           })}
-        {!hidden && p.clock && (
+        {!hidden &&view!=="chronology"&& p.clock && (
           <aside className="government-clock">
             <h3>{f.clock}</h3>
             {p.clock.holder && <p>{p.clock.holder}</p>}
@@ -284,14 +287,14 @@ export default function GovernmentLive({
           !hidden && <p>{t.noEvents}</p>
         )}
       </section>
-      <CurrentParliament
+      {view!=="chronology"&&<CurrentParliament
         initial={snapshot.seatContext}
         lang={lang}
         names={names}
         scenarios={scenarios}
         showSeats={false}
         compact={compact}
-      />
+      />}
       {!compact && (
         <section>
           <h2>{f.history}</h2>

@@ -13,16 +13,16 @@ import {
   validateTranslation,
   type TranslationDocument,
 } from "./translations";
-export async function generateReferenceTranslation(
+async function runReferenceTranslation(
   selected: string,
   lang: Exclude<Lang, "en">,
+  usage: object[],
 ) {
   const source = referenceDocuments.find((d) => d.id === selected);
   if (!source) throw Error("unknown_source");
   if (sourceRevision(readFileSync(source.file)) !== source.revision)
     throw Error("source_revision_changed");
   if (!process.env.GEMINI_API_KEY) throw Error("provider_unconfigured");
-  const usage: object[] = [];
   const deadline = Date.now() + 260000;
   const request = async (
     prompt: string,
@@ -50,7 +50,12 @@ export async function generateReferenceTranslation(
               maxOutputTokens: 32768,
             },
           }),
-          signal: AbortSignal.timeout(Math.min(85000, remaining)),
+          signal: AbortSignal.timeout(
+            Math.min(
+              120000,
+              Math.max(1000, remaining - (phase === "repair" ? 45000 : 0)),
+            ),
+          ),
         },
       );
     } catch (error) {
@@ -222,4 +227,26 @@ export async function generateReferenceTranslation(
     usage,
     widgets: "trusted_original_language" as const,
   };
+}
+
+export async function generateReferenceTranslation(
+  selected: string,
+  lang: Exclude<Lang, "en">,
+) {
+  const usage: object[] = [];
+  try {
+    return await runReferenceTranslation(selected, lang, usage);
+  } catch (error) {
+    const rejected =
+      error instanceof ReferenceValidationError
+        ? error
+        : new ReferenceValidationError(
+            error instanceof Error && /^[a-z0-9_]{1,80}$/.test(error.message)
+              ? error.message
+              : "translation_failed",
+            { check: "generation" },
+          );
+    rejected.usage = usage;
+    throw rejected;
+  }
 }

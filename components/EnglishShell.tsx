@@ -3,7 +3,7 @@ import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
@@ -103,7 +103,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
         </footer>
       </SeatContextProvider></body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
-      {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
+      {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}
     </html>
   );
 }
