@@ -4,6 +4,7 @@ import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/components/Countdown";
 import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
 import HomeRace, { type RaceOption } from "@/components/HomeRace";
+import renderLiveForecast from "@/components/live-forecast/LiveForecast";
 import { homeRaceModel } from "@/lib/home-race";
 import briefingsJson from "@/data/briefings/_index.json";
 import type { Briefing } from "@/lib/briefing";
@@ -143,7 +144,7 @@ function countTime(iso: string, lang: Lang): string {
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
-  const live = await fetchCount(revalidate, { now });
+  const [live, liveForecast] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true })]);
   const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
@@ -154,6 +155,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
     <div className="home">
       <div className="wrap">
         {hero === "exit" ? <ExitHero n={n} lang={lang} /> : <Race poll={poll} live={!!results} days={days} phase={n.phase} lang={lang} />}
+        {liveForecast}
 
         {n.phase === "before" && <Since now={now} lang={lang} />}
 

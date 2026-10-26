@@ -1,0 +1,247 @@
+{
+  "kind": "synthetic_reporting_order_over_real_historical_final_localities",
+  "scoredCalibration": false,
+  "note": "Named-list-only stress test with oracle national priors and arbitrary alternating blocs, not historical prediction accuracy; three reproducible draws per stage. Actual partial-locality station metadata is still required before production assimilation.",
+  "checks": [
+    {
+      "election": "2019a",
+      "order": "small-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019a",
+      "order": "small-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019a",
+      "order": "small-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019a",
+      "order": "large-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019a",
+      "order": "large-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019a",
+      "order": "large-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "small-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "small-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "small-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "large-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "large-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2019b",
+      "order": "large-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "small-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "small-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "small-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "large-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "large-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2020",
+      "order": "large-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "small-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "small-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "small-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "large-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "large-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2021",
+      "order": "large-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "small-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "small-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "small-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "large-first",
+      "fraction": 0,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "large-first",
+      "fraction": 0.5,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    },
+    {
+      "election": "2022",
+      "order": "large-first",
+      "fraction": 1,
+      "draws": 3,
+      "seatSum": 120,
+      "publicationEligible": false
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "live-v1-conservative-joint",
+  "scenarioVersion": "b2a4f927ac18ec9a",
+  "revision": "2964f08bb9943775bf3695b04e67b7a2673d5036ca7bdd71f72e5dc8880426aa",
+  "generatedAt": "2026-10-25T14:31:43.245Z",
+  "mode": "prior",
+  "experimental": true,
+  "prior": {
+    "version": "pre-election-2026-10-25-v3",
+    "sha256": "807342d4f4b5f6b0b8702585ec955734e80d4281f0e249bbfa74be63123d76cc",
+    "generatedAt": "2026-10-25T14:31:43.245Z",
+    "final": false
+  },
+  "freshness": {
+    "status": "baseline",
+    "lastSuccessfulAcquisitionAt": null,
+    "lastAttemptAt": null
+  },
+  "sources": [],
+  "largestParty": [
+    {
+      "id": "likud",
+      "probability": 0.3281
+    },
+    {
+      "id": "otzma",
+      "probability": 0
+    },
+    {
+      "id": "shas",
+      "probability": 0
+    },
+    {
+      "id": "utj",
+      "probability": 0
+    },
+    {
+      "id": "rz",
+      "probability": 0
+    },
+    {
+      "id": "poi",
+      "probability": 0
+    },
+    {
+      "id": "noam",
+      "probability": 0
+    },
+    {
+      "id": "yashar",
+      "probability": 0.5647666666666666
+    },
+    {
+      "id": "byachad",
+      "probability": 0.00013333333333333334
+    },
+    {
+      "id": "dem",
+      "probability": 0
+    },
+    {
+      "id": "yb",
+      "probability": 0
+    },
+    {
+      "id": "res",
+      "probability": 0
+    },
+    {
+      "id": "jl",
+      "probability": 0.000033333333333333335
+    },
+    {
+      "id": "raam",
+      "probability": 0
+    },
+    {
+      "id": "tie",
+      "probability": 0.10696666666666667
+    }
+  ],
+  "partySeats": [
+    {
+      "id": "likud",
+      "seats": {
+        "lo": 17,
+        "median": 21,
+        "hi": 24
+      }
+    },
+    {
+      "id": "otzma",
+      "seats": {
+        "lo": 6,
+        "median": 8,
+        "hi": 10
+      }
+    },
+    {
+      "id": "shas",
+      "seats": {
+        "lo": 7,
+        "median": 9,
+        "hi": 11
+      }
+    },
+    {
+      "id": "utj",
+      "seats": {
+        "lo": 6,
+        "median": 8,
+        "hi": 10
+      }
+    },
+    {
+      "id": "rz",
+      "seats": {
+        "lo": 5,
+        "median": 7,
+        "hi": 9
+      }
+    },
+    {
+      "id": "poi",
+      "seats": {
+        "lo": 0,
+        "median": 0,
+        "hi": 4
+      }
+    },
+    {
+      "id": "noam",
+      "seats": {
+        "lo": 0,
+        "median": 0,
+        "hi": 0
+      }
+    },
+    {
+      "id": "yashar",
+      "seats": {
+        "lo": 19,
+        "median": 22,
+        "hi": 25
+      }
+    },
+    {
+      "id": "byachad",
+      "seats": {
+        "lo": 10,
+        "median": 12,
+        "hi": 15
+      }
+    },
+    {
+      "id": "dem",
+      "seats": {
+        "lo": 7,
+        "median": 9,
+        "hi": 11
+      }
+    },
+    {
+      "id": "yb",
+      "seats": {
+        "lo": 6,
+        "median": 8,
+        "hi": 10
+      }
+    },
+    {
+      "id": "res",
+      "seats": {
+        "lo": 0,
+        "median": 0,
+        "hi": 4
+      }
+    },
+    {
+      "id": "jl",
+      "seats": {
+        "lo": 6,
+        "median": 9,
+        "hi": 12
+      }
+    },
+    {
+      "id": "raam",
+      "seats": {
+        "lo": 5,
+        "median": 6,
+        "hi": 8
+      }
+    }
+  ],
+  "blocMargin": {
+    "lo": -3,
+    "median": 2,
+    "hi": 7
+  },
+  "changeReason": "baseline",
+  "history": [
+    {
+      "generatedAt": "2026-10-25T14:31:43.245Z",
+      "revision": "2964f08bb9943775bf3695b04e67b7a2673d5036ca7bdd71f72e5dc8880426aa",
+      "mode": "prior",
+      "arrangements": [
+        {
+          "id": "opposition-support",
+          "probability": 0.7424919169361022
+        },
+        {
+          "id": "opposition-haredi",
+          "probability": 0.4341021965934469
+        },
+        {
+          "id": "netanyahu-arrangement",
+          "probability": 0.005683143895203493
+        }
+      ]
+    }
+  ],
+  "blocLead": [
+    {
+      "id": "net",
+      "probability": 0.6599
+    },
+    {
+      "id": "opp",
+      "probability": 0.2547333333333333
+    },
+    {
+      "id": "tie",
+      "probability": 0.08536666666666666
+    }
+  ],
+  "arrangements": [
+    {
+      "id": "opposition-support",
+      "probability": 0.7424919169361022,
+      "mcError": 0.002524530782942014,
+      "yes": {
+        "lo": 54,
+        "median": 57,
+        "hi": 61
+      },
+      "no": {
+        "lo": 50,
+        "median": 54,
+        "hi": 57
+      },
+      "margin": {
+        "lo": -3,
+        "median": 4,
+        "hi": 10
+      }
+    },
+    {
+      "id": "opposition-haredi",
+      "probability": 0.4341021965934469,
+      "mcError": 0.0028615699624867427,
+      "yes": {
+        "lo": 57,
+        "median": 60,
+        "hi": 63
+      },
+      "no": {
+        "lo": 57,
+        "median": 60,
+        "hi": 63
+      },
+      "margin": {
+        "lo": -6,
+        "median": 0,
+        "hi": 6
+      }
+    },
+    {
+      "id": "netanyahu-arrangement",
+      "probability": 0.005683143895203493,
+      "mcError": 0.00043400636595446017,
+      "yes": {
+        "lo": 49,
+        "median": 53,
+        "hi": 56
+      },
+      "no": {
+        "lo": 64,
+        "median": 67,
+        "hi": 71
+      },
+      "margin": {
+        "lo": -22,
+        "median": -14,
+        "hi": -8
+      }
+    }
+  ],
+  "thresholds": [
+    {
+      "id": "res",
+      "passProbability": 0.15617812739575349,
+      "sufficientSupport": true,
+      "impact": [
+        {
+          "scenarioId": "opposition-support",
+          "passSuccess": 0.4636150234741784,
+          "failSuccess": 0.7941025438457893,
+          "difference": -0.3304875203716109
+        },
+        {
+          "scenarioId": "opposition-haredi",
+          "passSuccess": 0.1680537772087068,
+          "failSuccess": 0.48335045030810553,
+          "difference": -0.31529667309939874
+        },
+        {
+          "scenarioId": "netanyahu-arrangement",
+          "passSuccess": 0.0013871105420401196,
+          "failSuccess": 0.006497866961605309,
+          "difference": -0.005110756419565189
+        }
+      ],
+      "score": 0.17421520074561697
+    },
+    {
+      "id": "poi",
+      "passProbability": 0.12371254291523616,
+      "sufficientSupport": true,
+      "impact": [
+        {
+          "scenarioId": "opposition-support",
+          "passSuccess": 0.572332974137931,
+          "failSuccess": 0.7665081780144541,
+          "difference": -0.1941752038765231
+        },
+        {
+          "scenarioId": "opposition-haredi",
+          "passSuccess": 0.2452855603448276,
+          "failSuccess": 0.4607645492582731,
+          "difference": -0.2154789889134455
+        },
+        {
+          "scenarioId": "netanyahu-arrangement",
+          "passSuccess": 0.0014816810344827585,
+          "failSuccess": 0.006295169265880563,
+          "difference": -0.004813488231397805
+        }
+      ],
+      "score": 0.09343836913182438
+    },
+    {
+      "id": "raam",
+      "passProbability": 0.9718509383020566,
+      "sufficientSupport": true,
+      "impact": [
+        {
+          "scenarioId": "opposition-support",
+          "passSuccess": 0.7610693829955071,
+          "failSuccess": 0.10118343195266272,
+          "difference": 0.6598859510428443
+        },
+        {
+          "scenarioId": "opposition-haredi",
+          "passSuccess": 0.4264670576533937,
+          "failSuccess": 0.6976331360946746,
+          "difference": -0.2711660784412809
+        },
+        {
+          "scenarioId": "netanyahu-arrangement",
+          "passSuccess": 0.004167095380183146,
+          "failSuccess": 0.058579881656804736,
+          "difference": -0.05441278627662159
+        }
+      ],
+      "score": 0.07220918693317155
+    },
+    {
+      "id": "rz",
+      "passProbability": 0.9922835905469818,
+      "sufficientSupport": true,
+      "impact": [
+        {
+          "scenarioId": "opposition-support",
+          "passSuccess": 0.7407289217332885,
+          "failSuccess": 0.9676724137931034,
+          "difference": -0.2269434920598149
+        },
+        {
+          "scenarioId": "opposition-haredi",
+          "passSuccess": 0.43122270742358076,
+          "failSuccess": 0.8038793103448276,
+          "difference": -0.37265660292124686
+        },
+        {
+          "scenarioId": "netanyahu-arrangement",
+          "passSuccess": 0.0057272421901242865,
+          "failSuccess": 0.0021551724137931034,
+          "difference": 0.003572069776331183
+        }
+      ],
+      "score": 0.011413527403107977
+    },
+    {
+      "id": "likud",
+      "passProbability": 0.9999833338888704,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "otzma",
+      "passProbability": 0.9993166894436852,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "shas",
+      "passProbability": 0.9998166727775741,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "utj",
+      "passProbability": 0.9982833905536482,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "noam",
+      "passProbability": 0.0006166461117962735,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "yashar",
+      "passProbability": 0.9999833338888704,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "byachad",
+      "passProbability": 0.9999833338888704,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "dem",
+      "passProbability": 0.9999166694443519,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "yb",
+      "passProbability": 0.9986500449985001,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    },
+    {
+      "id": "jl",
+      "passProbability": 0.9977167427752408,
+      "sufficientSupport": false,
+      "impact": [],
+      "score": 0
+    }
+  ],
+  "diagnostics": {
+    "runs": 30000,
+    "seed": 20261027,
+    "stable": true,
+    "countGate": "blocked",
+    "limitations": [
+      "Experimental conditional arithmetic, not probabilities that parties agree to govern.",
+      "Threshold comparisons are conditional associations, not causal effects.",
+      "Exit-poll error has no fitted 2026 historical calibration; broad prior shared errors are retained.",
+      "Official count publication is blocked pending source semantics and verified reporting-coverage metadata and replay checks.",
+      "Direct Channel13 timeline extraction is supported; complete structured N12/Kan ingestion remains unverified, with validated Wikipedia as fallback.",
+      "Special envelopes remain separate from geographic turnout."
+    ]
+  }
+}

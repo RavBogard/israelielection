@@ -19,6 +19,7 @@ import { countedTurnout, results, versusAverage } from "@/lib/results";
 import { fetchCount, resultsNow, resultsConfig as cfg } from "@/lib/results-live";
 import { averageLabel, night, PRIOR_ROLL, priorRollLabel, sections, type Counted, type Night, type Section } from "@/lib/results-phase";
 import PageHead from "@/components/PageHead";
+import renderLiveForecast from "@/components/live-forecast/LiveForecast";
 import PhaseStrip from "@/components/results/PhaseStrip";
 import ExitPollBars from "@/components/results/ExitPollBars";
 import { locale, type Lang } from "@/lib/i18n";
@@ -357,7 +358,7 @@ function noCount(n: Night, at: string, lang: Lang): string {
 export default async function ResultsPage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const t = resultsText[lang];
   const now = resultsNow();
-  const live = await fetchCount(revalidate, { now });
+  const [live, liveForecast] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang })]);
   const n = night(live, cfg, now);
   const close = new Date(cfg.pollsClose);
   const refresh = <ResultsRefresh pollsClose={cfg.pollsClose} button={n.phase !== "before"} />;
@@ -390,6 +391,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           {n.phase === "before" && refresh}
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead>
+        {liveForecast}
         {sections(n.phase).map((k) => part[k])}
       </div>
     </div>

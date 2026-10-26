@@ -1,0 +1,73 @@
+.lf { border-block-start: 4px solid var(--ink); margin-block: 40px; padding-block: 22px; color: var(--text); }
+.lf .lf-head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; }
+.lf .lf-head h2 { font: 700 clamp(30px, 3.5vw, 46px)/1.06 var(--display); margin: 0; letter-spacing: -.02em; }
+.lf .lf-head p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.lf .lf-head p span { font-weight: 700; color: var(--ink); }
+.lf .lf-status { color: var(--ink-2); font-size: 13px; margin: 10px 0 26px; }
+.lf .lf-moved { font-size: 13px; line-height: 1.6; margin-block: 8px 20px; }
+.lf .lf-moved span { display: inline-block; margin-inline-end: 12px; }
+.lf .lf-pledge-caution { font-size: 12px; line-height: 1.4; color: var(--warn-ink); background: var(--warn-bg); padding: 6px 8px; margin-block: 10px; border-inline-start: 2px solid var(--warn-line); }
+.lf .lf-questions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+.lf .lf-question { min-width: 0; border-block-start: 1px solid var(--ink); padding-block-start: 14px; }
+.lf .lf-question h3 { font: 700 26px/1.12 var(--display); margin: 0 0 17px; letter-spacing: -.015em; min-height: 2.3em; }
+.lf .lf-label, .lf .lf-note { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin: 8px 0 16px; }
+.lf ol { list-style: none; margin: 0; padding: 0; }
+.lf .lf-leaders li { margin-block-end: 15px; }
+.lf .lf-leaders li > div:first-child, .lf .lf-path-head, .lf .lf-threshold-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.lf .lf-leaders li > div:first-child > span { font-weight: 600; }
+.lf .lf-leaders b { font: 700 36px/1 var(--display); color: var(--ink); }
+.lf .lf-prob-track { height: 7px; background: var(--cell); margin-block: 9px; }
+.lf .lf-prob-track > span { display: block; height: 100%; min-width: 1px; }
+.lf .lf-bloc { border-block: 1px solid var(--line); padding-block: 12px; margin-block: 22px 14px; }
+.lf .lf-bloc > div { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; margin-block: 7px; }
+.lf .lf-bloc > div { border-inline-start: 3px solid var(--ink-2); padding-inline-start: 8px; }
+.lf .lf-bloc > div:first-child { border-color: var(--b-net); }
+.lf .lf-bloc > div:nth-child(2) { border-color: var(--b-opp); }
+.lf .lf-bloc b { color: var(--ink); }
+.lf .lf-bloc > p { font-size: 12px; color: var(--ink-2); margin-block: 10px 0; }
+.lf .lf-margin { font-size: 13px; }
+.lf .lf-margin strong { display: block; font: 700 30px/1.3 var(--display); color: var(--ink); }
+.lf small { color: var(--ink-2); font-size: 12px; }
+.lf .lf-details { border-block-start: 1px solid var(--line); margin-block-start: 16px; padding-block: 10px; font-size: 13px; }
+.lf summary { cursor: pointer; font-weight: 600; color: var(--ink); padding-block: 4px; }
+.lf summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.lf .lf-arrangements > li { border-block-end: 1px solid var(--line); padding-block: 16px; }
+.lf .lf-arrangements > li:first-child { padding-block-start: 2px; }
+.lf .lf-path-head h4 { font: 600 15px/1.35 var(--body); margin: 0; }
+.lf .lf-path-head > b { font: 700 35px/1 var(--display); color: var(--ink); flex-shrink: 0; }
+.lf .lf-vote { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; margin-block: 8px; }
+.lf .lf-vote small { width: 100%; }
+.lf dl { margin: 12px 0; }
+.lf dl > div { margin-block: 7px; }
+.lf dt { font-weight: 600; }
+.lf dd { margin: 2px 0; }
+.lf h5 { font: 700 13px var(--body); margin: 16px 0 8px; }
+.lf .lf-details ul { padding-inline-start: 18px; }
+.lf .lf-details ul li { margin-block: 10px; }
+.lf a { text-underline-offset: 3px; }
+.lf .lf-thresholds > li { border-block-end: 1px solid var(--line); padding-block: 16px; }
+.lf .lf-threshold-head { flex-wrap: wrap; gap: 3px; }
+.lf .lf-threshold-head > span { font-size: 12px; }
+.lf .lf-impact { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-size: 12px; margin-block: 13px; }
+.lf .lf-impact > span:first-child { grid-column: 1 / -1; font-weight: 600; }
+.lf .lf-stamp { margin-block: 22px 10px; font-size: 12px; color: var(--ink-2); }
+.lf .lf-full { font-size: 14px; font-weight: 600; }
+.lf .lf-history, .lf .lf-method { border-block-start: 2px solid var(--ink); margin-block-start: 32px; padding-block-start: 18px; }
+.lf .lf-history h3, .lf .lf-method h3 { font: 700 26px/1.15 var(--display); margin: 0 0 15px; }
+.lf .lf-history svg { display: block; width: 100%; max-height: 280px; margin-block: 22px 12px; direction: ltr; }
+.lf .lf-history-key { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 12px; }
+.lf .lf-history-key span { display: flex; align-items: center; gap: 8px; }
+.lf .lf-history-key i { width: 25px; border-block-start-width: 3px; }
+.lf .lf-method > p { max-width: 85ch; font-size: 14px; line-height: 1.6; }
+.lf .lf-provenance { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 32px; font-size: 13px; }
+.lf .lf-source { border-block-start: 1px solid var(--line); padding-block: 14px; font-size: 13px; }
+.lf .lf-source dl { display: flex; flex-wrap: wrap; gap: 8px 35px; }
+.lf code { overflow-wrap: anywhere; font-size: 11px; }
+.lf .lf-table-scroll { overflow-x: auto; }
+.lf table { width: 100%; border-collapse: collapse; font-size: 12px; margin-block: 12px; text-align: start; }
+.lf th, .lf td { text-align: start; padding: 8px 5px; border-block-end: 1px solid var(--line); vertical-align: top; }
+.lf caption { text-align: start; font-weight: 600; padding-block: 8px; }
+.lf-compact .lf-question h3 { font-size: 24px; }
+@media (max-width: 950px) { .lf .lf-questions { gap: 22px; } .lf .lf-question h3 { font-size: 23px; } }
+@media (max-width: 740px) { .lf { margin-block: 28px; } .lf .lf-questions { grid-template-columns: 1fr; gap: 28px; } .lf .lf-question h3 { min-height: 0; font-size: 28px; } .lf .lf-question { padding-block-start: 16px; } .lf .lf-provenance { grid-template-columns: 1fr; } .lf .lf-history-key { display: grid; } }
+@media print { .lf .lf-questions { grid-template-columns: 1fr; } .lf details > * { display: revert; } }
