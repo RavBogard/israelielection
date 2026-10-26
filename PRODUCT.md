@@ -8,18 +8,18 @@ web
 
 ## Users
 
-- **Primary: American readers, American Jews in particular**, trying to understand Israel's October 27, 2026 election on its own terms. They arrive through news, a share card, or a search during the campaign; they come back for the polls, the daily briefing and the Coalition Builder as the vote nears.
+- **Three equal audiences:** international/American newcomers, Israeli readers, and journalists/data enthusiasts. They need different depths of the same sourced answer, not separate products. Use answer → figure → explanation → evidence → method/data.
 - **Rabbis and educators** were a primary audience until 2026-10-06, when Daniel dropped Teaching resources ("it's really not the point of this page anymore"). Outside pages may still embed the interactives, so embeds keep working; nobody is designed for as a teacher.
 - **Journalists and Jewish institutions** who treat the site as a sourced reference. Outreach to press is underway (docs/outreach/2026-10-05/); no coverage has been confirmed yet.
-- The reader is not assumed to know Hebrew, Israeli party names, or how a parliamentary system forms a government. English is the main site. Since 2026-10-06 a Hebrew edition, "פתק 2026" at /he, covers the tools (home, polls, Coalition Builder, Compare, party profiles, results), written fresh in Israeli Hebrew rather than translated; the guides stay English. Readers in Israel and browsers set to Hebrew first land on it by default (proxy.ts), and a masthead toggle switches either way and is remembered.
+- The reader is not assumed to know Hebrew, Israeli party names, or how a parliamentary system forms a government. Seven tool editions exist. Full parity across reference, search, sharing, subscriptions and email is approved as of 2026-10-26 and is being implemented. Failed translations show localized pending/unavailable status linked to the current canonical revision; they never silently substitute outdated facts. Preserve language choice through navigation.
 
 One front door: understand it. The site is "the 538 of the Israeli election": visual, infographic, data-driven, graphic first on every page (Daniel, 2026-10-05 and 2026-10-06; the earlier "Teach it" door was dropped).
 
 ## Product Purpose
 
-An English-language public reference on the 2026 Israeli election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced. Built from Rabbi Daniel Bogard's "Israel Votes" class materials and published under his byline as his own project, independent of his congregation.
+A multilingual, data-driven public reference on Israeli elections, government, parliament and policy. Every number dated and sourced. Built from Rabbi Daniel Bogard's "Israel Votes" class materials and published under his byline as his own project, independent of his congregation. The restored hero and numerical/editorial identity remain central.
 
-Success (Daniel, 2026-10-05, revised 2026-10-06): American readers return during the campaign; press and institutions cite it.
+Success (revised 2026-10-26): newcomers and Israeli readers understand what is known and what changed; returning readers follow sourced political and policy developments; journalists and institutions can cite and reuse permanent evidence.
 
 Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Israeli elections**. The 2026 election is the first edition, and the product is built to carry the next one. Work that hard-codes 2026 as the only election should be treated as debt.
 
@@ -32,9 +32,9 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 
 ## Operating Context
 
-- **Election:** October 27, 2026; polls close 22:00 Israel time. Threshold 3.25% of valid votes; seats allocated by Bader-Ofer; 61 of 120 seats forms a government. The site teaches the post-election clock (president's consultations, mandate, 28+14 days, possible second mandate, the Knesset's 21 days).
-- **Phases the site must serve:** campaign (now), election night (results route polling the Central Elections Committee feed), government formation (tracker on /government), and the long tail as a dated record and a base for the next election.
-- **Live layer, no human in the loop:** a GitHub Action imports polls twice daily and auto-commits what passes validation; failures go to one rolling review PR. A daily Gemini job writes the briefing and publishes it unreviewed; Daniel receives it by email and can correct or kill any item by deleting the day's file. Results snapshots run every fifteen minutes through election week.
+- **Current election:** October 27, 2026; polls close 22:00 Israel time. Threshold 3.25% of valid votes; seats allocated by Bader-Ofer. A 61-seat majority is an arithmetic benchmark, not proof a government has formed. Formal events and procedural clocks require the relevant authoritative publication; never infer finality or formation from a percentage, seat total or elapsed time alone.
+- **Phases:** exit estimates, published counts, official allocation, formation, governing/parliament/policy, and permanent future-election editions. An incumbent government and a new election may coexist. Prepare for rapid repeats without predicting they are inevitable.
+- **Mostly automatic publishing:** existing poll and daily briefing jobs remain; lifecycle acquisition uses signed stored-data workers. Approved cadence is every fifteen minutes for ten hours from polls close, then every three hours; daily briefings remain daily. Current operational truth is the release STATE and scheduler configuration, not old campaign assumptions. Daniel handles occasional corrections and consequential unresolved readiness issues. Subscriber email is approved future work, not an existing delivery system.
 - **Content pipeline:** research briefs → Daniel rules in one sitting → MDX and JSON → code. Text that changes meaning goes by PR; well-sourced party-data changes merge automatically. Questions only Daniel can answer go to docs/planning/<date>-eval/HANDOFF.md; his answers come back in DECISIONS.md.
 - **Embeds:** the seat grid, the poll average and the Coalition Builder can be embedded. The teaching page, packets and decks were removed on 2026-10-06; /teach redirects home.
 - **Corrections:** public GitHub issues, the /corrections page (account-free draft), and Daniel's address on /corrections (kept by Daniel, 2026-10-06).
@@ -42,13 +42,13 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 ## Capabilities and Constraints
 
 - **Capabilities (built):** home with countdown and the 120-seat race summary; party profiles with six issue axes for 15 lists; Party Map; position compare with evidence gaps shown; Coalition Builder with pledge-conflict warnings driven by declarative rules; party family tree; ballot-list directory; polls with trend, averaging assumptions and an alternative average; daily briefing with RSS; results and government-formation trackers; sourced changes log; four how-it-works guides; seven issue pages; nine community pages; locality vote map for 2019–2022; timeline 1977–2026; glossary with pronunciations; American lens; embeds; sourced CSV exports; share cards; search; About with method and privacy.
-- **Data lives as JSON in the repo** (data/*.json) so every change is a reviewable commit. No database. Vote-map data is precomputed from CEC locality files and public boundaries.
+- **Existing storage:** reviewed reference JSON/MDX and precomputed map assets coexist with durable Redis lifecycle snapshots/captures and QStash jobs. **Approved expansion:** managed PostgreSQL for indexed immutable political records, private content-addressed captures, Redis projections and bounded workers. Migration is backfill/shadow/compare before cutover; the election-night pipeline stays intact meanwhile.
 - **Stack (existing):** Next.js 16 App Router, React 19, TypeScript, Tailwind 4, MDX; Vercel deploys on push to main; GitHub Actions for jobs; Gemini Flash 3.8 for the briefing (Daniel's ruling: Gemini, not Anthropic). Node 22+.
 - **Averaging rules (published):** latest poll per publisher within 14 days of the newest; weights by square root of sample size; lists passing the threshold in fewer than half the polls are excluded from default coalition totals; totals above 120 scaled down; Channel 14 included in the main average, excluded in the alternative.
 - **Terminology is ruled, not improvised.** House language includes "Haredi", "occupied West Bank", "Palestinian citizens of Israel" (with "Arab Israelis" noted and the dispute explained), "Liberman", "hostages", "Anti-Netanyahu bloc (Zionist parties)", and "far-right" only for Otzma Yehudit and the Religious Zionist Party with IDI cited. "Genocide" only inside quotations or case names. Full list: docs/research/RULINGS.md.
-- **Out of scope by ruling:** Hebrew versions of the guides, issue and community pages (the Hebrew edition covers the tools only); a Jewish-texts section or route (occasional downloadable class sheets only, each approved by Daniel); trip material; any claim of analytics anonymity or a consent control (neither verified).
+- **Out of scope:** an overall government grade, coalition-success or government-survival odds, autonomous original editorial opinion, a Jewish-texts section or route (occasional approved downloadable class sheets only), and trip material. Do not claim analytics anonymity. The former tools-only language scope is superseded by seven-language parity. Recommendation consent controls are approved work; do not describe them as built before they ship.
 - **Analytics:** Google Analytics loads in production only, disclosed on /about (footer line cut by Daniel, 2026-10-06).
-- **Open decisions (recorded, not invented):** none outstanding from the 2026-10-05 handoff. Future-election structure (how a second election is housed on the same site) is not yet designed.
+- **Approved platform decisions:** stable official election IDs and permanent editions, with old short URLs preserved; current and historical political records; confirmed/reported/analysis labels; source-status and correction histories; opt-in digests/alerts/follows; opt-in on-device reading-history recommendations; versioned public API and bulk data. No paid purchases or production database cutover are implied by implementation. See docs/planning/2026-10-26-political-platform/PLAN.md and STATE.md.
 
 ## Brand Commitments
 

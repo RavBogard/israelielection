@@ -1,4 +1,7 @@
 import { scheduledCycle } from "@/lib/election-lifecycle/scheduled-cycle";
+import { readinessDiagnostic } from "@/lib/political-record/readiness";
+import {collectPlatformSources,mirrorPublishedLifecycle} from "@/lib/political-record/operations";
+import { emptyLedger } from "@/lib/election-lifecycle/resolver";
 import {
   rehearsalEnabled,
   runRehearsal,
@@ -69,6 +72,16 @@ export async function POST(request: Request) {
   if (!store)
     return Response.json({ error: "store_unconfigured" }, { status: 503 });
   const payload = JSON.parse(body);
+  if(payload.mode==="platform_collect")return Response.json(await collectPlatformSources(),{headers:{"Cache-Control":"no-store"}});
+  if(payload.mode==="platform_shadow")return Response.json(await mirrorPublishedLifecycle((await store.load())??emptyLedger()),{headers:{"Cache-Control":"no-store"}});
+  if (payload.mode === "readiness")
+    return Response.json(
+      readinessDiagnostic(
+        (await store.load()) ?? emptyLedger(),
+        new Date().toISOString(),
+      ),
+      { headers: { "Cache-Control": "no-store" } },
+    );
   if (payload.mode === "count_recovery") {
     if (
       typeof payload.operator !== "string" ||

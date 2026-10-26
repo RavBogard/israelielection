@@ -13,7 +13,7 @@ describe("proxy", () => {
     }
   });
   it("runs on exactly the English pages with a Hebrew edition", () => {
-    expect(config.matcher).toEqual(HE_PATHS.map((p) => p.replace("[id]", ":id")));
+    expect(config.matcher).toEqual(HE_PATHS.map((p) => p.replace(/\[([^\]]+)\]/g, ":$1")));
   });
   it("redirects a page load from Israel to the Hebrew page, keeping the query", () => {
     const res = proxy(req("/coalition-builder?poll=results", { "x-vercel-ip-country": "IL", "sec-fetch-dest": "document" }));

@@ -11,6 +11,7 @@ import type { ForecastProps } from "../live-forecast/presentation";
 import { useSeatContext } from "../seat-context/SeatContextProvider";
 import CurrentParliament from "../seat-context/CurrentParliament";
 import "./government-live.css";
+import ProposalLedger from "../reference/ProposalLedger";
 type Props = {
   initial: ElectionLifecycleSnapshot;
   lang: Lang;
@@ -172,6 +173,7 @@ export default function GovernmentLive({
                 <h3>
                   {f.target}: {proposal.person}
                 </h3>
+                <ProposalLedger seats={snapshot.seatContext.pointSeats} decisions={proposal.decisions} lang={lang}/>
                 <h4>{t.confirmed}</h4>
                 {confirmed.length ? (
                   <ul>

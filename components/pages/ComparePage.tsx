@@ -1,4 +1,5 @@
 import "@/components/article/article.css";
+import UnprofiledLists from "../election-readiness/UnprofiledLists";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import SeatBasis from "@/components/seat-context/SeatBasis";
 import Compare, { type CompareParty, type Preset } from "@/components/Compare";
@@ -11,17 +12,16 @@ import { blocText, partyText } from "@/lib/i18n/overlays";
 import { lettersOf } from "@/lib/letters";
 import { outgoingGovernment } from "@/lib/outgoing-government";
 
-const listed = parties.filter((p) => p.coalitionCard !== "hidden");
-const ids = listed.map((p) => p.id);
 
 /** The core opposition lists are the four Jewish-majority lists polled into the Knesset. */
 const CORE_OPPOSITION = ["yashar", "byachad", "dem", "yb"];
 
-const rows = matrixRows(ids);
+
 
 /** The comparison page (/compare, /he/compare). Hebrew reads every data string through lib/i18n/overlays. */
 export default async function ComparePage({ lang }: { lang: Lang }) {
   const context = await seatContextForRender();
+  const listed=parties.filter(p=>p.coalitionCard!=="hidden"||(context?.pointSeats[p.id]??0)>0),ids=listed.map(p=>p.id),rows=matrixRows(ids);
   const T = compareText[lang];
   const he = lang !== "en";
   const pickable: CompareParty[] = listed.map((p) => ({
@@ -46,6 +46,7 @@ export default async function ComparePage({ lang }: { lang: Lang }) {
       <PageHead title={T.title} standfirst={<>{T.standfirst}</>} />
 
       <SeatBasis context={context} lang={lang} share />
+      <UnprofiledLists initial={context} knownIds={ids} lang={lang}/>
       <Compare
         context={context}
         unavailable={!context}

@@ -2,6 +2,8 @@
 
 import { useSeatContext } from "./seat-context/SeatContextProvider";
 import SeatBasis from "./seat-context/SeatBasis";
+import UnprofiledLists from "./election-readiness/UnprofiledLists";
+import { ballotSeat } from "./election-readiness/model";
 import { useState } from "react";
 import Link from "next/link";
 import { ballotLists, filterBallot, orderSlips, type SlipOrder } from "@/lib/ballot";
@@ -26,12 +28,12 @@ const slipName = (name: string) => {
  */
 export default function BallotDirectory() {
   const {context}=useSeatContext();
-  const seatsOf=(id:string|null)=>id&&context ? context.pointSeats[id]??0 : 0;
+  const seatsOf=(list: (typeof ballotLists)[number])=>ballotSeat(context,list);
   const [query, setQuery] = useState("");
   const [coverage, setCoverage] = useState<"all" | "profiled" | "other">("all");
   const [order, setOrder] = useState<SlipOrder>("roster");
   const shown = filterBallot(ballotLists, query, coverage);
-  const polled = ballotLists.filter((l) => seatsOf(l.profile) > 0).length;
+  const polled = ballotLists.filter((l) => (seatsOf(l)??0) > 0).length;
   return (
     <section className="ballot-directory">
       <SeatBasis context={context} lang="en" share/>
@@ -41,14 +43,14 @@ export default function BallotDirectory() {
             The {ballotLists.length} slips on the roster{context&&<>; <b>{polled}</b> hold seats in this allocation</>}
           </span>
           <div className="seg bd-order" role="group" aria-label="Order the slips">
-            {([["roster", "Roster order"], ["polled", "Polled first"]] as const).map(([k, t]) => (
+            {([["roster", "Roster order"], ["polled", "Seats first"]] as const).map(([k, t]) => (
               <button key={k} type="button" aria-pressed={order === k} onClick={() => setOrder(k)}>{t}</button>
             ))}
           </div>
         </figcaption>
         <ol className="bd-wall">
-          {orderSlips(ballotLists, (l) => seatsOf(l.profile), order).map((l) => {
-            const s = seatsOf(l.profile);
+          {orderSlips(ballotLists, (l) => seatsOf(l)??0, order).map((l) => {
+            const s = seatsOf(l)??0;
             const c = l.profile ? partyColor(l.profile) : null;
             return (
               <li key={l.id}>
@@ -62,10 +64,11 @@ export default function BallotDirectory() {
           })}
         </ol>
         <p className="fig-src bd-src">
-          Coloured slips are profiled lists holding seats in this allocation. A plain slip has no mapped seat total; this does not establish official approval, withdrawal or current eligibility. {order === "roster" ? "Order as in the published roster." : "Polled lists first, by seats; the rest in roster order."} {data.caveat}
+          Colour identifies profiled lists; seat totals also include matched lists without profiles. A plain slip may have no seats or no matched evidence; this does not establish approval, withdrawal or current eligibility. {order === "roster" ? "Order as in the published roster." : "Lists with seats first; the rest in roster order."} {data.caveat}
         </p>
       </figure>
 
+      <UnprofiledLists knownIds={ballotLists.map(l=>l.profile??l.id)}/>
       <div className="ballot-controls">
         <label>Find a list, leader or ballot letters<input value={query} onChange={(e) => setQuery(e.target.value)} type="search" placeholder="English, Hebrew or letters" /></label>
         <label>Site coverage<select value={coverage} onChange={(e) => setCoverage(e.target.value as typeof coverage)}><option value="all">Every published list</option><option value="profiled">Lists with detailed profiles</option><option value="other">Other lists</option></select></label>

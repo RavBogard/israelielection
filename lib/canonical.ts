@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HE_PUBLIC, LANGS, enPath, editionPath } from "./i18n";
+import { sourceForPath,translatedReference } from "./reference/catalog";
 
 /** The daily briefing's feed, linked from every English page. The feed is English only. */
 export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] };
@@ -8,7 +9,11 @@ export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Is
 function languages(en: string, announce = HE_PUBLIC): Record<string, string> | undefined {
   if (!announce) return undefined;
   if (!editionPath(en, "he")) return undefined;
-  return { ...Object.fromEntries(LANGS.map(lang => [lang, editionPath(en, lang)!])), "x-default": en };
+  const sourcePath=en.startsWith("/policies/")?en.replace("/policies/","/issues/"):en;
+  const source=sourceForPath(sourcePath);
+  const ready=source?LANGS.filter(lang=>lang==="en"||translatedReference(sourcePath,lang)?.state==="ready"):LANGS;
+  if(ready.length===1)return undefined;
+  return { ...Object.fromEntries(ready.map(lang => [lang, editionPath(en, lang)!])), "x-default": en };
 }
 
 /**

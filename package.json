@@ -23,14 +23,19 @@
     "@next/mdx": "^16.3.8",
     "@next/third-parties": "^16.3.8",
     "@types/mdx": "^2.0.14",
+    "@vercel/blob": "^2.8.2",
     "fast-xml-parser": "^5.11.2",
     "next": "16.3.8",
+    "pg": "^8.23.1",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "svix": "^2.9.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.12",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.19.1",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

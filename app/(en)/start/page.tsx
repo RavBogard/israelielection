@@ -28,7 +28,7 @@ export default async function Page() {
   const context = await seatContextForRender();
   const figures = {
     voters: <VotingRightsGuide />,
-    seats: context?.seatStatus==="official" ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : <div className="rs"><PollThresholdWatch /></div>,
+    seats: context ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : <div className="rs"><PollThresholdWatch /></div>,
     parties: context ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : <SeatBasis context={null} lang="en"/>,
     govern: context ? <CurrentParliament initial={context} lang="en" compact {...forecastPresentation("en")}/> : (
       <figure className="js-grid">

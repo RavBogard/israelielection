@@ -1,5 +1,7 @@
 import { seatContextForRender } from "@/lib/seat-context-server";
 import SeatBasis from "@/components/seat-context/SeatBasis";
+import UnprofiledLists from "../election-readiness/UnprofiledLists";
+import { readiness } from "@/lib/i18n/election-readiness";
 import "@/components/article/article.css";
 import { matrixRows, shade } from "@/components/compare/model";
 import MatchQuiz from "@/components/match/MatchQuiz";
@@ -77,6 +79,8 @@ export default async function MatchPage() {
     <div className="wrap match-page">
       <PageHead title="Which Israeli party matches you?" standfirst="Answer seven questions from this campaign and see which lists sit closest to you, and what an Israeli voter would weigh next." />
       <SeatBasis context={context} lang="en" share />
+      <p className="note">{readiness("en").matchNote}</p>
+      <UnprofiledLists initial={context} knownIds={ids}/>
       <MatchQuiz data={current} />
     </div>
   );

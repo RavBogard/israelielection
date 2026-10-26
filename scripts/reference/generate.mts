@@ -1,0 +1,10 @@
+import {mkdirSync,writeFileSync} from "node:fs";
+import {dirname,join,resolve} from "node:path";
+import {generateReferenceTranslation} from "../../lib/reference/generation";
+import type {TranslationDocument} from "../../lib/reference/translations";
+const arg=(key:string)=>{const i=process.argv.indexOf(key);return i<0?undefined:process.argv[i+1]};
+const id=arg("--id"),lang=arg("--lang") as TranslationDocument["lang"],out=arg("--out");
+if(!id||!out||!["he","ar","fa","de","fr","zh"].includes(lang)||process.argv.includes("--publish"))throw Error("Provide --id --lang --out. Generate privately, then publish sequentially with publish.mts");
+const result=await generateReferenceTranslation(id,lang),d=result.translation;
+const file=join(resolve(out),`${d.id.replaceAll(":","-")}.${lang}.${d.sourceRevision.slice(0,12)}.json`);mkdirSync(dirname(file),{recursive:true});writeFileSync(file,JSON.stringify(d,null,2)+"\n");
+console.log(JSON.stringify({id,lang,sourceRevision:d.sourceRevision,blocks:d.blocks.length,semanticReview:d.review.verdict,usage:result.usage,file,published:false,widgets:result.widgets}));

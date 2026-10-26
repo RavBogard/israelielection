@@ -15,6 +15,7 @@ import {
 } from "./html";
 import { extractEvents, PrimaryExtractionError } from "./extract";
 import { mergeEvents } from "./events";
+import { revalidationPlan } from "./readiness";
 import { officialOptions, OFFICIAL_URLS, parseOfficialSeats } from "./official";
 import type {
   Authority,
@@ -121,19 +122,36 @@ export async function acquirePoliticalSources(
     };
   let extractionBudget = 3;
   const deadline = Date.now() + 40000;
+  const htmlCache = new Map<string, Promise<string>>();
+  const acquire = (url: string, hosts: string[]) => {
+    const canonical = new URL(url);
+    canonical.hash = "";
+    if (
+      canonical.protocol !== "https:" ||
+      !hosts.includes(canonical.hostname) ||
+      canonical.username ||
+      canonical.password ||
+      canonical.port
+    )
+      return Promise.reject(new Error("source_not_allowed"));
+    const key = JSON.stringify([canonical.href, hosts.toSorted()]);
+    if (!htmlCache.has(key))
+      htmlCache.set(key, fetchPrimary(canonical.href, hosts, deadline));
+    return htmlCache.get(key)!;
+  };
   const extractionCache = { ...(ledger.extractionCache ?? {}) };
+  const extractionPending = new Set(ledger.extractionPending ?? []);
   const results = await Promise.all(
     (registry.sources as RegistrySource[]).map(async (source) => {
       const health: SourceHealth[] = [],
         captures: { source: SourceRef; body: string }[] = [],
         events: PoliticalEvent[] = [];
-      const known = ledger.events
-        .filter((e) => e.status !== "superseded" && e.status !== "retracted")
-        .flatMap((e) => e.sources)
-        .filter((s) => s.id.startsWith(source.id + ":"));
+      const known = revalidationPlan(ledger, source.id, now).selected.map(
+        (x) => x.ref,
+      );
       let discovered: { url: string; title: string }[] = [];
       try {
-        const html = await fetchPrimary(source.index, source.hosts, deadline);
+        const html = await acquire(source.index, source.hosts);
         if (isTestEnvironment(html)) throw new Error("test_environment");
         health.push(
           healthRecord(
@@ -177,22 +195,11 @@ export async function acquirePoliticalSources(
           ),
         );
       }
-      const rotated = known.toSorted(
-        (a, b) =>
-          Date.parse(
-            ledger.health.find((h) => h.sourceId === a.id)?.checkedAt ??
-              "1970-01-01",
-          ) -
-          Date.parse(
-            ledger.health.find((h) => h.sourceId === b.id)?.checkedAt ??
-              "1970-01-01",
-          ),
-      );
       const urls = [
         ...new Map(
           [
+            ...known.map((s) => ({ url: s.url, title: s.title })),
             ...discovered.slice(0, 3),
-            ...rotated.slice(0, 3).map((s) => ({ url: s.url, title: s.title })),
           ].map((s) => [s.url, s]),
         ).values(),
       ];
@@ -201,7 +208,7 @@ export async function acquirePoliticalSources(
           const id =
             source.id + ":" + Buffer.from(item.url).toString("base64url");
           try {
-            const html = await fetchPrimary(item.url, source.hosts, deadline);
+            const html = await acquire(item.url, source.hosts);
             if (isTestEnvironment(html)) throw new Error("test_environment");
             const article = articleOf(html, item.url);
             if (
@@ -240,7 +247,7 @@ export async function acquirePoliticalSources(
               )
                 events.push({ ...old, status: "retracted" });
             const extractionFingerprint = fingerprint({
-              extractorVersion: 3,
+              extractorVersion: 4,
               configured: !!process.env.GEMINI_API_KEY,
               body: textOf(article.body),
               publishedAt: ref.publishedAt,
@@ -252,6 +259,7 @@ export async function acquirePoliticalSources(
               extractionBudget > 0
             ) {
               extractionBudget--;
+              extractionPending.add(id);
               events.push(
                 ...(await extractEvents(
                   ref,
@@ -262,6 +270,9 @@ export async function acquirePoliticalSources(
                 )),
               );
               extractionCache[id] = extractionFingerprint;
+              extractionPending.delete(id);
+            } else if (extractionCache[id] !== extractionFingerprint) {
+              extractionPending.add(id);
             }
             health.push(
               healthRecord(
@@ -310,5 +321,6 @@ export async function acquirePoliticalSources(
     health: results.flatMap((r) => r.health),
     captures: results.flatMap((r) => r.captures),
     extractionCache,
+    extractionPending: [...extractionPending],
   };
 }

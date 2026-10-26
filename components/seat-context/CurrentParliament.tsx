@@ -17,6 +17,7 @@ type Props = {
   lang: Lang;
   compact?: boolean;
   showSeats?: boolean;
+  heading?: string;
   showScenarios?: boolean;
   names: ForecastProps["names"];
   scenarios: ForecastProps["scenarios"];
@@ -27,6 +28,7 @@ export default function CurrentParliament({
   lang,
   compact = false,
   showSeats = true,
+  heading,
   showScenarios = true,
   names,
   scenarios,
@@ -49,9 +51,9 @@ export default function CurrentParliament({
       {showSeats && (
         <>
           <h2 id={`current-seats-${compact ? "home" : "full"}`}>
-            {context.seatStatus === "official"
+            {heading ?? (context.seatStatus === "official"
               ? t.officialResult
-              : t.currentSeats}
+              : t.currentSeats)}
           </h2>
           <SeatBasis context={context} lang={lang} share />
           {refreshFailed && (

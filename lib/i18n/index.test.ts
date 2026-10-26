@@ -14,20 +14,20 @@ describe("edition paths", () => {
     }
     expect(editionPath("/ar", "fa")).toBe("/fa");
     expect(editionPath("/fa/parties/likud/", "ar")).toBe("/ar/parties/likud");
-    expect(editionPath("/about", "fa")).toBeNull();
+    expect(editionPath("/about", "fa")).toBe("/fa/about");
     expect(pathLang("/ar?x=1")).toBe("ar");
     expect(pathLang("/faraway")).toBe("en");
   });
   it("knows which English pages have a Hebrew edition", () => {
-    for (const p of ["/", "/polls", "/coalition-builder", "/compare", "/parties/likud", "/results", "/polls?poll=x", "/compare/"]) expect(hasHebrew(p)).toBe(true);
-    for (const p of ["/about", "/parties", "/parties/likud/extra", "/how-it-works", "/news/2026-10-05", "/pollsx"]) expect(hasHebrew(p)).toBe(false);
+    for (const p of ["/", "/polls", "/coalition-builder", "/compare", "/parties/likud", "/results", "/polls?poll=x", "/compare/", "/about", "/how-it-works", "/elections/il-knesset-26", "/policies/courts"]) expect(hasHebrew(p)).toBe(true);
+    for (const p of ["/parties", "/parties/likud/extra", "/news/2026-10-05", "/pollsx"]) expect(hasHebrew(p)).toBe(false);
   });
   it("maps English to Hebrew, keeping query and fragment", () => {
     expect(hePath("/")).toBe("/he");
     expect(hePath("/polls")).toBe("/he/polls");
     expect(hePath("/parties/likud#issues")).toBe("/he/parties/likud#issues");
     expect(hePath("/coalition-builder?with=likud,shas")).toBe("/he/coalition-builder?with=likud,shas");
-    expect(hePath("/about")).toBeNull();
+    expect(hePath("/about")).toBe("/he/about");
     expect(hePath("/he/polls")).toBe("/he/polls");
   });
   it("maps Hebrew to English", () => {

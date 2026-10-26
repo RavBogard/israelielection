@@ -11,6 +11,9 @@ import {useLang} from "@/lib/i18n/lang";
 import chrome from "@/lib/i18n/chrome";
 import {activeNavGroup,currentNavPage,visibleNavItems} from "@/lib/navigation";
 import "./site-nav.css";
+import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { useSeatContext } from "./seat-context/SeatContextProvider";
+import { phaseNavGroups, readinessPhase,referenceNavGroups } from "./election-readiness/model";
 
 /** True once polls close; re-renders at the moment they do. The server's answer is used for hydration. */
 function usePollsClosed(pollsClose:string,atRender:boolean){
@@ -33,7 +36,10 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,
  const lang=useLang(),t=chrome[lang];
  const path=usePathname(),navRef=useRef<HTMLElement>(null),menuRef=useRef<HTMLButtonElement>(null),triggerRefs=useRef<Record<string,HTMLButtonElement|null>>({});
  const [mobileOpen,setMobileOpen]=useState(false),[expanded,setExpanded]=useState<string|null>(null);
- const closed=usePollsClosed(pollsClose,closedAtRender);
+ const timeClosed=usePollsClosed(pollsClose,closedAtRender);
+ const {context}=useSeatContext();
+ const phase=readinessPhase(context,timeClosed),closed=phase!=="campaign";
+ const displayGroups=phaseNavGroups(referenceNavGroups(groups,lang),phase,lang);
  const active=activeNavGroup(groups,path);
  const close=()=>{setExpanded(null);setMobileOpen(false);};
  const follow=(e:MouseEvent)=>{if(!e.metaKey&&!e.ctrlKey&&!e.shiftKey&&!e.altKey&&e.button===0)close();};
@@ -57,8 +63,8 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,
   <LangSwitch/>
   <div id="primary-navigation" className={`nav-menu${mobileOpen?" mobile-open":""}`}>
    <div className="nav-main">
-    <ul className="nav-groups">{groups.map(g=><li key={g.id} className={`nav-group${active===g.id?" section-active":""}`}>
-     <button ref={el=>{triggerRefs.current[g.id]=el;}} type="button" className="nav-trigger" aria-expanded={expanded===g.id} aria-controls={`nav-panel-${g.id}`} onClick={()=>setExpanded(old=>old===g.id?null:g.id)}><span className="nav-label">{g.label}<span className="nav-caret" aria-hidden="true"/></span>{facts[g.id]&&<span className="nav-preview">{facts[g.id]}</span>}</button>
+    <ul className="nav-groups">{displayGroups.map(g=><li key={g.id} className={`nav-group${active===g.id?" section-active":""}`}>
+     <button ref={el=>{triggerRefs.current[g.id]=el;}} type="button" className="nav-trigger" aria-expanded={expanded===g.id} aria-controls={`nav-panel-${g.id}`} onClick={()=>setExpanded(old=>old===g.id?null:g.id)}><span className="nav-label">{g.label}<span className="nav-caret" aria-hidden="true"/></span>{(g.id==="polls"&&closed&&context?`${LIFECYCLE[lang][context.basis]} · ${LIFECYCLE[lang][context.seatStatus]}`:facts[g.id])&&<span className="nav-preview">{g.id==="polls"&&closed&&context?`${LIFECYCLE[lang][context.basis]} · ${LIFECYCLE[lang][context.seatStatus]}`:facts[g.id]}</span>}</button>
      <div id={`nav-panel-${g.id}`} className={`nav-panel${g.items.length<4?" compact":""}`} hidden={expanded!==g.id}>
       <p className="nav-panel-label">{g.label}</p><ul>{visibleNavItems(g.items,closed,path).map(n=><li key={n.href}><Link href={n.href} hrefLang={n.hrefLang} aria-current={currentNavPage(n.href,path)?"page":undefined} onClick={follow}><span><Label n={n} text={n.label} lang={lang}/></span>{n.description&&<small>{n.description}</small>}</Link></li>)}</ul>
       <ul className="nav-panel-more" aria-label={t.more}>{more.map(n=><li key={n.href}>{link(n)}</li>)}</ul>

@@ -118,7 +118,11 @@ export type EventType =
   | "agreement"
   | "confidence_commitment"
   | "confidence_vote"
-  | "government_formed";
+  | "government_formed"
+  | "mandate_returned"
+  | "mandate_failed"
+  | "government_ended"
+  | "election_called";
 export type PartyDecision =
   "cabinet" | "support" | "abstain" | "oppose" | "undecided";
 export type PoliticalEvent = {
@@ -158,6 +162,7 @@ export type ProposalDecision = {
   sourceEventIds: string[];
 };
 export type Politics = {
+  formationState?: "awaiting_assignment"|"forming"|"attempt_ended"|"governing"|"government_ended"|"new_election"|"unknown";
   activeProposalId: string | null;
   proposals: { id: string; person: string; decisions: ProposalDecision[] }[];
   activeStages: EventType[];
@@ -221,6 +226,7 @@ export type LifecycleLedger = {
     eventIds: string[];
   }[];
   extractionCache: Record<string, string>;
+  extractionPending?: string[];
   seatSnapshots: SharedSeatContext[];
   events: PoliticalEvent[];
   health: SourceHealth[];

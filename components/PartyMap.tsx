@@ -260,7 +260,7 @@ export default function PartyMap() {
               <button key={p.id} type="button" className={`chip${avgOf.has(p.id) ? "" : " na"}`} aria-pressed={current === p.id} data-party={p.id} onClick={() => select(p.id)}>
                 <span className="sw" style={avgOf.has(p.id) ? { background: partyColor(p.id) } : undefined} />
                 <b>{p.name}</b>
-                <em>{p.status}</em>
+                <em>{context ? `0 ${LIFECYCLE.en.seats} · ${LIFECYCLE.en[context.seatStatus]}` : p.status}</em>
               </button>
             ))}
           </div>

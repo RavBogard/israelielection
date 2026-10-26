@@ -3,6 +3,7 @@ import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {"/api/reference/worker":["./content/**/*.mdx","./content/*.mdx"]},
   pageExtensions: ["ts", "tsx", "mdx"],
   // Two root layouts (app/(en) and app/(he)/he), so unmatched URLs render app/global-not-found.tsx.
   experimental: { globalNotFound: true },
@@ -15,8 +16,6 @@ const nextConfig: NextConfig = {
       // Teaching resources were dropped (Daniel, 2026-10-06); old links land on the home page.
       { source: "/teach", destination: "/", permanent: false },
       { source: "/teach/:path*", destination: "/", permanent: false },
-      // The changes log was cut (Daniel, 2026-10-06); dated developments are in the briefings.
-      { source: "/changes", destination: "/news", permanent: true },
     ];
   },
 };

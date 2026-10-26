@@ -295,7 +295,7 @@ const words: Record<Exclude<Lang, "en">, string[]> = {
     "80%边际区间，并非另一套120席分配",
   ],
 };
-export const FORMATION: Record<Lang, Text> = {
+const baseFormation: Record<Lang, Text> = {
   en,
   ...Object.fromEntries(
     Object.entries(words).map(([lang, values]) => [
@@ -372,3 +372,6 @@ export const RECORD_LABELS: Record<
       "评分使用冻结的竞选记录，暂定条目未事后登记。名单平均误差采用原始预测范围，额外当选名单另列。一次选举并非校准测试。",
   },
 };
+
+const outcomeWords:Record<Lang,string[]>={en:["Mandate returned","Mandate attempt ended without a government","Government ended","Election called"],he:["המנדט הוחזר","ניסיון ההרכבה הסתיים ללא ממשלה","כהונת הממשלה הסתיימה","נקבעו בחירות"],ar:["أُعيد التكليف","انتهت محاولة التكليف دون تشكيل حكومة","انتهت ولاية الحكومة","دُعي إلى انتخابات"],fa:["مأموریت بازگردانده شد","تلاش تشکیل دولت بدون دولت پایان یافت","دوره دولت پایان یافت","انتخابات اعلام شد"],de:["Mandat zurückgegeben","Mandatsversuch ohne Regierung beendet","Regierung beendet","Wahl ausgerufen"],fr:["Mandat rendu","Tentative de formation terminée sans gouvernement","Fin du gouvernement","Élection convoquée"],zh:["组阁授权交回","组阁尝试结束，未组成政府","政府任期结束","宣布举行选举"]};
+export const FORMATION=Object.fromEntries(Object.entries(baseFormation).map(([lang,base])=>{const [mandate_returned,mandate_failed,government_ended,election_called]=outcomeWords[lang as Lang];return[lang,{...base,mandate_returned,mandate_failed,government_ended,election_called}]})) as Record<Lang,Text&{mandate_returned:string;mandate_failed:string;government_ended:string;election_called:string}>;

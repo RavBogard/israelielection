@@ -1,0 +1,134 @@
+[
+  {
+    "id": "about",
+    "path": "/about",
+    "title": "About this site",
+    "topic": "about"
+  },
+  {
+    "id": "american-lens",
+    "path": "/american-lens",
+    "title": "The American lens",
+    "topic": "american-lens"
+  },
+  {
+    "id": "communities:druze",
+    "path": "/communities/druze",
+    "title": "Druze",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:ethiopian-israelis",
+    "path": "/communities/ethiopian-israelis",
+    "title": "Ethiopian-Israelis",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:haredim",
+    "path": "/communities/haredim",
+    "title": "Haredim",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:masorti",
+    "path": "/communities/masorti",
+    "title": "Masorti Israel",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:palestinian-citizens",
+    "path": "/communities/palestinian-citizens",
+    "title": "Palestinian citizens of Israel",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:religious-zionists",
+    "path": "/communities/religious-zionists",
+    "title": "Religious Zionists",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:russian-speakers",
+    "path": "/communities/russian-speakers",
+    "title": "Russian-speaking Israelis",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:secular",
+    "path": "/communities/secular",
+    "title": "Secular Israel",
+    "topic": "communities"
+  },
+  {
+    "id": "communities:settlers",
+    "path": "/communities/settlers",
+    "title": "Settlers",
+    "topic": "communities"
+  },
+  {
+    "id": "guides:forming-a-government",
+    "path": "/how-it-works/forming-a-government",
+    "title": "Forming a government",
+    "topic": "guides"
+  },
+  {
+    "id": "guides:seats",
+    "path": "/how-it-works/seats",
+    "title": "From votes to seats",
+    "topic": "guides"
+  },
+  {
+    "id": "guides:voting",
+    "path": "/how-it-works/voting",
+    "title": "How Israelis vote",
+    "topic": "guides"
+  },
+  {
+    "id": "guides:who-votes",
+    "path": "/how-it-works/who-votes",
+    "title": "Who votes, and who doesn't",
+    "topic": "guides"
+  },
+  {
+    "id": "issues:courts",
+    "path": "/issues/courts",
+    "title": "Courts and the judicial overhaul",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:economy",
+    "path": "/issues/economy",
+    "title": "Cost of living and the economy",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:haredi-draft",
+    "path": "/issues/haredi-draft",
+    "title": "The Haredi draft",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:palestinian-state",
+    "path": "/issues/palestinian-state",
+    "title": "A Palestinian state and the 2026 vote",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:religion-state",
+    "path": "/issues/religion-state",
+    "title": "Religion and state",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:war-hostages",
+    "path": "/issues/war-hostages",
+    "title": "The war and the hostages",
+    "topic": "issues"
+  },
+  {
+    "id": "issues:west-bank",
+    "path": "/issues/west-bank",
+    "title": "The West Bank and annexation",
+    "topic": "issues"
+  }
+]

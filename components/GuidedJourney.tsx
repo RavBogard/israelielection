@@ -6,6 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { longDate } from "@/lib/format";
 import { journeys, journeyState, type JourneyStep } from "@/lib/journeys";
 import "./journey.css";
+import { readiness } from "@/lib/i18n/election-readiness";
+import { readinessPhase } from "./election-readiness/model";
 
 function Check({ step }: { step: JourneyStep }) {
   const [choice, setChoice] = useState<number | null>(null);
@@ -18,7 +20,9 @@ function Check({ step }: { step: JourneyStep }) {
 }
 /** Each step leads with a figure from the site (passed in from the server page), then its text. */
 export default function GuidedJourney({ figures = {} }: { figures?: Record<string, ReactNode> }) {
-  const {context}=useSeatContext();
+  const {context,cadence}=useSeatContext();
+  const phase=readinessPhase(context,!!cadence&&cadence.phase!=="before_close"),words=readiness("en");
+  const next=phase==="campaign"?{href:null,label:null}:phase==="official"?{href:"/government",label:words.governmentNext}:{href:"/results",label:words.resultsNext};
   const params = useSearchParams();
   const router = useRouter();
   const { route, index } = journeyState(params.get("route"), params.get("step"));
@@ -40,7 +44,7 @@ export default function GuidedJourney({ figures = {} }: { figures?: Record<strin
       <p>{step.text}</p>
       <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
       <Check key={`${route.id}-${key}`} step={step} />
-      <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step</button> : <p><b>You’ve reached the end of this route.</b> <Link href={route.next}>{route.nextLabel}</Link>.</p>}</div>
+      <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step</button> : <p><b>You’ve reached the end of this route.</b> <Link href={next.href??route.next}>{next.label??route.nextLabel}</Link>.</p>}</div>
     </section>
     <div className="journey-nav">
     <p>{route.description} Leave or skip a step whenever you like.</p>

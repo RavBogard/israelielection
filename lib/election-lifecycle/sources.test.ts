@@ -10,10 +10,82 @@ vi.mock("./extract", async (importOriginal) => ({
 }));
 import { acquirePoliticalSources } from "./sources";
 import { emptyLedger } from "./resolver";
+import type { PoliticalEvent } from "./types";
 afterEach(() => {
   vi.unstubAllEnvs();
   mocks.fetch.mockReset();
   mocks.extract.mockReset();
+});
+
+it("revalidates unique deadline-prioritized articles beyond the old three-item cap even when discovery fails", async () => {
+  vi.stubEnv("ELECTION_FORMATION_ENABLED", "true");
+  mocks.extract.mockResolvedValue([]);
+  const ledger = emptyLedger(),
+    now = "2026-11-04T12:00:00Z";
+  for (let n = 0; n < 14; n++) {
+    const url = `https://www.president.gov.il/statement-${n}/`,
+      id = "president:" + Buffer.from(url).toString("base64url");
+    const ref = {
+      id,
+      publisher: "President",
+      title: "Statement",
+      url,
+      authority: "president" as const,
+      publishedAt: "2026-11-04T09:00:00Z",
+      observedAt: now,
+      captureHash: "a".repeat(64),
+    };
+    const event: PoliticalEvent = {
+      id: `event${n}`,
+      revision: `rev${n}`,
+      claimKey: `claim${n}`,
+      type: "talks",
+      election: "2026-10-27",
+      effectiveAt: "2026-11-04T09:00:00Z",
+      publishedAt: ref.publishedAt,
+      observedAt: now,
+      partyIds: [],
+      person: null,
+      decision: null,
+      durationDays: null,
+      status: "confirmed",
+      sources: [ref],
+      evidenceQuote: "Government formation talks are ongoing.",
+      supersedes: null,
+      templateKey: "talks",
+    };
+    ledger.events.push(event);
+    ledger.health.push({
+      sourceId: id,
+      authority: "president",
+      status: "healthy",
+      checkedAt: now,
+      lastSuccessfulAt:
+        n === 13 ? "2026-11-03T06:00:00Z" : "2026-11-04T09:00:00Z",
+      reason: null,
+    });
+  }
+  ledger.events.push({ ...ledger.events[0], id: "duplicate-claim" });
+  mocks.fetch.mockImplementation(async (url: string) => {
+    if (!url.includes("statement-")) throw new Error("index unavailable");
+    return `<script type="application/ld+json">${JSON.stringify({ "@type": "NewsArticle", headline: "Primary statement", articleBody: "Government formation talks are ongoing.", datePublished: "2026-11-04T09:00:00Z" })}</script>`;
+  });
+  const result = await acquirePoliticalSources(ledger, now);
+  const calls = mocks.fetch.mock.calls
+    .map((call) => call[0] as string)
+    .filter((url) => url.includes("statement-"));
+  expect(calls).toHaveLength(12);
+  expect(new Set(calls).size).toBe(12);
+  expect(calls[0]).toContain("statement-13/");
+  expect(
+    result.health.filter(
+      (h) => h.sourceId.startsWith("president:") && h.status === "healthy",
+    ),
+  ).toHaveLength(12);
+  expect(result.health.find((h) => h.sourceId === "president")?.status).toBe(
+    "unavailable",
+  );
+  expect(result.extractionPending?.length).toBeGreaterThan(0);
 });
 it("caps model extraction, caches successful zero-event article bodies, and reserves discovery slots alongside known URLs", async () => {
   vi.stubEnv("ELECTION_FORMATION_ENABLED", "true");

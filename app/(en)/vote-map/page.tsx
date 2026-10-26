@@ -7,7 +7,7 @@ import PageHead from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Vote map",
-  description: "How Israel's cities, towns, kibbutzim and villages voted in the five Knesset elections from April 2019 to November 2022, from the Central Elections Committee's results by locality.",
+  description: "Published locality results for 2026 when verified, with historical Knesset election comparisons from 2019 to 2022.",
   alternates: alternates("/vote-map"),
 };
 
@@ -18,7 +18,7 @@ const TOI_EJ = "https://www.timesofisrael.com/unprecedented-1200-east-jerusalem-
 export default function Page() {
   return (
     <div className="wrap article-page vote-map-page">
-      <PageHead title="Vote map" standfirst={<>How each of Israel&apos;s roughly 1,200 voting localities voted in the five elections from April 2019 to November 2022.</>} />
+      <PageHead title="Vote map" standfirst={<>Explore published locality results. Verified 2026 results appear when available; the historical editions cover 2019–2022.</>} />
 
       <VoteMap />
 
