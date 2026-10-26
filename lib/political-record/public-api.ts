@@ -1,8 +1,9 @@
+import { getWorkspaceRegistry } from "./workspace-server";
 import { projectPublic as publicRecord } from "./public-projection";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import parties from "../../data/parties.json";
 import { getElectionLifecycle } from "../election-lifecycle/server";
-import { currentElection, ELECTIONS, electionById } from "./registry";
+import { currentElection, ELECTIONS } from "./registry";
 import { configuredPoliticalRecords } from "./postgres";
 import { requestLimit } from "./rate-limit";
 import { recordHash } from "./hash";
@@ -119,10 +120,30 @@ export async function publicApi(request: Request, collection: string) {
         { error: "api_unconfigured" },
         { status: 503, headers },
       );
+    const workspace = await getWorkspaceRegistry();
+    if (workspace.state === "unavailable")
+      return Response.json(
+        { error: "election_registry_unavailable" },
+        { status: 503, headers },
+      );
+    const elections = [
+      ...ELECTIONS,
+      ...(workspace.registry?.workspaces.flatMap((item) =>
+        item.definition && !ELECTIONS.some((old) => old.id === item.id)
+          ? [item.definition]
+          : [],
+      ) ?? []),
+    ];
     const url = new URL(request.url),
-      electionId = url.searchParams.get("election") ?? currentElection().id,
+      electionId =
+        url.searchParams.get("election") ??
+        workspace.registry?.currentElectionId ??
+        currentElection().id,
       view = url.searchParams.get("view") ?? "latest";
-    if (!electionById(electionId) || !["history", "latest"].includes(view))
+    if (
+      !elections.some((election) => election.id === electionId) ||
+      !["history", "latest"].includes(view)
+    )
       return Response.json(
         { error: "invalid_selection" },
         { status: 400, headers },
@@ -177,7 +198,7 @@ export async function publicApi(request: Request, collection: string) {
         };
         const current =
           collection === "events" && view === "latest"
-            ? await getElectionLifecycle()
+            ? await getElectionLifecycle({ electionId })
             : null;
         const records = page.records.map((record) => {
           if (view === "history") return { ...record, currentState: false };
@@ -252,7 +273,9 @@ export async function publicApi(request: Request, collection: string) {
         { status: 503, headers },
       );
     const lifecycle =
-      collection === "events" ? await getElectionLifecycle() : null;
+      collection === "events"
+        ? await getElectionLifecycle({ electionId })
+        : null;
     if (collection === "events" && !lifecycle)
       return Response.json(
         { error: "current_evidence_unavailable" },
@@ -263,9 +286,14 @@ export async function publicApi(request: Request, collection: string) {
         { error: "durable_history_unavailable" },
         { status: 503, headers },
       );
+    if (collection === "entities" && electionId !== currentElection().id)
+      return Response.json(
+        { error: "election_entities_unqualified" },
+        { status: 503, headers },
+      );
     const records =
       collection === "elections"
-        ? ELECTIONS
+        ? elections
         : collection === "entities"
           ? parties.parties.map((party) => ({
               id: `party:${party.id}`,

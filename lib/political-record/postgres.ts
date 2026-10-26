@@ -5,6 +5,8 @@ import type {
   RecordBatch,
   PoliticalRecord,
   RecordKind,
+  SourceRecord,
+  PrivateCaptureRef,
 } from "./types";
 export type SqlSession = {
   query(
@@ -20,7 +22,75 @@ export interface SqlPool {
 /** DDL is never invoked here. Append-only conflict checks reject mutated historical IDs. */
 export class PostgresPoliticalRecords implements PoliticalRecordRepository {
   constructor(private pool: SqlPool) {}
+  async getCapture(captureId: string): Promise<PrivateCaptureRef | null> {
+    if (!/^[a-f0-9]{64}$/.test(captureId))
+      throw new Error("capture_id_invalid");
+    const client = await this.pool.connect();
+    try {
+      const row = (
+        await client.query(
+          "SELECT * FROM political_record.private_captures WHERE capture_id=$1",
+          [captureId],
+        )
+      ).rows[0];
+      return row
+        ? {
+            captureId: String(row.capture_id),
+            contentSha256: String(row.content_sha256),
+            sourceRevisionId: String(row.source_revision_id),
+            storageKey: String(row.storage_key),
+            mediaType: String(row.media_type),
+            byteLength: Number(row.byte_length),
+            observedAt: new Date(row.observed_at as string).toISOString(),
+          }
+        : null;
+    } finally {
+      client.release();
+    }
+  }
+  async getSources(revisionIds: string[]): Promise<SourceRecord[]> {
+    if (
+      revisionIds.length > 5000 ||
+      revisionIds.some((id) => !/^[a-f0-9]{64}$/.test(id))
+    )
+      throw new Error("source_revision_ids_invalid");
+    const client = await this.pool.connect();
+    try {
+      const result = await client.query(
+        "SELECT * FROM political_record.source_revisions WHERE revision_id=ANY($1::text[])",
+        [revisionIds],
+      );
+      return result.rows.map((row) => ({
+        revisionId: String(row.revision_id),
+        sourceId: String(row.source_id),
+        publisher: String(row.publisher),
+        title: String(row.title),
+        captureHash: String(row.capture_hash),
+        url: String(row.url),
+        authority: String(row.authority),
+        observedAt: new Date(row.observed_at as string).toISOString(),
+        publishedAt: row.published_at
+          ? new Date(row.published_at as string).toISOString()
+          : null,
+      }));
+    } finally {
+      client.release();
+    }
+  }
   async append(batch: RecordBatch) {
+    const { records, captures, outbox } = await this.commit(batch);
+    return { records, captures, outbox };
+  }
+  async compareAndAppend(
+    batch: RecordBatch,
+    guard: { recordId: string; revisionId: string | null },
+  ) {
+    return this.commit(batch, guard);
+  }
+  private async commit(
+    batch: RecordBatch,
+    guard?: { recordId: string; revisionId: string | null },
+  ) {
     validateBatch(batch);
     const client = await this.pool.connect();
     let records = 0,
@@ -30,6 +100,18 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
       await client.query("BEGIN");
       // Serialize append transactions so committed cursors cannot arrive behind a published high-water mark.
       await client.query("SELECT pg_advisory_xact_lock(711026, 1)");
+      if (guard) {
+        const existing = (
+          await client.query(
+            "SELECT revision_id FROM political_record.record_revisions WHERE record_id=$1 ORDER BY insertion_cursor DESC LIMIT 1",
+            [guard.recordId],
+          )
+        ).rows[0];
+        if ((existing?.revision_id ?? null) !== guard.revisionId) {
+          await client.query("ROLLBACK");
+          return { records: 0, captures: 0, outbox: 0, conflict: true };
+        }
+      }
       for (const source of batch.sources)
         await client.query(
           "INSERT INTO political_record.source_revisions(revision_id,source_id,publisher,url,authority,observed_at,published_at,title,capture_hash) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9) ON CONFLICT DO NOTHING",
@@ -102,7 +184,7 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
         outbox += result.rowCount ?? 0;
       }
       await client.query("COMMIT");
-      return { records, captures, outbox };
+      return { records, captures, outbox, conflict: false };
     } catch (error) {
       await client.query("ROLLBACK");
       throw error;
@@ -175,6 +257,8 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
     }
   }
   async latest(query: {
+    globalOnly?: boolean;
+    asOfCursor?: string;
     electionId?: string;
     kind?: RecordKind;
     limit?: number;
@@ -185,10 +269,17 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
       const watermark = await client.query(
         "SELECT COALESCE(MAX(insertion_cursor),0)::text AS cursor FROM political_record.record_revisions",
       );
-      const asOfCursor = String(watermark.rows[0].cursor);
+      const asOfCursor = query.asOfCursor ?? String(watermark.rows[0].cursor);
+      if (!/^\d+$/.test(asOfCursor)) throw new Error("invalid_cursor");
       const result = await client.query(
-        "SELECT * FROM (SELECT DISTINCT ON (record_id) * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND ($2::text IS NULL OR election_id=$2) AND ($3::text IS NULL OR kind=$3) ORDER BY record_id,insertion_cursor DESC) current_records ORDER BY insertion_cursor DESC LIMIT $4",
-        [asOfCursor, query.electionId ?? null, query.kind ?? null, limit + 1],
+        "SELECT * FROM (SELECT DISTINCT ON (record_id) * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND ($2::text IS NULL OR election_id=$2) AND ($3::text IS NULL OR kind=$3) AND ($5::boolean=false OR election_id IS NULL) ORDER BY record_id,insertion_cursor DESC) current_records ORDER BY insertion_cursor DESC LIMIT $4",
+        [
+          asOfCursor,
+          query.electionId ?? null,
+          query.kind ?? null,
+          limit + 1,
+          query.globalOnly ?? false,
+        ],
       );
       return {
         asOfCursor,

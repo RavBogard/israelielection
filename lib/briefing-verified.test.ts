@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { describe, it, expect } from "vitest";
 import {
   validateAtomicClaims,
+  qualifyAtomicDraft,
   independentReporting,
   publicClaimEvidence,
   validateClaimReview,
@@ -156,4 +157,36 @@ it("records explicit byline origins and treats unknown/same wire as unqualified"
       "https://www.jpost.com/story",
     ).kind,
   ).toBe("unknown");
+});
+
+it("discards only unsupported numeric claims while retaining at least three independently reviewable claims", () => {
+  const good = claims(),
+    bad = { ...good[0], id: "bad", text: "The committee granted99 seats." };
+  const result = qualifyAtomicDraft([...good, bad], [article]);
+  expect(result.claims).toHaveLength(3);
+  expect(result.discarded[0].diagnostic).toMatchObject({
+    claimId: "bad",
+    token: "99",
+  });
+  expect(JSON.stringify(result.discarded)).not.toContain(article.body);
+  expect(() => qualifyAtomicDraft([good[0], good[1], bad], [article])).toThrow(
+    "insufficient_supported_claims",
+  );
+  expect(() =>
+    qualifyAtomicDraft(
+      [
+        ...good,
+        {
+          ...bad,
+          citations: [
+            {
+              source: 1,
+              quote: "A fabricated quotation is not source evidence.",
+            },
+          ],
+        },
+      ],
+      [article],
+    ),
+  ).toThrow("quote_not_in_captured_article");
 });

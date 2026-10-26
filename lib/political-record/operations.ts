@@ -1,3 +1,4 @@
+import { collectParliament } from "./parliament";
 import { configuredPoliticalRecords } from "./postgres";
 import { configuredCaptureArchive } from "./blob";
 import { collectCbs } from "./cbs";
@@ -67,6 +68,37 @@ export async function collectPlatformSources() {
       await repository?.close();
     } catch {
       /* Preserve the acquisition result; diagnostics never include connection secrets. */
+    }
+  }
+}
+
+/** One qualified contract/page per delivery; cursor progress commits with its records. */
+export async function collectConfiguredParliament() {
+  if (process.env.POLITICAL_PARLIAMENT_COLLECT_ENABLED !== "true")
+    return { status: "disabled" };
+  let repository: ReturnType<typeof configuredPoliticalRecords> = null;
+  try {
+    repository = configuredPoliticalRecords();
+    const id = process.env.POLITICAL_PARLIAMENT_CONTRACT_ID;
+    if (
+      !repository ||
+      !id ||
+      !/^source-contract:[a-zA-Z0-9:_-]{1,150}$/.test(id)
+    )
+      return { status: "unconfigured" };
+    return await collectParliament(
+      repository,
+      id,
+      configuredCaptureArchive(),
+      new Date().toISOString(),
+    );
+  } catch {
+    return { status: "source_unqualified" };
+  } finally {
+    try {
+      await repository?.close();
+    } catch {
+      /* Preserve committed page result. */
     }
   }
 }

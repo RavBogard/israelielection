@@ -1,16 +1,39 @@
 import { cache } from "react";
+import { connection } from "next/server";
 import { unstable_rethrow } from "next/navigation";
 import { getElectionLifecycle } from "../election-lifecycle/server";
 import { ELECTIONS, currentElection } from "./registry";
 import { formationIdentity } from "./identity";
 import { configuredPoliticalRecords } from "./postgres";
 import type { PoliticalRecord } from "./types";
+import { getWorkspaceRegistry } from "./workspace-server";
+import {
+  buildGlobalProjection,
+  loadGlobalProjection,
+  type GlobalProjection,
+} from "./global-model";
 
 /** Server-only bridge. Reference content and live lifecycle remain available without Postgres. */
 export const getPoliticalPlatformReadModel = cache(async () => {
+  if (
+    process.env.POLITICAL_RECORD_READ_ENABLED === "true" ||
+    process.env.POLITICAL_ELECTION_REGISTRY_ENABLED === "true"
+  )
+    await connection();
+  const workspaceState = await getWorkspaceRegistry();
+  const currentId =
+    workspaceState.registry?.currentElectionId ??
+    (workspaceState.state === "disabled" ? currentElection().id : null);
   const lifecycle = await getElectionLifecycle();
   let storage: "unconfigured" | "available" | "unavailable" = "unconfigured";
   let records: PoliticalRecord[] = [];
+  let global: GlobalProjection = buildGlobalProjection(
+    [],
+    [],
+    new Date().toISOString(),
+    null,
+    false,
+  );
   let asOfCursor: string | null = null,
     truncated = false;
   if (process.env.POLITICAL_RECORD_READ_ENABLED === "true") {
@@ -19,13 +42,17 @@ export const getPoliticalPlatformReadModel = cache(async () => {
       repository = configuredPoliticalRecords();
       if (repository) {
         const current = await repository.latest({
-          electionId: currentElection().id,
+          electionId: currentId ?? "unavailable",
           limit: 200,
         });
         records = current.records;
         asOfCursor = current.asOfCursor;
         truncated = current.truncated;
         storage = "available";
+        global = await loadGlobalProjection(
+          repository,
+          new Date().toISOString(),
+        );
       }
     } catch (error) {
       unstable_rethrow(error);
@@ -42,8 +69,19 @@ export const getPoliticalPlatformReadModel = cache(async () => {
   }
   return {
     schemaVersion: 1 as const,
-    elections: ELECTIONS,
-    currentElectionId: currentElection().id,
+    elections: [
+      ...ELECTIONS,
+      ...(workspaceState.registry?.workspaces.flatMap((workspace) =>
+        workspace.definition &&
+        !ELECTIONS.some((election) => election.id === workspace.id)
+          ? [workspace.definition]
+          : [],
+      ) ?? []),
+    ],
+    currentElectionId: currentId,
+    electionWorkspaces: workspaceState.registry?.workspaces ?? [],
+    workspaceState: workspaceState.state,
+    global: { ...global, storageState: storage },
     storage: { state: storage, authority: "redis_lifecycle" as const },
     lifecycle,
     lifecycleState: lifecycle

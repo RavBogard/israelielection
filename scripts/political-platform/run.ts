@@ -1,12 +1,17 @@
+import { runConfiguredWorkspaceCycle } from "../../lib/political-record/workspace-operations";
 /** Internal preview/development rehearsal runner. Production runs use the existing signed worker. */
-import { collectPlatformSources } from "../../lib/political-record/operations";
+import {
+  collectPlatformSources,
+  collectConfiguredParliament,
+} from "../../lib/political-record/operations";
 import { runSubscriptionWorker } from "../../lib/political-record/subscription-routes";
 async function main() {
   const mode = process.argv[2],
     target = process.argv
       .find((argument) => argument.startsWith("--target="))
       ?.slice(9);
-  if (!["collect", "deliver"].includes(mode)) throw new Error("unknown_mode");
+  if (!["collect", "deliver", "workspaces", "parliament"].includes(mode))
+    throw new Error("unknown_mode");
   if (!process.argv.includes("--run")) {
     console.log(
       JSON.stringify({
@@ -27,7 +32,11 @@ async function main() {
   const result =
     mode === "collect"
       ? await collectPlatformSources()
-      : await runSubscriptionWorker();
+      : mode === "parliament"
+        ? await collectConfiguredParliament()
+        : mode === "workspaces"
+          ? await runConfiguredWorkspaceCycle()
+          : await runSubscriptionWorker();
   console.log(JSON.stringify(result));
 }
 main().catch(() => {

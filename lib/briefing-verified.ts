@@ -107,6 +107,15 @@ export const REVIEW_SCHEMA = {
   },
 };
 const clean = (text: string) => text.replace(/\s+/g, " ").trim();
+export class BriefingValidationError extends Error {
+  constructor(
+    code: string,
+    readonly diagnostic: Record<string, unknown>,
+  ) {
+    super(code);
+    this.name = "BriefingValidationError";
+  }
+}
 export function independentReporting(a: CapturedArticle, b: CapturedArticle) {
   if (
     !a.origin?.id ||
@@ -135,8 +144,9 @@ export function independentReporting(a: CapturedArticle, b: CapturedArticle) {
 export function validateAtomicClaims(
   claims: AtomicClaim[],
   articles: CapturedArticle[],
+  minimum: 1 | 3 = 3,
 ) {
-  if (!Array.isArray(claims) || claims.length < 3 || claims.length > 8)
+  if (!Array.isArray(claims) || claims.length < minimum || claims.length > 8)
     throw Error("insufficient_atomic_claims");
   const ids = new Set<string>();
   for (const claim of claims) {
@@ -173,7 +183,15 @@ export function validateAtomicClaims(
     );
     for (const n of numericTokens(claim.text)) {
       const at = evidence.indexOf(n);
-      if (at < 0) throw Error("unsupported_claim_number");
+      if (at < 0)
+        throw new BriefingValidationError("unsupported_claim_number", {
+          claimId: claim.id,
+          token: n,
+          claimNumbers: numericTokens(claim.text),
+          evidenceNumbers: numericTokens(
+            claim.citations.map((c) => c.quote).join(" "),
+          ),
+        });
       evidence.splice(at, 1);
     }
     if (claim.kind !== "attributed_perspective") {
@@ -187,6 +205,43 @@ export function validateAtomicClaims(
     }
   }
   return claims;
+}
+/** Only numeric evidence failures may be discarded. Every remaining claim is revalidated together. */
+export function qualifyAtomicDraft(
+  claims: AtomicClaim[],
+  articles: CapturedArticle[],
+) {
+  if (!Array.isArray(claims) || claims.length < 3 || claims.length > 8)
+    throw Error("insufficient_atomic_claims");
+  const kept: AtomicClaim[] = [],
+    discarded: {
+      claimId: string;
+      code: string;
+      diagnostic: Record<string, unknown>;
+    }[] = [];
+  for (const claim of claims) {
+    try {
+      validateAtomicClaims([claim], articles, 1);
+      kept.push(claim);
+    } catch (error) {
+      if (
+        !(error instanceof BriefingValidationError) ||
+        error.message !== "unsupported_claim_number"
+      )
+        throw error;
+      discarded.push({
+        claimId: claim.id,
+        code: error.message,
+        diagnostic: error.diagnostic,
+      });
+    }
+  }
+  if (kept.length < 3)
+    throw new BriefingValidationError("insufficient_supported_claims", {
+      kept: kept.length,
+      discarded,
+    });
+  return { claims: validateAtomicClaims(kept, articles), discarded };
 }
 export function validateClaimReview(
   claims: AtomicClaim[],

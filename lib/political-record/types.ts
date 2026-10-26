@@ -14,7 +14,16 @@ export type RecordKind =
   | "bill"
   | "bill_version"
   | "roll_call"
-  | "indicator_observation";
+  | "indicator_observation"
+  | "commitment"
+  | "commitment_rubric"
+  | "methodology"
+  | "government"
+  | "source_contract"
+  | "election_announcement"
+  | "election_workspace"
+  | "election_activation"
+  | "capability_attestation";
 export type EvidenceClass =
   | "primary_confirmed"
   | "reported_corroborated"
@@ -96,11 +105,22 @@ export type RecordBatch = {
   outbox: OutboxIntent[];
 };
 export interface PoliticalRecordRepository {
+  compareAndAppend(
+    batch: RecordBatch,
+    guard: { recordId: string; revisionId: string | null },
+  ): Promise<{
+    records: number;
+    captures: number;
+    outbox: number;
+    conflict: boolean;
+  }>;
   append(
     batch: RecordBatch,
   ): Promise<{ records: number; captures: number; outbox: number }>;
   getRevision(revisionId: string): Promise<PoliticalRecord | null>;
   getLatest(recordId: string): Promise<PoliticalRecord | null>;
+  getSources(revisionIds: string[]): Promise<SourceRecord[]>;
+  getCapture(captureId: string): Promise<PrivateCaptureRef | null>;
   listRevisions(query: {
     electionId?: string;
     kind?: RecordKind;
@@ -112,6 +132,8 @@ export interface PoliticalRecordRepository {
     limit?: number,
   ): Promise<{ cursor: string; record: PoliticalRecord }[]>;
   latest(query: {
+    globalOnly?: boolean;
+    asOfCursor?: string;
     electionId?: string;
     kind?: RecordKind;
     limit?: number;

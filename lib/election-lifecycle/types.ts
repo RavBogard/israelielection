@@ -223,7 +223,7 @@ export type SeatContextResult =
       reason: "pinned_unavailable" | "source_unavailable";
       revision: string;
     };
-export type LifecycleSelection = { revision?: string };
+export type LifecycleSelection = { revision?: string; electionId?: string };
 /** Internal only; never serialize this ledger as the current public politics payload. */
 export type LifecycleLedger = {
   briefings?: {

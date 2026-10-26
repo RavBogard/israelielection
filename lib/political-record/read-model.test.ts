@@ -1,4 +1,5 @@
 import { afterEach, expect, it, vi } from "vitest";
+vi.mock("next/server", () => ({ connection: async () => {} }));
 const mocks = vi.hoisted(() => ({ lifecycle: vi.fn(), repository: vi.fn() }));
 vi.mock("../election-lifecycle/server", () => ({
   getElectionLifecycle: mocks.lifecycle,

@@ -15,7 +15,8 @@ import { captureArticle } from "../../lib/briefing-acquisition";
 import {
   atomicBriefingPrompt,
   reviewAtomicPrompt,
-  validateAtomicClaims,
+  qualifyAtomicDraft,
+  BriefingValidationError,
   validateClaimReview,
   sentenceHash,
   claimHash,
@@ -96,14 +97,23 @@ try {
     atomicBriefingPrompt(articles, phaseBriefingGuidance(lifecycle)),
     CLAIM_SCHEMA,
   );
-  const claims = validateAtomicClaims(draft.claims, articles);
+  const { claims, discarded } = qualifyAtomicDraft(draft.claims, articles);
+  if (discarded.length) console.log(JSON.stringify({ discarded }));
   const review = await generateJson<{ claims: ClaimReview[] }>(
     reviewAtomicPrompt(claims, articles),
     REVIEW_SCHEMA,
   );
   validateClaimReview(claims, review.claims);
   const capture = await archiveBriefingEvidence(
-    { date, model: GEMINI_MODEL, articles, claims, review: review.claims },
+    {
+      date,
+      model: GEMINI_MODEL,
+      articles,
+      claims,
+      review: review.claims,
+      draftClaims: draft.claims,
+      discarded,
+    },
     dry,
   );
   briefing = {
@@ -235,6 +245,10 @@ try {
   }
 } catch (error) {
   briefing = null;
+  if (error instanceof BriefingValidationError)
+    console.log(
+      JSON.stringify({ code: error.message, diagnostic: error.diagnostic }),
+    );
   reason =
     error instanceof Error && /^[a-z_]+$/.test(error.message)
       ? error.message

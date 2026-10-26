@@ -94,8 +94,8 @@ export class SubscriptionService {
       client.release();
     }
   }
-  private link(action: string, token: string) {
-    return `${this.origin.replace(/\/$/, "")}/subscriptions/${action}?token=${encodeURIComponent(token)}`;
+  private link(action: string, token: string, locale: string = "en") {
+    return `${this.origin.replace(/\/$/, "")}${locale === "en" ? "" : "/" + locale}/subscriptions/${action}#token=${encodeURIComponent(token)}`;
   }
   private async token(
     client: SqlSession,
@@ -198,7 +198,7 @@ export class SubscriptionService {
       );
       const copy = confirmationEmail(
         preferences.locale,
-        this.link("confirm", token.raw),
+        this.link("confirm", token.raw, preferences.locale),
       );
       const payload: DeliveryPayload = { ...copy, tokenHash: token.hash };
       await client.query(
@@ -531,8 +531,16 @@ export class SubscriptionService {
           subscriber.locale as EmailLocale,
           content.subject,
           content.text,
-          this.link("preferences", preferences.raw),
-          this.link("unsubscribe", unsubscribe.raw),
+          this.link(
+            "preferences",
+            preferences.raw,
+            subscriber.locale as string,
+          ),
+          this.link(
+            "unsubscribe",
+            unsubscribe.raw,
+            subscriber.locale as string,
+          ),
           kind === "correction",
         );
         const result = await client.query(
@@ -654,10 +662,9 @@ export class SubscriptionService {
             ),
             subject: payload.subject,
             text: payload.text,
-            unsubscribeUrl: payload.unsubscribeUrl?.replace(
-              "/subscriptions/unsubscribe?",
-              "/api/subscriptions/unsubscribe?",
-            ),
+            unsubscribeUrl: payload.unsubscribeUrl
+              ? `${this.origin}/api/subscriptions/unsubscribe?token=${encodeURIComponent(new URLSearchParams(new URL(payload.unsubscribeUrl).hash.slice(1)).get("token") ?? new URL(payload.unsubscribeUrl).searchParams.get("token") ?? "")}`
+              : undefined,
           };
           const sent = await this.mail.send(message, String(delivery.id));
           await client.query(

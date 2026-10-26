@@ -64,9 +64,9 @@ async function subscribeConfirmed(email: string) {
   )?.[0];
   expect(message).toBeTruthy();
   const url = message!.text.match(
-    /https:\/\/example\.org\/subscriptions\/confirm\?token=\S+/,
+    /https:\/\/example\.org\/subscriptions\/confirm#token=\S+/,
   )![0];
-  const token = new URL(url).searchParams.get("token")!;
+  const token = new URLSearchParams(new URL(url).hash.slice(1)).get("token")!;
   return { token, confirmed: await service.confirm(token, now) };
 }
 async function publication(suffix: string) {
@@ -304,4 +304,25 @@ it("has localized confirmation copy for all seven editions and no provider track
   expect(fetcher.mock.calls[0][1].body).not.toMatch(
     /tracking|pixel|open_tracking/,
   );
+});
+
+it("confirmation landing follows the selected language with a fragment-only bearer", async () => {
+  mail.mockResolvedValue({ id: "confirmation-he" });
+  await service.subscribe(
+    "he-landing@example.org",
+    "he",
+    ["formation"],
+    true,
+    now,
+  );
+  await service.deliver(now);
+  const copy = mail.mock.calls.find(
+    ([message]) => message.to === "he-landing@example.org",
+  )![0];
+  const link = copy.text.match(
+      /https:\/\/example\.org\/he\/subscriptions\/confirm#token=\S+/,
+    )![0],
+    url = new URL(link);
+  expect(url.search).toBe("");
+  expect(url.hash).toContain("token=");
 });

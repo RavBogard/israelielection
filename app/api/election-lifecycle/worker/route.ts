@@ -1,8 +1,10 @@
+import { runConfiguredWorkspaceCycle } from "@/lib/political-record/workspace-operations";
 import { scheduledCycle } from "@/lib/election-lifecycle/scheduled-cycle";
 import { runSubscriptionWorker } from "@/lib/political-record/subscription-routes";
 import { readinessDiagnostic } from "@/lib/political-record/readiness";
 import {
   collectPlatformSources,
+  collectConfiguredParliament,
   mirrorPublishedLifecycle,
 } from "@/lib/political-record/operations";
 import { emptyLedger } from "@/lib/election-lifecycle/resolver";
@@ -78,6 +80,14 @@ export async function POST(request: Request) {
   const payload = JSON.parse(body);
   if (payload.mode === "platform_deliver")
     return Response.json(await runSubscriptionWorker(), {
+      headers: { "Cache-Control": "no-store" },
+    });
+  if (payload.mode === "platform_parliament")
+    return Response.json(await collectConfiguredParliament(), {
+      headers: { "Cache-Control": "no-store" },
+    });
+  if (payload.mode === "platform_workspaces")
+    return Response.json(await runConfiguredWorkspaceCycle(), {
       headers: { "Cache-Control": "no-store" },
     });
   if (payload.mode === "platform_collect")

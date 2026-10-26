@@ -1,3 +1,5 @@
+import { activeWorkspaceId } from "../political-record/workspace-server";
+import { currentElection } from "../political-record/registry";
 import registry from "../../data/election-lifecycle-sources.json";
 import {
   fingerprint,
@@ -113,7 +115,10 @@ export async function acquirePoliticalSources(
   ledger: LifecycleLedger,
   now: string,
 ) {
-  if (!formationEnabled())
+  if (
+    !formationEnabled() ||
+    (await activeWorkspaceId()) !== currentElection().id
+  )
     return {
       events: ledger.events,
       health: [] as SourceHealth[],

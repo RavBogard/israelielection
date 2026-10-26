@@ -9,12 +9,23 @@ import type {
 export function makeSource(
   input: Omit<SourceRecord, "revisionId">,
 ): SourceRecord {
-  return { ...input, revisionId: recordHash(input) };
+  const source = {
+    ...input,
+    observedAt: new Date(input.observedAt).toISOString(),
+    publishedAt: input.publishedAt
+      ? new Date(input.publishedAt).toISOString()
+      : null,
+  };
+  return { ...source, revisionId: recordHash(source) };
 }
 export function makeCapture(
   input: Omit<PrivateCaptureRef, "captureId">,
 ): PrivateCaptureRef {
-  return { ...input, captureId: recordHash(input) };
+  const capture = {
+    ...input,
+    observedAt: new Date(input.observedAt).toISOString(),
+  };
+  return { ...capture, captureId: recordHash(capture) };
 }
 export function makeRecord<T extends Record<string, unknown>>(
   input: Omit<PoliticalRecord<T>, "revisionId" | "schemaVersion">,

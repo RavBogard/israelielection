@@ -13,6 +13,12 @@ export async function archiveBriefingEvidence(
     articles: CapturedArticle[];
     claims: AtomicClaim[];
     review: ClaimReview[];
+    draftClaims?: AtomicClaim[];
+    discarded?: {
+      claimId: string;
+      code: string;
+      diagnostic: Record<string, unknown>;
+    }[];
   },
   dryRun: boolean,
 ) {

@@ -32,9 +32,11 @@ async function main() {
   if (command === "schema") {
     const sql = (
       await Promise.all(
-        ["001-political-record.sql", "002-subscriptions.sql"].map((file) =>
-          readFile(path.resolve("db", file), "utf8"),
-        ),
+        [
+          "001-political-record.sql",
+          "002-subscriptions.sql",
+          "003-platform-workspaces.sql",
+        ].map((file) => readFile(path.resolve("db", file), "utf8")),
       )
     ).join("\n");
     if (!apply) {
