@@ -4,6 +4,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
+    // The localized reference renderer verifies reviewed chart labels against
+    // the original JSON at request time, including when no English MDX runs.
+    "/{,he/,ar/,fa/,de/,fr/,zh/}{issues,communities,how-it-works}/**": [
+      "./data/charts/*.json",
+    ],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}american-lens": ["./data/charts/*.json"],
     "/api/reference/worker": [
       "./content/**/*.mdx",
       "./content/*.mdx",
