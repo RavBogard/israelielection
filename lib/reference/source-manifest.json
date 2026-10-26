@@ -1656,12 +1656,12 @@
           "text": "The 2018 Nation-State Law tested that bond. On July 25, 2018, about 100 Druze reserve officers protested it ([Ynetnews](https://www.ynetnews.com/articles/0,7340,L-5316576,00.html)).",
           "id": "block-26-68c01de462d9",
           "numbers": [
-            "0,7340",
+            "0.7340",
             "100",
             "2018",
             "2018",
             "25",
-            "5316576,00"
+            "5316576.00"
           ],
           "links": [
             "https://www.ynetnews.com/articles/0,7340,L-5316576,00.html"
@@ -1674,10 +1674,10 @@
           "text": "Brig. Gen. (res.) Amal As'ad. Ynetnews. https://www.ynetnews.com/articles/0,7340,L-5316576,00.html. July 25, 2018",
           "id": "block-27-3232f48d0af3",
           "numbers": [
-            "0,7340",
+            "0.7340",
             "2018",
             "25",
-            "5316576,00"
+            "5316576.00"
           ],
           "links": [
             "https://www.ynetnews.com/articles/0,7340,L-5316576,00.html."
@@ -1699,10 +1699,10 @@
           "text": "On August 4, 2018, some 90,000 Druze, with other opponents of the law, filled Rabin Square, by Ynet's estimate ([Ynet](https://www.ynet.co.il/articles/0,7340,L-5322446,00.html)). Sheikh Tarif told the rally:",
           "id": "block-29-be2b1fbf4073",
           "numbers": [
-            "0,7340",
+            "0.7340",
             "2018",
             "4",
-            "5322446,00",
+            "5322446.00",
             "90000"
           ],
           "links": [
@@ -1716,10 +1716,10 @@
           "text": "Sheikh Mowafaq Tarif. Druze spiritual leader. Ynet (translated from Hebrew). https://www.ynet.co.il/articles/0,7340,L-5322446,00.html. August 4, 2018",
           "id": "block-30-ae1a712cb9f8",
           "numbers": [
-            "0,7340",
+            "0.7340",
             "2018",
             "4",
-            "5322446,00"
+            "5322446.00"
           ],
           "links": [
             "https://www.ynet.co.il/articles/0,7340,L-5322446,00.html."
@@ -1887,10 +1887,10 @@
         "https://www.ynetnews.com/articles/0,7340,L-5316576,00.html"
       ],
       "numbers": [
-        "0,7340",
-        "0,7340",
-        "0,7340",
-        "0,7340",
+        "0.7340",
+        "0.7340",
+        "0.7340",
+        "0.7340",
         "02",
         "03",
         "03",
@@ -2076,10 +2076,10 @@
         "5%",
         "50.8%",
         "50.8%",
-        "5316576,00",
-        "5316576,00",
-        "5322446,00",
-        "5322446,00",
+        "5316576.00",
+        "5316576.00",
+        "5322446.00",
+        "5322446.00",
         "54%",
         "54.9%",
         "5714",
@@ -2286,8 +2286,8 @@
           "text": "Likud fell 10 to 11 points at each station and Blue and White gained 9 to 15 ([Ynet, September 2019](https://www.ynet.co.il/articles/0,7340,L-5591507,00.html)). By March 2020 the shift had partly reversed: Blue and White fell to 18.5% at Ramat Eliyahu stations and 20.1% in Rehovot, and a community activist said many people he knew had gone back to Likud ([Ynet, March 2020](https://www.ynet.co.il/articles/0,7340,L-5688315,00.html)). Kiryat Malachi, the town with the largest Ethiopian-Israeli share, moved the same way.",
           "id": "block-10-2af8768dc885",
           "numbers": [
-            "0,7340",
-            "0,7340",
+            "0.7340",
+            "0.7340",
             "10",
             "11",
             "15",
@@ -2296,8 +2296,8 @@
             "2019",
             "2020",
             "2020",
-            "5591507,00",
-            "5688315,00",
+            "5591507.00",
+            "5688315.00",
             "9"
           ],
           "links": [
@@ -2502,9 +2502,9 @@
         "https://www.ynet.co.il/articles/0,7340,L-5688315,00.html"
       ],
       "numbers": [
-        "0,7340",
-        "0,7340",
         "0.6%",
+        "0.7340",
+        "0.7340",
         "02",
         "02",
         "03",
@@ -2585,8 +2585,8 @@
         "371",
         "371",
         "40%",
-        "5591507,00",
-        "5688315,00",
+        "5591507.00",
+        "5688315.00",
         "7000",
         "77.7%",
         "85.6%",

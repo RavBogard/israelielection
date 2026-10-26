@@ -26,6 +26,12 @@ CREATE TABLE IF NOT EXISTS political_private.deliveries (
  UNIQUE(subscriber_id,publication_revision_id,kind)
 );
 CREATE INDEX IF NOT EXISTS delivery_pending ON political_private.deliveries(status,next_attempt_at);
+CREATE TABLE IF NOT EXISTS political_private.publication_fanout (
+ publication_revision_id text NOT NULL REFERENCES political_record.record_revisions(revision_id),
+ locale text NOT NULL CHECK(locale IN ('en','he','ar','fa','de','fr','zh')),
+ subscriber_cursor uuid, completed boolean NOT NULL DEFAULT false, last_attempt_at timestamptz, attempts integer NOT NULL DEFAULT 0,
+ PRIMARY KEY(publication_revision_id,locale)
+);
 CREATE TABLE IF NOT EXISTS political_private.webhook_receipts (
  id text PRIMARY KEY, event_type text NOT NULL, received_at timestamptz NOT NULL
 );

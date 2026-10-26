@@ -30,15 +30,18 @@ async function main() {
   )
     throw new Error("production_apply_forbidden");
   if (command === "schema") {
-    const sql = await readFile(
-      path.resolve("db/001-political-record.sql"),
-      "utf8",
-    );
+    const sql = (
+      await Promise.all(
+        ["001-political-record.sql", "002-subscriptions.sql"].map((file) =>
+          readFile(path.resolve("db", file), "utf8"),
+        ),
+      )
+    ).join("\n");
     if (!apply) {
       console.log(
         JSON.stringify({
           status: "dry_run",
-          migration: "001-political-record",
+          migrations: ["001-political-record", "002-subscriptions"],
           bytes: Buffer.byteLength(sql),
         }),
       );

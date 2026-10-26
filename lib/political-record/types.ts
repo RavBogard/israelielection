@@ -100,6 +100,7 @@ export interface PoliticalRecordRepository {
     batch: RecordBatch,
   ): Promise<{ records: number; captures: number; outbox: number }>;
   getRevision(revisionId: string): Promise<PoliticalRecord | null>;
+  getLatest(recordId: string): Promise<PoliticalRecord | null>;
   listRevisions(query: {
     electionId?: string;
     kind?: RecordKind;

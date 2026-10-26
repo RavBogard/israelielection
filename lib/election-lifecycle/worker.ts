@@ -1,5 +1,5 @@
 import { readCountRecord } from "./count-store";
-import {mirrorPublishedLifecycle} from "../political-record/operations";
+import { mirrorPublishedLifecycle } from "../political-record/operations";
 import { randomUUID } from "node:crypto";
 import { ELECTION_END, formationEnabled, officialEnabled } from "./core";
 import { campaignContext, emptyLedger, resolveLifecycle } from "./resolver";
@@ -121,7 +121,7 @@ export async function runLifecycleWorker(
       ].slice(-240);
     if (!(await store.publish(token, ledger, delivery, now)))
       throw new Error("publication_lock_expired");
-    const shadow=await mirrorPublishedLifecycle(ledger);
+    const shadow = await mirrorPublishedLifecycle(ledger);
     // Daily briefings are structured summaries of the same redacted public state; no separate inferred facts.
     return {
       status: "published",

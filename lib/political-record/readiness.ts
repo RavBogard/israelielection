@@ -23,7 +23,9 @@ export function readinessDiagnostic(ledger: LifecycleLedger, now: string) {
     durableStore: process.env.POLITICAL_RECORD_DATABASE_URL
       ? "configured_unverified"
       : "unconfigured",
-    privateArchive: "unconfigured",
+    privateArchive: process.env.POLITICAL_RECORD_BLOB_TOKEN
+      ? "configured_unverified"
+      : "unconfigured",
     countModel: "validation_gated",
     revalidationCapability: {
       ready: coverage.every(

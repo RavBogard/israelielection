@@ -211,6 +211,51 @@ describe("real local PostgreSQL foundation (not production restore verification)
     expect((await repo.latest({ limit: 1 })).truncated).toBe(true);
     expect(BigInt(current.asOfCursor)).toBeGreaterThan(BigInt(0));
   });
+  it("pins public history pages to a high-water mark while later facts append", async () => {
+    const first = await repo.page({
+      kind: "publication",
+      after: "0",
+      limit: 1,
+      view: "history",
+    });
+    const next = makeRecord({
+      ...record(),
+      recordId: "after-export-watermark",
+      payload: { later: true },
+    });
+    await repo.append({
+      records: [next],
+      sources: [],
+      captures: [],
+      outbox: [],
+    });
+    const continuation = await repo.page({
+      kind: "publication",
+      after: first.after,
+      asOf: first.asOf,
+      limit: 100,
+      view: "history",
+    });
+    expect(continuation.asOf).toBe(first.asOf);
+    expect(
+      continuation.records.some(
+        (record) => record.revisionId === next.revisionId,
+      ),
+    ).toBe(false);
+    const latest = await repo.page({
+      kind: "publication",
+      after: "0",
+      limit: 100,
+      view: "latest",
+    });
+    expect(
+      latest.records.find((record) => record.recordId === "correctable")
+        ?.status,
+    ).toBe("withdrawn");
+    expect(
+      latest.records.filter((record) => record.recordId === "correctable"),
+    ).toHaveLength(1);
+  });
   it("imports and compares a legacy snapshot without inventing absent captures", async () => {
     const ledger = emptyLedger();
     const { campaignContext } = await import("../election-lifecycle/resolver");

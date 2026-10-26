@@ -1,6 +1,10 @@
 import { scheduledCycle } from "@/lib/election-lifecycle/scheduled-cycle";
+import { runSubscriptionWorker } from "@/lib/political-record/subscription-routes";
 import { readinessDiagnostic } from "@/lib/political-record/readiness";
-import {collectPlatformSources,mirrorPublishedLifecycle} from "@/lib/political-record/operations";
+import {
+  collectPlatformSources,
+  mirrorPublishedLifecycle,
+} from "@/lib/political-record/operations";
 import { emptyLedger } from "@/lib/election-lifecycle/resolver";
 import {
   rehearsalEnabled,
@@ -72,8 +76,19 @@ export async function POST(request: Request) {
   if (!store)
     return Response.json({ error: "store_unconfigured" }, { status: 503 });
   const payload = JSON.parse(body);
-  if(payload.mode==="platform_collect")return Response.json(await collectPlatformSources(),{headers:{"Cache-Control":"no-store"}});
-  if(payload.mode==="platform_shadow")return Response.json(await mirrorPublishedLifecycle((await store.load())??emptyLedger()),{headers:{"Cache-Control":"no-store"}});
+  if (payload.mode === "platform_deliver")
+    return Response.json(await runSubscriptionWorker(), {
+      headers: { "Cache-Control": "no-store" },
+    });
+  if (payload.mode === "platform_collect")
+    return Response.json(await collectPlatformSources(), {
+      headers: { "Cache-Control": "no-store" },
+    });
+  if (payload.mode === "platform_shadow")
+    return Response.json(
+      await mirrorPublishedLifecycle((await store.load()) ?? emptyLedger()),
+      { headers: { "Cache-Control": "no-store" } },
+    );
   if (payload.mode === "readiness")
     return Response.json(
       readinessDiagnostic(

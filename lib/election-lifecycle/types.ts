@@ -162,7 +162,14 @@ export type ProposalDecision = {
   sourceEventIds: string[];
 };
 export type Politics = {
-  formationState?: "awaiting_assignment"|"forming"|"attempt_ended"|"governing"|"government_ended"|"new_election"|"unknown";
+  formationState?:
+    | "awaiting_assignment"
+    | "forming"
+    | "attempt_ended"
+    | "governing"
+    | "government_ended"
+    | "new_election"
+    | "unknown";
   activeProposalId: string | null;
   proposals: { id: string; person: string; decisions: ProposalDecision[] }[];
   activeStages: EventType[];

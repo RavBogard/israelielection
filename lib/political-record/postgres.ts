@@ -140,6 +140,18 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
       client.release();
     }
   }
+  async getLatest(recordId: string) {
+    const client = await this.pool.connect();
+    try {
+      const result = await client.query(
+        "SELECT * FROM political_record.record_revisions WHERE record_id=$1 ORDER BY insertion_cursor DESC LIMIT 1",
+        [recordId],
+      );
+      return result.rows[0] ? this.decode(result.rows[0]) : null;
+    } finally {
+      client.release();
+    }
+  }
   async listRevisions(query: {
     electionId?: string;
     kind?: RecordKind;
@@ -187,17 +199,55 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
       client.release();
     }
   }
-  async page(query:{kind:RecordKind;electionId?:string;after:string;asOf?:string;limit:number;view:"history"|"latest"}){
-    if(!/^\d+$/.test(query.after)||query.asOf&&!/^\d+$/.test(query.asOf))throw new Error("invalid_cursor");
-    const client=await this.pool.connect();
-    try{
-      const asOf=query.asOf??String((await client.query("SELECT COALESCE(MAX(insertion_cursor),0)::text AS cursor FROM political_record.record_revisions")).rows[0].cursor);
-      const base="SELECT * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND kind=$2 AND ($3::text IS NULL OR election_id=$3)";
-      const selected=query.view==="latest"?`SELECT DISTINCT ON (record_id) * FROM (${base}) base ORDER BY record_id,insertion_cursor DESC`:base;
-      const result=await client.query(`SELECT * FROM (${selected}) selected WHERE insertion_cursor>$4::bigint ORDER BY insertion_cursor LIMIT $5`,[asOf,query.kind,query.electionId??null,query.after,query.limit+1]);
-      const rows=result.rows.slice(0,query.limit);
-      return {asOf,more:result.rows.length>query.limit,after:rows.at(-1)?String(rows.at(-1)!.insertion_cursor):query.after,records:rows.map(row=>this.decode(row))};
-    }finally{client.release();}
+  async page(query: {
+    kind: RecordKind;
+    electionId?: string;
+    after: string;
+    asOf?: string;
+    limit: number;
+    view: "history" | "latest";
+  }) {
+    if (!/^\d+$/.test(query.after) || (query.asOf && !/^\d+$/.test(query.asOf)))
+      throw new Error("invalid_cursor");
+    const client = await this.pool.connect();
+    try {
+      const asOf =
+        query.asOf ??
+        String(
+          (
+            await client.query(
+              "SELECT COALESCE(MAX(insertion_cursor),0)::text AS cursor FROM political_record.record_revisions",
+            )
+          ).rows[0].cursor,
+        );
+      const base =
+        "SELECT * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND kind=$2 AND ($3::text IS NULL OR election_id=$3)";
+      const selected =
+        query.view === "latest"
+          ? `SELECT DISTINCT ON (record_id) * FROM (${base}) base ORDER BY record_id,insertion_cursor DESC`
+          : base;
+      const result = await client.query(
+        `SELECT * FROM (${selected}) selected WHERE insertion_cursor>$4::bigint ORDER BY insertion_cursor LIMIT $5`,
+        [
+          asOf,
+          query.kind,
+          query.electionId ?? null,
+          query.after,
+          query.limit + 1,
+        ],
+      );
+      const rows = result.rows.slice(0, query.limit);
+      return {
+        asOf,
+        more: result.rows.length > query.limit,
+        after: rows.at(-1)
+          ? String(rows.at(-1)!.insertion_cursor)
+          : query.after,
+        records: rows.map((row) => this.decode(row)),
+      };
+    } finally {
+      client.release();
+    }
   }
   async close() {
     await this.pool.end();
