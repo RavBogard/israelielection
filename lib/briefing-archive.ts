@@ -14,6 +14,7 @@ export async function archiveBriefingEvidence(
     claims: AtomicClaim[];
     review: ClaimReview[];
     draftClaims?: AtomicClaim[];
+    reviewedClaims?: AtomicClaim[];
     discarded?: {
       claimId: string;
       code: string;

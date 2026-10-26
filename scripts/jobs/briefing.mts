@@ -17,7 +17,7 @@ import {
   reviewAtomicPrompt,
   qualifyAtomicDraft,
   BriefingValidationError,
-  validateClaimReview,
+  qualifyReviewedClaims,
   sentenceHash,
   claimHash,
   publicClaimEvidence,
@@ -70,7 +70,7 @@ console.log(
 let briefing: Briefing | null = null,
   reason = "insufficient_captured_articles";
 try {
-  if (articles.length < 3) throw Error(reason);
+  if (articles.length < 1) throw Error(reason);
   let lifecycle:
     | import("../../lib/election-lifecycle/types").ElectionLifecycleSnapshot
     | null = null;
@@ -97,13 +97,15 @@ try {
     atomicBriefingPrompt(articles, phaseBriefingGuidance(lifecycle)),
     CLAIM_SCHEMA,
   );
-  const { claims, discarded } = qualifyAtomicDraft(draft.claims, articles);
-  if (discarded.length) console.log(JSON.stringify({ discarded }));
+  const draftCheck = qualifyAtomicDraft(draft.claims, articles);
   const review = await generateJson<{ claims: ClaimReview[] }>(
-    reviewAtomicPrompt(claims, articles),
+    reviewAtomicPrompt(draftCheck.claims, articles),
     REVIEW_SCHEMA,
   );
-  validateClaimReview(claims, review.claims);
+  const reviewed = qualifyReviewedClaims(draftCheck.claims, review.claims);
+  const claims = reviewed.claims,
+    discarded = [...draftCheck.discarded, ...reviewed.discarded];
+  if (discarded.length) console.log(JSON.stringify({ discarded }));
   const capture = await archiveBriefingEvidence(
     {
       date,
@@ -112,6 +114,7 @@ try {
       claims,
       review: review.claims,
       draftClaims: draft.claims,
+      reviewedClaims: draftCheck.claims,
       discarded,
     },
     dry,
@@ -121,6 +124,13 @@ try {
     generatedAt: new Date().toISOString(),
     model: GEMINI_MODEL,
     evidenceVersion: 2,
+    coverage: {
+      state: "limited",
+      publishedClaims: claims.length,
+      discardedClaims: discarded.length,
+      sourceAttempts: attempted,
+      capturedSources: articles.length,
+    },
     capture,
     verification: {
       model: GEMINI_MODEL,

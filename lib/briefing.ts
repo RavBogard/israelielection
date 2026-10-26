@@ -10,6 +10,13 @@ export type Briefing = {
   generatedAt: string;
   model: string;
   evidenceVersion?: 2;
+  coverage?: {
+    state: "limited";
+    publishedClaims: number;
+    discardedClaims: number;
+    sourceAttempts: number;
+    capturedSources: number;
+  };
   capture?: {
     state: "archived" | "in_memory_only";
     captureHash?: string;

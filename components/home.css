@@ -186,3 +186,6 @@
 .home .race-source { line-height:1.6; }
 
 @media(max-width:560px){.home .race-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));}.home .race-pick button:nth-child(n+3){border-block-start:1px solid var(--line);}.home .race-pick button:nth-child(odd){border-inline-start:0;}}
+
+.home .pending-seat-frame { grid-area: mosaic; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; margin-block: 1rem; }
+.home .pending-seat-frame span { aspect-ratio: 1; border: 1px solid var(--line-2); }

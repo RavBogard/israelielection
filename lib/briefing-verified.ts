@@ -144,7 +144,7 @@ export function independentReporting(a: CapturedArticle, b: CapturedArticle) {
 export function validateAtomicClaims(
   claims: AtomicClaim[],
   articles: CapturedArticle[],
-  minimum: 1 | 3 = 3,
+  minimum: 1 | 3 = 1,
 ) {
   if (!Array.isArray(claims) || claims.length < minimum || claims.length > 8)
     throw Error("insufficient_atomic_claims");
@@ -211,7 +211,7 @@ export function qualifyAtomicDraft(
   claims: AtomicClaim[],
   articles: CapturedArticle[],
 ) {
-  if (!Array.isArray(claims) || claims.length < 3 || claims.length > 8)
+  if (!Array.isArray(claims) || claims.length < 1 || claims.length > 8)
     throw Error("insufficient_atomic_claims");
   const kept: AtomicClaim[] = [],
     discarded: {
@@ -236,7 +236,7 @@ export function qualifyAtomicDraft(
       });
     }
   }
-  if (kept.length < 3)
+  if (kept.length < 1)
     throw new BriefingValidationError("insufficient_supported_claims", {
       kept: kept.length,
       discarded,
@@ -263,6 +263,48 @@ export function validateClaimReview(
   )
     throw Error("atomic_semantic_review_rejected");
   return claims;
+}
+/** Review failures are omitted, never repaired into approvals. Missing/misaligned reviews fail closed. */
+export function qualifyReviewedClaims(
+  claims: AtomicClaim[],
+  reviews: ClaimReview[],
+) {
+  if (
+    !Array.isArray(reviews) ||
+    reviews.length !== claims.length ||
+    reviews.some((r, i) => r.id !== claims[i].id)
+  )
+    throw Error("atomic_review_shape_invalid");
+  const kept: AtomicClaim[] = [],
+    discarded: {
+      claimId: string;
+      code: string;
+      diagnostic: Record<string, unknown>;
+    }[] = [];
+  for (let i = 0; i < claims.length; i++) {
+    const r = reviews[i];
+    try {
+      validateClaimReview([claims[i]], [r]);
+      kept.push(claims[i]);
+    } catch {
+      discarded.push({
+        claimId: claims[i].id,
+        code: "atomic_semantic_review_rejected",
+        diagnostic: {
+          supported: r.supported,
+          atomic: r.atomic,
+          attributionPreserved: r.attributionPreserved,
+          noAddedInference: r.noAddedInference,
+          independentlyCorroborated: r.independentlyCorroborated,
+        },
+      });
+    }
+  }
+  if (!kept.length)
+    throw new BriefingValidationError("no_independently_verified_claims", {
+      discarded,
+    });
+  return { claims: kept, discarded };
 }
 export function atomicBriefingPrompt(
   articles: CapturedArticle[],

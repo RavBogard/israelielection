@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import {
   validateAtomicClaims,
   qualifyAtomicDraft,
+  qualifyReviewedClaims,
   independentReporting,
   publicClaimEvidence,
   validateClaimReview,
@@ -159,7 +160,7 @@ it("records explicit byline origins and treats unknown/same wire as unqualified"
   ).toBe("unknown");
 });
 
-it("discards only unsupported numeric claims while retaining at least three independently reviewable claims", () => {
+it("discards only unsupported numeric claims while retaining independently reviewable claims", () => {
   const good = claims(),
     bad = { ...good[0], id: "bad", text: "The committee granted99 seats." };
   const result = qualifyAtomicDraft([...good, bad], [article]);
@@ -169,9 +170,9 @@ it("discards only unsupported numeric claims while retaining at least three inde
     token: "99",
   });
   expect(JSON.stringify(result.discarded)).not.toContain(article.body);
-  expect(() => qualifyAtomicDraft([good[0], good[1], bad], [article])).toThrow(
-    "insufficient_supported_claims",
-  );
+  expect(
+    qualifyAtomicDraft([good[0], good[1], bad], [article]).claims,
+  ).toHaveLength(2);
   expect(() =>
     qualifyAtomicDraft(
       [
@@ -189,4 +190,27 @@ it("discards only unsupported numeric claims while retaining at least three inde
       [article],
     ),
   ).toThrow("quote_not_in_captured_article");
+});
+
+it("retains one fully reviewed claim and omits failed reviews without retrying their verdict", () => {
+  const draft = claims(),
+    review = draft.map((c) => ({
+      id: c.id,
+      supported: true,
+      atomic: true,
+      attributionPreserved: true,
+      noAddedInference: true,
+    }));
+  review[0].supported = false;
+  review[1].atomic = false;
+  const result = qualifyReviewedClaims(draft, review);
+  expect(result.claims.map((c) => c.id)).toEqual(["3"]);
+  expect(result.discarded).toHaveLength(2);
+  review[2].noAddedInference = false;
+  expect(() => qualifyReviewedClaims(draft, review)).toThrow(
+    "no_independently_verified_claims",
+  );
+  expect(() => qualifyReviewedClaims(draft, review.slice(0, 1))).toThrow(
+    "atomic_review_shape_invalid",
+  );
 });

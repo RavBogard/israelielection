@@ -154,3 +154,14 @@ export function briefingEvidenceLabel(
   } satisfies Record<Lang, string[]>;
   return labels[lang][kind === "corroborated_reporting" ? 0 : 1];
 }
+
+export const briefingCoverageNote = (lang: Lang) =>
+  ({
+    en: "Limited coverage: this briefing includes only individually verified claims from accessible selected articles. Missing topics do not establish that nothing happened.",
+    he: "כיסוי מוגבל: הסיכום כולל רק טענות שנבדקו בנפרד בכתבות נבחרות שהיו נגישות. היעדר נושא אינו מוכיח שלא אירע דבר.",
+    ar: "تغطية محدودة: يشمل الملخص ادعاءات جرى التحقق منها فرديًا من مقالات مختارة متاحة. غياب موضوع لا يثبت عدم وقوع شيء.",
+    fa: "پوشش محدود: این خلاصه فقط شامل ادعاهای جداگانه تأییدشده از مقاله‌های منتخب قابل دسترس است. نبود موضوعی به معنی نبود رویداد نیست.",
+    de: "Begrenzte Abdeckung: Nur einzeln geprüfte Aussagen aus ausgewählten zugänglichen Artikeln. Fehlende Themen belegen nicht, dass nichts geschah.",
+    fr: "Couverture limitée : seules les affirmations vérifiées individuellement dans des articles sélectionnés accessibles sont incluses. Un sujet absent ne prouve pas qu’il ne s’est rien passé.",
+    zh: "覆盖范围有限：仅收录可访问的选定文章中逐项核实的主张。缺少某个主题不证明没有相关事件。",
+  })[lang];

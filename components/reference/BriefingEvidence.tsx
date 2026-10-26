@@ -1,6 +1,10 @@
 import type { Briefing } from "@/lib/briefing";
 import type { Lang } from "@/lib/i18n";
-import { briefingCopy, briefingEvidenceLabel } from "@/lib/i18n/briefing";
+import {
+  briefingCopy,
+  briefingEvidenceLabel,
+  briefingCoverageNote,
+} from "@/lib/i18n/briefing";
 import { briefingSentence } from "@/lib/briefing-locale";
 export default function BriefingEvidence({
   briefing,
@@ -14,6 +18,9 @@ export default function BriefingEvidence({
     ready = sentences.every((s) => s.text);
   return (
     <section>
+      {briefing.coverage?.state === "limited" && (
+        <p className="note">{briefingCoverageNote(lang)}</p>
+      )}
       <p>
         <strong>
           {briefing.evidenceVersion === 2 ? t.verified : t.legacy}
