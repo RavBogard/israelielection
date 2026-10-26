@@ -37,6 +37,7 @@ const results: {
   usage?: object[];
   code?: string;
   sourceRevision?: string;
+  diagnostic?: Record<string, unknown>;
 }[] = [];
 let cursor = 0;
 async function worker() {
@@ -67,7 +68,11 @@ async function worker() {
         JSON.stringify({ ...item, status: "validated", usage: result.usage }),
       );
     } catch (error) {
-      const failure = error as { message?: string; usage?: object[] };
+      const failure = error as {
+        message?: string;
+        usage?: object[];
+        diagnostic?: Record<string, unknown>;
+      };
       const code = /^[a-z0-9_]{1,80}$/.test(failure.message ?? "")
         ? failure.message
         : "translation_failed";
@@ -76,6 +81,7 @@ async function worker() {
         status: "rejected",
         code,
         usage: failure.usage ?? [],
+        diagnostic: failure.diagnostic,
       });
       console.log(
         JSON.stringify({
@@ -83,6 +89,7 @@ async function worker() {
           status: "rejected",
           code,
           usage: failure.usage ?? [],
+          diagnostic: failure.diagnostic,
         }),
       );
     }

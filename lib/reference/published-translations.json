@@ -1203,6 +1203,808 @@
           }
         ]
       }
+    },
+    {
+      "id": "guides:seats",
+      "lang": "ar",
+      "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+      "status": "published",
+      "publishedAt": "2026-10-26T23:03:05.234Z",
+      "blocks": [
+        {
+          "id": "block-0-b25c97e728d0",
+          "text": "من الأصوات إلى المقاعد"
+        },
+        {
+          "id": "block-1-9acf4b523e2f",
+          "text": "كيف تحول إسرائيل الأصوات الوطنية إلى 120 مقعداً في الكنيست: القوائم الحزبية المغلقة، نسبة الحسم البالغة 3.25%، حساب بدر-عوفر، واتفاقيات فائض الأصوات."
+        },
+        {
+          "id": "block-2-daaa625612d0",
+          "text": "دولة واحدة، ورقة اقتراع واحدة، 120 مقعداً"
+        },
+        {
+          "id": "block-3-9d877b481301",
+          "text": "يضم الكنيست 120 عضواً، ويُنتخبون في «دائرة انتخابية واحدة على مستوى البلاد بأكملها». الناخبون «ينتخبون قوائم حزبية، لا أعضاء كنيست»، وتوزع المقاعد بالتناسب مع نسبة التصويت ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-4-7b5333e0e001",
+          "text": "لا توجد دوائر انتخابية. الناخب في حيفا والناخب في إيلات يختاران من نفس القوائم، ويدخل كل صوت صالح في مجمع وطني واحد. تقدم كل قائمة لائحة مرشحين مرتبة قبل الانتخابات، ولا يمكن للناخبين إعادة ترتيبها. «إذا فاز حزب بـ 10 مقاعد، يصبح أول 10 أشخاص في القائمة أعضاء في الكنيست» ([Center for Israel Education، 28 سبتمبر 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). بالنسبة للقارئ الأمريكي، أقرب تصور هو سباق عام وشامل واحد على جميع المقاعد الـ 120، حيث يصوت الناس للائحة حزبية بدلاً من التصويت لشخص."
+        },
+        {
+          "id": "block-5-f9e7fb8b7a80",
+          "text": "تأهلت ثمان وثلاثون قائمة لبطاقة الاقتراع في 27 أكتوبر 2026 ([Center for Israel Education، 28 سبتمبر 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). تظهر كل قائمة على بطاقة الاقتراع برمز قصير من أحرف عبرية؛ وتوضح [صفحة النتائج](/results) ارتباطها بالأحزاب."
+        },
+        {
+          "id": "block-6-301d162730f0",
+          "text": "نسبة الحسم 3.25%"
+        },
+        {
+          "id": "block-7-14a4fa786faf",
+          "text": "تحتاج القائمة إلى ما لا يقل عن 3.25% من الأصوات الصالحة للفوز بأي مقاعد على الإطلاق؛ وقد كانت هذه القاعدة سارية «منذ انتخابات 2015» ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750)). رُفعت نسبة الحسم عدة مرات. تذكر ملخصات هذا التاريخ أحياناً سنوات مختلفة للخطوة الأخيرة؛ ويتفق تقريرا IDI بمجرد الفصل بين تاريخ إقرار القانون والانتخابات: يكتب Ofer Kenig أن الكنيست أقر قانون الـ 3.25% في مارس 2014 ([IDI، 26 يناير 2015](https://en.idi.org.il/articles/5225))، بينما يؤرخها Assaf Shapira إلى 2015، وهي أول انتخابات أُجريت في ظله ([IDI، 8 نوفمبر 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-8-f54ccd463cc1",
+          "text": "<Chart id=\"seats.threshold-history\" />"
+        },
+        {
+          "id": "block-9-7bc765093016",
+          "text": "كم يعادل 3.25% من الأصوات؟ يعتمد ذلك على نسبة المشاركة، لذا لا يُعرف الرقم الدقيق إلا بعد الفرز. في 2022 كان 154855 صوتاً، أي 3.25% من 4764742 صوتاً صالحاً ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750)؛ [لجنة الانتخابات المركزية، نوفمبر 2022](https://votes25.bechirot.gov.il/nationalresults)). وبالنسبة لعام 2026، مع وجود حوالي 7.56 مليون ناخب مؤهل، يقدر Center for Israel Education أن القائمة «ستحتاج إلى 172000 صوت» ([28 سبتمبر 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/))."
+        },
+        {
+          "id": "block-10-47a475e86b3c",
+          "text": "الأصوات الممنوحة لقائمة لا تبلغ نسبة الحسم لا تنتقل إلى أي طرف آخر، بل تُستبعد من الحساب قبل توزيع أي مقعد ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750)). في 2022، حصلت القوائم الواقعة دون نسبة الحسم على 417400 صوت في المجمل ([لجنة الانتخابات المركزية، نوفمبر 2022](https://votes25.bechirot.gov.il/nationalresults)). وقد قدّر IDI حصة الأصوات المهدورة بنحو 8.7%، وهو أعلى مستوى على الإطلاق ([IDI، 8 نوفمبر 2022](https://en.idi.org.il/articles/46256)). حصد ميرتس 150793 صوتاً (3.16%) وفاته الحسم بفارق 4062 صوتاً. وحصد التجمع (بلد) 138617 صوتاً (2.91%)، وحصل البيت اليهودي على 56775 صوتاً (1.19%) ([لجنة الانتخابات المركزية، نوفمبر 2022](https://votes25.bechirot.gov.il/nationalresults)). ويشير Shapira إلى أن إجمالي أصوات الكتلتين كان «متطابقاً تقريباً»، لكن معسكر Netanyahu فاز «بأغلبية واضحة بلغت 64 مقعداً» ([IDI، 8 نوفمبر 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-11-cf02ecfde1e9",
+          "text": "<Chart id=\"seats.threshold-2022\" />"
+        },
+        {
+          "id": "block-12-208d3e82ed80",
+          "text": "<WhatIf />"
+        },
+        {
+          "id": "block-13-ade4fc80c1aa",
+          "text": "كيفية احتساب المقاعد"
+        },
+        {
+          "id": "block-14-b0bc19abf004",
+          "text": "تسمى الطريقة بدر-عوفر، نسبةً إلى عضوي الكنيست Yohanan Bader وAvraham Ofer. تعود إلى قانون بدر-عوفر الصادر عام 1973، والذي كان يهدف جزئياً «إلى تقوية الأحزاب الأكبر» ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485)). وهي في الواقع طريقة دي هوندت مطبقة على مرحلتين ([Fruits and Votes، 8 سبتمبر 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)). تستخدم الخطوات أدناه أرقام 2022. الحسابات هنا أعيد احتسابها من إجماليات لجنة الانتخابات المركزية وتتطابق مع أرقام IDI المنشورة ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-15-ef5f4f65377f",
+          "text": "1. **عد الأصوات الصالحة** واستبعاد تلك المدلى بها للقوائم التي لم تتجاوز نسبة الحسم. في 2022، تبقى 4347342 صوتاً.\n2. **تحديد سعر المقعد.** قسمة الأصوات المتبقية على 120. في 2022، بلغت تكلفة المقعد الواحد 36227 صوتاً.\n3. **توزيع المقاعد الكاملة.** تحصل كل قائمة على مقعد واحد مقابل كل 36227 صوتاً كاملاً. في 2022 وزع هذا الإجراء 113 مقعداً وترك 7 مقاعد.\n4. **توزيع المقاعد الفائضة مقعداً تلو الآخر.** قسمة أصوات كل قائمة على عدد المقاعد التي حصلت عليها بالفعل زائد واحد. والنتيجة الأعلى تفوز بالمقعد التالي. ثم يعاد احتساب رقم تلك القائمة، وتتكرر العملية. في هذه الخطوة، تُعامل القائمتان المرتبطتان باتفاقية فائض كقائمة واحدة.\n5. **تقسيم المقاعد الإضافية للزوج** بين الشريكين وفقاً لنفس القاعدة."
+        },
+        {
+          "id": "block-16-0de6f38d37d1",
+          "text": "<Chart id=\"seats.quotas-2022\" />"
+        },
+        {
+          "id": "block-17-14ded3081c6b",
+          "text": "<Chart id=\"seats.leftover-2022\" />"
+        },
+        {
+          "id": "block-18-517a60abc0a5",
+          "text": "داخل ثنائي الليكود–الصهيونية الدينية، تفوق رقم الليكود (1115336 ÷ 31 = 35978.58) على رقم شريكه (516470 ÷ 15 = 34431.33)، لذا أخذ الليكود المقعد الإضافي الأول. وظل رقمه الجديد، 34854.25، متفوقاً على رقم الصهيونية الدينية، لذا حصل الليكود على المقعد الثاني أيضاً وانتهى به المطاف بـ 32 مقعداً. وداخل الثنائيات الأخرى، حصد شاس مقعد شاس–يهدوت هتوراة، وحصل كل من معسكر الدولة ويش عتيد على مقعد واحد ([لجنة الانتخابات المركزية، نوفمبر 2022](https://votes25.bechirot.gov.il/nationalresults)؛ [Fruits and Votes، 8 سبتمبر 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        },
+        {
+          "id": "block-19-0fbc813e9b4e",
+          "text": "بموجب قاعدة الباقي الأكبر المتبعة من الكنيست الثانية حتى السابعة، كانت المقاعد السبعة الفائضة ستذهب إلى البواقي غير المستخدمة السبعة الأكبر. وكان ذلك سيمنح مقاعد لحزب العمل ويهدوت هتوراة بدلاً من المقعد الإضافي الثاني لليكود ومقعد يش عتيد (محسوبة من [إجماليات لجنة الانتخابات المركزية](https://votes25.bechirot.gov.il/nationalresults)). ويأتي الانحياز نحو الحجم الكبير بالكامل تقريباً في هذه المرحلة. يكتب Shapira وGideon Rahat من IDI أنه بصرف النظر عن المقاعد الفائضة، «لا توجد تقريباً أي ميزة انتخابية للقوائم الكبيرة» ([IDI، 27 أبريل 2026](https://en.idi.org.il/articles/64020))."
+        },
+        {
+          "id": "block-20-bb8781350e44",
+          "text": "اتفاقيات فائض الأصوات"
+        },
+        {
+          "id": "block-21-8b613186f714",
+          "text": "قبل الانتخابات، يجوز لقائمتين توقيع اتفاقية فائض أصوات (أو تقاسم الأصوات). وعند توزيع المقاعد الفائضة، «يُعامل الزوج كقائمة واحدة»: تُجمع أصواتهما معاً وتُقسم على مجموع مقاعدهما زائد واحد ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485)). يشكل الزوج قائمة أكبر، وتفضل الطريقة القوائم الأكبر، مما يزيد من فرصته في نيل مقعد إضافي. لا يمكن إلا لقائمتين فقط توقيع اتفاقية معاً ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-22-8a4d309e6a70",
+          "text": "عادةً ما يحصل الشريك الأكبر على المقعد الإضافي، ولكن ليس دائماً. في 2021 فاز الشريك الأصغر به في ثلاثة أزواج: ميرتس على حساب العمل، وأمل جديد (تيكفا حداشا) على حساب يمينا، وإسرائيل بيتنا على حساب يش عتيد ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-23-5b2286a1dead",
+          "text": "لا يُعتد بالاتفاقية إلا إذا اجتازت كلتا القائمتين نسبة الحسم. فإذا فشلت إحداهما، «يُعتبر شريكها وكأنه لم يوقع اتفاقية على الإطلاق» ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485)). حدث ذلك لحزب العمل في 2022؛ حيث أُلغيت اتفاقيته مع ميرتس عندما فشل ميرتس في تجاوز النسبة ([IDI، 27 أبريل 2026](https://en.idi.org.il/articles/64020))، فتنافس العمل على المقاعد الفائضة بمفرده ولم يحصل على أي منها."
+        },
+        {
+          "id": "block-24-715e97ad931a",
+          "text": "بالنسبة لعام 2026، تصف التقارير الصحفية ثلاث اتفاقيات بأنها موقعة: [ياشار!](/parties/yashar) مع [الديمقراطيون](/parties/dem)، و[معاً (بياحاد)](/parties/byachad) مع [إسرائيل بيتنا](/parties/yb)، و[القائمة المشتركة](/parties/jl) مع [الموحدة (رعّام)](/parties/raam). وذكرت صحيفة The Jerusalem Post أنه كان من المتوقع أن يوقع [شاس](/parties/shas) و[يهدوت هتوراة](/parties/utj) اتفاقية ([10 سبتمبر 2026](https://www.jpost.com/israel-election-2026/article-908296)). وذكر منتدى السياسة الإسرائيلية (Israel Policy Forum) أن [الليكود](/parties/likud) و[الصهيونية الدينية–زهوت](/parties/rz) يخططان للتوقيع ([مشروع 120، مدخلة 10 سبتمبر](https://israelpolicyforum.org/onetwenty/))؛ وبعد أسبوع من اتفاق الحزبين على صفقة، ذكرت القناة 14 أنها لم تُوقع بعد ([القناة 14، 15 سبتمبر 2026](https://www.c14.co.il/article/1702522)). يمكن إيداع الاتفاقيات حتى 16 أكتوبر ([AIJAC، 14 سبتمبر 2026](https://aijac.org.au/australia-israel-review/a-game-of-margins/)). تفترض [تقديرات النتائج](/results) المؤقتة وجود هذه الأزواج الثلاثة الموقعة فقط بحسب التقارير الصحفية، مع استبعاد الزوجين غير المؤكدين. لم يثبت الإيداع الرسمي بعد."
+        },
+        {
+          "id": "block-25-6ab0424abe2a",
+          "text": "<Chart id=\"seats.agreements-2026\" />"
+        },
+        {
+          "id": "block-26-9b610ba5d1fc",
+          "text": "مفاهيم خاطئة"
+        },
+        {
+          "id": "block-27-e022ca48de4a",
+          "text": "**«التصويت لحزب صغير هو تصويت لمرشحيه في دائرة الناخب الانتخابية نفسها.»** لا توجد دوائر انتخابية. يدخل كل صوت في فرز وطني واحد، وتذهب مقاعد القائمة إلى الأسماء الموجودة في صدارة لائحتها المرتبة ([IDI، 16 مارس 2026](https://en.idi.org.il/articles/63750)؛ [Center for Israel Education، 28 سبتمبر 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). ودون 3.25%، لا ينتخب ذلك الصوت أحداً."
+        },
+        {
+          "id": "block-28-84ac307aabc0",
+          "text": "**«الأصوات لقائمة تفشل في تجاوز نسبة الحسم تذهب إلى حلفائها.»** إنها تُلغى وتُهمل. واتفاقية الفائض لا تنقذها، لأنها لا تُحتسب إلا عند تجاوز كلا الشريكين لنسبة الحسم ([IDI، 30 أكتوبر 2022](https://en.idi.org.il/articles/47485)). في 2022، لم تقدم أصوات ميرتس البالغة 150793 صوتاً أي فائدة لحزب العمل."
+        },
+        {
+          "id": "block-29-9b7cb19a6f76",
+          "text": "**«نسبة الحسم تتعلق بالمقاعد.»** إنها نسبة مئوية من الأصوات الصالحة وليست عدداً من المقاعد. في 2022، كانت القائمة التي تحصل على 154855 صوتاً بالضبط ستستحق أربعة مقاعد كاملة بمعدل 36227 صوتاً لكل مقعد ([لجنة الانتخابات المركزية، نوفمبر 2022](https://votes25.bechirot.gov.il/nationalresults)). لذا، في ذلك العام لم يكن بإمكان أي قائمة أن تتجاوز نسبة الحسم وتفوز بمقعد أو مقعدين أو ثلاثة فقط. حصل العمل بنسبة 3.69% على أربعة مقاعد، بينما لم يحصل ميرتس بنسبة 3.16% على أي مقعد."
+        },
+        {
+          "id": "block-30-68857eb6b145",
+          "text": "**«الحزب الأكبر يشكل الحكومة.»** ما يهم هو الترتيب الذي يمكنه نيل الثقة المبدئية، وليس القائمة الكبرى. واحد وستون مقعداً هو الأغلبية المطلقة والهدف التخطيطي العملي. بعد انتخابات 2009، شكل Netanyahu حكومة «على الرغم من فوز كاديما بمقعد إضافي مقارنة بالليكود»، وفي وقت لاحق شكل Naftali Bennett حكومة وهو على رأس كتلة يمينا الصغيرة ([IDI، 27 أبريل 2026](https://en.idi.org.il/articles/64020)). الخطوات التي تلي يوم الانتخابات مفصلة في [تشكيل الحكومة](/how-it-works/forming-a-government)."
+        },
+        {
+          "id": "block-31-9d95737038ab",
+          "text": "**«المقاعد تتبع التصويت تماماً وبدقة.»** هي تقترب منه، لكن ليس بصورة تامة ومطابقة. تُسقط نسبة الحسم بعض الأصوات. وتفضل مرحلة المقاعد الفائضة القوائم الكبيرة والأزواج قليلاً، وهو ما منح الليكود في 2022 المقعد رقم 32 ([Fruits and Votes، 8 سبتمبر 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        }
+      ],
+      "review": {
+        "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+        "contentHash": "b86b2eda88d44e41bbd96b59e023293f9d82a5f7d66093ca13c16d8f62069b66",
+        "model": "gemini-3.8-flash",
+        "verdict": "supported",
+        "blocks": [
+          {
+            "id": "block-0-b25c97e728d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-1-9acf4b523e2f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-2-daaa625612d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-3-9d877b481301",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-4-7b5333e0e001",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-5-f9e7fb8b7a80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-6-301d162730f0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-7-14a4fa786faf",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-8-f54ccd463cc1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-9-7bc765093016",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-10-47a475e86b3c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-11-cf02ecfde1e9",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-12-208d3e82ed80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-13-ade4fc80c1aa",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-14-b0bc19abf004",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-15-ef5f4f65377f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-16-0de6f38d37d1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-17-14ded3081c6b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-18-517a60abc0a5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-19-0fbc813e9b4e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-20-bb8781350e44",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-21-8b613186f714",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-22-8a4d309e6a70",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-23-5b2286a1dead",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-24-715e97ad931a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-25-6ab0424abe2a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-26-9b610ba5d1fc",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-27-e022ca48de4a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-28-84ac307aabc0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-29-9b7cb19a6f76",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-30-68857eb6b145",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-31-9d95737038ab",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          }
+        ]
+      }
+    },
+    {
+      "id": "guides:seats",
+      "lang": "fr",
+      "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+      "status": "published",
+      "publishedAt": "2026-10-26T23:03:43.025Z",
+      "blocks": [
+        {
+          "id": "block-0-b25c97e728d0",
+          "text": "Des votes aux sièges"
+        },
+        {
+          "id": "block-1-9acf4b523e2f",
+          "text": "Comment Israël transforme les votes nationaux en 120 sièges à la Knesset : listes de partis fermées, seuil de 3.25%, méthode de décompte Bader-Ofer et accords de partage des surplus de voix."
+        },
+        {
+          "id": "block-2-daaa625612d0",
+          "text": "Un pays, un scrutin, 120 sièges"
+        },
+        {
+          "id": "block-3-9d877b481301",
+          "text": "La Knesset compte 120 membres, et ils sont élus dans « une circonscription unique à l'échelle nationale ». Les électeurs « élisent des listes de partis, et non des membres de la Knesset », et les sièges sont répartis proportionnellement au vote ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-4-7b5333e0e001",
+          "text": "Il n'y a pas de circonscriptions. Un électeur à Haïfa et un électeur à Eilat choisissent parmi les mêmes listes, et chaque vote valide va dans un pot commun national. Chaque liste dépose une liste ordonnée de candidats avant l'élection, et les électeurs ne peuvent pas la modifier. « Si un parti remporte 10 sièges, les 10 premières personnes sur la liste deviennent membres de la Knesset » ([Center for Israel Education, 28 septembre 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). Pour un lecteur américain, l'image la plus proche est celle d'une élection générale unique pour l'ensemble des 120 sièges, dans laquelle les gens votent pour la liste d'un parti plutôt que pour une personne."
+        },
+        {
+          "id": "block-5-f9e7fb8b7a80",
+          "text": "Trente-huit listes se sont qualifiées pour le scrutin du 27 octobre 2026 ([Center for Israel Education, 28 septembre 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). Chacune apparaît sur le bulletin de vote sous un court code de lettres hébraïques ; la [page des résultats](/results) les associe aux partis."
+        },
+        {
+          "id": "block-6-301d162730f0",
+          "text": "Le seuil de 3.25%"
+        },
+        {
+          "id": "block-7-14a4fa786faf",
+          "text": "Une liste doit obtenir au moins 3.25% des suffrages valides pour remporter le moindre siège ; c'est la règle « depuis les élections de 2015 » ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750)). Le seuil a été relevé à plusieurs reprises. Les résumés de cette histoire donnent parfois des années différentes pour la dernière étape ; les deux comptes rendus de l'IDI concordent une fois que la loi est dissociée de l'élection : Ofer Kenig écrit que la Knesset a adopté la loi fixant le seuil à 3.25% en mars 2014 ([IDI, 26 janvier 2015](https://en.idi.org.il/articles/5225)), et Assaf Shapira la date de 2015, la première élection tenue sous son empire ([IDI, 8 novembre 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-8-f54ccd463cc1",
+          "text": "<Chart id=\"seats.threshold-history\" />"
+        },
+        {
+          "id": "block-9-7bc765093016",
+          "text": "Le nombre de voix que représente 3.25% dépend de la participation, de sorte que le chiffre exact n'est connu qu'après le dépouillement. En 2022, il s'élevait à 154855 voix, soit 3.25% des 4764742 suffrages valides ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750) ; [Central Elections Committee, novembre 2022](https://votes25.bechirot.gov.il/nationalresults)). Pour 2026, avec environ 7.56 millions d'électeurs inscrits, le Center for Israel Education estime qu'une liste « aura besoin de 172000 voix » ([28 septembre 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/))."
+        },
+        {
+          "id": "block-10-47a475e86b3c",
+          "text": "Les voix obtenues par une liste qui échoue sous le seuil ne sont transmises à personne. Elles sont exclues du décompte avant l'attribution du moindre siège ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750)). En 2022, les listes sous le seuil ont recueilli 417400 voix au total ([Central Elections Committee, novembre 2022](https://votes25.bechirot.gov.il/nationalresults)). L'IDI a évalué la part des voix perdues à environ 8.7%, un record historique ([IDI, 8 novembre 2022](https://en.idi.org.il/articles/46256)). Meretz a obtenu 150793 voix (3.16%) et a manqué le seuil de 4062 voix. Balad a recueilli 138617 voix (2.91%), et Jewish Home a obtenu 56775 voix (1.19%) ([Central Elections Committee, novembre 2022](https://votes25.bechirot.gov.il/nationalresults)). Shapira note que les totaux de voix des deux blocs étaient « presque identiques », mais que le camp de Netanyahu a remporté « une nette majorité de 64 sièges » ([IDI, 8 novembre 2022](https://en.idi.org.il/articles/46256))."
+        },
+        {
+          "id": "block-11-cf02ecfde1e9",
+          "text": "<Chart id=\"seats.threshold-2022\" />"
+        },
+        {
+          "id": "block-12-208d3e82ed80",
+          "text": "<WhatIf />"
+        },
+        {
+          "id": "block-13-ade4fc80c1aa",
+          "text": "Comment les sièges sont comptés"
+        },
+        {
+          "id": "block-14-b0bc19abf004",
+          "text": "La méthode s'appelle Bader-Ofer, du nom des députés de la Knesset Yohanan Bader et Avraham Ofer. Elle date de la loi Bader-Ofer, introduite en 1973, qui visait en partie « à renforcer les plus grands partis » ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485)). En pratique, il s'agit de la méthode D'Hondt, appliquée en deux étapes ([Fruits and Votes, 8 septembre 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/)). Les étapes ci-dessous utilisent les chiffres de 2022. Le calcul arithmétique ici est recalculé à partir des totaux de la Central Elections Committee et correspond aux chiffres publiés par l'IDI ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750))."
+        },
+        {
+          "id": "block-15-ef5f4f65377f",
+          "text": "1. **Compter les suffrages valides** et retirer ceux exprimés pour les listes sous le seuil. En 2022, il restait 4347342 voix.\n2. **Déterminer le prix d'un siège.** Diviser les voix restantes par 120. En 2022, un siège coûtait 36227 voix.\n3. **Distribuer les sièges entiers.** Chaque liste obtient un siège pour chaque tranche complète de 36227 voix. En 2022, cela a permis d'attribuer 113 sièges et en a laissé 7.\n4. **Distribuer les sièges restants un par un.** Diviser les voix de chaque liste par le nombre de sièges qu'elle détient déjà plus un. Le résultat le plus élevé remporte le siège suivant. Le chiffre de cette liste est ensuite recalculé, et le processus se répète. À cette étape, deux listes ayant conclu un accord de surplus comptent comme une seule liste.\n5. **Répartir les sièges supplémentaires d'une paire** entre ses deux partenaires selon la même règle."
+        },
+        {
+          "id": "block-16-0de6f38d37d1",
+          "text": "<Chart id=\"seats.quotas-2022\" />"
+        },
+        {
+          "id": "block-17-14ded3081c6b",
+          "text": "<Chart id=\"seats.leftover-2022\" />"
+        },
+        {
+          "id": "block-18-517a60abc0a5",
+          "text": "Au sein de la paire Likud–Religious Zionism, le chiffre du Likud (1115336 ÷ 31 = 35978.58) a battu celui de son partenaire (516470 ÷ 15 = 34431.33), de sorte que le Likud a remporté le premier siège supplémentaire. Son nouveau chiffre, 34854.25, battait toujours celui de Religious Zionism, donc le Likud a également pris le second et a terminé avec 32 sièges. Au sein des autres paires, Shas a pris le siège Shas–UTJ, et National Unity et Yesh Atid ont pris un siège chacun ([Central Elections Committee, novembre 2022](https://votes25.bechirot.gov.il/nationalresults) ; [Fruits and Votes, 8 septembre 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        },
+        {
+          "id": "block-19-0fbc813e9b4e",
+          "text": "Sous la règle du plus fort reste utilisée de la Deuxième à la Septième Knesset, les sept sièges restants seraient allés aux sept plus grands restes inutilisés. Cela aurait attribué des sièges à Labor et United Torah Judaism au lieu du second siège supplémentaire du Likud et de celui de Yesh Atid (calculé à partir des [totaux de la Central Elections Committee](https://votes25.bechirot.gov.il/nationalresults)). Le biais en faveur de la taille survient presque entièrement à ce stade. Shapira et Gideon Rahat de l'IDI écrivent qu'en dehors des sièges restants, « il n'y a presque aucun avantage électoral pour les grandes listes » ([IDI, 27 avril 2026](https://en.idi.org.il/articles/64020))."
+        },
+        {
+          "id": "block-20-bb8781350e44",
+          "text": "Accords de partage des surplus de voix"
+        },
+        {
+          "id": "block-21-8b613186f714",
+          "text": "Avant une élection, deux listes peuvent signer un accord de surplus de voix (ou de partage des voix). Lorsque les sièges restants sont attribués, la paire « est traitée comme une seule liste » : leurs voix sont additionnées et divisées par le total combiné de leurs sièges plus un ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485)). Une paire constitue une liste plus importante, et la méthode favorise les listes plus importantes, de sorte que ses chances d'obtenir un siège supplémentaire augmentent. Seules deux listes peuvent signer un accord ensemble ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-22-8a4d309e6a70",
+          "text": "Le partenaire le plus grand obtient généralement le siège supplémentaire, mais pas toujours. En 2021, le partenaire le plus petit l'a emporté au sein de trois paires : Meretz devant Labor, New Hope devant Yamina, et Yisrael Beiteinu devant Yesh Atid ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485))."
+        },
+        {
+          "id": "block-23-5b2286a1dead",
+          "text": "Un accord ne compte que si les deux listes franchissent le seuil. Si l'une échoue, son partenaire « est considéré comme n'ayant signé aucun accord du tout » ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485)). C'est ce qui est arrivé à Labor en 2022. Son accord avec Meretz est devenu caduc lorsque Meretz a échoué ([IDI, 27 avril 2026](https://en.idi.org.il/articles/64020)), si bien que Labor a concouru seul pour les sièges restants et n'en a remporté aucun."
+        },
+        {
+          "id": "block-24-715e97ad931a",
+          "text": "Pour 2026, des articles de presse décrivent trois accords comme étant signés : [Yashar!](/parties/yashar) avec [The Democrats](/parties/dem), [B'Yachad](/parties/byachad) avec [Yisrael Beiteinu](/parties/yb), et la [Joint List](/parties/jl) avec [Ra'am](/parties/raam). The Jerusalem Post a rapporté que [Shas](/parties/shas) et [United Torah Judaism](/parties/utj) devaient en signer un ([10 septembre 2026](https://www.jpost.com/israel-election-2026/article-908296)). L'Israel Policy Forum a rapporté que le [Likud](/parties/likud) et [Religious Zionism–Zehut](/parties/rz) prévoyaient d'en signer un ([120 Project, entrée du 10 septembre](https://israelpolicyforum.org/onetwenty/)) ; une semaine après que les deux partis se sont mis d'accord sur un pacte, Channel 14 a rapporté qu'il n'avait pas encore été signé ([Channel 14, 15 septembre 2026](https://www.c14.co.il/article/1702522)). Les accords peuvent être déposés jusqu'au 16 octobre ([AIJAC, 14 septembre 2026](https://aijac.org.au/australia-israel-review/a-game-of-margins/)). Les [estimations des résultats](/results) provisoires ne prennent en compte que ces trois paires signées rapportées par la presse ; les deux paires non confirmées sont exclues. Le dépôt officiel n'a pas été établi."
+        },
+        {
+          "id": "block-25-6ab0424abe2a",
+          "text": "<Chart id=\"seats.agreements-2026\" />"
+        },
+        {
+          "id": "block-26-9b610ba5d1fc",
+          "text": "Idées fausses"
+        },
+        {
+          "id": "block-27-e022ca48de4a",
+          "text": "**« Un vote pour un petit parti est un vote pour ses candidats dans la propre circonscription de l'électeur. »** Il n'y a pas de circonscriptions. Chaque voix va dans un décompte national unique, et les sièges d'une liste reviennent aux noms figurant en haut de sa liste ordonnée ([IDI, 16 mars 2026](https://en.idi.org.il/articles/63750) ; [Center for Israel Education, 28 septembre 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). En dessous de 3.25%, ce vote n'élit personne."
+        },
+        {
+          "id": "block-28-84ac307aabc0",
+          "text": "**« Les voix d'une liste qui rate le seuil vont à ses alliés. »** Elles sont écartées. Un accord de surplus ne les sauve pas, car il ne compte que lorsque les deux partenaires franchissent le seuil ([IDI, 30 octobre 2022](https://en.idi.org.il/articles/47485)). En 2022, les 150793 voix de Meretz n'ont rien apporté à Labor."
+        },
+        {
+          "id": "block-29-9b7cb19a6f76",
+          "text": "**« Le seuil concerne les sièges. »** C'est une part des suffrages valides, pas un nombre de sièges. En 2022, une liste ayant exactement 154855 voix aurait tout de même valu quatre sièges entiers à 36227 voix chacun ([Central Elections Committee, novembre 2022](https://votes25.bechirot.gov.il/nationalresults)). Ainsi, cette année-là, aucune liste ne pouvait franchir le seuil et ne remporter qu'un, deux ou trois sièges. Labor, à 3.69%, en a remporté quatre. Meretz, à 3.16%, n'en a remporté aucun."
+        },
+        {
+          "id": "block-30-68857eb6b145",
+          "text": "**« Le plus grand parti forme le gouvernement. »** Ce qui compte, c'est un arrangement capable d'obtenir la confiance initiale, et non pas la liste la plus importante. Soixante et un est une majorité absolue de sièges et un objectif pratique de planification. Après les élections de 2009, Netanyahu a formé un gouvernement « bien que Kadima ait remporté un siège de plus que le Likud », et Naftali Bennett en a formé un plus tard à la tête de la petite faction Yamina ([IDI, 27 avril 2026](https://en.idi.org.il/articles/64020)). Les étapes qui suivent le jour de l'élection sont décrites sur [former un gouvernement](/how-it-works/forming-a-government)."
+        },
+        {
+          "id": "block-31-9d95737038ab",
+          "text": "**« Les sièges suivent exactement le vote. »** Ils s'en rapprochent, mais pas exactement. Le seuil élimine certaines voix. L'étape des sièges restants favorise légèrement les grandes listes et les paires, et en 2022, cela a donné au Likud un 32e siège ([Fruits and Votes, 8 septembre 2026](https://fruitsandvotes.wordpress.com/2026/09/08/israels-bader-ofer-method-of-allocating-seats-step-by-step/))."
+        }
+      ],
+      "review": {
+        "sourceRevision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+        "contentHash": "f1bece85186d13e3233fe3fb73431346408cd04872babdc49e9b9cb90220233c",
+        "model": "gemini-3.8-flash",
+        "verdict": "supported",
+        "blocks": [
+          {
+            "id": "block-0-b25c97e728d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-1-9acf4b523e2f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-2-daaa625612d0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-3-9d877b481301",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-4-7b5333e0e001",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-5-f9e7fb8b7a80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-6-301d162730f0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-7-14a4fa786faf",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-8-f54ccd463cc1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-9-7bc765093016",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-10-47a475e86b3c",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-11-cf02ecfde1e9",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-12-208d3e82ed80",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-13-ade4fc80c1aa",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-14-b0bc19abf004",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-15-ef5f4f65377f",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-16-0de6f38d37d1",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-17-14ded3081c6b",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-18-517a60abc0a5",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-19-0fbc813e9b4e",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-20-bb8781350e44",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-21-8b613186f714",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-22-8a4d309e6a70",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-23-5b2286a1dead",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-24-715e97ad931a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-25-6ab0424abe2a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-26-9b610ba5d1fc",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-27-e022ca48de4a",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-28-84ac307aabc0",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-29-9b7cb19a6f76",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-30-68857eb6b145",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          },
+          {
+            "id": "block-31-9d95737038ab",
+            "supported": true,
+            "complete": true,
+            "negationPreserved": true,
+            "namesPreserved": true,
+            "reasonCode": "none"
+          }
+        ]
+      }
     }
   ]
 }
