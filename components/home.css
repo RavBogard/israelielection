@@ -213,3 +213,5 @@
 @media (max-width: 640px), (pointer: coarse) {
   .home .hero-news li a { padding-block: 4px; }
 }
+.home .race-below { margin: 10px 0 0; font-size: 13px; line-height: 1.45; color: var(--text); }
+.home .race-below b { font-weight: 600; color: var(--ink); margin-inline-end: 6px; }

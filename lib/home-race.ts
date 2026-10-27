@@ -53,7 +53,8 @@ export function contextRaceModel(
   const rows: HomeRaceModel["rows"] = template.rows
     .filter((row) => row.id !== "other")
     .map((row) => {
-      const members = row.members.map((p) => ({
+      // Lists the context does not carry (withdrawn, or never modelled) leave the point rather than show as 0.
+      const members = row.members.filter((p) => p.id in context.pointSeats).map((p) => ({
           ...p,
           seats: context.pointSeats[p.id] ?? 0,
           state: "reported" as const,
