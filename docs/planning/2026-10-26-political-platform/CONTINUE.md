@@ -2,10 +2,14 @@
 
 Updated 2026-10-27. Sol 6.1 implemented and integrated this release. Do not restart the audit or provision services.
 
+## Actual release checkpoint
+
+Preview `121efae` passed seven-locale API/Changes/economy checks, EN/HE mobile dark Changes checks and eight deployed historical interaction checks. No overflow or JavaScript errors remained. User subsequently approved main code deployment and existing private Blob storage for daily briefing evidence. Its GitHub workflow credential was installed securely through stdin. Main's separate locked-forecast commit `1e537be` was merged intact;38 targeted forecast/registration/live-worker tests passed. PR29 is ready for its required checks and main merge. Final deployment evidence is recorded in local `.vercel/platform-production-release.receipt.json`. Database cutover, real email, new schedules and unrelated capability flags remain off.
+
 ## Checkout and release
 
 - Main workspace: `C:/Users/dsbog/israelielection`; preserve unrelated user work.
-- Release worktree: `C:/Users/dsbog/.codex/worktrees/political-platform-preview/israelielection`, branch `codex/political-platform-preview`. Main/production remain unchanged.
+- Release worktree: `C:/Users/dsbog/.codex/worktrees/political-platform-preview/israelielection`, branch `codex/political-platform-preview`. Main promotion is authorized through PR29; inspect its current merge/deployment status.
 - Build snapshot: main `.vercel/platform-preview-path.txt`. Approved-path manifest: `.vercel/final-platform-manifest.txt`.
 - Preview: https://israelielection-git-codex-political-d7a050-ravbogards-projects.vercel.app . Latest branch commit/status identifies its immutable deployment.
 
@@ -24,7 +28,7 @@ Updated 2026-10-27. Sol 6.1 implemented and integrated this release. Do not rest
 1. Many prose/tool translations remain pending or rejected. Exact source hashes, protected numbers/links and independent review still govern publication. Existing bounded runs40421287094 and40430871011 may finish independently: inspect artifacts once if needed; do not launch new runs or blindly retry. Timeline/history factual originals remain labeled pending.
 2. Resend account/sender approved; sole test recipient is recorded privately in task authorization. Account/key/domain/webhook qualification remains unavailable. No real email sent. Never connect a real sender to synthetic QA subscribers; later tests need an exact recipient allowlist and isolated cohort. Never request keys in chat.
 3. Knesset/President/current CEC and some party sources remain blocked/maintenance/unqualified. Do not invent official seats, government events, operative legal deadlines, membership or bills. CBS CPI is qualified; outcomes do not imply causation.
-4. No main/production push, database cutover, new paid service, schedule or production activation. Redis/QStash and the frozen forecast remain authoritative. Count-informed probabilities stay gated. Registry activation/discovery, subscriptions and delivery remain off.
+4. Main code deployment and existing Blob briefing storage are authorized. Database cutover, new paid plans, schedules and other production capability activation are not. Redis/QStash and the frozen forecast remain authoritative. Count-informed probabilities stay gated. Registry activation/discovery, subscriptions and delivery remain off.
 5. Provider PITR, independent account/region backup, key-disaster recovery, ongoing retention and production RPO/RTO remain unqualified. Preview resources/receipts are preserved.
 
 ## Safe continuation
