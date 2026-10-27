@@ -1,23 +1,49 @@
 # Political platform implementation state
 
-October 26, 2026. Full six-milestone plan approved; implementation in progress. [Plan](PLAN.md).
+Updated October 27, 2026, 00:14 UTC. The [six-milestone plan](PLAN.md) is approved and implementation continues with Sol 6.1 agents. This is a preview release, not a production migration.
 
-## Current work
+## Current state
 
-- Sol 6.1 backend agent: current-election source readiness plus stable identities, election registry and gated durable-record/shadow migration foundation.
-- Sol 6.1 UI agent: readiness slice complete; now implementing lasting edition/government/parliament/policy/reference surfaces and opt-in recommendations.
-- Root: product/design documentation alignment, integration and source/service feasibility review.
+- Preview branch: `codex/political-platform-preview`, latest integrated commit `e600cf2`.
+- Integrated: election readiness, stable identities and append-only records, private-capture adapters, qualified formation/government/parliament/policy contracts and views, measurable commitment rubrics, public API/bulk exports, subscriptions/delivery controls, device-local opt-in recommendations, future-election activation guards, independent monitoring, localized reference/search/exports/embeds.
+- Backend agent: finishing the automatic verified-publication producer, archived briefing/locale replay, correction/withdrawal handling and active-source health signalling.
+- UI agent: final export-method translations, edition-aware branding and evidence timestamps are integrated. Now implementing localized party index/PartyMap and ballot interactions. Remaining legacy destinations include Start, Match, vote map, party history, timeline, glossary, resources and corrections; seven-language site parity is not complete.
+- Root: integration, source/service qualification, release gates and documentation. No application implementation by Astra.
 
-## Constraints
+## Verified evidence
 
-Current production Redis/QStash pipeline and approved collection cadence remain authoritative. No paid service purchase or production migration is authorized. No count-informed probability gate override. No unverified political facts. Existing untracked research, outreach, screenshots, attachments and agent artifacts remain untouched.
+Latest integrated suite: **1,152 tests in 149 files**, isolated TypeScript and diff checks pass. Prior full production build passed; every pushed integration through `2de56f8` has confirmed hosted build success. The latest `e600cf2` deployment still needs confirmation.
 
-## Verification
+UI checks include seven-language mobile readiness; 57 reference cases; 28 subscription routes/actions; 14 briefing routes; keyboard search; future-edition/late-response isolation; 28 embed/export cases; 14 qualified-record fixture views; eight follow/preference cases; and nine final export-method/future-branding cases. Hebrew dark/mobile rendering and overflow were inspected. Fixtures were not published as facts.
 
-UI readiness slice: 25 focused tests in four files, standalone TypeScript, focused ESLint (zero warnings/errors), diff check and seven-language mobile browser checks pass. Tested official-state navigation, 120-cell coherence, no overflow/runtime errors, unknown-list Compare evidence, desktop Results and dark Hebrew. Temporary dev server stopped. Current count labels already accurately described eligible-voter/locality coverage; added explanation does not relabel it ballots counted.
+Database tests execute the exact migration DDL in PGlite, including append-only restrictions, idempotence, rollback, cursors and provenance. This is not a provisioned PostgreSQL restore/concurrency test. Real storage and mail gates remain below.
 
-Backend initial foundation: 12 focused tests pass, including exact migration DDL executed by PGlite, append-only triggers, rollback, idempotence, cursor behavior and historical capture provenance. This is local PostgreSQL-engine validation, not a provisioned production database/restore test. Additional worker regressions and whole-program integration pending. No deployment/commit yet. Previous lifecycle release checks are not evidence for this new work.
+Briefing verification uses captured article bodies, exact numeric/quote support, independent atomic-claim review and two independent reporting origins for factual developments/context. Individually failed claims are omitted; 1–8 verified claims can form a limited-coverage edition, zero cannot publish. Single-source perspectives remain attributed. Hosted dry-run [40418677784](https://github.com/RavBogard/israelielection/actions/runs/40418677784) qualified three claims and five translated editions; Chinese remained pending. No publication or notifications. A new dry-run is due after the final archive/producer contract changes.
 
-## Remaining
+Independent monitoring rehearsal [40422558173](https://github.com/RavBogard/israelielection/actions/runs/40422558173) passed seven rendered-browser checks (21 page views) and US/Germany/Israel HTTPS/TLS probes. Israel's locale redirect was followed successfully. Briefing/notification jobs were skipped; artifacts are redacted. The separate 15-minute monitor schedule is implemented but disabled, and private incident persistence is unconfigured.
 
-Next: integrate backend foundation return, run integration checks, continue formation/reference/distribution work against concrete interfaces. Full reference translations, authoritative source qualification, service provisioning, durable-store cutover and distribution remain pending. Do not report the full roadmap as completed while those features or deployment are pending.
+## Translation work
+
+Five independently reviewed seats-guide editions are published to the preview ledger: Persian, Hebrew, corrected/re-reviewed Chinese, Arabic and French. German remains pending. The reviewed Hebrew seats chart has 71 labels and passed actual mobile rendering. Never publish the earlier Chinese candidate with a stale review.
+
+- Prose batch `40417641522`: running, 132-edition/120-minute cap, two workers, 22 source documents.
+- Widget batch `40421287094`: queued behind prose, 126-edition/120-minute cap, 21 chart sources; already-current editions are skipped.
+
+Only independently validated artifacts can be published. Rejected/deferred editions remain explicitly pending with original-language access. Full source hashes include chart data; translations cannot change numbers, URLs or executable content. Remaining legacy interactive pages also need registered/reviewed content, not route wrappers alone.
+
+## Activation gates and constraints
+
+Current production Redis/QStash collection and the approved 15-minute-first-ten-hours then three-hour cadence remain authoritative. Forecast artifacts and count-calibration gates are preserved. No production deployment, database cutover, service purchase or actual email send has occurred for this platform expansion.
+
+A concrete preview-only free Neon/private Blob rehearsal is prepared in [Sources and services](SOURCES-AND-SERVICES.md). Approval is requested before provisioning. Required real checks: PostgreSQL app-role restrictions and concurrency; backup/restore into an isolated database; private Blob authenticated readback/public inaccessibility; exact publication replay; approved sender-domain/test-recipient setup, delivery deduplication, suppression webhooks and unsubscribe/correction races. Production cutover is a separate gate.
+
+Knesset/parliamentary and procedural-law sources remain unqualified because their actual endpoints returned maintenance/access restrictions. CBS CPI has a real qualified structured sample; observation periods/base units are preserved and no causal claims are made. No missing source is replaced with invented facts. Count-informed probabilities remain disabled without held-out replay/calibration evidence.
+
+## Next actions
+
+1. Integrate the frozen automatic producer/source-health slice; run focused review, full tests, isolated typecheck/build and one fresh safe briefing dry-run.
+2. Continue remaining locale-route milestones and publish only qualified translation artifacts.
+3. Complete approved real-service rehearsals when available; retain explicit unavailable states otherwise.
+4. Present the tested preview and draft PR with implementation versus activation gaps clearly separated. Do not call the roadmap complete while these gates or route/content work remain.
+
+Existing unrelated research, outreach, attachments and artifacts are untouched. Exact frozen path manifests and verbose test/QA logs are in ignored `.vercel/`; only task-owned files enter the preview branch.

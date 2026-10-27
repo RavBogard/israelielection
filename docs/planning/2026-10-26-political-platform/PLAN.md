@@ -31,7 +31,7 @@ Count-model research is independent: timestamp-correct historical replay with en
 ## Interfaces and operations
 
 - One Next.js application with bounded workers. Managed Postgres authoritative after approved/readiness-gated migration, private object archive, Redis projections/leases and QStash jobs.
-- Stable edition routes such as `/elections/knesset-26`; old short URLs stay valid. Election allocations differ from later parliamentary membership. Pinned links preserve selected edition/revision.
+- Stable edition routes such as `/elections/il-knesset-26`; old short URLs stay valid. Election allocations differ from later parliamentary membership. Pinned links preserve selected edition/revision.
 - Canonical publication with per-locale revision status; immutable correction/withdrawal history; transactional publication outbox.
 - `/api/v2` election/entity/event/publication resources, cursor pagination, ETags, historical revisions, provenance/license metadata, anonymous rate limits and bulk manifests.
 - Source states distinguish unconfigured, inaccessible, healthy-no-new-fact, stale and disputed. Deadline-aware validation replaces fixed rotation that can starve claims.
