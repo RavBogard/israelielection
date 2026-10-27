@@ -192,8 +192,8 @@
 .home .pending-seat-frame { grid-area: mosaic; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; margin-block: 1rem; }
 .home .pending-seat-frame span { aspect-ratio: 1; border: 1px solid var(--line-2); }
 
-/* Latest headlines (election night, Daniel 2026-10-27): the right column, below the bloc estimates. */
-.home .hero.has-news { grid-template-areas: "intro intro" "mosaic selectors" "source news" "detail detail" "context context"; }
+/* Latest headlines beside the headline (election night, Daniel 2026-10-27): the right column, above the bloc picker. */
+.home .hero.has-news { grid-template-areas: "intro news" "mosaic news" "mosaic selectors" "source selectors" "detail detail" "context context"; grid-template-rows: auto auto 1fr; }
 .home .hero-news { grid-area: news; align-self: start; border-top: 2px solid var(--ink); padding-top: 7px; min-width: 0; }
 .home .hero-news header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .home .hero-news h2 { font: 600 14px/1.35 var(--body); color: var(--ink); margin: 0; }
