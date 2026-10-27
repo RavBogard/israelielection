@@ -1,6 +1,6 @@
 import SeatBar from "@/components/SeatBar";
-import { blocs, exitPolls, parties } from "@/lib/data";
-import { BLOC_ORDER, BLOC_SEAT_ORDER, blocTotals, pollLabel, pollTotal } from "@/lib/polls";
+import { blocs, exitPolls, parties, pollsData } from "@/lib/data";
+import { BLOC_ORDER, BLOC_SEAT_ORDER, blocTotals, pollLabel, pollTotal, withoutVariantPolls } from "@/lib/polls";
 import { exitRows, exitTime } from "@/lib/results-phase";
 import type { ResultsConfig } from "@/lib/results";
 import type { BlocId } from "@/lib/types";
@@ -17,7 +17,8 @@ const fig = (n: number) => String(Math.round(n * 10) / 10);
 export default function ExitPollBars({ config, heading = "h2", className, lang = "en" }: { config: ResultsConfig; heading?: "h2" | "h3" | null; className?: string; lang?: Lang }) {
   const t = resultsText[lang].exitBars;
   const label = Object.fromEntries(blocs.map((b) => [b.id, blocName(b, lang).text])) as Record<BlocId, string>;
-  const rows = exitRows(exitPolls);
+  // Channel 14 and i24NEWS are shown apart (ExitPollTable), never as a bar beside the channels the forecast reads.
+  const rows = exitRows(withoutVariantPolls(exitPolls, pollsData.config));
   const H = heading;
   const any = rows.some((r) => r.poll);
   return (

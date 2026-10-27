@@ -1,0 +1,24 @@
+/* The compact exit-poll table (components/results/ExitPollTable.tsx): one column per broadcaster, bloc totals below. */
+.xt { margin: 0 0 30px; max-width: 760px; }
+.xt-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.xt-table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+.xt-table th, .xt-table td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: baseline; }
+.xt-table thead th { vertical-align: bottom; border-bottom: 1px solid var(--ink); font-weight: 400; }
+.xt-table .num { text-align: end; white-space: nowrap; }
+.xt-table thead .num { white-space: normal; min-width: 5.5em; }
+.xt-table tbody th { font-weight: 400; }
+.xt-table tbody th a { color: var(--ink); }
+.xt-ch { display: block; font-weight: 700; color: var(--ink); }
+.xt-time { display: block; font-size: 12px; color: var(--ink-2); line-height: 1.3; }
+.xt-table .xt-below { font-size: 12px; color: var(--ink-2); white-space: normal; }
+.xt-maj { font-weight: 700; }
+.xt-sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-inline-end: 8px; vertical-align: -1px; }
+.xt-table .xt-blocs-h { padding-top: 14px; font-weight: 700; border-bottom: 1px solid var(--ink); }
+.xt-caution { margin: 10px 0 0; max-width: 75ch; font-size: 14px; color: var(--ink-2); }
+.xt-apart { margin-top: 26px; }
+.xt-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 420px) {
+  .xt-table { font-size: 13px; }
+  .xt-table th, .xt-table td { padding: 5px 4px; }
+  .xt-table thead .num { min-width: 4.2em; }
+}
