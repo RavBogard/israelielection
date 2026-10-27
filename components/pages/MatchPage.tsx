@@ -1,87 +1,160 @@
+import "@/components/article/article.css";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import SeatBasis from "@/components/seat-context/SeatBasis";
 import UnprofiledLists from "../election-readiness/UnprofiledLists";
 import { readiness } from "@/lib/i18n/election-readiness";
-import "@/components/article/article.css";
-import { matrixRows, shade } from "@/components/compare/model";
+import { matrixRows, matrixText, shade } from "@/components/compare/model";
 import MatchQuiz from "@/components/match/MatchQuiz";
 import type { MatchData, MatchQuestion } from "@/components/match/types";
 import PageHead from "@/components/PageHead";
 import quiz from "@/data/quiz.json";
-import { averagePoll, blocLabel, blocs, parties } from "@/lib/data";
-import { blocSeats, listSeats } from "@/lib/list-seats";
+import { blocs, parties } from "@/lib/data";
+import { blocSeats } from "@/lib/list-seats";
 import { partyColor, partyInk } from "@/lib/party-colors";
 import { BLOC_ORDER } from "@/lib/polls";
+import { partyText, blocText } from "@/lib/i18n/overlays";
+import type { Lang } from "@/lib/i18n";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
+import { translatedTool } from "@/lib/reference/catalog";
+import { matchText } from "@/lib/i18n/match";
+import { longDate } from "@/lib/format";
 
-const listed = parties.filter((p) => p.coalitionCard !== "hidden");
-const ids = listed.map((p) => p.id);
-const rows = matrixRows(ids);
-
-/** "2026-10-05" → "Oct 5", as the site prints dates beside a figure. */
-const shortDate = (iso: string) => (/^\d{4}-\d{2}-\d{2}/.test(iso) ? new Date(`${iso.slice(0, 10)}T12:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" }) : iso);
-
-type QuizEntry = { row: string; prompt: string; context: string; options: Record<string, string> };
-/** JSON infers one object type per entry; every entry has this shape (pinned in lib/match.test.ts). */
-const QUIZ = quiz as unknown as { core: QuizEntry[]; deeper: QuizEntry[] };
-
-function question(q: QuizEntry, round: "core" | "deeper"): MatchQuestion {
-  const row = rows.find((r) => r.key === q.row);
-  if (!row) throw new Error(`quiz row ${q.row} is not on the Compare matrix`);
-  const words = q.options;
-  const stances = row.stances.map((s) => ({ id: s.id, label: words[s.id] ?? s.label, position: s.position, n: s.n, color: shade(s.position, s.n) }));
-  const said: MatchQuestion["said"] = {};
-  for (const r of row.issue.file.rows) if (r.text) said[r.party] = { text: r.text, source: r.source ?? "", url: r.url ?? undefined, date: r.date ?? undefined };
+type QuizEntry = {
+  row: string;
+  prompt: string;
+  context: string;
+  options: Record<string, string>;
+};
+export function buildMatchData(
+  lang: Lang,
+  context: SharedSeatContext,
+): MatchData {
+  const listed = parties.filter(
+      (p) =>
+        p.coalitionCard !== "hidden" || (context.pointSeats[p.id] ?? 0) > 0,
+    ),
+    ids = listed.map((p) => p.id),
+    rows = matrixRows(ids),
+    text = matrixText(rows, lang),
+    edition = translatedTool("tools:quiz", lang, quiz);
+  const source = edition.data as unknown as {
+    core: QuizEntry[];
+    deeper: QuizEntry[];
+  };
+  function question(q: QuizEntry, round: "core" | "deeper"): MatchQuestion {
+    const row = rows.find((r) => r.key === q.row);
+    if (!row) throw Error("quiz_row_unavailable");
+    const local = text[row.key],
+      stances = row.stances.map((s) => ({
+        id: s.id,
+        label: q.options[s.id] ?? local.stances[s.id]?.text ?? s.label,
+        position: s.position,
+        n: s.n,
+        color: shade(s.position, s.n),
+      }));
+    const said: MatchQuestion["said"] = {};
+    for (const r of row.issue.file.rows)
+      if (r.text) {
+        const quote = local.said[r.party];
+        said[r.party] = {
+          text: quote?.text ?? r.text,
+          lang: quote?.lang ?? "en",
+          translated: quote?.translated,
+          source: r.source ?? "",
+          url: r.url ?? undefined,
+          date: r.date ?? undefined,
+        };
+      }
+    return {
+      key: row.key,
+      round,
+      label: local.label.text,
+      labelLang: local.label.lang,
+      textLang: edition.contentLang,
+      prompt: q.prompt,
+      context: q.context,
+      scale: row.scale,
+      stances,
+      offered: stances.filter((s) => s.id in q.options).map((s) => s.id),
+      stanceLabels: Object.fromEntries(
+        row.stances.map((s) => [s.id, local.stances[s.id]?.text ?? s.label]),
+      ),
+      stanceLang: Object.fromEntries(
+        row.stances.map((s) => [s.id, local.stances[s.id]?.lang ?? "en"]),
+      ),
+      cells: row.cells,
+      said,
+    };
+  }
   return {
-    key: row.key,
-    round,
-    label: row.label,
-    prompt: q.prompt,
-    context: q.context,
-    scale: row.scale,
-    stances,
-    offered: stances.filter((s) => s.id in words).map((s) => s.id),
-    stanceLabels: Object.fromEntries(row.stances.map((s) => [s.id, s.label])),
-    cells: row.cells,
-    said,
+    lang,
+    copyLang: edition.contentLang,
+    copyState: edition.state,
+    context,
+    questions: [
+      ...source.core.map((q) => question(q, "core")),
+      ...source.deeper.map((q) => question(q, "deeper")),
+    ],
+    parties: listed.map((p) => {
+      const name = partyText(p, "name", lang),
+        short = partyText(p, "short", lang),
+        leader = partyText(p, "leader", lang),
+        surplus = partyText(p, "surplusPartner.text", lang),
+        pledge = partyText(p, "pledges.0.text", lang);
+      return {
+        id: p.id,
+        name: name.text,
+        short: short.text || name.text,
+        leader: leader.text,
+        nameLang: name.lang,
+        leaderLang: leader.lang,
+        bloc: p.bloc,
+        color: partyColor(p.id),
+        ink: partyInk(p.id),
+        seatsText: String(context.pointSeats[p.id] ?? 0),
+        seats: context.pointSeats[p.id] ?? 0,
+        below: !(context.pointSeats[p.id] ?? 0),
+        passing: [0, 0],
+        surplus: p.surplusPartner ? surplus.text : null,
+        surplusLang: surplus.lang,
+        pledge: p.pledges?.[0]
+          ? { text: pledge.text, source: p.pledges[0].source ?? "" }
+          : null,
+        pledgeLang: pledge.lang,
+      };
+    }),
+    blocs: BLOC_ORDER.map((id) => {
+      const b = blocs.find((b) => b.id === id)!;
+      return {
+        id,
+        label: blocText(b, lang).text,
+        seats: blocSeats(id, context),
+      };
+    }),
+    asOf: longDate(
+      (context.publishedAt ?? context.observedAt).slice(0, 10),
+      lang,
+    ),
   };
 }
-
-const data: MatchData = {
-  questions: [...QUIZ.core.map((q) => question(q, "core")), ...QUIZ.deeper.map((q) => question(q, "deeper"))],
-  parties: listed.map((p) => {
-    const s = listSeats(p.id);
-    return {
-      id: p.id,
-      name: p.name,
-      short: p.short ?? p.name,
-      leader: p.leader,
-      bloc: p.bloc,
-      color: partyColor(p.id),
-      ink: partyInk(p.id),
-      seatsText: s.text,
-      seats: s.seats,
-      below: s.below,
-      passing: [s.k, s.n],
-      surplus: p.surplusPartner?.text ?? null,
-      pledge: p.pledges?.[0] ? { text: p.pledges[0].text, source: p.pledges[0].source ?? "" } : null,
-    };
-  }),
-  blocs: BLOC_ORDER.map((b) => ({ id: b, label: blocLabel[b] ?? blocs.find((x) => x.id === b)?.label ?? b, seats: blocSeats(b) })),
-  asOf: shortDate(averagePoll.fieldwork ?? averagePoll.published ?? ""),
-};
-
-/** Party match (/match): a short questionnaire on the seven issues, matched against Compare's recorded answers. English only. */
-export default async function MatchPage() {
-  const context = await seatContextForRender();
-  if(!context)return <div className="wrap match-page"><PageHead title="Which Israeli party matches you?"/><SeatBasis context={null} lang="en"/></div>;
-  const current = context ? { ...data, context, parties:data.parties.map(p=>({...p,seats:context.pointSeats[p.id]??0,seatsText:String(context.pointSeats[p.id]??0),below:!(context.pointSeats[p.id]??0)})),blocs:data.blocs.map(b=>({...b,seats:blocSeats(b.id,context)})) } : data;
+export default async function MatchPage({ lang = "en" }: { lang?: Lang }) {
+  const context = await seatContextForRender(),
+    t = matchText(lang);
   return (
     <div className="wrap match-page">
-      <PageHead title="Which Israeli party matches you?" standfirst="Answer seven questions from this campaign and see which lists sit closest to you, and what an Israeli voter would weigh next." />
-      <SeatBasis context={context} lang="en" share />
-      <p className="note">{readiness("en").matchNote}</p>
-      <UnprofiledLists initial={context} knownIds={ids}/>
-      <MatchQuiz data={current} />
+      <PageHead title={t.title} standfirst={t.intro} />
+      <SeatBasis context={context} lang={lang} share />
+      <p className="note">{readiness(lang).matchNote}</p>
+      {context && (
+        <>
+          <UnprofiledLists
+            initial={context}
+            knownIds={parties.map((p) => p.id)}
+            lang={lang}
+          />
+          <MatchQuiz data={buildMatchData(lang, context)} />
+        </>
+      )}
     </div>
   );
 }

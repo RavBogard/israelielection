@@ -48,6 +48,7 @@ describe("seven-language learning routes", () => {
       if (lang !== "en") {
         expect(html).toContain(referenceText(lang).pending);
         expect(html).toContain('lang="en"');
+        expect(html).toContain('lang="en" dir="auto"');
         expect(html).toContain("original=en");
       }
     }

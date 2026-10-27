@@ -2,20 +2,57 @@
 
 import { useSeatContext } from "../seat-context/SeatContextProvider";
 import { useEffect, useMemo, useState } from "react";
-import { decodeAnswers, encodeAnswers, MIN_ANSWERS, type Answers, type Importance } from "@/lib/match";
+import {
+  decodeAnswers,
+  encodeAnswers,
+  MIN_ANSWERS,
+  type Answers,
+  type Importance,
+} from "@/lib/match";
 import QuestionStep from "./QuestionStep";
 import Results from "./Results";
 import type { MatchData } from "./types";
+import { matchText } from "@/lib/i18n/match";
+import { referenceText } from "@/lib/i18n/reference";
+import SeatBasis from "../seat-context/SeatBasis";
+import Link from "next/link";
 import "./match.css";
 
 /**
  * The Party match client: one question at a time, then the results. Answers live in the URL (?a=),
- * so a result can be shared as a link; nothing is stored or sent anywhere.
+ * so anyone holding a shared result link can read its encoded answers.
  */
 export default function MatchQuiz({ data: initial }: { data: MatchData }) {
-  const {context} = useSeatContext(initial.context);
-  const data = useMemo(()=>context ? {...initial,context,parties:initial.parties.map(p=>({...p,seats:context.pointSeats[p.id]??0,seatsText:String(context.pointSeats[p.id]??0),below:!(context.pointSeats[p.id]??0)})),blocs:initial.blocs.map(b=>({...b,seats:initial.parties.filter(p=>p.bloc===b.id).reduce((n,p)=>n+(context.pointSeats[p.id]??0),0)}))} : initial,[context,initial]);
-  const order = useMemo(() => data.questions.map((q) => ({ key: q.key, options: q.offered })), [data]);
+  const { context, blockedByEdition } = useSeatContext(initial.context);
+  const lang = initial.lang ?? "en",
+    t = matchText(lang),
+    ref = referenceText(lang);
+  const data = useMemo(
+    () =>
+      context
+        ? {
+            ...initial,
+            context,
+            parties: initial.parties.map((p) => ({
+              ...p,
+              seats: context.pointSeats[p.id] ?? 0,
+              seatsText: String(context.pointSeats[p.id] ?? 0),
+              below: !(context.pointSeats[p.id] ?? 0),
+            })),
+            blocs: initial.blocs.map((b) => ({
+              ...b,
+              seats: initial.parties
+                .filter((p) => p.bloc === b.id)
+                .reduce((n, p) => n + (context.pointSeats[p.id] ?? 0), 0),
+            })),
+          }
+        : initial,
+    [context, initial],
+  );
+  const order = useMemo(
+    () => data.questions.map((q) => ({ key: q.key, options: q.offered })),
+    [data],
+  );
   const core = data.questions.filter((q) => q.round === "core");
   const [answers, setAnswers] = useState<Answers>({});
   const [step, setStep] = useState(0);
@@ -25,7 +62,10 @@ export default function MatchQuiz({ data: initial }: { data: MatchData }) {
   // A shared link opens straight on its results (read once on arrival, as the Coalition Builder restores its URL).
   useEffect(() => {
     const restore = () => {
-      const a = decodeAnswers(order, new URLSearchParams(window.location.search).get("a"));
+      const a = decodeAnswers(
+        order,
+        new URLSearchParams(window.location.search).get("a"),
+      );
       if (core.filter((q) => a[q.key]).length < MIN_ANSWERS) return;
       setAnswers(a);
       setDeeper(data.questions.some((q) => q.round === "deeper" && a[q.key]));
@@ -60,6 +100,7 @@ export default function MatchQuiz({ data: initial }: { data: MatchData }) {
 
   const q = shown[Math.min(step, shown.length - 1)];
   const answer = answers[q.key] ?? null;
+  if (blockedByEdition) return <SeatBasis context={null} lang={lang} />;
 
   if (view === "results")
     return (
@@ -68,21 +109,50 @@ export default function MatchQuiz({ data: initial }: { data: MatchData }) {
         answers={answers}
         deeperDone={deeper}
         onEdit={() => goTo(0)}
-        onDeeper={() => { setDeeper(true); goTo(core.length); }}
-        onRestart={() => { setAnswers({}); setDeeper(false); goTo(0); }}
+        onDeeper={() => {
+          setDeeper(true);
+          goTo(core.length);
+        }}
+        onRestart={() => {
+          setAnswers({});
+          setDeeper(false);
+          goTo(0);
+        }}
       />
     );
 
   const last = step === shown.length - 1;
   return (
-    <section className="mq" aria-label="Questionnaire">
-      <ol className="mq-progress" aria-label="Questions">
+    <section className="mq" aria-label={t.questionnaire}>
+      {lang !== "en" && data.copyState !== "ready" && (
+        <p className="note">
+          <b>{data.copyState === "withdrawn" ? ref.withdrawn : ref.pending}.</b>{" "}
+          {ref.pendingNote}{" "}
+          <Link href="/match?original=en">{ref.original}</Link>
+        </p>
+      )}
+      <ol className="mq-progress" aria-label={t.questions}>
         {shown.map((x, i) => {
           const a = answers[x.key];
-          const state = i === step ? "now" : a ? "done" : x.key in answers ? "skipped" : "todo";
+          const state =
+            i === step
+              ? "now"
+              : a
+                ? "done"
+                : x.key in answers
+                  ? "skipped"
+                  : "todo";
           return (
-            <li key={x.key} className={`mq-mark ${state}${x.round === "deeper" ? " deep" : ""}`}>
-              <button type="button" onClick={() => setStep(i)} aria-current={i === step ? "step" : undefined} aria-label={`Question ${i + 1}: ${x.label}${a ? ", answered" : x.key in answers ? ", skipped" : ""}`} />
+            <li
+              key={x.key}
+              className={`mq-mark ${state}${x.round === "deeper" ? " deep" : ""}`}
+            >
+              <button
+                type="button"
+                onClick={() => setStep(i)}
+                aria-current={i === step ? "step" : undefined}
+                aria-label={`${t.question} ${i + 1}: ${x.label}${a ? ", " + t.answered : x.key in answers ? ", " + t.skipped : ""}`}
+              />
             </li>
           );
         })}
@@ -90,29 +160,88 @@ export default function MatchQuiz({ data: initial }: { data: MatchData }) {
 
       <QuestionStep
         key={q.key}
+        lang={lang}
         q={q}
         n={step + 1}
         of={shown.length}
         parties={data.parties}
         answer={answer}
-        onPick={(stance) => setAnswers((a) => ({ ...a, [q.key]: { stance, importance: a[q.key]?.importance ?? 1 } }))}
-        onImportance={(importance: Importance) => setAnswers((a) => (a[q.key] ? { ...a, [q.key]: { ...a[q.key]!, importance } } : a))}
+        onPick={(stance) =>
+          setAnswers((a) => ({
+            ...a,
+            [q.key]: { stance, importance: a[q.key]?.importance ?? 1 },
+          }))
+        }
+        onImportance={(importance: Importance) =>
+          setAnswers((a) =>
+            a[q.key] ? { ...a, [q.key]: { ...a[q.key]!, importance } } : a,
+          )
+        }
       />
 
       <div className="mq-nav">
-        <button type="button" className="btn" onClick={() => setStep((s) => Math.max(0, s - 1))} disabled={step === 0}>Back</button>
-        {!answer && <button type="button" className="btn mq-skip" onClick={() => { setAnswers((a) => ({ ...a, [q.key]: null })); if (!last) setStep(step + 1); }}>Skip this one</button>}
+        <button
+          type="button"
+          className="btn"
+          onClick={() => setStep((s) => Math.max(0, s - 1))}
+          disabled={step === 0}
+        >
+          {t.back}
+        </button>
+        {!answer && (
+          <button
+            type="button"
+            className="btn mq-skip"
+            onClick={() => {
+              setAnswers((a) => ({ ...a, [q.key]: null }));
+              if (!last) setStep(step + 1);
+            }}
+          >
+            {t.skip}
+          </button>
+        )}
         <span className="mq-gap" />
         {!last ? (
-          <button type="button" className="btn primary" onClick={() => setStep(step + 1)} disabled={!answer}>Next question</button>
+          <button
+            type="button"
+            className="btn primary"
+            onClick={() => setStep(step + 1)}
+            disabled={!answer}
+          >
+            {t.next}
+          </button>
         ) : (
           <>
-            {!deeper && <button type="button" className="btn" onClick={() => { setDeeper(true); setStep(step + 1); }}>Answer 8 more questions</button>}
-            <button type="button" className="btn primary" onClick={showResults} disabled={!canSee}>See your matches</button>
+            {!deeper && (
+              <button
+                type="button"
+                className="btn"
+                onClick={() => {
+                  setDeeper(true);
+                  setStep(step + 1);
+                }}
+              >
+                {t.more}
+              </button>
+            )}
+            <button
+              type="button"
+              className="btn primary"
+              onClick={showResults}
+              disabled={!canSee}
+            >
+              {t.see}
+            </button>
           </>
         )}
       </div>
-      {last && !canSee && <p className="fig-note mq-need">Answer at least {MIN_ANSWERS} of the first seven questions to see your matches; you have answered {answeredCore}.</p>}
+      {last && !canSee && (
+        <p className="fig-note mq-need">
+          {t.need
+            .replace("{min}", String(MIN_ANSWERS))
+            .replace("{n}", String(answeredCore))}
+        </p>
+      )}
     </section>
   );
 }
