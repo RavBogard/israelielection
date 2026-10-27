@@ -1,0 +1,1607 @@
+{
+  "schemaVersion": 1,
+  "documents": [
+    {
+      "id": "tools:quiz",
+      "file": "data/quiz.json",
+      "path": "/match",
+      "title": "Party match questions",
+      "revision": "2364b60b787b157e70ec65fa9073d2140c66ced5ba7bce2b569fa6f9dbec48ce",
+      "checked": "Evidence dates remain in the linked source records.",
+      "blocks": [
+        {
+          "id": "tool-text-3c4eddd4487e1bc2",
+          "kind": "text",
+          "field": "core.0.prompt",
+          "text": "Should Haredi (ultra-Orthodox) yeshiva students be drafted into the army?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2a76fac570365c10",
+          "kind": "text",
+          "field": "core.0.context",
+          "text": "Most Israeli Jews are conscripted at 18. Haredi men in full-time religious study have largely been exempt since 1948, and the Supreme Court ruled in 2024 that the exemption has no legal basis.",
+          "numbers": [
+            "18",
+            "1948",
+            "2024"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-82a290df3f71b4a5",
+          "kind": "text",
+          "field": "core.0.options.no-compulsion",
+          "text": "No one should be compelled to serve",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-e5d336b5dac91686",
+          "kind": "text",
+          "field": "core.0.options.exempt-learners",
+          "text": "Exempt those who study Torah full time",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bbcd01c6f28c352d",
+          "kind": "text",
+          "field": "core.0.options.draft-leavers",
+          "text": "Draft only those who leave yeshiva",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f5aa0fdc027a1292",
+          "kind": "text",
+          "field": "core.0.options.expand-gradually",
+          "text": "Raise Haredi service step by step",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3996850baaffd8fb",
+          "kind": "text",
+          "field": "core.0.options.draft-all",
+          "text": "Everyone serves, in the army or a civilian service",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e359368a75d5f422",
+          "kind": "text",
+          "field": "core.1.prompt",
+          "text": "Should power shift from the courts to the Knesset and the government?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ed339861500c518f",
+          "kind": "text",
+          "field": "core.1.context",
+          "text": "Israel has no written constitution. Its Supreme Court can strike down laws and government decisions, and the 2023 judicial overhaul, which set out to curb it, brought months of mass protest.",
+          "numbers": [
+            "2023"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-c2389acb17445560",
+          "kind": "text",
+          "field": "core.1.options.curb",
+          "text": "Yes, curb the Supreme Court's powers",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a3998dff9c069120",
+          "kind": "text",
+          "field": "core.1.options.limited-override",
+          "text": "Let the Knesset override the court in limited cases",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-25ea6deecc022627",
+          "kind": "text",
+          "field": "core.1.options.codify",
+          "text": "Settle the balance in a Basic Law, a kind of constitution",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b339030749ea70b8",
+          "kind": "text",
+          "field": "core.1.options.independence",
+          "text": "No, keep the courts independent",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-7ef2144bdb7a1bdf",
+          "kind": "text",
+          "field": "core.2.prompt",
+          "text": "Who should investigate the failures of October 7?",
+          "numbers": [
+            "10",
+            "7"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c4f8df8a101fdffd",
+          "kind": "text",
+          "field": "core.2.context",
+          "text": "Israel's 1968 law sets up a state commission of inquiry whose members are chosen by the president of the Supreme Court. The government has proposed a different commission whose members the court would not choose.",
+          "numbers": [
+            "1968"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-b11177ce9fb61c1a",
+          "kind": "text",
+          "field": "core.2.options.other-commission",
+          "text": "A commission set up outside the 1968 law",
+          "numbers": [
+            "1968"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f86ad6175acd21f6",
+          "kind": "text",
+          "field": "core.2.options.independent-unset",
+          "text": "An independent inquiry; the exact form can wait",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7b420cf46552f438",
+          "kind": "text",
+          "field": "core.2.options.state-commission",
+          "text": "A state commission of inquiry under the 1968 law",
+          "numbers": [
+            "1968"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-237a9fea8d658e3b",
+          "kind": "text",
+          "field": "core.3.prompt",
+          "text": "Should Israel annex land in the occupied West Bank?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5f8086c24c47ed8e",
+          "kind": "text",
+          "field": "core.3.context",
+          "text": "Israel has held the West Bank since 1967 without annexing it. About half a million Israeli settlers and some three million Palestinians live there. Annexation would apply Israeli law to the land.",
+          "numbers": [
+            "1967"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-843901eb6275cc92",
+          "kind": "text",
+          "field": "core.3.options.annex-all",
+          "text": "Annex the whole West Bank",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cb38a8d589c356ae",
+          "kind": "text",
+          "field": "core.3.options.annex-part",
+          "text": "Annex Area C or chosen areas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-11b2bebdf283e5fc",
+          "kind": "text",
+          "field": "core.3.options.sovereignty-not-bills",
+          "text": "Back sovereignty in principle, but not by law now",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-ca15a23f4ee65928",
+          "kind": "text",
+          "field": "core.3.options.settle-no-annex",
+          "text": "Expand settlements without annexing",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-008e7e1bb5e31a88",
+          "kind": "text",
+          "field": "core.3.options.separation",
+          "text": "Separate from the Palestinians",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7ca9a3f9d15e7225",
+          "kind": "text",
+          "field": "core.3.options.no-annexation",
+          "text": "No annexation; work toward a Palestinian state",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-79c16ffefb1f62ed",
+          "kind": "text",
+          "field": "core.4.prompt",
+          "text": "Should there be a Palestinian state?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e103168e10cccbe7",
+          "kind": "text",
+          "field": "core.4.context",
+          "text": "A Palestinian state beside Israel has been the aim of most international peace plans since the 1990s. Most lists running in 2026 oppose one; a few support it.",
+          "numbers": [
+            "1990",
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-346cf2bea883cd1f",
+          "kind": "text",
+          "field": "core.4.options.oppose",
+          "text": "No, oppose a Palestinian state",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-676248b17feddfd5",
+          "kind": "text",
+          "field": "core.4.options.not-on-agenda",
+          "text": "Not now; it is not on the agenda",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-fe90b2eb23e0fa56",
+          "kind": "text",
+          "field": "core.4.options.separation",
+          "text": "Separation as part of a regional deal",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ee245790234f1a31",
+          "kind": "text",
+          "field": "core.4.options.support",
+          "text": "Yes, support a Palestinian state",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-954e91ac4278732e",
+          "kind": "text",
+          "field": "core.5.prompt",
+          "text": "Who should run marriage, conversion and the rules for Shabbat?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-65ef989da1807cd7",
+          "kind": "text",
+          "field": "core.5.context",
+          "text": "Israel has no civil marriage: Jews marry through the Orthodox Chief Rabbinate, and many couples marry abroad instead. The rabbinate also controls conversion, and Shabbat rules such as public transport are set nationally.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-ac8744243bbcca3b",
+          "kind": "text",
+          "field": "core.5.options.orthodox",
+          "text": "Keep them in Orthodox hands",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3c6322ce38d889a2",
+          "kind": "text",
+          "field": "core.5.options.civil-local",
+          "text": "Allow civil marriage, and let towns set Shabbat rules",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2fb299229b86a72a",
+          "kind": "text",
+          "field": "core.5.options.civil-pluralist",
+          "text": "Allow civil marriage and recognise non-Orthodox conversion",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-16f7e929e65df794",
+          "kind": "text",
+          "field": "core.6.prompt",
+          "text": "What should economic policy put first?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c679d68109133cb4",
+          "kind": "text",
+          "field": "core.6.context",
+          "text": "The cost of living is among Israelis' top worries. The lists' economic priorities can coexist rather than run from one end to another, so the match here is on the priority you put first.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b95a4668fe76b6d2",
+          "kind": "text",
+          "field": "core.6.options.market",
+          "text": "Free markets and a smaller state",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b2a6a7d9c8f7b88b",
+          "kind": "text",
+          "field": "core.6.options.living-costs",
+          "text": "Lower living costs and narrower gaps",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-989947bf5ab28033",
+          "kind": "text",
+          "field": "core.6.options.reward-service",
+          "text": "Rewarding those who serve in the army or reserves",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ef27d9c5fcd25001",
+          "kind": "text",
+          "field": "core.6.options.own-community",
+          "text": "Budgets for communities that have been left behind",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e5b21fdf2bae21f9",
+          "kind": "text",
+          "field": "deeper.0.prompt",
+          "text": "Should young Haredi men who have left yeshiva be required to serve?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-89ed0faee4d56cee",
+          "kind": "text",
+          "field": "deeper.0.context",
+          "text": "Even some lists that defend the exemption for full-time students disagree over men who are no longer studying.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-79aae069253d9cad",
+          "kind": "text",
+          "field": "deeper.0.options.require",
+          "text": "Yes, require them to serve",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ffb011b70f1a9f95",
+          "kind": "text",
+          "field": "deeper.0.options.oppose",
+          "text": "No compulsory service",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-463b96486308a675",
+          "kind": "text",
+          "field": "deeper.1.prompt",
+          "text": "In a service framework, military or civilian, who should be exempt?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3f39f04e772f8631",
+          "kind": "text",
+          "field": "deeper.1.context",
+          "text": "The draft plans differ most on who would still be exempt.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-163f973e87a4312e",
+          "kind": "text",
+          "field": "deeper.1.options.none",
+          "text": "No one: no exemptions or quotas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-dbb6636e397659c8",
+          "kind": "text",
+          "field": "deeper.1.options.outstanding",
+          "text": "A small number of outstanding scholars",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d282e9ed23452de3",
+          "kind": "text",
+          "field": "deeper.1.options.learners",
+          "text": "Everyone studying in yeshiva full time",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4f83ec9bd8d5166d",
+          "kind": "text",
+          "field": "deeper.2.prompt",
+          "text": "Should the 2025 law that gave politicians more say in choosing judges be repealed?",
+          "numbers": [
+            "2025"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-068b9fc1a41dbf07",
+          "kind": "text",
+          "field": "deeper.2.context",
+          "text": "The March 2025 law replaced the Israel Bar Association's two seats on the committee that selects judges with public representatives chosen by the coalition and the opposition. It takes effect in the next Knesset.",
+          "numbers": [
+            "2025",
+            "3"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-40c06bfe36613ef1",
+          "kind": "text",
+          "field": "deeper.2.options.repeal",
+          "text": "Repeal and replace it",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9dae1c93a3cbbd6a",
+          "kind": "text",
+          "field": "deeper.2.options.enacted",
+          "text": "Keep it",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6d1c67f657782c64",
+          "kind": "text",
+          "field": "deeper.3.prompt",
+          "text": "Should the Knesset be able to pass again a law the Supreme Court has struck down?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6011b2dbc48bed8d",
+          "kind": "text",
+          "field": "deeper.3.context",
+          "text": "An \"override clause\" was the most contested part of the 2023 overhaul. The answers differ on how large a majority it would need.",
+          "numbers": [
+            "2023"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3138ba3086d2ac55",
+          "kind": "text",
+          "field": "deeper.3.options.61",
+          "text": "Yes, with a simple majority of 61",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7eb3e5b598b6a744",
+          "kind": "text",
+          "field": "deeper.3.options.oppose",
+          "text": "No override",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-9348415f87b9d7c5",
+          "kind": "text",
+          "field": "deeper.3.options.supermajority",
+          "text": "Only with a special majority, 70 MKs or more",
+          "numbers": [
+            "70"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-db88bbfe69203656",
+          "kind": "text",
+          "field": "deeper.4.prompt",
+          "text": "Should the courts keep \"reasonableness\" as grounds to overturn government decisions?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-965fb5e8fc4f319d",
+          "kind": "text",
+          "field": "deeper.4.context",
+          "text": "In 2023 the Knesset abolished the standard for decisions by the cabinet and ministers; the Supreme Court struck that law down in 2024.",
+          "numbers": [
+            "2023",
+            "2024"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2b66dfe5dead1db0",
+          "kind": "text",
+          "field": "deeper.4.options.narrow",
+          "text": "Keep it, but narrow it",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3e09b11e8ccf487b",
+          "kind": "text",
+          "field": "deeper.4.options.abolish",
+          "text": "Abolish it for decisions by the cabinet and ministers",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3ec7079f12062512",
+          "kind": "text",
+          "field": "deeper.5.prompt",
+          "text": "Should couples be able to marry in a civil ceremony inside Israel?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5952076c3edaec91",
+          "kind": "text",
+          "field": "deeper.5.context",
+          "text": "Today a civil marriage performed abroad is registered in Israel, but none can be performed in the country.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-12ea257121d72586",
+          "kind": "text",
+          "field": "deeper.5.options.allow",
+          "text": "Yes, allow a civil option",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b9a1bd43792129d5",
+          "kind": "text",
+          "field": "deeper.5.options.oppose",
+          "text": "No, keep marriage religious",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-68ddee386e6697b8",
+          "kind": "text",
+          "field": "deeper.6.prompt",
+          "text": "Should towns be able to run public transport on Shabbat?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bb1329dc2a9a1e66",
+          "kind": "text",
+          "field": "deeper.6.context",
+          "text": "Most buses and trains stop from Friday evening to Saturday evening. A few cities run limited services of their own.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1e690fae6efddca7",
+          "kind": "text",
+          "field": "deeper.6.options.local",
+          "text": "Yes, let each town decide",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9d636fd24fa2f650",
+          "kind": "text",
+          "field": "deeper.6.options.keep",
+          "text": "No, keep the current Shabbat rules",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-99ca82cf086e5e26",
+          "kind": "text",
+          "field": "deeper.7.prompt",
+          "text": "Should Israel recognise conversions to Judaism done outside the Orthodox establishment?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8f1a8c1fe8ab4399",
+          "kind": "text",
+          "field": "deeper.7.context",
+          "text": "Recognition decides who is Jewish under Israeli law for marriage and burial, which matters to many Reform and Conservative Jews.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7c1f300e95c355fb",
+          "kind": "text",
+          "field": "deeper.7.options.extend",
+          "text": "Yes, extend recognition",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-56923198f6052ef8",
+          "kind": "text",
+          "field": "deeper.7.options.orthodox",
+          "text": "No, keep Orthodox authority",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "10",
+        "18",
+        "1948",
+        "1967",
+        "1968",
+        "1968",
+        "1968",
+        "1990",
+        "2023",
+        "2023",
+        "2023",
+        "2024",
+        "2024",
+        "2025",
+        "2025",
+        "2026",
+        "3",
+        "61",
+        "7",
+        "70"
+      ]
+    },
+    {
+      "id": "tools:journeys",
+      "file": "data/journeys.json",
+      "path": "/start",
+      "title": "Guided learning routes",
+      "revision": "caeff4a1dc6f61e53929e6cd2fd8e5291b8937ab89db46868d4cd9fcd8f77503",
+      "checked": "2026-10-05",
+      "blocks": [
+        {
+          "id": "tool-text-8f6e4b1ba5969cba",
+          "kind": "text",
+          "field": "steps.voters.title",
+          "text": "Who has a vote?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-11cf318345d4dcc3",
+          "kind": "text",
+          "field": "steps.voters.text",
+          "text": "Knesset elections choose a national legislature. Citizenship, residency and location are different questions: people affected by Israeli decisions do not all have a vote in this election. Begin with the citizenship and residency distinctions.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-ec6b5eafee07b3ba",
+          "kind": "text",
+          "field": "steps.voters.link",
+          "text": "Read who votes",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f2884bcb4106c89f",
+          "kind": "text",
+          "field": "steps.voters.question",
+          "text": "Does living under the effects of a government's decisions automatically give someone a Knesset vote?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d61f542e82e321c2",
+          "kind": "text",
+          "field": "steps.voters.options.0",
+          "text": "Yes, every resident has the same national voting rights",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e03c33090e5c54b6",
+          "kind": "text",
+          "field": "steps.voters.options.1",
+          "text": "No; eligibility depends on citizenship and other legal conditions",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-382ffeb5342d044c",
+          "kind": "text",
+          "field": "steps.voters.explanation",
+          "text": "National and municipal eligibility differ. The guide distinguishes citizens, East Jerusalem permanent residents and Palestinians in the occupied West Bank and Gaza.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b32e9a66e7b06cb8",
+          "kind": "text",
+          "field": "steps.seats.title",
+          "text": "Votes become 120 seats",
+          "numbers": [
+            "120"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4dfdd9d90d0503a7",
+          "kind": "text",
+          "field": "steps.seats.text",
+          "text": "Voters choose a ranked electoral list in one nationwide constituency. A list needs 3.25% of valid votes to receive seats. Votes for a list below the threshold are not transferred to another list; seats are allocated among the lists that pass.",
+          "numbers": [
+            "3.25%"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-d08702dc0293a072",
+          "kind": "text",
+          "field": "steps.seats.link",
+          "text": "See how votes become seats",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7d7987df5630d7c3",
+          "kind": "text",
+          "field": "steps.seats.question",
+          "text": "What happens to votes cast for a list below the threshold?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d967c1538b1c8981",
+          "kind": "text",
+          "field": "steps.seats.options.0",
+          "text": "They are transferred to its closest ally",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c18c3b3aad297741",
+          "kind": "text",
+          "field": "steps.seats.options.1",
+          "text": "They produce no seats for that list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-60ef571f5d782515",
+          "kind": "text",
+          "field": "steps.seats.explanation",
+          "text": "The threshold applies to valid votes. Passing lists share the seats; surplus-vote agreements operate between eligible passing lists, not as a rescue for a failed list.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-15cc5fa2b170e470",
+          "kind": "text",
+          "field": "steps.parties.title",
+          "text": "A party is not a bloc",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-00baafb25f3ccf6b",
+          "kind": "text",
+          "field": "steps.parties.text",
+          "text": "An electoral list can contain several parties. A bloc is a grouping used to describe possible alliances; it is not a single ballot choice. Read two profiles, then compare the same parties on one concrete question.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-b57fb891c0c222de",
+          "kind": "text",
+          "field": "steps.parties.link",
+          "text": "Explore the parties",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d9dd7ef874b57dcb",
+          "kind": "text",
+          "field": "steps.parties.question",
+          "text": "If two lists belong to the same bloc, do they necessarily share every policy?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-835d571f88b47a67",
+          "kind": "text",
+          "field": "steps.parties.options.0",
+          "text": "Yes; a bloc is one party with one platform",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cee0e361ea484e93",
+          "kind": "text",
+          "field": "steps.parties.options.1",
+          "text": "No; cooperation can coexist with policy differences",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-b348f06a9937c455",
+          "kind": "text",
+          "field": "steps.parties.explanation",
+          "text": "Blocs describe groupings, not complete agreement. Compare recorded positions and missing evidence before describing a shared agenda.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-db43a203fbbd937c",
+          "kind": "text",
+          "field": "steps.govern.title",
+          "text": "Who can form a government?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ea8262f9d3a13345",
+          "kind": "text",
+          "field": "steps.govern.text",
+          "text": "The largest list does not automatically govern. It needs a governing arrangement and Knesset confidence. An absolute seat majority is 61 of 120; that planning target does not by itself establish how a confidence vote will go or whether parties will cooperate.",
+          "numbers": [
+            "120",
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-0894b700aa0c2e7c",
+          "kind": "text",
+          "field": "steps.govern.link",
+          "text": "Try a governing arrangement",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-20f471b1dcdf095b",
+          "kind": "text",
+          "field": "steps.govern.question",
+          "text": "Does winning the largest number of seats guarantee that a list forms the government?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-28fa389606a8ab1d",
+          "kind": "text",
+          "field": "steps.govern.options.0",
+          "text": "Yes; the largest list automatically governs",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7cab89e7880dd42a",
+          "kind": "text",
+          "field": "steps.govern.options.1",
+          "text": "No; it still needs an arrangement that can win confidence",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-5a6bdad49febd1dd",
+          "kind": "text",
+          "field": "steps.govern.explanation",
+          "text": "Seat arithmetic, recorded commitments and policy cooperation are separate questions. The formation guide explains the legal process; the builder helps you explore the arithmetic and constraints.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0bf73e0a30587b34",
+          "kind": "text",
+          "field": "steps.compare.title",
+          "text": "Compare one real question",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b6b22deec5f3ce53",
+          "kind": "text",
+          "field": "steps.compare.text",
+          "text": "Choose two or more lists in Compare. Find one shared recorded position and one difference. Open the evidence: what was said, when, and what remains unknown? A category count is not a forecast of governing stability.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-0723e9239d1f0034",
+          "kind": "text",
+          "field": "steps.compare.link",
+          "text": "Compare recorded positions",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-693a98c884e4bf78",
+          "kind": "text",
+          "field": "steps.compare.question",
+          "text": "What can missing evidence establish?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fe74ef417f41df07",
+          "kind": "text",
+          "field": "steps.compare.options.0",
+          "text": "That parties agree because no disagreement is recorded",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-c9b3da220b8d2a18",
+          "kind": "text",
+          "field": "steps.compare.options.1",
+          "text": "That the evidence is incomplete",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-016b0608e7587e90",
+          "kind": "text",
+          "field": "steps.compare.explanation",
+          "text": "Silence is not agreement. Look for complete dated evidence and distinguish a shared objective from agreement on how to achieve it.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-afd08855fa3f9bfe",
+          "kind": "text",
+          "field": "routes.0.title",
+          "text": "I have five minutes",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-756cc6b70314efda",
+          "kind": "text",
+          "field": "routes.0.description",
+          "text": "The essential distinctions, with one tool to try.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1db0d2b16566429a",
+          "kind": "text",
+          "field": "routes.0.nextLabel",
+          "text": "Read the polls with these distinctions in mind",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-29a2d02a118d9dd3",
+          "kind": "text",
+          "field": "routes.1.title",
+          "text": "Help me understand the parties",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ecc2a3a2322bf453",
+          "kind": "text",
+          "field": "routes.1.description",
+          "text": "From ballot choices to recorded disagreements and governing arrangements.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-71364f374cd2acfe",
+          "kind": "text",
+          "field": "routes.1.nextLabel",
+          "text": "Read an issue in depth",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "120",
+        "120",
+        "3.25%",
+        "61"
+      ]
+    },
+    {
+      "id": "tools:voting-rights",
+      "file": "data/voting-rights.json",
+      "path": "/start",
+      "title": "Voting-rights reference matrix",
+      "revision": "9d35d5748e39def5c25b80ea7e398bacc93a07ea3d5e8a9efad143ec40df67ba",
+      "checked": "2026-10-05",
+      "blocks": [
+        {
+          "id": "tool-text-0355844954f5faf0",
+          "kind": "text",
+          "field": "rows.0.status",
+          "text": "Israeli citizen",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-de7ef0d2a85ecb33",
+          "kind": "text",
+          "field": "rows.0.location",
+          "text": "Living in Israel, including Palestinian and Druze citizens",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dfda9f4379c26846",
+          "kind": "text",
+          "field": "rows.0.national",
+          "text": "Eligible from 18",
+          "numbers": [
+            "18"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2364a6fe1bc6491b",
+          "kind": "text",
+          "field": "rows.0.municipal",
+          "text": "Eligible from 17",
+          "numbers": [
+            "17"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6094e531282fc949",
+          "kind": "text",
+          "field": "rows.0.detail",
+          "text": "Subject to the relevant voter register. Religion and ethnicity do not create different citizenship-based voting rights.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-ae3218c9de0eb1ea",
+          "kind": "text",
+          "field": "rows.1.status",
+          "text": "Israeli permanent resident, without citizenship",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8ff32f3f89582c8e",
+          "kind": "text",
+          "field": "rows.1.location",
+          "text": "For example, many Palestinians in East Jerusalem; check each person's actual status",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-62265409b9010449",
+          "kind": "text",
+          "field": "rows.1.national",
+          "text": "Not eligible",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-5523c924fee76aee",
+          "kind": "text",
+          "field": "rows.1.municipal",
+          "text": "Eligible from 17",
+          "numbers": [
+            "17"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f50da23c865a4ad8",
+          "kind": "text",
+          "field": "rows.1.detail",
+          "text": "Municipal voting requires residence and registration in the relevant local authority. Naturalization changes the national-vote position.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e3cf63837cb21982",
+          "kind": "text",
+          "field": "rows.2.status",
+          "text": "Golan resident: citizenship must be checked",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0b4334a6c2d747d5",
+          "kind": "text",
+          "field": "rows.2.location",
+          "text": "Druze communities in the Israeli-annexed Golan Heights",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d6c5627467f40c0b",
+          "kind": "text",
+          "field": "rows.2.national",
+          "text": "Citizen: eligible from 18; noncitizen: not eligible",
+          "numbers": [
+            "18"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-877b6f1063155b22",
+          "kind": "text",
+          "field": "rows.2.municipal",
+          "text": "Permanent residents: eligible from 17",
+          "numbers": [
+            "17"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-61617935226fc260",
+          "kind": "text",
+          "field": "rows.2.detail",
+          "text": "Being Druze or living in the Golan does not establish whether a person has Israeli citizenship. Local voter-register conditions apply.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-d8140db8e3895b71",
+          "kind": "text",
+          "field": "rows.3.status",
+          "text": "Israeli citizen in a West Bank settlement",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a91076397b17f4e0",
+          "kind": "text",
+          "field": "rows.3.location",
+          "text": "The occupied West Bank",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d3f9b2349dec5e2b",
+          "kind": "text",
+          "field": "rows.3.national",
+          "text": "Eligible from 18",
+          "numbers": [
+            "18"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-29d22d1fcfc4547f",
+          "kind": "text",
+          "field": "rows.3.municipal",
+          "text": "Check local council rules",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-adf14da6d549f7c4",
+          "kind": "text",
+          "field": "rows.3.detail",
+          "text": "Citizens can vote in Knesset elections from settlement polling places. Local council arrangements should not be inferred from the national rule.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-aeee64694d5b5941",
+          "kind": "text",
+          "field": "rows.4.status",
+          "text": "Palestinian resident without Israeli citizenship or permanent residency",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a3a1c2a459114f6a",
+          "kind": "text",
+          "field": "rows.4.location",
+          "text": "The West Bank or Gaza",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2442426a2e0deae8",
+          "kind": "text",
+          "field": "rows.4.national",
+          "text": "Not eligible",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-10cca7e7fbb1f90a",
+          "kind": "text",
+          "field": "rows.4.municipal",
+          "text": "No Israeli municipal right on that basis",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-3c5dbdf3481b1eee",
+          "kind": "text",
+          "field": "rows.4.detail",
+          "text": "Place of residence alone does not confer Israeli voting rights. Palestinian elections are a separate system, described below.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-a7a504baac629185",
+          "kind": "text",
+          "field": "rows.5.status",
+          "text": "Israeli citizen abroad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-74a74123ac520db8",
+          "kind": "text",
+          "field": "rows.5.location",
+          "text": "Outside Israel on election day",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-abcc4863287eb38b",
+          "kind": "text",
+          "field": "rows.5.national",
+          "text": "Check registration and voting location",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-340c74d7841ce15c",
+          "kind": "text",
+          "field": "rows.5.municipal",
+          "text": "Check residence and the local register",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-89b3b99ec6daad51",
+          "kind": "text",
+          "field": "rows.5.detail",
+          "text": "There is no general overseas absentee vote. Most registered voters must return to vote; limited official overseas categories have special arrangements.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "17",
+        "17",
+        "17",
+        "18",
+        "18",
+        "18"
+      ]
+    }
+  ]
+}
