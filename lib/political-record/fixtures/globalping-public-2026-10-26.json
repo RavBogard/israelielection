@@ -1,0 +1,75 @@
+{
+  "note": "Redacted real public API pilot, no raw HTTP body/headers/certificates. Reachability only, not browser/source validation.",
+  "primary": {
+    "id": "2EOTuvWjNHsVgrRkC00021OGV",
+    "status": "finished",
+    "target": "www.israelielection.org",
+    "results": [
+      {
+        "probe": {
+          "country": "US",
+          "city": "Buffalo"
+        },
+        "result": {
+          "status": "finished",
+          "statusCode": 200,
+          "headers": {},
+          "tls": {
+            "authorized": true
+          }
+        }
+      },
+      {
+        "probe": {
+          "country": "DE",
+          "city": "Falkenstein"
+        },
+        "result": {
+          "status": "finished",
+          "statusCode": 200,
+          "headers": {},
+          "tls": {
+            "authorized": true
+          }
+        }
+      },
+      {
+        "probe": {
+          "country": "IL",
+          "city": "Tel Aviv"
+        },
+        "result": {
+          "status": "finished",
+          "statusCode": 307,
+          "headers": {
+            "location": "/he"
+          },
+          "tls": {
+            "authorized": true
+          }
+        }
+      }
+    ]
+  },
+  "followup": {
+    "id": "2X2zLk7ueRXtgwIeZ00021OGW",
+    "status": "finished",
+    "target": "www.israelielection.org",
+    "results": [
+      {
+        "probe": {
+          "country": "IL",
+          "city": "Tel Aviv"
+        },
+        "result": {
+          "status": "finished",
+          "statusCode": 200,
+          "headers": {},
+          "tls": {
+            "authorized": true
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+import type { Lang } from "./index";
+const copy = {
+  en: [
+    "Current election evidence is not ready.",
+    "Verified seats and a forecast are not available yet for this election.",
+    "The current election edition cannot be verified.",
+    "Current election details are temporarily unavailable. Saved evidence remains available in the archives.",
+    "Open this election edition",
+    "Browse election archives",
+    "This empty 120-seat frame shows the size of the Knesset, not an allocation.",
+  ],
+  he: [
+    "נתוני הבחירות הנוכחיות טרם מוכנים.",
+    "מנדטים מאומתים ותחזית למערכת הבחירות הזו אינם זמינים עדיין.",
+    "לא ניתן לאמת את מערכת הבחירות הנוכחית.",
+    "פרטי הבחירות הנוכחיות אינם זמינים זמנית. הראיות השמורות נגישות בארכיון.",
+    "פתיחת מערכת הבחירות הזו",
+    "עיון בארכיוני הבחירות",
+    "מסגרת 120 המושבים הריקה מציגה את גודל הכנסת, לא חלוקת מנדטים.",
+  ],
+  ar: [
+    "أدلة الانتخابات الحالية غير جاهزة.",
+    "المقاعد المتحقق منها والتوقعات لهذه الانتخابات غير متاحة بعد.",
+    "تعذر التحقق من النسخة الانتخابية الحالية.",
+    "تفاصيل الانتخابات الحالية غير متاحة مؤقتًا. تظل الأدلة المحفوظة في الأرشيف.",
+    "فتح هذه النسخة الانتخابية",
+    "تصفح أرشيف الانتخابات",
+    "إطار 120 مقعدًا الفارغ يوضح حجم الكنيست وليس توزيعًا.",
+  ],
+  fa: [
+    "شواهد انتخابات کنونی آماده نیست.",
+    "کرسی‌های تأییدشده و پیش‌بینی این انتخابات هنوز موجود نیست.",
+    "نسخه انتخابات کنونی قابل تأیید نیست.",
+    "جزئیات انتخابات کنونی موقتاً در دسترس نیست. شواهد ذخیره‌شده در آرشیو موجود است.",
+    "بازکردن این دوره انتخابات",
+    "مرور آرشیو انتخابات",
+    "چارچوب خالی 120 کرسی اندازه کنست را نشان می‌دهد، نه تقسیم کرسی‌ها.",
+  ],
+  de: [
+    "Aktuelle Wahlbelege sind noch nicht bereit.",
+    "Bestätigte Sitze und eine Prognose für diese Wahl sind noch nicht verfügbar.",
+    "Die aktuelle Wahledition ist nicht verifizierbar.",
+    "Aktuelle Wahldetails sind vorübergehend nicht verfügbar. Gesicherte Belege bleiben im Archiv erreichbar.",
+    "Diese Wahledition öffnen",
+    "Wahlarchive durchsuchen",
+    "Der leere Rahmen mit 120 Sitzen zeigt die Größe der Knesset, keine Verteilung.",
+  ],
+  fr: [
+    "Les données électorales actuelles ne sont pas prêtes.",
+    "Les sièges vérifiés et une prévision ne sont pas encore disponibles pour cette élection.",
+    "L’édition électorale actuelle ne peut être vérifiée.",
+    "Les détails électoraux actuels sont temporairement indisponibles. Les preuves sauvegardées restent dans les archives.",
+    "Ouvrir cette édition électorale",
+    "Parcourir les archives électorales",
+    "Le cadre vide de 120 sièges indique la taille de la Knesset, pas une répartition.",
+  ],
+  zh: [
+    "当前选举证据尚未就绪。",
+    "本届选举的已核实席位和预测尚不可用。",
+    "无法核实当前选举档案。",
+    "当前选举详情暂不可用；已保存的证据仍可从档案访问。",
+    "打开本届选举档案",
+    "浏览历届选举档案",
+    "空的120席框架仅表示议会规模，并非席位分配。",
+  ],
+} satisfies Record<Lang, string[]>;
+export function editionCopy(lang: Lang) {
+  const [
+    waiting,
+    waitingNote,
+    unavailable,
+    unavailableNote,
+    current,
+    previous,
+    frame,
+  ] = copy[lang];
+  return {
+    waiting,
+    waitingNote,
+    unavailable,
+    unavailableNote,
+    current,
+    previous,
+    frame,
+  };
+}

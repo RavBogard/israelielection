@@ -42,8 +42,7 @@ export default async function Page({ params }: { params: Promise<{ date: string 
       <div className="wrap">
         <PageHead title={<>Briefing, {label(b.date)}</>} standfirst={<>What changed in Israel&apos;s 2026 election that day, in a few sentences. Each sentence links the report it rests on.</>}>
           <p className="ph-meta">
-            Written by an AI model ({b.model}) from the day&apos;s headlines at {IL.format(new Date(b.generatedAt))} Israel time; sentences that could not be matched to a
-            source were removed automatically. <Link href="/news">Today&apos;s briefing and the latest headlines</Link>
+            {b.evidenceVersion===2?`Article-grounded briefing with independent claim review (${b.model}).`:`Legacy headline-based briefing (${b.model}), not reverified against full articles.`} {IL.format(new Date(b.generatedAt))} Israel time. <Link href="/news">Today&apos;s briefing and the latest headlines</Link>
           </p>
         </PageHead>
         <section className="nw-brief nw-brief-page" aria-label="The briefing">

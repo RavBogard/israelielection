@@ -1,14 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { editionPath, type Lang } from "@/lib/i18n";
+import { EMBEDS } from "@/lib/i18n/embeds";
 import "./embed.css";
 
 const ORIGIN = "https://www.israelielection.org";
 
 /** A copyable iframe snippet for one of the /embed widgets. */
-export default function EmbedCode({ path, height, label }: { path: string; height: number; label: string }) {
+export default function EmbedCode({
+  path,
+  height,
+  label,
+  lang = "en",
+}: {
+  path: string;
+  height: number;
+  label: string;
+  lang?: Lang;
+}) {
   const [copied, setCopied] = useState(false);
-  const src = `${ORIGIN}/embed/${path.replace(/^\/+/, "")}`;
+  const [failed, setFailed] = useState(false);
+  const t = EMBEDS[lang];
+  const src = `${ORIGIN}${editionPath(`/embed/${path.replace(/^\/+/, "")}`, lang) ?? `/embed/${path.replace(/^\/+/, "")}`}`;
   const snippet = `<iframe src="${src}" width="100%" height="${height}" style="border:0" title="${label.replace(/"/g, "&quot;")}" allow="clipboard-write" loading="lazy"></iframe>`;
 
   useEffect(() => {
@@ -20,8 +34,11 @@ export default function EmbedCode({ path, height, label }: { path: string; heigh
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(snippet);
+      setFailed(false);
       setCopied(true);
-    } catch {}
+    } catch {
+      setFailed(true);
+    }
   };
 
   return (
@@ -29,9 +46,10 @@ export default function EmbedCode({ path, height, label }: { path: string; heigh
       <div className="bar">
         <span className="lbl">{label}</span>
         <button type="button" onClick={copy} aria-live="polite">
-          {copied ? "Copied" : "Copy"}
+          {copied ? t.copied : t.copy}
         </button>
       </div>
+      {failed && <p role="status">{t.copyFailed}</p>}
       <pre>
         <code>{snippet}</code>
       </pre>

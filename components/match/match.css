@@ -8,7 +8,7 @@
 .mq { max-width: 760px; margin-top: 10px; }
 .mq-progress { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0 0 26px; }
 .mq-mark button { display: block; width: 26px; height: 26px; padding: 0; border: 1px solid var(--line-2); background: var(--sheet); cursor: pointer; position: relative; }
-.mq-mark.deep button { width: 18px; }
+.mq-mark.deep button { width: 26px; }
 .mq-mark.done button { background: var(--ink); border-color: var(--ink); }
 .mq-mark.skipped button { background: repeating-linear-gradient(135deg, var(--line-2) 0 1px, transparent 1px 5px); }
 .mq-mark.now button { border-color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
@@ -37,7 +37,7 @@
 .mq-options.revealed .mq-opt:not(.on) > button { border-color: var(--line); }
 .mq-options.revealed .mq-opt:not(.on) .mq-label { color: var(--ink-2); }
 
-.mq-holders { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 4px 18px; padding: 0; }
+.mq-holders { list-style: none; display: flex; flex-wrap: wrap; gap: 4px; margin-block: 6px 4px; margin-inline: 18px 0; padding: 0; }
 .mq-chip {
   font-family: var(--body); font-size: 12.5px; font-weight: 600; line-height: 1; color: var(--ink);
   background: var(--sheet); border: 1px solid var(--line-2); border-top: 3px solid var(--fill); padding: 5px 7px 6px;
@@ -96,7 +96,7 @@
 .mr-row.out .mr-name { border-top-style: dashed; }
 .mr-row > details[open] > summary { padding-bottom: 6px; }
 
-.mr-detail { padding: 6px 0 20px 2.2em; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px 40px; }
+.mr-detail { padding-block: 6px 20px; padding-inline: 2.2em 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px 40px; }
 .mr-detail > p:last-child { grid-column: 1 / -1; margin: 0; font-family: var(--body); font-size: 14px; font-weight: 600; }
 .mr-q-label { font-family: var(--body); font-size: 13px; font-weight: 600; color: var(--ink); margin: 0 0 22px; }
 .mr-q-read { font-family: var(--body); font-size: 13.5px; line-height: 1.45; color: var(--ink-2); margin: 16px 0 6px; }
@@ -144,7 +144,7 @@
   .mr-row > details > summary { grid-template-columns: 1.6em minmax(0, 1fr) auto; }
   .mr-bar { grid-column: 2 / 3; grid-row: 2; }
   .mr-cov { grid-column: 3; grid-row: 2; text-align: end; }
-  .mr-detail { padding-left: 0; grid-template-columns: 1fr; }
+  .mr-detail { padding-inline-start: 0; grid-template-columns: 1fr; }
   .mr-w dl { grid-template-columns: 1fr; gap: 2px; }
   .mr-w dd { margin-bottom: 8px; }
 }

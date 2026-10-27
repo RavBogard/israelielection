@@ -1,2 +1,12 @@
 "use client";
-export default function PrintButton() { return <button type="button" onClick={()=>window.print()}>Print / save as PDF</button>; }
+export default function PrintButton({
+  label = "Print / save as PDF",
+}: {
+  label?: string;
+}) {
+  return (
+    <button type="button" onClick={() => window.print()}>
+      {label}
+    </button>
+  );
+}

@@ -212,7 +212,7 @@ Density is a reference work's: figures sit beside the sentences they illustrate,
 - Frank Ruhl Libre carries display, numbers and reading prose; Public Sans carries labels, controls, tables and captions.
 - Square, flat paper; 4px only on controls; one drawer shadow in the whole system.
 - Colour appears only where it encodes data; government figures are ink, because a coalition is not a bloc.
-- One number per fact: a list's seats are the polling average scaled to 120, one decimal, or "below", wherever they appear.
+- One number per fact: current surfaces share the same seat-context revision and basis. Campaign averages may use decimals; exit estimates and official allocations use their actual precision. Unknown or unavailable is never rendered as zero or "below" without evidence.
 - Every page opens with its graphic, then the words.
 
 ## Colors
@@ -292,7 +292,7 @@ Follows `prefers-color-scheme` unless `data-theme` pins it. Swaps every neutral 
 
 **The Text Floor Rule.** No text under 12px, in CSS or SVG. Two sanctioned exceptions: the 11px footnote superscripts in the poll table, and the "61" beside the seat grid, which is set in grid units and scales with the figure.
 
-**The One Number Rule.** A list's seats print the same everywhere: its polling average scaled to 120, one decimal (`seatFigure`), or "below" when it counts 0 (`seatText`; lib/list-seats.ts for every page); a single poll prints whole seats. The figure is always called "Seats, polling average" (`SEATS_LABEL`).
+**The One Number Rule.** Current surfaces use the same shared seat-context revision. Label the actual basis: polling average, exit estimate, published count projection or official allocation. Campaign averages keep their decimal precision; individual polls and allocated seats use whole seats. Explicit historical comparisons and pinned shares retain their named revision. Unknown is not zero, and geographic coverage is not the percentage of ballots counted.
 
 ## Layout
 
@@ -529,3 +529,17 @@ A data/charts table in an article is drawn in one of four forms, chosen from its
 - **Don't** add shadows to paper; the drawer is the only shadow.
 - **Don't** draw the Knesset as a hemicycle.
 - **Don't** colour chrome, headings or buttons.
+
+## Political platform expansion (approved 2026-10-26)
+
+Preserve the restored headline and interactive 120-seat hero. Expand the existing editorial world rather than replacing it. Current pages progress from answer and figure to explanation, evidence and method/data. All three audiences use the same factual view with directly linkable depth.
+
+- Phase-aware hierarchy: exit uncertainty and broadcaster comparison; counted evidence and coverage; official outcome and evaluation; confirmed proposal-specific formation positions; government/parliament and documented policy changes. Keep dated previous editions reachable.
+- Confirmed, reported and analysis labels travel with cards, search results, shares and exports. Unknown/unverified is explicit and never a fabricated zero. Source publication time and site check time have distinct labels.
+- Government arithmetic is proposal-specific. Undecided parties remain separate. Keep hypothetical builder choices, confirmed commitments and historical snapshots visually distinguishable without party-political editorial recommendations.
+- Navigation adds destinations only when implemented. Retain keyboard disclosure behavior and small-screen readability; existing four-group navigation may transition to Now, Elections, Government and Parliament, Issues and Places, Learn and Data as those destinations become available.
+- Full seven-language parity includes reference and distribution. A translation belongs to a factual revision; pending translations show localized notices and explicit original-language links. Do not silently show stale translated facts.
+- Recommendation consent is explicit, with explanation, reset and off controls. Suggested reading can be personalized after opt-in; the main factual hierarchy and corrections stay common to all readers.
+- Updates preserve focus and reader choices. Test long translated names, mobile/RTL, keyboard access, chart/table alternatives and reduced motion. No new visual system, gradients, ornamental cards or speculative political-path diagrams are implied by expansion.
+
+The approved platform plan is docs/planning/2026-10-26-political-platform/PLAN.md. Its STATE.md records what has actually shipped; this direction is not a completion claim.

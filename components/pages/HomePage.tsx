@@ -1,3 +1,8 @@
+import {getWorkspaceRegistry} from "@/lib/political-record/workspace-server";
+import {homeEditionBoundary} from "@/components/reference/workspace-view";
+import PendingEditionHome from "@/components/reference/PendingEditionHome";
+import {briefingSentence} from "@/lib/briefing-locale";
+import {briefingCopy,briefingCoverageNote} from "@/lib/i18n/briefing";
 import GovernmentLive from "@/components/government/GovernmentLive";
 import { lifecycleForRender } from "@/lib/seat-context-server";
 import { seatContextForRender } from "@/lib/seat-context-server";
@@ -86,7 +91,7 @@ function Since({ now, lang }: { now: number; lang: Lang }) {
   const briefDate = b ? new Intl.DateTimeFormat(locale(lang), { month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${b.date}T12:00:00Z`)) : "";
   // The Hebrew home shows the checked Hebrew briefing, labelled as machine-translated, once the job writes `textHe`;
   // until then (or when its checks fail) the English sentences, marked as English.
-  const shown = b ? b.sentences.slice(0, 2) : [], heBrief = lang === "he" && shown.length > 0 && shown.every((s) => s.textHe);
+  const shown = b ? b.sentences.slice(0, 2) : [], heBrief = lang !== "en" && shown.length > 0 && shown.every((s) => briefingSentence(s,lang).text);
   return (
     <section className="since" aria-labelledby="since-h">
       <h2 id="since-h">{t.heading}</h2>
@@ -98,8 +103,9 @@ function Since({ now, lang }: { now: number; lang: Lang }) {
       {b && b.sentences.length > 0 && (
         <div className="since-brief">
           <h3>{b.date === today ? t.today : t.briefing(briefDate)}{he && <small className="since-brief-lang"> {heBrief ? t.machine : t.english}</small>}</h3>
-          <ul>{shown.map((s, i) => <li key={i}>{he ? heBrief ? s.textHe : <En>{s.text}</En> : s.text} <span className="srcs">{s.sources.map((src, k) => <a key={k} href={src.url} title={src.title} hrefLang={he ? "en" : undefined}>{src.outlet}</a>)}</span></li>)}</ul>
-          <Link href="/news" className="more" hrefLang={he ? "en" : undefined}>{t.full}</Link>
+          {b.coverage?.state==="limited"&&<p className="fig-src">{briefingCoverageNote(lang)}</p>}
+          <ul>{shown.map((s, i) => <li key={i}>{lang === "en" ? s.text : heBrief ? briefingSentence(s,lang).text : briefingCopy(lang).pendingNote} <span className="srcs">{s.sources.map((src, k) => <a key={k} href={src.url} title={src.title} hrefLang={he ? "en" : undefined}>{src.outlet}</a>)}</span></li>)}</ul>
+          <Link href={editionPath("/news",lang)??"/news"} className="more">{t.full}</Link>
         </div>
       )}
     </section>
@@ -127,6 +133,8 @@ function PollSlip({ slip, lang }: { slip: Slip; lang: Lang }) {
 }
 
 export default async function HomePage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
+  const edition=homeEditionBoundary(await getWorkspaceRegistry());
+  if(edition.state!=="legacy")return <PendingEditionHome lang={lang} id={edition.id}/>;
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
   const [live, liveForecast, context, lifecycle] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true }), seatContextForRender(), lifecycleForRender()]);

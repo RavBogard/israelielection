@@ -1,3 +1,4 @@
+import { readiness } from "@/lib/i18n/election-readiness";
 import CurrentUnavailable from "@/components/seat-context/CurrentUnavailable";
 import EvidenceGate, {ResultsHeading} from "@/components/seat-context/EvidenceGate";
 import { seatContextForRender } from "@/lib/seat-context-server";
@@ -292,6 +293,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
             {untrackedSeats > 0 && <li><span className="sw" style={{ background: "var(--line-2)" }} />{t.otherLists} <b>{untrackedSeats}</b></li>}
           </ul>
           <div className="rs-counted">
+            <p className="fig-note">{readiness(lang).countNote}</p>
             <p className="rs-counted-h">{share !== null ? <>{t.countedH}<b>{pc}</b></> : t.countedNone}</p>
             <div className={`rs-counted-bar${share === null ? " none" : ""}`} role="img" aria-label={share !== null ? t.countedAria(pc) : t.countedAriaNone}>
               {share !== null && <i style={{ width: `${share * 100}%` }} />}
@@ -397,6 +399,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           {n.phase === "before" && refresh}
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead></ResultsHeading>
+        <p className="note">{readiness(lang).timeNote}</p>
         {context && <CurrentParliament initial={context} lang={lang} showScenarios={false} {...forecastPresentation(lang)} />}
         {liveForecast}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>

@@ -1,4 +1,11 @@
 "use client";
+import {
+  authoritativeEdition,
+  canonicalSeatEdition,
+  blocksCurrentContext,
+  initialContextWins,
+  compatibleInitialEdition,
+} from "./edition-state";
 
 import {
   createContext,
@@ -10,15 +17,16 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
-import type {CadenceMetadata} from "@/lib/election-lifecycle/cadence";
+import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
 import { acceptsSeatContext, changedSeats } from "@/lib/seat-context";
 
 type SeatState = {
   context: SharedSeatContext | null;
   changes: ReturnType<typeof changedSeats>;
   refreshFailed: boolean;
-  forecastComplete?:boolean;
-  cadence?:CadenceMetadata;
+  blockedByEdition?: boolean;
+  forecastComplete?: boolean;
+  cadence?: CadenceMetadata;
 };
 const SeatStore = createContext<SeatState | null>(null);
 
@@ -35,22 +43,39 @@ export default function SeatContextProvider({
     context: initial,
     changes: [],
     refreshFailed: !initial,
-    forecastComplete:initial?.freshness.status==="complete",
+    forecastComplete: initial?.freshness.status === "complete",
   });
   const latest = useRef(initial);
+  const authoritativeCurrent = useRef<string | null>(null);
+  const currentEdition = useRef(
+    initial ? canonicalSeatEdition(initial.election) : null,
+  );
   useEffect(() => {
-    if (!initial || !acceptsSeatContext(latest.current, initial)) return;
+    if (
+      !initial ||
+      !compatibleInitialEdition(initial, authoritativeCurrent.current) ||
+      !acceptsSeatContext(
+        latest.current?.election === initial.election ? latest.current : null,
+        initial,
+      )
+    )
+      return;
+    currentEdition.current = canonicalSeatEdition(initial.election);
     const previous = latest.current;
     latest.current = initial;
     setState((state) => ({
       context: initial,
       changes:
-        previous && previous.revision !== initial.revision
+        previous &&
+        previous.election === initial.election &&
+        previous.revision !== initial.revision
           ? changedSeats(previous, initial)
           : state.changes,
       refreshFailed: false,
-      forecastComplete:state.forecastComplete||initial.freshness.status==="complete",
-      cadence:state.cadence,
+      forecastComplete:
+        (previous?.election === initial.election && state.forecastComplete) ||
+        initial.freshness.status === "complete",
+      cadence: state.cadence,
     }));
   }, [initial]);
   useEffect(() => {
@@ -72,11 +97,29 @@ export default function SeatContextProvider({
           signal: request.signal,
           cache: "no-store",
         });
-        if (!response.ok) throw new Error("Seat context unavailable");
         const body = await response.json();
+        if (disposed || request.signal.aborted) return;
+        const edition = authoritativeEdition(body);
+        if (edition) authoritativeCurrent.current = edition;
+        const editionChanged = !!edition && edition !== currentEdition.current;
+        if (editionChanged) {
+          currentEdition.current = edition;
+          if (blocksCurrentContext(latest.current, edition)) {
+            latest.current = null;
+            setState({
+              context: null,
+              changes: [],
+              refreshFailed: true,
+              blockedByEdition: true,
+            });
+          }
+          router.refresh();
+        }
+        if (!response.ok) throw new Error("Seat context unavailable");
         const next = body.seatContext as SharedSeatContext;
         if (
           !next?.pointSeats ||
+          blocksCurrentContext(next, edition) ||
           !next.freshness ||
           !acceptsSeatContext(latest.current, next)
         )
@@ -91,10 +134,16 @@ export default function SeatContextProvider({
               ? changedSeats(previous, next)
               : [],
           refreshFailed: false,
-          forecastComplete:body.archive?.electionForecast==="complete"||next.freshness.status==="complete",
-          cadence:body.cadence,
+          forecastComplete:
+            body.archive?.electionForecast === "complete" ||
+            next.freshness.status === "complete",
+          cadence: body.cadence,
         });
-        if (!previous || previous.revision !== next.revision) router.refresh();
+        if (
+          !editionChanged &&
+          (!previous || previous.revision !== next.revision)
+        )
+          router.refresh();
       } catch {
         if (!disposed && !request.signal.aborted)
           setState((previous) => ({ ...previous, refreshFailed: true }));
@@ -128,18 +177,19 @@ export function useSeatContext(
   const shared = useContext(SeatStore);
   return pinned
     ? { context: initial ?? null, changes: [], refreshFailed: false }
-    : initial &&
-        (!shared?.context || initial.sequence > shared.context.sequence)
-      ? {
-          context: initial,
-          changes: shared?.changes ?? [],
-          refreshFailed: shared?.refreshFailed ?? false,
-          cadence:shared?.cadence,
-        }
-      : (shared ?? {
-          context: initial ?? null,
-          changes: [],
-          refreshFailed: false,
-          forecastComplete:initial?.freshness.status==="complete",
-        });
+    : shared?.blockedByEdition
+      ? shared
+      : initial && initialContextWins(initial, shared?.context)
+        ? {
+            context: initial,
+            changes: shared?.changes ?? [],
+            refreshFailed: shared?.refreshFailed ?? false,
+            cadence: shared?.cadence,
+          }
+        : (shared ?? {
+            context: initial ?? null,
+            changes: [],
+            refreshFailed: false,
+            forecastComplete: initial?.freshness.status === "complete",
+          });
 }

@@ -1,0 +1,84 @@
+name: Platform read-only monitor
+on:
+  workflow_call:
+    inputs:
+      target:
+        type: string
+        default: public
+      public_regions:
+        type: boolean
+        default: false
+    secrets:
+      PLATFORM_MONITOR_PREVIEW_BYPASS:
+        required: false
+      POLITICAL_RECORD_DATABASE_URL:
+        required: false
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Owned deployment for rendered smoke"
+        type: choice
+        options: [public, preview]
+        default: public
+      public_regions:
+        description: "Run three-country free public HTTP/TLS probes (production public URL only)"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "2,17,32,47 * * * *"
+permissions:
+  contents: read
+concurrency:
+  group: platform-read-only-monitor
+  cancel-in-progress: false
+jobs:
+  monitor:
+    if: github.event_name == 'workflow_dispatch' || vars.PLATFORM_MONITOR_SCHEDULE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      PLATFORM_MONITOR_BROWSER_ORIGIN: ${{ inputs.target == 'preview' && vars.PLATFORM_MONITOR_PREVIEW_ORIGIN || 'https://www.israelielection.org' }}
+      PLATFORM_MONITOR_PREVIEW_ORIGIN: ${{ vars.PLATFORM_MONITOR_PREVIEW_ORIGIN }}
+      PLATFORM_MONITOR_PREVIEW_BYPASS: ${{ inputs.target == 'preview' && secrets.PLATFORM_MONITOR_PREVIEW_BYPASS || '' }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Free public reachability and TLS (no private headers)
+        id: regions
+        if: github.event_name == 'schedule' || inputs.public_regions
+        continue-on-error: true
+        run: npx tsx scripts/political-platform/monitor.ts --run --out=.vercel/platform-monitor-regions.json
+      - name: Independently rendered seven-edition smoke
+        id: render
+        continue-on-error: true
+        run: npx playwright test --config=scripts/political-platform/monitor-browser.config.ts
+      - name: Persist safe incident transitions when configured
+        if: always()
+        env:
+          PLATFORM_MONITOR_NAMESPACE: ${{ inputs.target == 'preview' && 'preview' || 'production' }}
+          PLATFORM_MONITOR_STORE_ENABLED: ${{ vars.PLATFORM_MONITOR_STORE_ENABLED }}
+          PLATFORM_MONITOR_SOURCE_STATUS_ENABLED: ${{ inputs.target != 'preview' && vars.PLATFORM_MONITOR_SOURCE_STATUS_ENABLED || 'false' }}
+          POLITICAL_RECORD_DATABASE_URL: ${{ secrets.POLITICAL_RECORD_DATABASE_URL }}
+        run: npx tsx scripts/political-platform/monitor-summary.ts --run --out=.vercel/platform-monitor-summary.json
+      - name: Grouped redacted summary
+        if: always()
+        env:
+          REGIONS: ${{ steps.regions.outcome }}
+          RENDER: ${{ steps.render.outcome }}
+        run: |
+          printf '## Read-only monitor\n\nRendered smoke: %s\n\nPublic regions: %s\n\nNo source acquisition, messages, deployment or DNS recovery performed.\n' "$RENDER" "$REGIONS" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$RENDER" != 'success' ] || [ "$REGIONS" = 'failure' ]; then exit 1; fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: platform-monitor-redacted
+          path: |
+            .vercel/platform-monitor-regions.json
+            .vercel/platform-monitor-summary.json
+          if-no-files-found: ignore
+          retention-days: 7

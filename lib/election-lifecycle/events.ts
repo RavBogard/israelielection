@@ -22,6 +22,14 @@ const he = heNames as Record<
   { name?: { text: string }; short?: { text: string } }
 >;
 const action: Record<EventType, RegExp> = {
+  mandate_returned:
+    /returned.{0,50}mandate|mandate.{0,50}returned|החזיר.{0,30}מנדט|החזירה.{0,30}מנדט/i,
+  mandate_failed:
+    /failed to form|unable to form|לא הצליח.{0,30}להרכיב|לא עלה ביד.{0,30}להרכיב/i,
+  government_ended:
+    /government.{0,50}(?:ended|resigned|dissolved)|הממשלה.{0,30}(?:התפטרה|סיימה|נפלה)/i,
+  election_called:
+    /elections?.{0,60}(?:called|scheduled|approved)|(?:called|scheduled).{0,40}elections?|בחירות.{0,40}(?:נקבעו|הוקדמו)|(?:אישרה|אישר).{0,40}בחירות/i,
   talks: /talks|negotiat|שיחות|משא ומתן/i,
   party_position:
     /will|support|join|oppose|נתמוך|נצביע|נשב|ניכנס|לא.*נשב|לא.*ניכנס/i,
@@ -35,6 +43,10 @@ const action: Record<EventType, RegExp> = {
   government_formed: /sworn|swearing|constituted|הושבע|כוננה|כינון הממשלה/i,
 };
 const allowed: Record<EventType, SourceRef["authority"][]> = {
+  mandate_returned: ["president"],
+  mandate_failed: ["president"],
+  government_ended: ["knesset"],
+  election_called: ["knesset", "cec"],
   talks: ["president", "knesset", "party", "joint"],
   party_position: ["party", "joint"],
   consultation: ["president"],
@@ -92,6 +104,10 @@ export function validateEvent(
     "agreement",
     "confidence_vote",
     "government_formed",
+    "mandate_returned",
+    "mandate_failed",
+    "government_ended",
+    "election_called",
   ];
   if (
     occurredTypes.includes(c.type) &&
@@ -155,7 +171,9 @@ export function validateEvent(
   )
     return null;
   if (
-    ["mandate", "extension"].includes(c.type) &&
+    ["mandate", "extension", "mandate_returned", "mandate_failed"].includes(
+      c.type,
+    ) &&
     (!c.person || !quote.includes(c.person))
   )
     return null;

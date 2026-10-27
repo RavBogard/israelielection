@@ -1,0 +1,83 @@
+.qualified-records {
+  margin-block: 2rem;
+  min-width: 0;
+}
+.qualified-records h2 {
+  margin-block: 1.8rem 0.6rem;
+}
+.qualified-records .record-status {
+  color: var(--ink-2);
+  max-width: 70ch;
+}
+.record-table {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+.record-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.record-table th,
+.record-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.6rem;
+  text-align: start;
+  vertical-align: top;
+}
+.record-table thead th {
+  border-block: 1px solid var(--ink);
+}
+.record-table td {
+  font-variant-numeric: tabular-nums;
+}
+.record-table details {
+  min-width: 9rem;
+}
+.record-sources {
+  padding-inline-start: 1.2rem;
+  font-size: 0.85rem;
+}
+.record-sources a {
+  overflow-wrap: anywhere;
+}
+.record-sources p {
+  color: var(--ink-2);
+}
+.record-receipt code,
+.commitment-record code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.commitment-record {
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--ink);
+}
+.record-assessment {
+  font-family: var(--display);
+  font-size: 1.5rem;
+}
+.record-rubric {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr));
+  gap: 0.75rem 1.5rem;
+}
+.record-rubric div {
+  border-top: 1px solid var(--line);
+  padding-block-start: 0.5rem;
+}
+.record-rubric dt {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+}
+.record-rubric dd {
+  margin: 0.3rem 0;
+  font-variant-numeric: tabular-nums;
+}
+.record-chain {
+  padding-inline-start: 1.5rem;
+}
+.record-chain > li {
+  padding-block: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}

@@ -26,11 +26,16 @@ export const NAV_GROUPS: readonly NavGroup[] = [
   {href:"/ballot",label:"Every ballot list",aliases:["Submitted ballot lists"],description:"All submitted lists, minor ones included, with their status."},
  ]},
  {id:"places",label:"Voters and places",items:[
-  {href:"/vote-map",label:"Vote map",aliases:["Historical vote map"],description:"How each locality voted in the five elections of 2019 to 2022."},
+  {href:"/vote-map",label:"Vote map",aliases:["Historical vote map"],description:"Verified locality results and historical election comparisons."},
   {href:"/communities",label:"Communities",aliases:["Voter communities"],description:"Voter communities, their histories and political concerns."},
   {href:"/issues",label:"Issues",description:"The policy questions shaping the election."},
  ]},
  {id:"how",label:"How it works",items:[
+  {href:"/elections",label:"Election editions",description:"Permanent election records with current and saved evidence."},
+  {href:"/parliament",label:"Parliament",description:"Seat allocation, separated from verified membership records."},
+  {href:"/policies",label:"Policies",description:"Sourced policy background and documented implementation evidence."},
+  {href:"/changes",label:"Changes and evidence",description:"Confirmed events, source evidence and saved seat revisions."},
+  {href:"/reference",label:"Reference library",description:"Guides, communities and issues with translation status."},
   {href:"/how-it-works",label:"Guides",aliases:["How elections work"],description:"The ballot, who can vote, seats and forming a government."},
   {href:"/timeline",label:"Timeline",aliases:["Political timeline"],description:"Elections, prime ministers and key events from 1977 to 2026."},
   {href:"/glossary",label:"Glossary",description:"Election vocabulary, Hebrew terms and pronunciations."},
@@ -38,6 +43,7 @@ export const NAV_GROUPS: readonly NavGroup[] = [
  ]},
 ];
 export const NAV_UTILITIES: readonly NavItem[] = [
+ {href:"/subscriptions",label:"Email updates",description:"Choose email topics and confirm your subscription."},
  {href:"/start",label:"Start here",description:"A short guided route through the election."},
  {href:"/search",label:"Search",description:"Find parties, leaders, issues and terms by name or alias."},
  {href:"/resources",label:"All resources",description:"Every section and tool on one page, with a picture of each."},

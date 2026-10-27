@@ -1,4 +1,6 @@
 import { cache } from "react";
+import { activeWorkspaceId } from "../political-record/workspace-server";
+import { currentElection } from "../political-record/registry";
 import { connection } from "next/server";
 import { unstable_rethrow } from "next/navigation";
 import { fingerprint, lifecycleEnabled } from "./core";
@@ -50,6 +52,10 @@ const readCurrent = cache(async () => {
 export async function getElectionLifecycle(
   selection: LifecycleSelection = {},
 ): Promise<ElectionLifecycleSnapshot | null> {
+  if (!selection.revision) {
+    const id = selection.electionId ?? (await activeWorkspaceId());
+    if (id !== currentElection().id) return null;
+  }
   const { store, ledger, coldFailure } = await readCurrent(),
     now = new Date().toISOString();
   if (coldFailure && !selection.revision) return null;

@@ -1,6 +1,6 @@
 /**
- * English is the full site. The other editions cover home, polls, forecast, Coalition Builder,
- * Compare, party profiles and results. Other reference pages stay English.
+ * Seven editions share the implemented tools and navigation. Source prose appears as a
+ * reviewed translation or an explicitly identified original, according to its revision.
  */
 export type Lang = "en" | "he" | "ar" | "fa" | "de" | "fr" | "zh";
 export type ToolLang = Exclude<Lang, "en">;
@@ -14,7 +14,7 @@ export const isRtl = (lang: Lang) => RTL_LANGS.includes(lang as ToolLang);
 export const locale = (lang: Lang) => ({ en: "en-US", he: "he-IL", ar: "ar-u-nu-latn", fa: "fa-u-ca-gregory-nu-latn", de: "de-DE", fr: "fr-FR", zh: "zh-CN" })[lang];
 
 /** The English paths with a Hebrew edition. `[id]` matches one segment (a party id). */
-export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results", "/government"] as const;
+export const HE_PATHS = ["/", "/polls", "/forecast", "/coalition-builder", "/compare", "/parties/[id]", "/results", "/government", "/elections", "/elections/[id]", "/parliament", "/policies", "/policies/[id]", "/changes", "/reference", "/issues", "/issues/[slug]", "/communities", "/communities/[slug]", "/how-it-works", "/how-it-works/[slug]", "/about", "/american-lens", "/search", "/news", "/news/[date]", "/subscriptions", "/subscriptions/confirm", "/subscriptions/preferences", "/subscriptions/unsubscribe", "/embed/grid", "/embed/average", "/embed/builder", "/export/[kind]", "/parties", "/ballot", "/start", "/match", "/glossary", "/corrections", "/resources", "/vote-map", "/timeline", "/party-history"] as const;
 
 /**
  * Whether the Hebrew edition is announced: hreflang links on English pages, sitemap entries, and indexing of
@@ -31,7 +31,7 @@ function split(href: string): [string, string] {
   return i < 0 ? [href, ""] : [href.slice(0, i), href.slice(i)];
 }
 
-/** "/polls/" → "/polls"; "" → "/". */
+/** "/polls/" Ã¢â€ â€™ "/polls"; "" Ã¢â€ â€™ "/". */
 function trim(path: string): string {
   const p = path.replace(/\/+$/, "");
   return p === "" ? "/" : p;
@@ -52,7 +52,7 @@ export function isHePath(href: string): boolean {
 }
 
 /**
- * The Hebrew edition of an English path, keeping its query and fragment: "/" → "/he", "/polls?poll=x" → "/he/polls?poll=x".
+ * The Hebrew edition of an English path, keeping its query and fragment: "/" Ã¢â€ â€™ "/he", "/polls?poll=x" Ã¢â€ â€™ "/he/polls?poll=x".
  * Null when the page has no Hebrew edition (the guides, the news, the about page).
  */
 export function hePath(enHref: string): string | null {
@@ -63,7 +63,7 @@ export function hePath(enHref: string): string | null {
   return `${p === "/" ? HE_PREFIX : `${HE_PREFIX}${p}`}${rest}`;
 }
 
-/** The English edition of a Hebrew path, keeping its query and fragment: "/he" → "/", "/he/polls" → "/polls". English paths pass through. */
+/** The English edition of a Hebrew path, keeping its query and fragment: "/he" Ã¢â€ â€™ "/", "/he/polls" Ã¢â€ â€™ "/polls". English paths pass through. */
 export function enPath(heHref: string): string {
   const [path, rest] = split(heHref);
   const prefix = /^\/(he|ar|fa|de|fr|zh)(?=\/|$)/.exec(path)?.[0];

@@ -1,4 +1,5 @@
 import { cadenceFresh, cadenceMetadata } from "./cadence";
+import { sourceAvailabilityChecks } from "../political-record/monitor-sources";
 import forecast from "../../data/forecast.json";
 import parties from "../../data/parties.json";
 import {
@@ -7,6 +8,7 @@ import {
   fingerprint,
   POLLS_CLOSE,
   validSeats,
+  formationEnabled,
 } from "./core";
 import type {
   ElectionLifecycleSnapshot,
@@ -202,10 +204,10 @@ export function publicPolitics(
     });
     return { id, person, decisions };
   });
-  const activeProposalId = mandate?.person
+  let activeProposalId = mandate?.person
     ? fingerprint({ person: mandate.person })
     : null;
-  const decisions =
+  let decisions =
     proposals.find((p) => p.id === activeProposalId)?.decisions ??
     parties.parties.map((p) => ({
       partyId: p.id,
@@ -268,7 +270,64 @@ export function publicPolitics(
     )
   )
     clock = null;
-  const formed = visible.some((e) => e.type === "government_formed");
+  const transitionTypes = new Set([
+    "mandate",
+    "government_formed",
+    "mandate_returned",
+    "mandate_failed",
+    "government_ended",
+    "election_called",
+  ]);
+  const transitionLog = events
+    .filter(
+      (e) =>
+        e.election === ELECTION &&
+        ["confirmed", "disputed"].includes(e.status) &&
+        !superseded.has(e.id) &&
+        transitionTypes.has(e.type) &&
+        (!mandate ||
+          !["mandate_returned", "mandate_failed"].includes(e.type) ||
+          (e.person === mandate.person &&
+            Date.parse(e.effectiveAt) >= Date.parse(mandate.effectiveAt))) &&
+        Date.parse(e.effectiveAt) <= Date.parse(now),
+    )
+    .sort((a, b) => Date.parse(a.effectiveAt) - Date.parse(b.effectiveAt));
+  const latestTransition = transitionLog.at(-1);
+  const qualifiedTransition =
+    latestTransition && visible.some((e) => e.id === latestTransition.id)
+      ? latestTransition
+      : null;
+  const formationState: NonNullable<Politics["formationState"]> =
+    latestTransition && !qualifiedTransition
+      ? "unknown"
+      : qualifiedTransition?.type === "government_formed"
+        ? "governing"
+        : qualifiedTransition?.type === "government_ended"
+          ? "government_ended"
+          : qualifiedTransition?.type === "election_called"
+            ? "new_election"
+            : qualifiedTransition &&
+                ["mandate_returned", "mandate_failed"].includes(
+                  qualifiedTransition.type,
+                )
+              ? "attempt_ended"
+              : mandate
+                ? "forming"
+                : "awaiting_assignment";
+  const formed = formationState === "governing";
+  if (
+    ["unknown", "attempt_ended", "government_ended", "new_election"].includes(
+      formationState,
+    )
+  ) {
+    clock = null;
+    activeProposalId = null;
+    decisions = parties.parties.map((p) => ({
+      partyId: p.id,
+      decision: "undecided" as const,
+      sourceEventIds: [],
+    }));
+  }
   if (formed) clock = null;
   const withheldCount =
     events.filter(
@@ -277,6 +336,7 @@ export function publicPolitics(
         !superseded.has(e.id),
     ).length - visible.length;
   return {
+    formationState,
     activeProposalId,
     proposals,
     activeStages: [...new Set(visible.map((e) => e.type))],
@@ -284,13 +344,16 @@ export function publicPolitics(
     decisions,
     clock,
     withheldCount: Math.max(0, withheldCount),
-    status: formed
-      ? "formed"
-      : visible.length
-        ? "active"
-        : withheldCount
-          ? "source_unavailable"
-          : "waiting",
+    status:
+      formationState === "unknown"
+        ? "source_unavailable"
+        : formed
+          ? "formed"
+          : visible.length
+            ? "active"
+            : withheldCount
+              ? "source_unavailable"
+              : "waiting",
   };
 }
 export function resolveLifecycle(
@@ -425,6 +488,7 @@ export function resolveLifecycle(
               )),
         ),
     ),
+    sourceChecks: sourceAvailabilityChecks(ledger, now, formationEnabled()),
     selection: {
       mode: "current",
       seatRevision: seatContext.revision,

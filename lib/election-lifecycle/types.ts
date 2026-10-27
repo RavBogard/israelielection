@@ -118,7 +118,11 @@ export type EventType =
   | "agreement"
   | "confidence_commitment"
   | "confidence_vote"
-  | "government_formed";
+  | "government_formed"
+  | "mandate_returned"
+  | "mandate_failed"
+  | "government_ended"
+  | "election_called";
 export type PartyDecision =
   "cabinet" | "support" | "abstain" | "oppose" | "undecided";
 export type PoliticalEvent = {
@@ -158,6 +162,14 @@ export type ProposalDecision = {
   sourceEventIds: string[];
 };
 export type Politics = {
+  formationState?:
+    | "awaiting_assignment"
+    | "forming"
+    | "attempt_ended"
+    | "governing"
+    | "government_ended"
+    | "new_election"
+    | "unknown";
   activeProposalId: string | null;
   proposals: { id: string; person: string; decisions: ProposalDecision[] }[];
   activeStages: EventType[];
@@ -179,6 +191,8 @@ export type Alternative = {
   sourceRefs: SourceRef[];
 };
 export type ElectionLifecycleSnapshot = {
+  /** Redacted server-computed health from the full ledger, including withheld current references. */
+  sourceChecks?: import("../political-record/monitor-types").MonitorCheck[];
   cadence?: CadenceMetadata;
   selection: {
     mode: "current" | "pinned";
@@ -211,7 +225,7 @@ export type SeatContextResult =
       reason: "pinned_unavailable" | "source_unavailable";
       revision: string;
     };
-export type LifecycleSelection = { revision?: string };
+export type LifecycleSelection = { revision?: string; electionId?: string };
 /** Internal only; never serialize this ledger as the current public politics payload. */
 export type LifecycleLedger = {
   briefings?: {
@@ -221,6 +235,7 @@ export type LifecycleLedger = {
     eventIds: string[];
   }[];
   extractionCache: Record<string, string>;
+  extractionPending?: string[];
   seatSnapshots: SharedSeatContext[];
   events: PoliticalEvent[];
   health: SourceHealth[];

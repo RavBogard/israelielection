@@ -1,7 +1,8 @@
 import { createHash } from "node:crypto";
-export const ELECTION = "2026-10-27";
-export const POLLS_CLOSE = "2026-10-27T20:00:00Z";
-export const ELECTION_END = "2026-11-03T00:00:00Z";
+import { currentElection } from "../political-record/registry";
+export const ELECTION = currentElection().electionDay;
+export const POLLS_CLOSE = currentElection().pollsClose;
+export const ELECTION_END = currentElection().modelArchiveAt;
 function canonical(v: unknown): unknown {
   return Array.isArray(v)
     ? v.map(canonical)

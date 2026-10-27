@@ -81,8 +81,7 @@ export default async function Page() {
                   <Sentences b={latest} topics />
                 </div>
                 <p className="fig-src">
-                  Written by an AI model ({latest.model}) from the day&apos;s headlines and published without editing. Each sentence links the
-                  reports it draws on; sentences that could not be matched to a source were removed automatically.
+                  {latest.evidenceVersion===2?`Written by ${latest.model} from captured article bodies, with independent claim review. Source access or verification failures prevent publication.`:`Legacy briefing written by ${latest.model} from headlines and summaries. Its earlier word-overlap check did not verify full article support.`}
                 </p>
                 {briefings.length > 1 && (
                   <details className="nw-archive">

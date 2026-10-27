@@ -3,8 +3,9 @@ import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
+import EditionDescription from "@/components/EditionDescription";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { resultsConfig } from "@/lib/results-live";
@@ -72,7 +73,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
           <div className="row">
             <div className="about">
               <Logo />
-              <p>{DESCRIPTION}</p>
+              <EditionDescription legacy={DESCRIPTION}/>
               <p>
                 A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>.
               </p>
@@ -103,7 +104,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
         </footer>
       </SeatContextProvider></body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
-      {process.env.VERCEL_ENV === "production" && <GoogleAnalytics gaId={GA_ID} />}
+      {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}
     </html>
   );
 }

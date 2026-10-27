@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "checkedAt": "2026-10-27T01:13:08.235Z",
+  "syntheticSubscribers": 9,
+  "privateTables": [
+    {
+      "name": "subscribers",
+      "rows": 9,
+      "hash": "045baa0d33255d9829e6aa721f1226291c4a27b130dcd688c45643941c068731"
+    },
+    {
+      "name": "subscription_tokens",
+      "rows": 41,
+      "hash": "e1eaf154ae44c4aea5cb2e27ddb625faa7b8c8ec11a4a84bca64b9e2c6a895c3"
+    },
+    {
+      "name": "deliveries",
+      "rows": 16,
+      "hash": "b5bb5b04c1f2ef4ded9187e7ef92b256895bb996921cd243346f34a9a80f66c2"
+    },
+    {
+      "name": "publication_fanout",
+      "rows": 7,
+      "hash": "6ff2d78c8f746814b331b16162c7dd58ca0584a459f59b7bc4de4b0a9185ae14"
+    },
+    {
+      "name": "webhook_receipts",
+      "rows": 2,
+      "hash": "275ad189d2833d86bb16085c04ebae2ea4f9d8526ad77705f5a258d9b329b615"
+    }
+  ],
+  "exactPrivateEqualityBeforeReplay": true,
+  "privateBackupObjectAuthenticated": true,
+  "objectsCopied": 6,
+  "recoveredWithoutOriginalKeys": true,
+  "anonymousObjectAccessDenied": true,
+  "corruptHashRejected": true,
+  "replay": {
+    "duplicateSends": 0,
+    "correctionsSuppressed": 3,
+    "unsubscribeIdempotent": true,
+    "consumedPreferencesDenied": true,
+    "webhookDeduplicated": true,
+    "states": [
+      {
+        "consent_state": "confirmed",
+        "suppression_reason": null,
+        "n": 5
+      },
+      {
+        "consent_state": "pending",
+        "suppression_reason": null,
+        "n": 1
+      },
+      {
+        "consent_state": "suppressed",
+        "suppression_reason": "bounce",
+        "n": 1
+      },
+      {
+        "consent_state": "suppressed",
+        "suppression_reason": "complaint",
+        "n": 1
+      },
+      {
+        "consent_state": "suppressed",
+        "suppression_reason": "unsubscribe",
+        "n": 1
+      }
+    ]
+  },
+  "syntheticFakeSends": 4,
+  "realSends": 0,
+  "providerCalls": 0,
+  "runtimeConnections": 0,
+  "productionWrites": 0,
+  "flagsChanged": false,
+  "schedulesChanged": false,
+  "providerPitr": false,
+  "independentAccountBackup": false,
+  "keyMaterialDisasterRecovery": false
+}

@@ -3,24 +3,92 @@ import createMDX from "@next/mdx";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/{,he/,ar/,fa/,de/,fr/,zh/}timeline": ["./data/timeline.json"],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}party-history": ["./data/party-history.json"],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}corrections": ["./data/corrections.json"],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}glossary": ["./data/glossary.json"],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}{start,match}": [
+      "./data/quiz.json",
+      "./data/journeys.json",
+      "./data/voting-rights.json",
+    ],
+    // The localized reference renderer verifies reviewed chart labels against
+    // the original JSON at request time, including when no English MDX runs.
+    "/{,he/,ar/,fa/,de/,fr/,zh/}{issues,communities,how-it-works}/**": [
+      "./data/charts/*.json",
+    ],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}american-lens": ["./data/charts/*.json"],
+    "/api/reference/worker": [
+      "./data/timeline.json",
+      "./data/party-history.json",
+      "./data/corrections.json",
+      "./data/glossary.json",
+      "./data/quiz.json",
+      "./data/journeys.json",
+      "./data/voting-rights.json",
+      "./content/**/*.mdx",
+      "./content/*.mdx",
+      "./data/charts/*.json",
+    ],
+  },
   pageExtensions: ["ts", "tsx", "mdx"],
   // Two root layouts (app/(en) and app/(he)/he), so unmatched URLs render app/global-not-found.tsx.
   experimental: { globalNotFound: true },
+  async headers() {
+    return [
+      {
+        source: "/:tool(match|corrections)",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
+      {
+        source: "/:lang(he|ar|fa|de|fr|zh)/:tool(match|corrections)",
+        headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
+      },
+      {
+        source: "/subscriptions/:path*",
+        headers: [
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+      {
+        source: "/:lang(he|ar|fa|de|fr|zh)/subscriptions/:path*",
+        headers: [
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     // The Coalition Builder has its own page again; old shared links keep their ?poll=&with= query.
     // The Palestinian-state issue page took its title's address (ruling 108).
     return [
-      { source: "/coalition", destination: "/coalition-builder", permanent: true },
-      { source: "/issues/not-on-ballot", destination: "/issues/palestinian-state", permanent: true },
+      {
+        source: "/coalition",
+        destination: "/coalition-builder",
+        permanent: true,
+      },
+      {
+        source: "/issues/not-on-ballot",
+        destination: "/issues/palestinian-state",
+        permanent: true,
+      },
       // Teaching resources were dropped (Daniel, 2026-10-06); old links land on the home page.
       { source: "/teach", destination: "/", permanent: false },
       { source: "/teach/:path*", destination: "/", permanent: false },
-      // The changes log was cut (Daniel, 2026-10-06); dated developments are in the briefings.
-      { source: "/changes", destination: "/news", permanent: true },
     ];
   },
 };
 
 // Reference pages are MDX in content/; their charts and party tables live in data/ (see lib/articles.ts).
 // Glossary terms link to /glossary on first use (lib/remark-glossary.mjs; a string so Turbopack can load it).
-export default createMDX({ options: { remarkPlugins: [path.join(process.cwd(), "lib/remark-glossary.mjs"), path.join(process.cwd(), "lib/remark-headings.mjs")] } })(nextConfig);
+export default createMDX({
+  options: {
+    remarkPlugins: [
+      path.join(process.cwd(), "lib/remark-glossary.mjs"),
+      path.join(process.cwd(), "lib/remark-headings.mjs"),
+    ],
+  },
+})(nextConfig);

@@ -10,7 +10,7 @@ describe("visitor navigation catalog",()=>{
   const pages=readdirSync(EN,{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(join(EN,d.name,"page.tsx"))).map(d=>`/${d.name}`);
   expect(new Set(NAV.map(n=>n.href))).toEqual(new Set(pages));expect(NAV).toHaveLength(pages.length);
   expect(NAV_GROUPS.map(g=>g.label)).toEqual(["Polls and news","Parties","Voters and places","How it works"]);
-  expect(NAV_UTILITIES.map(n=>n.href)).toEqual(["/start","/search","/resources","/about","/corrections"]);
+  expect(NAV_UTILITIES.map(n=>n.href)).toEqual(["/subscriptions","/start","/search","/resources","/about","/corrections"]);
   expect(NAV_TOOLS.map(n=>n.href)).toEqual(["/polls","/parties","/coalition-builder","/vote-map","/news"]);
   for(const n of NAV){expect(n.label.length).toBeGreaterThan(2);expect(n.description.length).toBeGreaterThan(20);expect(n.description.length).toBeLessThan(70);}
   for(const g of NAV_GROUPS)expect(g.label).not.toContain("&");
@@ -28,7 +28,7 @@ describe("visitor navigation catalog",()=>{
  it("keeps the masthead lean: Search and About in the bar, every other page one menu away, nothing listed twice",()=>{
   expect(NAV_BAR).toEqual(["/search","/about"]);
   const menus=NAV_GROUPS.flatMap(g=>g.items.map(n=>n.href)),more=NAV_UTILITIES.filter(n=>!NAV_BAR.includes(n.href)).map(n=>n.href);
-  expect(more).toEqual(["/start","/resources","/corrections"]);
+  expect(more).toEqual(["/subscriptions","/start","/resources","/corrections"]);
   // Desktop: menus, the bar and each panel's foot. Phone: menus, then every utility. Both reach every page, each once.
   for(const reach of [[...menus,...NAV_BAR,...more],[...menus,...NAV_UTILITIES.map(n=>n.href)]]){expect(new Set(reach).size).toBe(reach.length);expect(new Set(reach)).toEqual(new Set(NAV.map(n=>n.href)));}
   expect(menus.filter(h=>h==="/polls")).toHaveLength(1);

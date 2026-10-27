@@ -74,7 +74,12 @@ export function configuredCycleStore(prefix?: string) {
     ? new RedisCycleStore(new RedisLiveStore(url, token), prefix)
     : null;
 }
-export async function enqueueSignedPayload(payload: Record<string, unknown>) {
+export async function enqueueSignedPayload(
+  payload: Record<string, unknown>,
+  delaySeconds = 0,
+) {
+  if (!Number.isInteger(delaySeconds) || delaySeconds < 0 || delaySeconds > 600)
+    throw new Error("queue_delay_invalid");
   const destination = process.env.ELECTION_LIFECYCLE_WORKER_URL,
     token = process.env.QSTASH_TOKEN;
   if (!destination || !token) throw new Error("cycle_queue_unconfigured");
@@ -96,6 +101,7 @@ export async function enqueueSignedPayload(payload: Record<string, unknown>) {
           }
         : {}),
       "Upstash-Retries": "3",
+      ...(delaySeconds ? { "Upstash-Delay": `${delaySeconds}s` } : {}),
       "Upstash-Deduplication-Id": createHash("sha256")
         .update(destination + body)
         .digest("hex"),
