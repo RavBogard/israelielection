@@ -22,3 +22,6 @@
   .xt-table th, .xt-table td { padding: 5px 4px; }
   .xt-table thead .num { min-width: 4.2em; }
 }
+.xt-table .xt-now-h, .xt-table .xt-now { border-inline-start: 1px dashed var(--line-2); }
+.xt-table .xt-now .now-chip { margin-inline-start: 0; }
+.xt-table thead .xt-now-h { min-width: 0; }

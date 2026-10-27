@@ -12,6 +12,8 @@ import {
   probability,
   type ForecastProps,
 } from "./presentation";
+import NowSeats, { NowSeatsKey } from "../NowSeats";
+import { NOW_SEATS } from "@/lib/i18n/now-seats";
 
 const colors: Record<string, string> = {
   net: "var(--b-net)",
@@ -102,11 +104,14 @@ export function ForecastDisplay({
     <li key={row.id} data-threshold-id={row.id}>
       <div className="lf-threshold-head">
         <strong lang={names[row.id]?.lang}>{party(row.id)}</strong>
-        <b dir="ltr">
-          {official
-            ? (context.pointSeats[row.id] ?? 0)
-            : probability(row.passProbability)}
-        </b>
+        <span className="lf-fig">
+          <b dir="ltr">
+            {official
+              ? (context.pointSeats[row.id] ?? 0)
+              : probability(row.passProbability)}
+          </b>
+          {official && <NowSeats id={row.id} lang={lang} />}
+        </span>
       </div>
       {official ? (
         <p className="lf-note">
@@ -162,7 +167,10 @@ export function ForecastDisplay({
                 <li key={id}>
                   <div>
                     <span>{party(id)}</span>
-                    <b dir="ltr">{n}</b>
+                    <span className="lf-fig">
+                      <b dir="ltr">{n}</b>
+                      <NowSeats id={id} lang={lang} />
+                    </span>
                   </div>
                   <small>{d.official}</small>
                 </li>
@@ -206,6 +214,7 @@ export function ForecastDisplay({
                     <th>{t.seats}</th>
                     <th>{t.interval}</th>
                     <th>{t.largest}</th>
+                    <th>{NOW_SEATS[lang].col}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -221,10 +230,14 @@ export function ForecastDisplay({
                               ?.probability ?? 0,
                           )}
                         </td>
+                        <td className="lf-now">
+                          <NowSeats id={row.id} lang={lang} bare />
+                        </td>
                       </tr>
                     ))}
                 </tbody>
               </table>
+              <NowSeatsKey lang={lang} />
             </details>
           )}
         </section>
