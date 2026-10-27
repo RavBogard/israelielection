@@ -1,0 +1,39 @@
+name: Live refresh after deploy
+
+# Election night: every successful production deploy (new exit poll, model change) reruns the live forecast and
+# republishes the shared seat context at once, instead of waiting for the next 15-minute QStash slot.
+# Unchanged inputs are a no-op (source_unchanged). Remove after the election window.
+on:
+  deployment_status:
+
+permissions: {}
+
+concurrency:
+  group: live-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Rerun the live forecast
+        env:
+          QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
+        run: |
+          curl -sf -o /dev/null -w "forecast publish %{http_code}\n" -X POST \
+            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelielection.org/api/live-forecast/worker" \
+            -H "Authorization: Bearer $QSTASH_TOKEN" -H "Content-Type: application/json" -d '{}'
+          sleep 40
+      - name: Republish the shared seat context
+        env:
+          QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
+        run: |
+          curl -sf -o /dev/null -w "lifecycle publish %{http_code}\n" -X POST \
+            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelielection.org/api/election-lifecycle/worker" \
+            -H "Authorization: Bearer $QSTASH_TOKEN" -H "Content-Type: application/json" -d '{"mode":"election"}'
+          sleep 40
+      - name: Report
+        run: |
+          curl -s https://www.israelielection.org/api/live-forecast | jq -r '"forecast \(.generatedAt) \(.changeReason) " + ([.blocSeats[] | "\(.id) \(.seats.median)"] | join(" "))'
