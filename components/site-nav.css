@@ -115,3 +115,16 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 @media(max-width:420px) { .site-foot .cols { gap: 24px 16px; }.site-foot .cols a { font-size: 14px; } }
 
 @media(max-width:360px) { .masthead .brand { gap: 8px; }.masthead .brand .mark { width: 26px; }.masthead .brand .word { font-size: 20px; } }
+
+/* The exit-poll bloc line under the masthead: three colour-coded groups, spaced apart rather than separated by marks. */
+.exit-line { border-top: 1px solid var(--line); font-size: 13.5px; line-height: 1.4; }
+.exit-line .row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; padding-block: 7px; color: var(--ink-2); text-decoration: none; min-height: 32px; }
+.exit-line .el-lead { font-weight: 600; color: var(--ink); }
+.exit-line ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 18px; min-width: 0; }
+.exit-line li { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.exit-line .sw { width: 10px; height: 10px; flex: none; }
+.exit-line li { white-space: nowrap; }
+.exit-line b { font: 700 16px var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.exit-line a.row:hover .el-lead { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 420px) { .exit-line { font-size: 12.5px; } .exit-line .row, .exit-line ul { gap: 2px 12px; } }
+@media print { .exit-line { display: none; } }

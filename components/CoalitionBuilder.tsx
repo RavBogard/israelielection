@@ -19,7 +19,9 @@ import { supportFill } from "./coalition/support-fill";
 import { En, Loc, rich } from "./coalition/Loc";
 import PageHead from "./PageHead";
 import SeatBar from "./SeatBar";
-import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules } from "@/lib/data";
+import { israelAndLocal, useReaderZone } from "@/lib/local-time";
+import { EXIT_LINE } from "@/lib/i18n/exit-line";
+import { averagePoll, blocs, exitPolls, mainPolls, parties, pledgeRules, pollsData } from "@/lib/data";
 import { forecast, FORECAST_ID, forecastPoll } from "@/lib/forecast";
 import { MAJORITY, KNESSET, pledgeConflicts, tally, type TallyText, type Warning, type WarningText } from "@/lib/coalition";
 import type { UnstatedMap } from "@/lib/coalition-governing";
@@ -237,6 +239,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const choices = useMemo(() => pickList(results, context), [results, context]);
   const choicesRef = useRef(choices);
   useEffect(() => { choicesRef.current = choices; }, [choices]);
+  const zone = useReaderZone();
   const [pollId, setPollId] = useState("current");
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [roles, setRoles] = useState<RoleOverrides>({});
@@ -382,6 +385,8 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const outside = cardsFor(poll).filter((p) => !sel.has(p.id) && (p.coalitionCard !== "out" || (poll.id==="current"||poll.id===RESULTS_ID)&&(poll.results[p.id]?.seats??0)>0) && !seatLabel(p, poll).na && !seatLabel(p, poll).below);
   const keyColor = cabSegs[0]?.color ?? "var(--ink)";
 
+  /** An exit poll in the picker: channel, Israel time and the reader's own; Channel 14 / i24NEWS marked as set apart. */
+  const exitOption = (p: Poll) => `${pollLabel(p, lang)}, ${israelAndLocal(p.broadcastAt ?? "", lang, zone) ?? mediumDate(p.published, lang)}${pollsData.config.withoutVariant.pollsters.includes(p.pollster) ? ` (${EXIT_LINE[lang].setApart})` : ""}`;
   if(!context&&pollId==="current")return <SeatBasis context={null} lang={lang} pinned={pinned}/>;
   return (
     <div className="cb">
@@ -391,7 +396,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
           <select value={pollId} onChange={(e) => choosePoll(e.target.value)}>
             {choices.map((p) => (
               <option key={p.id} value={p.id}>
-                {p.id === "current" && context ? C[context.basis] : p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : p.id === FORECAST_ID ? T.pickForecast(mediumDate(p.published, lang)) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
+                {p.id === "current" && context ? C[context.basis] : p.id === AVERAGE_ID ? T.pickAverage(mainPolls.length) : p.id === FORECAST_ID ? T.pickForecast(mediumDate(p.published, lang)) : p.kind === "exit" ? exitOption(p) : `${pollLabel(p, lang)}, ${p.id === RESULTS_ID ? T.pickCount(p.resultState?.freshness === "stale") : mediumDate(p.published, lang)}`}
               </option>
             ))}
           </select>

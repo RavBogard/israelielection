@@ -6,6 +6,7 @@ import Link from "next/link";
 import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
 import EditionDescription from "@/components/EditionDescription";
+import ExitBlocLine from "./ExitBlocLine";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { resultsConfig } from "@/lib/results-live";
@@ -64,6 +65,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
             <Countdown />
             <SiteNav facts={FACTS} meter={METER} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} />
           </div>
+          <ExitBlocLine />
           <ResultsStrip pollsClose={pollsClose} />
         </header>
         <main id="main" className="flex-1">
