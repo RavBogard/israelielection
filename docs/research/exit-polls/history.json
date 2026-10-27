@@ -1,0 +1,96 @@
+{
+  "about": "Israeli TV exit polls against final results, 2013-2022, per broadcaster. Rows copied on 2026-10-27 from the English Wikipedia 'Opinion polling for the <year> Israeli legislative election' pages (exit-poll rows) and the election results pages. Wikipedia prints one row per broadcaster and does not label it initial (22:00) or updated (around midnight); treat every row as the version Wikipedia recorded, usually the first broadcast. 'bloc' lists the Netanyahu-aligned bloc as each election's table defined it (the Gov./R column). Seats as listed; a row whose listed seats do not sum to 120 is kept as listed and flagged in 'note'. Channel 14 (Channel 20 before 2022) published a party-level exit poll only in 2022. i24NEWS has no party-level exit poll in any table.",
+  "mainChannels": ["Channel 1", "Channel 2", "Channel 10", "Kan 11", "Channel 12", "Channel 13"],
+  "checkChannels": ["Channel 14"],
+  "elections": [
+    {
+      "id": "2013",
+      "date": "2013-01-22",
+      "parties": ["likud_yb", "yesh_atid", "labor", "jewish_home", "shas", "utj", "hatnua", "meretz", "raam_taal", "hadash", "balad", "kadima", "otzma"],
+      "bloc": ["likud_yb", "jewish_home", "shas", "utj", "otzma"],
+      "final": [31, 19, 15, 12, 11, 7, 6, 6, 4, 4, 3, 2, 0],
+      "exits": [
+        { "channel": "Channel 1", "seats": [31, 19, 17, 12, 11, 6, 7, 7, 3, 3, 2, 0, 2] },
+        { "channel": "Channel 2", "seats": [31, 19, 17, 12, 12, 6, 7, 7, 3, 4, 2, 0, 0] },
+        { "channel": "Channel 10", "seats": [31, 18, 17, 12, 13, 6, 6, 6, 4, 5, 2, 0, 0] }
+      ],
+      "note": "Kadima shown out by all three, passed with 2; Channel 1 showed Otzma LeYisrael passing, it failed."
+    },
+    {
+      "id": "2015",
+      "date": "2015-03-17",
+      "parties": ["likud", "yb", "yesh_atid", "zionist_union", "jewish_home", "shas", "utj", "meretz", "joint_list", "yachad", "kulanu"],
+      "bloc": ["likud", "yb", "jewish_home", "shas", "utj", "yachad"],
+      "final": [30, 6, 11, 24, 8, 7, 6, 5, 13, 0, 10],
+      "exits": [
+        { "channel": "Channel 1", "seats": [27, 5, 11, 26, 8, 7, 6, 5, 12, 0, 9], "note": "As listed on Wikipedia the row sums to 116" },
+        { "channel": "Channel 2", "seats": [28, 5, 11, 27, 8, 7, 6, 5, 13, 0, 10] },
+        { "channel": "Channel 10", "seats": [27, 5, 11, 27, 8, 7, 7, 5, 13, 0, 10] }
+      ],
+      "note": "All three understated Likud by 2-3 and overstated the Zionist Union by 2-3; the updated versions moved toward the result during the night."
+    },
+    {
+      "id": "2019a",
+      "date": "2019-04-09",
+      "parties": ["likud", "labor", "bw", "kulanu", "raam_balad", "shas", "utj", "urwp", "yb", "meretz", "hadash_taal", "new_right", "zehut"],
+      "bloc": ["likud", "kulanu", "shas", "utj", "urwp", "yb", "new_right", "zehut"],
+      "final": [35, 6, 35, 4, 4, 8, 8, 5, 5, 4, 6, 0, 0],
+      "exits": [
+        { "channel": "Channel 13", "seats": [36, 7, 36, 4, 0, 7, 7, 4, 4, 4, 7, 4, 0] },
+        { "channel": "Kan 11", "seats": [36, 8, 37, 5, 0, 7, 7, 5, 4, 5, 6, 0, 0] },
+        { "channel": "Channel 12", "seats": [33, 6, 37, 4, 6, 6, 7, 5, 5, 5, 6, 0, 0] }
+      ],
+      "note": "Channel 12 had Blue and White four ahead and the bloc at 60-60; Channel 13 showed New Right passing (it failed); Channel 13 and Kan showed Ra'am-Balad out (it passed)."
+    },
+    {
+      "id": "2019b",
+      "date": "2019-09-17",
+      "parties": ["bw", "likud", "joint_list", "shas", "yb", "utj", "yamina", "labor_gesher", "democratic_union", "otzma"],
+      "bloc": ["likud", "shas", "utj", "yamina"],
+      "final": [33, 32, 13, 9, 8, 7, 7, 6, 5, 0],
+      "exits": [],
+      "verified": false,
+      "note": "The English Wikipedia polling page carries no exit-poll rows for this election and the Hebrew page could not be read in time; left out of the fit rather than filled from memory."
+    },
+    {
+      "id": "2020",
+      "date": "2020-03-02",
+      "parties": ["bw", "likud", "joint_list", "lgm", "shas", "yb", "utj", "yamina"],
+      "bloc": ["likud", "shas", "utj", "yamina"],
+      "final": [33, 36, 15, 7, 9, 7, 7, 6],
+      "exits": [
+        { "channel": "Kan 11", "seats": [33, 36, 15, 6, 9, 6, 8, 7] },
+        { "channel": "Channel 12", "seats": [33, 37, 14, 7, 9, 6, 7, 7] },
+        { "channel": "Channel 13", "seats": [32, 37, 14, 6, 9, 8, 8, 6] }
+      ],
+      "note": "All three gave the bloc 60; it finished 58."
+    },
+    {
+      "id": "2021",
+      "date": "2021-03-23",
+      "parties": ["likud", "yesh_atid", "bw", "joint_list", "shas", "utj", "yb", "meretz", "raam", "yamina", "new_hope", "labor", "rz"],
+      "bloc": ["likud", "shas", "utj", "rz"],
+      "final": [30, 17, 8, 6, 9, 7, 7, 6, 4, 7, 6, 7, 6],
+      "exits": [
+        { "channel": "Channel 13", "seats": [32, 16, 8, 8, 8, 7, 8, 7, 0, 7, 5, 7, 7] },
+        { "channel": "Channel 12", "seats": [30, 18, 7, 9, 9, 6, 7, 7, 0, 7, 6, 8, 7], "note": "As listed on Wikipedia the row sums to 121" },
+        { "channel": "Kan 11", "seats": [30, 18, 8, 8, 9, 7, 7, 6, 0, 7, 6, 7, 7] }
+      ],
+      "note": "All three showed Ra'am out; it passed with 4 (the updated versions after midnight brought it in)."
+    },
+    {
+      "id": "2022",
+      "date": "2022-11-01",
+      "parties": ["likud", "yesh_atid", "nu", "shas", "jewish_home", "labor", "utj", "yb", "rz", "hadash_taal", "meretz", "raam", "balad"],
+      "bloc": ["likud", "shas", "utj", "rz"],
+      "final": [32, 24, 12, 11, 0, 4, 7, 6, 14, 5, 0, 5, 0],
+      "exits": [
+        { "channel": "Kan 11", "seats": [30, 22, 13, 10, 0, 5, 7, 5, 15, 4, 4, 5, 0] },
+        { "channel": "Channel 12", "seats": [30, 24, 11, 10, 0, 6, 7, 4, 14, 4, 5, 5, 0] },
+        { "channel": "Channel 13", "seats": [31, 24, 12, 10, 0, 5, 7, 4, 14, 4, 4, 5, 0] },
+        { "channel": "Channel 14", "seats": [31, 23, 11, 10, 0, 6, 8, 6, 12, 4, 5, 4, 0], "check": true }
+      ],
+      "note": "All four showed Meretz passing; it failed. The bloc finished 64 against 62 on the three main channels and 61 on Channel 14, whose Religious Zionism figure (12) was the furthest from the result (14)."
+    }
+  ]
+}

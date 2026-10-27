@@ -1,0 +1,38 @@
+{
+  "about": "Exit-poll likelihood for the live model, fitted to the record in docs/research/exit-polls/history.json (main channels averaged per party, Channel 14 left out as a check). 'field' is the averaged exit polls' Netanyahu-bloc seats, 'result' the final bloc, so result minus field is the exit polls' miss; the model's swing is the shrunk mean miss plus a Student-t with the record's own scale. 'partyMeanAbsSeats' is the averaged exit polls' mean absolute seat error per list. 'shrinkagePseudoElections' is the weight of a no-bias prior, in elections, applied to the mean miss.",
+  "sourceSha256": "b989b8054ee6bda526932c9037d80f305ec8e35a6435ab0c836e9be424141356",
+  "elections": [
+    {
+      "date": "2013-01-22",
+      "field": 61.67,
+      "result": 61
+    },
+    {
+      "date": "2015-03-17",
+      "field": 53.67,
+      "result": 57
+    },
+    {
+      "date": "2019-04-09",
+      "field": 63.33,
+      "result": 65
+    },
+    {
+      "date": "2020-03-02",
+      "field": 60,
+      "result": 58
+    },
+    {
+      "date": "2021-03-23",
+      "field": 53,
+      "result": 52
+    },
+    {
+      "date": "2022-11-01",
+      "field": 61.67,
+      "result": 64
+    }
+  ],
+  "partyMeanAbsSeats": 0.76,
+  "shrinkagePseudoElections": 4
+}

@@ -3,13 +3,43 @@ import { forecast } from "../../scripts/forecast/model.mjs";
 import frozen from "../../data/live-forecast-prior.json";
 const { pollFile, partyFile, results, calibration } = frozen.inputs;
 import scenarios from "../../data/coalition-scenarios.json";
+import exitCalibrationFile from "../../data/exit-poll-calibration.json";
 import type { Poll } from "../types";
 import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 
 export const MODEL_VERSION = "live-v3-joint-blocs";
 /** Bump on any change to model code: it enters the input revision, so the next cycle recomputes even when no
  * source changed. MODEL_VERSION stays, since stored snapshots are checked against the committed fallback's version. */
-export const MODEL_CODE_REVISION = "2026-10-27.1-grid-bloc-medians";
+export const MODEL_CODE_REVISION = "2026-10-27.2-exit-calibration";
+
+export type ExitCalibration = {
+  elections: { date: string; field: number; result: number }[];
+  partyMeanAbsSeats: number;
+  shrinkagePseudoElections: number;
+};
+/** The exit-poll likelihood, fitted to the record of TV exit polls against results (docs/research/exit-polls,
+ * derived by scripts/live-forecast/exit-history.mjs). The averaged main-channel exit polls missed the Netanyahu
+ * bloc by a mean of about +0.6 seats over six elections (three under, three over) with a spread of about two
+ * seats, so the lean is that mean shrunk toward zero by a no-bias prior worth `shrinkagePseudoElections`
+ * elections, and the swing's scale and degrees of freedom come from the same record through the campaign
+ * model's Student-t rule (resid × √(1 + 1/n), max(3, n − 1) df) with every election weighted equally. */
+export function exitLikelihood(cal: ExitCalibration = exitCalibrationFile) {
+  const misses = cal.elections.map((e) => e.result - e.field);
+  const n = misses.length;
+  if (!n || !Number.isFinite(cal.partyMeanAbsSeats) || cal.partyMeanAbsSeats <= 0)
+    throw new Error("Exit-poll calibration record is empty or malformed");
+  const meanMiss = misses.reduce((a, b) => a + b, 0) / n;
+  const lean = (meanMiss * n) / (n + Math.max(0, cal.shrinkagePseudoElections));
+  const resid = Math.sqrt(misses.reduce((s, x) => s + (x - meanMiss) ** 2, 0) / n);
+  return {
+    elections: cal.elections.map((e) => ({ ...e, shasError: 0 })),
+    n,
+    meanMiss,
+    lean,
+    resid,
+    partyMeanAbsSeats: cal.partyMeanAbsSeats,
+  };
+}
 const canonical = (v: unknown): unknown =>
   Array.isArray(v)
     ? v.map(canonical)
@@ -33,6 +63,7 @@ export const modelRevision = (exits: Poll[]) =>
     inputs: frozen.inputSha256,
     model: MODEL_VERSION,
     code: MODEL_CODE_REVISION,
+    exitCalibration: hash(exitCalibrationFile),
     scenarios: SCENARIO_VERSION,
     exits: exits
       .map((p) => ({
@@ -254,13 +285,21 @@ export function buildSnapshot({
   sources?: LiveSource[];
   runs?: number;
 }): LiveForecastSnapshot {
-  // Exit estimates retain the pre-election model's broad shared bloc and sector errors. No independent poll multiplication.
+  // Exit estimates: the publishers are averaged with shared correlated uncertainty (no independent poll
+  // multiplication); the bloc lean, swing scale and per-list error come from the exit-poll record, the sector
+  // noise from the campaign model with its mean shifts off. Channel 14 and i24NEWS stay out (sources.ts).
   const polls = exits.length
     ? exits.map((p) => ({ ...p, kind: undefined }))
     : pollFile.polls;
-  const liveCalibration = exits.length
+  const exitFit = exits.length ? exitLikelihood() : null;
+  const liveCalibration = exitFit
     ? {
         ...calibration,
+        elections: exitFit.elections,
+        perListError: {
+          about: "Averaged main-channel exit polls, 2013-2022: mean absolute seat error per list (docs/research/exit-polls/summary.json).",
+          meanAbsSeats: exitFit.partyMeanAbsSeats,
+        },
         sectorTurnout: {
           ...calibration.sectorTurnout,
           sectors: calibration.sectorTurnout.sectors.map((s) => ({
@@ -283,7 +322,9 @@ export function buildSnapshot({
       keepRuns: true,
       runs,
       seed: 20261027,
-      ...(exits.length ? { lean: 0, priors: false } : {}),
+      ...(exitFit
+        ? { lean: exitFit.lean, priors: false, leanHalfLife: Number.POSITIVE_INFINITY }
+        : {}),
     },
   });
   if (!out.seatRuns || !out.blocRuns)
@@ -326,7 +367,7 @@ export function buildSnapshot({
       limitations: [
         "Experimental conditional arithmetic, not probabilities that parties agree to govern.",
         "Threshold comparisons are conditional associations, not causal effects.",
-        "Exit-poll error has no fitted 2026 historical calibration; broad prior shared errors are retained.",
+        "Exit-poll bloc lean, swing scale and per-list error are fitted to six elections of TV exit polls (2013-2022, September 2019 unavailable); sector noise is still the campaign model's.",
         "Official count publication is blocked pending source semantics and verified reporting-coverage metadata and replay checks.",
         "Direct Channel13 timeline extraction is supported; complete structured N12/Kan ingestion remains unverified, with validated Wikipedia as fallback.",
         "Special envelopes remain separate from geographic turnout.",

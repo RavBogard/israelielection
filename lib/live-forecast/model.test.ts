@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { summarizeDraws, representativeJointDraw } from "./model";
+import { summarizeDraws, representativeJointDraw, buildSnapshot, exitLikelihood, modelRevision } from "./model";
 import {
   completeSeatParagraph,
   channel13Candidates,
@@ -320,4 +320,53 @@ it("computes bloc intervals from per-draw sums rather than summing independent p
       .filter((p) => ["likud", "shas"].includes(p.id))
       .reduce((n, p) => n + p.seats.hi, 0),
   ).toBe(120);
+});
+
+describe("exit-poll calibration", () => {
+  const record = {
+    elections: [
+      { date: "a", field: 60, result: 62 },
+      { date: "b", field: 60, result: 58 },
+      { date: "c", field: 60, result: 64 },
+      { date: "d", field: 60, result: 60 },
+    ],
+    partyMeanAbsSeats: 0.8,
+    shrinkagePseudoElections: 4,
+  };
+  it("shrinks the mean exit-poll miss toward zero and carries the record's spread", () => {
+    const fit = exitLikelihood(record);
+    expect(fit.n).toBe(4);
+    expect(fit.meanMiss).toBeCloseTo(1);
+    expect(fit.lean).toBeCloseTo(0.5);
+    expect(fit.resid).toBeCloseTo(Math.sqrt((1 + 9 + 9 + 1) / 4));
+    expect(fit.elections.every((e) => e.shasError === 0)).toBe(true);
+    expect(exitLikelihood({ ...record, shrinkagePseudoElections: 0 }).lean).toBeCloseTo(1);
+  });
+  it("refuses an empty or malformed record instead of silently falling back", () => {
+    expect(() => exitLikelihood({ ...record, elections: [] })).toThrow();
+    expect(() => exitLikelihood({ ...record, partyMeanAbsSeats: 0 })).toThrow();
+  });
+  it("the committed record is small, two-sided and fitted from six elections", () => {
+    const fit = exitLikelihood();
+    expect(fit.n).toBe(6);
+    expect(Math.abs(fit.lean)).toBeLessThan(1);
+    expect(fit.resid).toBeGreaterThan(1);
+    expect(fit.resid).toBeLessThan(3);
+    expect(fit.partyMeanAbsSeats).toBeGreaterThan(0.5);
+    expect(fit.partyMeanAbsSeats).toBeLessThan(1.2);
+  });
+  it("exit mode builds a 120-seat joint snapshot with the fitted likelihood and enters it in the revision", () => {
+    const exits = [
+      poll({ likud: { seats: 25 }, yashar: { seats: 22 }, byachad: { seats: 13 }, jl: { seats: 11 }, dem: { seats: 9 }, yb: { seats: 8 }, shas: { seats: 7 }, raam: { seats: 7 }, otzma: { seats: 6 }, rz: { seats: 6 }, utj: { seats: 6 }, res: { seats: 0 }, poi: { seats: 0 } }),
+    ];
+    const prior = { version: "v", sha256: "s", generatedAt: "2026-10-25", final: false };
+    const snap = buildSnapshot({ prior, revision: modelRevision(exits), now: "2026-10-27T21:30:00Z", exits, runs: 3000 });
+    expect(snap.mode).toBe("exit");
+    expect(Object.values(snap.representativePoint!.seats).reduce((a, b) => a + b, 0)).toBe(120);
+    expect(snap.diagnostics.limitations.some((l) => /fitted to six elections/.test(l))).toBe(true);
+    expect(snap.diagnostics.limitations.some((l) => /no fitted/.test(l))).toBe(false);
+    expect(snap.blocSeats!.find((b) => b.id === "net")!.seats.median).toBeGreaterThan(45);
+    expect(snap.blocSeats!.find((b) => b.id === "net")!.seats.median).toBeLessThan(55);
+    expect(modelRevision(exits)).not.toBe(modelRevision([]));
+  });
 });

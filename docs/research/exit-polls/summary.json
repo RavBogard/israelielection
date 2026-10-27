@@ -1,0 +1,326 @@
+{
+  "about": "Derived by scripts/live-forecast/exit-history.mjs from history.json; the field is the main channels averaged per party. Positive bloc error means the final result gave the Netanyahu-aligned bloc more seats than the exit polls did.",
+  "elections": [
+    {
+      "id": "2013",
+      "date": "2013-01-22",
+      "resultBloc": 61,
+      "fieldBloc": 61.67,
+      "fieldBlocError": -0.67,
+      "fieldPartyMeanAbsSeats": 0.77,
+      "channels": [
+        {
+          "channel": "Channel 1",
+          "check": false,
+          "exitBloc": 62,
+          "blocError": -1,
+          "partyMeanAbsSeats": 0.92,
+          "thresholdMisses": [
+            "kadima",
+            "otzma"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 2",
+          "check": false,
+          "exitBloc": 61,
+          "blocError": 0,
+          "partyMeanAbsSeats": 0.77,
+          "thresholdMisses": [
+            "kadima"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 10",
+          "check": false,
+          "exitBloc": 62,
+          "blocError": -1,
+          "partyMeanAbsSeats": 0.77,
+          "thresholdMisses": [
+            "kadima"
+          ],
+          "seatSum": 120
+        }
+      ]
+    },
+    {
+      "id": "2015",
+      "date": "2015-03-17",
+      "resultBloc": 57,
+      "fieldBloc": 53.67,
+      "fieldBlocError": 3.33,
+      "fieldPartyMeanAbsSeats": 0.67,
+      "channels": [
+        {
+          "channel": "Channel 1",
+          "check": false,
+          "exitBloc": 53,
+          "blocError": 4,
+          "partyMeanAbsSeats": 0.73,
+          "thresholdMisses": [],
+          "seatSum": 116
+        },
+        {
+          "channel": "Channel 2",
+          "check": false,
+          "exitBloc": 54,
+          "blocError": 3,
+          "partyMeanAbsSeats": 0.55,
+          "thresholdMisses": [],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 10",
+          "check": false,
+          "exitBloc": 54,
+          "blocError": 3,
+          "partyMeanAbsSeats": 0.73,
+          "thresholdMisses": [],
+          "seatSum": 120
+        }
+      ]
+    },
+    {
+      "id": "2019a",
+      "date": "2019-04-09",
+      "resultBloc": 65,
+      "fieldBloc": 63.33,
+      "fieldBlocError": 1.67,
+      "fieldPartyMeanAbsSeats": 0.82,
+      "channels": [
+        {
+          "channel": "Channel 13",
+          "check": false,
+          "exitBloc": 66,
+          "blocError": -1,
+          "partyMeanAbsSeats": 1.23,
+          "thresholdMisses": [
+            "raam_balad",
+            "new_right"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Kan 11",
+          "check": false,
+          "exitBloc": 64,
+          "blocError": 1,
+          "partyMeanAbsSeats": 1.08,
+          "thresholdMisses": [
+            "raam_balad"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 12",
+          "check": false,
+          "exitBloc": 60,
+          "blocError": 5,
+          "partyMeanAbsSeats": 0.77,
+          "thresholdMisses": [],
+          "seatSum": 120
+        }
+      ]
+    },
+    {
+      "id": "2020",
+      "date": "2020-03-02",
+      "resultBloc": 58,
+      "fieldBloc": 60,
+      "fieldBlocError": -2,
+      "fieldPartyMeanAbsSeats": 0.5,
+      "channels": [
+        {
+          "channel": "Kan 11",
+          "check": false,
+          "exitBloc": 60,
+          "blocError": -2,
+          "partyMeanAbsSeats": 0.5,
+          "thresholdMisses": [],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 12",
+          "check": false,
+          "exitBloc": 60,
+          "blocError": -2,
+          "partyMeanAbsSeats": 0.5,
+          "thresholdMisses": [],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 13",
+          "check": false,
+          "exitBloc": 60,
+          "blocError": -2,
+          "partyMeanAbsSeats": 0.75,
+          "thresholdMisses": [],
+          "seatSum": 120
+        }
+      ]
+    },
+    {
+      "id": "2021",
+      "date": "2021-03-23",
+      "resultBloc": 52,
+      "fieldBloc": 53,
+      "fieldBlocError": -1,
+      "fieldPartyMeanAbsSeats": 0.85,
+      "channels": [
+        {
+          "channel": "Channel 13",
+          "check": false,
+          "exitBloc": 54,
+          "blocError": -2,
+          "partyMeanAbsSeats": 1.08,
+          "thresholdMisses": [
+            "raam"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 12",
+          "check": false,
+          "exitBloc": 52,
+          "blocError": 0,
+          "partyMeanAbsSeats": 1,
+          "thresholdMisses": [
+            "raam"
+          ],
+          "seatSum": 121
+        },
+        {
+          "channel": "Kan 11",
+          "check": false,
+          "exitBloc": 53,
+          "blocError": -1,
+          "partyMeanAbsSeats": 0.62,
+          "thresholdMisses": [
+            "raam"
+          ],
+          "seatSum": 120
+        }
+      ]
+    },
+    {
+      "id": "2022",
+      "date": "2022-11-01",
+      "resultBloc": 64,
+      "fieldBloc": 61.67,
+      "fieldBlocError": 2.33,
+      "fieldPartyMeanAbsSeats": 0.92,
+      "channels": [
+        {
+          "channel": "Kan 11",
+          "check": false,
+          "exitBloc": 62,
+          "blocError": 2,
+          "partyMeanAbsSeats": 1.08,
+          "thresholdMisses": [
+            "meretz"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 12",
+          "check": false,
+          "exitBloc": 61,
+          "blocError": 3,
+          "partyMeanAbsSeats": 1.08,
+          "thresholdMisses": [
+            "meretz"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 13",
+          "check": false,
+          "exitBloc": 62,
+          "blocError": 2,
+          "partyMeanAbsSeats": 0.77,
+          "thresholdMisses": [
+            "meretz"
+          ],
+          "seatSum": 120
+        },
+        {
+          "channel": "Channel 14",
+          "check": true,
+          "exitBloc": 61,
+          "blocError": 3,
+          "partyMeanAbsSeats": 1.23,
+          "thresholdMisses": [
+            "meretz"
+          ],
+          "seatSum": 120
+        }
+      ]
+    }
+  ],
+  "field": {
+    "elections": 6,
+    "meanBlocError": 0.61,
+    "sdBlocError": 2.12,
+    "rmsBlocError": 2.03,
+    "underAndOver": {
+      "under": 3,
+      "over": 3,
+      "within": 0
+    },
+    "partyMeanAbsSeats": 0.76,
+    "electionsWithAThresholdMiss": 4
+  },
+  "byChannel": {
+    "Channel 1": {
+      "elections": 2,
+      "meanBlocError": 1.5,
+      "meanAbsBlocError": 2.5,
+      "partyMeanAbsSeats": 0.83,
+      "thresholdMisses": 2
+    },
+    "Channel 2": {
+      "elections": 2,
+      "meanBlocError": 1.5,
+      "meanAbsBlocError": 1.5,
+      "partyMeanAbsSeats": 0.66,
+      "thresholdMisses": 1
+    },
+    "Channel 10": {
+      "elections": 2,
+      "meanBlocError": 1,
+      "meanAbsBlocError": 2,
+      "partyMeanAbsSeats": 0.75,
+      "thresholdMisses": 1
+    },
+    "Channel 13": {
+      "elections": 4,
+      "meanBlocError": -0.75,
+      "meanAbsBlocError": 1.75,
+      "partyMeanAbsSeats": 0.96,
+      "thresholdMisses": 4
+    },
+    "Kan 11": {
+      "elections": 4,
+      "meanBlocError": 0,
+      "meanAbsBlocError": 1.5,
+      "partyMeanAbsSeats": 0.82,
+      "thresholdMisses": 3
+    },
+    "Channel 12": {
+      "elections": 4,
+      "meanBlocError": 1.5,
+      "meanAbsBlocError": 2.5,
+      "partyMeanAbsSeats": 0.84,
+      "thresholdMisses": 2
+    },
+    "Channel 14": {
+      "elections": 1,
+      "meanBlocError": 3,
+      "meanAbsBlocError": 3,
+      "partyMeanAbsSeats": 1.23,
+      "thresholdMisses": 1
+    }
+  }
+}
