@@ -35,6 +35,13 @@ async function main() {
     environment: process.env.VERCEL_ENV ?? "",
     mode: arg("--mode") ?? "",
     key: process.env.QSTASH_CURRENT_SIGNING_KEY ?? "",
+    recovery: arg("--recover-job")
+      ? {
+          jobId: arg("--recover-job")!,
+          operator: arg("--operator") ?? "",
+          reason: arg("--reason") ?? "",
+        }
+      : undefined,
     bypass:
       process.env.ELECTION_PREVIEW_PROTECTION_BYPASS ??
       process.env.VERCEL_AUTOMATION_BYPASS_SECRET,
@@ -67,7 +74,9 @@ async function main() {
       : "";
   if (
     !response.ok ||
-    !["stored", "review", "done", "idle", "waiting"].includes(status)
+    !["stored", "review", "done", "idle", "waiting", "recovered"].includes(
+      status,
+    )
   )
     process.exitCode = 1;
 }

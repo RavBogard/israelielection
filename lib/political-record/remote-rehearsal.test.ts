@@ -85,3 +85,38 @@ it("receipt allowlist excludes generated claims, tokens, provider text and URL-b
     revisions: 2,
   });
 });
+it("requires audited primary-only recovery and signs its exact body", () => {
+  const recovery = {
+    jobId: `producer:primary:${"a".repeat(64)}:en`,
+    operator: "Daniel",
+    reason:
+      "Typed CBS date and unit validator repaired; recover same blocked job",
+  };
+  const request = rehearsalRemoteRequest({
+    ...input,
+    mode: "platform_publish",
+    recovery,
+  });
+  expect(JSON.parse(request.body)).toEqual({
+    mode: "platform_publish",
+    recovery,
+  });
+  expect(
+    verifyQStash(
+      request.headers["Upstash-Signature"],
+      request.body,
+      input.subject,
+      [input.key],
+    ),
+  ).toBe(true);
+  expect(() => rehearsalRemoteRequest({ ...input, recovery })).toThrow(
+    "producer_recovery_audit_required",
+  );
+  expect(() =>
+    rehearsalRemoteRequest({
+      ...input,
+      mode: "platform_publish",
+      recovery: { ...recovery, reason: "" },
+    }),
+  ).toThrow();
+});

@@ -8,6 +8,7 @@ export function rehearsalRemoteRequest(
     mode: string;
     key: string;
     bypass?: string;
+    recovery?: { jobId: string; operator: string; reason: string };
   },
   now = Date.now(),
 ) {
@@ -43,7 +44,22 @@ export function rehearsalRemoteRequest(
     !input.key
   )
     throw Error("rehearsal_mode_or_key_invalid");
-  const body = JSON.stringify({ mode: input.mode }),
+  if (
+    input.recovery &&
+    (input.mode !== "platform_publish" ||
+      !/^producer:primary:[a-f0-9]{64}:(en|he|ar|fa|de|fr|zh)$/.test(
+        input.recovery.jobId,
+      ) ||
+      !input.recovery.operator.trim() ||
+      input.recovery.operator.length > 200 ||
+      !input.recovery.reason.trim() ||
+      input.recovery.reason.length > 2000)
+  )
+    throw Error("producer_recovery_audit_required");
+  const body = JSON.stringify({
+      mode: input.mode,
+      ...(input.recovery ? { recovery: input.recovery } : {}),
+    }),
     time = Math.floor(now / 1000);
   const header = Buffer.from(
     JSON.stringify({ alg: "HS256", typ: "JWT" }),

@@ -91,6 +91,24 @@ async function main() {
           ),
         });
       }
+      const jobs = await repository.producerJobs(100, true);
+      const failures = [];
+      for (const job of jobs) {
+        const ids = job.payload.failureCaptureIds;
+        if (!Array.isArray(ids)) continue;
+        for (const id of ids) {
+          if (typeof id !== "string") continue;
+          const capture = await repository.getCapture(id);
+          if (!capture) throw Error("failure_capture_missing");
+          failures.push({
+            jobId: job.recordId,
+            captureId: id,
+            evidence: JSON.parse(
+              new TextDecoder().decode(await archive.read(capture)),
+            ),
+          });
+        }
+      }
       const file = ".vercel/platform-primary-inspection.private.json";
       await writeFile(
         file,
@@ -100,7 +118,8 @@ async function main() {
             editions,
             reviews,
             reviewEvidence,
-            jobs: await repository.producerJobs(100, true),
+            jobs,
+            failures,
           },
           null,
           2,

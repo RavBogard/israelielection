@@ -404,7 +404,7 @@ it("primary producer checkpoints draft then actual separate review; no send or a
     stage === "draft"
       ? {
           subject: "Recorded observation",
-          text: "CBS published an index observation.",
+          text: "CBS recorded September 2026: index 105.3, monthly -0.5%, annual 1.6%, base 2024.",
         }
       : {
           supported: true,
@@ -601,4 +601,71 @@ it("default-off hook performs no database, provider or queue access", async () =
     status: "disabled",
   });
   vi.unstubAllEnvs();
+});
+it("archives rejected numeric candidate privately, checkpoints its receipt, and never reviews or publishes it", async () => {
+  const fact = (await repo.latest({ kind: "indicator_observation", limit: 20 }))
+    .records[0];
+  const job = makeRecord({
+    recordId: `producer:primary:${fact.revisionId}:en:validation-test`,
+    kind: "source_health",
+    electionId: null,
+    effectiveAt: null,
+    observedAt: now,
+    status: "unknown",
+    evidenceClass: "model_output",
+    previousRevisionId: null,
+    payload: {
+      mode: "primary",
+      stage: "queued",
+      attempts: 0,
+      nextAt: now,
+      factRevisionId: fact.revisionId,
+      locale: "en",
+    },
+    provenance: {
+      sourceIds: [],
+      captureIds: [],
+      parserVersion: "private-publication-job-v1",
+    },
+  });
+  await repo.append({ records: [job], sources: [], captures: [], outbox: [] });
+  const pending = vi.spyOn(repo, "producerJobs").mockResolvedValue([job]);
+  const candidate = {
+    subject: "Unqualified candidate",
+    text: "CBS recorded 99.9% in September 2026.",
+  };
+  const model = vi.fn(async () => candidate);
+  const before = (await repo.latest({ kind: "publication", limit: 100 }))
+    .records.length;
+  try {
+    const result = await runPublicationStage(repo, archive, now, model);
+    expect(result).toEqual({
+      status: "retry_or_blocked",
+      errorCode: "draft_unsupported_number",
+      more: false,
+    });
+    expect(model).toHaveBeenCalledTimes(1);
+    const checkpoint = (await repo.getLatest(job.recordId))!;
+    const ids = checkpoint.payload.failureCaptureIds as string[];
+    expect(ids).toHaveLength(1);
+    const capture = (await repo.getCapture(ids[0]))!;
+    const evidence = JSON.parse(
+      new TextDecoder().decode(await archive.read(capture)),
+    );
+    expect(evidence.candidate).toEqual(candidate);
+    expect(evidence.factRevisionId).toBe(fact.revisionId);
+    expect(evidence.issues).toContainEqual(
+      expect.objectContaining({
+        code: "unsupported_quantity",
+        token: "99.9%",
+        unit: "percent",
+      }),
+    );
+    expect(JSON.stringify(result)).not.toContain("99.9");
+    expect(
+      (await repo.latest({ kind: "publication", limit: 100 })).records,
+    ).toHaveLength(before);
+  } finally {
+    pending.mockRestore();
+  }
 });

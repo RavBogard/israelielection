@@ -15,7 +15,19 @@ import {
 import { enqueueSignedPayload } from "../election-lifecycle/coordinator";
 import type { PoliticalRecord, PoliticalRecordRepository } from "./types";
 import { randomUUID } from "node:crypto";
-import { numericTokens } from "../reference/numeric.mjs";
+import {
+  validatePrimaryNumbers,
+  primaryNumberGuidance,
+} from "./primary-numbers";
+
+class DraftValidationError extends Error {
+  constructor(
+    code: string,
+    readonly captureId: string,
+  ) {
+    super(code);
+  }
+}
 
 const enabled = () =>
   process.env.POLITICAL_PUBLICATION_PRODUCER_ENABLED === "true";
@@ -30,6 +42,7 @@ type Job = {
   locale?: EmailLocale;
   draftCaptureId?: string;
   errorCode?: string;
+  failureCaptureIds?: string[];
   recovery?: { operator: string; reason: string; retriedAt: string };
 };
 const jobPayload = (record: PoliticalRecord) =>
@@ -412,6 +425,7 @@ async function primaryStage(
   }
   const input = {
     locale: job.locale,
+    numericRendering: primaryNumberGuidance(fact),
     fact: {
       kind: fact.kind,
       payload: fact.payload,
@@ -425,7 +439,7 @@ async function primaryStage(
   };
   if (job.stage === "queued") {
     const content = (await model("draft", input)) as PublicationContent;
-    if (
+    const invalidSchema =
       !content ||
       typeof content.subject !== "string" ||
       typeof content.text !== "string" ||
@@ -434,16 +448,58 @@ async function primaryStage(
       content.subject.length > 200 ||
       content.text.length > 5000 ||
       /<|https?:\/\/|[\r\n]/.test(content.subject) ||
-      /<|https?:\/\//.test(content.text)
-    )
-      throw new Error("draft_schema_invalid");
-    const numbers = new Set(numericTokens(JSON.stringify(input)));
-    if (
-      numericTokens(content.subject + " " + content.text, job.locale).some(
-        (number: string) => !numbers.has(number),
-      )
-    )
-      throw new Error("draft_unsupported_number");
+      /<|https?:\/\//.test(content.text);
+    const issues = invalidSchema
+      ? []
+      : validatePrimaryNumbers(
+          fact,
+          content.subject + " " + content.text,
+          job.locale!,
+          input,
+        );
+    if (invalidSchema || issues.length) {
+      const code = invalidSchema
+        ? "draft_schema_invalid"
+        : "draft_unsupported_number";
+      const serialized = JSON.stringify(content) ?? "null";
+      const bytes = Buffer.from(
+        JSON.stringify({
+          factRevisionId: fact.revisionId,
+          locale: job.locale,
+          attempt: job.attempts + 1,
+          capturedAt: now,
+          model: GEMINI_MODEL,
+          input,
+          code,
+          issues,
+          candidate: serialized.length <= 100000 ? content : null,
+          candidateHash: contentHash(Buffer.from(serialized)),
+          candidateBytes: Buffer.byteLength(serialized),
+        }),
+      );
+      const failureSource = makeSource({
+        sourceId: `producer-failure:${fact.revisionId}:${job.locale}:${randomUUID()}`,
+        publisher: "Israeli Election",
+        title: "Private rejected draft",
+        url: "https://www.israelielection.org/api/v2/publications",
+        authority: "publication_validation_failure",
+        captureHash: contentHash(bytes),
+        observedAt: now,
+        publishedAt: null,
+      });
+      const failureCapture = await archive.put(
+        failureSource,
+        bytes,
+        "application/json",
+      );
+      await repo.append({
+        records: [],
+        sources: [failureSource],
+        captures: [failureCapture],
+        outbox: [],
+      });
+      throw new DraftValidationError(code, failureCapture.captureId);
+    }
     content.text +=
       "\n\n" +
       sources.map((source) => `${source.publisher}: ${source.url}`).join("\n");
@@ -674,6 +730,10 @@ export async function runPublicationStage(
       {
         ...job,
         attempts,
+        failureCaptureIds:
+          error instanceof DraftValidationError
+            ? [...(job.failureCaptureIds ?? []), error.captureId].slice(-12)
+            : job.failureCaptureIds,
         stage: attempts >= 3 ? "blocked" : job.stage,
         nextAt: new Date(Date.parse(now) + attempts * 60000).toISOString(),
         errorCode: code,
