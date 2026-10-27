@@ -199,16 +199,30 @@ export function representativeJointDraw(seats: Draws) {
   const ids = Object.keys(seats),
     n = seats[ids[0]]?.length ?? 0;
   if (!n) throw new Error("Missing joint draws");
+  // The draw that best matches the published central figures: bloc totals closest to the bloc medians first
+  // (so the grid agrees with the headline bloc numbers), then lists closest to their medians, then to their means.
   const means = Object.fromEntries(
     ids.map((id) => [id, Array.from(seats[id]).reduce((a, b) => a + b, 0) / n]),
+  );
+  const medians = Object.fromEntries(ids.map((id) => [id, interval(Array.from(seats[id])).median]));
+  const blocOf = Object.fromEntries(
+    ids.map((p) => {
+      const b = partyFile.parties.find((x) => x.id === p)?.bloc;
+      return [p, b && ["net", "opp", "mid", "arab"].includes(b) ? b : "other"];
+    }),
+  );
+  const blocIds = [...new Set(Object.values(blocOf))];
+  const blocAt = (bloc: string, i: number) => ids.reduce((s, id) => (blocOf[id] === bloc ? s + seats[id][i] : s), 0);
+  const blocMedian = Object.fromEntries(
+    blocIds.map((b) => [b, interval(Array.from({ length: n }, (_, i) => blocAt(b, i))).median]),
   );
   let drawIndex = 0,
     best = Infinity;
   for (let i = 0; i < n; i++) {
-    const loss = ids.reduce(
-      (v, id) => v + Math.abs(seats[id][i] - means[id]),
-      0,
-    );
+    const loss =
+      1e6 * blocIds.reduce((v, b) => v + Math.abs(blocAt(b, i) - blocMedian[b]), 0) +
+      1e3 * ids.reduce((v, id) => v + Math.abs(seats[id][i] - medians[id]), 0) +
+      ids.reduce((v, id) => v + Math.abs(seats[id][i] - means[id]), 0);
     if (loss < best) {
       best = loss;
       drawIndex = i;

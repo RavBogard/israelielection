@@ -45,6 +45,12 @@ describe("live joint summaries", () => {
     );
     expect(point).toEqual(representativeJointDraw(draws));
   });
+  it("prefers the draw whose bloc totals match the bloc medians", () => {
+    const draws = { likud: [40, 41, 39, 42, 40], otzma: [20, 18, 22, 17, 20], dem: [60, 61, 59, 61, 60] };
+    const point = representativeJointDraw(draws);
+    expect(point.seats.likud + point.seats.otzma).toBe(60);
+    expect(point.seats.dem).toBe(60);
+  });
   it("classifies unique winners and ties exhaustively without choosing a tie winner", () => {
     const s = summarizeDraws(
       { likud: [60, 61, 59], dem: [60, 59, 61] },
