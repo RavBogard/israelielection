@@ -10,7 +10,7 @@ import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 export const MODEL_VERSION = "live-v3-joint-blocs";
 /** Bump on any change to model code: it enters the input revision, so the next cycle recomputes even when no
  * source changed. MODEL_VERSION stays, since stored snapshots are checked against the committed fallback's version. */
-export const MODEL_CODE_REVISION = "2026-10-27.2-exit-calibration";
+export const MODEL_CODE_REVISION = "2026-10-27.3-grid-spare-seats";
 
 export type ExitCalibration = {
   elections: { date: string; field: number; result: number }[];
@@ -251,11 +251,17 @@ export function representativeJointDraw(seats: Draws) {
   const blocMedian = Object.fromEntries(
     blocIds.map((b) => [b, interval(Array.from({ length: n }, (_, i) => blocAt(b, i))).median]),
   );
+  // Bloc medians need not sum to 120: among draws equally close to them, the spare seats go to the blocs whose
+  // means sit furthest above their medians (closest to the bloc means), before any list-level tie-break.
+  const blocMean = Object.fromEntries(
+    blocIds.map((b) => [b, Array.from({ length: n }, (_, i) => blocAt(b, i)).reduce((a, x) => a + x, 0) / n]),
+  );
   let drawIndex = 0,
     best = Infinity;
   for (let i = 0; i < n; i++) {
     const loss =
       1e6 * blocIds.reduce((v, b) => v + Math.abs(blocAt(b, i) - blocMedian[b]), 0) +
+      1e5 * blocIds.reduce((v, b) => v + Math.abs(blocAt(b, i) - blocMean[b]), 0) +
       1e3 * ids.reduce((v, id) => v + Math.abs(seats[id][i] - medians[id]), 0) +
       ids.reduce((v, id) => v + Math.abs(seats[id][i] - means[id]), 0);
     if (loss < best) {
