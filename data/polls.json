@@ -4262,6 +4262,64 @@
       "combined": [],
       "kind": "exit",
       "broadcastAt": "2026-10-27T22:57:00+02:00"
+    },
+    {
+      "id": "kan-11-exit-2026-10-27-2311",
+      "pollster": "Kan 11",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "Times of Israel liveblog",
+      "url": "https://www.timesofisrael.com/liveblog-october-27-2026/",
+      "n": null,
+      "margin": null,
+      "note": "Kan 11 exit poll, updated version (Times of Israel liveblog entry 23:11): B’Yachad 14 to 13, Joint List 10 to 11, every other list as in the first version; blocs 50/52/18, as the liveblog reports for Kan, Channel 12 and Channel 13. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 25
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "jl": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yb": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 7
+        },
+        "shas": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T23:11:00+02:00"
     }
   ]
 }
