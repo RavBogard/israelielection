@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-28T01:01:00+02:00",
+  "checked": "2026-10-28T01:15:00+02:00",
   "turnout": {
     "pct": 77.7,
     "voters": 5695682,
@@ -62,6 +62,15 @@
       "source": {
         "name": "The Jewish Chronicle",
         "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx"
+      }
+    },
+    {
+      "speaker": "Naftali Bennett",
+      "list": "byachad",
+      "paraphrase": "said Netanyahu had lost, that the bloc's leaders were talking and coordinating, and that he would wait patiently for the real results.",
+      "source": {
+        "name": "ynet",
+        "url": "https://www.ynet.co.il/news/category/184"
       }
     },
     {

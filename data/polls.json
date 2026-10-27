@@ -4318,6 +4318,64 @@
       "broadcastAt": "2026-10-27T22:57:00+02:00"
     },
     {
+      "id": "channel-13-exit-2026-10-28-0114",
+      "pollster": "Channel 13",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-28",
+      "via": "ynet news flashes",
+      "url": "https://www.ynet.co.il/news/category/184",
+      "n": null,
+      "margin": null,
+      "note": "Channel 13 exit poll, third version (ynet flash 'עדכון למדגם חדשות 13: שוויון בין הגושים'): Likud 25 to 27, Yashar 23 to 22, UTJ 7 to 6, every other list unchanged from the 22:57 version. Sums to 120; blocs 51/51/18 match the flash. ynet gave no air time: 01:14 is when we saw it. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 27
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "jl": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 9
+        },
+        "raam": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 6
+        },
+        "yb": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "shas": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-28T01:14:00+02:00"
+    },
+    {
       "id": "kan-11-exit-2026-10-27-2311",
       "pollster": "Kan 11",
       "firm": null,
