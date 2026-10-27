@@ -4,7 +4,7 @@ import type { Lang } from "@/lib/i18n";
 import "./now-seats.css";
 
 /** "Likud 32 + New Hope 4" for a list built from several outgoing factions; null for a single faction. */
-export function nowComponents(id: string, lang: Lang): string | null {
+  const parts = (outgoingSeatsData.lists[id]?.components ?? []).filter((c) => c.seats > 0);
   const parts = outgoingSeatsData.lists[id]?.components ?? [];
   if (parts.length < 2) return null;
   return parts.map((c) => `${lang === "he" ? (FACTION_HE[c.faction] ?? c.faction) : c.faction} ${c.seats}`).join(" + ");
