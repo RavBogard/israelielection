@@ -29,5 +29,5 @@ export default async function Page(props: PageProps<"/how-it-works/[slug]">) {
   const { default: Body, meta } = await loadGuide(slug);
   const siblings = (await guideIndex()).map((s) => ({ href: s.href, title: s.meta.title }));
   const context=await seatContextForRender();
-  return <>{context&&<aside className="wrap"><SeatBasis context={context} lang="en"/><p><Link href="/results">Current evidence</Link> · <Link href="/government">Coalition scenarios and sourced negotiations</Link></p></aside>}<ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} /></>;
+  return <>{context&&<aside className="wrap"><SeatBasis context={context} lang="en"/><p><Link href="/results">Current evidence</Link> · <Link href="/government">Coalition talks tracker</Link></p></aside>}<ArticleShell meta={meta} Body={Body} section={{ href: "/how-it-works", title: "How it works" }} siblings={siblings} current={`/how-it-works/${slug}`} /></>;
 }

@@ -14,7 +14,16 @@ export type Feed = {
   filter?: boolean;
   /** Fallback when the feed is blocked: a Bing News query, keeping only links on `host`. */
   index?: { q: string; host: string };
+  /** The feed writes Israel wall-clock time and labels it GMT (the Jerusalem Post, checked 2026-10-27). */
+  israelClockAsGmt?: boolean;
 };
+
+/** Reads a wall-clock time mislabelled as GMT as Israel time: subtracts Israel's UTC offset at that moment. */
+export function fromIsraelClock(labelled: number): number {
+  const parts = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", hourCycle: "h23", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", second: "2-digit" }).formatToParts(new Date(labelled)).map((p) => [p.type, p.value]));
+  const offset = Date.UTC(+parts.year, +parts.month - 1, +parts.day, +parts.hour, +parts.minute, +parts.second) - Math.floor(labelled / 1000) * 1000;
+  return labelled - offset;
+}
 
 const bing = (q: string) => `https://www.bing.com/news/search?q=${encodeURIComponent(q)}&format=rss&count=50&sortby=date`;
 
@@ -22,7 +31,7 @@ export const FEEDS: Feed[] = [
   { outlet: "Times of Israel", url: "https://www.timesofisrael.com/israel-inside/feed/", index: { q: "site:timesofisrael.com", host: "timesofisrael.com" } },
   { outlet: "Times of Israel", url: "https://www.timesofisrael.com/topic/israeli-elections/feed/" },
   { outlet: "Haaretz", url: "https://www.haaretz.com/srv/israel-news-rss" },
-  { outlet: "Jerusalem Post", url: "https://www.jpost.com/rss/rssfeedisraelelection2026" },
+  { outlet: "Jerusalem Post", url: "https://www.jpost.com/rss/rssfeedisraelelection2026", israelClockAsGmt: true },
   { outlet: "+972 Magazine", url: "https://www.972mag.com/feed/", index: { q: '"+972 Magazine"', host: "972mag.com" } },
   { outlet: "JTA", url: "https://www.jta.org/category/israel/feed" },
   { outlet: "Jewish Insider", url: "https://jewishinsider.com/feed/", filter: true },
@@ -81,7 +90,8 @@ export function parseFeed(xml: string, feed: Feed, via?: { host: string }): News
     const title = toText(text(it.title), 300);
     let link = typeof it.link === "object" && it.link?.["@_href"] ? it.link["@_href"] : text(it.link);
     if (via) link = unwrap(link.trim(), via.host) ?? "";
-    const when = Date.parse(text(it.pubDate ?? it.published ?? it.updated ?? it["dc:date"]));
+    const stamped = Date.parse(text(it.pubDate ?? it.published ?? it.updated ?? it["dc:date"]));
+    const when = feed.israelClockAsGmt && !via ? fromIsraelClock(stamped) : stamped;
     if (!title || !/^https?:\/\//i.test(link) || Number.isNaN(when)) continue;
     const summary = toText(it.description ?? it.summary ?? "");
     if (feed.filter && !ISRAEL.test(`${title} ${summary}`)) continue;

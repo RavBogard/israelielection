@@ -27,7 +27,7 @@ import { MAJORITY, KNESSET, pledgeConflicts, tally, type TallyText, type Warning
 import type { UnstatedMap } from "@/lib/coalition-governing";
 import { arrangement, arrangementWarnings, initialVoteDependence, restoreRoles, roleOf, ROLE_LABELS, writeRoles, type RoleOverrides, type SupportRole } from "@/lib/coalition-arrangement";
 import scenarioData from "@/data/coalition-scenarios.json";
-import { fmt, longDate, mediumDate, shortDate } from "@/lib/format";
+import { fmt, mediumDate, shortDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import { AVERAGE_ID, BLOC_ORDER, blocTotals, pollLabel, seatFigure } from "@/lib/polls";
 import { RESULTS_ID } from "@/lib/results";
@@ -243,7 +243,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const [pollId, setPollId] = useState("current");
   const [sel, setSel] = useState<Set<string>>(() => new Set());
   const [roles, setRoles] = useState<RoleOverrides>({});
-  const [scenarioId, setScenarioId] = useState<string | null>(null);
   const [profile, setProfile] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   // The last change, for the one status line screen readers hear.
@@ -314,7 +313,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const outsideRoles = Object.values(roles).some((r) => r === "support" || r === "abstain");
   const cooperation = new Set([...sel, ...supportIds]);
   const voteNeeded = selectedContext ? contextVoteDependence(selectedContext,sel,roles) : initialVoteDependence(sel, roles, parties, poll);
-  const scenario = scenarioData.scenarios.find((s) => s.id === scenarioId);
   const segsOf = (ids: Set<string>, hatched = false) => [...tally(ids, parties, poll).segments.map((s) => {
     const party = parties.find((p) => p.name === s.name);
     const c = party ? partyColor(party.id) : PARTY_FALLBACK;
@@ -338,8 +336,7 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
     setPollId(id);
     try { localStorage.setItem(POLL_KEY, id); } catch {}
   };
-  const assignRole = (id: string, role: SupportRole, quiet = false) => {
-    setScenarioId(null);
+  const assignRole = (id: string, role: SupportRole, quiet = false) => { 
     setSel((s) => { const n = new Set(s); if (role === "cabinet") n.add(id); else n.delete(id); return n; });
     setRoles((r) => { const n = { ...r }; if (role === "support" || role === "abstain") n[id] = role; else delete n[id]; return n; });
     if (!quiet) setSaid(T.saidRole(nameOf(id), role));
@@ -352,13 +349,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
   const load = (cabinet: string[], support: string[], abstain: string[] = []) => {
     setSel(new Set(cabinet));
     setRoles(Object.fromEntries([...support.map((p) => [p, "support"]), ...abstain.map((p) => [p, "abstain"])]));
-  };
-  const loadScenario = (id: string) => {
-    const s = scenarioData.scenarios.find((s) => s.id === id);
-    if (!s) return;
-    load(s.cabinet, s.support, s.abstain);
-    setScenarioId(id);
-    setSaid(T.saidLoaded(scenarioText(s, "title", lang).text));
   };
   const closeProfile = useCallback(() => {
     setProfile(null);
@@ -408,15 +398,14 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
       {selectedContext && <SeatBasis context={selectedContext} lang={lang} pinned={pinned} />}
       {selectedContext && shared.changes.length > 0 && <p className="seat-change-note" role="status">{C.changes}: {shared.changes.map((change) => `${nameOf(change.id)} ${change.change > 0 ? "+" : ""}${change.change}`).join(" · ")}</p>}
       <section className="arrangement-scenarios" aria-label={T.scenariosLabel}>
-        <p>{T.scenariosLead}</p>
+        {preset && presetIds.length > 0 && <p>{T.scenariosLead}</p>}
         <div>
           {preset && presetIds.length > 0 && (
-            <button type="button" className="btn" aria-pressed={presetOn} onClick={() => { load(presetIds, []); setScenarioId(null); setSaid(T.saidLoaded(presetLabel)); }}>
+            <button type="button" className="btn" aria-pressed={presetOn} onClick={() => { load(presetIds, []);  setSaid(T.saidLoaded(presetLabel)); }}>
               {presetLabel}
             </button>
           )}
-          {scenarioData.scenarios.map((s) => <button key={s.id} type="button" className="btn" aria-pressed={scenarioId === s.id} onClick={() => loadScenario(s.id)}><Loc v={scenarioText(s, "title", lang)} page={lang} /></button>)}
-          <button className="btn reset" type="button" onClick={() => { load([], []); setScenarioId(null); setSaid(T.saidCleared); }} disabled={atRest}>
+          <button className="btn reset" type="button" onClick={() => { load([], []);  setSaid(T.saidCleared); }} disabled={atRest}>
             {T.startOver}
           </button>
         </div>
@@ -426,14 +415,6 @@ export default function CoalitionBuilder({ results = null, embedded = false, pre
               {rich(T.thenNow(presetLabel, presetIds.map(nameOf).join(", "), preset.seats, preset.year, sn(t.total), pollPhrase(poll, T, lang)))}
               {preset.note ? <> <Loc v={{ text: preset.note, lang: preset.noteLang ?? "en" }} page={lang} /></> : null}
             </p>
-          </div>
-        )}
-        {scenario && (
-          <div className="scenario-reading">
-            <p><Loc v={scenarioText(scenario, "agenda", lang)} page={lang} /></p>
-            <ol>{scenario.obstacles.map((text, i) => <li key={text}><Loc v={scenarioText(scenario, `obstacles.${i}`, lang)} page={lang} /></li>)}</ol>
-            <p><Loc v={scenarioText(scenario, "leadership", lang)} page={lang} /></p>
-            <p className="fig-src"><a href={scenario.url}><En page={lang}>{scenario.source}</En></a>{T.scenarioChecked(lang === "en" ? mediumDate(scenarioData.updated) : longDate(scenarioData.updated, lang))}</p>
           </div>
         )}
       </section>

@@ -204,7 +204,6 @@ export default async function ReferenceHub({
                 <CurrentParliament
                   initial={context}
                   lang={lang}
-                  showScenarios={false}
                   {...forecastPresentation(lang)}
                 />
               )}
@@ -233,7 +232,6 @@ export default async function ReferenceHub({
               initial={context}
               heading={t.electionAllocation}
               lang={lang}
-              showScenarios={false}
               {...forecastPresentation(lang)}
             />
           ) : (

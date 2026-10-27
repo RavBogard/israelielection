@@ -15,7 +15,7 @@ export const NAV_GROUPS: readonly NavGroup[] = [
   {href:"/forecast",label:"Forecast",description:"The site's seat forecast, how it is made and how it is scored."},
   {href:"/news",label:"News and briefings",short:"News",description:"Dated daily briefings, linked to the original reporting."},
   {href:"/results",label:"Results",afterClose:true,description:"The official count on election night, with its source and time."},
-  {href:"/government",label:"Forming a government",aliases:["Government and formation"],description:"Published seats, coalition scenarios and sourced negotiations."},
+  {href:"/government",label:"Forming a government",aliases:["Government and formation"],description:"Published seats and sourced coalition negotiations."},
  ]},
  {id:"parties",label:"Parties",items:[
   {href:"/parties",label:"Party Map",description:"Profiled lists sized by shared seat evidence, with sources."},

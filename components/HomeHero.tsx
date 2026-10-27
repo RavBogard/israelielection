@@ -9,6 +9,7 @@ import { DASHBOARD } from "@/lib/i18n/election-dashboard";
 import { editionPath } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
+import type { ReactNode } from "react";
 
 /** Same interactive hero as the campaign edition; its default point follows stored evidence. */
 export default function HomeHero({
@@ -18,6 +19,7 @@ export default function HomeHero({
   lang,
   cadence,
   phase:serverPhase,
+  news,
 }: {
   initial: SharedSeatContext|null;
   options: RaceOption[];
@@ -25,6 +27,8 @@ export default function HomeHero({
   lang: Lang;
   cadence?: CadenceMetadata;
   phase?:"before"|"exit"|"early"|"count";
+  /** The latest headlines, rendered on the server, beside the headline. */
+  news?: ReactNode;
 }) {
   const shared = useSeatContext(initial),
     context = shared.context ?? initial,
@@ -40,7 +44,7 @@ export default function HomeHero({
           ? "exit"
           : "count";
   return (
-    <section className="hero" aria-labelledby="hero-h">
+    <section className={news ? "hero has-news" : "hero"} aria-labelledby="hero-h">
       <div className="text">
         <h1 id="hero-h">
           {official ? t.officialHero : headline(phase, days, lang)}
@@ -54,6 +58,7 @@ export default function HomeHero({
           {h.majority(61, 120)}
         </p>
       </div>
+      {news}
       <HomeRace
         options={options}
         currentContext={context}

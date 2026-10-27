@@ -59,3 +59,13 @@ describe("briefing topics",()=>{
     expect(g.flatMap(x=>x.sentences)).toHaveLength(5);
   });
 });
+
+describe("fromIsraelClock", () => {
+  it("reads a GMT label on Israel wall-clock time as Israel time, across the DST change", async () => {
+    const { fromIsraelClock } = await import("./news");
+    // Winter (UTC+2): 23:38 "GMT" was 21:38 UTC.
+    expect(new Date(fromIsraelClock(Date.parse("Tue, 27 Oct 2026 23:38:52 GMT"))).toISOString()).toBe("2026-10-27T21:38:52.000Z");
+    // Summer (UTC+3).
+    expect(new Date(fromIsraelClock(Date.parse("Tue, 20 Oct 2026 12:00:00 GMT"))).toISOString()).toBe("2026-10-20T09:00:00.000Z");
+  });
+});

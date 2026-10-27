@@ -145,7 +145,6 @@ export default function GovernmentLive({
           lang={lang}
           names={names}
           scenarios={scenarios}
-          showScenarios={false}
           compact
         />
       )}
@@ -287,14 +286,7 @@ export default function GovernmentLive({
           !hidden && <p>{t.noEvents}</p>
         )}
       </section>
-      {view!=="chronology"&&<CurrentParliament
-        initial={snapshot.seatContext}
-        lang={lang}
-        names={names}
-        scenarios={scenarios}
-        showSeats={false}
-        compact={compact}
-      />}
+
       {!compact && (
         <section>
           <h2>{f.history}</h2>

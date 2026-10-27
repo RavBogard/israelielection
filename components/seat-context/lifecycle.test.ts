@@ -81,7 +81,7 @@ const snapshot: ElectionLifecycleSnapshot = {
   },
 };
 describe("lifecycle views", () => {
-  it("shows exact all120-seat scenario arithmetic with a pinned role-preserving link", () => {
+  it("shows the seats and no coalition scenarios (Daniel, 2026-10-27)", () => {
     const html = renderToStaticMarkup(
       createElement(CurrentParliament, {
         initial: context,
@@ -91,14 +91,11 @@ describe("lifecycle views", () => {
       }),
     );
     expect(html).toContain("Unprofiled list");
-    expect(html).toContain("<b>80</b> Yes");
-    expect(html).toContain("<b>0</b> No");
-    expect(html).toContain("40 Abstaining");
-    expect(html).toContain(`context=${context.revision}`);
-    expect(html).toContain("support=new");
+    expect(html).not.toContain("Yes");
+    expect(html).not.toContain("support=new");
     expect(html).not.toContain("80%");
   });
-  it("orders confirmed proposal positions before hypothetical scenarios, keeps undecided separate", () => {
+  it("lists confirmed proposal positions, keeps undecided separate, shows no hypothetical scenarios", () => {
     const html = renderToStaticMarkup(
       createElement(GovernmentLive, {
         initial: snapshot,
@@ -107,9 +104,8 @@ describe("lifecycle views", () => {
         scenarios,
       }),
     );
-    expect(html.indexOf("Nominee Alpha")).toBeLessThan(
-      html.indexOf("Hypothetical path"),
-    );
+    expect(html).toContain("Nominee Alpha");
+    expect(html).not.toContain("Hypothetical path");
     expect(html).toContain("Outside confidence support");
     expect(html).toContain("Undecided / no confirmed position");
     expect(html).toContain("Unprofiled list (30)");
@@ -154,7 +150,7 @@ describe("lifecycle views", () => {
       );
       expect(html).toContain(LIFECYCLE[lang].officialResult);
       expect(html).toContain(LIFECYCLE[lang].negotiations);
-      expect(html).toContain(FORMATION[lang].hypothesis);
+      expect(html).not.toContain(FORMATION[lang].hypothesis);
     }
   });
   it("shows a formerly inactive profiled list with new official seats and no campaign status substitute", () => {

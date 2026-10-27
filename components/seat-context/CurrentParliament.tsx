@@ -3,14 +3,12 @@ import Link from "next/link";
 import SeatBar from "../SeatBar";
 import SeatBasis from "./SeatBasis";
 import { useSeatContext } from "./SeatContextProvider";
-import { contextRoleTotals, pinnedSeatHref } from "@/lib/seat-context";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { Lang } from "@/lib/i18n";
 import { editionPath } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import type { ForecastProps } from "../live-forecast/presentation";
 import { FORMATION } from "@/lib/i18n/formation-live";
-import { LIVE_FORECAST } from "@/lib/i18n/live-forecast";
 
 type Props = {
   initial: SharedSeatContext;
@@ -18,25 +16,22 @@ type Props = {
   compact?: boolean;
   showSeats?: boolean;
   heading?: string;
-  showScenarios?: boolean;
   names: ForecastProps["names"];
-  scenarios: ForecastProps["scenarios"];
+  /** Arrives with forecastPresentation spreads; scenarios are not rendered. */
+  scenarios?: ForecastProps["scenarios"];
 };
-/** Exact arithmetic on one joint point. These values are never government-formation probabilities. */
+/** One joint point's seats. Coalition scenarios are not shown (Daniel, 2026-10-27: not our lane). */
 export default function CurrentParliament({
   initial,
   lang,
   compact = false,
   showSeats = true,
   heading,
-  showScenarios = true,
   names,
-  scenarios,
 }: Props) {
   const { context: current, refreshFailed } = useSeatContext(initial);
   const context = current ?? initial,
-    t = LIFECYCLE[lang],
-    f = LIVE_FORECAST[lang];
+    t = LIFECYCLE[lang];
   const rows = Object.entries(context.pointSeats)
     .filter(([, seats]) => seats > 0)
     .sort((a, b) => b[1] - a[1]);
@@ -45,7 +40,7 @@ export default function CurrentParliament({
   return (
     <section
       className="current-parliament"
-      aria-label={showSeats ? t.currentSeats : t.scenarios}
+      aria-label={t.currentSeats}
       data-seat-revision={context.revision}
     >
       {showSeats && (
@@ -112,69 +107,9 @@ export default function CurrentParliament({
           )}
         </>
       )}
-      {showScenarios && (
-        <>
-          <h3>{t.scenarios}</h3>
-          <p>{FORMATION[lang].hypothesis}</p>
-          <div className="parliament-scenarios">
-            {scenarios.map((s) => {
-              const url = new URL(s.href, "https://www.israelielection.org");
-              url.searchParams.set("poll", "current");
-              const cabinet = new Set(
-                (url.searchParams.get("with") ?? "").split(","),
-              );
-              const roles: Record<string, "support" | "abstain"> = {};
-              for (const role of ["support", "abstain"] as const)
-                for (const id of (url.searchParams.get(role) ?? "")
-                  .split(",")
-                  .filter(Boolean))
-                  roles[id] = role;
-              const total = contextRoleTotals(context, cabinet, roles);
-              return (
-                <article key={s.id}>
-                  <h4>
-                    <Link
-                      href={pinnedSeatHref(url.pathname + url.search, context)}
-                      lang={s.titleLang}
-                    >
-                      {s.title}
-                    </Link>
-                  </h4>
-                  <p className="parliament-vote">
-                    <b>{total.yes}</b> {f.yes} · <b>{total.no}</b> {f.no} ·{" "}
-                    {total.abstain} {f.abstain}
-                  </p>
-                  <p>
-                    {f.cabinet}: {total.cabinet} · {t[context.basis]}
-                  </p>
-                  {s.warnings.length > 0 && (
-                    <details>
-                      <summary>{f.pledgeCaution}</summary>
-                      {s.warnings.map((w, i) => (
-                        <p key={i} lang={w.lang}>
-                          {w.text}
-                        </p>
-                      ))}
-                    </details>
-                  )}
-                </article>
-              );
-            })}
-          </div>
-        </>
-      )}
       <p>
         <Link href={editionPath("/government", lang) ?? "/government"}>
           {t.negotiations}
-        </Link>{" "}
-        ·{" "}
-        <Link
-          href={pinnedSeatHref(
-            `${editionPath("/coalition-builder", lang)}?poll=current`,
-            context,
-          )}
-        >
-          {t.scenarios}
         </Link>
       </p>
     </section>

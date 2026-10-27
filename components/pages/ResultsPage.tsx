@@ -410,7 +410,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
         </PageHead></ResultsHeading>
         <p className="note">{readiness(lang).timeNote}</p>
         {exitPolls.length > 0 && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} /></>}
-        {context && <CurrentParliament initial={context} lang={lang} showScenarios={false} {...forecastPresentation(lang)} />}
+        {context && <CurrentParliament initial={context} lang={lang} {...forecastPresentation(lang)} />}
         {liveForecast}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>
         <EvidenceGate initial={context} official>{(["exitTable","letters","method"] as Section[]).map(k=>part[k])}</EvidenceGate>
