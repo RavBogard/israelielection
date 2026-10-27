@@ -56,8 +56,9 @@ export function useCountSummary(pollsClose: string, enabled = true): CountSummar
  */
 export default function ResultsStrip({ pollsClose, blocLabels }: { pollsClose: string; /** Hebrew edition: the bloc labels to show, from the overlay (English ones are marked lang="en"). */ blocLabels?: Record<string, Localized> }) {
   const {context,refreshFailed}=useSeatContext();
-  const data = useCountSummary(pollsClose,!context);
+  const data = useCountSummary(pollsClose,!context&&!refreshFailed);
   const lang = useLang();
+  if(!context&&refreshFailed)return null;
   if(context){if(context.evidenceStage==="campaign")return null;const t=LIFECYCLE[lang];return <div className="live-strip"><div className="row"><Link href={editionPath("/results",lang)??"/results"} className="lead">{t[context.basis]} · {t[context.seatStatus]}</Link><span>{refreshFailed?t.stale:t[context.freshness.status]}</span><Link className="lead" href={editionPath("/government",lang)??"/government"}>{t.negotiations}</Link></div></div>;}
   if (lang !== "en") return <HebrewStrip data={data} labels={blocLabels ?? {}} />;
   if (data?.state === "error" && data.phase === "exit")

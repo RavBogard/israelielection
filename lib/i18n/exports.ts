@@ -165,7 +165,7 @@ const en = {
   view: "View",
   attribution: "Attribution",
   original:
-    "Source quotations, detailed method notes and original list names remain in their original language. They have not been presented as a reviewed translation.",
+    "Source quotations and original list names remain in their original language where no reviewed translation is available.",
   credit:
     "Original site text: CC BY-NC 4.0, with credit to Rabbi Daniel Bogard and israelielection.org. Third-party source material retains its own rights.",
 };
@@ -187,7 +187,7 @@ export const EXPORTS: Record<Lang, Text> = {
     view: "תצוגה",
     attribution: "ייחוס",
     original:
-      "ציטוטי מקורות, הערות שיטה מפורטות ושמות רשימות מקוריים נשארים בשפת המקור. הם אינם מוצגים כתרגום שנבדק.",
+      "ציטוטי מקורות ושמות רשימות מקוריים נשמרים בשפת המקור כשאין תרגום שנבדק.",
     credit:
       "הטקסט המקורי באתר: CC BY-NC 4.0, עם ייחוס לרב דניאל בוגרד ולקישור israelielection.org. חומר של צדדים שלישיים כפוף לזכויות המקוריות.",
   },
@@ -206,7 +206,7 @@ export const EXPORTS: Record<Lang, Text> = {
     view: "العرض",
     attribution: "نسب الحقوق",
     original:
-      "تبقى اقتباسات المصادر وملاحظات المنهج التفصيلية وأسماء القوائم الأصلية بلغتها الأصلية. لا تُعرض بوصفها ترجمة مراجَعة.",
+      "تبقى اقتباسات المصادر وأسماء القوائم الأصلية بلغتها الأصلية عند غياب ترجمة مراجَعة.",
     credit:
       "النص الأصلي للموقع: CC BY-NC 4.0، مع نسبه إلى الحاخام دانيال بوغارد وisraelielection.org. تحتفظ مواد الأطراف الأخرى بحقوقها الأصلية.",
   },
@@ -225,7 +225,7 @@ export const EXPORTS: Record<Lang, Text> = {
     view: "نما",
     attribution: "انتساب",
     original:
-      "نقل‌قول منابع، یادداشت‌های تفصیلی روش و نام‌های اصلی فهرست‌ها به زبان اصلی باقی می‌مانند و ترجمه بررسی‌شده معرفی نمی‌شوند.",
+      "نقل‌قول منابع و نام‌های اصلی فهرست‌ها در نبود ترجمه بررسی‌شده به زبان اصلی می‌مانند.",
     credit:
       "متن اصلی سایت: CC BY-NC 4.0، با ذکر خاخام دانیل بوگارد و israelielection.org. حقوق مطالب اشخاص ثالث متعلق به صاحبان اصلی است.",
   },
@@ -244,7 +244,7 @@ export const EXPORTS: Record<Lang, Text> = {
     view: "Ansicht",
     attribution: "Urheberangabe",
     original:
-      "Quellenzitate, ausführliche Methodennotizen und ursprüngliche Listennamen bleiben in der Originalsprache. Sie werden nicht als geprüfte Übersetzung ausgegeben.",
+      "Quellenzitate und ursprüngliche Listennamen bleiben im Original, wenn keine geprüfte Übersetzung vorliegt.",
     credit:
       "Eigene Texte: CC BY-NC 4.0 mit Nennung von Rabbi Daniel Bogard und israelielection.org. Fremdmaterial behält seine ursprünglichen Rechte.",
   },
@@ -263,7 +263,7 @@ export const EXPORTS: Record<Lang, Text> = {
     view: "Vue",
     attribution: "Attribution",
     original:
-      "Les citations, les notes méthodologiques détaillées et les noms originaux des listes restent dans leur langue d’origine. Ils ne sont pas présentés comme une traduction révisée.",
+      "Les citations et les noms originaux des listes restent dans leur langue d’origine en l’absence de traduction révisée.",
     credit:
       "Textes originaux du site : CC BY-NC 4.0 avec attribution au rabbin Daniel Bogard et à israelielection.org. Les contenus tiers conservent leurs droits d’origine.",
   },
@@ -281,8 +281,7 @@ export const EXPORTS: Record<Lang, Text> = {
     assumption: "假设／限制",
     view: "视图",
     attribution: "署名",
-    original:
-      "来源引文、详细方法说明及名单原名保留原文，不被当作经过审核的译文。",
+    original: "尚无经审核译文的来源引文及名单名称保留原文。",
     credit:
       "本站原创文字采用CC BY-NC 4.0许可，须注明拉比Daniel Bogard及israelielection.org。第三方材料保留原有权利。",
   },

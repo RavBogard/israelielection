@@ -5,32 +5,72 @@ import { editionPath } from "@/lib/i18n";
 import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
+import { editionCopy } from "@/lib/i18n/edition";
 
-import { ELECTION_DAY,daysUntil } from "@/lib/election-date";
-export {ELECTION_DAY,daysUntil} from "@/lib/election-date";
+import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
+export { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 
 /** One line in the masthead: how far away Election Day is. Words from lib/i18n/chrome.ts. */
-export default function Countdown({ className, lang = "en" }: { className?: string; lang?: Lang }) {
-  const {context}=useSeatContext();
-  if(context&&context.evidenceStage!=="campaign")return <p className={`countdown${className?` ${className}`:""}`}><b>{LIFECYCLE[lang][context.basis]}</b> · <Link href={editionPath("/government",lang)??"/government"}>{LIFECYCLE[lang].negotiations}</Link></p>;
-  const d = daysUntil(ELECTION_DAY), t = chrome[lang].countdown;
+export default function Countdown({
+  className,
+  lang = "en",
+}: {
+  className?: string;
+  lang?: Lang;
+}) {
+  const { context, refreshFailed } = useSeatContext();
+  if (!context && refreshFailed)
+    return (
+      <p className={`countdown${className ? ` ${className}` : ""}`}>
+        <Link href={editionPath("/elections", lang) ?? "/elections"}>
+          {editionCopy(lang).unavailable}
+        </Link>
+      </p>
+    );
+  if (context && !["2026-10-27", "il-knesset-26"].includes(context.election))
+    return (
+      <p className={`countdown${className ? ` ${className}` : ""}`}>
+        <Link href={editionPath("/elections", lang) ?? "/elections"}>
+          {LIFECYCLE[lang][context.basis]}
+        </Link>
+      </p>
+    );
+  if (context && context.evidenceStage !== "campaign")
+    return (
+      <p className={`countdown${className ? ` ${className}` : ""}`}>
+        <b>{LIFECYCLE[lang][context.basis]}</b> ·{" "}
+        <Link href={editionPath("/government", lang) ?? "/government"}>
+          {LIFECYCLE[lang].negotiations}
+        </Link>
+      </p>
+    );
+  const d = daysUntil(ELECTION_DAY),
+    t = chrome[lang].countdown;
   const text =
     d > 1 ? (
       <>
-        <b>{t.days(d)}</b>{t.daysAfter}
+        <b>{t.days(d)}</b>
+        {t.daysAfter}
       </>
     ) : d === 1 ? (
       <>
-        <b>{t.tomorrow}</b>{t.tomorrowAfter}
+        <b>{t.tomorrow}</b>
+        {t.tomorrowAfter}
       </>
     ) : d === 0 ? (
       <>
-        <b>{t.today}</b>{t.todayAfter}
+        <b>{t.today}</b>
+        {t.todayAfter}
       </>
     ) : (
       <>
-        {t.after}<Link href={editionPath("/government",lang)??"/government"}>{LIFECYCLE[lang].negotiations}</Link>
+        {t.after}
+        <Link href={editionPath("/government", lang) ?? "/government"}>
+          {LIFECYCLE[lang].negotiations}
+        </Link>
       </>
     );
-  return <p className={`countdown${className ? ` ${className}` : ""}`}>{text}</p>;
+  return (
+    <p className={`countdown${className ? ` ${className}` : ""}`}>{text}</p>
+  );
 }

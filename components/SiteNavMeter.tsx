@@ -17,7 +17,7 @@ import { useLang } from "@/lib/i18n/lang";
  */
 export default function SiteNavMeter({ average, exit, closed, pollsClose }: { average: Meter; exit: ExitMeter | null; closed: boolean; pollsClose: string }) {
   const { context, refreshFailed } = useSeatContext();
-  const summary = useCountSummary(pollsClose,!context);
+  const summary = useCountSummary(pollsClose,!context&&!refreshFailed);
   const lang = useLang();
   // `average` arrives in the page's edition from its layout; the night's figure is worded here.
   const m = nightMeter(closed, summary, exit, lang) ?? average;

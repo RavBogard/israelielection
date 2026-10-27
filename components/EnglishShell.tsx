@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
+import EditionDescription from "@/components/EditionDescription";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { resultsConfig } from "@/lib/results-live";
@@ -72,7 +73,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
           <div className="row">
             <div className="about">
               <Logo />
-              <p>{DESCRIPTION}</p>
+              <EditionDescription legacy={DESCRIPTION}/>
               <p>
                 A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>.
               </p>

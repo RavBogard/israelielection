@@ -10,6 +10,7 @@ import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { recordText, recordState, recordScope } from "@/lib/i18n/records";
 import { parties } from "@/lib/data";
 import { partyText } from "@/lib/i18n/overlay-text";
+import { recordDate } from "@/lib/reference/record-format";
 import "./records.css";
 
 type Global = GlobalProjection & { storageState?: string };
@@ -30,8 +31,18 @@ function Sources({
             {s.publisher}: {s.title}
           </a>
           <p>
-            {t.published}: {s.publishedAt ?? missing}. {t.checked}:{" "}
-            <time dateTime={s.observedAt}>{s.observedAt}</time>
+            {t.published}:{" "}
+            {s.publishedAt ? (
+              <time dateTime={s.publishedAt}>
+                {recordDate(s.publishedAt, lang)}
+              </time>
+            ) : (
+              missing
+            )}
+            . {t.checked}:{" "}
+            <time dateTime={s.observedAt}>
+              {recordDate(s.observedAt, lang)}
+            </time>
           </p>
         </li>
       ))}
@@ -193,7 +204,7 @@ export default function QualifiedRecords({
                     <dt>{t.deadline}</dt>
                     <dd>
                       <time dateTime={row.rubric.deadlineAt}>
-                        {row.rubric.deadlineAt}
+                        {recordDate(row.rubric.deadlineAt, lang)}
                       </time>
                     </dd>
                   </div>
@@ -283,11 +294,15 @@ export default function QualifiedRecords({
                       </td>
                       <td>{recordState(row.role, lang)}</td>
                       <td>
-                        <time dateTime={row.startedAt}>{row.startedAt}</time>
+                        <time dateTime={row.startedAt}>
+                          {recordDate(row.startedAt, lang)}
+                        </time>
                       </td>
                       <td>
                         {row.endedAt ? (
-                          <time dateTime={row.endedAt}>{row.endedAt}</time>
+                          <time dateTime={row.endedAt}>
+                            {recordDate(row.endedAt, lang)}
+                          </time>
                         ) : (
                           t.noEnd
                         )}
@@ -333,7 +348,9 @@ export default function QualifiedRecords({
                     </th>
                     <td>{recordState(row.stage, lang)}</td>
                     <td>
-                      <time dateTime={row.occurredAt}>{row.occurredAt}</time>
+                      <time dateTime={row.occurredAt}>
+                        {recordDate(row.occurredAt, lang)}
+                      </time>
                     </td>
                     <td>
                       <Receipt row={row} lang={lang} />
@@ -354,7 +371,7 @@ export default function QualifiedRecords({
               <p>
                 {recordState(incumbent.state, lang)}. {t.from}:{" "}
                 <time dateTime={incumbent.startedAt}>
-                  {incumbent.startedAt}
+                  {recordDate(incumbent.startedAt, lang)}
                 </time>
               </p>
               <Receipt row={incumbent} lang={lang} />
@@ -372,8 +389,18 @@ export default function QualifiedRecords({
                   <article key={row.revisionId}>
                     <h3 dir="auto">{row.title}</h3>
                     <p>
-                      {recordState(row.state, lang)}. {t.from}: {row.startedAt}.{" "}
-                      {t.until}: {row.endedAt ?? t.noEnd}
+                      {recordState(row.state, lang)}. {t.from}:{" "}
+                      <time dateTime={row.startedAt}>
+                        {recordDate(row.startedAt, lang)}
+                      </time>
+                      . {t.until}:{" "}
+                      {row.endedAt ? (
+                        <time dateTime={row.endedAt}>
+                          {recordDate(row.endedAt, lang)}
+                        </time>
+                      ) : (
+                        t.noEnd
+                      )}
                     </p>
                     <Receipt row={row} lang={lang} />
                   </article>

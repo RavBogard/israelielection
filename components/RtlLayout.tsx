@@ -19,6 +19,7 @@ import { blocTotals, isExit } from "@/lib/polls";
 import { resultsConfig } from "@/lib/results-live";
 import briefingsJson from "@/data/briefings/_index.json";
 import Logo from "./Logo";
+import EditionDescription from "./EditionDescription";
 import Countdown from "./Countdown";
 import ResultsStrip from "./ResultsStrip";
 import SiteNav from "./SiteNav";
@@ -70,7 +71,7 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
         </header>
         <main id="main" className="flex-1">{children}</main>
         <footer className="site-foot he-foot"><div className="row">
-          <div className="about"><Logo lang={lang} /><p>{t.description}</p>
+          <div className="about"><Logo lang={lang} /><EditionDescription legacy={t.description} lang={lang}/>
             <p>{ui(lang, "Machine-translated edition. Source material that has changed or has no translation is shown in English.")}</p>
             <p>{t.bylineBefore}<a href="https://danielbogard.com" hrefLang="en">{t.bylineName}</a>{t.bylineAfter}</p>
             <ul className="foot-links">{utilities.map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.label}{english(n)}</Link></li>)}<li><LangLink /></li></ul>

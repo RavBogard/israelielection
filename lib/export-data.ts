@@ -35,6 +35,11 @@ import { resultsAsPoll, RESULTS_ID } from "./results";
 import { localityHistory, mapHref, readMapState } from "./locality-history";
 import type { SourcedExport } from "./export";
 import { localizeExport } from "./export-locale";
+import { isLang, locale } from "./i18n";
+import { exportMethodText } from "./i18n/export-method";
+import builder from "./i18n/builder";
+import { partyText, pledgeText, questionText } from "./i18n/overlays";
+import { referenceText } from "./i18n/reference";
 export async function buildExport(
   kind: string,
   q: URLSearchParams,
@@ -46,6 +51,11 @@ async function buildSourceExport(
   kind: string,
   q: URLSearchParams,
 ): Promise<SourcedExport | null> {
+  const requestedLang = q.get("lang"),
+    lang = requestedLang && isLang(requestedLang) ? requestedLang : "en",
+    t = exportMethodText(lang),
+    B = builder[lang],
+    L = LIFECYCLE[lang];
   const ids = [
     ...new Set(
       (q.get("p") ?? "")
@@ -69,26 +79,33 @@ async function buildSourceExport(
     const rows = chosenIssues.flatMap((issue) =>
       selected.map((p) => {
         const row = issue.file.rows.find((r) => r.party === p.id);
+        const question = {
+          key: issue.key,
+          label: issue.label,
+          question: issue.file.question ?? issue.file.title,
+        };
         if (row?.url && /^https?:\/\//.test(row.url))
-          sources.set(row.url, row.source ?? "Cited evidence");
+          sources.set(row.url, row.source ?? L.source);
         return [
-          issue.label,
-          issue.file.question ?? issue.file.title,
+          questionText(question, "label", lang).text,
+          questionText(question, "question", lang).text,
           p.name,
           row?.status === "none" || !row?.text
-            ? `Not established by these sources${row?.text ? `; retained source context: ${row.text}` : ""}`
+            ? `${t.notEstablished}${row?.text ? `; ${t.sourceContext}: ${row.text}` : ""}`
             : row.declined || row.status === "declined"
-              ? "Declined to answer"
-              : stanceText(row),
+              ? t.declined
+              : lang !== "en" && isUnstated(row)
+                ? `${t.unstated}: ${row.text}`
+                : stanceText(row),
           isUnstated(row)
-            ? "Not said publicly (unstated)"
+            ? t.unstated
             : isRecord(row)
-              ? "On the record"
+              ? t.record
               : row?.stance
-                ? "Stated"
-                : "Not applicable",
-          evidenceLabel(row),
-          row?.source ?? "Source not recorded",
+                ? t.stated
+                : t.notApplicable,
+          evidenceLabel(row, lang),
+          row?.source ?? L.noTime,
           row?.url ?? null,
         ];
       }),
@@ -99,10 +116,16 @@ async function buildSourceExport(
           ? chosenIssues[0].file.title
           : "Selected issue comparison",
       asOf: dataUpdated,
-      assumptions: [
-        `Selected lists: ${selected.map((p) => p.name).join(", ")}.`,
-        'Recorded answers are evidence, not a forecast. Missing evidence is not a policy position. Basis "Not said publicly" marks a position read from the party\'s record, not from its own statement. Evidence publication dates are shown separately from source checks.',
-      ],
+      assumptions:
+        lang !== "en"
+          ? [
+              `${t.selected}: ${selected.map((p) => partyText(p, "name", lang).text).join(", ")}.`,
+              t.issueNote,
+            ]
+          : [
+              `Selected lists: ${selected.map((p) => p.name).join(", ")}.`,
+              'Recorded answers are evidence, not a forecast. Missing evidence is not a policy position. Basis "Not said publicly" marks a position read from the party\'s record, not from its own statement. Evidence publication dates are shown separately from source checks.',
+            ],
       headers: [
         "Issue",
         "Question",
@@ -128,12 +151,21 @@ async function buildSourceExport(
         vote = contextRoleTotals(c, roles.cabinet, roles.overrides);
       return {
         title: "Selected coalition arrangement",
-        asOf: c.publishedAt ?? "Publication time not supplied",
-        assumptions: [
-          `${LIFECYCLE.en[c.basis]} · ${LIFECYCLE.en[c.seatStatus]} · ${LIFECYCLE.en[c.freshness.status]}. Revision ${c.revision}. Checked ${c.freshness.checkedAt ?? "not recorded"}.`,
-          "All roles are hypothetical. Unknown lists have no inferred bloc, policy or pledge. More yes than no is required for initial confidence; abstentions can permit passage below 61.",
-          `Cabinet ${vote.cabinet}; yes ${vote.yes}; no ${vote.no}; abstain ${vote.abstain}.`,
-        ],
+        asOf: c.publishedAt ?? L.noTime,
+        assumptions:
+          lang !== "en"
+            ? [
+                `${L[c.basis]}. ${L[c.seatStatus]}. ${L[c.freshness.status]}. ${referenceText(lang).revision}: ${c.revision}. ${L.checked}: ${c.freshness.checkedAt ?? L.noTime}.`,
+                t.unknown,
+                B.description,
+                B.voteRowNote,
+                `${B.cabinetRow}: ${vote.cabinet}. ${B.voteLine(String(vote.yes), String(vote.no), String(vote.abstain))}.`,
+              ]
+            : [
+                `${LIFECYCLE.en[c.basis]} · ${LIFECYCLE.en[c.seatStatus]} · ${LIFECYCLE.en[c.freshness.status]}. Revision ${c.revision}. Checked ${c.freshness.checkedAt ?? "not recorded"}.`,
+                "All roles are hypothetical. Unknown lists have no inferred bloc, policy or pledge. More yes than no is required for initial confidence; abstentions can permit passage below 61.",
+                `Cabinet ${vote.cabinet}; yes ${vote.yes}; no ${vote.no}; abstain ${vote.abstain}.`,
+              ],
         headers: ["List", "Assigned role", "Seats"],
         rows: ids.map((id) => [
           parties.find((p) => p.id === id)?.name ??
@@ -164,9 +196,7 @@ async function buildSourceExport(
         return {
           title: "Coalition arrangement — count unavailable",
           asOf: resultsConfig.election,
-          assumptions: [
-            "The selected results count is unavailable. No poll average has been substituted. Reopen this export when a validated count is available.",
-          ],
+          assumptions: [t.countUnavailable],
           headers: ["List", "Assigned role"],
           rows: parties.map((p) => [
             p.name,
@@ -182,35 +212,67 @@ async function buildSourceExport(
         };
       poll = resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live);
       assumptions.push(
-        `Count ${live.freshness}; captured ${live.fetchedAt}. Source update: ${live.sourceUpdatedAt ?? "not provided"}. Estimated seats, not official allocation.`,
+        lang === "en"
+          ? `Count ${live.freshness}; captured ${live.fetchedAt}. Source update: ${live.sourceUpdatedAt ?? "not provided"}. Estimated seats, not official allocation.`
+          : `${L.partial_count}. ${L[live.freshness === "fresh" ? "current" : "stale"]}. ${t.captured}: ${live.fetchedAt}. ${t.sourceUpdate}: ${live.sourceUpdatedAt ?? L.noTime}. ${t.countNote}`,
       );
     }
     if (!poll) return null;
     const vote = arrangement(roles.cabinet, roles.overrides, parties, poll);
     const averaged = poll.id === averagePoll.id;
-    assumptions.push(
-      `Selected seat basis: ${averaged ? "Normalized coalition average" : pollLabel(poll)}, ${poll.published}.`,
-      "Every assigned role is hypothetical. Cabinet membership, outside support and abstention are distinct. An initial confidence vote requires more for than against; 61 seats is the absolute-majority planning target.",
-      `Cabinet ${vote.cabinet}; votes for ${vote.yes}, against ${vote.no}, hypothetical abstention ${vote.abstain}. ${vote.complete ? `Arithmetic outcome: ${vote.outcome}.` : "Coverage or rounded totals are incomplete; no confidence outcome inferred."}`,
-    );
+    if (lang !== "en")
+      assumptions.push(
+        `${t.basis}: ${averaged ? B.averagePhrase(mainPolls.length) : poll.id === forecastPoll.id ? L.campaign_forecast : poll.pollster}. ${poll.published}.`,
+        t.unknown,
+        B.description,
+        B.voteRowNote,
+        `${B.cabinetRow}: ${vote.cabinet}. ${vote.complete ? B.voteLabel(B.voteLine(String(vote.yes), String(vote.no), String(vote.abstain)), B.verdict[vote.outcome === "passes" ? "passes" : "fails"]) : B.voteLabel(B.voteLine(String(vote.yes), String(vote.no), String(vote.abstain)), B.verdict.none)}`,
+      );
+    else
+      assumptions.push(
+        `Selected seat basis: ${averaged ? "Normalized coalition average" : pollLabel(poll)}, ${poll.published}.`,
+        "Every assigned role is hypothetical. Cabinet membership, outside support and abstention are distinct. An initial confidence vote requires more for than against; 61 seats is the absolute-majority planning target.",
+        `Cabinet ${vote.cabinet}; votes for ${vote.yes}, against ${vote.no}, hypothetical abstention ${vote.abstain}. ${vote.complete ? `Arithmetic outcome: ${vote.outcome}.` : "Coverage or rounded totals are incomplete; no confidence outcome inferred."}`,
+      );
     if (vote.approximate)
       assumptions.push(
-        "Fractional averages illustrate support; real MKs cast whole votes. This hypothetical arithmetic is not a prediction of a parliamentary vote.",
+        lang === "en"
+          ? "Fractional averages illustrate support; real MKs cast whole votes. This hypothetical arithmetic is not a prediction of a parliamentary vote."
+          : B.approximate,
       );
     for (const warning of arrangementWarnings(
       roles.cabinet,
       roles.overrides,
       parties,
       pledgeRules,
+      lang === "en"
+        ? undefined
+        : {
+            message: (r) => pledgeText(r, lang),
+            name: (p) => partyText(p, "name", lang).text,
+            and: (names) =>
+              new Intl.ListFormat(locale(lang), { type: "conjunction" }).format(
+                names,
+              ),
+          },
     ))
       assumptions.push(
-        `Recorded ${warning.kind}: ${warning.message} Source: ${warning.source}`,
+        lang === "en"
+          ? `Recorded ${warning.kind}: ${warning.message} Source: ${warning.source}`
+          : `${t.recorded}: ${warning.message} ${L.source}: ${warning.source}`,
       );
-    if (averaged)
-      assumptions.push(
-        `${pollsData.config.currentWindowDays}-day publication window; one latest poll per publisher; square-root sample-size weights, median n when absent; passing-only means; near-threshold lists excluded and sum scaled down only if over 120.`,
-        `Inputs: ${mainPolls.map((p) => `${p.pollster} ${p.published} (n ${p.n ?? "not recorded"})`).join("; ")}.`,
-      );
+    if (averaged) {
+      if (lang !== "en")
+        assumptions.push(
+          `${t.window}: ${pollsData.config.currentWindowDays}. ${t.averageNote}`,
+          `${t.inputs}: ${mainPolls.map((p) => `${p.pollster} ${p.published} (n ${p.n ?? L.noTime})`).join("; ")}.`,
+        );
+      else
+        assumptions.push(
+          `${pollsData.config.currentWindowDays}-day publication window; one latest poll per publisher; square-root sample-size weights, median n when absent; passing-only means; near-threshold lists excluded and sum scaled down only if over 120.`,
+          `Inputs: ${mainPolls.map((p) => `${p.pollster} ${p.published} (n ${p.n ?? "not recorded"})`).join("; ")}.`,
+        );
+    }
     return {
       title: "Selected coalition arrangement",
       asOf: poll.resultState?.capturedAt ?? poll.published,
@@ -221,8 +283,8 @@ async function buildSourceExport(
         ROLE_LABELS[roleOf(p.id, roles.cabinet, roles.overrides)],
         poll.results[p.id]?.seats ??
           (poll.combined.find((g) => g.parties.includes(p.id))
-            ? "Reported combined; cannot split"
-            : "Not reported"),
+            ? t.combined
+            : t.notReported),
       ]),
       sources: [
         ...(averaged ? mainPolls : [poll])
@@ -232,11 +294,17 @@ async function buildSourceExport(
             url: p.url!,
           })),
         {
-          label: "Initial confidence: Basic Law, The Government",
+          label:
+            lang === "en"
+              ? "Initial confidence: Basic Law, The Government"
+              : B.lawLinks[0].text,
           url: "https://main.knesset.gov.il/EN/activity/Documents/BasicLawsPDF/BasicLawTheGovernment.pdf",
         },
         {
-          label: "Polling average method",
+          label:
+            lang === "en"
+              ? "Polling average method"
+              : B.averagePhrase(mainPolls.length),
           url: "https://www.israelielection.org/polls#method",
         },
       ],
@@ -277,15 +345,28 @@ async function buildSourceExport(
     const history = localityHistory(elections, state.locality);
     return {
       title: `${places[state.locality][0]}: locality voting history`,
-      asOf: `${elections[0].date} through ${elections.at(-1)!.date}; source files fetched ${[...new Set(elections.map((e) => e.source.fetched))].sort().join(", ")}`,
-      assumptions: [
-        ...(selectedGeographyRevision
-          ? [`Geography snapshot revision: ${selectedGeographyRevision}.`]
-          : []),
-        `Selected observation: ${election.label}, ${selected.list}; locality code ${state.locality}; map view ${{ single: "one list’s vote share", mix: "vote mix", leader: "leading list" }[state.mode]}.`,
-        `Election-specific lists retain original names and ballot letters. Ballot letters do not identify the same political party across elections.`,
-        "Shares use valid local votes; turnout is voted / eligible. Missing rows or denominators are unavailable, not zero. Special envelopes have no locality and are excluded. Aggregate changes cannot establish individual voter migration; population, eligibility and boundaries can change.",
-      ],
+      asOf:
+        lang !== "en"
+          ? `${elections[0].date} → ${elections.at(-1)!.date}. ${t.files}: ${[...new Set(elections.map((e) => e.source.fetched))].sort().join(", ")}`
+          : `${elections[0].date} through ${elections.at(-1)!.date}; source files fetched ${[...new Set(elections.map((e) => e.source.fetched))].sort().join(", ")}`,
+      assumptions:
+        lang !== "en"
+          ? [
+              ...(selectedGeographyRevision
+                ? [`${t.geography}: ${selectedGeographyRevision}.`]
+                : []),
+              `${t.observation}: ${election.label}, ${selected.list}. ${t.locality}: ${state.locality}. ${t[state.mode]}.`,
+              t.listIdentity,
+              t.mapNote,
+            ]
+          : [
+              ...(selectedGeographyRevision
+                ? [`Geography snapshot revision: ${selectedGeographyRevision}.`]
+                : []),
+              `Selected observation: ${election.label}, ${selected.list}; locality code ${state.locality}; map view ${{ single: "one list’s vote share", mix: "vote mix", leader: "leading list" }[state.mode]}.`,
+              `Election-specific lists retain original names and ballot letters. Ballot letters do not identify the same political party across elections.`,
+              "Shares use valid local votes; turnout is voted / eligible. Missing rows or denominators are unavailable, not zero. Special envelopes have no locality and are excluded. Aggregate changes cannot establish individual voter migration; population, eligibility and boundaries can change.",
+            ],
       headers: [
         "Election",
         "List",
@@ -299,19 +380,7 @@ async function buildSourceExport(
       ],
       rows: history.flatMap(({ election: e, row, turnout, lists }) =>
         !row
-          ? [
-              [
-                e.label,
-                "No locality row",
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-              ],
-            ]
+          ? [[e.label, t.noRow, null, null, null, null, null, null, null]]
           : [
               ...lists.map((l) => [
                 e.label,
@@ -326,7 +395,7 @@ async function buildSourceExport(
               ]),
               [
                 e.label,
-                "Other lists",
+                t.other,
                 null,
                 row[3] - lists.reduce((n, l) => n + l.votes, 0),
                 row[3] > 0
@@ -344,7 +413,10 @@ async function buildSourceExport(
             ],
       ),
       sources: elections.map((e) => ({
-        label: `CEC ${e.label}, fetched ${e.source.fetched}`,
+        label:
+          lang === "en"
+            ? `CEC ${e.label}, fetched ${e.source.fetched}`
+            : `CEC ${e.label}. ${L.checked}: ${e.source.fetched}`,
         url: e.source.csv,
       })),
       view:

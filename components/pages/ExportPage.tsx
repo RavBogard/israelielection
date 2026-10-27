@@ -41,7 +41,7 @@ export default async function ExportPage({
       </p>
       {model.originalEvidence && <p role="note">{t.original}</p>}
       {model.assumptions.map((text, i) => (
-        <p className="export-assumption" lang="en" dir="ltr" key={i}>
+        <p className="export-assumption" lang={lang} key={i}>
           {text}
         </p>
       ))}

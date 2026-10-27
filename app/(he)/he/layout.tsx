@@ -8,6 +8,7 @@ import Link from "next/link";
 import { IBM_Plex_Sans_Hebrew } from "next/font/google";
 import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
+import EditionDescription from "@/components/EditionDescription";
 import Countdown from "@/components/Countdown";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
@@ -108,7 +109,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
             <div className="row">
               <div className="about">
                 <Logo lang="he" />
-                <p>{t.description}</p>
+                <EditionDescription legacy={t.description} lang="he"/>
                 <p>{t.footNote}</p>
                 <p>
                   {t.bylineBefore}
