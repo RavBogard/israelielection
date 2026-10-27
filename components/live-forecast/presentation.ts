@@ -62,6 +62,23 @@ export function exactBlocs(
     seats: { lo: n, median: n, hi: n },
   }));
 }
+type SeatRow = { id: string; seats: { lo: number; median: number; hi: number } };
+/**
+ * Headline figures are the shared 120-seat parliament the grid shows (Daniel, 2026-10-27: one consistent best
+ * estimate everywhere), with the simulations' 80% range beside them. Bloc and list medians need not sum to 120,
+ * so a median headline could disagree with the grid by a seat. The range widens only if the point falls outside it.
+ */
+export function headlineRows(rows: SeatRow[], point: Record<string, number> | null): SeatRow[] {
+  if (!point) return rows;
+  return rows.map((row) => {
+    const n = point[row.id];
+    if (n === undefined) return row;
+    return { ...row, seats: { lo: Math.min(row.seats.lo, n), median: n, hi: Math.max(row.seats.hi, n) } };
+  });
+}
+export function pointBlocs(context: SharedSeatContext, names: Record<string, ForecastParty>): Record<string, number> {
+  return Object.fromEntries(exactBlocs(context, names).map((row) => [row.id, row.seats.median]));
+}
 /** A missing field is a gap, not permission to join or backfill neighboring projections. */
 export function numericHistorySegments(history:LiveForecastSnapshot["history"],id:string){
  const segments:{at:number;seats:number}[][]=[];let current:{at:number;seats:number}[]=[];

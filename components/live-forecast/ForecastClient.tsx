@@ -6,6 +6,8 @@ import { useSeatContext } from "../seat-context/SeatContextProvider";
 import type { LiveForecastSnapshot } from "@/lib/live-forecast/types";
 import {
   exactBlocs,
+  headlineRows,
+  pointBlocs,
   mergeSnapshot,
   numericHistorySegments,
   primaryThresholds,
@@ -84,7 +86,7 @@ export function ForecastDisplay({
     maximum = Math.max(0, ...exact.map(([, n]) => n)),
     winners = exact.filter(([, n]) => n === maximum);
   const blocks = (
-    official ? exactBlocs(context, names) : (snapshot.blocSeats ?? [])
+    official ? exactBlocs(context, names) : headlineRows(snapshot.blocSeats ?? [], context ? pointBlocs(context, names) : null)
   ).filter((row) => row.id !== "other" || row.seats.hi > 0);
   const history = snapshot.history.filter((point) => point.blocSeats?.length);
   const cadence = readCadence ?? snapshot.cadence;
@@ -218,7 +220,7 @@ export function ForecastDisplay({
                   </tr>
                 </thead>
                 <tbody>
-                  {[...snapshot.partySeats]
+                  {headlineRows(snapshot.partySeats, context?.pointSeats ?? null)
                     .sort((a, b) => b.seats.median - a.seats.median)
                     .map((row) => (
                       <tr key={row.id}>

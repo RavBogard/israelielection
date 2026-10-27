@@ -11,7 +11,7 @@ const en = {
   watch:"The three modeled lists whose chances of passing are most uncertain.",
   all: "All modeled lists",
   marginal:
-    "Bloc medians and 80% ranges come from the same simulations. Separate medians need not add to 120; the mosaic above shows one coherent parliament.",
+    "Each figure is from the single 120-seat parliament shown above, the one closest to the middle of all the simulations. The range beside it covers 80% of simulated outcomes.",
   majority: "61 seats",
   arab: "Arab lists",
   other: "Unclassified lists",
@@ -51,7 +51,7 @@ mid:"בין הגושים",largestHistory:"ההסתברות לרשימה הגדו
   watch:"שלוש הרשימות במודל שסיכוייהן לעבור את אחוז החסימה הם הפחות ודאיים.",
   all: "כל הרשימות במודל",
   marginal:
-    "החציונים וטווחי ה־80% של הגושים מחושבים מאותן הדמיות. חציונים נפרדים אינם חייבים להסתכם ב־120; הפסיפס למעלה מציג כנסת אפשרית אחת.",
+    "כל מספר לקוח מהכנסת בת 120 המנדטים שמוצגת למעלה, זו הקרובה ביותר לאמצע כל ההדמיות. הטווח שלצידו מכסה 80% מהתוצאות בהדמיות.",
   majority: "61 מנדטים",
   arab: "הרשימות הערביות",
   other: "רשימות ללא שיוך לגוש",
@@ -90,7 +90,7 @@ mid:"بين الكتل",largestHistory:"احتمالات القائمة الأك
   watch:"القوائم الثلاث في النموذج ذات احتمالات الاجتياز الأكثر غموضًا.",
   all: "جميع القوائم في النموذج",
   marginal:
-    "تأتي وسائط الكتل ونطاقات 80% من المحاكاة نفسها. لا يلزم أن تجمع الوسائط المنفصلة إلى 120؛ الفسيفساء أعلاه تعرض برلمانًا متسقًا واحدًا.",
+    "كل رقم مأخوذ من البرلمان الواحد ذي الـ120 مقعدًا المعروض أعلاه، وهو الأقرب إلى وسط جميع المحاكاة. والنطاق بجانبه يغطي 80% من النتائج المحاكاة.",
   majority: "61 مقعدًا",
   arab: "القوائم العربية",
   other: "قوائم غير مصنفة",
@@ -129,7 +129,7 @@ mid:"میان بلوک‌ها",largestHistory:"احتمال بزرگ‌ترین 
   watch:"سه فهرست مدل که احتمال عبورشان از حد نصاب نامطمئن‌تر است.",
   all: "همه فهرست‌های مدل",
   marginal:
-    "میانه بلوک‌ها و بازه‌های ۸۰٪ از همان شبیه‌سازی‌ها می‌آیند. جمع میانه‌های جداگانه لزوماً ۱۲۰ نیست؛ موزاییک بالا یک مجلس منسجم را نشان می‌دهد.",
+    "هر عدد از همان مجلس ۱۲۰ کرسی بالا گرفته شده است، مجلسی که به میانهٔ همهٔ شبیه‌سازی‌ها نزدیک‌تر است. بازهٔ کنار آن ۸۰٪ نتایج شبیه‌سازی را در بر می‌گیرد.",
   majority: "۶۱ کرسی",
   arab: "فهرست‌های عرب",
   other: "فهرست‌های طبقه‌بندی‌نشده",
@@ -168,7 +168,7 @@ mid:"Zwischen den Blöcken",largestHistory:"Wahrscheinlichkeit der größten Lis
   watch:"Die drei modellierten Listen mit den unsichersten Einzugschancen.",
   all: "Alle modellierten Listen",
   marginal:
-    "Blockmediane und 80%-Spannen stammen aus denselben Simulationen. Einzelne Mediane müssen nicht 120 ergeben; das Mosaik zeigt ein stimmiges Parlament.",
+    "Jede Zahl stammt aus dem oben gezeigten Parlament mit 120 Sitzen, dem, das der Mitte aller Simulationen am nächsten liegt. Die Spanne daneben umfasst 80 % der simulierten Ergebnisse.",
   majority: "61 Sitze",
   arab: "Arabische Listen",
   other: "Nicht zugeordnete Listen",
@@ -207,7 +207,7 @@ mid:"Entre les blocs",largestHistory:"Probabilités de première liste au fil du
   watch:"Les trois listes modélisées dont les chances de franchir le seuil sont les plus incertaines.",
   all: "Toutes les listes modélisées",
   marginal:
-    "Les médianes des blocs et les plages à 80 % proviennent des mêmes simulations. Leur somme ne vaut pas nécessairement 120 ; la mosaïque montre un parlement cohérent.",
+    "Chaque chiffre provient du parlement de 120 sièges présenté plus haut, le plus proche du centre de toutes les simulations. La fourchette à côté couvre 80 % des résultats simulés.",
   majority: "61 sièges",
   arab: "Listes arabes",
   other: "Listes non classées",
@@ -247,7 +247,7 @@ mid:"两阵营之间",largestHistory:"最大名单概率随时间变化",thresho
   watch:"模型中跨门槛机会最不确定的三个名单。",
   all: "所有建模名单",
   marginal:
-    "阵营中位数和80%区间来自同一组模拟。各中位数之和不一定是120；上方拼图显示一个完整且一致的议会。",
+    "每个数字都来自上方显示的那一个120席议会，即最接近全部模拟中间位置的议会。旁边的区间涵盖80%的模拟结果。",
   majority: "61席",
   arab: "阿拉伯名单",
   other: "未分类名单",

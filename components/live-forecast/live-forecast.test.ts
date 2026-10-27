@@ -242,3 +242,15 @@ it("archives after the election window without calling preofficial estimates fin
 });
 
 it("keeps known between-bloc lists separate from unknown elected lists",()=>{const rows=exactBlocs({...official,pointSeats:{likud:50,yashar:50,res:5,new:15}},forecastPresentation("en").names);expect(rows.find(row=>row.id==="mid")?.seats.median).toBe(5);expect(rows.find(row=>row.id==="other")?.seats.median).toBe(15);expect(rows.reduce((n,row)=>n+row.seats.median,0)).toBe(120);});
+
+describe("headline rows", () => {
+  it("headline the shared parliament's seats and keep the range around them", async () => {
+    const { headlineRows } = await import("./presentation");
+    const rows = [{ id: "net", seats: { lo: 46, median: 50, hi: 54 } }, { id: "arab", seats: { lo: 15, median: 17, hi: 18 } }];
+    expect(headlineRows(rows, { net: 51, arab: 19 })).toEqual([
+      { id: "net", seats: { lo: 46, median: 51, hi: 54 } },
+      { id: "arab", seats: { lo: 15, median: 19, hi: 19 } },
+    ]);
+    expect(headlineRows(rows, null)).toBe(rows);
+  });
+});
