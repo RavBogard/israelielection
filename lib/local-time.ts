@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { locale, type Lang } from "./i18n";
 import { EXIT_LINE } from "./i18n/exit-line";
 
@@ -7,10 +7,10 @@ const clock = (iso: string, lang: Lang, timeZone: string) =>
   new Intl.DateTimeFormat(locale(lang), { timeZone, hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(iso));
 
 /** The reader's time zone, known only in the browser: null on the server and for the first client render, so the markup matches. */
+const noSubscribe = () => () => {};
+const readerZone = () => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || null; } catch { return null; } };
 export function useReaderZone(): string | null {
-  const [zone, setZone] = useState<string | null>(null);
-  useEffect(() => { try { setZone(Intl.DateTimeFormat().resolvedOptions().timeZone || null); } catch { setZone(null); } }, []);
-  return zone;
+  return useSyncExternalStore(noSubscribe, readerZone, () => null);
 }
 
 /**
