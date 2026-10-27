@@ -250,16 +250,22 @@ const signed = (n: number) => (n > 0 ? `+${n.toFixed(1)}` : n < 0 ? `−${(-n).t
 const DASH = "–";
 
 /** The election-night board, drawn the same before polls close (hatched, awaiting the count) and during it, so nothing moves on the night. */
+const SEAT_GRID_MIN_SHARE = 0.05;
+
 function Board({ count, counted, early, avgLabel, lang }: { count: Count | null; counted: Counted | null; early: boolean; avgLabel: string; lang: Lang }) {
   const t = resultsText[lang].board;
   const r = count ? results(count, cfg) : null;
+  const share = counted?.share ?? null;
+  // Below the share the live forecast needs before it leans on the count, a
+  // seat grid drawn from a few small localities misleads; show it as awaiting.
+  const gridR = r && !(share !== null && share < SEAT_GRID_MIN_SHARE) ? r : null;
   const toLetter = Object.fromEntries(Object.entries(cfg.letters).map(([l, id]) => [id, l]));
   const blocSeats = [...blocs]
     .sort((a, b) => BLOC_SEAT_ORDER.indexOf(a.id) - BLOC_SEAT_ORDER.indexOf(b.id))
-    .map((b) => ({ ...b, name: blocName(b, lang), seats: r ? r.lists.filter((l) => byId(l.partyId)?.bloc === b.id).reduce((s, l) => s + l.seats, 0) : null }));
-  const others = r ? r.lists.filter((l) => !l.partyId) : [];
+    .map((b) => ({ ...b, name: blocName(b, lang), seats: gridR ? gridR.lists.filter((l) => byId(l.partyId)?.bloc === b.id).reduce((s, l) => s + l.seats, 0) : null }));
+  const others = gridR ? gridR.lists.filter((l) => !l.partyId) : [];
   const untrackedSeats = others.reduce((s, l) => s + l.seats, 0);
-  const segments = r
+  const segments = gridR
     ? [
         ...blocSeats.filter((b) => b.seats).map((b) => ({ id: b.id, seats: b.seats!, color: `var(--b-${b.id})`, label: b.name.text })),
         ...(untrackedSeats ? [{ id: "other", seats: untrackedSeats, color: "var(--line-2)", label: t.otherLists }] : []),
@@ -269,7 +275,6 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
   const rows = r
     ? r.lists.filter((l) => l.partyId).map((l) => ({ l: l as PartyResult | null, v: vs.find((x) => x.partyId === l.partyId)! }))
     : [...vs].sort((a, b) => (b.avg ?? -1) - (a.avg ?? -1)).map((v) => ({ l: null as PartyResult | null, v }));
-  const share = counted?.share ?? null;
   const pc = share !== null ? `${(share * 100).toFixed(1)}%` : "";
   const turnout = count ? countedTurnout(count) : null;
   const wait = (k: string, c = "") => <td key={k} className={`num rs-wait${c ? ` ${c}` : ""}`}><span className="sr-only">{t.awaiting}</span><span aria-hidden="true">{DASH}</span></td>;
@@ -286,9 +291,9 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
         </defs>
       </svg>
       {early && r && <p className="rs-early-flag"><b>{flag[0]}</b>{flag[1]}</p>}
-      <section className={`rs-count${r ? "" : " rs-await"}${early && r ? " rs-early" : ""}`} aria-label={t.aria(!!(early && r))}>
+      <section className={`rs-count${gridR ? "" : " rs-await"}${early && gridR ? " rs-early" : ""}`} aria-label={t.aria(!!(early && r))}>
         <div className="rs-grid">
-          <SeatGrid segments={segments} labelRule rtl={isRtl(lang)} title={r ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
+          <SeatGrid segments={segments} labelRule rtl={isRtl(lang)} title={gridR ? t.gridTitle(early, MAJORITY) : t.gridAwait(KNESSET, MAJORITY)} />
         </div>
         <div>
           <ul className="rs-legend">
