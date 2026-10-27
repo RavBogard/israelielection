@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
-import { installAnalyticsPrivacyGuard } from "./analytics-privacy";
+import {
+  installAnalyticsPrivacyGuard,
+  privateAnalyticsReferrer,
+} from "./analytics-privacy";
 function browser(initial: string) {
   const location = { href: initial },
     listeners = new Map<string, () => void>(),
@@ -39,6 +42,24 @@ function browser(initial: string) {
   };
 }
 describe("analytics privacy across SPA navigation", () => {
+  it("blocks new documents reached from sensitive same-origin referrers", () => {
+    const b = browser("https://example.test/polls");
+    Object.defineProperty(b.target, "document", {
+      value: { referrer: "https://example.test/he/match?a=private" },
+    });
+    installAnalyticsPrivacyGuard(b.target, "test");
+    b.record();
+    expect(b.sent).toEqual([]);
+    expect(
+      privateAnalyticsReferrer(
+        "https://other.test/match?a=x",
+        "https://example.test",
+      ),
+    ).toBe(false);
+    expect(privateAnalyticsReferrer("not a URL", "https://example.test")).toBe(
+      false,
+    );
+  });
   it("disables an already initialized tag before either history method exposes answers, then stays disabled on exit", () => {
     for (const method of ["pushState", "replaceState"] as const) {
       const b = browser("https://example.test/polls");

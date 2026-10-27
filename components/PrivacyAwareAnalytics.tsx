@@ -1,16 +1,29 @@
 "use client";
 import { usePathname } from "next/navigation";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { useLayoutEffect } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import {
   privateAnalyticsPath,
+  privateAnalyticsReferrer,
   installAnalyticsPrivacyGuard,
 } from "@/lib/analytics-privacy";
-/** Sensitive direct loads omit GA; SPA entry disables an earlier tag for this document. */
+const serverSnapshot = () => false;
+/** No tag mounts until the browser URL/referrer has passed the privacy boundary. */
 export default function PrivacyAwareAnalytics({ gaId }: { gaId: string }) {
   const pathname = usePathname();
-  useLayoutEffect(() => installAnalyticsPrivacyGuard(window, gaId), [gaId]);
-  return privateAnalyticsPath(pathname ?? "") ? null : (
+  const subscribe = useCallback(
+    (notify: () => void) => installAnalyticsPrivacyGuard(window, gaId, notify),
+    [gaId],
+  );
+  const snapshot = useCallback(
+    () =>
+      !privateAnalyticsPath(window.location.pathname) &&
+      !privateAnalyticsReferrer(document.referrer, window.location.origin) &&
+      !(window as unknown as Record<string, unknown>)[`ga-disable-${gaId}`],
+    [gaId],
+  );
+  const allowed = useSyncExternalStore(subscribe, snapshot, serverSnapshot);
+  return !allowed || privateAnalyticsPath(pathname ?? "") ? null : (
     <GoogleAnalytics gaId={gaId} />
   );
 }

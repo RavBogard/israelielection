@@ -8,21 +8,41 @@ export const privateAnalyticsPath = (path: string) =>
  * disclose the previous answer/token URL. A full document load resets it.
  * https://developers.google.com/tag-platform/security/guides/privacy
  */
+export function privateAnalyticsReferrer(referrer: string, origin: string) {
+  try {
+    const url = new URL(referrer);
+    return url.origin === origin && privateAnalyticsPath(url.pathname);
+  } catch {
+    return false;
+  }
+}
 export function installAnalyticsPrivacyGuard(
   target: Window,
   measurementId: string,
+  onDisabled?: () => void,
 ) {
+  const suppress = () => {
+    (target as unknown as Record<string, unknown>)[
+      `ga-disable-${measurementId}`
+    ] = true;
+    onDisabled?.();
+  };
   const disable = (url?: string | URL | null) => {
     if (
       privateAnalyticsPath(
         new URL(url ?? target.location.href, target.location.href).pathname,
       )
     )
-      (target as unknown as Record<string, unknown>)[
-        `ga-disable-${measurementId}`
-      ] = true;
+      suppress();
   };
   disable();
+  if (
+    privateAnalyticsReferrer(
+      target.document?.referrer ?? "",
+      new URL(target.location.href).origin,
+    )
+  )
+    suppress();
   const cleanups = (["pushState", "replaceState"] as const).map((method) => {
     const original = target.history[method];
     const guarded: History[typeof method] = function (...args) {

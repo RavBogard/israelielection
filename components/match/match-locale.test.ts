@@ -154,6 +154,6 @@ describe("localized party match", () => {
       renderToStaticMarkup(
         createElement(PrivacyAwareAnalytics, { gaId: "test" }),
       ),
-    ).toContain("data-analytics");
+    ).toBe(""); // Tags wait until the client guard checks document.referrer.
   });
 });
