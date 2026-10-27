@@ -4432,6 +4432,64 @@
       "combined": [],
       "kind": "exit",
       "broadcastAt": "2026-10-27T23:11:00+02:00"
+    },
+    {
+      "id": "kan-11-exit-2026-10-28-0140",
+      "pollster": "Kan 11",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-28",
+      "via": "ynet news flashes",
+      "url": "https://www.ynet.co.il/news/category/184",
+      "n": null,
+      "margin": null,
+      "note": "Kan 11 exit poll, third version (ynet flash 'עדכון מדגם כאן 11: שוויון בין הגושים, הליכוד עולה ל-27 מנדטים'): Likud 25 to 27, Otzma Yehudit 7 to 6, Democrats 10 to 9, Yashar 21 unchanged; every other list as in the 23:11 version. Sums to 120 and gives the tie the flash reports (51/51/18). ynet gave no air time: 01:40 is approximate, when we saw it. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 27
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 13
+        },
+        "jl": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yb": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "raam": {
+          "seats": 7
+        },
+        "shas": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-28T01:40:00+02:00"
     }
   ]
 }
