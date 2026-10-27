@@ -6,9 +6,9 @@ import { applyToolCopy, appliedToolEdition } from "./tool-copy";
 import journeys from "@/data/journeys.json";
 
 describe("trusted interactive copy", () => {
-  it("registers three actual source revisions without translating control data", () => {
-    expect(toolDocuments).toHaveLength(3);
-    expect(generationDocuments).toHaveLength(46);
+  it("registers actual source revisions without translating control data", () => {
+    expect(toolDocuments).toHaveLength(4);
+    expect(generationDocuments).toHaveLength(47);
     for (const source of toolDocuments) {
       expect(source.revision).toBe(sourceRevision(readFileSync(source.file)));
       expect(

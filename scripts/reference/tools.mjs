@@ -4,6 +4,13 @@ import { sourceRevision } from "../../lib/reference/source.mjs";
 import { invariants } from "./source-blocks.mjs";
 const definitions = [
   {
+    id: "tools:glossary",
+    file: "data/glossary.json",
+    path: "/glossary",
+    title: "Election glossary",
+    fields: [/^terms\.\d+\.(?:term|def)$/],
+  },
+  {
     id: "tools:quiz",
     file: "data/quiz.json",
     path: "/match",

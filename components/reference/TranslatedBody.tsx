@@ -5,6 +5,8 @@ import type {
   TranslationDocument,
 } from "@/lib/reference/translations";
 import { isRtl, type Lang } from "@/lib/i18n";
+import { longDate } from "@/lib/format";
+import { sourceCheckedText } from "@/lib/i18n/reference";
 import {
   referenceText,
   widgetNotice,
@@ -45,71 +47,93 @@ export default function TranslatedBody({
   title?: string;
 }) {
   const t = referenceText(lang);
+  const heading = source.blocks.findIndex((b) => b.kind === "title"),
+    summary = source.blocks.findIndex((b) => b.kind === "summary");
   return (
-    <article className="article">
-      {source.blocks.map((block, i) => {
-        const text = translation.blocks[i].text;
-        if (block.kind === "title")
-          return <h1 key={block.id}>{title ?? text}</h1>;
-        if (block.kind === "heading")
-          return <h2 key={block.id}>{inline(text)}</h2>;
-        if (block.kind === "quote")
-          return (
-            <figure key={block.id}>
-              <blockquote>{inline(text)}</blockquote>
-              <figcaption>{quotationNotice(lang)}</figcaption>
-            </figure>
-          );
-        if (block.kind === "attribution")
-          return (
-            <p className="fig-src" key={block.id}>
-              {inline(text)}
-            </p>
-          );
-        if (block.kind === "widget") {
-          const w = block.widget!;
-          const chart =
-            w.name === "Chart" ? chartLabelEdition(w.attrs.id, lang) : null;
-          const localized =
-            w.name === "WhatIf" ||
-            chart?.state === "ready" ||
-            (w.name === "Positions" &&
-              positionsTranslated(w.attrs.issue, lang));
-          return (
-            <section className="reference-widget" key={block.id}>
-              {!localized && (
-                <p className="fig-src">
-                  <a href={source.path + "?original=en"} hrefLang="en">
-                    {t.original}
-                  </a>
-                  . {widgetNotice(lang)}
+    <div className="article-grid solo">
+      <article className="article">
+        {(title || heading >= 0) && (
+          <h1>{title ?? translation.blocks[heading].text}</h1>
+        )}
+        {summary >= 0 && (
+          <p className="dek">{inline(translation.blocks[summary].text)}</p>
+        )}
+        <p className="checked">
+          {sourceCheckedText(lang)}{" "}
+          <time dateTime={source.checked}>
+            {/^\d{4}-\d\d-\d\d$/.test(source.checked)
+              ? longDate(source.checked, lang)
+              : source.checked}
+          </time>
+          .
+        </p>
+        <div className="body">
+          {source.blocks.map((block, i) => {
+            const text = translation.blocks[i].text;
+            if (block.kind === "title" || block.kind === "summary") return null;
+            if (block.kind === "heading")
+              return <h2 key={block.id}>{inline(text)}</h2>;
+            if (block.kind === "quote")
+              return (
+                <figure key={block.id}>
+                  <blockquote>{inline(text)}</blockquote>
+                  <figcaption>{quotationNotice(lang)}</figcaption>
+                </figure>
+              );
+            if (block.kind === "attribution")
+              return (
+                <p className="fig-src" key={block.id}>
+                  {inline(text)}
                 </p>
-              )}
-              <div
-                lang={localized || w.name === "Positions" ? lang : "en"}
-                dir={w.name === "Positions" && isRtl(lang) ? "rtl" : "ltr"}
-              >
-                {w.name === "Chart" ? (
-                  <Chart
-                    id={w.attrs.id}
-                    labels={chart?.state === "ready" ? chart.labels : undefined}
-                    lang={chart?.state === "ready" ? lang : "en"}
-                  />
-                ) : w.name === "Positions" ? (
-                  <Positions issue={w.attrs.issue} lang={lang} />
-                ) : w.name === "WhatIf" ? (
-                  <WhatIf lang={lang} />
-                ) : null}
-              </div>
-            </section>
-          );
-        }
-        return (
-          <p key={block.id} style={{ whiteSpace: "pre-line" }}>
-            {inline(text)}
-          </p>
-        );
-      })}
-    </article>
+              );
+            if (block.kind === "widget") {
+              const w = block.widget!;
+              const chart =
+                w.name === "Chart" ? chartLabelEdition(w.attrs.id, lang) : null;
+              const localized =
+                w.name === "WhatIf" ||
+                chart?.state === "ready" ||
+                (w.name === "Positions" &&
+                  positionsTranslated(w.attrs.issue, lang));
+              return (
+                <section className="reference-widget" key={block.id}>
+                  {!localized && (
+                    <p className="fig-src">
+                      <a href={source.path + "?original=en"} hrefLang="en">
+                        {t.original}
+                      </a>
+                      . {widgetNotice(lang)}
+                    </p>
+                  )}
+                  <div
+                    lang={localized || w.name === "Positions" ? lang : "en"}
+                    dir={w.name === "Positions" && isRtl(lang) ? "rtl" : "ltr"}
+                  >
+                    {w.name === "Chart" ? (
+                      <Chart
+                        id={w.attrs.id}
+                        labels={
+                          chart?.state === "ready" ? chart.labels : undefined
+                        }
+                        lang={chart?.state === "ready" ? lang : "en"}
+                      />
+                    ) : w.name === "Positions" ? (
+                      <Positions issue={w.attrs.issue} lang={lang} />
+                    ) : w.name === "WhatIf" ? (
+                      <WhatIf lang={lang} />
+                    ) : null}
+                  </div>
+                </section>
+              );
+            }
+            return (
+              <p key={block.id} style={{ whiteSpace: "pre-line" }}>
+                {inline(text)}
+              </p>
+            );
+          })}
+        </div>
+      </article>
+    </div>
   );
 }

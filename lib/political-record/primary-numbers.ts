@@ -51,6 +51,8 @@ const negativeDirection =
   /(?:fell|fall|decreased?|declined?|down|minus|negative|sank|fiel|gesunken|baisse|baissé|diminué|reculé|ירד|ירידה|פחת|انخفض|انخفاض|تراجع|کاهش|افت|下降|下跌|降低)\s*(?:(?:by|of|was|is|um|de|ب|بنسبة)\s*)?$/iu;
 const positiveDirection =
   /(?:rose|rise|increased?|up|plus|positive|stieg|gestiegen|hausse|augmenté|עלה|עלייה|עליה|ارتفع|ارتفاع|افزایش|رشد|上涨|增长|上升)\s*(?:(?:by|of|was|is|um|de|ب|بنسبة)\s*)?$/iu;
+const seriesIdentifier =
+  /(?:^|[^\p{L}])(?:series(?:\s+ID)?|série|Reihe|סדרה|סדרת|סلسلة|السلسلة|سری|系列)\s*[:#]?\s*$/iu;
 function periodText(text: string, period: string, issues: NumericIssue[]) {
   const [year, month] = period.split("-").map(Number);
   const consume = (raw: string, y: number, m: number, day = false) => {
@@ -104,7 +106,7 @@ function mentions(text: string, locale: EmailLocale) {
       );
     const token = numericTokens(raw, locale)[0] ?? "",
       value = Number(token.replace(/%$/, ""));
-    const unit = percentagePoints.test(after)
+    const quantityUnit = percentagePoints.test(after)
       ? "percentage_points"
       : /%$/.test(raw) || percentWords.test(after) || /百分之\s*$/.test(before)
         ? "percent"
@@ -113,6 +115,11 @@ function mentions(text: string, locale: EmailLocale) {
           : otherCounts.test(after)
             ? "count"
             : "bare";
+    const unit = seriesIdentifier.test(before)
+      ? quantityUnit === "bare"
+        ? "series_identifier"
+        : `series_identifier_${quantityUnit}`
+      : quantityUnit;
     const directionText = before.replace(/百分之\s*$/, "");
     const negative = negativeDirection.test(directionText),
       positive = positiveDirection.test(directionText);
@@ -170,16 +177,22 @@ export function validatePrimaryNumbers(
           ? -mention.value
           : mention.value;
       const allowed =
-        mention.unit === "percent"
-          ? [payload.monthlyPercent, payload.annualPercent].includes(value)
-          : mention.unit === "bare" && !mention.negative && !mention.positive
-            ? mention.value === payload.indexValue || years.has(mention.value)
-            : false;
+        mention.unit === "series_identifier"
+          ? mention.value === payload.seriesId &&
+            !mention.negative &&
+            !mention.positive
+          : mention.unit === "percent"
+            ? [payload.monthlyPercent, payload.annualPercent].includes(value)
+            : mention.unit === "bare" && !mention.negative && !mention.positive
+              ? mention.value === payload.indexValue || years.has(mention.value)
+              : false;
       if (!allowed)
         issues.push({
-          code: ["percentage_points", "seats", "count"].includes(mention.unit)
-            ? "unsupported_unit"
-            : "unsupported_quantity",
+          code:
+            ["percentage_points", "seats", "count"].includes(mention.unit) ||
+            mention.unit.startsWith("series_identifier_")
+              ? "unsupported_unit"
+              : "unsupported_quantity",
           token: mention.raw,
           unit: mention.unit,
         });

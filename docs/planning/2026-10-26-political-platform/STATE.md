@@ -1,49 +1,62 @@
 # Political platform implementation state
 
-Updated October 27, 2026, 00:54 UTC. The [six-milestone plan](PLAN.md) is approved and implementation continues with Sol 6.1 agents. This is a preview release, not a production migration.
+Updated October 27, 2026, 01:18 UTC. The [six-milestone plan](PLAN.md) is approved. Implementation uses Sol 6.1 agents. This is a preview release, not a production migration.
 
 ## Current state
 
-- Preview branch: `codex/political-platform-preview`, latest deployed commit `a7953df`.
-- Integrated: election readiness, stable identities and append-only records, private-capture adapters, qualified formation/government/parliament/policy contracts and views, measurable commitment rubrics, public API/bulk exports, subscriptions/delivery controls, device-local opt-in recommendations, future-election activation guards, independent monitoring, localized reference/search/exports/embeds.
-- Backend agent: automatic producer integrated at `d15a8e6`; real preview storage rehearsal passed. Full-ledger monitoring is integrated. Actual CBS collection passed; the hosted publication rehearsal stopped on a numeric-validation rejection, under repair with bounded retries and private diagnostic evidence.
-- UI agent: party index/PartyMap and ballot interactions integrated in seven languages at `7b8cf83`, including future-edition roster isolation. Start is integrated in seven languages. Match is frozen for integration review. The remaining vote map, history, timeline, glossary, resources and corrections interactions are in progress; About has localized wrappers with reviewed prose still pending. Full site parity is not complete.
-- Root: integration, source/service qualification, release gates and documentation. No application implementation by Astra.
+- Preview branch: `codex/political-platform-preview`; latest deployed commit `346d38b`. [Draft PR #29](https://github.com/RavBogard/israelielection/pull/29) is attached.
+- Implemented: election readiness, stable identities/append-only records/private captures, qualified formation/government/parliament/policy contracts and views, measurable commitment rubrics, API/bulk exports, subscription/delivery controls, device-local opt-in recommendations, future-election guards, independent monitoring, localized reference/search/exports/embeds.
+- UI: party index/PartyMap, ballot, Start and Match have seven-language interactions. Match scores/IDs remain invariant; analytics are disabled before answer URLs enter browser history, with sensitive-referrer guards. Glossary and reviewed-prose layout are frozen for integration. Remaining interactions: corrections, timeline, party history, resources and vote map. Reviewed prose/chart/tool coverage is still incomplete; pending editions retain explicit original-language access.
+- Backend: actual CBS collection and English plus five other independently reviewed publication editions succeeded. French was correctly held at the numeric gate because a valid series identifier was not recognized; exact failed drafts are privately captured. The narrow typed-identifier repair is frozen for integration, followed by audited recovery of the same job.
+- Root owns integration/review and operations; no application implementation by Astra.
 
-## Verified evidence
+## Verification
 
-Latest full integrated suite: **1,195 tests in 157 files**, isolated TypeScript and diff checks pass. Producer production build passed. The subsequent exact-host signing guard has four focused tests passing. Hosted `a7953df` is Ready at `https://israelielection-git-codex-political-d7a050-ravbogards-projects.vercel.app`. [Draft PR #29](https://github.com/RavBogard/israelielection/pull/29) is attached to this task.
+Latest completed full integrated suite: **1,206 tests in 160 files** at the Match/privacy integration. Later typed-number checks passed28 tests; reviewed-prose/referrer checks passed57 tests. Isolated TypeScript and scoped lint pass. Hosted `346d38b` is Ready. A new combined suite is running for glossary, recovery and the French identifier fix.
 
-UI checks include seven-language mobile readiness; 57 reference cases; 28 subscription routes/actions; 14 briefing routes; keyboard search; future-edition/late-response isolation; 28 embed/export cases; 14 qualified-record fixture views; eight follow/preference cases; and nine final export-method/future-branding cases. Hebrew dark/mobile rendering and overflow were inspected. Fixtures were not published as facts.
+Preview: https://israelielection-git-codex-political-d7a050-ravbogards-projects.vercel.app
 
-Database tests execute the exact migration DDL in PGlite, including append-only restrictions, idempotence, rollback, cursors and provenance. The subsequent real Neon/Blob rehearsal passed: migrations001–006, restricted-role denials, concurrent CAS/idempotent record/outbox/edition writes, exact logical-core restore into a separate database, private-object authenticated readback, anonymous403 and corrupt-hash rejection. A third isolated runtime database uses a restricted branch-only URL; it now contains two actual CBS observations, with no QA fixtures. Provider PITR and subscriber/PII recovery are not certified by this core-record rehearsal. Mail gates remain below.
+Bounded browser evidence covers mobile/RTL/keyboard behavior across the changed surfaces, source-language/pending states, unknown lists, future-edition isolation, exports/embeds and questionnaire share/reload/privacy. Real reviewed Chinese American Lens and Hebrew voting articles were inspected after restoring the native article frame. Fixtures have not been published as political facts.
 
-Briefing verification uses captured article bodies, exact numeric/quote support, independent atomic-claim review and two independent reporting origins for factual developments/context. Individually failed claims are omitted; 1–8 verified claims can form a limited-coverage edition, zero cannot publish. Single-source perspectives remain attributed. Hosted dry-run [40418677784](https://github.com/RavBogard/israelielection/actions/runs/40418677784) qualified three claims and five translated editions; Chinese remained pending. No publication or notifications. Fresh post-contract dry-run40426009349 also passed: five of sixteen article captures, three independently qualified claims and five of six translated editions (Chinese pending), with no publication or notification.
+Real approved Neon/private Blob qualification passed:
 
-Independent monitoring rehearsal [40422558173](https://github.com/RavBogard/israelielection/actions/runs/40422558173) passed seven rendered-browser checks (21 page views) and US/Germany/Israel HTTPS/TLS probes. Israel's locale redirect was followed successfully. Briefing/notification jobs were skipped; artifacts are redacted. The separate 15-minute monitor schedule is implemented but disabled, and private incident persistence is unconfigured.
+- Exact migrations001–006, restricted-role denials, owner append-only enforcement and atomic rollback.
+- Concurrent CAS/idempotent record/outbox/edition writes, exact logical-core restore, authenticated private captures, anonymous403 and corrupt-hash rejection.
+- Separate synthetic subscriber rehearsal: exact five-table restore; copied-object recovery without original-key fallback; preserved consent, token consumption, unsubscribes, bounce/complaint suppression and delivery/fanout/webhook deduplication. Replay sent zero duplicate messages. No real mail or runtime-database connections occurred in this rehearsal.
+- Hosted collector stored two actual CBS observations. English notice and five other locales passed independent review with archived evidence; values and observation/base periods remain intact. First collection did not create historical alerts.
+
+These checks do not certify provider PITR, independent-account/key disaster recovery or production recovery objectives. Owner credentials were removed from hosted environments and rotated; old direct/pooled logins fail, while the restricted runtime remains valid.
+
+Briefing dry-run40426009349 qualified three independently verified atomic claims and five translated editions; Chinese remained pending. No publication or notification. Claims retain exact numeric/quote support and independent-source/semantic requirements; individual failures are omitted and zero qualified claims cannot publish.
+
+Monitoring rehearsal40422558173 passed21 rendered views and US/Germany/Israel HTTPS/TLS checks. Private persistence was unconfigured in that rehearsal. The separate15-minute monitoring schedule remains disabled.
 
 ## Translation work
 
-Five independently reviewed seats-guide editions are published to the preview ledger: Persian, Hebrew, corrected/re-reviewed Chinese, Arabic and French. German remains pending. The reviewed Hebrew seats chart has 71 labels and passed actual mobile rendering. Never publish the earlier Chinese candidate with a stale review.
+The original five reviewed seats-guide editions plus28 newly validated prose editions are in the preview ledger; seats-guide prose now covers all six additional languages. One reviewed Hebrew seats-chart edition is published. Never publish the earlier Chinese seats candidate with a stale review.
 
-- Prose batch `40417641522`: running, 132-edition/120-minute cap, two workers, 22 source documents.
-- Widget batch `40421287094`: queued behind prose, 126-edition/120-minute cap, 21 chart sources; already-current editions are skipped.
+- Completed prose run40417641522:28 validated,56 rejected,43 deferred,5 already-current skipped. Only validated artifacts were published.
+- Widget run40421287094: running,126-edition/120-minute cap,21 sources, two workers; current editions skipped.
+- Deferred policy prose run40430871011: queued,42 editions/120-minute cap, seven issue documents, all six additional locales. These were never attempted in the first run; no blind retry of rejected content.
+- One deferred Chinese who-votes edition and rejected tool/prose candidates remain pending. Tool quiz pilot failed numeric invariants and was not published.
 
-Only independently validated artifacts can be published. Rejected/deferred editions remain explicitly pending with original-language access. Full source hashes include chart data; translations cannot change numbers, URLs or executable content. Remaining legacy interactive pages also need registered/reviewed content, not route wrappers alone.
+Translation readiness requires exact source hashes, protected numbers/links/executable content and independent review. Localized route wrappers do not establish prose parity.
 
-## Activation gates and constraints
+## Activation and access boundaries
 
-Current production Redis/QStash collection and the approved 15-minute-first-ten-hours then three-hour cadence remain authoritative. Forecast artifacts and count-calibration gates are preserved. No production deployment, database cutover or actual email send has occurred for this platform expansion. Preview-only Neon/private Blob provisioning was explicitly approved; no paid plan upgrade was made.
+Production Redis/QStash and the approved15-minute-first-ten-hours then three-hour cadence remain authoritative. No production deployment/cutover, new recurring schedule, probability-calibration bypass or real email send occurred for this expansion.
 
-Approved preview Neon/private Blob qualification is documented in [Sources and services](SOURCES-AND-SERVICES.md). Storage, core restore and restricted-role checks passed. The initial owner credentials were removed from hosted environments and rotated; old direct/pooled logins fail while the restricted runtime remains valid. Only preview collection and publication-producer flags are enabled for bounded rehearsals. Public reads, API, subscriptions, email, discovery, activation and new recurring schedules remain off. Actual publication replay is under test. Sender-domain/test-recipient approval, email delivery/suppression/unsubscribe/correction races, provider PITR and subscriber recovery remain separate gates. Production cutover is not authorized.
+Preview-only Neon/private Blob was explicitly approved. Preview collection/producer flags are active. Branch-only database-read/API flags and a sensitive server cursor key are configured for the next deployment and real read-through QA. Registry/discovery/activation/subscription/send flags remain off.
 
-Knesset/parliamentary and procedural-law sources remain unqualified because their actual endpoints returned maintenance/access restrictions. CBS CPI has a real qualified structured sample; observation periods/base units are preserved and no causal claims are made. No missing source is replaced with invented facts. Count-informed probabilities remain disabled without held-out replay/calibration evidence.
+User approved the existing Resend account, sender `updates@israelvotes.org`, and test recipient `daniel@centralreform.org` for confirmation/digest/correction/unsubscribe tests. No paid upgrade or other recipients are authorized. Authentication/key access is still missing: user is on a phone and cannot sign in to the desktop browser. A secure phone-accessible Vercel environment setup link was provided; never request an API key in chat or re-ask recipient permission.
+
+Knesset/parliamentary and procedural-law sources remain unqualified due actual maintenance/access restrictions. CBS CPI is qualified with preserved units/period/base and no causal claims. Count-informed probabilities remain disabled without held-out replay/calibration.
 
 ## Next actions
 
-1. Repair the observed producer numeric-validation failure, then use audited recovery on the same preview job and verify exact reviewed publication replay. Actual CBS collection, full-ledger source monitoring, storage and briefing dry-run have passed.
-2. Continue remaining locale-route milestones and publish only qualified translation artifacts.
-3. Complete approved real-service rehearsals when available; retain explicit unavailable states otherwise.
-4. Present the tested preview and draft PR with implementation versus activation gaps clearly separated. Do not call the roadmap complete while these gates or route/content work remain.
+1. Integrate glossary/recovery/French identifier fix; deploy and recover the original French job with an audit record, then verify database-backed views/API against actual CBS records.
+2. Finish the remaining five legacy interactions and publish only independently qualified translation artifacts as bounded runs finish.
+3. Run real email/domain/webhook checks once secure Resend access is available, using only the approved sender/recipient.
+4. Present implementation versus activation/content gaps clearly. Production release/cutover is a separate approval; the roadmap is not complete while required work remains.
 
-Existing unrelated research, outreach, attachments and artifacts are untouched. Exact frozen path manifests and verbose test/QA logs are in ignored `.vercel/`; only task-owned files enter the preview branch.
+Exact frozen manifests and verbose QA logs are in ignored `.vercel/`. Existing unrelated research, outreach, attachments and artifacts remain untouched.

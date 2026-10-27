@@ -47,6 +47,7 @@ describe("edition paths", () => {
   it("finds the other edition of a page when there is one", () => {
     expect(otherEdition("/polls")).toEqual({ lang: "he", href: "/he/polls" });
     expect(otherEdition("/he/compare")).toEqual({ lang: "en", href: "/compare" });
-    expect(otherEdition("/glossary")).toBeNull();
+    expect(otherEdition("/glossary")).toEqual({lang:"he",href:"/he/glossary"});
+    expect(otherEdition("/he/glossary")).toEqual({lang:"en",href:"/glossary"});
   });
 });

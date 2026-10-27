@@ -73,3 +73,30 @@ it("never converts seats to percentages while retaining exact numeric checks", (
     validatePrimaryNumbers(seats, "62 seats", "en").length,
   ).toBeGreaterThan(0);
 });
+it("accepts the actual French CBS series identifier only in explicit localized identifier context", () => {
+  const french =
+    "Pour septembre 2026, le CBS indique un indice de 105,3 (série 120010, base moyenne 2024), une variation mensuelle de -0,5 % et annuelle de 1,6 %.";
+  expect(validatePrimaryNumbers(fact, french, "fr")).toEqual([]);
+  for (const [locale, label] of [
+    ["en", "series ID"],
+    ["he", "סדרה"],
+    ["ar", "السلسلة"],
+    ["fa", "سری"],
+    ["de", "Reihe"],
+    ["fr", "série"],
+    ["zh", "系列"],
+  ] as [EmailLocale, string][]) {
+    expect(validatePrimaryNumbers(fact, `${label} 120010`, locale)).toEqual([]);
+    for (const invalid of [
+      `${label} 120011`,
+      `${label} 120010%`,
+      `${label} 120010 seats`,
+      `${label} 1.6%`,
+      `120010`,
+    ])
+      expect(
+        validatePrimaryNumbers(fact, invalid, locale).length,
+        invalid,
+      ).toBeGreaterThan(0);
+  }
+});

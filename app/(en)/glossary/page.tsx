@@ -1,18 +1,11 @@
-import type { Metadata } from "next";
+import GlossaryPage from "@/components/pages/GlossaryPage";
 import { alternates } from "@/lib/canonical";
-import "@/components/article/article.css";
-import "@/components/glossary.css";
-import glossaryJson from "@/data/glossary.json";
-import { communityIndex, guideIndex, issueIndex } from "@/lib/content";
-import type { Glossary as GlossaryData } from "@/lib/glossary";
-import { longDate } from "@/lib/timeline";
-import Glossary from "@/components/Glossary";
-import CorrectionLink from "@/components/CorrectionLink";
-import PageHead from "@/components/PageHead";
-const data = glossaryJson as GlossaryData;
-export const metadata: Metadata = { title: "Glossary", description: "Find the election terms an American reader meets, including Hebrew names and alternate spellings.", alternates: alternates("/glossary") };
-export default async function Page() {
-  const labels: Record<string, string> = { "/vote-map": "Vote map", "/results": "Results", "/polls": "Polls", "/parties": "Party Map", "/american-lens": "The American lens", "/timeline": "Timeline" };
-  for (const article of [...await guideIndex(), ...await issueIndex(), ...await communityIndex()]) labels[article.href] = article.meta.title;
-  return <div className="wrap article-page glossary-page"><PageHead title="Glossary" standfirst={<>{data.terms.length} words an American reader meets in coverage of the election, each with its source. Search by name, Hebrew or alternate spelling.</>}><p className="ph-meta">Definitions checked {longDate(data.checked)}.</p></PageHead><div className="article-grid solo"><article className="article"><Glossary data={data} labels={labels} /><p className="article-correction"><CorrectionLink /></p></article></div></div>;
+import { glossaryText } from "@/lib/i18n/glossary";
+export const metadata = {
+  title: glossaryText("en").title,
+  description: glossaryText("en").intro,
+  alternates: alternates("/glossary"),
+};
+export default function Page() {
+  return <GlossaryPage />;
 }
