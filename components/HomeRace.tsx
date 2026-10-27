@@ -196,7 +196,7 @@ export default function HomeRace({
       ) : (
         shown.source && (
           <p className="race-source fig-src" data-seat-revision={cur.id === "forecast" && context?.basis === "campaign_forecast" ? context.revision : undefined}>
-            {!(cur.id === "forecast" && context?.basis === "campaign_forecast") && <>{dt.comparison} · </>}{shown.source}
+            {!(cur.id === "forecast" && context?.basis === "campaign_forecast") && <>{dt.comparison} Â· </>}{shown.source}
           </p>
         )
       )}
