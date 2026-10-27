@@ -1,3 +1,4 @@
+import { israelTimeLabel } from "@/lib/exit-line";
 import { getSharedSeatContext } from "@/lib/election-lifecycle/server";
 import { contextToPoll } from "@/lib/seat-context";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
@@ -54,7 +55,7 @@ export default async function Image() {
   const standfirst = context ? `${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]}. 120.` : isLive
     ? `The count so far, as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`
     : `Where the race stands: the normalized average of the latest ${mainPolls.length} polls as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`;
-  const dateline = context ? `${LIFECYCLE.en[context.freshness.status]} · ${context.publishedAt??LIFECYCLE.en.noTime}` : isLive ? live.state === "open" && live.freshness === "stale" ? "Saved count (stale)" : "Central Elections Committee count" : `Polls to ${mediumDate(mainPolls[0].published)}`;
+  const dateline = context ? `${LIFECYCLE.en[context.freshness.status]} · ${israelTimeLabel(context.publishedAt,"en",LIFECYCLE.en.noTime)}` : isLive ? live.state === "open" && live.freshness === "stale" ? "Saved count (stale)" : "Central Elections Committee count" : `Polls to ${mediumDate(mainPolls[0].published)}`;
 
   return new ImageResponse(
     (

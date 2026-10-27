@@ -1,3 +1,4 @@
+import { israelTimeLabel } from "@/lib/exit-line";
 import { getSharedSeatContext } from "@/lib/election-lifecycle/server";
 import { contextToPoll } from "@/lib/seat-context";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
@@ -63,7 +64,7 @@ export default async function Image() {
     ? [`הספירה עד כה, ב-${KNESSET} המושבים`, `בכנסת. ${MAJORITY} מנדטים הם רוב.`]
     : [`תמונת המרוץ לפי ממוצע ${mainPolls.length} הסקרים`, `האחרונים, ב-${KNESSET} המושבים בכנסת.`, `${MAJORITY} מנדטים הם רוב.`];
   const newest = new Intl.DateTimeFormat("he-IL", { day: "numeric", month: "long", timeZone: "Asia/Jerusalem" }).format(new Date(mainPolls[0].published));
-  const dateline = context ? `${LIFECYCLE.he[context.freshness.status]} · ${context.publishedAt??LIFECYCLE.he.noTime}` : isLive ? live.state === "open" && live.freshness === "stale" ? "ספירה שמורה, לא מעודכנת" : "ספירת ועדת הבחירות המרכזית" : `סקרים עד ${newest}`;
+  const dateline = context ? `${LIFECYCLE.he[context.freshness.status]} · ${israelTimeLabel(context.publishedAt,"he",LIFECYCLE.he.noTime)}` : isLive ? live.state === "open" && live.freshness === "stale" ? "ספירה שמורה, לא מעודכנת" : "ספירת ועדת הבחירות המרכזית" : `סקרים עד ${newest}`;
 
   return new ImageResponse(
     (

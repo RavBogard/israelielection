@@ -2,6 +2,7 @@
 
 import { useSeatContext } from "./SeatContextProvider";
 import { useState } from "react";
+import { israelAndLocal, useReaderZone } from "@/lib/local-time";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
@@ -22,6 +23,7 @@ export default function SeatBasis({
   const t = LIFECYCLE[lang];
   const { refreshFailed } = useSeatContext(context, pinned);
   const [copied, setCopied] = useState(false);
+  const zone = useReaderZone();
   if (!context)
     return (
       <p className="seat-basis seat-unavailable" role="status">
@@ -31,16 +33,12 @@ export default function SeatBasis({
         <a href={editionPath("/forecast", lang) ?? "/forecast"}>{t.archive}</a>
       </p>
     );
+  // A time is shown in Israel time and, in the browser, the reader's own.
   const date = (value: string | null) =>
     value
-      ? new Intl.DateTimeFormat(locale(lang), {
-          timeZone: "Asia/Jerusalem",
-          month: "short",
-          day: "numeric",
-          ...(value.includes("T")
-            ? { hour: "2-digit", minute: "2-digit", hourCycle: "h23" as const }
-            : {}),
-        }).format(new Date(value))
+      ? value.includes("T")
+        ? `${new Intl.DateTimeFormat(locale(lang), { timeZone: "Asia/Jerusalem", month: "short", day: "numeric" }).format(new Date(value))}, ${israelAndLocal(value, lang, zone)}`
+        : new Intl.DateTimeFormat(locale(lang), { timeZone: "Asia/Jerusalem", month: "short", day: "numeric" }).format(new Date(value))
       : t.noTime;
   const copy = async () => {
     try {

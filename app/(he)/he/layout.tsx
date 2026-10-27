@@ -10,6 +10,7 @@ import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import Logo from "@/components/Logo";
 import EditionDescription from "@/components/EditionDescription";
 import Countdown from "@/components/Countdown";
+import ExitBlocLine from "@/components/ExitBlocLine";
 import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { LangLink } from "@/components/LangSwitch";
@@ -100,6 +101,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
               <Countdown lang="he" />
               <SiteNav facts={FACTS} meter={METER} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} groups={GROUPS} utilities={HE_NAV_UTILITIES} bar={HE_NAV_BAR} home="/he" />
             </div>
+            <ExitBlocLine lang="he" />
             <ResultsStrip pollsClose={pollsClose} blocLabels={BLOC_LABELS} />
           </header>
           <main id="main" className="flex-1">

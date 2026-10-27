@@ -21,6 +21,7 @@ import briefingsJson from "@/data/briefings/_index.json";
 import Logo from "./Logo";
 import EditionDescription from "./EditionDescription";
 import Countdown from "./Countdown";
+import ExitBlocLine from "./ExitBlocLine";
 import ResultsStrip from "./ResultsStrip";
 import SiteNav from "./SiteNav";
 import { LangLink } from "./LangSwitch";
@@ -67,6 +68,7 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
         <a href="#main" className="skip">{t.skip}</a>
         <header className="masthead he-masthead">
           <div className="row"><Logo lang={lang} /><Countdown lang={lang} /><SiteNav facts={facts} meter={meter} pollsClose={pollsClose} closedAtRender={closed} groups={groups} utilities={utilities} bar={[`/${lang}`, "/search", "/about"]} home={`/${lang}`} /></div>
+          <ExitBlocLine lang={lang} />
           <ResultsStrip pollsClose={pollsClose} blocLabels={Object.fromEntries(blocs.map(b => [b.id, blocText(b, lang)]))} />
         </header>
         <main id="main" className="flex-1">{children}</main>
