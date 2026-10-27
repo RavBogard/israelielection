@@ -16,7 +16,7 @@ import PollThresholdWatch from "@/components/results/ThresholdWatch";
 import { partyColor } from "@/lib/party-colors";
 import SeatGrid from "@/components/SeatGrid";
 import { MAJORITY, KNESSET } from "@/lib/coalition";
-import { averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
+import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties, pollsData } from "@/lib/data";
 import { mediumDate } from "@/lib/format";
 import { BLOC_ORDER, BLOC_SEAT_ORDER, pollLabel, seatFigure, seatsIn } from "@/lib/polls";
 import type { Count, PartyResult } from "@/lib/results";
@@ -28,6 +28,7 @@ import PageHead from "@/components/PageHead";
 import renderLiveForecast from "@/components/live-forecast/LiveForecast";
 import PhaseStrip from "@/components/results/PhaseStrip";
 import ExitPollBars from "@/components/results/ExitPollBars";
+import ExitPollTable from "@/components/results/ExitPollTable";
 import { locale, type Lang } from "@/lib/i18n";
 import { partyText } from "@/lib/i18n/overlays";
 import resultsText from "@/lib/i18n/results";
@@ -381,14 +382,15 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
       : t.standfirst.open(live.freshness === "stale" ? t.standfirst.stale : n.phase === "early" ? t.standfirst.early : t.standfirst.count, when(captured!, lang), ET.format(captured!));
   const names = Object.fromEntries(parties.map((p) => [p.id, listName(p, lang).text]));
   const part: Record<Section, ReactNode> = {
-    exit: <ExitPollBars key="exit" config={cfg} lang={lang} />,
+    // Once exit polls air they lead the page (above the live panels); their sections below stay empty.
+    exit: !exitPolls.length && <ExitPollBars key="exit" config={cfg} lang={lang} />,
     board: <Board key="board" count={count} counted={n.counted} early={n.phase === "early"} avgLabel={avgLabel} lang={lang} />,
     freshness: live.state === "open" && <ResultsFreshness key="freshness" live={live} lang={lang} />,
     changes: live.state === "open" && <ResultsChanges key="changes" current={live.snapshot} previous={live.previous} config={cfg} names={names} lang={lang} />,
     threshold: count && <ThresholdWatch key="threshold" count={count} lang={lang} />,
     pollWatch: <PollThresholdWatch key="pollWatch" closed={n.phase !== "before"} lang={lang} />,
     watch: <WhatToWatch key="watch" closed={n.phase !== "before"} lang={lang} />,
-    exitTable: (n.phase === "before" || exitPolls.length > 0) && <ExitPolls key="exitTable" lists={r?.lists ?? null} lang={lang} />,
+    exitTable: n.phase === "before" && !exitPolls.length && <ExitPolls key="exitTable" lists={r?.lists ?? null} lang={lang} />,
     letters: <Letters key="letters" lang={lang} />,
     method: <Method key="method" lang={lang} />,
   };
@@ -400,6 +402,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead></ResultsHeading>
         <p className="note">{readiness(lang).timeNote}</p>
+        {exitPolls.length > 0 && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} /></>}
         {context && <CurrentParliament initial={context} lang={lang} showScenarios={false} {...forecastPresentation(lang)} />}
         {liveForecast}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>

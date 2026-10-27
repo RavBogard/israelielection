@@ -33,7 +33,12 @@ import SeatBar from "@/components/SeatBar";
 import { blocChange, blocSeries, newestPoll } from "@/lib/bloc-change";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsNow, resultsConfig } from "@/lib/results-live";
-import { homeHero, night, type Night } from "@/lib/results-phase";
+import { exitTime, homeHero, night, type Night } from "@/lib/results-phase";
+import ExitPollTable from "@/components/results/ExitPollTable";
+import AirTime from "@/components/results/AirTime";
+import { pollsterName } from "@/components/results/names";
+import { splitExits } from "@/lib/exit-split";
+import { EXIT_TABLE } from "@/lib/i18n/exit-table";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { blocText, pollsterText } from "@/lib/i18n/overlays";
 import chrome from "@/lib/i18n/chrome";
@@ -74,9 +79,19 @@ function Race({ poll, live, days, phase, lang, context, cadence }: { cadence?:Ca
     return { id: p.id, label, detail: shortDate(p.published, lang), model: homeRaceModel(p, parties, blocs, lang), change: own, heading: t.basisPoll(label, mediumDate(p.published, lang)),
       source: <>{t.pollSource(label, firm, p.n, mediumDate(p.published, lang))}{t.latestNote}{p.url && <><a href={p.url} hrefLang={he ? undefined : "en"}>{t.pollReport}</a>. </>}<Link href={href(lang, "/polls#browser", "/he/polls#browser")}>{t.everyPoll}</Link>.</> };
   };
+  // Election night: each channel's latest exit poll as its own comparison (Channel 14 and i24NEWS stay out; they are
+  // shown apart in the table under the hero). After the forecast, so the shared context (or the forecast) stays the default.
+  const x = EXIT_TABLE[lang], exits = splitExits(allPolls, cfg);
+  const exitOption = (p: Poll): RaceOption => {
+    const name = pollsterName(p.pollster, lang).text, at = exitTime(p, resultsConfig);
+    return { id: p.id, label: name, detail: new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(at)), model: homeRaceModel(p, parties, blocs, lang), heading: <>{pollLabel(p, lang)}, <AirTime at={at} lang={lang} updated={exits.updated.has(p.pollster)} /></>,
+      source: <>{x.caution} <Link href={href(lang, "/results", "/he/results")}>{x.more}</Link>.</> };
+  };
+  const exitChoice: RaceOption[] = exits.main.length ? [{ id: "exits", label: x.pick, detail: x.pickDetail(exits.main.length), model: homeRaceModel(exits.main[0], parties, blocs, lang), variants: exits.main.map(exitOption), variantsLabel: x.pickPoll }] : [];
   const options: RaceOption[] = [
     { id:"current",label:DASHBOARD[lang].current,model:homeRaceModel(context?contextToPoll(context):averagePoll,parties,blocs,lang) },
     { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(locale(lang))), model: homeRaceModel(forecastPoll, parties, blocs, lang), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
+    ...exitChoice,
     { id: "avg", label: t.pickAverage, detail: t.pickPolls(mainPolls.length), model:homeRaceModel(averagePoll,parties,blocs,lang), change, heading: t.basis(mainPolls.length,shortDate(mainPolls[0].published,lang)), source: avgSource },
     { id: "latest", label: t.pickLatest, detail: t.pickPollsters(mainPolls.length), model, variants: mainPolls.map(pollOption), variantsLabel: t.pickPoll },
   ];
@@ -148,6 +163,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
     <div className="home">
       <div className="wrap">
         <Race context={context} cadence={lifecycle?.cadence} poll={poll} live={!!results} days={days} phase={n.phase} lang={lang}/>
+        <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />
         {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
         {liveForecast}
 
