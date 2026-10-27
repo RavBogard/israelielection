@@ -24,9 +24,9 @@ const en = {
     basisForecast: (date: string, final: boolean) => `${final ? "Final forecast" : "Forecast model"}, ${date}`,
     /** The segmented control over the bloc list: which figures the hero shows. */
     pick: "Seats from",
-    pickAverage: "Site average",
+    pickAverage: "Polling average",
     pickVariant: (without: string) => `Without ${without}`,
-    pickForecast: "Forecast",
+    pickForecast: "Election forecast",
     pickLatest: "Latest polls",
     pickPolls: (n: number) => `${n} polls`,
     pickRuns: (runs: string) => `${runs} runs`,

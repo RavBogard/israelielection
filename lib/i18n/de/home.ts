@@ -15,7 +15,7 @@ const en: HomeText = {
         pick: "Grundlage der Sitze",
         pickAverage: "Umfragedurchschnitt",
         pickVariant: (without: string) => `Ohne ${without}`,
-        pickForecast: "Prognose",
+        pickForecast: "Wahlprognose",
         pickLatest: "Neueste Umfragen",
         pickPolls: (n: number) => `${n} Umfragen`,
         pickRuns: (runs: string) => `${runs} Simulationen`,

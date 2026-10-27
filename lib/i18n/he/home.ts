@@ -16,7 +16,7 @@ const he: HomeText = {
     pick: "המנדטים לפי",
     pickAverage: "ממוצע הסקרים",
     pickVariant: (without) => `בלי ${without}`,
-    pickForecast: "תחזית",
+    pickForecast: "תחזית הבחירות",
     pickLatest: "הסקרים האחרונים",
     pickPolls: (n) => `${n} סקרים`,
     pickRuns: (runs) => `${runs} ריצות`,

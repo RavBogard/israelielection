@@ -109,10 +109,11 @@ export default function HomeRace({
         heading: singleHeading,
       },
     ];
-    return rows.map((row) =>
+    return rows.filter((row) => row.id !== "current" || (context && context.basis !== "campaign_forecast")).map((row) =>
       row.id === "current" && context
         ? {
             ...row,
+            label: lt[context.basis],
             model: contextRaceModel(row.model, context, dt.unknown),
             heading: (
               <>
