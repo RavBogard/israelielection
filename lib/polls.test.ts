@@ -94,3 +94,14 @@ describe("which polls are averaged (ruling 111)", () => {
     for (const f of pollsData.config.withoutVariant.pollsters) expect(names.has(f), f).toBe(true);
   });
 });
+
+import { latestExits as _latestExits } from "./polls";
+describe("latestExits", () => {
+  it("keeps each broadcaster's newest version by broadcast time", () => {
+    const base = { firm: null, fieldwork: null, published: "2026-10-27", via: null, url: null, n: null, margin: null, note: null, results: {}, combined: [], kind: "exit" as const };
+    const a = { ...base, id: "a", pollster: "Channel 12", broadcastAt: "2026-10-27T22:00:00+02:00" };
+    const b = { ...base, id: "b", pollster: "Channel 12", broadcastAt: "2026-10-27T22:44:00+02:00" };
+    const c = { ...base, id: "c", pollster: "Kan 11", broadcastAt: "2026-10-27T22:00:00+02:00" };
+    expect(_latestExits([a, c, b]).map((p) => p.id)).toEqual(["b", "c"]);
+  });
+});

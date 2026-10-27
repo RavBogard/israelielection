@@ -4088,6 +4088,64 @@
       "combined": [],
       "kind": "exit",
       "broadcastAt": "2026-10-27T22:00:00+02:00"
+    },
+    {
+      "id": "channel-12-exit-2026-10-27-2244",
+      "pollster": "Channel 12",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "Times of Israel liveblog",
+      "url": "https://www.timesofisrael.com/liveblog-october-27-2026/",
+      "n": null,
+      "margin": null,
+      "note": "Channel 12 exit poll, updated version (Times of Israel liveblog entry 22:44): Democrats 9 to 10, Yisrael Beytenu 9 to 8, every other list as in the first version (from JNS); blocs unchanged at 50 and 52, matching the liveblog. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 24
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "byachad": {
+          "seats": 12
+        },
+        "jl": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yb": {
+          "seats": 8
+        },
+        "shas": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:44:00+02:00"
     }
   ]
 }

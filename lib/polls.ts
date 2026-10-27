@@ -19,6 +19,14 @@ export function byNewest(a: Poll, b: Poll): number {
 /** An election-night exit poll rather than a campaign poll. */
 export const isExit = (p: Poll) => p.kind === "exit";
 
+/** Each broadcaster's newest exit-poll version (by broadcast time), newest first. */
+export function latestExits(polls: Poll[]): Poll[] {
+  const at = (p: Poll) => Date.parse(p.broadcastAt ?? p.published);
+  const latest = new Map<string, Poll>();
+  for (const p of polls.filter(isExit)) { const old = latest.get(p.pollster); if (!old || at(p) > at(old)) latest.set(p.pollster, p); }
+  return [...latest.values()].sort((a, b) => at(b) - at(a) || a.pollster.localeCompare(b.pollster));
+}
+
 export function currentPolls(polls: Poll[], config: PollsConfig): Poll[] {
   const sorted = polls.filter((p) => !isExit(p)).sort(byNewest);
   if (!sorted.length) return [];
