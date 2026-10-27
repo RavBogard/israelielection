@@ -109,10 +109,11 @@ export default function HomeRace({
         heading: singleHeading,
       },
     ];
-    return rows.map((row) =>
+    return rows.filter((row) => row.id !== "current" || (context && context.basis !== "campaign_forecast")).map((row) =>
       row.id === "current" && context
         ? {
             ...row,
+            label: lt[context.basis],
             model: contextRaceModel(row.model, context, dt.unknown),
             heading: (
               <>
@@ -194,8 +195,8 @@ export default function HomeRace({
         </p>
       ) : (
         shown.source && (
-          <p className="race-source fig-src">
-            {dt.comparison} · {shown.source}
+          <p className="race-source fig-src" data-seat-revision={cur.id === "forecast" && context?.basis === "campaign_forecast" ? context.revision : undefined}>
+            {!(cur.id === "forecast" && context?.basis === "campaign_forecast") && <>{dt.comparison} · </>}{shown.source}
           </p>
         )
       )}

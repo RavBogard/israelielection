@@ -15,7 +15,7 @@ const en: HomeText = {
         pick: "席位数据来源",
         pickAverage: "民调平均值",
         pickVariant: (without: string) => `没有${without}`,
-        pickForecast: "预测",
+        pickForecast: "选举预测",
         pickLatest: "最新民调",
         pickPolls: (n: number) => `${n} 项民调`,
         pickRuns: (runs: string) => `${runs} 次模拟`,

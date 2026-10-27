@@ -5,6 +5,7 @@ import HomeRace from "./HomeRace";
 import { LangProvider } from "@/lib/i18n/lang";
 import { averagePoll, mainPolls, blocs, parties } from "@/lib/data";
 import { forecast, forecastPoll } from "@/lib/forecast";
+import { campaignContext } from "@/lib/election-lifecycle/resolver";
 import { homeRaceModel } from "@/lib/home-race";
 
 const cell0 = (html: string) => html.match(/<rect data-cell="0" data-bloc="net" class="c" x="(\d+)" y="(\d+)"/)!.slice(1).map(Number);
@@ -50,5 +51,30 @@ describe("the home mosaic", () => {
     expect(latestFirst).toContain(`${mainPolls[0].pollster} source`);
     expect(latest[0].model.kind).toBe("poll");
     expect(latest[0].model.rows.every((r) => !r.incomplete)).toBe(true);
+  });
+});
+
+
+describe("evidence choices", () => {
+  const model = homeRaceModel(forecastPoll, parties, blocs);
+  const options = [
+    { id: "current", label: "Current", model },
+    { id: "forecast", label: "Election forecast", model },
+    { id: "avg", label: "Polling average", model },
+  ];
+  it("does not offer the saved forecast twice before qualified election evidence", () => {
+    const html = renderToStaticMarkup(createElement(HomeRace, {options, currentContext: campaignContext()}));
+    expect(html).not.toContain('>Current<');
+    expect(html).toContain('aria-pressed="true">Election forecast');
+    expect(html).toContain('>Polling average<');
+  });
+  it.each(["named_exit", "live_projection", "official_seats"] as const)("names %s accurately and retains campaign comparisons", (basis) => {
+    const context = {...campaignContext(), basis};
+    const html = renderToStaticMarkup(createElement(HomeRace, {options, currentContext: context}));
+    const label = {named_exit:"Named exit poll",live_projection:"Qualified live projection",official_seats:"CEC-published seats"}[basis];
+    expect(html).toContain(`aria-pressed="true">${label}`);
+    expect(html).not.toContain('>Current<');
+    expect(html).toContain('>Election forecast<');
+    expect(html).toContain('>Polling average<');
   });
 });
