@@ -106,3 +106,5 @@
 [dir="rtl"] .rs .tw-dot { margin: -5.5px -5.5px 0 0; }
 [dir="rtl"] .rs .tw-dot.out { margin-right: 0; }
 [dir="rtl"] .rs .rs-counted-bar i { inset: 0 0 0 auto; }
+.rs .list-table .lt-now { white-space: nowrap; }
+.rs .list-table .lt-now .now-chip { margin-inline-start: 0; }

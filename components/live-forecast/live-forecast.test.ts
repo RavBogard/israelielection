@@ -74,6 +74,9 @@ describe.each(LANGS)("%s public election dashboard", (lang) => {
     expect(html).not.toContain("poll=forecast");
     expect(html).not.toContain("lf-impact");
     expect(html).not.toContain("NaN");
+    // Each party seat row carries the outgoing Knesset chip, with one key line.
+    expect((html.match(/data-testid="now-seats"/g) ?? []).length).toBeGreaterThan(0);
+    expect(html.match(/data-testid="now-seats-key"/g) ?? []).toHaveLength(1);
   });
   it("replaces uncertainty with exact official winners/blocs and watched outcomes", () => {
     const props = forecastPresentation(lang),
@@ -89,6 +92,7 @@ describe.each(LANGS)("%s public election dashboard", (lang) => {
     expect(html).toContain(DASHBOARD[lang].watched);
     expect(html).not.toContain(props.text.aheadChance);
     expect(html).not.toContain('class="lf-margin"');
+    expect(html).toContain('data-testid="now-seats"');
     expect(
       exactBlocs(official, props.names).reduce(
         (n, row) => n + row.seats.median,

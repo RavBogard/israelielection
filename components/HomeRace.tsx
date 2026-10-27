@@ -20,6 +20,7 @@ import { shortDate } from "@/lib/format";
 import { partyColor, PARTY_FALLBACK } from "@/lib/party-colors";
 import { seatFigure } from "@/lib/polls";
 import { useLang } from "@/lib/i18n/lang";
+import NowSeats, { NowSeatsKey } from "./NowSeats";
 import type { Lang } from "@/lib/i18n";
 import home from "@/lib/i18n/home";
 import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
@@ -203,8 +204,8 @@ export default function HomeRace({
 
   <section id="race-party-panel" className="race-party-panel" hidden={!active} aria-labelledby="race-party-heading" onKeyDown={e=>{if(e.key==="Escape"){e.preventDefault();reset();}}}>
    {active&&<><header><h2 id="race-party-heading">{t.panel(active.label)}</h2><button type="button" className="btn" onClick={reset}>{t.back}</button></header><p className="race-selection-status" role="status">{t.status(active.label)}</p>
-    <ul className="race-parties">{active.members.map(p=><li key={p.id}>{active.id==="other"?<span>{p.name}</span>:<Link href={profile(p.id)}><span className="sw" style={{background:partyColor(p.id)}} aria-hidden="true"/>{nm(p.name,p.nameLang)}</Link>}<span className="race-party-seats">{p.seats===null?p.state==="combined"?t.notSeparated:t.notReported:p.state==="below"?<>{t.below}<small>{model.kind==="average"?t.belowAvg:model.kind==="forecast"?t.belowForecast:model.kind==="poll"?t.belowPoll:t.belowCount}</small></>:seats(p.seats)}</span></li>)}</ul>
-    {active.combined.map(c=><p key={c.parties.join(",")} className="race-combined">{t.combined(c.names.join(" + "),seats(c.seats))}{c.withinGroup?t.within:t.across}{t.noSplit}</p>)}<p className="race-model-note">{model.kind==="average"?t.followsAvg:model.kind==="forecast"?t.followsForecast:model.kind==="poll"?t.followsPoll:t.followsCount}{t.noInvented}</p>
+    <ul className="race-parties">{active.members.map(p=><li key={p.id}>{active.id==="other"?<span>{p.name}</span>:<Link href={profile(p.id)}><span className="sw" style={{background:partyColor(p.id)}} aria-hidden="true"/>{nm(p.name,p.nameLang)}</Link>}<span className="race-party-seats" data-testid="race-party-seats" data-party={p.id}>{p.seats===null?p.state==="combined"?t.notSeparated:t.notReported:p.state==="below"?t.below:seats(p.seats)}{active.id!=="other"&&<NowSeats id={p.id} lang={lang}/>}{p.seats!==null&&p.state==="below"&&<small>{model.kind==="average"?t.belowAvg:model.kind==="forecast"?t.belowForecast:model.kind==="poll"?t.belowPoll:t.belowCount}</small>}</span></li>)}</ul>
+    {active.combined.map(c=><p key={c.parties.join(",")} className="race-combined">{t.combined(c.names.join(" + "),seats(c.seats))}{c.withinGroup?t.within:t.across}{t.noSplit}</p>)}{active.id!=="other"&&<NowSeatsKey lang={lang}/>}<p className="race-model-note">{model.kind==="average"?t.followsAvg:model.kind==="forecast"?t.followsForecast:model.kind==="poll"?t.followsPoll:t.followsCount}{t.noInvented}</p>
    </>}
   </section>
  </div>;

@@ -10,6 +10,8 @@ import { partyColor } from "@/lib/party-colors";
 import { splitExits } from "@/lib/exit-split";
 import { blocName, listName, pollsterName, T } from "./names";
 import AirTime from "./AirTime";
+import NowSeats, { NowSeatsKey } from "@/components/NowSeats";
+import { NOW_SEATS } from "@/lib/i18n/now-seats";
 import "./exit-table.css";
 
 type Lists = PartyResult[] | null | undefined;
@@ -64,6 +66,9 @@ function Table({ polls, lists, updated, config, lang, testId }: { polls: Poll[];
                 <span className="xt-ch">{x.countSoFar}</span>
               </th>
             )}
+            <th scope="col" className="num xt-now-h" data-testid={`${testId}-now-h`}>
+              <span className="xt-ch">{NOW_SEATS[lang].col}</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -77,12 +82,15 @@ function Table({ polls, lists, updated, config, lang, testId }: { polls: Poll[];
               </th>
               {polls.map((p) => cell(p, party.id))}
               {lists && <td className={`num${counted(party.id) ? "" : " xt-below"}`}>{counted(party.id) || x.below}</td>}
+              <td className="num xt-now">
+                <NowSeats id={party.id} lang={lang} bare />
+              </td>
             </tr>
           ))}
         </tbody>
         <tbody className="xt-blocs" data-testid={`${testId}-blocs`}>
           <tr>
-            <th scope="colgroup" colSpan={polls.length + 1 + (lists ? 1 : 0)} className="xt-blocs-h">
+            <th scope="colgroup" colSpan={polls.length + 2 + (lists ? 1 : 0)} className="xt-blocs-h">
               {x.blocs}
             </th>
           </tr>
@@ -100,6 +108,7 @@ function Table({ polls, lists, updated, config, lang, testId }: { polls: Poll[];
                   </td>
                 ))}
                 {lists && <td className="num">{countBloc(b)}</td>}
+                <td className="xt-now" />
               </tr>
             );
           })}
@@ -139,6 +148,7 @@ export default function ExitPollTable({
         {x.h}
       </h2>
       {main.length > 0 && <Table polls={main} lists={lists} updated={updated} config={config} lang={lang} testId="exit-main" />}
+      {main.length > 0 && <NowSeatsKey lang={lang} />}
       <p className="xt-caution" data-testid="exit-caution">
         {x.caution}
         {more && (

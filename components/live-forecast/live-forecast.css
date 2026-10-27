@@ -83,5 +83,7 @@
 .lf .lf-seat-point { position:absolute; top:0; height:18px; width:3px; transform:translateX(-50%); }
 .lf .lf-sixty-one { position:absolute; inset-inline-start:50.8333%; inset-block:0; border-inline-start:1px dashed var(--ink); z-index:1; }
 .lf[dir=rtl] .lf-seat-point,.lf[dir=rtl] .lf-seat-axis b { transform:translateX(50%); }
-.lf .lf-threshold-head>b { font:700 32px/1 var(--display); color:var(--ink); }
+.lf .lf-threshold-head>b, .lf .lf-threshold-head>.lf-fig>b { font:700 32px/1 var(--display); color:var(--ink); }
 .lf .lf-bloc>div { border-inline-start:0; padding-inline-start:0; }
+.lf .lf-fig { display: inline-flex; align-items: baseline; flex-shrink: 0; }
+.lf .lf-now .now-chip { margin-inline-start: 0; }

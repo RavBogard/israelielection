@@ -1,4 +1,6 @@
 import { readiness } from "@/lib/i18n/election-readiness";
+import NowSeats, { NowSeatsKey } from "@/components/NowSeats";
+import { NOW_SEATS } from "@/lib/i18n/now-seats";
 import CurrentUnavailable from "@/components/seat-context/CurrentUnavailable";
 import EvidenceGate, {ResultsHeading} from "@/components/seat-context/EvidenceGate";
 import { seatContextForRender } from "@/lib/seat-context-server";
@@ -312,7 +314,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
       <div className="table-scroll">
         <table className="data-table list-table">
           <thead>
-            <tr><th>{t.th.list}</th><th className="num lt-seat-m">{t.th.seats}</th><th className="lt-let">{t.th.letters}</th><th className="num">{t.th.votes}</th><th className="num">{t.th.share}</th><th className="num lt-seat">{t.th.seats}</th><th className="num">{avgLabel}</th><th className="num">{t.th.diff}</th></tr>
+            <tr><th>{t.th.list}</th><th className="lt-now" data-testid="board-now-h">{NOW_SEATS[lang].col}</th><th className="num lt-seat-m">{t.th.seats}</th><th className="lt-let">{t.th.letters}</th><th className="num">{t.th.votes}</th><th className="num">{t.th.share}</th><th className="num lt-seat">{t.th.seats}</th><th className="num">{avgLabel}</th><th className="num">{t.th.diff}</th></tr>
           </thead>
           <tbody>
             {rows.map(({ l, v }) => {
@@ -320,6 +322,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
               return (
                 <tr key={v.partyId}>
                   <td><span className="sw" style={swatch(p.id, lang)} /><Link href={edHref(`/parties/${p.id}`, lang)}><T v={listName(p, lang)} lang={lang} /></Link></td>
+                  <td className="lt-now"><NowSeats id={p.id} lang={lang} bare /></td>
                   {seatCell(l, "lt-seat-m")}
                   <td className="rs-heb lt-let" lang="he" dir="rtl">{toLetter[p.id]}</td>
                   {l ? <td className="num">{num(l.votes)}</td> : wait("v")}
@@ -332,6 +335,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
             })}
             <tr>
               <td>{t.others(r ? others.length : null)}</td>
+              <td className="lt-now" />
               {r ? <td className="num lt-seat-m">{untrackedSeats || DASH}</td> : wait("lt-seat-m", "lt-seat-m")}
               <td className="lt-let" />
               {r ? <td className="num">{num(others.reduce((s, l) => s + l.votes, 0))}</td> : wait("v")}
@@ -343,6 +347,7 @@ function Board({ count, counted, early, avgLabel, lang }: { count: Count | null;
           </tbody>
         </table>
       </div>
+      <NowSeatsKey lang={lang} />
       <p className="fig-src" style={{ marginTop: 10 }}>
         {r ? t.srcThreshold(num(r.alloc.thresholdVotes), String(cfg.threshold * 100)) : t.srcHatched}
         {t.srcAverage(avgLabel, mainPolls.length, mediumDate(mainPolls[0].published, lang))}
