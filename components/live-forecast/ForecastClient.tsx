@@ -14,7 +14,8 @@ import {
   probability,
   type ForecastProps,
 } from "./presentation";
-import NowSeats, { NowSeatsKey } from "../NowSeats";
+import NowSeats, { NowBlocSeats, NowSeatsKey } from "../NowSeats";
+import { outgoingBlocSeats } from "@/lib/outgoing-seats";
 import { NOW_SEATS } from "@/lib/i18n/now-seats";
 
 const colors: Record<string, string> = {
@@ -255,12 +256,16 @@ export function ForecastDisplay({
               <li key={row.id}>
                 <div className="lf-range-label">
                   <span>{bloc(row.id)}</span>
-                  <b dir="ltr">
-                    {official ? row.seats.median : interval(row.seats)}
-                  </b>
+                  <span className="lf-fig">
+                    <b dir="ltr">
+                      {official ? row.seats.median : interval(row.seats)}
+                    </b>
+                    <NowBlocSeats id={row.id} lang={lang} />
+                  </span>
                 </div>
                 <div className="lf-seat-track" aria-hidden="true">
                   <i className="lf-sixty-one" />
+                  {outgoingBlocSeats[row.id] !== undefined && <i className="lf-now-mark" style={{ insetInlineStart: pct(outgoingBlocSeats[row.id]) }} />}
                   <span
                     className="lf-seat-range"
                     style={{

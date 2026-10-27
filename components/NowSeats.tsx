@@ -1,4 +1,4 @@
-import { outgoingSeatsData } from "@/lib/outgoing-seats";
+import { outgoingBlocSeats, outgoingSeatsData } from "@/lib/outgoing-seats";
 import { FACTION_HE, NOW_SEATS } from "@/lib/i18n/now-seats";
 import type { Lang } from "@/lib/i18n";
 import "./now-seats.css";
@@ -35,5 +35,18 @@ export function NowSeatsKey({ lang, className }: { lang: Lang; className?: strin
     <p className={`now-key${className ? ` ${className}` : ""}`} data-testid="now-seats-key">
       {NOW_SEATS[lang].key}
     </p>
+  );
+}
+
+/** The same chip for a bloc: the seats its lists held in the outgoing Knesset ("now 68"). Nothing for "other". */
+export function NowBlocSeats({ id, lang, bare = false }: { id: string; lang: Lang; bare?: boolean }) {
+  const n = outgoingBlocSeats[id];
+  if (n === undefined) return null;
+  const t = NOW_SEATS[lang];
+  return (
+    <span className="now-chip" data-testid="now-bloc-seats" data-now={String(n)} title={t.sr(n)}>
+      <span aria-hidden="true">{bare ? String(n) : t.chip(n)}</span>
+      <span className="now-sr">{t.sr(n)}</span>
+    </span>
   );
 }

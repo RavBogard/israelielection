@@ -5,6 +5,7 @@
 .home .hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro intro" "mosaic selectors" "source selectors" "detail detail" "context context"; gap: 20px 64px; align-items: start; padding-block: 40px 36px; }
 .home .hero .text { grid-area: intro; }
 .home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
+.home .hero .hero-story { font: 600 clamp(16px, 1.3vw, 18px)/1.45 var(--body); color: var(--ink); margin: 10px 0 0; max-width: 60ch; text-wrap: balance; }
 .home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 52ch; }
 .home .race-basis { font-size: 14px; font-weight: 600; color: var(--ink); margin: 14px 0 0; }
 .home .race-chart { display: contents; }
@@ -42,6 +43,7 @@
 .home .race-group-name { display: flex; align-items: baseline; gap: 8px; font-size: 15px; font-weight: 600; line-height: 1.3; }
 .home .race-group-name .sw { flex: 0 0 auto; align-self: baseline; }
 .home .race-value { font: 700 25px var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.home .race-value .now-chip { font-family: var(--body); vertical-align: 7px; }
 .home .race-value small { display: block; font: 400 12px var(--body); text-align: end; color: var(--text); }
 .home .race-change { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; margin-top: 2px; }
 .home .race-spark { width: 52px; height: 18px; flex: 0 0 auto; }
@@ -190,8 +192,8 @@
 .home .pending-seat-frame { grid-area: mosaic; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 3px; margin-block: 1rem; }
 .home .pending-seat-frame span { aspect-ratio: 1; border: 1px solid var(--line-2); }
 
-/* Latest headlines beside the headline (election night, Daniel 2026-10-27): the right column above the bloc picker. */
-.home .hero.has-news { grid-template-areas: "intro news" "mosaic news" "mosaic selectors" "source selectors" "detail detail" "context context"; grid-template-rows: auto auto 1fr; }
+/* Latest headlines (election night, Daniel 2026-10-27): the right column, below the bloc estimates. */
+.home .hero.has-news { grid-template-areas: "intro intro" "mosaic selectors" "source news" "detail detail" "context context"; }
 .home .hero-news { grid-area: news; align-self: start; border-top: 2px solid var(--ink); padding-top: 7px; min-width: 0; }
 .home .hero-news header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .home .hero-news h2 { font: 600 14px/1.35 var(--body); color: var(--ink); margin: 0; }

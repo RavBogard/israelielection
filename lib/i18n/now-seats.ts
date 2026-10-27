@@ -17,6 +17,8 @@ export type NowSeatsText = {
   col: string;
   /** One key line below the first graphic that uses the chip. */
   key: string;
+  /** The hero's line after polls close: the Netanyahu bloc's outgoing seats against the estimate shown. */
+  blocStory: (was: number, now: number) => string;
 };
 
 const en: NowSeatsText = {
@@ -26,6 +28,7 @@ const en: NowSeatsText = {
   srFresh: "new list, no seats in the outgoing Knesset",
   col: "Now",
   key: "now: seats in the outgoing Knesset when it dissolved on July 17, 2026; new: a list with none.",
+  blocStory: (was, now) => `The Netanyahu bloc held ${was} seats in the outgoing Knesset; our estimate gives it ${now}.`,
 };
 
 const he: NowSeatsText = {
@@ -35,6 +38,7 @@ const he: NowSeatsText = {
   srFresh: "רשימה חדשה, בלי מנדטים בכנסת היוצאת",
   col: "כיום",
   key: "כיום: המנדטים בכנסת היוצאת ביום פיזורה, 17 ביולי 2026. חדשה: רשימה בלי מנדטים בה.",
+  blocStory: (was, now) => `לגוש נתניהו היו ${was} מנדטים בכנסת היוצאת; לפי ההערכה שלנו יהיו לו ${now}.`,
 };
 
 const ar: NowSeatsText = {
@@ -44,6 +48,7 @@ const ar: NowSeatsText = {
   srFresh: "قائمة جديدة، بلا مقاعد في الكنيست المنتهية ولايته",
   col: "حاليًا",
   key: "حاليًا: المقاعد في الكنيست المنتهية ولايته يوم حلّه في 17 تموز/يوليو 2026. جديدة: قائمة بلا مقاعد فيه.",
+  blocStory: (was, now) => `كان لكتلة نتنياهو ${was} مقعدًا في الكنيست المنتهية ولايته، وتقديرنا يمنحها ${now}.`,
 };
 
 const fa: NowSeatsText = {
@@ -53,6 +58,7 @@ const fa: NowSeatsText = {
   srFresh: "فهرست تازه، بدون کرسی در کنست پیشین",
   col: "اکنون",
   key: "اکنون: کرسی‌ها در کنست پیشین هنگام انحلال آن در ۱۷ ژوئیه ۲۰۲۶. تازه: فهرستی بدون کرسی در آن.",
+  blocStory: (was, now) => `بلوک نتانیاهو در کنست پیشین ${was} کرسی داشت؛ برآورد ما به آن ${now} کرسی می‌دهد.`,
 };
 
 const de: NowSeatsText = {
@@ -62,6 +68,7 @@ const de: NowSeatsText = {
   srFresh: "neue Liste, keine Sitze in der scheidenden Knesset",
   col: "Jetzt",
   key: "jetzt: Sitze in der scheidenden Knesset bei ihrer Auflösung am 17. Juli 2026; neu: eine Liste ohne Sitze.",
+  blocStory: (was, now) => `Der Netanjahu-Block hatte in der scheidenden Knesset ${was} Sitze; unsere Schätzung gibt ihm ${now}.`,
 };
 
 const fr: NowSeatsText = {
@@ -71,6 +78,7 @@ const fr: NowSeatsText = {
   srFresh: "nouvelle liste, sans siège dans la Knesset sortante",
   col: "Actuel",
   key: "actuel : sièges dans la Knesset sortante à sa dissolution, le 17 juillet 2026 ; nouvelle : une liste sans siège.",
+  blocStory: (was, now) => `Le bloc Netanyahou détenait ${was} sièges dans la Knesset sortante ; notre estimation lui en donne ${now}.`,
 };
 
 const zh: NowSeatsText = {
@@ -80,6 +88,7 @@ const zh: NowSeatsText = {
   srFresh: "新名单，在上届议会中没有席位",
   col: "现有",
   key: "现：上届议会于2026年7月17日解散时所占席位；新：在上届议会中没有席位的名单。",
+  blocStory: (was, now) => `内塔尼亚胡阵营在即将卸任的议会中拥有${was}席；我们的估计为${now}席。`,
 };
 
 export const NOW_SEATS: Record<Lang, NowSeatsText> = { en, he, ar, fa, de, fr, zh };

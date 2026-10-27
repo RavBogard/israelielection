@@ -28,3 +28,10 @@ describe("data/outgoing-seats.json", () => {
     expect(outgoingSeats("nope")).toBeNull();
   });
 });
+
+describe("outgoingBlocSeats", () => {
+  it("sums each bloc's lists in the outgoing Knesset to 120", async () => {
+    const { outgoingBlocSeats } = await import("./outgoing-seats");
+    expect(outgoingBlocSeats).toEqual({ net: 68, opp: 42, mid: 0, arab: 10 });
+  });
+});

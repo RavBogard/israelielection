@@ -10,7 +10,7 @@ import { partyColor } from "@/lib/party-colors";
 import { splitExits } from "@/lib/exit-split";
 import { blocName, listName, pollsterName, T } from "./names";
 import AirTime from "./AirTime";
-import NowSeats, { NowSeatsKey } from "@/components/NowSeats";
+import NowSeats, { NowBlocSeats, NowSeatsKey } from "@/components/NowSeats";
 import { NOW_SEATS } from "@/lib/i18n/now-seats";
 import "./exit-table.css";
 
@@ -113,7 +113,9 @@ function Table({ polls, lists, coverage, updated, config, lang, testId }: { poll
                   </td>
                 ))}
                 {lists && <td className="num">{countBloc(b)}</td>}
-                <td className="xt-now" />
+                <td className="num xt-now">
+                  <NowBlocSeats id={b} lang={lang} bare />
+                </td>
               </tr>
             );
           })}

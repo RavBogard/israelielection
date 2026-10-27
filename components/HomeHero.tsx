@@ -10,6 +10,8 @@ import { editionPath } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
 import type { ReactNode } from "react";
+import { blocOfList, outgoingBlocSeats } from "@/lib/outgoing-seats";
+import { NOW_SEATS } from "@/lib/i18n/now-seats";
 
 /** Same interactive hero as the campaign edition; its default point follows stored evidence. */
 export default function HomeHero({
@@ -57,6 +59,11 @@ export default function HomeHero({
               : t.projectedIntro}
           {h.majority(61, 120)}
         </p>
+        {!official && phase !== "before" && (
+          <p className="hero-story" data-testid="hero-bloc-story">
+            {NOW_SEATS[lang].blocStory(outgoingBlocSeats.net, Object.entries(context.pointSeats).reduce((n, [id, seats]) => n + (blocOfList[id] === "net" ? seats : 0), 0))}
+          </p>
+        )}
       </div>
       {news}
       <HomeRace

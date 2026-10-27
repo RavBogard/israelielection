@@ -20,7 +20,7 @@ import { shortDate } from "@/lib/format";
 import { partyColor, PARTY_FALLBACK } from "@/lib/party-colors";
 import { seatFigure } from "@/lib/polls";
 import { useLang } from "@/lib/i18n/lang";
-import NowSeats, { NowSeatsKey } from "./NowSeats";
+import NowSeats, { NowBlocSeats, NowSeatsKey } from "./NowSeats";
 import type { Lang } from "@/lib/i18n";
 import home from "@/lib/i18n/home";
 import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
@@ -159,7 +159,7 @@ export default function HomeRace({
  const delta=(d:number)=>he?d===0?t.noChange:<bdi dir="ltr">{signedSeats(d)}</bdi>:signedSeats(d);
  return <div className="race-chart">
   <div className="race-selectors">{opts.length>1&&<div className="race-pick" role="group" aria-label={th.pick}>{opts.map(o=><button key={o.id} type="button" aria-pressed={cur.id===o.id} onClick={()=>chooseOption(o.id)}>{o.label}{o.detail&&<small>{o.detail}</small>}</button>)}</div>}{cur.variants&&<div className="race-sub" role="group" aria-label={cur.variantsLabel??th.pickPoll}>{cur.variants.map(v=><button key={v.id} type="button" aria-pressed={shown.id===v.id} onClick={()=>choosePoll(v.id)}>{v.label}{v.detail&&<small>{v.detail}</small>}</button>)}</div>}{heading&&<p className="race-list-head">{heading}</p>}<p id="race-instruction" className="sr-only">{t.instruction}</p><ul>{model.rows.map(row=><li key={row.id}><button ref={el=>{buttons.current[row.id]=el;}} type="button" className="race-bloc-button" aria-expanded={selected===row.id} aria-controls="race-party-panel" onClick={()=>choose(row.id)}>
-   <span className="race-row-label"><span className="race-group-name"><span className="sw" style={{background:`var(--b-${row.id}, var(--ink-3))`}} aria-hidden="true"/>{nm(row.label,row.labelLang)}</span><span className="race-value">{seats(row.labelSeats??row.seats)}<small>{row.incomplete?t.knownSeats:t.seats}</small></span></span>
+   <span className="race-row-label"><span className="race-group-name"><span className="sw" style={{background:`var(--b-${row.id}, var(--ink-3))`}} aria-hidden="true"/>{nm(row.label,row.labelLang)}</span><span className="race-value">{seats(row.labelSeats??row.seats)}{row.id!=="other"&&<NowBlocSeats id={row.id} lang={lang}/>}<small>{row.incomplete?t.knownSeats:t.seats}</small></span></span>
    {change&&row.id!=="other"&&<span className="race-change"><svg className="race-spark" viewBox="-2 -2 52 18" aria-hidden="true" focusable="false"><path d={sparkPath(change.points,row.id,48,14,range)} stroke={`var(--b-${row.id}, var(--ink-3))`}/></svg>{delta(change.delta[row.id])}{t.since}{shortDate(change.since,lang)}</span>}
    {forecast&&row.id!=="other"&&<span className="race-change race-range">{t.range(forecast.blocs[row.id].lo,forecast.blocs[row.id].hi)}{(row.id==="net"||row.id==="opp")&&<><span aria-hidden="true">·</span>{t.chance(row.id==="net"?forecast.majority.net:forecast.majority.oppZionist)}</>}</span>}
    <span className="race-row-caption">{(row.id==="net"||row.id==="opp")&&<span className="race-gap">{row.shortfall>0?t.short(seats(row.shortfall)):(row.labelSeats??row.seats)===61?t.at:t.above(seats((row.labelSeats??row.seats)-61))}{row.incomplete?t.known:""}</span>}<span className="race-disclosure">{selected===row.id?t.hide:t.show}<span className={`race-caret${selected===row.id?" open":""}`} aria-hidden="true"/></span></span>

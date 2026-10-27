@@ -87,3 +87,7 @@
 .lf .lf-bloc>div { border-inline-start:0; padding-inline-start:0; }
 .lf .lf-fig { display: inline-flex; align-items: baseline; flex-shrink: 0; }
 .lf .lf-now .now-chip { margin-inline-start: 0; }
+
+/* Where the bloc stood in the outgoing Knesset: a hollow tick on the 0-120 track, keyed by the "now" chip beside the figure. */
+.lf .lf-now-mark { position:absolute; inset-block:-3px; width:7px; transform:translateX(-50%); border:1.5px solid var(--ink-2); border-radius:2px; background:transparent; z-index:2; }
+.lf[dir=rtl] .lf-now-mark { transform:translateX(50%); }
