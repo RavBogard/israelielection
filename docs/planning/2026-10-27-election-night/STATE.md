@@ -19,3 +19,9 @@ GATE: building UI changes straight to main via PRs without a preview gate. Proce
 - Channel 13 partial update (ynet: B'Yachad 13, Joint List 11, blocs 50/52/18) held until Democrats and Yisrael Beytenu are known.
 - Open for tomorrow: polls.json withoutVariant note says "Filber's firms" (stale: he left Direct Polls in June 2025; Channel 14 polls through Next Data); parties.json still says Gantz may drop out (Wikipedia: Blue and White withdrew Oct 19); share images exist only for en and he.
 - Ops: the live model reads hand-entered exits at each 15-minute cycle after deploy. Tests that read data/polls.json must not assume which exits exist (fixed twice tonight).
+
+## 2026-10-28 ~01:10 Israel
+- GATE: /results count seat grid held as "awaiting" below 5% of the roll counted (11d3206) — proceeded because Daniel's "only care about getting it right" ruling; 0.1% coverage from 15 localities showed Netanyahu bloc 75. Same threshold the live forecast uses (count-nowcast minCoverage).
+- Reactions: added Deri, Ben Gvir; Liberman now paraphrase (soldiers' votes, results by Friday); Netanyahu note updated to 1 a.m. + Likud no-interviews instruction (ToI liveblog).
+- Sweep 01:01: no newer exit polls than Kan 23:11 / Ch13 22:57 / Ch12 22:44; no final turnout; CEC count unchanged at 2,661 votes. Netanyahu not expected at Likud HQ before ~03:00.
+- Earlier this session (logged in batch): headlines rail on home; coalition scenarios removed (Daniel ruling); JPost Israel-clock fix; bloc "now" chips + bloc story line; i24NEWS exit (set apart); mid row hidden at 0 + below-threshold line; election-night notes + formation steps; home reorder; tighter headline rail.
