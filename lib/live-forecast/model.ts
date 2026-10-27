@@ -7,6 +7,9 @@ import type { Poll } from "../types";
 import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 
 export const MODEL_VERSION = "live-v3-joint-blocs";
+/** Bump on any change to model code: it enters the input revision, so the next cycle recomputes even when no
+ * source changed. MODEL_VERSION stays, since stored snapshots are checked against the committed fallback's version. */
+export const MODEL_CODE_REVISION = "2026-10-27.1-grid-bloc-medians";
 const canonical = (v: unknown): unknown =>
   Array.isArray(v)
     ? v.map(canonical)
@@ -29,6 +32,7 @@ export const modelRevision = (exits: Poll[]) =>
     prior: frozen.sha256,
     inputs: frozen.inputSha256,
     model: MODEL_VERSION,
+    code: MODEL_CODE_REVISION,
     scenarios: SCENARIO_VERSION,
     exits: exits
       .map((p) => ({
