@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-27",
   "config": {
     "dissolved": "2026-07-17",
     "currentWindowDays": 14,
@@ -3914,6 +3914,180 @@
         }
       },
       "combined": []
+    },
+    {
+      "id": "kan-11-exit-2026-10-27-2200",
+      "pollster": "Kan 11",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "Times of Israel liveblog",
+      "url": "https://www.timesofisrael.com/liveblog-october-27-2026/",
+      "n": null,
+      "margin": null,
+      "note": "Kan 11 exit poll, first version at the close of polls (Times of Israel liveblog entry 22:09). Reservists–Economic and Amcha Yisrael below the threshold. Kan says it will update the poll every 30 minutes; later versions are separate rows. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 25
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "jl": {
+          "seats": 10
+        },
+        "dem": {
+          "seats": 10
+        },
+        "yb": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 7
+        },
+        "shas": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:00:00+02:00"
+    },
+    {
+      "id": "channel-13-exit-2026-10-27-2200",
+      "pollster": "Channel 13",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "JNS; Haaretz live blog",
+      "url": "https://www.jns.org/israeli-election-exit-polls",
+      "n": null,
+      "margin": null,
+      "note": "Channel 13 exit poll, first version at the close of polls (Times of Israel liveblog entry 22:06). JNS and Haaretz agree on every party; blocs 50/53/17 match the Times of Israel liveblog (https://www.timesofisrael.com/liveblog-october-27-2026/). Reservists–Economic and Amcha Yisrael below the threshold. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 25
+        },
+        "yashar": {
+          "seats": 23
+        },
+        "byachad": {
+          "seats": 14
+        },
+        "jl": {
+          "seats": 10
+        },
+        "dem": {
+          "seats": 9
+        },
+        "raam": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 6
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "shas": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:00:00+02:00"
+    },
+    {
+      "id": "channel-12-exit-2026-10-27-2200",
+      "pollster": "Channel 12",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "JNS",
+      "url": "https://www.jns.org/israeli-election-exit-polls",
+      "n": null,
+      "margin": null,
+      "note": "Channel 12 exit poll, first version at the close of polls (Times of Israel liveblog entry 22:03). Party figures from JNS; they match the Times of Israel liveblog figures for Likud 24, Yashar 22, B’Yachad 12 and the Joint List 11 and its blocs 50/52/18. Haaretz’s live blog gives Yisrael Beytenu 7, Shas 6 and UTJ 7, which make 117 seats and contradict its own bloc totals; JNS’s figures are used. Reservists–Economic and Amcha Yisrael below the threshold. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 24
+        },
+        "yashar": {
+          "seats": 22
+        },
+        "byachad": {
+          "seats": 12
+        },
+        "jl": {
+          "seats": 11
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yb": {
+          "seats": 9
+        },
+        "shas": {
+          "seats": 8
+        },
+        "raam": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:00:00+02:00"
     }
   ]
 }
