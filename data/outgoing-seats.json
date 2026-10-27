@@ -1,0 +1,161 @@
+{
+  "checked": "2026-10-27",
+  "rule": "Seats are the Knesset faction seats held at dissolution (2026-07-17) by the faction(s) that make up each 2026 list, not the 2022 result. A list built from several factions sums them and lists each component. Faction membership is the formal one recognised by the Knesset House Committee: an MK who announced a move to another 2026 list but kept their seat still counts for the faction they sat in, and the move is noted. A seat an MK resigned was filled by the next candidate on the old list and stays with that faction; it is not carried to the MK's new list. A list with no sitting MKs is 0 (new list).",
+  "sourceNote": "Faction counts come from Hebrew Wikipedia's 25th Knesset page (revision 44118337, 2026-10-25), section 'Factions after splits and mergers' and the splits log, which records the July 16, 2026 splits of UTJ (Degel HaTorah 4, Agudat Yisrael 3) and Hadash–Ta'al (Hadash 3, Ta'al 2). They agree with the member list on English Wikipedia's 'List of members of the twenty-fifth Knesset' (revision 1382274472, 2026-10-27), whose summary table swaps Otzma Yehudit (7) and the Religious Zionist Party (6); its member list gives Religious Zionist Party 7 and Otzma Yehudit 6, as the Hebrew page and IDI's 2022 split record do. The Knesset site was not consulted.",
+  "lists": {
+    "likud": {
+      "seats": 36,
+      "components": [
+        { "faction": "Likud", "seats": 32 },
+        { "faction": "New Hope", "seats": 4 }
+      ],
+      "note": "New Hope signed a merger with Likud in March 2025 and Sa'ar and Elkin are on the 2026 Likud list, but the House Committee had not approved the merger as of July 2026, so New Hope was still a separate 4-seat faction at dissolution (Elkin, Haskel, Buskila, Hasson). Sharren Haskel left to form Israel First, which is not one of the 15 lists; her seat is counted here because it was a New Hope faction seat. Dan Illouz left Likud and resigned his seat on Aug 13, 2026, after dissolution; his replacement is Likud.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "Wikipedia, New Hope (Israel), rev 1375765476", "url": "https://en.wikipedia.org/w/index.php?oldid=1375765476", "date": "2026-09-19" },
+        { "name": "Times of Israel, Ruling Likud party approves merger with Gideon Sa'ar's New Hope", "url": "https://www.timesofisrael.com/ruling-likud-party-approves-merger-with-gideon-saars-new-hope/", "date": null }
+      ]
+    },
+    "otzma": {
+      "seats": 6,
+      "components": [{ "faction": "Otzma Yehudit", "seats": 6 }],
+      "note": "Ran inside the Religious Zionism joint list in 2022; the list split into three factions on Nov 20, 2022.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "IDI, Division of the Religious Zionism faction", "url": "https://en.idi.org.il/articles/46496", "date": "2022-11-20" }
+      ]
+    },
+    "shas": {
+      "seats": 11,
+      "components": [{ "faction": "Shas", "seats": 11 }],
+      "note": "",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "utj": {
+      "seats": 7,
+      "components": [
+        { "faction": "Degel HaTorah", "seats": 4 },
+        { "faction": "Agudat Yisrael", "seats": 3 }
+      ],
+      "note": "The UTJ faction split into its two components on July 16, 2026, the day before dissolution. Both run together on the 2026 UTJ list.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "rz": {
+      "seats": 7,
+      "components": [
+        { "faction": "Religious Zionist Party", "seats": 7 },
+        { "faction": "Zehut", "seats": 0 }
+      ],
+      "note": "Zehut had no MKs in the 25th Knesset.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "IDI, Division of the Religious Zionism faction", "url": "https://en.idi.org.il/articles/46496", "date": "2022-11-20" }
+      ]
+    },
+    "poi": {
+      "seats": 0,
+      "components": [],
+      "note": "New list (launched Aug 25, 2026); no sitting MKs.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "noam": {
+      "seats": 1,
+      "components": [{ "faction": "Noam", "seats": 1 }],
+      "note": "Avi Maoz.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "yashar": {
+      "seats": 0,
+      "components": [],
+      "note": "New list; no faction in the Knesset. Eisenkot resigned his National Unity seat in July 2025 and Eitan Ginzburg took it for National Unity; Matan Kahana's seat likewise went to Yael Ron Ben-Moshe. Orit Farkash-Hacohen moved to Yashar but kept her seat in the Blue and White–National Unity faction, where it is counted.",
+      "sources": [
+        { "name": "Wikipedia, List of members of the twenty-fifth Knesset, rev 1382274472 (replacements)", "url": "https://en.wikipedia.org/w/index.php?oldid=1382274472", "date": "2026-10-27" },
+        { "name": "Wikipedia, Blue and White (political party), rev 1382278619", "url": "https://en.wikipedia.org/w/index.php?oldid=1382278619", "date": "2026-10-27" }
+      ]
+    },
+    "byachad": {
+      "seats": 24,
+      "components": [
+        { "faction": "Yesh Atid", "seats": 24 },
+        { "faction": "Bennett 2026", "seats": 0 }
+      ],
+      "note": "Bennett's party had no MKs. Yesh Atid MKs who left the party (Segalovitz, Stern, Ron Katz) resigned their seats, which went to the next Yesh Atid candidates. Eitan Ginzburg joined B'Yachad but his seat is in the Blue and White–National Unity faction.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "Wikipedia, List of members of the twenty-fifth Knesset, rev 1382274472 (replacements)", "url": "https://en.wikipedia.org/w/index.php?oldid=1382274472", "date": "2026-10-27" }
+      ]
+    },
+    "dem": {
+      "seats": 4,
+      "components": [
+        { "faction": "Labor", "seats": 4 },
+        { "faction": "Meretz", "seats": 0 }
+      ],
+      "note": "The faction kept the name Labor in the Knesset; the House Committee refused a rename to The Democrats in Feb 2025. Meretz won no seats in 2022.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "Wikipedia, List of members of the twenty-fifth Knesset, rev 1382274472", "url": "https://en.wikipedia.org/w/index.php?oldid=1382274472", "date": "2026-10-27" }
+      ]
+    },
+    "yb": {
+      "seats": 6,
+      "components": [{ "faction": "Yisrael Beiteinu", "seats": 6 }],
+      "note": "",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "bw": {
+      "seats": 8,
+      "components": [{ "faction": "Blue and White–National Unity", "seats": 8 }],
+      "note": "Formal faction count at dissolution. Only three of the eight MKs stayed on the 2026 list (Gantz, Tamano-Shata, Schuster); Farkash-Hacohen and others moved to Yashar, Ginzburg to B'Yachad, and Tropper left. Wikipedia reports Gantz withdrew the list on Oct 19, 2026.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" },
+        { "name": "Wikipedia, Blue and White (political party), rev 1382278619", "url": "https://en.wikipedia.org/w/index.php?oldid=1382278619", "date": "2026-10-27" },
+        { "name": "Ynet, Gantz announces MK Tropper will not leave current Knesset, asks Farkash-Hacohen to resign", "url": "https://www.ynetnews.com/article/1cyucu5ng", "date": null }
+      ]
+    },
+    "res": {
+      "seats": 0,
+      "components": [],
+      "note": "New list; neither the Reservists nor the Economic Party had MKs. Hili Tropper's seat is counted in Blue and White–National Unity.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "jl": {
+      "seats": 5,
+      "components": [
+        { "faction": "Hadash", "seats": 3 },
+        { "faction": "Ta'al", "seats": 2 },
+        { "faction": "Balad", "seats": 0 }
+      ],
+      "note": "The Hadash–Ta'al faction split into its components on July 16, 2026. Balad won no seats in 2022.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    },
+    "raam": {
+      "seats": 5,
+      "components": [{ "faction": "Ra'am (United Arab List)", "seats": 5 }],
+      "note": "Ra'am's 2026 no. 2, Yoav Segalovitz, resigned his Yesh Atid seat in Aug 2026; it is not carried.",
+      "sources": [
+        { "name": "Wikipedia (he), הכנסת העשרים וחמש, rev 44118337", "url": "https://he.wikipedia.org/w/index.php?oldid=44118337", "date": "2026-10-25" }
+      ]
+    }
+  },
+  "reconciliation": {
+    "listSum": 120,
+    "notRunning": [],
+    "total": 120,
+    "note": "Every faction at dissolution maps to one of the 15 lists: Likud 32 + New Hope 4, Yesh Atid 24, Shas 11, Blue and White–National Unity 8, Religious Zionist Party 7, Degel HaTorah 4 + Agudat Yisrael 3, Otzma Yehudit 6, Yisrael Beiteinu 6, Ra'am 5, Hadash 3 + Ta'al 2, Labor 4, Noam 1 = 120. No faction is left over as not running."
+  }
+}
