@@ -88,9 +88,12 @@ function Race({ poll, live, days, phase, lang, context, cadence }: { cadence?:Ca
       source: <>{x.caution} <Link href={href(lang, "/results", "/he/results")}>{x.more}</Link>.</> };
   };
   const exitChoice: RaceOption[] = exits.main.length ? [{ id: "exits", label: x.pick, detail: x.pickDetail(exits.main.length), model: homeRaceModel(exits.main[0], parties, blocs, lang), variants: exits.main.map(exitOption), variantsLabel: x.pickPoll }] : [];
+  // Once polls close, the saved campaign forecast leaves the hero (Daniel, 2026-10-27): live evidence leads;
+  // the forecast stays on its own page.
+  const afterClose = phase !== "before";
   const options: RaceOption[] = [
     { id:"current",label:DASHBOARD[lang].current,model:homeRaceModel(context?contextToPoll(context):averagePoll,parties,blocs,lang) },
-    { id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(locale(lang))), model: homeRaceModel(forecastPoll, parties, blocs, lang), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } },
+    ...(afterClose ? [] : [{ id: "forecast", label: t.pickForecast, detail: t.pickRuns(forecast.runs.toLocaleString(locale(lang))), model: homeRaceModel(forecastPoll, parties, blocs, lang), heading: t.basisForecast(mediumDate(forecast.generated, lang), !!forecast.final), source: <>{t.forecastSource(forecast.majority.net, forecast.majority.oppZionist, forecast.majority.neither)}<Link href={href(lang, "/forecast", "/he/forecast")}>{t.forecastMethod}</Link>.</>, forecast: { blocs: forecast.blocs, majority: forecast.majority } }]),
     ...exitChoice,
     { id: "avg", label: t.pickAverage, detail: t.pickPolls(mainPolls.length), model:homeRaceModel(averagePoll,parties,blocs,lang), change, heading: t.basis(mainPolls.length,shortDate(mainPolls[0].published,lang)), source: avgSource },
     { id: "latest", label: t.pickLatest, detail: t.pickPollsters(mainPolls.length), model, variants: mainPolls.map(pollOption), variantsLabel: t.pickPoll },

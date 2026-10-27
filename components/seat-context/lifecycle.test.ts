@@ -164,7 +164,7 @@ describe("lifecycle views", () => {
     );
     expect(html).toContain("Blue and White");
     expect(html).not.toContain("Below the threshold in every recent poll");
-    expect(html).toContain("CEC-published seats");
+    expect(html).toContain("Official seats (Central Elections Committee)");
   });
   it("resolves national seat metadata from the matching official revision instead of inventing zero",()=>{const geo:GeographySnapshot={schemaVersion:1,election:context.election,revision:"g",observedAt:context.observedAt,source:{id:"cec",publisher:"CEC",title:"Current localities",url:"https://example.org",authority:"cec",publishedAt:context.publishedAt,observedAt:context.observedAt,captureHash:"g"},complete:true,coverage:"documented_complete",officialSeatRevision:context.revision,lists:Object.keys(context.pointSeats).map(id=>({id,letters:id,name:id})),rows:[{code:1,eligible:330,voted:300,valid:300,votes:{a:100,b:100,new:100}}],envelopes:{valid:0,votes:{a:0,b:0,new:0}},totals:{eligible:330,voted:300,valid:300}};expect(geographyToElection(geo)).toBeNull();expect(geographyToElection(geo,{...context,revision:"other"})).toBeNull();expect(geographyToElection(geo,context)?.lists.map(p=>p.seats)).toEqual([50,40,30]);});
   it("never supplies2026map geometry from an incomplete or unreconciled count", () => {

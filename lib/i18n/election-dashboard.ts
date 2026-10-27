@@ -20,7 +20,7 @@ const en = {
   officialHero: "The results are in.",
   officialIntro: "The published parliament, with every seat accounted for.",
   projectedIntro:
-    "The latest qualified evidence, translated into one possible 120-seat parliament.",
+    "Our best estimate of the final Knesset, updated as exit polls and the count come in.",
   winner: "Largest party",
   winners: "Tied largest parties",
   official: "Published seats",
@@ -60,7 +60,7 @@ mid:"בין הגושים",largestHistory:"ההסתברות לרשימה הגדו
   officialHero: "התוצאות פורסמו.",
   officialIntro: "הכנסת שפורסמה, עם כל 120 המנדטים.",
   projectedIntro:
-    "הנתונים המאומתים העדכניים, מתורגמים לכנסת אפשרית אחת בת 120 מנדטים.",
+    "ההערכה הטובה ביותר שלנו לכנסת הבאה, מתעדכנת עם המדגמים ועם הספירה.",
   winner: "הרשימה הגדולה ביותר",
   winners: "שוויון בין הרשימות הגדולות",
   official: "מנדטים שפורסמו",
@@ -99,7 +99,7 @@ mid:"بين الكتل",largestHistory:"احتمالات القائمة الأك
   officialHero: "نُشرت النتائج.",
   officialIntro: "البرلمان المنشور، مع احتساب كل مقعد.",
   projectedIntro:
-    "أحدث الأدلة المتحققة، مترجمة إلى برلمان محتمل متسق من 120 مقعدًا.",
+    "أفضل تقدير لدينا للكنيست المقبل، يُحدَّث مع استطلاعات الخروج والفرز.",
   winner: "القائمة الأكبر",
   winners: "تعادل القوائم الأكبر",
   official: "المقاعد المنشورة",
@@ -138,7 +138,7 @@ mid:"میان بلوک‌ها",largestHistory:"احتمال بزرگ‌ترین 
   officialHero: "نتایج منتشر شد.",
   officialIntro: "مجلس منتشرشده، با احتساب تک‌تک کرسی‌ها.",
   projectedIntro:
-    "تازه‌ترین شواهد تأییدشده، در قالب یک مجلس ممکن و منسجم ۱۲۰ کرسی.",
+    "بهترین برآورد ما از کنست آینده، که با نظرسنجی‌های خروج و شمارش آرا به‌روز می‌شود.",
   winner: "بزرگ‌ترین فهرست",
   winners: "تساوی بزرگ‌ترین فهرست‌ها",
   official: "کرسی‌های منتشرشده",
@@ -177,7 +177,7 @@ mid:"Zwischen den Blöcken",largestHistory:"Wahrscheinlichkeit der größten Lis
   officialHero: "Die Ergebnisse sind veröffentlicht.",
   officialIntro: "Das veröffentlichte Parlament, Sitz für Sitz.",
   projectedIntro:
-    "Die neuesten geprüften Daten als ein mögliches Parlament mit genau 120 Sitzen.",
+    "Unsere beste Schätzung der neuen Knesset, aktualisiert mit Nachwahlbefragungen und Auszählung.",
   winner: "Größte Liste",
   winners: "Gleichstand der größten Listen",
   official: "Veröffentlichte Sitze",
@@ -216,7 +216,7 @@ mid:"Entre les blocs",largestHistory:"Probabilités de première liste au fil du
   officialHero: "Les résultats sont publiés.",
   officialIntro: "Le parlement publié, avec chaque siège comptabilisé.",
   projectedIntro:
-    "Les dernières données vérifiées, traduites en un parlement possible de 120 sièges.",
+    "Notre meilleure estimation de la prochaine Knesset, mise à jour avec les sondages de sortie des urnes et le dépouillement.",
   winner: "Première liste",
   winners: "Premières listes à égalité",
   official: "Sièges publiés",
@@ -255,7 +255,7 @@ mid:"两阵营之间",largestHistory:"最大名单概率随时间变化",thresho
   comparison: "已保存比较",
   officialHero: "结果已公布。",
   officialIntro: "公布的议会席位，每一席均已计入。",
-  projectedIntro: "将最新已验证证据转化为一个完整的120席可能议会。",
+  projectedIntro: "我们对新一届议会的最佳估计，随出口民调和计票结果更新。",
   winner: "最大名单",
   winners: "并列最大名单",
   official: "公布席位",

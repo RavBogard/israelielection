@@ -50,3 +50,13 @@ it("renders the shared coherent allocation on home and preserves the forecast pa
   expect((html.match(/data-cell=/g)??[])).toHaveLength(120);
   expect(html).not.toContain("Current seat context");
 });
+
+it("drops the saved campaign forecast from the home hero once polls close", async () => {
+  vi.stubEnv("NODE_ENV", "development");vi.stubEnv("ELECTION_LIFECYCLE_ENABLED","false");
+  vi.stubEnv("RESULTS_NOW", "2026-10-27T23:30:00+02:00");
+  vi.resetModules();
+  const { default: HomePage } = await import("./HomePage");
+  const html = renderToStaticMarkup(createElement(LangProvider, { lang: "en" }, await HomePage({ lang: "en", revalidate: 60 })));
+  expect(html).not.toContain(">Election forecast<small>");
+  expect(html).toContain("Exit polls<small>");
+});

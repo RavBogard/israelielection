@@ -71,7 +71,7 @@ describe("evidence choices", () => {
   it.each(["named_exit", "live_projection", "official_seats"] as const)("names %s accurately and retains campaign comparisons", (basis) => {
     const context = {...campaignContext(), basis};
     const html = renderToStaticMarkup(createElement(HomeRace, {options, currentContext: context}));
-    const label = {named_exit:"Named exit poll",live_projection:"Qualified live projection",official_seats:"CEC-published seats"}[basis];
+    const label = {named_exit:"Exit poll",live_projection:"Our live forecast",official_seats:"Official seats (Central Elections Committee)"}[basis];
     expect(html).toContain(`aria-pressed="true">${label}`);
     expect(html).not.toContain('>Current<');
     expect(html).toContain('>Election forecast<');
