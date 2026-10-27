@@ -1,4 +1,5 @@
 import { cadenceFresh, cadenceMetadata } from "./cadence";
+import { sourceAvailabilityChecks } from "../political-record/monitor-sources";
 import forecast from "../../data/forecast.json";
 import parties from "../../data/parties.json";
 import {
@@ -7,6 +8,7 @@ import {
   fingerprint,
   POLLS_CLOSE,
   validSeats,
+  formationEnabled,
 } from "./core";
 import type {
   ElectionLifecycleSnapshot,
@@ -486,6 +488,7 @@ export function resolveLifecycle(
               )),
         ),
     ),
+    sourceChecks: sourceAvailabilityChecks(ledger, now, formationEnabled()),
     selection: {
       mode: "current",
       seatRevision: seatContext.revision,

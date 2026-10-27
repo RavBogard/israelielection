@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "scope": "actual_isolated_preview_services_with_synthetic_fixture_data",
+  "checkedAt": "2026-10-27T00:28:06.672Z",
+  "status": "passed",
+  "checks": {
+    "migrations": [
+      {
+        "name": "001-political-record.sql",
+        "hash": "e95f25193396ff7bd273b7503da644680b27c22ff8cbaf9957b74a310493d0ec"
+      },
+      {
+        "name": "002-subscriptions.sql",
+        "hash": "b6ec2f93de9097fec9c8faa8d67d3bcebd024ab0ffbcaf3a9b948ebe94bc0177"
+      },
+      {
+        "name": "003-platform-workspaces.sql",
+        "hash": "baf4b0121c3ad3fbb5c1f5a4324e6ba2d23a97019cc3cc76cd1b8d349defaec4"
+      },
+      {
+        "name": "004-distribution.sql",
+        "hash": "9f6bd4cf8ed350bf9946b12c17677a73dbd6a6fd60e83fb60b2f3a754f85073a"
+      },
+      {
+        "name": "005-operations.sql",
+        "hash": "dbf1db5f5fd39088f336f178c09b791b44ccd1014095e297a8a64b9774aba4e3"
+      },
+      {
+        "name": "006-publication-evidence.sql",
+        "hash": "412520d0556bc569cdc35ea9fa2000933bf1926256848aad190ef0fd0baf1199"
+      }
+    ],
+    "restrictedRole": {
+      "nonOwner": true,
+      "privilegesDenied": true
+    },
+    "blob": {
+      "privateWriteRead": true,
+      "anonymousStatus": 403,
+      "corruptRejected": true,
+      "contentHash": "03a67272b8e7a246a10fbadc69a0469d9306507f8b5fd27a9cc255271d0ff9e0"
+    },
+    "mutationDenials": {
+      "restricted": 7,
+      "ownerAppendOnlyTrigger": true
+    },
+    "atomicRollback": true,
+    "concurrentCas": {
+      "writers": 6,
+      "winners": 1,
+      "conflicts": 5
+    },
+    "concurrentPublication": {
+      "appenders": 6,
+      "recordInserted": 1,
+      "outboxInserted": 1,
+      "editionWriters": 4,
+      "uniqueEdition": 1,
+      "providerCalls": 0,
+      "sends": 0
+    },
+    "restore": {
+      "equal": true,
+      "source": {
+        "kind": "private_logical_core_export",
+        "hash": "c4aa46476aa5cc178596dfe2f0db6c97263289fea4481dcc221733cbcf09eeaf",
+        "tables": [
+          {
+            "name": "source_revisions",
+            "rows": 6,
+            "hash": "ac591c13fb3fd8f3d6e8a5c3ffcb892b3a342fea1220f5594da786310dd1a807"
+          },
+          {
+            "name": "private_captures",
+            "rows": 6,
+            "hash": "ef72e53749876f5e64857e6c562f78366499cf54a01e898c6fc285c61a1b99d7"
+          },
+          {
+            "name": "record_revisions",
+            "rows": 35,
+            "hash": "b86d8a038478cf82f5869fbf8b8ed047f57473630cf0001482461f2f67c78faa"
+          },
+          {
+            "name": "outbox_intents",
+            "rows": 4,
+            "hash": "7b81a0d64f6583090732d6d82eb38992abd2d8fc6e86a4f807d23173e47508ef"
+          }
+        ]
+      },
+      "target": {
+        "kind": "private_logical_core_export",
+        "hash": "c4aa46476aa5cc178596dfe2f0db6c97263289fea4481dcc221733cbcf09eeaf",
+        "tables": [
+          {
+            "name": "source_revisions",
+            "rows": 6,
+            "hash": "ac591c13fb3fd8f3d6e8a5c3ffcb892b3a342fea1220f5594da786310dd1a807"
+          },
+          {
+            "name": "private_captures",
+            "rows": 6,
+            "hash": "ef72e53749876f5e64857e6c562f78366499cf54a01e898c6fc285c61a1b99d7"
+          },
+          {
+            "name": "record_revisions",
+            "rows": 35,
+            "hash": "b86d8a038478cf82f5869fbf8b8ed047f57473630cf0001482461f2f67c78faa"
+          },
+          {
+            "name": "outbox_intents",
+            "rows": 4,
+            "hash": "7b81a0d64f6583090732d6d82eb38992abd2d8fc6e86a4f807d23173e47508ef"
+          }
+        ]
+      },
+      "privateCapturesReadBack": 6,
+      "providerPitrVerified": false
+    }
+  },
+  "runtimeFacts": 0,
+  "productionWrites": 0,
+  "providerCalls": 0,
+  "emailSends": 0,
+  "flagsChanged": false,
+  "schedulesChanged": false,
+  "subscriberPiiBackupVerified": false,
+  "privateObjectDisasterBackupVerified": false
+}

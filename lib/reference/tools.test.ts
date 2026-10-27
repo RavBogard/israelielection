@@ -34,7 +34,7 @@ describe("trusted interactive copy", () => {
   it("rejects malformed paths/IDs and explicitly retains original pending copy", () => {
     const source = toolDocuments[0];
     expect(applyToolCopy({}, source, [])).toBeNull();
-    const edition = translatedTool("tools:journeys", "he", journeys);
+    const edition = translatedTool("tools:unknown", "he", journeys);
     expect(edition.state).toBe("pending");
     expect(edition.contentLang).toBe("en");
     expect(edition.data).toBe(journeys);

@@ -191,6 +191,8 @@ export type Alternative = {
   sourceRefs: SourceRef[];
 };
 export type ElectionLifecycleSnapshot = {
+  /** Redacted server-computed health from the full ledger, including withheld current references. */
+  sourceChecks?: import("../political-record/monitor-types").MonitorCheck[];
   cadence?: CadenceMetadata;
   selection: {
     mode: "current" | "pinned";

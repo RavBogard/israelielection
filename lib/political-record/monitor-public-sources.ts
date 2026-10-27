@@ -1,7 +1,5 @@
-import { emptyLedger } from "../election-lifecycle/resolver";
 import type { ElectionLifecycleSnapshot } from "../election-lifecycle/types";
-import { sourceAvailabilityChecks } from "./monitor-sources";
-import type { MonitorCheck } from "./monitor-types";
+import { safeCheck, type MonitorCheck } from "./monitor-types";
 /** CI reads stored public facts only. No secret headers, source collection or private response logging. */
 export async function publicStoredSourceChecks(
   now: string,
@@ -16,14 +14,11 @@ export async function publicStoredSourceChecks(
     const body = (await response.json()) as ElectionLifecycleSnapshot;
     if (
       body.schemaVersion !== 1 ||
-      !Array.isArray(body.health) ||
-      !Array.isArray(body.politics?.events)
+      !Array.isArray(body.sourceChecks) ||
+      body.sourceChecks.length > 100
     )
       throw Error("stored_read_invalid");
-    const ledger = emptyLedger();
-    ledger.events = body.politics.events;
-    ledger.health = body.health;
-    return sourceAvailabilityChecks(ledger, now, true);
+    return body.sourceChecks.map(safeCheck);
   } catch {
     return [
       {

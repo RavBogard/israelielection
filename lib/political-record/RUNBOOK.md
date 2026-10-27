@@ -165,3 +165,44 @@ npx tsx scripts/political-platform/producer.ts --run --target=preview --briefing
 Activation handoff: enable/source-rehearse the shadow/CBS hooks and private archive first, then producer and signed queue continuation; verify actual independently reviewed locale output and an injected failure/retry. Configure a separate bounded signed producer recovery pulse if required, after cost review; no source collection schedule changes are implied. Delivery remains separately disabled until sender domain, consent/suppression/webhooks and the one-minute confirmation/outbox schedule pass their gates. No real producer publication or subscriber email was created during development. Approved free preview PostgreSQL/Blob provisioning is being qualified separately; production storage/restore/service activation remains gated. PGlite/mock provider tests prove contracts/checkpoints, not production provider availability, concurrent PostgreSQL behavior, real backup restore, or delivery. The changed actual briefing bundle should receive a fresh no-write provider dry-run at integration.
 
 Explicit blocked-job recovery is signed `platform_publish` with `recovery:{jobId,operator,reason}`. It appends an audit checkpoint, resets the bounded generation/review budget and rechecks current evidence; it cannot edit source facts or revive withdrawn text. Ordinary retries do not require editorial approval. No recovery action was executed against production.
+
+
+## Actual isolated preview storage qualification
+
+An approved free preview Neon database and private Blob store were tested against real services. The sanitized committed receipt is `fixtures/storage-preview-2026-10-26.json`; original operator receipts/configuration remain ignored under `.vercel/`. Separate QA, restore and clean runtime databases were created. The runtime SQL-created role is not an owner, has no admin membership/role inheritance/database creation/role creation/bypass privilege, and cannot update/delete/truncate historical records, disable triggers, create schemas/tables or bypass replication triggers. Owner UPDATE was independently denied by the append-only trigger. An intentionally invalid outbox foreign key rolled its whole transaction back.
+
+Actual concurrent database tests produced one winner and five CAS conflicts, one record/outbox insertion across six identical appends, and one exact edition across four concurrent reviewed-edition writers. Private Blob write/authenticated readback passed, anonymous fetch returned403, and a corrupt hash receipt failed closed. The primary publication pipeline was exercised only with a captured fixture and a clearly named fixture model callback; Gemini and email were never called. These private QA records were not exposed as public facts.
+
+A consistent logical core export restored into a separate migrated database with exact source/capture/record/outbox hashes and counts (6/6/35/4), identity cursor preservation and authenticated readback of all six restored capture references. The first restore attempt caught an over-restrictive column validator for `content_sha256`; after correction, the preserved empty target was resumed successfully. This is application logical core export/restore evidence, **not** provider PITR, an independent backup of private Blob objects, a subscriber-PII backup, encryption-key recovery or production disaster recovery. Those remain separate subscription/production gates.
+
+The third runtime database contains zero fixture facts. Its restricted URL is available only in ignored `.vercel/platform-runtime.private.env`; the original admin environment file must never be installed as runtime configuration. Root installed only preview-branch sensitive overrides. No feature flag, acquisition schedule, production resource or email activation changed.
+
+```
+# Defaults to no requests/writes. Explicit approved preview service credentials are required.
+node --env-file=.vercel/platform-services.private.env --import tsx scripts/political-platform/storage-rehearsal.ts
+node --env-file=.vercel/platform-services.private.env --import tsx scripts/political-platform/storage-rehearsal.ts --run --target=preview
+# Only after a failed logical-restore phase; refuses nonempty targets and changed source exports.
+node --env-file=.vercel/platform-services.private.env --import tsx scripts/political-platform/storage-rehearsal.ts --run --target=preview --resume-restore
+```
+
+Completed resource/configuration receipts are preserved. A repeat whole-resource run refuses existing targets, and a subsequent failed attempt does not overwrite a successful receipt. No destructive cleanup is automated. SQL-created restricted roles follow [Neon role guidance](https://neon.com/docs/manage/roles); authenticated private reads follow [Vercel private Blob documentation](https://vercel.com/docs/vercel-blob/private-storage).
+
+## Bounded hosted actual-CBS publication rehearsal
+
+Keep public read, subscriptions and delivery off. Root must first install a **preview-branch-only** `ELECTION_LIFECYCLE_WORKER_URL` equal to the current owned stable political-platform preview worker, because signatures and queued continuations use that exact URL. Set `POLITICAL_PLATFORM_PREVIEW_ORIGIN` locally to its origin. The remote helper accepts only an explicitly configured `israelielection-…preview.vercel.app` origin, exact worker path/subject, explicit preview target and the two allowlisted modes. Signing/bypass keys come only from environment; a bypass header is sent solely to the validated origin. Responses time out after60 seconds and only categorical/count fields enter receipts. No raw claims, signatures, keys, provider bodies or cookies are written.
+
+1. Root may enable preview `POLITICAL_PLATFORM_COLLECT_ENABLED=true` and invoke signed `platform_collect` once. It acquires the actual fixed CBS endpoint and retains original bytes privately. No local fixture input is accepted by the rehearsal preparer.
+2. Load the service environment **before** the restricted runtime environment so the latter wins. Prepare only EN. The CLI verifies exact dedicated runtime host/database/role, a recent current observation, documented source identity and authenticated raw capture parsed back to the exact stored payload. It creates one deterministic locale job with no model calls. Initial ordinary activation still seeds a watermark without bulk alerts.
+3. Root may enable preview `POLITICAL_PUBLICATION_PRODUCER_ENABLED=true`, then invoke signed `platform_publish`. Existing signed continuation performs the independent second stage. Inspect the private result before preparing any remaining locale. No extra schedule is created.
+
+```
+# WORKER is the exact configured preview /api/election-lifecycle/worker URL, no query/token.
+node --env-file=.vercel/platform-services.private.env --import tsx scripts/political-platform/remote-rehearsal.ts --run --target preview --mode platform_collect --url WORKER --subject-url WORKER --out .vercel/platform-hosted-collect.receipt.json
+node --env-file=.vercel/platform-services.private.env --env-file=.vercel/platform-runtime.private.env --import tsx scripts/political-platform/publication-rehearsal.ts --run --target=preview --locale=en
+node --env-file=.vercel/platform-services.private.env --import tsx scripts/political-platform/remote-rehearsal.ts --run --target preview --mode platform_publish --url WORKER --subject-url WORKER --out .vercel/platform-hosted-publish.receipt.json
+node --env-file=.vercel/platform-services.private.env --env-file=.vercel/platform-runtime.private.env --import tsx scripts/political-platform/publication-rehearsal.ts --run --target=preview --inspect
+```
+
+Inspection writes generated copy and authenticated independent-review evidence only to `.vercel/platform-primary-inspection.private.json`; stdout contains counts/status. Preparation retries preserve an existing job rather than resetting its review/attempts. After successful bounded EN inspection, the operator can explicitly prepare each remaining allowlisted locale. This code was fixture-tested locally; **actual hosted Gemini producer proof remains pending** until root performs this rehearsal. No sends are authorized by any of these commands.
+
+Source monitoring now consumes server-computed redacted `sourceChecks` from the full private lifecycle ledger. It cannot lose a current unavailable article merely because its claim was withheld from public politics; extraction-pending references remain included, while superseded-only failures stop affecting health. Public summaries contain only categories/source IDs, never hidden claim text or article URLs. Old responses missing the new summary fail as unavailable rather than being reconstructed into a false healthy result.

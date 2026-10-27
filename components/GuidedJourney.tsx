@@ -5,51 +5,236 @@ import { useState, type ReactNode } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { longDate } from "@/lib/format";
 import { journeys, journeyState, type JourneyStep } from "@/lib/journeys";
-import "./journey.css";
+import { editionPath, type Lang } from "@/lib/i18n";
+import { journeyText } from "@/lib/i18n/journeys";
+import { referenceText } from "@/lib/i18n/reference";
 import { readiness } from "@/lib/i18n/election-readiness";
 import { readinessPhase } from "./election-readiness/model";
+import "./journey.css";
 
-function Check({ step }: { step: JourneyStep }) {
-  const [choice, setChoice] = useState<number | null>(null);
-  const [revealed, setRevealed] = useState(false);
-  return <details className="journey-check"><summary>Optional check: {step.question}</summary>
-    <fieldset><legend>{step.question}</legend>{step.options.map((option, i) => <label key={option}><input type="radio" name="check" checked={choice === i} onChange={() => { setChoice(i); setRevealed(false); }} />{option}</label>)}</fieldset>
-    <button type="button" onClick={() => setRevealed(true)}>Show the explanation</button>
-    {revealed && <div role="status"><p><b>{choice === null ? "The answer:" : choice === step.answer ? "That's right." : "Reconsider this distinction."}</b> {step.options[step.answer]}.</p><p>{step.explanation}</p></div>}
-  </details>;
+function Check({
+  step,
+  lang,
+  contentLang,
+}: {
+  step: JourneyStep;
+  lang: Lang;
+  contentLang: Lang;
+}) {
+  const [choice, setChoice] = useState<number | null>(null),
+    [revealed, setRevealed] = useState(false),
+    t = journeyText(lang);
+  return (
+    <details className="journey-check">
+      <summary>
+        {t.check}:{" "}
+        <span lang={contentLang} dir="auto">
+          {step.question}
+        </span>
+      </summary>
+      <fieldset lang={contentLang} dir="auto">
+        <legend>{step.question}</legend>
+        {step.options.map((option, i) => (
+          <label key={i}>
+            <input
+              type="radio"
+              name="check"
+              checked={choice === i}
+              onChange={() => {
+                setChoice(i);
+                setRevealed(false);
+              }}
+            />
+            {option}
+          </label>
+        ))}
+      </fieldset>
+      <button type="button" onClick={() => setRevealed(true)}>
+        {t.explain}
+      </button>
+      {revealed && (
+        <div role="status">
+          <p>
+            <b>
+              {choice === null
+                ? t.answer
+                : choice === step.answer
+                  ? t.right
+                  : t.reconsider}
+            </b>{" "}
+            <span lang={contentLang} dir="auto">
+              {step.options[step.answer]}
+            </span>
+            .
+          </p>
+          <p lang={contentLang} dir="auto">
+            {step.explanation}
+          </p>
+        </div>
+      )}
+    </details>
+  );
 }
-/** Each step leads with a figure from the site (passed in from the server page), then its text. */
-export default function GuidedJourney({ figures = {} }: { figures?: Record<string, ReactNode> }) {
-  const {context,cadence}=useSeatContext();
-  const phase=readinessPhase(context,!!cadence&&cadence.phase!=="before_close"),words=readiness("en");
-  const next=phase==="campaign"?{href:null,label:null}:phase==="official"?{href:"/government",label:words.governmentNext}:{href:"/results",label:words.resultsNext};
-  const params = useSearchParams();
-  const router = useRouter();
-  const { route, index } = journeyState(params.get("route"), params.get("step"));
-  const key = route.steps[index] as keyof typeof journeys.steps;
-  const step = journeys.steps[key];
-  const go = (id: string, next: number) => router.push(`/start?route=${id}&step=${next}#journey-step`, { scroll: true });
-  return <div className="journey">
-    <nav aria-label="Choose a route" className="journey-routes">{journeys.routes.map((r) => <button type="button" key={r.id} aria-pressed={r.id === route.id} onClick={() => go(r.id, 0)}>{r.title}</button>)}</nav>
-    <section id="journey-step" aria-labelledby="journey-title" tabIndex={-1}>
-      {/* The step label and its question caption the figure from above, so the graphic still leads the text. */}
-      <figure className="journey-fig">
-        <figcaption>
-          <p className="journey-step-n">Step {index + 1} of {route.steps.length}, about {step.minutes} {step.minutes === 1 ? "minute" : "minutes"}</p>
-          <h2 id="journey-title">{step.title}</h2>
-        </figcaption>
-        {figures[key]}
-      </figure>
-      {context&&context.evidenceStage!=="campaign"&&<p className="fig-note">{context.seatStatus==="official"?"Official seats are published. Follow coalition scenarios and sourced negotiations; a seat majority is not a government agreement.":"The election is under way. Seat estimates remain provisional until an authoritative seat publication."} <Link href="/government">Current government formation</Link> · <Link href="/results">Current seat evidence</Link>.</p>}
-      <p>{step.text}</p>
-      <p><Link href={step.href}>{step.link}</Link>{key === "govern" && <>. <Link href="/how-it-works/forming-a-government">Read the formation process</Link></>}</p>
-      <Check key={`${route.id}-${key}`} step={step} />
-      <div className="journey-move">{index > 0 && <button type="button" onClick={() => go(route.id, index - 1)}>Previous step</button>}{index < route.steps.length - 1 ? <button type="button" onClick={() => go(route.id, index + 1)}>Next step</button> : <p><b>You’ve reached the end of this route.</b> <Link href={next.href??route.next}>{next.label??route.nextLabel}</Link>.</p>}</div>
-    </section>
-    <div className="journey-nav">
-    <p>{route.description} Leave or skip a step whenever you like.</p>
-    <nav aria-label="Learning steps"><ol className="journey-steps">{route.steps.map((id, i) => <li key={id}><a href={`/start?route=${route.id}&step=${i}#journey-step`} aria-current={i === index ? "step" : undefined}>{journeys.steps[id as keyof typeof journeys.steps].title}</a></li>)}</ol></nav>
+export default function GuidedJourney({
+  figures = {},
+  lang = "en",
+  copy = journeys,
+  contentLang = "en",
+  copyState = "original",
+}: {
+  figures?: Record<string, ReactNode>;
+  lang?: Lang;
+  copy?: typeof journeys;
+  contentLang?: Lang;
+  copyState?: string;
+}) {
+  const { context, cadence } = useSeatContext();
+  const phase = readinessPhase(
+      context,
+      !!cadence && cadence.phase !== "before_close",
+    ),
+    words = readiness(lang),
+    t = journeyText(lang),
+    ref = referenceText(lang);
+  const next =
+    phase === "campaign"
+      ? null
+      : phase === "official"
+        ? { href: "/government", label: words.governmentNext }
+        : { href: "/results", label: words.resultsNext };
+  const params = useSearchParams(),
+    router = useRouter();
+  const selected = journeyState(params.get("route"), params.get("step")),
+    index = selected.index;
+  const route =
+    copy.routes.find((r) => r.id === selected.route.id) ?? copy.routes[0];
+  const key = route.steps[index] as keyof typeof copy.steps,
+    step = copy.steps[key];
+  const local = (href: string) => editionPath(href, lang) ?? href;
+  const href = (id: string, n: number) =>
+    local(`/start?route=${id}&step=${n}#journey-step`);
+  const go = (id: string, n: number) =>
+    router.push(href(id, n), { scroll: true });
+  return (
+    <div className="journey">
+      {lang !== "en" && copyState !== "ready" && (
+        <p className="note">
+          <b>{copyState === "withdrawn" ? ref.withdrawn : ref.pending}.</b>{" "}
+          {ref.pendingNote}{" "}
+          <Link href={`/start?route=${route.id}&step=${index}&original=en`}>
+            {ref.original}
+          </Link>
+        </p>
+      )}
+      <nav aria-label={t.routes} className="journey-routes">
+        {copy.routes.map((r) => (
+          <button
+            type="button"
+            key={r.id}
+            lang={contentLang}
+            dir="auto"
+            aria-pressed={r.id === route.id}
+            onClick={() => go(r.id, 0)}
+          >
+            {r.title}
+          </button>
+        ))}
+      </nav>
+      <section id="journey-step" aria-labelledby="journey-title" tabIndex={-1}>
+        <figure className="journey-fig">
+          <figcaption>
+            <p className="journey-step-n">
+              {t.step} {index + 1} {t.of} {route.steps.length}. {step.minutes}{" "}
+              {t.minutes}
+            </p>
+            <h2 id="journey-title" lang={contentLang} dir="auto">
+              {step.title}
+            </h2>
+          </figcaption>
+          {figures[key]}
+        </figure>
+        {next && (
+          <p className="fig-note">
+            {words.matchNote}{" "}
+            <Link href={local("/government")}>{t.formation}</Link>.{" "}
+            <Link href={local("/results")}>{words.resultsNext}</Link>.
+          </p>
+        )}
+        <p lang={contentLang} dir="auto">
+          {step.text}
+        </p>
+        <p>
+          <Link lang={contentLang} dir="auto" href={local(step.href)}>
+            {step.link}
+          </Link>
+          {key === "govern" && (
+            <>
+              .{" "}
+              <Link href={local("/how-it-works/forming-a-government")}>
+                {t.process}
+              </Link>
+            </>
+          )}
+        </p>
+        <Check
+          key={`${route.id}-${key}`}
+          step={step}
+          lang={lang}
+          contentLang={contentLang}
+        />
+        <div className="journey-move">
+          {index > 0 && (
+            <button type="button" onClick={() => go(route.id, index - 1)}>
+              {t.previous}
+            </button>
+          )}
+          {index < route.steps.length - 1 ? (
+            <button type="button" onClick={() => go(route.id, index + 1)}>
+              {t.next}
+            </button>
+          ) : (
+            <p>
+              <b>{t.end}</b>{" "}
+              <Link
+                href={local(next?.href ?? route.next)}
+                lang={next ? lang : contentLang}
+              >
+                {next?.label ?? route.nextLabel}
+              </Link>
+              .
+            </p>
+          )}
+        </div>
+      </section>
+      <div className="journey-nav">
+        <p>
+          <span lang={contentLang} dir="auto">
+            {route.description}
+          </span>{" "}
+          {t.skip}
+        </p>
+        <nav aria-label={t.steps}>
+          <ol className="journey-steps">
+            {route.steps.map((id, i) => (
+              <li key={id}>
+                <Link
+                  lang={contentLang}
+                  dir="auto"
+                  href={href(route.id, i)}
+                  aria-current={i === index ? "step" : undefined}
+                >
+                  {copy.steps[id as keyof typeof copy.steps].title}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+      <p className="fig-src">
+        {t.checked}{" "}
+        <time dateTime={copy.checked}>{longDate(copy.checked, lang)}</time>.{" "}
+        {t.sources} <Link href={local("/")}>{t.home}</Link>.
+      </p>
     </div>
-    <p className="fig-src">Route facts as of {longDate(journeys.checked)}. The linked guides carry the original evidence and dates. <Link href="/">Return to the homepage</Link>.</p>
-  </div>;
+  );
 }

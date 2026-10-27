@@ -221,6 +221,78 @@ it("CI source signal reads only stored public status and exports no response/bod
   expect(checks[0].state).toBe("unavailable");
   expect(JSON.stringify(checks)).not.toContain("private-like");
 });
+it("server-computed source summary retains a hidden current article failure without exposing its claim", async () => {
+  const source = sourceRegistry.sources.find((row) =>
+    (row.partyIds as string[]).includes("likud"),
+  )!;
+  const ledger = emptyLedger();
+  const ref = {
+    id: `${source.id}:hidden`,
+    publisher: "Party",
+    title: "Statement",
+    url: "https://www.likud.org.il/hidden",
+    authority: "party" as const,
+    publishedAt: now,
+    observedAt: now,
+    captureHash: "a".repeat(64),
+  };
+  ledger.events = [
+    {
+      id: "private-hidden-event",
+      status: "confirmed",
+      sources: [ref],
+    } as PoliticalEvent,
+  ];
+  ledger.health = [
+    {
+      sourceId: source.id,
+      authority: "party",
+      status: "healthy",
+      checkedAt: now,
+      lastSuccessfulAt: now,
+      reason: null,
+    },
+    {
+      sourceId: ref.id,
+      authority: "party",
+      status: "unavailable",
+      checkedAt: now,
+      lastSuccessfulAt: null,
+      reason: "source_unavailable",
+      diagnostic: {
+        stage: "extraction",
+        code: "provider_billing",
+        httpStatus: 402,
+        providerStatus: "RESOURCE_EXHAUSTED",
+      },
+    },
+  ];
+  const fetcher = async () =>
+    Response.json({
+      schemaVersion: 1,
+      politics: { events: [] },
+      sourceChecks: sourceAvailabilityChecks(ledger, now, true),
+    });
+  expect(
+    (await publicStoredSourceChecks(now, fetcher)).find((row) =>
+      row.subjects.includes(source.id),
+    ),
+  ).toMatchObject({ state: "unavailable", reasonCode: "provider_billing" });
+  ledger.events[0].status = "superseded";
+  expect(
+    (await publicStoredSourceChecks(now, fetcher)).find((row) =>
+      row.subjects.includes(source.id),
+    )?.state,
+  ).toBe("healthy_no_new");
+  ledger.extractionPending = [ref.id];
+  const checks = await publicStoredSourceChecks(now, fetcher);
+  expect(checks.find((row) => row.subjects.includes(source.id))?.state).toBe(
+    "unavailable",
+  );
+  expect(JSON.stringify(checks)).not.toMatch(
+    /private-hidden-event|likud.org.il/,
+  );
+});
 let db: PGlite, store: IncidentStore, pool: SqlPool;
 beforeAll(async () => {
   db = new PGlite();
