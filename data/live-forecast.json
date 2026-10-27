@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "modelVersion": "live-v3-joint-blocs",
   "scenarioVersion": "b2a4f927ac18ec9a",
-  "revision": "d996979bcccdcec0471a2224cc76426990cb73c62874326d9194af46a44a83c9",
+  "revision": "dde7b055af7790eb3ff88e021ce1f6cd5803d6064b6584d7ee5b8db12d73576a",
   "generatedAt": "2026-10-25T14:31:43.245Z",
   "mode": "prior",
   "experimental": true,
@@ -265,7 +265,7 @@
   "history": [
     {
       "generatedAt": "2026-10-25T14:31:43.245Z",
-      "revision": "d996979bcccdcec0471a2224cc76426990cb73c62874326d9194af46a44a83c9",
+      "revision": "dde7b055af7790eb3ff88e021ce1f6cd5803d6064b6584d7ee5b8db12d73576a",
       "mode": "prior",
       "largestParty": [
         {
@@ -705,7 +705,7 @@
     "limitations": [
       "Experimental conditional arithmetic, not probabilities that parties agree to govern.",
       "Threshold comparisons are conditional associations, not causal effects.",
-      "Exit-poll error has no fitted 2026 historical calibration; broad prior shared errors are retained.",
+      "Exit-poll bloc lean, swing scale and per-list error are fitted to six elections of TV exit polls (2013-2022, September 2019 unavailable); sector noise is still the campaign model's.",
       "Official count publication is blocked pending source semantics and verified reporting-coverage metadata and replay checks.",
       "Direct Channel13 timeline extraction is supported; complete structured N12/Kan ingestion remains unverified, with validated Wikipedia as fallback.",
       "Special envelopes remain separate from geographic turnout."
