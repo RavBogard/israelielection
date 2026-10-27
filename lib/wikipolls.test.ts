@@ -79,23 +79,25 @@ describe("exit polls on election night", () => {
   const kanRow = fixture.slice(fixture.indexOf("|{{Opdrts||4|Oct|2026}}"), fixture.indexOf("|51\n", fixture.indexOf("|{{Opdrts||4|Oct|2026}}")) + 4);
   const exitRow = (seats: string) => kanRow.replace("{{Opdrts||4|Oct|2026}}", "{{Opdrts||27|Oct|2026}}").replace("date=4 October 2026", "date=27 October 2026").replace("'''23'''", `'''${seats}'''`);
   const night = (seats: string, shade = true) => fixture.replace("|-\n|{{Opdrts||4|Oct|2026}}", `|-${shade ? ' style="background:#FFD"' : ""}\n${exitRow(seats)}\n|-\n|{{Opdrts||4|Oct|2026}}`);
+  // Independent of exit polls already entered by hand tonight.
+  const campaign = { ...pollsData, polls: pollsData.polls.filter((p) => p.kind !== "exit") };
   const src = { ...pollSources.wikipedia, election: "2026-10-27", pollsClose: "2026-10-27T22:00:00+02:00" };
   const exits = (r: ReturnType<typeof importFromWikitext>) => [...r.accepted, ...r.review.map((x) => x.poll)].filter((p) => p.kind === "exit");
 
   it("reads the shaded row as an exit poll that aired at the close", () => {
     const [table] = seatTables(night("20"));
     expect(parseTable(table).polls[0]).toMatchObject({ end: "2026-10-27", shaded: true });
-    const r = importFromWikitext(night("20"), "night", src, pollsData, ids, "2026-10-27", "2026-10-27T20:05:00Z");
+    const r = importFromWikitext(night("20"), "night", src, campaign, ids, "2026-10-27", "2026-10-27T20:05:00Z");
     expect(r.accepted.find((p) => p.kind === "exit")).toMatchObject({ id: "kan-11-exit-2026-10-27", pollster: "Kan 11", broadcastAt: "2026-10-27T22:00:00+02:00" });
   });
 
   it("treats an unshaded election-day row as an exit poll too", () => {
-    expect(exits(importFromWikitext(night("20", false), "night", src, pollsData, ids, "2026-10-27"))).toHaveLength(1);
+    expect(exits(importFromWikitext(night("20", false), "night", src, campaign, ids, "2026-10-27"))).toHaveLength(1);
   });
 
   it("adds a revision when the numbers change, and nothing when they don't", () => {
-    const first = importFromWikitext(night("20"), "night", src, pollsData, ids, "2026-10-27", "2026-10-27T20:05:00Z");
-    const after = { ...pollsData, polls: [...pollsData.polls, ...first.accepted] };
+    const first = importFromWikitext(night("20"), "night", src, campaign, ids, "2026-10-27", "2026-10-27T20:05:00Z");
+    const after = { ...campaign, polls: [...campaign.polls, ...first.accepted] };
     expect(exits(importFromWikitext(night("20"), "night", src, after, ids, "2026-10-27", "2026-10-27T20:15:00Z"))).toEqual([]);
     const revised = importFromWikitext(night("19").replace("|8\n|{{small|(1.3%)}}", "|9\n|{{small|(1.3%)}}"), "night", src, after, ids, "2026-10-27", "2026-10-27T21:40:00Z");
     expect(revised.accepted.filter((p) => p.kind === "exit").map((p) => [p.id, p.broadcastAt])).toEqual([["kan-11-exit-2026-10-27-2", "2026-10-27T21:40:00Z"]]);
