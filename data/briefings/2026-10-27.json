@@ -1,0 +1,389 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T15:57:26.963Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 13,
+    "capturedSources": 8
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-10-27T15:57:26.963Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "7adbb88f6e66c770c90001686f830ba0e00917c37274f50de076f6bd832a3654",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "1a5085eaebfac809a35857eafdb88b0951001a7aa618b786deed4d44a77c9654",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "35edf242f2ef4517e1c5ed37278f8f4f9de719a6b8cb39b8ab560cefc9fea2f3",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "ca374f5db51deaf70846422e68797c9a83a4b82ba61c93d42510551846246a9b",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "68f3084e137df7844174daff5bb6e06bda81bad434b13fe4ff0282168debe846",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "National voter turnout reached 44.9% by 2:00 p.m. on election day, marking the highest voter participation rate recorded at that hour since at least 1973.",
+      "claimId": "claim-1",
+      "kind": "change",
+      "evidenceClass": "corroborated_reporting",
+      "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+      "translations": {
+        "he": {
+          "text": "שיעור ההצבעה הארצי הגיע ל-44.9% עד השעה 2:00 בצהריים ביום הבחירות, מה שמסמן את שיעור השתתפות המצביעים הגבוה ביותר שנרשם בשעה זו מאז 1973 לפחות.",
+          "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "بلغت نسبة إقبال الناخبين الوطنية 44.9% بحلول الساعة 2:00 مساءً في يوم الانتخابات، مسجلة أعلى معدل مشاركة للناخبين تم تسجيله في تلك الساعة منذ عام 1973 على الأقل.",
+          "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "میزان مشارکت ملی رای‌دهندگان تا ساعت 2:00 بعدازظهر در روز انتخابات به 44.9% رسید که بالاترین نرخ مشارکت رای‌دهندگان ثبت‌شده در آن ساعت از حداقل سال 1973 به شمار می‌رود.",
+          "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die landesweite Wahlbeteiligung erreichte am Wahltag bis 2:00 p.m. 44.9 %, was die höchste zu dieser Stunde seit mindestens 1973 verzeichnete Wahlbeteiligungsquote darstellte.",
+          "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le taux de participation électorale national a atteint 44.9% à 2:00 p.m. le jour du scrutin, marquant le taux de participation électorale le plus élevé enregistré à cette heure depuis au moins 1973.",
+          "sourceHash": "559bb77efd45f2d1da24a644fa9504106b3dda23b3dfbaf300535ace758d638c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud officials sound alarm over voter apathy as Israel sees record-high election turnout",
+          "url": "https://www.jpost.com/israel-election-2026/article-913046",
+          "published": "2026-10-27T17:40:02.000+00:00"
+        },
+        {
+          "outlet": "JTA",
+          "title": "Democrats leader Golan approached by man with knife on election day",
+          "url": "https://www.jta.org/2026/10/27/israel/democrats-leader-golan-approached-by-man-with-knife-on-election-day",
+          "published": "2026-10-27T14:39:58Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913046",
+          "bodyHash": "370e1b7697958af7f6b1bbe5944424f1bd069b8dabcf8f6d7f10614c50481c69",
+          "capturedAt": "2026-10-27T15:56:51.856Z",
+          "quoteHash": "901fb9c56d9e49ccdd4d23180466a44c49d5482a61c6c844f73ff06efbed634f",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        },
+        {
+          "url": "https://www.jta.org/2026/10/27/israel/democrats-leader-golan-approached-by-man-with-knife-on-election-day",
+          "bodyHash": "292ef0068e5959bbada57757221752ec655a37b72b23277306629da2f2f50f92",
+          "capturedAt": "2026-10-27T15:56:52.410Z",
+          "quoteHash": "a84690fb03e71faadaa295bf23d2575a7490fc2076b663bf00177211fc7f15cf",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Michele Chabin"
+          }
+        }
+      ],
+      "textHe": "שיעור ההצבעה הארצי הגיע ל-44.9% עד השעה 2:00 בצהריים ביום הבחירות, מה שמסמן את שיעור השתתפות המצביעים הגבוה ביותר שנרשם בשעה זו מאז 1973 לפחות."
+    },
+    {
+      "text": "Likud's election integrity headquarters announced that it received 620 reports of suspected irregularities and unusual incidents at polling stations in the Arab sector.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+      "translations": {
+        "he": {
+          "text": "מטה טוהר הבחירות של הליכוד הודיע כי קיבל 620 דיווחים על חשד לאי-סדרים ואירועים חריגים בקלפיות במגזר הערבי.",
+          "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن مقر نزاهة الانتخابات التابع لحزب Likud أنه تلقى 620 بلاغاً عن مخالفات مشتبه بها وحوادث غير عادية في مراكز الاقتراع في الوسط العربي.",
+          "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "ستاد سلامت انتخابات Likud اعلام کرد که 620 گزارش درباره موارد مشکوک به بی‌نظمی و حوادث غیرعادی در شعب اخذ رای در بخش عربی دریافت کرده است.",
+          "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Zentrale für Wahlintegrität des Likud gab bekannt, dass sie 620 Berichte über mutmaßliche Unregelmäßigkeiten und ungewöhnliche Vorfälle in Wahllokalen im arabischen Sektor erhalten habe.",
+          "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le quartier général pour l'intégrité des élections du Likoud a annoncé avoir reçu 620 signalements de soupçons d'irrégularités et d'incidents inhabituels dans des bureaux de vote du secteur arabe.",
+          "sourceHash": "9161712be096318fb0c0de06210c1891b78b8f82603f74b11c17cc4b6b27b77c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud says it received 620 reports of 'suspected irregularities' at polling stations in Arab sector",
+          "url": "https://www.jpost.com/israel-election-2026/article-913049",
+          "published": "2026-10-27T17:52:33.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913049",
+          "bodyHash": "8f51a83f1f5c8c7d0aa6522b6be37cb5769f7324748e2fc00e5dfa0d34612aa1",
+          "capturedAt": "2026-10-27T15:56:51.701Z",
+          "quoteHash": "d54d012ec2f7b3bdb626a9f869a91493e5cfeddfd7339249aab36d4e3287ee7b",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "מטה טוהר הבחירות של הליכוד הודיע כי קיבל 620 דיווחים על חשד לאי-סדרים ואירועים חריגים בקלפיות במגזר הערבי."
+    },
+    {
+      "text": "The Jerusalem Post reported that Likud submitted a formal application to the Central Elections Committee requesting an extension of voting hours without specifying a reason.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+      "translations": {
+        "he": {
+          "text": "ה-Jerusalem Post דיווח כי הליכוד הגיש בקשה רשמית לוועדת הבחירות המרכזית בבקשה להארכת שעות ההצבעה מבלי לציין סיבה.",
+          "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت The Jerusalem Post أن حزب Likud قدّم طلباً رسمياً إلى لجنة الانتخابات المركزية يطلب فيه تمديد ساعات التصويت دون تحديد سبب.",
+          "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "روزنامه The Jerusalem Post گزارش داد که Likud بدون ذکر دلیل، درخواست رسمی مبنی بر تمدید ساعات رای‌گیری به کمیته مرکزی انتخابات ارائه کرده است.",
+          "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass der Likud einen formellen Antrag beim Zentralen Wahlausschuss eingereicht habe, in dem eine Verlängerung der Wahlzeiten gefordert wurde, ohne einen Grund anzugeben.",
+          "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que le Likoud a soumis une demande officielle à la Commission centrale des élections afin de prolonger les heures de vote sans spécifier de motif.",
+          "sourceHash": "ba21dd80f9b4a15dea3a459171f0d00b312cc2382e4bf278c7df6e14edf2b734",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud, Shas call for extension of voting hours amid reports of congested polling stations",
+          "url": "https://www.jpost.com/israel-election-2026/article-913050",
+          "published": "2026-10-27T17:47:41.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913050",
+          "bodyHash": "e8ff8a20957b8f8e2a90c0fe31d620a21d65e902ebceaba1dae71074591920e7",
+          "capturedAt": "2026-10-27T15:56:51.777Z",
+          "quoteHash": "5ddf788730c5b19b976c0fe5da9ab62d5a5ed971793b474acbecd1689eac1198",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "MAARIV, JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "ה-Jerusalem Post דיווח כי הליכוד הגיש בקשה רשמית לוועדת הבחירות המרכזית בבקשה להארכת שעות ההצבעה מבלי לציין סיבה."
+    },
+    {
+      "text": "JTA reported that Israel Police arrested a man carrying a large knife after he approached Democrats party leader Yair Golan during campaign activities in Tel Aviv.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+      "translations": {
+        "he": {
+          "text": "JTA דיווח כי משטרת ישראל עצרה גבר שנשא סכין גדולה לאחר שהתקרב למנהיג מפלגת הדמוקרטים יאיר גולן במהלך פעילות קמפיין בתל אביב.",
+          "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت JTA أن شرطة إسرائيل اعتقلت رجلاً يحمل سكيناً كبيراً بعد أن اقترب من زعيم حزب Democrats، Yair Golan، خلال أنشطة الحملة الانتخابية في تل أبيب.",
+          "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "خبرگزاری JTA گزارش داد که پلیس اسرائیل مردی حامل یک چاقوی بزرگ را پس از نزدیک شدن او به Yair Golan، رهبر حزب Democrats، در جریان فعالیت‌های تبلیغاتی در تل‌آویو بازداشت کرد.",
+          "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "JTA berichtete, dass die israelische Polizei einen Mann festnahm, der ein großes Messer bei sich trug, nachdem er sich während Wahlkampfaktivitäten in Tel Aviv dem Vorsitzenden der Partei Die Demokraten, Yair Golan, genähert hatte.",
+          "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "JTA a rapporté que la police israélienne a arrêté un homme muni d'un grand couteau après qu'il s'est approché du chef du parti des Démocrates, Yair Golan, pendant des activités de campagne à Tel Aviv.",
+          "sourceHash": "d53a26b082958dafb82c72caa239387d0177cef94c0cd84be29c761e36d1343f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Democrats leader Golan approached by man with knife on election day",
+          "url": "https://www.jta.org/2026/10/27/israel/democrats-leader-golan-approached-by-man-with-knife-on-election-day",
+          "published": "2026-10-27T14:39:58Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/10/27/israel/democrats-leader-golan-approached-by-man-with-knife-on-election-day",
+          "bodyHash": "292ef0068e5959bbada57757221752ec655a37b72b23277306629da2f2f50f92",
+          "capturedAt": "2026-10-27T15:56:52.410Z",
+          "quoteHash": "d8f4f5f979acde7e637787149c53ca37075bc5c295066f953f33e9b12006801d",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Michele Chabin"
+          }
+        }
+      ],
+      "textHe": "JTA דיווח כי משטרת ישראל עצרה גבר שנשא סכין גדולה לאחר שהתקרב למנהיג מפלגת הדמוקרטים יאיר גולן במהלך פעילות קמפיין בתל אביב."
+    },
+    {
+      "text": "According to the Jerusalem Post, the Yashar party submitted complaints to the Israeli Election Commission alleging systematic destruction and vandalism of its ballot slips at multiple voting locations.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+      "translations": {
+        "he": {
+          "text": "לפי ה-Jerusalem Post, מפלגת ישר הגישה תלונות לוועדת הבחירות הישראלית בטענה להשמדה שיטתית והשחתה של פתקי ההצבעה שלה במספר מוקדי הצבעה.",
+          "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لـ The Jerusalem Post، قدّم حزب Yashar شكاوى إلى لجنة الانتخابات الإسرائيلية زاعماً حدوث إتلاف وتخريب منهجي لأوراق الاقتراع الخاصة به في مواقع تصويت متعددة.",
+          "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش Jerusalem Post، حزب Yashar با طرح ادعای تخریب و آسیب سیستماتیک به برگه‌های رای خود در چندین حوزه رای‌گیری، شکایت‌هایی را به کمیسیون انتخابات اسرائیل ارائه کرد.",
+          "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut The Jerusalem Post reichte die Yashar-Partei Beschwerden bei der israelischen Wahlkommission ein, in denen die systematische Zerstörung und der Vandalismus ihrer Stimmzettel an mehreren Wahllokalen geltend gemacht wurden.",
+          "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon The Jerusalem Post, le parti Yashar a déposé des plaintes auprès de la Commission électorale israélienne alléguant la destruction systématique et le vandalisme de ses bulletins de vote dans plusieurs bureaux de vote.",
+          "sourceHash": "cc81214e6030d76336383ca4aaf0ac519993ca60e1e8d3981acd73c550714b32",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot is hoping to beat Netanyahu, but what does the Yashar leader stand for? - explainer",
+          "url": "https://www.jpost.com/israel-election-2026/article-913037",
+          "published": "2026-10-27T15:08:09.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913037",
+          "bodyHash": "5bc15b725eba7307bf9a2a9e889a8510fda6ff1beb95e574f23802eeab93b3db",
+          "capturedAt": "2026-10-27T15:56:52.229Z",
+          "quoteHash": "dad34ce69c7d32a429717cfa9e018e7f8fc2ea3b2d8cd9fce91ba24bd2105232",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "YONAH JEREMY BOB"
+          }
+        }
+      ],
+      "textHe": "לפי ה-Jerusalem Post, מפלגת ישר הגישה תלונות לוועדת הבחירות הישראלית בטענה להשמדה שיטתית והשחתה של פתקי ההצבעה שלה במספר מוקדי הצבעה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "1fa5cbabffa2923b62764c2a51e876a3399e6a2a7ed385e7647e5de2a35119fd",
+    "privateStored": true
+  }
+}
