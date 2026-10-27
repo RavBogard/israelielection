@@ -92,6 +92,8 @@ export async function acquireCount(
       },
     });
     if (response.status >= 500) throw new Error("Source unavailable");
+    // The CEC sits behind an AWS WAF bot challenge: 202, empty body, x-amzn-waf-action. That is not a published file.
+    if (response.status === 202 || response.headers.get("x-amzn-waf-action")) throw new Error("Source challenged");
     reason = "unusable";
     if (!response.ok) throw new Error("Source not published");
     const raw = await response.text();

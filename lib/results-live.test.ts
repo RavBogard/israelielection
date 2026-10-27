@@ -95,4 +95,12 @@ describe("fresh count and cold-start fallback", () => {
     });
     expect(live.state).toBe("error");
   });
+  it("treats the CEC's AWS WAF challenge as unreachable, not as a published file", async () => {
+    const live = await acquireCount(60, {
+      now,
+      store: {},
+      fetcher: mock(new Response(null, { status: 202, headers: { "x-amzn-waf-action": "challenge" } })),
+    });
+    expect(live).toMatchObject({ state: "error", reason: "unreachable" });
+  });
 });
