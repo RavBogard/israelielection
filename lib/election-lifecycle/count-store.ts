@@ -1,4 +1,5 @@
 import { RedisLiveStore } from "../live-forecast/store";
+import { cadenceFresh } from "./cadence";
 import { acquireCount, resultsConfig } from "../results-live";
 import type { ResultsSnapshot } from "../results-snapshot";
 import type { ErrorReason } from "../results-phase";
@@ -46,9 +47,16 @@ export async function readCountRecord(): Promise<CountRecord | null> {
     };
   }
 }
+/** A server fetch that meets the WAF challenge must not mark a relay capture still within its cadence as failed. */
+export const relayStillCurrent = (old: CountRecord | null, now: string) =>
+  !!old?.current &&
+  !old.health.error &&
+  cadenceFresh(now, old.health.lastSuccessfulAt, old.health.lastAttemptAt);
 export async function acquireDurableCount(
   now: string,
   audit?: { operator: string; reason: string },
+  /** The browser relay (scripts/live-count/capture.mts) hands over a file it fetched past the WAF; validation is unchanged. */
+  fetcher?: typeof fetch,
 ) {
   const db = redis();
   if (!db) throw new Error("count_store_unconfigured");
@@ -57,6 +65,7 @@ export async function acquireDurableCount(
   const result = await acquireCount(0, {
     now: Date.parse(now),
     store: old ?? {},
+    ...(fetcher ? { fetcher } : {}),
     onAcquired: (value) => {
       raw = value;
     },
@@ -79,7 +88,7 @@ export async function acquireDurableCount(
     health: {
       lastAttemptAt: now,
       lastSuccessfulAt: success ? now : (old?.health.lastSuccessfulAt ?? null),
-      error: success
+      error: success || relayStillCurrent(old, now)
         ? null
         : result.state === "error"
           ? result.reason

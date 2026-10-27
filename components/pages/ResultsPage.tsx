@@ -25,6 +25,7 @@ import type { Count, PartyResult } from "@/lib/results";
 import { pollWatch, thresholdSeats, thresholdWatch } from "@/lib/watch";
 import { countedTurnout, results, versusAverage } from "@/lib/results";
 import { fetchCount, resultsNow, resultsConfig as cfg } from "@/lib/results-live";
+import { getLiveForecast } from "@/lib/live-forecast/server";
 import { averageLabel, night, PRIOR_ROLL, priorRollLabel, sections, type Counted, type Night, type Section } from "@/lib/results-phase";
 import PageHead from "@/components/PageHead";
 import renderLiveForecast from "@/components/live-forecast/LiveForecast";
@@ -371,7 +372,8 @@ function noCount(n: Night, at: string, lang: Lang): string {
 export default async function ResultsPage({ lang, revalidate }: { lang: Lang; revalidate: number }) {
   const t = resultsText[lang];
   const now = resultsNow();
-  const [live, liveForecast, context] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang }), seatContextForRender()]);
+  const [live, liveForecast, context, forecastSnapshot] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang }), seatContextForRender(), getLiveForecast().catch(() => null)]);
+  const coverage = forecastSnapshot?.countEstimate?.coverage.votes ?? null;
   if(!context)return <CurrentUnavailable lang={lang} {...forecastPresentation(lang)}/>;
   const n = night(live, cfg, now);
   const close = new Date(cfg.pollsClose);
@@ -407,7 +409,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead></ResultsHeading>
         <p className="note">{readiness(lang).timeNote}</p>
-        {exitPolls.length > 0 && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} /></>}
+        {exitPolls.length > 0 && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} /></>}
         {context && <CurrentParliament initial={context} lang={lang} showScenarios={false} {...forecastPresentation(lang)} />}
         {liveForecast}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>

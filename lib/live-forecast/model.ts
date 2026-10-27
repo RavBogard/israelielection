@@ -10,7 +10,7 @@ import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 export const MODEL_VERSION = "live-v3-joint-blocs";
 /** Bump on any change to model code: it enters the input revision, so the next cycle recomputes even when no
  * source changed. MODEL_VERSION stays, since stored snapshots are checked against the committed fallback's version. */
-export const MODEL_CODE_REVISION = "2026-10-27.3-grid-spare-seats";
+export const MODEL_CODE_REVISION = "2026-10-27.4-count-estimate";
 
 export type ExitCalibration = {
   elections: { date: string; field: number; result: number }[];

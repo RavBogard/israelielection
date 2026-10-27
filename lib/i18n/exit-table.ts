@@ -13,6 +13,8 @@ type ExitTableText = {
   below: string;
   notReported: string;
   countSoFar: string;
+  /** Share of the expected vote counted, under the count column header; `p` is already formatted ("12%"). */
+  counted: (p: string) => string;
   aired: (t: string) => string;
   updated: (t: string) => string;
   yourTime: (t: string) => string;
@@ -32,6 +34,7 @@ const en: ExitTableText = {
   below: "below threshold",
   notReported: "not reported",
   countSoFar: "Count so far",
+  counted: (p) => `${p} of expected votes counted`,
   aired: (t) => `aired ${t} Israel time`,
   updated: (t) => `updated ${t} Israel time`,
   yourTime: (t) => ` (${t} your time)`,
@@ -51,6 +54,7 @@ const he: ExitTableText = {
   below: "מתחת לאחוז החסימה",
   notReported: "לא פורסם",
   countSoFar: "הספירה עד כה",
+  counted: (p) => `נספרו ${p} מהקולות הצפויים`,
   aired: (t) => `שודר ב־${t} שעון ישראל`,
   updated: (t) => `עודכן ב־${t} שעון ישראל`,
   yourTime: (t) => ` (${t} אצלך)`,
@@ -70,6 +74,7 @@ const ar: ExitTableText = {
   below: "دون نسبة الحسم",
   notReported: "لم يُنشر",
   countSoFar: "الفرز حتى الآن",
+  counted: (p) => `فُرز ${p} من الأصوات المتوقعة`,
   aired: (t) => `بُثّ الساعة ${t} بتوقيت إسرائيل`,
   updated: (t) => `حُدّث الساعة ${t} بتوقيت إسرائيل`,
   yourTime: (t) => ` (${t} بتوقيتك)`,
@@ -89,6 +94,7 @@ const fa: ExitTableText = {
   below: "زیر حد نصاب",
   notReported: "اعلام نشده",
   countSoFar: "شمارش تاکنون",
+  counted: (p) => `${p} از آرای پیش‌بینی‌شده شمارش شده`,
   aired: (t) => `پخش در ساعت ${t} به وقت اسرائیل`,
   updated: (t) => `به‌روزرسانی در ساعت ${t} به وقت اسرائیل`,
   yourTime: (t) => ` (${t} به وقت شما)`,
@@ -108,6 +114,7 @@ const de: ExitTableText = {
   below: "unter der Sperrklausel",
   notReported: "nicht gemeldet",
   countSoFar: "Bisher ausgezählt",
+  counted: (p) => `${p} der erwarteten Stimmen ausgezählt`,
   aired: (t) => `gesendet um ${t} Uhr israelischer Zeit`,
   updated: (t) => `aktualisiert um ${t} Uhr israelischer Zeit`,
   yourTime: (t) => ` (${t} bei Ihnen)`,
@@ -127,6 +134,7 @@ const fr: ExitTableText = {
   below: "sous le seuil",
   notReported: "non publié",
   countSoFar: "Dépouillement en cours",
+  counted: (p) => `${p} des voix attendues dépouillées`,
   aired: (t) => `diffusé à ${t}, heure d’Israël`,
   updated: (t) => `mis à jour à ${t}, heure d’Israël`,
   yourTime: (t) => ` (${t} chez vous)`,
@@ -146,6 +154,7 @@ const zh: ExitTableText = {
   below: "未过门槛",
   notReported: "未公布",
   countSoFar: "目前计票",
+  counted: (p) => `已计 ${p} 预计票数`,
   aired: (t) => `以色列时间 ${t} 播出`,
   updated: (t) => `以色列时间 ${t} 更新`,
   yourTime: (t) => `（您当地时间 ${t}）`,
