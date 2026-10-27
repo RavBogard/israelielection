@@ -31,7 +31,9 @@ const channel14: Poll = {
   kind: "exit",
   broadcastAt: "2026-10-27T22:00:00+02:00",
 } as unknown as Poll;
-const withC14 = [...allPolls, channel14];
+// The forecast channels only, whatever set-apart exit polls tonight's data already holds.
+const base = allPolls.filter((p) => !pollsData.config.withoutVariant.pollsters.includes(p.pollster));
+const withC14 = [...base, channel14];
 
 const html = (polls: Poll[], lang: (typeof LANGS)[number] = "en") =>
   renderToStaticMarkup(createElement(ExitPollTable, { polls, pollsConfig: pollsData.config, config: resultsConfig, lang }));
@@ -64,19 +66,19 @@ describe("ExitPollTable", () => {
   });
 
   it("has no set-apart block when only the forecast's channels have aired", () => {
-    const markup = html(allPolls);
+    const markup = html(base);
     expect(markup).not.toContain('data-testid="exit-apart"');
-    expect(columns(markup, "exit-main").length).toBe(splitExits(allPolls, pollsData.config).main.length);
+    expect(columns(markup, "exit-main").length).toBe(splitExits(base, pollsData.config).main.length);
   });
 
   it("marks below-threshold lists and adds a bloc totals block", () => {
-    const markup = html(allPolls);
+    const markup = html(base);
     expect(markup).toContain('data-below="true"');
     expect(markup).toContain('data-testid="exit-main-blocs"');
   });
 
   it("renders Israel time only on the server (the reader's time is added in the browser)", () => {
-    const markup = html(allPolls);
+    const markup = html(base);
     expect(markup).toContain('data-testid="exit-air-time"');
     expect(markup).not.toContain("xt-local");
   });
@@ -86,6 +88,6 @@ describe("ExitPollTable", () => {
   });
 
   it("renders nothing before any exit poll", () => {
-    expect(html(allPolls.filter((p) => p.kind !== "exit"))).toBe("");
+    expect(html(base.filter((p) => p.kind !== "exit"))).toBe("");
   });
 });

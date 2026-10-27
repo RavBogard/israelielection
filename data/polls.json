@@ -4146,6 +4146,64 @@
       "combined": [],
       "kind": "exit",
       "broadcastAt": "2026-10-27T22:44:00+02:00"
+    },
+    {
+      "id": "channel-14-exit-2026-10-27-2200",
+      "pollster": "Channel 14",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "JNS",
+      "url": "https://www.jns.org/israeli-election-exit-polls",
+      "n": null,
+      "margin": null,
+      "note": "Channel 14 exit poll, at the close of polls (in the Times of Israel liveblog roundup at 22:44; air time not stated). Party figures from JNS; they sum to 120 and give the Netanyahu bloc 60, opposition 43 and Arab lists 17, as the Times of Israel reports. ynet gives Religious Zionism 9 and UTJ 9, which make 124; JNS is used. Reservists–Economic and Amcha Yisrael below the threshold (Times of Israel, ynet). Shown apart from the other channels and not in the forecast. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 30
+        },
+        "yashar": {
+          "seats": 19
+        },
+        "byachad": {
+          "seats": 11
+        },
+        "jl": {
+          "seats": 10
+        },
+        "shas": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 9
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 7
+        },
+        "yb": {
+          "seats": 4
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:00:00+02:00"
     }
   ]
 }
