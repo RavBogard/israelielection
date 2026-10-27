@@ -8,6 +8,7 @@ import {
 import {
   inputRevision,
   latestPublisherRevisions,
+  manualExits,
   selectPublisherInputs,
   validExit,
 } from "./sources";
@@ -156,6 +157,15 @@ describe("source validation", () => {
     const tied = { ...fallback, broadcastAt: direct.broadcastAt };
     expect(latestPublisherRevisions([tied, direct])).toEqual([direct]);
     expect(latestPublisherRevisions([direct, tied])).toEqual([direct]);
+  });
+  it("accepts hand-entered exit polls only under the ordinary exit validation", () => {
+    const now = "2026-10-27T21:00:00Z";
+    expect(manualExits(now).map((p) => p.pollster).sort()).toEqual(["Channel 12", "Channel 13", "Kan 11"]);
+    expect(manualExits("2026-10-27T19:59:00Z")).toEqual([]);
+    const c14 = { ...poll(), id: "c14", pollster: "Channel 14" };
+    const early = { ...poll(), id: "early", broadcastAt: "2026-10-27T19:00:00Z" };
+    const short = { ...poll({ likud: { seats: 60 }, dem: { seats: 59 } }), id: "short" };
+    expect(manualExits(now, [c14, early, short, poll()])).toEqual([poll()]);
   });
   it("rejects negative, fractional, empty and duplicate combined groups even if totals can sum120", () => {
     const base = { ...poll(), results: { likud: { seats: 60 } } };

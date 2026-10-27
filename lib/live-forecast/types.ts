@@ -2,7 +2,7 @@ import type { CadenceMetadata } from "../election-lifecycle/cadence";
 export type LiveSource = {
   id: string;
   publisher: string;
-  transport: "direct" | "wikipedia" | "official";
+  transport: "direct" | "wikipedia" | "official" | "manual";
   url: string;
   revision: string;
   publishedAt: string | null;

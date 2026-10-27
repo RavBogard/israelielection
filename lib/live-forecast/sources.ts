@@ -1,6 +1,7 @@
 import { importFromWikitext } from "../pollimport";
 import type { Poll, PollsFile } from "../types";
 import frozen from "../../data/live-forecast-prior.json";
+import bundled from "../../data/polls.json";
 import sourceConfig from "../../data/poll-sources.json";
 import type { LiveSource } from "./types";
 import { hash, modelRevision } from "./model";
@@ -38,11 +39,20 @@ export function validExit(p: Poll, now: number): boolean {
   const allIds = [...entries.map(([id]) => id), ...p.combined.flatMap((g) => g.parties)];
   return p.kind === "exit" && now >= close && published >= close && published <= now && p.published === frozen.inputs.results.election && frozen.inputs.pollFile.config.pollsters.includes(p.pollster) && !frozen.inputs.pollFile.config.withoutVariant.pollsters.includes(p.pollster) && allIds.every((id) => ids.has(id)) && new Set(allIds).size === allIds.length && entries.every(([, r]) => Number.isInteger(r.seats) && r.seats >= 0) && p.combined.every((g) => g.parties.length > 0 && Number.isInteger(g.seats) && g.seats >= 0) && entries.reduce((n, [, r]) => n + r.seats, 0) + p.combined.reduce((n, g) => n + g.seats, 0) === 120;
 }
-export async function acquireSources(now: string, previousExits: Poll[] = []) {
+/** Exit polls entered by hand in data/polls.json, under the same validation as every other exit source. */
+export function manualExits(now: string, polls: Poll[] = (bundled as PollsFile).polls): Poll[] {
+  return polls.filter((p) => validExit(p, Date.parse(now)));
+}
+export async function acquireSources(now: string, previousExits: Poll[] = [], manualPolls: Poll[] = manualExits(now)) {
   const [direct, official] = await Promise.all([acquireDirect(now), acquireOfficial(now)]);
-  const directPolls = direct.polls.filter((p) => validExit(p, Date.parse(now)));
-  const sources: LiveSource[] = direct.sources.map((s) => s.status === "valid" && !directPolls.some((p) => p.pollster === s.publisher) ? { ...s, status: "rejected", note: "Historical, future, or invalid exit estimate rejected" } : s);
+  const broadcastPolls = direct.polls.filter((p) => validExit(p, Date.parse(now)));
+  const sources: LiveSource[] = direct.sources.map((s) => s.status === "valid" && !broadcastPolls.some((p) => p.pollster === s.publisher) ? { ...s, status: "rejected", note: "Historical, future, or invalid exit estimate rejected" } : s);
   sources.push(official);
+  // A hand-entered exit poll is authoritative for its publisher, like a verified direct read: a mirror's later
+  // observation time must not override a newer hand-entered version.
+  const manual = latestPublisherRevisions(manualPolls.filter((p) => validExit(p, Date.parse(now))));
+  for (const p of manual) sources.push({ id: `manual:${p.pollster}`, publisher: p.pollster, transport: "manual", url: p.url ?? "https://www.israelielection.org/polls", revision: hash(p), publishedAt: p.broadcastAt ?? null, observedAt: now, status: "valid", note: "Entered by hand from the broadcast" });
+  const directPolls = [...manual, ...broadcastPolls];
   try {
   // Wikipedia's revision timestamp describes the page; do not mislabel it as a broadcaster publication time.
   const page = sourceConfig.wikipedia.page;
