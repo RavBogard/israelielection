@@ -4206,6 +4206,60 @@
       "broadcastAt": "2026-10-27T22:00:00+02:00"
     },
     {
+      "id": "i24news-exit-2026-10-27-2200",
+      "pollster": "i24NEWS",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-27",
+      "via": "i24NEWS",
+      "url": "https://www.i24news.tv/en/news/israeli-elections/artc-i24news-exit-poll-likud-wins-27-seats-yashar-20-coalition-bloc-reaches-55-seats-opposition-49-and-arab-parties-16",
+      "n": null,
+      "margin": null,
+      "note": "i24NEWS exit poll at the close of polls (air time not stated; in the Times of Israel liveblog roundup at 23:58). Party figures from i24NEWS; they sum to 120 and give the Netanyahu bloc 55, the opposition 49 and the Arab lists 16, as i24NEWS and the Times of Israel both report. Ofer Winter's Reservists–Economic list below the threshold (i24NEWS). Shown apart from the other channels and not in the forecast. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 27
+        },
+        "yashar": {
+          "seats": 20
+        },
+        "byachad": {
+          "seats": 15
+        },
+        "jl": {
+          "seats": 9
+        },
+        "dem": {
+          "seats": 9
+        },
+        "shas": {
+          "seats": 8
+        },
+        "otzma": {
+          "seats": 7
+        },
+        "utj": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 7
+        },
+        "rz": {
+          "seats": 6
+        },
+        "yb": {
+          "seats": 5
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-27T22:00:00+02:00"
+    },
+    {
       "id": "channel-13-exit-2026-10-27-2257",
       "pollster": "Channel 13",
       "firm": null,
