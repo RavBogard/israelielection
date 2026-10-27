@@ -6,6 +6,7 @@
 .home .hero .text { grid-area: intro; }
 .home .hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
 .home .hero .hero-story { font: 600 clamp(16px, 1.3vw, 18px)/1.45 var(--body); color: var(--ink); margin: 10px 0 0; max-width: 60ch; text-wrap: balance; }
+.home .hero .hero-turnout { font-size: 14px; line-height: 1.45; color: var(--text); margin: 6px 0 0; }
 .home .hero .standfirst { font-family: var(--display); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; color: var(--text); margin: 18px 0 0; max-width: 52ch; }
 .home .race-basis { font-size: 14px; font-weight: 600; color: var(--ink); margin: 14px 0 0; }
 .home .race-chart { display: contents; }
@@ -205,8 +206,8 @@
 .home .hero-news li a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 .home .hero-news .hn-meta { display: flex; gap: 8px; font-size: 12px; color: var(--ink-3); font-variant-numeric: tabular-nums; }
 .home .hero-news .hn-meta b { color: var(--ink-2); font-weight: 600; }
-.home .hero-news .hn-all { margin: 6px 0 0; font-size: 13px; font-weight: 600; }
-.home .hero-news .hn-all a { color: var(--ink); text-underline-offset: 3px; }
+.home .hero-news h2 a { color: inherit; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.home .hero-news h2 a:hover { text-decoration-thickness: 2px; }
 @media (max-width: 1000px) {
   .home .hero.has-news { grid-template-areas: "intro" "mosaic" "selectors" "detail" "source" "news" "context"; grid-template-rows: none; }
 }

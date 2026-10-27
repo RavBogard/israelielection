@@ -91,3 +91,11 @@
 /* Where the bloc stood in the outgoing Knesset: a hollow tick on the 0-120 track, keyed by the "now" chip beside the figure. */
 .lf .lf-now-mark { position:absolute; inset-block:-3px; width:7px; transform:translateX(-50%); border:1.5px solid var(--ink-2); border-radius:2px; background:transparent; z-index:2; }
 .lf[dir=rtl] .lf-now-mark { transform:translateX(50%); }
+/* Home: every list's projected seats, open under the panel. */
+.lf .lf-all-seats { border-block-start: 1px solid var(--line); margin-block-start: 18px; padding-block-start: 12px; max-width: 760px; }
+.lf .lf-all-seats h3 { margin: 0; font-size: 15px; }
+.lf .lf-all-seats table { font-size: 14px; }
+.lf .lf-all-seats td { font-variant-numeric: tabular-nums; }
+.lf .lf-all-seats td { white-space: nowrap; }
+/* Phones: the largest-party chance is in the panel above; the table keeps list, seats and now. */
+@media (max-width: 560px) { .lf .lf-all-seats th:nth-child(3), .lf .lf-all-seats td:nth-child(3) { display: none; } }

@@ -1,0 +1,20 @@
+{
+  "checked": "2026-10-28T00:20:00+02:00",
+  "turnout": {
+    "pct": 77.7,
+    "voters": 5695682,
+    "at": "2026-10-27T22:00:00+02:00",
+    "note": "Near-final: people already in line at 22:00 could still vote. Highest at that hour since 1999 (70.6% in 2022).",
+    "source": { "name": "Times of Israel, from the Central Elections Committee", "url": "https://www.timesofisrael.com/liveblog_entry/near-final-election-turnout-at-77-7-highest-since-1999/" }
+  },
+  "countSource": { "name": "The Jewish Chronicle", "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx" },
+  "complaintsSource": { "name": "The Jewish Chronicle", "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx" },
+  "reactions": [
+    { "speaker": "Gadi Eisenkot", "list": "yashar", "quote": "If these are the final results, this is a victory for Israel's responsible Zionist majority.", "source": { "name": "The Jewish Chronicle", "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx" } },
+    { "speaker": "Gideon Sa'ar", "list": "likud", "paraphrase": "called the opposition's celebrations “premature.”", "source": { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-27-2026/" } },
+    { "speaker": "Yair Lapid", "list": "byachad", "quote": "Don't let them confuse you: The Netanyahu bloc suffered a harsh defeat.", "source": { "name": "The Jewish Chronicle", "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx" } },
+    { "speaker": "Yair Golan", "list": "dem", "quote": "The public has spoken, it has fired the Netanyahu government.", "source": { "name": "The Jewish Chronicle", "url": "https://www.thejc.com/news/israel/israel-elections-2026-live-results-um05revx" } },
+    { "speaker": "Avigdor Liberman", "list": "yb", "quote": "We have to hold on until we see the actual, final results.", "source": { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-27-2026/" } },
+    { "speaker": "Mansour Abbas", "list": "raam", "quote": "We'll translate this electoral power into an influential political force.", "source": { "name": "Times of Israel", "url": "https://www.timesofisrael.com/liveblog-october-27-2026/" } }
+  ]
+}

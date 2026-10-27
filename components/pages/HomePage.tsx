@@ -167,9 +167,10 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
     <div className="home">
       <div className="wrap">
         <Race news={news} context={context} cadence={lifecycle?.cadence} poll={poll} live={!!results} days={days} phase={n.phase} lang={lang}/>
+        {/* After the hero: the race in numbers with every list's projected seats, then the exit polls (Daniel, 2026-10-28). */}
+        {liveForecast}
         <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />
         {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
-        {liveForecast}
 
         {context?.evidenceStage === "campaign" && n.phase === "before" && <Since now={now} lang={lang} />}
 

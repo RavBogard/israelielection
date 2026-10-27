@@ -22,7 +22,7 @@ export async function homeHeadlines(lang: Lang, count = 3) {
   return (
     <section key="hero-news" className="hero-news" aria-labelledby="hero-news-h">
       <header>
-        <h2 id="hero-news-h">{t.heading}{translated && <small> {t.inEnglish}</small>}</h2>
+        <h2 id="hero-news-h"><Link href="/news" hrefLang={translated ? "en" : undefined}>{t.heading}</Link>{translated && <small> {t.inEnglish}</small>}</h2>
         <span className="hn-zone">{t.israelTime}</span>
       </header>
       <ol lang={translated ? "en" : undefined} dir={translated ? "ltr" : undefined}>
@@ -36,7 +36,6 @@ export async function homeHeadlines(lang: Lang, count = 3) {
           </li>
         ))}
       </ol>
-      <p className="hn-all"><Link href="/news" hrefLang={translated ? "en" : undefined}>{t.all}</Link></p>
     </section>
   );
 }

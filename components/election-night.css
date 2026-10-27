@@ -1,0 +1,15 @@
+/* Election night notes (components/ElectionNight.tsx). */
+.en-night .en-src { font-size: 12.5px; color: var(--ink-2); text-underline-offset: 3px; white-space: nowrap; }
+.en-night q { font-style: italic; }
+.en-night dl > div:last-child { grid-column: 1 / -1; }
+.en-quotes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px 32px; }
+.en-quotes li { display: flex; flex-direction: column; gap: 4px; padding-block-end: 12px; border-bottom: 1px solid var(--line); }
+.en-who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; font-size: 14px; }
+.en-who .sw { width: 10px; height: 10px; display: inline-block; flex: none; }
+.en-who span:last-child { color: var(--ink-3); font-size: 13px; }
+.en-said { font-family: var(--display); font-size: 16px; line-height: 1.45; text-align: start; }
+[dir="rtl"] .en-said { text-align: left; }
+.en-note { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-2); }
+.en-formation { margin-block: 18px 28px; max-width: 70ch; }
+.en-formation ol { margin: 10px 0 0; padding-inline-start: 1.4em; display: grid; gap: 8px; line-height: 1.5; }
+.en-night { margin-block-end: 32px; }

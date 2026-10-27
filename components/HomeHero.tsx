@@ -12,6 +12,7 @@ import type { CadenceMetadata } from "@/lib/election-lifecycle/cadence";
 import type { ReactNode } from "react";
 import { blocOfList, outgoingBlocSeats } from "@/lib/outgoing-seats";
 import { NOW_SEATS } from "@/lib/i18n/now-seats";
+import { turnoutLine } from "./ElectionNight";
 
 /** Same interactive hero as the campaign edition; its default point follows stored evidence. */
 export default function HomeHero({
@@ -64,6 +65,7 @@ export default function HomeHero({
             {NOW_SEATS[lang].blocStory(outgoingBlocSeats.net, Object.entries(context.pointSeats).reduce((n, [id, seats]) => n + (blocOfList[id] === "net" ? seats : 0), 0))}
           </p>
         )}
+        {phase !== "before" && <p className="hero-turnout" data-testid="hero-turnout">{turnoutLine(lang)}</p>}
       </div>
       {news}
       <HomeRace

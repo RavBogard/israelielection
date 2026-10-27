@@ -103,6 +103,41 @@ export function ForecastDisplay({
             ? t.paused
             : t[snapshot.mode];
   const probabilityHistory=(kind:"largestParty"|"thresholds",caption:string)=>{const ids=[...new Set(snapshot.history.flatMap(point=>(point[kind]??[]).map(row=>row.id)))].sort();return <div className="lf-table-scroll"><table><caption>{caption}</caption><thead><tr><th>{t.time}</th>{ids.map(id=><th key={id}>{party(id)}</th>)}</tr></thead><tbody>{snapshot.history.map(point=><tr key={point.revision}><th scope="row">{date(point.generatedAt)}</th>{ids.map(id=>{const row=point[kind]?.find(row=>row.id===id);return <td key={id} dir="ltr">{row?probability("probability" in row?row.probability:row.passProbability):"—"}</td>;})}</tr>)}</tbody></table></div>;};
+  // Every list's projected seats; open on its own under the panel on the home page (Daniel, 2026-10-28), folded on /results.
+  const seatTable = (
+    <>
+    <table>
+      <thead>
+        <tr>
+          <th>{t.seats}</th>
+          <th>{t.interval}</th>
+          <th>{t.largest}</th>
+          <th>{NOW_SEATS[lang].col}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {headlineRows(snapshot.partySeats, context?.pointSeats ?? null)
+          .sort((a, b) => b.seats.median - a.seats.median)
+          .map((row) => (
+            <tr key={row.id}>
+              <th scope="row">{party(row.id)}</th>
+              <td dir="ltr">{interval(row.seats)}</td>
+              <td dir="ltr">
+                {probability(
+                  leaders.find((lead) => lead.id === row.id)
+                    ?.probability ?? 0,
+                )}
+              </td>
+              <td className="lf-now">
+                <NowSeats id={row.id} lang={lang} bare />
+              </td>
+            </tr>
+          ))}
+      </tbody>
+    </table>
+    <NowSeatsKey lang={lang} />
+    </>
+  );
   const thresholdRow = (row: (typeof watched)[number]) => (
     <li key={row.id} data-threshold-id={row.id}>
       <div className="lf-threshold-head">
@@ -206,41 +241,12 @@ export function ForecastDisplay({
             </>
           )}
           <p className="lf-note">{t.pm}</p>
-          {!official && (
+          {!official && !compact && (
             <details className="lf-details">
               <summary>
                 {t.seats} · {t.interval}
               </summary>
-              <table>
-                <thead>
-                  <tr>
-                    <th>{t.seats}</th>
-                    <th>{t.interval}</th>
-                    <th>{t.largest}</th>
-                    <th>{NOW_SEATS[lang].col}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {headlineRows(snapshot.partySeats, context?.pointSeats ?? null)
-                    .sort((a, b) => b.seats.median - a.seats.median)
-                    .map((row) => (
-                      <tr key={row.id}>
-                        <th scope="row">{party(row.id)}</th>
-                        <td dir="ltr">{interval(row.seats)}</td>
-                        <td dir="ltr">
-                          {probability(
-                            leaders.find((lead) => lead.id === row.id)
-                              ?.probability ?? 0,
-                          )}
-                        </td>
-                        <td className="lf-now">
-                          <NowSeats id={row.id} lang={lang} bare />
-                        </td>
-                      </tr>
-                    ))}
-                </tbody>
-              </table>
-              <NowSeatsKey lang={lang} />
+              {seatTable}
             </details>
           )}
         </section>
@@ -328,6 +334,12 @@ export function ForecastDisplay({
           )}
         </section>
       </div>
+      {compact && !official && (
+        <section className="lf-all-seats" aria-labelledby="lf-all-seats-h">
+          <h3 id="lf-all-seats-h">{t.seats} · {t.interval}</h3>
+          {seatTable}
+        </section>
+      )}
       <p className="lf-stamp">
         {official ? d.official : t.updated}:{" "}
         <time
