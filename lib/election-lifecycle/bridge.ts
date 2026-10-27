@@ -3,6 +3,7 @@ import { configuredStore } from "../live-forecast/store";
 import partyData from "../../data/parties.json";
 import { ELECTION, fingerprint, POLLS_CLOSE, validSeats } from "./core";
 import type { LifecycleLedger, SharedSeatContext, SourceHealth } from "./types";
+import type { LiveForecastSnapshot } from "../live-forecast/types";
 /** Reads the already acquired durable exit inputs; viewers never fetch broadcasters or simulate. */
 export async function acquireLiveBridge(now: string) {
   const store = configuredStore();
@@ -177,7 +178,92 @@ export async function acquireLiveBridge(now: string) {
       reason: fresh ? null : "source_unavailable",
     });
   }
+  const count = countSnapshot(live, now, fresh);
+  if (count) {
+    snapshots.push(count);
+    health.push({
+      sourceId: "count-projection",
+      authority: "model",
+      status: fresh ? "healthy" : "unavailable",
+      checkedAt: now,
+      lastSuccessfulAt: live.freshness.lastSuccessfulAcquisitionAt,
+      reason: fresh ? null : "source_unavailable",
+    });
+  }
   return { snapshots, health };
+}
+/**
+ * Once enough of the expected vote is counted (the nowcast's own threshold, mode "count"), the count-informed
+ * projection of the final result is the seat context; below it, nothing is emitted and exits keep the grid.
+ */
+export function countSnapshot(
+  live: LiveForecastSnapshot,
+  now: string,
+  fresh: boolean,
+): SharedSeatContext | null {
+  const estimate = live.countEstimate;
+  if (!estimate || estimate.mode !== "count" || !validSeats(estimate.seats))
+    return null;
+  const at = estimate.capturedAt ?? live.generatedAt;
+  const snapshotRevision = fingerprint({
+      basis: "count_projection",
+      seats: estimate.seats,
+      capturedAt: estimate.capturedAt,
+      coverage: estimate.coverage.votes,
+    }),
+    revision = fingerprint({ basis: "partial_count", snapshotRevision });
+  return {
+    schemaVersion: 1,
+    election: ELECTION,
+    revision,
+    snapshotRevision,
+    sequence: 0,
+    updatedAt: now,
+    evidenceStage: "counting",
+    basis: "partial_count",
+    seatStatus: "estimated",
+    pointMethod: "partial_count_allocation",
+    pointSeats: estimate.seats,
+    parties: partyData.parties
+      .filter((p) => p.id in estimate.seats)
+      .map((p) => ({ id: p.id, label: p.short, profiled: true, bloc: p.bloc })),
+    sourceRefs: [
+      {
+        id: "count-projection",
+        publisher: "Israeli Election",
+        title: "Count-informed projection of the final result",
+        url: "https://www.israelielection.org/results",
+        authority: "model",
+        publishedAt: live.generatedAt,
+        observedAt: at,
+        captureHash: snapshotRevision,
+      },
+    ],
+    publishedAt: live.generatedAt,
+    observedAt: at,
+    correctionOf: null,
+    uncertainty: {
+      snapshotRevision,
+      intervalLevel: 0.8,
+      partyIntervals: Object.fromEntries(
+        Object.entries(estimate.seats).map(([id, median]) => [
+          id,
+          {
+            lo: Math.min(median, estimate.intervals[id]?.lo ?? median),
+            median,
+            hi: Math.max(median, estimate.intervals[id]?.hi ?? median),
+          },
+        ]),
+      ),
+      jointPoint: { method: "partial_count_allocation", snapshotRevision },
+    },
+    freshness: {
+      status: fresh ? "current" : "stale",
+      checkedAt: live.freshness.lastSuccessfulAcquisitionAt,
+      lastAttemptAt: live.freshness.lastAttemptAt,
+    },
+    reasonCodes: [],
+  };
 }
 export function appendSnapshots(
   ledger: LifecycleLedger,

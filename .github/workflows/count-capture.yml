@@ -1,0 +1,62 @@
+name: Count capture (browser relay backup)
+# Backup for scripts/live-count/capture.mts on the operator machine: the CEC count files sit behind an AWS WAF
+# challenge that only a browser passes. One headless capture per run, written through the same count-store path.
+# Secrets: KV_REST_API_URL, KV_REST_API_TOKEN (production count store). Optional QSTASH_URL, QSTASH_TOKEN to
+# trigger the forecast and lifecycle refresh at once; without them the next scheduled cycle reads the stored count.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Validate and log only, write nothing
+        type: boolean
+        default: false
+  schedule:
+    - cron: "*/5 20-23 27 10 *"
+    - cron: "*/5 * 28 10 *"
+    - cron: "*/5 0-23 29 10 *"
+concurrency:
+  group: count-capture
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Bound automatic runs to election night and the day after
+        id: window
+        env:
+          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          now=$(date -u +%s)
+          start=$(date -u -d '2026-10-27T20:00:00Z' +%s)
+          end=$(date -u -d '2026-10-30T00:00:00Z' +%s)
+          if [ "$now" -ge "$start" ] && { [ "$MANUAL" = 'true' ] || [ "$now" -lt "$end" ]; }; then
+            echo 'allowed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v5
+        if: steps.window.outputs.allowed == 'true'
+      - uses: actions/setup-node@v5
+        if: steps.window.outputs.allowed == 'true'
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies and Chromium
+        if: steps.window.outputs.allowed == 'true'
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Capture once
+        if: steps.window.outputs.allowed == 'true'
+        env:
+          KV_REST_API_URL: ${{ secrets.KV_REST_API_URL }}
+          KV_REST_API_TOKEN: ${{ secrets.KV_REST_API_TOKEN }}
+          QSTASH_URL: ${{ secrets.QSTASH_URL }}
+          QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
+          ELECTION_LIFECYCLE_NAMESPACE: production
+          VERCEL_ENV: production
+          LIVE_FORECAST_WORKER_URL: https://www.israelielection.org/api/live-forecast/worker
+          ELECTION_LIFECYCLE_WORKER_URL: https://www.israelielection.org/api/election-lifecycle/worker
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: npx tsx scripts/live-count/capture.mts --target production --once $DRY_RUN

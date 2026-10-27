@@ -99,3 +99,12 @@ it("migrates model versions without losing old numeric history gaps or prior-com
   expect(next.history.at(-1)?.largestParty).toBeDefined();
   expect(next.history.at(-1)?.thresholds).toBeDefined();
 });
+it("every run re-projects the stored count from the exit-informed snapshot, even when sources are unchanged", async () => {
+  const store = memory(),
+    old = (await store.read())!;
+  const acquire = vi.fn(async () => ({ exits: [], sources: [], revision: old.revision }));
+  const estimate = vi.fn(async () => ({ mode: "count" }) as never);
+  await runWorker(store, "count", "2026-10-27T22:01:00Z", acquire, estimate);
+  expect(estimate).toHaveBeenCalledWith(expect.objectContaining({ partySeats: old.partySeats }));
+  expect((await store.read())!.countEstimate).toEqual({ mode: "count" });
+});

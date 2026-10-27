@@ -2,6 +2,7 @@ import { cadenceMetadata } from "../election-lifecycle/cadence";
 import { randomUUID } from "node:crypto";
 import frozen from "../../data/live-forecast-prior.json";
 import { acquireSources } from "./sources";
+import { getCountEstimate } from "./count-estimate";
 import { buildSnapshot, MODEL_VERSION, SCENARIO_VERSION } from "./model";
 import type { LiveStore } from "./store";
 import type { Poll } from "../types";
@@ -13,6 +14,7 @@ export async function runWorker(
   delivery: string,
   now = new Date().toISOString(),
   acquire = acquireSources,
+  estimateCount: typeof getCountEstimate = getCountEstimate,
 ) {
   if (!electionWindow(Date.parse(now))) return { status: "outside_window" };
   if (await store.delivered(delivery)) return { status: "duplicate" };
@@ -84,6 +86,8 @@ export async function runWorker(
       };
       snapshot.history = [...history, entry].slice(-240);
     }
+    // The count moves on its own clock: re-project it every run, from the exit-informed seats as prior.
+    snapshot.countEstimate = await estimateCount(snapshot);
     snapshot.cadence = cadenceMetadata(now, now, now);
     if (
       !(await store.publish(

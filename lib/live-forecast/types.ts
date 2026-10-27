@@ -1,4 +1,5 @@
 import type { CadenceMetadata } from "../election-lifecycle/cadence";
+import type { CountEstimate } from "./count-estimate";
 export type LiveSource = {
   id: string;
   publisher: string;
@@ -13,6 +14,8 @@ export type LiveSource = {
 export type Interval = { lo: number; median: number; hi: number };
 export type LiveForecastSnapshot = {
   cadence?: CadenceMetadata;
+  /** Count-informed estimate from the stored CEC count, recomputed every worker run; null until a count is stored. */
+  countEstimate?: CountEstimate | null;
   blocSeats?: {
     id: "net" | "opp" | "mid" | "arab" | "other";
     seats: Interval;

@@ -4,7 +4,7 @@ import { BLOC_ORDER, blocTotals } from "@/lib/polls";
 import { exitTime } from "@/lib/results-phase";
 import type { PartyResult, ResultsConfig } from "@/lib/results";
 import type { Poll, PollsConfig } from "@/lib/types";
-import { editionPath, type Lang } from "@/lib/i18n";
+import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { EXIT_TABLE } from "@/lib/i18n/exit-table";
 import { partyColor } from "@/lib/party-colors";
 import { splitExits } from "@/lib/exit-split";
@@ -17,7 +17,7 @@ import "./exit-table.css";
 type Lists = PartyResult[] | null | undefined;
 
 /** One table: a column per broadcaster (its latest version and air time), a row per list, then the bloc totals. */
-function Table({ polls, lists, updated, config, lang, testId }: { polls: Poll[]; lists?: Lists; updated: Set<string>; config: ResultsConfig; lang: Lang; testId: string }) {
+function Table({ polls, lists, coverage, updated, config, lang, testId }: { polls: Poll[]; lists?: Lists; coverage?: number | null; updated: Set<string>; config: ResultsConfig; lang: Lang; testId: string }) {
   const x = EXIT_TABLE[lang];
   const counted = (id: string) => lists?.find((l) => l.partyId === id)?.seats ?? 0;
   const reported = (id: string) => polls.some((p) => p.results[id]) || counted(id) > 0;
@@ -64,6 +64,11 @@ function Table({ polls, lists, updated, config, lang, testId }: { polls: Poll[];
             {lists && (
               <th scope="col" className="num">
                 <span className="xt-ch">{x.countSoFar}</span>
+                {coverage != null && (
+                  <span className="xt-time" data-testid="count-coverage">
+                    {x.counted(new Intl.NumberFormat(locale(lang), { style: "percent", maximumFractionDigits: coverage < 0.1 ? 1 : 0 }).format(coverage))}
+                  </span>
+                )}
               </th>
             )}
             <th scope="col" className="num xt-now-h" data-testid={`${testId}-now-h`}>
@@ -129,6 +134,7 @@ export default function ExitPollTable({
   config,
   lang,
   lists,
+  coverage,
   more = false,
 }: {
   polls: Poll[];
@@ -136,6 +142,8 @@ export default function ExitPollTable({
   config: ResultsConfig;
   lang: Lang;
   lists?: Lists;
+  /** Share of the expected vote counted (the count-informed estimate's coverage), shown under the count column. */
+  coverage?: number | null;
   more?: boolean;
 }) {
   const { main, apart, updated } = splitExits(polls, pollsConfig);
@@ -147,7 +155,7 @@ export default function ExitPollTable({
       <h2 id="xt-h" className="sec-h">
         {x.h}
       </h2>
-      {main.length > 0 && <Table polls={main} lists={lists} updated={updated} config={config} lang={lang} testId="exit-main" />}
+      {main.length > 0 && <Table polls={main} lists={lists} coverage={coverage} updated={updated} config={config} lang={lang} testId="exit-main" />}
       {main.length > 0 && <NowSeatsKey lang={lang} />}
       <p className="xt-caution" data-testid="exit-caution">
         {x.caution}

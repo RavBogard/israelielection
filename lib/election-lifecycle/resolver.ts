@@ -105,6 +105,15 @@ export function selectSeats(
   )
     return prior;
   if (Date.parse(now) >= Date.parse(POLLS_CLOSE)) {
+    // Past the nowcast's coverage threshold the count-informed projection outranks every exit-based estimate.
+    const counting = valid
+      .filter(
+        (s) =>
+          s.basis === "partial_count" &&
+          s.pointMethod === "partial_count_allocation",
+      )
+      .sort(mostRecent)[0];
+    if (counting) return counting;
     const projection = valid
       .filter(
         (s) =>

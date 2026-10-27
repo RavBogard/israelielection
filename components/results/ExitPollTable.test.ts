@@ -91,3 +91,16 @@ describe("ExitPollTable", () => {
     expect(html(base.filter((p) => p.kind !== "exit"))).toBe("");
   });
 });
+
+describe("count column", () => {
+  it("shows the share of the expected vote counted under the count column, in every edition, only when known", () => {
+    const lists = [{ partyId: "likud", seats: 30 }] as never;
+    for (const lang of LANGS) {
+      const markup = renderToStaticMarkup(createElement(ExitPollTable, { polls: base, pollsConfig: pollsData.config, config: resultsConfig, lang, lists, coverage: 0.304 }));
+      expect(markup).toContain('data-testid="count-coverage"');
+      expect(markup).toMatch(/30/);
+    }
+    const none = renderToStaticMarkup(createElement(ExitPollTable, { polls: base, pollsConfig: pollsData.config, config: resultsConfig, lang: "en", lists, coverage: null }));
+    expect(none).not.toContain('data-testid="count-coverage"');
+  });
+});
