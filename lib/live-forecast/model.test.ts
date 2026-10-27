@@ -17,7 +17,7 @@ import { createHash, createHmac } from "node:crypto";
 import type { Poll } from "../types";
 import captured from "./fixtures/channel13-2022.json";
 
-const poll = (seats = { likud: { seats: 60 }, dem: { seats: 60 } }): Poll => ({
+const poll = (seats: Poll["results"] = { likud: { seats: 60 }, dem: { seats: 60 } }): Poll => ({
   id: "x",
   pollster: "Channel 13",
   published: "2026-10-27",
