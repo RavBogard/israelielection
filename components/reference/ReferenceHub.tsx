@@ -20,6 +20,8 @@ import { forecastPresentation } from "../live-forecast/LiveForecast";
 import SuggestedReading from "./SuggestedReading";
 import ReferenceDocument from "./ReferenceDocument";
 import QualifiedRecords from "./QualifiedRecords";
+import ChangesPage from "../pages/ChangesPage";
+import { getGlobalNotices } from "@/lib/political-record/global-notices";
 import "../article/article.css";
 import "./reference.css";
 export type ReferenceKind =
@@ -287,6 +289,7 @@ export default async function ReferenceHub({
       )}
       {kind === "changes" && (
         <>
+          <ChangesPage lang={lang} notices={await getGlobalNotices(lang)} />
           <p>{t.evidence}</p>
           {snapshot ? (
             <GovernmentLive

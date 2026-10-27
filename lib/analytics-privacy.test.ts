@@ -79,6 +79,7 @@ describe("analytics privacy across SPA navigation", () => {
   it("latches direct loads, query updates, bearer URLs and back/forward navigation", () => {
     for (const path of [
       "/match?a=private",
+      "/corrections?url=private-context",
       "/fa/match",
       "/subscriptions/confirm?token=private",
     ]) {

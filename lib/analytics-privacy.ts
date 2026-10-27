@@ -1,7 +1,8 @@
 export const privateAnalyticsPath = (path: string) =>
   /\/(?:subscriptions)\/(?:confirm|preferences|unsubscribe)(?:\/|$)/.test(
     path,
-  ) || /^\/(?:(?:he|ar|fa|de|fr|zh)\/)?match(?:\/|$)/.test(path);
+  ) ||
+  /^\/(?:(?:he|ar|fa|de|fr|zh)\/)?(?:match|corrections)(?:\/|$)/.test(path);
 
 /** Disable before native history updates, including when gtag wraps our wrapper.
  * The flag stays latched for this document so later page-referrer events cannot

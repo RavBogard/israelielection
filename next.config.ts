@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
+    "/{,he/,ar/,fa/,de/,fr/,zh/}corrections": ["./data/corrections.json"],
     "/{,he/,ar/,fa/,de/,fr/,zh/}glossary": ["./data/glossary.json"],
     "/{,he/,ar/,fa/,de/,fr/,zh/}{start,match}": [
       "./data/quiz.json",
@@ -17,6 +18,7 @@ const nextConfig: NextConfig = {
     ],
     "/{,he/,ar/,fa/,de/,fr/,zh/}american-lens": ["./data/charts/*.json"],
     "/api/reference/worker": [
+      "./data/corrections.json",
       "./data/glossary.json",
       "./data/quiz.json",
       "./data/journeys.json",
@@ -32,11 +34,11 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/match",
+        source: "/:tool(match|corrections)",
         headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
       },
       {
-        source: "/:lang(he|ar|fa|de|fr|zh)/match",
+        source: "/:lang(he|ar|fa|de|fr|zh)/:tool(match|corrections)",
         headers: [{ key: "Referrer-Policy", value: "no-referrer" }],
       },
       {

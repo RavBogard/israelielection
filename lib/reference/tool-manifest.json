@@ -2,6 +2,126 @@
   "schemaVersion": 1,
   "documents": [
     {
+      "id": "tools:corrections",
+      "file": "data/corrections.json",
+      "path": "/corrections",
+      "title": "Correction register",
+      "revision": "00bf36347ce319869744f4a55eb7a50b78593e52334305cc955cce0f2bd3ab34",
+      "checked": "Evidence dates remain in the linked source records.",
+      "blocks": [
+        {
+          "id": "tool-text-65ed6265e6735099",
+          "kind": "text",
+          "field": "entries.0.before",
+          "text": "The builder and results described 61 as an unconditional requirement to win confidence.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6d5bda12a733d5cb",
+          "kind": "text",
+          "field": "entries.0.after",
+          "text": "61 is labeled an absolute seat majority and a planning target. An initial confidence vote depends on votes for and against, with abstention distinguished from opposition.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-151eb783b5f36483",
+          "kind": "text",
+          "field": "entries.0.explanation",
+          "text": "A seat-majority target is useful coalition arithmetic but cannot replace the applicable confidence rules. The 2021 government was confirmed 60–59. The same wording correction applies on Results and the homepage.",
+          "numbers": [
+            "2021",
+            "59",
+            "60"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-842f35f26a822961",
+          "kind": "text",
+          "field": "entries.0.reviewedBy",
+          "text": "automated, Oct 5, 2026",
+          "numbers": [
+            "10",
+            "2026",
+            "5"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6cd46c7eaa517382",
+          "kind": "text",
+          "field": "entries.1.before",
+          "text": "The results preparation text said votes for lists below the threshold are shared out.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cf4fc787ff066b08",
+          "kind": "text",
+          "field": "entries.1.after",
+          "text": "Votes for a list below the threshold are not transferred. Seats are allocated among lists that passed.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-dbb8b387b4051a1e",
+          "kind": "text",
+          "field": "entries.1.explanation",
+          "text": "The previous wording could imply that a failed list's votes move to other parties. This correction aligns the preparation and count text with the seat-allocation explanation.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b813e8358d648621",
+          "kind": "text",
+          "field": "entries.1.reviewedBy",
+          "text": "automated, Oct 5, 2026",
+          "numbers": [
+            "10",
+            "2026",
+            "5"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "10",
+        "10",
+        "2021",
+        "2026",
+        "2026",
+        "5",
+        "5",
+        "59",
+        "60",
+        "61",
+        "61"
+      ]
+    },
+    {
       "id": "tools:glossary",
       "file": "data/glossary.json",
       "path": "/glossary",

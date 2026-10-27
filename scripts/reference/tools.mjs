@@ -4,6 +4,13 @@ import { sourceRevision } from "../../lib/reference/source.mjs";
 import { invariants } from "./source-blocks.mjs";
 const definitions = [
   {
+    id: "tools:corrections",
+    file: "data/corrections.json",
+    path: "/corrections",
+    title: "Correction register",
+    fields: [/^entries\.\d+\.(?:before|after|explanation|reviewedBy)$/],
+  },
+  {
     id: "tools:glossary",
     file: "data/glossary.json",
     path: "/glossary",
