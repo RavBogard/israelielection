@@ -3,22 +3,56 @@
 import { useRef, useState, type CSSProperties } from "react";
 import "./timeline.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
-import { electionAt, eventAt, governmentAt, labelOf, longDate, monthOf, stackLanes, type Timeline as Data } from "@/lib/timeline";
+import {
+  electionAt,
+  eventAt,
+  governmentAt,
+  monthOf,
+  stackLanes,
+  type Timeline as Data,
+} from "@/lib/timeline";
 
-const ORD = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] ?? "th"}`;
-const KIND: Record<string, string> = { war: "War and security", peace: "Peace and diplomacy", politics: "Politics", law: "Law and courts", society: "Society" };
+import {
+  historyText,
+  historicalDate,
+  historicalMonth,
+  timelineKind,
+} from "@/lib/i18n/history";
+import type { Lang } from "@/lib/i18n";
+
 const surname = (pm: string) => pm.split(" ").slice(-1)[0];
 /** A prime minister's party drawn in the colour of the 2026 list that carries it on; Kadima has none. */
-const HEIR: Record<string, string | null> = { Likud: "likud", Alignment: "dem", Labor: "dem", "One Israel (Labor)": "dem", "Likud (Kadima from November 2005)": "likud", Kadima: null, Yamina: "byachad", "Yesh Atid": "byachad" };
+const HEIR: Record<string, string | null> = {
+  Likud: "likud",
+  Alignment: "dem",
+  Labor: "dem",
+  "One Israel (Labor)": "dem",
+  "Likud (Kadima from November 2005)": "likud",
+  Kadima: null,
+  Yamina: "byachad",
+  "Yesh Atid": "byachad",
+};
 
 /**
  * The scrubbable timeline: drag along the track (or use the slider, or step from event to
  * event) and the panel shows who governed, which Knesset sat, and what had just happened.
  */
-export default function Timeline({ data, electionDay }: { data: Data; electionDay: string }) {
+export default function Timeline({
+  data,
+  electionDay,
+  lang = "en",
+  contentLang = "en",
+}: {
+  data: Data;
+  electionDay: string;
+  lang?: Lang;
+  contentLang?: Lang;
+}) {
+  const t = historyText(lang),
+    date = (value: string) => historicalDate(value, lang);
   const start = monthOf(data.elections[0].date);
   const end = monthOf(electionDay);
-  const span = end - start;
+  const span = Math.max(1, end - start);
   // The month on the scale, and the event picked by a click or a step (several can share a month).
   const [month, setMonthRaw] = useState(start);
   const [pick, setPick] = useState<number | null>(null);
@@ -31,23 +65,31 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
     setPick(i);
   };
   const track = useRef<HTMLDivElement>(null);
-  const pct = (m: number) => `${((Math.max(start, Math.min(end, m)) - start) / span) * 100}%`;
+  const pct = (m: number) =>
+    `${((Math.max(start, Math.min(end, m)) - start) / span) * 100}%`;
 
   const gov = governmentAt(data.governments, month);
   const el = electionAt(data.elections, month);
   const ei = pick ?? eventAt(data.events, month);
   const ev = ei >= 0 ? data.events[ei] : undefined;
-  const { year, month: mName } = labelOf(month);
+  const monthLabel = historicalMonth(month, lang);
 
   const fromPointer = (x: number) => {
     const r = track.current!.getBoundingClientRect();
-    setMonth(start + Math.round(Math.max(0, Math.min(1, (x - r.left) / r.width)) * span));
+    setMonth(
+      start +
+        Math.round(Math.max(0, Math.min(1, (x - r.left) / r.width)) * span),
+    );
   };
 
   // Events close in time stack in lanes instead of overlapping: one set of lanes for a desktop track, one for a phone's.
   const ats = data.events.map((e) => (monthOf(e.date) - start) / span);
-  const laneW = stackLanes(ats, 13 / 900), laneN = stackLanes(ats, 11 / 358);
-  const lanes = { "--ln-w": Math.max(0, ...laneW), "--ln-n": Math.max(0, ...laneN) } as CSSProperties;
+  const laneW = stackLanes(ats, 13 / 900),
+    laneN = stackLanes(ats, 11 / 358);
+  const lanes = {
+    "--ln-w": Math.max(0, ...laneW),
+    "--ln-n": Math.max(0, ...laneN),
+  } as CSSProperties;
 
   const decades = [];
   for (let y = 1980; y <= 2020; y += 10) decades.push(y);
@@ -56,6 +98,7 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
     <div className="tl">
       <div
         className="tl-track"
+        dir="ltr"
         ref={track}
         style={lanes}
         onPointerDown={(e) => {
@@ -64,25 +107,36 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
           fromPointer(e.clientX);
         }}
         onPointerMove={(e) => {
-          if (e.currentTarget.hasPointerCapture(e.pointerId)) fromPointer(e.clientX);
+          if (e.currentTarget.hasPointerCapture(e.pointerId))
+            fromPointer(e.clientX);
         }}
       >
-        <div className="tl-row tl-evs" aria-label="Events">
+        <div className="tl-row tl-evs" aria-label={t.events}>
           {data.events.map((e, i) => (
             <button
               key={i}
               type="button"
               className={i === ei ? "on" : undefined}
-              style={{ left: pct(monthOf(e.date)), "--l-w": laneW[i], "--l-n": laneN[i] } as CSSProperties}
-              title={`${longDate(e.date)}: ${e.title}`}
-              aria-label={`${longDate(e.date)}: ${e.title}`}
+              style={
+                {
+                  left: pct(monthOf(e.date)),
+                  "--l-w": laneW[i],
+                  "--l-n": laneN[i],
+                } as CSSProperties
+              }
+              title={`${date(e.date)}: ${e.title}`}
+              aria-label={`${date(e.date)}: ${e.title}`}
               onClick={() => goTo(i)}
             />
           ))}
         </div>
         <div className="tl-row tl-els" aria-hidden="true">
           {data.elections.map((e) => (
-            <span key={e.date} className={e === el ? "on" : undefined} style={{ left: pct(monthOf(e.date)) }} />
+            <span
+              key={e.date}
+              className={e === el ? "on" : undefined}
+              style={{ left: pct(monthOf(e.date)) }}
+            />
           ))}
           <span className="next" style={{ left: pct(end) }} />
         </div>
@@ -90,9 +144,20 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
           {data.governments.map((g) => {
             const from = monthOf(g.from);
             const to = g.to ? monthOf(g.to) : end;
-            const w = ((to - from) / end) * 100;
+            const w = ((to - from) / span) * 100;
             return (
-              <span key={g.from} className={g === gov ? "on" : undefined} style={{ left: pct(from), width: `${w}%`, background: HEIR[g.party] ? partyColor(HEIR[g.party]!) : "var(--ink-2)", color: HEIR[g.party] ? partyInk(HEIR[g.party]!) : "var(--bg)" }}>
+              <span
+                key={g.from}
+                className={g === gov ? "on" : undefined}
+                style={{
+                  left: pct(from),
+                  width: `${w}%`,
+                  background: HEIR[g.party]
+                    ? partyColor(HEIR[g.party]!)
+                    : "var(--ink-2)",
+                  color: HEIR[g.party] ? partyInk(HEIR[g.party]!) : "var(--bg)",
+                }}
+              >
                 {w > 5.5 ? surname(g.pm) : ""}
               </span>
             );
@@ -105,54 +170,73 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
             </span>
           ))}
         </div>
-        <div className="tl-cursor" style={{ left: pct(month) }} aria-hidden="true" />
+        <div
+          className="tl-cursor"
+          style={{ left: pct(month) }}
+          aria-hidden="true"
+        />
       </div>
       <p className="fig-key tl-key" aria-hidden="true">
         <span>
-          <i className="k-ev" /> Event
+          <i className="k-ev" /> {t.events}
         </span>
         <span>
-          <i className="k-el" /> Knesset election
+          <i className="k-el" /> {t.election}
         </span>
         <span>
-          <i className="k-pm" /> Prime minister&apos;s term, in the colour of the 2026 list that carries the party on (Kadima, grey, has none)
+          <i className="k-pm" /> {t.termLegend}
         </span>
       </p>
 
       <div className="tl-controls">
         <button type="button" disabled={ei <= 0} onClick={() => goTo(ei - 1)}>
-          Previous event
+          {t.previous}
         </button>
         <label>
-          <span className="sr">Month</span>
+          <span className="sr">{t.month}</span>
           <input
             type="range"
+            dir="ltr"
             min={start}
             max={end}
             value={month}
-            aria-valuetext={`${mName} ${year}`}
+            aria-valuetext={monthLabel}
             onChange={(e) => setMonth(Number(e.target.value))}
           />
         </label>
-        <button type="button" disabled={ei >= data.events.length - 1} onClick={() => goTo(ei + 1)}>
-          Next event
+        <button
+          type="button"
+          disabled={ei >= data.events.length - 1}
+          onClick={() => goTo(ei + 1)}
+        >
+          {t.next}
         </button>
       </div>
       <div className="tl-panel" aria-live="polite">
-        <p className="tl-when">
-          {mName} {year}
-        </p>
+        <p className="tl-when">{monthLabel}</p>
         <dl className="tl-facts">
           <div>
-            <dt>Prime minister</dt>
-            <dd>{gov ? `${gov.pm} (${gov.party}), from ${longDate(gov.from)}` : "The new government was not yet sworn in."}</dd>
+            <dt>{t.primeMinisters}</dt>
+            <dd>
+              {gov
+                ? `${gov.pm} (${gov.party}), ${t.from} ${date(gov.from)}`
+                : t.unknownGovernment}
+            </dd>
           </div>
           <div>
-            <dt>Knesset</dt>
+            <dt>{t.election}</dt>
             <dd>
               {el && (
                 <>
-                  {ORD(el.knesset)}, elected {longDate(el.date)}: {el.first.list} {el.first.seats} seats, {el.second.list} {el.second.seats}
+                  {el.knesset}, {t.elected} {date(el.date)}:{" "}
+                  <span lang={contentLang} dir="auto">
+                    {el.first.list}
+                  </span>{" "}
+                  {el.first.seats} {t.seats},{" "}
+                  <span lang={contentLang} dir="auto">
+                    {el.second.list}
+                  </span>{" "}
+                  {el.second.seats}
                 </>
               )}
             </dd>
@@ -160,25 +244,30 @@ export default function Timeline({ data, electionDay }: { data: Data; electionDa
         </dl>
         {ev ? (
           <div className="tl-ev">
-            <h2>{ev.title}</h2>
+            <h2 lang={contentLang} dir="auto">
+              {ev.title}
+            </h2>
             <p className="tl-k">
-              {KIND[ev.kind]}, {longDate(ev.date)}
+              {timelineKind(ev.kind, lang)}, {date(ev.date)}
             </p>
-            <p>{ev.text}</p>
+            <p lang={contentLang} dir="auto">
+              {ev.text}
+            </p>
             <p className="fig-src tl-src">
               <a href={ev.source.url}>
                 {ev.source.name}
-                {ev.source.date ? `, ${/^\d{4}-\d\d-\d\d$/.test(ev.source.date) ? longDate(ev.source.date) : ev.source.date}` : ""}
+                {ev.source.date
+                  ? `, ${/^\d{4}-\d\d-\d\d$/.test(ev.source.date) ? date(ev.source.date) : ev.source.date}`
+                  : ""}
               </a>
             </p>
           </div>
         ) : (
           <div className="tl-ev">
-            <p>Drag along the line, or step through the events.</p>
+            <p>{t.drag}</p>
           </div>
         )}
       </div>
-
     </div>
   );
 }

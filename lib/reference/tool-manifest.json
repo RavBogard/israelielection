@@ -2,6 +2,4941 @@
   "schemaVersion": 1,
   "documents": [
     {
+      "id": "tools:timeline",
+      "file": "data/timeline.json",
+      "path": "/timeline",
+      "title": "Political timeline",
+      "revision": "1f01bb8301514246d45a585399f193a84daece68dea7574f10b3b0d647322d7e",
+      "checked": "2026-10-05",
+      "blocks": [
+        {
+          "id": "tool-text-0be32ef884e00f08",
+          "kind": "text",
+          "field": "elections.0.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6ced55ee1fd60afb",
+          "kind": "text",
+          "field": "elections.0.second.list",
+          "text": "Alignment",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-20a33fa74956ddb5",
+          "kind": "text",
+          "field": "elections.0.outcome",
+          "text": "Begin formed a coalition of Likud, the National Religious Party and Agudat Yisrael; Dash joined four months later.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-341107fa2d8edc3b",
+          "kind": "text",
+          "field": "elections.1.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e893db8ac3d0f4d3",
+          "kind": "text",
+          "field": "elections.1.second.list",
+          "text": "Alignment",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d14c654f8324919b",
+          "kind": "text",
+          "field": "elections.1.outcome",
+          "text": "Begin formed a narrow 61-seat coalition of Likud, the National Religious Party, Tami and Agudat Yisrael.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2574cfbbf868ab26",
+          "kind": "text",
+          "field": "elections.2.first.list",
+          "text": "Alignment",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f0a98624acd5c462",
+          "kind": "text",
+          "field": "elections.2.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7d500e68aa28512c",
+          "kind": "text",
+          "field": "elections.2.outcome",
+          "text": "Peres and Shamir formed a national unity government, agreeing to swap the premiership after two years.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-675dd8f3a68c1f93",
+          "kind": "text",
+          "field": "elections.3.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3bd821fd49c8aacf",
+          "kind": "text",
+          "field": "elections.3.second.list",
+          "text": "Alignment",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-14d0aee9266c42ee",
+          "kind": "text",
+          "field": "elections.3.outcome",
+          "text": "Shamir formed another unity government with the Alignment, without rotation; after it fell in March 1990 he formed a narrow right-wing and religious government.",
+          "numbers": [
+            "1990",
+            "3"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6f4bfdefb95a7c7a",
+          "kind": "text",
+          "field": "elections.4.first.list",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ec4febf549393d24",
+          "kind": "text",
+          "field": "elections.4.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3c06be5f54522b10",
+          "kind": "text",
+          "field": "elections.4.outcome",
+          "text": "Rabin formed a Labor–Meretz–Shas coalition of 62 MKs, with outside support from five Arab-party MKs.",
+          "numbers": [
+            "62"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a5fc6bb1460e317c",
+          "kind": "text",
+          "field": "elections.5.first.list",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e1ce10f87f2f8346",
+          "kind": "text",
+          "field": "elections.5.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0501fff2a335be4b",
+          "kind": "text",
+          "field": "elections.5.outcome",
+          "text": "Netanyahu, elected prime minister directly by about 30,000 votes, formed a six-faction coalition of 66 MKs.",
+          "numbers": [
+            "30000",
+            "66"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-58390eaaf68fb780",
+          "kind": "text",
+          "field": "elections.6.first.list",
+          "text": "One Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f38d3824d516a687",
+          "kind": "text",
+          "field": "elections.6.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9d7c4fb835bad1f8",
+          "kind": "text",
+          "field": "elections.6.outcome",
+          "text": "Barak, elected prime minister directly, formed a seven-faction coalition of 75 MKs.",
+          "numbers": [
+            "75"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ae7d8acab0b24ce0",
+          "kind": "text",
+          "field": "elections.7.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9e234fb07bcb17d7",
+          "kind": "text",
+          "field": "elections.7.second.list",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4b28b9c793fb6185",
+          "kind": "text",
+          "field": "elections.7.outcome",
+          "text": "Sharon formed a coalition of Likud, Shinui, the National Religious Party and National Union, with 68 MKs.",
+          "numbers": [
+            "68"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cd083b7e1aff58dd",
+          "kind": "text",
+          "field": "elections.8.first.list",
+          "text": "Kadima",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-46e49712dc86ec8b",
+          "kind": "text",
+          "field": "elections.8.second.list",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0329fea051451d02",
+          "kind": "text",
+          "field": "elections.8.outcome",
+          "text": "Olmert formed a coalition of Kadima, Labor, Shas and Gil, with 67 MKs.",
+          "numbers": [
+            "67"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8684df794a74eba1",
+          "kind": "text",
+          "field": "elections.9.first.list",
+          "text": "Kadima",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9f7c3e0da2824a48",
+          "kind": "text",
+          "field": "elections.9.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9fc311fd6c802d3c",
+          "kind": "text",
+          "field": "elections.9.outcome",
+          "text": "Although Kadima won one more seat, a majority backed Netanyahu, who formed a six-party coalition of 74 MKs.",
+          "numbers": [
+            "74"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-762ef2b3857c3486",
+          "kind": "text",
+          "field": "elections.10.first.list",
+          "text": "Likud Beitenu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-08de5ae072d25eff",
+          "kind": "text",
+          "field": "elections.10.second.list",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ec0ef32f345fc1c5",
+          "kind": "text",
+          "field": "elections.10.outcome",
+          "text": "Netanyahu formed a four-party coalition of 68 MKs.",
+          "numbers": [
+            "68"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-97db56b828781def",
+          "kind": "text",
+          "field": "elections.11.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-71e870e5b7c28cda",
+          "kind": "text",
+          "field": "elections.11.second.list",
+          "text": "Zionist Union",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8f3c2a05336645fa",
+          "kind": "text",
+          "field": "elections.11.outcome",
+          "text": "Netanyahu formed a five-party coalition of 61 MKs.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-651bef484f5b2659",
+          "kind": "text",
+          "field": "elections.12.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-29e6ede36232584d",
+          "kind": "text",
+          "field": "elections.12.second.list",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b5140ab8cfba7d24",
+          "kind": "text",
+          "field": "elections.12.outcome",
+          "text": "Netanyahu could not form a coalition, and the Knesset voted 74–45 to dissolve itself, a month after being sworn in.",
+          "numbers": [
+            "45",
+            "74"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": true
+        },
+        {
+          "id": "tool-text-03687e9286d485c5",
+          "kind": "text",
+          "field": "elections.13.first.list",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8be1cd2808700e7a",
+          "kind": "text",
+          "field": "elections.13.second.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7553e0b4a73a5d62",
+          "kind": "text",
+          "field": "elections.13.outcome",
+          "text": "Neither Netanyahu nor Gantz assembled a coalition, and the Knesset dissolved, setting a third election.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": true
+        },
+        {
+          "id": "tool-text-375a241b20220032",
+          "kind": "text",
+          "field": "elections.14.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fb32e5f35efa06de",
+          "kind": "text",
+          "field": "elections.14.second.list",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5900804f6cb73238",
+          "kind": "text",
+          "field": "elections.14.outcome",
+          "text": "Netanyahu and Gantz formed a rotation government, approved 73–46 on May 17, 2020; Gantz was to take over in November 2021.",
+          "numbers": [
+            "11",
+            "17",
+            "2020",
+            "2021",
+            "46",
+            "5",
+            "73"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dcada44b43d88c76",
+          "kind": "text",
+          "field": "elections.15.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-13fdfd1d33f62844",
+          "kind": "text",
+          "field": "elections.15.second.list",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cd2555cb159d06e0",
+          "kind": "text",
+          "field": "elections.15.outcome",
+          "text": "After Netanyahu failed, Lapid assembled an eight-party coalition with Yamina's Bennett as prime minister.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-427f1ae54da593e5",
+          "kind": "text",
+          "field": "elections.16.first.list",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1b08981450eb2891",
+          "kind": "text",
+          "field": "elections.16.second.list",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9096ce26813183ca",
+          "kind": "text",
+          "field": "elections.16.outcome",
+          "text": "Netanyahu formed a six-party coalition of Likud, Religious Zionism, Otzma Yehudit, Noam, Shas and UTJ, approved 63–54 on Dec 29, 2022.",
+          "numbers": [
+            "12",
+            "2022",
+            "29",
+            "54",
+            "63"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8b7514ba46673be8",
+          "kind": "text",
+          "field": "governments.0.pm",
+          "text": "Menachem Begin",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e6a822d344865426",
+          "kind": "text",
+          "field": "governments.0.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-317fcc69ef4a6258",
+          "kind": "text",
+          "field": "governments.1.pm",
+          "text": "Yitzhak Shamir",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e9b19152dd7390db",
+          "kind": "text",
+          "field": "governments.1.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-61e47d803e82b2eb",
+          "kind": "text",
+          "field": "governments.2.pm",
+          "text": "Shimon Peres",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2b854656ccb6cf94",
+          "kind": "text",
+          "field": "governments.2.party",
+          "text": "Alignment",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-53a7d5e0fccc11c1",
+          "kind": "text",
+          "field": "governments.3.pm",
+          "text": "Yitzhak Shamir",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e05088ebbd1c6482",
+          "kind": "text",
+          "field": "governments.3.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f7edb90d8f03b7ef",
+          "kind": "text",
+          "field": "governments.4.pm",
+          "text": "Yitzhak Rabin",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Yitzhak Rabin"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-caa73172547f02a9",
+          "kind": "text",
+          "field": "governments.4.party",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2562c27691ed11a1",
+          "kind": "text",
+          "field": "governments.5.pm",
+          "text": "Shimon Peres",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6f4975ff80ab5b9a",
+          "kind": "text",
+          "field": "governments.5.party",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4155605db86f020a",
+          "kind": "text",
+          "field": "governments.6.pm",
+          "text": "Benjamin Netanyahu",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Benjamin Netanyahu",
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f2bd0d63be6c2b83",
+          "kind": "text",
+          "field": "governments.6.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-25079eb8e83181e5",
+          "kind": "text",
+          "field": "governments.7.pm",
+          "text": "Ehud Barak",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-372cf21b8e6d934f",
+          "kind": "text",
+          "field": "governments.7.party",
+          "text": "One Israel (Labor)",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f8a4a4bea7cbc43b",
+          "kind": "text",
+          "field": "governments.8.pm",
+          "text": "Ariel Sharon",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9eeaabd1a7fa6ca3",
+          "kind": "text",
+          "field": "governments.8.party",
+          "text": "Likud (Kadima from November 2005)",
+          "numbers": [
+            "11",
+            "2005"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f617ea55e1619fea",
+          "kind": "text",
+          "field": "governments.9.pm",
+          "text": "Ehud Olmert",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d58d01edf6a5a6d4",
+          "kind": "text",
+          "field": "governments.9.party",
+          "text": "Kadima",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-62853577ae47755c",
+          "kind": "text",
+          "field": "governments.10.pm",
+          "text": "Benjamin Netanyahu",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Benjamin Netanyahu",
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-62d6ba222b735839",
+          "kind": "text",
+          "field": "governments.10.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9577f9878ee9a953",
+          "kind": "text",
+          "field": "governments.11.pm",
+          "text": "Naftali Bennett",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Naftali Bennett"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0803f02f60be2fa2",
+          "kind": "text",
+          "field": "governments.11.party",
+          "text": "Yamina",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dc2a2f36b446f932",
+          "kind": "text",
+          "field": "governments.12.pm",
+          "text": "Yair Lapid",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Yair Lapid"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-98449e45f0980d26",
+          "kind": "text",
+          "field": "governments.12.party",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1f85c75fff6a56a9",
+          "kind": "text",
+          "field": "governments.13.pm",
+          "text": "Benjamin Netanyahu",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Benjamin Netanyahu",
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f44f9aa758e136aa",
+          "kind": "text",
+          "field": "governments.13.party",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0c43ff1699ac1b5f",
+          "kind": "text",
+          "field": "events.0.title",
+          "text": "The 'upheaval': Likud wins",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0ab3a0813c3ee912",
+          "kind": "text",
+          "field": "events.0.text",
+          "text": "For the first time, power shifted from Mapai and its heirs, in office for 29 years, to the right-wing bloc under Menachem Begin. The Alignment fell to 32 seats; Likud won 43. The result became known as \"the upheaval.\"",
+          "numbers": [
+            "29",
+            "32",
+            "43"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8f98ac97fb69cf48",
+          "kind": "text",
+          "field": "events.1.title",
+          "text": "Sadat visits Jerusalem",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b13b7f864d9ba125",
+          "kind": "text",
+          "field": "events.1.text",
+          "text": "Begin received Egyptian President Anwar Sadat on his visit to Jerusalem.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-31ebb100d2c54110",
+          "kind": "text",
+          "field": "events.2.title",
+          "text": "Camp David framework signed",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a4b55f5a9357540c",
+          "kind": "text",
+          "field": "events.2.text",
+          "text": "After 11 days of talks at Camp David, Begin signed a framework for a peace treaty with Egypt. Israel agreed to withdraw from the entire Sinai Peninsula.",
+          "numbers": [
+            "11"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2fe5d930467e6fc3",
+          "kind": "text",
+          "field": "events.3.title",
+          "text": "Peace treaty with Egypt",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f3aaace2aec0837b",
+          "kind": "text",
+          "field": "events.3.text",
+          "text": "At the White House, Begin signed the peace treaty with Egypt, the first agreement of its kind between Israel and an Arab state.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-eb7fa8e373d63129",
+          "kind": "text",
+          "field": "events.4.title",
+          "text": "Israel invades Lebanon",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c368fcef0f98f358",
+          "kind": "text",
+          "field": "events.4.text",
+          "text": "Israel invaded Lebanon, with Ariel Sharon as defense minister. Sharon lost the post after Israeli-allied Christian militia killed hundreds of Palestinians in west Beirut refugee camps that September.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-98ffbd7387122bd3",
+          "kind": "text",
+          "field": "events.5.title",
+          "text": "Unity government with rotation",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c539280f359a644c",
+          "kind": "text",
+          "field": "events.5.text",
+          "text": "Shimon Peres of the Alignment became prime minister of a government that included Likud, with Likud's Yitzhak Shamir as foreign minister. Shamir replaced Peres as prime minister on Oct 20, 1986.",
+          "numbers": [
+            "10",
+            "1986",
+            "20"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a8cf4df471e8e54a",
+          "kind": "text",
+          "field": "events.6.title",
+          "text": "First intifada begins",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6d5d7dffc4a507cd",
+          "kind": "text",
+          "field": "events.6.text",
+          "text": "After an Israeli vehicle in Gaza caused a crash that killed four Palestinians, protests broke out in the Jabalia refugee camp. The uprising, the first intifada, spread to the occupied West Bank.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-17af81a77a9c5617",
+          "kind": "text",
+          "field": "events.7.title",
+          "text": "Madrid peace conference",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-399b99c1534ea105",
+          "kind": "text",
+          "field": "events.7.text",
+          "text": "A conference co-chaired by Presidents Bush and Gorbachev opened with Israeli, Egyptian, Syrian and Lebanese delegations and a joint Jordanian-Palestinian one: the first time all parties to the Arab-Israeli conflict met for direct talks.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1608a2bbbdce2d52",
+          "kind": "text",
+          "field": "events.8.title",
+          "text": "Oslo Accords signed",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7c0fb6f093590405",
+          "kind": "text",
+          "field": "events.8.text",
+          "text": "Israel and the PLO signed the first Oslo Accord, in which each side recognized the other for the first time. A second accord followed in September 1995.",
+          "numbers": [
+            "1995",
+            "9"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-603635b3bd9b9232",
+          "kind": "text",
+          "field": "events.9.title",
+          "text": "Peace treaty with Jordan",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2b90ffabfb81cfae",
+          "kind": "text",
+          "field": "events.9.text",
+          "text": "At the Arava border crossing, Israel and Jordan signed a peace treaty. Jordan became the second Arab country, after Egypt, to make peace with Israel.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-182492597e59f0e7",
+          "kind": "text",
+          "field": "events.10.title",
+          "text": "Rabin assassinated",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0fa30cad927b6872",
+          "kind": "text",
+          "field": "events.10.text",
+          "text": "Prime Minister Yitzhak Rabin was shot dead by Yigal Amir, a far-right Jewish activist, at a rally of more than 100,000 people in Tel Aviv. In the Oslo talks Rabin had agreed to cede some territory won in 1967 to the PLO in exchange for peace.",
+          "numbers": [
+            "100000",
+            "1967"
+          ],
+          "links": [],
+          "names": [
+            "Yitzhak Rabin"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8ba3b5855e27316c",
+          "kind": "text",
+          "field": "events.11.title",
+          "text": "First direct election of a PM",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9aab2cbbda4f0869",
+          "kind": "text",
+          "field": "events.11.text",
+          "text": "For the first time voters cast two ballots, one for the Knesset and one for prime minister. Netanyahu beat Peres by about 30,000 votes, under one percent, and sectoral parties gained seats.",
+          "numbers": [
+            "30000"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-03a1f41c09c77927",
+          "kind": "text",
+          "field": "events.12.title",
+          "text": "Barak wins second direct election",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a71d8c3325f06d3b",
+          "kind": "text",
+          "field": "events.12.text",
+          "text": "Ehud Barak beat Netanyahu for prime minister by a convincing margin, but his One Israel list won only 26 seats. For the first time the two largest factions held fewer than half the Knesset's seats.",
+          "numbers": [
+            "26"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8f01e9a391a80599",
+          "kind": "text",
+          "field": "events.13.title",
+          "text": "Israel leaves southern Lebanon",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0bc7ee739d5798fe",
+          "kind": "text",
+          "field": "events.13.text",
+          "text": "The last Israeli troops withdrew from southern Lebanon, ending an 18-year presence in the security zone. The army's stay there from June 1982 had cost 1,216 Israeli soldiers' lives.",
+          "numbers": [
+            "1216",
+            "18",
+            "1982",
+            "6"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-65f151527614dd33",
+          "kind": "text",
+          "field": "events.14.title",
+          "text": "Camp David summit ends without a deal",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7ed08ca118604a16",
+          "kind": "text",
+          "field": "events.14.text",
+          "text": "Between July 11 and 24, Prime Minister Ehud Barak and Chairman Yasser Arafat met at Camp David under President Clinton's auspices but could not reach a permanent-status agreement. Both sides pledged to keep negotiating.",
+          "numbers": [
+            "11",
+            "24",
+            "7"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-2fa2365a78657619",
+          "kind": "text",
+          "field": "events.15.title",
+          "text": "Sharon visit; second intifada",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c36a0b6995ad921c",
+          "kind": "text",
+          "field": "events.15.text",
+          "text": "Opposition leader Ariel Sharon visited the Temple Mount, which Muslims call the Noble Sanctuary, and violence erupted. Palestinians attribute the uprising to the visit; his supporters say it was already planned.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-89eb3dc5de559a2f",
+          "kind": "text",
+          "field": "events.16.title",
+          "text": "PM-only election: Sharon wins",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-10cafdfe8c347250",
+          "kind": "text",
+          "field": "events.16.text",
+          "text": "In the first election ever held for prime minister alone, with no Knesset vote, Sharon beat Barak with 62.4%. Turnout, 62.3%, was the lowest in Israel's history to that point. A month later Israel returned to its former system.",
+          "numbers": [
+            "62.3%",
+            "62.4%"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-de587abd369719da",
+          "kind": "text",
+          "field": "events.17.title",
+          "text": "Back to a single ballot",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-50b6131fb1b18f59",
+          "kind": "text",
+          "field": "events.17.text",
+          "text": "Sharon had abolished direct election of the prime minister, and Israel returned to single-ballot elections. Held during the second intifada, the vote gave his Likud 38 seats to Labor's 19.",
+          "numbers": [
+            "19",
+            "38"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-155ebce943ca00d6",
+          "kind": "text",
+          "field": "events.18.title",
+          "text": "Gaza disengagement",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d01a255e6348fc13",
+          "kind": "text",
+          "field": "events.18.text",
+          "text": "Sharon's government began a unilateral withdrawal from Gaza and a small part of the West Bank, reversing his decades of support for expanding settlements.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f03253a007a0e57e",
+          "kind": "text",
+          "field": "events.19.title",
+          "text": "Sharon leaves Likud, founds Kadima",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-644f8093937cd6f3",
+          "kind": "text",
+          "field": "events.19.text",
+          "text": "Facing a Likud rebellion over the Gaza pullout, Prime Minister Sharon quit Likud to lead a new centrist party, later named Kadima, into early elections.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-98851378509f69b4",
+          "kind": "text",
+          "field": "events.20.title",
+          "text": "Sharon's stroke",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4745b7c1d8539950",
+          "kind": "text",
+          "field": "events.20.text",
+          "text": "On the eve of a scheduled heart procedure, Sharon suffered a massive stroke and entered a coma. He was still in a coma in 2013 and died in January 2014.",
+          "numbers": [
+            "1",
+            "2013",
+            "2014"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e3900e7e1be71512",
+          "kind": "text",
+          "field": "events.21.title",
+          "text": "Second Lebanon War",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b4957b403dca77ea",
+          "kind": "text",
+          "field": "events.21.text",
+          "text": "Hezbollah fighters killed three Israeli soldiers and seized two in a cross-border raid, setting off 34 days of fighting in Lebanon.",
+          "numbers": [
+            "34"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7b632eedd4ae2f76",
+          "kind": "text",
+          "field": "events.22.title",
+          "text": "Hamas takes control of Gaza",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a579be43aac445dc",
+          "kind": "text",
+          "field": "events.22.text",
+          "text": "Fighting between Fatah forces and Hamas resumed in Gaza on June 9, and by June 15 Hamas had full control of the Strip; the internal violence killed 188 Palestinians, OCHA reported. President Mahmoud Abbas dissolved the unity government on June 14.",
+          "numbers": [
+            "14",
+            "15",
+            "188",
+            "6",
+            "6",
+            "6",
+            "9"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-89eba0348fa0b5db",
+          "kind": "text",
+          "field": "events.23.title",
+          "text": "Gaza war of 2008–09",
+          "numbers": [
+            "09",
+            "2008"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8aa4631c7d5c77f9",
+          "kind": "text",
+          "field": "events.23.text",
+          "text": "Israel's \"Operation Cast Lead\" lasted until Jan 18, 2009. Its airstrikes, shelling and ground operations killed 1,383 Palestinians, 333 of them children, OCHA reported. Rockets and mortars from Gaza killed three Israeli civilians; ten Israeli soldiers were killed.",
+          "numbers": [
+            "1",
+            "1383",
+            "18",
+            "2009",
+            "333"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-78b1f5014867e8c4",
+          "kind": "text",
+          "field": "events.24.title",
+          "text": "Netanyahu returns to office",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a75e90047d8877cb",
+          "kind": "text",
+          "field": "events.24.text",
+          "text": "The Knesset approved Netanyahu's government, Israel's 32nd, by 69–45 with five abstentions, after he assembled a coalition amid tensions within Likud.",
+          "numbers": [
+            "32",
+            "45",
+            "69"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b4459df41e76582d",
+          "kind": "text",
+          "field": "events.25.title",
+          "text": "Social protests peak",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f7b819de856dacc4",
+          "kind": "text",
+          "field": "events.25.text",
+          "text": "After a summer of tent protests over the high cost of living, more than 400,000 people rallied for \"social justice\" across Israel, in what was called the biggest protest in the country's history.",
+          "numbers": [
+            "400000"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bd7ba7ee0b1484a9",
+          "kind": "text",
+          "field": "events.26.title",
+          "text": "Gaza war of November 2012",
+          "numbers": [
+            "11",
+            "2012"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4a3a39080f41ad4f",
+          "kind": "text",
+          "field": "events.26.text",
+          "text": "In eight days of fighting before an Egyptian-brokered ceasefire, 158 Palestinians were killed in Gaza, 103 of them civilians, including at least 33 children, and six Israelis were killed, four civilians and two soldiers, OCHA reported.",
+          "numbers": [
+            "103",
+            "158",
+            "33"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-edea6d5d5a63463e",
+          "kind": "text",
+          "field": "events.27.title",
+          "text": "Gaza war of 2014",
+          "numbers": [
+            "2014"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-666cf02dc4a352e9",
+          "kind": "text",
+          "field": "events.27.text",
+          "text": "In fighting from July 7 to Aug 26, 2,251 Palestinians were killed in Gaza, 1,462 of them civilians and 551 children, according to a UN commission of inquiry's figures published by OCHA; 67 Israeli soldiers and six civilians in Israel were killed.",
+          "numbers": [
+            "1462",
+            "2251",
+            "26",
+            "551",
+            "67",
+            "7",
+            "7",
+            "8"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bda4d4dee53dc7ff",
+          "kind": "text",
+          "field": "events.28.title",
+          "text": "Nation-state law passes",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a201409097b25395",
+          "kind": "text",
+          "field": "events.28.text",
+          "text": "The Knesset passed, 62–55, a Basic Law stating that the right to national self-determination in Israel is \"exclusive\" to the Jewish people. It downgraded Arabic from an official language to a \"special status.\"",
+          "numbers": [
+            "55",
+            "62"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f75dc43c282e9c42",
+          "kind": "text",
+          "field": "events.29.title",
+          "text": "First of five elections fails",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b85d8f32d528a3bf",
+          "kind": "text",
+          "field": "events.29.text",
+          "text": "After the April vote, Netanyahu could not form a coalition: Liberman's Yisrael Beytenu and the Haredi parties split over the draft law. The Knesset dissolved itself 74–45, forcing an unprecedented second election that year.",
+          "numbers": [
+            "45",
+            "74"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu",
+            "Liberman"
+          ],
+          "negated": true
+        },
+        {
+          "id": "tool-text-6efd7143a26c86e9",
+          "kind": "text",
+          "field": "events.30.title",
+          "text": "Netanyahu indicted",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4bb779ae23dbf30d",
+          "kind": "text",
+          "field": "events.30.text",
+          "text": "Attorney General Avichai Mandelblit announced that Netanyahu would be charged with bribery, fraud and breach of trust in Cases 1000, 2000 and 4000. He was the first sitting Israeli prime minister accused of bribery.",
+          "numbers": [
+            "1000",
+            "2000",
+            "4000"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e2d6a8694aecdfea",
+          "kind": "text",
+          "field": "events.31.title",
+          "text": "Netanyahu–Gantz unity government",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2c5600b445f9d47a",
+          "kind": "text",
+          "field": "events.31.text",
+          "text": "After a third election, the Knesset approved a Netanyahu–Gantz government 73–46. Under the deal, Benny Gantz was to become prime minister on Nov 17, 2021.",
+          "numbers": [
+            "11",
+            "17",
+            "2021",
+            "46",
+            "73"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu",
+            "Benny Gantz"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-faa2e7304cdf95cd",
+          "kind": "text",
+          "field": "events.32.title",
+          "text": "Abraham Accords signed",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0192c4b31cc80e38",
+          "kind": "text",
+          "field": "events.32.text",
+          "text": "At the White House, Israel signed agreements with the United Arab Emirates and Bahrain, which joined Egypt and Jordan as Arab states at formal peace with Israel.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-96c887242f319054",
+          "kind": "text",
+          "field": "events.33.title",
+          "text": "Morocco joins the normalization deals",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1a076ad717a83a37",
+          "kind": "text",
+          "field": "events.33.text",
+          "text": "Morocco agreed to normalize relations with Israel, the fourth country since August after the UAE, Bahrain and Sudan. As part of the deal, President Trump recognized Morocco's sovereignty over the Western Sahara. Palestinian officials condemned it.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-363793ca3128f9ee",
+          "kind": "text",
+          "field": "events.34.title",
+          "text": "Violence in mixed cities",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-790e098483c60653",
+          "kind": "text",
+          "field": "events.34.text",
+          "text": "Amid fighting in Gaza and clashes around Al-Aqsa Mosque, Jewish and Arab mobs attacked each other in Lod, Acre, Ramle and Bat Yam, the widest unrest between citizens since October 2000, when police killed 13 protesters, 12 of them Palestinian citizens of Israel.",
+          "numbers": [
+            "10",
+            "12",
+            "13",
+            "2000"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c0d53e232b425d5d",
+          "kind": "text",
+          "field": "events.35.title",
+          "text": "Ra'am signs on to a coalition",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7c24520a08f9f656",
+          "kind": "text",
+          "field": "events.35.text",
+          "text": "Mansour Abbas signed a deal to bring Ra'am into the Bennett–Lapid coalition, the first Arab party leader in half a century to do so. The coalition pledged about NIS 53 billion for Arab communities.",
+          "numbers": [
+            "53"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0727c6f81b5cc0ce",
+          "kind": "text",
+          "field": "events.36.title",
+          "text": "Bennett–Lapid government sworn in",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d03bc126472133c8",
+          "kind": "text",
+          "field": "events.36.text",
+          "text": "The Knesset approved the new government 60–59, ending Netanyahu's 12-year tenure. Naftali Bennett became prime minister.",
+          "numbers": [
+            "12",
+            "59",
+            "60"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu",
+            "Naftali Bennett"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-62dda5683713b268",
+          "kind": "text",
+          "field": "events.37.title",
+          "text": "Knesset dissolves; Lapid PM",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5807616541b3b668",
+          "kind": "text",
+          "field": "events.37.text",
+          "text": "The Knesset dissolved itself 92–0 and set the fifth election in three and a half years for Nov 1. Yair Lapid became interim prime minister at midnight.",
+          "numbers": [
+            "0",
+            "1",
+            "11",
+            "92"
+          ],
+          "links": [],
+          "names": [
+            "Yair Lapid"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-65e9453060b93c81",
+          "kind": "text",
+          "field": "events.38.title",
+          "text": "Netanyahu bloc wins 64 seats",
+          "numbers": [
+            "64"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-67fa94cea9720dc3",
+          "kind": "text",
+          "field": "events.38.text",
+          "text": "The two blocs were nearly tied in votes, but Meretz and Balad fell below the threshold. Likud and its allies won 64 seats, enough for Netanyahu to form a \"pure\" right-wing government.",
+          "numbers": [
+            "64"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-51a70162ed6d9cd5",
+          "kind": "text",
+          "field": "events.39.title",
+          "text": "Judicial overhaul unveiled",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ace6ddee330b0dc8",
+          "kind": "text",
+          "field": "events.39.text",
+          "text": "Justice Minister Yariv Levin proposed barring the courts' \"reasonableness\" review, giving the government effective control of judicial appointments, and letting 61 MKs re-enact laws the court strikes down.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [
+            "Yariv Levin"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8d3fc00329c9c3dd",
+          "kind": "text",
+          "field": "events.40.title",
+          "text": "Overhaul paused after strike",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b4c2a0eec1c52631",
+          "kind": "text",
+          "field": "events.40.text",
+          "text": "After mass protests and a nationwide strike, Netanyahu delayed the overhaul: \"When there's an opportunity to avoid civil war through dialogue, I, as prime minister, am taking a time out for dialogue.\"",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-12de70c9ba011588",
+          "kind": "text",
+          "field": "events.41.title",
+          "text": "'Reasonableness' law passes",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cfab3a4fb2d13c7d",
+          "kind": "text",
+          "field": "events.41.text",
+          "text": "The Knesset passed 64–0 a law limiting the courts' review of government decisions for \"reasonableness.\" The opposition boycotted the vote.",
+          "numbers": [
+            "0",
+            "64"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7359dafc9c7eb7e1",
+          "kind": "text",
+          "field": "events.42.title",
+          "text": "Hamas-led attack on Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a1efb6458e1ea7a5",
+          "kind": "text",
+          "field": "events.42.text",
+          "text": "Thousands of Hamas-led gunmen stormed southern Israel, killing some 1,200 people and taking 251 hostages to Gaza, which started the war in Gaza.",
+          "numbers": [
+            "1200",
+            "251"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-07b9742655e340e6",
+          "kind": "text",
+          "field": "events.43.title",
+          "text": "Hezbollah opens fire on Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bd57e2396e3c8993",
+          "kind": "text",
+          "field": "events.43.text",
+          "text": "UN peacekeepers saw about 40 rockets and mortars fired from Lebanon at three Israeli army positions in the Israeli-held Shebaa Farms area. Hezbollah said it acted \"in solidarity with the triumphant Palestinian resistance.\" Exchanges of fire across the border followed.",
+          "numbers": [
+            "40"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d95779173ac4f5e6",
+          "kind": "text",
+          "field": "events.44.title",
+          "text": "First truce and hostage releases",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-43c4ea50f866c5dd",
+          "kind": "text",
+          "field": "events.44.text",
+          "text": "A seven-day truce began. Hamas freed 105 hostages, 81 of them Israelis, and Israel released 210 Palestinian prisoners, all women or minors. Fighting resumed on Dec 1.",
+          "numbers": [
+            "1",
+            "105",
+            "12",
+            "210",
+            "81"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c9573a390cfec1d9",
+          "kind": "text",
+          "field": "events.45.title",
+          "text": "Court voids reasonableness law",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-791791955478d936",
+          "kind": "text",
+          "field": "events.45.text",
+          "text": "Eight of 15 Supreme Court justices voted to strike down the reasonableness amendment, the first time the court nullified a Basic Law or an amendment to one. Twelve ruled that it had that power.",
+          "numbers": [
+            "15"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2a040369e0128ebe",
+          "kind": "text",
+          "field": "events.46.title",
+          "text": "ICJ orders provisional measures",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6639b7f75775ce97",
+          "kind": "text",
+          "field": "events.46.text",
+          "text": "In South Africa v. Israel, the International Court of Justice ordered Israel, 15–2, to take all measures within its power to prevent acts under Article II of the convention invoked, and, 16–1, to enable humanitarian aid to Gaza. It has not ruled on the merits.",
+          "numbers": [
+            "1",
+            "15",
+            "16",
+            "2"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-5ad2a83d0a2249f2",
+          "kind": "text",
+          "field": "events.47.title",
+          "text": "Court orders Haredi draft",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0c292b5347866447",
+          "kind": "text",
+          "field": "events.47.text",
+          "text": "A unanimous nine-justice panel ruled there is \"no legal basis for avoiding the recruitment of yeshiva students\" and that the state may not keep funding yeshivas for students eligible for service.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-55045d4483ace525",
+          "kind": "text",
+          "field": "events.48.title",
+          "text": "ICC warrants for Netanyahu and Gallant",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b38c7c1c14b5995e",
+          "kind": "text",
+          "field": "events.48.text",
+          "text": "The International Criminal Court rejected Israel's challenges to its jurisdiction and issued arrest warrants for Netanyahu and Yoav Gallant, defense minister at the time, for \"the war crime of starvation as a method of warfare\" and crimes against humanity.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c9fb708547791b94",
+          "kind": "text",
+          "field": "events.49.title",
+          "text": "Gaza ceasefire takes effect",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c3ee4e2dc0174241",
+          "kind": "text",
+          "field": "events.49.text",
+          "text": "A ceasefire began and Hamas freed its first three hostages under a deal whose first phase was to last 42 days.",
+          "numbers": [
+            "42"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-21915da42a2a5cd2",
+          "kind": "text",
+          "field": "events.50.title",
+          "text": "War resumes; Ben-Gvir returns",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-350adee67af4fad5",
+          "kind": "text",
+          "field": "events.50.text",
+          "text": "Israel launched its deadliest strikes on Gaza since the January ceasefire. Hours later, Itamar Ben-Gvir's Otzma Yehudit, which had resigned in January in protest at the ceasefire, announced it would rejoin.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1d1081a6279f7aef",
+          "kind": "text",
+          "field": "events.51.title",
+          "text": "Twelve-day war with Iran",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6b657621a3f93106",
+          "kind": "text",
+          "field": "events.51.text",
+          "text": "Israel bombed Iranian nuclear sites at Natanz and Isfahan, and Iran retaliated with drones and missiles. President Trump announced a ceasefire, calling it \"the 12 Day War.\"",
+          "numbers": [
+            "12"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-721ddd6df19c60be",
+          "kind": "text",
+          "field": "events.52.title",
+          "text": "UTJ quits the coalition",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2e9db03906120c47",
+          "kind": "text",
+          "field": "events.52.text",
+          "text": "Both factions of United Torah Judaism, Degel Hatorah and Agudat Yisrael, left the government and coalition in protest over the draft bill, cutting the coalition from 68 seats to 61.",
+          "numbers": [
+            "61",
+            "68"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-821992facdd6cfe8",
+          "kind": "text",
+          "field": "events.53.title",
+          "text": "Shas quits the government",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0c5ad0c1bc743b6d",
+          "kind": "text",
+          "field": "events.53.text",
+          "text": "Shas announced its resignation from the government amid the coalition's failure to advance a bill on military service for Haredi men, but said it would not vote to bring down Netanyahu's coalition.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": true
+        },
+        {
+          "id": "tool-text-d541894e02cfb2ae",
+          "kind": "text",
+          "field": "events.54.title",
+          "text": "IPC finds famine in Gaza",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-33c3e84472262f25",
+          "kind": "text",
+          "field": "events.54.text",
+          "text": "The IPC hunger monitor found an estimated 514,000 people in Gaza, nearly a quarter of its population, experiencing famine. Netanyahu's office called the finding an \"outright lie\" and said Israel \"has a policy of preventing starvation.\"",
+          "numbers": [
+            "514000"
+          ],
+          "links": [],
+          "names": [
+            "Netanyahu"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e1469e87df9ca82c",
+          "kind": "text",
+          "field": "events.55.title",
+          "text": "Last living hostages come home",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-eeb89a4b476c47fc",
+          "kind": "text",
+          "field": "events.55.text",
+          "text": "Under a ceasefire deal brokered by President Trump, Hamas released the 20 remaining living hostages and Israel released nearly 2,000 Palestinian prisoners. That day Hamas handed over 4 of the 28 dead hostages' bodies.",
+          "numbers": [
+            "20",
+            "2000",
+            "28",
+            "4"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5aa5e9ae3193dd71",
+          "kind": "text",
+          "field": "events.56.title",
+          "text": "Gaza's toll after two years of war",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-05a2a79ba828acc3",
+          "kind": "text",
+          "field": "events.56.text",
+          "text": "As of Oct 15, 2025, Gaza's Health Ministry had reported 67,938 Palestinians killed and 170,169 injured since Oct 7, 2023, OCHA said; of the 67,173 dead it had identified by Oct 7, 20,179 were children.",
+          "numbers": [
+            "10",
+            "10",
+            "10",
+            "15",
+            "170169",
+            "20179",
+            "2023",
+            "2025",
+            "67173",
+            "67938",
+            "7",
+            "7"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cbe8ee1ab56d9681",
+          "kind": "text",
+          "field": "events.57.title",
+          "text": "US and Israel strike Iran",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5e62018bd94da696",
+          "kind": "text",
+          "field": "events.57.text",
+          "text": "The United States and Israel launched strikes on Iran two days after US–Iran nuclear talks in Geneva ended without a breakthrough. Iran responded with missile and air strikes across the region, including on Israel.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-be84831b70eca8c3",
+          "kind": "text",
+          "field": "events.58.title",
+          "text": "Knesset dissolves; vote set",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8b9e332eacea8d10",
+          "kind": "text",
+          "field": "events.58.text",
+          "text": "The 25th Knesset dissolved itself 62–0 overnight and set the election for Oct 27, 2026. A separate vote kept mandatory military service at 32 months.",
+          "numbers": [
+            "0",
+            "10",
+            "2026",
+            "25",
+            "27",
+            "32",
+            "62"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c1775700c6f72fcc",
+          "kind": "text",
+          "field": "events.59.title",
+          "text": "Court reinstates Arab lists",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b331d1f0e68d8c45",
+          "kind": "text",
+          "field": "events.59.text",
+          "text": "The Supreme Court unanimously overturned the Central Elections Committee's disqualification of the Joint List and Ra'am. Balad leader Sami Abu Shehadeh withdrew after the court signaled a majority favored barring him.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "0",
+        "0",
+        "0",
+        "09",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "10",
+        "10",
+        "10",
+        "10",
+        "10",
+        "10",
+        "1000",
+        "100000",
+        "103",
+        "105",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "11",
+        "12",
+        "12",
+        "12",
+        "12",
+        "12",
+        "1200",
+        "1216",
+        "13",
+        "1383",
+        "14",
+        "1462",
+        "15",
+        "15",
+        "15",
+        "15",
+        "158",
+        "16",
+        "17",
+        "17",
+        "170169",
+        "18",
+        "18",
+        "188",
+        "19",
+        "1967",
+        "1982",
+        "1986",
+        "1990",
+        "1995",
+        "2",
+        "20",
+        "20",
+        "2000",
+        "2000",
+        "2000",
+        "2005",
+        "2008",
+        "2009",
+        "2012",
+        "2013",
+        "2014",
+        "2014",
+        "20179",
+        "2020",
+        "2021",
+        "2021",
+        "2022",
+        "2023",
+        "2025",
+        "2026",
+        "210",
+        "2251",
+        "24",
+        "25",
+        "251",
+        "26",
+        "26",
+        "27",
+        "28",
+        "29",
+        "29",
+        "3",
+        "30000",
+        "30000",
+        "32",
+        "32",
+        "32",
+        "33",
+        "333",
+        "34",
+        "38",
+        "4",
+        "40",
+        "4000",
+        "400000",
+        "42",
+        "43",
+        "45",
+        "45",
+        "45",
+        "46",
+        "46",
+        "5",
+        "514000",
+        "53",
+        "54",
+        "55",
+        "551",
+        "59",
+        "6",
+        "6",
+        "6",
+        "6",
+        "60",
+        "61",
+        "61",
+        "61",
+        "61",
+        "62",
+        "62",
+        "62",
+        "62.3%",
+        "62.4%",
+        "63",
+        "64",
+        "64",
+        "64",
+        "66",
+        "67",
+        "67",
+        "67173",
+        "67938",
+        "68",
+        "68",
+        "68",
+        "69",
+        "7",
+        "7",
+        "7",
+        "7",
+        "7",
+        "73",
+        "73",
+        "74",
+        "74",
+        "74",
+        "75",
+        "8",
+        "81",
+        "9",
+        "9",
+        "92"
+      ]
+    },
+    {
+      "id": "tools:party-history",
+      "file": "data/party-history.json",
+      "path": "/party-history",
+      "title": "Party histories",
+      "revision": "d68416fc96e20742d7cec5514bb8bbb38f5132211d71f55dec64d89bc0d82672",
+      "checked": "2026-10-05",
+      "blocks": [
+        {
+          "id": "tool-text-2df9620a42700545",
+          "kind": "text",
+          "field": "scope",
+          "text": "Selected organizational and electoral milestones for all 15 profiled 2026 lists. Lines and marks show the stated relationship, not inherited platforms or a claim that every predecessor merged legally. Historical lists retain their names at the time.",
+          "numbers": [
+            "15",
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-452d723447938d16",
+          "kind": "text",
+          "field": "histories.0.name",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d6407b8d3f7198bc",
+          "kind": "text",
+          "field": "histories.0.family",
+          "text": "Likud and secular right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9d5eb4a0760fd3d5",
+          "kind": "text",
+          "field": "histories.0.events.0.inputs.0",
+          "text": "Herut",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9596268a3eba65b1",
+          "kind": "text",
+          "field": "histories.0.events.0.inputs.1",
+          "text": "Liberal Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-65ff826ef32b84e7",
+          "kind": "text",
+          "field": "histories.0.events.0.inputs.2",
+          "text": "Free Center",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-126d28e71036938b",
+          "kind": "text",
+          "field": "histories.0.events.0.inputs.3",
+          "text": "National List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b92d77f670060ce3",
+          "kind": "text",
+          "field": "histories.0.events.0.inputs.4",
+          "text": "Movement for Greater Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-46d3a095a3897dfc",
+          "kind": "text",
+          "field": "histories.0.events.0.output",
+          "text": "Likud joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5146f8d65f5220fb",
+          "kind": "text",
+          "field": "histories.0.events.0.text",
+          "text": "Five organizations formed an electoral alliance.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ac85110861f13f18",
+          "kind": "text",
+          "field": "histories.0.events.1.inputs.0",
+          "text": "Likud alliance components",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-730f7f65a5117a44",
+          "kind": "text",
+          "field": "histories.0.events.1.output",
+          "text": "Likud party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-30435c4a8eebf7f2",
+          "kind": "text",
+          "field": "histories.0.events.1.text",
+          "text": "The component organizations merged into a single party.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-adffda99d16fd8ae",
+          "kind": "text",
+          "field": "histories.0.events.2.inputs.0",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-30f31bb1a59431b8",
+          "kind": "text",
+          "field": "histories.0.events.2.output",
+          "text": "Sharon leaves to form Kadima",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-318fd3d080b504b4",
+          "kind": "text",
+          "field": "histories.0.events.2.text",
+          "text": "A departure from Likud, not a renaming of Likud.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-b9dc859690787e20",
+          "kind": "text",
+          "field": "histories.0.events.3.inputs.0",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-918f98b9765ca6b4",
+          "kind": "text",
+          "field": "histories.0.events.3.inputs.1",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3d3d02fcb8dfb3f8",
+          "kind": "text",
+          "field": "histories.0.events.3.output",
+          "text": "Likud–Beiteinu list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-88a3609644186562",
+          "kind": "text",
+          "field": "histories.0.events.3.text",
+          "text": "A joint election list; the parties retained separate identities.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-80c65e5bffcc5b3d",
+          "kind": "text",
+          "field": "histories.0.events.4.inputs.0",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-efebb6a924fb502d",
+          "kind": "text",
+          "field": "histories.0.events.4.output",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2c1922cf3a338360",
+          "kind": "text",
+          "field": "histories.0.events.4.text",
+          "text": "Listed separately in the published submitted roster.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-782668d541627b90",
+          "kind": "text",
+          "field": "histories.1.name",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-17ed896f7d93348f",
+          "kind": "text",
+          "field": "histories.1.family",
+          "text": "Likud and secular right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7c6c6d842773dc03",
+          "kind": "text",
+          "field": "histories.1.events.0.output",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6a202d61b4da47bd",
+          "kind": "text",
+          "field": "histories.1.events.0.text",
+          "text": "Established by Avigdor Liberman; initially appealed especially to former Soviet Union immigrants.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Avigdor Liberman",
+            "Liberman"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-53a62a48935bfcf2",
+          "kind": "text",
+          "field": "histories.1.events.1.inputs.0",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-846df7749fd34148",
+          "kind": "text",
+          "field": "histories.1.events.1.inputs.1",
+          "text": "National Union",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0d7653ae20d807c1",
+          "kind": "text",
+          "field": "histories.1.events.1.output",
+          "text": "National Union joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a560ff0d2d6f33fc",
+          "kind": "text",
+          "field": "histories.1.events.1.text",
+          "text": "Ran together in 2003; Yisrael Beiteinu ran independently again in 2006.",
+          "numbers": [
+            "2003",
+            "2006"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a67eeabf3f0b39d2",
+          "kind": "text",
+          "field": "histories.1.events.2.inputs.0",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-aea1889eb197034e",
+          "kind": "text",
+          "field": "histories.1.events.2.inputs.1",
+          "text": "Likud",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-04dd6f96a02baf44",
+          "kind": "text",
+          "field": "histories.1.events.2.output",
+          "text": "Likud–Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cf5c98bceb1b630d",
+          "kind": "text",
+          "field": "histories.1.events.2.text",
+          "text": "A shared ballot, rather than a single new party.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a22c8ebdbef68d5c",
+          "kind": "text",
+          "field": "histories.1.events.3.inputs.0",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-be6702f78b0b701c",
+          "kind": "text",
+          "field": "histories.1.events.3.output",
+          "text": "Yisrael Beiteinu",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4ebbbc0dd9970439",
+          "kind": "text",
+          "field": "histories.1.events.3.text",
+          "text": "A separate submitted list under Liberman.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Liberman"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-39f4fdd76b7e93c8",
+          "kind": "text",
+          "field": "histories.2.name",
+          "text": "B'Yachad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b3b4464cc777c67a",
+          "kind": "text",
+          "field": "histories.2.family",
+          "text": "Bennett, Lapid and Gantz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6ca2b332b1687ee4",
+          "kind": "text",
+          "field": "histories.2.events.0.inputs.0",
+          "text": "Bennett becomes Jewish Home chair",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-682073a1f529ecb9",
+          "kind": "text",
+          "field": "histories.2.events.0.inputs.1",
+          "text": "Lapid founds Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dc7a867dd98be401",
+          "kind": "text",
+          "field": "histories.2.events.0.output",
+          "text": "Two separate political paths",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ae0465431413b844",
+          "kind": "text",
+          "field": "histories.2.events.0.text",
+          "text": "Bennett led Jewish Home in the 2013 and 2015 joint lists with Tkuma.",
+          "numbers": [
+            "2013",
+            "2015"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8c5f745e24638d11",
+          "kind": "text",
+          "field": "histories.2.events.1.inputs.0",
+          "text": "Bennett and Shaked leave Jewish Home",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1dd040bd133613fb",
+          "kind": "text",
+          "field": "histories.2.events.1.output",
+          "text": "New Right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a8efd87f4c084a9a",
+          "kind": "text",
+          "field": "histories.2.events.1.text",
+          "text": "New Right missed the threshold in April 2019.",
+          "numbers": [
+            "2019",
+            "4"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2e56fc6a523a72ed",
+          "kind": "text",
+          "field": "histories.2.events.2.inputs.0",
+          "text": "New Right + Tkuma + Jewish Home",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-69548815395426b8",
+          "kind": "text",
+          "field": "histories.2.events.2.inputs.1",
+          "text": "Yesh Atid + Israel Resilience + Telem",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e1eae055f18e7cc2",
+          "kind": "text",
+          "field": "histories.2.events.2.output",
+          "text": "Yamina / Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-22dc61abddee7535",
+          "kind": "text",
+          "field": "histories.2.events.2.text",
+          "text": "Bennett and Lapid ran in different electoral alliances.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-482b271c222b628a",
+          "kind": "text",
+          "field": "histories.2.events.3.inputs.0",
+          "text": "Bennett's New Right, branded Yamina",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cd42b980d95ebaa2",
+          "kind": "text",
+          "field": "histories.2.events.3.inputs.1",
+          "text": "Lapid's Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cc28d10ac2619473",
+          "kind": "text",
+          "field": "histories.2.events.3.output",
+          "text": "Separate lists; rotation government",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5561e5cabaa35178",
+          "kind": "text",
+          "field": "histories.2.events.3.text",
+          "text": "Their governing partnership was a coalition, not a party merger.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-9fe59c14e39977f3",
+          "kind": "text",
+          "field": "histories.2.events.4.inputs.0",
+          "text": "Bennett 2026",
+          "numbers": [
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f0d96facd8d97f58",
+          "kind": "text",
+          "field": "histories.2.events.4.inputs.1",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d63924658b066c88",
+          "kind": "text",
+          "field": "histories.2.events.4.output",
+          "text": "B'Yachad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-33263e1ce15c810a",
+          "kind": "text",
+          "field": "histories.2.events.4.text",
+          "text": "Bennett registered his new party in 2025. In April 2026 it announced a joint electoral run with Yesh Atid. The roster names Bennett as list leader.",
+          "numbers": [
+            "2025",
+            "2026",
+            "4"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-732cc5f06eed6ad7",
+          "kind": "text",
+          "field": "histories.3.name",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-45017b999c39167c",
+          "kind": "text",
+          "field": "histories.3.family",
+          "text": "Bennett, Lapid and Gantz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9be751f7a3520528",
+          "kind": "text",
+          "field": "histories.3.events.0.inputs.0",
+          "text": "Israel Resilience",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-595668b309dc2d7a",
+          "kind": "text",
+          "field": "histories.3.events.0.inputs.1",
+          "text": "Yesh Atid",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6979cffb8dd6802b",
+          "kind": "text",
+          "field": "histories.3.events.0.inputs.2",
+          "text": "Telem",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-745fbd04ba879ab1",
+          "kind": "text",
+          "field": "histories.3.events.0.output",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e886686209a99f43",
+          "kind": "text",
+          "field": "histories.3.events.0.text",
+          "text": "The three-party alliance contested the two 2019 elections and the 2020 election.",
+          "numbers": [
+            "2019",
+            "2020"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-089bf580745a48ab",
+          "kind": "text",
+          "field": "histories.3.events.1.inputs.0",
+          "text": "Blue and White alliance",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d827e32b556227fc",
+          "kind": "text",
+          "field": "histories.3.events.1.output",
+          "text": "Gantz retains Blue and White name",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f0d2c4f6c50f14df",
+          "kind": "text",
+          "field": "histories.3.events.1.text",
+          "text": "The alliance disbanded. Gantz's party ran alone under this name in 2021.",
+          "numbers": [
+            "2021"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e347f610e4af6178",
+          "kind": "text",
+          "field": "histories.3.events.2.inputs.0",
+          "text": "Gantz's Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7d12419f13c852bb",
+          "kind": "text",
+          "field": "histories.3.events.2.inputs.1",
+          "text": "New Hope",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-69110b85a25f9a74",
+          "kind": "text",
+          "field": "histories.3.events.2.output",
+          "text": "National Unity",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a64b21d205aa0591",
+          "kind": "text",
+          "field": "histories.3.events.2.text",
+          "text": "A new joint list, rather than the original 2019 three-party alliance.",
+          "numbers": [
+            "2019"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fbf6a2f1be202f40",
+          "kind": "text",
+          "field": "histories.3.events.3.inputs.0",
+          "text": "Gantz's list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-976f1719d3f812bc",
+          "kind": "text",
+          "field": "histories.3.events.3.output",
+          "text": "Blue and White",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-53efc46582565282",
+          "kind": "text",
+          "field": "histories.3.events.3.text",
+          "text": "The published roster again lists Blue and White under Benny Gantz. Reuse of a name does not restore the 2019 alliance.",
+          "numbers": [
+            "2019"
+          ],
+          "links": [],
+          "names": [
+            "Benny Gantz"
+          ],
+          "negated": true
+        },
+        {
+          "id": "tool-text-67f1b267dbc420dd",
+          "kind": "text",
+          "field": "histories.4.name",
+          "text": "Yashar!",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-07a8f42ae58d5619",
+          "kind": "text",
+          "field": "histories.4.family",
+          "text": "Bennett, Lapid and Gantz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d11d0d29e066d6b4",
+          "kind": "text",
+          "field": "histories.4.events.0.inputs.0",
+          "text": "Gadi Eisenkot's new organization",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-be4d44a9aac0fa04",
+          "kind": "text",
+          "field": "histories.4.events.0.output",
+          "text": "Yashar!",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-10164534dd08e778",
+          "kind": "text",
+          "field": "histories.4.events.0.text",
+          "text": "IDI identifies Yashar! as a party led by Eisenkot; the CEC lists it separately. A leader's previous affiliations do not make it a legal continuation of Blue and White or National Unity. These sources do not date its registration.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-3a0b8525acf5d080",
+          "kind": "text",
+          "field": "histories.5.name",
+          "text": "The Democrats",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cdb9d1a8ca2eeb49",
+          "kind": "text",
+          "field": "histories.5.family",
+          "text": "Labor and Meretz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-db1158897133d1ce",
+          "kind": "text",
+          "field": "histories.5.events.0.inputs.0",
+          "text": "Mapai",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1b4e2649c3050e3b",
+          "kind": "text",
+          "field": "histories.5.events.0.inputs.1",
+          "text": "Ahdut HaAvoda",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d0ab71855d993eab",
+          "kind": "text",
+          "field": "histories.5.events.0.inputs.2",
+          "text": "Rafi",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e6fef9be40f62ffa",
+          "kind": "text",
+          "field": "histories.5.events.0.output",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cd3daeefd166d873",
+          "kind": "text",
+          "field": "histories.5.events.0.text",
+          "text": "These parties established the Labor Party.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-824a00398cef4615",
+          "kind": "text",
+          "field": "histories.5.events.1.inputs.0",
+          "text": "Ratz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-640f700dcbe9b206",
+          "kind": "text",
+          "field": "histories.5.events.1.inputs.1",
+          "text": "Mapam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-133a893f9fa6a5c6",
+          "kind": "text",
+          "field": "histories.5.events.1.inputs.2",
+          "text": "Shinui",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d600603c88bc4720",
+          "kind": "text",
+          "field": "histories.5.events.1.output",
+          "text": "Meretz joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-07b2758bc0f79e4b",
+          "kind": "text",
+          "field": "histories.5.events.1.text",
+          "text": "Its component parties initially remained separate.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ba3aca6097eb3efe",
+          "kind": "text",
+          "field": "histories.5.events.2.inputs.0",
+          "text": "Ratz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-72a8a08aff116e67",
+          "kind": "text",
+          "field": "histories.5.events.2.inputs.1",
+          "text": "Mapam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5c2ac438e734b0af",
+          "kind": "text",
+          "field": "histories.5.events.2.inputs.2",
+          "text": "Part of Shinui",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f6bf828cf27c8c62",
+          "kind": "text",
+          "field": "histories.5.events.2.output",
+          "text": "Meretz party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-40342f299c6ed6ca",
+          "kind": "text",
+          "field": "histories.5.events.2.text",
+          "text": "The joint list became a merged party; the merger did not include all of Shinui.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-36281ecc11daf514",
+          "kind": "text",
+          "field": "histories.5.events.3.inputs.0",
+          "text": "Labor",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4064c92645631aeb",
+          "kind": "text",
+          "field": "histories.5.events.3.inputs.1",
+          "text": "Meretz",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8cb0f3c4e261bb92",
+          "kind": "text",
+          "field": "histories.5.events.3.output",
+          "text": "The Democrats",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fdbfa372b02c0734",
+          "kind": "text",
+          "field": "histories.5.events.3.text",
+          "text": "IDI calls this a partial merger: Labor and Meretz retained organizational and institutional independence. Yair Golan heads the combined organization.",
+          "numbers": [],
+          "links": [],
+          "names": [
+            "Yair Golan"
+          ],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3520f1a05e0117ac",
+          "kind": "text",
+          "field": "histories.5.events.4.inputs.0",
+          "text": "The Democrats",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3c5f060332abbd9a",
+          "kind": "text",
+          "field": "histories.5.events.4.output",
+          "text": "The Democrats",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e7cb3ca988573f55",
+          "kind": "text",
+          "field": "histories.5.events.4.text",
+          "text": "A single submitted electoral list under Golan.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-52cb7505028c7199",
+          "kind": "text",
+          "field": "histories.6.name",
+          "text": "Shas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-148d33e5e5bca6cc",
+          "kind": "text",
+          "field": "histories.6.family",
+          "text": "Haredi parties",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c32c96a0d7a4e692",
+          "kind": "text",
+          "field": "histories.6.events.0.inputs.0",
+          "text": "Sephardic Haredi founders",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e4513b71b4d36604",
+          "kind": "text",
+          "field": "histories.6.events.0.output",
+          "text": "Shas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2111c7f0f9df9b22",
+          "kind": "text",
+          "field": "histories.6.events.0.text",
+          "text": "Founded in response to institutional disadvantage and under-representation relative to Ashkenazi Haredim; Rabbi Ovadia Yosef headed its Council of Torah Sages.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cd65158c7fc91dfc",
+          "kind": "text",
+          "field": "histories.6.events.1.inputs.0",
+          "text": "Shas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c73996c025339906",
+          "kind": "text",
+          "field": "histories.6.events.1.output",
+          "text": "Shas",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-37cce6f1e2df505a",
+          "kind": "text",
+          "field": "histories.6.events.1.text",
+          "text": "A separate submitted list. Shared Haredi interests do not make Shas a component of United Torah Judaism.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-dbd0626ba01c7169",
+          "kind": "text",
+          "field": "histories.7.name",
+          "text": "United Torah Judaism",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-883932a7e8a04519",
+          "kind": "text",
+          "field": "histories.7.family",
+          "text": "Haredi parties",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6a71df8d26254af7",
+          "kind": "text",
+          "field": "histories.7.events.0.inputs.0",
+          "text": "Agudat Yisrael",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-078593fa99e2dfd0",
+          "kind": "text",
+          "field": "histories.7.events.0.output",
+          "text": "Degel HaTorah runs separately",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0d4e8e69c2346f1f",
+          "kind": "text",
+          "field": "histories.7.events.0.text",
+          "text": "Degel HaTorah formed to represent the Lithuanian Haredi community, distinct from the Hasidic parties in Agudat Yisrael.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fee65174f3b714d4",
+          "kind": "text",
+          "field": "histories.7.events.1.inputs.0",
+          "text": "Agudat Yisrael",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0f2f4155dac2c220",
+          "kind": "text",
+          "field": "histories.7.events.1.inputs.1",
+          "text": "Degel HaTorah",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8b17090d429faba9",
+          "kind": "text",
+          "field": "histories.7.events.1.output",
+          "text": "United Torah Judaism",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-088574112875232a",
+          "kind": "text",
+          "field": "histories.7.events.1.text",
+          "text": "A joint electoral list. Its components have continued as separate parties.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f8bd82442e66002d",
+          "kind": "text",
+          "field": "histories.7.events.2.inputs.0",
+          "text": "Agudat Yisrael",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dbd578e1235e78a6",
+          "kind": "text",
+          "field": "histories.7.events.2.inputs.1",
+          "text": "Degel HaTorah",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6b1b282f79b68616",
+          "kind": "text",
+          "field": "histories.7.events.2.output",
+          "text": "UTJ",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1ba32f36b8099250",
+          "kind": "text",
+          "field": "histories.7.events.2.text",
+          "text": "Both component names appear in the submitted roster title.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e1f0061abdd58618",
+          "kind": "text",
+          "field": "histories.8.name",
+          "text": "Religious Zionism–Zehut",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c4233901a9f6635c",
+          "kind": "text",
+          "field": "histories.8.family",
+          "text": "Religious right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fa5322c7e7eeffea",
+          "kind": "text",
+          "field": "histories.8.events.0.inputs.0",
+          "text": "National Union–Tkuma",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a769836a992d5e54",
+          "kind": "text",
+          "field": "histories.8.events.0.inputs.1",
+          "text": "Jewish Home",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-76ab3e8069884e38",
+          "kind": "text",
+          "field": "histories.8.events.0.output",
+          "text": "Jewish Home joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f448a3da4fcd7c8e",
+          "kind": "text",
+          "field": "histories.8.events.0.text",
+          "text": "Tkuma cooperated electorally with Jewish Home.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-426a1df33c6b020f",
+          "kind": "text",
+          "field": "histories.8.events.1.inputs.0",
+          "text": "National Union–Tkuma",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-3c67fbbbc8ff7c5f",
+          "kind": "text",
+          "field": "histories.8.events.1.output",
+          "text": "Religious Zionist Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e0a22e01b6320e5d",
+          "kind": "text",
+          "field": "histories.8.events.1.text",
+          "text": "Tkuma adopted the Religious Zionist Party name; that name also identified a broader joint list.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7e8712fd09f287a4",
+          "kind": "text",
+          "field": "histories.8.events.2.inputs.0",
+          "text": "Religious Zionist Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1ef1920ced7a810c",
+          "kind": "text",
+          "field": "histories.8.events.2.inputs.1",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c5e2f3466464c06d",
+          "kind": "text",
+          "field": "histories.8.events.2.inputs.2",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b53552d5b81c4594",
+          "kind": "text",
+          "field": "histories.8.events.2.output",
+          "text": "Religious Zionism joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c96d91c23bf6e3dd",
+          "kind": "text",
+          "field": "histories.8.events.2.text",
+          "text": "A shared ballot followed by separate Knesset factions. IDI records two registered parties representing Otzma: Jewish National Front and Eretz Yisrael Shelanu. Electoral brands and legal parties are not always identical.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-380e9e385374e513",
+          "kind": "text",
+          "field": "histories.8.events.3.inputs.0",
+          "text": "Religious Zionist Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ba54e7e58d2212c6",
+          "kind": "text",
+          "field": "histories.8.events.3.inputs.1",
+          "text": "Zehut",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c0ab16f0e23b4624",
+          "kind": "text",
+          "field": "histories.8.events.3.output",
+          "text": "Religious Zionism–Zehut",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ea77aa6dc8a09159",
+          "kind": "text",
+          "field": "histories.8.events.3.text",
+          "text": "Smotrich and Feiglin head this submitted joint list; Otzma and Noam have separate entries.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c16003fe49e6ae92",
+          "kind": "text",
+          "field": "histories.9.name",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-25af89cc0bf32719",
+          "kind": "text",
+          "field": "histories.9.family",
+          "text": "Religious right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-58b1ad8a380f9d5f",
+          "kind": "text",
+          "field": "histories.9.events.0.inputs.0",
+          "text": "Baruch Marzel's organization",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e400f2af0e356974",
+          "kind": "text",
+          "field": "histories.9.events.0.output",
+          "text": "Jewish National Front",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c3a02e041f9cb508",
+          "kind": "text",
+          "field": "histories.9.events.0.text",
+          "text": "IDI traces Otzma's organizational roots to this party.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4273f4583d083239",
+          "kind": "text",
+          "field": "histories.9.events.1.inputs.0",
+          "text": "Jewish National Front",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b9cd4c6f3e3475b9",
+          "kind": "text",
+          "field": "histories.9.events.1.inputs.1",
+          "text": "Hatikva",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7fd2db8237f31f38",
+          "kind": "text",
+          "field": "histories.9.events.1.output",
+          "text": "Otzma LeYisrael",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c2a566fcb41467f9",
+          "kind": "text",
+          "field": "histories.9.events.1.text",
+          "text": "The joint list failed to enter the Knesset.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ca7d2b6d2464eb04",
+          "kind": "text",
+          "field": "histories.9.events.2.inputs.0",
+          "text": "Otzma LeYisrael",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-da443f0cc5ebc120",
+          "kind": "text",
+          "field": "histories.9.events.2.output",
+          "text": "Otzma Yehudit; joint run with Yahad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-67fd0f222ff5d61c",
+          "kind": "text",
+          "field": "histories.9.events.2.text",
+          "text": "Changed its name and ran with Eli Yishai's Yahad; that list also missed the threshold.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ff621d8c514c43c2",
+          "kind": "text",
+          "field": "histories.9.events.3.inputs.0",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-82df6a779cef8ffb",
+          "kind": "text",
+          "field": "histories.9.events.3.inputs.1",
+          "text": "Religious Zionist Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cf2566887c08d237",
+          "kind": "text",
+          "field": "histories.9.events.3.inputs.2",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-00a455dcb59bea07",
+          "kind": "text",
+          "field": "histories.9.events.3.output",
+          "text": "Religious Zionism joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-96295b8abe99b010",
+          "kind": "text",
+          "field": "histories.9.events.3.text",
+          "text": "The far-right parties shared a ballot; they did not become one party.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-15b733fd4bd8cf04",
+          "kind": "text",
+          "field": "histories.9.events.4.inputs.0",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-901f87442839c71b",
+          "kind": "text",
+          "field": "histories.9.events.4.output",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2c79df6da1712b2e",
+          "kind": "text",
+          "field": "histories.9.events.4.text",
+          "text": "A separate submitted list under Itamar Ben-Gvir.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-426c88bc0d7e15fb",
+          "kind": "text",
+          "field": "histories.10.name",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c9a8207748532c85",
+          "kind": "text",
+          "field": "histories.10.family",
+          "text": "Religious right",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-82758a1c03be386e",
+          "kind": "text",
+          "field": "histories.10.events.0.output",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-326bfe0095e2d8b6",
+          "kind": "text",
+          "field": "histories.10.events.0.text",
+          "text": "Founded as a religious conservative party identified with the Haredi-nationalist stream.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5838bbb55035257b",
+          "kind": "text",
+          "field": "histories.10.events.1.inputs.0",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e6e1fb6638819655",
+          "kind": "text",
+          "field": "histories.10.events.1.inputs.1",
+          "text": "Religious Zionist Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2d075b8f2aea9f4e",
+          "kind": "text",
+          "field": "histories.10.events.1.inputs.2",
+          "text": "Otzma Yehudit",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-6d7d77470b2be96e",
+          "kind": "text",
+          "field": "histories.10.events.1.output",
+          "text": "Religious Zionism joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-35295fa98b57ab26",
+          "kind": "text",
+          "field": "histories.10.events.1.text",
+          "text": "After the election, the shared list divided into separate Knesset factions.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a469eaeb003e92a6",
+          "kind": "text",
+          "field": "histories.10.events.2.inputs.0",
+          "text": "Noam",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b592e19c7145c9b4",
+          "kind": "text",
+          "field": "histories.10.events.2.output",
+          "text": "Noam for Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f828383a2005cc23",
+          "kind": "text",
+          "field": "histories.10.events.2.text",
+          "text": "A separate submitted list under Avi Maoz.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-89b9857ef60cdc25",
+          "kind": "text",
+          "field": "histories.11.name",
+          "text": "Joint List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e426f90dcfc526e9",
+          "kind": "text",
+          "field": "histories.11.family",
+          "text": "Hadash, Ta'al, Balad and Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-004042cf3005b39e",
+          "kind": "text",
+          "field": "histories.11.events.0.inputs.0",
+          "text": "Hadash",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0ef1695a5769dd8a",
+          "kind": "text",
+          "field": "histories.11.events.0.inputs.1",
+          "text": "Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-629f5a72694ca138",
+          "kind": "text",
+          "field": "histories.11.events.0.inputs.2",
+          "text": "Balad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4970a29b056dfd8b",
+          "kind": "text",
+          "field": "histories.11.events.0.inputs.3",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-04c23fa55a074c6a",
+          "kind": "text",
+          "field": "histories.11.events.0.output",
+          "text": "Joint List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bb45d82b1c1c169c",
+          "kind": "text",
+          "field": "histories.11.events.0.text",
+          "text": "Four parties formed a joint electoral list.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2e820dc82a94ef00",
+          "kind": "text",
+          "field": "histories.11.events.1.inputs.0",
+          "text": "Joint List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5a1d5da66e13d9fe",
+          "kind": "text",
+          "field": "histories.11.events.1.output",
+          "text": "Two lists in April; reunified in September",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f9bd94460e0f3c93",
+          "kind": "text",
+          "field": "histories.11.events.1.text",
+          "text": "The original alliance reunited for the September 2019 and 2020 elections.",
+          "numbers": [
+            "2019",
+            "2020",
+            "9"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0d6d55e3317ae970",
+          "kind": "text",
+          "field": "histories.11.events.2.inputs.0",
+          "text": "Joint List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-70202fd0f1a7b3ae",
+          "kind": "text",
+          "field": "histories.11.events.2.output",
+          "text": "Hadash–Ta'al–Balad / separate Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-81bb9dc353961d46",
+          "kind": "text",
+          "field": "histories.11.events.2.text",
+          "text": "Ra'am left the alliance and contested separately.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d3315107a184e8cb",
+          "kind": "text",
+          "field": "histories.11.events.3.inputs.0",
+          "text": "Hadash",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-779d174de28b5978",
+          "kind": "text",
+          "field": "histories.11.events.3.inputs.1",
+          "text": "Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d5ef6c8f0b4cc8cf",
+          "kind": "text",
+          "field": "histories.11.events.3.inputs.2",
+          "text": "Balad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4f250db734727b74",
+          "kind": "text",
+          "field": "histories.11.events.3.inputs.3",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-31c4732120d36fb6",
+          "kind": "text",
+          "field": "histories.11.events.3.output",
+          "text": "Hadash–Ta'al / Balad / Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-e37e68c65c70d1be",
+          "kind": "text",
+          "field": "histories.11.events.3.text",
+          "text": "These were three separate electoral lists.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-768af25e92bd325d",
+          "kind": "text",
+          "field": "histories.11.events.4.inputs.0",
+          "text": "Hadash",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-41414b2e846d4f2b",
+          "kind": "text",
+          "field": "histories.11.events.4.inputs.1",
+          "text": "Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2b263f6cdf236c6d",
+          "kind": "text",
+          "field": "histories.11.events.4.inputs.2",
+          "text": "Balad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a4c52045f8b15210",
+          "kind": "text",
+          "field": "histories.11.events.4.output",
+          "text": "Joint List",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-86c62262d482352d",
+          "kind": "text",
+          "field": "histories.11.events.4.text",
+          "text": "IDI identifies the current alliance's three components. Ra'am remains a separate roster entry.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-63717bc296eb3f56",
+          "kind": "text",
+          "field": "histories.12.name",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4e3a77194b07ae95",
+          "kind": "text",
+          "field": "histories.12.family",
+          "text": "Hadash, Ta'al, Balad and Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-513a2917cf96a23a",
+          "kind": "text",
+          "field": "histories.12.events.0.inputs.0",
+          "text": "New United Arab List (Ra'am)",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8698ce0572393ff4",
+          "kind": "text",
+          "field": "histories.12.events.0.inputs.1",
+          "text": "Mada (Arab Democratic Party)",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8682ab4f1efe1a14",
+          "kind": "text",
+          "field": "histories.12.events.0.output",
+          "text": "Ra'am–Mada joint list",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1a56320d2da6500b",
+          "kind": "text",
+          "field": "histories.12.events.0.text",
+          "text": "Ra'am was established in 1996 and first ran with Mada.",
+          "numbers": [
+            "1996"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2270a778563bc519",
+          "kind": "text",
+          "field": "histories.12.events.1.inputs.0",
+          "text": "Mada",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-370e1e1f45e99e97",
+          "kind": "text",
+          "field": "histories.12.events.1.inputs.1",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-00fdb07dd0b7fa62",
+          "kind": "text",
+          "field": "histories.12.events.1.output",
+          "text": "Mada absorbed into Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b87e89f6f35b3b9e",
+          "kind": "text",
+          "field": "histories.12.events.1.text",
+          "text": "An organizational absorption, rather than a continuing two-party electoral alliance.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7a166f3fe7c875eb",
+          "kind": "text",
+          "field": "histories.12.events.2.inputs.0",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-c135585b34e92336",
+          "kind": "text",
+          "field": "histories.12.events.2.inputs.1",
+          "text": "Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-a6f64824429b3ea3",
+          "kind": "text",
+          "field": "histories.12.events.2.output",
+          "text": "Ra'am–Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2fe87af105ad03f0",
+          "kind": "text",
+          "field": "histories.12.events.2.text",
+          "text": "Ran together in the 2006, 2009 and 2013 elections.",
+          "numbers": [
+            "2006",
+            "2009",
+            "2013"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bf738b3cebd75c74",
+          "kind": "text",
+          "field": "histories.12.events.3.inputs.0",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-83297498316840a5",
+          "kind": "text",
+          "field": "histories.12.events.3.inputs.1",
+          "text": "Hadash",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b76c5bfd024dc217",
+          "kind": "text",
+          "field": "histories.12.events.3.inputs.2",
+          "text": "Ta'al",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-eafb639f072aa6ef",
+          "kind": "text",
+          "field": "histories.12.events.3.inputs.3",
+          "text": "Balad",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bfbcea8c6d656148",
+          "kind": "text",
+          "field": "histories.12.events.3.output",
+          "text": "Joint List (with April 2019 split)",
+          "numbers": [
+            "2019",
+            "4"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b94f150b774c601f",
+          "kind": "text",
+          "field": "histories.12.events.3.text",
+          "text": "Ra'am participated in the broader alliance, then left before the 2021 election.",
+          "numbers": [
+            "2021"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-b7aaa5625678632d",
+          "kind": "text",
+          "field": "histories.12.events.4.inputs.0",
+          "text": "Ra'am",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-bbd18d9afd20f562",
+          "kind": "text",
+          "field": "histories.12.events.4.output",
+          "text": "Separate list in 2026",
+          "numbers": [
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9e741c0fac613d9d",
+          "kind": "text",
+          "field": "histories.12.events.4.text",
+          "text": "Ra'am joined the Bennett–Lapid coalition in 2021; coalition membership did not merge it with those parties.",
+          "numbers": [
+            "2021"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-0f3bdca2b68e34b9",
+          "kind": "text",
+          "field": "histories.13.name",
+          "text": "Reservists–Economic",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2dc9355de4027277",
+          "kind": "text",
+          "field": "histories.13.family",
+          "text": "New organizations",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-950612675a9bc35a",
+          "kind": "text",
+          "field": "histories.13.events.0.inputs.0",
+          "text": "Yoaz Hendel's new organization",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7f85bad2214a897d",
+          "kind": "text",
+          "field": "histories.13.events.0.output",
+          "text": "The Reservists",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-17b193d26dacec2d",
+          "kind": "text",
+          "field": "histories.13.events.0.text",
+          "text": "IDI dates the establishment of Hendel's party to 2025.",
+          "numbers": [
+            "2025"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4a2f86291e1b6de7",
+          "kind": "text",
+          "field": "histories.13.events.1.inputs.0",
+          "text": "The Reservists",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-673fa0ff418b1cfe",
+          "kind": "text",
+          "field": "histories.13.events.1.inputs.1",
+          "text": "The Economic Party",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fb606495f31a5f58",
+          "kind": "text",
+          "field": "histories.13.events.1.output",
+          "text": "Reservists–Economic",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-323cd248d0f3eb65",
+          "kind": "text",
+          "field": "histories.13.events.1.text",
+          "text": "The CEC title identifies a joint list under Yoaz Hendel and Yaron Zelekha. This does not establish a legal merger or continuity with Hendel's former parties.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-3430e72d581f357b",
+          "kind": "text",
+          "field": "histories.14.name",
+          "text": "People of Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-1f1a8c1513ce392c",
+          "kind": "text",
+          "field": "histories.14.family",
+          "text": "New organizations",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-9d94277da9fcd785",
+          "kind": "text",
+          "field": "histories.14.events.0.inputs.0",
+          "text": "Ofer Winter's organization",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-71a3e47f5ff3349f",
+          "kind": "text",
+          "field": "histories.14.events.0.output",
+          "text": "People of Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-46083a4aeb793a3e",
+          "kind": "text",
+          "field": "histories.14.events.0.text",
+          "text": "IDI identifies Amcha Yisrael as a party established ahead of this election by Winter; the CEC includes a separate submitted list. These sources establish no predecessor-party merger or exact registration date.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        }
+      ],
+      "links": [],
+      "numbers": [
+        "15",
+        "1996",
+        "2003",
+        "2006",
+        "2006",
+        "2009",
+        "2013",
+        "2013",
+        "2015",
+        "2019",
+        "2019",
+        "2019",
+        "2019",
+        "2019",
+        "2019",
+        "2020",
+        "2020",
+        "2021",
+        "2021",
+        "2021",
+        "2025",
+        "2025",
+        "2026",
+        "2026",
+        "2026",
+        "2026",
+        "4",
+        "4",
+        "4",
+        "9"
+      ]
+    },
+    {
       "id": "tools:corrections",
       "file": "data/corrections.json",
       "path": "/corrections",

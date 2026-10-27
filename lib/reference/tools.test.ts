@@ -7,8 +7,8 @@ import journeys from "@/data/journeys.json";
 
 describe("trusted interactive copy", () => {
   it("registers actual source revisions without translating control data", () => {
-    expect(toolDocuments).toHaveLength(5);
-    expect(generationDocuments).toHaveLength(48);
+    expect(toolDocuments).toHaveLength(7);
+    expect(generationDocuments).toHaveLength(50);
     for (const source of toolDocuments) {
       expect(source.revision).toBe(sourceRevision(readFileSync(source.file)));
       expect(

@@ -21,7 +21,11 @@ export default function ChangesPage({
   )
     return null;
   return (
-    <section aria-label={t.evidence} data-global-publications>
+    <section
+      aria-label={t.evidence}
+      data-global-publications
+      style={{ minWidth: 0, overflowWrap: "anywhere" }}
+    >
       <h2>{t.evidence}</h2>
       {(notices.state === "unavailable" || !notices.complete) && (
         <p role="status">{r.partial}</p>

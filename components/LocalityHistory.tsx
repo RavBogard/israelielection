@@ -2,11 +2,152 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HISTORY_ELECTIONS, localityHistory } from "@/lib/locality-history";
+import { editionPath, type Lang } from "@/lib/i18n";
+import { mapText, mapMessage, mapDate } from "@/lib/i18n/vote-map";
 import type { VoteMapElection } from "@/lib/votemap";
-import type {MapMode} from "@/lib/votemap-visual";
-export default function LocalityHistory({ code, name, election, list,mode="single", current, geographyRevision }: { code: number; name: string; election: string; list: string;mode?:MapMode;current?:VoteMapElection;geographyRevision?:string }) {
-  const [files, setFiles] = useState<VoteMapElection[]>([]); const [error, setError] = useState(false);
-  useEffect(() => { let active = true; Promise.all(HISTORY_ELECTIONS.map(async (id) => { const res = await fetch(`/vote-map/${id}.json`); if (!res.ok) throw new Error("History unavailable"); return res.json() as Promise<VoteMapElection>; })).then((data) => { if (active) setFiles(data); }).catch(() => { if (active) setError(true); }); return () => { active = false; }; }, []);
-  const exportHref = `/export/locality?${new URLSearchParams({ locality: String(code), election, list,mode,...(election==="2026"&&geographyRevision?{geography:geographyRevision}:{}) })}`;
-  return <section className="vm-history" aria-labelledby="vm-history-h"><h2 id="vm-history-h">{name}: election history</h2><p>Locality code {code}. Lists keep their names in each original election: mergers and alliances changed. These are aggregate results, not evidence that individual voters switched parties. Population, eligibility and locality boundaries can change. Double envelopes are excluded from locality figures.</p><p><Link href={exportHref}>Print or export this locality</Link></p>{error ? <p>History could not be loaded. Reload to try again; missing data is not zero.</p> : !files.length ? <p>Loading locality history…</p> : <div className="vm-tw"><table><thead><tr><th>Election</th><th>Eligible</th><th>Voted / valid</th><th>Turnout</th><th>Original election lists</th><th>Source</th></tr></thead><tbody>{localityHistory(current?[...files,current]:files,code).map(({ election:e,row,turnout,lists }) => <tr key={e.id}><th scope="row">{e.label}<br /><time>{e.date}</time></th><td>{row ? row[1].toLocaleString("en-US") : "Not available"}</td><td>{row ? `${row[2].toLocaleString("en-US")} / ${row[3].toLocaleString("en-US")}` : "Not available"}</td><td>{turnout === null ? "Not available" : `${(turnout*100).toFixed(1)}%`}</td><td>{row ? <details><summary>{lists[0]?.name ?? "No named list"}: {lists[0]?.share === null ? "share unavailable" : `${((lists[0]?.share ?? 0)*100).toFixed(1)}%`}; all list results</summary><ul>{lists.map((l) => <li key={l.letters}>{l.name} ({l.letters}): {l.votes.toLocaleString("en-US")}, {l.share === null ? "share unavailable" : `${(l.share*100).toFixed(2)}%`}</li>)}<li>Other lists: {(row[3]-lists.reduce((n,l)=>n+l.votes,0)).toLocaleString("en-US")}</li></ul></details> : "No row in this election file"}</td><td><a href={e.source.csv}>CEC locality file</a><br />Fetched {e.source.fetched}</td></tr>)}</tbody></table></div>}</section>;
+import type { MapMode } from "@/lib/votemap-visual";
+export default function LocalityHistory({
+  code,
+  name,
+  election,
+  list,
+  mode = "single",
+  current,
+  geographyRevision,
+  lang = "en",
+}: {
+  code: number;
+  name: string;
+  election: string;
+  list: string;
+  mode?: MapMode;
+  current?: VoteMapElection;
+  geographyRevision?: string;
+  lang?: Lang;
+}) {
+  const [files, setFiles] = useState<VoteMapElection[]>([]),
+    [error, setError] = useState(false),
+    t = mapText(lang);
+  useEffect(() => {
+    let active = true;
+    const controller = new AbortController();
+    Promise.all(
+      HISTORY_ELECTIONS.map(async (id) => {
+        const res = await fetch(`/vote-map/${id}.json`, {
+          signal: controller.signal,
+        });
+        if (!res.ok) throw Error("history_unavailable");
+        return res.json() as Promise<VoteMapElection>;
+      }),
+    )
+      .then((data) => {
+        if (active) setFiles(data);
+      })
+      .catch(() => {
+        if (active) setError(true);
+      });
+    return () => {
+      active = false;
+      controller.abort();
+    };
+  }, []);
+  const exportHref = editionPath(
+    `/export/locality?${new URLSearchParams({ locality: String(code), election, list, mode, ...(election === "2026" && geographyRevision ? { geography: geographyRevision } : {}) })}`,
+    lang,
+  )!;
+  const number = (n: number) => n.toLocaleString("en-US"),
+    share = (n: number | null | undefined) =>
+      n == null ? t.notAvailable : `${(n * 100).toFixed(2)}%`;
+  return (
+    <section className="vm-history" aria-labelledby="vm-history-h">
+      <h2 id="vm-history-h">
+        <bdi lang="en">{name}</bdi>: {t.history}
+      </h2>
+      <p>{mapMessage(t.historyNote, code)}</p>
+      <p>
+        <Link href={exportHref}>{t.export}</Link>
+      </p>
+      {error ? (
+        <p role="status">{t.historyError}</p>
+      ) : !files.length ? (
+        <p role="status">{t.historyLoading}</p>
+      ) : (
+        <div
+          className="vm-tw"
+          role="region"
+          aria-label={t.history}
+          tabIndex={0}
+        >
+          <table>
+            <thead>
+              <tr>
+                <th>{t.election}</th>
+                <th>{t.eligible}</th>
+                <th>
+                  {t.voted} / {t.valid}
+                </th>
+                <th>{t.turnout}</th>
+                <th>{t.originalLists}</th>
+                <th>{t.source}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {localityHistory(current ? [...files, current] : files, code).map(
+                ({ election: e, row, turnout, lists }) => (
+                  <tr key={e.id}>
+                    <th scope="row">
+                      <time dateTime={e.date}>{mapDate(e.date, lang)}</time>
+                    </th>
+                    <td>{row ? number(row[1]) : t.notAvailable}</td>
+                    <td>
+                      {row
+                        ? `${number(row[2])} / ${number(row[3])}`
+                        : t.notAvailable}
+                    </td>
+                    <td>{share(turnout)}</td>
+                    <td>
+                      {row ? (
+                        <details>
+                          <summary>
+                            <bdi lang="en">{lists[0]?.name ?? ""}</bdi>
+                            {lists[0] ? `: ${share(lists[0].share)}. ` : ""}
+                            {t.allLists}
+                          </summary>
+                          <ul>
+                            {lists.map((l) => (
+                              <li key={l.letters}>
+                                <bdi lang="en">{l.name}</bdi> (
+                                <bdi>{l.letters}</bdi>): {number(l.votes)},{" "}
+                                {share(l.share)}
+                              </li>
+                            ))}
+                            <li>
+                              {t.other}:{" "}
+                              {number(
+                                row[3] - lists.reduce((n, l) => n + l.votes, 0),
+                              )}
+                            </li>
+                          </ul>
+                        </details>
+                      ) : (
+                        t.noRow
+                      )}
+                    </td>
+                    <td>
+                      <a href={e.source.csv}>{t.localSource}</a>
+                      <br />
+                      {t.fetched}:{" "}
+                      <time dateTime={e.source.fetched}>
+                        {mapDate(e.source.fetched, lang)}
+                      </time>
+                    </td>
+                  </tr>
+                ),
+              )}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
 }

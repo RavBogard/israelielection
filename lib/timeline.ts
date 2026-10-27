@@ -18,12 +18,29 @@ export type Election = {
   outcomeSource?: Source;
 };
 
-export type Government = { pm: string; party: string; from: string; to: string; source: Source };
+export type Government = {
+  pm: string;
+  party: string;
+  from: string;
+  to: string;
+  source: Source;
+};
 
 export type EventKind = "war" | "peace" | "politics" | "law" | "society";
-export type TimelineEvent = { date: string; title: string; text: string; kind: EventKind; source: Source };
+export type TimelineEvent = {
+  date: string;
+  title: string;
+  text: string;
+  kind: EventKind;
+  source: Source;
+};
 
-export type Timeline = { checked: string; elections: Election[]; governments: Government[]; events: TimelineEvent[] };
+export type Timeline = {
+  checked: string;
+  elections: Election[];
+  governments: Government[];
+  events: TimelineEvent[];
+};
 
 export const START_YEAR = 1977;
 
@@ -40,7 +57,20 @@ export function labelOf(month: number): { year: number; month: string } {
   return { year, month: MONTHS[month0] };
 }
 
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 /** "May 17, 1977" for an ISO date. */
 export function longDate(iso: string): string {
@@ -49,14 +79,22 @@ export function longDate(iso: string): string {
 }
 
 /** The government in office during a month: the last one sworn in at or before it. */
-export function governmentAt(gs: Government[], month: number): Government | undefined {
+export function governmentAt(
+  gs: Government[],
+  month: number,
+): Government | undefined {
   let found: Government | undefined;
-  for (const g of gs) if (monthOf(g.from) <= month) found = g;
+  for (const g of gs)
+    if (monthOf(g.from) <= month && (!g.to || monthOf(g.to) >= month))
+      found = g;
   return found;
 }
 
 /** The most recent Knesset election at or before a month. */
-export function electionAt(es: Election[], month: number): Election | undefined {
+export function electionAt(
+  es: Election[],
+  month: number,
+): Election | undefined {
   let found: Election | undefined;
   for (const e of es) if (monthOf(e.date) <= month) found = e;
   return found;
@@ -72,7 +110,8 @@ export function eventAt(evs: TimelineEvent[], month: number): number {
 }
 
 /** "1970s", "1980s", … for a date. */
-export const decadeOf = (iso: string) => `${Math.floor(Number(iso.slice(0, 4)) / 10) * 10}s`;
+export const decadeOf = (iso: string) =>
+  `${Math.floor(Number(iso.slice(0, 4)) / 10) * 10}s`;
 
 /**
  * Lanes for marks along a track so none overlap: each mark (positions 0–1, in order) takes the lowest

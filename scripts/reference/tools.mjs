@@ -4,6 +4,29 @@ import { sourceRevision } from "../../lib/reference/source.mjs";
 import { invariants } from "./source-blocks.mjs";
 const definitions = [
   {
+    id: "tools:timeline",
+    file: "data/timeline.json",
+    path: "/timeline",
+    title: "Political timeline",
+    fields: [
+      /^events\.\d+\.(?:title|text)$/,
+      /^elections\.\d+\.(?:outcome|first\.list|second\.list)$/,
+      /^governments\.\d+\.(?:pm|party)$/,
+    ],
+  },
+  {
+    id: "tools:party-history",
+    file: "data/party-history.json",
+    path: "/party-history",
+    title: "Party histories",
+    fields: [
+      /^scope$/,
+      /^histories\.\d+\.(?:name|family)$/,
+      /^histories\.\d+\.events\.\d+\.(?:text|output)$/,
+      /^histories\.\d+\.events\.\d+\.inputs\.\d+$/,
+    ],
+  },
+  {
     id: "tools:corrections",
     file: "data/corrections.json",
     path: "/corrections",

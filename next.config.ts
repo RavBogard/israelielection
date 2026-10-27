@@ -4,6 +4,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
+    "/{,he/,ar/,fa/,de/,fr/,zh/}timeline": ["./data/timeline.json"],
+    "/{,he/,ar/,fa/,de/,fr/,zh/}party-history": ["./data/party-history.json"],
     "/{,he/,ar/,fa/,de/,fr/,zh/}corrections": ["./data/corrections.json"],
     "/{,he/,ar/,fa/,de/,fr/,zh/}glossary": ["./data/glossary.json"],
     "/{,he/,ar/,fa/,de/,fr/,zh/}{start,match}": [
@@ -18,6 +20,8 @@ const nextConfig: NextConfig = {
     ],
     "/{,he/,ar/,fa/,de/,fr/,zh/}american-lens": ["./data/charts/*.json"],
     "/api/reference/worker": [
+      "./data/timeline.json",
+      "./data/party-history.json",
       "./data/corrections.json",
       "./data/glossary.json",
       "./data/quiz.json",

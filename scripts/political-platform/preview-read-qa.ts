@@ -73,7 +73,12 @@ async function main() {
   let failed = false;
   const requireAllLocales = process.argv.includes("--require-all-locales"),
     requireChanges = process.argv.includes("--require-global-changes");
-  for (const locale of locales) {
+  if (
+    process.argv.includes("--mobile-only") &&
+    !process.argv.includes("--mobile-dark")
+  )
+    throw Error("mobile_checks_required");
+  for (const locale of process.argv.includes("--mobile-only") ? [] : locales) {
     const response = await fetchOwned(
         `/api/v2/publications?lang=${locale}&election=il-knesset-26&limit=10`,
       ),
@@ -198,6 +203,72 @@ async function main() {
       failed ||= !passed;
     }
   }
+  if (process.argv.includes("--mobile-dark")) {
+    const { chromium } = await import("@playwright/test");
+    const browser = await chromium.launch({ headless: true });
+    try {
+      for (const locale of ["en", "he"]) {
+        const context = await browser.newContext({
+          viewport: { width: 390, height: 844 },
+          colorScheme: "dark",
+          locale: locale === "en" ? "en-US" : "he",
+        });
+        await context.addCookies([
+          { name: "lang", value: locale, url: origin },
+        ]);
+        await context.route("**/*", async (route) => {
+          if (new URL(route.request().url()).origin !== origin)
+            return route.abort();
+          const requestHeaders = { ...route.request().headers() };
+          delete requestHeaders["x-vercel-protection-bypass"];
+          if (bypass) requestHeaders["x-vercel-protection-bypass"] = bypass;
+          return route.continue({ headers: requestHeaders });
+        });
+        const page = await context.newPage();
+        let pageErrors = 0;
+        page.on("pageerror", () => pageErrors++);
+        const response = await page.goto(
+          origin + (locale === "en" ? "" : "/he") + "/changes",
+          { waitUntil: "networkidle", timeout: 60000 },
+        );
+        const notice = page.locator("[data-global-publications]");
+        await notice.waitFor({ state: "visible", timeout: 15000 });
+        const overflow = await page.evaluate(
+          () => document.documentElement.scrollWidth > innerWidth + 2,
+        );
+        const observed = await notice.locator("time").count(),
+          sources = await notice
+            .locator('a[href^="https://api.cbs.gov.il/"]')
+            .count();
+        await page.screenshot({
+          path: `.vercel/platform-preview-changes-${locale}-dark.png`,
+          fullPage: true,
+        });
+        const passed =
+          response?.status() === 200 &&
+          !overflow &&
+          pageErrors === 0 &&
+          observed > 0 &&
+          sources > 0;
+        checks.push({
+          kind: "browser",
+          locale,
+          status: response?.status(),
+          passed,
+          overflow,
+          pageErrors,
+          observed,
+          sources,
+          dark: true,
+          width: 390,
+        });
+        failed ||= !passed;
+        await context.close();
+      }
+    } finally {
+      await browser.close();
+    }
+  }
   const receipt = {
     status: failed ? "failed" : "passed",
     checkedAt: new Date().toISOString(),
@@ -210,7 +281,9 @@ async function main() {
     sourceMutations: 0,
   };
   await writeFile(
-    ".vercel/platform-preview-read-qa.receipt.json",
+    process.argv.includes("--mobile-only")
+      ? ".vercel/platform-preview-mobile-qa.receipt.json"
+      : ".vercel/platform-preview-read-qa.receipt.json",
     JSON.stringify(receipt, null, 2),
     { mode: 0o600 },
   );
