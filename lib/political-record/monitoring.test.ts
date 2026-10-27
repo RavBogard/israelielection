@@ -12,7 +12,9 @@ import {
   type MonitorCheck,
 } from "./monitor-types";
 import { sourceAvailabilityChecks, groupedWarnings } from "./monitor-sources";
+import { publicStoredSourceChecks } from "./monitor-public-sources";
 import { emptyLedger } from "../election-lifecycle/resolver";
+import type { PoliticalEvent } from "../election-lifecycle/types";
 import { IncidentStore } from "./incidents";
 import type { SqlPool } from "./postgres";
 const now = "2026-10-28T06:01:00Z";
@@ -159,6 +161,65 @@ it("distinguishes absent configuration, checked-no-new, stale and disputed sourc
       (group) => group.count > 1,
     ),
   ).toBe(true);
+});
+it("historic failed articles stop affecting coverage after supersession, while active/pending failures remain", () => {
+  const source = sourceRegistry.sources.find((row) =>
+    (row.partyIds as string[]).includes("likud"),
+  )!;
+  const ledger = emptyLedger();
+  const ref = {
+    id: `${source.id}:old`,
+    publisher: "Party",
+    title: "Statement",
+    url: "https://www.likud.org.il/old",
+    authority: "party" as const,
+    publishedAt: now,
+    observedAt: now,
+    captureHash: "a".repeat(64),
+  };
+  ledger.health = [
+    {
+      sourceId: source.id,
+      authority: "party",
+      status: "healthy",
+      checkedAt: now,
+      lastSuccessfulAt: now,
+      reason: null,
+    },
+    {
+      sourceId: ref.id,
+      authority: "party",
+      status: "unavailable",
+      checkedAt: now,
+      lastSuccessfulAt: null,
+      reason: "source_unavailable",
+    },
+  ];
+  ledger.events = [
+    { id: "old", status: "superseded", sources: [ref] } as PoliticalEvent,
+  ];
+  const state = () =>
+    sourceAvailabilityChecks(ledger, now, true).find((row) =>
+      row.subjects.includes(source.id),
+    )?.state;
+  expect(state()).toBe("healthy_no_new");
+  ledger.events[0].status = "confirmed";
+  expect(state()).toBe("unavailable");
+  ledger.events[0].status = "retracted";
+  ledger.extractionPending = [ref.id];
+  expect(state()).toBe("unavailable");
+});
+it("CI source signal reads only stored public status and exports no response/body/provider details", async () => {
+  const requests: string[] = [];
+  const checks = await publicStoredSourceChecks(now, async (input) => {
+    requests.push(String(input));
+    return new Response("private-like response diagnostics", { status: 503 });
+  });
+  expect(requests).toEqual([
+    "https://www.israelielection.org/api/election-lifecycle",
+  ]);
+  expect(checks[0].state).toBe("unavailable");
+  expect(JSON.stringify(checks)).not.toContain("private-like");
 });
 let db: PGlite, store: IncidentStore, pool: SqlPool;
 beforeAll(async () => {

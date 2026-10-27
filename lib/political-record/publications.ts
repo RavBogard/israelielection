@@ -17,6 +17,7 @@ export type IndependentReview = {
   reviewRunId: string;
   provider: string;
   model: string;
+  verificationCaptureId?: string;
 };
 const editionId = (revision: string, locale: string) =>
   `publication-edition:${revision}:${locale}`;
@@ -55,8 +56,15 @@ async function evidence(
     const record = await repository.getRevision(id as string);
     if (
       !record ||
-      record.status !== "confirmed" ||
-      record.evidenceClass !== "primary_confirmed" ||
+      !(
+        (record.status === "confirmed" &&
+          record.evidenceClass === "primary_confirmed") ||
+        (record.status === "reported" &&
+          ["reported_corroborated", "attributed_analysis"].includes(
+            record.evidenceClass,
+          ) &&
+          record.provenance.parserVersion === "reviewed-briefing-claim-v1")
+      ) ||
       record.provenance.missingCapture ||
       !record.provenance.sourceIds.length ||
       !record.provenance.captureIds.length
@@ -344,6 +352,14 @@ export async function projectPublication(
         publishedAt: source.publishedAt,
         observedAt: source.observedAt,
       })),
+      evidenceClasses: [...new Set(facts.map((fact) => fact.evidenceClass))],
+      classifications: [
+        ...new Set(
+          facts
+            .map((fact) => fact.payload.classification)
+            .filter((value) => typeof value === "string"),
+        ),
+      ],
     },
   };
 }

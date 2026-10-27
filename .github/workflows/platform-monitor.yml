@@ -62,6 +62,7 @@ jobs:
         env:
           PLATFORM_MONITOR_NAMESPACE: ${{ inputs.target == 'preview' && 'preview' || 'production' }}
           PLATFORM_MONITOR_STORE_ENABLED: ${{ vars.PLATFORM_MONITOR_STORE_ENABLED }}
+          PLATFORM_MONITOR_SOURCE_STATUS_ENABLED: ${{ inputs.target != 'preview' && vars.PLATFORM_MONITOR_SOURCE_STATUS_ENABLED || 'false' }}
           POLITICAL_RECORD_DATABASE_URL: ${{ secrets.POLITICAL_RECORD_DATABASE_URL }}
         run: npx tsx scripts/political-platform/monitor-summary.ts --run --out=.vercel/platform-monitor-summary.json
       - name: Grouped redacted summary

@@ -38,6 +38,7 @@ async function main() {
           "003-platform-workspaces.sql",
           "004-distribution.sql",
           "005-operations.sql",
+          "006-publication-evidence.sql",
         ].map((file) => readFile(path.resolve("db", file), "utf8")),
       )
     ).join("\n");
@@ -45,7 +46,14 @@ async function main() {
       console.log(
         JSON.stringify({
           status: "dry_run",
-          migrations: ["001-political-record", "002-subscriptions"],
+          migrations: [
+            "001-political-record",
+            "002-subscriptions",
+            "003-platform-workspaces",
+            "004-distribution",
+            "005-operations",
+            "006-publication-evidence",
+          ],
           bytes: Buffer.byteLength(sql),
         }),
       );

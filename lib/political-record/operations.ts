@@ -3,6 +3,11 @@ import { configuredPoliticalRecords } from "./postgres";
 import { configuredCaptureArchive } from "./blob";
 import { collectCbs } from "./cbs";
 import { shadowLifecycle } from "./shadow";
+import {
+  requestPublicationCycle,
+  registerLivePublicationInputs,
+} from "./producer";
+import { stageLifecycleNotices } from "./producer-lifecycle";
 import type { LifecycleLedger } from "../election-lifecycle/types";
 /** Bounded shadow mirror; a failed mirror never changes the authoritative Redis publication. */
 export async function mirrorPublishedLifecycle(ledger: LifecycleLedger) {
@@ -39,6 +44,22 @@ export async function mirrorPublishedLifecycle(ledger: LifecycleLedger) {
       { ...ledger, events, seatSnapshots, captures },
       archive,
     );
+    if (process.env.POLITICAL_PUBLICATION_PRODUCER_ENABLED === "true") {
+      const now = new Date().toISOString();
+      const staged = await stageLifecycleNotices(
+        repository,
+        archive,
+        ledger,
+        now,
+      );
+      await registerLivePublicationInputs(
+        repository,
+        "lifecycle",
+        staged.revisionIds,
+        now,
+      );
+      await requestPublicationCycle();
+    }
     return {
       status: result.ready ? "compared" : "mismatch",
       compared: result.compared,
@@ -60,7 +81,24 @@ export async function collectPlatformSources() {
   try {
     repository = configuredPoliticalRecords();
     if (!repository) return { status: "unconfigured" };
-    return await collectCbs(repository, configuredCaptureArchive());
+    const now = new Date().toISOString();
+    const result = await collectCbs(
+      repository,
+      configuredCaptureArchive(),
+      now,
+    );
+    if (
+      process.env.POLITICAL_PUBLICATION_PRODUCER_ENABLED === "true" &&
+      "revisionIds" in result
+    )
+      await registerLivePublicationInputs(
+        repository,
+        "cbs",
+        result.revisionIds,
+        now,
+      );
+    await requestPublicationCycle();
+    return result;
   } catch {
     return { status: "source_unavailable", sourceId: "cbs:price:120010" };
   } finally {

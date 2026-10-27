@@ -6,21 +6,34 @@ import type {
   AtomicClaim,
   ClaimReview,
 } from "./briefing-verified";
+export type BriefingTranslationEvidence = {
+  locale: import("./political-record/email").EmailLocale;
+  model: string;
+  sentences: { id: string; text: string; sourceHash: string }[];
+  review: {
+    id: string;
+    supported: boolean;
+    complete: boolean;
+    attributionPreserved: boolean;
+  }[];
+};
+export type BriefingEvidenceBundle = {
+  date: string;
+  model: string;
+  articles: CapturedArticle[];
+  claims: AtomicClaim[];
+  review: ClaimReview[];
+  translations?: BriefingTranslationEvidence[];
+  draftClaims?: AtomicClaim[];
+  reviewedClaims?: AtomicClaim[];
+  discarded?: {
+    claimId: string;
+    code: string;
+    diagnostic: Record<string, unknown>;
+  }[];
+};
 export async function archiveBriefingEvidence(
-  bundle: {
-    date: string;
-    model: string;
-    articles: CapturedArticle[];
-    claims: AtomicClaim[];
-    review: ClaimReview[];
-    draftClaims?: AtomicClaim[];
-    reviewedClaims?: AtomicClaim[];
-    discarded?: {
-      claimId: string;
-      code: string;
-      diagnostic: Record<string, unknown>;
-    }[];
-  },
+  bundle: BriefingEvidenceBundle,
   dryRun: boolean,
 ) {
   if (dryRun)

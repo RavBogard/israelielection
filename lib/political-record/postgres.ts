@@ -22,6 +22,28 @@ export interface SqlPool {
 /** DDL is never invoked here. Append-only conflict checks reject mutated historical IDs. */
 export class PostgresPoliticalRecords implements PoliticalRecordRepository {
   constructor(private pool: SqlPool) {}
+  async producerJobs(
+    limit = 25,
+    includeBlocked = false,
+    now = new Date().toISOString(),
+  ) {
+    const client = await this.pool.connect();
+    try {
+      const result = await client.query(
+        "SELECT * FROM (SELECT DISTINCT ON(record_id) * FROM political_record.record_revisions WHERE kind='source_health' AND provenance->>'parserVersion'='private-publication-job-v1' ORDER BY record_id,insertion_cursor DESC) jobs WHERE payload->>'stage'=ANY($1::text[]) ORDER BY ((payload->>'nextAt')::timestamptz<=$3::timestamptz) DESC,(payload->>'stage'='review') DESC,(payload->>'nextAt')::timestamptz,insertion_cursor LIMIT $2",
+        [
+          includeBlocked
+            ? ["queued", "review", "blocked"]
+            : ["queued", "review"],
+          Math.max(1, Math.min(100, limit)),
+          now,
+        ],
+      );
+      return result.rows.map((row) => this.decode(row));
+    } finally {
+      client.release();
+    }
+  }
   async getCapture(captureId: string): Promise<PrivateCaptureRef | null> {
     if (!/^[a-f0-9]{64}$/.test(captureId))
       throw new Error("capture_id_invalid");
@@ -293,6 +315,7 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
   async page(query: {
     kind: RecordKind;
     electionId?: string;
+    includeGlobal?: boolean;
     after: string;
     asOf?: string;
     limit: number;
@@ -312,7 +335,7 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
           ).rows[0].cursor,
         );
       const base =
-        "SELECT * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND kind=$2 AND ($3::text IS NULL OR election_id=$3)";
+        "SELECT * FROM political_record.record_revisions WHERE insertion_cursor<=$1::bigint AND kind=$2 AND ($3::text IS NULL OR election_id=$3 OR ($6::boolean AND election_id IS NULL))";
       const selected =
         query.view === "latest"
           ? `SELECT DISTINCT ON (record_id) * FROM (${base}) base ORDER BY record_id,insertion_cursor DESC`
@@ -325,6 +348,7 @@ export class PostgresPoliticalRecords implements PoliticalRecordRepository {
           query.electionId ?? null,
           query.after,
           query.limit + 1,
+          query.includeGlobal ?? false,
         ],
       );
       const rows = result.rows.slice(0, query.limit);

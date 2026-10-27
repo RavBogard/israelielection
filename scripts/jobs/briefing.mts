@@ -1,4 +1,8 @@
-import { archiveBriefingEvidence } from "../../lib/briefing-archive";
+import {
+  archiveBriefingEvidence,
+  type BriefingTranslationEvidence,
+} from "../../lib/briefing-archive";
+import { queueReviewedBriefing } from "../../lib/political-record/producer";
 /** Daily article-grounded briefing. Existing files remain immutable unless --force is explicit. */
 import {
   appendFileSync,
@@ -6,6 +10,7 @@ import {
   mkdirSync,
   writeFileSync,
   renameSync,
+  readFileSync,
 } from "node:fs";
 import { GEMINI_MODEL } from "../../lib/ai";
 import { generateJson } from "../../lib/gemini";
@@ -47,6 +52,14 @@ if (existsSync(file) && !args.includes("--force")) {
   console.log(
     "Existing briefing retained. Use --force only for an explicit correction.",
   );
+  if (!dry)
+    console.log(
+      JSON.stringify({
+        producer: await queueReviewedBriefing(
+          JSON.parse(readFileSync(file, "utf8")) as Briefing,
+        ),
+      }),
+    );
   output("published", 0);
   process.exit(0);
 }
@@ -106,19 +119,7 @@ try {
   const claims = reviewed.claims,
     discarded = [...draftCheck.discarded, ...reviewed.discarded];
   if (discarded.length) console.log(JSON.stringify({ discarded }));
-  const capture = await archiveBriefingEvidence(
-    {
-      date,
-      model: GEMINI_MODEL,
-      articles,
-      claims,
-      review: review.claims,
-      draftClaims: draft.claims,
-      reviewedClaims: draftCheck.claims,
-      discarded,
-    },
-    dry,
-  );
+  const translationEvidence: BriefingTranslationEvidence[] = [];
   briefing = {
     date,
     generatedAt: new Date().toISOString(),
@@ -131,7 +132,6 @@ try {
       sourceAttempts: attempted,
       capturedSources: articles.length,
     },
-    capture,
     verification: {
       model: GEMINI_MODEL,
       reviewedAt: new Date().toISOString(),
@@ -239,6 +239,15 @@ try {
         )
       )
         throw Error("translation_review_rejected");
+      translationEvidence.push({
+        locale: lang,
+        model: GEMINI_MODEL,
+        sentences: translated.sentences.map((row, i) => ({
+          ...row,
+          sourceHash: sentenceHash(claims[i].text),
+        })),
+        review: checked.sentences,
+      });
       briefing.sentences.forEach((s, i) => {
         s.translations![lang] = {
           text: translated.sentences[i].text,
@@ -253,6 +262,20 @@ try {
       console.log(JSON.stringify({ lang, status: "pending" }));
     }
   }
+  briefing.capture = await archiveBriefingEvidence(
+    {
+      date,
+      model: GEMINI_MODEL,
+      articles,
+      claims,
+      review: review.claims,
+      draftClaims: draft.claims,
+      reviewedClaims: draftCheck.claims,
+      discarded,
+      translations: translationEvidence,
+    },
+    dry,
+  );
 } catch (error) {
   briefing = null;
   if (error instanceof BriefingValidationError)
@@ -272,6 +295,10 @@ if (briefing && !dry) {
   const temp = `${file}.tmp`;
   writeFileSync(temp, JSON.stringify(briefing, null, 2) + "\n");
   renameSync(temp, file);
+  // Durable publication failure cannot undo a verified public briefing. No sends here.
+  console.log(
+    JSON.stringify({ producer: await queueReviewedBriefing(briefing) }),
+  );
 }
 output("published", briefing && !dry ? 1 : 0);
 console.log(report);

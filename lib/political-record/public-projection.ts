@@ -99,6 +99,8 @@ export function projectPublic(value: unknown): unknown {
           "currentTextUnavailable",
           "locale",
           "editionRevisionId",
+          "evidenceClasses",
+          "classifications",
         ]),
         ...(payload.currentTextUnavailable === false
           ? {

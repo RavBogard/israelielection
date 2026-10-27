@@ -153,6 +153,7 @@ export async function collectCbs(
     seriesId: 120010,
     observations: observations.length,
     revisions: result.records,
+    revisionIds: records.map((record) => record.revisionId),
     privateArchive: capture ? "available" : "unconfigured",
   };
 }

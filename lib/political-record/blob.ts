@@ -15,7 +15,16 @@ export class PrivateBlobArchive implements CaptureArchive {
     return value;
   }
   async read(ref: PrivateCaptureRef) {
-    const result = await this.client.get(this.key(ref.storageKey), {
+    const body = await this.readHash(ref.contentSha256);
+    if (
+      ref.storageKey !== `private/${ref.contentSha256}` ||
+      body.length !== ref.byteLength
+    )
+      throw new Error("capture_content_conflict");
+    return body;
+  }
+  async readHash(hash: string) {
+    const result = await this.client.get(this.key(`private/${hash}`), {
       access: "private",
       token: this.token,
       useCache: false,
@@ -25,11 +34,7 @@ export class PrivateBlobArchive implements CaptureArchive {
     const body = new Uint8Array(
       await new Response(result.stream).arrayBuffer(),
     );
-    if (
-      body.length !== ref.byteLength ||
-      contentHash(body) !== ref.contentSha256
-    )
-      throw new Error("capture_content_conflict");
+    if (contentHash(body) !== hash) throw new Error("capture_content_conflict");
     return body;
   }
   async put(source: SourceRecord, body: Uint8Array, mediaType: string) {

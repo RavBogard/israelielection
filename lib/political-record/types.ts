@@ -28,6 +28,7 @@ export type RecordKind =
 export type EvidenceClass =
   | "primary_confirmed"
   | "reported_corroborated"
+  | "attributed_analysis"
   | "legacy_import"
   | "model_output";
 export type AssertionStatus =
@@ -106,6 +107,12 @@ export type RecordBatch = {
   outbox: OutboxIntent[];
 };
 export interface PoliticalRecordRepository {
+  /** Private operational queue, filtered after latest-per-identity selection, never a public API. */
+  producerJobs?(
+    limit: number,
+    includeBlocked?: boolean,
+    now?: string,
+  ): Promise<PoliticalRecord[]>;
   compareAndAppend(
     batch: RecordBatch,
     guard: { recordId: string; revisionId: string | null },

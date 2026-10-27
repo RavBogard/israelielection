@@ -10,6 +10,8 @@ export interface CaptureArchive {
     mediaType: string,
   ): Promise<PrivateCaptureRef>;
   read(ref: PrivateCaptureRef): Promise<Uint8Array>;
+  /** Authenticated content-addressed lookup; never exposed by public routes. */
+  readHash?(hash: string): Promise<Uint8Array>;
 }
 export const contentHash = (body: Uint8Array) =>
   createHash("sha256").update(body).digest("hex");
@@ -64,6 +66,11 @@ export class LocalCaptureArchive implements CaptureArchive {
       contentHash(body) !== ref.contentSha256
     )
       throw new Error("capture_content_conflict");
+    return body;
+  }
+  async readHash(hash: string) {
+    const body = await readFile(this.filename(`private/${hash}`));
+    if (contentHash(body) !== hash) throw new Error("capture_content_conflict");
     return body;
   }
 }

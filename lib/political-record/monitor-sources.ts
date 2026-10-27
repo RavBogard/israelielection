@@ -30,10 +30,14 @@ export function sourceAvailabilityChecks(
       },
     ];
   const checks: MonitorCheck[] = registry.sources.map((source) => {
+    const refs = revalidationPlan(ledger, source.id, now);
+    const active = new Set(refs.all.map((row) => row.ref.id));
+    const pending = new Set(ledger.extractionPending ?? []);
     const health = ledger.health.filter(
         (row) =>
           row.sourceId === source.id ||
-          row.sourceId.startsWith(source.id + ":"),
+          (row.sourceId.startsWith(source.id + ":") &&
+            (active.has(row.sourceId) || pending.has(row.sourceId))),
       ),
       index = health.find((row) => row.sourceId === source.id),
       base = {
@@ -78,12 +82,11 @@ export function sourceAvailabilityChecks(
     if (index.status === "complete")
       return { ...base, state: "settled", reasonCode: "completed_archive" };
     const cadence = cadenceMetadata(
-        now,
-        index.lastSuccessfulAt,
-        index.checkedAt,
-        false,
-      ),
-      refs = revalidationPlan(ledger, source.id, now);
+      now,
+      index.lastSuccessfulAt,
+      index.checkedAt,
+      false,
+    );
     if (
       Date.parse(now) > Date.parse(cadence.expiresAt) ||
       refs.all.some((ref) => Date.parse(now) > Date.parse(ref.expiresAt))

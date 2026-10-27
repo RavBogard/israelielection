@@ -470,8 +470,16 @@ export class SubscriptionService {
       ).rows[0];
       if (
         !fact ||
-        fact.assertion_status !== "confirmed" ||
-        fact.evidence_class !== "primary_confirmed" ||
+        !(
+          (fact.assertion_status === "confirmed" &&
+            fact.evidence_class === "primary_confirmed") ||
+          (fact.assertion_status === "reported" &&
+            ["reported_corroborated", "attributed_analysis"].includes(
+              String(fact.evidence_class),
+            ) &&
+            (fact.provenance as { parserVersion?: unknown })?.parserVersion ===
+              "reviewed-briefing-claim-v1")
+        ) ||
         (!historicalQualificationOnly && !(await this.eligible(fact, now)))
       )
         return null;

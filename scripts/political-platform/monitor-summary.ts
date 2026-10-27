@@ -8,6 +8,8 @@ import {
 } from "../../lib/political-record/monitor-types";
 import { recordMonitorReport } from "../../lib/political-record/monitor-operations";
 import { groupedWarnings } from "../../lib/political-record/monitor-sources";
+import { publicStoredSourceChecks } from "../../lib/political-record/monitor-public-sources";
+import { publicationProducerChecks } from "../../lib/political-record/monitor-producer";
 async function main() {
   if (!process.argv.includes("--run")) {
     console.log(
@@ -28,6 +30,11 @@ async function main() {
     /* Unknown is not pass. */
   }
   const checks: MonitorCheck[] = renderedChecks(browser, now);
+  if (process.env.PLATFORM_MONITOR_SOURCE_STATUS_ENABLED === "true")
+    checks.push(
+      ...(await publicStoredSourceChecks(now)),
+      ...(await publicationProducerChecks(now)),
+    );
   try {
     const regions = JSON.parse(
       await readFile(".vercel/platform-monitor-regions.json", "utf8"),
@@ -74,6 +81,17 @@ async function main() {
       persistence,
     }),
   );
+  if (
+    process.env.PLATFORM_MONITOR_SOURCE_STATUS_ENABLED === "true" &&
+    checks.some(
+      (check) =>
+        (check.scope === "source" ||
+          check.id === "platform:publication_producer" ||
+          check.id === "sources:public_stored_status") &&
+        ["unavailable", "stale", "disputed"].includes(check.state),
+    )
+  )
+    process.exitCode = 1;
 }
 main().catch(() => {
   console.error(

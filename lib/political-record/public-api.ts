@@ -204,6 +204,7 @@ export async function publicApi(request: Request, collection: string) {
         const page = await repository.page({
           kind: collection === "events" ? "event" : "publication",
           electionId,
+          includeGlobal: collection === "publications",
           view: view as Cursor["view"],
           after: cursor?.after ?? "0",
           asOf: cursor?.asOf,
