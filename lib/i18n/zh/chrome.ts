@@ -28,7 +28,7 @@ const en: Chrome = {
         tomorrow: "选举日是明天",
         tomorrowAfter: "，十月星期二 27",
         today: "选举日。",
-        todayAfter: " 投票于以色列时间 10 下午结束",
+        todayAfter: " 投票于以色列时间 22:00 结束",
         after: "以色列于 10 月 27 投票。 ",
         formation: "组建政府",
     },

@@ -2320,7 +2320,7 @@
           "text": "Israelis voted for the 26th Knesset. The polls closed at 10:00 p.m. Israel time.",
           "numbers": [
             "00",
-            "10",
+            "22",
             "26"
           ],
           "links": [],
@@ -2427,7 +2427,6 @@
         "10",
         "10",
         "10",
-        "10",
         "1000",
         "100000",
         "103",
@@ -2494,6 +2493,7 @@
         "2025",
         "2026",
         "210",
+        "22",
         "22",
         "2251",
         "24",
@@ -5813,9 +5813,9 @@
           "text": "The estimates broadcast by Israel's three main television channels, Kan, Channel 12 and Channel 13, the moment polls close at 10:00 p.m. They are projections of seats per list, not a count, and can differ from the final result.",
           "numbers": [
             "00",
-            "10",
             "12",
-            "13"
+            "13",
+            "22"
           ],
           "links": [],
           "names": [],
@@ -6877,7 +6877,6 @@
         "10",
         "10",
         "10",
-        "10",
         "100",
         "1000",
         "11",
@@ -6993,6 +6992,7 @@
         "21",
         "21.8%",
         "21.8%",
+        "22",
         "22",
         "22%",
         "24",

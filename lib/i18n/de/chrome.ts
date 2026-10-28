@@ -28,7 +28,7 @@ const en: Chrome = {
         tomorrow: "Morgen ist Wahltag",
         tomorrowAfter: ", Dienstag, Oktober 27",
         today: "Wahltag.",
-        todayAfter: " Die Wahllokale schlie\u00DFen um 10 Uhr israelischer Zeit",
+        todayAfter: " Die Wahllokale schlie\u00DFen um 22:00 Uhr israelischer Zeit",
         after: "Israel hat im Oktober 27 abgestimmt. ",
         formation: "Eine Regierung bilden",
     },

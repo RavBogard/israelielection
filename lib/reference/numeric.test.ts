@@ -55,3 +55,10 @@ it("reads Chinese 亿 sums against English billions", () => {
   expect(numericTokens("约530亿新谢克尔", "zh")).toEqual(numericTokens("NIS 53 billion"));
   expect(numericTokens("近13亿美元", "zh")).toEqual(numericTokens("almost $1.3B"));
 });
+it("reads English p.m. times on the 24-hour clock", () => {
+  expect(numericTokens("until 10:00 p.m.")).toEqual(numericTokens("until 22:00", "he"));
+  expect(numericTokens("at 10 pm")).toEqual(numericTokens("à 22:00", "fr"));
+  expect(numericTokens("8:00 a.m.")).toEqual(numericTokens("08:00", "de"));
+  expect(numericTokens("10:00 p.m.")).not.toEqual(numericTokens("10:00 בלילה", "he"));
+  expect(numericTokens("12:00 a.m.")).toEqual(numericTokens("00:00", "zh"));
+});

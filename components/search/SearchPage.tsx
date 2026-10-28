@@ -4,6 +4,7 @@ import { referenceReadModel } from "@/lib/reference/read-model";
 import {
   referenceDocuments,
   translatedReference,
+  translatedTool,
 } from "@/lib/reference/catalog";
 import { parties, blocs } from "@/lib/data";
 import { TOOL_LANGS, editionPath, locale, type Lang } from "@/lib/i18n";
@@ -145,16 +146,26 @@ export default async function SearchPage({ lang }: { lang: Lang }) {
       kind: "resource",
       aliases: [election.id, String(election.termNumber), election.electionDay],
     });
-  for (const term of (glossaryJson as Glossary).terms)
+  // The edition's own glossary terms come from the published tool translation; the English
+  // term stays searchable as an alias, and an unpublished edition keeps English with a pending note.
+  const glossary = translatedTool("tools:glossary", lang, glossaryJson),
+    glossaryReady = lang === "en" || glossary.state === "ready";
+  for (const [i, term] of (glossary.data as Glossary).terms.entries()) {
+    const original = (glossaryJson as Glossary).terms[i];
     entries.push({
-      href: href("/glossary") + "#" + anchorOf(term.term),
+      href: href("/glossary") + "#" + anchorOf(original.term),
       title: term.term,
       description: term.def,
       kind: "glossary",
-      aliases: [term.hebrew ?? "", term.say ?? ""],
-      contentLang: "en",
-      translationPending: lang !== "en",
+      aliases: [
+        ...(term.term === original.term ? [] : [original.term]),
+        term.hebrew ?? "",
+        term.say ?? "",
+      ],
+      contentLang: glossaryReady ? lang : "en",
+      translationPending: !glossaryReady,
     });
+  }
   const localNav = (path: string) =>
     lang === "he"
       ? [...HE_NAV_GROUPS.flatMap((g) => g.items), ...HE_NAV_UTILITIES].find(
