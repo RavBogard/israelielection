@@ -33,7 +33,7 @@
    Hebrew (--font-he, loaded only there) sets the Hebrew. Frank Ruhl Libre already has Hebrew, so --display is unchanged. */
 :root:lang(he) { --body: var(--font-sans), var(--font-he), sans-serif; }
 :root:lang(ar), :root:lang(fa) { --body: var(--font-sans), var(--font-arabic), sans-serif; --display: var(--font-arabic), sans-serif; }
-:is(:lang(ar), :lang(fa)) :is(h1, h2, h3, .brand .word, .nav-panel-label) { letter-spacing: 0; }
+:is(:lang(ar), :lang(fa)) :is(h1, h2, h3, .nav-panel-label) { letter-spacing: 0; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #121210; --sheet: #1b1a17; --cell: #2b2a26;
@@ -107,10 +107,16 @@ a:hover { text-decoration-color: currentColor; }
 .masthead .brand { grid-area: brand; padding-block: 16px 12px; }
 .masthead .countdown { grid-area: countdown; margin: 0; font-size: 14px; color: var(--ink-2); padding-top: 4px; }
 .masthead .countdown b { color: var(--ink); font-weight: 600; }
-.brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-.brand .mark { width: 34px; height: auto; flex: none; }
-.brand .word { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
-.brand .word .yr { font-weight: 500; }
+/* The nameplate (Daniel, 2026-10-28): "Israel Votes" on the notched bloc rule, ישראל בוחרת hanging from its right end,
+   inside a ballot-slip border. --np scales the whole plate; the same mark in every edition. */
+.brand { display: inline-flex; text-decoration: none; color: var(--ink); --np: .9; }
+.nameplate { display: inline-grid; gap: calc(5px * var(--np)); padding: calc(8px * var(--np)) calc(13px * var(--np)) calc(7px * var(--np)); border: 1.5px solid currentColor; }
+.np-en { font-family: var(--display); font-weight: 900; font-size: calc(26px * var(--np)); line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
+.np-he { font-family: var(--display); font-weight: 500; font-size: calc(16px * var(--np)); line-height: 1; letter-spacing: 0; white-space: nowrap; justify-self: end; }
+.np-rule { display: grid; grid-template-columns: 15fr 46fr 2px 59fr; block-size: calc(4px * var(--np)); }
+.np-rule i:nth-child(2) { margin-inline-start: 2px; }
+.np-rule .np-notch { background: currentColor; block-size: calc(4px * var(--np) + 6px); margin-block-start: -3px; }
+.brand:hover .np-en { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 /* Page head, shared by every page (components/PageHead.tsx): the title at one display size, then the standfirst.
    A tool's controls sit in .ph-aside, right of the title on wide screens. .ph-meta is a small meta line under the standfirst. */
@@ -203,8 +209,7 @@ a:hover { text-decoration-color: currentColor; }
 .site-foot .row { max-width: var(--wrap); margin: 0 auto; padding: 32px var(--gutter) 44px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr); gap: 28px 48px; font-size: 14.5px; color: var(--ink-2); }
 .site-foot .about { display: flex; flex-direction: column; gap: 12px; }
 .site-foot .about p { margin: 0; max-width: 46ch; font-size: 14.5px; line-height: 1.5; }
-.site-foot .brand .mark { width: 26px; }
-.site-foot .brand .word { font-size: 21px; }
+.site-foot .brand { --np: .85; }
 .site-foot .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 28px; }
 @media (min-width: 1100px) { .site-foot .cols { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .site-foot .cols ul { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -282,4 +287,4 @@ a:hover { text-decoration-color: currentColor; }
 
 /* System CJK fonts cover Simplified Chinese without downloading a large font bundle. */
 :root:lang(zh) { --body: var(--font-sans), "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; --display: var(--body); }
-:lang(zh) :is(h1, h2, h3, .brand .word, .nav-panel-label) { letter-spacing: 0; }
+:lang(zh) :is(h1, h2, h3, .nav-panel-label) { letter-spacing: 0; }

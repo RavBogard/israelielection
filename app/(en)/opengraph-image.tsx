@@ -10,7 +10,7 @@ import { blocs, parties } from "@/lib/data";
 import { heroHeadline } from "@/lib/og-headline";
 import { mediumDate } from "@/lib/format";
 import { blocTotals } from "@/lib/polls";
-import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from "@/lib/og";
+import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, OgNameplate, PAPER, TEXT, ogFonts } from "@/lib/og";
 
 // The share card is the home page's opening: the race as the 120 seats of the Knesset, coloured
 // by bloc from the shared seat context (the count, or the official result). It is drawn on request and
@@ -65,8 +65,8 @@ export default async function Image() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "baseline", marginTop: "auto", fontFamily: "Public Sans", fontSize: 18 }}>
-            <div style={{ display: "flex", fontWeight: 600 }}>israelielection.org</div>
+          <div style={{ display: "flex", alignItems: "flex-end", marginTop: "auto", fontFamily: "Public Sans", fontSize: 18 }}>
+            <div style={{ display: "flex", flexDirection: "column" }}><OgNameplate scale={0.8} /><div style={{ display: "flex", fontWeight: 600, marginTop: 8 }}>israelielection.org</div></div>
             <div style={{ display: "flex", marginLeft: "auto", fontWeight: 500, color: INK3 }}>{dateline}</div>
           </div>
         </div>

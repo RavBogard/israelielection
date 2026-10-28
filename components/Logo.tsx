@@ -1,93 +1,57 @@
 "use client";
 import Link from "next/link";
-import { isRtl, type Lang } from "@/lib/i18n";
+import type { Lang } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 
 /**
- * The mark: 120 seats as a grid of 12 by 10, the first 61 filled. The shape of a majority,
- * which is what every page on the site is about. The filled seats are drawn as one solid
- * shape so the mark stays crisp at favicon size; the other 59 are faint cells behind it.
- * Drawn in currentColor, so it reads in light and dark and on any bloc colour.
+ * The bloc rule: the three blocs in fixed proportions (15, 46 and 59 of 120, not any election's result) with a
+ * notch at the 61st seat. Drawn in the bloc tokens, so it follows light and dark.
  */
-export function Mark({
-  className,
-  title,
-  rtl = false,
-}: {
-  className?: string;
-  title?: string;
-  /** Fill from the top right (the Hebrew edition's reading order). */ rtl?: boolean;
-}) {
-  const cells = [];
-  for (let i = 61; i < 120; i++) {
-    const x = (i % 12) * 12 + 1,
-      y = Math.floor(i / 12) * 12 + 1;
-    cells.push(
-      <rect
-        key={i}
-        x={x}
-        y={y}
-        width={10}
-        height={10}
-        fill="currentColor"
-        opacity={0.18}
-      />,
-    );
-  }
+function Rule({ className }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 144 120"
-      className={className}
-      aria-hidden={title ? undefined : true}
-      role={title ? "img" : undefined}
-      focusable="false"
-    >
+    <span className={className ?? "np-rule"} aria-hidden="true">
+      <i style={{ background: "var(--b-arab)" }} />
+      <i style={{ background: "var(--b-opp)" }} />
+      <i className="np-notch" />
+      <i style={{ background: "var(--b-net)" }} />
+    </span>
+  );
+}
+
+/**
+ * The icon (Daniel, 2026-10-28, icon C): 61, the number the site turns on, standing on the notched bloc rule inside
+ * a ballot-slip border. Used where the full nameplate does not fit; the favicon and app icons are drawn from it.
+ */
+export function Mark({ className, title }: { className?: string; title?: string; rtl?: boolean }) {
+  const x0 = 7, u = 26 / 120;
+  return (
+    <svg viewBox="0 0 40 40" className={className} aria-hidden={title ? undefined : true} role={title ? "img" : undefined} focusable="false">
       {title && <title>{title}</title>}
-      {rtl ? (
-        <g transform="matrix(-1 0 0 1 144 0)">
-          {cells}
-          <path d="M1 1h142v58H11v12H1z" fill="currentColor" />
-        </g>
-      ) : (
-        <>
-          {cells}
-          <path d="M1 1h142v58H11v12H1z" fill="currentColor" />
-        </>
-      )}
+      <rect x="3.5" y="3.5" width="33" height="33" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <text x="20" y="27.5" textAnchor="middle" fontFamily="var(--display)" fontWeight="900" fontSize="23" fill="currentColor">61</text>
+      <rect x={x0} y="29" width={15 * u - 0.5} height="3.6" style={{ fill: "var(--b-arab)" }} />
+      <rect x={x0 + 15 * u + 0.5} y="29" width={46 * u - 1} height="3.6" style={{ fill: "var(--b-opp)" }} />
+      <rect x={x0 + 61 * u + 0.5} y="29" width={59 * u - 0.5} height="3.6" style={{ fill: "var(--b-net)" }} />
+      <rect x={x0 + 61 * u - 0.75} y="29" width="1.5" height="6.6" fill="currentColor" />
     </svg>
   );
 }
 
-/** Mark + wordmark, linking home. The Hebrew wordmark is פתק, its mark filling from the right. */
-export default function Logo({
-  className,
-  lang = "en",
-}: {
-  className?: string;
-  lang?: Lang;
-}) {
-  if (lang !== "en")
-    return (
-      <Link
-        href={`/${lang}`}
-        className={`brand${className ? ` ${className}` : ""}`}
-        aria-label={chrome[lang].homeLabel}
-      >
-        <Mark className="mark" rtl={isRtl(lang)} />
-        <span className="word">
-          {chrome[lang].siteName}
-        </span>
-      </Link>
-    );
+/**
+ * The nameplate (Daniel, 2026-10-28, option 7): "Israel Votes" standing on the bloc rule, ישראל בוחרת hanging from
+ * its right end, inside a ballot-slip border. The same mark in every edition; edition names stay in titles and text.
+ */
+export default function Logo({ className, lang = "en" }: { className?: string; lang?: Lang }) {
   return (
     <Link
-      href="/"
+      href={lang === "en" ? "/" : `/${lang}`}
       className={`brand${className ? ` ${className}` : ""}`}
-      aria-label="Israel Votes, home"
+      aria-label={lang === "en" ? "Israel Votes, home" : chrome[lang].homeLabel}
     >
-      <Mark className="mark" />
-      <span className="word">
-        Israel Votes
+      <span className="nameplate" dir="ltr">
+        <span className="np-en" lang="en">Israel Votes</span>
+        <Rule />
+        <span className="np-he" lang="he" dir="rtl">ישראל בוחרת</span>
       </span>
     </Link>
   );

@@ -76,8 +76,7 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
  .lt-cell { min-height: 44px; min-width: 44px; }
  .lt-cell[aria-current] { display: none; }
  .masthead .brand, .masthead:has(.site-nav[data-home]) .brand, .masthead:has(.site-nav[data-closed]) .brand { padding-block: 12px 6px; }
- .masthead .brand .mark { width: 28px; }
- .masthead .brand .word { font-size: 22px; }
+ .masthead .brand { --np: .84; }
  .masthead > .row > .countdown { padding: 0 0 10px; }
  .mast-meter { width: auto; flex-direction: row; align-items: center; gap: 12px; min-height: 44px; padding: 0 0 6px; }
  .mm-text { flex: 1; min-width:0; overflow-wrap:anywhere; }
@@ -114,7 +113,7 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 @media(max-width:1100px) { .site-foot .cols { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media(max-width:420px) { .site-foot .cols { gap: 24px 16px; }.site-foot .cols a { font-size: 14px; } }
 
-@media(max-width:360px) { .masthead .brand { gap: 8px; }.masthead .brand .mark { width: 26px; }.masthead .brand .word { font-size: 20px; } }
+@media(max-width:360px) { .masthead .brand { --np: .74; } }
 
 /* The exit-poll bloc line under the masthead: three colour-coded groups, spaced apart rather than separated by marks. */
 .exit-line { border-top: 1px solid var(--line); font-size: 13.5px; line-height: 1.4; }
@@ -157,17 +156,15 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
   .lang-toggle select { max-width: 92px; padding-inline: 6px 2px; }
 }
 @media (max-width: 440px) {
-  .masthead .brand .word { font-size: 19px; }
-  .masthead .brand { gap: 8px; }
+  .masthead .brand { --np: .78; }
   .nav-mobile-toggle { padding-inline: 12px; }
   .exit-line .el-lead { flex-basis: 100%; }
 }
 @media (max-width: 374px) {
-  .masthead .row { grid-template-areas: "brand lang toggle" "meter meter meter" "countdown countdown countdown" "menu menu menu"; }
+  .masthead .row { grid-template-areas: "brand lang toggle" "countdown countdown countdown" "menu menu menu"; }
   .lang-toggle { justify-self: auto; margin-bottom: 0; }
   .lang-toggle select { max-width: 84px; }
-  .masthead .brand .word { font-size: 17px; }
-  .masthead .brand .mark { width: 22px; }
+  .masthead .brand { --np: .7; }
   .nav-mobile-toggle { padding-inline: 10px; }
 }
 

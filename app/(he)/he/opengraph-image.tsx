@@ -9,7 +9,7 @@ import { KNESSET } from "@/lib/coalition";
 import { blocs, parties } from "@/lib/data";
 import { heroHeadline } from "@/lib/og-headline";
 import { blocText } from "@/lib/i18n/overlays";
-import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from "@/lib/og";
+import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, OgNameplate, PAPER, TEXT, ogFonts } from "@/lib/og";
 import { visualOrder } from "@/lib/og-rtl";
 import { blocTotals } from "@/lib/polls";
 
@@ -79,8 +79,8 @@ export default async function Image() {
               </div>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "baseline", marginTop: "auto", fontSize: 20 }}>
-            <div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600, fontSize: 18 }}>israelielection.org/he</div>
+          <div style={{ display: "flex", alignItems: "flex-end", marginTop: "auto", fontSize: 20 }}>
+            <div style={{ display: "flex", flexDirection: "column" }}><OgNameplate scale={0.8} /><div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600, fontSize: 18, marginTop: 8 }}>israelielection.org/he</div></div>
             <Line text={dateline} style={{ marginLeft: "auto", color: INK3 }} />
           </div>
         </div>

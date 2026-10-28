@@ -2,5 +2,5 @@
    .masthead / .site-foot rules in globals.css), which are written in logical properties and so mirror under
    dir="rtl". Only what Hebrew type needs differs here. */
 /* Hebrew display type takes no negative tracking. */
-.he-masthead .brand .word, .he-foot .brand .word, .he-masthead .nav-panel-label { letter-spacing: 0; }
+.he-masthead .nav-panel-label { letter-spacing: 0; }
 .he-foot .about .foot-links .lang-switch { font-weight: 600; }

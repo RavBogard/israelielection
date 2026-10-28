@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { BlocId } from "./types";
+import { visualOrder } from "./og-rtl";
 
 /**
  * Shared pieces of the share images drawn with next/og (the home card and the coalition card).
@@ -50,6 +51,23 @@ export function Grid({ fills }: { fills: { count: number; color: string }[] }) {
         <line x1={0} x2={GRID_W + 4} y1={RULE_Y} y2={RULE_Y} stroke={INK} strokeWidth={3} />
       </svg>
       <div style={{ display: "flex", position: "absolute", left: GRID_W + 14, top: RULE_Y - 14, fontWeight: 700, fontSize: 26, lineHeight: 1, color: INK }}>61</div>
+    </div>
+  );
+}
+
+/** The nameplate for share images (components/Logo.tsx): "Israel Votes" on the notched bloc rule, ישראל בוחרת below, in a slip border. */
+export function OgNameplate({ scale = 1 }: { scale?: number }) {
+  const k = (n: number) => Math.round(n * scale * 10) / 10, w = k(190);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", border: `${k(2)}px solid ${INK}`, padding: `${k(9)}px ${k(14)}px ${k(8)}px`, color: INK }}>
+      <div style={{ display: "flex", fontFamily: "Frank Ruhl Libre", fontWeight: 700, fontSize: k(30), lineHeight: 1, letterSpacing: "-0.02em" }}>Israel Votes</div>
+      <div style={{ display: "flex", width: w, height: k(5), marginTop: k(6), position: "relative" }}>
+        <div style={{ display: "flex", width: (15 / 120) * w - 1, background: BLOC.arab }} />
+        <div style={{ display: "flex", width: (46 / 120) * w - 1, marginLeft: 2, background: BLOC.opp }} />
+        <div style={{ display: "flex", flexGrow: 1, background: BLOC.net }} />
+        <div style={{ display: "flex", position: "absolute", left: (61 / 120) * w - 1, top: -k(3), width: 2, height: k(11), background: INK }} />
+      </div>
+      <div style={{ display: "flex", justifyContent: "flex-end", fontFamily: "Frank Ruhl Libre", fontWeight: 400, fontSize: k(19), lineHeight: 1, marginTop: k(6) }}>{visualOrder("ישראל בוחרת")}</div>
     </div>
   );
 }
