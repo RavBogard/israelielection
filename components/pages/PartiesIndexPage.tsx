@@ -1,17 +1,22 @@
 import Link from "next/link";
 import PartyMap from "@/components/PartyMap";
+import { ListSharesProvider } from "@/components/list-status/ListSharesProvider";
+import { listSharesForRender } from "@/lib/list-shares-server";
 import { PollSources, ProfileSources } from "@/components/Sources";
 import SourcesBox from "@/components/SourcesBox";
 import { allPolls } from "@/lib/data";
 import { editionPath, type Lang } from "@/lib/i18n";
 import { partyDirectoryText } from "@/lib/i18n/party-directory";
 import chrome from "@/lib/i18n/chrome";
-export default function PartiesIndexPage({ lang }: { lang: Lang }) {
+export default async function PartiesIndexPage({ lang }: { lang: Lang }) {
   const t = partyDirectoryText(lang);
+  const shares = await listSharesForRender();
   return (
     <div className="ix">
       <div className="wrap">
-        <PartyMap />
+        <ListSharesProvider shares={shares}>
+          <PartyMap />
+        </ListSharesProvider>
         <p>
           <Link href="/party-history" hrefLang="en">
             {t.familyTree}

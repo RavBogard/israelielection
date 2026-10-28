@@ -2,6 +2,9 @@
 
 import { useSeatContext } from "./seat-context/SeatContextProvider";
 import SeatBasis from "./seat-context/SeatBasis";
+import ListStatusChip from "./list-status/ListStatusChip";
+import { useListShares } from "./list-status/ListSharesProvider";
+import { shareOf } from "@/lib/list-status";
 import UnprofiledLists from "./election-readiness/UnprofiledLists";
 import { ballotSeat } from "./election-readiness/model";
 import { useState } from "react";
@@ -55,6 +58,7 @@ export default function BallotDirectory({
   const name = (l: (typeof ballotLists)[number]) =>
     labels[l.id]?.name ?? { text: l.name, lang: "en" as const };
   const { context: currentContext } = useSeatContext();
+  const shares = useListShares();
   // This immutable roster belongs to the 26th election, even when another term is active.
   const context =
     currentContext &&
@@ -201,6 +205,11 @@ export default function BallotDirectory({
               <p className="bd-he" lang="he" dir="rtl">
                 {l.hebrew}
               </p>
+              {context && (
+                <p>
+                  <ListStatusChip seats={seatsOf(l) ?? 0} seatStatus={context.seatStatus} pct={shareOf({ party: l.profile, letters: l.letters }, shares, context)} lang={lang} />
+                </p>
+              )}
               <p>
                 {l.leader ? (
                   <>

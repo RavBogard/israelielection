@@ -28,13 +28,14 @@ vi.mock("@/components/seat-context/SeatContextProvider", () => ({
     refreshFailed: false,
   }),
 }));
+vi.mock("@/lib/list-shares-server", () => ({ listSharesForRender: async () => null }));
 import BallotPage from "./BallotPage";
 import PartiesIndexPage from "./PartiesIndexPage";
 describe("seven-edition party and ballot routes", () => {
-  it("never attaches another election's seats or unknown lists to the saved26 roster", () => {
+  it("never attaches another election's seats or unknown lists to the saved26 roster", async () => {
     for (const election of ["il-knesset-27", null]) {
       state.election = election;
-      const html = renderToStaticMarkup(BallotPage({ lang: "he" }));
+      const html = renderToStaticMarkup(await BallotPage({ lang: "he" }));
       expect(html).toContain("bd-snapshot-note");
       expect(html).not.toContain('class="bd-seats"');
       expect(html).not.toContain('class="election-record"');
@@ -43,11 +44,11 @@ describe("seven-edition party and ballot routes", () => {
     }
     state.election = "2026-10-27";
   });
-  it("renders localized controls, official records and explicit original-source navigation", () => {
+  it("renders localized controls, official records and explicit original-source navigation", async () => {
     for (const lang of LANGS) {
       state.lang = lang;
-      const ballot = renderToStaticMarkup(BallotPage({ lang })),
-        map = renderToStaticMarkup(PartiesIndexPage({ lang })),
+      const ballot = renderToStaticMarkup(await BallotPage({ lang })),
+        map = renderToStaticMarkup(await PartiesIndexPage({ lang })),
         t = partyDirectoryText(lang);
       expect(ballot).toContain(t.roster);
       expect(ballot).toContain(t.coverage);

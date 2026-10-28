@@ -702,7 +702,7 @@
       "leader": "Avi Maoz",
       "bloc": "net",
       "tags": [],
-      "status": "Polling not found",
+      "status": "In the outgoing Knesset (1 seat). Below the threshold in the count so far.",
       "coalitionCard": "hidden",
       "surplusLine": null,
       "who": [
@@ -1179,7 +1179,7 @@
       "leader": "Benny Gantz",
       "bloc": "opp",
       "tags": [],
-      "status": "Below threshold in every recent poll",
+      "status": "Withdrew before the vote. No seats in the count so far.",
       "coalitionCard": "out",
       "surplusLine": null,
       "who": [

@@ -16,6 +16,9 @@ import {
   type Positions,
 } from "@/lib/articles";
 import { averagePoll, parties } from "@/lib/data";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import { POST_COUNT, seatBasisPhrase } from "@/lib/i18n/post-count";
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { partyColor } from "@/lib/party-colors";
 import { onShade, shade, UNORDERED_EDGE } from "../compare/model";
 import { seatFigure } from "@/lib/polls";
@@ -50,7 +53,7 @@ const charts = allCharts();
 
 /** Seats to one decimal (the One Number Rule); a total short of 61 never prints as 61.0. */
 const seatsAt = (n: number) =>
-  n < 61 && seatFigure(n) === "61.0" ? "60.9" : seatFigure(n);
+  Number.isInteger(n) ? String(n) : n < 61 && seatFigure(n) === "61.0" ? "60.9" : seatFigure(n);
 const majorityNote = (n: number) =>
   n >= 61 ? ", a majority" : n >= 60.5 ? ", short of 61" : "";
 const positions = allPositions();
@@ -337,14 +340,15 @@ type PositionRowData = Positions["rows"][number];
  * ramp the profiles and Compare use), then each answer's lists with their words and sources.
  */
 /** An issue's answers with the lists that gave each and their seats in the polling average, shared by the lead figure and the full block. */
-function splitOf(issue: string) {
+function splitOf(issue: string, context: SharedSeatContext | null = null) {
   const p = positions[issue];
   if (!p)
     throw new Error(`Unknown positions table "${issue}" (see data/positions/)`);
   const stances = p.stances ?? [];
   const scale = issue !== "economy" && stances.length > 1;
   const at = (i: number) => (scale ? i / (stances.length - 1) : null);
-  const seats = (id: string) => averagePoll.results[id]?.seats ?? 0;
+  // Seat weights follow the shared seat context (the count projection, then official seats); the poll average only without one.
+  const seats = (id: string) => (context ? context.pointSeats[id] ?? 0 : averagePoll.results[id]?.seats ?? 0);
   const hasText = (r: PositionRowData) =>
     !!r.text?.trim() &&
     !(r as PositionRow).declined &&
@@ -388,7 +392,8 @@ function SplitBar({
   groups,
   rest,
   size = "l",
-}: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l" }) {
+  basis = POST_COUNT.en.seatsInAverage,
+}: Pick<ReturnType<typeof splitOf>, "groups" | "rest"> & { size?: "m" | "l"; basis?: string }) {
   return (
     <SeatBar
       className="ps-bar sb-fit"
@@ -418,7 +423,7 @@ function SplitBar({
       rest={{
         title: `No recorded answer, or below the threshold: ${seatFigure(rest)} seats`,
       }}
-      label={`Seats in the polling average by answer: ${groups
+      label={`${basis[0].toUpperCase()}${basis.slice(1)} by answer: ${groups
         .filter((g) => g.seats > 0)
         .map((g) => `${g.st.label} ${seatsAt(g.seats)}`)
         .join(
@@ -433,8 +438,10 @@ function SplitBar({
  * each answer with its lists and their seats, before any prose. The full block lower on the page
  * carries each list's own words and sources.
  */
-export function PositionsLead({ issue }: { issue: string }) {
-  const { p, scale, groups, rest } = splitOf(issue);
+export async function PositionsLead({ issue }: { issue: string }) {
+  const context = await seatContextForRender();
+  const basis = seatBasisPhrase(context, "en");
+  const { p, scale, groups, rest } = splitOf(issue, context);
   if (!groups.length) return null;
   const name = (id: string) => parties.find((x) => x.id === id)!.name;
   return (
@@ -443,7 +450,7 @@ export function PositionsLead({ issue }: { issue: string }) {
         Where the lists stand
         {p.question ? `: ${p.question.replace(/\?$/, "")}?` : ""}
       </figcaption>
-      <SplitBar groups={groups} rest={rest} />
+      <SplitBar groups={groups} rest={rest} basis={basis} />
       <ul className="ps-legend">
         {groups
           .filter((g) => g.rows.length)
@@ -493,7 +500,7 @@ export function PositionsLead({ issue }: { issue: string }) {
         {scale
           ? "Answers in order from one end of the debate to the other. "
           : "These priorities can coexist, so they are not ordered. "}
-        Seats are the current polling average; the tick is 61.{" "}
+        {context ? `Figures are ${basis}; the tick is 61.` : "Seats are the current polling average; the tick is 61."}{" "}
         {groups.some((g) => g.rows.some((r) => isUnstated(r as PositionRow))) &&
           "A dotted outline marks a list that has not said its position publicly; it is read from the list's votes, deals or ministers' actions. "}
         <a href="#positions">Each list&apos;s own words and sources</a>.
@@ -503,8 +510,10 @@ export function PositionsLead({ issue }: { issue: string }) {
 }
 
 /** An issue's split as a small figure for the Issues index: the bar and its largest answer. */
-export function SplitMini({ issue }: { issue: string }) {
-  const { groups, rest, scale } = splitOf(issue);
+export async function SplitMini({ issue }: { issue: string }) {
+  const context = await seatContextForRender();
+  const basis = seatBasisPhrase(context, "en");
+  const { groups, rest, scale } = splitOf(issue, context);
   if (!groups.length) return null;
   const top = [...groups].sort((a, b) => b.seats - a.seats)[0];
   return (
@@ -520,7 +529,7 @@ export function SplitMini({ issue }: { issue: string }) {
             ink: inkOn(g.pos),
           }))}
       >
-        <SplitBar groups={groups} rest={rest} size="m" />
+        <SplitBar groups={groups} rest={rest} size="m" basis={basis} />
       </MiniKey>
       {scale && (
         <p className="ps-mini-ends" aria-hidden="true">
@@ -545,14 +554,16 @@ export function SplitMini({ issue }: { issue: string }) {
   );
 }
 
-export function Positions({
+export async function Positions({
   issue,
   lang = "en",
 }: {
   issue: string;
   lang?: Lang;
 }) {
-  const { p, stances, seats, hasText, groups } = splitOf(issue);
+  const context = await seatContextForRender();
+  const { p, stances, seats, hasText, groups } = splitOf(issue, context);
+  const stamp = context ? (context.publishedAt ?? context.observedAt).slice(0, 10) : averagePoll.published;
   const T = compareCopy[lang],
     unit = searchText(lang).seats,
     words = widgetText(lang);
@@ -633,9 +644,9 @@ export function Positions({
     <figure className="positions" id="positions">
       <figcaption className="ct">{field("title")}</figcaption>
       <p className="fig-src">
-        {T.seatnote}{" "}
-        <time dateTime={averagePoll.published}>
-          {mediumDate(averagePoll.published, lang)}
+        {T.seatnote(seatBasisPhrase(context, lang))}{" "}
+        <time dateTime={stamp}>
+          {mediumDate(stamp, lang)}
         </time>
         .
       </p>

@@ -1,0 +1,4 @@
+.list-status { display: inline-block; padding: 1px 8px; border: 1px solid currentColor; border-radius: 999px; font-size: 12px; line-height: 1.5; font-weight: 600; }
+.list-status.entered { border-color: var(--b-mid); box-shadow: inset 3px 0 0 var(--b-mid); }
+.list-status.below { color: var(--warn-ink); background: var(--warn-bg); border-color: var(--warn-line); }
+[dir="rtl"] .list-status.entered { box-shadow: inset -3px 0 0 var(--b-mid); }

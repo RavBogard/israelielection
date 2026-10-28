@@ -70,3 +70,4 @@
 .pm .pm-about .btable { max-width: 460px; font-size: 14px; }
 .pm .pm-about p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-2); }
 .pm .pm-about a { color: var(--ink-2); }
+.pm .offmap-head { font-size: 15px; font-weight: 700; margin: 14px 0 8px; }
