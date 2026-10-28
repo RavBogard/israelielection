@@ -1,0 +1,42 @@
+/* Live count (Daniel, 2026-10-28): the committee's raw votes, list by list, ruled against the 3.25% threshold.
+   One measure runs through every row: the bar's length is the list's share, the hairline is the threshold. */
+.live-count { margin-block: 36px 40px; padding-block-start: 20px; border-block-start: 2px solid var(--ink); }
+.lc-head { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: end; margin-block-end: 18px; }
+.lc-head h2 { grid-column: 1 / -1; margin: 0; font: 700 22px/1.2 var(--display); display: flex; align-items: center; gap: 10px; color: var(--ink); }
+.lc-live { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 7px; border-radius: 4px; background: var(--ink); color: var(--bg); font: 700 11.5px/1 var(--body); letter-spacing: .02em; }
+.lc-live::before { content: ""; inline-size: 7px; block-size: 7px; border-radius: 50%; background: #e5484d; animation: lc-pulse 2s ease-in-out infinite; }
+@keyframes lc-pulse { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .lc-live::before { animation: none; } }
+.lc-total { margin: 0; font-size: 15px; color: var(--ink-2); }
+.lc-total b { font: 700 clamp(30px, 5vw, 42px)/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -.01em; margin-inline-end: 4px; }
+.lc-of { display: block; margin-block-start: 4px; }
+.lc-progress { grid-column: 1 / -1; block-size: 6px; background: var(--cell); border-radius: 3px; overflow: hidden; }
+.lc-progress i { display: block; block-size: 100%; background: var(--ink); }
+.lc-when { grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--ink-3); }
+
+.lc-lists { list-style: none; margin: 0; padding: 0; }
+.lc-lists li { display: grid; grid-template-columns: minmax(9rem, 15rem) 1fr 4.6rem 6.4rem; gap: 14px; align-items: center; min-block-size: 34px; border-block-end: 1px solid var(--line); font-size: 15px; }
+.lc-lists .lc-cols { min-block-size: 26px; border-block-end-color: var(--line-2); font-size: 12.5px; color: var(--ink-3); }
+.lc-cols span:nth-child(3), .lc-cols span:nth-child(4) { text-align: end; }
+.lc-th-label { position: relative; }
+.lc-th-label { padding-inline-start: calc(var(--lc-th) + 6px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lc-name { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); min-inline-size: 0; }
+.lc-name .sw { flex: none; inline-size: 10px; block-size: 10px; border-radius: 2px; }
+.lc-bar { position: relative; block-size: 14px; }
+.lc-bar i { display: block; block-size: 100%; border-radius: 0 2px 2px 0; min-inline-size: 2px; }
+.lc-bar::after { content: ""; position: absolute; inset-block: -10px; inset-inline-start: var(--lc-th); border-inline-start: 1px dashed var(--ink-2); }
+.lc-pct { text-align: end; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--ink); }
+.lc-votes { text-align: end; font-variant-numeric: tabular-nums; color: var(--ink-2); font-size: 14px; }
+.lc-below .lc-name, .lc-below .lc-pct { color: var(--ink-3); font-weight: 500; }
+.lc-below .lc-bar i { opacity: .45; }
+[dir="rtl"] .lc-bar i { border-radius: 2px 0 0 2px; }
+.lc-note { margin: 14px 0 0; max-inline-size: 72ch; font-size: 14px; line-height: 1.5; color: var(--ink-2); }
+.lc-note a { font-weight: 700; color: var(--ink); }
+
+@media (max-width: 640px) {
+  .lc-head { grid-template-columns: 1fr; }
+  .lc-lists li { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "name pct" "bar votes"; gap: 2px 12px; padding-block: 6px; }
+  .lc-name { grid-area: name; } .lc-pct { grid-area: pct; } .lc-bar { grid-area: bar; block-size: 8px; } .lc-votes { grid-area: votes; font-size: 12.5px; }
+  .lc-lists .lc-cols { display: none; }
+  .lc-bar::after { inset-block: -4px; }
+}
