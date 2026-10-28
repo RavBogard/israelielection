@@ -40,3 +40,7 @@ GATE: building UI changes straight to main via PRs without a preview gate. Proce
 - GATE: disabled the Polls workflow (twice-daily pre-election poll ingestion) — proceeded because voting is over, exit polls are entered by hand, and `gh workflow enable polls.yml` restores it.
 - Kept on until the double envelopes are counted (expected Thursday 29 Oct): local capture loop, count-capture backup (cron ends 29 Oct), lifecycle cadence, platform monitor, live refresh after deploy. Daily briefing kept (post-election news).
 - Stopped the manual exit-poll sweep (no further exit updates are meaningful).
+
+## 2026-10-28 — "now 68" chips renamed
+Readers took the "now N" chip (outgoing-Knesset seats) for a live-count figure. Renamed chip and column to "last Knesset" in all seven editions, said in the key that it is not the 2022 result, captioned the hollow tick on the bloc bars, and put the estimate first in the hero's bloc line.
+GATE: rewrote the chip wording without a wording round — proceeded because Daniel reported the confusion, the chip itself and its meaning were already approved, and only the label changed.

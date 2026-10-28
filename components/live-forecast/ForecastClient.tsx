@@ -291,6 +291,7 @@ export function ForecastDisplay({
               </li>
             ))}
           </ol>
+          {blocks.some((row) => outgoingBlocSeats[row.id] !== undefined) && <p className="lf-note">{NOW_SEATS[lang].mark}</p>}
           {!blocks.length && <p className="lf-note">{t.unavailable}</p>}
           {!official && (
             <>

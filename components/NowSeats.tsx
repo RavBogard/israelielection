@@ -12,7 +12,7 @@ export function nowComponents(id: string, lang: Lang): string | null {
 
 /**
  * The outgoing Knesset's seats for a list, as a small hollow chip beside (never inside) the projected figure:
- * "now 36", or "new" for a list with no sitting MKs. `bare` drops the word where a column heading already says it. Renders nothing for an id with no outgoing record.
+ * "last Knesset 36", or "new" for a list with no sitting MKs. `bare` drops the word where a column heading already says it. Renders nothing for an id with no outgoing record.
  */
 export default function NowSeats({ id, lang, bare = false }: { id: string; lang: Lang; bare?: boolean }) {
   const list = outgoingSeatsData.lists[id];
@@ -38,7 +38,7 @@ export function NowSeatsKey({ lang, className }: { lang: Lang; className?: strin
   );
 }
 
-/** The same chip for a bloc: the seats its lists held in the outgoing Knesset ("now 68"). Nothing for "other". */
+/** The same chip for a bloc: the seats its lists held in the outgoing Knesset ("last Knesset 68"). Nothing for "other". */
 export function NowBlocSeats({ id, lang, bare = false }: { id: string; lang: Lang; bare?: boolean }) {
   const n = outgoingBlocSeats[id];
   if (n === undefined) return null;
