@@ -73,3 +73,8 @@ Remaining: count capture runs through the envelope count (Thu 29 Oct), then stop
 - Brand is "Israel Votes" / ישראל בוחרת: nameplate option 7 (no side bar) on the notched bloc rule (15/46/59, notch at 61), icon C (61 on the rule) for favicon and app icons. Same mark in every edition (Daniel). Seat meter dropped from the masthead (Daniel).
 - Share images carry the nameplate in the footer; zero-seat bloc rows hidden. Verified en + he live after c496adf; standfirst wording tidied in a7cdcef.
 - GATE: English share-image standfirst now reads "Projection from the count so far (estimate)." — proceeded because it is a punctuation fix of existing labels, no new wording.
+
+## 2026-10-28 domain move
+- israelvotes.org is the site's address (Daniel). Vercel: www.israelvotes.org serves Production, apex 308s to www (Daniel set). israelielection.org entries left serving Production; next.config host redirect 308s every page to the same path+query on www.israelvotes.org, /api exempt (QStash worker signatures bind to LIVE_FORECAST_WORKER_URL / ELECTION_LIFECYCLE_WORKER_URL on the old host). PR #53, 4f8530a; verified live.
+- GATE: canonical host is www.israelvotes.org, displayed as israelvotes.org — proceeded because it mirrors the previous www setup and Daniel configured Vercel that way.
+- After the count (Thu 29 Oct): move the two worker URLs (Vercel env + count-capture.yml, live-refresh.yml, platform-monitor.yml) to www.israelvotes.org, confirm a refresh lands, then Daniel may set the old domains to a Vercel-level 308. Daniel: Search Console change of address; keep israelielection.org registered.
