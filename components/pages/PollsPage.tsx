@@ -15,7 +15,7 @@ import PollTabs from "@/components/polls/PollTabs";
 import CiteButton from "@/components/CiteButton";
 import { allPolls, averagePoll, blocs, mainPolls, parties, pollsData, variantPolls } from "@/lib/data";
 import { mediumDate, shortDate } from "@/lib/format";
-import { averageAsPoll, blocTotals, inWithoutVariant, isExit, pollLabel } from "@/lib/polls";
+import { averageAsPoll, blocTotals, inWithoutVariant, isExit, pollLabel, seatFigure } from "@/lib/polls";
 import { blocTrend, scaledTrends } from "@/lib/trend";
 import { houseEffects } from "@/lib/house-effects";
 import { newestPoll } from "@/lib/bloc-change";
@@ -23,6 +23,10 @@ import { averageFinding, citeText, counterText, leaderFinding, leanFinding, majo
 import { resultsConfig } from "@/lib/results-live";
 import BlocRace from "@/components/polls/BlocRace";
 import HouseEffects from "@/components/polls/HouseEffects";
+import PollsterAccuracy from "@/components/polls/PollsterAccuracy";
+import { countBlocTotals, pollsterAccuracy } from "@/lib/post-records";
+import { POST_RECORDS } from "@/lib/i18n/post-records";
+import { fill } from "@/lib/i18n/post-count";
 import PageHead from "@/components/PageHead";
 import { blocName as blocLabel, partyName, pollsterName, Tx } from "@/components/polls/names";
 import { editionPath, type Lang } from "@/lib/i18n";
@@ -48,9 +52,11 @@ export default async function PollsPage({ lang }: { lang: Lang }) {
   const named = parties.map((p) => ({ ...p, name: partyName(p, lang) }));
   const nameOf = Object.fromEntries(named.map((p) => [p.id, p.name]));
   const uncertainFigures=[...new Set(allPolls.flatMap(poll=>undatedListNames(poll,named)))];
-  const dates = [...new Set(allPolls.map((p) => p.published))].sort();
+  // The browser and its date range are the campaign polls; election-night exit polls live in their own record on /results.
+  const campaign = allPolls.filter((p) => !isExit(p));
+  const dates = [...new Set(campaign.map((p) => p.published))].sort();
   const from = dates[0];
-  const to = allPolls[0].published;
+  const to = campaign[0].published;
   const maxSeats = Math.max(...allPolls.flatMap((p) => Object.values(p.results).map((r) => r.seats)));
   const yMax = Math.max(30, Math.ceil(maxSeats / 5) * 5);
 
@@ -80,7 +86,11 @@ export default async function PollsPage({ lang }: { lang: Lang }) {
   const asOf = mainPolls.map((p) => p.published).sort().at(-1)!;
   const newest = newestPoll(allPolls);
   const effects = houseEffects(allPolls, parties, cfg);
-  const pollsters = new Set(allPolls.map((p) => p.pollster)).size;
+  const pollsters = new Set(campaign.map((p) => p.pollster)).size;
+  const R = POST_RECORDS[lang];
+  const official = context?.seatStatus === "official";
+  const countRef = context ? { ...countBlocTotals(context, parties), official } : undefined;
+  const accuracy = context ? pollsterAccuracy(allPolls, parties, context, cfg) : null;
 
   const sensitivity = (
     <Suspense fallback={<p>{t.loadingSensitivity}</p>}>
@@ -151,12 +161,16 @@ export default async function PollsPage({ lang }: { lang: Lang }) {
     { id: "pollsters" as const, content: <>
       <PollsBlocs title={spreadFinding(mainPolls, parties, lang)} lang={lang} />
       <HouseEffects title={leanFinding(effects, undefined, lang)} rows={effects} labels={blocName} hollowNames={variant.pollsters} lang={lang} />
+      {accuracy && <PollsterAccuracy rows={accuracy} labels={blocName} official={official} lang={lang} />}
       <PollsAlternative title={variantFinding(avg, blocTotals(averageAsPoll(variantPolls, parties.map((p) => p.id)), parties), variant.pollsters, lang)} lang={lang} />
     </> },
     { id: "every-poll" as const, content: (
-      <Suspense fallback={<p>{t.loadingBrowser}</p>}>
-        <PollBrowser title={t.browserTitle(allPolls.length, pollsters, he ? dayMonthHe(from) : mediumDate(from))} polls={allPolls} parties={named} currentIds={mainPolls.map((p) => p.id)} config={cfg} />
-      </Suspense>
+      <>
+        <p className="note" data-testid="exit-fold-note">{R.exitNote} <Link href={editionPath("/results", lang)! + "#exit-record"}>{R.exitLink}</Link>.</p>
+        <Suspense fallback={<p>{t.loadingBrowser}</p>}>
+          <PollBrowser title={t.browserTitle(campaign.length, pollsters, he ? dayMonthHe(from) : mediumDate(from))} polls={campaign} parties={named} currentIds={mainPolls.map((p) => p.id)} config={cfg} />
+        </Suspense>
+      </>
     ) },
     { id: "method" as const, content: method },
   ].map((tab) => ({ ...tab, label: t.tabs[tab.id] }));
@@ -165,9 +179,12 @@ export default async function PollsPage({ lang }: { lang: Lang }) {
     <div className="ix pl">
       <div className="wrap">
         <ElectionRecord context={context} lang={lang}/>
-      <PageHead title={t.title} standfirst={averageFinding(avg, lang)} />
+      <PageHead
+          title={context ? R.pollsTitle : t.title}
+          standfirst={context && countRef ? fill(official ? R.pollsStandfirstOfficial : R.pollsStandfirst, { bn: blocName.net, bo: blocName.opp, n: countRef.net, o: countRef.opp, an: seatFigure(avg.net), ao: seatFigure(avg.opp) }) : averageFinding(avg, lang)}
+        />
 
-        <BlocRace title={raceFinding(race, lang)} trend={race} dots={raceDots} labels={blocName} hollowNames={variant.pollsters} windowDays={cfg.currentWindowDays} until={resultsConfig.election}>
+        <BlocRace title={raceFinding(race, lang)} trend={race} dots={raceDots} labels={blocName} hollowNames={variant.pollsters} windowDays={cfg.currentWindowDays} until={resultsConfig.election} countRef={countRef}>
           <div className="pd-facts">
             <p className="pd-count">{counterText(majorityCounts(mainPolls, parties), lang)}.</p>
             {newest && (he

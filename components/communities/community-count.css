@@ -1,0 +1,5 @@
+.cc { margin: 32px 0 8px; padding-top: 16px; border-top: 1px solid var(--ink); }
+.cc h2 { margin: 0 0 8px; }
+.cc .cc-table th, .cc .cc-table td { padding: 6px 10px; }
+.cc .cc-table .num { text-align: end; font-variant-numeric: tabular-nums; }
+.cc .cc-na { color: var(--ink-3); font-size: 12.5px; }

@@ -87,7 +87,7 @@ export default function ProfileDetail({ party: p, headingId,context:initial }: P
       )}
       {p.pledges && (
         <div className="sec">
-          <p className="lbl">Coalition pledges</p>
+          <p className="lbl">Pledges to be tested in coalition talks</p>
           <Items items={p.pledges} />
         </div>
       )}

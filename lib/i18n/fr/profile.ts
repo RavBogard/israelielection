@@ -93,7 +93,7 @@ const en: ProfileText = {
         voters: "Qui vote pour eux",
         names: "Noms sur la liste",
         slot: (s: string) => `N\u00B0 ${s}`,
-        pledges: "Engagements de la coalition",
+        pledges: "Engagements à l'épreuve des négociations de coalition",
         words: "Dans leurs mots",
         quoteOpen: "“",
         quoteClose: "”",

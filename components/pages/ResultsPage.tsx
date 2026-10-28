@@ -423,7 +423,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>
         <EvidenceGate initial={context} official>{(["exitTable","letters","method"] as Section[]).map(k=>part[k])}</EvidenceGate>
         {exitPolls.length > 0 && (n.phase === "early" || n.phase === "count") && (
-          <details className="rs-exit-record" data-testid="exit-record">
+          <details className="rs-exit-record" id="exit-record" data-testid="exit-record">
             <summary>{EXIT_TABLE[lang].record}</summary>
             <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} />
           </details>

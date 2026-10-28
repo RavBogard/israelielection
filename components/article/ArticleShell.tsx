@@ -23,6 +23,7 @@ export default function ArticleShell({
   current,
   foreword,
   lead,
+  after,
 }: {
   meta: ArticleMeta;
   Body: ComponentType<{ components?: Record<string, ComponentType<{ id: string }>> }>;
@@ -33,6 +34,8 @@ export default function ArticleShell({
   foreword?: ReactNode;
   /** The page's lead figure, set right under the title so the graphic comes before the prose. */
   lead?: ReactNode;
+  /** A block set after the body, before the page's links (the communities' 2026 count). */
+  after?: ReactNode;
 }) {
   const leadFigure = !lead && current ? LEAD_FIGURES[current] : undefined;
   const leadChart = !lead && !leadFigure && current ? LEAD_CHARTS[current] : undefined;
@@ -52,6 +55,7 @@ export default function ArticleShell({
           <div className="body">
             <Body components={components} />
           </div>
+          {after}
           {current && current.startsWith("/issues/") && <p className="article-export"><Link href={`/export/issue?issue=${({"haredi-draft":"draft",courts:"courts","war-hostages":"war","west-bank":"wb","religion-state":"relig",economy:"econ","palestinian-state":"pstate"} as Record<string,string>)[current.split("/").at(-1)!] ?? ""}`}>Print or export recorded party positions on this issue</Link></p>}
           <p className="article-correction"><CorrectionLink page={current} />. <Link href="/corrections">Correction history and verification</Link></p>
           <SuggestedReading lang="en"/>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import { notFound } from "next/navigation";
 import ArticleShell from "@/components/article/ArticleShell";
+import CommunityCount from "@/components/communities/CommunityCount";
 import { COMMUNITIES, type CommunitySlug } from "@/lib/articles";
 import { loadCommunity, communityIndex } from "@/lib/content";
 
@@ -25,5 +26,5 @@ export default async function Page(props: PageProps<"/communities/[slug]">) {
   if (!known(slug)) notFound();
   const { default: Body, meta } = await loadCommunity(slug);
   const siblings = (await communityIndex()).map((s) => ({ href: s.href, title: s.meta.title }));
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/communities", title: "Communities" }} siblings={siblings} current={`/communities/${slug}`} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/communities", title: "Communities" }} siblings={siblings} current={`/communities/${slug}`} after={<CommunityCount slug={slug} lang="en" />} />;
 }

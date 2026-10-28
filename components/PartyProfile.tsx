@@ -5,9 +5,13 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import "./party-profile.css";
 import { partyColor, partyInk } from "@/lib/party-colors";
-import { partiesData } from "@/lib/data";
+import { allPolls, partiesData, pollsData } from "@/lib/data";
+import { POST_RECORDS } from "@/lib/i18n/post-records";
+import { fill } from "@/lib/i18n/post-count";
+import { candidateMark, finalPolls, rangeText, seatRange, surplusStatus } from "@/lib/post-records";
+import { outgoingSeats } from "@/lib/outgoing-seats";
 import { mediumDate, shortDate } from "@/lib/format";
-import { editionPath, type Lang } from "@/lib/i18n";
+import { editionPath, locale, type Lang } from "@/lib/i18n";
 import type { Localized } from "@/lib/i18n/localize";
 import { overlays, blocText, overlayText, partyText, pollsterText } from "@/lib/i18n/overlays";
 import profileText from "@/lib/i18n/profile";
@@ -121,6 +125,21 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
   const quote = p.quote ? (he ? partyText(p, "quote.text", lang) : p.quote.text) : null;
   const speaker: Txt | null = p.quote ? (he ? (p.quote.speaker === p.leader ? leader : partyText(p, "quote.speaker", lang)) : p.quote.speaker) : null;
   const variant = g.variantPollsters.map((s) => (he ? pollsterText(s, lang) : s));
+  // Result against the polls: the count (or official) seats beside the final polls, 2022 and the last Knesset.
+  const R = POST_RECORDS[lang];
+  const official = context?.seatStatus === "official";
+  const finals = finalPolls(allPolls, pollsData.config);
+  const finalMain = seatRange(p.id, finals.main);
+  const finalApart = seatRange(p.id, finals.apart);
+  const apartNames = finals.apart.filter((poll) => poll.results[p.id]).map((poll) => (he ? pollsterText(poll.pollster, lang).text : poll.pollster));
+  const interval = context && !official ? context.uncertainty?.partyIntervals[p.id] : undefined;
+  const lastKnesset = outgoingSeats(p.id);
+  const dash = "\u2013";
+  const partner = context && p.surplusPartner ? surplusStatus(p.id, partiesData.parties, context) : null;
+  const partnerName = partner ? (() => { const q = partiesData.parties.find((x) => x.id === partner.partnerId); return q ? (he ? partyText(q, "name", lang).text : q.name) : partner.partnerName; })() : "";
+  const surplusLine = partner ? fill(partner.both ? (partner.official ? R.surplusBothOfficial : R.surplusBoth) : partner.official ? R.surplusNotOfficial : R.surplusNot, { partner: partnerName }) : null;
+  const markWords = { onTrack: R.onTrack, elected: R.elected, notElected: R.notElected };
+  const hasNumbered = !!context && !!p.names?.some((n) => /^\d+$/.test(n.slot));
   return (
     <article className="pp" style={{ ["--pc" as string]: color, ["--pc-ink" as string]: ink }}>
       <header className="pp-head">
@@ -181,7 +200,46 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
               </p>
             </figure>
 
-            <figure className="pp-fig o3">
+            {context && (
+              <figure className="pp-fig o2" data-testid="profile-result">
+                <figcaption className="lbl">{R.resultTitle}</figcaption>
+                <dl className="pp-glance pp-result">
+                  <div>
+                    <dd>{countSeats}</dd>
+                    <dt>{official ? R.officialResult : R.countSoFar}</dt>
+                    <small>{countSeats === 0 ? chip : interval ? <bdi dir="ltr">{fill(R.range80, { lo: interval.lo, hi: interval.hi })}</bdi> : LIFECYCLE[lang][context.seatStatus]}</small>
+                  </div>
+                  <div>
+                    <dd>{g.avg === null ? <span className="nf">{P.head.noPolls}</span> : g.below ? P.glance.below : seatFigure(g.avg)}</dd>
+                    <dt>{R.finalAverage}</dt>
+                    <small>{R.finalAverageNote}</small>
+                  </div>
+                  <div>
+                    <dd>{finalMain ? <bdi dir="ltr">{rangeText(finalMain, dash)}</bdi> : <span className="nf">{P.head.noPolls}</span>}</dd>
+                    <dt>{R.finalPolls}</dt>
+                    <small>
+                      {fill(R.finalPollsNote, { n: finals.main.filter((poll) => poll.results[p.id]).length })}
+                      {finalApart && apartNames.length > 0 && <> {fill(R.apartNote, { names: new Intl.ListFormat(locale(lang)).format(apartNames), range: rangeText(finalApart, dash) })}</>}
+                    </small>
+                  </div>
+                  <div>
+                    <dd>{r22 ? r22.seats : <span className="nf">{P.glance.newList}</span>}</dd>
+                    <dt>{R.in2022}</dt>
+                    <small>{r22 ? P.glance.share2022((r22.share * 100).toFixed(1)) : P.glance.didNotRun}</small>
+                  </div>
+                  <div>
+                    <dd>{lastKnesset === null ? <span className="nf">{"\u2013"}</span> : lastKnesset}</dd>
+                    <dt>{R.lastKnesset}</dt>
+                    <small>{R.lastKnessetNote}</small>
+                  </div>
+                </dl>
+                <p className="fig-src">{official ? R.officialNote : R.provisionalNote}</p>
+              </figure>
+            )}
+
+            <details className="pp-fold o3">
+              <summary>{R.campaignRecord}<small>{R.campaignRecordNote}</small></summary>
+            <figure className="pp-fig">
               <figcaption className="lbl">{P.spark.title}</figcaption>
               {reported.length < 2 ? (
                 <p className="pp-nopolls">{reported.length === 0 ? P.spark.noPolls : P.spark.onePoll}</p>
@@ -194,6 +252,7 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
                   : P.spark.reported(reported.length, publishers, mediumDate(g.firstDate, lang), mediumDate(g.lastDate, lang))}
               </p>
             </figure>
+            </details>
 
             {vb && vbHe && (
               <figure className="pp-fig o6">
@@ -222,6 +281,7 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
             <section className="pp-text o4">
               <h2>{P.text.who}</h2>
               <Items items={who} he={he} />
+              {surplusLine && <p className="fig-src" data-testid="surplus-status">{surplusLine}</p>}
               {thin && <p className="fig-src"><Loc v={thin} /></p>}
             </section>
 
@@ -245,9 +305,11 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
                         ) : (
                           <span><b>{n.name}</b>{n.note ? `, ${n.note}` : ""}</span>
                         )}
+                        {(() => { const m = context ? candidateMark(n.slot, countSeats, context.seatStatus) : null; return m ? <span className={`pp-mark ${m}`} data-testid="candidate-mark" data-mark={m}>{markWords[m]}</span> : null; })()}
                       </li>
                     ))}
                   </ul>
+                  {hasNumbered && <p className="fig-src">{official ? R.marksNoteOfficial : R.marksNote}</p>}
                   <p className="fig-src">{he && p.namesSource ? <>{P.text.sourcePrefix}<span lang="en" dir="ltr">{p.namesSource}</span></> : p.namesSource}</p>
                 </>
               )}

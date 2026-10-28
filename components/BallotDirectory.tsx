@@ -5,7 +5,9 @@ import { useSeatContext } from "./seat-context/SeatContextProvider";
 import SeatBasis from "./seat-context/SeatBasis";
 import ListStatusChip from "./list-status/ListStatusChip";
 import { useListShares } from "./list-status/ListSharesProvider";
-import { shareOf } from "@/lib/list-status";
+import { percentText, shareOf, votesOf } from "@/lib/list-status";
+import { POST_RECORDS } from "@/lib/i18n/post-records";
+import { fill } from "@/lib/i18n/post-count";
 import UnprofiledLists from "./election-readiness/UnprofiledLists";
 import { ballotSeat } from "./election-readiness/model";
 import { useState } from "react";
@@ -55,6 +57,7 @@ export default function BallotDirectory({
   labels?: Record<string, BallotLabel>;
 }) {
   const t = partyDirectoryText(lang),
+    R = POST_RECORDS[lang],
     href = (path: string) => editionPath(path, lang) ?? path;
   const name = (l: (typeof ballotLists)[number]) =>
     labels[l.id]?.name ?? { text: l.name, lang: "en" as const };
@@ -86,7 +89,12 @@ export default function BallotDirectory({
         <SeatBasis context={context} lang={lang} share />
       ) : (
         <p className="bd-snapshot-note" role="note">
-          {t.sourceDates}: 2026. {t.rosterNote}
+          {t.sourceDates}: 2026. {R.ballotNote}
+        </p>
+      )}
+      {context && (
+        <p className="bd-snapshot-note" role="note">
+          {context.seatStatus === "official" ? R.ballotNoteOfficial : R.ballotNote}
         </p>
       )}
       {lang !== "en" && (
@@ -191,7 +199,7 @@ export default function BallotDirectory({
         </label>
       </div>
       <p className="bd-count" aria-live="polite">
-        {t.showingLists}: {shown.length} / {ballotLists.length}. {t.rosterNote}
+        {t.showingLists}: {shown.length} / {ballotLists.length}.
       </p>
       <ol className="ballot-grid">
         {shown.map((l) => (
@@ -206,6 +214,16 @@ export default function BallotDirectory({
               <p className="bd-he" lang="he" dir="rtl">
                 {l.hebrew}
               </p>
+              {context && (
+                <p className="bd-votes" data-testid="ballot-votes">
+                  {(() => {
+                    const ids = { party: l.profile, letters: l.letters };
+                    const v = votesOf(ids, shares, context);
+                    const pct = shareOf(ids, shares, context);
+                    return v === null || pct === null ? R.votesNone : fill(context.seatStatus === "official" ? R.votesOfficial : R.votesSoFar, { v: v.toLocaleString(lang === "en" ? "en-US" : lang === "he" ? "he-IL" : lang === "ar" ? "ar-u-nu-latn" : lang === "fa" ? "fa-u-nu-latn" : lang === "de" ? "de-DE" : lang === "fr" ? "fr-FR" : "zh-CN"), p: percentText(pct, lang) });
+                  })()}
+                </p>
+              )}
               {context && (
                 <p>
                   <ListStatusChip seats={seatsOf(l) ?? 0} seatStatus={context.seatStatus} pct={shareOf({ party: l.profile, letters: l.letters }, shares, context)} lang={lang} />

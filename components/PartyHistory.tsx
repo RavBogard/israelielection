@@ -9,6 +9,7 @@ import {
   type PartyHistory as HistoryRow,
 } from "@/lib/party-history";
 import "./PartyHistory.css";
+import { useHistoryMarker } from "./history/HistoryResults";
 import {
   historyText,
   historyKind,
@@ -42,6 +43,7 @@ export default function PartyHistory({
   data?: HistoryRow[];
   labels?: Record<string, { name: string; aliases: string[] }>;
 }) {
+  const marker = useHistoryMarker(lang);
   const t = historyText(lang),
     name = (id: string, fallback: string) => labels[id]?.name ?? fallback;
 
@@ -93,6 +95,7 @@ export default function PartyHistory({
         <section key={h.id} id={h.id} className="history-branch">
           <header>
             <h2>{name(h.id, h.name)}</h2>
+            {marker(h.id) && <p className="history-result" data-testid="history-result"><b>{marker(h.id)}</b></p>}
             <p>
               {historyFamily(
                 histories.find((original) => original.id === h.id)?.family ??

@@ -174,7 +174,7 @@ const en = {
   seatsNear: (k: number, n: number, passing: string) => `Below: passes in ${k} of ${n} polls, ${passing} seats where it passes`,
   seatsPasses: (text: string, k: number, n: number) => `${text}, scaled to 120 seats; passes in ${k} of ${n} polls`,
   whoTheyAre: "Who they are",
-  coalitionPledges: "Coalition pledges",
+  coalitionPledges: "Pledges to be tested in coalition talks",
   profileMore: (name: string) => `has where ${name} stands on each issue, its seats in every poll, the names on its list, bios and sources.`,
   profileLead: "The ",
   fullProfile: "full profile",

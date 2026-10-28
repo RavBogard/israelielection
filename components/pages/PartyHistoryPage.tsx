@@ -3,6 +3,7 @@ import PageHead from "@/components/PageHead";
 import type { PartyHistory as HistoryRow } from "@/lib/party-history";
 import PartyHistory from "@/components/PartyHistory";
 import PartyLanes from "@/components/history/PartyLanes";
+import HistoryResults from "@/components/history/HistoryResults";
 import source from "@/data/party-history.json";
 import { translatedTool } from "@/lib/reference/catalog";
 import { historyPartyLabels } from "@/lib/history-pages";
@@ -38,6 +39,7 @@ export default function PartyHistoryPage({ lang = "en" }: { lang?: Lang }) {
         data={edition.data.histories as HistoryRow[]}
         labels={labels}
       />
+      <HistoryResults lang={lang} rows={(edition.data.histories as HistoryRow[]).map((h) => ({ id: h.id, name: labels[h.id]?.name ?? h.name }))} />
       <div className="history-key">
         <p>
           <strong>{t.relationship}.</strong> {t.relationshipNote}
