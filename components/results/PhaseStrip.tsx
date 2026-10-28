@@ -5,7 +5,8 @@ import resultsText from "@/lib/i18n/results";
 /** The night in three steps: past ones ticked, the current one marked, later ones plain. Before close none is marked. */
 export default function PhaseStrip({ phase, lang = "en" }: { phase: Phase; lang?: Lang }) {
   const t = resultsText[lang].phases;
-  const steps = phases(lang);
+  // Once the count is in the exit-poll step is retired from the strip (Daniel, 2026-10-28).
+  const steps = phases(lang).filter((p) => !(p.id === "exit" && (phase === "early" || phase === "count")));
   const at = steps.findIndex((p) => p.id === phase);
   return (
     <ol className="rs-phases" aria-label={t.aria}>

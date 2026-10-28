@@ -10,6 +10,7 @@ import { blocRank } from "@/lib/polls";
 import type { BlocId } from "@/lib/types";
 import { useLang } from "@/lib/i18n/lang";
 import chrome from "@/lib/i18n/chrome";
+import { SOURCE_UP_TO_DATE } from "@/lib/i18n/strip-fresh";
 import type { Localized } from "@/lib/i18n/localize";
 
 const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
@@ -59,7 +60,7 @@ export default function ResultsStrip({ pollsClose, blocLabels }: { pollsClose: s
   const data = useCountSummary(pollsClose,!context&&!refreshFailed);
   const lang = useLang();
   if(!context&&refreshFailed)return null;
-  if(context){if(context.evidenceStage==="campaign")return null;const t=LIFECYCLE[lang];return <div className="live-strip"><div className="row"><Link href={editionPath("/results",lang)??"/results"} className="lead">{t[context.basis]} · {t[context.seatStatus]}</Link><span>{refreshFailed?t.stale:t[context.freshness.status]}</span><Link className="lead" href={editionPath("/government",lang)??"/government"}>{t.negotiations}</Link></div></div>;}
+  if(context){if(context.evidenceStage==="campaign")return null;const t=LIFECYCLE[lang];return <div className="live-strip"><div className="row"><Link href={editionPath("/results",lang)??"/results"} className="lead">{t[context.basis]} · {t[context.seatStatus]}</Link><span>{refreshFailed?t.stale:context.freshness.status==="current"?SOURCE_UP_TO_DATE[lang]:t[context.freshness.status]}</span><Link className="lead" href={editionPath("/government",lang)??"/government"}>{t.negotiations}</Link></div></div>;}
   if (lang !== "en") return <HebrewStrip data={data} labels={blocLabels ?? {}} />;
   if (data?.state === "error" && data.phase === "exit")
     return (

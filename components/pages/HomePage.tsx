@@ -89,7 +89,8 @@ function Race({ poll, live, days, phase, lang, context, cadence, news }: { news?
     return { id: p.id, label: name, detail: new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date(at)), model: homeRaceModel(p, parties, blocs, lang), heading: <>{pollLabel(p, lang)}, <AirTime at={at} lang={lang} updated={exits.updated.has(p.pollster)} /></>,
       source: <>{x.caution} <Link href={href(lang, "/results", "/he/results")}>{x.more}</Link>.</> };
   };
-  const exitChoice: RaceOption[] = exits.main.length ? [{ id: "exits", label: x.pick, detail: x.pickDetail(exits.main.length), model: homeRaceModel(exits.main[0], parties, blocs, lang), variants: exits.main.map(exitOption), variantsLabel: x.pickPoll }] : [];
+  // Exit polls are retired from the live surfaces once the count is in (Daniel, 2026-10-28): only on the night before it.
+  const exitChoice: RaceOption[] = exits.main.length && (phase === "before" || phase === "exit") ? [{ id: "exits", label: x.pick, detail: x.pickDetail(exits.main.length), model: homeRaceModel(exits.main[0], parties, blocs, lang), variants: exits.main.map(exitOption), variantsLabel: x.pickPoll }] : [];
   // Once polls close, the saved campaign forecast leaves the hero (Daniel, 2026-10-27): live evidence leads;
   // the forecast stays on its own page.
   const afterClose = phase !== "before";
@@ -172,7 +173,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
             Once the count drives the seats, the count is the only estimate on the page and the exit-poll model steps aside (Daniel, 2026-10-28). */}
         {!(context && (context.basis === "partial_count" || context.basis === "official_seats")) && liveForecast}
         {live.state === "open" && n.phase !== "before" && <LiveCount count={live.count} sourceUpdatedAt={live.sourceUpdatedAt} fetchedAt={live.fetchedAt} lang={lang} />}
-        <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />
+        {(n.phase === "before" || n.phase === "exit") && <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />}
         {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
 
         {context?.evidenceStage === "campaign" && n.phase === "before" && <Since now={now} lang={lang} />}

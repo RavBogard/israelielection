@@ -9,6 +9,7 @@ import { useCountSummary } from "./ResultsStrip";
 import { type ExitMeter, type Meter, nightMeter } from "@/lib/nav-facts";
 import { BLOC_SEAT_ORDER } from "@/lib/polls";
 import { useLang } from "@/lib/i18n/lang";
+import { SOURCE_UP_TO_DATE } from "@/lib/i18n/strip-fresh";
 
 /**
  * The masthead's thin seat meter: the 120 seats by bloc with the 61 tick and the Netanyahu bloc's figure
@@ -28,7 +29,7 @@ export default function SiteNavMeter({ average, exit, closed, pollsClose }: { av
     const segments: {key:string;seats:number;color:string}[] = BLOC_SEAT_ORDER.map(b => ({ key:b, seats:parties.filter(p => p.bloc === b).reduce((n,p) => n + (context.pointSeats[p.id] ?? 0),0), color:`var(--b-${b})` }));
     const unknown = Object.entries(context.pointSeats).filter(([id]) => !known.has(id)).reduce((n,[,seats]) => n+seats,0);
     if (unknown) segments.push({key:"unclassified",seats:unknown,color:"var(--ink-3)"});
-    return <Link href={editionPath("/results",lang) ?? "/results"} className="mast-meter" data-seat-revision={context.revision}><span className="mm-text">{t[context.basis]} · {t[context.seatStatus]} · {refreshFailed ? t.stale : t[context.freshness.status]}</span><SeatBar size="s" className="mm-bar" segments={segments} /></Link>;
+    return <Link href={editionPath("/results",lang) ?? "/results"} className="mast-meter" data-seat-revision={context.revision}><span className="mm-text">{t[context.basis]} · {t[context.seatStatus]} · {refreshFailed ? t.stale : context.freshness.status === "current" ? SOURCE_UP_TO_DATE[lang] : t[context.freshness.status]}</span><SeatBar size="s" className="mm-bar" segments={segments} /></Link>;
   }
   return (
     <Link href={m.href} className={`mast-meter${m.hatch ? " early" : ""}`}>

@@ -122,6 +122,13 @@ describe("/he/results through the night", () => {
     expect(html).toContain("הליכוד");
     expect(html).toContain("/he/coalition-builder?poll=results");
   });
+  it("once the count is in, exit polls fold into one record section low on the page", async () => {
+    const html = await render("he", { RESULTS_NOW: AFTER, RESULTS_FIXTURE: FIXTURE });
+    expect(html).toContain('data-testid="exit-record"');
+    expect(html).toContain("<details");
+    expect(html.match(/data-testid="exit-poll-table"/g)?.length ?? 0).toBe(1);
+    expect(html).not.toMatch(/aria-current="step"[^>]*>מדגמי הערוצים/);
+  });
   it("full count: the count is current, differences in <bdi>, envelopes line", async () => {
     const html = await render("he", {
       RESULTS_NOW: AFTER,

@@ -24,6 +24,8 @@ type ExitTableText = {
   pickDetail: (n: number) => string;
   pickPoll: string;
   more: string;
+  /** The folded record on /results once the count is in. */
+  record: string;
 };
 
 const en: ExitTableText = {
@@ -44,6 +46,7 @@ const en: ExitTableText = {
   pickDetail: (n) => `${n} channels`,
   pickPoll: "Exit poll by channel",
   more: "Every list in each exit poll",
+  record: "How the exit polls did",
 };
 
 const he: ExitTableText = {
@@ -64,6 +67,7 @@ const he: ExitTableText = {
   pickDetail: (n) => `${n} ערוצים`,
   pickPoll: "מדגם לפי ערוץ",
   more: "כל הרשימות בכל מדגם",
+  record: "איך הצליחו המדגמים",
 };
 
 const ar: ExitTableText = {
@@ -84,6 +88,7 @@ const ar: ExitTableText = {
   pickDetail: (n) => `القنوات: ${n}`,
   pickPoll: "استطلاع الخروج حسب القناة",
   more: "كل القوائم في كل استطلاع",
+  record: "كيف أصابت استطلاعات الخروج",
 };
 
 const fa: ExitTableText = {
@@ -104,6 +109,7 @@ const fa: ExitTableText = {
   pickDetail: (n) => `${n} شبکه`,
   pickPoll: "نظرسنجی خروجی به تفکیک شبکه",
   more: "همهٔ فهرست‌ها در هر نظرسنجی",
+  record: "نظرسنجی‌های خروجی چقدر درست بودند",
 };
 
 const de: ExitTableText = {
@@ -124,6 +130,7 @@ const de: ExitTableText = {
   pickDetail: (n) => `${n} Sender`,
   pickPoll: "Exit Poll je Sender",
   more: "Alle Listen in jedem Exit Poll",
+  record: "Wie die Exit Polls lagen",
 };
 
 const fr: ExitTableText = {
@@ -144,6 +151,7 @@ const fr: ExitTableText = {
   pickDetail: (n) => `${n} chaînes`,
   pickPoll: "Sondage par chaîne",
   more: "Toutes les listes de chaque sondage",
+  record: "Ce que valaient les sondages sortie des urnes",
 };
 
 const zh: ExitTableText = {
@@ -164,6 +172,7 @@ const zh: ExitTableText = {
   pickDetail: (n) => `${n} 家电视台`,
   pickPoll: "按电视台查看出口民调",
   more: "每份出口民调中的所有名单",
+  record: "出口民调的准确度",
 };
 
 export const EXIT_TABLE: Record<Lang, ExitTableText> = { en, he, ar, fa, de, fr, zh };

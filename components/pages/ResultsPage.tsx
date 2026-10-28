@@ -32,6 +32,7 @@ import renderLiveForecast from "@/components/live-forecast/LiveForecast";
 import PhaseStrip from "@/components/results/PhaseStrip";
 import ExitPollBars from "@/components/results/ExitPollBars";
 import ExitPollTable from "@/components/results/ExitPollTable";
+import { EXIT_TABLE } from "@/lib/i18n/exit-table";
 import ElectionNight from "@/components/ElectionNight";
 import { locale, type Lang } from "@/lib/i18n";
 import { partyText } from "@/lib/i18n/overlays";
@@ -396,7 +397,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
   const names = Object.fromEntries(parties.map((p) => [p.id, listName(p, lang).text]));
   const part: Record<Section, ReactNode> = {
     // Once exit polls air they lead the page (above the live panels); their sections below stay empty.
-    exit: !exitPolls.length && <ExitPollBars key="exit" config={cfg} lang={lang} />,
+    exit: n.phase === "exit" && !exitPolls.length && <ExitPollBars key="exit" config={cfg} lang={lang} />,
     board: <Board key="board" count={count} counted={n.counted} early={n.phase === "early"} avgLabel={avgLabel} lang={lang} />,
     freshness: live.state === "open" && <ResultsFreshness key="freshness" live={live} lang={lang} />,
     changes: live.state === "open" && <ResultsChanges key="changes" current={live.snapshot} previous={live.previous} config={cfg} names={names} lang={lang} />,
@@ -415,12 +416,18 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
           <PhaseStrip phase={n.phase} lang={lang} />
         </PageHead></ResultsHeading>
         <p className="note">{readiness(lang).timeNote}</p>
-        {exitPolls.length > 0 && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} /></>}
+        {exitPolls.length > 0 && (n.phase === "before" || n.phase === "exit") && <><ExitPollBars config={cfg} lang={lang} /><ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} /></>}
         {context && <CurrentParliament initial={context} lang={lang} {...forecastPresentation(lang)} />}
         {liveForecast}
         {n.phase !== "before" && <ElectionNight lang={lang} />}
         <EvidenceGate initial={context}>{sections(n.phase).map((k) => part[k])}</EvidenceGate>
         <EvidenceGate initial={context} official>{(["exitTable","letters","method"] as Section[]).map(k=>part[k])}</EvidenceGate>
+        {exitPolls.length > 0 && (n.phase === "early" || n.phase === "count") && (
+          <details className="rs-exit-record" data-testid="exit-record">
+            <summary>{EXIT_TABLE[lang].record}</summary>
+            <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} />
+          </details>
+        )}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { editionPath, type Lang } from "@/lib/i18n";
 import { EXIT_LINE } from "@/lib/i18n/exit-line";
 import { pollsterText } from "@/lib/i18n/overlay-text";
 import { exitPolls, parties, pollsData } from "@/lib/data";
+import ExitLineGate from "./ExitLineGate";
 import { exitBlocLine, rangeText } from "@/lib/exit-line";
 
 /**
@@ -15,6 +16,7 @@ export default function ExitBlocLine({ lang = "en" }: { lang?: Lang }) {
   const t = EXIT_LINE[lang];
   const names = line.sources.map((s) => `${pollsterText(s.pollster, lang).text} ${s.seats.net}/${s.seats.opp + s.seats.mid}/${s.seats.arab}`).join("; ");
   return (
+    <ExitLineGate>
     <div className="exit-line">
       <Link href={editionPath("/", lang) ?? "/"} className="row" aria-label={`${t.label}: ${t.aria}`} title={names}>
         <span className="el-lead">{t.label}</span>
@@ -28,5 +30,6 @@ export default function ExitBlocLine({ lang = "en" }: { lang?: Lang }) {
         </ul>
       </Link>
     </div>
+    </ExitLineGate>
   );
 }
