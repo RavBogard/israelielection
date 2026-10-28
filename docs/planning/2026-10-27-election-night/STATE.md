@@ -33,3 +33,10 @@ GATE: building UI changes straight to main via PRs without a preview gate. Proce
 - Merged #39 (276b82e) count model overhaul; live at 1,597,973 votes (28%): 51/51/18 (80%: net 50–53, opp 48–51, Arab 17–19), Res P(pass) 15%. Hold-out bloc error 5.7→3.2 pt. Bloc ranges in API only — not yet in grid.
 - Live count section on home (raw CEC votes by list, % of expected vote, threshold line, auto-refresh 60s), Daniel 2026-10-28. Incident: forced removal of worktree ie-model followed its node_modules junction and deleted part of israelielection/node_modules; restored with npm install (package.json/lock restored from backup, unchanged). Capture loop kept running.
 - Phone footer tightened; PayPal (and public email) removed from support popup until Daniel sends a paypal.me link (Daniel 2026-10-28).
+
+## 2026-10-28 12:10 Israel — regular count at 70.7%, envelopes from midnight
+- Site matches the CEC: file of 10:50 Israel, 4,008,086 votes, 1,057 localities, 70.7% counted; raw seats 54/47/19 (as ynet reports); count estimate 52 (52–53) / 50 (49–50) / 18 (18–19).
+- Pre-close check of the count model (2022 replay in 9 reporting orders, envelope-arrival and Arab-locality stress tests): bloc within 1–2 seats of truth in every case; no double count when envelopes arrive.
+- GATE: disabled the Polls workflow (twice-daily pre-election poll ingestion) — proceeded because voting is over, exit polls are entered by hand, and `gh workflow enable polls.yml` restores it.
+- Kept on until the double envelopes are counted (expected Thursday 29 Oct): local capture loop, count-capture backup (cron ends 29 Oct), lifecycle cadence, platform monitor, live refresh after deploy. Daily briefing kept (post-election news).
+- Stopped the manual exit-poll sweep (no further exit updates are meaningful).
