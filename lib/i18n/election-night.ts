@@ -44,7 +44,7 @@ const en: ElectionNightText = {
   complaintsDd: "During the day Yashar, Yisrael Beiteinu and People of Israel complained of missing, damaged or tampered ballot slips. The Central Elections Committee said:",
   committeeQuote: "Contrary to claims circulating online, there are currently no indications of systematic tampering with ballot slips.",
   reactionsDt: "What the leaders said",
-  reactionsNote: "As reported in English. Netanyahu had made no statement by 1 a.m.; Likud told ministers not to give interviews.",
+  reactionsNote: "As reported in English.",
   source: "Source",
 };
 
@@ -68,7 +68,7 @@ const he: ElectionNightText = {
   complaintsDd: "במהלך היום התלוננו ישר!, ישראל ביתנו ועמך ישראל על פתקים חסרים, פגומים או משובשים. ועדת הבחירות המרכזית מסרה:",
   committeeQuote: "בניגוד לטענות שמופצות ברשת, אין בשלב זה אינדיקציה לפגיעה שיטתית בפתקי ההצבעה.",
   reactionsDt: "מה אמרו המנהיגים",
-  reactionsNote: "הציטוטים כפי שדווחו באנגלית. נתניהו לא מסר הודעה עד 01:00, והליכוד הנחה את השרים לא להתראיין.",
+  reactionsNote: "הציטוטים כפי שדווחו באנגלית.",
   source: "מקור",
 };
 
@@ -92,7 +92,7 @@ const ar: ElectionNightText = {
   complaintsDd: "اشتكت خلال اليوم قوائم يشار ويسرائيل بيتينو وشعب إسرائيل من أوراق اقتراع مفقودة أو تالفة أو عُبث بها. وقالت لجنة الانتخابات المركزية:",
   committeeQuote: "خلافًا للادعاءات المتداولة على الإنترنت، لا توجد حاليًا أي مؤشرات على عبث ممنهج بأوراق الاقتراع.",
   reactionsDt: "ماذا قال القادة",
-  reactionsNote: "الاقتباسات كما نُشرت بالإنجليزية. لم يُدلِ نتنياهو بأي تصريح حتى الساعة الواحدة فجرًا، وطلب الليكود من الوزراء عدم إجراء مقابلات.",
+  reactionsNote: "الاقتباسات كما نُشرت بالإنجليزية.",
   source: "المصدر",
 };
 
@@ -116,7 +116,7 @@ const fa: ElectionNightText = {
   complaintsDd: "در طول روز یاشار، یسرائیل بیتنو و مردم اسرائیل از برگه‌های رأی گم‌شده، آسیب‌دیده یا دست‌کاری‌شده شکایت کردند. کمیته مرکزی انتخابات اعلام کرد:",
   committeeQuote: "برخلاف ادعاهایی که در فضای مجازی دست‌به‌دست می‌شود، در حال حاضر هیچ نشانه‌ای از دست‌کاری نظام‌مند برگه‌های رأی وجود ندارد.",
   reactionsDt: "رهبران چه گفتند",
-  reactionsNote: "نقل‌قول‌ها همان‌گونه که به انگلیسی گزارش شده‌اند. نتانیاهو تا ساعت یک بامداد بیانیه‌ای نداده بود و لیکود از وزیران خواست مصاحبه نکنند.",
+  reactionsNote: "نقل‌قول‌ها همان‌گونه که به انگلیسی گزارش شده‌اند.",
   source: "منبع",
 };
 
@@ -140,7 +140,7 @@ const de: ElectionNightText = {
   complaintsDd: "Im Laufe des Tages beschwerten sich Yashar, Yisrael Beiteinu und People of Israel über fehlende, beschädigte oder manipulierte Stimmzettel. Der Zentrale Wahlausschuss erklärte:",
   committeeQuote: "Entgegen den im Internet verbreiteten Behauptungen gibt es derzeit keine Hinweise auf eine systematische Manipulation von Stimmzetteln.",
   reactionsDt: "Was die Spitzenpolitiker sagten",
-  reactionsNote: "Zitate wie auf Englisch berichtet. Netanjahu hatte sich bis 1 Uhr nicht geäußert; der Likud wies seine Minister an, keine Interviews zu geben.",
+  reactionsNote: "Zitate wie auf Englisch berichtet.",
   source: "Quelle",
 };
 
@@ -164,7 +164,7 @@ const fr: ElectionNightText = {
   complaintsDd: "Dans la journée, Yashar, Yisrael Beiteinu et People of Israel se sont plaints de bulletins manquants, abîmés ou falsifiés. La Commission électorale centrale a déclaré :",
   committeeQuote: "Contrairement aux affirmations qui circulent en ligne, il n'y a à ce stade aucun indice de falsification systématique des bulletins.",
   reactionsDt: "Ce qu'ont dit les dirigeants",
-  reactionsNote: "Citations telles que rapportées en anglais. Netanyahou ne s'était pas exprimé à 1 h ; le Likoud a demandé à ses ministres de ne pas donner d'interviews.",
+  reactionsNote: "Citations telles que rapportées en anglais.",
   source: "Source",
 };
 
@@ -188,7 +188,7 @@ const zh: ElectionNightText = {
   complaintsDd: "白天，Yashar、以色列我们的家园和以色列人民党投诉选票缺失、损坏或被篡改。中央选举委员会表示：",
   committeeQuote: "与网上流传的说法相反，目前没有任何迹象表明选票遭到系统性篡改。",
   reactionsDt: "领导人怎么说",
-  reactionsNote: "引语依据英文报道。截至凌晨1点，内塔尼亚胡尚未发表声明；利库德集团要求部长们不要接受采访。",
+  reactionsNote: "引语依据英文报道。",
   source: "来源",
 };
 

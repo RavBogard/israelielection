@@ -4148,6 +4148,64 @@
       "broadcastAt": "2026-10-27T22:44:00+02:00"
     },
     {
+      "id": "channel-12-exit-2026-10-28-0217",
+      "pollster": "Channel 12",
+      "firm": null,
+      "fieldwork": "Oct 27, 2026",
+      "published": "2026-10-28",
+      "via": "Times of Israel liveblog; ynet news flashes",
+      "url": "https://www.timesofisrael.com/liveblog-october-27-2026/",
+      "n": null,
+      "margin": null,
+      "note": "Channel 12 exit poll, third version (Times of Israel liveblog entry 02:17): Likud 24 to 27, Yashar 22 to 21, Joint List 11 to 12, Democrats 10 to 9, Shas 8 to 7, Yisrael Beiteinu 8 to 7; every other list unchanged from the 22:44 version. Sums to 120; blocs 52/49/19 as reported by the Times of Israel and ynet. Entered by hand.",
+      "results": {
+        "likud": {
+          "seats": 27
+        },
+        "yashar": {
+          "seats": 21
+        },
+        "byachad": {
+          "seats": 12
+        },
+        "jl": {
+          "seats": 12
+        },
+        "dem": {
+          "seats": 9
+        },
+        "yb": {
+          "seats": 7
+        },
+        "shas": {
+          "seats": 7
+        },
+        "raam": {
+          "seats": 7
+        },
+        "otzma": {
+          "seats": 6
+        },
+        "rz": {
+          "seats": 6
+        },
+        "utj": {
+          "seats": 6
+        },
+        "res": {
+          "seats": 0,
+          "belowThreshold": true
+        },
+        "poi": {
+          "seats": 0,
+          "belowThreshold": true
+        }
+      },
+      "combined": [],
+      "kind": "exit",
+      "broadcastAt": "2026-10-28T02:17:00+02:00"
+    },
+    {
       "id": "channel-14-exit-2026-10-27-2200",
       "pollster": "Channel 14",
       "firm": null,
