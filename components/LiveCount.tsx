@@ -20,11 +20,14 @@ export function fileAge(then: number, now: number, loc: string) {
   return minutes < 60 ? rtf.format(-minutes, "minute") : minutes < 48 * 60 ? rtf.format(-Math.round(minutes / 60), "hour") : rtf.format(-Math.round(minutes / 1440), "day");
 }
 
+/** Read once per server render; kept outside the component so render stays pure. */
+const clock = () => Date.now();
+
 /**
  * The raw count on the home page, list by list, as the Central Elections Committee publishes it
  * (Daniel, 2026-10-28). The page re-renders every minute; the refresher re-fetches it while the tab is visible.
  */
-export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang, now = Date.now(), envelopes = null }: { count: Count; sourceUpdatedAt: string | null; fetchedAt: string; lang: Lang; now?: number; envelopes?: number | null }) {
+export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang, now, envelopes = null }: { count: Count; sourceUpdatedAt: string | null; fetchedAt: string; lang: Lang; now?: number; envelopes?: number | null }) {
   if (!count.valid) return null;
   const t = LIVE_COUNT[lang], loc = locale(lang);
   const num = (n: number) => n.toLocaleString(loc);
@@ -38,6 +41,7 @@ export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang, now
   const counted = count.valid / expected;
   const scale = Math.max(0.3, Math.ceil(((tracked[0]?.pct ?? 0) + 0.02) * 20) / 20);
   const at = new Date(sourceUpdatedAt ?? fetchedAt);
+  const nowMs = now ?? clock();
   const israel = new Intl.DateTimeFormat(loc, { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(at);
   const threshold = cfg.threshold;
   const row = (key: string, name: ReactNode, color: string, votes: number, below: boolean, dim = below) => {
@@ -58,7 +62,7 @@ export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang, now
         <h2 id="lc-h">{t.heading}</h2>
         <p className="lc-total"><b>{num(count.valid)}</b> {t.votesCounted}<span className="lc-of">{t.ofExpected(num(expected), pctOf(counted, 0))}</span></p>
         <div className="lc-progress" role="img" aria-label={t.aria(pctOf(counted, 0))}><i style={{ inlineSize: `${Math.min(1, counted) * 100}%` }} /></div>
-        <p className="lc-when"><time dateTime={at.toISOString()}>{t.lastFile(israel, fileAge(+at, now, loc))}</time></p>
+        <p className="lc-when"><time dateTime={at.toISOString()}>{t.lastFile(israel, fileAge(+at, nowMs, loc))}</time></p>
         {envelopes ? <p className="lc-envelopes">{t.envelopes(num(Math.round(envelopes / 1000) * 1000), new Intl.DateTimeFormat(loc, { weekday: "long", timeZone: "Asia/Jerusalem" }).format(new Date(`${ENVELOPES_EXPECTED_THROUGH}T12:00:00Z`)))}</p> : null}
       </header>
       <ol className="lc-lists">
