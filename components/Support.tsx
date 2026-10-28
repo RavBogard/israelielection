@@ -1,7 +1,7 @@
 import type { Lang } from "@/lib/i18n";
 import { SUPPORT, SUPPORT_METHODS } from "@/lib/i18n/support";
 
-/** Each way to give: a link where the service has one, the handle where readers type it in (PayPal by email). */
+/** Each way to give: a link where the service has one, the handle where readers type it in. */
 function Methods() {
   return (
     <ul className="support-methods">

@@ -130,7 +130,7 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 @media print { .exit-line { display: none; } }
 
 /* Support (Daniel, 2026-10-28): three ways to give as plain chips, the note muted beneath. */
-.support-open { min-height: 44px; padding: 0 16px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--bg); font: 700 15px/1 inherit; font-family: inherit; cursor: pointer; }
+.support-open { min-height: 44px; padding: 0 16px; border: 1px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--bg); font-family: inherit; font-size: 15px; font-weight: 700; line-height: 1; cursor: pointer; }
 .support-open:hover { background: var(--text); }
 .support-open:focus-visible, .support-close:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 .support-pop { width: min(440px, calc(100vw - 32px)); margin: auto; padding: 20px; border: 1px solid var(--line-2); border-radius: 10px; background: var(--sheet); color: var(--text); box-shadow: 0 18px 50px rgb(0 0 0 / .25); }
@@ -169,4 +169,18 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
   .masthead .brand .word { font-size: 17px; }
   .masthead .brand .mark { width: 22px; }
   .nav-mobile-toggle { padding-inline: 10px; }
+}
+
+/* Phone footer (Daniel, 2026-10-28): tighter rhythm. Targets stay 40px+ tall, but rows no longer stack 44px plus gaps,
+   and the band above the footer rule shrinks. */
+@media (max-width: 640px) {
+  .site-foot { margin-top: 32px; }
+  .site-foot .row { padding-block: 24px 32px; gap: 22px; }
+  .site-foot .about { gap: 10px; }
+  .site-foot .about .foot-links { gap: 0 18px; }
+  .site-foot .cols { gap: 18px 16px; }
+  footer.site-foot .cols ul { margin-top: 2px; gap: 0; }
+  footer.site-foot .cols a, footer.site-foot .about .foot-links a { min-height: 40px; font-size: 15px; }
+  .site-foot .cols .lbl { margin: 0; font-size: 13px; }
+  .foot-support { margin-block: 4px; }
 }
