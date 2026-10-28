@@ -10,7 +10,9 @@ vi.mock("./i18n", async (orig) => ({
 
 describe("alternates", () => {
   it("does not advertise pending source-prose translations as reviewed editions", () => {
-    expect(alternates("/about")).toEqual({ canonical: "/about", types: RSS });
+    expect(alternates("/party-history")).toEqual({ canonical: "/party-history", types: RSS });
+    // /about has a written Hebrew edition; the other five languages are still pending and stay unadvertised.
+    expect(Object.keys((alternates("/about") as { languages?: object }).languages ?? {}).sort()).toEqual(["en", "he", "x-default"]);
   });
   it("announces both implemented party-directory tools in all seven locales", () => {
     for (const path of ["/parties", "/ballot"]) {
