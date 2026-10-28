@@ -68,3 +68,8 @@ GATE: S5 shows a scorecard "miss" as official minus forecast (Likud +6 = six mor
 GATE: Hebrew uses מחבלים for the 7 October attackers where English says "gunmen" — proceeded because the Hebrew edition is written in Israeli press register, where it is the standard word; flagged to Daniel, one-line flip to חמושים.
 GATE: next election shown as 12 November 2030 (third Tuesday of Heshvan, Basic Law: The Knesset ss. 8–9) rather than "four years after" — proceeded because it follows the statute and the same rule reproduces 27 October 2026; flagged to Daniel.
 Remaining: count capture runs through the envelope count (Thu 29 Oct), then stop the local loop. Scorecard, About note and standing home publish themselves on their triggers.
+
+## 2026-10-28 brand
+- Brand is "Israel Votes" / ישראל בוחרת: nameplate option 7 (no side bar) on the notched bloc rule (15/46/59, notch at 61), icon C (61 on the rule) for favicon and app icons. Same mark in every edition (Daniel). Seat meter dropped from the masthead (Daniel).
+- Share images carry the nameplate in the footer; zero-seat bloc rows hidden. Verified en + he live after c496adf; standfirst wording tidied in a7cdcef.
+- GATE: English share-image standfirst now reads "Projection from the count so far (estimate)." — proceeded because it is a punctuation fix of existing labels, no new wording.
