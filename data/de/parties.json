@@ -939,8 +939,8 @@
       "machine": true
     },
     "status": {
-      "text": "Umfrage nicht gefunden",
-      "src": "01951895",
+      "text": "In der scheidenden Knesset (1 Sitz). In der bisherigen Auszählung unter dem Schwellenwert.",
+      "src": "ac7993d8",
       "machine": true
     },
     "who.0.text": {
@@ -1558,8 +1558,8 @@
       "machine": true
     },
     "status": {
-      "text": "In jeder aktuellen Umfrage unter dem Schwellenwert",
-      "src": "be024347",
+      "text": "Vor der Wahl zurückgezogen. Bisher keine Sitze in der Auszählung.",
+      "src": "88d8ba48",
       "machine": true
     },
     "who.0.text": {

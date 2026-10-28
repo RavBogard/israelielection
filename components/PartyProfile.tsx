@@ -21,6 +21,8 @@ import StanceTiles from "./profile/StanceTiles";
 import StrongholdsMap from "./profile/StrongholdsMap";
 import VoterBaseBar from "./profile/VoterBaseBar";
 import SeatBar from "./SeatBar";
+import ListStatusChip from "./list-status/ListStatusChip";
+import { shareOf, type ListShares } from "@/lib/list-status";
 
 /** An item as the page prints it: in Hebrew `text` is Localized and `prefix` (the surplus line's lead) is Hebrew UI. */
 type Item = { text: Txt; source: string | null; prefix?: string };
@@ -65,7 +67,7 @@ const MAJORITY = 61, TOTAL = 120;
  * everything else is paper and ink. Both editions: the words are lib/i18n/profile's, and in Hebrew the
  * data text is read through lib/i18n/overlays (English where no current Hebrew exists, marked lang="en").
  */
-export default function PartyProfile({ party: p, lang = "en", context,unavailable=false }: { party: Party; lang?: Lang; context?: SharedSeatContext | null;unavailable?:boolean }) {
+export default function PartyProfile({ party: p, lang = "en", context,unavailable=false,shares=null }: { party: Party; lang?: Lang; context?: SharedSeatContext | null;unavailable?:boolean;shares?:ListShares|null }) {
   const one=context ? (n:number)=>String(n) : seatFigure;
   const P = profileText[lang];
   const he = lang !== "en";
@@ -102,7 +104,10 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
     .map(({ v, i }) => ({ text: pt(`voters.${i}.text`, v.text), source: v.source }));
   // No poll has reported the list at all: the seat figures are absent, drawn hatched, not zero.
   const unpolled = reported.length === 0 && g.n === 0;
-  const note = blocNote(g, p.bloc, one, lang);
+  // With a count in use the bloc note speaks of the count: the list is counted when the projection gives it seats.
+  const note = blocNote(context ? { ...g, avg: g.projection, below: g.projection === 0 } : g, p.bloc, one, lang);
+  const countSeats = context ? context.pointSeats[p.id] ?? 0 : 0;
+  const chip = context ? <ListStatusChip seats={countSeats} seatStatus={context.seatStatus} pct={shareOf({ party: p.id, letters: lettersOf[p.id] }, shares, context)} lang={lang} /> : null;
   const thin: Txt | null = p.thin ? (he ? partyText(p, "thin", lang) : p.thin.replace(/^Our research registers have no /, "We have not yet found a sourced ")) : null;
   const whoItems: Item[] = p.who.map((w, i) => ({ text: pt(`who.${i}.text`, w.text), source: w.source }));
   const who: Item[] = p.surplusPartner
@@ -131,7 +136,7 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
           </div>
           <div className="bloc">
             <span className="chip"><i style={{ background: `var(--b-${p.bloc})` }} /><Loc v={bloc} /></span>
-            <span className="total">{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? <><b>{context.pointSeats[p.id] ?? 0}</b> {LIFECYCLE[lang].seats} · {LIFECYCLE[lang][context.seatStatus]}</> : g.avg === null ? (unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.head.notPolledSeparately) : g.below ? P.head.belowAverage : <><b>{one(g.avg)}</b>{P.head.seatsAverage}</>}</span>
+            <span className="total">{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? (countSeats > 0 ? <><b>{countSeats}</b> {LIFECYCLE[lang].seats} · {LIFECYCLE[lang][context.seatStatus]} {chip}</> : chip) : g.avg === null ? (unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.head.notPolledSeparately) : g.below ? P.head.belowAverage : <><b>{one(g.avg)}</b>{P.head.seatsAverage}</>}</span>
           </div>
         </div>
       </header>
@@ -146,7 +151,7 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
                 <div className={unpolled ? "pp-none" : undefined}>
                   <dd>{unavailable ? "—" : context ? context.pointSeats[p.id] ?? 0 : g.avg === null ? <span className="nf">{unpolled ? P.head.noPolls : status ? <Loc v={status} /> : P.glance.notPolled}</span> : g.below ? P.glance.below : one(g.avg)}</dd>
                   <dt>{context ? LIFECYCLE[lang][context.basis] : P.glance.seatsLabel}</dt>
-                  <small>{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? LIFECYCLE[lang][context.seatStatus] : g.avg === null ? P.glance.noSeatFigures : g.below ? (g.passingAvg !== null ? P.glance.wherePasses(one(g.passingAvg)) : P.glance.belowEvery) : g.low !== null ? P.glance.range(g.low, g.high!, g.n) : P.glance.scaled}</small>
+                  <small>{unavailable ? LIFECYCLE[lang].sourceUnavailable : context ? (countSeats > 0 ? LIFECYCLE[lang][context.seatStatus] : chip) : g.avg === null ? P.glance.noSeatFigures : g.below ? (g.passingAvg !== null ? P.glance.wherePasses(one(g.passingAvg)) : P.glance.belowEvery) : g.low !== null ? P.glance.range(g.low, g.high!, g.n) : P.glance.scaled}</small>
                 </div>
                 <div>
                   <dd>{r22 ? r22.seats : <span className="nf">{P.glance.newList}</span>}</dd>
@@ -181,7 +186,7 @@ export default function PartyProfile({ party: p, lang = "en", context,unavailabl
               {reported.length < 2 ? (
                 <p className="pp-nopolls">{reported.length === 0 ? P.spark.noPolls : P.spark.onePoll}</p>
               ) : (
-                <SeatSparkline series={series} result={r22} id={p.id} name={plain(name)} avg={g.avg !== null && !g.below ? g.avg : null} lang={lang} pollsterName={pollster} />
+                <SeatSparkline series={series} result={r22} id={p.id} name={plain(name)} avg={g.avg !== null && !g.below ? g.avg : null} projection={g.projection} lang={lang} pollsterName={pollster} />
               )}
               <p className="fig-src">
                 {reported.length === 0

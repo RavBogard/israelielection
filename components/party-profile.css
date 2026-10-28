@@ -82,9 +82,11 @@
 .pp-spark .dot { stroke-width: 1.5; }
 .pp-spark .dot.hollow { stroke-width: 1.5; }
 .pp-spark .avg { stroke: var(--ink); stroke-width: 1; }
+.pp-spark .proj { stroke: var(--psx); stroke-width: 2.5; }
 .pp-key { margin: 0; }
 .pp-key i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .pp-key i.ring { background: var(--sheet); border: 1.5px solid; width: 9px; height: 9px; }
+.pp-key i.proj { width: 18px; height: 0; border-radius: 0; border-top: 3px solid var(--psx); }
 .pp-key i.avg { width: 18px; height: 0; border-radius: 0; border-top: 1px solid var(--ink); }
 .pp-key i.dash { width: 18px; height: 0; border-radius: 0; border-top: 1.5px dashed var(--ink); }
 
@@ -172,6 +174,7 @@
 .pp-sparkwrap .sl.x.mid { transform: translate(-50%, -100%); }
 .pp-sparkwrap .sl.x.end, .pp-sparkwrap .sl.ref { transform: translate(-100%, -100%); }
 .pp-sparkwrap .sl.ref { font-weight: 600; color: var(--ink); }
+.pp-sparkwrap .sl.proj { transform: translate(0, -50%); font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--psx); }
 .pp-sparkwrap .sl.avg { transform: translate(0, -50%); font-family: var(--display); font-weight: 700; font-size: 15px; color: var(--ink); }
 /* Phones: the related links under a profile are full targets. */
 @media (pointer: coarse), (max-width: 640px) {

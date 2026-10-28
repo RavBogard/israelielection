@@ -939,8 +939,8 @@
       "machine": true
     },
     "status": {
-      "text": "Sondage introuvable",
-      "src": "01951895",
+      "text": "À la Knesset sortante (1 siège). Sous le seuil dans le décompte à ce stade.",
+      "src": "ac7993d8",
       "machine": true
     },
     "who.0.text": {
@@ -1558,8 +1558,8 @@
       "machine": true
     },
     "status": {
-      "text": "En dessous du seuil dans tous les sondages récents",
-      "src": "be024347",
+      "text": "Retiré avant le vote. Aucun siège dans le décompte à ce stade.",
+      "src": "88d8ba48",
       "machine": true
     },
     "who.0.text": {

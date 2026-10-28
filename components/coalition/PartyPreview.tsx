@@ -7,6 +7,9 @@ import { partyColor } from "@/lib/party-colors";
 import { blocs } from "@/lib/data";
 import { lettersOf } from "@/lib/letters";
 import { listSeats } from "@/lib/list-seats";
+import ListStatusChip from "../list-status/ListStatusChip";
+import { useListShares } from "../list-status/ListSharesProvider";
+import { shareOf } from "@/lib/list-status";
 import { seatFigure } from "@/lib/polls";
 import type { Lang } from "@/lib/i18n";
 import builder from "@/lib/i18n/builder";
@@ -36,6 +39,9 @@ export default function PartyPreview({ party: p, headingId, lang, context:initia
       ))}
     </ul>
   );
+  const shares = useListShares();
+  const countSeats = context ? context.pointSeats[p.id] ?? 0 : 0;
+  const chip = context ? <ListStatusChip seats={countSeats} seatStatus={context.seatStatus} pct={shareOf({ party: p.id, letters: lettersOf[p.id] }, shares, context)} lang={lang} /> : null;
   const s = listSeats(p.id);
   const seats = !s.n
     ? p.status ? <Loc v={partyText(p, "status", lang)} page={lang} /> : T.noPollFigures
@@ -63,7 +69,7 @@ export default function PartyPreview({ party: p, headingId, lang, context:initia
         <dt>{T.leader}</dt>
         <dd><Loc v={partyText(p, "leader", lang)} page={lang} /></dd>
         <dt>{context?LIFECYCLE[lang][context.basis]:T.seatsAverage}</dt>
-        <dd>{!context&&refreshFailed?LIFECYCLE[lang].sourceUnavailable:context?`${context.pointSeats[p.id]??0} · ${LIFECYCLE[lang][context.seatStatus]}`:seats}</dd>
+        <dd>{!context&&refreshFailed?LIFECYCLE[lang].sourceUnavailable:context?(countSeats>0?<>{countSeats} · {LIFECYCLE[lang][context.seatStatus]} {chip}</>:chip):seats}</dd>
       </dl>
       {p.who.length > 0 && (
         <div className="sec">

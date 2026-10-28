@@ -1,6 +1,9 @@
 "use client";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { useSeatContext } from "./seat-context/SeatContextProvider";
+import ListStatusChip from "./list-status/ListStatusChip";
+import { useListShares } from "./list-status/ListSharesProvider";
+import { shareOf } from "@/lib/list-status";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import Link from "next/link";
 import { partyColor } from "@/lib/party-colors";
@@ -47,7 +50,10 @@ type Props = {
  */
 export default function ProfileDetail({ party: p, headingId,context:initial }: Props) {
   const {context,refreshFailed}=useSeatContext(initial,!!initial);
+  const shares = useListShares();
   const color = partyColor(p.id);
+  const countSeats = context ? context.pointSeats[p.id] ?? 0 : 0;
+  const chip = context ? <ListStatusChip seats={countSeats} seatStatus={context.seatStatus} pct={shareOf({ party: p.id, letters: lettersOf[p.id] }, shares, context)} lang="en" /> : null;
   return (
     <div className="profile preview" style={{ ["--qc" as string]: color }}>
       <div className="ident">
@@ -70,8 +76,8 @@ export default function ProfileDetail({ party: p, headingId,context:initial }: P
       <dl className="kv">
         <dt>Leader</dt>
         <dd>{p.leader}</dd>
-        <dt>Seats, polling average</dt>
-        <dd>{!context&&refreshFailed ? LIFECYCLE.en.sourceUnavailable : context ? `${context.pointSeats[p.id] ?? 0} seats · ${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]}` : seatsLine(p)}</dd>
+        <dt>{context ? LIFECYCLE.en[context.basis] : "Seats, polling average"}</dt>
+        <dd>{!context&&refreshFailed ? LIFECYCLE.en.sourceUnavailable : context ? (countSeats > 0 ? <>{countSeats} seats · {LIFECYCLE.en[context.seatStatus]} {chip}</> : chip) : seatsLine(p)}</dd>
       </dl>
       {p.who.length > 0 && (
         <div className="sec">

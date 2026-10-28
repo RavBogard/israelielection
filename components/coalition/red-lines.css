@@ -1,0 +1,8 @@
+.red-lines { margin: 18px 0; padding: 14px 16px; background: var(--sheet); border: 1px solid var(--line-2); border-radius: var(--r); }
+.red-lines h2 { margin: 0 0 8px; font-size: 20px; }
+.red-lines h3 { margin: 12px 0 6px; font-size: 15px; }
+.red-lines ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.red-lines .rl-needs li { display: flex; align-items: center; gap: 8px; }
+.red-lines .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; flex: none; }
+.red-lines .s { color: var(--ink-2); }
+.red-lines .fig-src { margin: 12px 0 0; }

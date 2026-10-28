@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -8,6 +8,7 @@ import {
   widgetDocuments,
   generationDocuments,
 } from "./catalog";
+vi.mock("@/lib/seat-context-server", () => ({ seatContextForRender: async () => null }));
 import { Chart, Positions } from "@/components/article/Article";
 import { allCharts } from "@/lib/articles";
 import { LANGS } from "@/lib/i18n";
@@ -38,10 +39,10 @@ describe("trusted widget label editions", () => {
     expect(JSON.stringify(charts[id])).toBe(original);
     expect(html).toContain(charts[id].url);
   });
-  it("renders positions in every edition with actual fallback languages and source links", () => {
+  it("renders positions in every edition with actual fallback languages and source links", async () => {
     for (const lang of LANGS) {
       const html = renderToStaticMarkup(
-        createElement(Positions, { issue: "courts", lang }),
+        await Positions({ issue: "courts", lang }),
       );
       expect(html).toContain("/compare#issue-courts");
       expect(html).toContain("<figure");

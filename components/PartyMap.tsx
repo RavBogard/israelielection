@@ -5,6 +5,11 @@ import "./interactives.css";
 import "./map.css";
 import { useSeatContext } from "./seat-context/SeatContextProvider";
 import SeatBasis from "./seat-context/SeatBasis";
+import ListStatusChip from "./list-status/ListStatusChip";
+import { useListShares } from "./list-status/ListSharesProvider";
+import { POST_COUNT } from "@/lib/i18n/post-count";
+import { shareOf } from "@/lib/list-status";
+import { lettersOf } from "@/lib/letters";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { unmappedLists } from "@/lib/seat-context";
 import {
@@ -182,6 +187,9 @@ export default function PartyMap() {
     L = LIFECYCLE[lang];
   const named = (p: Party, field = "name") => partyText(p, field, lang);
   const { context, refreshFailed } = useSeatContext();
+  const shares = useListShares();
+  const PC = POST_COUNT[lang];
+  const official = context?.seatStatus === "official";
   const seatsOf = (id: string) =>
     context
       ? (context.pointSeats[id] ?? 0)
@@ -455,6 +463,7 @@ export default function PartyMap() {
 
       <div className={`layout${party ? " open" : ""}`}>
         <div className="mapcol">
+          {context && <h2 className="offmap-head">{official ? PC.groupInOfficial : PC.groupIn}</h2>}
           <div
             className={`map${party ? " has-sel" : ""}`}
             ref={mapRef}
@@ -464,6 +473,7 @@ export default function PartyMap() {
           >
             {cells}
           </div>
+          {context && <h2 className="offmap-head">{official ? PC.groupBelowOfficial : PC.groupBelow}</h2>}
           <div className="offmap">
             {offMap.map((p) => (
               <button
@@ -487,7 +497,7 @@ export default function PartyMap() {
                 </b>
                 <em>
                   {context
-                    ? `0 ${L.seats}. ${L[context.seatStatus]}`
+                    ? <ListStatusChip seats={0} seatStatus={context.seatStatus} pct={shareOf({ party: p.id, letters: lettersOf[p.id] }, shares, context)} lang={lang} />
                     : named(p, "status").text}
                 </em>
               </button>

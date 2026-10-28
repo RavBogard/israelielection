@@ -3,6 +3,7 @@
 import Link from "next/link";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { pinnedSeatHref } from "@/lib/seat-context";
+import { seatBasisPhrase } from "@/lib/i18n/post-count";
 import { useSeatContext } from "./seat-context/SeatContextProvider";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { Fragment, Suspense, useEffect, useState } from "react";
@@ -225,6 +226,7 @@ function Panel({ ed, row, shown, colSpan }: { ed: Ed; row: MatrixRow; shown: Com
 function CompareView({ context, unavailable, parties, blocs, rows, presets, selected, onSelect, text }: Props & { selected: string[]; onSelect?: (ids: string[]) => void }) {
   const ed = edition(useLang(), text);
   const { T } = ed;
+  const seatsPhrase = seatBasisPhrase(context ?? null, ed.lang);
   const [open, setOpen] = useState<string | null>(null);
   const [hover, setHover] = useState<{ row: string; stance: string } | null>(null);
   // A link to /compare#issue-<key> (from the Builder or a profile tile) opens that row.
@@ -308,7 +310,7 @@ function CompareView({ context, unavailable, parties, blocs, rows, presets, sele
       <div className="fig-key mx-key">
         <p className="ramp">
           <span className="bar" aria-hidden="true">{[0, 0.25, 0.5, 0.75, 1].map((x) => <i key={x} style={{ background: shade(x) }} />)}</span>
-          {T.ramp}
+          {T.ramp(seatsPhrase)}
         </p>
         <p className="glyphs">
           <span><i className="g none" aria-hidden="true" />{T.glyphs.none}</span>
@@ -319,7 +321,7 @@ function CompareView({ context, unavailable, parties, blocs, rows, presets, sele
           <span><i className="g ink" aria-hidden="true">1</i>{T.glyphs.ink}</span>
         </p>
         <p className="tap">{T.tap}</p>
-        <p className="seatnote">{T.seatnote}</p>
+        <p className="seatnote">{T.seatnote(seatsPhrase)}</p>
         <p className="blockey">
           {T.blockey}
           {groups.map((g) => <span key={g.id}><i style={{ background: `var(--b-${g.id})` }} aria-hidden="true" /><Loc v={g.label} /></span>)}
@@ -382,7 +384,7 @@ function CompareView({ context, unavailable, parties, blocs, rows, presets, sele
                             <li key={s.id} className={active === s.id ? "hi" : undefined}>
                               <span className={`key on-${onShade(s.position)}`} style={{ background: shade(s.position, s.n) }} aria-hidden="true">{s.n}</span>
                               <span className="sl"><Loc v={stanceLabel(ed, row, s.id)} /></span>
-                              <span className="ss" title={context ? LIFECYCLE[ed.lang][context.basis] : T.heldTitle}>{context ? String(holders.reduce((a,p)=>a+seatsOf(p),0)) : seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
+                              <span className="ss" title={T.heldTitle(seatsPhrase)}>{context ? String(holders.reduce((a,p)=>a+seatsOf(p),0)) : seatFigure(holders.reduce((a, p) => a + seatsOf(p), 0))}</span>
                             </li>
                           ))}
                         </ul>

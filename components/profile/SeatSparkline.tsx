@@ -4,6 +4,7 @@ import { seatTicks } from "@/lib/poll-chart";
 import type { Lang } from "@/lib/i18n";
 import profileText from "@/lib/i18n/profile";
 import { seatFigure } from "@/lib/polls";
+import { POST_COUNT } from "@/lib/i18n/post-count";
 import "../party-stroke.css";
 import type { Reading, Result2022 } from "./model";
 
@@ -20,16 +21,19 @@ const at = (x: number, y: number) => ({ left: `${(x / W) * 100}%`, top: `${(y / 
  * labels do not); the readings also ship as a table for assistive technology. The time axis runs left to right in
  * both editions; `pollsterName` gives the outlet as the page's edition names it.
  */
-export default function SeatSparkline({ series, result, id, name, avg, lang = "en", pollsterName = (p) => p }: { series: Reading[]; result: Result2022 | null; id: string; name: string; avg: number | null; lang?: Lang; pollsterName?: (pollster: string) => string }) {
+export default function SeatSparkline({ series, result, id, name, avg, projection = null, lang = "en", pollsterName = (p) => p }: { series: Reading[]; result: Result2022 | null; id: string; name: string; avg: number | null; projection?: number | null; lang?: Lang; pollsterName?: (pollster: string) => string }) {
   const P = profileText[lang].spark;
   const G = profileText[lang].glance;
+  const W2 = POST_COUNT[lang];
+  // Two different facts, two labels: the last campaign average, and (once there is a count) the projection from the count.
+  const avgLabel = projection !== null ? W2.finalAverage : G.seatsLabel;
   const md = (d: string) => mediumDate(d, lang);
   const reported = series.filter((r) => r.seats !== null);
   if (reported.length < 2) return null;
   const t0 = Date.parse(series[0].date), t1 = Date.parse(series[series.length - 1].date);
   const vals = reported.map((r) => r.seats!);
   const ref = result?.seats ?? null;
-  let low = Math.min(...vals, ref ?? Infinity, avg ?? Infinity), high = Math.max(...vals, ref ?? -Infinity, avg ?? -Infinity);
+  let low = Math.min(...vals, ref ?? Infinity, avg ?? Infinity, projection ?? Infinity), high = Math.max(...vals, ref ?? -Infinity, avg ?? -Infinity, projection ?? -Infinity);
   low = Math.max(0, Math.floor((low - 1) / 5) * 5);
   high = Math.ceil((high + 1) / 5) * 5;
   if (high - low < 10) high = low + 10;
@@ -74,6 +78,11 @@ export default function SeatSparkline({ series, result, id, name, avg, lang = "e
             <title>{P.point(pollsterName(r.pollster), r.dateUncertain ? P.undated : md(r.date), r.below ? P.below : P.seats(r.seats!))}</title>
           </circle>
         ))}
+        {projection !== null && (
+          <g>
+            <line className="proj" x1={x(Date.parse(last.date)) - 28} x2={W - PAD.r + 4} y1={y(projection)} y2={y(projection)} />
+          </g>
+        )}
         {avg !== null && (
           <g>
             <line className="avg" x1={x(Date.parse(last.date)) - 28} x2={W - PAD.r + 4} y1={y(avg)} y2={y(avg)} />
@@ -84,13 +93,15 @@ export default function SeatSparkline({ series, result, id, name, avg, lang = "e
         {seatTicks(low, high).map((n) => <span key={n} className="sl y" style={at(PAD.l - 8, y(n))}>{n}</span>)}
         {ref !== null && <span className="sl ref" style={at(W - PAD.r, y(ref) - 4)}>2022: {ref}</span>}
         {avg !== null && <span className="sl avg" style={at(W - PAD.r + 7, y(avg))}>{seatFigure(avg)}</span>}
+        {projection !== null && <span className="sl proj" style={at(W - PAD.r + 7, y(projection) + (avg !== null && Math.abs(y(projection) - y(avg)) < 14 ? 14 : 0))}>{projection}</span>}
         <span className="sl x" style={at(PAD.l, H - 3)}>{shortDate(series[0].date, lang)}</span>
         <span className="sl x mid" style={at(x(Date.parse(mid)), H - 3)}>{shortDate(mid, lang)}</span>
         <span className="sl x end" style={at(W - PAD.r, H - 3)}>{shortDate(series[series.length - 1].date, lang)}</span>
       </div>
       </div>
       <p className="fig-key pp-key pstroke" style={strokeVars(id)}>
-        {avg !== null && <span className="k"><i className="avg" /> {G.seatsLabel}, {seatFigure(avg)}</span>}
+        {avg !== null && <span className="k"><i className="avg" /> {avgLabel}, {seatFigure(avg)}</span>}
+        {projection !== null && <span className="k"><i className="proj" /> {W2.projection}, {projection}</span>}
         <span className="k"><i className="solid" style={{ background: "var(--psx)" }} /> {hollow ? P.othersJoined(mainPollsters) : P.joined(mainPollsters)}</span>
         {hollow && <span className="k"><i className="ring" style={{ borderColor: "var(--psx)" }} /> {hollowNames.map(pollsterName).join(G.and)}{P.hollowNote}</span>}
         {ref !== null && <span className="k"><i className="dash" />{` ${P.result2022}`}</span>}

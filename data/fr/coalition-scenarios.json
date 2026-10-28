@@ -70,8 +70,8 @@
       "machine": true
     },
     "agenda": {
-      "text": "Testez la majorité des sièges du scrutin sélectionné, puis inspectez les mandats enregistrés des partis. Il s’agit d’un hypothétique arrangement post-électoral, et non d’un accord de coalition.",
-      "src": "f6c43ef1",
+      "text": "Vérifiez si la répartition actuelle des sièges donne une majorité, puis examinez les conditions enregistrées des partis. Il s’agit d’un arrangement post-électoral hypothétique, et non d’un accord de coalition.",
+      "src": "fd431c6a",
       "machine": true
     },
     "obstacles.0": {

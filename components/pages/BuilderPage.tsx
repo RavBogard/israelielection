@@ -13,6 +13,9 @@ import { comparisonIssues } from "@/lib/positions";
 import { outgoingGovernment } from "@/lib/outgoing-government";
 import { resultsAsPoll } from "@/lib/results";
 import { fetchCount, resultsConfig } from "@/lib/results-live";
+import { listSharesForRender } from "@/lib/list-shares-server";
+import { ListSharesProvider } from "@/components/list-status/ListSharesProvider";
+import { POST_COUNT } from "@/lib/i18n/post-count";
 import type { Lang } from "@/lib/i18n";
 import builder from "@/lib/i18n/builder";
 import { governmentText, positionText, questionText } from "@/lib/i18n/overlays";
@@ -90,16 +93,25 @@ function SourceItems({ items, lang }: { items: { head: string; text: string }[];
 /** The Coalition Builder page body, in either edition. The route files hold only the metadata. */
 export default async function BuilderPage({ lang, revalidate, revision }: { lang: Lang; revalidate: number; revision?: string }) {
   const T = builder[lang];
-  const [live, context] = await Promise.all([fetchCount(revalidate), seatContextForRender(revision)]);
+  const [live, context, shares] = await Promise.all([fetchCount(revalidate), seatContextForRender(revision), listSharesForRender()]);
   if (revision && !context) return <div className="wrap"><SeatBasis context={null} lang={lang} pinned={!!revision} /></div>;
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   return (
     <div className="ix builder-page">
       <div className="wrap">
-        <CoalitionBuilder initialContext={context} pinned={!!revision} results={results} preset={presetIn(lang)} stances={stancesIn(lang)} unstated={unstatedIn(lang)} />
+        <ListSharesProvider shares={shares}>
+          <CoalitionBuilder initialContext={context} pinned={!!revision} results={results} preset={presetIn(lang)} stances={stancesIn(lang)} unstated={unstatedIn(lang)} />
+        </ListSharesProvider>
 
         <SourcesBox count={allPolls.length + 10} lang={lang}>
-          <PollSources lang={lang} />
+          <li>
+            <details className="campaign-sources">
+              <summary>{POST_COUNT[lang].campaignSources} <span className="n">{allPolls.length}</span></summary>
+              <ol>
+                <PollSources lang={lang} />
+              </ol>
+            </details>
+          </li>
           <SourceItems items={T.sources} lang={lang} />
           <ProfileSources lang={lang} />
           <SourceItems items={T.sourcesAfter} lang={lang} />

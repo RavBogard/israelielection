@@ -40,6 +40,8 @@ export type Reading = {
 export type Glance = {
   /** Seats, polling average: the list's average scaled to 120, as everywhere on the site; null when no poll reported it. */
   avg: number | null;
+  /** The list's seats in the shared count projection (or official seats); null when no count context is in use. Never the poll average. */
+  projection: number | null;
   /** Counts 0 in the average: below the threshold in every poll, or passing in under half. */
   below: boolean;
   /** The unscaled mean over the polls where it passed, for a list near the threshold. */
@@ -143,7 +145,8 @@ export function readings(party: Party): Reading[] {
 const variantAverage = averageAsPoll(variantPolls, parties.map((p) => p.id), { id: "avg-variant" });
 
 export function glance(party: Party, series: Reading[], context?: SharedSeatContext | null): Glance {
-  const av = listSeats(party.id, context);
+  // The poll average is always the campaign's last average; the count projection is its own field, never mixed into it.
+  const av = listSeats(party.id);
   const wv = variantAverage.results[party.id];
   const passing = mainPolls.map((p) => p.results[party.id]).filter((r) => r && !r.belowThreshold && r.seats > 0).map((r) => r!.seats);
   const current = context ? contextToPoll(context) : averagePoll;
@@ -151,7 +154,8 @@ export function glance(party: Party, series: Reading[], context?: SharedSeatCont
   const mates = parties.filter((p) => p.bloc === party.bloc).map((p) => ({ id: p.id, seats: current.results[p.id]?.seats ?? 0 })).sort((a, b) => b.seats - a.seats);
   const reported = series.filter((r) => r.seats !== null);
   return {
-    avg: context || av.n ? av.seats : null,
+    avg: av.n ? av.seats : null,
+    projection: context ? (context.pointSeats[party.id] ?? 0) : null,
     below: av.below,
     passingAvg: av.passing,
     k: av.k,

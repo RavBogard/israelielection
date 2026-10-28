@@ -939,8 +939,8 @@
       "machine": true
     },
     "status": {
-      "text": "未找到投票",
-      "src": "01951895",
+      "text": "在即将卸任的议会中（1席）。目前点票中低于门槛。",
+      "src": "ac7993d8",
       "machine": true
     },
     "who.0.text": {
@@ -1558,8 +1558,8 @@
       "machine": true
     },
     "status": {
-      "text": "最近的每一次民意调查均低于阈值",
-      "src": "be024347",
+      "text": "在投票前退出。目前点票中没有席位。",
+      "src": "88d8ba48",
       "machine": true
     },
     "who.0.text": {
