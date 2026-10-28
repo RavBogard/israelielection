@@ -7,7 +7,7 @@ import { DESCRIPTION } from "@/lib/site";
 // has nothing to fetch, so regenerating it is cheap.
 export const revalidate = 60;
 
-export const metadata: Metadata = { title: { absolute: "Israel Votes 2026" }, description: DESCRIPTION, alternates: alternates("/") };
+export const metadata: Metadata = { title: { absolute: "Israel Votes" }, description: DESCRIPTION, alternates: alternates("/") };
 
 export default function Page() {
   return <HomePage lang="en" revalidate={revalidate} />;

@@ -1,3 +1,4 @@
+import { ELECTION_DAY } from "@/lib/election-date";
 import { GH, GW } from "@/components/HomeGlyphs";
 
 /*
@@ -38,7 +39,7 @@ export function ResultsGlyph({ closed }: { closed: boolean }) {
 
 /** The outgoing coalition's seats after each step, against 61. */
 export function GovernmentGlyph({ points }: { points: { date: string; seats: number }[] }) {
-  const ts = points.map((p) => t(p.date)), lo = Math.min(...ts), hi = Date.parse("2026-10-27");
+  const ts = points.map((p) => t(p.date)), lo = Math.min(...ts), hi = Date.parse(ELECTION_DAY);
   const x = (v: number) => 20 + ((v - lo) / Math.max(1, hi - lo)) * 250, y = (s: number) => 170 - ((s - 50) / 30) * 150;
   const d = points.map((p, i) => `${i ? `H${x(ts[i]).toFixed(1)}V` : `M${x(ts[i]).toFixed(1)},`}${y(p.seats).toFixed(1)}`).join("") + `H${x(hi).toFixed(1)}`;
   return (
@@ -62,7 +63,7 @@ export function CompareGlyph({ questions, lists }: { questions: number; lists: n
 
 /** The family tree: one lane per party history, a dot for each split, merger or alliance. */
 export function FamilyGlyph({ lanes }: { lanes: string[][] }) {
-  const all = lanes.flat().map(t), lo = Math.min(...all), hi = Date.parse("2026-10-27"), x = (v: number) => 20 + ((v - lo) / (hi - lo)) * 260;
+  const all = lanes.flat().map(t), lo = Math.min(...all), hi = Date.parse(ELECTION_DAY), x = (v: number) => 20 + ((v - lo) / (hi - lo)) * 260;
   const gap = 160 / Math.max(1, lanes.length);
   return (
     <Svg k="family">

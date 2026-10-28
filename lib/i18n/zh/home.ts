@@ -2,7 +2,7 @@
 import type { HomeText } from "../home";
 type Bits = (string | number)[];
 const en: HomeText = {
-    title: "以色列选举 2026",
+    title: "以色列选举",
     hero: {
         standfirstLive: "根据目前的计票结果估算以色列议会席位。",
         standfirst: "选情概览：根据模型估算以色列议会席位。",

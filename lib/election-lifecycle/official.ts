@@ -3,6 +3,13 @@ import partyData from "../../data/parties.json";
 import { ELECTION, fingerprint, POLLS_CLOSE, validSeats } from "./core";
 import { articleOf, htmlTables, isTestEnvironment, textOf } from "./html";
 import type { SharedSeatContext, SourceRef } from "./types";
+import { currentElection } from "../political-record/elections";
+const HE_MONTHS = ["בינואר", "בפברואר", "במרץ", "באפריל", "במאי", "ביוני", "ביולי", "באוגוסט", "בספטמבר", "באוקטובר", "בנובמבר", "בדצמבר"];
+/** The election day as the CEC page writes it: Hebrew long form, dotted, slashed and ISO. */
+export function dateMarkers(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return [`${d} ${HE_MONTHS[m - 1]} ${y}`, `${d}.${m}.${y}`, `${String(d).padStart(2, "0")}.${String(m).padStart(2, "0")}.${y}`, `${d}/${m}/${y}`, `${String(d).padStart(2, "0")}/${String(m).padStart(2, "0")}/${y}`, iso];
+}
 export type OfficialOptions = {
   election: string;
   knesset: number;
@@ -13,8 +20,8 @@ export type OfficialOptions = {
 };
 export const officialOptions = (now: string, url: string): OfficialOptions => ({
   election: ELECTION,
-  knesset: 26,
-  dateMarkers: ["27 באוקטובר 2026", "27.10.2026", "27/10/2026", "2026-10-27"],
+  knesset: currentElection().termNumber,
+  dateMarkers: dateMarkers(currentElection().electionDay),
   now,
   url,
   letters: config.letters,

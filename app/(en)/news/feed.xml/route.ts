@@ -53,7 +53,7 @@ export function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>${esc("Israel Votes 2026: daily briefing")}</title>
+<title>${esc("Israel Votes: daily briefing")}</title>
 <link>${NEWS}</link>
 <atom:link href="${NEWS}/feed.xml" rel="self" type="application/rss+xml"/>
 <description>${esc(DESCRIPTION)}</description>

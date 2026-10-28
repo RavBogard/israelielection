@@ -25,5 +25,5 @@ function Foreword() {
 }
 
 export default function Page() {
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/", title: "Israel Votes 2026" }} foreword={<><Foreword /><AboutSupport /></>} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/", title: "Israel Votes" }} foreword={<><Foreword /><AboutSupport /></>} />;
 }

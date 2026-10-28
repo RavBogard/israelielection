@@ -1,3 +1,4 @@
+import { COUNT_TIMELINE } from "../political-record/elections";
 import { createHash, randomUUID } from "node:crypto";
 import { RedisLiveStore, configuredStore } from "../live-forecast/store";
 import { runWorker, electionWindow } from "../live-forecast/worker";
@@ -161,9 +162,9 @@ export async function runCycle(
 ) {
   const current = cycleAt(Date.parse(now));
   if (current === null) return { status: "before_close" };
-  if (request.window === "night" && current >= Date.parse("2026-10-28T06:00Z"))
+  if (request.window === "night" && current >= COUNT_TIMELINE.regularStart)
     return { status: "outside_night_window" };
-  if (request.window === "regular" && current < Date.parse("2026-10-28T06:00Z"))
+  if (request.window === "regular" && current < COUNT_TIMELINE.regularStart)
     return { status: "before_regular_window" };
   const time = request.cycleAt ? Date.parse(request.cycleAt) : current;
   if (!Number.isFinite(time) || time > current || cycleAt(time) !== time)
@@ -214,7 +215,7 @@ export async function runCycle(
 
 /** Delayed signed maintenance action targets only the bounded intensive schedule. */
 export async function pauseNightSchedule(now = new Date().toISOString()) {
-  if (Date.parse(now) < Date.parse("2026-10-28T06:00Z"))
+  if (Date.parse(now) < COUNT_TIMELINE.regularStart)
     return { status: "before_pause_time" };
   const id = `lifecycle-${process.env.VERCEL_ENV ?? "development"}-night-2026`,
     base = new URL(process.env.QSTASH_URL ?? "https://qstash.upstash.io")

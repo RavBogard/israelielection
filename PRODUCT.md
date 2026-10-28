@@ -52,7 +52,7 @@ Horizon (Daniel, 2026-10-05): the site is a **standing reference for future Isra
 
 ## Brand Commitments
 
-- **Name: "Israel Votes 2026"** (Daniel, 2026-10-05). israelielection.org is the address, not the name. Titles, share text and the wordmark keep the name.
+- **Name: "Israel Votes"**, no year anywhere (Daniel, 2026-10-28; was "Israel Votes 2026" from 2026-10-05). israelielection.org is the address, not the name. Titles, share text, metadata, the footer and the wordmark carry the name without a year; a 2026 edition page keeps the year in its own title ("Israel Votes: the 2026 election").
 - **Byline:** "A project of Rabbi Daniel Bogard." Not CRC-branded; the About page states independence from his congregation. His signed note appears on the home page and About; text in his voice is his to approve.
 - **Tool disclosure is part of the brand:** About names Gemini Flash 3.8 for the briefing and Claude Code (Fable 5.1 and Opus 5.5) for development. Do not revert to a generic "AI".
 - **Voice:** educational, precise, sourced; evidence distinguished from interpretation; legal findings stated fully and attributed first, with Israel's rejection in one sentence.

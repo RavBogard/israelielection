@@ -12,7 +12,7 @@ import { heText } from "./he-text";
 type Bits = (string | number)[];
 
 const en = {
-  title: "Israel Votes 2026",
+  title: "Israel Votes",
   hero: {
     standfirstLive: "The count so far, translated into estimated Knesset seats.",
     standfirst: "Where the race stands, translated into modeled Knesset seats.",

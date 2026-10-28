@@ -1,3 +1,4 @@
+import { COUNT_TIMELINE } from "../political-record/elections";
 /**
  * The browser relay for the CEC count files (scripts/live-count/capture.mts). The files sit behind an AWS WAF
  * challenge that only a real browser passes; the relay fetches them there and hands the body to the unchanged
@@ -8,7 +9,7 @@ import { countHash, validCount } from "../results-snapshot";
 import type { Count } from "../results";
 
 /** No relay write before Israel 22:00 on election day (the shared cadence start). */
-export const RELAY_OPENS = Date.parse("2026-10-27T20:00:00Z");
+export const RELAY_OPENS = COUNT_TIMELINE.pollsClose;
 
 export type RelayCheck =
   | { ok: true; count: Count; hash: string }

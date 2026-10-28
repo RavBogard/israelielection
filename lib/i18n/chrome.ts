@@ -9,8 +9,8 @@ import { editionText } from "./edition-text";
 import { heText } from "./he-text";
 
 const en = {
-  siteName: "Israel Votes 2026",
-  homeLabel: "Israel Votes 2026, home",
+  siteName: "Israel Votes",
+  homeLabel: "Israel Votes, home",
   skip: "Skip to content",
   /** The masthead nav. */
   navLabel: "Primary navigation",

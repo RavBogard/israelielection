@@ -1,13 +1,14 @@
 "use client";
 
 import { geographyToElection } from "@/lib/geography-view";
+import { currentElection } from "@/lib/political-record/elections";
 import type { GeographySnapshot } from "@/lib/election-lifecycle/types";
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./votemap.css";
 import { editionPath } from "@/lib/i18n";
 import { useLang } from "@/lib/i18n/lang";
 import { mapText, mapMessage, mapDate } from "@/lib/i18n/vote-map";
-import type { Lang } from "@/lib/i18n";
+import { locale, type Lang } from "@/lib/i18n";
 import LocalityHistory from "./LocalityHistory";
 import { readMapState, mapHref } from "@/lib/locality-history";
 import {
@@ -44,12 +45,16 @@ import {
  */
 
 export const ELECTIONS = [
-  { id: "2022", label: "Nov 2022" },
-  { id: "2021", label: "Mar 2021" },
-  { id: "2020", label: "Mar 2020" },
-  { id: "2019b", label: "Sep 2019" },
-  { id: "2019a", label: "Apr 2019" },
+  { id: "2022", label: "Nov 2022", date: "2022-11-01" },
+  { id: "2021", label: "Mar 2021", date: "2021-03-23" },
+  { id: "2020", label: "Mar 2020", date: "2020-03-02" },
+  { id: "2019b", label: "Sep 2019", date: "2019-09-17" },
+  { id: "2019a", label: "Apr 2019", date: "2019-04-09" },
 ] as const;
+/** The gated layer for the current election: its map id is the registry id; ?election=2026 is an alias (readMapState). */
+const GEO_ID = currentElection().id;
+const monthYearLabel = (iso: string, lang: Lang) =>
+  new Intl.DateTimeFormat(locale(lang), { month: "short", year: "numeric", timeZone: "Asia/Jerusalem" }).format(new Date(`${iso}T12:00:00Z`));
 
 type Shape = { code: number; d: string; box: [number, number, number, number] };
 type Context = { westBank: number[][][]; gaza: number[][][] };
@@ -216,9 +221,9 @@ export default function VoteMap() {
         if (!disposed && !request.signal.aborted) {
           setGeographyFailed(false);
           setGeography({ revision: snapshot.revision, election });
-          setCache((c) => ({ ...c, "2026": election }));
+          setCache((c) => ({ ...c, [GEO_ID]: election }));
           if (!new URLSearchParams(window.location.search).has("election"))
-            setElectionId("2026");
+            setElectionId(GEO_ID);
           setGeographyChecked(true);
         }
       } catch {
@@ -266,7 +271,7 @@ export default function VoteMap() {
   ) {
     let path = href(mapHref(id, name, code, nextMode));
     if (
-      id === "2026" &&
+      id === GEO_ID &&
       geography &&
       new URLSearchParams(window.location.search).has("geography")
     )
@@ -319,7 +324,7 @@ export default function VoteMap() {
   }, []);
 
   useEffect(() => {
-    if (cache[electionId] || electionId === "2026") return;
+    if (cache[electionId] || electionId === GEO_ID) return;
     getJson<VoteMapElection>(`/vote-map/${electionId}.json`)
       .then((e) => setCache((c) => ({ ...c, [electionId]: e })))
       .catch(() => setError(true));
@@ -488,7 +493,7 @@ export default function VoteMap() {
   });
 
   if (error) return <p className="vm-msg">{t.error}</p>;
-  if (electionId === "2026" && !geography && geographyChecked)
+  if (electionId === GEO_ID && !geography && geographyChecked)
     return (
       <div className="vm-msg">
         <p>{t.unavailable}</p>
@@ -605,25 +610,18 @@ export default function VoteMap() {
             }}
           >
             {(geography
-              ? [{ id: "2026", label: geography.election.label }, ...ELECTIONS]
+              ? [{ id: GEO_ID, label: geography.election.label, date: geography.election.date }, ...ELECTIONS]
               : ELECTIONS
             ).map((e) => (
               <option key={e.id} value={e.id}>
-                {mapDate(
-                  (
-                    {
-                      "2022": "2022-11-01",
-                      "2021": "2021-03-23",
-                      "2020": "2020-03-02",
-                      "2019b": "2019-09-17",
-                      "2019a": "2019-04-09",
-                      "2026": "2026-10-27",
-                    } as Record<string, string>
-                  )[e.id],
-                  lang,
-                )}
+                {mapDate(e.date, lang)}
               </option>
             ))}
+            {!geography && (
+              <option disabled value="">
+                {monthYearLabel(currentElection().electionDay, lang)} ({t.pendingOfficial})
+              </option>
+            )}
           </select>
         </label>
         <label>
@@ -672,7 +670,7 @@ export default function VoteMap() {
           onClick={async () => {
             const path =
               href(mapHref(electionId, list.name, selected, mode)) +
-              (electionId === "2026" && geography
+              (electionId === GEO_ID && geography
                 ? `&geography=${geography.revision}`
                 : "");
             try {
@@ -1172,7 +1170,7 @@ export default function VoteMap() {
         </aside>
       </div>
 
-      {electionId === "2026" && (
+      {electionId === GEO_ID && (
         <details>
           <summary>{t.allRows}</summary>
           <div

@@ -365,5 +365,5 @@ export const HE_FIND = {
   variantNone: (who: string, bloc: string) => `בלי סקרי ${who} ${bloc} נשאר ללא שינוי`,
   variant: (who: string, bloc: string, v: string, d: string, down: boolean) => `בלי סקרי ${who} ${bloc} ${down ? "יורד" : "עולה"} ל-${v}, ${down ? "ירידה" : "עלייה"} של ${d} מנדטים`,
   cite: (n: number, date: string, net: string, netV: string, opp: string, oppV: string, url: string) =>
-    `פתק 2026, ממוצע ${n === 1 ? "הסקר העדכני היחיד" : `${n} הסקרים העדכניים`}, נכון ל-${date}: ${net} ${netV}, ${opp} ${oppV} מתוך 120 מנדטים. ${url}`,
+    `פתק, ממוצע ${n === 1 ? "הסקר העדכני היחיד" : `${n} הסקרים העדכניים`}, נכון ל-${date}: ${net} ${netV}, ${opp} ${oppV} מתוך 120 מנדטים. ${url}`,
 };

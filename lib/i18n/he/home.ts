@@ -3,7 +3,7 @@
 import type { HomeText } from "../home";
 
 const he: HomeText = {
-  title: "פתק 2026",
+  title: "פתק",
   hero: {
     standfirstLive: "הקולות שנספרו עד כה, בתרגום להערכת מנדטים.",
     standfirst: "תמונת הגושים לפי ממוצע הסקרים, במנדטים.",

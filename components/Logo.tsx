@@ -1,8 +1,5 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useSeatContext } from "./seat-context/SeatContextProvider";
-import { electionChromeYear } from "@/lib/election-chrome";
 import { isRtl, type Lang } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 
@@ -61,7 +58,7 @@ export function Mark({
   );
 }
 
-/** Mark + wordmark, linking home. The Hebrew wordmark is פתק 2026, its mark filling from the right. */
+/** Mark + wordmark, linking home. The Hebrew wordmark is פתק, its mark filling from the right. */
 export default function Logo({
   className,
   lang = "en",
@@ -69,23 +66,16 @@ export default function Logo({
   className?: string;
   lang?: Lang;
 }) {
-  const { context, refreshFailed } = useSeatContext();
-  const year = electionChromeYear(
-    usePathname(),
-    context?.election ?? null,
-    refreshFailed,
-  );
   if (lang !== "en")
     return (
       <Link
         href={`/${lang}`}
         className={`brand${className ? ` ${className}` : ""}`}
-        aria-label={chrome[lang].homeLabel.replace(/2026/g, year ?? "")}
+        aria-label={chrome[lang].homeLabel}
       >
         <Mark className="mark" rtl={isRtl(lang)} />
         <span className="word">
-          {chrome[lang].siteName.replace(/\s*2026$/, "")}{" "}
-          {year && <span className="yr">{year}</span>}
+          {chrome[lang].siteName}
         </span>
       </Link>
     );
@@ -93,11 +83,11 @@ export default function Logo({
     <Link
       href="/"
       className={`brand${className ? ` ${className}` : ""}`}
-      aria-label={`Israel Votes${year ? " " + year : ""}, home`}
+      aria-label="Israel Votes, home"
     >
       <Mark className="mark" />
       <span className="word">
-        Israel Votes {year && <span className="yr">{year}</span>}
+        Israel Votes
       </span>
     </Link>
   );

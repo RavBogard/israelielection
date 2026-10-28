@@ -1,4 +1,5 @@
 "use client";
+import { isCurrentElectionRef } from "@/lib/political-record/elections";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { HISTORY_ELECTIONS, localityHistory } from "@/lib/locality-history";
@@ -52,7 +53,7 @@ export default function LocalityHistory({
     };
   }, []);
   const exportHref = editionPath(
-    `/export/locality?${new URLSearchParams({ locality: String(code), election, list, mode, ...(election === "2026" && geographyRevision ? { geography: geographyRevision } : {}) })}`,
+    `/export/locality?${new URLSearchParams({ locality: String(code), election, list, mode, ...(isCurrentElectionRef(election) && geographyRevision ? { geography: geographyRevision } : {}) })}`,
     lang,
   )!;
   const number = (n: number) => n.toLocaleString("en-US"),

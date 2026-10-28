@@ -1,3 +1,4 @@
+import { isCurrentElectionRef } from "./political-record/elections";
 import { getSharedSeatContext } from "./election-lifecycle/server";
 import { lifecycleStore } from "./election-lifecycle/store";
 import { geographyToElection } from "./geography-view";
@@ -315,7 +316,7 @@ async function buildSourceExport(
     let elections = historicalElections;
     const places = historicalPlaces;
     let selectedGeographyRevision: string | null = null;
-    if (q.get("election") === "2026") {
+    if (isCurrentElectionRef(q.get("election"))) {
       const revision = q.get("geography") ?? undefined;
       if (revision && !/^[a-f0-9]{64}$/.test(revision)) return null;
       try {

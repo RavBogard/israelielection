@@ -1,5 +1,5 @@
 ---
-name: Israel Votes 2026
+name: Israel Votes
 description: The shape of a majority. Paper and two inks; 120 seats, 61 marked; colour only as data.
 colors:
   paper: "#f6f5f1"
@@ -192,7 +192,7 @@ components:
     height: "44px"
 ---
 
-# Design System: Israel Votes 2026
+# Design System: Israel Votes
 
 ## Overview
 

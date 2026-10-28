@@ -1,7 +1,8 @@
+import { electionByLegacyDate } from "@/lib/political-record/elections";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
-/** The26th edition predates canonical IDs in shared seat snapshots. */
+/** Early seat snapshots carry the election day instead of the canonical id. */
 export function canonicalSeatEdition(id: string) {
-  return id === "2026-10-27" ? "il-knesset-26" : id;
+  return electionByLegacyDate(id)?.id ?? id;
 }
 export function authoritativeEdition(body: {
   currentElectionId?: unknown;

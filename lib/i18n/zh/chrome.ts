@@ -1,8 +1,8 @@
 // Static machine translation; regenerate explicitly with scripts/i18n/generate-editions.mts.
 import type { Chrome } from "../chrome";
 const en: Chrome = {
-    siteName: "以色列选举 2026",
-    homeLabel: "以色列选举 2026，首页",
+    siteName: "以色列选举",
+    homeLabel: "以色列选举，首页",
     skip: "跳至内容",
     navLabel: "主要导航",
     openMenu: "打开菜单",

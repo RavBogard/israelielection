@@ -1,3 +1,4 @@
+import { ELECTION_DAY } from "@/lib/election-date";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import PageHead from "@/components/PageHead";
@@ -158,7 +159,7 @@ export function resourceTiles(
           elections={timeline.elections.map((e) => e.date)}
           terms={timeline.governments.map((g) => ({
             from: g.from,
-            to: g.to || "2026-10-27",
+            to: g.to || ELECTION_DAY,
           }))}
         />
       ),

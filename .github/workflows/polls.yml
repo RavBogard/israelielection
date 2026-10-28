@@ -1,13 +1,11 @@
 name: Polls
 
-# Twice a day: import new polls from Wikipedia. Polls that pass the validator are committed to
+# Manual runs only (Daniel, 2026-10-28: the campaign is over, so the twice-daily schedule is removed; the file stays for the
+# next campaign). Import new polls from Wikipedia. Polls that pass the validator are committed to
 # main (Vercel redeploys). Polls that fail go to one rolling review PR assigned to Daniel.
 # Election-night acquisition is coordinated by signed QStash cycles; no independent10-minute importer.
 # Fallback by hand: Run workflow with a pollster and its seats (scripts/jobs/add-exit-poll.mts).
 on:
-  schedule:
-    - cron: "0 5 * * *"   # 08:00 Israel
-    - cron: "0 18 * * *"  # 21:00 Israel, after the evening TV polls
   workflow_dispatch:
     inputs:
       pollster:
@@ -38,16 +36,9 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REVIEW_BRANCH: polls/review
     steps:
-      - name: Automatic acquisition stops at polls close; signed cycles take over
+      - name: Manual runs only
         id: window
-        env:
-          MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
-        run: |
-          if [ "$MANUAL" = true ] || [ "$(date -u +%s)" -lt "$(date -u -d '2026-10-27T20:00:00Z' +%s)" ]; then
-            echo 'allowed=true' >> "$GITHUB_OUTPUT"
-          else
-            echo 'allowed=false' >> "$GITHUB_OUTPUT"
-          fi
+        run: echo 'allowed=true' >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v5
         if: steps.window.outputs.allowed == 'true'
       - uses: actions/setup-node@v5
@@ -77,7 +68,7 @@ jobs:
       - name: Campaign forecast write window
         if: steps.window.outputs.allowed == 'true'
         id: campaign
-        run: node -e "require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'open='+(Date.now()<Date.parse('2026-10-27T20:00:00Z'))+'\n')"
+        run: node -e "const c=require('./data/election.json');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'open='+(Date.now()<Date.parse(c.pollsClose))+'\n')"
 
       - name: Regenerate the forecast on the new polls
         # scripts/forecast/forecast.mjs: refuses to run once data/forecast.json is marked final, so exit polls never change the prediction.

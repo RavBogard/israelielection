@@ -1,3 +1,4 @@
+import { COUNT_TIMELINE } from "../political-record/elections";
 import { readCountRecord } from "./count-store";
 import { mirrorPublishedLifecycle } from "../political-record/operations";
 import { randomUUID } from "node:crypto";
@@ -46,7 +47,7 @@ export async function runLifecycleWorker(
           }),
     ]);
     appendSnapshots(ledger, [
-      ...(Date.parse(now) < Date.parse("2026-10-27T20:00:00Z")
+      ...(Date.parse(now) < COUNT_TIMELINE.pollsClose
         ? [campaignContext(now)]
         : []),
       ...bridge.snapshots,
