@@ -91,8 +91,8 @@ export type Chrome = typeof en;
 
 /**
  * The Hebrew edition's menus: the same four-group disclosure menus as English, listing the Hebrew pages, the
- * parties (filled in by the layout from the party data) and the English guides. `hrefLang: "en"` marks a page
- * that exists only in English; the menu adds "(באנגלית)" after it. Results and Forming a government join once
+ * parties (filled in by the layout from the party data) and the guides. `hrefLang: "en"` marks a page whose content
+ * is still only in English; the menu adds "(באנגלית)" after it. Results and Forming a government join once
  * polls close, as in English.
  */
 type HeItem = { href: string; label: string; description: string; short?: string; hrefLang?: Lang; afterClose?: true };
@@ -103,7 +103,7 @@ export const HE_NAV_GROUPS: { id: string; label: string; items: HeItem[] }[] = [
     items: [
       { href: "/he/polls", label: "סקרים", description: "כל סקרי המנדטים של מערכת הבחירות וממוצע הסקרים העדכני." },
       { href: "/he/forecast", label: "התחזית", description: "תחזית המנדטים של האתר, איך חישבנו אותה ואיך היא תיבחן." },
-      { href: "/news", label: "התדריך היומי", hrefLang: "en", description: "תדריך מתוארך בכל יום, עם קישורים לדיווחים המקוריים." },
+      { href: "/he/news", label: "התדריך היומי", description: "תדריך מתוארך בכל יום, עם קישורים לדיווחים המקוריים." },
       { href: "/he/results", label: "תוצאות", afterClose: true, description: "ספירת הקולות בליל הבחירות, עם המקור ושעת העדכון." },
       { href: "/he/government", label: "הרכבת הממשלה", description: "המגעים להרכבת הממשלה הבאה והממשלה היוצאת." },
     ],
@@ -114,8 +114,8 @@ export const HE_NAV_GROUPS: { id: string; label: string; items: HeItem[] }[] = [
     items: [
       { href: "/he/coalition-builder", label: "מרכיבים קואליציה", description: "בחרו מפלגות מכל סקר ובדקו אם מגיעים ל-61." },
       { href: "/he/compare", label: "השוואת עמדות", description: "עמדות המפלגות בסוגיות המרכזיות, זו לצד זו, עם מקורות." },
-      { href: "/parties", label: "מפת המפלגות", hrefLang: "en", description: "כל הרשימות לפי ממוצע הסקרים, ולכל אחת פרופיל עם מקורות." },
-      { href: "/ballot", label: "כל הרשימות שהוגשו", hrefLang: "en", description: "כל הרשימות שהגישו מועמדות, גם הקטנות, ומצב כל אחת." },
+      { href: "/he/parties", label: "מפת המפלגות", description: "כל הרשימות לפי ממוצע הסקרים, ולכל אחת פרופיל עם מקורות." },
+      { href: "/he/ballot", label: "כל הרשימות שהוגשו", description: "כל הרשימות שהגישו מועמדות, גם הקטנות, ומצב כל אחת." },
     ],
   },
   // The parties group: one link per party to its Hebrew profile, filled in by app/(he)/he/layout.tsx.
@@ -124,20 +124,20 @@ export const HE_NAV_GROUPS: { id: string; label: string; items: HeItem[] }[] = [
     id: "how",
     label: "מדריכים",
     items: [
-      { href: "/how-it-works", label: "איך הבחירות עובדות", hrefLang: "en", description: "הפתק, זכות הבחירה, חלוקת המנדטים והרכבת הממשלה." },
-      { href: "/vote-map", label: "מפת ההצבעה", hrefLang: "en", description: "איך הצביע כל יישוב בחמש מערכות הבחירות, 2019 עד 2022." },
+      { href: "/he/how-it-works", label: "איך הבחירות עובדות", description: "הפתק, זכות הבחירה, חלוקת המנדטים והרכבת הממשלה." },
+      { href: "/he/vote-map", label: "מפת ההצבעה", description: "איך הצביע כל יישוב בחמש מערכות הבחירות, 2019 עד 2022." },
       { href: "/party-history", label: "אילן היוחסין של המפלגות", hrefLang: "en", description: "מאיפה באה כל מפלגה: פילוגים, איחודים ובריתות." },
-      { href: "/timeline", label: "ציר זמן", hrefLang: "en", description: "בחירות, ראשי ממשלה ואירועי מפתח מ-1977 עד 2026." },
-      { href: "/glossary", label: "מילון מונחים", hrefLang: "en", description: "מונחי הבחירות, עם התעתיק וההגייה באנגלית." },
+      { href: "/he/timeline", label: "ציר זמן", description: "בחירות, ראשי ממשלה ואירועי מפתח מ-1977 עד 2026." },
+      { href: "/he/glossary", label: "מילון מונחים", description: "מונחי הבחירות, עם התעתיק וההגייה באנגלית." },
     ],
   },
 ];
 /** The utilities: Home, Search and About sit in the bar; the rest at the foot of every open panel, the phone menu and the footer. */
 export const HE_NAV_UTILITIES: HeItem[] = [
   { href: "/he", label: "ראשי", description: "" },
-  { href: "/search", label: "חיפוש", hrefLang: "en", description: "" },
-  { href: "/about", label: "אודות", hrefLang: "en", description: "" },
-  { href: "/start", label: "מסלול היכרות", hrefLang: "en", description: "" },
+  { href: "/he/search", label: "חיפוש", description: "" },
+  { href: "/he/about", label: "אודות", description: "" },
+  { href: "/he/start", label: "מסלול היכרות", description: "" },
   { href: "/corrections", label: "תיקונים ופניות", hrefLang: "en", description: "" },
 ];
-export const HE_NAV_BAR = ["/he", "/search", "/about"];
+export const HE_NAV_BAR = ["/he", "/he/search", "/he/about"];
