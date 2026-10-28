@@ -44,3 +44,7 @@ GATE: building UI changes straight to main via PRs without a preview gate. Proce
 ## 2026-10-28 — "now 68" chips renamed
 Readers took the "now N" chip (outgoing-Knesset seats) for a live-count figure. Renamed chip and column to "last Knesset" in all seven editions, said in the key that it is not the 2022 result, captioned the hollow tick on the bloc bars, and put the estimate first in the hero's bloc line.
 GATE: rewrote the chip wording without a wording round — proceeded because Daniel reported the confusion, the chip itself and its meaning were already approved, and only the label changed.
+
+## 2026-10-28 — home hero is the chamber (option C)
+Daniel picked option C of three (artifact https://claude.ai/artifact/5NAvrdfK8ouTykXKHRUt4j). Once the seat context is partial_count or official_seats, the home hero is ChamberHero: "No bloc has 61 seats", the 120 seats as the plenum (Netanyahu bloc on the right), and each bloc with its distance from 61, its range and its last-Knesset seats. Headlines stay; the tabs go. Before the count, the old hero is unchanged.
+GATE: wrote the hero copy in seven editions without a wording round — proceeded because Daniel approved the option with its English copy on the comparison page; the other editions follow the house voice and are listed for review.

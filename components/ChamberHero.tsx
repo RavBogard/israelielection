@@ -61,14 +61,14 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
         <p className="ch-dek">{official ? t.dekOfficial(n(MAJORITY), n(TOTAL)) : t.dekCount(n(MAJORITY), n(TOTAL), env)}</p>
       </div>
       <figure className="ch-chart">
-        <svg viewBox="0 0 620 340" role="img" aria-label={t.aria(n(TOTAL), summary)}>
+        <svg viewBox="0 -30 620 370" role="img" aria-label={t.aria(n(TOTAL), summary)}>
           {placed.map((s, i) => (
             <circle key={i} cx={s.x.toFixed(1)} cy={s.y.toFixed(1)} r={s.r.toFixed(1)} style={{ fill: shade(s.bloc, s.shade) }}>
               <title>{partyLabel(s.party)}</title>
             </circle>
           ))}
-          <line x1="310" x2="310" y1="4" y2="220" className="ch-mid" />
-          <text x="318" y="16" className="ch-mid-label">{t.centre(n(MAJORITY))}</text>
+          <line x1="310" x2="310" y1="-8" y2="220" className="ch-mid" />
+          <text x="310" y="-14" textAnchor="middle" className="ch-mid-label">{t.centre(n(MAJORITY))}</text>
           <text x="310" y="284" textAnchor="middle" className="ch-total">{n(TOTAL)}</text>
           <text x="310" y="308" textAnchor="middle" className="ch-total-sub">{t.seats}</text>
         </svg>
