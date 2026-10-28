@@ -19,6 +19,8 @@ export type SourceBlock = {
   names: string[];
   negated: boolean;
   field?: string;
+  /** A heading the source gives an explicit id, kept so links like /about#privacy still land. */
+  anchor?: string;
   widget?: { name: string; attrs: Record<string, string> };
 };
 export type SourceDocument = {

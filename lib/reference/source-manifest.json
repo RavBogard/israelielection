@@ -207,13 +207,11 @@
           "negated": false
         },
         {
-          "kind": "text",
-          "text": "<h2 id=\"privacy\">Privacy</h2>",
-          "id": "block-19-4e93190b7668",
-          "numbers": [
-            "2",
-            "2"
-          ],
+          "kind": "heading",
+          "text": "Privacy",
+          "anchor": "privacy",
+          "id": "block-19-54a57c3147c4",
+          "numbers": [],
           "links": [],
           "names": [],
           "negated": false
