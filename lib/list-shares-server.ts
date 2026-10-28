@@ -13,6 +13,7 @@ export const listSharesForRender = cache(async (): Promise<ListShares | null> =>
     return {
       byParty: Object.fromEntries(lists.filter((l) => l.partyId).map((l) => [l.partyId!, l.pct])),
       byLetters: Object.fromEntries(lists.map((l) => [l.letters, l.pct])),
+      votesByLetters: Object.fromEntries(lists.map((l) => [l.letters, l.votes])),
     };
   } catch (error) {
     unstable_rethrow(error);

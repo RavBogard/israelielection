@@ -93,7 +93,7 @@ const en: ProfileText = {
         voters: "谁投票给他们",
         names: "名单上的名字",
         slot: (s: string) => `编号${s}`,
-        pledges: "联盟承诺",
+        pledges: "将在组阁谈判中受检验的承诺",
         words: "用他们的话来说",
         quoteOpen: "“",
         quoteClose: "”",

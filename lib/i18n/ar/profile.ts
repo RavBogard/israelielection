@@ -93,7 +93,7 @@ const en: ProfileText = {
         voters: "ومن يصوت لهم",
         names: "الأسماء في القائمة",
         slot: (s: string) => `رقم ${s}`,
-        pledges: "وعود الائتلاف",
+        pledges: "تعهدات ستُختبر في مفاوضات الائتلاف",
         words: "في كلماتهم",
         quoteOpen: "“",
         quoteClose: "”",

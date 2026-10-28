@@ -394,3 +394,7 @@
   .onepage .op-panels { grid-template-columns: minmax(0, 1fr); }
   .onepage h3 a { min-height: 44px; }
 }
+
+/* A list with no seats in the official result keeps its recorded position, greyed, marked as outside the Knesset. */
+.positions li.out { opacity: .62; }
+.positions li.out .ps.below { font-weight: 600; }

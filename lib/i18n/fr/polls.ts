@@ -3,7 +3,7 @@ import type { PollsText } from "../polls";
 const en: PollsText = {
     meta: {
         title: "Sondages",
-        description: "Nous suivons chaque scrutin pour un si\u00E8ge \u00E0 la Knesset de la campagne 2026, la moyenne actuelle et l'\u00E9volution de chaque parti.",
+        description: "Chaque sondage de sièges à la Knesset de la campagne 2026 que nous avons suivi, conservé comme bilan final et comparé au décompte.",
     },
     title: "Les sondages",
     tablist: "Bureau de vote",

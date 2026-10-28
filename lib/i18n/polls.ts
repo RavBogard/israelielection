@@ -21,7 +21,7 @@ export const dayMonthHe = (iso: string) => DAY_MONTH_HE.format(new Date(`${iso.s
 const en = {
   meta: {
     title: "Polls",
-    description: "Every Knesset seat poll of the 2026 campaign we track, the current average, and how each party has moved.",
+    description: "Every Knesset seat poll of the 2026 campaign we tracked, kept as the final record and set against the count.",
   },
   title: "The Polls",
   tablist: "Polls desk",

@@ -18,6 +18,7 @@ import {
 import { averagePoll, parties } from "@/lib/data";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import { POST_COUNT, seatBasisPhrase } from "@/lib/i18n/post-count";
+import { POST_RECORDS } from "@/lib/i18n/post-records";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { partyColor } from "@/lib/party-colors";
 import { onShade, shade, UNORDERED_EDGE } from "../compare/model";
@@ -594,8 +595,11 @@ export async function Positions({
   const Entry = ({ r }: { r: PositionRowData }) => {
     const party = name(r.party);
     const unstated = isUnstated(r as PositionRow);
+    // A list with no seats keeps its recorded position. Once the result is official it is greyed and marked as outside the Knesset; before that it only says "so far".
+    const out = !!context && seats(party.id) === 0;
+    const official = context?.seatStatus === "official";
     return (
-      <li className={unstated ? "unstated" : undefined}>
+      <li className={[unstated ? "unstated" : "", out && official ? "out" : ""].filter(Boolean).join(" ") || undefined}>
         <p className="pn">
           <span
             className="sw"
@@ -617,6 +621,11 @@ export async function Positions({
           )}
           {((r as PositionRow).declined || r.status === "declined") && (
             <span className="ps">{T.declined}</span>
+          )}
+          {out && (
+            <span className="ps below" data-testid="stance-below" data-official={official ? "true" : "false"}>
+              {official ? POST_RECORDS[lang].notInKnesset : POST_RECORDS[lang].belowSoFarTag}
+            </span>
           )}
         </p>
         {r.text?.trim() && (

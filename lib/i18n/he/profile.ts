@@ -100,7 +100,7 @@ const he: ProfileText = {
     voters: "המצביעים",
     names: "המועמדים ברשימה",
     slot: (s) => `מס' ${s}`,
-    pledges: "התחייבויות לגבי הקואליציה",
+    pledges: "התחייבויות שייבחנו במשא ומתן הקואליציוני",
     words: "ציטוט",
     quoteOpen: "\"",
     quoteClose: "\"",

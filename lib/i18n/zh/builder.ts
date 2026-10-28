@@ -133,7 +133,7 @@ const en: BuilderText = {
     seatsNear: (k: number, n: number, passing: string) => `下图：在 ${n} 个民意调查中的 ${k} 个席位中通过，通过的席位为 ${passing} 个`,
     seatsPasses: (text: string, k: number, n: number) => `${text}，缩放至 120 个席位；在 ${k} 个投票中通过 ${n} 个投票`,
     whoTheyAre: "他们是谁",
-    coalitionPledges: "联盟承诺",
+    coalitionPledges: "将在组阁谈判中受检验的承诺",
     profileMore: (name: string) => `包含 ${name} 在每个问题上的立场、每次民意调查中的席位、名单上的名字、简历和来源。`,
     profileLead: "的 ",
     fullProfile: "完整档案",

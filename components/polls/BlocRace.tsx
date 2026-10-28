@@ -7,10 +7,14 @@ import { seatFigure } from "@/lib/polls";
 import type { BlocPoint } from "@/lib/trend";
 import { useLang } from "@/lib/i18n/lang";
 import POLLS from "@/lib/i18n/polls";
+import { POST_RECORDS } from "@/lib/i18n/post-records";
+import { fill } from "@/lib/i18n/post-count";
 import { Ltr, pollsterName, svgText } from "./names";
 import "./bloc-race.css";
 
 export type RaceDot = { id: string; date: string; pollster: string; net: number; opp: number; hollow: boolean };
+/** The count (or official result) as a reference: each contender bloc's seats, drawn as a dashed line and a table column. */
+export type CountRef = { net: number; opp: number; official: boolean };
 const DAY = 86400_000, MAJ = 61, BLOCS = ["net", "opp"] as const;
 const one = seatFigure;
 
@@ -20,7 +24,7 @@ const one = seatFigure;
  * edges. The date axis runs in weeks counted back from election day, which it marks; the weeks
  * still to come are left plain. `children` sit under the key (the counter and the cite line).
  */
-export default function BlocRace({ trend, dots, labels, hollowNames, windowDays, until, title, children }: { trend: BlocPoint[]; dots: RaceDot[]; labels: Record<"net" | "opp", string>; hollowNames: string[]; windowDays: number; until: string; title: string; children?: ReactNode }) {
+export default function BlocRace({ trend, dots, labels, hollowNames, windowDays, until, title, countRef, children }: { trend: BlocPoint[]; dots: RaceDot[]; labels: Record<"net" | "opp", string>; hollowNames: string[]; windowDays: number; until: string; title: string; countRef?: CountRef; children?: ReactNode }) {
   const lang = useLang(), he = lang !== "en", T = POLLS[lang], R = T.race, END = R.end;
   const sd = (d: string) => shortDate(d, lang), md = (d: string) => mediumDate(d, lang);
   const ref = useRef<HTMLDivElement>(null);
@@ -31,7 +35,7 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
   const H = wide ? 400 : 320, PAD = { l: 34, r: 14, t: 16, b: 30 };
   const dates = trend.map((t) => t.date);
   const t0 = Date.parse(dates[0]), t1 = Math.max(Date.parse(dates.at(-1)!), Date.parse(until));
-  const all = [...trend.flatMap((t) => [t.lo.net, t.hi.net, t.lo.opp, t.hi.opp]), ...dots.flatMap((d) => [d.net, d.opp]), MAJ];
+  const all = [...trend.flatMap((t) => [t.lo.net, t.hi.net, t.lo.opp, t.hi.opp]), ...dots.flatMap((d) => [d.net, d.opp]), MAJ, ...(countRef ? [countRef.net, countRef.opp] : [])];
   const lo = Math.floor((Math.min(...all) - 1) / 5) * 5, hi = Math.ceil((Math.max(...all) + 1) / 5) * 5;
   const xt = (t: number) => PAD.l + ((t - t0) / Math.max(DAY, t1 - t0)) * (w - PAD.l - PAD.r);
   const x = (date: string) => xt(Date.parse(date));
@@ -53,6 +57,7 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
   if (Math.abs(endY.net - endY.opp) < 34) { const mid = (endY.net + endY.opp) / 2, up = last.avg.net >= last.avg.opp ? "net" : "opp"; endY[up] = mid - 17; endY[up === "net" ? "opp" : "net"] = mid + 17; }
   const reading = (b: "net" | "opp") => R.reading(labels[b], one(sel.avg[b]), sel.lo[b], sel.hi[b]);
   const hollow = hollowNames.map((n) => pollsterName(n, lang));
+  const PR = POST_RECORDS[lang], refName = countRef ? (countRef.official ? PR.officialResult : PR.countSoFar) : "";
 
   return (
     <figure className="br" aria-labelledby="br-h">
@@ -72,6 +77,12 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
             {BLOCS.map((b) => <g key={b} style={{ stroke: `var(--b-${b})` }}><path d={path((t) => t.hi[b])} className="br-edge" /><path d={path((t) => t.lo[b])} className="br-edge" /></g>)}
             <line x1={PAD.l} x2={w - PAD.r} y1={y(MAJ)} y2={y(MAJ)} className="br-maj" />
             <text x={PAD.l + 6} y={y(MAJ) - 6} {...svgText(isRtl(lang))} className="br-majlbl">{R.majority}</text>
+            {countRef && BLOCS.map((b) => (
+              <g key={`ref-${b}`} data-testid="count-ref">
+                <line x1={PAD.l} x2={w - PAD.r} y1={y(countRef[b])} y2={y(countRef[b])} className="br-ref" style={{ stroke: `var(--b-${b})` }} />
+                <text x={PAD.l + 6} y={y(countRef[b]) + (countRef.net >= countRef.opp === (b === "net") ? -6 : 14)} {...svgText(isRtl(lang))} className="br-reflbl" style={{ fill: `var(--b-${b})` }}>{`${refName} ${countRef[b]}`}</text>
+              </g>
+            ))}
             {sel && <line x1={x(sel.date)} x2={x(sel.date)} y1={PAD.t} y2={H - PAD.b} className="br-cross" />}
             {BLOCS.map((b) => dots.map((d) => (
               <circle key={`${b}-${d.id}`} cx={x(d.date)} cy={y(d[b])} r={3.5} className={`br-dot${d.hollow ? " hollow" : ""}`} style={{ ["--c" as string]: `var(--b-${b})` }}>
@@ -96,6 +107,7 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
         <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4" fill="var(--ink-2)" /></svg>{T.common.onePoll}</li>
         <li><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="3.5" fill="none" stroke="var(--ink-2)" strokeWidth="1.5" /></svg>{T.common.or(hollow)}</li>
         <li><svg width="22" height="12" aria-hidden="true"><path d="M1 3h20M1 9h20" stroke="var(--ink-2)" strokeWidth="1" /></svg>{R.keyRange}</li>
+        {countRef && <li><svg width="22" height="12" aria-hidden="true"><line x1="1" x2="21" y1="6" y2="6" strokeWidth="2" strokeDasharray="5 3" stroke="var(--ink-2)" /></svg>{fill(PR.refLine, { label: refName, net: countRef.net, opp: countRef.opp })}</li>}
       </ul>
       {children}
       <p className="fig-note">{R.note}</p>
@@ -113,8 +125,8 @@ export default function BlocRace({ trend, dots, labels, hollowNames, windowDays,
         <div className="table-scroll" tabIndex={0} role="region" aria-label={R.tableAria}>
           <table className="data-table">
             <caption>{R.caption}</caption>
-            <thead><tr><th scope="col">{R.date}</th><th scope="col" className="num">{R.currentPolls}</th>{BLOCS.map((b) => <th key={b} scope="col" className="num">{labels[b]}</th>)}{BLOCS.map((b) => <th key={b} scope="col" className="num">{he ? R.range(labels[b]) : <>{labels[b]} range</>}</th>)}</tr></thead>
-            <tbody>{[...trend].reverse().map((t) => <tr key={t.date}><th scope="row">{md(t.date)}</th><td className="num">{t.n}</td>{BLOCS.map((b) => <td key={b} className="num">{one(t.avg[b])}</td>)}{BLOCS.map((b) => <td key={b} className="num">{t.lo[b] === t.hi[b] ? t.lo[b] : <Ltr lang={lang}>{`${t.lo[b]}–${t.hi[b]}`}</Ltr>}</td>)}</tr>)}</tbody>
+            <thead><tr><th scope="col">{R.date}</th><th scope="col" className="num">{R.currentPolls}</th>{BLOCS.map((b) => <th key={b} scope="col" className="num">{labels[b]}</th>)}{BLOCS.map((b) => <th key={b} scope="col" className="num">{he ? R.range(labels[b]) : <>{labels[b]} range</>}</th>)}{countRef && BLOCS.map((b) => <th key={`ref-${b}`} scope="col" className="num ref">{fill(PR.refColumn, { bloc: labels[b], label: refName })}</th>)}</tr></thead>
+            <tbody>{[...trend].reverse().map((t) => <tr key={t.date}><th scope="row">{md(t.date)}</th><td className="num">{t.n}</td>{BLOCS.map((b) => <td key={b} className="num">{one(t.avg[b])}</td>)}{BLOCS.map((b) => <td key={b} className="num">{t.lo[b] === t.hi[b] ? t.lo[b] : <Ltr lang={lang}>{`${t.lo[b]}–${t.hi[b]}`}</Ltr>}</td>)}{countRef && BLOCS.map((b) => <td key={`ref-${b}`} className="num ref">{countRef[b]}</td>)}</tr>)}</tbody>
           </table>
         </div>
       </details>

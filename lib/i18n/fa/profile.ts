@@ -93,7 +93,7 @@ const en: ProfileText = {
         voters: "چه کسی به آنها رای می دهد",
         names: "نام های موجود در لیست",
         slot: (s: string) => `شماره ${s}`,
-        pledges: "تعهدات ائتلاف",
+        pledges: "تعهداتی که در مذاکرات ائتلافی محک می‌خورند",
         words: "به قول آنها",
         quoteOpen: "“",
         quoteClose: "”",

@@ -63,3 +63,15 @@
 [dir="rtl"] .br-plot svg { direction: ltr; }
 /* Hebrew: the house-effect gap scale is a signed number line, left to right; its signed ticks read "+5", not "5+". */
 [dir="rtl"] .he-scale i { direction: ltr; unicode-bidi: isolate; }
+
+/* The count (or official result) as a reference: dashed in each bloc's colour. */
+.br-ref { stroke-width: 2; stroke-dasharray: 6 4; }
+.br-reflbl { font: 600 12px var(--body); paint-order: stroke; stroke: var(--bg); stroke-width: 3px; }
+.br .data-table .ref { border-inline-start: 1px solid var(--line-2); }
+.acc-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.acc-table th, .acc-table td { padding: 6px 10px; border-bottom: 1px solid var(--line); text-align: start; vertical-align: middle; }
+.acc-table thead th { font-size: 12.5px; font-weight: 600; color: var(--ink-2); border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+.acc-table .num { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.acc-table th[scope="row"] { font-weight: 600; }
+.acc-table tr.apart th[scope="row"] { font-weight: 500; }
+.acc-note { margin: 10px 0 0; max-width: 90ch; }

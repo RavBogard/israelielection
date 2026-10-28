@@ -3,7 +3,7 @@ import type { PollsText } from "../polls";
 const en: PollsText = {
     meta: {
         title: "民意调查",
-        description: "我们跟踪 2026 竞选活动的每个议会席位民意调查、当前平均值以及各政党的行动方式。",
+        description: "我们跟踪的2026年竞选期间每一次议会席位民调，作为最终记录保存，并与点票结果对照。",
     },
     title: "民意调查",
     tablist: "投票站",

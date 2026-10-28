@@ -133,7 +133,7 @@ const en: BuilderText = {
     seatsNear: (k: number, n: number, passing: string) => `Ci-dessous\u00A0:\u00A0passe dans ${k} des ${n} sondages, ${passing} si\u00E8ges o\u00F9 il passe`,
     seatsPasses: (text: string, k: number, n: number) => `${text}, adapt\u00E9 \u00E0 120\u00A0si\u00E8ges\u00A0; r\u00E9ussit dans ${k} des ${n} sondages`,
     whoTheyAre: "Qui ils sont",
-    coalitionPledges: "Engagements de la coalition",
+    coalitionPledges: "Engagements à l'épreuve des négociations de coalition",
     profileMore: (name: string) => `a la position de ${name} sur chaque question, ses si\u00E8ges dans chaque sondage, les noms sur sa liste, ses biographies et ses sources.`,
     profileLead: "Le ",
     fullProfile: "profil complet",

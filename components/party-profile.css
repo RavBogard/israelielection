@@ -190,3 +190,12 @@
 [dir="rtl"] .pp-stack span { border-right: 0; border-left: 1.5px solid var(--sheet); } /* physical: chart geometry */
 [dir="rtl"] .pp-stack span:last-child { border-left: 0; } /* physical: chart geometry */
 [dir="rtl"] .pp-scale i { transform: scaleX(-1); }
+
+/* Result against the polls: five figures in the at-a-glance grid; the odd last one spans the row. */
+.pp-result > div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.pp-mark { grid-column: 2; justify-self: start; display: inline-block; padding: 0 8px; border-radius: 999px; font-size: 12px; font-weight: 600; line-height: 1.6; border: 1px solid var(--b-mid); }
+.pp-mark.notElected { color: var(--warn-ink); background: var(--warn-bg); border-color: var(--warn-line); }
+.pp-fold { margin: 0; }
+.pp-fold > summary { cursor: pointer; padding-block: 10px; font-weight: 600; border-bottom: 1px solid var(--ink); color: var(--ink); }
+.pp-fold > summary small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink-3); }
+.pp-fold[open] > summary { margin-bottom: 12px; }

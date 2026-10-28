@@ -150,7 +150,7 @@ const he: BuilderText = {
   seatsNear: (k, n, passing) => `מתחת לאחוז החסימה: עוברת ב-${k} מתוך ${n} הסקרים, עם ${passing} מנדטים בממוצע כשהיא עוברת`,
   seatsPasses: (text, k, n) => `${text}, בהתאמה ל-120 מנדטים; עוברת את אחוז החסימה ב-${k} מתוך ${n} הסקרים`,
   whoTheyAre: "על המפלגה",
-  coalitionPledges: "התחייבויות קואליציוניות",
+  coalitionPledges: "התחייבויות שייבחנו במשא ומתן הקואליציוני",
   profileMore: (name) => `העמדות של ${name} בכל נושא, המנדטים שלה בכל סקר, המועמדים ברשימה, ביוגרפיות ומקורות.`,
   profileLead: "",
   fullProfile: "בפרופיל המלא:",

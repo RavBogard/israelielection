@@ -133,7 +133,7 @@ const en: BuilderText = {
     seatsNear: (k: number, n: number, passing: string) => `در زیر: در نظرسنجی ${k} از نظرسنجی ${n}، کرسی ${passing} در جایی که می گذرد می گذرد`,
     seatsPasses: (text: string, k: number, n: number) => `${text}، در مقیاس کرسی 120. در نظرسنجی ${k} از نظرسنجی ${n} می گذرد`,
     whoTheyAre: "آنها چه کسانی هستند",
-    coalitionPledges: "تعهدات ائتلاف",
+    coalitionPledges: "تعهداتی که در مذاکرات ائتلافی محک می‌خورند",
     profileMore: (name: string) => `دارای جایگاه ${name} در مورد هر موضوع، جایگاه‌های آن در هر نظرسنجی، نام‌های فهرست، بایوس و منابع آن است.`,
     profileLead: "را ",
     fullProfile: "مشخصات کامل",

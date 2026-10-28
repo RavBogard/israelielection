@@ -3,7 +3,7 @@ import type { PollsText } from "../polls";
 const en: PollsText = {
     meta: {
         title: "Umfragen",
-        description: "Wir verfolgen jede Knesset-Sitzumfrage der 2026-Kampagne, den aktuellen Durchschnitt und die Entwicklung der einzelnen Parteien.",
+        description: "Jede Knesset-Sitzumfrage des Wahlkampfs 2026, die wir verfolgt haben, als Schlussbilanz und im Vergleich mit der Auszählung.",
     },
     title: "Die Umfragen",
     tablist: "Umfrageschalter",

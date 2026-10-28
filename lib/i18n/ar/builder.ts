@@ -133,7 +133,7 @@ const en: BuilderText = {
     seatsNear: (k: number, n: number, passing: string) => `أدناه: يمر في ${k} من استطلاعات ${n}، ومقاعد ${passing} حيث يمر`,
     seatsPasses: (text: string, k: number, n: number) => `${text}، تم تحجيمها إلى مقاعد 120؛ يمر في ${k} من استطلاعات ${n}`,
     whoTheyAre: "من هم",
-    coalitionPledges: "وعود الائتلاف",
+    coalitionPledges: "تعهدات ستُختبر في مفاوضات الائتلاف",
     profileMore: (name: string) => `لديه موقف ${name} في كل قضية، ومقاعده في كل استطلاع، والأسماء الموجودة في قائمته، والسير الذاتية، والمصادر.`,
     profileLead: "ال ",
     fullProfile: "الملف الشخصي الكامل",

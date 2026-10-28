@@ -105,7 +105,7 @@ const en = {
     voters: "Who votes for them",
     names: "Names on the list",
     slot: (s: string) => `No. ${s}`,
-    pledges: "Coalition pledges",
+    pledges: "Pledges to be tested in coalition talks",
     words: "In their words",
     quoteOpen: "“",
     quoteClose: "”",
