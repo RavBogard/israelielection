@@ -74,6 +74,7 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
         </svg>
         <figcaption>{t.note}</figcaption>
       </figure>
+      {news && <div className="ch-news">{news}</div>}
       <div className="ch-side">
         <ul className="ch-blocs">
           {rows.map((b) => {
@@ -96,7 +97,6 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
             );
           })}
         </ul>
-        {news}
         <p className="ch-links">
           <a href={editionPath("/results", lang) ?? "/results"}>{t.results}</a>
           <a href={editionPath("/coalition-builder", lang) ?? "/coalition-builder"}>{h.builder}</a>
