@@ -5,7 +5,7 @@
       "id": "about",
       "path": "/about",
       "file": "content/about.mdx",
-      "revision": "16814c1707d56ab924705e0fe3473bd6b2c0de20bbc9b4e287c809aca96ea20d",
+      "revision": "928ad4e3a070ceab2c4134bb9678edb19b82fa6f03acaa74973db31e04502262",
       "title": "About this site",
       "checked": "2026-10-05",
       "blocks": [
@@ -263,8 +263,8 @@
         },
         {
           "kind": "text",
-          "text": "Please [report a correction on GitHub](https://github.com/RavBogard/israelielection/issues). Include the page address, the wording or number in question, and a supporting source where possible.",
-          "id": "block-24-8c7121ab98a6",
+          "text": "Please [report a correction](/corrections#report) by email draft or by [GitHub issue](https://github.com/RavBogard/israelielection/issues); both are offered there. Material changes, such as updates to the count, are logged on [changes and evidence](/changes). Include the page address, the wording or number in question, and a supporting source where possible.",
+          "id": "block-24-45438b7b2b5e",
           "numbers": [],
           "links": [
             "https://github.com/RavBogard/israelielection/issues"

@@ -6,8 +6,9 @@ import { LIMITS as L, RESULTS_TO_DISSOLUTION } from "@/lib/formation";
 import { partyColor } from "@/lib/party-colors";
 import { seatFigure } from "@/lib/polls";
 import rights from "@/data/voting-rights.json";
+import { seatContextForRender } from "@/lib/seat-context-server";
+import { seatBasisPhrase } from "@/lib/i18n/post-count";
 
-const seatsOf = (id: string | null) => (id ? averagePoll.results[id]?.seats ?? 0 : 0);
 const BLOC_ORDER = ["net", "mid", "opp", "arab"];
 /** The formation clock's stages in order, as the government page draws them: who acts, and for how long. */
 export const CLOCK: { kind: "president" | "nominee" | "discretion" | "knesset"; days: number; label: string }[] = [
@@ -30,7 +31,11 @@ export type Panel = { href: string; title: string };
  * the figure its guide opens with: the slips on the ballot and how many pass the threshold, the 120
  * seats and the 61 line, the formation clock in days, and who has the vote.
  */
-export default function OnePage({ voting, seats, forming, whoVotes }: { voting: Panel; seats: Panel; forming: Panel; whoVotes: Panel }) {
+export default async function OnePage({ voting, seats, forming, whoVotes }: { voting: Panel; seats: Panel; forming: Panel; whoVotes: Panel }) {
+  // Seats follow the shared seat context (the count projection, then official seats); the poll average only without one.
+  const context = await seatContextForRender();
+  const phrase = seatBasisPhrase(context, "en");
+  const seatsOf = (id: string | null) => (id ? (context ? context.pointSeats[id] ?? 0 : averagePoll.results[id]?.seats ?? 0) : 0);
   const polled = ballotLists.filter((l) => seatsOf(l.profile) > 0).length;
   const listSeats = parties
     .filter((p) => seatsOf(p.id) > 0)
@@ -45,13 +50,13 @@ export default function OnePage({ voting, seats, forming, whoVotes }: { voting: 
           <ol className="op-slips" aria-hidden="true">
             {ballotLists.map((l) => <li key={l.id} className={seatsOf(l.profile) > 0 ? "in" : "out"} lang="he" dir="rtl">{l.letters}</li>)}
           </ol>
-          <p className="op-read"><b>{ballotLists.length}</b> lists on the ballot, one paper slip each. <b>{polled}</b> pass the 3.25% threshold in the polling average; the rest, dashed, poll below it or are not polled.</p>
+          <p className="op-read"><b>{ballotLists.length}</b> lists on the ballot, one paper slip each. <b>{polled}</b> pass the 3.25% threshold in the figures below; the rest, dashed, fall below it or are not in it.</p>
         </li>
         <li>
           <h3><Link href={seats.href}><b>2</b>{seats.title}</Link></h3>
           <div className="op-seats">
             <span className="op-61" style={{ left: `${(61 / 120) * 100}%` }} aria-hidden="true">61</span>
-            <SeatBar size="m" segments={listSeats.map((p) => ({ key: p.id, seats: seatsOf(p.id), color: partyColor(p.id), title: `${p.name}: ${seatFigure(seatsOf(p.id))}` }))} label={`120 seats in the polling average, list by list: ${listSeats.map((p) => `${p.name} ${seatFigure(seatsOf(p.id))}`).join(", ")}. A majority is 61.`} />
+            <SeatBar size="m" segments={listSeats.map((p) => ({ key: p.id, seats: seatsOf(p.id), color: partyColor(p.id), title: `${p.name}: ${seatFigure(seatsOf(p.id))}` }))} label={`120 seats${phrase.startsWith("seats") ? phrase.slice(5) : `, ${phrase}`}, list by list: ${listSeats.map((p) => `${p.name} ${seatFigure(seatsOf(p.id))}`).join(", ")}. A majority is 61.`} />
           </div>
           <p className="op-read">The 120 seats are shared in proportion among the lists that pass. A government needs the Knesset&apos;s confidence, and <b>61</b> is a majority.</p>
         </li>
@@ -83,7 +88,7 @@ export default function OnePage({ voting, seats, forming, whoVotes }: { voting: 
           <p className="op-read">Citizenship decides the Knesset vote: solid can vote, hatched cannot, grey depends on the person&apos;s status.</p>
         </li>
       </ol>
-      <p className="fig-src op-src">Seats: the current polling average. Slips: the Central Elections Committee&apos;s published roster. Clock: Basic Law: The Government, articles 7 to 10. Voting rights: the sources on each guide.</p>
+      <p className="fig-src op-src">Shown: {phrase}. Slips: the Central Elections Committee&apos;s published roster. Clock: Basic Law: The Government, articles 7 to 10. Voting rights: the sources on each guide.</p>
     </section>
   );
 }

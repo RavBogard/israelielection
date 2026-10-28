@@ -4,7 +4,7 @@ import Timeline from "@/components/Timeline";
 import results from "@/data/results.json";
 import timelineJson from "@/data/timeline.json";
 import { decadeOf, type Source, type Timeline as Data } from "@/lib/timeline";
-import { withLiveElection } from "@/lib/timeline-live";
+import { applyLiveElection, type LiveElectionFigures } from "@/lib/timeline-live";
 import PageHead from "@/components/PageHead";
 
 import { translatedTool } from "@/lib/reference/catalog";
@@ -20,9 +20,9 @@ function Cite({ s, lang }: { s: Source; lang: Lang }) {
   );
 }
 
-export default async function TimelinePage({ lang = "en" }: { lang?: Lang }) {
+export default function TimelinePage({ lang = "en", live = null }: { lang?: Lang; live?: LiveElectionFigures | null }) {
   const edition = translatedTool("tools:timeline", lang, timelineJson),
-    data = await withLiveElection(edition.data as Data),
+    data = applyLiveElection(edition.data as Data, live),
     t = historyText(lang),
     date = (value: string) => historicalDate(value, lang);
 
