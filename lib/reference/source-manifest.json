@@ -11171,8 +11171,12 @@
           "negated": false
         },
         {
-          "kind": "text",
+          "kind": "widget",
           "text": "<BallotLead />",
+          "widget": {
+            "name": "BallotLead",
+            "attrs": {}
+          },
           "id": "block-8-eb125c89af0a",
           "numbers": [],
           "links": [],
