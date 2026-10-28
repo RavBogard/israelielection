@@ -9,6 +9,8 @@ import { lifecycleForRender } from "@/lib/seat-context-server";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import HomeHero from "@/components/HomeHero";
 import ChamberHero, { type ChamberProgress } from "@/components/ChamberHero";
+import StandingHome from "@/components/StandingHome";
+import { swornGovernment } from "@/lib/standing-home";
 import { getLiveForecast } from "@/lib/live-forecast/server";
 import { expectedFinalValid, getCountEstimate } from "@/lib/live-forecast/count-estimate";
 import { homeHeadlines } from "@/components/HomeHeadlines";
@@ -167,6 +169,10 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
   const [live, liveForecast, context, lifecycle, news, estimate] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true }), seatContextForRender(), lifecycleForRender(), homeHeadlines(lang), getLiveForecast().then((s) => getCountEstimate(s)).catch(() => null)]);
+  // Once the Knesset record shows a government sworn in, the home becomes the standing reference (Daniel, 2026-10-28).
+  // The switch reads only the lifecycle record /government uses, never the date or the seat totals.
+  const sworn = swornGovernment(lifecycle);
+  if (sworn && lifecycle) return <div className="home"><div className="wrap"><StandingHome government={sworn} snapshot={lifecycle} lang={lang} news={news} /></div></div>;
   const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
