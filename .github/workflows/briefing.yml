@@ -140,7 +140,7 @@ jobs:
   # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
     needs: [gate, brief]
-    if: always() && needs.gate.outputs.run == 'true' && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference') && inputs.task != 'monitor'
+    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && needs.gate.outputs.run == 'true' && !startsWith(inputs.task, 'reference') && inputs.task != 'monitor'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
