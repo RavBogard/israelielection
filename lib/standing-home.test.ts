@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { nextElectionDue, swornGovernment } from "./standing-home";
-import { governingSnapshot, formingSnapshot } from "./standing-home.fixtures";
+import { governingSnapshot, formingSnapshot } from "./fixtures/standing-home";
 
 describe("swornGovernment", () => {
   it("reads the sworn-in government only from a confirmed Knesset record of it", () => {

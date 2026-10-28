@@ -1,4 +1,4 @@
-import type { ElectionLifecycleSnapshot, PoliticalEvent } from "./election-lifecycle/types";
+import type { ElectionLifecycleSnapshot, PoliticalEvent } from "../election-lifecycle/types";
 
 /** Test fixtures for the standing-reference home: a lifecycle record before and after a government is sworn in. */
 const seats = { likud: 27, otzma: 7, utj: 7, shas: 6, rz: 6, yashar: 22, byachad: 12, dem: 8, yb: 7, jl: 11, raam: 7 };

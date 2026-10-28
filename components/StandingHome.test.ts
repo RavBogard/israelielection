@@ -9,7 +9,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { LANGS } from "@/lib/i18n";
 import { LangProvider } from "@/lib/i18n/lang";
 import { swornGovernment } from "@/lib/standing-home";
-import { formingSnapshot, governingSnapshot } from "@/lib/standing-home.fixtures";
+import { formingSnapshot, governingSnapshot } from "@/lib/fixtures/standing-home";
 import type { ElectionLifecycleSnapshot } from "@/lib/election-lifecycle/types";
 import StandingHome from "./StandingHome";
 
