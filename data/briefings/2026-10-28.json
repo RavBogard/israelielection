@@ -1,0 +1,402 @@
+{
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T16:46:27.951Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 1,
+    "sourceAttempts": 13,
+    "capturedSources": 8
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-10-28T16:46:27.951Z",
+    "claims": [
+      {
+        "id": "claim_1",
+        "contentHash": "050e148f3f935bb877e1cecf37aab73c0f196aa9acb2e73e13feb555e0bd0163",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim_2",
+        "contentHash": "547ec411e9cfeb627146b3a7e57733a5bc315b3cbd904d479f1903b59753064b",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim_3",
+        "contentHash": "84884f1f9b97434348fa069a52d711c83d148d1bc290d4e9bed7df23731523bc",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim_4",
+        "contentHash": "676f171b375841af189060da4974f6b4c4862fcc12f81ee2bab242ff7546f213",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim_6",
+        "contentHash": "53226e8416a7c38caffe2982014058f6a1e8b94fcffb796f3166029bb362a37e",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Benjamin Netanyahu stated in his election-night address that Likud is the largest party in Israel and claimed a decisive majority for the right-wing bloc among the Jewish and Zionist public.",
+      "claimId": "claim_1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+      "translations": {
+        "he": {
+          "text": "בנימין נתניהו הצהיר בנאום ליל הבחירות שלו כי הליכוד הוא המפלגה הגדולה ביותר בישראל וטען לרוב מכריע לגוש הימין בקרב הציבור היהודי והציוני.",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح بنيامين نتنياهو في خطابه ليلة الانتخابات بأن حزب الليكود هو أكبر حزب في إسرائيل وادعى تحقيق أغلبية حاسمة لكتلة اليمين بين الجمهور اليهودي والصهيوني.",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بنیامین نتانیاهو در سخنرانی شب انتخابات خود اظهار داشت که لیکود بزرگ‌ترین حزب در اسرائیل است و مدعی اکثریت قاطعی برای بلوک راست‌گرا در میان عموم یهودیان و صهیونیست‌ها شد.",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Benjamin Netanyahu erklärte in seiner Ansprache am Wahlabend, dass der Likud die größte Partei in Israel sei, und beanspruchte eine entscheidende Mehrheit für den rechten Block in der jüdischen und zionistischen Öffentlichkeit.",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Benjamin Netanyahu a déclaré dans son discours au soir des élections que le Likoud est le plus grand parti d'Israël et a revendiqué une majorité décisive pour le bloc de droite parmi le public juif et sioniste.",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "本雅明·内塔尼亚胡（Benjamin Netanyahu）在选举之夜的演讲中表示，利库德集团（Likud）是以色列第一大党，并坚称右翼阵营在犹太人和犹太复国主义公众中获得了决定性多数。",
+          "sourceHash": "59861257423e9b6e79c7ca3579a2f03e98f077346e21569a454b1e5549a238f6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Israel's election produced only one result - so why is everyone claiming victory? - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913137",
+          "published": "2026-10-28T18:02:37.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913137",
+          "bodyHash": "b8474f2564d683b41a1ced8557f1ae757fe7d815dd1aab98d0c9cef492412ecb",
+          "capturedAt": "2026-10-28T16:45:41.242Z",
+          "quoteHash": "6228426d14d66603558bf395e386967b145e7cc250d77264dfb69eed31f789c4",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "HERB KEINON"
+          }
+        }
+      ],
+      "textHe": "בנימין נתניהו הצהיר בנאום ליל הבחירות שלו כי הליכוד הוא המפלגה הגדולה ביותר בישראל וטען לרוב מכריע לגוש הימין בקרב הציבור היהודי והציוני."
+    },
+    {
+      "text": "Likud publicly alleged widespread electoral fraud and ballot manipulation by Arab parties following Tuesday's election and submitted complaints to authorities.",
+      "claimId": "claim_2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+      "translations": {
+        "he": {
+          "text": "הליכוד טען בפומבי להונאת בחירות נרחבת ולזיוף פתקי הצבעה על ידי המפלגות הערביות בעקבות הבחירות ביום שלישי והגיש תלונות לרשויות.",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ادعى حزب الليكود علنًا حدوث تزوير انتخابي واسع النطاق وتلاعب بأوراق الاقتراع من جانب الأحزاب العربية عقب انتخابات يوم الثلاثاء، وقدم شكاوى إلى السلطات.",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "لیکود در پی انتخابات روز سه‌شنبه، احزاب عرب را علناً به تقلب گسترده در انتخابات و دستکاری آرا متهم کرد و شکایاتی را به مقامات ارائه داد.",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Likud warf arabischen Parteien nach der Wahl am Dienstag öffentlich weit verbreiteten Wahlbetrug und Stimmzettelmanipulation vor und reichte Beschwerden bei den Behörden ein.",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le Likoud a publiquement allégué une fraude électorale généralisée et une manipulation des bulletins de vote par les partis arabes à la suite de l'élection de mardi et a soumis des plaintes aux autorités.",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "利库德集团在周二的选举后公开指控阿拉伯政党存在大范围的选举舞弊和选票操纵行为，并向有关当局提交了投诉。",
+          "sourceHash": "e3ea663a6eed88965635645b4561361a468087318b0ca8f570c817b5eefaad35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu's Likud alleges Arab parties 'stole' Israeli election, demands investigation",
+          "url": "https://www.jpost.com/israel-election-2026/article-913133",
+          "published": "2026-10-28T17:29:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913133",
+          "bodyHash": "8373e9a727e64aaf2d0ef0c566ff483e821a6790a3f334d72b63f83433723afa",
+          "capturedAt": "2026-10-28T16:45:41.524Z",
+          "quoteHash": "8f510d05638d1ab7f48523a7bf5c854a8dde75c6ec829e601a8ea93e8808f5b9",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "הליכוד טען בפומבי להונאת בחירות נרחבת ולזיוף פתקי הצבעה על ידי המפלגות הערביות בעקבות הבחירות ביום שלישי והגיש תלונות לרשויות."
+    },
+    {
+      "text": "Rahat Mayor Talal al-Krenawi rejected Likud's fraud accusations, calling them lies and incitement against the Bedouin community.",
+      "claimId": "claim_3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+      "translations": {
+        "he": {
+          "text": "ראש עיריית רהט טלאל אל-קרינאווי דחה את האשמות ההונאה של הליכוד, וכינה אותן שקרים והסתה נגד הקהילה הבדואית.",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "رفض رئيس بلدية رهط طلال القريناوي اتهامات الليكود بالتزوير، واصفًا إياها بأنها أكاذيب وتحريض ضد المجتمع البدوي.",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "طلال الکرناوی، شهردار رهط، اتهامات تقلب لیکود را رد کرد و آن‌ها را دروغ و تحریک علیه جامعه بدوی خواند.",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Bürgermeister von Rahat, Talal al-Krenawi, wies die Betrugsvorwürfe des Likud zurück und bezeichnete sie als Lügen und Hetze gegen die Beduinengemeinschaft.",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le maire de Rahat, Talal al-Krenawi, a rejeté les accusations de fraude du Likoud, les qualifiant de mensonges et d'incitation contre la communauté bédouine.",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "拉哈特（Rahat）市长塔拉勒·阿尔克雷纳维（Talal al-Krenawi）驳斥了利库德集团的舞弊指控，称其为谎言以及针对贝都因人社区的煽动。",
+          "sourceHash": "af5998c344c5e74dd6220eec35b06c24ba252c637dac69b1b2702eafe4a021a5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu's Likud alleges Arab parties 'stole' Israeli election, demands investigation",
+          "url": "https://www.jpost.com/israel-election-2026/article-913133",
+          "published": "2026-10-28T17:29:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913133",
+          "bodyHash": "8373e9a727e64aaf2d0ef0c566ff483e821a6790a3f334d72b63f83433723afa",
+          "capturedAt": "2026-10-28T16:45:41.524Z",
+          "quoteHash": "25c6c09453306c94e2167d956b5903288a2dac1a854468f29fc6e615125738b9",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "ראש עיריית רהט טלאל אל-קרינאווי דחה את האשמות ההונאה של הליכוד, וכינה אותן שקרים והסתה נגד הקהילה הבדואית."
+    },
+    {
+      "text": "Israeli President Isaac Herzog urged party leaders to arrive at coalition consultations with an open mind to avert another election round.",
+      "claimId": "claim_4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+      "translations": {
+        "he": {
+          "text": "נשיא המדינה יצחק הרצוג הפציר בראשי המפלגות להגיע להתייעצויות הקואליציוניות בראש פתוח כדי למנוע סבב בחירות נוסף.",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "حث الرئيس الإسرائيلي إسحاق هرتسوغ قادة الأحزاب على القدوم إلى المشاورات الائتلافية بعقل متفتح لتفادي جولة انتخابات أخرى.",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "اسحاق هرتزوگ، رئیس‌جمهور اسرائیل، از رهبران احزاب خواست تا با ذهنی باز در رایزنی‌های ائتلاف حاضر شوند تا از برگزاری دور دیگری از انتخابات جلوگیری شود.",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der israelische Präsident Isaac Herzog forderte die Parteiführer auf, mit Offenheit zu den Koalitionsberatungen zu erscheinen, um eine weitere Wahlrunde abzuwenden.",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président israélien Isaac Herzog a exhorté les chefs de parti à se présenter aux consultations de coalition avec un esprit ouvert afin d'éviter un nouveau tour électoral.",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "以色列总统艾萨克·赫尔佐格（Isaac Herzog）敦促各政党领导人以开放的心态参与组阁磋商，以避免进行新一轮选举。",
+          "sourceHash": "0637b61152ad7e3bccaf90f4ac8999ebda4b3572b4ae7a1868af6520fe3cac31",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Herzog urges Israeli leaders to keep open minds, avoid another election after deadlock",
+          "url": "https://www.jpost.com/israel-election-2026/article-913127",
+          "published": "2026-10-28T16:01:36.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913127",
+          "bodyHash": "8f4b000efba6ece6173261bfe10a69f3c6b7a8e38368bd69ad0b11fa3555d613",
+          "capturedAt": "2026-10-28T16:45:42.363Z",
+          "quoteHash": "e1723b76117885697cc5fc454fb0d43fed09c736aea40bec526bdf0d5bc39d3b",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "נשיא המדינה יצחק הרצוג הפציר בראשי המפלגות להגיע להתייעצויות הקואליציוניות בראש פתוח כדי למנוע סבב בחירות נוסף."
+    },
+    {
+      "text": "Joint List faction chairman Ahmad Tibi expressed willingness to assist and potentially sit with the opposition bloc to form a government.",
+      "claimId": "claim_6",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+      "translations": {
+        "he": {
+          "text": "יו\"ר סיעת הרשימה המשותפת אחמד טיבי הביע נכונות לסייע ופוטנציאלית לשבת עם גוש האופוזיציה כדי להקים ממשלה.",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعرب رئيس كتلة القائمة المشتركة أحمد الطيبي عن استعداده للمساعدة والجلوس المحتمل مع كتلة المعارضة لتشكيل حكومة.",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "احمد طیبی، رئیس فراکسیون فهرست مشترک، برای کمک و حضور احتمالی در کنار بلوک اپوزیسیون جهت تشکیل دولت ابراز تمایل کرد.",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Fraktionsvorsitzende der Gemeinsamen Liste, Ahmad Tibi, äußerte die Bereitschaft zu helfen und potenziell mit dem Oppositionsblock zusammenzusitzen, um eine Regierung zu bilden.",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président de la faction de la Liste conjointe, Ahmad Tibi, a exprimé sa volonté d'aider et potentiellement de siéger avec le bloc de l'opposition pour former un gouvernement.",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "联合名单（Joint List）派系主席艾哈迈德·蒂比（Ahmad Tibi）表示愿意提供协助，并可能与反对派阵营共同加入执政联盟以组建政府。",
+          "sourceHash": "e8e64cd4c3da63873bed7d231ab7698652b4a6cdfc0fc72f7d9522ea48e6ad88",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Israel election results: Netanyahu bloc wins 53 seats, opposition holds 48, Arab parties skyrocket",
+          "url": "https://www.jpost.com/israel-election-2026/article-913122",
+          "published": "2026-10-28T14:21:07.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913122",
+          "bodyHash": "ee36efa1f4c6ee829b8b2f8e7c26761332c2075fb5ad15463a1f1adc05fc21af",
+          "capturedAt": "2026-10-28T16:45:42.431Z",
+          "quoteHash": "9ccae6890c73bdf6ad31ee4e0661e0baf24944aed3171626d80c9e47d15cba3d",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "יו\"ר סיעת הרשימה המשותפת אחמד טיבי הביע נכונות לסייע ופוטנציאלית לשבת עם גוש האופוזיציה כדי להקים ממשלה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "7932b7d3c18202b3b8223a6a835a550454d56263ff554a3ce06c4efaf7c2361a",
+    "privateStored": true
+  }
+}
