@@ -40,7 +40,7 @@ export default async function Image() {
   });
   for (; i < TOTAL; i++) cells.push(<rect key={i} x={(i % COLS) * P} y={Math.floor(i / COLS) * P} width={S} height={S} fill={CELL} />);
 
-  const standfirst = `${LIFECYCLE.en[context.basis]}, ${LIFECYCLE.en[context.seatStatus]}. The ${KNESSET} seats of the Knesset; ${MAJORITY} is an absolute majority.`;
+  const standfirst = `${LIFECYCLE.en[context.basis]} (${LIFECYCLE.en[context.seatStatus].toLowerCase()}). The ${KNESSET} seats of the Knesset; ${MAJORITY} is an absolute majority.`;
   // The as-of time on the card: the committee file's time while the context is current, else its status and the time we last updated it.
   const dateline = context.freshness.status === "current" ? updatedFromCount("en", context.updatedAt, context.countSourceUpdatedAt) : `${LIFECYCLE.en[context.freshness.status]}, ${israelTimeLabel(context.updatedAt, "en", LIFECYCLE.en.noTime)}`;
 
