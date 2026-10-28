@@ -49,15 +49,10 @@
 .chamber-hero svg.dim .ch-seat:not(.on) { opacity: .3; }
 .chamber-hero .ch-hint { margin: 4px 0 0; font-size: 13.5px; color: var(--ink-2); }
 .chamber-hero .ch-tally { display: none; margin: 4px 0 0; font-size: 15px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; min-block-size: 1.5em; }
-.chamber-hero .ch-h-q { display: none; }
 /* The opening sweep (pending: primed before paint; is-intro: running). */
 .chamber-hero[data-intro="pending"] .ch-seat { fill: var(--cell) !important; }
-.chamber-hero:is([data-intro="pending"], .is-intro) .ch-h-final { display: none; }
-.chamber-hero:is([data-intro="pending"], .is-intro) .ch-h-q { display: inline; }
 .chamber-hero:is([data-intro="pending"], .is-intro) .ch-hint { display: none; }
 .chamber-hero:is([data-intro="pending"], .is-intro) .ch-tally { display: block; }
-.chamber-hero .ch-side { transition: opacity .35s ease; }
-.chamber-hero:is([data-intro="pending"], .is-intro) .ch-side { opacity: 0; }
 .chamber-hero .ch-panel { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 10px; min-block-size: 96px; }
 .chamber-hero .ch-panel h2 { font: 700 21px/1.2 var(--display); margin: 0; color: var(--ink); }
 .chamber-hero .ch-prompt { margin: 0; font-size: 14px; color: var(--ink-2); }
@@ -78,7 +73,7 @@
 .chamber-hero .ch-was svg { inline-size: 120px; block-size: 14px; }
 .chamber-hero:dir(rtl) .ch-was svg { transform: scaleX(-1); }
 .chamber-hero .ch-back { justify-self: start; padding: 0; border: 0; background: none; color: var(--ink-2); font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-@media (prefers-reduced-motion: reduce) { .chamber-hero .ch-seat, .chamber-hero .ch-side { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .chamber-hero .ch-seat { transition: none; } }
 @media (max-width: 860px) {
   .home .chamber-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "news" "intro" "chart" "side"; grid-template-rows: none; gap: 18px; padding-block: 24px 28px; }
   .home .chamber-hero .hero-news ol { grid-template-columns: minmax(0, 1fr); }

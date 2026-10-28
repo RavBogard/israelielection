@@ -27,8 +27,8 @@ const tone = (bloc: string, shade: number) => (shade >= 100 ? `var(--b-${bloc})`
 /** The opening sweep: one pass across the hall from right to left, a beat as each bloc completes. */
 const LEAD = 350, PER = 19, BEAT = 520, SEEN = "ch-intro-seen";
 /**
- * Runs while the HTML parses, before first paint: readers who will see the sweep get blank seats and the question
- * headline from the start, so the full chamber never flashes first. If the component never takes over, the
+ * Runs while the HTML parses, before first paint: readers who will see the sweep get blank seats from the start, so the
+ * full chamber never flashes first. The headline and the bloc list stay in place throughout (Daniel, 2026-10-28). If the component never takes over, the
  * timeout restores the resting state.
  */
 const PRIME = `(function(s){try{if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("${SEEN}"))return;s.dataset.intro="pending";window.__chIntro=setTimeout(function(){delete s.dataset.intro},6000)}catch(e){}})(document.currentScript.parentElement)`;
@@ -185,10 +185,7 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
             {official ? t.official : t.counted(pct!, !!env)}
           </p>
         )}
-        <h1 id="hero-h">
-          <span className="ch-h-final">{leader ? t.hasMajority(label(leader.id), n(leader.seats)) : t.noMajority(n(MAJORITY))}</span>
-          <span className="ch-h-q" aria-hidden="true">{t.question(n(MAJORITY))}</span>
-        </h1>
+        <h1 id="hero-h">{leader ? t.hasMajority(label(leader.id), n(leader.seats)) : t.noMajority(n(MAJORITY))}</h1>
         <p className="ch-dek">{official ? t.dekOfficial(n(MAJORITY), n(TOTAL)) : t.dekCount(n(MAJORITY), n(TOTAL), env)}</p>
       </div>
       <figure className="ch-chart">

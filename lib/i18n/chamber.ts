@@ -23,8 +23,6 @@ export type ChamberText = {
   note: string;
   aria: (k: string, summary: string) => string;
   results: string;
-  /** Headline while the opening sweep fills the hall. */
-  question: (m: string) => string;
   /** Under the chamber once it is at rest. */
   hint: string;
   /** Panel before anything is picked. */
@@ -66,7 +64,6 @@ const en: ChamberText = {
   note: "Seated as in the hall: Netanyahu bloc on the right. Blocs are groupings of lists, not coalition agreements.",
   aria: (k, s) => `The Knesset's ${k} seats by bloc: ${s}.`,
   results: "Full results",
-  question: (m) => `Who reaches ${m}?`,
   hint: "Tap a bloc to see its lists. Tap a list to see how it did.",
   prompt: "Pick a bloc, or tap any seat in the chamber.",
   allBlocs: "All blocs",
@@ -102,7 +99,6 @@ const he: ChamberText = {
   note: "לפי מקומות הישיבה במליאה: גוש נתניהו מימין. גושים הם קיבוצים של רשימות, לא הסכמים קואליציוניים.",
   aria: (k, s) => `${k} המנדטים בכנסת לפי גוש: ${s}.`,
   results: "התוצאות המלאות",
-  question: (m) => `מי מגיע ל־${m}?`,
   hint: "לחצו על גוש כדי לראות את הרשימות שלו, ועל רשימה כדי לראות איך הצליחה.",
   prompt: "בחרו גוש, או לחצו על מושב כלשהו במליאה.",
   allBlocs: "כל הגושים",
@@ -138,7 +134,6 @@ const ar: ChamberText = {
   note: "بحسب مقاعد القاعة: كتلة نتنياهو على اليمين. الكتل تجميع للقوائم، لا اتفاقات ائتلافية.",
   aria: (k, s) => `مقاعد الكنيست الـ${k} حسب الكتلة: ${s}.`,
   results: "النتائج الكاملة",
-  question: (m) => `من يصل إلى ${m}؟`,
   hint: "انقر على كتلة لرؤية قوائمها، وعلى قائمة لرؤية نتيجتها.",
   prompt: "اختر كتلة، أو انقر على أي مقعد في القاعة.",
   allBlocs: "كل الكتل",
@@ -174,7 +169,6 @@ const fa: ChamberText = {
   note: "به ترتیب نشستن در صحن: بلوک نتانیاهو در سمت راست. بلوک‌ها گروه‌بندی فهرست‌ها هستند، نه توافق ائتلافی.",
   aria: (k, s) => `${k} کرسی کنست بر پایهٔ بلوک: ${s}.`,
   results: "نتایج کامل",
-  question: (m) => `چه کسی به ${m} می‌رسد؟`,
   hint: "روی یک بلوک بزنید تا فهرست‌هایش را ببینید، و روی یک فهرست تا نتیجه‌اش را.",
   prompt: "یک بلوک را برگزینید، یا روی هر کرسی در صحن بزنید.",
   allBlocs: "همهٔ بلوک‌ها",
@@ -210,7 +204,6 @@ const de: ChamberText = {
   note: "Sitzordnung wie im Plenarsaal: der Netanjahu-Block rechts. Blöcke sind Gruppen von Listen, keine Koalitionsvereinbarungen.",
   aria: (k, s) => `Die ${k} Sitze der Knesset nach Block: ${s}.`,
   results: "Alle Ergebnisse",
-  question: (m) => `Wer kommt auf ${m}?`,
   hint: "Tippen Sie auf einen Block, um seine Listen zu sehen, und auf eine Liste für ihr Ergebnis.",
   prompt: "Wählen Sie einen Block oder tippen Sie auf einen Sitz im Plenum.",
   allBlocs: "Alle Blöcke",
@@ -246,7 +239,6 @@ const fr: ChamberText = {
   note: "Placement comme dans l'hémicycle : le bloc Netanyahou à droite. Les blocs regroupent des listes ; ce ne sont pas des accords de coalition.",
   aria: (k, s) => `Les ${k} sièges de la Knesset par bloc : ${s}.`,
   results: "Tous les résultats",
-  question: (m) => `Qui atteint ${m} ?`,
   hint: "Touchez un bloc pour voir ses listes, puis une liste pour voir son résultat.",
   prompt: "Choisissez un bloc, ou touchez un siège de l'hémicycle.",
   allBlocs: "Tous les blocs",
@@ -282,7 +274,6 @@ const zh: ChamberText = {
   note: "按议会大厅座位排列：内塔尼亚胡阵营在右侧。阵营是名单的分组，不是联合执政协议。",
   aria: (k, s) => `议会${k}个席位按阵营划分：${s}。`,
   results: "完整结果",
-  question: (m) => `谁能达到${m}席？`,
   hint: "点击一个阵营查看其名单，再点击名单查看其结果。",
   prompt: "选择一个阵营，或点击议会大厅中的任一席位。",
   allBlocs: "所有阵营",

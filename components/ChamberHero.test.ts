@@ -74,7 +74,7 @@ describe("interactive chamber", () => {
     const html = render("en");
     expect(html).not.toContain('data-intro="pending"');
     expect(html).toContain("<script>");
-    expect(html).toContain('class="ch-h-final"');
+    expect(html).toContain(CHAMBER.en.noMajority("61"));
   });
   it("shades each list a step of its bloc's colour, largest darkest", () => {
     expect([0, 1, 2, 3, 4].map((k) => shadeOf(k, 5))).toEqual([100, 87, 74, 61, 48]);
