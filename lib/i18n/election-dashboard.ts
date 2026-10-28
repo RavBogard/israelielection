@@ -6,6 +6,7 @@ const en = {
   method:
     "A frozen campaign prior is updated with validated exit polls. Partial counts stay excluded until the count model passes its validation gate. Each simulation allocates 120 seats. Ranges cover the middle 80%; the coherent mosaic point and separate marginal medians answer different questions. These are not probabilities of a government forming.",
   title: "The race in numbers",
+  countTitle: "Where the count stands", countWatch: "Lists within 0.75 points of the 3.25% threshold in the count so far.", countShare: "Share of the count", countNone: "No list is within 0.75 points of the threshold in the count so far.",
   blocs: "How do the blocs compare?",
   thresholds: "Who is closest to the threshold?",
   watch:"The three modeled lists whose chances of passing are most uncertain.",
@@ -46,6 +47,7 @@ mid:"בין הגושים",largestHistory:"ההסתברות לרשימה הגדו
   method:
     "תחזית קפואה מתקופת הבחירות מתעדכנת במדגמים מאומתים. ספירות חלקיות אינן נכללות עד לאימות מודל הספירה. בכל הדמיה מוקצים 120 מנדטים. הטווחים כוללים את 80% ההדמיות המרכזיות; הפסיפס האחיד והחציונים הנפרדים עונים על שאלות שונות. אין כאן הסתברות להקמת ממשלה.",
   title: "הבחירות במספרים",
+  countTitle: "היכן עומדת הספירה", countWatch: "רשימות שנמצאות בטווח של 0.75 נקודות מאחוז החסימה (3.25%) בספירה עד כה.", countShare: "חלק מהספירה", countNone: "אף רשימה אינה בטווח של 0.75 נקודות מאחוז החסימה בספירה עד כה.",
   blocs: "מה מצב הגושים?",
   thresholds: "מי הכי קרוב לאחוז החסימה?",
   watch:"שלוש הרשימות במודל שסיכוייהן לעבור את אחוז החסימה הם הפחות ודאיים.",
@@ -85,6 +87,7 @@ mid:"بين الكتل",largestHistory:"احتمالات القائمة الأك
   method:
     "يُحدَّث التوقع المجمد قبل الانتخابات باستطلاعات خروج متحققة. لا تُدرج الأعداد الجزئية قبل التحقق من نموذج العد. توزع كل محاكاة 120 مقعدًا. تغطي النطاقات وسط 80%؛ البرلمان المتسق والوسائط المنفصلة يجيبان عن سؤالين مختلفين. هذه ليست احتمالات تشكيل حكومة.",
   title: "الانتخابات بالأرقام",
+  countTitle: "أين وصل الفرز", countWatch: "قوائم ضمن 0.75 نقطة من نسبة الحسم 3.25% في الفرز حتى الآن.", countShare: "حصتها من الفرز", countNone: "لا توجد قائمة ضمن 0.75 نقطة من نسبة الحسم في الفرز حتى الآن.",
   blocs: "كيف تتقارن الكتل؟",
   thresholds: "من الأقرب إلى نسبة الحسم؟",
   watch:"القوائم الثلاث في النموذج ذات احتمالات الاجتياز الأكثر غموضًا.",
@@ -124,6 +127,7 @@ mid:"میان بلوک‌ها",largestHistory:"احتمال بزرگ‌ترین 
   method:
     "پیشین ثابت انتخاباتی با نظرسنجی خروج تأییدشده به‌روز می‌شود. شمارش جزئی تا تأیید مدل شمارش وارد نمی‌شود. هر شبیه‌سازی ۱۲۰ کرسی تخصیص می‌دهد. بازه‌ها ۸۰٪ میانی را پوشش می‌دهند؛ مجلس منسجم و میانه‌های جداگانه پرسش‌های متفاوتی را پاسخ می‌دهند. این‌ها احتمال تشکیل دولت نیستند.",
   title: "انتخابات به روایت اعداد",
+  countTitle: "شمارش در چه وضعی است", countWatch: "فهرست‌هایی که در شمارش تا اینجا در فاصله ۰٫۷۵ واحد درصد از آستانهٔ ۳٫۲۵٪ قرار دارند.", countShare: "سهم از شمارش", countNone: "در شمارش تا اینجا هیچ فهرستی در فاصله ۰٫۷۵ واحد درصد از آستانه نیست.",
   blocs: "بلوک‌ها چه وضعی دارند؟",
   thresholds: "چه کسی به حد نصاب نزدیک‌تر است؟",
   watch:"سه فهرست مدل که احتمال عبورشان از حد نصاب نامطمئن‌تر است.",
@@ -163,6 +167,7 @@ mid:"Zwischen den Blöcken",largestHistory:"Wahrscheinlichkeit der größten Lis
   method:
     "Ein eingefrorenes Wahlkampfmodell wird mit geprüften Nachwahlbefragungen aktualisiert. Teilzählungen bleiben bis zur Validierung des Zählmodells ausgeschlossen. Jede Simulation verteilt 120 Sitze. Spannen umfassen die mittleren 80%; das stimmige Mosaik und einzelne Mediane beantworten unterschiedliche Fragen. Sie sagen keine Regierungsbildung voraus.",
   title: "Die Wahl in Zahlen",
+  countTitle: "Wo die Auszählung steht", countWatch: "Listen innerhalb von 0,75 Punkten um die 3,25-%-Hürde in der bisherigen Auszählung.", countShare: "Anteil an der Auszählung", countNone: "Keine Liste liegt in der bisherigen Auszählung innerhalb von 0,75 Punkten um die Hürde.",
   blocs: "Wie stehen die Blöcke?",
   thresholds: "Wer liegt nahe an der Sperrklausel?",
   watch:"Die drei modellierten Listen mit den unsichersten Einzugschancen.",
@@ -202,6 +207,7 @@ mid:"Entre les blocs",largestHistory:"Probabilités de première liste au fil du
   method:
     "Le modèle de campagne figé est actualisé par des sondages de sortie validés. Les décomptes partiels restent exclus jusqu’à validation du modèle de comptage. Chaque simulation répartit 120 sièges. Les plages couvrent les 80 % centraux ; la mosaïque cohérente et les médianes séparées répondent à des questions différentes. Ce ne sont pas des probabilités de formation d’un gouvernement.",
   title: "L’élection en chiffres",
+  countTitle: "Où en est le décompte", countWatch: "Listes à moins de 0,75 point du seuil de 3,25 % dans le décompte à ce stade.", countShare: "Part du décompte", countNone: "Aucune liste n’est à moins de 0,75 point du seuil dans le décompte à ce stade.",
   blocs: "Où en sont les blocs ?",
   thresholds: "Qui est au plus près du seuil ?",
   watch:"Les trois listes modélisées dont les chances de franchir le seuil sont les plus incertaines.",
@@ -242,6 +248,7 @@ mid:"两阵营之间",largestHistory:"最大名单概率随时间变化",thresho
   method:
     "冻结的选前先验通过已验证出口民调更新。部分计票在计票模型通过验证前不纳入。每次模拟分配120席。区间覆盖中间80%的模拟；完整拼图与各自的中位数回答不同问题。这些并非组阁概率。",
   title: "数字看选举",
+  countTitle: "计票现状", countWatch: "目前计票中，得票率与3.25%门槛相差不超过0.75个百分点的名单。", countShare: "计票得票率", countNone: "目前计票中，没有名单与门槛相差不超过0.75个百分点。",
   blocs: "各阵营实力如何？",
   thresholds: "谁最接近选举门槛？",
   watch:"模型中跨门槛机会最不确定的三个名单。",

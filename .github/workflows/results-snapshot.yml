@@ -2,6 +2,10 @@ name: Save election count
 on:
   # Automatic count acquisition now uses coordinated QStash cycles. Manual archive recovery remains.
   workflow_dispatch:
+# The one place the window is set (count-capture.yml carries the same pair).
+env:
+  COUNT_WINDOW_START: "2026-10-27T20:00:00Z"
+  COUNT_WINDOW_END: "2026-11-08T00:00:00Z"
 concurrency:
   group: results-snapshot
   cancel-in-progress: false
@@ -16,8 +20,8 @@ jobs:
         env:
           MANUAL: ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          start=$(date -u -d '2026-10-27T20:00:00Z' +%s)
-          end=$((start + 604800))
+          start=$(date -u -d "$COUNT_WINDOW_START" +%s)
+          end=$(date -u -d "$COUNT_WINDOW_END" +%s)
           now=$(date -u +%s)
           if [ "$now" -ge "$start" ] && { [ "$MANUAL" = 'true' ] || [ "$now" -le "$end" ]; }; then
             echo 'allowed=true' >> "$GITHUB_OUTPUT"

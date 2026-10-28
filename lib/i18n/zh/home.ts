@@ -58,7 +58,7 @@ const en: HomeText = {
         at: "在 61 席位上占据绝对多数",
         above: (x: string) => `${x} ${x === "1" ? "席" : "席"} 高于 61`,
         known: " 在已知的小计中",
-        show: "演出政党",
+        show: "显示政党",
         hide: "隐藏政党",
         mosaic: (selected: string | null) => `120-席位马赛克。 ${selected ? `${selected} 各方已透露；其他集团依然稳固。` : "四种颜色块；激活一个集团以揭露其政党。"}`,
         open: (label: string, seats: string) => `打开 ${label} 个人资料：${seats} 个席位`,

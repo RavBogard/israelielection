@@ -7,6 +7,7 @@ import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import { pinnedSeatHref } from "@/lib/seat-context";
+import { updatedFromCount } from "@/lib/i18n/strip-fresh";
 import "./seat-context.css";
 
 export default function SeatBasis({
@@ -67,7 +68,7 @@ export default function SeatBasis({
         {context.correctionOf && <> · {t.corrected}</>}
       </p>
       <p className="seat-times">
-        {t.published}: {date(context.publishedAt)} · {t.checked}:{" "}
+        {updatedFromCount(lang, context.updatedAt, context.countSourceUpdatedAt)} · {t.checked}:{" "}
         {date(context.freshness.checkedAt)}
       </p>
       {share && (

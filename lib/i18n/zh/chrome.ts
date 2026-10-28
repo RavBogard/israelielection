@@ -34,7 +34,7 @@ const en: Chrome = {
     },
     strip: {
         closed: "投票已经结束",
-        closedNote: "各频道的退出民意调查显示在结果页面上；委员会的计数如下。",
+        closedNote: "委员会正在计票；结果页面会在计票结果发布后随时显示。",
         stale: "保存的计数（陈旧）",
         early: "早期计数",
         count: "到目前为止的计数",

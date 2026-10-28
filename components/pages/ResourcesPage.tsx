@@ -198,7 +198,6 @@ function words(n: NavItem, lang: Lang) {
     ...HE_NAV_UTILITIES,
   ].find((item) => enPath(item.href) === path);
   const heTitles: Record<string, string> = {
-    "/match": "התאמה למפלגות",
     "/communities": "קהילות",
     "/issues": "סוגיות",
     "/american-lens": "נקודת המבט האמריקאית",

@@ -34,7 +34,7 @@ const en: Chrome = {
     },
     strip: {
         closed: "Les bureaux de vote sont ferm\u00E9s",
-        closedNote: "Les sondages de sortie des cha\u00EEnes se trouvent sur la page de r\u00E9sultats ; le d\u00E9compte du comit\u00E9 suit.",
+        closedNote: "Le comité procède au décompte ; la page des résultats l’affiche à mesure qu’il est publié.",
         stale: "Nombre enregistr\u00E9 (p\u00E9rim\u00E9)",
         early: "D\u00E9compte pr\u00E9coce",
         count: "Le d\u00E9compte jusqu'\u00E0 pr\u00E9sent",

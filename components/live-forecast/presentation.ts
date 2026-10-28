@@ -118,3 +118,18 @@ export function mergeSnapshot(
     };
   return current;
 }
+
+/** Once the count drives the seats, the pre-count odds (largest list, bloc ahead, far-from-line passes) are retired. */
+export const countDrivesSeats = (context: SharedSeatContext | null | undefined) =>
+  context?.basis === "partial_count" || context?.basis === "official_seats";
+export const THRESHOLD_SHARE = 0.0325;
+/** A pass chance is kept only for lists whose count share is this close to the line (0.75 points). */
+export const NEAR_LINE = 0.0075;
+/** Lists whose share of the count so far is within 0.75 points of 3.25%, with that share, closest first. */
+export function nearLine(snapshot: LiveForecastSnapshot) {
+  const shares = snapshot.countEstimate?.countedShares ?? {};
+  return snapshot.thresholds
+    .filter((row) => shares[row.id] !== undefined && Math.abs(shares[row.id] - THRESHOLD_SHARE) <= NEAR_LINE + 1e-9)
+    .map((row) => ({ ...row, share: shares[row.id] }))
+    .sort((a, b) => Math.abs(a.share - THRESHOLD_SHARE) - Math.abs(b.share - THRESHOLD_SHARE) || (a.id < b.id ? -1 : 1));
+}
