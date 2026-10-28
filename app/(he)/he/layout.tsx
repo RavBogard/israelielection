@@ -13,7 +13,6 @@ import Logo from "@/components/Logo";
 import EditionDescription from "@/components/EditionDescription";
 import Countdown from "@/components/Countdown";
 import ExitBlocLine from "@/components/ExitBlocLine";
-import ResultsStrip from "@/components/ResultsStrip";
 import SiteNav from "@/components/SiteNav";
 import { LangLink } from "@/components/LangSwitch";
 import { GA_ID } from "@/lib/analytics";
@@ -21,9 +20,9 @@ import { frank, sans } from "@/lib/fonts";
 import chrome, { HE_NAV_BAR, HE_NAV_GROUPS, HE_NAV_UTILITIES } from "@/lib/i18n/chrome";
 import { HebrewProvider } from "@/lib/i18n/HebrewProvider";
 import { HE_PUBLIC } from "@/lib/i18n";
-import { blocText, partyText } from "@/lib/i18n/overlays";
+import { partyText } from "@/lib/i18n/overlays";
 import briefingsJson from "@/data/briefings/_index.json";
-import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
+import { allPolls, averagePoll, exitPolls, mainPolls, parties } from "@/lib/data";
 import { averageMeter, firstExit, navFacts } from "@/lib/nav-facts";
 import { visibleNavItems } from "@/lib/navigation";
 import { blocTotals, isExit } from "@/lib/polls";
@@ -81,7 +80,6 @@ const GROUPS: NavGroup[] = HE_NAV_GROUPS.map((g) =>
       },
 );
 /** Bloc labels for the results strip, as the overlay gives them. */
-const BLOC_LABELS = Object.fromEntries(blocs.map((b) => [b.id, blocText(b, "he")]));
 
 const closedBy = (iso: string) => Date.now() >= Date.parse(iso);
 const inEnglish = (lang?: string) => (lang === "en" ? ` ${t.inEnglish}` : "");
@@ -105,7 +103,6 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
               <SiteNav facts={FACTS} meter={METER} pollsClose={pollsClose} closedAtRender={closedBy(pollsClose)} groups={GROUPS} utilities={HE_NAV_UTILITIES} bar={HE_NAV_BAR} home="/he" />
             </div>
             <ExitBlocLine lang="he" />
-            <ResultsStrip pollsClose={pollsClose} blocLabels={BLOC_LABELS} />
           </header>
           </ChromeGate>
           <main id="main" className="flex-1">

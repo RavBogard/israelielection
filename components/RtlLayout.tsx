@@ -10,12 +10,12 @@ import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
 import { editionPath, isRtl } from "@/lib/i18n";
 import chrome from "@/lib/i18n/chrome";
 import { ui } from "@/lib/i18n/ui";
-import { blocText, partyText } from "@/lib/i18n/overlays";
+import { partyText } from "@/lib/i18n/overlays";
 import { frank, sans } from "@/lib/fonts";
 import { GA_ID } from "@/lib/analytics";
 import { NAV_GROUPS, NAV_UTILITIES, type NavGroup, type NavItem } from "@/lib/site";
 import { visibleNavItems } from "@/lib/navigation";
-import { allPolls, averagePoll, blocs, exitPolls, mainPolls, parties } from "@/lib/data";
+import { allPolls, averagePoll, exitPolls, mainPolls, parties } from "@/lib/data";
 import { averageMeter, firstExit, navFacts } from "@/lib/nav-facts";
 import { blocTotals, isExit } from "@/lib/polls";
 import { resultsConfig } from "@/lib/results-live";
@@ -24,7 +24,6 @@ import Logo from "./Logo";
 import EditionDescription from "./EditionDescription";
 import Countdown from "./Countdown";
 import ExitBlocLine from "./ExitBlocLine";
-import ResultsStrip from "./ResultsStrip";
 import SiteNav from "./SiteNav";
 import { LangLink } from "./LangSwitch";
 import "@/app/globals.css";
@@ -71,7 +70,6 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
         <header className="masthead he-masthead">
           <div className="row"><Logo lang={lang} /><Countdown lang={lang} /><SiteNav facts={facts} meter={meter} pollsClose={pollsClose} closedAtRender={closed} groups={groups} utilities={utilities} bar={[`/${lang}`, "/search", "/about"]} home={`/${lang}`} /></div>
           <ExitBlocLine lang={lang} />
-          <ResultsStrip pollsClose={pollsClose} blocLabels={Object.fromEntries(blocs.map(b => [b.id, blocText(b, lang)]))} />
         </header></ChromeGate>
         <main id="main" className="flex-1">{children}</main>
         <ChromeGate><footer className="site-foot he-foot"><div className="row">

@@ -17,6 +17,7 @@
 .chamber-hero .ch-side { grid-area: side; min-width: 0; display: grid; gap: 22px; align-content: start; }
 /* Headlines: a full-width strip under the masthead, three across, before the majority question (Daniel, 2026-10-28). */
 .chamber-hero .ch-news { grid-area: news; min-width: 0; margin-bottom: 10px; }
+.chamber-hero .ch-fresh { margin: 4px 0 0; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .home .chamber-hero .hero-news { grid-area: auto; border-top: 0; border-bottom: 1px solid var(--line); padding: 0 0 12px; }
 .home .chamber-hero .hero-news header { margin-bottom: 6px; }
 .home .chamber-hero .hero-news ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 0; }
@@ -75,7 +76,8 @@
 .chamber-hero .ch-back { justify-self: start; padding: 0; border: 0; background: none; color: var(--ink-2); font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) { .chamber-hero .ch-seat { transition: none; } }
 @media (max-width: 860px) {
-  .home .chamber-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "news" "intro" "chart" "side"; grid-template-rows: none; gap: 18px; padding-block: 24px 28px; }
+  .home .chamber-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "chart" "side" "news"; grid-template-rows: none; gap: 18px; padding-block: 24px 28px; }
+  .home .chamber-hero .ch-news { margin: 14px 0 0; padding-top: 18px; border-top: 1px solid var(--line); }
   .home .chamber-hero .hero-news ol { grid-template-columns: minmax(0, 1fr); }
   .home .chamber-hero .hero-news li { padding: 8px 0; padding-inline-end: 0; }
   .home .chamber-hero .hero-news li + li { border-inline-start: 0; border-top: 1px solid var(--line); margin-inline-start: 0; padding-inline-start: 0; }

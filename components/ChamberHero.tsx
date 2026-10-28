@@ -6,6 +6,7 @@ import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { CHAMBER } from "@/lib/i18n/chamber";
 import { NOW_SEATS } from "@/lib/i18n/now-seats";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
+import { updatedFromCount } from "@/lib/i18n/strip-fresh";
 import { blocText } from "@/lib/i18n/overlays";
 import { listName } from "@/components/results/names";
 import { blocs } from "@/lib/data";
@@ -210,6 +211,8 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
         <p className="ch-tally" aria-hidden="true">{intro.tally}</p>
         <p className="ch-hint">{t.hint}</p>
         <figcaption>{t.note}</figcaption>
+        {/* The masthead strip is gone (Daniel, 2026-10-28); the estimate keeps its time here. */}
+        <p className="ch-fresh">{shared.refreshFailed ? LIFECYCLE[lang].stale : context.freshness.status === "current" ? updatedFromCount(lang, context.updatedAt, context.countSourceUpdatedAt) : LIFECYCLE[lang][context.freshness.status]}</p>
       </figure>
       <div className="ch-side">
         <ul className="ch-blocs">
