@@ -254,3 +254,52 @@ describe("headline rows", () => {
     expect(headlineRows(rows, null)).toBe(rows);
   });
 });
+
+describe.each(LANGS)("%s count-driven dashboard", (lang) => {
+  const base = getBaselineSnapshot();
+  const share = (id: string, value: number) => ({ [id]: value });
+  const counting: SharedSeatContext = {
+    ...official,
+    evidenceStage: "counting",
+    basis: "partial_count",
+    seatStatus: "estimated",
+    pointMethod: "partial_count_allocation",
+    updatedAt: "2026-10-28T10:40:00Z",
+    countSourceUpdatedAt: "2026-10-28T10:31:00Z",
+    freshness: { status: "current", checkedAt: null, lastAttemptAt: null },
+  };
+  const ids = base.thresholds.map((row) => row.id);
+  const snapshot = {
+    ...base,
+    mode: "exit" as const,
+    countEstimate: {
+      countedShares: { ...share(ids[0], 0.0325 + 0.005), ...share(ids[1], 0.0325 - 0.012), ...share(ids[2], 0.0325) },
+    } as NonNullable<typeof base.countEstimate>,
+  };
+  const render = () =>
+    renderToStaticMarkup(createElement(ForecastDisplay, { initial: snapshot, context: counting, lang, ...forecastPresentation(lang) }));
+  it("drops the pre-count odds, keeps pass chances only near the line, and renames the section", () => {
+    const html = render(), t = LIVE_FORECAST[lang], d = DASHBOARD[lang];
+    expect(html).toContain(d.countTitle);
+    expect(html).not.toContain(`>${t.experimental}<`);
+    expect(html).not.toContain(t.ahead);
+    expect(html).not.toContain(t.aheadChance);
+    expect(html).not.toContain(t.largest);
+    expect(html).not.toContain(`>${t.exit}<`);
+    const shown = [...html.matchAll(/data-threshold-id="([^"]+)"/g)].map((m) => m[1]);
+    expect(shown).toEqual([ids[2], ids[0]]);
+  });
+});
+describe("updatedFromCount", () => {
+  it("shows both Israel times when the count file's time is known, and one when it is not", async () => {
+    const { updatedFromCount } = await import("@/lib/i18n/strip-fresh");
+    for (const lang of LANGS) {
+      const both = updatedFromCount(lang, "2026-10-28T10:40:00Z", "2026-10-28T10:31:00Z");
+      expect(both).toContain("12:40");
+      expect(both).toContain("12:31");
+      const one = updatedFromCount(lang, "2026-10-28T10:40:00Z", null);
+      expect(one).toContain("12:40");
+      expect(one).not.toContain("12:31");
+    }
+  });
+});

@@ -17,6 +17,10 @@ import type { LiveForecastSnapshot } from "./types";
 
 export type CountEstimate = Omit<NowcastResult, "counted" | "projected" | "localities"> & {
   capturedAt: string | null;
+  /** The count file's own last-modified time (CEC header), when it gave one. */
+  sourceUpdatedAt?: string | null;
+  /** Each list's share of the valid votes counted so far (not projected); the threshold watch reads this. */
+  countedShares?: Record<string, number>;
   source: "expc";
   method: string;
   /** Revision of the frozen prior the projection is reconciled to; changes only when the prior file does. */
@@ -128,12 +132,16 @@ export async function getCountEstimate(snapshot: Pick<LiveForecastSnapshot, "par
     const r = countProjection({ raw: record.raw, snapshot, draws: 300 });
     if (!r) return null;
     const { counted: _c, projected: _p, localities: _l, ...rest } = r;
+    const total = Object.values(_c).reduce((n, v) => n + v, 0);
+    const countedShares = total > 0 ? Object.fromEntries(Object.entries(_c).map(([id, v]) => [id, v / total])) : undefined;
     void _c;
     void _p;
     void _l;
     return {
       ...rest,
       capturedAt: record.current?.capturedAt ?? null,
+      sourceUpdatedAt: record.current?.sourceUpdatedAt ?? null,
+      countedShares,
       source: "expc",
       priorRevision: countPrior.revision,
       assumptions: assumptions(r),

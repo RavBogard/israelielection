@@ -37,7 +37,8 @@ describe("durable count validation and rotation", () => {
     const start = Date.parse(config.pollsClose);
     expect(captureAllowed(config.pollsClose, start - 1, true)).toBe(false);
     expect(captureAllowed(config.pollsClose, start + 7 * 86400_000, false)).toBe(true);
-    expect(captureAllowed(config.pollsClose, start + 8 * 86400_000, false)).toBe(false);
-    expect(captureAllowed(config.pollsClose, start + 8 * 86400_000, true)).toBe(true);
+    expect(captureAllowed(config.pollsClose, Date.parse("2026-11-07T23:59:00Z"), false)).toBe(true);
+    expect(captureAllowed(config.pollsClose, Date.parse("2026-11-08T00:00:00Z"), false)).toBe(false);
+    expect(captureAllowed(config.pollsClose, Date.parse("2026-11-09T00:00:00Z"), true)).toBe(true);
   });
 });

@@ -1104,5 +1104,21 @@
   "Extend": "تمديد",
   "Orthodox only": "الأرثوذكسية فقط",
   "Security only": "الأمن فقط",
-  "Israeli control": "السيطرة الإسرائيلية"
+  "Israeli control": "السيطرة الإسرائيلية",
+  "Published seats and sourced coalition negotiations.": "المقاعد المنشورة والمفاوضات الائتلافية الموثقة بمصادر.",
+  "Profiled lists sized by shared seat evidence, with sources.": "قوائم موثقة بحجم يعكس أدلة المقاعد المشتركة، مع المصادر.",
+  "Try cabinet, support and abstention roles on current or saved seats.": "جرّب أدوار الحكومة والدعم والامتناع على المقاعد الحالية أو المحفوظة.",
+  "Verified locality results and historical election comparisons.": "نتائج موثقة حسب البلدة ومقارنات تاريخية بين الانتخابات.",
+  "Election editions": "دورات الانتخابات",
+  "Permanent election records with current and saved evidence.": "سجلات انتخابية دائمة مع الأدلة الحالية والمحفوظة.",
+  "Parliament": "الكنيست",
+  "Seat allocation, separated from verified membership records.": "توزيع المقاعد، منفصلاً عن سجلات الأعضاء الموثقة.",
+  "Policies": "السياسات",
+  "Sourced policy background and documented implementation evidence.": "خلفية موثقة للسياسات وأدلة موثقة على التنفيذ.",
+  "Changes and evidence": "التغييرات والأدلة",
+  "Confirmed events, source evidence and saved seat revisions.": "أحداث مؤكدة وأدلة مصدرية ونسخ محفوظة من المقاعد.",
+  "Reference library": "مكتبة المراجع",
+  "Guides, communities and issues with translation status.": "أدلة ومجتمعات وقضايا مع حالة الترجمة.",
+  "Email updates": "تحديثات بالبريد الإلكتروني",
+  "Choose email topics and confirm your subscription.": "اختر موضوعات البريد الإلكتروني وأكّد اشتراكك."
 }

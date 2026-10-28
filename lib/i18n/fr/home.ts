@@ -58,7 +58,7 @@ const en: HomeText = {
         at: "\u00C0 la majorit\u00E9 absolue des si\u00E8ges 61",
         above: (x: string) => `${x} ${x === "1" ? "si\u00E8ge" : "si\u00E8ges"} au dessus de 61`,
         known: " dans le sous-total connu",
-        show: "Soir\u00E9es spectacle",
+        show: "Afficher les partis",
         hide: "Masquer les f\u00EAtes",
         mosaic: (selected: string | null) => `120-si\u00E8ge mosa\u00EFque. ${selected ? `${selected} f\u00EAtes r\u00E9v\u00E9l\u00E9es\u00A0; les autres blocs restent solides.` : "Quatre couleurs de bloc\u00A0; activer un bloc pour r\u00E9v\u00E9ler ses partis."}`,
         open: (label: string, seats: string) => `Ouvrir le profil ${label}\u00A0: ${seats}\u00A0si\u00E8ges`,

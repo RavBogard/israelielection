@@ -84,6 +84,8 @@ export type SharedSeatContext = {
   sourceRefs: SourceRef[];
   publishedAt: string | null;
   observedAt: string;
+  /** Partial-count contexts: the count file's own last-modified time, when the source gave one. */
+  countSourceUpdatedAt?: string | null;
   correctionOf: string | null;
   uncertainty?: {
     snapshotRevision: string;

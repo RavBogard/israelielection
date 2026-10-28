@@ -7,7 +7,7 @@ import {NAV,NAV_BAR,NAV_GROUPS,NAV_TOOLS,NAV_UTILITIES} from "./site";
 import {activeNavGroup,canonicalNavPaths,currentNavPage,visibleNavItems,withinNavPage} from "./navigation";
 describe("visitor navigation catalog",()=>{
  it("covers each actual first-level public page once with meaningful labels/descriptions",()=>{
-  const pages=readdirSync(EN,{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(join(EN,d.name,"page.tsx"))).map(d=>`/${d.name}`);
+  const pages=readdirSync(EN,{withFileTypes:true}).filter(d=>d.isDirectory()&&existsSync(join(EN,d.name,"page.tsx"))&&d.name!=="match"/* retired, redirects to /parties (Daniel, 2026-10-28) */).map(d=>`/${d.name}`);
   expect(new Set(NAV.map(n=>n.href))).toEqual(new Set(pages));expect(NAV).toHaveLength(pages.length);
   expect(NAV_GROUPS.map(g=>g.label)).toEqual(["Polls and news","Parties","Voters and places","How it works"]);
   expect(NAV_UTILITIES.map(n=>n.href)).toEqual(["/subscriptions","/start","/search","/resources","/about","/corrections"]);

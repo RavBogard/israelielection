@@ -21,7 +21,6 @@ export const NAV_GROUPS: readonly NavGroup[] = [
   {href:"/parties",label:"Party Map",description:"Profiled lists sized by shared seat evidence, with sources."},
   {href:"/compare",label:"Compare positions",aliases:["Compare party positions"],description:"Recorded positions on major issues, side by side, with sources."},
   {href:"/coalition-builder",label:"Coalition Builder",description:"Try cabinet, support and abstention roles on current or saved seats."},
-  {href:"/match",label:"Party match",aliases:["Which party matches you","Party quiz"],description:"Answer seven questions and see which lists sit closest to you."},
   {href:"/party-history",label:"Party family tree",description:"Origins, splits, mergers and alliances over time."},
   {href:"/ballot",label:"Every ballot list",aliases:["Submitted ballot lists"],description:"All submitted lists, minor ones included, with their status."},
  ]},

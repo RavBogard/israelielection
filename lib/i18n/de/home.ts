@@ -58,7 +58,7 @@ const en: HomeText = {
         at: "Auf dem 61-Sitz absolute Mehrheit",
         above: (x: string) => `${x} ${x === "1" ? "Sitz" : "Sitze"} \u00FCber 61`,
         known: " in der bekannten Zwischensumme",
-        show: "Showpartys",
+        show: "Parteien anzeigen",
         hide: "Partys ausblenden",
         mosaic: (selected: string | null) => `120-Sitzmosaik. ${selected ? `${selected} Parteien enth\u00FCllt; andere Bl\u00F6cke bleiben solide.` : "Vier Blockfarben; Aktiviere einen Block, um seine Parteien anzuzeigen."}`,
         open: (label: string, seats: string) => `\u00D6ffnen Sie das Profil ${label}: ${seats} Pl\u00E4tze`,

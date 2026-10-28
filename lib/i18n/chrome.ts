@@ -50,7 +50,7 @@ const en = {
   /** The line under the masthead once polls close. */
   strip: {
     closed: "Polls have closed",
-    closedNote: "The channels' exit polls are on the results page; the committee's count follows.",
+    closedNote: "The committee is counting; the results page shows the count as it is published.",
     stale: "Saved count (stale)",
     early: "Early count",
     count: "The count so far",

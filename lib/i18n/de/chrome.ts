@@ -34,7 +34,7 @@ const en: Chrome = {
     },
     strip: {
         closed: "Die Wahllokale sind geschlossen",
-        closedNote: "Die Exit-Umfragen der Kan\u00E4le finden Sie auf der Ergebnisseite. Die Ausz\u00E4hlung des Ausschusses folgt.",
+        closedNote: "Der Ausschuss zählt aus; die Ergebnisseite zeigt die Auszählung, sobald sie veröffentlicht wird.",
         stale: "Gespeicherte Anzahl (veraltet)",
         early: "Fr\u00FChe Z\u00E4hlung",
         count: "Die Z\u00E4hlung bisher",

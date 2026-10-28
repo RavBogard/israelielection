@@ -11,12 +11,15 @@ import {
   mergeSnapshot,
   numericHistorySegments,
   primaryThresholds,
+  countDrivesSeats,
+  nearLine,
   probability,
   type ForecastProps,
 } from "./presentation";
 import NowSeats, { NowBlocSeats, NowSeatsKey } from "../NowSeats";
 import { outgoingBlocSeats } from "@/lib/outgoing-seats";
 import { NOW_SEATS } from "@/lib/i18n/now-seats";
+import { updatedFromCount } from "@/lib/i18n/strip-fresh";
 
 const colors: Record<string, string> = {
   net: "var(--b-net)",
@@ -41,7 +44,9 @@ export function ForecastDisplay({
   refreshError = false,
 }: ForecastProps & { refreshError?: boolean }) {
   const d = DASHBOARD[lang],
-    official = context?.seatStatus === "official";
+    official = context?.seatStatus === "official",
+    countMode = countDrivesSeats(context),
+    pct2 = (n: number) => new Intl.NumberFormat(locale(lang), { style: "percent", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n);
   const date = (value: string | null | undefined) =>
     value
       ? new Intl.DateTimeFormat(locale(lang), {
@@ -76,7 +81,9 @@ export function ForecastDisplay({
           : id === "arab"
           ? d.arab
           : d.other;
-  const watched = primaryThresholds(snapshot).slice(0, 3);
+  // Once the count drives the seats the pre-count odds go; a pass chance stays only for lists within 0.75 points of 3.25%.
+  const watched: ((typeof snapshot.thresholds)[number] & { share?: number })[] =
+    countMode && !official ? nearLine(snapshot) : primaryThresholds(snapshot).slice(0, 3);
   const leaders = [...snapshot.largestParty]
     .filter((row) => row.probability > 0||row.id==="tie")
     .sort((a, b) => b.probability - a.probability || (a.id < b.id ? -1 : 1));
@@ -101,7 +108,9 @@ export function ForecastDisplay({
           ? d.overdue
           : snapshot.freshness.status === "stale"
             ? t.paused
-            : t[snapshot.mode];
+            : countMode
+              ? t.count
+              : t[snapshot.mode];
   const probabilityHistory=(kind:"largestParty"|"thresholds",caption:string)=>{const ids=[...new Set(snapshot.history.flatMap(point=>(point[kind]??[]).map(row=>row.id)))].sort();return <div className="lf-table-scroll"><table><caption>{caption}</caption><thead><tr><th>{t.time}</th>{ids.map(id=><th key={id}>{party(id)}</th>)}</tr></thead><tbody>{snapshot.history.map(point=><tr key={point.revision}><th scope="row">{date(point.generatedAt)}</th>{ids.map(id=>{const row=point[kind]?.find(row=>row.id===id);return <td key={id} dir="ltr">{row?probability("probability" in row?row.probability:row.passProbability):"—"}</td>;})}</tr>)}</tbody></table></div>;};
   // Every list's projected seats; open on its own under the panel on the home page (Daniel, 2026-10-28), folded on /results.
   const seatTable = (
@@ -111,7 +120,7 @@ export function ForecastDisplay({
         <tr>
           <th>{t.seats}</th>
           <th>{t.interval}</th>
-          <th>{t.largest}</th>
+          {!countMode && <th>{t.largest}</th>}
           <th>{NOW_SEATS[lang].col}</th>
         </tr>
       </thead>
@@ -122,12 +131,14 @@ export function ForecastDisplay({
             <tr key={row.id}>
               <th scope="row">{party(row.id)}</th>
               <td dir="ltr">{interval(row.seats)}</td>
-              <td dir="ltr">
-                {probability(
-                  leaders.find((lead) => lead.id === row.id)
-                    ?.probability ?? 0,
-                )}
-              </td>
+              {!countMode && (
+                <td dir="ltr">
+                  {probability(
+                    leaders.find((lead) => lead.id === row.id)
+                      ?.probability ?? 0,
+                  )}
+                </td>
+              )}
               <td className="lf-now">
                 <NowSeats id={row.id} lang={lang} bare />
               </td>
@@ -166,6 +177,11 @@ export function ForecastDisplay({
             />
           </div>
           <small>{t.threshold}</small>
+          {row.share !== undefined && (
+            <small>
+              {d.countShare}: <b dir="ltr">{pct2(row.share)}</b>
+            </small>
+          )}
         </>
       )}
     </li>
@@ -177,9 +193,9 @@ export function ForecastDisplay({
       aria-labelledby="live-forecast-title"
     >
       <header className="lf-head">
-        <h2 id="live-forecast-title">{d.title}</h2>
+        <h2 id="live-forecast-title">{countMode ? d.countTitle : d.title}</h2>
         <p>
-          {!official && (
+          {!official && !countMode && (
             <>
               <span>{t.experimental}</span> ·{" "}
             </>
@@ -195,6 +211,7 @@ export function ForecastDisplay({
         </p>
       )}
       <div className="lf-questions">
+        {(!countMode || official) && (
         <section className="lf-question" aria-labelledby="lf-ahead">
           <h3 id="lf-ahead">
             {official ? (winners.length > 1 ? d.winners : d.winner) : t.ahead}
@@ -250,6 +267,7 @@ export function ForecastDisplay({
             </details>
           )}
         </section>
+        )}
         <section className="lf-question" aria-labelledby="lf-blocs">
           <h3 id="lf-blocs">{d.blocs}</h3>
           <div className="lf-seat-axis" aria-hidden="true">
@@ -293,9 +311,9 @@ export function ForecastDisplay({
           </ol>
           {blocks.some((row) => outgoingBlocSeats[row.id] !== undefined) && <p className="lf-note">{NOW_SEATS[lang].mark}</p>}
           {!blocks.length && <p className="lf-note">{t.unavailable}</p>}
-          {!official && (
+          {!official && <p className="lf-note">{d.marginal}</p>}
+          {!official && !countMode && (
             <>
-              <p className="lf-note">{d.marginal}</p>
               <div className="lf-bloc">
                 {snapshot.blocLead.map((row) => (
                   <div key={row.id}>
@@ -315,10 +333,10 @@ export function ForecastDisplay({
         </section>
         <section className="lf-question" aria-labelledby="lf-changes">
           <h3 id="lf-changes">{official ? d.watched : d.thresholds}</h3>
-          {!official&&<p className="lf-note">{d.watch}</p>}
+          {!official&&<p className="lf-note">{countMode ? d.countWatch : d.watch}</p>}
           <ol className="lf-thresholds">{watched.map(thresholdRow)}</ol>
-          {!watched.length && <p>{t.none}</p>}
-          {compact ? (
+          {!watched.length && <p>{countMode && !official ? d.countNone : t.none}</p>}
+          {countMode && !official ? null : compact ? (
             <a
               className="lf-full"
               href={`${editionPath("/results", lang)}#lf-all-thresholds`}
@@ -335,6 +353,14 @@ export function ForecastDisplay({
           )}
         </section>
       </div>
+      {countMode && !official && !compact && (
+        <details className="lf-details">
+          <summary>
+            {t.seats} · {t.interval}
+          </summary>
+          {seatTable}
+        </details>
+      )}
       {compact && !official && (
         <section className="lf-all-seats" aria-labelledby="lf-all-seats-h">
           <h3 id="lf-all-seats-h">{t.seats} · {t.interval}</h3>
@@ -342,17 +368,25 @@ export function ForecastDisplay({
         </section>
       )}
       <p className="lf-stamp">
-        {official ? d.official : t.updated}:{" "}
-        <time
-          dateTime={
-            official
-              ? (context.publishedAt ?? context.observedAt)
-              : snapshot.generatedAt
-          }
-        >
-          {date(official ? context.publishedAt : snapshot.generatedAt)}
-        </time>{" "}
-        · {t.time}
+        {countMode && !official && context ? (
+          <>
+            {updatedFromCount(lang, context.updatedAt, context.countSourceUpdatedAt)} · {d.israel}
+          </>
+        ) : (
+          <>
+            {official ? d.official : t.updated}:{" "}
+            <time
+              dateTime={
+                official
+                  ? (context.publishedAt ?? context.observedAt)
+                  : snapshot.generatedAt
+              }
+            >
+              {date(official ? context.publishedAt : snapshot.generatedAt)}
+            </time>{" "}
+            · {t.time}
+          </>
+        )}
         <br />
         {cadence?.phase==="before_close"&&!cadence.lastSuccessfulAt?<>{d.begins}: {date(cadence.nextCheckAt)} · {t.time}</>:<>{d.last}: {date(cadence?.lastSuccessfulAt??snapshot.freshness.lastSuccessfulAcquisitionAt)}{!official&&!archived&&<> · {d.next}: {date(cadence?.nextCheckAt)}</>}</>}
       </p>
@@ -445,8 +479,8 @@ export function ForecastDisplay({
                   </tbody>
                 </table>
               </div>
-              {probabilityHistory("largestParty",d.largestHistory)}
-              {probabilityHistory("thresholds",d.thresholdHistory)}
+              {!countMode && probabilityHistory("largestParty",d.largestHistory)}
+              {!countMode && probabilityHistory("thresholds",d.thresholdHistory)}
             </details>
           </section>
           <section className="lf-method">

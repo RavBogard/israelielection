@@ -78,6 +78,9 @@ const nextConfig: NextConfig = {
       // Teaching resources were dropped (Daniel, 2026-10-06); old links land on the home page.
       { source: "/teach", destination: "/", permanent: false },
       { source: "/teach/:path*", destination: "/", permanent: false },
+      // Party match retired (Daniel, 2026-10-28 ruling); components/match/* and data/quiz.json stay for the next campaign.
+      { source: "/match", destination: "/parties", permanent: false },
+      { source: "/:lang(he|ar|fa|de|fr|zh)/match", destination: "/:lang/parties", permanent: false },
     ];
   },
 };

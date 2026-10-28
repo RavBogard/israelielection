@@ -241,6 +241,7 @@ export function countSnapshot(
     ],
     publishedAt: live.generatedAt,
     observedAt: at,
+    countSourceUpdatedAt: estimate.sourceUpdatedAt ?? null,
     correctionOf: null,
     uncertainty: {
       snapshotRevision,
