@@ -129,11 +129,14 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 @media (max-width: 420px) { .exit-line { font-size: 12.5px; } .exit-line .row, .exit-line ul { gap: 2px 12px; } }
 @media print { .exit-line { display: none; } }
 
-/* Support line (Daniel, 2026-10-28): the link leads in ink weight, the note stays muted. */
-.site-foot .about .foot-support { color: var(--ink-2); }
-.site-foot .about .foot-support a { font-weight: 700; color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
-.about-support { margin-block: 28px; padding-block: 18px; border-block: 1px solid var(--line); }
-.about-support h2 { margin: 0 0 8px; font: 700 20px/1.2 var(--display); }
-.about-support p { margin: 0 0 12px; max-width: 62ch; }
-.about-support .support-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 6px; background: var(--ink); color: var(--bg); font-weight: 700; text-decoration: none; }
-.about-support .support-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+/* Support (Daniel, 2026-10-28): three ways to give as plain chips, the note muted beneath. */
+.site-foot .about .foot-support { display: grid; gap: 6px; }
+.site-foot .about .foot-support p { color: var(--ink-2); }
+.site-foot .about .foot-support .support-h a { font-weight: 700; color: var(--ink); }
+.support-methods { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.support-methods li { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 12px; border: 1px solid var(--line-2); border-radius: 6px; font-size: 14.5px; background: var(--sheet); }
+.support-methods a, .support-methods b { font-weight: 700; color: var(--ink); }
+.support-handle { color: var(--ink-2); font-variant-numeric: tabular-nums; user-select: all; }
+.about-support { margin-block: 28px; padding-block: 18px; border-block: 1px solid var(--line); display: grid; gap: 12px; }
+.about-support h2 { margin: 0; font: 700 20px/1.2 var(--display); }
+.about-support p { margin: 0; max-width: 62ch; }
