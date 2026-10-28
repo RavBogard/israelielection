@@ -30,8 +30,11 @@ export function chamberLayout(total = 120, rows = 7, inner = 120, outer = 296, c
 
 /**
  * Lists to seats: blocs in hall order, each bloc's lists largest first from its outer edge (the Netanyahu bloc's
- * largest list at the far right). `shade` alternates within a bloc so neighbouring lists stay apart.
+ * largest list at the far right). `shade` is the list's step on its bloc's ramp, as a percentage of the bloc colour:
+ * the largest list 100, the smallest 48 (Daniel, 2026-10-28), so lists stay apart and the bloc still reads as one.
  */
+export const shadeOf = (rank: number, count: number) => (count > 1 ? Math.round(100 - (rank * 52) / (count - 1)) : 100);
+
 export function seatParties(layout: ChamberSeat[], parties: ChamberParty[]): PlacedSeat[] {
   const rank = (b: string) => { const i = HALL_ORDER.indexOf(b as (typeof HALL_ORDER)[number]); return i < 0 ? HALL_ORDER.indexOf("other") : i; };
   const order: { party: string; bloc: string; shade: number }[] = [];
@@ -40,7 +43,7 @@ export function seatParties(layout: ChamberSeat[], parties: ChamberParty[]): Pla
     const lists = parties.filter((p) => p.bloc === bloc && p.seats > 0).sort((a, b) => b.seats - a.seats || a.id.localeCompare(b.id));
     // Blocs right of centre run their largest list outward (rightmost); the rest run it outward on the left.
     const seq = rank(bloc) >= HALL_ORDER.indexOf("net") ? [...lists].reverse() : lists;
-    seq.forEach((p) => { const shade = lists.indexOf(p) % 2; for (let k = 0; k < p.seats; k++) order.push({ party: p.id, bloc, shade }); });
+    seq.forEach((p) => { const shade = shadeOf(lists.indexOf(p), lists.length); for (let k = 0; k < p.seats; k++) order.push({ party: p.id, bloc, shade }); });
   }
   return layout.slice(0, order.length).map((s, i) => ({ ...s, ...order[i] }));
 }

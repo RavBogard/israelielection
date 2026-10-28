@@ -26,14 +26,59 @@
 .home .chamber-hero .hero-news .hn-meta { display: block; margin: 4px 0 0; }
 .chamber-hero .ch-side { align-self: center; }
 .chamber-hero .ch-blocs { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
-.chamber-hero .ch-blocs li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 3px 10px; align-items: baseline; padding: 11px 0 12px; border-bottom: 1px solid var(--line); }
+.chamber-hero .ch-blocs li { border-bottom: 1px solid var(--line); }
+.chamber-hero .ch-bloc { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 3px 10px; align-items: baseline; inline-size: 100%; padding: 11px 8px 12px; margin: 0; border: 0; background: none; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.chamber-hero .ch-bloc:hover, .chamber-hero .ch-bloc[aria-pressed="true"] { background: var(--sheet); }
+.chamber-hero .ch-bloc[aria-pressed="true"] { box-shadow: inset 3px 0 0 var(--ink); }
+.chamber-hero:dir(rtl) .ch-bloc[aria-pressed="true"] { box-shadow: inset -3px 0 0 var(--ink); }
 .chamber-hero .ch-blocs .sw { inline-size: 12px; block-size: 12px; align-self: center; }
 .chamber-hero .ch-name { font-weight: 600; color: var(--ink); min-width: 0; }
 .chamber-hero .ch-seats { font: 700 32px/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
-.chamber-hero .ch-meta, .chamber-hero .ch-lists { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-.chamber-hero .ch-lists { color: var(--ink-3); font-size: 12.5px; }
+.chamber-hero .ch-meta { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
 .chamber-hero .ch-short { color: var(--ink); font-weight: 600; }
 .chamber-hero .ch-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; font-size: 14px; font-weight: 600; }
+/* Each list is a step on its bloc ramp: toward the paper in light mode, toward white in dark so small lists stay visible. */
+.chamber-hero { --ch-mix: var(--bg); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .chamber-hero { --ch-mix: #ffffff; } }
+:root[data-theme="dark"] .chamber-hero { --ch-mix: #ffffff; }
+/* Interactive chamber: lists are buttons; a picked bloc or list stays bright while the rest of the hall dims. */
+.chamber-hero .ch-chart svg g { cursor: pointer; }
+.chamber-hero .ch-chart svg g:focus { outline: none; }
+.chamber-hero .ch-chart svg g:focus-visible .ch-seat { stroke: var(--ink); stroke-width: 2.5; }
+.chamber-hero .ch-seat { transition: opacity .18s ease, fill .25s ease; }
+.chamber-hero svg.dim .ch-seat:not(.on) { opacity: .3; }
+.chamber-hero .ch-hint { margin: 4px 0 0; font-size: 13.5px; color: var(--ink-2); }
+.chamber-hero .ch-tally { display: none; margin: 4px 0 0; font-size: 15px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; min-block-size: 1.5em; }
+.chamber-hero .ch-h-q { display: none; }
+/* The opening sweep (pending: primed before paint; is-intro: running). */
+.chamber-hero[data-intro="pending"] .ch-seat { fill: var(--cell) !important; }
+.chamber-hero:is([data-intro="pending"], .is-intro) .ch-h-final { display: none; }
+.chamber-hero:is([data-intro="pending"], .is-intro) .ch-h-q { display: inline; }
+.chamber-hero:is([data-intro="pending"], .is-intro) .ch-hint { display: none; }
+.chamber-hero:is([data-intro="pending"], .is-intro) .ch-tally { display: block; }
+.chamber-hero .ch-side { transition: opacity .35s ease; }
+.chamber-hero:is([data-intro="pending"], .is-intro) .ch-side { opacity: 0; }
+.chamber-hero .ch-panel { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 10px; min-block-size: 96px; }
+.chamber-hero .ch-panel h2 { font: 700 21px/1.2 var(--display); margin: 0; color: var(--ink); }
+.chamber-hero .ch-prompt { margin: 0; font-size: 14px; color: var(--ink-2); }
+.chamber-hero .ch-panel-lists { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.chamber-hero .ch-lrow { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto auto; gap: 10px; align-items: center; inline-size: 100%; padding: 6px 8px; border: 0; background: none; color: inherit; font: inherit; text-align: start; cursor: pointer; }
+.chamber-hero .ch-lrow:hover { background: var(--sheet); }
+.chamber-hero .ch-dot { inline-size: 10px; block-size: 10px; border-radius: 50%; }
+.chamber-hero .ch-lname { font-weight: 600; color: var(--ink); min-width: 0; }
+.chamber-hero .ch-lseats { color: var(--ink); font-variant-numeric: tabular-nums; min-inline-size: 2ch; text-align: end; }
+.chamber-hero .ch-ldelta { font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; text-align: end; }
+.chamber-hero .ch-card { display: grid; gap: 8px; }
+.chamber-hero .ch-big { margin: 0; font: 700 46px/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.chamber-hero .ch-big small { font: 500 15px var(--body); color: var(--ink-2); margin-inline-start: 8px; }
+.chamber-hero .ch-card dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; font-size: 14.5px; }
+.chamber-hero .ch-card dt { color: var(--ink-2); }
+.chamber-hero .ch-card dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+.chamber-hero .ch-was { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.chamber-hero .ch-was svg { inline-size: 120px; block-size: 14px; }
+.chamber-hero:dir(rtl) .ch-was svg { transform: scaleX(-1); }
+.chamber-hero .ch-back { justify-self: start; padding: 0; border: 0; background: none; color: var(--ink-2); font: inherit; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { .chamber-hero .ch-seat, .chamber-hero .ch-side { transition: none; } }
 @media (max-width: 860px) {
   .home .chamber-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "news" "intro" "chart" "side"; grid-template-rows: none; gap: 18px; padding-block: 24px 28px; }
   .home .chamber-hero .hero-news ol { grid-template-columns: minmax(0, 1fr); }

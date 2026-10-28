@@ -9,7 +9,7 @@ import { describe, expect, it } from "vitest";
 import { LANGS, locale } from "@/lib/i18n";
 import { CHAMBER } from "@/lib/i18n/chamber";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
-import { chamberLayout, seatParties } from "@/lib/chamber";
+import { chamberLayout, seatParties, shadeOf } from "@/lib/chamber";
 import ChamberHero from "./ChamberHero";
 
 const seats = { likud: 27, otzma: 7, utj: 7, shas: 6, rz: 6, yashar: 22, byachad: 12, dem: 8, yb: 7, jl: 11, raam: 7 };
@@ -58,5 +58,26 @@ describe("chamber hero when official", () => {
   it("names a bloc that reaches 61", () => {
     const html = render("en", context({ pointSeats: { ...seats, likud: 35 } }));
     expect(html).not.toContain(CHAMBER.en.noMajority("61"));
+  });
+});
+
+describe("interactive chamber", () => {
+  it("makes every list a keyboard button and every bloc a toggle, in each edition", () => {
+    for (const lang of LANGS) {
+      const html = render(lang);
+      expect(html.match(/<g role="button" tabindex="0" data-list=/g) ?? []).toHaveLength(Object.keys(seats).length);
+      expect(html.match(/class="ch-bloc" aria-pressed="false"/g) ?? []).toHaveLength(3);
+      expect(html).toContain('aria-live="polite"');
+    }
+  });
+  it("renders the resting chamber and primes the opening sweep before paint", () => {
+    const html = render("en");
+    expect(html).not.toContain('data-intro="pending"');
+    expect(html).toContain("<script>");
+    expect(html).toContain('class="ch-h-final"');
+  });
+  it("shades each list a step of its bloc's colour, largest darkest", () => {
+    expect([0, 1, 2, 3, 4].map((k) => shadeOf(k, 5))).toEqual([100, 87, 74, 61, 48]);
+    expect(shadeOf(0, 1)).toBe(100);
   });
 });
