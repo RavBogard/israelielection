@@ -15,7 +15,7 @@
 .chamber-hero .ch-total-sub { fill: var(--ink-2); font: 400 14px var(--body); }
 .chamber-hero figcaption { font-size: 12.5px; line-height: 1.45; color: var(--ink-3); margin-top: 6px; max-width: 64ch; }
 .chamber-hero .ch-side { grid-area: side; min-width: 0; display: grid; gap: 22px; align-content: start; }
-.chamber-hero .hero-news { grid-area: auto; }
+.home .chamber-hero .hero-news { grid-area: auto; }
 .chamber-hero .ch-blocs { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
 .chamber-hero .ch-blocs li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 3px 10px; align-items: baseline; padding: 11px 0 12px; border-bottom: 1px solid var(--line); }
 .chamber-hero .ch-blocs .sw { inline-size: 12px; block-size: 12px; align-self: center; }
