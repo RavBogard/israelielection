@@ -1,3 +1,4 @@
+import ChromeGate from "@/components/ChromeGate";
 import SeatContextProvider from "./seat-context/SeatContextProvider";
 import { FootSupport } from "@/components/Support";
 import { seatContextForRender } from "@/lib/seat-context-server";
@@ -66,14 +67,14 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
   return <html lang={lang} dir={isRtl(lang) ? "rtl" : "ltr"} className={`${frank.variable} ${sans.variable} ${isRtl(lang) ? arabic.variable : ""}`}>
     <body className="min-h-screen flex flex-col">
       <Provider><SeatContextProvider initial={seatContext}>
-        <a href="#main" className="skip">{t.skip}</a>
+        <ChromeGate><a href="#main" className="skip">{t.skip}</a>
         <header className="masthead he-masthead">
           <div className="row"><Logo lang={lang} /><Countdown lang={lang} /><SiteNav facts={facts} meter={meter} pollsClose={pollsClose} closedAtRender={closed} groups={groups} utilities={utilities} bar={[`/${lang}`, "/search", "/about"]} home={`/${lang}`} /></div>
           <ExitBlocLine lang={lang} />
           <ResultsStrip pollsClose={pollsClose} blocLabels={Object.fromEntries(blocs.map(b => [b.id, blocText(b, lang)]))} />
-        </header>
+        </header></ChromeGate>
         <main id="main" className="flex-1">{children}</main>
-        <footer className="site-foot he-foot"><div className="row">
+        <ChromeGate><footer className="site-foot he-foot"><div className="row">
           <div className="about"><Logo lang={lang} /><EditionDescription legacy={t.description} lang={lang}/>
             <p>{ui(lang, "Machine-translated edition. Source material that has changed or has no translation is shown in English.")}</p>
             <p>{t.bylineBefore}<a href="https://danielbogard.com" hrefLang="en">{t.bylineName}</a>{t.bylineAfter}</p>
@@ -81,7 +82,7 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
             <ul className="foot-links">{utilities.map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.label}{english(n)}</Link></li>)}<li><LangLink /></li></ul>
           </div>
           <nav className="cols" aria-label={t.siteMapLabel}>{groups.map(g => <div key={g.id}><p className="lbl">{g.label}</p><ul>{visibleNavItems(g.items, closed, "").map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.lang === "en" ? <span lang="en" dir="ltr">{n.label}</span> : n.label}{english(n)}</Link></li>)}</ul></div>)}</nav>
-        </div></footer>
+        </div></footer></ChromeGate>
       </SeatContextProvider></Provider>
     </body>
     {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}

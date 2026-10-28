@@ -86,6 +86,8 @@ export type SharedSeatContext = {
   observedAt: string;
   /** Partial-count contexts: the count file's own last-modified time, when the source gave one. */
   countSourceUpdatedAt?: string | null;
+  /** Partial-count contexts: the share of the expected final vote that file had counted (0 to 1); older snapshots lack it. */
+  countCoverage?: number | null;
   correctionOf: string | null;
   uncertainty?: {
     snapshotRevision: string;

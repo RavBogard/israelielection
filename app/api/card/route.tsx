@@ -10,6 +10,7 @@ import { mediumDate } from "@/lib/format";
 import { lettersOf } from "@/lib/letters";
 import { BLOC, Grid, INK, INK2, INK3, LINE, PAPER, SIZE, TEXT, ogFonts } from "@/lib/og";
 import { pollLabel } from "@/lib/polls";
+import { israelTimeLabel } from "@/lib/exit-line";
 
 // Satori has no bidi: Hebrew ballot letters are reversed by hand so they read right to left.
 const rtl = (s: string) => [...s].reverse().join("");
@@ -35,7 +36,7 @@ export async function GET(req: NextRequest) {
   for(const id of ids)if(!parties.some(p=>p.id===id))fills.push({count:context?.pointSeats[id]??0,color:"#777777"});
   const title = ids.length ? `${whole} seats` : "Build a coalition";
   const read = !ids.length ? "Choose cabinet, outside support and abstention roles." : `Hypothetical initial confidence: ${vote.yes} yes, ${vote.no} no, ${vote.abstain} abstain. More yes than no is required;61 is an absolute-majority target.`;
-  const source = context ? `${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]} · ${context.publishedAt??"Publication time not supplied"}` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
+  const source = context ? `${LIFECYCLE.en[context.basis]}, ${LIFECYCLE.en[context.seatStatus]}, as of ${israelTimeLabel(context.countSourceUpdatedAt ?? context.updatedAt, "en", LIFECYCLE.en.noTime)}` : `${pollLabel(poll)}, ${mediumDate(poll.published)}`;
 
   return new ImageResponse(
     (

@@ -9,16 +9,25 @@ import { resultsConfig as cfg } from "@/lib/results-live";
 import { expectedFinalValid } from "@/lib/live-forecast/count-estimate";
 import { listName, T } from "@/components/results/names";
 import { edHref } from "@/components/results/rich";
+import { ENVELOPES_EXPECTED_THROUGH } from "@/lib/government-next";
 import ResultsRefresh from "@/components/ResultsRefresh";
 import "@/components/live-count.css";
 
-const ET = new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+/** "4 hr. ago" in the reader's language: minutes under an hour, hours under two days, then days. */
+export function fileAge(then: number, now: number, loc: string) {
+  const rtf = new Intl.RelativeTimeFormat(loc, { numeric: "always", style: "short" });
+  const minutes = Math.max(0, Math.round((now - then) / 60_000));
+  return minutes < 60 ? rtf.format(-minutes, "minute") : minutes < 48 * 60 ? rtf.format(-Math.round(minutes / 60), "hour") : rtf.format(-Math.round(minutes / 1440), "day");
+}
+
+/** Read once per server render; kept outside the component so render stays pure. */
+const clock = () => Date.now();
 
 /**
  * The raw count on the home page, list by list, as the Central Elections Committee publishes it
  * (Daniel, 2026-10-28). The page re-renders every minute; the refresher re-fetches it while the tab is visible.
  */
-export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang }: { count: Count; sourceUpdatedAt: string | null; fetchedAt: string; lang: Lang }) {
+export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang, now, envelopes = null }: { count: Count; sourceUpdatedAt: string | null; fetchedAt: string; lang: Lang; now?: number; envelopes?: number | null }) {
   if (!count.valid) return null;
   const t = LIVE_COUNT[lang], loc = locale(lang);
   const num = (n: number) => n.toLocaleString(loc);
@@ -32,6 +41,7 @@ export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang }: {
   const counted = count.valid / expected;
   const scale = Math.max(0.3, Math.ceil(((tracked[0]?.pct ?? 0) + 0.02) * 20) / 20);
   const at = new Date(sourceUpdatedAt ?? fetchedAt);
+  const nowMs = now ?? clock();
   const israel = new Intl.DateTimeFormat(loc, { timeZone: "Asia/Jerusalem", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(at);
   const threshold = cfg.threshold;
   const row = (key: string, name: ReactNode, color: string, votes: number, below: boolean, dim = below) => {
@@ -49,10 +59,11 @@ export default function LiveCount({ count, sourceUpdatedAt, fetchedAt, lang }: {
   return (
     <section className="live-count" aria-labelledby="lc-h" style={{ "--lc-th": `${(threshold / scale) * 100}%` } as CSSProperties}>
       <header className="lc-head">
-        <h2 id="lc-h"><span className="lc-live">{t.live}</span>{t.heading}</h2>
+        <h2 id="lc-h">{t.heading}</h2>
         <p className="lc-total"><b>{num(count.valid)}</b> {t.votesCounted}<span className="lc-of">{t.ofExpected(num(expected), pctOf(counted, 0))}</span></p>
         <div className="lc-progress" role="img" aria-label={t.aria(pctOf(counted, 0))}><i style={{ inlineSize: `${Math.min(1, counted) * 100}%` }} /></div>
-        <p className="lc-when"><time dateTime={at.toISOString()}>{t.updated(israel, ET.format(at))}</time></p>
+        <p className="lc-when"><time dateTime={at.toISOString()}>{t.lastFile(israel, fileAge(+at, nowMs, loc))}</time></p>
+        {envelopes ? <p className="lc-envelopes">{t.envelopes(num(Math.round(envelopes / 1000) * 1000), new Intl.DateTimeFormat(loc, { weekday: "long", timeZone: "Asia/Jerusalem" }).format(new Date(`${ENVELOPES_EXPECTED_THROUGH}T12:00:00Z`)))}</p> : null}
       </header>
       <ol className="lc-lists">
         <li className="lc-cols" aria-hidden="true"><span>{t.th.list}</span><span className="lc-th-label">{t.threshold}</span><span>%</span><span>{t.th.votes}</span></li>

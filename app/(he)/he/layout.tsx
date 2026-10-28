@@ -1,4 +1,5 @@
 import SeatContextProvider from "@/components/seat-context/SeatContextProvider";
+import ChromeGate from "@/components/ChromeGate";
 import { FootSupport } from "@/components/Support";
 import { seatContextForRender } from "@/lib/seat-context-server";
 // Loads the Hebrew interface words before this module reads them (lib/i18n/he-text.ts).
@@ -93,6 +94,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
     <html lang="he" dir="rtl" className={`${frank.variable} ${sans.variable} ${heSans.variable}`}>
       <body className="min-h-screen flex flex-col">
         <HebrewProvider><SeatContextProvider initial={seatContext}>
+          <ChromeGate>
           <a href="#main" className="skip">
             {t.skip}
           </a>
@@ -105,9 +107,11 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
             <ExitBlocLine lang="he" />
             <ResultsStrip pollsClose={pollsClose} blocLabels={BLOC_LABELS} />
           </header>
+          </ChromeGate>
           <main id="main" className="flex-1">
             {children}
           </main>
+          <ChromeGate>
           <footer className="site-foot he-foot">
             <div className="row">
               <div className="about">
@@ -151,6 +155,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
               </nav>
             </div>
           </footer>
+          </ChromeGate>
         </SeatContextProvider></HebrewProvider>
       </body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}

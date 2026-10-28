@@ -32,12 +32,14 @@ import {
 } from "./coalition-arrangement";
 import { pollLabel } from "./polls";
 import { fetchCount, resultsConfig } from "./results-live";
-import { resultsAsPoll, RESULTS_ID } from "./results";
+import { resultsAsPoll, results, RESULTS_ID } from "./results";
 import { localityHistory, mapHref, readMapState } from "./locality-history";
 import type { SourcedExport } from "./export";
 import { localizeExport } from "./export-locale";
 import { isLang, locale } from "./i18n";
 import { exportMethodText } from "./i18n/export-method";
+import { exportCells } from "./i18n/exports";
+import { forecast } from "./forecast";
 import builder from "./i18n/builder";
 import { partyText, pledgeText, questionText } from "./i18n/overlays";
 import { referenceText } from "./i18n/reference";
@@ -425,6 +427,78 @@ async function buildSourceExport(
         (selectedGeographyRevision
           ? `&geography=${encodeURIComponent(selectedGeographyRevision)}`
           : ""),
+    };
+  }
+  if (kind === "results" || kind === "polls" || kind === "forecast") {
+    const cells = exportCells(lang),
+      name = (id: string | null, letters: string) =>
+        parties.find((p) => p.id === id)?.name ?? letters;
+    if (kind === "forecast")
+      return {
+        title: "Forecast",
+        asOf: forecast.generatedAt ?? forecast.generated,
+        assumptions: [cells.frozen, `${forecast.runs} runs. ${forecast.method}`],
+        headers: ["List", "Forecast seats", "Range low", "Range high", "Chance of passing the threshold (%)", "Source", "Source link", "Retrieved at", "Licence"],
+        rows: Object.entries(forecast.lists)
+          .sort(([, a], [, b]) => b.point - a.point)
+          .map(([id, l]) => [name(id, id), l.point, l.lo, l.hi, l.passes, "Israel Votes forecast", "https://www.israelielection.org/forecast", forecast.generatedAt ?? forecast.generated, cells.licence]),
+        sources: [{ label: forecast.method, url: "https://www.israelielection.org/forecast" }],
+        view: "/forecast",
+      };
+    if (kind === "polls") {
+      const noAverage = new Set(pollsData.config.withoutVariant?.pollsters ?? []);
+      const polls = pollsData.polls.filter((p) => p.kind !== "exit");
+      return {
+        title: "Polls",
+        asOf: dataUpdated,
+        assumptions: [cells.pollsNote],
+        headers: ["Pollster", "Published", "Fieldwork", "List", "Seats", "In the poll average", "Source", "Source link", "Retrieved at", "Licence"],
+        rows: polls.flatMap((p) =>
+          Object.entries(p.results).map(([id, r]) => [
+            p.pollster,
+            p.published,
+            p.fieldwork,
+            name(id, id),
+            r.seats,
+            noAverage.has(p.pollster) ? cells.setApart : cells.inAverage,
+            p.via ? `${p.pollster} via ${p.via}` : p.pollster,
+            p.url ?? null,
+            dataUpdated,
+            cells.licence,
+          ]),
+        ),
+        sources: [{ label: "Poll file", url: "https://www.israelielection.org/polls" }],
+        view: "/polls",
+      };
+    }
+    const [live, seat] = await Promise.all([fetchCount(), getSharedSeatContext()]);
+    const context = seat.state === "ready" ? seat.context : null;
+    if (context?.seatStatus === "official" && context.officialVotes) {
+      const ref = context.sourceRefs[0];
+      return {
+        title: "Results by list",
+        asOf: context.publishedAt ?? context.observedAt,
+        assumptions: [`${L.official}. ${referenceText(lang).revision}: ${context.revision}.`],
+        headers: ["List", "Votes", "Seats", "Status", "Source", "Source link", "Retrieved at", "Licence"],
+        rows: Object.entries(context.officialVotes.byParty).sort(([, a], [, b]) => b - a).map(([id, votes]) => [
+          name(id, context.parties.find((x) => x.id === id)?.label ?? id), votes, context.pointSeats[id] ?? 0, cells.official,
+          ref ? `${ref.publisher}: ${ref.title}` : "Central Elections Committee", ref?.url ?? resultsConfig.source.url, ref?.observedAt ?? context.observedAt, cells.licence,
+        ]),
+        sources: context.sourceRefs.map((r) => ({ label: `${r.publisher}: ${r.title}`, url: r.url })),
+        view: "/results",
+      };
+    }
+    if (live.state !== "open")
+      return { title: "Results by list", asOf: resultsConfig.election, assumptions: [cells.unavailable], headers: ["List", "Votes", "Seats", "Status"], rows: [], sources: [{ label: resultsConfig.source.label, url: resultsConfig.source.url }], view: "/results" };
+    const { lists } = results(live.count, resultsConfig);
+    return {
+      title: "Results by list",
+      asOf: live.sourceUpdatedAt ?? live.fetchedAt,
+      assumptions: [cells.provisional],
+      headers: ["List", "Letters", "Votes", "Share of valid votes (%)", "Seats", "Status", "Source", "Source link", "Retrieved at", "Licence"],
+      rows: lists.map((l) => [name(l.partyId, l.letters), l.letters, l.votes, (l.pct * 100).toFixed(2), l.seats, cells.provisional, resultsConfig.source.label, resultsConfig.source.url, live.fetchedAt, cells.licence]),
+      sources: [{ label: resultsConfig.source.label, url: resultsConfig.source.url }],
+      view: "/results",
     };
   }
   return null;

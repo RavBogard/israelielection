@@ -16,6 +16,8 @@ type Props = {
   compact?: boolean;
   showSeats?: boolean;
   heading?: string;
+  /** A certified edition page: pinned to the context it was given, and it never says "Current". */
+  frozen?: boolean;
   names: ForecastProps["names"];
   /** Arrives with forecastPresentation spreads; scenarios are not rendered. */
   scenarios?: ForecastProps["scenarios"];
@@ -27,9 +29,10 @@ export default function CurrentParliament({
   compact = false,
   showSeats = true,
   heading,
+  frozen = false,
   names,
 }: Props) {
-  const { context: current, refreshFailed } = useSeatContext(initial);
+  const { context: current, refreshFailed } = useSeatContext(initial, frozen);
   const context = current ?? initial,
     t = LIFECYCLE[lang];
   const rows = Object.entries(context.pointSeats)
@@ -50,7 +53,7 @@ export default function CurrentParliament({
               ? t.officialResult
               : t.currentSeats)}
           </h2>
-          <SeatBasis context={context} lang={lang} share />
+          {!frozen && <SeatBasis context={context} lang={lang} share />}
           {refreshFailed && (
             <p role="status">
               {t.notice}: {t.stale}
