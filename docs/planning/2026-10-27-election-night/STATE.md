@@ -48,3 +48,7 @@ GATE: rewrote the chip wording without a wording round — proceeded because Dan
 ## 2026-10-28 — home hero is the chamber (option C)
 Daniel picked option C of three (artifact https://claude.ai/artifact/5NAvrdfK8ouTykXKHRUt4j). Once the seat context is partial_count or official_seats, the home hero is ChamberHero: "No bloc has 61 seats", the 120 seats as the plenum (Netanyahu bloc on the right), and each bloc with its distance from 61, its range and its last-Knesset seats. Headlines stay; the tabs go. Before the count, the old hero is unchanged.
 GATE: wrote the hero copy in seven editions without a wording round — proceeded because Daniel approved the option with its English copy on the comparison page; the other editions follow the house voice and are listed for review.
+
+## 2026-10-28 — post-election review rulings
+Daniel: /match retired (redirect to /parties, code kept); "red lines in play" panel in the Coalition Builder approved (arithmetic and sourced pledges, no odds); no forecast scorecard now (do not build it); everything else in the review approved (https://claude.ai/artifact/ReeQJfT71dD3Hp8wExsBmh).
+Wave 1 (this week): three builders: results+chrome+match+capture window; parties+compare+builder; home tiles+government+briefing. After-result items wait for the official allocation.
