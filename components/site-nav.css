@@ -1,8 +1,8 @@
-/* Masthead: one bar. The nameplate (countdown under it), a thin seat meter linking to the polls, the four
+/* Masthead: one bar. The nameplate (countdown under it), the four
    grouped disclosure menus, then Search and About, then the language toggle. The other utilities sit at the foot
    of each open panel. From 900px up the menus take their own row: the page is capped near 1120px, so one bar never fits (Daniel, 2026-10-28). Phones: brand, the toggle and Menu, the meter on one line, the countdown;
    the menu lists the groups, then every utility. */
-.masthead .row { position: relative; grid-template-columns: auto auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter navigation utilities lang" "countdown countdown navigation utilities lang"; column-gap: 10px; }
+.masthead .row { position: relative; grid-template-columns: auto minmax(0,1fr) auto auto; grid-template-areas: "brand navigation utilities lang" "countdown navigation utilities lang"; column-gap: 10px; }
 .masthead .brand { padding-block: 14px 4px; }
 .masthead > .row > .countdown { padding: 0 0 12px; font-size: 13px; }
 .masthead:has(.site-nav[data-home]) > .row > .countdown, .masthead:has(.site-nav[data-closed]) > .row > .countdown { display: none; }
@@ -64,13 +64,13 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 .nav-panel .nav-panel-more a { display: flex; align-items: center; min-height: 44px; padding: 0; border: 0; font-size: 13.5px; color: var(--ink-2); text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .nav-panel .nav-panel-more a:hover { background: none; color: var(--ink); text-decoration-color: currentColor; }
 @media (min-width:900px) {
- .masthead .row { grid-template-columns: auto minmax(0,1fr) auto auto; grid-template-areas: "brand meter utilities lang" "countdown meter utilities lang" "navigation navigation navigation navigation"; column-gap: 24px; }
+ .masthead .row { grid-template-columns: auto minmax(0,1fr) auto auto; grid-template-areas: "brand . utilities lang" "countdown . utilities lang" "navigation navigation navigation navigation"; column-gap: 24px; }
  .mast-meter { justify-self: start; }
  .nav-main { border-top: 1px solid var(--line); }
  .nav-trigger { min-height: 56px; }
 }
 @media (max-width:899px) {
- .masthead .row { grid-template-columns: minmax(0,1fr) auto auto; grid-template-areas: "brand lang toggle" "meter meter meter" "countdown countdown countdown" "menu menu menu"; row-gap: 0; }
+ .masthead .row { grid-template-columns: minmax(0,1fr) auto auto; grid-template-areas: "brand lang toggle" "countdown countdown countdown" "menu menu menu"; row-gap: 0; }
  header.masthead > .row { column-gap: 8px; }
  /* One cell on phones, naming the other edition, as a theme switch shows the other mode. */
  .lt-cell { min-height: 44px; min-width: 44px; }
