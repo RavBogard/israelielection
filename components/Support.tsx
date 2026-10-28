@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Lang } from "@/lib/i18n";
 import { SUPPORT, SUPPORT_METHODS } from "@/lib/i18n/support";
 
@@ -16,15 +15,21 @@ function Methods() {
   );
 }
 
-/** The footer's support line: the methods, then who is paid and how. Renders nothing while the list is empty. */
+/** The footer's support button: it opens a popup (the native popover, no script) with the ways to give. Renders nothing while the list is empty. */
 export function FootSupport({ lang = "en" }: { lang?: Lang }) {
   if (!SUPPORT_METHODS.length) return null;
   const t = SUPPORT[lang];
   return (
     <div className="foot-support">
-      <p className="support-h"><Link href="/about#support" hrefLang={lang === "en" ? undefined : "en"}>{t.link}</Link></p>
-      <Methods />
-      <p>{t.note}</p>
+      <button type="button" className="support-open" popoverTarget="support-pop" data-testid="support-open">{t.link}</button>
+      <div id="support-pop" className="support-pop" popover="auto" role="dialog" aria-labelledby="support-pop-h">
+        <div className="support-pop-head">
+          <h2 id="support-pop-h">{t.link}</h2>
+          <button type="button" className="support-close" popoverTarget="support-pop" popoverTargetAction="hide" aria-label={t.close}>×</button>
+        </div>
+        <Methods />
+        <p>{t.note}</p>
+      </div>
     </div>
   );
 }
