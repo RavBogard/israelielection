@@ -80,7 +80,7 @@ describe("lasting reference surfaces", () => {
     ).rejects.toThrow("not_found");
   });
   it("marks pending reference translations noindex without announcing them as ready alternates", () => {
-    const metadata = referenceMetadata("/about", "fa");
+    const metadata = referenceMetadata("/issues/courts", "fa");
     expect(metadata.robots).toEqual({ index: false, follow: true });
     expect(metadata.alternates?.languages).toBeUndefined();
   });
