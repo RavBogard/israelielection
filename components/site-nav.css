@@ -147,3 +147,26 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 .about-support { margin-block: 28px; padding-block: 18px; border-block: 1px solid var(--line); display: grid; gap: 12px; }
 .about-support h2 { margin: 0; font: 700 20px/1.2 var(--display); }
 .about-support p { margin: 0; max-width: 62ch; }
+
+/* Phones (Daniel, 2026-10-28): the masthead grid's ".masthead .row" also caught the exit-poll line's row, collapsing its
+   label under the blocs; that line is a plain wrapping row. The top row keeps the wordmark whole beside the edition
+   picker and Menu, and the meter's label stays on one line. */
+.masthead .exit-line .row { display: flex; grid-template-areas: none; grid-template-columns: none; }
+@media (max-width: 899px) {
+  .mm-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; overflow-wrap: normal; }
+  .lang-toggle select { max-width: 92px; padding-inline: 6px 2px; }
+}
+@media (max-width: 440px) {
+  .masthead .brand .word { font-size: 19px; }
+  .masthead .brand { gap: 8px; }
+  .nav-mobile-toggle { padding-inline: 12px; }
+  .exit-line .el-lead { flex-basis: 100%; }
+}
+@media (max-width: 374px) {
+  .masthead .row { grid-template-areas: "brand lang toggle" "meter meter meter" "countdown countdown countdown" "menu menu menu"; }
+  .lang-toggle { justify-self: auto; margin-bottom: 0; }
+  .lang-toggle select { max-width: 84px; }
+  .masthead .brand .word { font-size: 17px; }
+  .masthead .brand .mark { width: 22px; }
+  .nav-mobile-toggle { padding-inline: 10px; }
+}

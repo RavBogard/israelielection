@@ -1,0 +1,10 @@
+/* /forecast, election night: the count projection's method, ahead of the saved campaign forecast. */
+.count-method { margin-block: 8px 44px; padding: 22px 24px 20px; border: 1px solid var(--line-2); border-inline-start: 4px solid var(--ink); background: var(--sheet); }
+.count-method .sec-h { margin-block-start: 0; }
+.count-method h3 { margin: 22px 0 8px; font: 700 17px/1.3 var(--display); color: var(--ink); }
+.count-method p { margin: 0 0 12px; max-width: 70ch; line-height: 1.55; }
+.cm-now { font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.cm-steps { margin: 0; padding-inline-start: 1.4em; max-width: 70ch; display: grid; gap: 8px; line-height: 1.55; }
+.cm-steps li::marker { font-weight: 700; color: var(--ink); }
+.cm-tested, .cm-below { font-size: 14.5px; color: var(--ink-2); }
+@media (max-width: 560px) { .count-method { padding: 18px 16px 14px; } }

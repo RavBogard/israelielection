@@ -1,4 +1,5 @@
 import { seatContextForRender } from "@/lib/seat-context-server";
+import CountMethod from "@/components/CountMethod";
 import ElectionRecord from "@/components/seat-context/ElectionRecord";
 import Link from "next/link";
 import PageHead from "@/components/PageHead";
@@ -66,6 +67,8 @@ export default async function ForecastPage({ lang }: { lang: Lang }) {
       <PageHead title={t.title} standfirst={t.standfirst(date, !!f.final)}>
         <p className="ph-meta">{t.meta2(runs, f.inputs.field.length)}</p>
       </PageHead>
+      {/* Election night: the count projection now heads the site; its method comes first (Daniel, 2026-10-28). */}
+      <CountMethod lang={lang} />
 
       <section aria-labelledby="fc-pred">
         <h2 id="fc-pred" className="sec-h">{t.prediction.h(date, !!f.final)}</h2>
