@@ -1,0 +1,15 @@
+{
+  "revision": "049a6ab50e51966d9f425340830f921b36ed6a799ab7761cff0f245ca0ba2c64",
+  "frozenAt": "2026-10-28T02:18:30Z",
+  "basis": "Exit-informed live-model medians at 02:18 Israel time on election night (final versions of the Channel 12, Channel 13 and Kan 11 exit polls). Frozen for the night so the count projection moves only when votes are counted; later exit-poll entries reach it only through the coverage-weighted blend.",
+  "seats": {
+    "likud": 27, "otzma": 6, "shas": 6, "utj": 6, "rz": 6,
+    "yashar": 21, "byachad": 13, "dem": 9, "yb": 7,
+    "jl": 11, "raam": 7
+  },
+  "subThreshold": {
+    "note": "Vote shares (percent) assumed for lists the exit polls place below 3.25%: Reservists just under the threshold as every exit poll reported, Pensioners of Israel and Noam at their pre-election polling.",
+    "res": 2.9, "poi": 1.8, "noam": 0.2
+  },
+  "other": 1.3
+}
