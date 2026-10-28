@@ -1,4 +1,5 @@
 import SeatContextProvider from "@/components/seat-context/SeatContextProvider";
+import { FootSupport } from "@/components/Support";
 import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
@@ -79,6 +80,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
               <p>
                 A project of <a href="https://danielbogard.com">Rabbi Daniel Bogard</a>.
               </p>
+              <FootSupport />
               <ul className="foot-links">
                 {NAV_UTILITIES.map((n) => (
                   <li key={n.href}>

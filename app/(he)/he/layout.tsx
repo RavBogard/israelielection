@@ -1,4 +1,5 @@
 import SeatContextProvider from "@/components/seat-context/SeatContextProvider";
+import { FootSupport } from "@/components/Support";
 import { seatContextForRender } from "@/lib/seat-context-server";
 // Loads the Hebrew interface words before this module reads them (lib/i18n/he-text.ts).
 import "@/lib/i18n/he/register";
@@ -118,6 +119,7 @@ export default async function HebrewLayout({ children }: { children: ReactNode }
                   <a href="https://danielbogard.com" hrefLang="en">{t.bylineName}</a>
                   {t.bylineAfter}
                 </p>
+                <FootSupport lang="he" />
                 <ul className="foot-links">
                   {HE_NAV_UTILITIES.map((n) => (
                     <li key={n.href}>

@@ -128,3 +128,12 @@ a.lt-cell:focus-visible { outline-offset: 2px; }
 .exit-line a.row:hover .el-lead { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 420px) { .exit-line { font-size: 12.5px; } .exit-line .row, .exit-line ul { gap: 2px 12px; } }
 @media print { .exit-line { display: none; } }
+
+/* Support line (Daniel, 2026-10-28): the link leads in ink weight, the note stays muted. */
+.site-foot .about .foot-support { color: var(--ink-2); }
+.site-foot .about .foot-support a { font-weight: 700; color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.about-support { margin-block: 28px; padding-block: 18px; border-block: 1px solid var(--line); }
+.about-support h2 { margin: 0 0 8px; font: 700 20px/1.2 var(--display); }
+.about-support p { margin: 0 0 12px; max-width: 62ch; }
+.about-support .support-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 6px; background: var(--ink); color: var(--bg); font-weight: 700; text-decoration: none; }
+.about-support .support-btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }

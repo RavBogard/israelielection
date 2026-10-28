@@ -1,4 +1,5 @@
 import SeatContextProvider from "./seat-context/SeatContextProvider";
+import { FootSupport } from "@/components/Support";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import type { Metadata } from "next";
 import type { ComponentType, ReactNode } from "react";
@@ -76,6 +77,7 @@ export default async function RtlLayout({ children, lang, provider: Provider }: 
           <div className="about"><Logo lang={lang} /><EditionDescription legacy={t.description} lang={lang}/>
             <p>{ui(lang, "Machine-translated edition. Source material that has changed or has no translation is shown in English.")}</p>
             <p>{t.bylineBefore}<a href="https://danielbogard.com" hrefLang="en">{t.bylineName}</a>{t.bylineAfter}</p>
+            <FootSupport lang={lang} />
             <ul className="foot-links">{utilities.map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.label}{english(n)}</Link></li>)}<li><LangLink /></li></ul>
           </div>
           <nav className="cols" aria-label={t.siteMapLabel}>{groups.map(g => <div key={g.id}><p className="lbl">{g.label}</p><ul>{visibleNavItems(g.items, closed, "").map(n => <li key={n.href}><Link href={n.href} hrefLang={n.hrefLang}>{n.lang === "en" ? <span lang="en" dir="ltr">{n.label}</span> : n.label}{english(n)}</Link></li>)}</ul></div>)}</nav>
