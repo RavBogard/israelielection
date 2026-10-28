@@ -28,7 +28,7 @@ const en: Chrome = {
         tomorrow: "Le jour des \u00E9lections, c'est demain",
         tomorrowAfter: ", mardi octobre 27",
         today: "Jour d'\u00E9lection.",
-        todayAfter: " Les bureaux de vote ferment \u00E0 10 pm, heure d'Isra\u00EBl",
+        todayAfter: " Les bureaux de vote ferment \u00E0 22 h, heure d'Isra\u00EBl",
         after: "Isra\u00EBl a vot\u00E9 le 27 octobre. ",
         formation: "Former un gouvernement",
     },

@@ -1,6 +1,7 @@
 import { numericTokens } from "./numeric.mjs";
 import { createHash } from "node:crypto";
 import type { Lang } from "@/lib/i18n";
+import { nameAppears } from "./names.mjs";
 export class ReferenceValidationError extends Error {
   usage?: object[];
   candidate?: Record<string, unknown>;
@@ -125,7 +126,11 @@ export function validateRenderedTranslation(
       });
     if (/<\/?[A-Za-z][^>]*>/.test(actual.text))
       throw Error("executable_markup_forbidden");
-    if (expected.names.some((name) => !actual.text.includes(name)))
+    if (
+      expected.names.some(
+        (name) => !nameAppears(name, actual.text, value.lang),
+      )
+    )
       throw new ReferenceValidationError("rendered_name_missing", {
         blockId: expected.id,
         check: "protected_names",
