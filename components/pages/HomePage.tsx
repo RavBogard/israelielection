@@ -167,8 +167,9 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
     <div className="home">
       <div className="wrap">
         <Race news={news} context={context} cadence={lifecycle?.cadence} poll={poll} live={!!results} days={days} phase={n.phase} lang={lang}/>
-        {/* After the hero: the race in numbers with every list's projected seats, then the exit polls (Daniel, 2026-10-28). */}
-        {liveForecast}
+        {/* After the hero: the race in numbers with every list's projected seats, then the exit polls (Daniel, 2026-10-28).
+            Once the count drives the seats, the count is the only estimate on the page and the exit-poll model steps aside (Daniel, 2026-10-28). */}
+        {!(context && (context.basis === "partial_count" || context.basis === "official_seats")) && liveForecast}
         <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />
         {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
 
