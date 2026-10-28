@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AboutSupport } from "@/components/Support";
+import ForecastScoreNote from "@/components/forecast/ForecastScoreNote";
 import { alternates } from "@/lib/canonical";
 import ArticleShell from "@/components/article/ArticleShell";
 import Body, { meta } from "@/content/about.mdx";
@@ -25,5 +26,5 @@ function Foreword() {
 }
 
 export default function Page() {
-  return <ArticleShell meta={meta} Body={Body} section={{ href: "/", title: "Israel Votes" }} foreword={<><Foreword /><AboutSupport /></>} />;
+  return <ArticleShell meta={meta} Body={Body} section={{ href: "/", title: "Israel Votes" }} foreword={<><Foreword /><ForecastScoreNote /><AboutSupport /></>} />;
 }
