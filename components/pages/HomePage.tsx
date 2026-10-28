@@ -8,6 +8,9 @@ import GovernmentLive from "@/components/government/GovernmentLive";
 import { lifecycleForRender } from "@/lib/seat-context-server";
 import { seatContextForRender } from "@/lib/seat-context-server";
 import HomeHero from "@/components/HomeHero";
+import ChamberHero, { type ChamberProgress } from "@/components/ChamberHero";
+import { getLiveForecast } from "@/lib/live-forecast/server";
+import { expectedFinalValid, getCountEstimate } from "@/lib/live-forecast/count-estimate";
 import { homeHeadlines } from "@/components/HomeHeadlines";
 import type {SharedSeatContext} from "@/lib/election-lifecycle/types";
 import {contextToPoll} from "@/lib/seat-context";
@@ -65,7 +68,9 @@ const En = ({ children }: { children: ReactNode }) => <span lang="en" dir="ltr">
 const blocsIn = (lang: Lang) => (lang !== "en" ? blocs.map((b) => ({ ...b, label: blocText(b, lang).text })) : blocs);
 
 /** Current modeled seats, with election-night freshness preserved. */
-function Race({ poll, live, days, phase, lang, context, cadence, news }: { news?: ReactNode; cadence?:CadenceMetadata;poll: Poll; live: boolean; days: number; phase: Night["phase"]; lang: Lang; context:SharedSeatContext|null }) {
+function Race({ poll, live, days, phase, lang, context, cadence, news, progress }: { progress?: ChamberProgress; news?: ReactNode; cadence?:CadenceMetadata;poll: Poll; live: boolean; days: number; phase: Night["phase"]; lang: Lang; context:SharedSeatContext|null }) {
+  // Once the count drives the seats, the hero is the plenum against 61 (Daniel, 2026-10-28, option C).
+  if (context && progress && phase !== "before" && (context.basis === "partial_count" || context.basis === "official_seats")) return <ChamberHero initial={context} lang={lang} news={news} progress={progress} />;
   const t = HOME[lang].hero, he = lang !== "en";
   const pollsters = new Intl.ListFormat(lang, { type: "conjunction" }).format(mainPolls.map((p) => (he ? pollsterText(p.pollster, lang).text : p.pollster))), newest = live ? null : newestPoll(allPolls), change = live ? null : blocChange(blocSeries(pollsData.polls, parties, pollsData.config));
   const model = homeRaceModel(poll, parties, blocs, lang), net = model.rows.find((r) => r.id === "net")!, cite = live || phase !== "before" ? null : citeText(poll, mainPolls.length, net.label, net.seats, undefined, lang);
@@ -158,17 +163,22 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
   if(edition.state!=="legacy")return <PendingEditionHome lang={lang} id={edition.id}/>;
   const he = lang !== "en", s = HOME[lang].start, tl = HOME[lang].tools, enLink = he ? "en" : undefined;
   const now = resultsNow();
-  const [live, liveForecast, context, lifecycle, news] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true }), seatContextForRender(), lifecycleForRender(), homeHeadlines(lang)]);
+  const [live, liveForecast, context, lifecycle, news, estimate] = await Promise.all([fetchCount(revalidate, { now }), renderLiveForecast({ lang, compact: true }), seatContextForRender(), lifecycleForRender(), homeHeadlines(lang), getLiveForecast().then((s) => getCountEstimate(s)).catch(() => null)]);
   const n = night(live, resultsConfig, now), hero = homeHero(n.phase);
   const results = live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : null;
   const days = daysUntil(ELECTION_DAY);
+  const progress: ChamberProgress = {
+    counted: live.state === "open" && live.count.valid ? live.count.valid / Math.max(expectedFinalValid(), live.count.valid) : null,
+    envelopesPending: estimate?.mode === "count" ? (estimate.envelopes?.remaining ?? null) : null,
+    blocIntervals: estimate?.mode === "count" ? estimate.blocIntervals : undefined,
+  };
   // After close the thumbnails follow the count, else the newest exit poll; the average only before close.
   const poll = results ?? (hero === "exit" ? exitPolls[0] : undefined) ?? averagePoll;
   const trendPolls = allPolls.filter((p) => !isExit(p));
   return (
     <div className="home">
       <div className="wrap">
-        <Race news={news} context={context} cadence={lifecycle?.cadence} poll={poll} live={!!results} days={days} phase={n.phase} lang={lang}/>
+        <Race news={news} progress={progress} context={context} cadence={lifecycle?.cadence} poll={poll} live={!!results} days={days} phase={n.phase} lang={lang}/>
         {/* After the hero: the race in numbers with every list's projected seats, then the exit polls (Daniel, 2026-10-28).
             Once the count drives the seats, the count is the only estimate on the page and the exit-poll model steps aside (Daniel, 2026-10-28). */}
         {!(context && (context.basis === "partial_count" || context.basis === "official_seats")) && liveForecast}

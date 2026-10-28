@@ -1,0 +1,32 @@
+/* The post-count home hero: the majority question over the plenum (components/ChamberHero.tsx). */
+.home .chamber-hero { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-areas: "intro side" "chart side"; grid-template-rows: auto 1fr; gap: 18px 64px; align-items: start; padding-block: 36px 36px; }
+.chamber-hero .ch-intro { grid-area: intro; min-width: 0; }
+.chamber-hero .ch-status { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.chamber-hero .ch-meter { inline-size: 96px; block-size: 6px; background: var(--cell); position: relative; flex: none; }
+.chamber-hero .ch-meter i { position: absolute; inset-block: 0; inset-inline-start: 0; background: var(--ink-2); }
+.chamber-hero h1 { font-family: var(--display); font-weight: 700; font-size: clamp(44px, 5.6vw, 76px); line-height: .98; letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variant-numeric: tabular-nums; }
+.home:lang(he) .chamber-hero h1 { letter-spacing: 0; }
+.chamber-hero .ch-dek { font-family: var(--display); font-size: clamp(17px, 1.4vw, 20px); line-height: 1.45; color: var(--text); margin: 16px 0 0; max-width: 56ch; }
+.chamber-hero .ch-chart { grid-area: chart; margin: 0; min-width: 0; }
+.chamber-hero .ch-chart svg { display: block; inline-size: 100%; block-size: auto; overflow: visible; }
+.chamber-hero .ch-mid { stroke: var(--ink); stroke-width: 2; }
+.chamber-hero .ch-mid-label { fill: var(--ink); font: 600 14px var(--body); }
+.chamber-hero .ch-total { fill: var(--ink); font: 700 46px var(--display); font-variant-numeric: tabular-nums; }
+.chamber-hero .ch-total-sub { fill: var(--ink-2); font: 400 14px var(--body); }
+.chamber-hero figcaption { font-size: 12.5px; line-height: 1.45; color: var(--ink-3); margin-top: 6px; max-width: 64ch; }
+.chamber-hero .ch-side { grid-area: side; min-width: 0; display: grid; gap: 22px; align-content: start; }
+.chamber-hero .hero-news { grid-area: auto; }
+.chamber-hero .ch-blocs { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+.chamber-hero .ch-blocs li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 3px 10px; align-items: baseline; padding: 11px 0 12px; border-bottom: 1px solid var(--line); }
+.chamber-hero .ch-blocs .sw { inline-size: 12px; block-size: 12px; align-self: center; }
+.chamber-hero .ch-name { font-weight: 600; color: var(--ink); min-width: 0; }
+.chamber-hero .ch-seats { font: 700 32px/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; }
+.chamber-hero .ch-meta, .chamber-hero .ch-lists { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 13px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.chamber-hero .ch-lists { color: var(--ink-3); font-size: 12.5px; }
+.chamber-hero .ch-short { color: var(--ink); font-weight: 600; }
+.chamber-hero .ch-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; font-size: 14px; font-weight: 600; }
+@media (max-width: 860px) {
+  .home .chamber-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "chart" "side"; grid-template-rows: none; gap: 18px; padding-block: 24px 28px; }
+  .chamber-hero h1 { font-size: clamp(38px, 10.5vw, 52px); }
+  .chamber-hero .ch-mid-label { font-size: 17px; }
+}
