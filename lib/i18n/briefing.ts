@@ -165,3 +165,15 @@ export const briefingCoverageNote = (lang: Lang) =>
     fr: "Couverture limitée : seules les affirmations vérifiées individuellement dans des articles sélectionnés accessibles sont incluses. Un sujet absent ne prouve pas qu’il ne s’est rien passé.",
     zh: "覆盖范围有限：仅收录可访问的选定文章中逐项核实的主张。缺少某个主题不证明没有相关事件。",
   })[lang];
+
+/** Shown when the morning job ran for a day but published nothing, so readers are not left to assume the previous briefing is today's. */
+export const briefingSuppressed = (lang: Lang, date: string) =>
+  ({
+    en: `No briefing was published for ${date}. The articles could not be captured and checked to our standard, so we published nothing rather than an unverified summary.`,
+    he: `לא פורסם סיכום ל-${date}. לא הצלחנו לשמור את הכתבות ולבדוק אותן לפי הסטנדרט שלנו, ולכן העדפנו לא לפרסם כלום על פני סיכום שלא אומת.`,
+    ar: `لم يُنشر ملخص ليوم ${date}. تعذّر حفظ المقالات وفحصها وفق معيارنا، فآثرنا ألا ننشر شيئًا على نشر ملخص لم يُتحقق منه.`,
+    fa: `برای ${date} خلاصه‌ای منتشر نشد. مقاله‌ها را نتوانستیم طبق معیار خود ثبت و بررسی کنیم، پس به‌جای خلاصه‌ای تأییدنشده چیزی منتشر نکردیم.`,
+    de: `Für den ${date} wurde keine Zusammenfassung veröffentlicht. Die Artikel ließen sich nicht nach unserem Standard erfassen und prüfen; wir veröffentlichen lieber nichts als eine ungeprüfte Zusammenfassung.`,
+    fr: `Aucune synthèse n'a été publiée pour le ${date}. Les articles n'ont pas pu être capturés et vérifiés selon notre norme ; nous préférons ne rien publier plutôt qu'une synthèse non vérifiée.`,
+    zh: `${date} 没有发布简报。这些文章未能按我们的标准抓取并核查，因此我们宁可不发布，也不发布未经核实的摘要。`,
+  })[lang];

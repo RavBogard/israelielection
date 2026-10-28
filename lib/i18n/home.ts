@@ -139,6 +139,14 @@ const en = {
     pollsText: "Every seat poll of the campaign, the current average, and how each party has moved.",
     voteMap: "Vote map",
     voteMapText: "How every town voted in the five elections from 2019 to 2022, list by list.",
+    recordsH: "Records",
+    resultsT: "Full results",
+    resultsText: "The count so far, list by list, with the seats it projects.",
+    govT: "Coalition talks",
+    govText: "What happens next, and where each party stands in the talks.",
+    partyMapCount: "Every list sized by its seats in the count projection, with a sourced profile of each.",
+    pollsRecord: "The campaign polls: final record",
+    pollsRecordText: "Every seat poll of the campaign and how each party moved, as it ended.",
   },
 };
 

@@ -125,6 +125,14 @@ const en: HomeText = {
         pollsText: "竞选活动的每个席位民意调查、当前平均值以及各党派的进展情况。",
         voteMap: "投票地图",
         voteMapText: "每个城镇如何在从 2019 到 2022 的五次选举中按列表投票。",
+        recordsH: "记录",
+        resultsT: "完整结果",
+        resultsText: "目前的计票情况，逐个名单，以及据此推算的席位。",
+        govT: "组阁谈判",
+        govText: "接下来会发生什么，以及各党在谈判中的位置。",
+        partyMapCount: "每个名单的大小按其在计票推算中的席位计算，并附有每个名单的来源资料。",
+        pollsRecord: "竞选期民调：最终记录",
+        pollsRecordText: "竞选期间的每一项席位民调，以及各党派走势的最终记录。",
     },
 };
 export default en;

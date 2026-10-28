@@ -11,6 +11,7 @@ import {
   writeFileSync,
   renameSync,
   readFileSync,
+  rmSync,
 } from "node:fs";
 import { GEMINI_MODEL } from "../../lib/ai";
 import { generateJson } from "../../lib/gemini";
@@ -301,5 +302,16 @@ if (briefing && !dry) {
   );
 }
 output("published", briefing && !dry ? 1 : 0);
+// A day without a verified briefing leaves a public record, so /news says so instead of silently showing the previous day.
+const suppressedFile = `data/briefings/suppressed/${date}.json`;
+if (!dry) {
+  if (briefing) {
+    if (existsSync(suppressedFile)) rmSync(suppressedFile);
+  } else {
+    mkdirSync("data/briefings/suppressed", { recursive: true });
+    writeFileSync(suppressedFile, JSON.stringify({ date, checkedAt: new Date().toISOString(), reason }, null, 2) + "\n");
+  }
+}
+output("suppressed", !briefing && !dry ? 1 : 0);
 console.log(report);
 if (opt("--report")) writeFileSync(opt("--report")!, report + "\n");
