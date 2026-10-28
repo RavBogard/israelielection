@@ -80,7 +80,7 @@ it("makes preview and explicit dry runs incapable of publishing or notifying", (
   );
   expect(
     workflow.match(
-      /if: github.ref == 'refs\/heads\/main' && !inputs.dry_run && steps.job.outputs.published == '1'/g,
+      /if: github.ref == 'refs\/heads\/main' && !inputs.dry_run && \(?steps.job.outputs.published == '1'/g,
     ),
   ).toHaveLength(2);
   expect(
