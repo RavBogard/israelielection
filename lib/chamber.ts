@@ -35,15 +35,45 @@ export function chamberLayout(total = 120, rows = 7, inner = 120, outer = 296, c
  */
 export const shadeOf = (rank: number, count: number) => (count > 1 ? Math.round(100 - (rank * 52) / (count - 1)) : 100);
 
-export function seatParties(layout: ChamberSeat[], parties: ChamberParty[]): PlacedSeat[] {
-  const rank = (b: string) => { const i = HALL_ORDER.indexOf(b as (typeof HALL_ORDER)[number]); return i < 0 ? HALL_ORDER.indexOf("other") : i; };
+const hallRank = (b: string) => { const i = HALL_ORDER.indexOf(b as (typeof HALL_ORDER)[number]); return i < 0 ? HALL_ORDER.indexOf("other") : i; };
+
+/** Each list's step on its bloc's ramp, ranked within the bloc by seats (lib/chamber.ts shadeOf). */
+function listShades(parties: ChamberParty[]): Map<string, number> {
+  const shades = new Map<string, number>();
+  for (const bloc of new Set(parties.filter((p) => p.seats > 0).map((p) => p.bloc))) {
+    const lists = parties.filter((p) => p.bloc === bloc && p.seats > 0).sort((a, b) => b.seats - a.seats || a.id.localeCompare(b.id));
+    lists.forEach((p, i) => shades.set(p.id, shadeOf(i, lists.length)));
+  }
+  return shades;
+}
+
+/** One seat per entry, blocs in hall order, each bloc's largest list at its outer edge. */
+function seatOrder(parties: ChamberParty[], shades: Map<string, number>) {
   const order: { party: string; bloc: string; shade: number }[] = [];
-  const blocIds = [...new Set(parties.filter((p) => p.seats > 0).map((p) => p.bloc))].sort((a, b) => rank(a) - rank(b));
+  const blocIds = [...new Set(parties.filter((p) => p.seats > 0).map((p) => p.bloc))].sort((a, b) => hallRank(a) - hallRank(b));
   for (const bloc of blocIds) {
     const lists = parties.filter((p) => p.bloc === bloc && p.seats > 0).sort((a, b) => b.seats - a.seats || a.id.localeCompare(b.id));
     // Blocs right of centre run their largest list outward (rightmost); the rest run it outward on the left.
-    const seq = rank(bloc) >= HALL_ORDER.indexOf("net") ? [...lists].reverse() : lists;
-    seq.forEach((p) => { const shade = shadeOf(lists.indexOf(p), lists.length); for (let k = 0; k < p.seats; k++) order.push({ party: p.id, bloc, shade }); });
+    const seq = hallRank(bloc) >= HALL_ORDER.indexOf("net") ? [...lists].reverse() : lists;
+    seq.forEach((p) => { const shade = shades.get(p.id)!; for (let k = 0; k < p.seats; k++) order.push({ party: p.id, bloc, shade }); });
   }
+  return order;
+}
+
+export function seatParties(layout: ChamberSeat[], parties: ChamberParty[]): PlacedSeat[] {
+  const order = seatOrder(parties, listShades(parties));
+  return layout.slice(0, order.length).map((s, i) => ({ ...s, ...order[i] }));
+}
+
+/**
+ * A sworn-in government in the hall: the opposition on the left, the coalition on the right, each side in hall order.
+ * Shades stay those of `seatParties`, ranked within each bloc across the whole house, so a list keeps its colour.
+ */
+export function seatGovernment(layout: ChamberSeat[], parties: ChamberParty[], coalition: readonly string[]): (PlacedSeat & { coalition: boolean })[] {
+  const shades = listShades(parties), inGov = new Set(coalition);
+  const order = [
+    ...seatOrder(parties.filter((p) => !inGov.has(p.id)), shades).map((s) => ({ ...s, coalition: false })),
+    ...seatOrder(parties.filter((p) => inGov.has(p.id)), shades).map((s) => ({ ...s, coalition: true })),
+  ];
   return layout.slice(0, order.length).map((s, i) => ({ ...s, ...order[i] }));
 }

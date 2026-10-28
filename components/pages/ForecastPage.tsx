@@ -67,7 +67,8 @@ export default async function ForecastPage({ lang }: { lang: Lang }) {
     <div className="wrap forecast-page">
       {/* Hidden until the seats are official; then the scorecard leads the page (Daniel, 2026-10-28). */}
       <ForecastScorecard context={context} lang={lang}/>
-      <ElectionRecord context={context} lang={lang}/>
+      {/* Once the seats are official the scorecard supersedes the record of the Oct 26 campaign snapshot (Daniel, 2026-10-28). */}
+      {context?.seatStatus !== "official" && <ElectionRecord context={context} lang={lang}/>}
       <PageHead title={t.title} standfirst={t.standfirst(date, !!f.final)}>
         <p className="ph-meta">{t.meta2(runs, f.inputs.field.length)}</p>
       </PageHead>
