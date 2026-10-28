@@ -56,7 +56,8 @@ export const hash = (value: unknown) =>
       typeof value === "string" ? value : JSON.stringify(canonical(value)),
     )
     .digest("hex");
-export const SCENARIO_VERSION = hash(scenarios.scenarios).slice(0, 16);
+// Only the arrangements feed the model; their explanatory copy can change without a new scenario version.
+export const SCENARIO_VERSION = hash(scenarios.scenarios.map(({ id, cabinet, support, abstain }) => ({ id, cabinet, support, abstain }))).slice(0, 16);
 export const modelRevision = (exits: Poll[]) =>
   hash({
     prior: frozen.sha256,
