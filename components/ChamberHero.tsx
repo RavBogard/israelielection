@@ -50,6 +50,7 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
   const h = HOME[lang].hero;
   return (
     <section className="chamber-hero" aria-labelledby="hero-h" data-testid="chamber-hero">
+      {news && <div className="ch-news">{news}</div>}
       <div className="ch-intro">
         {(official || pct) && (
           <p className="ch-status">
@@ -74,7 +75,6 @@ export default function ChamberHero({ initial, lang, news, progress }: { initial
         </svg>
         <figcaption>{t.note}</figcaption>
       </figure>
-      {news && <div className="ch-news">{news}</div>}
       <div className="ch-side">
         <ul className="ch-blocs">
           {rows.map((b) => {
