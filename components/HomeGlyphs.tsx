@@ -184,8 +184,8 @@ export function BuilderSeatsGlyph({ context }: { context: Pick<SharedSeatContext
 /** Full results: the 120 seats as one bar split by bloc, the 61st seat marked. */
 export function ResultsSeatsGlyph({ context }: { context: Pick<SharedSeatContext, "pointSeats" | "parties"> }) {
   const x0 = 20, w = 260, total = 120;
-  let x = x0;
-  const segs = blocSeats(context).map((b) => { const sw = (b.seats / total) * w, seg = { ...b, x, sw }; x += sw; return seg; });
+  const rows = blocSeats(context);
+  const segs = rows.map((b, i) => ({ ...b, x: x0 + rows.slice(0, i).reduce((n, r) => n + (r.seats / total) * w, 0), sw: (b.seats / total) * w }));
   const x61 = x0 + (61 / total) * w;
   return (
     <svg className="gl gl-results" viewBox={`0 0 ${GW} ${GH}`} aria-hidden="true" focusable="false">
