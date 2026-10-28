@@ -59,4 +59,4 @@ export const navLabel=(n:NavItem)=>n.short??n.label;
 
 /** The site's one-paragraph description, used in metadata and the footer. */
 export const DESCRIPTION =
-  "An English-language reference on Israel's October 27, 2026 election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced.";
+  "An English-language reference on Israeli elections: the 2026 result, the parties, the polls, the system, and how a government gets built. Every number dated and sourced.";

@@ -29,7 +29,7 @@ const en = {
   noHebrew: "This page is in English only. Opens the Hebrew edition's home page.",
   englishSite: "The full site in English",
   description:
-    "An English-language reference on Israel's October 27, 2026 election: the parties, the polls, the system, and how a government gets built. Every number dated and sourced.",
+    "An English-language reference on Israeli elections: the 2026 result, the parties, the polls, the system, and how a government gets built. Every number dated and sourced.",
   footNote: "",
   bylineBefore: "A project of ",
   bylineName: "Rabbi Daniel Bogard",
