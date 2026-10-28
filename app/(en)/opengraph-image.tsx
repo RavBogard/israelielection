@@ -57,7 +57,7 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", fontSize: 22, lineHeight: 1.4, color: TEXT, marginTop: 20 }}>{standfirst}</div>
           <div style={{ display: "flex", flexDirection: "column", marginTop: 26, borderTop: `1px solid ${LINE}` }}>
-            {ordered.map((b) => (
+            {ordered.filter((b) => b.seats > 0).map((b) => (
               <div key={b.id} style={{ display: "flex", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${LINE}`, fontFamily: "Public Sans", fontSize: 18, fontWeight: 500, color: TEXT }}>
                 <div style={{ width: 14, height: 14, background: b.color, marginRight: 10 }} />
                 <div style={{ display: "flex" }}>{b.label}</div>
@@ -66,8 +66,8 @@ export default async function Image() {
             ))}
           </div>
           <div style={{ display: "flex", alignItems: "flex-end", marginTop: "auto", fontFamily: "Public Sans", fontSize: 18 }}>
-            <div style={{ display: "flex", flexDirection: "column" }}><OgNameplate scale={0.8} /><div style={{ display: "flex", fontWeight: 600, marginTop: 8 }}>israelielection.org</div></div>
-            <div style={{ display: "flex", marginLeft: "auto", fontWeight: 500, color: INK3 }}>{dateline}</div>
+            <OgNameplate scale={0.66} />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", marginLeft: "auto", fontSize: 16 }}><div style={{ display: "flex", fontWeight: 600 }}>israelielection.org</div><div style={{ display: "flex", fontWeight: 500, color: INK3, marginTop: 4 }}>{dateline}</div></div>
           </div>
         </div>
         <div style={{ display: "flex", flexGrow: 1, alignItems: "center", justifyContent: "flex-end" }}>

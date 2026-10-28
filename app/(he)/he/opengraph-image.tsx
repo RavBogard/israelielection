@@ -71,7 +71,7 @@ export default async function Image() {
             {standfirst.map((line) => <Line key={line} text={line} />)}
           </div>
           <div style={{ display: "flex", flexDirection: "column", marginTop: 26, borderTop: `1px solid ${LINE}` }}>
-            {ordered.map((b) => (
+            {ordered.filter((b) => b.seats > 0).map((b) => (
               <div key={b.id} style={{ display: "flex", alignItems: "center", padding: "8px 0", borderBottom: `1px solid ${LINE}`, fontSize: 21, color: TEXT }}>
                 <div style={{ display: "flex", marginRight: "auto", fontWeight: 700, fontSize: 26, color: INK }}>{String(Math.round(b.seats * 10) / 10)}</div>
                 <Line text={b.label} />
@@ -80,8 +80,8 @@ export default async function Image() {
             ))}
           </div>
           <div style={{ display: "flex", alignItems: "flex-end", marginTop: "auto", fontSize: 20 }}>
-            <div style={{ display: "flex", flexDirection: "column" }}><OgNameplate scale={0.8} /><div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600, fontSize: 18, marginTop: 8 }}>israelielection.org/he</div></div>
-            <Line text={dateline} style={{ marginLeft: "auto", color: INK3 }} />
+            <OgNameplate scale={0.66} />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", marginLeft: "auto", fontSize: 16 }}><div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600 }}>israelielection.org/he</div><Line text={dateline} style={{ color: INK3, marginTop: 4 }} /></div>
           </div>
         </div>
       </div>
