@@ -50,7 +50,7 @@ export type NewsItem = {
   summary: string;
 };
 
-const UA = "Mozilla/5.0 (compatible; israelielection.org news reader; +https://www.israelielection.org)";
+const UA = "Mozilla/5.0 (compatible; israelvotes.org news reader; +https://www.israelvotes.org)";
 const parser = new XMLParser({ ignoreAttributes: false, processEntities: true, htmlEntities: true });
 
 const ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", "#8217": "’", "#8216": "‘", "#8220": "“", "#8221": "”", "#8211": "–", "#8212": "—", "#039": "'" };

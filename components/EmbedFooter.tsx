@@ -31,11 +31,11 @@ export default function EmbedFooter({
       )}
       Israel Votes,{" "}
       <a
-        href={`https://www.israelielection.org${editionPath(path, lang) ?? path}?utm_source=embed`}
+        href={`https://www.israelvotes.org${editionPath(path, lang) ?? path}?utm_source=embed`}
         target="_blank"
         rel="noopener"
       >
-        israelielection.org
+        israelvotes.org
       </a>
       . {dateLine}. CC BY-NC 4.0.
     </p>

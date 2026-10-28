@@ -162,7 +162,7 @@ export async function storeReviewedPublicationEdition(
       sourceId: `publication-review:${publicationRevisionId}:${locale}`,
       publisher: "Israeli Election",
       title: "Independent publication review",
-      url: `https://www.israelielection.org/api/v2/publications?revision=${publicationRevisionId}`,
+      url: `https://www.israelvotes.org/api/v2/publications?revision=${publicationRevisionId}`,
       authority: "publication_review",
       captureHash: contentHash(body),
       observedAt: now,

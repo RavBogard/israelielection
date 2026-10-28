@@ -1,4 +1,4 @@
-export const SITE_ORIGIN = "https://www.israelielection.org";
+export const SITE_ORIGIN = "https://www.israelvotes.org";
 export type Correction = {
   id: string;
   date: string;
@@ -23,6 +23,8 @@ export function reportPage(input: string) {
     if (
       !["https:", "http:"].includes(url.protocol) ||
       ![
+        "israelvotes.org",
+        "www.israelvotes.org",
         "israelielection.org",
         "www.israelielection.org",
         "localhost",

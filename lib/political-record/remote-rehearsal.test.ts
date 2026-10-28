@@ -64,7 +64,7 @@ it("rejects production, alternate hosts/subjects, URL secrets and email modes be
     { mode: "platform_deliver" },
     { url: "https://attacker.test/api/election-lifecycle/worker" },
     { subject: input.subject + "?secret=x" },
-    { previewOrigin: "https://www.israelielection.org" },
+    { previewOrigin: "https://www.israelvotes.org" },
     { url: input.url + "?secret=x", subject: input.subject + "?secret=x" },
   ])
     expect(() => rehearsalRemoteRequest({ ...input, ...patch })).toThrow();

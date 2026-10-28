@@ -91,7 +91,7 @@ export async function collectCbs(
     signal: AbortSignal.timeout(8000),
     headers: {
       "User-Agent":
-        "IsraeliElection source collector (+https://www.israelielection.org)",
+        "IsraeliElection source collector (+https://www.israelvotes.org)",
       Accept: "application/json",
     },
   });

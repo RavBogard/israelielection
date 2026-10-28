@@ -104,7 +104,7 @@ it("uses only fixed public measurement fields, no secrets/headers, and recovers 
   );
   expect(
     JSON.parse(requests.find((request) => request.body)!.body!).target,
-  ).toBe("www.israelielection.org");
+  ).toBe("www.israelvotes.org");
 });
 it("bounded recovery never becomes an unbounded retry or destructive operation", async () => {
   let attempts = 0;
@@ -216,7 +216,7 @@ it("CI source signal reads only stored public status and exports no response/bod
     return new Response("private-like response diagnostics", { status: 503 });
   });
   expect(requests).toEqual([
-    "https://www.israelielection.org/api/election-lifecycle",
+    "https://www.israelvotes.org/api/election-lifecycle",
   ]);
   expect(checks[0].state).toBe("unavailable");
   expect(JSON.stringify(checks)).not.toContain("private-like");

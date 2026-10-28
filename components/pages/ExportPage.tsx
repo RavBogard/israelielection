@@ -37,7 +37,7 @@ export default async function ExportPage({
       <h1>{model.title}</h1>
       <p>
         {t.asOf} {model.asOf}.{" "}
-        <a href={`https://www.israelielection.org${model.view}`}>{t.open}</a>.
+        <a href={`https://www.israelvotes.org${model.view}`}>{t.open}</a>.
       </p>
       {model.originalEvidence && <p role="note">{t.original}</p>}
       {model.assumptions.map((text, i) => (

@@ -77,13 +77,13 @@ for packet in DATA["packets"]:
                 story.append(KeepTogether(group))
         story.append(paragraph("Sources and next steps", "PacketHeading"))
         for source in packet["sources"]:
-            url = source["href"] if source["href"].startswith("http") else "https://www.israelielection.org" + source["href"]
+            url = source["href"] if source["href"].startswith("http") else "https://www.israelvotes.org" + source["href"]
             text = f"{source['title']} - {source['date']}"
             story.append(paragraph(text, "PacketMeta"))
             story.append(Paragraph(f'<link href="{html.escape(url, quote=True)}" color="#233f86">{html.escape(url)}</link>', styles["PacketMeta"]))
         story.append(paragraph(DATA["attribution"], "PacketMeta"))
         story.append(Paragraph('<link href="https://creativecommons.org/licenses/by-nc/4.0/">License: https://creativecommons.org/licenses/by-nc/4.0/</link>', styles["PacketMeta"]))
-        canonical = f"https://www.israelielection.org/teach/packets/{packet['id']}/{role}"
+        canonical = f"https://www.israelvotes.org/teach/packets/{packet['id']}/{role}"
         story.append(paragraph("Accessible HTML version: " + canonical, "PacketMeta"))
         SimpleDocTemplate(str(output), pagesize=(612, 792), leftMargin=44, rightMargin=44, topMargin=36, bottomMargin=50, title=f"{packet['title']} - {role}", author="Rabbi Daniel Bogard / Israel Votes 2026").build(story, onFirstPage=footer, onLaterPages=footer)
         print(output.name)

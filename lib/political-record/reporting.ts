@@ -162,7 +162,7 @@ export async function promoteReviewedBriefing(
     sourceId: `briefing-evidence:${briefing.date}`,
     publisher: "Israeli Election",
     title: "Reviewed reporting evidence",
-    url: `https://www.israelielection.org/news/${briefing.date}`,
+    url: `https://www.israelvotes.org/news/${briefing.date}`,
     authority: "briefing_evidence",
     captureHash: proof.hash,
     observedAt: now,

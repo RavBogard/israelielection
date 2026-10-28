@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/embed/", "/api/"],
     },
-    sitemap: "https://www.israelielection.org/sitemap.xml",
+    sitemap: "https://www.israelvotes.org/sitemap.xml",
   };
 }

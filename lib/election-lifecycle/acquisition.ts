@@ -56,7 +56,7 @@ export async function fetchPrimaryDetailed(
         signal: AbortSignal.timeout(Math.max(1, remaining)),
         headers: {
           "User-Agent":
-            "Mozilla/5.0 (compatible; IsraeliElection lifecycle; +https://www.israelielection.org)",
+            "Mozilla/5.0 (compatible; IsraeliElection lifecycle; +https://www.israelvotes.org)",
         },
       });
       if ([301, 302, 303, 307, 308].includes(r.status)) {

@@ -51,7 +51,7 @@ export function campaignContext(
         title: forecast.final
           ? "Final campaign forecast"
           : "Saved provisional campaign forecast",
-        url: "https://www.israelielection.org/forecast",
+        url: "https://www.israelvotes.org/forecast",
         authority: "model",
         publishedAt: observedAt,
         observedAt,

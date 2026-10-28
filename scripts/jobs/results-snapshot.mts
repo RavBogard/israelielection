@@ -9,7 +9,7 @@ const now = Date.now(); const manual = process.env.GITHUB_EVENT_NAME === "workfl
 let changed = false;
 if (!captureAllowed(cfg.pollsClose, now, manual)) console.log("Outside the permitted count-capture window; no request made.");
 else {
-  const response = await fetch("https://www.israelielection.org/api/results-snapshot", { cache: "no-store", signal: AbortSignal.timeout(20_000) });
+  const response = await fetch("https://www.israelvotes.org/api/results-snapshot", { cache: "no-store", signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`Snapshot endpoint unavailable: HTTP ${response.status}`);
   const store = JSON.parse(readFileSync("data/results-snapshot.json", "utf8")) as SnapshotStore;
   const next = rotateSnapshot(store, await response.json(), cfg, Date.now());

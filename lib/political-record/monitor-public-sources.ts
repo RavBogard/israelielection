@@ -7,7 +7,7 @@ export async function publicStoredSourceChecks(
 ): Promise<MonitorCheck[]> {
   try {
     const response = await fetcher(
-      "https://www.israelielection.org/api/election-lifecycle",
+      "https://www.israelvotes.org/api/election-lifecycle",
       { cache: "no-store", signal: AbortSignal.timeout(5000) },
     );
     if (!response.ok) throw Error("stored_read_failed");

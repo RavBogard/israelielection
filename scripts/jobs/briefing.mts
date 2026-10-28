@@ -93,7 +93,7 @@ try {
       new URL(
         "/api/election-lifecycle",
         process.env.ELECTION_LIFECYCLE_BASE_URL ??
-          "https://www.israelielection.org",
+          "https://www.israelvotes.org",
       ),
       { cache: "no-store", signal: AbortSignal.timeout(8000) },
     );

@@ -12,7 +12,7 @@ import { appendFileSync, readFileSync, writeFileSync } from "node:fs";
 import { importFromWikitext, type WikiSources } from "../../lib/pollimport";
 import type { PartiesFile, Poll, PollsFile } from "../../lib/types";
 
-const UA = "israelielection.org polls job (https://github.com/RavBogard/israelielection)";
+const UA = "israelvotes.org polls job (https://github.com/RavBogard/israelielection)";
 const args = process.argv.slice(2);
 const opt = (name: string) => {
   const i = args.indexOf(name);

@@ -45,7 +45,7 @@ const heSans = IBM_Plex_Sans_Hebrew({ variable: "--font-he", subsets: ["hebrew"]
 const t = chrome.he;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.israelielection.org"),
+  metadataBase: new URL("https://www.israelvotes.org"),
   title: { default: t.siteName, template: `%s | ${t.siteName}` },
   description: t.description,
   applicationName: t.siteName,

@@ -62,7 +62,7 @@ export async function GET(req: NextRequest) {
           )}
           <div style={{ display: "flex", flexDirection: "column", marginTop: "auto", fontFamily: "Public Sans", fontSize: 15, color: INK3 }}>
             <div style={{ display: "flex" }}>{source}. Built by a reader, not a forecast.</div>
-            <div style={{ display: "flex", fontWeight: 600, color: INK, marginTop: 4 }}>israelielection.org/coalition-builder</div>
+            <div style={{ display: "flex", fontWeight: 600, color: INK, marginTop: 4 }}>israelvotes.org/coalition-builder</div>
           </div>
         </div>
         <div style={{ display: "flex", flexGrow: 1, alignItems: "center", justifyContent: "flex-end" }}>

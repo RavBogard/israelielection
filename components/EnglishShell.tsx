@@ -29,7 +29,7 @@ import { GA_ID } from "@/lib/analytics";
  */
 
 export const EN_METADATA: Metadata = {
-  metadataBase: new URL("https://www.israelielection.org"),
+  metadataBase: new URL("https://www.israelvotes.org"),
   title: { default: "Israel Votes", template: "%s | Israel Votes" },
   description: DESCRIPTION,
   applicationName: "Israel Votes",

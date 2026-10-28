@@ -9,13 +9,13 @@ import {
 } from "./corrections";
 it("preserves current tool assumptions and rejects unsafe prefilled addresses", () => {
   expect(reportPage("/compare?p=likud,shas#draft")).toBe(
-    "https://www.israelielection.org/compare?p=likud,shas#draft",
+    "https://www.israelvotes.org/compare?p=likud,shas#draft",
   );
   expect(reportPage("javascript:alert(1)")).toBe(
-    "https://www.israelielection.org",
+    "https://www.israelvotes.org",
   );
   expect(reportPage("https://elsewhere.test/page")).toBe(
-    "https://www.israelielection.org",
+    "https://www.israelvotes.org",
   );
   expect(correctionHref("/polls")).toContain("url=https%3A");
 });
@@ -60,7 +60,7 @@ it("refreshes contextual page address on same-route history changes while preser
     second = reportPage("/polls?with=likud&synthetic=3.3#sensitivity");
   const edited = {
     from: first,
-    page: "https://www.israelielection.org/compare?p=likud,yashar#courts",
+    page: "https://www.israelvotes.org/compare?p=likud,yashar#courts",
   };
   expect(reportAddress(first, null)).toBe(first);
   expect(reportAddress(first, edited)).toBe(edited.page);
@@ -75,6 +75,6 @@ it("refreshes contextual page address on same-route history changes while preser
     }),
   ).toContain("synthetic=3.3#sensitivity");
   expect(reportAddress("javascript:bad", edited)).toBe(
-    "https://www.israelielection.org",
+    "https://www.israelvotes.org",
   );
 });

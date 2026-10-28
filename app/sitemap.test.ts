@@ -10,7 +10,7 @@ describe("sitemap editions", () => {
     for (const id of [...ELECTIONS.map((e) => e.id), ...ARCHIVE_EDITION_IDS])
       for (const lang of LANGS) {
         const path = editionPath(`/elections/${id}`, lang);
-        expect(urls.has(`https://www.israelielection.org${path}`), `${lang} ${id}`).toBe(true);
+        expect(urls.has(`https://www.israelvotes.org${path}`), `${lang} ${id}`).toBe(true);
       }
   });
 });

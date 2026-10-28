@@ -51,7 +51,7 @@ export async function acquireSources(now: string, previousExits: Poll[] = [], ma
   // A hand-entered exit poll is authoritative for its publisher, like a verified direct read: a mirror's later
   // observation time must not override a newer hand-entered version.
   const manual = latestPublisherRevisions(manualPolls.filter((p) => validExit(p, Date.parse(now))));
-  for (const p of manual) sources.push({ id: `manual:${p.pollster}`, publisher: p.pollster, transport: "manual", url: p.url ?? "https://www.israelielection.org/polls", revision: hash(p), publishedAt: p.broadcastAt ?? null, observedAt: now, status: "valid", note: "Entered by hand from the broadcast" });
+  for (const p of manual) sources.push({ id: `manual:${p.pollster}`, publisher: p.pollster, transport: "manual", url: p.url ?? "https://www.israelvotes.org/polls", revision: hash(p), publishedAt: p.broadcastAt ?? null, observedAt: now, status: "valid", note: "Entered by hand from the broadcast" });
   const directPolls = [...manual, ...broadcastPolls];
   try {
   // Wikipedia's revision timestamp describes the page; do not mislabel it as a broadcaster publication time.

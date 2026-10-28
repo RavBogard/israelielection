@@ -81,7 +81,7 @@ export default async function Image() {
           </div>
           <div style={{ display: "flex", alignItems: "flex-end", marginTop: "auto", fontSize: 20 }}>
             <OgNameplate scale={0.66} />
-            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", marginLeft: "auto", fontSize: 16 }}><div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600 }}>israelielection.org/he</div><Line text={dateline} style={{ color: INK3, marginTop: 4 }} /></div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", marginLeft: "auto", fontSize: 16 }}><div style={{ display: "flex", fontFamily: "Public Sans", fontWeight: 600 }}>israelvotes.org/he</div><Line text={dateline} style={{ color: INK3, marginTop: 4 }} /></div>
           </div>
         </div>
       </div>

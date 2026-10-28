@@ -45,10 +45,10 @@ export async function archiveBriefingEvidence(
     now = new Date().toISOString();
   const source = makeSource({
     sourceId: "briefing-evidence:" + bundle.date,
-    publisher: "israelielection.org",
+    publisher: "israelvotes.org",
     title: "Private briefing verification bundle",
     captureHash: hash,
-    url: "https://www.israelielection.org/news/" + bundle.date,
+    url: "https://www.israelvotes.org/news/" + bundle.date,
     authority: "briefing_evidence",
     observedAt: now,
     publishedAt: null,

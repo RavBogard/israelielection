@@ -27,7 +27,7 @@ export function exportCsv(model: SourcedExport): string {
     ...model.rows,
     [t.sources],
     ...model.sources.map((s) => [s.label, s.url]),
-    [t.view, `https://www.israelielection.org${model.view}`],
+    [t.view, `https://www.israelvotes.org${model.view}`],
     [t.attribution, t.credit],
   ];
   return `\uFEFF${rows.map((row) => row.map(cell).join(",")).join("\r\n")}\r\n`;

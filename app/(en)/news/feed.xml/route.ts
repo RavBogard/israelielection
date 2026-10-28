@@ -10,7 +10,7 @@ type FeedBriefing = {
   sentences: { text: string; sources: { outlet: string; title: string; url: string }[] }[];
 };
 
-const NEWS = "https://www.israelielection.org/news";
+const NEWS = "https://www.israelvotes.org/news";
 const DAY = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
 /** Escape text for XML element content and attribute values. */

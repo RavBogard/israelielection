@@ -18,7 +18,7 @@ import path from "node:path";
 import { inflateRawSync } from "node:zlib";
 import { englishName, isEnvelopeCode, splitCsv, type Places, type VoteMapElection } from "../../lib/votemap";
 
-const UA = "israelielection.org data build (+https://www.israelielection.org)";
+const UA = "israelvotes.org data build (+https://www.israelvotes.org)";
 const ROOT = process.cwd();
 const SAMPLES = path.join(ROOT, "docs/research/data-vote-map/samples");
 const OUT = path.join(ROOT, "public/vote-map");

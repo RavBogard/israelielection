@@ -9,7 +9,7 @@ import { results, parseExpc } from "../../lib/results";
 import { resultsConfig as cfg } from "../../lib/results-live";
 
 const res = await fetch(cfg.source.url, {
-  headers: { "User-Agent": "Mozilla/5.0 (compatible; israelielection.org results reader; +https://www.israelielection.org)" },
+  headers: { "User-Agent": "Mozilla/5.0 (compatible; israelvotes.org results reader; +https://www.israelvotes.org)" },
 });
 console.log(`${cfg.source.url}: HTTP ${res.status}, ${res.headers.get("last-modified") ?? "no Last-Modified"}`);
 if (!res.ok) process.exit(1);

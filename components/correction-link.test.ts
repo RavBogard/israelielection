@@ -18,10 +18,10 @@ it("captures contextual path/query/hash on a Vercel preview without allowing arb
     const link = CorrectionLink({}),
       target = { href: "" };
     link.props.onClick({ currentTarget: target });
-    const url = new URL(target.href, "https://www.israelielection.org");
+    const url = new URL(target.href, "https://www.israelvotes.org");
     expect(url.pathname).toBe("/he/corrections");
     expect(url.searchParams.get("url")).toBe(
-      "https://www.israelielection.org/he/coalition-builder?with=likud&support=utj#arrangement",
+      "https://www.israelvotes.org/he/coalition-builder?with=likud&support=utj#arrangement",
     );
   } finally {
     vi.unstubAllGlobals();
