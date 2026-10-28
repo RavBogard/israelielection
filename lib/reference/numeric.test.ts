@@ -47,3 +47,7 @@ it("normalizes written Gregorian months only in explicit date context", () => {
     numericTokens("March 2014"),
   );
 });
+test("a French first of the month reads as the same date", () => {
+  expect(numericTokens("le 1er novembre", "fr")).toEqual(numericTokens("Nov 1"));
+  expect(numericTokens("1er tour", "fr")).toEqual(["1"]);
+});
