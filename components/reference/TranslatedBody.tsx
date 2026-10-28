@@ -17,6 +17,7 @@ import {
 } from "@/lib/i18n/reference";
 import { Chart, Positions, positionsTranslated } from "../article/Article";
 import WhatIf from "../article/WhatIf";
+import BallotLead from "../article/BallotLead";
 /** A small text renderer, never MDX/eval. Links must already match the source invariants. */
 function inline(text: string): ReactNode[] {
   const result: ReactNode[] = [];
@@ -84,7 +85,11 @@ export default function TranslatedBody({
             const text = translation.blocks[i].text;
             if (block.kind === "title" || block.kind === "summary") return null;
             if (block.kind === "heading")
-              return <h2 key={block.id}>{inline(text)}</h2>;
+              return (
+                <h2 key={block.id} id={block.anchor}>
+                  {inline(text)}
+                </h2>
+              );
             if (block.kind === "quote")
               return (
                 <figure key={block.id}>
@@ -133,6 +138,8 @@ export default function TranslatedBody({
                       <Positions issue={w.attrs.issue} lang={lang} />
                     ) : w.name === "WhatIf" ? (
                       <WhatIf lang={lang} />
+                    ) : w.name === "BallotLead" ? (
+                      <BallotLead />
                     ) : null}
                   </div>
                 </section>

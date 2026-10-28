@@ -31,7 +31,11 @@ describe("vote-map editions", () => {
       ).toContain("45.0%");
       const html = renderToStaticMarkup(createElement(VoteMapPage, { lang }));
       expect(html).toContain(t.title);
-      if (lang !== "en") expect(html).toContain("/vote-map?original=en");
+      if (lang === "he") {
+        // The Hebrew guide is written in Hebrew, so it carries the sources instead of the pending note.
+        expect(html).toContain("https://votes25.bechirot.gov.il/nationalresults");
+        expect(html).not.toContain("/vote-map?original=en");
+      } else if (lang !== "en") expect(html).toContain("/vote-map?original=en");
       else {
         expect(html).toContain(
           "https://votes25.bechirot.gov.il/nationalresults",

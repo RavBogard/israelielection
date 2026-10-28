@@ -33,10 +33,12 @@ it("all seven historical editions localize controls and dates, preserve records/
     expect(family).toContain(editionPath("/parties/likud", lang)!);
     expect(family).toContain(editionPath("/ballot#likud", lang)!);
     if (lang !== "en") {
-      expect(time).toContain(t.original);
+      // The timeline is translated in every edition; party histories still show their English originals.
+      expect(time).not.toContain(t.original);
+      expect(time).toContain(`lang="${lang}"`);
+      expect(historicalMetadata("timeline", lang).robots).toBeUndefined();
       expect(family).toContain(t.original);
-      expect(time).toContain('lang="en"');
-      expect(historicalMetadata("timeline", lang).robots).toEqual({
+      expect(historicalMetadata("party-history", lang).robots).toEqual({
         index: false,
         follow: true,
       });

@@ -47,3 +47,11 @@ it("normalizes written Gregorian months only in explicit date context", () => {
     numericTokens("March 2014"),
   );
 });
+it("a French first of the month reads as the same date", () => {
+  expect(numericTokens("le 1er novembre", "fr")).toEqual(numericTokens("Nov 1"));
+  expect(numericTokens("1er tour", "fr")).toEqual(["1"]);
+});
+it("reads Chinese 亿 sums against English billions", () => {
+  expect(numericTokens("约530亿新谢克尔", "zh")).toEqual(numericTokens("NIS 53 billion"));
+  expect(numericTokens("近13亿美元", "zh")).toEqual(numericTokens("almost $1.3B"));
+});

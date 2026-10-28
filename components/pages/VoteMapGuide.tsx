@@ -59,13 +59,13 @@ export default function VoteMapGuide() {
               <strong>Each list is shown as it ran that year.</strong> Ballot
               letters and alliances change between elections. In 2022, for
               example, Religious Zionism ran on one list with Otzma Yehudit, and
-              the letters ×¤×” belonged to Blue and White in 2019â€“2020 and to
-              Yesh Atid in 2021â€“2022. The list menu names every list that won
+              the letters פה belonged to Blue and White in 2019–2020 and to
+              Yesh Atid in 2021–2022. The list menu names every list that won
               at least 1% of the national vote; smaller lists are counted in the
               totals but cannot be picked individually. Their combined remainder
               appears as Other in vote-mix markers and the town breakdown. Lists
               that run on under the same party in 2026 (Likud, Shas, United
-              Torah Judaism, Yisrael Beiteinu, Ra&apos;am, Hadashâ€“Ta&apos;al,
+              Torah Judaism, Yisrael Beiteinu, Ra&apos;am, Hadash–Ta&apos;al,
               Otzma Yehudit, Religious Zionism) take that party&apos;s color;
               other colors identify original historical list names, not current
               political blocs.{" "}

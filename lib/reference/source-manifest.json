@@ -207,13 +207,11 @@
           "negated": false
         },
         {
-          "kind": "text",
-          "text": "<h2 id=\"privacy\">Privacy</h2>",
-          "id": "block-19-4e93190b7668",
-          "numbers": [
-            "2",
-            "2"
-          ],
+          "kind": "heading",
+          "text": "Privacy",
+          "anchor": "privacy",
+          "id": "block-19-54a57c3147c4",
+          "numbers": [],
           "links": [],
           "names": [],
           "negated": false
@@ -1945,7 +1943,7 @@
             "https://www.timesofisrael.com/taboo-no-more-one-in-five-golan-druze-now-holds-israeli-citizenship/"
           ],
           "names": [],
-          "negated": true
+          "negated": false
         },
         {
           "kind": "text",
@@ -11171,8 +11169,12 @@
           "negated": false
         },
         {
-          "kind": "text",
+          "kind": "widget",
           "text": "<BallotLead />",
+          "widget": {
+            "name": "BallotLead",
+            "attrs": {}
+          },
           "id": "block-8-eb125c89af0a",
           "numbers": [],
           "links": [],
