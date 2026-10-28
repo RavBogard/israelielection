@@ -4,6 +4,7 @@ import Timeline from "@/components/Timeline";
 import results from "@/data/results.json";
 import timelineJson from "@/data/timeline.json";
 import { decadeOf, type Source, type Timeline as Data } from "@/lib/timeline";
+import { withLiveElection } from "@/lib/timeline-live";
 import PageHead from "@/components/PageHead";
 
 import { translatedTool } from "@/lib/reference/catalog";
@@ -19,9 +20,9 @@ function Cite({ s, lang }: { s: Source; lang: Lang }) {
   );
 }
 
-export default function TimelinePage({ lang = "en" }: { lang?: Lang }) {
+export default async function TimelinePage({ lang = "en" }: { lang?: Lang }) {
   const edition = translatedTool("tools:timeline", lang, timelineJson),
-    data = edition.data as Data,
+    data = await withLiveElection(edition.data as Data),
     t = historyText(lang),
     date = (value: string) => historicalDate(value, lang);
 
@@ -64,7 +65,10 @@ export default function TimelinePage({ lang = "en" }: { lang?: Lang }) {
                     .filter((e) => decadeOf(e.date) === d)
                     .map((e) => (
                       <li key={e.date + e.title}>
-                        <span className="d">{date(e.date)}</span>
+                        <span className="d">
+                          {date(e.date)}
+                          {e.expected ? `, ${t.expected}` : ""}
+                        </span>
                         <br />
                         <span lang={edition.contentLang} dir="auto">
                           <span className="t">{e.title}.</span> {e.text}
@@ -113,15 +117,17 @@ export default function TimelinePage({ lang = "en" }: { lang?: Lang }) {
                       </th>
                       <td>
                         <span lang={edition.contentLang} dir="auto">
-                          {e.first.list}
+                          {e.first?.list}
                         </span>{" "}
-                        {e.first.seats}
+                        {e.first?.seats}
+                        {!e.first && "—"}
                       </td>
                       <td>
                         <span lang={edition.contentLang} dir="auto">
-                          {e.second.list}
+                          {e.second?.list}
                         </span>{" "}
-                        {e.second.seats}
+                        {e.second?.seats}
+                        {!e.second && "—"}
                       </td>
                       <td>
                         {e.turnout !== undefined
@@ -129,6 +135,12 @@ export default function TimelinePage({ lang = "en" }: { lang?: Lang }) {
                           : "—"}
                       </td>
                       <td lang={edition.contentLang} dir="auto">
+                        {e.status === "counting" && (
+                          <>
+                            <b>{t.counting}</b>
+                            {e.asOf ? `. ${t.countAsOf} ${date(e.asOf)}. ` : ". "}
+                          </>
+                        )}
                         {e.outcome}{" "}
                         <span className="s">
                           (<Cite s={e.source} lang={lang} />

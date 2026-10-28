@@ -9,10 +9,19 @@ import { lettersOf } from "@/lib/letters";
 import { resultsConfig } from "@/lib/results-live";
 import { seatsIn } from "@/lib/polls";
 import { thresholdSeats } from "@/lib/watch";
+import { countView } from "@/lib/count-view";
 
-/** The threshold what-if for the seats guide, fed from the current average on the server. */
-export default function WhatIf({ lang = "en" }: { lang?: Lang } = {}) {
+const WHEN = (lang: Lang, at: string) =>
+  new Intl.DateTimeFormat(lang, { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }).format(new Date(at));
+
+/**
+ * The threshold what-if for the seats guide, fed on the server from the committee's count (vote shares and the
+ * 3.25% line, provisional) and, with no count saved, from the poll average.
+ */
+export default async function WhatIf({ lang = "en" }: { lang?: Lang } = {}) {
+  const view = await countView();
   const edge = thresholdSeats(resultsConfig.threshold) + 1.5;
+  const EDGE_SHARE = 0.045;
   const list: WhatIfParty[] = parties
     .filter((p) => p.coalitionCard !== "hidden")
     .map((p) => {
@@ -23,7 +32,8 @@ export default function WhatIf({ lang = "en" }: { lang?: Lang } = {}) {
         bloc: p.bloc,
         letters: lettersOf[p.id] ?? null,
         seats: Math.round(seats * 10) / 10,
-        near: (seats > 0 && seats <= edge) || p.coalitionCard === "out",
+        near: view ? ((view.shares[p.id] ?? 0) > 0 && (view.shares[p.id] ?? 0) <= EDGE_SHARE) || p.coalitionCard === "out" : (seats > 0 && seats <= edge) || p.coalitionCard === "out",
+        share: view ? (view.shares[p.id] ?? 0) : null,
       };
     });
   const agreements = resultsConfig.agreements
@@ -35,8 +45,11 @@ export default function WhatIf({ lang = "en" }: { lang?: Lang } = {}) {
       blocs={blocs.map((b) => ({ ...b, label: blocText(b, lang).text }))}
       threshold={resultsConfig.threshold}
       agreements={agreements}
+      basis={view ? "count" : "poll"}
       pollsLabel={
-        lang === "en"
+        view
+          ? `${builder[lang].countPhrase(false)} (${WHEN(lang, view.at)})`
+          : lang === "en"
           ? `the average of the latest ${mainPolls.length} polls (${averagePoll.published})`
           : builder[lang].averagePhrase(mainPolls.length) +
             ` (${averagePoll.published})`

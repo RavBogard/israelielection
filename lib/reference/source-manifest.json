@@ -318,7 +318,7 @@
       "id": "american-lens",
       "path": "/american-lens",
       "file": "content/american-lens.mdx",
-      "revision": "d9f96f749d2bcf6f07259bb112c8fde93ba275f3ee48b7de375aa9c4fe8f0c10",
+      "revision": "99c8bf88976e5645b12d8e5dc83feec3856360bae79352981bf786604db20d98",
       "title": "The American lens",
       "checked": "2026-10-05",
       "blocks": [
@@ -342,8 +342,8 @@
         },
         {
           "kind": "text",
-          "text": "The thing Americans most often get wrong about Israel's election is what it is about. In the United States, the conduct of the war in Gaza and a Palestinian state are at the center of the argument over Israel. In Israel's 2026 campaign, for most Jewish voters and for the Jewish-majority parties, they are not. This page starts there, then sets out where the rest of the American map (pro-Israel and its critics, left and right, religious and secular) fits and where it misleads.",
-          "id": "block-2-e95330af1064",
+          "text": "The thing Americans most often get wrong about Israel's election is what it is about. In the United States, the conduct of the war in Gaza and a Palestinian state are at the center of the argument over Israel. In Israel's 2026 campaign, for most Jewish voters and for the Jewish-majority parties, they were not. This page starts there, then sets out where the rest of the American map (pro-Israel and its critics, left and right, religious and secular) fits and where it misleads.",
+          "id": "block-2-7754c596842d",
           "numbers": [
             "2026"
           ],
@@ -362,13 +362,14 @@
         },
         {
           "kind": "text",
-          "text": "For most Jewish Israeli voters, and for the Jewish-majority lists on the October 27 ballot, the Palestinian question is not a top-tier issue in 2026. That question takes in Palestinian rights and statehood, two states or one, equality, Israel's military rule over the West Bank, which it has occupied since 1967 ([Times of Israel, July 19, 2024](https://www.timesofisrael.com/world-court-israeli-presence-in-east-jerusalem-west-bank-is-illegal-and-must-end/)), and the conduct of the war in Gaza.",
-          "id": "block-4-32487585574b",
+          "text": "For most Jewish Israeli voters, and for the Jewish-majority lists on the October 27, 2026 ballot, the Palestinian question was not a top-tier issue in 2026. That question takes in Palestinian rights and statehood, two states or one, equality, Israel's military rule over the West Bank, which it has occupied since 1967 ([Times of Israel, July 19, 2024](https://www.timesofisrael.com/world-court-israeli-presence-in-east-jerusalem-west-bank-is-illegal-and-must-end/)), and the conduct of the war in Gaza.",
+          "id": "block-4-022f33bcd3a2",
           "numbers": [
             "10",
             "19",
             "1967",
             "2024",
+            "2026",
             "2026",
             "27",
             "7"
@@ -381,8 +382,8 @@
         },
         {
           "kind": "text",
-          "text": "**What voters say will decide their vote.** Asked by the Israel Democracy Institute (IDI) for their first and second considerations, Jewish respondents chose foreign affairs and security (39%), the economy and cost of living (38%) and conscription (27%). The Palestinian issue was not offered as a separate answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)).",
-          "id": "block-5-d5d71fb18aae",
+          "text": "**What voters said would decide their vote.** Asked by the Israel Democracy Institute (IDI) for their first and second considerations, Jewish respondents chose foreign affairs and security (39%), the economy and cost of living (38%) and conscription (27%). The Palestinian issue was not offered as a separate answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)).",
+          "id": "block-5-67982dab368b",
           "numbers": [
             "2026",
             "27%",
@@ -816,8 +817,8 @@
         },
         {
           "kind": "text",
-          "text": "**Courts.** Both countries argue over how far courts should check elected majorities, and who picks the judges. On January 1, 2024, a full 15-justice panel struck down the 2023 law ending \"reasonableness\" review, 8–7 ([NPR, January 1, 2024](https://www.npr.org/2024/01/01/1222400537/israel-supreme-court-ruling-judiciary-changes)). Judges are chosen by a nine-member committee of ministers, lawmakers, lawyers and justices, not nominated by an executive and confirmed by a legislature. A 2025 law changes that committee and takes effect when the next Knesset convenes, after the October 27 vote ([Times of Israel](https://www.timesofisrael.com/regime-change-high-court-tears-into-coalition-bid-to-control-judicial-appointments/)). See [courts and the judicial overhaul](/issues/courts).",
-          "id": "block-27-c5ca37a3ef9e",
+          "text": "**Courts.** Both countries argue over how far courts should check elected majorities, and who picks the judges. On January 1, 2024, a full 15-justice panel struck down the 2023 law ending \"reasonableness\" review, 8–7 ([NPR, January 1, 2024](https://www.npr.org/2024/01/01/1222400537/israel-supreme-court-ruling-judiciary-changes)). Judges are chosen by a nine-member committee of ministers, lawmakers, lawyers and justices, not nominated by an executive and confirmed by a legislature. A 2025 law changes that committee and takes effect when the next Knesset convenes, after the October 27, 2026 vote ([Times of Israel](https://www.timesofisrael.com/regime-change-high-court-tears-into-coalition-bid-to-control-judicial-appointments/)). See [courts and the judicial overhaul](/issues/courts).",
+          "id": "block-27-030d6b4bbbbe",
           "numbers": [
             "01",
             "01",
@@ -833,6 +834,7 @@
             "2024",
             "2024",
             "2025",
+            "2026",
             "27",
             "7",
             "8"
@@ -957,8 +959,8 @@
         },
         {
           "kind": "text",
-          "text": "**\"The election is a referendum on the war in Gaza, or on two states.\"** Jewish voters rank security, the cost of living and conscription highest, and IDI did not offer the Palestinian issue as an answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)). A Palestinian state is on the ballot mainly through the Joint List and Ra'am. See [a Palestinian state and the 2026 vote](/issues/palestinian-state).",
-          "id": "block-36-3d795cd85028",
+          "text": "**\"The election is a referendum on the war in Gaza, or on two states.\"** Jewish voters rank security, the cost of living and conscription highest, and IDI did not offer the Palestinian issue as an answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)). A Palestinian state was on the ballot mainly through the Joint List and Ra'am. See [a Palestinian state and the 2026 vote](/issues/palestinian-state).",
+          "id": "block-36-a218e89100b5",
           "numbers": [
             "2026",
             "2026",
@@ -1174,6 +1176,8 @@
         "2026",
         "2026",
         "2026",
+        "2026",
+        "2026",
         "2026.09.15",
         "2026.09.15",
         "2026.09.15",
@@ -1284,7 +1288,7 @@
       "id": "communities:druze",
       "path": "/communities/druze",
       "file": "content/communities/druze.mdx",
-      "revision": "b7225c38349894c66a0ef480b3aeb3ba54a7c5207fae50fa23cee0c2b994b30b",
+      "revision": "ac9b286e4330a33c2a8607751406f459967565f27a954748e2f171d127251108",
       "title": "Druze",
       "checked": "2026-10-05",
       "blocks": [
@@ -1945,8 +1949,8 @@
         },
         {
           "kind": "text",
-          "text": "In 2022 the four villages had 2,755 registered voters, and 23.2% voted: Yesh Atid 24.3%, National Unity 19.4%, Likud 15.5%, Yisrael Beiteinu 15.5% ([CEC, computed](https://media25.bechirot.gov.il/files/expc.csv)). The 2026 roll has not been published and will be larger.",
-          "id": "block-35-c0e9a6797339",
+          "text": "In 2022 the four villages had 2,755 registered voters, and 23.2% voted: Yesh Atid 24.3%, National Unity 19.4%, Likud 15.5%, Yisrael Beiteinu 15.5% ([CEC, computed](https://media25.bechirot.gov.il/files/expc.csv)). The 2026 roll had not been published when this page was checked, and it was expected to be larger.",
+          "id": "block-35-e34ef743e390",
           "numbers": [
             "15.5%",
             "15.5%",
@@ -2781,7 +2785,7 @@
       "id": "communities:haredim",
       "path": "/communities/haredim",
       "file": "content/communities/haredim.mdx",
-      "revision": "a1c0d585b48fd0dfd1887fa8d3c153223f3b01956e642dfd2ea1affa78535aaf",
+      "revision": "c3b7a69f74d57ead0dc944bd30fd04d78e3bdc8d27044e94532de651d8cc2fb1",
       "title": "Haredim",
       "checked": "2026-10-05",
       "blocks": [
@@ -3235,8 +3239,8 @@
         },
         {
           "kind": "text",
-          "text": "For 2026, UTJ filed one list, but with three factions, for the first time apart from a few days in 1992: Degel HaTorah, Agudat Yisrael and a new faction, Homat Torat Yisrael, led by Meir Porush and Elyakim Stark, whose members may split from UTJ once elected ([Davar, Sept 2026](https://www.davar1.co.il/696518/)). Asked in July 2026 to commit to Benjamin Netanyahu's bloc after the election, UTJ's Moshe Gafni cited his rabbi's ruling that \"as of now, there is no bloc,\" and Agudat Yisrael answered, \"First you pass the laws, then we'll talk,\" according to a Channel 12 report cited by the Times of Israel ([Times of Israel, July 2026](https://www.timesofisrael.com/netanyahu-said-seeking-haredi-loyalty-after-election-but-party-leaders-noncommittal/)). Only 36% of Haredim say they will vote for the same party as always, against 7% of the public ([IDI, Aug 2026](https://en.idi.org.il/articles/65364)). No 2026 survey of Haredi vote intention with a full Haredi sample was found.",
-          "id": "block-25-2c41cfe494f6",
+          "text": "For 2026, UTJ filed one list, but with three factions, for the first time apart from a few days in 1992: Degel HaTorah, Agudat Yisrael and a new faction, Homat Torat Yisrael, led by Meir Porush and Elyakim Stark, whose members may split from UTJ once elected ([Davar, Sept 2026](https://www.davar1.co.il/696518/)). Asked in July 2026 to commit to Benjamin Netanyahu's bloc after the election, UTJ's Moshe Gafni cited his rabbi's ruling that \"as of now, there is no bloc,\" and Agudat Yisrael answered, \"First you pass the laws, then we'll talk,\" according to a Channel 12 report cited by the Times of Israel ([Times of Israel, July 2026](https://www.timesofisrael.com/netanyahu-said-seeking-haredi-loyalty-after-election-but-party-leaders-noncommittal/)). Only 36% of Haredim said they would vote for the same party as always, against 7% of the public ([IDI, Aug 2026](https://en.idi.org.il/articles/65364)). No 2026 survey of Haredi vote intention with a full Haredi sample was found.",
+          "id": "block-25-c2f857fc70c2",
           "numbers": [
             "1",
             "12",
@@ -3515,8 +3519,8 @@
         },
         {
           "kind": "text",
-          "text": "Another part of the community takes the opposite view, and in 2026 it has its own list. The Haredi Public party launched its campaign in August 2026 with billboards reading \"Those who do not learn should serve\" and \"Haredi children too need math and English.\"",
-          "id": "block-38-0425e707ddcf",
+          "text": "Another part of the community takes the opposite view, and in 2026 it ran its own list. The Haredi Public party launched its campaign in August 2026 with billboards reading \"Those who do not learn should serve\" and \"Haredi children too need math and English.\"",
+          "id": "block-38-475736e13f3e",
           "numbers": [
             "2026",
             "2026",
@@ -3877,7 +3881,7 @@
       "id": "communities:masorti",
       "path": "/communities/masorti",
       "file": "content/communities/masorti.mdx",
-      "revision": "b1f6e331e013a1f8f704bbfd6e025d5392b7ce4067308e9aa374b83b7194d405",
+      "revision": "dab047c1260d556ce6b24d0a877b6cd904ca535c5216724e12f1d24287a0444d",
       "title": "Masorti Israel",
       "checked": "2026-10-05",
       "blocks": [
@@ -4491,8 +4495,8 @@
         },
         {
           "kind": "text",
-          "text": "In 2026 the contest for these voters is open. Eisenkot said of Shas that his mother \"voted for them for 30 years,\" and added:",
-          "id": "block-36-72089344f862",
+          "text": "In 2026 the contest for these voters was open. Eisenkot said of Shas that his mother \"voted for them for 30 years,\" and added:",
+          "id": "block-36-d3c845416f6a",
           "numbers": [
             "2026",
             "30"
@@ -4806,7 +4810,7 @@
       "id": "communities:palestinian-citizens",
       "path": "/communities/palestinian-citizens",
       "file": "content/communities/palestinian-citizens.mdx",
-      "revision": "5302865e1b0d2afa45058fa07e6348e8f6fe77e1544844ff67cc2d6c71390d4c",
+      "revision": "f0fc5d7fe1bf4c1881762867aace56c6f85d46c0b7b2fcc209e7bf570e0365c0",
       "title": "Palestinian citizens of Israel",
       "checked": "2026-10-05",
       "blocks": [
@@ -5076,8 +5080,8 @@
         },
         {
           "kind": "text",
-          "text": "For 2026 two lists are running: Ra'am under Mansour Abbas, and a re-formed Joint List of Hadash, Ta'al and Balad. The Central Elections Committee disqualified both in September. On October 2 the Supreme Court unanimously reinstated them, and Balad's leader Sami Abu Shehadeh withdrew his candidacy after the court told him a majority of the nine justices favored disqualifying him ([Al Jazeera, October 2, 2026](https://www.aljazeera.com/news/2026/10/2/israels-supreme-court-overturns-election-panel-ban-on-arab-parties)). In three TV polls after the lists were filed, the Joint List polled at 7–8 seats and Ra'am at 4–6 ([Times of Israel, September 10, 2026](https://www.timesofisrael.com/election-polls-show-little-change-continued-deadlock-after-party-slates-finalized/)). In May, KAP projected Arab turnout of 53% if the parties ran as three separate lists, as in 2022 ([KAP, May 2026](https://dayan.org/file-download/download/public/18837)). Pollster Yousef Makladeh estimated that a Hadash–Ta'al–Balad slate could lift it \"from about 53% to 59%\" ([Ynet, August 2, 2026](https://www.ynetnews.com/article/s1xafktsfg)).",
-          "id": "block-15-6d9b30ca47a9",
+          "text": "For 2026 two lists ran: Ra'am under Mansour Abbas, and a re-formed Joint List of Hadash, Ta'al and Balad. The Central Elections Committee disqualified both in September. On October 2 the Supreme Court unanimously reinstated them, and Balad's leader Sami Abu Shehadeh withdrew his candidacy after the court told him a majority of the nine justices favored disqualifying him ([Al Jazeera, October 2, 2026](https://www.aljazeera.com/news/2026/10/2/israels-supreme-court-overturns-election-panel-ban-on-arab-parties)). In three TV polls after the lists were filed, the Joint List polled at 7–8 seats and Ra'am at 4–6 ([Times of Israel, September 10, 2026](https://www.timesofisrael.com/election-polls-show-little-change-continued-deadlock-after-party-slates-finalized/)). In May, KAP projected Arab turnout of 53% if the parties ran as three separate lists, as in 2022 ([KAP, May 2026](https://dayan.org/file-download/download/public/18837)). Pollster Yousef Makladeh estimated that a Hadash–Ta'al–Balad slate could lift it \"from about 53% to 59%\" ([Ynet, August 2, 2026](https://www.ynetnews.com/article/s1xafktsfg)).",
+          "id": "block-15-cf66bae63734",
           "numbers": [
             "1",
             "10",
@@ -5887,7 +5891,7 @@
       "id": "communities:religious-zionists",
       "path": "/communities/religious-zionists",
       "file": "content/communities/religious-zionists.mdx",
-      "revision": "4dac83d31bed5a040b06e0f4147a67be37c4786e124de6bffa8cc34f3c635792",
+      "revision": "9a5fd9db0081077e251784e62c689fc18817ec5f0ed688f313e7bcec12805d40",
       "title": "Religious Zionists",
       "checked": "2026-10-05",
       "blocks": [
@@ -5902,8 +5906,8 @@
         },
         {
           "kind": "summary",
-          "text": "Who Israel's national-religious Jews are, how their towns have voted since 2019, what they think on the six election issues, and why the 2026 vote splits them.",
-          "id": "block-1-221690990bb0",
+          "text": "Who Israel's national-religious Jews are, how their towns have voted since 2019, what they think on the six election issues, and why the 2026 vote split them.",
+          "id": "block-1-ab919007d256",
           "numbers": [
             "2019",
             "2026"
@@ -6187,8 +6191,8 @@
         },
         {
           "kind": "text",
-          "text": "For 2026 the movement's lists are running apart. Religious Zionism runs with Moshe Feiglin's Zehut, Otzma Yehudit runs alone, and Ofer Winter's new Amcha Yisrael ([People of Israel](/parties/poi)) competes for the same voters. A Dialog poll of national-religious voters for Ynet and Yedioth Ahronoth, taken Aug 31–Sept 2, 2026 among 508 members of Dialog's online panel (484 of them asked again after the Religious Zionism–Zehut union; margin of error 4.4 points), is the only 2026 survey of the group found:",
-          "id": "block-14-e0cb0df51a76",
+          "text": "For 2026 the movement's lists ran apart. Religious Zionism ran with Moshe Feiglin's Zehut, Otzma Yehudit ran alone, and Ofer Winter's new Amcha Yisrael ([People of Israel](/parties/poi)) competed for the same voters. A Dialog poll of national-religious voters for Ynet and Yedioth Ahronoth, taken Aug 31–Sept 2, 2026 among 508 members of Dialog's online panel (484 of them asked again after the Religious Zionism–Zehut union; margin of error 4.4 points), is the only 2026 survey of the group found:",
+          "id": "block-14-3cd6a5c34e19",
           "numbers": [
             "2",
             "2026",
@@ -6776,7 +6780,7 @@
       "id": "communities:russian-speakers",
       "path": "/communities/russian-speakers",
       "file": "content/communities/russian-speakers.mdx",
-      "revision": "404de1b72440ed1e737386512f54e2cedb0e529ec2da3336886615a3a7819f10",
+      "revision": "bc351bbb7785baf1358fbc54ec93c5ca7e0ecba366710426b974c83b691a08d3",
       "title": "Russian-speaking Israelis",
       "checked": "2026-10-05",
       "blocks": [
@@ -7205,8 +7209,8 @@
         },
         {
           "kind": "text",
-          "text": "Those who came as children, the \"1.5 generation,\" are moving from being guests in a host society to acting as hosts themselves ([Lily Galili, Brookings, September 2020](https://www.brookings.edu/articles/the-other-tribe-israels-russian-speaking-community-and-how-it-is-changing-the-country/)). Liberman, who was born in the Soviet Union, again heads Yisrael Beiteinu's list in 2026 ([Times of Israel, September 2026](https://www.timesofisrael.com/bennett-liberman-unveil-byachad-yisrael-beytenu-knesset-slates-for-upcoming-election/)).",
-          "id": "block-23-5fb2898b045b",
+          "text": "Those who came as children, the \"1.5 generation,\" are moving from being guests in a host society to acting as hosts themselves ([Lily Galili, Brookings, September 2020](https://www.brookings.edu/articles/the-other-tribe-israels-russian-speaking-community-and-how-it-is-changing-the-country/)). Liberman, who was born in the Soviet Union, again headed Yisrael Beiteinu's list in 2026 ([Times of Israel, September 2026](https://www.timesofisrael.com/bennett-liberman-unveil-byachad-yisrael-beytenu-knesset-slates-for-upcoming-election/)).",
+          "id": "block-23-a57724469c58",
           "numbers": [
             "1.5",
             "2020",
@@ -7485,7 +7489,7 @@
       "id": "communities:secular",
       "path": "/communities/secular",
       "file": "content/communities/secular.mdx",
-      "revision": "f580e86edcd9b316d07971e6e990fdf637ae8ec69237ac48f7c65a1b9c3e324e",
+      "revision": "852bcf9b9715dd8221ac1799047a8b36b45567e03453931b5704b0ccc2a0aa8b",
       "title": "Secular Israel",
       "checked": "2026-10-05",
       "blocks": [
@@ -7771,8 +7775,8 @@
         },
         {
           "kind": "text",
-          "text": "No published 2026 poll breaking vote intention down by religiosity was found. The parties competing for these voters in 2026 are on the [party pages](/parties).",
-          "id": "block-15-9d978842f3bb",
+          "text": "No published 2026 poll breaking vote intention down by religiosity was found. The parties that competed for these voters in 2026 are on the [party pages](/parties).",
+          "id": "block-15-c4763ba43c67",
           "numbers": [
             "2026",
             "2026"
@@ -9260,7 +9264,7 @@
       "id": "guides:forming-a-government",
       "path": "/how-it-works/forming-a-government",
       "file": "content/guides/forming-a-government.mdx",
-      "revision": "57ec936ebe1a155652a9f7423a477e6ae7c976ba8459bdf2b69a10e48b262463",
+      "revision": "e6eadbf71cec491aa3496eca75097ae8a0ab3326c99b4580da17610c51650a2d",
       "title": "Forming a government",
       "checked": "2026-10-05",
       "blocks": [
@@ -9742,8 +9746,8 @@
         },
         {
           "kind": "text",
-          "text": "The 25th Knesset dissolved itself in a 62–0 vote in the early hours of July 17, 2026, which set the election for October 27 ([Ynet, July 17, 2026](https://www.ynetnews.com/article/h1nremv4gl)). The clock above starts when the official results are published, so this page lists no calendar dates for certification or consultations; the [government page](/government) will date each step once the results are out. The [results page](/results) will carry the count, and the [polls page](/polls) shows where the lists stand before the vote.",
-          "id": "block-27-79c007d5918d",
+          "text": "The 25th Knesset dissolved itself in a 62–0 vote in the early hours of July 17, 2026, which set the election for October 27 ([Ynet, July 17, 2026](https://www.ynetnews.com/article/h1nremv4gl)), and the election was held on that date. The clock above starts when the official results are published, so this page lists no calendar dates for certification or consultations; the [government page](/government) dates each step as it happens, and the [results page](/results) carries the count.",
+          "id": "block-27-3420666977da",
           "numbers": [
             "0",
             "1",
@@ -10137,7 +10141,7 @@
       "id": "guides:seats",
       "path": "/how-it-works/seats",
       "file": "content/guides/seats.mdx",
-      "revision": "08e16eee7d1332ec8db3d0eae22c48670858a7bb38d5fc96f01802e0d52c20e6",
+      "revision": "cba58a3f4d0b316e3ab68e1aa0e407e47364bf76c184823afccde74ce91324ad",
       "title": "From votes to seats",
       "checked": "2026-10-05",
       "blocks": [
@@ -10290,8 +10294,8 @@
         },
         {
           "kind": "text",
-          "text": "How many votes 3.25% means depends on turnout, so the exact number is known only after the count. In 2022 it was 154,855 votes, 3.25% of 4,764,742 valid votes ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750); [Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). For 2026, with about 7.56 million eligible voters, the Center for Israel Education estimates that a list \"will need 172,000 votes\" ([Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)).",
-          "id": "block-9-7bc765093016",
+          "text": "How many votes 3.25% means depends on turnout, so the exact number is known only after the count. In 2022 it was 154,855 votes, 3.25% of 4,764,742 valid votes ([IDI, March 16, 2026](https://en.idi.org.il/articles/63750); [Central Elections Committee, Nov 2022](https://votes25.bechirot.gov.il/nationalresults)). For 2026, with about 7.56 million eligible voters, the Center for Israel Education estimated before the vote that a list \"will need 172,000 votes\" ([Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)).",
+          "id": "block-9-9a70ae57aa17",
           "numbers": [
             "11",
             "154855",
@@ -11026,7 +11030,7 @@
       "id": "guides:voting",
       "path": "/how-it-works/voting",
       "file": "content/guides/voting.mdx",
-      "revision": "fc95d0cf9f064c62289caeffb6ccca710deda8c3e3f846327a13329281707552",
+      "revision": "79e7a18b84d126014664c67f171c60dd93154ebb3896cbc887728e215e8acfef",
       "title": "How Israelis vote",
       "checked": "2026-10-05",
       "blocks": [
@@ -11059,8 +11063,8 @@
         },
         {
           "kind": "text",
-          "text": "Any Israeli citizen aged 18 or over who is on the voter roll can vote ([Ynet, Oct 31, 2022](https://www.ynetnews.com/article/rjxzpztvo)). In 2022 the roll held 6,788,804 eligible voters ([Central Elections Committee, 2022](https://votes25.bechirot.gov.il/nationalresults)). For the October 27, 2026 election an estimated 7.56 million are eligible, 11% more than in 2022, mostly people who have turned 18 and newly naturalized citizens ([IsraelEd, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). The committee had not published its own 2026 total in the sources checked for this page.",
-          "id": "block-3-30028d3e4d11",
+          "text": "Any Israeli citizen aged 18 or over who is on the voter roll can vote ([Ynet, Oct 31, 2022](https://www.ynetnews.com/article/rjxzpztvo)). In 2022 the roll held 6,788,804 eligible voters ([Central Elections Committee, 2022](https://votes25.bechirot.gov.il/nationalresults)). For the October 27, 2026 election an estimated 7.56 million were eligible, 11% more than in 2022, mostly people who have turned 18 and newly naturalized citizens ([IsraelEd, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). The committee had not published its own 2026 total in the sources checked for this page.",
+          "id": "block-3-1c58ae290aba",
           "numbers": [
             "10",
             "10",
@@ -11116,8 +11120,8 @@
         },
         {
           "kind": "text",
-          "text": "Israel has almost no absentee voting. Only diplomats and official emissaries abroad may vote outside the country ([IDI, Feb 18, 2020](https://en.idi.org.il/articles/29786)). The law's list covers government employees posted overseas, including military personnel, and emissaries of the Jewish Agency, the World Zionist Organization, Keren Kayemeth LeIsrael-Jewish National Fund and Keren Hayesod, with their spouses and children up to age 20. In 2022 about 4,500 voters were registered at 103 polling stations in 101 missions ([Ynet, Aug 29, 2026](https://www.ynetnews.com/article/sjljnsl00zg)). Every other Israeli abroad must be in Israel on election day to vote. For 2026, the missions vote from October 20 ([Jerusalem Post, July 13, 2026](https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333)).",
-          "id": "block-5-38323954f4ee",
+          "text": "Israel has almost no absentee voting. Only diplomats and official emissaries abroad may vote outside the country ([IDI, Feb 18, 2020](https://en.idi.org.il/articles/29786)). The law's list covers government employees posted overseas, including military personnel, and emissaries of the Jewish Agency, the World Zionist Organization, Keren Kayemeth LeIsrael-Jewish National Fund and Keren Hayesod, with their spouses and children up to age 20. In 2022 about 4,500 voters were registered at 103 polling stations in 101 missions ([Ynet, Aug 29, 2026](https://www.ynetnews.com/article/sjljnsl00zg)). Every other Israeli abroad must be in Israel on election day to vote. For 2026, the missions voted from October 20 ([Jerusalem Post, July 13, 2026](https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333)).",
+          "id": "block-5-5cc4cf77fbee",
           "numbers": [
             "00",
             "10",
@@ -11150,8 +11154,35 @@
         },
         {
           "kind": "heading",
+          "text": "How a Knesset vote works",
+          "id": "block-6-7fe9e4b0aa88",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "kind": "text",
+          "text": "The walk-through below holds for any Knesset election: one slip, one envelope, one box, and a second envelope for a voter away from home.",
+          "id": "block-7-0ab9800eecb2",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "kind": "text",
+          "text": "<BallotLead />",
+          "id": "block-8-eb125c89af0a",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "kind": "heading",
           "text": "Election day",
-          "id": "block-6-8c24f42a05f6",
+          "id": "block-9-8c24f42a05f6",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11160,7 +11191,7 @@
         {
           "kind": "text",
           "text": "Election day is a national holiday, with public transport running normally ([Jerusalem Post, July 13, 2026](https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333)). Most polling stations are open from 7:00 a.m. to 10:00 p.m.; smaller communities, hospitals and prisons from 8:00 a.m. to 8:00 p.m. A voter still in line at closing time may still vote (same source). Salaried employees are entitled to a paid day off by law, and those who work that day get higher pay ([Ynet, Sept 18, 2026](https://www.ynetnews.com/business/article/sjkupwyffg)).",
-          "id": "block-7-f0f4dfdbd9dc",
+          "id": "block-10-f0f4dfdbd9dc",
           "numbers": [
             "00",
             "00",
@@ -11188,7 +11219,7 @@
         {
           "kind": "text",
           "text": "Voting is on paper, not machines ([IsraelEd, Sept 28, 2026](https://israeled.org/38-party-lists-israels-2026-parliamentary-election/)). The voter shows photo identification, and the polling-station committee checks the name on the roll. The voter is handed an envelope, steps behind a screen, takes one paper slip for the chosen list, seals it in the envelope and drops the envelope in the ballot box. A slip with writing on it, a torn slip, or an envelope holding more than one slip is disqualified ([Ynet, Oct 31, 2022](https://www.ynetnews.com/article/rjxzpztvo)).",
-          "id": "block-8-fb011c4d25d5",
+          "id": "block-11-fb011c4d25d5",
           "numbers": [
             "10",
             "2022",
@@ -11209,7 +11240,7 @@
         {
           "kind": "text",
           "text": "Each list is identified by one to four Hebrew letters, and the committee reports its count by those letters, not by party name: in 2022 the Likud column in the results file was headed מחל ([CEC, 2022](https://media25.bechirot.gov.il/files/expc.csv)). Letters can pass from one alliance to another between elections. The 2026 letters for the lists this site tracks are on the [results page](/results), under \"The ballot letters\". For what the votes turn into, see [how seats are allocated](/how-it-works/seats).",
-          "id": "block-9-825bc61c89c8",
+          "id": "block-12-825bc61c89c8",
           "numbers": [
             "2022",
             "2022",
@@ -11225,7 +11256,7 @@
         {
           "kind": "heading",
           "text": "Double-envelope votes",
-          "id": "block-10-6f6a59defa57",
+          "id": "block-13-6f6a59defa57",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11234,7 +11265,7 @@
         {
           "kind": "text",
           "text": "A voter who casts a ballot anywhere other than the assigned polling station votes in a double envelope, officially an \"outer envelope.\" Most are members of the security forces stationed away from home. The rest include hospital patients and staff, prisoners and detainees, diplomats abroad, residents of senior-care facilities, and voters with disabilities, who may use any accessible polling station ([IDI, Nov 2, 2022](https://en.idi.org.il/articles/46196)). Police officers who vote away from their own station use them too. Before counting, the committee gathers the double envelopes and checks that no one voted twice ([Ynet, Oct 31, 2022](https://www.ynetnews.com/article/rjxzpztvo)). For 2026, the committee decided that soldiers deployed in Lebanon, Syria and Gaza may be identified by their military tags and a fellow soldier, and that this procedure applies to double envelopes, \"which are counted at a later stage\" ([Ynet, July 30, 2026](https://www.ynetnews.com/article/byscqcurml)).",
-          "id": "block-11-043074ff6447",
+          "id": "block-14-043074ff6447",
           "numbers": [
             "10",
             "11",
@@ -11259,7 +11290,7 @@
         {
           "kind": "text",
           "text": "The share rose at each election from April 2019 to 2022, from 5.54% to 9.63% of valid votes (computed from the [CEC files](https://media25.bechirot.gov.il/files/expc.csv)). IDI notes that more voters now use accessible polling stations, and that in 2020 and 2021 tens of thousands of double-envelope votes were cast by people in quarantine or hospital and by residents of senior citizens' homes ([IDI, Nov 2, 2022](https://en.idi.org.il/articles/46196)).",
-          "id": "block-12-86a56d1c33c4",
+          "id": "block-15-86a56d1c33c4",
           "numbers": [
             "11",
             "2",
@@ -11290,7 +11321,7 @@
               "id": "voting.envelopes"
             }
           },
-          "id": "block-13-e4d0b4c47107",
+          "id": "block-16-e4d0b4c47107",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11299,7 +11330,7 @@
         {
           "kind": "text",
           "text": "These votes are why the count moves after election night. Double-envelope voters are younger and more often soldiers than the electorate as a whole. IDI found that Arab lists' share of these ballots is less than half of their share among regular voters, and that Haredi lists also do worse in them, so an Arab list hovering near the threshold after the regular count can fall below it once they are added ([IDI, Nov 2, 2022](https://en.idi.org.il/articles/46196)). The 2022 file shows the pattern: Ra'am won 1.7% of the double-envelope votes against 4.3% of the votes counted by locality, while Religious Zionism–Otzma Yehudit won 15.5% against 10.4% (computed from the [CEC file](https://media25.bechirot.gov.il/files/expc.csv)).",
-          "id": "block-14-69978860d2fd",
+          "id": "block-17-69978860d2fd",
           "numbers": [
             "1.7%",
             "10.4%",
@@ -11328,7 +11359,7 @@
               "id": "voting.envelopes-2022"
             }
           },
-          "id": "block-15-5d16324435f5",
+          "id": "block-18-5d16324435f5",
           "numbers": [
             "2022"
           ],
@@ -11339,7 +11370,7 @@
         {
           "kind": "heading",
           "text": "Turnout",
-          "id": "block-16-58eb7394d02a",
+          "id": "block-19-58eb7394d02a",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11348,7 +11379,7 @@
         {
           "kind": "text",
           "text": "National turnout ranged from 67.44% to 71.52% across the five elections of 2019–2022; in 2022 it was 70.63% ([CEC, 2022](https://votes25.bechirot.gov.il/nationalresults)).",
-          "id": "block-17-d75a375db158",
+          "id": "block-20-d75a375db158",
           "numbers": [
             "2019",
             "2022",
@@ -11374,7 +11405,7 @@
               "id": "voting.turnout"
             }
           },
-          "id": "block-18-2eb2ae143100",
+          "id": "block-21-2eb2ae143100",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11383,7 +11414,7 @@
         {
           "kind": "text",
           "text": "Turnout among Palestinian citizens of Israel has been lower and has swung far more. The Israel Democracy Institute's Arik Rudnitzky measures it in Arab and Druze localities. It fell to 49.2% in April 2019, after the Joint List broke up, and rose to 59.2% in September 2019 when it re-formed ([IDI, Sept 23, 2019](https://en.idi.org.il/articles/28660)). It reached 64.8% in March 2020, the highest in two decades ([IDI, Mar 10, 2020](https://en.idi.org.il/articles/30961)), then dropped to 44.6% in 2021 ([IDI, Apr 27, 2021](https://en.idi.org.il/articles/34420)), and recovered to 53.2% in 2022 ([IDI, Dec 25, 2022](https://en.idi.org.il/articles/47986)). Because the measure leaves out double-envelope votes and Arab voters in mixed cities, it is not directly comparable with the national figure. More on the community is on the [Palestinian citizens of Israel page](/communities/palestinian-citizens).",
-          "id": "block-19-43018ff4c7a2",
+          "id": "block-22-43018ff4c7a2",
           "numbers": [
             "10",
             "12",
@@ -11433,7 +11464,7 @@
               "id": "voting.turnout-arab"
             }
           },
-          "id": "block-20-241caf408b06",
+          "id": "block-23-241caf408b06",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11442,7 +11473,7 @@
         {
           "kind": "heading",
           "text": "Election night",
-          "id": "block-21-db320da7cf57",
+          "id": "block-24-db320da7cf57",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11451,7 +11482,7 @@
         {
           "kind": "text",
           "text": "Polls close at 10:00 p.m. Israel time, and the three main television channels, Kan, Channel 12 and Channel 13, broadcast exit polls at that moment ([Ynet, Nov 1, 2022](https://www.ynetnews.com/article/h1tyl0a4s)). Counting starts at the polling stations at 10:00 p.m.; the ballot boxes then go to regional election committees, and the results are entered into the Central Elections Committee's system, which shows them as they arrive ([Ynet, Oct 31, 2022](https://www.ynetnews.com/article/rjxzpztvo)). Votes cast at the missions abroad are counted on election day after 10:00 p.m. (same source).",
-          "id": "block-22-082e277e8768",
+          "id": "block-25-082e277e8768",
           "numbers": [
             "0",
             "00",
@@ -11481,7 +11512,7 @@
         {
           "kind": "text",
           "text": "In 2022 the count ran into the next day. By Wednesday afternoon over 80% of the votes had been counted, and many of those still out were double-envelope ballots ([JTA, Nov 2, 2022](https://www.jta.org/2022/11/02/israel/as-vote-is-tallied-netanyahu-appears-headed-for-more-sweeping-victory-than-expected)). The committee's final 2022 locality file is dated November 8, a week after the vote ([CEC file](https://media25.bechirot.gov.il/files/expc.csv)). For 2026, official confirmation of the results was scheduled for November 4, with appeals possible until November 18 ([Jerusalem Post, July 13, 2026](https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333)).",
-          "id": "block-23-22f99aa793a1",
+          "id": "block-26-22f99aa793a1",
           "numbers": [
             "02",
             "11",
@@ -11515,10 +11546,11 @@
         },
         {
           "kind": "text",
-          "text": "On October 27 this site follows the committee's count on the [results page](/results).",
-          "id": "block-24-b8c7f8ac958a",
+          "text": "For the October 27, 2026 election, the committee's count is on the [results page](/results), and the steps that follow it are on the [government page](/government).",
+          "id": "block-27-555f7b1feb58",
           "numbers": [
             "10",
+            "2026",
             "27"
           ],
           "links": [],
@@ -11528,7 +11560,7 @@
         {
           "kind": "heading",
           "text": "Misreadings",
-          "id": "block-25-9b610ba5d1fc",
+          "id": "block-28-9b610ba5d1fc",
           "numbers": [],
           "links": [],
           "names": [],
@@ -11537,7 +11569,7 @@
         {
           "kind": "text",
           "text": "**\"Israelis abroad can vote by mail or at a consulate.\"** There is no mail vote, and the consulate polling stations are open only to officials posted abroad and named national-institution emissaries, with their families. An Israeli who lives in New York, or is on vacation there on election day, cannot vote at the consulate ([Ynet, Aug 29, 2026](https://www.ynetnews.com/article/sjljnsl00zg)).",
-          "id": "block-26-0cc532ee5b71",
+          "id": "block-29-0cc532ee5b71",
           "numbers": [
             "00",
             "2026",
@@ -11553,7 +11585,7 @@
         {
           "kind": "text",
           "text": "**\"The exit poll is the result.\"** Exit polls are estimates. In 2022 the early exit polls put Meretz at 5 seats ([Jerusalem Post, Nov 1, 2022](https://www.jpost.com/israel-elections/article-721230)). In the final count Meretz won 3.16% of the vote, below the 3.25% threshold, and no seats ([CEC, 2022](https://votes25.bechirot.gov.il/nationalresults)).",
-          "id": "block-27-a822947033cd",
+          "id": "block-30-a822947033cd",
           "numbers": [
             "1",
             "11",
@@ -11576,7 +11608,7 @@
         {
           "kind": "text",
           "text": "**\"Election-night numbers are final.\"** About one valid vote in ten in 2022 was a double-envelope vote counted after the regular ballots, and those votes split differently from the rest. With 87.6% counted, Meretz stood at 3.19% and Balad at 3.02% ([Jerusalem Post, Nov 2, 2022](https://www.jpost.com/israel-elections/article-721318)); both finished lower, at 3.16% and 2.91% ([CEC, 2022](https://votes25.bechirot.gov.il/nationalresults)). A list near the threshold is not in or out until the envelopes are counted.",
-          "id": "block-28-ef5567cb4a2e",
+          "id": "block-31-ef5567cb4a2e",
           "numbers": [
             "11",
             "2",
@@ -11601,7 +11633,7 @@
         {
           "kind": "text",
           "text": "**\"Low turnout means apathy, the same everywhere.\"** National turnout has stayed near 70%, while turnout in Arab and Druze localities has swung by 20 points between elections, with the gap widest in 2021: 67.44% nationally, 44.6% in those localities ([CEC, 2021](https://votes24.bechirot.gov.il/nationalresults); [IDI, Apr 27, 2021](https://en.idi.org.il/articles/34420)).",
-          "id": "block-29-8e8cc5ab76d0",
+          "id": "block-32-8e8cc5ab76d0",
           "numbers": [
             "20",
             "2021",
@@ -11625,7 +11657,7 @@
         {
           "kind": "text",
           "text": "**\"Every Palestinian under Israeli control can vote.\"** Palestinian citizens of Israel can. Most East Jerusalem Palestinians are permanent residents, not citizens, and cannot vote for the Knesset, and Palestinians in the rest of the West Bank and Gaza, who hold no Israeli status, have no vote in it ([Inter-Agency Task Force, updated Dec 2022](https://www.acitaskforce.org/wp-content/uploads/2022/08/Arab-Palestinian-Citizenship-and-Residency-2025.pdf)).",
-          "id": "block-30-beac22bb9524",
+          "id": "block-33-beac22bb9524",
           "numbers": [
             "08",
             "12",
@@ -11788,6 +11820,7 @@
         "2022",
         "2025",
         "2025",
+        "2026",
         "2026",
         "2026",
         "2026",
@@ -12954,7 +12987,7 @@
       "id": "issues:courts",
       "path": "/issues/courts",
       "file": "content/issues/courts.mdx",
-      "revision": "c976cf479caed37edc8a6c1bc30ac40c380d2ae75005a597a71fc71e15714c8f",
+      "revision": "ec96f0474a18a204087e07c0f80dc4d5cfff716783def94b06da3d748913205b",
       "title": "Courts and the judicial overhaul",
       "checked": "2026-10-05",
       "blocks": [
@@ -13403,9 +13436,11 @@
         },
         {
           "kind": "heading",
-          "text": "The court and this election",
-          "id": "block-21-365147a98578",
-          "numbers": [],
+          "text": "The court and the 2026 election",
+          "id": "block-21-e8bcf8ded171",
+          "numbers": [
+            "2026"
+          ],
           "links": [],
           "names": [],
           "negated": false
@@ -13857,6 +13892,7 @@
         "2025",
         "2025",
         "2025",
+        "2026",
         "2026",
         "2026",
         "2026",
@@ -14749,7 +14785,7 @@
       "id": "issues:haredi-draft",
       "path": "/issues/haredi-draft",
       "file": "content/issues/haredi-draft.mdx",
-      "revision": "fc6948986fd5e65364c4ceea5968d70e98a27b00adb68331ad56c4472349a1a7",
+      "revision": "9eeca9080e8ed617d0ef6be16584b1ab383d97329badc5dfb8f8d622f031c61c",
       "title": "The Haredi draft",
       "checked": "2026-10-05",
       "blocks": [
@@ -15019,8 +15055,8 @@
         },
         {
           "kind": "text",
-          "text": "The draft split the coalition in its last year. Both factions of United Torah Judaism left the government over the stalled law in July 2025 ([Times of Israel, July 2025](https://www.timesofisrael.com/united-torah-judaism-quits-govt-to-protest-new-proposal-on-army-enlistment-exemptions/)), and the Knesset dissolved in July 2026, setting the vote for October 27. The Knesset was near the end of its four-year term anyway: the outgoing coalition \"became the first Israeli government in decades to complete a full four-year term\" ([JNS, July 2026](https://www.jns.org/news/israel-news/knesset-votes-to-dissolve-formally-sets-oct-27-election-date)). Money is part of the fight: after the 2024 ruling, NIS 480 million a year in yeshiva funding was revoked ([IDI, June 2025](https://en.idi.org.il/articles/59892)); the wider question of coalition money for sectoral institutions is on [the economy page](/issues/economy).",
-          "id": "block-12-a3fe11fb856e",
+          "text": "The draft split the coalition in its last year. Both factions of United Torah Judaism left the government over the stalled law in July 2025 ([Times of Israel, July 2025](https://www.timesofisrael.com/united-torah-judaism-quits-govt-to-protest-new-proposal-on-army-enlistment-exemptions/)), and the Knesset dissolved in July 2026, setting the vote for October 27, 2026. The Knesset was near the end of its four-year term anyway: the outgoing coalition \"became the first Israeli government in decades to complete a full four-year term\" ([JNS, July 2026](https://www.jns.org/news/israel-news/knesset-votes-to-dissolve-formally-sets-oct-27-election-date)). Money is part of the fight: after the 2024 ruling, NIS 480 million a year in yeshiva funding was revoked ([IDI, June 2025](https://en.idi.org.il/articles/59892)); the wider question of coalition money for sectoral institutions is on [the economy page](/issues/economy).",
+          "id": "block-12-089c4b0c442a",
           "numbers": [
             "10",
             "10",
@@ -15028,6 +15064,7 @@
             "2025",
             "2025",
             "2025",
+            "2026",
             "2026",
             "2026",
             "27",
@@ -15325,8 +15362,8 @@
         },
         {
           "kind": "text",
-          "text": "**The draft does not divide right from left.** People of Israel, which still recommends Netanyahu, will not join a government that has not passed a draft law ([Jerusalem Post, September 2026](https://www.jpost.com/israel-election-2026/article-907373)); Yisrael Beiteinu wants \"no exemptions, no quotas and no deals\" ([Ynet, September 2026](https://www.ynetnews.com/article/sjph72wyzx)). Likud voters back drafting Haredim but prefer to do it by agreement ([JPPI via Jerusalem Post, July 2026](https://www.jpost.com/israel-news/article-902297)).",
-          "id": "block-28-8b55ad08b0cd",
+          "text": "**The draft does not divide right from left.** People of Israel, which recommended Netanyahu before the vote, said it would not join a government that had not passed a draft law ([Jerusalem Post, September 2026](https://www.jpost.com/israel-election-2026/article-907373)); Yisrael Beiteinu wants \"no exemptions, no quotas and no deals\" ([Ynet, September 2026](https://www.ynetnews.com/article/sjph72wyzx)). Likud voters back drafting Haredim but prefer to do it by agreement ([JPPI via Jerusalem Post, July 2026](https://www.jpost.com/israel-news/article-902297)).",
+          "id": "block-28-1afc6175a0b5",
           "numbers": [
             "2026",
             "2026",
@@ -15534,6 +15571,7 @@
         "2026",
         "2026",
         "2026",
+        "2026",
         "21",
         "21",
         "219",
@@ -15664,7 +15702,7 @@
       "id": "issues:palestinian-state",
       "path": "/issues/palestinian-state",
       "file": "content/issues/palestinian-state.mdx",
-      "revision": "5004c339b6b07d5710cbb7c1dc53808fc7c6732c8d6fde2c4948708540c72cb3",
+      "revision": "cddfb8f6e3f12937c65d2a40eaac91a6e5c7c22bcd613766cd5bef5e1a888dea",
       "title": "A Palestinian state and the 2026 vote",
       "checked": "2026-10-05",
       "blocks": [
@@ -15681,11 +15719,12 @@
         },
         {
           "kind": "summary",
-          "text": "Where the lists running on October 27 stand on a Palestinian state, and what Israeli and Palestinian surveys show about the idea since 2013.",
-          "id": "block-1-201fe110889d",
+          "text": "Where the lists that ran in the October 27, 2026 election stand on a Palestinian state, and what Israeli and Palestinian surveys show about the idea since 2013.",
+          "id": "block-1-f9f1d8a62441",
           "numbers": [
             "10",
             "2013",
+            "2026",
             "27"
           ],
           "links": [],
@@ -15703,8 +15742,8 @@
         },
         {
           "kind": "text",
-          "text": "In Israel, left and right are defined mostly by positions on the Palestinians, the occupied territories and a Palestinian state, not by economics ([CHES-Israel expert survey, 2021–22](https://journals.sagepub.com/doi/10.1177/13540688231218917)). Yet in the 2026 campaign almost no one argues for a Palestinian state. Of the lists running on October 27, only Ra'am and the Joint List say they support a Palestinian state ([Jerusalem Post, Sept 1, 2026](https://www.jpost.com/israel-election-2026/article-907154)). The Jewish-majority lists oppose one, say it is \"not on the agenda\", decline to answer, or, in the case of The Democrats, speak of \"separation\" ([Ynet party questionnaire, Sept 30, 2026](https://www.ynetnews.com/article/h1dpvu9cgl)).",
-          "id": "block-3-b92abda5ec84",
+          "text": "In Israel, left and right are defined mostly by positions on the Palestinians, the occupied territories and a Palestinian state, not by economics ([CHES-Israel expert survey, 2021–22](https://journals.sagepub.com/doi/10.1177/13540688231218917)). Yet in the 2026 campaign almost no one argued for a Palestinian state. Of the lists that ran in the October 27, 2026 election, only Ra'am and the Joint List say they support a Palestinian state ([Jerusalem Post, Sept 1, 2026](https://www.jpost.com/israel-election-2026/article-907154)). The Jewish-majority lists oppose one, say it is \"not on the agenda\", decline to answer, or, in the case of The Democrats, speak of \"separation\" ([Ynet party questionnaire, Sept 30, 2026](https://www.ynetnews.com/article/h1dpvu9cgl)).",
+          "id": "block-3-af82d89cbeca",
           "numbers": [
             "1",
             "1",
@@ -15712,6 +15751,7 @@
             "10.1177",
             "13540688231218917",
             "2021",
+            "2026",
             "2026",
             "2026",
             "2026",
@@ -15734,14 +15774,17 @@
         },
         {
           "kind": "text",
-          "text": "The Knesset put this on record before the campaign began. On July 17, 2024 it passed, 68–9, a resolution stating that \"the Knesset of Israel firmly opposes the establishment of a Palestinian state west of Jordan.\" Unlike a February 2024 resolution, which rejected only unilateral recognition, it rejected a state even as part of a negotiated settlement. Coalition parties were joined by members of Benny Gantz's National Unity; the nine votes against came from Ra'am and Hadash–Ta'al, and Yesh Atid and Labor left the chamber ([Times of Israel, July 2024](https://www.timesofisrael.com/knesset-votes-overwhelmingly-against-palestinian-statehood-days-before-pms-us-trip/)). The Palestinians of the West Bank and Gaza, whose state is the question, are not Israeli citizens and have no vote in this election (see [who votes, and who doesn't](/how-it-works/who-votes)).",
-          "id": "block-4-06cdee468bdb",
+          "text": "The Knesset put this on record before the campaign began. On July 17, 2024 it passed, 68–9, a resolution stating that \"the Knesset of Israel firmly opposes the establishment of a Palestinian state west of Jordan.\" Unlike a February 2024 resolution, which rejected only unilateral recognition, it rejected a state even as part of a negotiated settlement. Coalition parties were joined by members of Benny Gantz's National Unity; the nine votes against came from Ra'am and Hadash–Ta'al, and Yesh Atid and Labor left the chamber ([Times of Israel, July 2024](https://www.timesofisrael.com/knesset-votes-overwhelmingly-against-palestinian-statehood-days-before-pms-us-trip/)). The Palestinians of the West Bank and Gaza, whose state is the question, are not Israeli citizens and had no vote in the October 27, 2026 election (see [who votes, and who doesn't](/how-it-works/who-votes)).",
+          "id": "block-4-569501c4ecc8",
           "numbers": [
+            "10",
             "17",
             "2",
             "2024",
             "2024",
             "2024",
+            "2026",
+            "27",
             "68",
             "7",
             "7",
@@ -15819,8 +15862,8 @@
         },
         {
           "kind": "text",
-          "text": "When the Israel Democracy Institute asked voters to name their most important considerations, Jewish respondents chose foreign affairs and security (39%), the economy and cost of living (38%) and conscription (27%). The Palestinian issue was not offered as a separate answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)). In the campaign, Netanyahu has put the question this way:",
-          "id": "block-7-75f3a71b9ed8",
+          "text": "When the Israel Democracy Institute asked voters to name their most important considerations, Jewish respondents chose foreign affairs and security (39%), the economy and cost of living (38%) and conscription (27%). The Palestinian issue was not offered as a separate answer ([IDI, Aug 31–Sept 3, 2026](https://en.idi.org.il/articles/66177)). In the campaign, Netanyahu put the question this way:",
+          "id": "block-7-8c63abdc58fa",
           "numbers": [
             "2026",
             "27%",
@@ -16204,10 +16247,11 @@
         },
         {
           "kind": "text",
-          "text": "**The election is not a referendum on two states.** No Jewish-majority list running on October 27 campaigns for a Palestinian state. Two of Netanyahu's leading opponents, Gadi Eisenkot's Yashar! and Naftali Bennett's B'Yachad, answered Ynet that a state is \"not on the agenda\" and \"We oppose a Palestinian state\", respectively.",
-          "id": "block-27-0117264283a3",
+          "text": "**The election was not a referendum on two states.** No Jewish-majority list that ran in the October 27, 2026 election campaigned for a Palestinian state. Two of Netanyahu's leading opponents, Gadi Eisenkot's Yashar! and Naftali Bennett's B'Yachad, answered Ynet that a state is \"not on the agenda\" and \"We oppose a Palestinian state\", respectively.",
+          "id": "block-27-6ece34c4398d",
           "numbers": [
             "10",
+            "2026",
             "27"
           ],
           "links": [],
@@ -16357,6 +16401,7 @@
         "10",
         "10",
         "10",
+        "10",
         "10%",
         "10%",
         "10.1177",
@@ -16470,6 +16515,10 @@
         "2026",
         "2026",
         "2026",
+        "2026",
+        "2026",
+        "2026",
+        "2026",
         "21",
         "21%",
         "21%",
@@ -16487,6 +16536,7 @@
         "25",
         "25",
         "25%",
+        "27",
         "27",
         "27",
         "27",
@@ -18713,7 +18763,7 @@
       "id": "issues:west-bank",
       "path": "/issues/west-bank",
       "file": "content/issues/west-bank.mdx",
-      "revision": "00c01322d3a2c1fbe751b9000b51629127eb61fcb43019eef034217006a51b1f",
+      "revision": "6983af176ddd73aa7fd4a4605c94059d4d0f5f1ad95cf99d8d4f4e079530149b",
       "title": "The West Bank and annexation",
       "checked": "2026-10-05",
       "blocks": [
@@ -18785,8 +18835,8 @@
         },
         {
           "kind": "text",
-          "text": "The 1995 Oslo II agreement, meant to last five years, split the territory into three zones that are still in force: Area A, the Palestinian cities (about 18%), under the Palestinian Authority; Area B (about 22%), under Palestinian civil and Israeli security control; and Area C (about 60%), under full Israeli control ([B'Tselem](https://www.btselem.org/area_c/what_is_area_c)). More than 3 million people live in the West Bank, 85% of them Palestinian (end of 2023, [Peace Now](https://peacenow.org.il/en/settlements-watch/settlements-data/population)). The Palestinians among them live under Israeli military rule, are not Israeli citizens and have no vote on October 27; the Israeli settlers living beside them do (see [who votes, and who doesn't](/how-it-works/who-votes)). The two groups also live under different law: the International Court of Justice found that \"Palestinians in the West Bank are thus subject to military law and military courts, whereas settlers benefit from the criminal law and criminal justice system applicable to civilians in Israel\" ([ICJ, July 19, 2024, para. 136](https://documents.un.org/api/symbol/access?s=A/78/968&l=en&t=pdf)).",
-          "id": "block-4-f5b656c0244e",
+          "text": "The 1995 Oslo II agreement, meant to last five years, split the territory into three zones that are still in force: Area A, the Palestinian cities (about 18%), under the Palestinian Authority; Area B (about 22%), under Palestinian civil and Israeli security control; and Area C (about 60%), under full Israeli control ([B'Tselem](https://www.btselem.org/area_c/what_is_area_c)). More than 3 million people live in the West Bank, 85% of them Palestinian (end of 2023, [Peace Now](https://peacenow.org.il/en/settlements-watch/settlements-data/population)). The Palestinians among them live under Israeli military rule, are not Israeli citizens and had no vote in the October 27, 2026 election; the Israeli settlers living beside them do (see [who votes, and who doesn't](/how-it-works/who-votes)). The two groups also live under different law: the International Court of Justice found that \"Palestinians in the West Bank are thus subject to military law and military courts, whereas settlers benefit from the criminal law and criminal justice system applicable to civilians in Israel\" ([ICJ, July 19, 2024, para. 136](https://documents.un.org/api/symbol/access?s=A/78/968&l=en&t=pdf)).",
+          "id": "block-4-a5c9d3d613dc",
           "numbers": [
             "10",
             "136",
@@ -18795,6 +18845,7 @@
             "1995",
             "2023",
             "2024",
+            "2026",
             "22%",
             "27",
             "3",
@@ -18958,8 +19009,8 @@
         },
         {
           "kind": "text",
-          "text": "One project runs into election week. E1, the land between Ma'ale Adumim and Jerusalem, received final approval for 3,401 units in August 2025. A tender for 1,234 of them closes on Oct 19, 2026, eight days before the vote ([Peace Now, Aug 2026](https://peacenow.org.il/en/e1-tender-published-and-open-for-bidding)).",
-          "id": "block-12-8af0b06adc03",
+          "text": "One project runs into election week. E1, the land between Ma'ale Adumim and Jerusalem, received final approval for 3,401 units in August 2025. A tender for 1,234 of them was due to close on Oct 19, 2026, eight days before the vote ([Peace Now, Aug 2026](https://peacenow.org.il/en/e1-tender-published-and-open-for-bidding)).",
+          "id": "block-12-fe9ebb582373",
           "numbers": [
             "1",
             "1",
@@ -19516,6 +19567,7 @@
         "2025%",
         "2025%",
         "2025%",
+        "2026",
         "2026",
         "2026",
         "2026",

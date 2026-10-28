@@ -20,3 +20,15 @@ export const widgetNotice=(lang:Lang)=>({en:"This figure retains its original En
 export const quotationNotice=(lang:Lang)=>({en:"Quotation from the English source; that source may itself translate the original.",he:"ציטוט שתורגם מהמקור באנגלית; ייתכן שגם המקור הוא תרגום.",ar:"اقتباس مترجم عن المصدر الإنجليزي؛ قد يكون المصدر نفسه ترجمة للأصل.",fa:"نقل‌قول ترجمه‌شده از منبع انگلیسی؛ خود منبع نیز ممکن است ترجمه باشد.",de:"Zitat aus der englischen Quelle übersetzt; diese kann selbst eine Übersetzung sein.",fr:"Citation traduite de la source anglaise ; celle-ci peut elle-même traduire l’original.",zh:"引文译自英文来源；该来源本身也可能译自原文。"})[lang];
 
 export function assertionText(status:string,lang:Lang){const keys=["confirmed","reported","disputed","corrected","withdrawn","unknown"],values:Record<Lang,string[]>={en:["Confirmed","Reported","Disputed","Corrected","Withdrawn","Unknown"],he:["מאומת","דווח","במחלוקת","תוקן","הוסר","לא ידוע"],ar:["مؤكد","منقول صحفياً","متنازع عليه","مصحح","مسحوب","غير معروف"],fa:["تأییدشده","گزارش‌شده","مورد اختلاف","اصلاح‌شده","پس‌گرفته‌شده","نامعلوم"],de:["Bestätigt","Berichtet","Umstritten","Korrigiert","Zurückgezogen","Unbekannt"],fr:["Confirmé","Rapporté","Contesté","Corrigé","Retiré","Inconnu"],zh:["已确认","据报道","有争议","已更正","已撤回","未知"]};return values[lang][keys.indexOf(status)]??values[lang][5]};
+
+/** Shown beside a page's check date when the page was last checked before election day: where to look for the result. */
+export const beforeVoteNote = (lang: Lang) =>
+  ({
+    en: { lead: "Written before the vote; for the result see ", link: "Results" },
+    he: { lead: "נכתב לפני הבחירות; לתוצאות ראו ", link: "תוצאות" },
+    ar: { lead: "كُتبت قبل التصويت؛ للاطلاع على النتيجة انظر ", link: "النتائج" },
+    fa: { lead: "پیش از رأی‌گیری نوشته شده؛ برای نتیجه ببینید ", link: "نتایج" },
+    de: { lead: "Vor der Wahl geschrieben; das Ergebnis finden Sie unter ", link: "Ergebnisse" },
+    fr: { lead: "Rédigé avant le vote ; pour le résultat, voir ", link: "Résultats" },
+    zh: { lead: "撰写于投票之前；结果请见", link: "结果" },
+  })[lang];

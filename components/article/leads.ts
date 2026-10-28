@@ -1,7 +1,7 @@
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import VotingRightsGuide from "@/components/VotingRightsGuide";
 import SettlementsVote from "@/components/maps/SettlementsVote";
-import BallotLead from "./BallotLead";
+import VotingLead from "./VotingLead";
 import FormationLead from "./FormationLead";
 import WhatIf from "./WhatIf";
 
@@ -28,10 +28,10 @@ export const LEAD_CHARTS: Record<string, string> = {
  * LEAD_CHARTS (whose chart then stays in the body, where the copy puts it; the Communities index
  * still previews it). `hides` names MDX blocks the lead replaces, so they are not drawn twice.
  */
-export const LEAD_FIGURES: Record<string, { Figure: ComponentType; hides?: string[] }> = {
+export const LEAD_FIGURES: Record<string, { Figure: ComponentType | (() => Promise<ReactNode>); hides?: string[] }> = {
   "/how-it-works/forming-a-government": { Figure: FormationLead },
   "/how-it-works/seats": { Figure: WhatIf, hides: ["WhatIf"] },
-  "/how-it-works/voting": { Figure: BallotLead },
+  "/how-it-works/voting": { Figure: VotingLead },
   "/how-it-works/who-votes": { Figure: VotingRightsGuide },
   "/communities/settlers": { Figure: SettlementsVote },
 };

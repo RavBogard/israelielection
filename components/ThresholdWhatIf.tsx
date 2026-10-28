@@ -8,14 +8,18 @@ import type { BlocId } from "@/lib/types";
 import builder from "@/lib/i18n/builder";
 import { useLang } from "@/lib/i18n/lang";
 
-export type WhatIfParty = { id: string; name: string; bloc: BlocId; letters: string | null; seats: number; near: boolean };
+/** `share` (0 to 1) is the list's share of the valid votes in the count so far; without it the list's seats in the poll average stand in. */
+export type WhatIfParty = { id: string; name: string; bloc: BlocId; letters: string | null; seats: number; near: boolean; share?: number | null };
 export type WhatIfProps = {
   parties: WhatIfParty[];
   blocs: { id: BlocId; label: string }[];
   threshold: number;
   /** Surplus-vote agreements as id pairs, signed ones only. */
   agreements: [string, string][];
+  /** The source's name inside the caption: the count so far, or the poll average. */
   pollsLabel: string;
+  /** "count" seeds the lists from the committee's count (vote shares); "poll" from the poll average. */
+  basis?: "count" | "poll";
 };
 
 const ORDER: BlocId[] = ["net", "mid", "opp", "arab"];
@@ -25,15 +29,18 @@ const VALID = 4800;
 /**
  * The threshold as arithmetic a reader can move: each list near 3.25% is set to pass or fail,
  * and the 120 seats are re-counted by the same method the results page uses. Shares come from
- * the poll average (seats over 120); a list set to pass sits exactly at the threshold.
+ * the count so far (provisional) or, with no count, from the poll average (seats over 120); a list set to
+ * pass sits exactly at the threshold.
  */
-export default function ThresholdWhatIf({ parties, blocs, threshold, agreements, pollsLabel }: WhatIfProps) {
+export default function ThresholdWhatIf({ parties, blocs, threshold, agreements, pollsLabel, basis = "poll" }: WhatIfProps) {
   // The caller passes names, bloc labels and pollsLabel in the page's edition.
   const lang = useLang();
   const T = builder[lang];
   const near = parties.filter((p) => p.near);
-  const [passing, setPassing] = useState<Record<string, boolean>>(() => Object.fromEntries(near.map((p) => [p.id, p.seats > 0])));
-  const base = useMemo(() => count(parties, threshold, agreements, Object.fromEntries(near.map((p) => [p.id, p.seats > 0]))), [parties, threshold, agreements, near]);
+  const start = (p: WhatIfParty) => (p.share != null ? p.share >= threshold : p.seats > 0);
+  const [passing, setPassing] = useState<Record<string, boolean>>(() => Object.fromEntries(near.map((p) => [p.id, start(p)])));
+  const base = useMemo(() => count(parties, threshold, agreements, Object.fromEntries(near.map((p) => [p.id, start(p)]))), [parties, threshold, agreements, near]);
+  const pct = new Intl.NumberFormat(lang, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   const now = useMemo(() => count(parties, threshold, agreements, passing), [parties, threshold, agreements, passing]);
   const label = Object.fromEntries(blocs.map((b) => [b.id, b.label])) as Record<BlocId, string>;
   const segments = ORDER.flatMap((bloc)=>parties.filter((p)=>p.bloc===bloc&&(now.byParty[p.id]??0)>0).map((p)=>({id:p.id,seats:now.byParty[p.id],color:partyColor(p.id),label:p.name,href:`/parties?party=${p.id}`})));
@@ -42,7 +49,7 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
   return (
     <figure className="whatif" aria-label={T.whatIfLabel}>
       <figcaption>
-        <b>{T.whatIfTry}</b>{T.whatIfCaption(pollsLabel, threshold * 100)}
+        <b>{T.whatIfTry}</b>{basis === "count" ? T.whatIfCaptionCount(pollsLabel, threshold * 100) : T.whatIfCaption(pollsLabel, threshold * 100)}
       </figcaption>
       <div className="wi-body">
         <ul className="wi-toggles">
@@ -57,7 +64,7 @@ export default function ThresholdWhatIf({ parties, blocs, threshold, agreements,
                   </span>
                 )}
               </span>
-              <span className="avg">{p.seats > 0 ? T.whatIfAverage(p.seats) : T.whatIfBelowAll}</span>
+              <span className="avg">{p.share != null ? (p.share > 0 ? T.whatIfShare(`${pct.format(p.share * 100)}%`) : T.whatIfNoVotes) : p.seats > 0 ? T.whatIfAverage(p.seats) : T.whatIfBelowAll}</span>
               <span className="seg" role="group" aria-label={T.whatIfToggle(p.name)}>
                 <button type="button" aria-pressed={passing[p.id]} onClick={() => setPassing({ ...passing, [p.id]: true })}>
                   {T.passes}
@@ -104,6 +111,7 @@ function count(parties: WhatIfParty[], threshold: number, agreements: [string, s
   const votes: Record<string, number> = {};
   for (const p of parties) {
     if (p.near) votes[p.id] = passing[p.id] ? Math.ceil(t) + 1 : Math.floor(t * 0.9);
+    else if (p.share != null) votes[p.id] = p.share * VALID;
     else if (p.seats > 0) votes[p.id] = (p.seats / 120) * VALID;
   }
   const alloc = allocate(votes, VALID, threshold, agreements);

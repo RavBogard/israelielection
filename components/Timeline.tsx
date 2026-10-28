@@ -228,15 +228,27 @@ export default function Timeline({
             <dd>
               {el && (
                 <>
-                  {el.knesset}, {t.elected} {date(el.date)}:{" "}
-                  <span lang={contentLang} dir="auto">
-                    {el.first.list}
-                  </span>{" "}
-                  {el.first.seats} {t.seats},{" "}
-                  <span lang={contentLang} dir="auto">
-                    {el.second.list}
-                  </span>{" "}
-                  {el.second.seats}
+                  {el.knesset}, {t.elected} {date(el.date)}
+                  {el.first && el.second && (
+                    <>
+                      :{" "}
+                      <span lang={contentLang} dir="auto">
+                        {el.first.list}
+                      </span>{" "}
+                      {el.first.seats} {t.seats},{" "}
+                      <span lang={contentLang} dir="auto">
+                        {el.second.list}
+                      </span>{" "}
+                      {el.second.seats}
+                    </>
+                  )}
+                  {el.status === "counting" && (
+                    <>
+                      {" "}
+                      ({t.counting}
+                      {el.asOf ? `. ${t.countAsOf} ${date(el.asOf)}` : ""})
+                    </>
+                  )}
                 </>
               )}
             </dd>
@@ -249,6 +261,7 @@ export default function Timeline({
             </h2>
             <p className="tl-k">
               {timelineKind(ev.kind, lang)}, {date(ev.date)}
+              {ev.expected ? `, ${t.expected}` : ""}
             </p>
             <p lang={contentLang} dir="auto">
               {ev.text}
