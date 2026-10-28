@@ -242,6 +242,7 @@ export function countSnapshot(
     publishedAt: live.generatedAt,
     observedAt: at,
     countSourceUpdatedAt: estimate.sourceUpdatedAt ?? null,
+    countCoverage: estimate.coverage.votes,
     correctionOf: null,
     uncertainty: {
       snapshotRevision,

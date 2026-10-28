@@ -2,7 +2,8 @@ import type { Lang } from "./index";
 
 const en = {
   grid: "The 120 seats by bloc",
-  average: "The campaign poll average",
+  average: "Campaign final poll average (frozen)",
+  asOf: "As of",
   builder: "Coalition Builder",
   majority: "61 seats is an absolute majority.",
   rule: "The heavy rule follows seat 60; the next seat is the 61st.",
@@ -24,7 +25,8 @@ export const EMBEDS: Record<Lang, Text> = {
   en,
   he: {
     grid: "120 המושבים לפי גושים",
-    average: "ממוצע סקרי מערכת הבחירות",
+    average: "ממוצע הסקרים האחרון של הקמפיין (קפוא)",
+    asOf: "נכון ל־",
     builder: "בונה הקואליציה",
     majority: "61 מושבים הם רוב מוחלט.",
     rule: "הקו העבה נמצא אחרי המושב ה־60; המושב הבא הוא ה־61.",
@@ -43,7 +45,8 @@ export const EMBEDS: Record<Lang, Text> = {
   },
   ar: {
     grid: "المقاعد الـ120 حسب الكتل",
-    average: "متوسط استطلاعات الحملة الانتخابية",
+    average: "المتوسط الأخير لاستطلاعات الحملة (مجمّد)",
+    asOf: "حتى",
     builder: "أداة بناء الائتلاف",
     majority: "61 مقعدًا تشكّل أغلبية مطلقة.",
     rule: "الخط السميك يلي المقعد الستين؛ والمقعد التالي هو الحادي والستون.",
@@ -62,7 +65,8 @@ export const EMBEDS: Record<Lang, Text> = {
   },
   fa: {
     grid: "۱۲۰ کرسی به تفکیک بلوک",
-    average: "میانگین نظرسنجی‌های کارزار انتخاباتی",
+    average: "آخرین میانگین نظرسنجی‌های کارزار (ثابت‌شده)",
+    asOf: "تا",
     builder: "ابزار ساخت ائتلاف",
     majority: "۶۱ کرسی اکثریت مطلق است.",
     rule: "خط ضخیم پس از کرسی شصتم است؛ کرسی بعدی شصت‌ویکمین است.",
@@ -81,7 +85,8 @@ export const EMBEDS: Record<Lang, Text> = {
   },
   de: {
     grid: "Die 120 Sitze nach Blöcken",
-    average: "Der Umfragedurchschnitt im Wahlkampf",
+    average: "Letzter Umfragedurchschnitt des Wahlkampfs (eingefroren)",
+    asOf: "Stand",
     builder: "Koalitionsplaner",
     majority: "61 Sitze sind eine absolute Mehrheit.",
     rule: "Die dicke Linie folgt auf Sitz 60; der nächste ist Sitz 61.",
@@ -100,7 +105,8 @@ export const EMBEDS: Record<Lang, Text> = {
   },
   fr: {
     grid: "Les 120 sièges par bloc",
-    average: "La moyenne des sondages de campagne",
+    average: "Dernière moyenne des sondages de campagne (figée)",
+    asOf: "En date du",
     builder: "Simulateur de coalition",
     majority: "61 sièges constituent une majorité absolue.",
     rule: "Le trait épais suit le 60e siège ; le suivant est le 61e.",
@@ -119,7 +125,8 @@ export const EMBEDS: Record<Lang, Text> = {
   },
   zh: {
     grid: "按阵营划分的120个席位",
-    average: "竞选期间的民调平均值",
+    average: "竞选期间最终民调平均值（已冻结）",
+    asOf: "截至",
     builder: "联合政府构建器",
     majority: "61席构成绝对多数。",
     rule: "粗线位于第60席之后；下一席为第61席。",

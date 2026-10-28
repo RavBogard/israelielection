@@ -18,6 +18,8 @@ import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
 import {canonicalNavPath,canonicalNavPaths} from "@/lib/navigation";
 import { NAV } from "@/lib/site";
 import { HE_PUBLIC, LANGS, editionPath } from "@/lib/i18n";
+import { ELECTIONS } from "@/lib/political-record/elections";
+import { ARCHIVE_EDITION_IDS } from "@/lib/archive-editions";
 
 const BASE = "https://www.israelielection.org";
 
@@ -79,6 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ISSUES.map((s) => `/issues/${s}`),
     ...COMMUNITIES.map((s) => `/communities/${s}`),
     ...GUIDES.map((s) => `/how-it-works/${s}`),
+    // Every edition id (the current election and the archive), in every language.
+    "/elections",
+    ...[...ELECTIONS.map((e) => e.id), ...ARCHIVE_EDITION_IDS].map((id) => `/elections/${id}`),
   ];
   const paths = canonicalNavPaths([...statics, ...dynamic]);
   const url = (p: string) => (p === "/" ? BASE : `${BASE}${p}`);

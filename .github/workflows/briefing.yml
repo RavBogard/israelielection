@@ -1,11 +1,14 @@
 name: Daily briefing
 
-# 10:30 UTC = 6:30am US Eastern, 1:30pm Israel. Publishes without review (plan ruling);
+# Twice daily while the count and the formation talks are news (06:00 and 15:00 UTC), then once at 06:00 UTC: the second
+# run stops at the end of the count window in data/election.json (Daniel, 2026-10-28). 06:00 UTC is 9:00 Israel; the old
+# 10:30 start also ran late. Publishes without review (plan ruling);
 # Daniel gets it by GitHub notification (an issue assigned to him) and can kill it by
 # deleting the day's file.
 on:
   schedule:
-    - cron: "30 10 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 15 * * *"
   workflow_dispatch:
     inputs:
       task:
@@ -66,8 +69,27 @@ permissions:
   pull-requests: write
 
 jobs:
+  # The 15:00 run is only for the count window; the end date is read from the one election config.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: data/election.json
+          sparse-checkout-cone-mode: false
+      - id: g
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          run=true
+          if [ "$SCHEDULE" = "0 15 * * *" ] && [ "$(date -u +%s)" -ge "$(date -u -d "$(jq -r .countWindowEnd data/election.json)" +%s)" ]; then run=false; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
   brief:
-    if: github.event_name != 'workflow_dispatch' || inputs.task == 'briefing'
+    needs: gate
+    if: needs.gate.outputs.run == 'true' && (github.event_name != 'workflow_dispatch' || inputs.task == 'briefing')
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
@@ -117,8 +139,8 @@ jobs:
   # single outlet opens a PR instead. Either way Daniel gets a GitHub notification. The Hebrew for
   # every changed field is rewritten in the same step (lib/he-refresh.ts), so the overlay test passes.
   register:
-    needs: brief
-    if: always() && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference') && inputs.task != 'monitor'
+    needs: [gate, brief]
+    if: always() && needs.gate.outputs.run == 'true' && github.ref == 'refs/heads/main' && !inputs.dry_run && !startsWith(inputs.task, 'reference') && inputs.task != 'monitor'
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}

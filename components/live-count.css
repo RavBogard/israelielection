@@ -3,10 +3,10 @@
 .live-count { margin-block: 36px 40px; padding-block-start: 20px; border-block-start: 2px solid var(--ink); }
 .lc-head { display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: end; margin-block-end: 18px; }
 .lc-head h2 { grid-column: 1 / -1; margin: 0; font: 700 22px/1.2 var(--display); display: flex; align-items: center; gap: 10px; color: var(--ink); }
-.lc-live { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 7px; border-radius: 4px; background: var(--ink); color: var(--bg); font: 700 11.5px/1 var(--body); letter-spacing: .02em; }
-.lc-live::before { content: ""; inline-size: 7px; block-size: 7px; border-radius: 50%; background: #e5484d; animation: lc-pulse 2s ease-in-out infinite; }
-@keyframes lc-pulse { 50% { opacity: .35; } }
-@media (prefers-reduced-motion: reduce) { .lc-live::before { animation: none; } }
+
+
+.lc-envelopes { grid-column: 1 / -1; margin: 0; font-size: 14px; color: var(--ink-2); }
+
 .lc-total { margin: 0; font-size: 15px; color: var(--ink-2); }
 .lc-total b { font: 700 clamp(30px, 5vw, 42px)/1 var(--display); color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -.01em; margin-inline-end: 4px; }
 .lc-of { display: block; margin-block-start: 4px; }

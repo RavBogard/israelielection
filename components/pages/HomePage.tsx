@@ -186,7 +186,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
         {/* After the hero: the race in numbers with every list's projected seats, then the exit polls (Daniel, 2026-10-28).
             Once the count drives the seats, the count is the only estimate on the page and the exit-poll model steps aside (Daniel, 2026-10-28). */}
         {!(context && (context.basis === "partial_count" || context.basis === "official_seats")) && liveForecast}
-        {live.state === "open" && n.phase !== "before" && <LiveCount count={live.count} sourceUpdatedAt={live.sourceUpdatedAt} fetchedAt={live.fetchedAt} lang={lang} />}
+        {live.state === "open" && n.phase !== "before" && <LiveCount count={live.count} sourceUpdatedAt={live.sourceUpdatedAt} fetchedAt={live.fetchedAt} lang={lang} now={now} envelopes={estimate?.mode === "count" ? (estimate.envelopes?.expected ?? null) : null} />}
         {(n.phase === "before" || n.phase === "exit") && <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={resultsConfig} lang={lang} more />}
         {lifecycle && <GovernmentLive onlyWhenRelevant initial={lifecycle} lang={lang} compact hideSeats {...forecastPresentation(lang)}/>}
 

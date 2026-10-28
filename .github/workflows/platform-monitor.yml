@@ -25,15 +25,34 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "2,17,32,47 * * * *"
+    # Every 15 minutes until the count window in data/election.json ends, then hourly (the gate job skips the :17, :32 and :47 runs).
+    - cron: "2 * * * *"
+    - cron: "17,32,47 * * * *"
 permissions:
   contents: read
 concurrency:
   group: platform-read-only-monitor
   cancel-in-progress: false
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.g.outputs.run }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          sparse-checkout: data/election.json
+          sparse-checkout-cone-mode: false
+      - id: g
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          run=true
+          if [ "$SCHEDULE" = "17,32,47 * * * *" ] && [ "$(date -u +%s)" -ge "$(date -u -d "$(jq -r .countWindowEnd data/election.json)" +%s)" ]; then run=false; fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
   monitor:
-    if: github.event_name == 'workflow_dispatch' || vars.PLATFORM_MONITOR_SCHEDULE_ENABLED == 'true'
+    needs: gate
+    if: needs.gate.outputs.run == 'true' && (github.event_name == 'workflow_dispatch' || vars.PLATFORM_MONITOR_SCHEDULE_ENABLED == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 12
     env:
