@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 import { Chart, Note, Positions, Quote } from "@/components/article/Article";
 import WhatIf from "@/components/article/WhatIf";
+import BallotLead from "@/components/article/BallotLead";
 
 // Every MDX page gets the article blocks without importing them; internal links route client-side.
 const components = {
@@ -10,6 +11,7 @@ const components = {
   Quote,
   Note,
   WhatIf,
+  BallotLead,
   a: ({ href = "", children }) => (href.startsWith("/") ? <Link href={href}>{children}</Link> : <a href={href}>{children}</a>),
 } satisfies MDXComponents;
 

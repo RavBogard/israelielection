@@ -6,6 +6,8 @@ import type { ArticleMeta } from "@/lib/articles";
 import CorrectionLink from "../CorrectionLink";
 import { Chart } from "./Article";
 import { LEAD_CHARTS, LEAD_FIGURES } from "./leads";
+import { beforeVoteNote } from "@/lib/i18n/reference";
+import { ELECTION_DAY } from "@/lib/election-date";
 
 const DATE = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 
@@ -50,7 +52,7 @@ export default function ArticleShell({
           <h1>{meta.title}</h1>
           <p className="dek">{meta.dek}</p>
           {lead ?? (LeadFigure ? <div className="lead-fig"><LeadFigure /></div> : leadChart && <div className="lead-fig"><Chart id={leadChart} /></div>)}
-          <p className="checked">Facts checked {DATE.format(new Date(meta.checked))}. Every number shows its source and date.</p>
+          <p className="checked">Facts checked {DATE.format(new Date(meta.checked))}. Every number shows its source and date.{meta.checked < ELECTION_DAY && <>{" "}<span className="checked-note">{beforeVoteNote("en").lead}<Link href="/results">{beforeVoteNote("en").link}</Link>.</span></>}</p>
           {foreword}
           <div className="body">
             <Body components={components} />

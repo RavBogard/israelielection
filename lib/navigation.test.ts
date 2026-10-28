@@ -11,7 +11,7 @@ describe("visitor navigation catalog",()=>{
   expect(new Set(NAV.map(n=>n.href))).toEqual(new Set(pages));expect(NAV).toHaveLength(pages.length);
   expect(NAV_GROUPS.map(g=>g.label)).toEqual(["Polls and news","Parties","Voters and places","How it works"]);
   expect(NAV_UTILITIES.map(n=>n.href)).toEqual(["/subscriptions","/start","/search","/resources","/about","/corrections"]);
-  expect(NAV_TOOLS.map(n=>n.href)).toEqual(["/polls","/parties","/coalition-builder","/vote-map","/news"]);
+  expect(NAV_TOOLS.map(n=>n.href)).toEqual(["/results","/government","/polls","/parties","/coalition-builder","/vote-map","/news"]);
   for(const n of NAV){expect(n.label.length).toBeGreaterThan(2);expect(n.description.length).toBeGreaterThan(20);expect(n.description.length).toBeLessThan(70);}
   for(const g of NAV_GROUPS)expect(g.label).not.toContain("&");
  });

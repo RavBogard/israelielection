@@ -13,7 +13,7 @@ const load = <T,>(f: string): T | null => {
 };
 const ISO = /^\d{4}-\d\d-\d\d$/;
 const ROUTES = new Set([
-  "/how-it-works", "/vote-map", "/results", "/polls", "/parties", "/american-lens", "/timeline", "/issues", "/communities", "/coalition-builder",
+  "/how-it-works", "/vote-map", "/results", "/government", "/polls", "/parties", "/american-lens", "/timeline", "/issues", "/communities", "/coalition-builder",
   ...GUIDES.map((s) => `/how-it-works/${s}`),
   ...ISSUES.map((s) => `/issues/${s}`),
   ...COMMUNITIES.map((s) => `/communities/${s}`),
@@ -79,12 +79,18 @@ const tl = load<Timeline>("data/timeline.json");
 describe.runIf(tl)("timeline data", () => {
   const t = tl!;
   it("is dated", () => expect(t.checked).toMatch(ISO));
-  it("has every Knesset election from 1977 to 2022, in order", () => {
-    expect(t.elections.map((e) => e.knesset)).toEqual(Array.from({ length: 17 }, (_, i) => 9 + i));
+  it("has every Knesset election from 1977 on, in order, a counting row carrying no stored figures", () => {
+    expect(t.elections.map((e) => e.knesset)).toEqual(Array.from({ length: 18 }, (_, i) => 9 + i));
     for (const e of t.elections) {
       expect(e.date).toMatch(ISO);
-      expect(e.first.seats).toBeGreaterThanOrEqual(e.second.seats);
-      expect(e.first.seats + e.second.seats).toBeLessThanOrEqual(120);
+      if (e.status === "counting") {
+        // Filled from the shared count at render time, so the same file serves the next cycle.
+        expect(e.first).toBeUndefined();
+        expect(e.second).toBeUndefined();
+      } else {
+        expect(e.first!.seats).toBeGreaterThanOrEqual(e.second!.seats);
+        expect(e.first!.seats + e.second!.seats).toBeLessThanOrEqual(120);
+      }
       if (e.turnout !== undefined) expect(e.turnout).toBeGreaterThan(50);
       expect(e.outcome.length).toBeGreaterThan(10);
       source(e.source);
@@ -107,7 +113,7 @@ describe.runIf(tl)("timeline data", () => {
     expect(t.events.length).toBeGreaterThanOrEqual(30);
     for (const e of t.events) {
       expect(e.date).toMatch(ISO);
-      expect(e.date <= t.checked).toBe(true);
+      expect(e.expected || e.date <= t.checked).toBeTruthy();
       expect(["war", "peace", "politics", "law", "society"]).toContain(e.kind);
       expect(e.title.length).toBeLessThanOrEqual(60);
       expect(e.text.length).toBeLessThanOrEqual(280);

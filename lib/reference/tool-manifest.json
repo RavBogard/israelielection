@@ -6,8 +6,8 @@
       "file": "data/timeline.json",
       "path": "/timeline",
       "title": "Political timeline",
-      "revision": "1f01bb8301514246d45a585399f193a84daece68dea7574f10b3b0d647322d7e",
-      "checked": "2026-10-05",
+      "revision": "0a509bc3653dc3b609f99f5952f13b99e74ef4f2c037001706d15c761d317856",
+      "checked": "2026-10-28",
       "blocks": [
         {
           "id": "tool-text-0be32ef884e00f08",
@@ -575,6 +575,16 @@
             "Netanyahu"
           ],
           "negated": false
+        },
+        {
+          "id": "tool-text-a5a7beb896ff935a",
+          "kind": "text",
+          "field": "elections.17.outcome",
+          "text": "Count in progress. No government has been formed; coalition talks follow the official result.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
         },
         {
           "id": "tool-text-8b7514ba46673be8",
@@ -2292,6 +2302,108 @@
           "links": [],
           "names": [],
           "negated": false
+        },
+        {
+          "id": "tool-text-8cc7cf54865e9db4",
+          "kind": "text",
+          "field": "events.60.title",
+          "text": "Election day",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-42a23e938ebd6314",
+          "kind": "text",
+          "field": "events.60.text",
+          "text": "Israelis voted for the 26th Knesset. The polls closed at 10:00 p.m. Israel time.",
+          "numbers": [
+            "00",
+            "10",
+            "26"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5c87bb5d9dd1f4e9",
+          "kind": "text",
+          "field": "events.61.title",
+          "text": "Exit polls at 22:00",
+          "numbers": [
+            "00",
+            "22"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-db92d329d14471a7",
+          "kind": "text",
+          "field": "events.61.text",
+          "text": "Channel 12, Channel 13 and Kan 11 published exit polls as the polls closed, and updated them through the night. Exit polls are estimates, not the count.",
+          "numbers": [
+            "11",
+            "12",
+            "13"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-6ea505ce85b8aead",
+          "kind": "text",
+          "field": "events.62.title",
+          "text": "Count passes 70%",
+          "numbers": [
+            "70%"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-78ea6ce85a4bee2b",
+          "kind": "text",
+          "field": "events.62.text",
+          "text": "By the committee's file of 10:50 a.m. Israel time, 4,008,086 votes were counted in 1,057 localities, 70.7% of the expected vote. Double-envelope votes were still to come.",
+          "numbers": [
+            "10",
+            "1057",
+            "4008086",
+            "50",
+            "70.7%"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-0537517f93865ebc",
+          "kind": "text",
+          "field": "events.63.title",
+          "text": "Double-envelope count expected",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-dfdc1fd536f6abd7",
+          "kind": "text",
+          "field": "events.63.text",
+          "text": "Double-envelope votes are counted after the regular ballots. This site expected that count to finish on Thursday, Oct 29.",
+          "numbers": [
+            "10",
+            "29"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
         }
       ],
       "links": [],
@@ -2299,6 +2411,8 @@
         "0",
         "0",
         "0",
+        "00",
+        "00",
         "09",
         "1",
         "1",
@@ -2311,10 +2425,14 @@
         "10",
         "10",
         "10",
+        "10",
+        "10",
+        "10",
         "1000",
         "100000",
         "103",
         "105",
+        "1057",
         "11",
         "11",
         "11",
@@ -2322,6 +2440,8 @@
         "11",
         "11",
         "11",
+        "11",
+        "12",
         "12",
         "12",
         "12",
@@ -2329,6 +2449,7 @@
         "12",
         "1200",
         "1216",
+        "13",
         "13",
         "1383",
         "14",
@@ -2373,14 +2494,17 @@
         "2025",
         "2026",
         "210",
+        "22",
         "2251",
         "24",
         "25",
         "251",
         "26",
         "26",
+        "26",
         "27",
         "28",
+        "29",
         "29",
         "29",
         "3",
@@ -2397,6 +2521,7 @@
         "40",
         "4000",
         "400000",
+        "4008086",
         "42",
         "43",
         "45",
@@ -2405,6 +2530,7 @@
         "46",
         "46",
         "5",
+        "50",
         "514000",
         "53",
         "54",
@@ -2443,6 +2569,8 @@
         "7",
         "7",
         "7",
+        "70%",
+        "70.7%",
         "73",
         "73",
         "74",
@@ -5061,7 +5189,7 @@
       "file": "data/glossary.json",
       "path": "/glossary",
       "title": "Election glossary",
-      "revision": "0a8bc792e5dd485029c8296be72e3f6fdd9b28ab29846a419f4b7f51f0badf95",
+      "revision": "c16c28faff6a9075f6efa12f8b81973dc993da90db6b5c6668cec9cb3e6c4597",
       "checked": "2026-10-05",
       "blocks": [
         {
@@ -6109,7 +6237,7 @@
           "id": "tool-text-2eaa391026d66ae9",
           "kind": "text",
           "field": "terms.44.term",
-          "text": "Mandate",
+          "text": "Mandate (seat)",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6119,8 +6247,10 @@
           "id": "tool-text-06fd777450362a7d",
           "kind": "text",
           "field": "terms.44.def",
-          "text": "The task of forming a government, which the president gives to one Knesset member after the election. The law sets no rule for choosing. The president typically picks the leader of the largest party, \"but this is by no means mandatory\"; what counts is who seems best placed to win the Knesset's confidence.",
-          "numbers": [],
+          "text": "In Israeli polls and election coverage, a \"mandate\" often simply means a Knesset seat, as in a party \"expected to come second with 19 mandates.\" It is not the mandate to form a government.",
+          "numbers": [
+            "19"
+          ],
           "links": [],
           "names": [],
           "negated": true
@@ -6129,7 +6259,7 @@
           "id": "tool-text-100a9c0b539a75c3",
           "kind": "text",
           "field": "terms.45.term",
-          "text": "Mandate (seat)",
+          "text": "Mandate to form a government",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6139,13 +6269,11 @@
           "id": "tool-text-0d679c9e6ab411e3",
           "kind": "text",
           "field": "terms.45.def",
-          "text": "In Israeli polls and election coverage, a \"mandate\" often simply means a Knesset seat, as in a party \"expected to come second with 19 mandates.\"",
-          "numbers": [
-            "19"
-          ],
+          "text": "The task of forming a government, which the president gives to one Knesset member after the election. It is a different thing from a \"mandate\" in the sense of a Knesset seat (see Mandate (seat)). The law sets no rule for choosing. The president typically picks the leader of the largest party, \"but this is by no means mandatory\"; what counts is who seems best placed to win the Knesset's confidence.",
+          "numbers": [],
           "links": [],
           "names": [],
-          "negated": false
+          "negated": true
         },
         {
           "id": "tool-text-a847716dd3d01188",
@@ -6302,7 +6430,7 @@
           "id": "tool-text-9c9e7dad8d7fb927",
           "kind": "text",
           "field": "terms.52.term",
-          "text": "Opposition",
+          "text": "Official (certified) result",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6312,17 +6440,21 @@
           "id": "tool-text-6e125920718a3d14",
           "kind": "text",
           "field": "terms.52.def",
-          "text": "The parties in the Knesset that are not part of the government. It is led by the Leader of the Opposition, usually from the largest opposition faction, a post with special powers and status.",
-          "numbers": [],
+          "text": "The national result the Central Elections Committee confirms once the count is complete, double-envelope votes included. Until then the figures are provisional and can move. For the 2026 election the committee scheduled confirmation for November 4.",
+          "numbers": [
+            "11",
+            "2026",
+            "4"
+          ],
           "links": [],
           "names": [],
-          "negated": true
+          "negated": false
         },
         {
           "id": "tool-text-8a2352532c8aaa09",
           "kind": "text",
           "field": "terms.53.term",
-          "text": "Oslo Accords",
+          "text": "Opposition",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6332,6 +6464,26 @@
           "id": "tool-text-0bf2b447e6b35865",
           "kind": "text",
           "field": "terms.53.def",
+          "text": "The parties in the Knesset that are not part of the government. It is led by the Leader of the Opposition, usually from the largest opposition faction, a post with special powers and status.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-26f153d51dc778f0",
+          "kind": "text",
+          "field": "terms.54.term",
+          "text": "Oslo Accords",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8375e773459507c3",
+          "kind": "text",
+          "field": "terms.54.def",
           "text": "The agreements between Israel and the Palestine Liberation Organization signed on September 13, 1993, by Yitzhak Rabin and Yasser Arafat, which created the Palestinian Authority. They set a five-year interim period of Palestinian self-government and postponed issues such as Jerusalem and refugees. Oslo II, in 1995, divided the West Bank into Areas A, B and C.",
           "numbers": [
             "13",
@@ -6346,32 +6498,10 @@
           "negated": false
         },
         {
-          "id": "tool-text-26f153d51dc778f0",
-          "kind": "text",
-          "field": "terms.54.term",
-          "text": "Outpost",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-8375e773459507c3",
-          "kind": "text",
-          "field": "terms.54.def",
-          "text": "A West Bank settlement without official status. Peace Now defines outposts as \"settlements established by governments of Israel since the 1990s in an unofficial and illegal manner.\"",
-          "numbers": [
-            "1990"
-          ],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
           "id": "tool-text-0c99ae74950321a3",
           "kind": "text",
           "field": "terms.55.term",
-          "text": "Outside support",
+          "text": "Outpost",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6381,6 +6511,28 @@
           "id": "tool-text-3e4bab3d8382e80c",
           "kind": "text",
           "field": "terms.55.def",
+          "text": "A West Bank settlement without official status. Peace Now defines outposts as \"settlements established by governments of Israel since the 1990s in an unofficial and illegal manner.\"",
+          "numbers": [
+            "1990"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f9978ea77fd2f83a",
+          "kind": "text",
+          "field": "terms.56.term",
+          "text": "Outside support",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-4e20ac382a48e2df",
+          "kind": "text",
+          "field": "terms.56.def",
           "text": "Backing a government in Knesset votes without joining its cabinet or holding ministries. After Shas left Rabin's coalition in September 1993, its 56 MKs relied on outside support from Arab factions. Ra'am joined the Bennett–Lapid coalition in 2021. The Builder separates cabinet membership, hypothetical outside support and abstention; these choices do not imply an agreement.",
           "numbers": [
             "1993",
@@ -6393,30 +6545,10 @@
           "negated": true
         },
         {
-          "id": "tool-text-f9978ea77fd2f83a",
-          "kind": "text",
-          "field": "terms.56.term",
-          "text": "Palestinian Authority",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-4e20ac382a48e2df",
-          "kind": "text",
-          "field": "terms.56.def",
-          "text": "The Palestinian self-government created under the Oslo Accords as a \"supposedly temporary\" body; it \"administers limited rule\" over Areas A and B of the West Bank. A final treaty was due within five years and has not been reached.",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": true
-        },
-        {
           "id": "tool-text-b4c17ec624653fd0",
           "kind": "text",
           "field": "terms.57.term",
-          "text": "Palestinian citizens of Israel",
+          "text": "Palestinian Authority",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6426,6 +6558,26 @@
           "id": "tool-text-b2a7c31d327ad1dd",
           "kind": "text",
           "field": "terms.57.def",
+          "text": "The Palestinian self-government created under the Oslo Accords as a \"supposedly temporary\" body; it \"administers limited rule\" over Areas A and B of the West Bank. A final treaty was due within five years and has not been reached.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-ec85bc0bfc69a562",
+          "kind": "text",
+          "field": "terms.58.term",
+          "text": "Palestinian citizens of Israel",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-25ad12c963f4cf75",
+          "kind": "text",
+          "field": "terms.58.def",
           "text": "This site's term for Arab Muslims, among them the Negev Bedouin, and Arab Christians who hold Israeli citizenship. IDI and other sources say \"Arab citizens of Israel\" or \"Arabs.\" IDI counted 1,595,300 Arab citizens outside East Jerusalem at the end of 2020, 17.2% of the population, a figure that includes Druze.",
           "numbers": [
             "1595300",
@@ -6437,32 +6589,10 @@
           "negated": false
         },
         {
-          "id": "tool-text-ec85bc0bfc69a562",
-          "kind": "text",
-          "field": "terms.58.term",
-          "text": "President",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-25ad12c963f4cf75",
-          "kind": "text",
-          "field": "terms.58.def",
-          "text": "Israel's head of state, elected by the Knesset for a seven-year term by an absolute majority (61 members) in a secret ballot. The role is mostly ceremonial, but the president gives the task of forming a government to a Knesset member after an election, signs laws, and grants pardons.",
-          "numbers": [
-            "61"
-          ],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
           "id": "tool-text-0afa246a135e3174",
           "kind": "text",
           "field": "terms.59.term",
-          "text": "Reasonableness standard",
+          "text": "President",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6472,6 +6602,28 @@
           "id": "tool-text-193ed5c768031fb0",
           "kind": "text",
           "field": "terms.59.def",
+          "text": "Israel's head of state, elected by the Knesset for a seven-year term by an absolute majority (61 members) in a secret ballot. The role is mostly ceremonial, but the president gives the task of forming a government to a Knesset member after an election, signs laws, and grants pardons.",
+          "numbers": [
+            "61"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-5029f764d650af84",
+          "kind": "text",
+          "field": "terms.60.term",
+          "text": "Reasonableness standard",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-12532a2ac60f8655",
+          "kind": "text",
+          "field": "terms.60.def",
           "text": "A doctrine under which courts could void government and ministerial decisions they found unreasonable. The Knesset curbed it in July 2023, the second overhaul-era law to pass after a March 2023 change limiting when a prime minister can be removed as incapacitated. On January 1, 2024, a full 15-justice Supreme Court panel struck that law down 8–7.",
           "numbers": [
             "1",
@@ -6490,32 +6642,10 @@
           "negated": false
         },
         {
-          "id": "tool-text-5029f764d650af84",
-          "kind": "text",
-          "field": "terms.60.term",
-          "text": "Religious Zionism (party)",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-12532a2ac60f8655",
-          "kind": "text",
-          "field": "terms.60.def",
-          "text": "A party led by Bezalel Smotrich. For 2026, Smotrich and Zehut leader Moshe Feiglin agreed to run together in a \"technical bloc,\" which they said was meant \"to prevent loss of votes.\" The party is distinct from the national-religious movement (dati leumi) whose name it shares.",
-          "numbers": [
-            "2026"
-          ],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
           "id": "tool-text-99e2b88304c1e905",
           "kind": "text",
           "field": "terms.61.term",
-          "text": "Rotation government",
+          "text": "Recount / appeal to the Central Elections Committee",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6525,6 +6655,52 @@
           "id": "tool-text-c575d7bc3ef659df",
           "kind": "text",
           "field": "terms.61.def",
+          "text": "A formal challenge to the count or the confirmed result, brought to the Central Elections Committee. For the 2026 election, appeals were possible until November 18.",
+          "numbers": [
+            "11",
+            "18",
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-697280ab42baaa2c",
+          "kind": "text",
+          "field": "terms.62.term",
+          "text": "Religious Zionism (party)",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-ac98359b25aa1152",
+          "kind": "text",
+          "field": "terms.62.def",
+          "text": "A party led by Bezalel Smotrich. For 2026, Smotrich and Zehut leader Moshe Feiglin agreed to run together in a \"technical bloc,\" which they said was meant \"to prevent loss of votes.\" The party is distinct from the national-religious movement (dati leumi) whose name it shares.",
+          "numbers": [
+            "2026"
+          ],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7ed2bf3a1b87b6f9",
+          "kind": "text",
+          "field": "terms.63.term",
+          "text": "Rotation government",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-7d781da683e3587e",
+          "kind": "text",
+          "field": "terms.63.def",
           "text": "A government with two heads, a prime minister and an alternate, who switch posts on a date set in advance. The form was created in 2020 for the Netanyahu–Gantz government, whose ministers were split into two blocs, one tied to each leader, each head holding a veto over important decisions by the other.",
           "numbers": [
             "2020"
@@ -6536,9 +6712,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-697280ab42baaa2c",
+          "id": "tool-text-93727a1a8272fa45",
           "kind": "text",
-          "field": "terms.62.term",
+          "field": "terms.64.term",
           "text": "Settlement",
           "numbers": [],
           "links": [],
@@ -6546,9 +6722,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-ac98359b25aa1152",
+          "id": "tool-text-5ba9b2689d8cb6e1",
           "kind": "text",
-          "field": "terms.62.def",
+          "field": "terms.64.def",
           "text": "In Peace Now's definition, one of the Jewish communities \"that Israel established after 1967 beyond the Green Line on land occupied in the Six-Day War.\" Some 30% of settlers are Haredi and live in cities built for them, such as Modi'in Illit and Beitar Illit.",
           "numbers": [
             "1967",
@@ -6559,9 +6735,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-7ed2bf3a1b87b6f9",
+          "id": "tool-text-6618e45131ffb047",
           "kind": "text",
-          "field": "terms.63.term",
+          "field": "terms.65.term",
           "text": "Sovereignty",
           "numbers": [],
           "links": [],
@@ -6569,9 +6745,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-7d781da683e3587e",
+          "id": "tool-text-0a744a4b136413d3",
           "kind": "text",
-          "field": "terms.63.def",
+          "field": "terms.65.def",
           "text": "The word supporters of annexation use: \"applying sovereignty\" means extending Israeli law to West Bank land. When the cabinet expanded Israeli control over West Bank land in February 2026, Bezalel Smotrich called it part of \"the normalization and de facto sovereignty revolution that we are leading\"; the Foreign Ministry called it \"an administrative measure.\" This site says annexation.",
           "numbers": [
             "2",
@@ -6582,52 +6758,10 @@
           "negated": false
         },
         {
-          "id": "tool-text-93727a1a8272fa45",
-          "kind": "text",
-          "field": "terms.64.term",
-          "text": "Status quo",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-5ba9b2689d8cb6e1",
-          "kind": "text",
-          "field": "terms.64.def",
-          "text": "The arrangement on religion and state that goes back to David Ben-Gurion's 1947 letter to the Haredi party Agudat Yisrael, which promised that the new state would take Jewish religious concerns into account on Shabbat, kashrut and matrimonial law. The letter had no legal force, but \"the status quo\" is still the name for the arrangements that followed.",
-          "numbers": [
-            "1947"
-          ],
-          "links": [],
-          "names": [],
-          "negated": true
-        },
-        {
-          "id": "tool-text-6618e45131ffb047",
-          "kind": "text",
-          "field": "terms.65.term",
-          "text": "Surplus-vote agreement",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
-          "id": "tool-text-0a744a4b136413d3",
-          "kind": "text",
-          "field": "terms.65.def",
-          "text": "A pre-election pact between two lists, also called a vote-sharing agreement. When leftover seats are handed out, the pair are treated as a single list, which raises their chance of an extra seat. Only two lists can sign together, and the agreement counts only if both pass the threshold.",
-          "numbers": [],
-          "links": [],
-          "names": [],
-          "negated": false
-        },
-        {
           "id": "tool-text-5010be476b91d4c0",
           "kind": "text",
           "field": "terms.66.term",
-          "text": "Torato Umanuto",
+          "text": "Status quo",
           "numbers": [],
           "links": [],
           "names": [],
@@ -6637,6 +6771,48 @@
           "id": "tool-text-a53fc4e7dca5c7ec",
           "kind": "text",
           "field": "terms.66.def",
+          "text": "The arrangement on religion and state that goes back to David Ben-Gurion's 1947 letter to the Haredi party Agudat Yisrael, which promised that the new state would take Jewish religious concerns into account on Shabbat, kashrut and matrimonial law. The letter had no legal force, but \"the status quo\" is still the name for the arrangements that followed.",
+          "numbers": [
+            "1947"
+          ],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-33bbff6e761e53c7",
+          "kind": "text",
+          "field": "terms.67.term",
+          "text": "Surplus-vote agreement",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-8b4d657ed099bb89",
+          "kind": "text",
+          "field": "terms.67.def",
+          "text": "A pre-election pact between two lists, also called a vote-sharing agreement. When leftover seats are handed out, the pair are treated as a single list, which raises their chance of an extra seat. Only two lists can sign together, and the agreement counts only if both pass the threshold.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-fae5cc133eb670f5",
+          "kind": "text",
+          "field": "terms.68.term",
+          "text": "Torato Umanuto",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-2015a3cd023c3381",
+          "kind": "text",
+          "field": "terms.68.def",
           "text": "Hebrew for \"his Torah is his trade\": the arrangement, set up after the state was founded, under which yeshiva students could claim that \"Torah [study] is my occupation\" and receive a deferral of military service. The deferrals expired on June 30, 2023.",
           "numbers": [
             "2023",
@@ -6648,9 +6824,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-33bbff6e761e53c7",
+          "id": "tool-text-e35d8e23326a204f",
           "kind": "text",
-          "field": "terms.67.term",
+          "field": "terms.69.term",
           "text": "Transitional government",
           "numbers": [],
           "links": [],
@@ -6658,9 +6834,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-8b4d657ed099bb89",
+          "id": "tool-text-bdd70cc9cccffa52",
           "kind": "text",
-          "field": "terms.67.def",
+          "field": "terms.69.def",
           "text": "The common name, not found in legislation, for an outgoing government that keeps serving until a new government is formed. The law sets no limit on its powers, to avoid a \"governance vacuum,\" but transitional governments have a narrower \"scope of reasonableness\" and must act with restraint.",
           "numbers": [],
           "links": [],
@@ -6668,9 +6844,9 @@
           "negated": true
         },
         {
-          "id": "tool-text-fae5cc133eb670f5",
+          "id": "tool-text-a221c411b979de01",
           "kind": "text",
-          "field": "terms.68.term",
+          "field": "terms.70.term",
           "text": "West Bank",
           "numbers": [],
           "links": [],
@@ -6678,9 +6854,9 @@
           "negated": false
         },
         {
-          "id": "tool-text-2015a3cd023c3381",
+          "id": "tool-text-178f8994b741d3fe",
           "kind": "text",
-          "field": "terms.68.def",
+          "field": "terms.70.def",
           "text": "The territory west of the Jordan River that Israel captured in the 1967 war and has held under military occupation since (see Occupied). This site's name for it; internal Israeli discourse refers to it primarily by its biblical name, Judea and Samaria.",
           "numbers": [
             "1967"
@@ -6705,6 +6881,8 @@
         "100",
         "1000",
         "11",
+        "11",
+        "11",
         "11.5%",
         "11.5%",
         "12",
@@ -6725,6 +6903,7 @@
         "154855",
         "1595300",
         "17.2%",
+        "18",
         "18",
         "18%",
         "19",
@@ -6809,6 +6988,8 @@
         "2026",
         "2026",
         "2026",
+        "2026",
+        "2026",
         "21",
         "21.8%",
         "21.8%",
@@ -6832,6 +7013,7 @@
         "35.2%",
         "39.6%",
         "39.8%",
+        "4",
         "45%",
         "4876",
         "49",
@@ -7708,8 +7890,8 @@
       "file": "data/journeys.json",
       "path": "/start",
       "title": "Guided learning routes",
-      "revision": "caeff4a1dc6f61e53929e6cd2fd8e5291b8937ab89db46868d4cd9fcd8f77503",
-      "checked": "2026-10-05",
+      "revision": "72ca7c455e86eeb4cd10f35900a541d9cfeaccbfb453c6e770fae51c2d016486",
+      "checked": "2026-10-28",
       "blocks": [
         {
           "id": "tool-text-8f6e4b1ba5969cba",
@@ -7999,6 +8181,76 @@
           "negated": false
         },
         {
+          "id": "tool-text-ac78768f6fd4a970",
+          "kind": "text",
+          "field": "steps.talks.title",
+          "text": "From the count to coalition talks",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f2662cc6fa475003",
+          "kind": "text",
+          "field": "steps.talks.text",
+          "text": "The count gives each list its seats; it does not name a government. A count is provisional until the Central Elections Committee publishes the official result. The government page follows each step after that, with its dates.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-b03feb05ef007359",
+          "kind": "text",
+          "field": "steps.talks.link",
+          "text": "Follow the coalition talks",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-04f93e4819038d2a",
+          "kind": "text",
+          "field": "steps.talks.question",
+          "text": "Does the count by itself decide who forms the government?",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-57f11a8d5330abb7",
+          "kind": "text",
+          "field": "steps.talks.options.0",
+          "text": "Yes; the count names the next prime minister",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-d9ea8c960ce5d13c",
+          "kind": "text",
+          "field": "steps.talks.options.1",
+          "text": "No; the count sets the seats, and a government must still win the Knesset's confidence",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": true
+        },
+        {
+          "id": "tool-text-53f5de46a246d42b",
+          "kind": "text",
+          "field": "steps.talks.explanation",
+          "text": "The seats set the arithmetic. Who is asked to form a government, and whether the Knesset gives that government its confidence, are separate steps, which the formation guide explains and the government page tracks.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
           "id": "tool-text-0bf73e0a30587b34",
           "kind": "text",
           "field": "steps.compare.title",
@@ -8092,7 +8344,7 @@
           "id": "tool-text-1db0d2b16566429a",
           "kind": "text",
           "field": "routes.0.nextLabel",
-          "text": "Read the polls with these distinctions in mind",
+          "text": "See what the count did to these distinctions",
           "numbers": [],
           "links": [],
           "names": [],
@@ -8102,7 +8354,7 @@
           "id": "tool-text-29a2d02a118d9dd3",
           "kind": "text",
           "field": "routes.1.title",
-          "text": "Help me understand the parties",
+          "text": "What just happened: from the count to coalition talks",
           "numbers": [],
           "links": [],
           "names": [],
@@ -8112,7 +8364,7 @@
           "id": "tool-text-ecc2a3a2322bf453",
           "kind": "text",
           "field": "routes.1.description",
-          "text": "From ballot choices to recorded disagreements and governing arrangements.",
+          "text": "How the count becomes seats, and what comes before a government.",
           "numbers": [],
           "links": [],
           "names": [],
@@ -8122,6 +8374,36 @@
           "id": "tool-text-71364f374cd2acfe",
           "kind": "text",
           "field": "routes.1.nextLabel",
+          "text": "Follow the coalition talks",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-eda626e6782a4362",
+          "kind": "text",
+          "field": "routes.2.title",
+          "text": "Help me understand the parties",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-f70c6737b03d6a00",
+          "kind": "text",
+          "field": "routes.2.description",
+          "text": "From ballot choices to recorded disagreements and governing arrangements.",
+          "numbers": [],
+          "links": [],
+          "names": [],
+          "negated": false
+        },
+        {
+          "id": "tool-text-cb9076de59250856",
+          "kind": "text",
+          "field": "routes.2.nextLabel",
           "text": "Read an issue in depth",
           "numbers": [],
           "links": [],

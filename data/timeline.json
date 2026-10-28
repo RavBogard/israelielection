@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-05",
+  "checked": "2026-10-28",
   "elections": [
     {
       "date": "1977-05-17",
@@ -352,6 +352,17 @@
         "name": "Times of Israel",
         "date": "December 29, 2022",
         "url": "https://www.timesofisrael.com/netanyahu-resumes-role-as-pm-as-israels-most-hardline-government-ever-takes-office/"
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "knesset": 26,
+      "status": "counting",
+      "outcome": "Count in progress. No government has been formed; coalition talks follow the official result.",
+      "source": {
+        "name": "Central Elections Committee, results by locality",
+        "date": "",
+        "url": "https://media26.bechirot.gov.il/files/expc.csv"
       }
     }
   ],
@@ -1170,6 +1181,51 @@
         "name": "Al Jazeera",
         "date": "October 2, 2026",
         "url": "https://www.aljazeera.com/news/2026/10/2/israels-supreme-court-overturns-election-panel-ban-on-arab-parties"
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "title": "Election day",
+      "text": "Israelis voted for the 26th Knesset. The polls closed at 10:00 p.m. Israel time.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel liveblog",
+        "date": "October 27, 2026",
+        "url": "https://www.timesofisrael.com/liveblog-october-27-2026/"
+      }
+    },
+    {
+      "date": "2026-10-27",
+      "title": "Exit polls at 22:00",
+      "text": "Channel 12, Channel 13 and Kan 11 published exit polls as the polls closed, and updated them through the night. Exit polls are estimates, not the count.",
+      "kind": "politics",
+      "source": {
+        "name": "Times of Israel liveblog",
+        "date": "October 27, 2026",
+        "url": "https://www.timesofisrael.com/liveblog-october-27-2026/"
+      }
+    },
+    {
+      "date": "2026-10-28",
+      "title": "Count passes 70%",
+      "text": "By the committee's file of 10:50 a.m. Israel time, 4,008,086 votes were counted in 1,057 localities, 70.7% of the expected vote. Double-envelope votes were still to come.",
+      "kind": "politics",
+      "source": {
+        "name": "Central Elections Committee, results by locality (file captured Oct 28, 2026)",
+        "date": "October 28, 2026",
+        "url": "https://media26.bechirot.gov.il/files/expc.csv"
+      }
+    },
+    {
+      "date": "2026-10-29",
+      "title": "Double-envelope count expected",
+      "text": "Double-envelope votes are counted after the regular ballots. This site expected that count to finish on Thursday, Oct 29.",
+      "kind": "politics",
+      "expected": true,
+      "source": {
+        "name": "Israel Votes, results page",
+        "date": "October 28, 2026",
+        "url": "https://www.israelielection.org/results"
       }
     }
   ]

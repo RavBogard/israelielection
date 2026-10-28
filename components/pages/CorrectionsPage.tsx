@@ -65,6 +65,10 @@ export default function CorrectionsPage({ lang = "en" }: { lang?: Lang }) {
           <Link href={local("/about")}>{t.methodLink}</Link>.
         </p>
         <p className="fig-note">{t.methodNote}</p>
+        <p className="fig-note">
+          {t.changesNote}
+          <Link href={local("/changes")}>{t.changesLink}</Link>.
+        </p>
         <h2>{t.substantive}</h2>
         {lang !== "en" && edition.state !== "ready" && (
           <p className="note">

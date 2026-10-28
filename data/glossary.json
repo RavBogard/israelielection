@@ -236,6 +236,7 @@
       "term": "Consultations",
       "def": "After the election, the president holds consultations with the representatives of the factions elected to the Knesset, then nominates one of their leaders to form a government. The nominee has 28 days to do so, which can be extended by 14.",
       "see": [
+        "/government",
         "/how-it-works/forming-a-government"
       ],
       "source": {
@@ -572,24 +573,10 @@
       }
     },
     {
-      "term": "Mandate",
-      "hebrew": "מנדט",
-      "say": "man-DAHT",
-      "def": "The task of forming a government, which the president gives to one Knesset member after the election. The law sets no rule for choosing. The president typically picks the leader of the largest party, \"but this is by no means mandatory\"; what counts is who seems best placed to win the Knesset's confidence.",
-      "see": [
-        "/how-it-works/forming-a-government"
-      ],
-      "source": {
-        "name": "Israel Democracy Institute",
-        "date": "2026-04-15",
-        "url": "https://en.idi.org.il/articles/63982"
-      }
-    },
-    {
       "term": "Mandate (seat)",
       "hebrew": "מנדט",
       "say": "man-DAHT",
-      "def": "In Israeli polls and election coverage, a \"mandate\" often simply means a Knesset seat, as in a party \"expected to come second with 19 mandates.\"",
+      "def": "In Israeli polls and election coverage, a \"mandate\" often simply means a Knesset seat, as in a party \"expected to come second with 19 mandates.\" It is not the mandate to form a government.",
       "see": [
         "/polls",
         "/results"
@@ -598,6 +585,21 @@
         "name": "Al Jazeera",
         "date": "2013-01-22",
         "url": "https://www.aljazeera.com/news/2013/1/22/israeli-exit-polls-show-lead-for-likud"
+      }
+    },
+    {
+      "term": "Mandate to form a government",
+      "hebrew": "מנדט",
+      "say": "man-DAHT",
+      "def": "The task of forming a government, which the president gives to one Knesset member after the election. It is a different thing from a \"mandate\" in the sense of a Knesset seat (see Mandate (seat)). The law sets no rule for choosing. The president typically picks the leader of the largest party, \"but this is by no means mandatory\"; what counts is who seems best placed to win the Knesset's confidence.",
+      "see": [
+        "/how-it-works/forming-a-government",
+        "/government"
+      ],
+      "source": {
+        "name": "Israel Democracy Institute",
+        "date": "2026-04-15",
+        "url": "https://en.idi.org.il/articles/63982"
       }
     },
     {
@@ -679,6 +681,19 @@
         "name": "Times of Israel",
         "date": "2024-07-19",
         "url": "https://www.timesofisrael.com/world-court-israeli-presence-in-east-jerusalem-west-bank-is-illegal-and-must-end/"
+      }
+    },
+    {
+      "term": "Official (certified) result",
+      "def": "The national result the Central Elections Committee confirms once the count is complete, double-envelope votes included. Until then the figures are provisional and can move. For the 2026 election the committee scheduled confirmation for November 4.",
+      "see": [
+        "/results",
+        "/government"
+      ],
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "2026-07-13",
+        "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333"
       }
     },
     {
@@ -788,6 +803,19 @@
       }
     },
     {
+      "term": "Recount / appeal to the Central Elections Committee",
+      "def": "A formal challenge to the count or the confirmed result, brought to the Central Elections Committee. For the 2026 election, appeals were possible until November 18.",
+      "see": [
+        "/results",
+        "/how-it-works/voting"
+      ],
+      "source": {
+        "name": "Jerusalem Post",
+        "date": "2026-07-13",
+        "url": "https://www.jpost.com/israel-news/politics-and-diplomacy/article-902333"
+      }
+    },
+    {
       "term": "Religious Zionism (party)",
       "def": "A party led by Bezalel Smotrich. For 2026, Smotrich and Zehut leader Moshe Feiglin agreed to run together in a \"technical bloc,\" which they said was meant \"to prevent loss of votes.\" The party is distinct from the national-religious movement (dati leumi) whose name it shares.",
       "see": [
@@ -878,6 +906,7 @@
       "term": "Transitional government",
       "def": "The common name, not found in legislation, for an outgoing government that keeps serving until a new government is formed. The law sets no limit on its powers, to avoid a \"governance vacuum,\" but transitional governments have a narrower \"scope of reasonableness\" and must act with restraint.",
       "see": [
+        "/government",
         "/how-it-works/forming-a-government"
       ],
       "source": {

@@ -147,7 +147,7 @@ export default async function SearchPage({ lang }: { lang: Lang }) {
     });
   for (const term of (glossaryJson as Glossary).terms)
     entries.push({
-      href: "/glossary#" + anchorOf(term.term),
+      href: href("/glossary") + "#" + anchorOf(term.term),
       title: term.term,
       description: term.def,
       kind: "glossary",

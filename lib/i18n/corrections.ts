@@ -35,6 +35,8 @@ const keys = [
   "subject",
   "header",
   "draftNotice",
+  "changesNote",
+  "changesLink",
 ] as const;
 const copy: Record<Lang, string[]> = {
   en: [
@@ -73,6 +75,8 @@ const copy: Record<Lang, string[]> = {
     "Election-site correction",
     "Election-site correction",
     "Prepared by a reader; the claim has not yet been reviewed.",
+    "Reports reach us by email draft or by GitHub issue. Updates to the count and other material changes are logged on ",
+    "Changes and evidence",
   ],
   he: [
     "פניות תקשורת ותיקונים",
@@ -110,6 +114,8 @@ const copy: Record<Lang, string[]> = {
     "תיקון באתר הבחירות",
     "תיקון באתר הבחירות",
     "הוכן בידי קורא; הטענה טרם נבדקה.",
+    "אפשר לדווח בטיוטת דוא״ל או בפנייה ב-GitHub. עדכונים בספירה ושינויים מהותיים אחרים נרשמים בעמוד ",
+    "שינויים וראיות",
   ],
   ar: [
     "استفسارات إعلامية وتصحيحات",
@@ -147,6 +153,8 @@ const copy: Record<Lang, string[]> = {
     "تصحيح لموقع الانتخابات",
     "تصحيح لموقع الانتخابات",
     "أعدّه قارئ؛ لم يُراجع الادعاء بعد.",
+    "تصلنا البلاغات عبر مسودة بريد إلكتروني أو عبر بلاغ على GitHub. تُسجَّل تحديثات العد والتغييرات الجوهرية الأخرى في صفحة ",
+    "التغييرات والأدلة",
   ],
   fa: [
     "درخواست رسانه‌ای و اصلاحات",
@@ -184,6 +192,8 @@ const copy: Record<Lang, string[]> = {
     "اصلاح سایت انتخابات",
     "اصلاح سایت انتخابات",
     "تهیه‌شده توسط خواننده؛ ادعا هنوز بررسی نشده است.",
+    "گزارش‌ها از راه پیش‌نویس ایمیل یا گزارش در GitHub به ما می‌رسد. به‌روزرسانی‌های شمارش و دیگر تغییرات مهم در صفحه‌ی ",
+    "تغییرات و شواهد",
   ],
   de: [
     "Medienanfragen und Korrekturen",
@@ -221,6 +231,8 @@ const copy: Record<Lang, string[]> = {
     "Korrektur zur Wahlwebsite",
     "Korrektur zur Wahlwebsite",
     "Von einem Leser vorbereitet; die Aussage wurde noch nicht geprüft.",
+    "Meldungen erreichen uns per E-Mail-Entwurf oder GitHub-Issue. Aktualisierungen der Auszählung und andere wesentliche Änderungen stehen unter ",
+    "Änderungen und Belege",
   ],
   fr: [
     "Demandes des médias et corrections",
@@ -258,6 +270,8 @@ const copy: Record<Lang, string[]> = {
     "Correction du site électoral",
     "Correction du site électoral",
     "Préparé par un lecteur ; l’affirmation n’a pas encore été vérifiée.",
+    "Les signalements nous parviennent par brouillon d'e-mail ou par issue GitHub. Les mises à jour du décompte et les autres changements importants sont consignés sous ",
+    "Changements et preuves",
   ],
   zh: [
     "媒体咨询与更正",
@@ -295,6 +309,8 @@ const copy: Record<Lang, string[]> = {
     "选举网站更正",
     "选举网站更正",
     "由读者准备；该陈述尚未审核。",
+    "更正可通过电子邮件草稿或 GitHub 问题单提交。计票更新及其他重大变更记录在",
+    "变更与证据",
   ],
 };
 export const correctionText = (lang: Lang) =>

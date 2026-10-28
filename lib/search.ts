@@ -1,6 +1,6 @@
 export type SearchKind =
   "party" | "bloc" | "issue" | "community" | "guide" | "glossary" | "resource";
-/** `figure` is a dated seat line ("Likud: 22.1 seats, polling average, Oct 5") shown before the description. */
+/** `figure` is a dated seat line ("Likud: 22.1 seats, polling average (before the election), Oct 5") shown before the description. */
 export type SearchEntry = {
   href: string;
   title: string;
@@ -67,7 +67,7 @@ export const figureLine = (
   seats: number | "below",
   date: string,
 ) =>
-  `${name}: ${seats === "below" ? "below the threshold" : `${(Math.round(seats * 10) / 10).toFixed(1)} seats`}, polling average, ${date}`;
+  `${name}: ${seats === "below" ? "below the threshold" : `${(Math.round(seats * 10) / 10).toFixed(1)} seats`}, polling average (before the election), ${date}`;
 
 export const currentSeatFigure = (
   name: string,

@@ -9,9 +9,14 @@ export type Source = { name: string; date: string; url: string };
 export type Election = {
   date: string;
   knesset: number;
-  first: { list: string; seats: number };
-  second: { list: string; seats: number };
+  /** "counting" while the count is in progress (the top lists and turnout are then read from the shared count data, not stored); absent once the result is official. */
+  status?: "counting" | "final";
+  /** Absent on a counting row until the live figures are filled in. */
+  first?: { list: string; seats: number };
+  second?: { list: string; seats: number };
   turnout?: number;
+  /** For a counting row: the date of the count the figures come from (ISO). */
+  asOf?: string;
   outcome: string;
   source: Source;
   /** Where the outcome comes from, when the results source does not say who formed the government. */
@@ -33,6 +38,8 @@ export type TimelineEvent = {
   text: string;
   kind: EventKind;
   source: Source;
+  /** A dated step that has not happened yet; it can fall after the checked date. */
+  expected?: boolean;
 };
 
 export type Timeline = {

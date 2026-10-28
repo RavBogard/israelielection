@@ -45,6 +45,9 @@ const keys = [
   "axisNote",
   "fullHistory",
   "chartTitle",
+  "counting",
+  "countAsOf",
+  "expected",
 ] as const;
 const copy: Record<Lang, string[]> = {
   en: [
@@ -93,6 +96,9 @@ const copy: Record<Lang, string[]> = {
     "The axis changes scale at 2005. A bar marks a span of years. Tap a list for its full sourced history below.",
     "Full history below",
     "Organizational histories, through the 2026 edition",
+    "Count in progress",
+    "Provisional, from the count as of",
+    "Expected",
   ],
   he: [
     "ציר זמן, 1977–2026",
@@ -140,6 +146,9 @@ const copy: Record<Lang, string[]> = {
     "קנה המידה משתנה ב־2005. פס מסמן טווח שנים. לחצו על רשימה להיסטוריה המלאה עם מקורות.",
     "ההיסטוריה המלאה בהמשך",
     "היסטוריה ארגונית עד מהדורת 2026",
+    "הספירה נמשכת",
+    "זמני, לפי הספירה נכון לתאריך",
+    "צפוי",
   ],
   ar: [
     "الخط الزمني، 1977–2026",
@@ -187,6 +196,9 @@ const copy: Record<Lang, string[]> = {
     "يتغير مقياس المحور عند 2005. يشير الشريط إلى فترة سنوات. اضغط على قائمة لتاريخها الكامل ومصادره.",
     "التاريخ الكامل أدناه",
     "التواريخ التنظيمية حتى إصدار 2026",
+    "العد جارٍ",
+    "مؤقت، وفق العد حتى تاريخ",
+    "متوقع",
   ],
   fa: [
     "خط زمانی، 1977–2026",
@@ -234,6 +246,9 @@ const copy: Record<Lang, string[]> = {
     "مقیاس محور در 2005 تغییر می‌کند. نوار نشان‌دهنده چند سال است. برای تاریخ کامل و منابع روی فهرست بزنید.",
     "تاریخ کامل در پایین",
     "تاریخچه‌های سازمانی تا نسخه 2026",
+    "شمارش ادامه دارد",
+    "موقت، بر پایه شمارش تا تاریخ",
+    "مورد انتظار",
   ],
   de: [
     "Zeitleiste, 1977–2026",
@@ -281,6 +296,9 @@ const copy: Record<Lang, string[]> = {
     "Der Maßstab wechselt bei 2005. Ein Balken markiert mehrere Jahre. Eine Liste öffnet ihre vollständige Geschichte mit Quellen.",
     "Vollständige Geschichte unten",
     "Organisationsgeschichte bis zur Ausgabe 2026",
+    "Auszählung läuft",
+    "Vorläufig, nach der Auszählung vom",
+    "Erwartet",
   ],
   fr: [
     "Chronologie, 1977–2026",
@@ -328,6 +346,9 @@ const copy: Record<Lang, string[]> = {
     "L’échelle change en 2005. Une barre marque plusieurs années. Touchez une liste pour son histoire complète et ses sources.",
     "Histoire complète ci-dessous",
     "Histoires organisationnelles jusqu’à l’édition 2026",
+    "Décompte en cours",
+    "Provisoire, d'après le décompte du",
+    "Attendu",
   ],
   zh: [
     "时间轴，1977–2026",
@@ -375,6 +396,9 @@ const copy: Record<Lang, string[]> = {
     "坐标轴在2005年改变比例。横条表示跨越数年。点击名单可阅读下方完整沿革与来源。",
     "完整沿革见下方",
     "截至2026年版的组织沿革",
+    "计票进行中",
+    "暂定，依据截至以下日期的计票：",
+    "预计",
   ],
 };
 const kinds: Record<Lang, string[]> = {

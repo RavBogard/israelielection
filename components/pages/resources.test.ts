@@ -42,7 +42,7 @@ describe("resource directory editions", () => {
     expect(current["/coalition-builder"].caption).not.toBe(
       resourcesText("en").currentUnavailable,
     );
-    expect(current["/ballot"].caption).toContain("saved 2026");
-    expect(current["/vote-map"].caption).toContain("2022 results");
+    expect(current["/ballot"].caption).toContain("Knesset 26");
+    expect(current["/vote-map"].caption).toContain("Knesset 25");
   });
 });

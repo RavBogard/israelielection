@@ -26,6 +26,7 @@ import timeline from "@/data/timeline.json";
 import election2022 from "@/public/vote-map/2022.json";
 import { COMMUNITIES, GUIDES, ISSUES } from "@/lib/articles";
 import { ballotLists } from "@/lib/ballot";
+import { currentElection } from "@/lib/political-record/registry";
 import { allPolls, mainPolls, parties, pollsData } from "@/lib/data";
 import { initialOf } from "@/lib/glossary";
 import { journeys } from "@/lib/journeys";
@@ -42,6 +43,7 @@ import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import {
   resourcesText,
   resourceFact,
+  resourceElection,
   resourceGroups,
   resourceOpen,
 } from "@/lib/i18n/resources";
@@ -135,11 +137,11 @@ export function resourceTiles(
     },
     "/ballot": {
       fig: <BallotGlyph letters={ballotLists.map((l) => l.letters)} />,
-      caption: fact(t.savedBallot, ballotLists.length),
+      caption: fact(t.savedBallot, ballotLists.length, resourceElection(lang, currentElection().termNumber)),
     },
     "/vote-map": {
       fig: <VoteMapGlyph />,
-      caption: fact(t.historicMap, election2022.rows.length),
+      caption: fact(t.historicMap, election2022.rows.length, resourceElection(lang, election2022.knesset)),
     },
     "/communities": {
       fig: <SheetsGlyph n={COMMUNITIES.length} k="communities" />,

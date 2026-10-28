@@ -83,10 +83,10 @@ describe("seat figures in search", () => {
   ];
   it("prints one decimal and the date", () => {
     expect(figureLine("Likud", 22.06, "Oct 5")).toBe(
-      "Likud: 22.1 seats, polling average, Oct 5",
+      "Likud: 22.1 seats, polling average (before the election), Oct 5",
     );
     expect(figureLine("Ra'am", "below", "Oct 5")).toBe(
-      "Ra'am: below the threshold, polling average, Oct 5",
+      "Ra'am: below the threshold, polling average (before the election), Oct 5",
     );
   });
   it("puts a party's figure first for its name, with or without asking for seats", () => {

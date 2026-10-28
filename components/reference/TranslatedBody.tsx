@@ -6,7 +6,10 @@ import type {
 } from "@/lib/reference/translations";
 import { isRtl, type Lang } from "@/lib/i18n";
 import { longDate } from "@/lib/format";
-import { sourceCheckedText } from "@/lib/i18n/reference";
+import { sourceCheckedText, beforeVoteNote } from "@/lib/i18n/reference";
+import { editionPath } from "@/lib/i18n";
+import { ELECTION_DAY } from "@/lib/election-date";
+import Link from "next/link";
 import {
   referenceText,
   widgetNotice,
@@ -66,6 +69,15 @@ export default function TranslatedBody({
               : source.checked}
           </time>
           .
+          {source.checked < ELECTION_DAY && (
+            <>
+              {" "}
+              <span className="checked-note">
+                {beforeVoteNote(lang).lead}
+                <Link href={editionPath("/results", lang) ?? "/results"}>{beforeVoteNote(lang).link}</Link>.
+              </span>
+            </>
+          )}
         </p>
         <div className="body">
           {source.blocks.map((block, i) => {
