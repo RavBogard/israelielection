@@ -31,7 +31,7 @@ jobs:
           cache: npm
       - name: Install job dependencies
         if: steps.window.outputs.allowed == 'true'
-        run: npm ci --no-audit --no-fund
+        run: npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
       - name: Acquire fresh validated count
         if: steps.window.outputs.allowed == 'true'
         id: capture

@@ -45,7 +45,7 @@ jobs:
       - name: Install dependencies and Chromium
         if: steps.window.outputs.allowed == 'true'
         run: |
-          npm ci --no-audit --no-fund
+          npm install --no-audit --no-fund  # not `npm ci`: lockfiles written on Windows drop Linux-only optional deps (npm bug)
           npx playwright install --with-deps chromium
       - name: Capture once
         if: steps.window.outputs.allowed == 'true'
