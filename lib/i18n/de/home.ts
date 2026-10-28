@@ -125,6 +125,14 @@ const en: HomeText = {
         pollsText: "Jede Sitzumfrage im Wahlkampf, der aktuelle Durchschnitt und wie sich jede Partei entwickelt hat.",
         voteMap: "Abstimmungskarte",
         voteMapText: "Wie jede Stadt bei den f\u00FCnf Wahlen von 2019 bis 2022 abgestimmt hat, Liste f\u00FCr Liste.",
+        recordsH: "Dokumentation",
+        resultsT: "Gesamtergebnis",
+        resultsText: "Die Auszählung bisher, Liste für Liste, mit den Sitzen, die sie hochrechnet.",
+        govT: "Koalitionsgespräche",
+        govText: "Was als Nächstes geschieht und wo jede Partei in den Gesprächen steht.",
+        partyMapCount: "Die Größe jeder Liste folgt ihren Sitzen in der Auszählungshochrechnung, mit jeweils einem Quellenprofil.",
+        pollsRecord: "Die Umfragen des Wahlkampfs: Schlussstand",
+        pollsRecordText: "Jede Sitzumfrage des Wahlkampfs und wie sich jede Partei bewegt hat, bis zum Ende.",
     },
 };
 export default en;

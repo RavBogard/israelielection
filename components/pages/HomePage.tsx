@@ -20,7 +20,8 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import "@/components/home.css";
 import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
-import { BuilderGlyph, PartyMapGlyph, PollsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
+import { BuilderGlyph, BuilderSeatsGlyph, PartyMapGlyph, PollsGlyph, ResultsSeatsGlyph, StepsGlyph, VoteMapGlyph } from "@/components/HomeGlyphs";
+import { nextSteps } from "@/lib/government-next";
 import type {RaceOption} from "@/components/HomeRace";
 import type {CadenceMetadata} from "@/lib/election-lifecycle/cadence";
 import renderLiveForecast from "@/components/live-forecast/LiveForecast";
@@ -60,6 +61,8 @@ import type { Poll } from "@/lib/types";
 const briefings = briefingsJson as Briefing[];
 
 /** Links within the edition: the Hebrew home links to the Hebrew pages where they exist. */
+/** The poll shape the Party Map glyph reads, carrying the shared seat context's seats once the count drives them. */
+const seatPoll = (poll: Poll, context: SharedSeatContext): Poll => ({ ...poll, results: Object.fromEntries(Object.entries(context.pointSeats).map(([id, seats]) => [id, { seats }])) } as unknown as Poll);
 const href = (lang: Lang, en: string, _he?: string) => lang === "en" ? en : editionPath(_he ?? en, lang) ?? en;
 /** English text on the Hebrew home (an English-only page's name, the briefing), marked as such. */
 const En = ({ children }: { children: ReactNode }) => <span lang="en" dir="ltr">{children}</span>;
@@ -175,6 +178,7 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
   // After close the thumbnails follow the count, else the newest exit poll; the average only before close.
   const poll = results ?? (hero === "exit" ? exitPolls[0] : undefined) ?? averagePoll;
   const trendPolls = allPolls.filter((p) => !isExit(p));
+  const countDriven = !!context && n.phase !== "before" && (context.basis === "partial_count" || context.basis === "official_seats");
   return (
     <div className="home">
       <div className="wrap">
@@ -202,35 +206,78 @@ export default async function HomePage({ lang, revalidate }: { lang: Lang; reval
         <section className="tools" aria-labelledby="tools-h">
           <h2 id="tools-h">{tl.heading}</h2>
           <ul>
+            {countDriven && context && (
+              <li>
+                <Link href={href(lang, "/results", "/he/results")}>
+                  <ResultsSeatsGlyph context={context} />
+                  <span className="t">{tl.resultsT}</span>
+                  <span className="p">{tl.resultsText}</span>
+                </Link>
+              </li>
+            )}
+            {countDriven && lifecycle && (
+              <li>
+                <Link href={href(lang, "/government", "/he/government")}>
+                  <StepsGlyph done={nextSteps(lifecycle).filter((x) => x.state === "done").length} total={4} />
+                  <span className="t">{tl.govT}</span>
+                  <span className="p">{tl.govText}</span>
+                </Link>
+              </li>
+            )}
             <li>
               <Link href={href(lang, "/coalition-builder", "/he/coalition-builder")}>
-                <BuilderGlyph parties={parties} poll={poll} />
+                {countDriven && context ? <BuilderSeatsGlyph context={context} /> : <BuilderGlyph parties={parties} poll={poll} />}
                 <span className="t">{tl.builder}</span>
                 <span className="p">{results ? tl.builderLive : tl.builderText}</span>
               </Link>
             </li>
             <li>
               <Link href="/parties" hrefLang={enLink}>
-                <PartyMapGlyph parties={parties} poll={poll} />
+                <PartyMapGlyph parties={parties} poll={countDriven && context ? seatPoll(poll, context) : poll} />
                 <span className="t">{tl.partyMap}</span>
-                <span className="p">{tl.partyMapText}</span>
+                <span className="p">{countDriven ? tl.partyMapCount : tl.partyMapText}</span>
               </Link>
             </li>
-            <li>
-              <Link href={href(lang, "/polls", "/he/polls")}>
-                <PollsGlyph polls={trendPolls} parties={parties} config={pollsData.config} />
-                <span className="t">{tl.polls}</span>
-                <span className="p">{tl.pollsText}</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/vote-map" hrefLang={enLink}>
-                <VoteMapGlyph />
-                <span className="t">{tl.voteMap}</span>
-                <span className="p">{tl.voteMapText}</span>
-              </Link>
-            </li>
+            {!countDriven && (
+              <>
+                <li>
+                  <Link href={href(lang, "/polls", "/he/polls")}>
+                    <PollsGlyph polls={trendPolls} parties={parties} config={pollsData.config} />
+                    <span className="t">{tl.polls}</span>
+                    <span className="p">{tl.pollsText}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/vote-map" hrefLang={enLink}>
+                    <VoteMapGlyph />
+                    <span className="t">{tl.voteMap}</span>
+                    <span className="p">{tl.voteMapText}</span>
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
+          {countDriven && (
+            <>
+              <h2 id="records-h" className="tools-records-h">{tl.recordsH}</h2>
+              <ul aria-labelledby="records-h">
+                <li>
+                  <Link href={href(lang, "/polls", "/he/polls")}>
+                    <PollsGlyph polls={trendPolls} parties={parties} config={pollsData.config} />
+                    <span className="t">{tl.pollsRecord}</span>
+                    <span className="p">{tl.pollsRecordText}</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/vote-map" hrefLang={enLink}>
+                    <VoteMapGlyph />
+                    <span className="t">{tl.voteMap}</span>
+                    <span className="p">{tl.voteMapText}</span>
+                  </Link>
+                </li>
+              </ul>
+            </>
+          )}
         </section>
       </div>
     </div>

@@ -1,13 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import briefingsJson from "@/data/briefings/_index.json";
+import suppressedJson from "@/data/briefings/_suppressed.json";
 import type { Briefing } from "@/lib/briefing";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
-import { briefingCopy } from "@/lib/i18n/briefing";
+import { briefingCopy, briefingSuppressed } from "@/lib/i18n/briefing";
 import { subscriptionText } from "@/lib/i18n/subscriptions";
 import BriefingEvidence from "./BriefingEvidence";
 import "./reference.css";
 const briefings = briefingsJson as Briefing[];
+const suppressed = suppressedJson as { date: string }[];
 export default function BriefingPage({
   lang,
   date,
@@ -17,7 +19,8 @@ export default function BriefingPage({
 }) {
   const t = briefingCopy(lang),
     selected = date ? briefings.find((b) => b.date === date) : briefings[0];
-  if (date && !selected) notFound();
+  const missed = date ? (!selected ? suppressed.find((d) => d.date === date) : undefined) : suppressed.find((d) => !briefings[0] || d.date > briefings[0].date);
+  if (date && !selected && !missed) notFound();
   return (
     <div className="wrap article-page reference-page">
       <header className="page-head">
@@ -27,6 +30,7 @@ export default function BriefingPage({
           {subscriptionText(lang).title}
         </Link>
       </header>
+      {missed && <p role="status">{briefingSuppressed(lang, missed.date)}</p>}
       {selected ? (
         <>
           <h2>
@@ -40,7 +44,7 @@ export default function BriefingPage({
           <BriefingEvidence briefing={selected} lang={lang} />
         </>
       ) : (
-        <p>{t.empty}</p>
+        !missed && <p>{t.empty}</p>
       )}
       <h2>{t.archive}</h2>
       <ul>

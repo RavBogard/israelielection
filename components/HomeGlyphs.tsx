@@ -1,3 +1,4 @@
+import type { SharedSeatContext } from "@/lib/election-lifecycle/types";
 import context from "@/public/vote-map/context.json";
 import election from "@/public/vote-map/2022.json";
 import places from "@/public/vote-map/places.json";
@@ -149,6 +150,59 @@ export function VoteMapGlyph() {
       {[...buckets].map(([k, d]) => (
         <path key={k} className={`v${k.split("-")[0]}`} d={d} strokeWidth={SIZES[+k.split("-")[1]]} />
       ))}
+    </svg>
+  );
+}
+
+const BLOC_ORDER = ["net", "opp", "mid", "arab"] as const;
+/** Seats per bloc from the shared seat context's point seats, in the Builder's bloc order, empty blocs left out. */
+export function blocSeats(context: Pick<SharedSeatContext, "pointSeats" | "parties">) {
+  const bloc = new Map(context.parties.map((p) => [p.id, p.bloc]));
+  return BLOC_ORDER.map((b) => ({ bloc: b, seats: Object.entries(context.pointSeats).reduce((s, [id, n]) => s + (bloc.get(id) === b ? n : 0), 0) })).filter((x) => x.seats > 0);
+}
+
+/** The Builder once the count drives the seats: one slip per bloc, its figure the bloc's seats in the current seat context. */
+export function BuilderSeatsGlyph({ context }: { context: Pick<SharedSeatContext, "pointSeats" | "parties"> }) {
+  const picks = blocSeats(context), n = picks.length, W = 84, H = 130;
+  return (
+    <svg className="gl gl-builder" viewBox={`0 0 ${GW} ${GH}`} aria-hidden="true" focusable="false">
+      {picks.map((p, i) => {
+        const rot = (i - (n - 1) / 2) * 6, cx = GW / 2 + (i - (n - 1) / 2) * 76;
+        return (
+          <g key={p.bloc} transform={`translate(${cx} ${GH + 10}) rotate(${rot}) translate(${-W / 2} ${-H})`}>
+            <rect className="paper" x="0" y="0" width={W} height={H} />
+            <rect x="0" y="0" width={W} height="7" fill={`var(--b-${p.bloc})`} />
+            <text className="let" x="10" y="64">{p.seats}</text>
+            {p.seats >= 61 && <text className="seats" x="10" y="92">61</text>}
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/** Full results: the 120 seats as one bar split by bloc, the 61st seat marked. */
+export function ResultsSeatsGlyph({ context }: { context: Pick<SharedSeatContext, "pointSeats" | "parties"> }) {
+  const x0 = 20, w = 260, total = 120;
+  let x = x0;
+  const segs = blocSeats(context).map((b) => { const sw = (b.seats / total) * w, seg = { ...b, x, sw }; x += sw; return seg; });
+  const x61 = x0 + (61 / total) * w;
+  return (
+    <svg className="gl gl-results" viewBox={`0 0 ${GW} ${GH}`} aria-hidden="true" focusable="false">
+      {segs.map((s) => <rect key={s.bloc} x={s.x} y="74" width={Math.max(0, s.sw - 1)} height="44" fill={`var(--b-${s.bloc})`} />)}
+      <line x1={x61} x2={x61} y1="64" y2="128" stroke="var(--ink)" strokeWidth="2" />
+      <text className="seats" x={x61} y="150" textAnchor="middle">61</text>
+    </svg>
+  );
+}
+
+/** Coalition talks: the four dated steps as a line of dots, the finished ones filled. */
+export function StepsGlyph({ done, total }: { done: number; total: number }) {
+  const xs = Array.from({ length: total }, (_, i) => 40 + (i * 220) / Math.max(1, total - 1));
+  return (
+    <svg className="gl gl-steps" viewBox={`0 0 ${GW} ${GH}`} aria-hidden="true" focusable="false">
+      <line x1={xs[0]} x2={xs[total - 1]} y1="95" y2="95" stroke="var(--ink)" strokeWidth="2" />
+      {xs.map((x, i) => <circle key={i} cx={x} cy="95" r="9" fill={i < done ? "var(--ink)" : "var(--sheet)"} stroke="var(--ink)" strokeWidth="2" />)}
     </svg>
   );
 }

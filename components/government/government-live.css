@@ -59,3 +59,16 @@
 .government-live a {
   overflow-wrap: anywhere;
 }
+
+.gl-next { margin-block: 24px; }
+.gl-next ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.gl-next li { border-top: 4px solid var(--line-2); padding-top: 10px; min-width: 0; }
+.gl-next li[data-state="done"] { border-top-color: var(--ink); }
+.gl-next li[data-state="next"] { border-top-color: var(--b-net); }
+.gl-next h3 { font-family: var(--display); font-size: 19px; line-height: 1.15; margin: 4px 0 6px; }
+.gl-next p { margin: 0 0 6px; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.gl-next .gl-next-tag { font-size: 13px; font-weight: 700; display: block; min-height: 1.2em; }
+.gl-next .gl-next-when { font-size: 15px; }
+.gl-next .gl-next-src { font-size: 12.5px; color: var(--ink-3); }
+@media (max-width: 900px) { .gl-next ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .gl-next ol { grid-template-columns: minmax(0, 1fr); } }

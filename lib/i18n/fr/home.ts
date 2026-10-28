@@ -125,6 +125,14 @@ const en: HomeText = {
         pollsText: "Chaque scrutin de si\u00E8ge de la campagne, la moyenne actuelle et l'\u00E9volution de chaque parti.",
         voteMap: "Carte des votes",
         voteMapText: "Comment chaque ville a vot\u00E9 lors des cinq \u00E9lections de 2019 \u00E0 2022, liste par liste.",
+        recordsH: "Archives",
+        resultsT: "Résultats complets",
+        resultsText: "Le dépouillement jusqu'ici, liste par liste, avec les sièges qu'il projette.",
+        govT: "Négociations de coalition",
+        govText: "Ce qui se passe ensuite, et où en est chaque parti dans les discussions.",
+        partyMapCount: "Chaque liste est dimensionnée selon ses sièges dans la projection du dépouillement, avec un profil sourcé de chacune.",
+        pollsRecord: "Les sondages de la campagne : bilan final",
+        pollsRecordText: "Chaque sondage de sièges de la campagne et l'évolution de chaque parti, jusqu'à la fin.",
     },
 };
 export default en;

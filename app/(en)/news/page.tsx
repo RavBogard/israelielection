@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { alternates } from "@/lib/canonical";
 import Link from "next/link";
 import briefingsJson from "@/data/briefings/_index.json";
+import suppressedJson from "@/data/briefings/_suppressed.json";
+import { briefingSuppressed } from "@/lib/i18n/briefing";
 import "@/components/interactives.css";
 import "@/components/news.css";
 import type { Briefing } from "@/lib/briefing";
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 export const revalidate = 900;
 
 const briefings = briefingsJson as Briefing[];
+const suppressed = suppressedJson as { date: string }[];
 
 const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 
@@ -57,6 +60,7 @@ export default async function Page() {
   const grouped = groupNews(news.items);
   const { election, other } = splitHeadlines(grouped.slice(0, 120), vocabulary);
   const latest = briefings[0];
+  const missed = suppressed.find((d) => !latest || d.date > latest.date);
   const outlets = [...new Set(FEEDS.map((f) => f.outlet))];
   const shown = [...election, ...other].flatMap((g) => [g.item, ...g.sources]);
   const paywalled = paywalledOutlets([...shown, ...(latest?.sentences.flatMap((s) => s.sources) ?? [])]);
@@ -74,6 +78,7 @@ export default async function Page() {
         <div className="nw-layout">
           <section className="nw-brief" id={latest?.date} aria-labelledby="brief-h">
             <p className="lbl">The daily briefing</p>
+            {missed && <p className="nw-none" role="status">{briefingSuppressed("en", longDate(missed.date))}{latest && ` The latest verified briefing is below, from ${longDate(latest.date)}.`}</p>}
             {latest ? (
               <>
                 <h2 id="brief-h">{longDate(latest.date)}</h2>

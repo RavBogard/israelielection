@@ -5,23 +5,26 @@ import { notFound } from "next/navigation";
 import "@/components/interactives.css";
 import "@/components/news.css";
 import briefingsJson from "@/data/briefings/_index.json";
+import suppressedJson from "@/data/briefings/_suppressed.json";
+import { briefingSuppressed } from "@/lib/i18n/briefing";
 import type { Briefing } from "@/lib/briefing";
 import PageHead from "@/components/PageHead";
 import Sentences from "../Sentences";
 
 const briefings = briefingsJson as Briefing[];
+const suppressed = suppressedJson as { date: string }[];
 const LONG = new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
 const IL = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Jerusalem", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 const label = (date: string) => LONG.format(new Date(`${date}T12:00:00Z`));
 
 export function generateStaticParams() {
-  return briefings.map((b) => ({ date: b.date }));
+  return [...briefings, ...suppressed].map((b) => ({ date: b.date }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ date: string }> }): Promise<Metadata> {
   const { date } = await params;
   const b = briefings.find((x) => x.date === date);
-  if (!b) return { title: "Briefing" };
+  if (!b) return { title: "Briefing", ...(suppressed.some((x) => x.date === date) ? { robots: { index: false } } : {}) };
   return {
     title: `Briefing, ${label(b.date)}`,
     alternates: alternates(`/news/${b.date}`),
@@ -33,7 +36,18 @@ export async function generateMetadata({ params }: { params: Promise<{ date: str
 export default async function Page({ params }: { params: Promise<{ date: string }> }) {
   const { date } = await params;
   const i = briefings.findIndex((x) => x.date === date);
-  if (i < 0) notFound();
+  if (i < 0) {
+    if (!suppressed.some((x) => x.date === date)) notFound();
+    return (
+      <div className="ix nw">
+        <div className="wrap">
+          <PageHead title={<>Briefing, {label(date)}</>} standfirst={<>{briefingSuppressed("en", label(date))}</>}>
+            <p className="ph-meta"><Link href="/news">The latest briefing and headlines</Link></p>
+          </PageHead>
+        </div>
+      </div>
+    );
+  }
   const b = briefings[i];
   const newer = briefings[i - 1];
   const older = briefings[i + 1];
