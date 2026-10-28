@@ -4,47 +4,33 @@ import { getSharedSeatContext } from "@/lib/election-lifecycle/server";
 import { contextToPoll } from "@/lib/seat-context";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { ImageResponse } from "next/og";
-import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 import { COLS, MAJORITY, ROWS, TOTAL, allocate } from "@/components/SeatGrid";
 import { KNESSET } from "@/lib/coalition";
-import { averagePoll, blocs, mainPolls, parties } from "@/lib/data";
-import { plural } from "@/lib/i18n/he-grammar";
+import { blocs, parties } from "@/lib/data";
+import { heroHeadline } from "@/lib/og-headline";
 import { blocText } from "@/lib/i18n/overlays";
 import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from "@/lib/og";
 import { visualOrder } from "@/lib/og-rtl";
 import { blocTotals } from "@/lib/polls";
-import { resultsAsPoll } from "@/lib/results";
-import { fetchCount, resultsConfig } from "@/lib/results-live";
 
 // The Hebrew edition's share card: the English card (app/(en)/opengraph-image.tsx) mirrored, the text on the right
 // and the grid filling from the top right as it does on the Hebrew pages. Satori cannot lay out Hebrew, so every
 // line is broken by hand and put in visual order by lib/og-rtl.ts and drawn without wrapping. Frank Ruhl Libre carries the
 // Hebrew; Public Sans (no Hebrew letters) sets only the address.
-export const revalidate = 3600;
-export const alt = "פתק: 120 המושבים בכנסת לפי גוש, בממוצע הסקרים העדכני. 61 מנדטים הם רוב.";
+export const revalidate = 300;
+export const alt = "פתק: 120 המושבים בכנסת לפי גוש, מהספירה עד כה. 61 מנדטים הם רוב.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const { S, P } = G;
 
-/** Two lines, the number with its unit on the first. */
-function headline(days: number, live: boolean): [string, string] {
-  if (live) return ["ישראל הצביעה.", "הספירה עד כה."];
-  if (days > 1) return [`עוד ${plural(days, { one: "יום אחד", two: "יומיים", other: `${days} ימים` })}`, "לבחירות."];
-  if (days === 1) return ["הבחירות", "מחר."];
-  if (days === 0) return ["הבחירות", "היום."];
-  return ["ישראל הצביעה", "ב-27 באוקטובר."];
-}
-
 /** A right-aligned Hebrew line, drawn in visual order. */
 const Line = ({ text, style }: { text: string; style?: React.CSSProperties }) => <div style={{ display: "flex", justifyContent: "flex-end", whiteSpace: "nowrap", ...style }}>{visualOrder(text)}</div>;
 
 export default async function Image() {
-  const live = await fetchCount(revalidate);
   const selected=await getSharedSeatContext();const context=selected.state==="ready"?selected.context:null;
-  if(!context)return new ImageResponse(<div style={{display:"flex",background:PAPER,color:INK,width:"100%",height:"100%",padding:64,fontSize:40,fontFamily:"Frank Ruhl Libre"}}>{LIFECYCLE.he.sourceUnavailable}</div>,{...size,fonts:await ogFonts()});
-  const poll = context ? contextToPoll(context) : live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : averagePoll;
-  const isLive = live.state === "open";
+  if(!context)return new ImageResponse(<div style={{display:"flex",background:PAPER,color:INK,width:"100%",height:"100%",padding:64,fontSize:40,fontFamily:"Frank Ruhl Libre"}}>הספירה אינה זמינה</div>,{...size,fonts:await ogFonts()});
+  const poll = contextToPoll(context);
   const totals = blocTotals(poll, parties);
   const ordered: {id:string;label:string;seats:number;color:string}[] = GRID_ORDER.map((id) => { const b = blocs.find((x) => x.id === id)!; return { id, label: blocText(b, "he").text, seats: totals[id],color:BLOC[id] }; });
   const unclassified = 120-ordered.reduce((n,b)=>n+b.seats,0);if(unclassified>0)ordered.push({id:"unclassified",label:LIFECYCLE.he.unknown,seats:unclassified,color:CELL});
@@ -61,11 +47,9 @@ export default async function Image() {
   for (; i < TOTAL; i++) cells.push(<rect key={i} x={x(i)} y={Math.floor(i / COLS) * P} width={S} height={S} fill={CELL} />);
 
   // Broken by hand at the phrase boundaries; the numbers are short enough not to move a break.
-  const standfirst = context ? [`${LIFECYCLE.he[context.basis]}`, `${LIFECYCLE.he[context.seatStatus]} · 120`] : isLive
-    ? [`הספירה עד כה, ב-${KNESSET} המושבים`, `בכנסת. ${MAJORITY} מנדטים הם רוב.`]
-    : [`תמונת המרוץ לפי ממוצע ${mainPolls.length} הסקרים`, `האחרונים, ב-${KNESSET} המושבים בכנסת.`, `${MAJORITY} מנדטים הם רוב.`];
-  const newest = new Intl.DateTimeFormat("he-IL", { day: "numeric", month: "long", timeZone: "Asia/Jerusalem" }).format(new Date(mainPolls[0].published));
-  const dateline = context ? `${context.freshness.status === "current" ? updatedFromCount("he", context.updatedAt, context.countSourceUpdatedAt) : `${LIFECYCLE.he[context.freshness.status]} · ${israelTimeLabel(context.updatedAt,"he",LIFECYCLE.he.noTime)}`}` : isLive ? live.state === "open" && live.freshness === "stale" ? "ספירה שמורה, לא מעודכנת" : "ספירת ועדת הבחירות המרכזית" : `סקרים עד ${newest}`;
+  const standfirst = [`${LIFECYCLE.he[context.basis]}`, `${LIFECYCLE.he[context.seatStatus]}, ${KNESSET} המושבים`];
+  // The as-of time on the card: the committee file's time while the context is current, else its status and the time we last updated it.
+  const dateline = context.freshness.status === "current" ? updatedFromCount("he", context.updatedAt, context.countSourceUpdatedAt) : `${LIFECYCLE.he[context.freshness.status]}, ${israelTimeLabel(context.updatedAt, "he", LIFECYCLE.he.noTime)}`;
 
   return new ImageResponse(
     (
@@ -81,7 +65,7 @@ export default async function Image() {
         </div>
         <div style={{ display: "flex", flexDirection: "column", width: 480, flexShrink: 0 }}>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 64, fontWeight: 700, lineHeight: 1.05 }}>
-            {(context ? (context.seatStatus==="official" ? ["פורסמו המנדטים.","הכנסת שנבחרה."] : ["המנדטים כעת.",LIFECYCLE.he[context.seatStatus]]) : headline(daysUntil(ELECTION_DAY), isLive)).map((line) => <Line key={line} text={line} />)}
+            {heroHeadline(context, "he").map((line) => <Line key={line} text={line} />)}
           </div>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 23, lineHeight: 1.4, color: TEXT, marginTop: 20 }}>
             {standfirst.map((line) => <Line key={line} text={line} />)}

@@ -30,7 +30,7 @@ export function localizeExport(
     ...model,
     lang,
     originalEvidence: true,
-    title: t[kind as "issue" | "coalition" | "locality"] ?? model.title,
+    title: t[kind as "issue" | "coalition" | "locality" | "results" | "polls" | "forecast"] ?? model.title,
     headers: model.headers.map((h) => exportHeader(h, lang)),
     rows: model.rows.map((row) =>
       row.map((cell, index) =>

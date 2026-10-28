@@ -7,8 +7,10 @@ type LiveCountText = {
   votesCounted: string;
   /** Against the expected final vote. */
   ofExpected: (total: string, pct: string) => string;
-  updated: (israel: string, et: string) => string;
-  live: string;
+  /** "Last file 14:23, 4 h ago": the committee file's own time in Israel time and its age now. */
+  lastFile: (israel: string, age: string) => string;
+  /** The double-envelope pool: "About 623,000 double-envelope votes, counted through Thursday". */
+  envelopes: (n: string, day: string) => string;
   threshold: string;
   below: string;
   other: string;
@@ -22,8 +24,8 @@ const en: LiveCountText = {
   heading: "Votes counted so far",
   votesCounted: "votes counted",
   ofExpected: (total, pct) => `about ${pct} of the ${total} expected`,
-  updated: (israel, et) => `Committee file of ${israel} Israel time (${et})`,
-  live: "Live",
+  lastFile: (israel, age) => `Last file ${israel}, ${age}`,
+  envelopes: (n, day) => `About ${n} double-envelope votes, counted through ${day}`,
   threshold: "3.25% threshold",
   below: "below the threshold so far",
   other: "Other lists",
@@ -37,8 +39,8 @@ const he: LiveCountText = {
   heading: "הקולות שנספרו עד כה",
   votesCounted: "קולות נספרו",
   ofExpected: (total, pct) => `כ־${pct} מתוך ${total} הקולות הצפויים`,
-  updated: (israel) => `קובץ ועדת הבחירות מ־${israel}`,
-  live: "בשידור חי",
+  lastFile: (israel, age) => `הקובץ האחרון מ־${israel}, ${age}`,
+  envelopes: (n, day) => `כ־${n} קולות במעטפות כפולות, שייספרו עד ${day}`,
   threshold: "אחוז החסימה 3.25%",
   below: "מתחת לאחוז החסימה בינתיים",
   other: "רשימות אחרות",
@@ -52,8 +54,8 @@ const ar: LiveCountText = {
   heading: "الأصوات المفروزة حتى الآن",
   votesCounted: "صوتًا مفروزًا",
   ofExpected: (total, pct) => `نحو ${pct} من ${total} صوت متوقع`,
-  updated: (israel, et) => `ملف لجنة الانتخابات الصادر ${israel} بتوقيت إسرائيل (${et})`,
-  live: "مباشر",
+  lastFile: (israel, age) => `آخر ملف ${israel}، ${age}`,
+  envelopes: (n, day) => `نحو ${n} صوت في المغلفات المزدوجة، يستمر فرزها حتى ${day}`,
   threshold: "نسبة الحسم 3.25%",
   below: "دون نسبة الحسم حتى الآن",
   other: "قوائم أخرى",
@@ -67,8 +69,8 @@ const fa: LiveCountText = {
   heading: "آرای شمرده‌شده تا این لحظه",
   votesCounted: "رأی شمرده شد",
   ofExpected: (total, pct) => `حدود ${pct} از ${total} رأی مورد انتظار`,
-  updated: (israel, et) => `فایل کمیته انتخابات، ${israel} به وقت اسرائیل (${et})`,
-  live: "زنده",
+  lastFile: (israel, age) => `آخرین فایل ${israel}، ${age}`,
+  envelopes: (n, day) => `حدود ${n} رأی در پاکت‌های دوگانه، شمارش تا ${day}`,
   threshold: "آستانه ۳٫۲۵٪",
   below: "فعلاً زیر آستانه",
   other: "فهرست‌های دیگر",
@@ -82,8 +84,8 @@ const de: LiveCountText = {
   heading: "Bisher ausgezählte Stimmen",
   votesCounted: "Stimmen ausgezählt",
   ofExpected: (total, pct) => `etwa ${pct} der erwarteten ${total}`,
-  updated: (israel, et) => `Datei des Wahlausschusses von ${israel} israelischer Zeit (${et})`,
-  live: "Live",
+  lastFile: (israel, age) => `Letzte Datei ${israel}, ${age}`,
+  envelopes: (n, day) => `Etwa ${n} Stimmen in Doppelkuverts, ausgezählt bis ${day}`,
   threshold: "3,25-%-Hürde",
   below: "bisher unter der Hürde",
   other: "Andere Listen",
@@ -97,8 +99,8 @@ const fr: LiveCountText = {
   heading: "Voix dépouillées à ce stade",
   votesCounted: "voix dépouillées",
   ofExpected: (total, pct) => `environ ${pct} des ${total} attendues`,
-  updated: (israel, et) => `Fichier de la Commission électorale de ${israel}, heure d'Israël (${et})`,
-  live: "En direct",
+  lastFile: (israel, age) => `Dernier fichier ${israel}, ${age}`,
+  envelopes: (n, day) => `Environ ${n} votes sous double enveloppe, dépouillés jusqu’à ${day}`,
   threshold: "Seuil de 3,25 %",
   below: "sous le seuil pour l'instant",
   other: "Autres listes",
@@ -112,8 +114,8 @@ const zh: LiveCountText = {
   heading: "目前已计票数",
   votesCounted: "票已计",
   ofExpected: (total, pct) => `约为预计 ${total} 票的 ${pct}`,
-  updated: (israel, et) => `中央选举委员会文件，以色列时间 ${israel}（${et}）`,
-  live: "实时",
+  lastFile: (israel, age) => `最新文件 ${israel}，${age}`,
+  envelopes: (n, day) => `约 ${n} 张双信封选票，计票持续至${day}`,
   threshold: "3.25% 门槛",
   below: "目前低于门槛",
   other: "其他名单",

@@ -1,6 +1,6 @@
 import GovernmentLive from "../government/GovernmentLive";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { referenceText, assertionText } from "@/lib/i18n/reference";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
@@ -21,9 +21,16 @@ import SuggestedReading from "./SuggestedReading";
 import ReferenceDocument from "./ReferenceDocument";
 import QualifiedRecords from "./QualifiedRecords";
 import ChangesPage from "../pages/ChangesPage";
+import ArchiveEditionView from "./ArchiveEditionView";
+import ExportLinks from "../ExportLinks";
+import CountLog from "../pages/CountLog";
+import { ARCHIVE_EDITION_IDS, archiveEdition, canonicalEditionId } from "@/lib/archive-editions";
+import { PLATFORM_COPY } from "@/lib/i18n/platform-copy";
 import { getGlobalNotices } from "@/lib/political-record/global-notices";
 import "../article/article.css";
 import "./reference.css";
+const archiveElections = () => ARCHIVE_EDITION_IDS.map((id) => archiveEdition(id)).filter((e): e is NonNullable<typeof e> => !!e);
+export const longDay = (iso: string, lang: Lang) => new Intl.DateTimeFormat(locale(lang), { dateStyle: "long", timeZone: "Asia/Jerusalem" }).format(new Date(`${iso}T12:00:00Z`));
 export type ReferenceKind =
   | "elections"
   | "edition"
@@ -144,21 +151,28 @@ export default async function ReferenceHub({
       />
     );
   }
+  // /elections/2026, /elections/26 and /elections/2022 are public aliases of the canonical id.
+  const canonical = kind === "edition" && id ? canonicalEditionId(id) : null;
+  if (canonical && canonical !== id) permanentRedirect(href(`/elections/${canonical}`));
+  const archive = kind === "edition" && id ? archiveEdition(id) : null;
   const edition =
-    kind === "edition"
+    kind === "edition" && !archive
       ? editionEvidence(model.elections, id ?? "", snapshot)
       : null;
-  if (edition?.state === "unknown") notFound();
+  if (kind === "edition" && !archive && edition?.state === "unknown") notFound();
   const context = (edition ? edition.lifecycle : snapshot)?.seatContext ?? null;
+  // Once the seats are official the edition page is a frozen record: it names the certification, not "Current".
+  const frozen = kind === "edition" && !archive && context?.seatStatus === "official";
+  const certifiedOn = context?.statutoryPublication?.publishedOn ?? (context?.publishedAt ?? context?.observedAt ?? "").slice(0, 10);
   const title =
     kind === "edition"
-      ? `${t.elections}: ${t.term} ${edition?.election?.termNumber}`
+      ? `${t.elections}: ${t.term} ${archive?.termNumber ?? edition?.election?.termNumber}`
       : t[kind];
   return (
     <div
       className="wrap article-page reference-page"
       data-election-workspace={
-        kind === "edition" ? edition?.election?.id : undefined
+        kind === "edition" ? (archive?.id ?? edition?.election?.id) : undefined
       }
       data-workspace-locale={kind === "edition" ? lang : undefined}
     >
@@ -181,7 +195,7 @@ export default async function ReferenceHub({
           <p>{t.editionNote}</p>
           {kind === "elections" ? (
             <ul>
-              {model.elections.map((e) => (
+              {[...model.elections.map((e) => ({ id: e.id, termNumber: e.termNumber, electionDay: e.electionDay })), ...archiveElections()].sort((a, b) => b.termNumber - a.termNumber).map((e) => (
                 <li key={e.id}>
                   <Link href={href(`/elections/${e.id}`)}>
                     {t.term} {e.termNumber}
@@ -189,29 +203,48 @@ export default async function ReferenceHub({
                   .{" "}
                   {new Intl.DateTimeFormat(locale(lang), {
                     dateStyle: "long",
-                    timeZone: e.timeZone,
+                    timeZone: "Asia/Jerusalem",
                   }).format(new Date(e.electionDay + "T12:00:00Z"))}
                 </li>
               ))}
             </ul>
+          ) : archive ? (
+            <ArchiveEditionView edition={archive} lang={lang} />
           ) : (
             <>
               <p>
-                {t.electionDate}: {edition?.election?.electionDay}
+                {t.electionDate}:{" "}
+                <time dateTime={edition?.election?.electionDay}>
+                  {longDay(edition?.election?.electionDay ?? "", lang)}
+                </time>
               </p>
-              <SeatBasis context={context} lang={lang} />
+              {frozen ? (
+                <p data-testid="edition-frozen" data-seat-revision={context!.revision}>
+                  <strong>{PLATFORM_COPY[lang].finalCertified(longDay(certifiedOn, lang))}</strong>
+                  {". "}
+                  {PLATFORM_COPY[lang].revision}: <code>{context!.revision}</code>
+                </p>
+              ) : (
+                <SeatBasis context={context} lang={lang} />
+              )}
               {context && (
                 <CurrentParliament
                   initial={context}
                   lang={lang}
+                  frozen={frozen}
                   {...forecastPresentation(lang)}
                 />
               )}
               <p>
-                <Link href={href("/results")}>{t.current}</Link>
-                {", "}
+                {!frozen && (
+                  <>
+                    <Link href={href("/results")}>{t.current}</Link>
+                    {", "}
+                  </>
+                )}
                 <Link href={href("/forecast")}>{LIFECYCLE[lang].archive}</Link>
               </p>
+              <ExportLinks lang={lang} kinds={["results", "polls", "forecast"]} />
             </>
           )}
         </>
@@ -288,6 +321,7 @@ export default async function ReferenceHub({
       {kind === "changes" && (
         <>
           <ChangesPage lang={lang} notices={await getGlobalNotices(lang)} />
+          <CountLog lang={lang} />
           <p>{t.evidence}</p>
           {snapshot ? (
             <GovernmentLive

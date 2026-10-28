@@ -45,7 +45,9 @@ export default async function EmbedPage({
         <CoalitionBuilder initialContext={context} pinned={!!revision} />
         <EmbedFooter
           lang={lang}
-          dateLine={`${LIFECYCLE[lang][context.basis]}. ${LIFECYCLE[lang][context.seatStatus]}. ${context.publishedAt ?? LIFECYCLE[lang].noTime}`}
+          path="/coalition-builder"
+          asOf={context.countSourceUpdatedAt ?? context.updatedAt}
+          dateLine={`${LIFECYCLE[lang][context.basis]}. ${LIFECYCLE[lang][context.seatStatus]}`}
         />
       </div>
     );
@@ -93,7 +95,14 @@ export default async function EmbedPage({
   }).format(new Date(poll.published));
   return (
     <div className="embed-page" lang={lang} dir={isRtl(lang) ? "rtl" : "ltr"}>
-      <h1 className="embed-head">{t[kind]}</h1>
+      <h1 className="embed-head">
+        {t[kind]}
+        {kind === "average" && (
+          <>
+            , <time dateTime={poll.published}>{date}</time>
+          </>
+        )}
+      </h1>
       <p className="embed-sub">
         {kind === "average"
           ? t.averageNote
@@ -160,12 +169,14 @@ export default async function EmbedPage({
       </p>
       <EmbedFooter
         lang={lang}
+        path={kind === "average" ? "/polls" : "/results"}
+        asOf={kind === "average" ? poll.published : context ? (context.countSourceUpdatedAt ?? context.updatedAt) : poll.published}
         dateLine={
           kind === "average"
-            ? `${t.polls}: ${mainPolls.length}. ${t.through} ${date}`
+            ? `${t.polls}: ${mainPolls.length}`
             : context
-              ? `${LIFECYCLE[lang][context.basis]}. ${context.publishedAt ?? LIFECYCLE[lang].noTime}`
-              : date
+              ? `${LIFECYCLE[lang][context.basis]}. ${LIFECYCLE[lang][context.seatStatus]}`
+              : poll.pollster
         }
       />
     </div>

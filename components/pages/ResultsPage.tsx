@@ -28,6 +28,7 @@ import { fetchCount, resultsNow, resultsConfig as cfg } from "@/lib/results-live
 import { getLiveForecast } from "@/lib/live-forecast/server";
 import { averageLabel, night, PRIOR_ROLL, priorRollLabel, sections, type Counted, type Night, type Section } from "@/lib/results-phase";
 import PageHead from "@/components/PageHead";
+import ExportLinks from "@/components/ExportLinks";
 import renderLiveForecast from "@/components/live-forecast/LiveForecast";
 import PhaseStrip from "@/components/results/PhaseStrip";
 import ExitPollBars from "@/components/results/ExitPollBars";
@@ -428,6 +429,7 @@ export default async function ResultsPage({ lang, revalidate }: { lang: Lang; re
             <ExitPollTable polls={allPolls} pollsConfig={pollsData.config} config={cfg} lang={lang} lists={r?.lists ?? null} coverage={r ? coverage : null} />
           </details>
         )}
+        <ExportLinks lang={lang} />
       </div>
     </div>
   );

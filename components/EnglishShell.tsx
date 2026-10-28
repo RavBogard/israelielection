@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import PrivacyAwareAnalytics from "@/components/PrivacyAwareAnalytics";
+import ChromeGate from "@/components/ChromeGate";
 import Logo from "@/components/Logo";
 import EditionDescription from "@/components/EditionDescription";
 import ExitBlocLine from "./ExitBlocLine";
@@ -57,6 +58,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
   return (
     <html lang="en" className={`${frank.variable} ${sans.variable}`}>
       <body className="min-h-screen flex flex-col"><SeatContextProvider initial={seatContext}>
+        <ChromeGate>
         <a href="#main" className="skip">
           Skip to content
         </a>
@@ -69,9 +71,11 @@ export default function EnglishShell({ children, seatContext = null }: { childre
           <ExitBlocLine />
           <ResultsStrip pollsClose={pollsClose} />
         </header>
+        </ChromeGate>
         <main id="main" className="flex-1">
           {children}
         </main>
+        <ChromeGate>
         <footer className="site-foot">
           <div className="row">
             <div className="about">
@@ -106,6 +110,7 @@ export default function EnglishShell({ children, seatContext = null }: { childre
             </nav>
           </div>
         </footer>
+        </ChromeGate>
       </SeatContextProvider></body>
       {/* Google Analytics on the production site only, so preview deploys do not count. */}
       {process.env.VERCEL_ENV === "production" && <PrivacyAwareAnalytics gaId={GA_ID} />}

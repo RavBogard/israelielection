@@ -4,41 +4,28 @@ import { getSharedSeatContext } from "@/lib/election-lifecycle/server";
 import { contextToPoll } from "@/lib/seat-context";
 import { LIFECYCLE } from "@/lib/i18n/election-lifecycle";
 import { ImageResponse } from "next/og";
-import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 import { COLS, MAJORITY, ROWS, TOTAL, allocate } from "@/components/SeatGrid";
 import { KNESSET } from "@/lib/coalition";
-import { averagePoll, blocs, mainPolls, parties } from "@/lib/data";
+import { blocs, parties } from "@/lib/data";
+import { heroHeadline } from "@/lib/og-headline";
 import { mediumDate } from "@/lib/format";
 import { blocTotals } from "@/lib/polls";
-import { resultsAsPoll } from "@/lib/results";
-import { fetchCount, resultsConfig } from "@/lib/results-live";
 import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from "@/lib/og";
 
 // The share card is the home page's opening: the race as the 120 seats of the Knesset, coloured
-// by bloc from the current poll average (or the count, on election night). It is drawn on request
-// and cached for an hour, so a link shared today shows today's numbers.
-export const revalidate = 3600;
-export const alt = "Israel Votes: the 120 seats of the Knesset by bloc in the current poll average. 61 seats is an absolute majority.";
+// by bloc from the shared seat context (the count, or the official result). It is drawn on request and
+// cached for five minutes, so a link shared while the count is open never shows an hour-old figure.
+export const revalidate = 300;
+export const alt = "Israel Votes: the 120 seats of the Knesset by bloc, from the count so far. 61 seats is an absolute majority.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const { S, P } = G;
 
-/** Two lines, broken after "votes" so the number never sits alone on the second line. */
-function headline(days: number, live: boolean): [string, string] {
-  if (live) return ["Israel voted.", "The count so far."];
-  if (days > 1) return ["Israel votes", `in ${days} days.`];
-  if (days === 1) return ["Israel votes", "tomorrow."];
-  if (days === 0) return ["Israel votes", "today."];
-  return ["Israel voted", "on October 27."];
-}
-
 export default async function Image() {
-  const live = await fetchCount(revalidate);
   const selected=await getSharedSeatContext();const context=selected.state==="ready"?selected.context:null;
-  if(!context)return new ImageResponse(<div style={{display:"flex",background:PAPER,color:INK,width:"100%",height:"100%",padding:64,fontSize:40,fontFamily:"Frank Ruhl Libre"}}>{LIFECYCLE.en.sourceUnavailable}</div>,{...size,fonts:await ogFonts()});
-  const poll = context ? contextToPoll(context) : live.state === "open" ? resultsAsPoll(live.count, resultsConfig, live.fetchedAt, live) : averagePoll;
-  const isLive = live.state === "open";
+  if(!context)return new ImageResponse(<div style={{display:"flex",background:PAPER,color:INK,width:"100%",height:"100%",padding:64,fontSize:40,fontFamily:"Frank Ruhl Libre"}}>Count unavailable</div>,{...size,fonts:await ogFonts()});
+  const poll = contextToPoll(context);
   const totals = blocTotals(poll, parties);
   const ordered: {id:string;label:string;seats:number;color:string}[] = GRID_ORDER.map((id) => ({ id, label: blocs.find((b) => b.id === id)!.label, seats: totals[id],color:BLOC[id] }));
   const unclassified = 120-ordered.reduce((n,b)=>n+b.seats,0);if(unclassified>0)ordered.push({id:"unclassified",label:LIFECYCLE.en.unknown,seats:unclassified,color:CELL});
@@ -53,17 +40,16 @@ export default async function Image() {
   });
   for (; i < TOTAL; i++) cells.push(<rect key={i} x={(i % COLS) * P} y={Math.floor(i / COLS) * P} width={S} height={S} fill={CELL} />);
 
-  const standfirst = context ? `${LIFECYCLE.en[context.basis]} · ${LIFECYCLE.en[context.seatStatus]}. 120.` : isLive
-    ? `The count so far, as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`
-    : `Where the race stands: the normalized average of the latest ${mainPolls.length} polls as the ${KNESSET} seats of the Knesset. ${MAJORITY} seats is an absolute majority.`;
-  const dateline = context ? `${context.freshness.status === "current" ? updatedFromCount("en", context.updatedAt, context.countSourceUpdatedAt) : `${LIFECYCLE.en[context.freshness.status]} · ${israelTimeLabel(context.updatedAt,"en",LIFECYCLE.en.noTime)}`}` : isLive ? live.state === "open" && live.freshness === "stale" ? "Saved count (stale)" : "Central Elections Committee count" : `Polls to ${mediumDate(mainPolls[0].published)}`;
+  const standfirst = `${LIFECYCLE.en[context.basis]}, ${LIFECYCLE.en[context.seatStatus]}. The ${KNESSET} seats of the Knesset; ${MAJORITY} is an absolute majority.`;
+  // The as-of time on the card: the committee file's time while the context is current, else its status and the time we last updated it.
+  const dateline = context.freshness.status === "current" ? updatedFromCount("en", context.updatedAt, context.countSourceUpdatedAt) : `${LIFECYCLE.en[context.freshness.status]}, ${israelTimeLabel(context.updatedAt, "en", LIFECYCLE.en.noTime)}`;
 
   return new ImageResponse(
     (
       <div style={{ width: "100%", height: "100%", display: "flex", background: PAPER, color: INK, padding: "56px 64px", fontFamily: "Frank Ruhl Libre" }}>
         <div style={{ display: "flex", flexDirection: "column", width: 480, flexShrink: 0 }}>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 64, fontWeight: 700, lineHeight: 0.98, letterSpacing: "-0.02em" }}>
-            {(context ? (context.seatStatus==="official" ? ["Published seats.","Israel’s Knesset."] : ["Current seats.",LIFECYCLE.en[context.seatStatus]]) : headline(daysUntil(ELECTION_DAY), isLive)).map((line) => (
+            {heroHeadline(context, "en").map((line) => (
               <div key={line} style={{ display: "flex" }}>
                 {line}
               </div>
