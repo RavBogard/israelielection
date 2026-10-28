@@ -1,0 +1,20 @@
+/* The forecast scorecard (/forecast#scorecard): two 120-seat grids, then each list's 90% range against its official seats. */
+.scorecard { margin-bottom: 32px; }
+.scorecard .sc-grids { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px 28px; max-width: 820px; margin: 14px 0 0; }
+.scorecard .sc-grids figure { margin: 0; min-width: 0; }
+.scorecard .sc-grids svg { width: 100%; height: auto; max-width: 360px; display: block; }
+.scorecard .sc-key { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13.5px; color: var(--ink-2); }
+.scorecard .sc-key b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.scorecard .sc-largest { font-family: var(--display); font-size: 19px; line-height: 1.4; max-width: 62ch; margin: 18px 0 8px; color: var(--ink); }
+.scorecard .sc-ranges { margin: 22px 0 0; max-width: 820px; }
+.scorecard .sc-ranges ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.scorecard .sc-ranges li { display: grid; grid-template-columns: minmax(0, 9em) minmax(0, 1fr) 4.5em; align-items: center; gap: 10px; font-size: 13.5px; }
+.scorecard .sc-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scorecard .sc-track { position: relative; height: 14px; border-block-end: 1px solid var(--line-2); }
+.scorecard .sc-band { position: absolute; top: 3px; height: 8px; border-radius: 4px; opacity: .45; }
+.scorecard .sc-point { position: absolute; top: 0; width: 2px; height: 14px; background: var(--ink); }
+.scorecard .sc-dot { position: absolute; top: 2px; width: 10px; height: 10px; margin-inline-start: -4px; border-radius: 50%; border: 2px solid var(--bg); box-sizing: border-box; }
+.scorecard .sc-ranges li.out .sc-dot { outline: 2px solid var(--ink); }
+.scorecard .sc-fig { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.scorecard .sc-apart tr:first-child th, .scorecard .sc-apart tr:first-child td { border-top: 2px solid var(--line-2); }
+@media (max-width: 420px) { .scorecard .sc-ranges li { grid-template-columns: minmax(0, 6.5em) minmax(0, 1fr) 4em; gap: 6px; } }

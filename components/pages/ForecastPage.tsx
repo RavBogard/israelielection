@@ -1,6 +1,7 @@
 import { seatContextForRender } from "@/lib/seat-context-server";
 import { countMethod } from "@/components/CountMethod";
 import ElectionRecord from "@/components/seat-context/ElectionRecord";
+import ForecastScorecard from "@/components/forecast/ForecastScorecard";
 import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import SeatBar from "@/components/SeatBar";
@@ -64,6 +65,8 @@ export default async function ForecastPage({ lang }: { lang: Lang }) {
   const method = await countMethod(lang);
   return (
     <div className="wrap forecast-page">
+      {/* Hidden until the seats are official; then the scorecard leads the page (Daniel, 2026-10-28). */}
+      <ForecastScorecard context={context} lang={lang}/>
       <ElectionRecord context={context} lang={lang}/>
       <PageHead title={t.title} standfirst={t.standfirst(date, !!f.final)}>
         <p className="ph-meta">{t.meta2(runs, f.inputs.field.length)}</p>

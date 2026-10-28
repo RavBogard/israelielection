@@ -12,6 +12,9 @@ import { longDate } from "@/lib/format";
 import { editionPath, locale, type Lang } from "@/lib/i18n";
 import { glossaryText } from "@/lib/i18n/glossary";
 import aliases from "@/data/glossary-aliases.json";
+import ThresholdVotes from "@/components/glossary/ThresholdVotes";
+/** The one term that carries a live figure: the 2026 threshold in votes. */
+const THRESHOLD_ID = anchorOf("Electoral threshold");
 export type GlossaryLabel = { text: string; lang: Lang };
 export default function Glossary({
   data,
@@ -139,7 +142,8 @@ export default function Glossary({
                       <dd>
                         <span lang={contentLang} dir="auto">
                           {term.def}
-                        </span>{" "}
+                        </span>
+                        {id === THRESHOLD_ID && <ThresholdVotes lang={lang} />}{" "}
                         <span className="fig-src">
                           ({t.source}:{" "}
                           <a href={term.source.url}>
