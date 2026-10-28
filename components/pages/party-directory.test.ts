@@ -83,7 +83,7 @@ describe("ballot: votes and share per list from the count", () => {
     const profiled = ballotLists.find((l) => l.profile)!;
     state.election = "2026-10-27";
     const shares = { byParty: {}, byLetters: { [unprofiled.letters]: 0.0123 }, votesByLetters: { [unprofiled.letters]: 54321 } };
-    const html = renderToStaticMarkup(createElement(ListSharesProvider, { shares }, createElement(BallotDirectory, { lang: "en" })));
+    const html = renderToStaticMarkup(createElement(ListSharesProvider, { shares, children: createElement(BallotDirectory, { lang: "en" }) }));
     expect(html).toContain("54,321 votes, 1.2%, count so far");
     expect(html).toContain('data-testid="ballot-votes"');
     expect(html).toContain("No votes in the count so far");
