@@ -308,7 +308,7 @@ async function buildSourceExport(
             lang === "en"
               ? "Polling average method"
               : B.averagePhrase(mainPolls.length),
-          url: "https://www.israelielection.org/polls#method",
+          url: "https://www.israelvotes.org/polls#method",
         },
       ],
       view: `/coalition-builder?${q}`,
@@ -441,8 +441,8 @@ async function buildSourceExport(
         headers: ["List", "Forecast seats", "Range low", "Range high", "Chance of passing the threshold (%)", "Source", "Source link", "Retrieved at", "Licence"],
         rows: Object.entries(forecast.lists)
           .sort(([, a], [, b]) => b.point - a.point)
-          .map(([id, l]) => [name(id, id), l.point, l.lo, l.hi, l.passes, "Israel Votes forecast", "https://www.israelielection.org/forecast", forecast.generatedAt ?? forecast.generated, cells.licence]),
-        sources: [{ label: forecast.method, url: "https://www.israelielection.org/forecast" }],
+          .map(([id, l]) => [name(id, id), l.point, l.lo, l.hi, l.passes, "Israel Votes forecast", "https://www.israelvotes.org/forecast", forecast.generatedAt ?? forecast.generated, cells.licence]),
+        sources: [{ label: forecast.method, url: "https://www.israelvotes.org/forecast" }],
         view: "/forecast",
       };
     if (kind === "polls") {
@@ -467,7 +467,7 @@ async function buildSourceExport(
             cells.licence,
           ]),
         ),
-        sources: [{ label: "Poll file", url: "https://www.israelielection.org/polls" }],
+        sources: [{ label: "Poll file", url: "https://www.israelvotes.org/polls" }],
         view: "/polls",
       };
     }

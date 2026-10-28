@@ -92,7 +92,7 @@ export function pinnedSeatHref(
   href: string,
   context: SharedSeatContext,
 ): string {
-  const url = new URL(href, "https://www.israelielection.org");
+  const url = new URL(href, "https://www.israelvotes.org");
   url.searchParams.set("context", context.revision);
   return `${url.pathname}${url.search}${url.hash}`;
 }

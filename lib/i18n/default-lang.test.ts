@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { defaultLang, firstLanguage, type Visit } from "./default-lang";
 
-const visit = (v: Partial<Visit>): Visit => ({ cookie: undefined, country: "US", acceptLanguage: "en-US,en;q=0.9", userAgent: "Mozilla/5.0", referer: null, origin: "https://www.israelielection.org", ...v });
+const visit = (v: Partial<Visit>): Visit => ({ cookie: undefined, country: "US", acceptLanguage: "en-US,en;q=0.9", userAgent: "Mozilla/5.0", referer: null, origin: "https://www.israelvotes.org", ...v });
 
 describe("the browser's first language", () => {
   it("reads the first tag, by quality", () => {
@@ -40,8 +40,8 @@ describe("the default edition", () => {
     expect(defaultLang(visit({ cookie: "he" }))).toBe("he");
   });
   it("never redirects a click inside the site, a crawler or a link preview", () => {
-    expect(defaultLang(visit({ country: "IL", referer: "https://www.israelielection.org/he/polls" }))).toBeNull();
-    expect(defaultLang(visit({ country: "IL", referer: "https://israelielection.org/about" }))).toBeNull();
+    expect(defaultLang(visit({ country: "IL", referer: "https://www.israelvotes.org/he/polls" }))).toBeNull();
+    expect(defaultLang(visit({ country: "IL", referer: "https://israelvotes.org/about" }))).toBeNull();
     expect(defaultLang(visit({ country: "IL", referer: "https://www.google.co.il/" }))).toBe("he");
     expect(defaultLang(visit({ country: "IL", userAgent: "Mozilla/5.0 (compatible; Googlebot/2.1)" }))).toBeNull();
     expect(defaultLang(visit({ country: "IL", userAgent: "WhatsApp/2.23" }))).toBeNull();

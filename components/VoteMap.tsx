@@ -675,7 +675,7 @@ export default function VoteMap() {
                 : "");
             try {
               await navigator.clipboard.writeText(
-                `https://www.israelielection.org${path}`,
+                `https://www.israelvotes.org${path}`,
               );
               setCopied(true);
             } catch {

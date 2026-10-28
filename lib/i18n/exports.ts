@@ -247,7 +247,7 @@ const en = {
   original:
     "Source quotations and original list names remain in their original language where no reviewed translation is available.",
   credit:
-    "Original site text: CC BY-NC 4.0, with credit to Rabbi Daniel Bogard and israelielection.org. Third-party source material retains its own rights.",
+    "Original site text: CC BY-NC 4.0, with credit to Rabbi Daniel Bogard and israelvotes.org. Third-party source material retains its own rights.",
 };
 type Text = typeof en;
 export const EXPORTS: Record<Lang, Text> = {
@@ -272,7 +272,7 @@ export const EXPORTS: Record<Lang, Text> = {
     original:
       "ציטוטי מקורות ושמות רשימות מקוריים נשמרים בשפת המקור כשאין תרגום שנבדק.",
     credit:
-      "הטקסט המקורי באתר: CC BY-NC 4.0, עם ייחוס לרב דניאל בוגרד ולקישור israelielection.org. חומר של צדדים שלישיים כפוף לזכויות המקוריות.",
+      "הטקסט המקורי באתר: CC BY-NC 4.0, עם ייחוס לרב דניאל בוגרד ולקישור israelvotes.org. חומר של צדדים שלישיים כפוף לזכויות המקוריות.",
   },
   ar: {
     issue: "مقارنة المواقف المختارة",
@@ -294,7 +294,7 @@ export const EXPORTS: Record<Lang, Text> = {
     original:
       "تبقى اقتباسات المصادر وأسماء القوائم الأصلية بلغتها الأصلية عند غياب ترجمة مراجَعة.",
     credit:
-      "النص الأصلي للموقع: CC BY-NC 4.0، مع نسبه إلى الحاخام دانيال بوغارد وisraelielection.org. تحتفظ مواد الأطراف الأخرى بحقوقها الأصلية.",
+      "النص الأصلي للموقع: CC BY-NC 4.0، مع نسبه إلى الحاخام دانيال بوغارد وisraelvotes.org. تحتفظ مواد الأطراف الأخرى بحقوقها الأصلية.",
   },
   fa: {
     issue: "مقایسه مواضع انتخاب‌شده",
@@ -316,7 +316,7 @@ export const EXPORTS: Record<Lang, Text> = {
     original:
       "نقل‌قول منابع و نام‌های اصلی فهرست‌ها در نبود ترجمه بررسی‌شده به زبان اصلی می‌مانند.",
     credit:
-      "متن اصلی سایت: CC BY-NC 4.0، با ذکر خاخام دانیل بوگارد و israelielection.org. حقوق مطالب اشخاص ثالث متعلق به صاحبان اصلی است.",
+      "متن اصلی سایت: CC BY-NC 4.0، با ذکر خاخام دانیل بوگارد و israelvotes.org. حقوق مطالب اشخاص ثالث متعلق به صاحبان اصلی است.",
   },
   de: {
     issue: "Ausgewählter Positionsvergleich",
@@ -338,7 +338,7 @@ export const EXPORTS: Record<Lang, Text> = {
     original:
       "Quellenzitate und ursprüngliche Listennamen bleiben im Original, wenn keine geprüfte Übersetzung vorliegt.",
     credit:
-      "Eigene Texte: CC BY-NC 4.0 mit Nennung von Rabbi Daniel Bogard und israelielection.org. Fremdmaterial behält seine ursprünglichen Rechte.",
+      "Eigene Texte: CC BY-NC 4.0 mit Nennung von Rabbi Daniel Bogard und israelvotes.org. Fremdmaterial behält seine ursprünglichen Rechte.",
   },
   fr: {
     issue: "Comparaison des positions choisies",
@@ -360,7 +360,7 @@ export const EXPORTS: Record<Lang, Text> = {
     original:
       "Les citations et les noms originaux des listes restent dans leur langue d’origine en l’absence de traduction révisée.",
     credit:
-      "Textes originaux du site : CC BY-NC 4.0 avec attribution au rabbin Daniel Bogard et à israelielection.org. Les contenus tiers conservent leurs droits d’origine.",
+      "Textes originaux du site : CC BY-NC 4.0 avec attribution au rabbin Daniel Bogard et à israelvotes.org. Les contenus tiers conservent leurs droits d’origine.",
   },
   zh: {
     issue: "所选议题对照",
@@ -381,7 +381,7 @@ export const EXPORTS: Record<Lang, Text> = {
     attribution: "署名",
     original: "尚无经审核译文的来源引文及名单名称保留原文。",
     credit:
-      "本站原创文字采用CC BY-NC 4.0许可，须注明拉比Daniel Bogard及israelielection.org。第三方材料保留原有权利。",
+      "本站原创文字采用CC BY-NC 4.0许可，须注明拉比Daniel Bogard及israelvotes.org。第三方材料保留原有权利。",
   },
 };
 export function exportHeader(header: string, lang: Lang) {
@@ -391,12 +391,12 @@ export function exportHeader(header: string, lang: Lang) {
 
 /** Cell wording for the results, polls and forecast downloads. */
 const cellText = {
-  en: { provisional: "Provisional: the count is still open", official: "Official", setApart: "Not in the average: set apart", inAverage: "In the average", unavailable: "Count unavailable. No figures are shown.", licence: "Source rights stay with the source; this compilation CC BY-NC 4.0, credit israelielection.org", frozen: "Frozen before the vote", pollsNote: "Pre-election campaign polls; exit polls are not included." },
-  he: { provisional: "זמני: הספירה עדיין פתוחה", official: "רשמי", setApart: "לא בממוצע: מוצג בנפרד", inAverage: "בממוצע", unavailable: "הספירה אינה זמינה. לא מוצגים נתונים.", licence: "הזכויות במקור נשארות אצל המקור; הריכוז הזה ברישיון CC BY-NC 4.0, ייחוס ל־israelielection.org", frozen: "הוקפא לפני ההצבעה", pollsNote: "סקרי מערכת הבחירות; סקרי היציאה אינם כלולים." },
-  ar: { provisional: "مؤقت: الفرز لا يزال مفتوحًا", official: "رسمي", setApart: "خارج المتوسط: يُعرض منفصلًا", inAverage: "ضمن المتوسط", unavailable: "الفرز غير متاح. لا تُعرض أي أرقام.", licence: "تبقى حقوق المصدر لدى المصدر؛ هذا التجميع بترخيص CC BY-NC 4.0 مع نسبته إلى israelielection.org", frozen: "مجمّد قبل التصويت", pollsNote: "استطلاعات الحملة؛ استطلاعات الخروج غير مشمولة." },
-  fa: { provisional: "موقت: شمارش هنوز باز است", official: "رسمی", setApart: "خارج از میانگین: جداگانه نمایش داده می‌شود", inAverage: "در میانگین", unavailable: "شمارش در دسترس نیست. هیچ عددی نمایش داده نمی‌شود.", licence: "حقوق منبع نزد خود منبع می‌ماند؛ این گردآوری با مجوز CC BY-NC 4.0 و ذکر israelielection.org", frozen: "پیش از رأی‌گیری ثابت شد", pollsNote: "نظرسنجی‌های دوره مبارزات؛ نظرسنجی‌های خروجی شامل نیست." },
-  de: { provisional: "Vorläufig: Die Auszählung läuft noch", official: "Amtlich", setApart: "Nicht im Durchschnitt: gesondert ausgewiesen", inAverage: "Im Durchschnitt", unavailable: "Auszählung nicht verfügbar. Es werden keine Zahlen angezeigt.", licence: "Die Rechte an den Quellen bleiben bei den Quellen; diese Zusammenstellung unter CC BY-NC 4.0 mit Nennung von israelielection.org", frozen: "Vor der Wahl eingefroren", pollsNote: "Umfragen aus dem Wahlkampf; Wahltagsbefragungen sind nicht enthalten." },
-  fr: { provisional: "Provisoire : le dépouillement est encore ouvert", official: "Officiel", setApart: "Hors moyenne : présenté à part", inAverage: "Dans la moyenne", unavailable: "Dépouillement indisponible. Aucun chiffre n’est affiché.", licence: "Les droits sur les sources restent aux sources ; cette compilation est sous CC BY-NC 4.0, avec mention d’israelielection.org", frozen: "Figée avant le vote", pollsNote: "Sondages de la campagne ; les sondages sortie des urnes ne sont pas inclus." },
-  zh: { provisional: "临时：计票仍在进行", official: "正式", setApart: "不计入平均值：单独列出", inAverage: "计入平均值", unavailable: "计票数据不可用，不显示数字。", licence: "来源数据权利归来源方所有；本汇编采用 CC BY-NC 4.0，须注明 israelielection.org", frozen: "投票前已冻结", pollsNote: "竞选期间民调；不含出口民调。" },
+  en: { provisional: "Provisional: the count is still open", official: "Official", setApart: "Not in the average: set apart", inAverage: "In the average", unavailable: "Count unavailable. No figures are shown.", licence: "Source rights stay with the source; this compilation CC BY-NC 4.0, credit israelvotes.org", frozen: "Frozen before the vote", pollsNote: "Pre-election campaign polls; exit polls are not included." },
+  he: { provisional: "זמני: הספירה עדיין פתוחה", official: "רשמי", setApart: "לא בממוצע: מוצג בנפרד", inAverage: "בממוצע", unavailable: "הספירה אינה זמינה. לא מוצגים נתונים.", licence: "הזכויות במקור נשארות אצל המקור; הריכוז הזה ברישיון CC BY-NC 4.0, ייחוס ל־israelvotes.org", frozen: "הוקפא לפני ההצבעה", pollsNote: "סקרי מערכת הבחירות; סקרי היציאה אינם כלולים." },
+  ar: { provisional: "مؤقت: الفرز لا يزال مفتوحًا", official: "رسمي", setApart: "خارج المتوسط: يُعرض منفصلًا", inAverage: "ضمن المتوسط", unavailable: "الفرز غير متاح. لا تُعرض أي أرقام.", licence: "تبقى حقوق المصدر لدى المصدر؛ هذا التجميع بترخيص CC BY-NC 4.0 مع نسبته إلى israelvotes.org", frozen: "مجمّد قبل التصويت", pollsNote: "استطلاعات الحملة؛ استطلاعات الخروج غير مشمولة." },
+  fa: { provisional: "موقت: شمارش هنوز باز است", official: "رسمی", setApart: "خارج از میانگین: جداگانه نمایش داده می‌شود", inAverage: "در میانگین", unavailable: "شمارش در دسترس نیست. هیچ عددی نمایش داده نمی‌شود.", licence: "حقوق منبع نزد خود منبع می‌ماند؛ این گردآوری با مجوز CC BY-NC 4.0 و ذکر israelvotes.org", frozen: "پیش از رأی‌گیری ثابت شد", pollsNote: "نظرسنجی‌های دوره مبارزات؛ نظرسنجی‌های خروجی شامل نیست." },
+  de: { provisional: "Vorläufig: Die Auszählung läuft noch", official: "Amtlich", setApart: "Nicht im Durchschnitt: gesondert ausgewiesen", inAverage: "Im Durchschnitt", unavailable: "Auszählung nicht verfügbar. Es werden keine Zahlen angezeigt.", licence: "Die Rechte an den Quellen bleiben bei den Quellen; diese Zusammenstellung unter CC BY-NC 4.0 mit Nennung von israelvotes.org", frozen: "Vor der Wahl eingefroren", pollsNote: "Umfragen aus dem Wahlkampf; Wahltagsbefragungen sind nicht enthalten." },
+  fr: { provisional: "Provisoire : le dépouillement est encore ouvert", official: "Officiel", setApart: "Hors moyenne : présenté à part", inAverage: "Dans la moyenne", unavailable: "Dépouillement indisponible. Aucun chiffre n’est affiché.", licence: "Les droits sur les sources restent aux sources ; cette compilation est sous CC BY-NC 4.0, avec mention d’israelvotes.org", frozen: "Figée avant le vote", pollsNote: "Sondages de la campagne ; les sondages sortie des urnes ne sont pas inclus." },
+  zh: { provisional: "临时：计票仍在进行", official: "正式", setApart: "不计入平均值：单独列出", inAverage: "计入平均值", unavailable: "计票数据不可用，不显示数字。", licence: "来源数据权利归来源方所有；本汇编采用 CC BY-NC 4.0，须注明 israelvotes.org", frozen: "投票前已冻结", pollsNote: "竞选期间民调；不含出口民调。" },
 } satisfies Record<Lang, Record<"provisional" | "official" | "setApart" | "inAverage" | "unavailable" | "licence" | "frozen" | "pollsNote", string>>;
 export const exportCells = (lang: Lang) => cellText[lang];

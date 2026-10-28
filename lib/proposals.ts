@@ -59,7 +59,7 @@ export function proposalPrompt(items: NewsItem[], parties: Party[], date: string
   const list = items
     .map((it, i) => `[${i + 1}] ${it.outlet}, ${it.published.slice(0, 10)} | ${it.title}${it.summary ? ` | ${it.summary}` : ""}`)
     .join("\n");
-  return `You maintain the party register of israelielection.org, a neutral English reference on Israel's October 27, 2026 Knesset election. Today is ${date}.
+  return `You maintain the party register of israelvotes.org, a neutral English reference on Israel's October 27, 2026 Knesset election. Today is ${date}.
 
 Below is the register, then the last day's headlines, numbered. Propose a change ONLY when a headline reports a concrete new fact that makes a register entry out of date:
 - leader: the list's leader changed.

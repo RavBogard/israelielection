@@ -37,7 +37,7 @@ type Edition = "ar" | "fa" | "de" | "fr" | "zh";
 export function toolMetadata(lang: Edition): Metadata {
   const t = chrome[lang];
   return {
-    metadataBase: new URL("https://www.israelielection.org"),
+    metadataBase: new URL("https://www.israelvotes.org"),
     title: { default: t.siteName, template: `%s | ${t.siteName}` }, description: t.description, applicationName: t.siteName,
     openGraph: { type: "website", siteName: t.siteName, locale: ({ ar: "ar_AR", fa: "fa_IR", de: "de_DE", fr: "fr_FR", zh: "zh_CN" })[lang] },
     twitter: { card: "summary_large_image" }, appleWebApp: { title: t.siteName },

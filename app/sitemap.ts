@@ -21,7 +21,7 @@ import { HE_PUBLIC, LANGS, editionPath } from "@/lib/i18n";
 import { ELECTIONS } from "@/lib/political-record/elections";
 import { ARCHIVE_EDITION_IDS } from "@/lib/archive-editions";
 
-const BASE = "https://www.israelielection.org";
+const BASE = "https://www.israelvotes.org";
 
 /** Pages with no dated data source take the build time. */
 const BUILT = new Date();

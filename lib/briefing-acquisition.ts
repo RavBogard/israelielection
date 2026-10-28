@@ -97,7 +97,7 @@ export async function captureArticle(
         redirect: "manual",
         signal,
         headers: {
-          "User-Agent": "israelielection.org public reference reader",
+          "User-Agent": "israelvotes.org public reference reader",
         },
       });
       if ([301, 302, 303, 307, 308].includes(response.status)) {

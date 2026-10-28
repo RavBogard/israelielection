@@ -5,7 +5,7 @@ import { editionPath, type Lang } from "@/lib/i18n";
 import { EMBEDS } from "@/lib/i18n/embeds";
 import "./embed.css";
 
-const ORIGIN = "https://www.israelielection.org";
+const ORIGIN = "https://www.israelvotes.org";
 
 /** A copyable iframe snippet for one of the /embed widgets. */
 export default function EmbedCode({

@@ -1,6 +1,6 @@
 import { boundedReadRetry } from "./monitor-types";
 import type { MonitorCheck } from "./monitor-types";
-export const PUBLIC_MONITOR_ORIGIN = "https://www.israelielection.org";
+export const PUBLIC_MONITOR_ORIGIN = "https://www.israelvotes.org";
 const API = "https://api.globalping.io/v1/measurements";
 const COUNTRIES = ["US", "DE", "IL"] as const;
 type ProbeRow = {

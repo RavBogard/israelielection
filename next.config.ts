@@ -64,7 +64,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     // The Coalition Builder has its own page again; old shared links keep their ?poll=&with= query.
     // The Palestinian-state issue page took its title's address (ruling 108).
+    // The site moved to israelvotes.org (Daniel, 2026-10-28). The old domain keeps every path and query; /api stays
+    // served there so signed worker deliveries and outside readers of the data endpoints keep working unchanged.
+    const OLD_HOST = [{ type: "host" as const, value: "(?:www\\.)?israelielection\\.org" }];
     return [
+      { source: "/", has: OLD_HOST, destination: "https://www.israelvotes.org/", permanent: true },
+      { source: "/:path((?!api(?:/|$)).*)", has: OLD_HOST, destination: "https://www.israelvotes.org/:path", permanent: true },
       {
         source: "/coalition",
         destination: "/coalition-builder",

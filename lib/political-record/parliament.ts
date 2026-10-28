@@ -111,7 +111,7 @@ async function acquire(url: string, fetcher: typeof fetch) {
     signal: AbortSignal.timeout(8000),
     headers: {
       "User-Agent":
-        "IsraeliElection primary parliament collector (+https://www.israelielection.org)",
+        "IsraeliElection primary parliament collector (+https://www.israelvotes.org)",
     },
   });
   if (!response.ok) throw new Error("parliament_source_unavailable");

@@ -56,7 +56,7 @@ describe("finding sentence", () => {
 
 describe("cite", () => {
   it("states the average, its date, the figure and the poll count", () => {
-    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "Netanyahu bloc", 54.63)).toBe("Israel Votes polling average, October 5, 2026: Netanyahu bloc 54.6 of 120 seats (7 polls). israelielection.org/polls");
+    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "Netanyahu bloc", 54.63)).toBe("Israel Votes polling average, October 5, 2026: Netanyahu bloc 54.6 of 120 seats (7 polls). israelvotes.org/polls");
   });
 });
 
@@ -88,7 +88,7 @@ describe("the Hebrew finding (STYLE.md agreement: blocs masculine, pollsters thr
     expect(f([crossed("x", "P")])).toBe("באף סקר עדכני אי אפשר לחשב את גוש נתניהו בנפרד מול רף ה-61.");
   });
   it("cites, labels the no-news line and the slip in Hebrew", () => {
-    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "גוש נתניהו", 54.63, undefined, "he")).toBe("ממוצע הסקרים של פתק, 5 באוקטובר 2026: גוש נתניהו 54.6 מתוך 120 מנדטים (7 סקרים). israelielection.org/he/polls");
+    expect(citeText({ ...averagePoll, published: "2026-10-05" }, 7, "גוש נתניהו", 54.63, undefined, "he")).toBe("ממוצע הסקרים של פתק, 5 באוקטובר 2026: גוש נתניהו 54.6 מתוך 120 מנדטים (7 סקרים). israelvotes.org/he/polls");
     expect(citeText({ ...averagePoll, published: "2026-10-05" }, 1, "גוש נתניהו", 54.63, undefined, "he")).toContain("(סקר אחד)");
     expect(citeText({ ...averagePoll, published: "2026-10-05" }, 2, "גוש נתניהו", 54.63, undefined, "he")).toContain("(שני סקרים)");
     expect(noNewLabel(short("c", "C", "2026-10-06"), "he")).toBe("אין סקרים חדשים מאז 6.10");

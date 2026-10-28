@@ -109,7 +109,7 @@ export function briefingPrompt(
         `[${i + 1}] ${it.outlet}, ${it.published.slice(0, 16).replace("T", " ")} UTC | ${it.title}${it.summary ? ` | ${it.summary}` : ""}`,
     )
     .join("\n");
-  return `You write the daily "what changed" briefing for israelielection.org, an English-language reference site on Israel's October 27, 2026 Knesset election for American readers.
+  return `You write the daily "what changed" briefing for israelvotes.org, an English-language reference site on Israel's October 27, 2026 Knesset election for American readers.
 
 Today is ${date}. Below are the last day's headlines from English-language outlets, numbered.
 

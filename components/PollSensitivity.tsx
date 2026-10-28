@@ -35,7 +35,7 @@ export default function PollSensitivity({ polls, parties, blocs, config }: Props
   const hypothetical = syntheticThresholdSeats(fiction);
   async function share() {
     const q = writeSensitivityView(new URLSearchParams(params),settings);
-    const path = `${he ? `/${lang}/polls` : "/polls"}?${q}#sensitivity`; const url = `https://www.israelielection.org${path}`; setShareUrl(url); router.push(path, { scroll: false });
+    const path = `${he ? `/${lang}/polls` : "/polls"}?${q}#sensitivity`; const url = `https://www.israelvotes.org${path}`; setShareUrl(url); router.push(path, { scroll: false });
     try { await navigator.clipboard.writeText(url); setShareStatus(t.copied); } catch { setShareStatus(t.copyFailed); }
   }
   return <section id="sensitivity" className="poll-sensitivity" aria-labelledby="sensitivity-h"><h2 id="sensitivity-h" className="sec-h">{t.title}</h2><p>{t.intro}</p>

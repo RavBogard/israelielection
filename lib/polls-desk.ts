@@ -105,8 +105,8 @@ export function variantFinding(main: Two, variant: Two, left: string[], lang: La
 
 /** The copyable citation for the average. */
 export const citeText = (avg: Two, n: number, date: string, url?: string, lang: Lang = "en") =>
-  lang === "he" ? H.cite(n, longDate(date, "he"), HE_BLOC.net, seatFigure(avg.net), HE_BLOC.opp, seatFigure(avg.opp), url ?? "https://www.israelielection.org/he/polls") :
-  ui(lang, "Israel Votes, polling average of {0} current polls as of {1}: {2} {3}, {4} {5} of 120 seats. {6}", n, longDate(date, lang), ui(lang, BLOC_NAME.net), seatFigure(avg.net), ui(lang, BLOC_NAME.opp), seatFigure(avg.opp), url ?? "https://www.israelielection.org/polls");
+  lang === "he" ? H.cite(n, longDate(date, "he"), HE_BLOC.net, seatFigure(avg.net), HE_BLOC.opp, seatFigure(avg.opp), url ?? "https://www.israelvotes.org/he/polls") :
+  ui(lang, "Israel Votes, polling average of {0} current polls as of {1}: {2} {3}, {4} {5} of 120 seats. {6}", n, longDate(date, lang), ui(lang, BLOC_NAME.net), seatFigure(avg.net), ui(lang, BLOC_NAME.opp), seatFigure(avg.opp), url ?? "https://www.israelvotes.org/polls");
 
 export const DESK_TABS = [
   { id: "parties", label: "Parties" },

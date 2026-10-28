@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 const origin =
   process.env.PLATFORM_MONITOR_BROWSER_ORIGIN ??
-  "https://www.israelielection.org";
+  "https://www.israelvotes.org";
 const parsed = new URL(origin),
   preview =
     origin === process.env.PLATFORM_MONITOR_PREVIEW_ORIGIN &&
@@ -9,7 +9,7 @@ const parsed = new URL(origin),
 if (
   parsed.origin !== origin ||
   parsed.protocol !== "https:" ||
-  (origin !== "https://www.israelielection.org" && !preview)
+  (origin !== "https://www.israelvotes.org" && !preview)
 )
   throw new Error("monitor_origin_not_allowed");
 for (const locale of ["en", "he", "ar", "fa", "de", "fr", "zh"]) {

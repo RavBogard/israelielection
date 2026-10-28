@@ -88,7 +88,7 @@ export async function acquireCount(
       signal: AbortSignal.timeout(10_000),
       headers: {
         "User-Agent":
-          "Mozilla/5.0 (compatible; israelielection.org results reader; +https://www.israelielection.org)",
+          "Mozilla/5.0 (compatible; israelvotes.org results reader; +https://www.israelvotes.org)",
       },
     });
     if (response.status >= 500) throw new Error("Source unavailable");
