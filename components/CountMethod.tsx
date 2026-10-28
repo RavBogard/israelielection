@@ -8,7 +8,7 @@ import "@/components/count-method.css";
  * /forecast on election night: how the count projection heading the site works, with tonight's figures filled in
  * (Daniel, 2026-10-28). Renders nothing until the projection runs on the count.
  */
-export default async function CountMethod({ lang }: { lang: Lang }) {
+export async function countMethod(lang: Lang) {
   const est = await getLiveForecast().then((s) => getCountEstimate(s)).catch(() => null);
   if (!est || est.mode !== "count" || !est.blocIntervals) return null;
   const t = COUNT_METHOD[lang], loc = locale(lang);
@@ -24,7 +24,7 @@ export default async function CountMethod({ lang }: { lang: Lang }) {
     weight: pct(est.blend?.weight ?? 1),
   };
   return (
-    <section className="count-method" aria-labelledby="cm-h">
+    <section key="count-method" className="count-method" aria-labelledby="cm-h">
       <h2 id="cm-h" className="sec-h">{t.h}</h2>
       <p className="cm-lead">{t.lead}</p>
       <p className="cm-now">{t.now(v)}</p>
