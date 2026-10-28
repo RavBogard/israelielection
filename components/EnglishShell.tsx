@@ -29,12 +29,12 @@ import { GA_ID } from "@/lib/analytics";
 
 export const EN_METADATA: Metadata = {
   metadataBase: new URL("https://www.israelielection.org"),
-  title: { default: "Israel Votes 2026", template: "%s | Israel Votes 2026" },
+  title: { default: "Israel Votes", template: "%s | Israel Votes" },
   description: DESCRIPTION,
-  applicationName: "Israel Votes 2026",
+  applicationName: "Israel Votes",
   alternates: { types: RSS },
   // What Facebook, iMessage, Slack and X show when a link is shared. The picture is drawn by app/(en)/opengraph-image.tsx.
-  openGraph: { type: "website", siteName: "Israel Votes 2026", locale: "en_US" },
+  openGraph: { type: "website", siteName: "Israel Votes", locale: "en_US" },
   twitter: { card: "summary_large_image" },
   appleWebApp: { title: "Israel Votes" },
 };

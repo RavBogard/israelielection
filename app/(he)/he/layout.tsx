@@ -34,7 +34,7 @@ import "@/components/he-chrome.css";
 
 // The Hebrew edition's root layout (/he and below): its own <html lang="he" dir="rtl">, so crossing between
 // editions is a full page load. The same one-bar masthead as English (components/EnglishShell.tsx): the wordmark
-// פתק 2026 with the countdown, the seat meter, four group menus listing the Hebrew pages, the parties and the
+// פתק with the countdown, the seat meter, four group menus listing the Hebrew pages, the parties and the
 // English guides, then Home, Search and About, and the language toggle. All words come from lib/i18n/chrome.ts.
 
 // IBM Plex Sans Hebrew sets the interface's Hebrew (--font-he; the :root:lang(he) stack in globals.css puts

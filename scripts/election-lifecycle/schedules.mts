@@ -1,4 +1,5 @@
 /** Dry-run by default. Release owner runs --apply only after preview and production verification. */
+import { COUNT_TIMELINE } from "../../lib/political-record/elections";
 const destination = process.env.ELECTION_LIFECYCLE_WORKER_URL;
 if (!destination || new URL(destination).protocol !== "https:")
   throw new Error("Set the exact HTTPS worker URL for this environment.");
@@ -12,14 +13,14 @@ const schedules = [
     window: "night",
     id: `lifecycle-${environment}-night-2026`,
     cron: "*/15 * * * *",
-    note: "Self-gates to2026-10-27T20Z through2026-10-28T05:45Z. Pause after that one-night window.",
+    note: "Self-gates from polls close to the regular-window start (data/election.json). Pause after that one-night window.",
   },
   {
     mode: "cycle",
     window: "regular",
     id: `lifecycle-${environment}-regular-2026`,
     cron: "0 */3 * * *",
-    note: "Self-gates until2026-10-28T06Z, then every3hoursUTC; official/formation continue afterNov3.",
+    note: "Self-gates from the regular-window start (data/election.json), then every 3 hours UTC; official/formation continue after the archive date.",
   },
   {
     mode: "briefing",
@@ -85,7 +86,7 @@ for (const s of schedules) {
 }
 
 // The one-night schedule pauses itself after its40slots; continuation/briefing IDs are never targeted.
-const pauseAt = Date.parse("2026-10-28T06:00:00Z");
+const pauseAt = COUNT_TIMELINE.regularStart;
 if (!apply)
   console.log(
     JSON.stringify({

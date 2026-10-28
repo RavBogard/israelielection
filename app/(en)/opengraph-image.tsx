@@ -18,7 +18,7 @@ import { BLOC, CELL, G, GRID_ORDER, INK, INK3, LINE, PAPER, TEXT, ogFonts } from
 // by bloc from the current poll average (or the count, on election night). It is drawn on request
 // and cached for an hour, so a link shared today shows today's numbers.
 export const revalidate = 3600;
-export const alt = "Israel Votes 2026: the 120 seats of the Knesset by bloc in the current poll average. 61 seats is an absolute majority.";
+export const alt = "Israel Votes: the 120 seats of the Knesset by bloc in the current poll average. 61 seats is an absolute majority.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

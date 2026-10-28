@@ -1,4 +1,5 @@
 "use client";
+import { isCurrentElectionRef } from "@/lib/political-record/elections";
 
 import { useSeatContext } from "./seat-context/SeatContextProvider";
 import SeatBasis from "./seat-context/SeatBasis";
@@ -62,7 +63,7 @@ export default function BallotDirectory({
   // This immutable roster belongs to the 26th election, even when another term is active.
   const context =
     currentContext &&
-    ["2026-10-27", "il-knesset-26"].includes(currentContext.election)
+    isCurrentElectionRef(currentContext.election)
       ? currentContext
       : null;
   const seatsOf = (list: (typeof ballotLists)[number]) =>

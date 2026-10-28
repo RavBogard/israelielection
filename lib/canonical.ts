@@ -6,7 +6,7 @@ import { HE_PUBLIC, LANGS, enPath, editionPath } from "./i18n";
 import { sourceForPath,translatedReference,toolTextEdition } from "./reference/catalog";
 
 /** The daily briefing's feed, linked from every English page. The feed is English only. */
-export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes 2026: daily briefing" }] };
+export const RSS = { "application/rss+xml": [{ url: "/news/feed.xml", title: "Israel Votes: daily briefing" }] };
 
 /** hreflang links for a page with both editions; undefined for English-only pages. */
 function languages(en: string, announce = HE_PUBLIC): Record<string, string> | undefined {

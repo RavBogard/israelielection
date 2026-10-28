@@ -8,6 +8,7 @@ import chrome from "@/lib/i18n/chrome";
 import { editionCopy } from "@/lib/i18n/edition";
 
 import { ELECTION_DAY, daysUntil } from "@/lib/election-date";
+import { isCurrentElectionRef } from "@/lib/political-record/elections";
 export { ELECTION_DAY, daysUntil } from "@/lib/election-date";
 
 /** One line in the masthead: how far away Election Day is. Words from lib/i18n/chrome.ts. */
@@ -27,7 +28,7 @@ export default function Countdown({
         </Link>
       </p>
     );
-  if (context && !["2026-10-27", "il-knesset-26"].includes(context.election))
+  if (context && !isCurrentElectionRef(context.election))
     return (
       <p className={`countdown${className ? ` ${className}` : ""}`}>
         <Link href={editionPath("/elections", lang) ?? "/elections"}>

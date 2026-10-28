@@ -50,7 +50,7 @@ describe("polls desk findings", () => {
     expect(variantFinding({ net: 54.6, opp: 48 }, { net: 54.6, opp: 49 }, ["P"])).toBe("Leaving out P does not move the Netanyahu bloc");
   });
   it("cites the average with its date", () => {
-    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05")).toBe("Israel Votes 2026, polling average of 7 current polls as of October 5, 2026: Netanyahu bloc 54.6, Anti-Netanyahu bloc 48.0 of 120 seats. https://www.israelielection.org/polls");
+    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05")).toBe("Israel Votes, polling average of 7 current polls as of October 5, 2026: Netanyahu bloc 54.6, Anti-Netanyahu bloc 48.0 of 120 seats. https://www.israelielection.org/polls");
   });
   it("opens the tab a link names, else the tool its query belongs to", () => {
     expect(initialTab("", "")).toBe("parties");
@@ -117,11 +117,11 @@ describe("polls desk findings in Hebrew", () => {
     expect(variantFinding({ net: 54.6, opp: 48 }, { net: 54.6, opp: 49 }, ["P"], "he")).toBe("בלי סקרי P גוש נתניהו נשאר ללא שינוי");
   });
   it("cites the average in Hebrew with the Hebrew address", () => {
-    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05", undefined, "he")).toBe("פתק 2026, ממוצע 7 הסקרים העדכניים, נכון ל-5 באוקטובר 2026: גוש נתניהו 54.6, גוש האופוזיציה 48.0 מתוך 120 מנדטים. https://www.israelielection.org/he/polls");
+    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05", undefined, "he")).toBe("פתק, ממוצע 7 הסקרים העדכניים, נכון ל-5 באוקטובר 2026: גוש נתניהו 54.6, גוש האופוזיציה 48.0 מתוך 120 מנדטים. https://www.israelielection.org/he/polls");
     expect(citeText({ net: 54.64, opp: 48 }, 1, "2026-10-05", undefined, "he")).toContain("ממוצע הסקר העדכני היחיד, נכון");
   });
   it("keeps the English untouched when no language is given", () => {
-    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05")).toMatch(/^Israel Votes 2026, .*\/polls$/);
+    expect(citeText({ net: 54.64, opp: 48 }, 7, "2026-10-05")).toMatch(/^Israel Votes, .*\/polls$/);
   });
   it("reads the real data in Hebrew without English bloc names", () => {
     const avg = blocTotals(averagePoll, parties);

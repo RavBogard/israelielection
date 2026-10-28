@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "@/components/article/article.css";
+import { longEnglishDate, voteMapFacts } from "@/lib/vote-map-facts";
 
 const CEC = "https://votes25.bechirot.gov.il/nationalresults";
 const TOI_VOTE =
@@ -8,6 +9,7 @@ const TOI_EJ =
   "https://www.timesofisrael.com/unprecedented-1200-east-jerusalem-palestinians-got-israeli-citizenship-in-2019/";
 
 export default function VoteMapGuide() {
+  const facts = voteMapFacts();
   return (
     <div lang="en" dir="ltr">
       <div className="article-grid solo">
@@ -15,7 +17,7 @@ export default function VoteMapGuide() {
           <div className="body">
             <h2>Reading the map</h2>
             <p className="vm-checked">
-              Facts checked October 5, 2026. Results are the Central Elections
+              {facts.snapshot ? `Result files fetched ${longEnglishDate(facts.snapshot)}.` : "Result files as fetched."} Results are the Central Elections
               Committee&apos;s final files for each election.
             </p>
             <p>
@@ -99,7 +101,7 @@ export default function VoteMapGuide() {
               <li>
                 <strong>Results:</strong> the Central Elections Committee&apos;s
                 results by locality for each election (the files are linked
-                under the map). For every list in all five elections, the
+                under the map). For every list in all {facts.countWord} elections, the
                 locality figures add up exactly to the committee&apos;s{" "}
                 <a href={CEC}>national results</a>; the build script checks this
                 each time it runs.

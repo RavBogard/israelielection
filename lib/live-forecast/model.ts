@@ -1,3 +1,4 @@
+import { currentElection } from "../political-record/elections";
 import { createHash } from "node:crypto";
 import { forecast } from "../../scripts/forecast/model.mjs";
 import frozen from "../../data/live-forecast-prior.json";
@@ -10,7 +11,7 @@ import type { Interval, LiveForecastSnapshot, LiveSource } from "./types";
 export const MODEL_VERSION = "live-v3-joint-blocs";
 /** Bump on any change to model code: it enters the input revision, so the next cycle recomputes even when no
  * source changed. MODEL_VERSION stays, since stored snapshots are checked against the committed fallback's version. */
-export const MODEL_CODE_REVISION = "2026-10-27.4-count-estimate";
+export const MODEL_CODE_REVISION = "count-estimate.4";
 
 export type ExitCalibration = {
   elections: { date: string; field: number; result: number }[];
@@ -328,7 +329,7 @@ export function buildSnapshot({
     opts: {
       keepRuns: true,
       runs,
-      seed: 20261027,
+      seed: Number(currentElection().electionDay.replace(/-/g, "")),
       ...(exitFit
         ? { lean: exitFit.lean, priors: false, leanHalfLife: Number.POSITIVE_INFINITY }
         : {}),

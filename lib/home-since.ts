@@ -103,9 +103,9 @@ function findingHe(polls: Poll[], parties: Party[], blocs: Bloc[], id: BlocId): 
 /** The hero's citation: the average, its date, the bloc figure and the poll count. */
 export function citeText(average: Poll, count: number, blocLabel: string, seats: number, site?: string, lang: Lang = "en"): string {
   if (lang === "he")
-    return `ממוצע הסקרים של פתק 2026, ${longDate(average.published, "he")}: ${blocLabel} ${seatFigure(seats)} מתוך 120 מנדטים (${plural(count, { one: "סקר אחד", two: "שני סקרים", other: `${count} סקרים` })}). ${site ?? "israelielection.org/he/polls"}`;
+    return `ממוצע הסקרים של פתק, ${longDate(average.published, "he")}: ${blocLabel} ${seatFigure(seats)} מתוך 120 מנדטים (${plural(count, { one: "סקר אחד", two: "שני סקרים", other: `${count} סקרים` })}). ${site ?? "israelielection.org/he/polls"}`;
   site ??= "israelielection.org/polls";
-  return ui(lang, "Israel Votes 2026 polling average, {0}: {1} {2} of 120 seats ({3} {4}). {5}", longDate(average.published, lang), blocLabel, seatFigure(seats), count, ui(lang, pollWord(count)), site);
+  return ui(lang, "Israel Votes polling average, {0}: {1} {2} of 120 seats ({3} {4}). {5}", longDate(average.published, lang), blocLabel, seatFigure(seats), count, ui(lang, pollWord(count)), site);
 }
 
 /** "No new polls since Oct 5", dated by the newest poll. */

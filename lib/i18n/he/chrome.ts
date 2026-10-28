@@ -4,8 +4,8 @@ import { seatsHe } from "../he-grammar";
 import type { Chrome } from "../chrome";
 
 const he: Chrome = {
-  siteName: "פתק 2026",
-  homeLabel: "פתק 2026, לעמוד הראשי",
+  siteName: "פתק",
+  homeLabel: "פתק, לעמוד הראשי",
   skip: "דלגו לתוכן",
   navLabel: "ניווט ראשי",
   openMenu: "פתיחת התפריט",

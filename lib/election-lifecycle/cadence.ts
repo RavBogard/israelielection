@@ -1,5 +1,6 @@
-export const CADENCE_START = Date.parse("2026-10-27T20:00:00Z");
-export const REGULAR_START = Date.parse("2026-10-28T06:00:00Z");
+import { COUNT_TIMELINE } from "../political-record/elections";
+export const CADENCE_START = COUNT_TIMELINE.pollsClose;
+export const REGULAR_START = COUNT_TIMELINE.regularStart;
 export const CADENCE_GRACE = 5 * 60_000;
 export type CadenceMetadata = {
   phase: "before_close" | "election_night" | "regular";

@@ -75,6 +75,7 @@ const keys = [
   "marker",
   "snapshot",
   "validOf",
+  "pendingOfficial",
 ] as const;
 const copy: Record<Lang, string[]> = {
   en: [
@@ -153,6 +154,7 @@ const copy: Record<Lang, string[]> = {
     "{0}: {1} valid votes. Select for results.",
     "Snapshot {0}. Places without coordinates remain in tables; special envelopes stay separate.",
     "{0}: {1} of {2} valid votes.",
+    "after the official result",
   ],
   he: [
     "מפת הצבעה",
@@ -230,6 +232,7 @@ const copy: Record<Lang, string[]> = {
     "{0}: {1} קולות כשרים. בחרו לתוצאות.",
     "גרסה {0}. מקומות ללא קואורדינטות נשארים בטבלאות; מעטפות מיוחדות בנפרד.",
     "{0}: {1} מתוך {2} קולות כשרים.",
+    "אחרי התוצאות הרשמיות",
   ],
   ar: [
     "خريطة التصويت",
@@ -307,6 +310,7 @@ const copy: Record<Lang, string[]> = {
     "{0}: {1} صوت صحيح. اختر لعرض النتائج.",
     "النسخة {0}. تبقى الأماكن دون إحداثيات في الجداول والمغلفات الخاصة منفصلة.",
     "{0}: {1} من {2} صوت صحيح.",
+    "بعد النتيجة الرسمية",
   ],
   fa: [
     "نقشه رأی",
@@ -384,6 +388,7 @@ const copy: Record<Lang, string[]> = {
     "{0}: {1} رأی معتبر. برای نتیجه انتخاب کنید.",
     "نسخه {0}. مکان‌های بدون مختصات در جدول‌ها می‌مانند؛ پاکت‌های ویژه جدا هستند.",
     "{0}: {1} از {2} رأی معتبر.",
+    "پس از نتیجهٔ رسمی",
   ],
   de: [
     "Wahlkarte",
@@ -461,6 +466,7 @@ const copy: Record<Lang, string[]> = {
     "{0}: {1} gültige Stimmen. Für Ergebnisse auswählen.",
     "Datensatz {0}. Orte ohne Koordinaten bleiben in Tabellen; Sonderumschläge getrennt.",
     "{0}: {1} von {2} gültigen Stimmen.",
+    "nach dem amtlichen Ergebnis",
   ],
   fr: [
     "Carte du vote",
@@ -538,6 +544,7 @@ const copy: Record<Lang, string[]> = {
     "{0} : {1} suffrages valides. Sélectionnez pour les résultats.",
     "Version {0}. Les lieux sans coordonnées restent dans les tableaux ; enveloppes spéciales séparées.",
     "{0} : {1} sur {2} suffrages valides.",
+    "après le résultat officiel",
   ],
   zh: [
     "投票地图",
@@ -615,6 +622,7 @@ const copy: Record<Lang, string[]> = {
     "{0}：{1}张有效票。选择查看结果。",
     "快照{0}。无坐标地点仍列于表格；特殊信封票另行列示。",
     "{0}：{2}张有效票中的{1}张。",
+    "官方结果公布后",
   ],
 };
 export function mapText(lang: Lang) {

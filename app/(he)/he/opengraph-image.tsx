@@ -21,7 +21,7 @@ import { fetchCount, resultsConfig } from "@/lib/results-live";
 // line is broken by hand and put in visual order by lib/og-rtl.ts and drawn without wrapping. Frank Ruhl Libre carries the
 // Hebrew; Public Sans (no Hebrew letters) sets only the address.
 export const revalidate = 3600;
-export const alt = "פתק 2026: 120 המושבים בכנסת לפי גוש, בממוצע הסקרים העדכני. 61 מנדטים הם רוב.";
+export const alt = "פתק: 120 המושבים בכנסת לפי גוש, בממוצע הסקרים העדכני. 61 מנדטים הם רוב.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

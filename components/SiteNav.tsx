@@ -1,4 +1,5 @@
 "use client";
+import { isCurrentElectionRef } from "@/lib/political-record/elections";
 import {editionPath,type Lang} from "@/lib/i18n";
 import {subscriptionText} from "@/lib/i18n/subscriptions";
 import Link from "next/link";
@@ -39,7 +40,7 @@ export default function SiteNav({facts={},pollsClose,closedAtRender=false,meter,
  const [mobileOpen,setMobileOpen]=useState(false),[expanded,setExpanded]=useState<string|null>(null);
  const timeClosed=usePollsClosed(pollsClose,closedAtRender);
  const {context}=useSeatContext();
- const editionFacts=context&&["2026-10-27","il-knesset-26"].includes(context.election)?facts:{};
+ const editionFacts=context&&isCurrentElectionRef(context.election)?facts:{};
  const phase=readinessPhase(context,timeClosed),closed=phase!=="campaign";
  const displayGroups=phaseNavGroups(referenceNavGroups(groups,lang),phase,lang);
  const active=activeNavGroup(groups,path);

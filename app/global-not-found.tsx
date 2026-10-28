@@ -7,7 +7,7 @@ import "./globals.css";
 // compose a 404 from, so Next renders this file instead (experimental.globalNotFound in next.config.ts). It wraps
 // the English not-found body in the English chrome; notFound() inside English pages still uses app/(en)/not-found.tsx.
 
-export const metadata: Metadata = { ...EN_METADATA, title: "Not found | Israel Votes 2026" };
+export const metadata: Metadata = { ...EN_METADATA, title: "Not found | Israel Votes" };
 
 export const viewport = VIEWPORT;
 

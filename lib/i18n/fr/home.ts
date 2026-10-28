@@ -2,7 +2,7 @@
 import type { HomeText } from "../home";
 type Bits = (string | number)[];
 const en: HomeText = {
-    title: "Isra\u00EBl vote 2026",
+    title: "Isra\u00EBl vote",
     hero: {
         standfirstLive: "Le d\u00E9pouillement \u00E0 ce stade, converti en si\u00E8ges estim\u00E9s \u00E0 la Knesset.",
         standfirst: "Le point sur la campagne, en si\u00E8ges mod\u00E9lis\u00E9s \u00E0 la Knesset.",

@@ -1,6 +1,12 @@
+import { currentElection } from "./political-record/elections";
 import type { GeographySnapshot } from "./election-lifecycle/types";
 import type { SharedSeatContext } from "./election-lifecycle/types";
 import type { VoteMapElection } from "./votemap";
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+/** "2026-10-27" as "Oct 2026", the menu form the other vote-map elections use. */
+export function monthYear(iso: string) {
+  return `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`;
+}
 /** Current geography is offered only with documented completeness and reconciled official seats. */
 export function geographyToElection(
   snapshot: GeographySnapshot,
@@ -13,7 +19,7 @@ export function geographyToElection(
   )
     return null;
   if (
-    snapshot.election !== "2026-10-27" ||
+    snapshot.election !== currentElection().electionDay ||
     !snapshot.complete ||
     snapshot.coverage !== "documented_complete" ||
     !snapshot.officialSeatRevision ||
@@ -31,10 +37,10 @@ export function geographyToElection(
   if (lists.reduce((n, l) => n + l.votes, 0) !== snapshot.totals.valid)
     return null;
   return {
-    id: "2026",
-    label: "Oct2026 · official localities",
+    id: currentElection().id,
+    label: `${monthYear(snapshot.election)} · official localities`,
     date: snapshot.election,
-    knesset: 26,
+    knesset: currentElection().termNumber,
     source: {
       results: snapshot.source.url,
       csv: snapshot.source.url,

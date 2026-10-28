@@ -2,7 +2,7 @@
 import type { HomeText } from "../home";
 type Bits = (string | number)[];
 const en: HomeText = {
-    title: "اسرائیل رأی می‌دهد 2026",
+    title: "اسرائیل رأی می‌دهد",
     hero: {
         standfirstLive: "آرای شمارش‌شده تا این لحظه و برآورد توزیع کرسی‌های کنست.",
         standfirst: "وضعیت کنونی رقابت انتخاباتی، بر پایهٔ برآورد توزیع کرسی‌های کنست.",

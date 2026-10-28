@@ -9,7 +9,7 @@ export default function EmbedFooter({
 }) {
   return (
     <p className="embed-foot">
-      Israel Votes 2026,{" "}
+      Israel Votes,{" "}
       <a
         href={`https://www.israelielection.org${editionPath("/", lang) ?? "/"}?utm_source=embed`}
         target="_blank"
