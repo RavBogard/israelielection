@@ -1,3 +1,4 @@
+import { workerDestinations } from "@/lib/live-forecast/auth";
 import { CADENCE_START, REGULAR_START, cycleAt } from "./cadence";
 /** QStash body is static: bind its original message creation slot, never a delayed delivery's wall clock. */
 export async function scheduledCycle(
@@ -24,7 +25,7 @@ export async function scheduledCycle(
   if (
     metadata.messageId !== messageId ||
     metadata.scheduleId !== expected ||
-    metadata.url !== destination ||
+    !workerDestinations(destination).includes(metadata.url) ||
     !Number.isSafeInteger(metadata.createdAt) ||
     metadata.createdAt <= 0 ||
     metadata.createdAt > Date.parse(now)

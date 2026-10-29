@@ -23,7 +23,7 @@ jobs:
           QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
         run: |
           curl -sf -o /dev/null -w "forecast publish %{http_code}\n" -X POST \
-            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelielection.org/api/live-forecast/worker" \
+            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelvotes.org/api/live-forecast/worker" \
             -H "Authorization: Bearer $QSTASH_TOKEN" -H "Content-Type: application/json" -d '{}'
           sleep 40
       - name: Republish the shared seat context
@@ -31,9 +31,9 @@ jobs:
           QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
         run: |
           curl -sf -o /dev/null -w "lifecycle publish %{http_code}\n" -X POST \
-            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelielection.org/api/election-lifecycle/worker" \
+            "https://qstash-us-east-1.upstash.io/v2/publish/https://www.israelvotes.org/api/election-lifecycle/worker" \
             -H "Authorization: Bearer $QSTASH_TOKEN" -H "Content-Type: application/json" -d '{"mode":"election"}'
           sleep 40
       - name: Report
         run: |
-          curl -s https://www.israelielection.org/api/live-forecast | jq -r '"forecast \(.generatedAt) \(.changeReason) " + ([.blocSeats[] | "\(.id) \(.seats.median)"] | join(" "))'
+          curl -s https://www.israelvotes.org/api/live-forecast | jq -r '"forecast \(.generatedAt) \(.changeReason) " + ([.blocSeats[] | "\(.id) \(.seats.median)"] | join(" "))'

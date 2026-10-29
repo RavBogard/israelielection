@@ -24,7 +24,7 @@ import {
   pauseNightSchedule,
 } from "@/lib/election-lifecycle/coordinator";
 import { createHash } from "node:crypto";
-import { verifyQStash } from "@/lib/live-forecast/auth";
+import { verifyQStash, workerDestinations } from "@/lib/live-forecast/auth";
 import { lifecycleEnabled } from "@/lib/election-lifecycle/core";
 import { lifecycleStore } from "@/lib/election-lifecycle/store";
 import {
@@ -45,12 +45,8 @@ export async function POST(request: Request) {
       process.env.QSTASH_NEXT_SIGNING_KEY,
     ].filter((s): s is string => !!s);
   if (
-    !destination ||
-    !verifyQStash(
-      request.headers.get("upstash-signature"),
-      body,
-      destination,
-      keys,
+    !workerDestinations(destination).some((d) =>
+      verifyQStash(request.headers.get("upstash-signature"), body, d, keys),
     )
   )
     return Response.json({ error: "unauthorized" }, { status: 401 });
