@@ -59,7 +59,7 @@ jobs:
           QSTASH_TOKEN: ${{ secrets.QSTASH_TOKEN }}
           ELECTION_LIFECYCLE_NAMESPACE: production
           VERCEL_ENV: production
-          LIVE_FORECAST_WORKER_URL: https://www.israelielection.org/api/live-forecast/worker
-          ELECTION_LIFECYCLE_WORKER_URL: https://www.israelielection.org/api/election-lifecycle/worker
+          LIVE_FORECAST_WORKER_URL: https://www.israelvotes.org/api/live-forecast/worker
+          ELECTION_LIFECYCLE_WORKER_URL: https://www.israelvotes.org/api/election-lifecycle/worker
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
         run: npx tsx scripts/live-count/capture.mts --target production --once $DRY_RUN

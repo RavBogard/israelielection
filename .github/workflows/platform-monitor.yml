@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     env:
-      PLATFORM_MONITOR_BROWSER_ORIGIN: ${{ inputs.target == 'preview' && vars.PLATFORM_MONITOR_PREVIEW_ORIGIN || 'https://www.israelielection.org' }}
+      PLATFORM_MONITOR_BROWSER_ORIGIN: ${{ inputs.target == 'preview' && vars.PLATFORM_MONITOR_PREVIEW_ORIGIN || 'https://www.israelvotes.org' }}
       PLATFORM_MONITOR_PREVIEW_ORIGIN: ${{ vars.PLATFORM_MONITOR_PREVIEW_ORIGIN }}
       PLATFORM_MONITOR_PREVIEW_BYPASS: ${{ inputs.target == 'preview' && secrets.PLATFORM_MONITOR_PREVIEW_BYPASS || '' }}
     steps:

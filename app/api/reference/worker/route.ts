@@ -1,4 +1,4 @@
-import { verifyQStash } from "@/lib/live-forecast/auth";
+import { verifyQStash, workerDestinations } from "@/lib/live-forecast/auth";
 import { generationDocuments } from "@/lib/reference/catalog";
 import {
   generateReferenceTranslation,
@@ -44,11 +44,8 @@ export async function POST(request: Request) {
   ].filter((s): s is string => !!s);
   if (
     !destination ||
-    !verifyQStash(
-      request.headers.get("upstash-signature"),
-      raw,
-      destination,
-      keys,
+    !workerDestinations(destination).some((d) =>
+      verifyQStash(request.headers.get("upstash-signature"), raw, d, keys),
     )
   )
     return Response.json({ error: "unauthorized" }, { status: 401, headers });

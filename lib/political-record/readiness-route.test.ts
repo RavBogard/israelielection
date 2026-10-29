@@ -1,6 +1,6 @@
 import { afterEach, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({ verified: vi.fn(), load: vi.fn() }));
-vi.mock("../live-forecast/auth", () => ({ verifyQStash: mocks.verified }));
+vi.mock("../live-forecast/auth", () => ({ verifyQStash: mocks.verified, workerDestinations: (u?: string) => (u ? [u] : []) }));
 vi.mock("../election-lifecycle/store", () => ({
   lifecycleStore: () => ({ load: mocks.load }),
 }));

@@ -12,3 +12,14 @@ export function verifyQStash(signature: string | null, body: string, url: string
     return keys.some((key) => { const expected = createHmac("sha256", key).update(`${head}.${payload}`).digest(); return received.length === expected.length && timingSafeEqual(received, expected); });
   } catch { return false; }
 }
+
+/**
+ * The signed addresses a worker answers to: the configured one, and the same path on www.israelvotes.org while the
+ * configured one still names the old domain (the site moved on 2026-10-28). Senders move first; the env can follow.
+ */
+export function workerDestinations(configured: string | undefined): string[] {
+  if (!configured) return [];
+  const url = new URL(configured);
+  if (!/^(?:www\.)?israelielection\.org$/.test(url.hostname)) return [configured];
+  return [configured, `https://www.israelvotes.org${url.pathname}${url.search}`];
+}
