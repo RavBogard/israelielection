@@ -1,0 +1,327 @@
+{
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T20:01:55.305Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 2,
+    "sourceAttempts": 16,
+    "capturedSources": 4
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-10-29T20:01:55.305Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "66fe8ff5394ad849ab1d7a2a22e7d987ff1443b747887406696828bc2f82308d",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "0d0f1eec115771749849b87c3c8a82782be15260e83511a0b4eb18245bca2ce1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "63c691b1d9009d5c856a9ba4b0f9bd3642597d81094f4aef1d887467de40f569",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "cb315674f16375dd8161425d046b3c96df001753d95294064bcb8fc6bb0c36ab",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to The Jerusalem Post, election tallies showed Benjamin Netanyahu's aligned bloc securing 53 seats and the Gadi Eisenkot bloc winning 48 seats of the 61 needed for a majority in the 120-seat Knesset.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+      "translations": {
+        "he": {
+          "text": "לפי The Jerusalem Post, תוצאות הבחירות הראו כי הגוש המזוהה עם בנימין נתניהו הבטיח 53 מושבים והגוש של גדי איזנקוט זכה ב-48 מושבים מתוך ה-61 הדרושים לרוב בכנסת בת 120 המושבים.",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لـ The Jerusalem Post، أظهرت نتائج فرز الأصوات في الانتخابات حصول الكتلة المتحالفة مع بنيامين نتنياهو على 53 مقعداً وفوز كتلة غادي آيزنكوت بـ 48 مقعداً من أصل 61 مقعداً لازمة لتحقيق الأغلبية في الكنيست المكون من 120 مقعداً.",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش The Jerusalem Post، شمارش آرای انتخابات نشان داد که بلوک هم‌پیمان بنیامین نتانیاهو 53 کرسی و بلوک گادی آیزنکوت 48 کرسی از 61 کرسی لازم برای اکثریت در کنستِ 120 کرسی را به دست آورده‌اند.",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut The Jerusalem Post zeigten Wahlauszählungen, dass der mit Benjamin Netanjahu verbündete Block sich 53 Sitze sicherte und der Gadi-Eisenkot-Block 48 der 61 Sitze gewann, die für eine Mehrheit in der 120 Sitze zählenden Knesset erforderlich sind.",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon The Jerusalem Post, les décomptes électoraux ont montré que le bloc aligné sur Benjamin Netanyahu obtenait 53 sièges et que le bloc de Gadi Eisenkot remportait 48 sièges sur les 61 nécessaires pour obtenir une majorité au sein de la Knesset de 120 sièges.",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《The Jerusalem Post》报道，选举计票显示本雅明·内塔尼亚胡（Benjamin Netanyahu）结盟阵营获得了53个席位，而加迪·埃森科特（Gadi Eisenkot）阵营赢得了在拥有120个席位的以色列议会（Knesset）中获得多数席位所需的61个席位中的48个。",
+          "sourceHash": "f15c80b0beb9c7d9b80ebd6c2b14ddc5dbe8027e0c8f6978419bfae11fa246f0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Every road to a new Israeli government runs through a broken campaign promise",
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "published": "2026-10-29T21:46:57.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "bodyHash": "1d792448ce3608a1ee252be8b8e91d56ef54609b50149fc15c9be83078d59b31",
+          "capturedAt": "2026-10-29T19:59:28.608Z",
+          "quoteHash": "ead14cff5a171c5d7b36db3aa008df5d6cdba1e058420b72351df1419bb844b8",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "TOMER ALMAGOR / JTA"
+          }
+        }
+      ],
+      "textHe": "לפי The Jerusalem Post, תוצאות הבחירות הראו כי הגוש המזוהה עם בנימין נתניהו הבטיח 53 מושבים והגוש של גדי איזנקוט זכה ב-48 מושבים מתוך ה-61 הדרושים לרוב בכנסת בת 120 המושבים."
+    },
+    {
+      "text": "Ra'am leader Mansour Abbas stated on election night that he was holding discussions with politicians from both blocs.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+      "translations": {
+        "he": {
+          "text": "מנהיג רע\"מ מנסור עבאס הצהיר בליל הבחירות כי הוא מקיים שיחות עם פוליטיקאים משני הגושים.",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح زعيم Ra'am منصور عباس في ليلة الانتخابات بأنه كان يجري مناقشات مع سياسيين من كلا الكتلتين.",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "منصور عباس، رهبر رعام (Ra'am)، در شب انتخابات اظهار داشت که در حال انجام مذاکراتی با سیاستمدارانی از هر دو بلوک است.",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Ra'am-Chef Mansour Abbas erklärte am Wahlabend, dass er Gespräche mit Politikern beider Blöcke führe.",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le dirigeant de Ra'am, Mansour Abbas, a déclaré le soir des élections qu'il tenait des discussions avec des responsables politiques des deux blocs.",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Ra'am领导人曼苏尔·阿巴斯（Mansour Abbas）在选举当晚表示，他正在与来自两个阵营的政客进行讨论。",
+          "sourceHash": "27b6ffe3fab2db4bcbff15f2b9dab2f59965210abe72d555fd350674c2c97921",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Every road to a new Israeli government runs through a broken campaign promise",
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "published": "2026-10-29T21:46:57.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "bodyHash": "1d792448ce3608a1ee252be8b8e91d56ef54609b50149fc15c9be83078d59b31",
+          "capturedAt": "2026-10-29T19:59:28.608Z",
+          "quoteHash": "4559d0bf658fca8e933efab9c6782c15486c6f99df5e394f1a433118b234ce43",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "TOMER ALMAGOR / JTA"
+          }
+        }
+      ],
+      "textHe": "מנהיג רע\"מ מנסור עבאס הצהיר בליל הבחירות כי הוא מקיים שיחות עם פוליטיקאים משני הגושים."
+    },
+    {
+      "text": "The Jerusalem Post reported that Gadi Eisenkot repeatedly and unequivocally stated that he does not intend to form a government with Arab parties.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+      "translations": {
+        "he": {
+          "text": "The Jerusalem Post דיווח כי גדי איזנקוט הצהיר שוב ושוב ובאופן חד-משמעי כי אין בכוונתו להקים ממשלה עם מפלגות ערביות.",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت The Jerusalem Post بأن غادي آيزنكوت صرح مراراً وبشكل لا لبس فيه بأنه لا ينوي تشكيل حكومة مع أحزاب عربية.",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "The Jerusalem Post گزارش داد که گادی آیزنکوت بارها و به صراحت بیان کرده است که قصد ندارد با احزاب عربی تشکیل دولت دهد.",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass Gadi Eisenkot wiederholt und unmissverständlich erklärt habe, dass er nicht beabsichtige, eine Regierung mit arabischen Parteien zu bilden.",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que Gadi Eisenkot a déclaré à plusieurs reprises et sans équivoque qu'il n'avait pas l'intention de former un gouvernement avec des partis arabes.",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《The Jerusalem Post》报道，加迪·埃森科特（Gadi Eisenkot）多次且明确表示，他无意与阿拉伯政党组建政府。",
+          "sourceHash": "b43ed31518cf5d3cf05b2576fde30196f1978fe7d9ef1922a6904a7bc4da160e",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Every road to a new Israeli government runs through a broken campaign promise",
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "published": "2026-10-29T21:46:57.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "bodyHash": "1d792448ce3608a1ee252be8b8e91d56ef54609b50149fc15c9be83078d59b31",
+          "capturedAt": "2026-10-29T19:59:28.608Z",
+          "quoteHash": "df934c301a044e08312f5eb0e1fb2c9049c7e12b673eaf62937848d44c787836",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "TOMER ALMAGOR / JTA"
+          }
+        }
+      ],
+      "textHe": "The Jerusalem Post דיווח כי גדי איזנקוט הצהיר שוב ושוב ובאופן חד-משמעי כי אין בכוונתו להקים ממשלה עם מפלגות ערביות."
+    },
+    {
+      "text": "Democrats leader Yair Golan called on the other three parties in his bloc to form a government sitting with Arab parties.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+      "translations": {
+        "he": {
+          "text": "מנהיג הדמוקרטים יאיר גולן קרא לשלוש המפלגות האחרות בגוש שלו להקים ממשלה היושבת עם מפלגות ערביות.",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "دعا زعيم Democrats يائير غولان الأحزاب الثلاثة الأخرى في كتلته إلى تشكيل حكومة تجلس مع أحزاب عربية.",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "یائیر گولان، رهبر دموکرات‌ها، از سه حزب دیگر در بلوک خود خواست تا با حضور در کنار احزاب عربی دولت تشکیل دهند.",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende der Democrats, Yair Golan, forderte die anderen drei Parteien in seinem Block auf, eine Regierung zu bilden, die mit arabischen Parteien zusammensitzt.",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le dirigeant des Démocrates, Yair Golan, a appelé les trois autres partis de son bloc à former un gouvernement siégeant avec des partis arabes.",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Democrats领导人亚伊尔·戈兰（Yair Golan）呼吁其阵营内的其他三个政党与阿拉伯政党共同组建政府。",
+          "sourceHash": "35b27d0b9250c8d834831ad159302405559a6c7fed5c976725fdbee7d014ac9f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Every road to a new Israeli government runs through a broken campaign promise",
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "published": "2026-10-29T21:46:57.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913296",
+          "bodyHash": "1d792448ce3608a1ee252be8b8e91d56ef54609b50149fc15c9be83078d59b31",
+          "capturedAt": "2026-10-29T19:59:28.608Z",
+          "quoteHash": "e6dec52a4e8993dbbb5f0cbdfd9148a9d1a18914fc99729ceb93558be30865bd",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "TOMER ALMAGOR / JTA"
+          }
+        }
+      ],
+      "textHe": "מנהיג הדמוקרטים יאיר גולן קרא לשלוש המפלגות האחרות בגוש שלו להקים ממשלה היושבת עם מפלגות ערביות."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "bdb26258a8982b6b9d75e058f5daa05fb0b3a02aa40f10d3c68e943024aafe1e",
+    "privateStored": true
+  }
+}
