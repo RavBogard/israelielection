@@ -66,6 +66,15 @@ describe("countNowcast on a 2022 replay", () => {
     for (const l of h.lists) expect(Math.abs((r.seats[l.letters] ?? 0) - l.seats)).toBeLessThanOrEqual(1);
     expect(Object.values(r.seats).reduce((a, b) => a + b, 0)).toBe(120);
   });
+
+  it("projects no envelopes beyond a finished count that passed the expected vote", () => {
+    const obs = reveal(smallFirst, 1.01, true);
+    const counted = obs.localities.reduce((n, o) => n + o.valid, 0) + obs.envelope.valid;
+    const r = countNowcast({ history: h, prior, observation: obs, threshold: 0.0325, agreements, profileMap, draws: 50, expectedFinalValid: counted * 0.99, envelopeShare: 0.15 });
+    expect(r.envelopes?.remaining).toBe(0);
+    const total = (o: Record<string, number>) => Object.values(o).reduce((a, b) => a + b, 0);
+    expect(total(r.projected)).toBeCloseTo(counted, 0);
+  });
 });
 
 describe("count file parsers", () => {

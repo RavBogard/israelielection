@@ -270,8 +270,13 @@ export function countNowcast({
 
   // 4. Envelopes expected tonight.
   const envExpected = envExpected0 ?? history.envelopes.valid * (expectedLocal / localValid2022);
-  const envRemaining = Math.max(0, envExpected - observation.envelope.valid);
   const expectedFinal = expectedFinalValid ?? expectedLocal + envExpected;
+  // Votes still to come can't exceed the vote still expected: once the count passes the anchor, none are left
+  // (2026-10-29: 173k phantom envelopes and 92k phantom locality votes after the count closed moved the last seat).
+  const envRemaining = Math.max(0, Math.min(envExpected, expectedFinal - countedLocal) - observation.envelope.valid);
+  const localBudget = Math.max(0, expectedFinal - countedLocal - observation.envelope.valid - envRemaining);
+  const localRemaining = rows.reduce((n, r) => n + r.remaining, 0);
+  if (localRemaining > localBudget) for (const r of rows) r.remaining *= localBudget / localRemaining;
   const coverageVotes = Math.min(1, (countedLocal + observation.envelope.valid) / Math.max(1, expectedFinal));
   const eligibleCounted = observation.localities.reduce((n, o) => {
     const h = histByCode.get(o.code);
