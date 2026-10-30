@@ -1,0 +1,361 @@
+{
+  "date": "2026-10-30",
+  "generatedAt": "2026-10-30T14:43:05.168Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 2,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-10-30T14:43:05.168Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "9d9468297eeb6dad055b946b59438f0baa34fbb45a37f6c4c95766bdb30576a4",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "cbb7236a786e704e540f905b7d943a9564739995f1eb5fc7f031fdd6f7f7c2f5",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "b97deae5b2a4240b4f535c03b07b973fd1ad5c57f041caca8c85f4384ba27a2f",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-6",
+        "contentHash": "40481b1ced8f10dddaba637e84fbc9c668ff4bde40a9bcb7ac7aed6613e01ead",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Neither political bloc secured a 61-seat majority in the 120-seat Knesset following the election.",
+      "claimId": "claim-1",
+      "kind": "context",
+      "evidenceClass": "corroborated_reporting",
+      "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+      "translations": {
+        "he": {
+          "text": "אף אחד מהגושים הפוליטיים לא השיג רוב של 61 מושבים בכנסת בת 120 המושבים בעקבות הבחירות.",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "لم تؤمّن أي من الكتلتين السياسيتين أغلبية 61 مقعداً في الكنيست المؤلف من 120 مقعداً في أعقاب الانتخابات.",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "هیچ‌یک از دو جناح سیاسی پس از انتخابات، اکثریت 61 کرسی را در کنست 120 کرسی به دست نیاورد.",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Keiner der politischen Blöcke sicherte sich nach der Wahl eine Mehrheit von 61 Sitzen in der 120 Sitze umfassenden Knesset.",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Aucun des blocs politiques n'a obtenu une majorité de 61 sièges au sein de la Knesset de 120 sièges à la suite de l'élection.",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "选举后，两个政治阵营均未在拥有 120 个席位的 Knesset 中获得 61 席多数席位。",
+          "sourceHash": "9b7a277d3a205eb5c3f0f591f6ae918532b98a07a25c98b0331c03c8d6d65e65",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Israeli officials reject Netanyahu’s claim of a ‘stolen’ election",
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "published": "2026-10-30T10:13:26Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu meets Ben-Gvir, Smotrich as opposition leaders hold coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "published": "2026-10-30T11:33:04.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "bodyHash": "775443f9b8a64b5bd15c29b6632205d6c1a1bd7f53e9cccb8d16ba5d962ed9fd",
+          "capturedAt": "2026-10-30T14:41:23.429Z",
+          "quoteHash": "aaa232e140c391cd2d97936a4e99e0200b1d0dc4ec212ae40d43fefa209353c1",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Deborah Danan"
+          }
+        },
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "bodyHash": "b9d2464b0f0cb0be507a432d898294f1c701add0e9bac6d9e3e7947c0b6d41eb",
+          "capturedAt": "2026-10-30T14:41:23.641Z",
+          "quoteHash": "b3930dc10058eb593dac3f37102cb9ec777681f691130c96b52b0f425f949d8d",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY, NAHUM PERRY"
+          }
+        }
+      ],
+      "textHe": "אף אחד מהגושים הפוליטיים לא השיג רוב של 61 מושבים בכנסת בת 120 המושבים בעקבות הבחירות."
+    },
+    {
+      "text": "Otzma Yehudit stated that Itamar Ben-Gvir met with Prime Minister Benjamin Netanyahu to discuss preserving the right-wing government.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+      "translations": {
+        "he": {
+          "text": "עוצמה יהודית הצהירה כי איתמר בן-גביר נפגש עם ראש הממשלה בנימין נתניהו כדי לדון בשימור ממשלת הימין.",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكر Otzma Yehudit أن Itamar Ben-Gvir التقى برئيس الوزراء Benjamin Netanyahu لمناقشة الحفاظ على الحكومة اليمينية.",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "عوتسما یهودیت اعلام کرد که ایتامار بن گویر با نخست‌وزیر بنیامین نتانیاهو دیدار کرد تا درباره حفظ دولت راست‌گرا گفتگو کند.",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Otzma Yehudit erklärte, dass Itamar Ben-Gvir mit Premierminister Benjamin Netanyahu zusammentraf, um den Erhalt der rechten Regierung zu besprechen.",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Otzma Yehudit a déclaré qu'Itamar Ben-Gvir avait rencontré le Premier ministre Benjamin Netanyahu pour discuter de la préservation du gouvernement de droite.",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Otzma Yehudit 表示，Itamar Ben-Gvir 会见了总理 Benjamin Netanyahu，以讨论维持右翼政府。",
+          "sourceHash": "88bb08f81a3400f75180f1e57b3eb7d6f34a9b4fab957637149d5a270b00de37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu meets Ben-Gvir, Smotrich as opposition leaders hold coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "published": "2026-10-30T11:33:04.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "bodyHash": "b9d2464b0f0cb0be507a432d898294f1c701add0e9bac6d9e3e7947c0b6d41eb",
+          "capturedAt": "2026-10-30T14:41:23.641Z",
+          "quoteHash": "52b8e1fb78a7da477fd9b0d4db7a7a507a41a6c681844291b11ded70b844f860",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY, NAHUM PERRY"
+          }
+        }
+      ],
+      "textHe": "עוצמה יהודית הצהירה כי איתמר בן-גביר נפגש עם ראש הממשלה בנימין נתניהו כדי לדון בשימור ממשלת הימין."
+    },
+    {
+      "text": "Gadi Eisenkot accused Benjamin Netanyahu and Likud of conducting a campaign to delegitimize the results of the election.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+      "translations": {
+        "he": {
+          "text": "גדי איזנקוט האשים את בנימין נתניהו ואת הליכוד בניהול קמפיין לביצוע דה-לגיטימציה של תוצאות הבחירות.",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "اتهم Gadi Eisenkot كلاً من Benjamin Netanyahu و Likud بإدارة حملة لنزع الشرعية عن نتائج الانتخابات.",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "گادی آیزنکوت، بنیامین نتانیاهو و لیکود را به پیشبرد کارزاری برای مشروعیت‌زدایی از نتایج انتخابات متهم کرد.",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Gadi Eisenkot warf Benjamin Netanyahu und dem Likud vor, eine Kampagne zur Delegitimierung der Wahlergebnisse zu führen.",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Gadi Eisenkot a accusé Benjamin Netanyahu et le Likoud de mener une campagne pour délégitimer les résultats de l'élection.",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Gadi Eisenkot 指责 Benjamin Netanyahu 和 Likud 开展了一场旨在使选举结果失去合法性的行动。",
+          "sourceHash": "a0a7e4dd5f854dc787b80ba8b14096cfae10162ce6cc4ef8216326d39ae2f5f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Israeli officials reject Netanyahu’s claim of a ‘stolen’ election",
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "published": "2026-10-30T10:13:26Z"
+        },
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu meets Ben-Gvir, Smotrich as opposition leaders hold coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "published": "2026-10-30T11:33:04.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "bodyHash": "775443f9b8a64b5bd15c29b6632205d6c1a1bd7f53e9cccb8d16ba5d962ed9fd",
+          "capturedAt": "2026-10-30T14:41:23.429Z",
+          "quoteHash": "e536709e6c2210e42c34551c5d226ec5f0a2ebe3693b09c2523b7face2530f4c",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Deborah Danan"
+          }
+        },
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913339",
+          "bodyHash": "b9d2464b0f0cb0be507a432d898294f1c701add0e9bac6d9e3e7947c0b6d41eb",
+          "capturedAt": "2026-10-30T14:41:23.641Z",
+          "quoteHash": "a2d71cab5c669daa6de3daf43c183212ab7d0e6ab9733e24df20a9c6b2db71b4",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY, NAHUM PERRY"
+          }
+        }
+      ],
+      "textHe": "גדי איזנקוט האשים את בנימין נתניהו ואת הליכוד בניהול קמפיין לביצוע דה-לגיטימציה של תוצאות הבחירות."
+    },
+    {
+      "text": "Benjamin Netanyahu claimed the election was stolen through alleged covert foreign Qatari funding aimed at boosting Arab voter turnout.",
+      "claimId": "claim-6",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+      "translations": {
+        "he": {
+          "text": "בנימין נתניהו טען כי הבחירות נגנבו באמצעות מימון קטארי זר סמוי לכאורה שנועד להגביר את אחוזי ההצבעה בקרב הבוחרים הערבים.",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ادعى Benjamin Netanyahu أن الانتخابات سُرقت من خلال تمويل قطري أجنبي سري مزعوم كان يهدف إلى رفع نسبة إقبال الناخبين العرب.",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بنیامین نتانیاهو ادعا کرد که انتخابات از طریق تأمین مالی خارجی پنهانی و ادعایی قطر با هدف افزایش مشارکت رأی‌دهندگان عرب به سرقت رفته است.",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Benjamin Netanyahu behauptete, die Wahl sei durch mutmaßliche verdeckte ausländische katarische Finanzmittel gestohlen worden, die darauf abzielten, die arabische Wahlbeteiligung zu steigern.",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Benjamin Netanyahu a affirmé que l'élection avait été volée par le biais d'un prétendu financement étranger qatari secret visant à stimuler le taux de participation des électeurs arabes.",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Benjamin Netanyahu 声称，选举是通过据称旨在提高阿拉伯选民投票率的卡塔尔秘密外国资金被窃取的。",
+          "sourceHash": "266ef20cb0a90ec23960d3f95047c9b13e036182392b8a1e7928721df2cef78d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Israeli officials reject Netanyahu’s claim of a ‘stolen’ election",
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "published": "2026-10-30T10:13:26Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/10/30/israel/israel-probes-alleged-qatari-election-meddling-in-arab-vote-as-netanyahu-claims-election-stolen",
+          "bodyHash": "775443f9b8a64b5bd15c29b6632205d6c1a1bd7f53e9cccb8d16ba5d962ed9fd",
+          "capturedAt": "2026-10-30T14:41:23.429Z",
+          "quoteHash": "38f02e0cb3715059fd33b97f0d78bf995f28a74493056401443d4daa760863a8",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Deborah Danan"
+          }
+        }
+      ],
+      "textHe": "בנימין נתניהו טען כי הבחירות נגנבו באמצעות מימון קטארי זר סמוי לכאורה שנועד להגביר את אחוזי ההצבעה בקרב הבוחרים הערבים."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "e9cb1660a84bc4b762642ffb79c6da96805ce93c7e0288fc124865beb66ca4dd",
+    "privateStored": true
+  }
+}
