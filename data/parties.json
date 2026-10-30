@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-30",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -354,6 +354,10 @@
         {
           "text": "“There will be no government in Israel with Shas's support or participation unless the status of yeshiva students is regulated.”",
           "source": "Jerusalem Post, Oct 14, 2026"
+        },
+        {
+          "text": "Ruled out joining an opposition bloc government without Likud.",
+          "source": "Jerusalem Post, Oct 30, 2026"
         }
       ],
       "surplusPartner": {
