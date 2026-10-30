@@ -169,7 +169,7 @@ jobs:
 
       - name: Gate (tests and build with the updated register)
         if: steps.job.outputs.auto != '0'
-        run: npx vitest run && npm run build
+        run: npm test && npm run build  # npm test runs pretest, which writes the gitignored briefing index
 
       - name: Commit automatic updates
         if: steps.job.outputs.auto != '0'
