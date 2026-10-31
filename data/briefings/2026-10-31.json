@@ -1,0 +1,477 @@
+{
+  "date": "2026-10-31",
+  "generatedAt": "2026-10-31T11:48:08.926Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 6,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 6
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-10-31T11:48:08.926Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "ff880316299b09ea240b5e947914f2be9252711e6ce7bf91e4bf25dcdfad0316",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "9f45e4a61414d268e4dc2122b07be15450fce3e1549c01cb66781687e18deb83",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "4d2be20737f80fa8567775787b80e908810c1836a54084bd97011a2a637ca14d",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "25db6596b6d105e749e5e742ea622561f10c95d7e20f18e0b95dd42934402c00",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "f40d7048f1589babc9f125f90f00082ff9ace71cd1599c50908a5a560ed3fc49",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-6",
+        "contentHash": "b0428fc35de74524a63b413666b2ce22daa7d4963644e021fb100b1a616d67a2",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to the Jerusalem Post's Anna Barsky, initial exit polls pointed to a clear victory for the opposition bloc and the approaching end of Prime Minister Benjamin Netanyahu's tenure.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+      "translations": {
+        "he": {
+          "text": "לפי אנה ברסקי מ-Jerusalem Post, מדגמי הבחירות הראשוניים הצביעו על ניצחון ברור לגוש האופוזיציה ועל סיומה המתקרב של כהונת ראש הממשלה בנימין נתניהו.",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لـ Anna Barsky من صحيفة Jerusalem Post، أشارت استطلاعات الخروج الأولية إلى فوز واضح لكتلة المعارضة واقتراب نهاية ولاية رئيس الوزراء Benjamin Netanyahu.",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش آنا بارسکی از اورشلیم پست، نظرسنجی‌های اولیه پس از خروج از شعب اخذ رأی به پیروزی آشکار جناح اپوزیسیون و نزدیک شدن به پایان دوران نخست‌وزیری بنیامین نتانیاهو اشاره داشتند.",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut Anna Barsky von der Jerusalem Post deuteten erste Nachwahlbefragungen auf einen klaren Sieg für den Oppositionsblock und das bevorstehende Ende der Amtszeit von Premierminister Benjamin Netanjahu hin.",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon Anna Barsky du Jerusalem Post, les premiers sondages a la sortie des urnes indiquaient une nette victoire pour le bloc de l'opposition et la fin imminente du mandat du Premier ministre Benjamin Netanyahu.",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《耶路撒冷邮报》（Jerusalem Post）的Anna Barsky报道，初步出口民调显示反对派阵营取得明显胜利，且总理本雅明·内塔尼亚胡（Benjamin Netanyahu）的任期即将结束。",
+          "sourceHash": "d02e1a7e53dad78095b54a88db403528a9a56b2160bca907dd8b64b6151937e2",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu survives the election, but Eisenkot holds key to replacing him - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "published": "2026-10-31T09:22:40.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "bodyHash": "a6f774524aff3a669cb556d8a0064b040e520b241e6005432189a3cd81c95861",
+          "capturedAt": "2026-10-31T11:47:25.804Z",
+          "quoteHash": "07781681041f9f17784c64a8c830baba264e91bedfff2df446ebcf9bad0b5b31",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "לפי אנה ברסקי מ-Jerusalem Post, מדגמי הבחירות הראשוניים הצביעו על ניצחון ברור לגוש האופוזיציה ועל סיומה המתקרב של כהונת ראש הממשלה בנימין נתניהו."
+    },
+    {
+      "text": "Anna Barsky reported that according to the latest reported vote count, Benjamin Netanyahu's outgoing coalition bloc held 53 seats, the opposition bloc held 48 seats, and Ra'am and the Joint List held 19 seats combined.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+      "translations": {
+        "he": {
+          "text": "אנה ברסקי דיווחה כי לפי ספירת הקולות האחרונה שדווחה, גוש הקואליציה היוצא של בנימין נתניהו החזיק ב-53 מנדטים, גוש האופוזיציה החזיק ב-48 מנדטים, ורע\"מ והרשימה המשותפת החזיקו ב-19 מנדטים יחד.",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت Anna Barsky بأنه وفقاً لأحدث فرز معلن للأصوات، حصلت كتلة الائتلاف المنتهية ولايته بزعامة Benjamin Netanyahu على 53 مقعداً، وحصلت كتلة المعارضة على 48 مقعداً، وحصلت Ra'am و Joint List معاً على 19 مقعداً.",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آنا بارسکی گزارش داد که طبق آخرین شمارش آرای گزارش‌شده، بلوک ائتلافی رو به پایان بنیامین نتانیاهو 53 کرسی، بلوک اپوزیسیون 48 کرسی، و راعم و فهرست مشترک مجموعاً 19 کرسی در اختیار داشتند.",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Anna Barsky berichtete, dass laut der jüngsten gemeldeten Stimmenauszählung Benjamin Netanjahus scheidender Koalitionsblock 53 Sitze innehatte, der Oppositionsblock 48 Sitze hielt und Ra'am sowie die Joint List zusammen 19 Sitze hielten.",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Anna Barsky a rapporte que, selon le dernier decompte des voix signale, le bloc de la coalition sortante de Benjamin Netanyahu detenait 53 sieges, le bloc de l'opposition detenait 48 sieges, et Ra'am et la Liste conjointe detenait 19 sieges au total.",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Anna Barsky报道称，根据最新公布的计票结果，本雅明·内塔尼亚胡即将离任的执政联盟阵营拥有53个席位，反对派阵营拥有48个席位，联合名单（Joint List）与拉阿姆党（Ra'am）合计拥有19个席位。",
+          "sourceHash": "f544a7308247de7f66267a75916810f58d2fc1d84f3fbd51a7e9d7080e3d793c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu survives the election, but Eisenkot holds key to replacing him - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "published": "2026-10-31T09:22:40.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "bodyHash": "a6f774524aff3a669cb556d8a0064b040e520b241e6005432189a3cd81c95861",
+          "capturedAt": "2026-10-31T11:47:25.804Z",
+          "quoteHash": "f5fd2cf4db4de4244765c1bf0d01fdfa4f6369f0c957dd9c8e50f086bdd70294",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "אנה ברסקי דיווחה כי לפי ספירת הקולות האחרונה שדווחה, גוש הקואליציה היוצא של בנימין נתניהו החזיק ב-53 מנדטים, גוש האופוזיציה החזיק ב-48 מנדטים, ורע\"מ והרשימה המשותפת החזיקו ב-19 מנדטים יחד."
+    },
+    {
+      "text": "Anna Barsky reported that Yisrael Beytenu made clear that an offer allowing Avigdor Liberman to serve first in a rotation arrangement would not alter his refusal to join a government with Benjamin Netanyahu.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+      "translations": {
+        "he": {
+          "text": "אנה ברסקי דיווחה כי ישראל ביתנו הבהירה שהצעה שתאפשר לאביגדור ליברמן לכהן ראשון בהסדר רוטציה לא תשנה את סירובו להצטרף לממשלה עם בנימין נתניהו.",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت Anna Barsky بأن Yisrael Beytenu أوضح أن تقديم عرض يتيح لـ Avigdor Liberman تولي المنصب أولاً في اتفاق تناوب لن يغير رفضه الانضمام إلى حكومة مع Benjamin Netanyahu.",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آنا بارسکی گزارش داد که حزب اسرائیل بیتنو تصریح کرد پیشنهادی که به آویگدور لیبرمن اجازه دهد ابتدا در یک توافق چرخشی خدمت کند، امتناع او از پیوستن به دولتی با بنیامین نتانیاهو را تغییر نخواهد داد.",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Anna Barsky berichtete, dass Jisra'el Beitenu klarstellte, dass ein Angebot, das es Avigdor Liberman erlauben würde, zuerst in einer Rotationsvereinbarung zu amtieren, nichts an seiner Weigerung ändern würde, einer Regierung mit Benjamin Netanjahu beizutreten.",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Anna Barsky a rapporte qu'Yisrael Beytenu a clairement fait savoir qu'une offre permettant a Avigdor Liberman d'exercer ses fonctions en premier dans le cadre d'un accord de rotation ne modifierait pas son refus de rejoindre un gouvernement avec Benjamin Netanyahu.",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Anna Barsky报道称，“以色列是我们的家园”党（Yisrael Beytenu）明确表示，允许阿维格多·利伯曼（Avigdor Liberman）在轮换协议中首先任职的提议不会改变其拒绝与本雅明·内塔尼亚胡组建政府的立场。",
+          "sourceHash": "606f80b22d4922da463ae4c6c1496280ebcb1afb903e4319113c219a9dfc6110",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu survives the election, but Eisenkot holds key to replacing him - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "published": "2026-10-31T09:22:40.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "bodyHash": "a6f774524aff3a669cb556d8a0064b040e520b241e6005432189a3cd81c95861",
+          "capturedAt": "2026-10-31T11:47:25.804Z",
+          "quoteHash": "587d7956b36a4591de1ef04a209c928c2166556ad0943f2212783b868d42528e",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "אנה ברסקי דיווחה כי ישראל ביתנו הבהירה שהצעה שתאפשר לאביגדור ליברמן לכהן ראשון בהסדר רוטציה לא תשנה את סירובו להצטרף לממשלה עם בנימין נתניהו."
+    },
+    {
+      "text": "The Democrats chairman Yair Golan called on bloc leaders to include Ra'am and the Joint List among the 67 MKs outside Netanyahu's bloc to form a government in partnership with Arab citizens, according to Anna Barsky.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+      "translations": {
+        "he": {
+          "text": "יו\"ר הדמוקרטים יאיר גולן קרא לראשי הגוש לכלול את רע\"מ ואת הרשימה המשותפת בין 67 חברי הכנסת שמחוץ לגוש נתניהו כדי להקים ממשלה בשותפות עם האזרחים הערבים, לפי אנה ברסקי.",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "دعا رئيس حزب The Democrats، Yair Golan، قادة الكتلة إلى ضم Ra'am و Joint List ضمن أعضاء الكنيست البالغ عددهم 67 عضواً خارج كتلة Netanyahu لتشكيل حكومة بالشراكة مع المواطنين العرب، وفقاً لـ Anna Barsky.",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش آنا بارسکی، یائیر گولان، رئیس حزب دموکرات‌ها، از رهبران این بلوک خواست تا راعم و فهرست مشترک را در میان 67 نماینده کنست خارج از بلوک نتانیاهو بگنجانند تا با مشارکت شهروندان عرب دولتی تشکیل دهند.",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut Anna Barsky forderte der Vorsitzende der Demokraten, Yair Golan, die Blockführer auf, Ra'am und die Joint List zu den 67 Abgeordneten außerhalb von Netanjahus Block hinzuzuziehen, um eine Regierung in Partnerschaft mit arabischen Bürgern zu bilden.",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon Anna Barsky, le president des Democrates Yair Golan a appele les dirigeants du bloc a inclure Ra'am et la Liste conjointe parmi les 67 deputes en dehors du bloc de Netanyahu afin de former un gouvernement en partenariat avec les citoyens arabes.",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据Anna Barsky报道，“民主人士”党（The Democrats）主席亚伊尔·戈兰（Yair Golan）呼吁阵营领导人将拉阿姆党和联合名单计入内塔尼亚胡阵营之外的67名议员中，以便与阿拉伯公民合作组建政府。",
+          "sourceHash": "e953f04dfd69e049358a2a61874eb26fb960b786855f4036e79508e4b28f6d4f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu survives the election, but Eisenkot holds key to replacing him - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "published": "2026-10-31T09:22:40.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913382",
+          "bodyHash": "a6f774524aff3a669cb556d8a0064b040e520b241e6005432189a3cd81c95861",
+          "capturedAt": "2026-10-31T11:47:25.804Z",
+          "quoteHash": "ca8477db25c03e8f45eb3b1f5196f609ce17aee359dfdeda8c34b2d7b3d36bf0",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "יו\"ר הדמוקרטים יאיר גולן קרא לראשי הגוש לכלול את רע\"מ ואת הרשימה המשותפת בין 67 חברי הכנסת שמחוץ לגוש נתניהו כדי להקים ממשלה בשותפות עם האזרחים הערבים, לפי אנה ברסקי."
+    },
+    {
+      "text": "Journalist Michael Hauser Tov reported on Ulpan Shishi that senior figures in the opposition bloc confirmed that direct prime ministerial elections without dissolving the Knesset were among the options being examined following election results.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+      "translations": {
+        "he": {
+          "text": "העיתונאי מיכאל האוזר טוב דיווח באולפן שישי כי גורמים בכירים בגוש האופוזיציה אישרו שבחירות ישירות לראשות הממשלה ללא פיזור הכנסת היו בין האפשרויות שנבחנו בעקבות תוצאות הבחירות.",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفاد الصحفي Michael Hauser Tov في Ulpan Shishi بأن شخصيات رفيعة في كتلة المعارضة أكدت أن إجراء انتخابات مباشرة لرئاسة الوزراء دون حل الكنيست كان من بين الخيارات التي يجري فحصها عقب نتائج الانتخابات.",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "میخائیل هاوزر توو، روزنامه‌نگار، در برنامه اولپان شیشی گزارش داد که شخصیت‌های ارشد در جناح اپوزیسیون تأیید کردند که انتخابات مستقیم نخست‌وزیری بدون انحلال کنست از جمله گزینه‌هایی بود که در پی نتایج انتخابات در حال بررسی بودند.",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Journalist Michael Hauser Tov berichtete auf Ulpan Shishi, dass hochrangige Persönlichkeiten im Oppositionsblock bestätigten, dass direkte Wahlen des Premierministers ohne Auflösung der Knesset zu den Optionen gehörten, die infolge der Wahlergebnisse geprüft wurden.",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le journaliste Michael Hauser Tov a rapporte sur Ulpan Shishi que de hauts responsables du bloc de l'opposition avaient confirme que des elections directes au poste de Premier ministre sans dissoudre la Knesset figuraient parmi les options examinees a la suite des resultats des elections.",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "记者Michael Hauser Tov在Ulpan Shishi节目中报道称，反对派阵营的高层人士证实，在选举结果出炉后，在不解散议会的情况下直接举行总理选举是正在受审查的方案之一。",
+          "sourceHash": "b666e95325633656a3b321425945da372a6ec670d309c7d748769cb1d61dc31d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Opposition bloc considers reviving direct elections without dissolving Knesset to end stalemate",
+          "url": "https://www.jpost.com/israel-election-2026/article-913379",
+          "published": "2026-10-31T08:05:48.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913379",
+          "bodyHash": "ee04811823e09b09013feb345be47d07c7ff83fff9cb123538b57e74ed1e3653",
+          "capturedAt": "2026-10-31T11:47:26.201Z",
+          "quoteHash": "cc0c1b25be062585b3761bc0adb06b4397def1db279a5c6fef06e6475a5e5499",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "MAARIV"
+          }
+        }
+      ],
+      "textHe": "העיתונאי מיכאל האוזר טוב דיווח באולפן שישי כי גורמים בכירים בגוש האופוזיציה אישרו שבחירות ישירות לראשות הממשלה ללא פיזור הכנסת היו בין האפשרויות שנבחנו בעקבות תוצאות הבחירות."
+    },
+    {
+      "text": "Likud election observer Rami stated that National Security Minister Itamar Ben-Gvir's actions spurred Bedouin voters to turn out against Likud, reducing the party's share in Rahat to almost zero.",
+      "claimId": "claim-6",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+      "translations": {
+        "he": {
+          "text": "משקיף הבחירות של הליכוד רמי הצהיר כי פעולותיו של השר לביטחון לאומי איתמר בן גביר דרבנו מצביעים בדואים לצאת להצביע נגד הליכוד, ובכך צמצמו את חלקה של המפלגה ברהט לכמעט אפס.",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح مراقب انتخابات حزب Likud، المدعو Rami، بأن تصرفات وزير الأمن القومي Itamar Ben-Gvir حفزت الناخبين البدو على الإقبال ضد Likud، مما قلص حصة الحزب في Rahat إلى ما يقارب الصفر.",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رامی، ناظر انتخاباتی حزب لیکود، بیان کرد که اقدامات ایتامار بن گویر، وزیر امنیت ملی، رأی‌دهندگان بادیه‌نشین را به حضور پای صندوق‌های رأی علیه لیکود برانگیخت و سهم این حزب در رهط را تقریباً به صفر کاهش داد.",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Likud-Wahlbeobachter Rami erklärte, dass das Vorgehen des Ministers für nationale Sicherheit, Itamar Ben-Gvir, Beduinen-Wähler dazu anspornte, gegen den Likud zu stimmen, wodurch der Anteil der Partei in Rahat auf nahezu null sank.",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "L'observateur electoral du Likoud Rami a declare que les actions du ministre de la Securite nationale Itamar Ben-Gvir avaient incite les electeurs bedouins a se mobiliser contre le Likoud, reduisant la part du parti a Rahat a presque zero.",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "利库德集团（Likud）选举观察员Rami表示，国家安全部长伊塔马尔·本-格维尔（Itamar Ben-Gvir）的举动刺激了贝都因选民投票反对利库德集团，使该党在拉哈特（Rahat）的得票份额几乎降至为零。",
+          "sourceHash": "2b06b97f3fef9ea7776c9f4eaf0e3ce6cdfe131b8e727bd8f1595d72c903e73c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'He sent them to the polls': Likud activists blame Ben-Gvir for galvanizing Arab voters",
+          "url": "https://www.jpost.com/israel-election-2026/article-913383",
+          "published": "2026-10-31T09:51:51.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913383",
+          "bodyHash": "b8531495cea8839985caa24c575aa941eab91ab240e20f1ed94af40faa61da80",
+          "capturedAt": "2026-10-31T11:47:25.699Z",
+          "quoteHash": "a069b54c96399af20ac2ede2d41348148a16ab7385c1ac699a1d83356224bd86",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "YANIR YAGNA, AVI SOLOMON"
+          }
+        }
+      ],
+      "textHe": "משקיף הבחירות של הליכוד רמי הצהיר כי פעולותיו של השר לביטחון לאומי איתמר בן גביר דרבנו מצביעים בדואים לצאת להצביע נגד הליכוד, ובכך צמצמו את חלקה של המפלגה ברהט לכמעט אפס."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "bbc0542f6284d6aa7f5d713a56d708d4923084921fe88bf8854770d650cc3763",
+    "privateStored": true
+  }
+}
