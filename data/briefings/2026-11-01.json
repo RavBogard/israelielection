@@ -1,0 +1,402 @@
+{
+  "date": "2026-11-01",
+  "generatedAt": "2026-11-01T19:17:54.229Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 4
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-01T19:17:54.229Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "10a63845bb10ffcaf0c5fe01e5442d401c0b8cb89d44b175690d41a5563cc056",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "11387b7f69e1eed1150961e24fd1938b05113a801129b6f2521e9e10859bd1dd",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "f32d3b7a679c191896103c2fde4a22da6643ecd7612efc8fbfb8b322d37cd3af",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "b8a22ca6666b9bcac38165434f3a449cc9a6c7b49c78cca448dfc83e535507e5",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "8298d84681eee7ca483041772f5bd0ff5264e40e81e77faf710961d739199f8a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "The Jerusalem Post reported election results showing that Benjamin Netanyahu's bloc secured 53 Knesset seats, the opposition bloc won 48 seats, and the Arab parties Ra'am and the Joint List won a combined 19 seats.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+      "translations": {
+        "he": {
+          "text": "ה-Jerusalem Post דיווח על תוצאות בחירות המראות כי הגוש של בנימין נתניהו השיג 53 מושבים בכנסת, גוש האופוזיציה זכה ב-48 מושבים, והמפלגות הערביות רע\"מ והרשימה המשותפת זכו יחד ב-19 מושבים.",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت صحيفة The Jerusalem Post بنتائج انتخابات تُظهر أن كتلة بنيامين نتنياهو حصلت على 53 مقعداً في الكنيست، وفازت كتلة المعارضة بـ 48 مقعداً، بينما فاز الحزبان العربيّان رعام والقائمة المشتركة معاً بـ 19 مقعداً.",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "روزنامه Jerusalem Post نتایج انتخاباتی را گزارش داد که نشان می‌داد بلوک بنیامین نتانیاهو 53 کرسی کنست را به دست آورد، بلوک مخالفان 48 کرسی کسب کرد و احزاب عربی Ra'am و فهرست مشترک در مجموع 19 کرسی به دست آوردند.",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete über Wahlergebnisse, aus denen hervorging, dass der Block von Benjamin Netanjahu 53 Knesset-Sitze sicherte, der Oppositionsblock 48 Sitze gewann und die arabischen Parteien Ra'am und die Gemeinsame Liste zusammen 19 Sitze gewannen.",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté des résultats électoraux montrant que le bloc de Benjamin Netanyahu a obtenu 53 sièges à la Knesset, que le bloc de l'opposition a remporté 48 sièges, et que les partis arabes Ra'am et la Liste unie ont remporté ensemble 19 sièges.",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "《耶路撒冷邮报》（The Jerusalem Post）报道的选举结果显示，本雅明·内塔尼亚胡（Benjamin Netanyahu）的阵营获得了53个以色列议会（Knesset）席位，反对派阵营赢得了48个席位，阿拉伯政党Ra'am和联合名单（Joint List）合计赢得了19个席位。",
+          "sourceHash": "e8b8ace49899d72e548dcb6606d41ebc6e4353ec984823dcca66ff1d548ce287",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Bennett to recommend Eisenkot as prime minister, B'Yachad party says ahead of meeting with Herzog",
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "published": "2026-11-01T20:08:45.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "bodyHash": "995cff26a162f4d77ffe47f4276b9ca65a59c65d9f714dc9d394cb53f1280770",
+          "capturedAt": "2026-11-01T19:17:19.141Z",
+          "quoteHash": "93a8e16a7a4a26cbdb9368a4f296885434f996c325691577f594f10bf0583c43",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "ה-Jerusalem Post דיווח על תוצאות בחירות המראות כי הגוש של בנימין נתניהו השיג 53 מושבים בכנסת, גוש האופוזיציה זכה ב-48 מושבים, והמפלגות הערביות רע\"מ והרשימה המשותפת זכו יחד ב-19 מושבים."
+    },
+    {
+      "text": "The B'Yachad party announced that it would recommend Yashar leader Gadi Eisenkot to President Isaac Herzog as its candidate to form the next government.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+      "translations": {
+        "he": {
+          "text": "מפלגת B'Yachad הודיעה כי תמליץ על מנהיג Yashar גדי איזנקוט לנשיא יצחק הרצוג כמועמדה להרכבת הממשלה הבאה.",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن حزب B'Yachad أنه سيوصي بزعيم حزب Yashar غادي آيزنكوت أمام الرئيس إسحاق هرتسوغ كمرشحه لتشكيل الحكومة المقبلة.",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "حزب B'Yachad اعلام کرد که گادی آیزنکوت، رهبر Yashar را به عنوان نامزد خود برای تشکیل دولت بعدی به رئیس‌جمهور اسحاق هرتزوگ پیشنهاد خواهد کرد.",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die B'Yachad-Partei kündigte an, dass sie Präsident Isaac Herzog den Yashar-Vorsitzenden Gadi Eisenkot als ihren Kandidaten für die Bildung der nächsten Regierung empfehlen werde.",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le parti B'Yachad a annoncé qu'il recommanderait le chef de Yashar, Gadi Eisenkot, au président Isaac Herzog comme son candidat pour former le prochain gouvernement.",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "B'Yachad党宣布将向总统伊萨克·赫尔佐格（Isaac Herzog）推荐Yashar领导人加迪·埃森科特（Gadi Eisenkot）作为其组建下一届政府的候选人。",
+          "sourceHash": "e5bd80f1593aee33334c44bae628346dfc1d4ce5b63fbe478d0763ca74ba6b8b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Bennett to recommend Eisenkot as prime minister, B'Yachad party says ahead of meeting with Herzog",
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "published": "2026-11-01T20:08:45.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "bodyHash": "995cff26a162f4d77ffe47f4276b9ca65a59c65d9f714dc9d394cb53f1280770",
+          "capturedAt": "2026-11-01T19:17:19.141Z",
+          "quoteHash": "3dc6da56d022ceb16587511d39094d47772634f6891a76a46eac9a1863735dde",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מפלגת B'Yachad הודיעה כי תמליץ על מנהיג Yashar גדי איזנקוט לנשיא יצחק הרצוג כמועמדה להרכבת הממשלה הבאה."
+    },
+    {
+      "text": "A senior Joint List official told Walla that the Joint List and Ra'am are expected to recommend Gadi Eisenkot for prime minister during presidential consultations.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+      "translations": {
+        "he": {
+          "text": "בכיר ברשימה המשותפת מסר ל-Walla כי הרשימה המשותפת ורע\"מ צפויות להמליץ על גדי איזנקוט לראשות הממשלה במהלך התייעצויות הנשיא.",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح مسؤول كبير في القائمة المشتركة لـ Walla بأنه من المتوقع أن توصي القائمة المشتركة ورعام بغادي آيزنكوت لرئاسة الوزراء خلال المشاورات الرئاسية.",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "یک مقام ارشد فهرست مشترک به Walla گفت انتظار می‌رود که فهرست مشترک و Ra'am در جریان رایزنی‌های ریاست‌جمهوری، گادی آیزنکوت را برای نخست‌وزیری پیشنهاد کنند.",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Ein hochrangiger Vertreter der Gemeinsamen Liste sagte gegenüber Walla, dass erwartet werde, dass die Gemeinsame Liste und Ra'am während der Konsultationen beim Präsidenten Gadi Eisenkot als Premierminister empfehlen.",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Un haut responsable de la Liste unie a déclaré à Walla que la Liste unie et Ra'am devraient recommander Gadi Eisenkot pour le poste de Premier ministre lors des consultations présidentielles.",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "联合名单（Joint List）的一名高级官员对Walla表示，预计联合名单和Ra'am将在总统磋商期间推荐加迪·埃森科特（Gadi Eisenkot）出任总理。",
+          "sourceHash": "9153a2701f94ceb564a24e672d4d9749c272eedba70d9eee997b87ae1aa4496c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Bennett to recommend Eisenkot as prime minister, B'Yachad party says ahead of meeting with Herzog",
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "published": "2026-11-01T20:08:45.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913504",
+          "bodyHash": "995cff26a162f4d77ffe47f4276b9ca65a59c65d9f714dc9d394cb53f1280770",
+          "capturedAt": "2026-11-01T19:17:19.141Z",
+          "quoteHash": "fe3a411fca1f0f4ce91228fe95b52ee76acd4fd10ce4b8669ba1b8169f1d94e1",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "בכיר ברשימה המשותפת מסר ל-Walla כי הרשימה המשותפת ורע\"מ צפויות להמליץ על גדי איזנקוט לראשות הממשלה במהלך התייעצויות הנשיא."
+    },
+    {
+      "text": "Dimona Mayor Benny Biton stated to Kan News that Prime Minister Benjamin Netanyahu wants to establish a national unity government.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+      "translations": {
+        "he": {
+          "text": "ראש עיריית דימונה בני ביטון הצהיר בפני Kan News כי ראש הממשלה בנימין נתניהו רוצה להקים ממשלת אחדות לאומית.",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح رئيس بلدية ديمونا بيني بيتون لـ Kan News بأن رئيس الوزراء بنيامين نتنياهو يريد تشكيل حكومة وحدة وطنية.",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بنی بیتون، شهردار دیمونا، به Kan News اظهار داشت که نخست‌وزیر بنیامین نتانیاهو می‌خواهد یک دولت وحدت ملی تشکیل دهد.",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Bürgermeister von Dimona, Benny Biton, erklärte gegenüber Kan News, dass Premierminister Benjamin Netanjahu eine Regierung der nationalen Einheit bilden möchte.",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le maire de Dimona, Benny Biton, a déclaré à Kan News que le Premier ministre Benjamin Netanyahu souhaite établir un gouvernement d'unité nationale.",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "迪莫纳（Dimona）市长本尼·比通（Benny Biton）向Kan News表示，总理本雅明·内塔尼亚胡（Benjamin Netanyahu）希望建立一个民族团结政府。",
+          "sourceHash": "771096925645ade4d8e3f1aa82bbedc98f7ea3242f3ddc632ffff79a0d5afacc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu ally says Trump, Herzog could serve as guarantors for unity gov't with Eisenkot",
+          "url": "https://www.jpost.com/israel-election-2026/article-913467",
+          "published": "2026-11-01T14:32:13.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913467",
+          "bodyHash": "e7db78e6c56b5b105521baf5768e92406277ed274bbcf6f75bb4e38997d554be",
+          "capturedAt": "2026-11-01T19:17:19.664Z",
+          "quoteHash": "8526c684c176b36b1eee7c6b75d740f40be0496ee734c2912c1a1fd223cc3e78",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "ראש עיריית דימונה בני ביטון הצהיר בפני Kan News כי ראש הממשלה בנימין נתניהו רוצה להקים ממשלת אחדות לאומית."
+    },
+    {
+      "text": "Qatari Foreign Ministry spokesperson Majed al-Ansari stated that Qatar categorically denies allegations of interfering in Israeli elections or funding activities to influence their outcome.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+      "translations": {
+        "he": {
+          "text": "דובר משרד החוץ הקטארי מאג'ד אל-אנסארי הצהיר כי קטאר מכחישה באופן מוחלט טענות על התערבות בבחירות בישראל או מימון פעילויות להשפעה על תוצאותיהן.",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح المتحدث باسم وزارة الخارجية القطرية ماجد الأنصاري بأن قطر تنفي بشكل قاطع مزاعم التدخل في الانتخابات الإسرائيلية أو تمويل أنشطة للتأثير على نتائجها.",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "ماجد الانصاری، سخنگوی وزارت امور خارجه قطر، اعلام کرد که قطر ادعاهای مداخله در انتخابات اسرائیل یا تأمین مالی فعالیت‌ها جهت تأثیرگذاری بر نتیجه آن را قاطعانه رد می‌کند.",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Sprecher des katarischen Außenministeriums, Majed al-Ansari, erklärte, dass Katar Vorwürfe einer Einmischung in die israelischen Wahlen oder der Finanzierung von Aktivitäten zur Beeinflussung ihres Ausgangs kategorisch zurückweist.",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le porte-parole du ministère des Affaires étrangères du Qatar, Majed al-Ansari, a déclaré que le Qatar dément catégoriquement les allégations d'ingérence dans les élections israéliennes ou de financement d'activités destinées à influencer leur issue.",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "卡塔尔外交部发言人马吉德·安萨里（Majed al-Ansari）表示，卡塔尔断然否认有关干涉以色列选举或资助旨在影响选举结果的活动的指控。",
+          "sourceHash": "f202586d5def018a67bad01b9fef4aa6168391ba6474dbf1f561fdf098e7d091",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Joint List MK investigated on suspicion of receiving Qatari funding during Israel's 2026 elections",
+          "url": "https://www.jpost.com/israel-election-2026/article-913469",
+          "published": "2026-11-01T14:46:37.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913469",
+          "bodyHash": "a2b3ef8657298ed622ec8fcc2a64661ea1a586aaae353d28063f104b8414349e",
+          "capturedAt": "2026-11-01T19:17:19.613Z",
+          "quoteHash": "fea3e256a00901c6ed9e9a0cb2b9a30a8334f5afbd03c8ede4a1d135f8cca658",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "דובר משרד החוץ הקטארי מאג'ד אל-אנסארי הצהיר כי קטאר מכחישה באופן מוחלט טענות על התערבות בבחירות בישראל או מימון פעילויות להשפעה על תוצאותיהן."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "478b8e9bcf52459dc935b6a781c36e9f292db2f712fda775679cf5bc09995f4b",
+    "privateStored": true
+  }
+}
