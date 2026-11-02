@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -140,6 +140,10 @@
         {
           "text": "Ben-Gvir will be a senior minister in future government.",
           "source": "Haaretz, Oct 19, 2026"
+        },
+        {
+          "text": "Open to a “broad national government” under his leadership with any party that “opposes terrorism,” while insisting he will not abandon far-right and ultra-Orthodox partners and ruling out Ra'am and the Joint List as “parties that support terrorism and reject the existence of the Jewish state.”",
+          "source": "Jerusalem Post, Nov 2, 2026; Haaretz, Nov 2, 2026; Times of Israel, Nov 2, 2026"
         }
       ],
       "surplusPartner": {
