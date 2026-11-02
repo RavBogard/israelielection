@@ -1,0 +1,402 @@
+{
+  "date": "2026-11-02",
+  "generatedAt": "2026-11-02T14:56:09.163Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 7
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-02T14:56:09.163Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "8020e59c05e954c9e67b8853cecefccab335477a6b7b9e1fa6f70e65179b8b9e",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "95f756fef703731a1a722edfa49e9a5eb17210be5564efe48f1cf269f60a5080",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "d98f3e95989b4c535200f3db4d55ee92f76fc988a00453d1a19cacc0a115e2e1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "74ae97ebda8a62a88c466fb9c6b34b711805cfba1aea57110d2f7741aff87aea",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "6724f09e165c70be0b6bc6525c7e766de5d1baa98e76003c4c419ea7aff76d45",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to the President's Office, President Isaac Herzog will begin consultations with party representatives on Wednesday in ascending order of Knesset seats, beginning with Religious Zionism-Zehut and ending with Likud on Thursday evening.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+      "translations": {
+        "he": {
+          "text": "לפי בית הנשיא, הנשיא יצחק הרצוג יתחיל בהתייעצויות עם נציגי המפלגות ביום רביעי לפי סדר עולה של מושבי כנסת, החל מ\"הציונות הדתית-זהות\" וכלה ב\"ליכוד\" ביום חמישי בערב.",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لمكتب الرئيس، سيبدأ الرئيس إسحاق هرتسوغ مشاورات مع ممثلي الأحزاب يوم الأربعاء بترتيب تصاعدي لمقاعد الكنيست، بدءاً بحزب الصهيونية الدينية-زهوت وانتهاءً بالليكود مساء الخميس.",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "طبق اعلام دفتر رئیس‌جمهور، رئیس‌جمهور اسحاق هرتزوگ رایزنی‌ها با نمایندگان احزاب را در روز چهارشنبه به ترتیب صعودی کرسی‌های کنست آغاز خواهد کرد، که با Religious Zionism-Zehut شروع می‌شود و در شامگاه پنجشنبه با لیکود به پایان می‌رسد.",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Nach Angaben des Büros des Präsidenten wird Präsident Isaac Herzog am Mittwoch Konsultationen mit Parteivertretern in aufsteigender Reihenfolge der Knesset-Sitze aufnehmen, beginnend mit Religiöser Zionismus-Zehut und endend mit Likud am Donnerstagabend.",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon le bureau du président, le président Isaac Herzog commencera les consultations avec les représentants des partis mercredi par ordre croissant de sièges à la Knesset, en commençant par Sionisme religieux-Zehut et en terminant par le Likoud jeudi soir.",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据总统办公室称，总统Isaac Herzog将于周三按照议会席位的升序开始与政党代表进行磋商，从Religious Zionism-Zehut开始，并于周四傍晚以Likud结束。",
+          "sourceHash": "5488d0d54ef702deeef58c0d49ff2435010821b46215a20864223cdeee382203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "In unusual move, Herzog to begin coalition consultations with smallest Knesset parties",
+          "url": "https://www.jpost.com/israel-election-2026/article-913577",
+          "published": "2026-11-02T16:46:59.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913577",
+          "bodyHash": "c1d43ec2f0c2beebb3608943fdf1f9bf150f722e87d79d90e94adf0e8affff17",
+          "capturedAt": "2026-11-02T14:55:13.217Z",
+          "quoteHash": "df0a9a7ceb82a1c8b1560fb017267751d5805d8ad2da1b448287fa59a1c3a34d",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "לפי בית הנשיא, הנשיא יצחק הרצוג יתחיל בהתייעצויות עם נציגי המפלגות ביום רביעי לפי סדר עולה של מושבי כנסת, החל מ\"הציונות הדתית-זהות\" וכלה ב\"ליכוד\" ביום חמישי בערב."
+    },
+    {
+      "text": "The Democrats party announced that it would recommend Yashar leader Gadi Eisenkot to President Isaac Herzog as its candidate to form the next government.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+      "translations": {
+        "he": {
+          "text": "מפלגת הדמוקרטים הודיעה כי תמליץ על מנהיג \"ישר\", גדי איזנקוט, בפני הנשיא יצחק הרצוג כמועמדה להרכבת הממשלה הבאה.",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن حزب الديمقراطيين أنه سيوصي لدى الرئيس إسحاق هرتسوغ بزعيم حزب ياشار غادي آيزنكوت كمرشحه لتشكيل الحكومة المقبلة.",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "حزب دموکرات‌ها اعلام کرد که گادی آیزنکوت، رهبر Yashar را به عنوان نامزد خود برای تشکیل دولت بعدی به رئیس‌جمهور اسحاق هرتزوگ پیشنهاد خواهد کرد.",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Partei The Democrats gab bekannt, dass sie Präsident Isaac Herzog den Yashar-Vorsitzenden Gadi Eisenkot als ihren Kandidaten für die Bildung der nächsten Regierung empfehlen werde.",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le parti Les Démocrates a annoncé qu'il recommanderait le chef de Yashar, Gadi Eisenkot, au président Isaac Herzog comme candidat pour former le prochain gouvernement.",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "The Democrats党宣布，将向总统Isaac Herzog推荐Yashar领导人Gadi Eisenkot作为其组建下一届政府的候选人。",
+          "sourceHash": "011dc1a8c364bff626a8a7971a379022b6ec819b3f8054f045f4b29e8b27d7b6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Democrats to recommend Eisenkot for prime minister ahead of meeting with Herzog",
+          "url": "https://www.jpost.com/israel-election-2026/article-913583",
+          "published": "2026-11-02T15:47:25.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913583",
+          "bodyHash": "dc7d9f50e90b69232ca26ef1a8a6bc2f18ac1d9c9047aa77053f21394afcb90c",
+          "capturedAt": "2026-11-02T14:55:13.761Z",
+          "quoteHash": "4e4059eeb4f7df6c4c6acbb8b3bfc0dbb83b77c43a205f4780d8ab8126cfac1e",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מפלגת הדמוקרטים הודיעה כי תמליץ על מנהיג \"ישר\", גדי איזנקוט, בפני הנשיא יצחק הרצוג כמועמדה להרכבת הממשלה הבאה."
+    },
+    {
+      "text": "Yisrael Beytenu chairman Avigdor Liberman announced that his party would recommend Yashar leader Gadi Eisenkot to form the next government and back B'Yachad's Yair Lapid for Knesset speaker.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+      "translations": {
+        "he": {
+          "text": "יו\"ר ישראל ביתנו, אביגדור ליברמן, הודיע כי מפלגתו תמליץ על מנהיג \"ישר\", גדי איזנקוט, להרכבת הממשלה הבאה ותתמוך ביאיר לפיד מ\"ביחד\" לתפקיד יו\"ר הכנסת.",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن رئيس حزب إسرائيل بيتنا أفيغدور ليبرمان أن حزبه سيوصي بزعيم حزب ياشار غادي آيزنكوت لتشكيل الحكومة المقبلة وسيدعم يائير لبيد من حزب بياحاد لرئاسة الكنيست.",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آویگدور لیبرمن، رئیس Yisrael Beytenu اعلام کرد که حزب او گادی آیزنکوت، رهبر Yashar را برای تشکیل دولت بعدی پیشنهاد خواهد داد و از یائیر لاپید از B'Yachad برای ریاست کنست حمایت خواهد کرد.",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende von Yisrael Beytenu, Avigdor Liberman, gab bekannt, dass seine Partei den Yashar-Vorsitzenden Gadi Eisenkot zur Bildung der nächsten Regierung empfehlen und Yair Lapid von B'Yachad als Knesset-Sprecher unterstützen werde.",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président d'Yisrael Beytenu, Avigdor Liberman, a annoncé que son parti recommanderait le chef de Yashar, Gadi Eisenkot, pour former le prochain gouvernement et soutiendrait Yair Lapid de B'Yachad pour la présidence de la Knesset.",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Yisrael Beytenu主席Avigdor Liberman宣布，其政党将推荐Yashar领导人Gadi Eisenkot组建下一届政府，并支持B'Yachad的Yair Lapid出任议会议长。",
+          "sourceHash": "5be49cef7e5d2eed17e6cbb7630fdcb74a2d80cb26b1332c08c5b85fcec6a074",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Liberman pledges to recommend Eisenkot for PM, back Lapid as Knesset speaker",
+          "url": "https://www.jpost.com/israel-election-2026/article-913564",
+          "published": "2026-11-02T13:50:42.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913564",
+          "bodyHash": "7cd6494ce6daa6046bb07c88428c56b5a00c671ef78ae8b8bdb4990e179410f8",
+          "capturedAt": "2026-11-02T14:55:14.939Z",
+          "quoteHash": "3c31c25423ff77b885926a4fc92d9e4ea37793d84df21e4e13cc7737167fd612",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "יו\"ר ישראל ביתנו, אביגדור ליברמן, הודיע כי מפלגתו תמליץ על מנהיג \"ישר\", גדי איזנקוט, להרכבת הממשלה הבאה ותתמוך ביאיר לפיד מ\"ביחד\" לתפקיד יו\"ר הכנסת."
+    },
+    {
+      "text": "Central Elections Committee chairman Justice Noam Sohlberg stated that even if suspicions of foreign interference were substantiated, they would not undermine the integrity of the election process or its overall results.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+      "translations": {
+        "he": {
+          "text": "יו\"ר ועדת הבחירות המרכזית, השופט נעם סולברג, הצהיר כי גם אם חשדות להתערבות זרה יתאמתו, הם לא יפגעו בטוהר תהליך הבחירות או בתוצאותיו הכוללות.",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح رئيس لجنة الانتخابات المركزية القاضي نوعام سولبرغ بأنه حتى لو ثبتت صحة الشبهات بشأن التدخل الأجنبي، فإنها لن تقوض نزاهة العملية الانتخابية أو نتائجها الإجمالية.",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "قاضی نوآم سولبرگ، رئیس کمیته مرکزی انتخابات اظهار داشت که حتی اگر سوءظن‌های مربوط به دخالت خارجی اثبات شود، سلامت فرآیند انتخابات یا نتایج کلی آن خدشه‌دار نخواهد شد.",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende des Zentralen Wahlausschusses, Richter Noam Sohlberg, erklärte, dass selbst wenn sich der Verdacht einer ausländischen Einflussnahme bestätigen sollte, dieser die Integrität des Wahlprozesses oder seiner Gesamtergebnisse nicht untergraben würde.",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président de la Commission centrale des élections, le juge Noam Sohlberg, a déclaré que même si les soupçons d'ingérence étrangère étaient étayés, ils ne porteraient pas atteinte à l'intégrité du processus électoral ou à ses résultats globaux.",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "中央选举委员会主席Noam Sohlberg法官表示，即便对外国干预的怀疑得到证实，也不会损害选举进程的公正性或其整体结果。",
+          "sourceHash": "dfead8175d73a37d0ea3dfbdc76b3c42b5cd7130fb4251bf9f96bc07a163d567",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Court lifts restrictions on suspect in alleged Ra'am election bribery scheme",
+          "url": "https://www.jpost.com/israel-election-2026/article-913576",
+          "published": "2026-11-02T14:55:47.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913576",
+          "bodyHash": "2bb26350425c4d59def326b29690f4b667d87b57c0ed3c77dae501c069e9028f",
+          "capturedAt": "2026-11-02T14:55:14.083Z",
+          "quoteHash": "5287faf72baca18134d14325fa0e3491f60e581fbf1c9f194b13c33620caa8b9",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SARAH BEN-NUN"
+          }
+        }
+      ],
+      "textHe": "יו\"ר ועדת הבחירות המרכזית, השופט נעם סולברג, הצהיר כי גם אם חשדות להתערבות זרה יתאמתו, הם לא יפגעו בטוהר תהליך הבחירות או בתוצאותיו הכוללות."
+    },
+    {
+      "text": "Prime Minister Benjamin Netanyahu's Likud party stated that it was perplexing for Justice Noam Sohlberg to preemptively determine that foreign funding allegations have no impact on election results before the investigation concludes.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+      "translations": {
+        "he": {
+          "text": "מפלגת הליכוד של ראש הממשלה בנימין נתניהו מסרה כי תמוה שהשופט נעם סולברג קבע מראש כי לטענות על מימון זר אין השפעה על תוצאות הבחירות בטרם הסתיימה החקירה.",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح حزب الليكود التابع لرئيس الوزراء بنيامين نتنياهو بأنه من المثير للحيرة أن يقرر القاضي نوعام سولبرغ بشكل استباقي أن مزاعم التمويل الأجنبي ليس لها تأثير على نتائج الانتخابات قبل انتهاء التحقيق.",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "حزب لیکود نخست‌وزیر بنیامین نتانیاهو اعلام کرد که اینکه قاضی نوآم سولبرگ پیش از پایان تحقیقات به طور پیش‌دستانه تعیین کند که ادعاهای تأمین مالی خارجی هیچ اثری بر نتایج انتخابات ندارد، گیج‌کننده است.",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Likud-Partei von Premierminister Benjamin Netanyahu erklärte, es sei verwirrend, dass Richter Noam Sohlberg vor Abschluss der Untersuchung vorab feststelle, dass Vorwürfe ausländischer Finanzierung keine Auswirkungen auf die Wahlergebnisse hätten.",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le parti Likoud du Premier ministre Benjamin Netanyahu a déclaré qu'il était déroutant que le juge Noam Sohlberg détermine de manière préventive que les allégations de financement étranger n'ont aucun impact sur les résultats des élections avant que l'enquête ne soit conclue.",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "总理Benjamin Netanyahu所在的Likud党表示，Noam Sohlberg法官在调查结束前就先发制人地认定外国资金指控对选举结果没有影响，这是令人费解的。",
+          "sourceHash": "e9ee15e6adf4a73470b20e34c112bd8f475b6be4c6ae49c529c5b4291800fc9d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'Dark cloud over results': Netanyahu questions Sohlberg's decision over election interference case",
+          "url": "https://www.jpost.com/israel-election-2026/article-913557",
+          "published": "2026-11-02T13:24:57.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913557",
+          "bodyHash": "9231e915be58c21f7b36451aa8e00bb6555dc487569aa406ba213645c919b519",
+          "capturedAt": "2026-11-02T14:55:15.036Z",
+          "quoteHash": "8bab711e94ff520541b1ce8d6031d4f636073997440cd1d5194186a9006bdc87",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "מפלגת הליכוד של ראש הממשלה בנימין נתניהו מסרה כי תמוה שהשופט נעם סולברג קבע מראש כי לטענות על מימון זר אין השפעה על תוצאות הבחירות בטרם הסתיימה החקירה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "e88170f5c02fcb6c26a01a8d64e6447cc870230be40dc37d937f18a5edcdb71a",
+    "privateStored": true
+  }
+}
