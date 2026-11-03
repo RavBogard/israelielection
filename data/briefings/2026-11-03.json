@@ -1,0 +1,327 @@
+{
+  "date": "2026-11-03",
+  "generatedAt": "2026-11-03T13:44:48.990Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 1,
+    "sourceAttempts": 16,
+    "capturedSources": 5
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-03T13:44:48.990Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "1fd0757b3d8815023c257eada54488845dd95913d6a781edf977a1997889f906",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "26148d5f006f8e9820e8f86c8ece890ff3a64ee8d39678746a419820932ae502",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "e395beb841c5fdd39a4dfedbce388558080ba77a96b2ae62c2ae4f566e7d9316",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "ec3bd6ad9f052f22bfe2712f63caff6b8c14a003efc59608e0cb051d84f39934",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Zehut party chairman Moshe Feiglin called for the newly elected Knesset to dissolve and for fresh elections to be held, claiming that alleged electoral irregularities undermined the legitimacy of Israel's democratic process.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+      "translations": {
+        "he": {
+          "text": "יו\"ר מפלגת זהות משה פייגלין קרא לפיזור הכנסת החדשה שנבחרה ולקיום בחירות חדשות, בטענה שאי-סדרים לכאורה בבחירות פגעו בלגיטימיות של התהליך הדמוקרטי בישראל.",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "دعا رئيس حزب زيهوت موشيه فيغلين الكنيست المنتخب حديثاً إلى حل نفسه وإجراء انتخابات جديدة، مدعياً أن المخالفات الانتخابية المزعومة قد قوضت شرعية العملية الديمقراطية في إسرائيل.",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "موشه فیگلین، رئیس حزب زهوت، خواستار انحلال کنست تازه انتخاب‌شده و برگزاری انتخابات جدید شد و ادعا کرد که بی‌نظمی‌های انتخاباتی ادعاشده مشروعیت فرایند دموکراتیک اسرائیل را تضعیف کرده است.",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende der Zehut-Partei, Moshe Feiglin, forderte die Auflösung der neu gewählten Knesset und die Abhaltung von Neuwahlen, wobei er geltend machte, dass mutmaßliche Unregelmäßigkeiten bei den Wahlen die Legitimität des demokratischen Prozesses in Israel untergraben hätten.",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président du parti Zehut, Moshe Feiglin, a appelé à la dissolution de la Knesset nouvellement élue et à la tenue de nouvelles élections, affirmant que de présumées irrégularités électorales portaient atteinte à la légitimité du processus démocratique israélien.",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Zehut党主席Moshe Feiglin呼吁解散新当选的Knesset并举行新的选举，声称涉嫌存在的选举违规行为破坏了以色列民主进程的合法性。",
+          "sourceHash": "45c173c44a2241dd810f3dfe302eb73156822dcc7fbaff10a1becd8d5ff5e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Zehut leader Feiglin calls for dissolution of new Knesset even as he recommends Netanyahu for PM",
+          "url": "https://www.jpost.com/israel-election-2026/article-913702",
+          "published": "2026-11-03T15:02:52.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913702",
+          "bodyHash": "72a4865d2cee631d1186344fd657e7f68765ebdbf781bfe66a9df6958a7fe7bc",
+          "capturedAt": "2026-11-03T13:43:50.096Z",
+          "quoteHash": "5d1aa878b92cbebac792df4a004de7ba958c9e2cef997ee0e77dc474e7687555",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "יו\"ר מפלגת זהות משה פייגלין קרא לפיזור הכנסת החדשה שנבחרה ולקיום בחירות חדשות, בטענה שאי-סדרים לכאורה בבחירות פגעו בלגיטימיות של התהליך הדמוקרטי בישראל."
+    },
+    {
+      "text": "Moshe Feiglin stated that despite questioning the election results, he would recommend only Prime Minister Benjamin Netanyahu to form the next government.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+      "translations": {
+        "he": {
+          "text": "משה פייגלין הצהיר כי למרות הטלת הספק בתוצאות הבחירות, הוא ימליץ אך ורק על ראש הממשלה בנימין נתניהו להרכבת הממשלה הבאה.",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح موشيه فيغلين بأنه على الرغم من التشكيك في نتائج الانتخابات، فإنه لن يوصي إلا برئيس الوزراء بنيامين نتنياهو لتشكيل الحكومة المقبلة.",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "موشه فیگلین اظهار داشت که با وجود زیر سؤال بردن نتایج انتخابات، او فقط بنیامین نتانیاهو نخست‌وزیر را برای تشکیل دولت بعدی پیشنهاد خواهد کرد.",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Moshe Feiglin erklärte, dass er trotz des Anzweifelns der Wahlergebnisse ausschließlich Premierminister Benjamin Netanyahu für die Bildung der nächsten Regierung empfehlen werde.",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Moshe Feiglin a déclaré que, bien qu'il conteste les résultats des élections, il ne recommanderait que le Premier ministre Benjamin Netanyahu pour former le prochain gouvernement.",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Moshe Feiglin表示，尽管对选举结果提出质疑，但他只会推荐总理Benjamin Netanyahu组建下一届政府。",
+          "sourceHash": "ca6e7b627112c0454255435bb6c07f60b389d36e818659d4c182df2c1c672923",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Zehut leader Feiglin calls for dissolution of new Knesset even as he recommends Netanyahu for PM",
+          "url": "https://www.jpost.com/israel-election-2026/article-913702",
+          "published": "2026-11-03T15:02:52.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913702",
+          "bodyHash": "72a4865d2cee631d1186344fd657e7f68765ebdbf781bfe66a9df6958a7fe7bc",
+          "capturedAt": "2026-11-03T13:43:50.096Z",
+          "quoteHash": "c86731b5e909eca2c2997896b6637bd0b68944079ea994db1c7ecc6ddcdfa85d",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "משה פייגלין הצהיר כי למרות הטלת הספק בתוצאות הבחירות, הוא ימליץ אך ורק על ראש הממשלה בנימין נתניהו להרכבת הממשלה הבאה."
+    },
+    {
+      "text": "Yisrael Beytenu chairman Avigdor Liberman reiterated ahead of the opposition leaders' meeting that entering a coalition with Arab parties was not an option.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+      "translations": {
+        "he": {
+          "text": "יו\"ר ישראל ביתנו אביגדור ליברמן חזר והדגיש לקראת פגישת ראשי האופוזיציה כי כניסה לקואליציה עם מפלגות ערביות אינה אופציה.",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "كرر رئيس حزب يسرائيل بيتينو أفيغدور ليبرمان قبيل اجتماع قادة المعارضة أن الدخول في ائتلاف مع الأحزاب العربية ليس خياراً مطروحاً.",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آویگدور لیبرمن، رئیس یسرائیل بیتنو، پیش از نشست رهبران اپوزیسیون مجدداً تکرار کرد که ورود به ائتلاف با احزاب عربی یک گزینه نبود.",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende von Yisrael Beytenu, Avigdor Liberman, bekräftigte vor dem Treffen der Oppositionsführer, dass der Eintritt in eine Koalition mit arabischen Parteien keine Option sei.",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président d'Yisrael Beytenu, Avigdor Liberman, a réitéré avant la réunion des dirigeants de l'opposition qu'entrer dans une coalition avec des partis arabes n'était pas une option.",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Yisrael Beytenu党主席Avigdor Liberman在反对党领袖会议前重申，与阿拉伯政党组建执政联盟不是一种选择。",
+          "sourceHash": "c600300fb07bc8bdb4177f18dbc1ce5b2a9e0c8c1bc177acc6b3a012e9dfa3aa",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot gets opposition backing as leaders vow to form emergency gov't 'as soon as possible'",
+          "url": "https://www.jpost.com/israel-election-2026/article-913678",
+          "published": "2026-11-03T11:27:04.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913678",
+          "bodyHash": "8e734a1272c0a2c4dbc411fd1c0e59e2db970f7a98eb7cb13d4ed0e5c0247fcc",
+          "capturedAt": "2026-11-03T13:43:50.874Z",
+          "quoteHash": "1a2d9af2646f29e0623ed6083c30e9086baba549f396e13e9a7ba681fed98efd",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV, SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "יו\"ר ישראל ביתנו אביגדור ליברמן חזר והדגיש לקראת פגישת ראשי האופוזיציה כי כניסה לקואליציה עם מפלגות ערביות אינה אופציה."
+    },
+    {
+      "text": "The Likud party accused Attorney-General Gali Baharav-Miara of obstructing a Shin Bet investigation after reports indicated she required her approval before questioning parliamentary aides from the Joint List.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+      "translations": {
+        "he": {
+          "text": "מפלגת הליכוד האשימה את היועצת המשפטית לממשלה גלי בהרב-מיארה בשיבוש חקירת שב\"כ לאחר שדיווחים הצביעו על כך שהיא דרשה את אישורה לפני חקירת עוזרים פרלמנטריים מהרשימה המשותפת.",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "اتهم حزب الليكود المستشارة القضائية للحكومة غالي باهاراف-ميارا بعرقلة تحقيق يجريه جهاز الشاباك بعد أن أشارت تقارير إلى أنها اشترطت الحصول على موافقتها قبل استجواب مساعدين برلمانيين من القائمة المشتركة.",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "حزب لیکود پس از آنکه گزارش‌ها نشان دادند گالی باهاراو-میارا، دادستان کل، پیش از بازجویی از دستیاران پارلمانی فهرست مشترک موافقت خود را الزامی دانسته بود، او را به مانع‌تراشی در تحقیقات شین بت متهم کرد.",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Likud-Partei warf Generalstaatsanwältin Gali Baharav-Miara vor, eine Untersuchung des Shin Bet behindert zu haben, nachdem Berichten zufolge ihre Genehmigung erforderlich war, bevor parlamentarische Mitarbeiter der Gemeinsamen Liste befragt werden konnten.",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le parti Likoud a accusé la procureure générale Gali Baharav-Miara d'entraver une enquête du Shin Bet après que des rapports ont indiqué qu'elle exigeait son approbation avant d'interroger des assistants parlementaires de la Liste conjointe.",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "在有报道显示总检察长Gali Baharav-Miara要求在审问来自Joint List的议会助手前必须获得她的批准后，Likud党指责她阻碍了Shin Bet的调查。",
+          "sourceHash": "10cf552bad86f868c4f41f5bbaa755c82a7896aba071f39b5c4abbf83c2de3e6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet expands election interference probe to suspected Palestinian Authority funding - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-913658",
+          "published": "2026-11-03T08:13:07.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913658",
+          "bodyHash": "6245d96c2df7333f45d47efb98fa0a982c2329445401ec0be622b079e14522ba",
+          "capturedAt": "2026-11-03T13:43:51.119Z",
+          "quoteHash": "bb3998f3859125e1a0ee8d6f6cb320aa6710e345a345b048adfc1a0b4261639c",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "מפלגת הליכוד האשימה את היועצת המשפטית לממשלה גלי בהרב-מיארה בשיבוש חקירת שב\"כ לאחר שדיווחים הצביעו על כך שהיא דרשה את אישורה לפני חקירת עוזרים פרלמנטריים מהרשימה המשותפת."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "2a5b99973b3f5cbaebe5e94c76fb7fd654f5ded86fbfe39a04b466720bc45261",
+    "privateStored": true
+  }
+}
