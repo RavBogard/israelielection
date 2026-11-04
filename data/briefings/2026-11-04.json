@@ -1,0 +1,372 @@
+{
+  "date": "2026-11-04",
+  "generatedAt": "2026-11-04T13:52:58.276Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-04T13:52:58.276Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "591095ab74c5bde0b3fd7d576ffdaad57b6b513c9fb84c05b2d11a13c8d385f8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "e8dd737bb277b4b5d3b08773cf3b1e44e1c4e72a8b6280e0ad898999376ae94a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "b428532c989933ceb831a01f61156a5e198034372dd21887875a3c7dd20e46d8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "94e693a11b28a10e2fb98f54cfd88437cd17a880bb43605ce17c83f1c71533a6",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "959a5a6c71c7b993e3a3b242818be4dfcd587994621b7eeaf7b5018bf202ca91",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to election results reported by The Jerusalem Post, Prime Minister Benjamin Netanyahu's bloc secured 53 seats, the opposition bloc won 48 seats, and Arab parties Ra'am and the Joint List won a combined 19 seats.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+      "translations": {
+        "he": {
+          "text": "על פי תוצאות הבחירות שדווחו על ידי The Jerusalem Post, הגוש של ראש הממשלה בנימין נתניהו השיג 53 מנדטים, גוש האופוזיציה זכה ב-48 מנדטים, והמפלגות הערביות רע\"מ והרשימה המשותפת זכו יחד ב-19 מנדטים.",
+          "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس نتایج انتخابات گزارش‌شده توسط The Jerusalem Post، بلوک نخست‌وزیر بنیامین نتانیاهو 53 کرسی را تضمین کرد، بلوک اپوزیسیون 48 کرسی به دست آورد، و احزاب عربی رعام و فهرست مشترک مجموعاً 19 کرسی کسب کردند.",
+          "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Nach den von The Jerusalem Post gemeldeten Wahlergebnissen sicherte sich der Block von Premierminister Benjamin Netanjahu 53 Sitze, der Oppositionsblock gewann 48 Sitze und die arabischen Parteien Ra'am und die Gemeinsame Liste gewannen zusammen 19 Sitze.",
+          "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon les résultats des élections rapportés par The Jerusalem Post, le bloc du Premier ministre Benjamin Netanyahu a obtenu 53 sièges, le bloc de l'opposition a remporté 48 sièges, et les partis arabes Ra'am et la Liste conjointe ont remporté ensemble 19 sièges.",
+          "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "根据《耶路撒冷邮报》（The Jerusalem Post）报道的选举结果，总理本雅明·内塔尼亚胡（Benjamin Netanyahu）的阵营获得了53个席位，反对派阵营赢得了48个席位，阿拉伯政党Ra'am和联合名单（Joint List）共赢得了19个席位。",
+          "sourceHash": "6a37c726085cfc716286158a35feaa5b69e387abdd592e77755c06770cd3ae8c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Sohlberg hands election results to Herzog, says casting doubt poses ‘real danger’ to democracy",
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "published": "2026-11-04T11:59:06.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "bodyHash": "828d4620b90a5e8ccae89081ea1db295b86cde5a9725de81197a83f84e6bcf54",
+          "capturedAt": "2026-11-04T13:52:07.047Z",
+          "quoteHash": "d3382b7e6129bf3967aff196cfc4bf7cae942dd35a1d87952b529f3c5ff708f0",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "על פי תוצאות הבחירות שדווחו על ידי The Jerusalem Post, הגוש של ראש הממשלה בנימין נתניהו השיג 53 מנדטים, גוש האופוזיציה זכה ב-48 מנדטים, והמפלגות הערביות רע\"מ והרשימה המשותפת זכו יחד ב-19 מנדטים."
+    },
+    {
+      "text": "The Jerusalem Post reported that coalition partners the Religious Zionist Party and Shas stated they would recommend Benjamin Netanyahu to form the government.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+      "translations": {
+        "he": {
+          "text": "ה-The Jerusalem Post דיווח כי השותפות לקואליציה מפלגת הציונות הדתית וש\"ס הצהירו שימליצו על בנימין נתניהו להרכבת הממשלה.",
+          "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "The Jerusalem Post گزارش داد که شرکای ائتلاف، حزب صهیونیسم مذهبی و شاس، اعلام کردند که بنیامین نتانیاهو را برای تشکیل دولت پیشنهاد خواهند داد.",
+          "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass die Koalitionspartner Religiöse Zionistische Partei und Schas erklärten, sie würden Benjamin Netanjahu für die Regierungsbildung empfehlen.",
+          "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que les partenaires de coalition, le Parti sioniste religieux et le Shas, ont déclaré qu'ils recommanderaient Benjamin Netanyahu pour former le gouvernement.",
+          "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《耶路撒冷邮报》（The Jerusalem Post）报道，联盟伙伴宗教犹太复国主义党（Religious Zionist Party）和沙斯党（Shas）表示，他们将推荐本雅明·内塔尼亚胡（Benjamin Netanyahu）组建政府。",
+          "sourceHash": "4ebd2842946fc705b5f8f185797f46cedb7e65d70f35207d070e33356843f142",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Sohlberg hands election results to Herzog, says casting doubt poses ‘real danger’ to democracy",
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "published": "2026-11-04T11:59:06.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "bodyHash": "828d4620b90a5e8ccae89081ea1db295b86cde5a9725de81197a83f84e6bcf54",
+          "capturedAt": "2026-11-04T13:52:07.047Z",
+          "quoteHash": "6660c95b63413898b2ce45ba8ea989452ee59b42a0693ca5183553a5c7aa3d2c",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "ה-The Jerusalem Post דיווח כי השותפות לקואליציה מפלגת הציונות הדתית וש\"ס הצהירו שימליצו על בנימין נתניהו להרכבת הממשלה."
+    },
+    {
+      "text": "According to The Jerusalem Post, United Torah Judaism has demanded that Prime Minister Benjamin Netanyahu secure final Knesset approval of the haredi draft law before entering coalition negotiations.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+      "translations": {
+        "he": {
+          "text": "על פי The Jerusalem Post, יהדות התורה דרשה מראש הממשלה בנימין נתניהו להבטיח את אישורו הסופי בכנסת של חוק הגיוס החרדי לפני כניסה למשא ומתן קואליציוני.",
+          "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس گزارش The Jerusalem Post، حزب یهودیت تورات متحد خواستار آن شده است که نخست‌وزیر بنیامین نتانیاهو قبل از ورود به مذاکرات ائتلاف، تأیید نهایی کنست را برای قانون خدمت سربازی حریدی‌ها تضمین کند.",
+          "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut The Jerusalem Post hat Vereinigtes Thora-Judentum gefordert, dass Premierminister Benjamin Netanjahu vor dem Eintritt in Koalitionsverhandlungen die endgültige Zustimmung der Knesset zum Haredi-Wehrpflichtgesetz sichert.",
+          "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon The Jerusalem Post, Judaïsme unifié de la Torah a exigé que le Premier ministre Benjamin Netanyahu obtienne l'approbation finale de la Knesset pour la loi sur la conscription des haredim avant d'entamer les négociations de coalition.",
+          "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《耶路撒冷邮报》（The Jerusalem Post）报道，圣经犹太教联盟（United Torah Judaism）已要求总理本雅明·内塔尼亚胡（Benjamin Netanyahu）在开展组阁谈判之前确保以色列议会（Knesset）最终批准哈雷迪征兵法案。",
+          "sourceHash": "1735804442f827ddb71b1fbf9e716413584d6f7a2b2ee29d6ed87bd5b336aa0c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "UTJ demands draft law from Netanyahu, but will it make Eisenkot pay upfront? - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-913801",
+          "published": "2026-11-04T11:34:01.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913801",
+          "bodyHash": "1425e2e638c0a8c16d682c8349f1b1984a3f7e6f2724bb323469749571952053",
+          "capturedAt": "2026-11-04T13:52:07.513Z",
+          "quoteHash": "280057b4ada80a12c2fd57014c961afff4a4726851a35ebaa01e11c0a5b13e97",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "על פי The Jerusalem Post, יהדות התורה דרשה מראש הממשלה בנימין נתניהו להבטיח את אישורו הסופי בכנסת של חוק הגיוס החרדי לפני כניסה למשא ומתן קואליציוני."
+    },
+    {
+      "text": "Central Elections Committee chairman Justice Noam Sohlberg stated that presented suspicions of foreign funding remain suspicions only and do not cast doubt on the voting of Arab society.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+      "translations": {
+        "he": {
+          "text": "יו\"ר ועדת הבחירות המרכזית השופט נעם סולברג הצהיר כי החשדות שהוצגו למימון זר נותרו חשדות בלבד ואינם מטילים ספק בהצבעתה של החברה הערבית.",
+          "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رئیس کمیته مرکزی انتخابات، قاضی Noam Sohlberg، اظهار داشت که سوءظن‌های ارائه‌شده درباره بودجه خارجی صرفاً در حد ظن باقی می‌ماند و رأی‌گیری جامعه عرب را با تردید مواجه نمی‌کند.",
+          "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende des Zentralen Wahlausschusses, Richter Noam Sohlberg, erklärte, dass die vorgebrachten Verdachtsmomente bezüglich ausländischer Finanzierung bloße Verdachtsmomente bleiben und die Stimmabgabe der arabischen Gesellschaft nicht in Zweifel ziehen.",
+          "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président de la Commission centrale des élections, le juge Noam Sohlberg, a déclaré que les soupçons présentés de financement étranger ne restent que des soupçons et ne remettent pas en cause le vote de la société arabe.",
+          "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "中央选举委员会（Central Elections Committee）主席诺姆·索尔伯格（Noam Sohlberg）法官表示，提出的外国资助嫌疑仍仅仅是嫌疑，并没有对阿拉伯社会的投票产生怀疑。",
+          "sourceHash": "cf24ade95da64be2445471433132a54aba52a666abfde2e414365ca4c985ea6a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Sohlberg hands election results to Herzog, says casting doubt poses ‘real danger’ to democracy",
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "published": "2026-11-04T11:59:06.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913806",
+          "bodyHash": "828d4620b90a5e8ccae89081ea1db295b86cde5a9725de81197a83f84e6bcf54",
+          "capturedAt": "2026-11-04T13:52:07.047Z",
+          "quoteHash": "d62d2dccee1b1236d96da5f232c527cb669abfefa282362ad3021cabd8f6d8e3",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "יו\"ר ועדת הבחירות המרכזית השופט נעם סולברג הצהיר כי החשדות שהוצגו למימון זר נותרו חשדות בלבד ואינם מטילים ספק בהצבעתה של החברה הערבית."
+    },
+    {
+      "text": "National Security Minister Itamar Ben-Gvir urged Shin Bet chief David Zini to arrest and interrogate Arab party leaders without the Attorney-General's approval and called for government formation to be halted.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+      "translations": {
+        "he": {
+          "text": "השר לביטחון לאומי איתמר בן גביר הפציר בראש השב\"כ דוד זיני לעצור ולחקור את ראשי המפלגות הערביות ללא אישור היועצת המשפטית לממשלה וקרא לעצור את הרכבת הממשלה.",
+          "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "وزیر امنیت ملی ایتامار بن گویر از رئیس شین بت David Zini خواست تا رهبران احزاب عربی را بدون تأیید دادستان کل بازداشت و بازجویی کند و خواستار توقف تشکیل دولت شد.",
+          "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Minister für nationale Sicherheit Itamar Ben-Gvir forderte Schin-Bet-Chef David Zini auf, die Führer der arabischen Parteien ohne die Genehmigung der Generalstaatsanwältin festzunehmen und zu verhören, und rief dazu auf, die Regierungsbildung zu stoppen.",
+          "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le ministre de la Sécurité nationale Itamar Ben-Gvir a exhorté le chef du Shin Bet David Zini à arrêter et interroger les dirigeants des partis arabes sans l'approbation du procureur général et a appelé à suspendre la formation du gouvernement.",
+          "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "国家安全部长伊塔马尔·本-格维尔（Itamar Ben-Gvir）敦促辛贝特（Shin Bet）局长大卫·齐尼（David Zini）在未经总检察长批准的情况下逮捕并审问阿拉伯政党领导人，并呼吁停止组建政府。",
+          "sourceHash": "ddbc9cd569e2b3bde3d43fdeaea5425612c99e53e52c1cd7d2b049cc3cf12bf6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Zini appears to backtrack request to interrogate Arab MKs in election's foreign interference probe",
+          "url": "https://www.jpost.com/israel-election-2026/article-913793",
+          "published": "2026-11-04T12:19:16.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913793",
+          "bodyHash": "5ddab4cce76b0bd57723804ddcecc4940dc89aa843f77541e74590ffaeb1ff54",
+          "capturedAt": "2026-11-04T13:52:07.004Z",
+          "quoteHash": "05f74aa3f1c0bf31a204299dffd92ff68729391be10b6fd79331a0553dac1343",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "השר לביטחון לאומי איתמר בן גביר הפציר בראש השב\"כ דוד זיני לעצור ולחקור את ראשי המפלגות הערביות ללא אישור היועצת המשפטית לממשלה וקרא לעצור את הרכבת הממשלה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "c86a7a6c1ba228f3f3ac175eb3d03c7948b0bf63c6648988f3e42214254720c4",
+    "privateStored": true
+  }
+}
