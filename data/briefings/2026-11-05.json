@@ -1,0 +1,327 @@
+{
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T14:07:23.373Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 2
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-05T14:07:23.373Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "91ee72f55adaf48c1502be8367df354df76fd8889507183f55883a85f7260192",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "9c6ac4386defed4b40e6a0cff126b7548a4c47591dbf290bfbad986103584ae7",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "71d2d2f6a161e6b25b47be42f9fa6d76b7b5fa62774f0df1363cfea7fb90c7bd",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "f8b5f3647bc29f35defeb885b0c0828d8e6a60cc061b839d09b3759efbf9d4c8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to The Jerusalem Post, opposition party leaders sent a letter to Knesset Speaker Amir Ohana demanding a debate and vote to elect a new Knesset speaker as early as Tuesday.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+      "translations": {
+        "he": {
+          "text": "על פי The Jerusalem Post, ראשי מפלגות האופוזיציה שלחו מכתב ליושב ראש הכנסת אמיר אוחנה בדרישה לקיים דיון והצבעה לבחירת יושב ראש כנסת חדש כבר ביום שלישי.",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لـ The Jerusalem Post، أرسل قادة أحزاب المعارضة رسالة إلى رئيس الكنيست Amir Ohana يطالبون فيها بإجراء مناقشة وتصويت لانتخاب رئيس جديد للكنيست في موعد أقربه يوم الثلاثاء.",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش The Jerusalem Post، رهبران احزاب اپوزیسیون نامه‌ای به رئیس کنست Amir Ohana ارسال کردند و خواستار برگزاری یک بحث و رأی‌گیری برای انتخاب رئیس جدید کنست در زودترین زمان ممکن یعنی سه‌شنبه شدند.",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut The Jerusalem Post schickten die Vorsitzenden der Oppositionsparteien einen Brief an den Sprecher der Knesset, Amir Ohana, in dem sie bereits für Dienstag eine Debatte und eine Abstimmung zur Wahl eines neuen Sprechers der Knesset forderten.",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon The Jerusalem Post, les chefs des partis d'opposition ont envoyé une lettre au président de la Knesset, Amir Ohana, exigeant un débat et un vote pour élire un nouveau président de la Knesset dès mardi.",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据 The Jerusalem Post 报道，反对党领导人致函 Knesset 议长 Amir Ohana，要求最早在周二举行辩论和投票以选举产生新的 Knesset 议长。",
+          "sourceHash": "77ffbf1c6cb244f24c995cae52491715126acc9216938a0a2f0217c578442468",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Opposition pushes to replace Knesset speaker amid fears of Likud 'January 6' plot to block vote",
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "published": "2026-11-05T11:43:58.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "bodyHash": "a744e69c0cf0a151fe4b7d20771b54eb6dc39ad5ec47404ad86a7a1c845ca2b8",
+          "capturedAt": "2026-11-05T14:06:56.767Z",
+          "quoteHash": "74d816f7f7436027a727a1c1b25d5f93a97d49debbd31523e99755ab14e6229a",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "על פי The Jerusalem Post, ראשי מפלגות האופוזיציה שלחו מכתב ליושב ראש הכנסת אמיר אוחנה בדרישה לקיים דיון והצבעה לבחירת יושב ראש כנסת חדש כבר ביום שלישי."
+    },
+    {
+      "text": "In a response on X reported by The Jerusalem Post, Knesset Speaker Amir Ohana said the date for electing a new speaker would be set only after a new government is formed unless a majority of lawmakers sign a letter requesting an earlier schedule.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+      "translations": {
+        "he": {
+          "text": "בתגובה ב-X שדווחה על ידי The Jerusalem Post, יושב ראש הכנסת אמיר אוחנה אמר כי המועד לבחירת יושב ראש חדש ייקבע רק לאחר שתוקם ממשלה חדשה, אלא אם כן רוב חברי הכנסת יחתמו על מכתב המבקש לוח זמנים מוקדם יותר.",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "في رد على X أوردته The Jerusalem Post، قال رئيس الكنيست Amir Ohana إن موعد انتخاب رئيس جديد سيُحدد فقط بعد تشكيل حكومة جديدة ما لم يوقع غالبية المشرعين على رسالة تطالب بموعد أبكر.",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "در پاسخی در X که توسط The Jerusalem Post گزارش شد، رئیس کنست Amir Ohana گفت که تاریخ انتخاب رئیس جدید تنها پس از تشکیل یک دولت جدید تعیین خواهد شد، مگر اینکه اکثریت قانون‌گذاران نامه‌ای را امضا کنند و خواستار زمان‌بندی زودتری شوند.",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "In einer Antwort auf X, über die The Jerusalem Post berichtete, erklärte der Sprecher der Knesset, Amir Ohana, das Datum für die Wahl eines neuen Sprechers werde erst festgelegt, nachdem eine neue Regierung gebildet worden sei, es sei denn, eine Mehrheit der Abgeordneten unterzeichne einen Brief, der einen früheren Zeitplan fordert.",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Dans une réponse sur X rapportée par The Jerusalem Post, le président de la Knesset, Amir Ohana, a déclaré que la date d'élection d'un nouveau président ne serait fixée qu'après la formation d'un nouveau gouvernement, à moins qu'une majorité de parlementaires ne signe une lettre demandant un calendrier plus précoce.",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "在 The Jerusalem Post 报道的 X 平台回应中，Knesset 议长 Amir Ohana 表示，除非多数议员签署信函要求提前安排日程，否则选举新议长的日期只会在新政府组建后确定。",
+          "sourceHash": "1fc2d5386af8b447a3c8bb7d358d8a4b865ffbb79980b70f48d8f2d7e4ad5b83",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Opposition pushes to replace Knesset speaker amid fears of Likud 'January 6' plot to block vote",
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "published": "2026-11-05T11:43:58.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "bodyHash": "a744e69c0cf0a151fe4b7d20771b54eb6dc39ad5ec47404ad86a7a1c845ca2b8",
+          "capturedAt": "2026-11-05T14:06:56.767Z",
+          "quoteHash": "d9247a0d1a35515c5e6a0f8f90351948040a298c5c13253e2c14829d43d52776",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "בתגובה ב-X שדווחה על ידי The Jerusalem Post, יושב ראש הכנסת אמיר אוחנה אמר כי המועד לבחירת יושב ראש חדש ייקבע רק לאחר שתוקם ממשלה חדשה, אלא אם כן רוב חברי הכנסת יחתמו על מכתב המבקש לוח זמנים מוקדם יותר."
+    },
+    {
+      "text": "The Jerusalem Post reported that Yashar chairman Gadi Eisenkot and Yesh Atid chairman Yair Lapid are at the center of an unresolved dispute within the opposition bloc regarding their candidate for Knesset speaker.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+      "translations": {
+        "he": {
+          "text": "The Jerusalem Post דיווח כי יושב ראש ישר גדי איזנקוט ויושב ראש יש עתיד יאיר לפיד עומדים במרכזה של מחלוקת שטרם נפתרה בתוך גוש האופוזיציה בנוגע למועמדם לתפקיד יושב ראש הכנסת.",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت The Jerusalem Post أن رئيس Yashar، Gadi Eisenkot، ورئيس Yesh Atid، Yair Lapid، يقعان في قلب خلاف لم يُحل داخل كتلة المعارضة بشأن مرشحهما لرئاسة الكنيست.",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "The Jerusalem Post گزارش داد که رئیس Yashar، Gadi Eisenkot و رئیس Yesh Atid، Yair Lapid در کانون یک اختلاف حل‌نشده در درون بلوک اپوزیسیون در رابطه با نامزد خود برای ریاست کنست قرار دارند.",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass der Yashar-Vorsitzende Gadi Eisenkot und der Yesh-Atid-Vorsitzende Yair Lapid im Zentrum eines ungelösten Streits innerhalb des Oppositionsblocks bezüglich ihres Kandidaten für das Amt des Sprechers der Knesset stehen.",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que le président de Yashar, Gadi Eisenkot, et le président de Yesh Atid, Yair Lapid, sont au centre d'un différend non résolu au sein du bloc de l'opposition concernant leur candidat à la présidence de la Knesset.",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "The Jerusalem Post 报道称，Yashar 主席 Gadi Eisenkot 和 Yesh Atid 主席 Yair Lapid 处于反对派阵营内部关于其 Knesset 议长候选人未决争议的核心。",
+          "sourceHash": "47a06b867e73bfb9c495fa3d3b3cfb1ab5d5e46817fd63f8674e6316b8db061d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Opposition pushes to replace Knesset speaker amid fears of Likud 'January 6' plot to block vote",
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "published": "2026-11-05T11:43:58.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "bodyHash": "a744e69c0cf0a151fe4b7d20771b54eb6dc39ad5ec47404ad86a7a1c845ca2b8",
+          "capturedAt": "2026-11-05T14:06:56.767Z",
+          "quoteHash": "b7efbd780951692af7ad2c4e9b15f3d5f290574c80d697a62322c668c948a4e9",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "The Jerusalem Post דיווח כי יושב ראש ישר גדי איזנקוט ויושב ראש יש עתיד יאיר לפיד עומדים במרכזה של מחלוקת שטרם נפתרה בתוך גוש האופוזיציה בנוגע למועמדם לתפקיד יושב ראש הכנסת."
+    },
+    {
+      "text": "The Jerusalem Post reported that opposition bloc sources claimed to have received information regarding an alleged Likud plan to disrupt the speaker vote by preventing lawmakers from entering the plenum, a plan that has not been independently verified.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+      "translations": {
+        "he": {
+          "text": "The Jerusalem Post דיווח כי מקורות בגוש האופוזיציה טענו כי קיבלו מידע בנוגע לתוכנית לכאורה של הליכוד לשבש את ההצבעה על יושב הראש על ידי מניעת כניסתם של חברי כנסת למליאה, תוכנית שלא אומתה באופן עצמאי.",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت The Jerusalem Post أن مصادر من كتلة المعارضة زعمت تلقي معلومات تتعلق بخطة مزعومة لـ Likud لتعطيل التصويت على رئيس الكنيست من خلال منع المشرعين من دخول الهيئة العامة، وهي خطة لم يتم التحقق منها بشكل مستقل.",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "The Jerusalem Post گزارش داد که منابع بلوک اپوزیسیون ادعا کردند اطلاعاتی در مورد طرح ادعایی Likud برای اخلال در رأی‌گیری رئیس با جلوگیری از ورود قانون‌گذاران به صحن عمومی دریافت کرده‌اند؛ طرحی که به طور مستقل تأیید نشده است.",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass Quellen aus dem Oppositionsblock behaupteten, Informationen über einen mutmaßlichen Plan des Likud erhalten zu haben, die Wahl des Sprechers zu stören, indem Abgeordnete am Betreten des Plenums gehindert werden, ein Plan, der nicht unabhängig verifiziert wurde.",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que des sources du bloc de l'opposition ont affirmé avoir reçu des informations concernant un prétendu projet du Likoud visant à perturber le vote pour la présidence en empêchant les parlementaires d'entrer dans l'hémicycle, un projet qui n'a pas été vérifié de manière indépendante.",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "The Jerusalem Post 报道称，反对派阵营消息人士声称收到了关于据称 Likud 企图通过阻止议员进入全体会议大厅来扰乱议长投票的计划的信息，该计划尚未得到独立核实。",
+          "sourceHash": "378863d99065bfda64ba5ea2433b19c7bdb650636e10316d1e0784fb818d1b14",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Opposition pushes to replace Knesset speaker amid fears of Likud 'January 6' plot to block vote",
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "published": "2026-11-05T11:43:58.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-913918",
+          "bodyHash": "a744e69c0cf0a151fe4b7d20771b54eb6dc39ad5ec47404ad86a7a1c845ca2b8",
+          "capturedAt": "2026-11-05T14:06:56.767Z",
+          "quoteHash": "3de8a4e8de1de7be0421473cba76715f0ed611b1e4d7f86fbbc0f62bdf0a4d18",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "The Jerusalem Post דיווח כי מקורות בגוש האופוזיציה טענו כי קיבלו מידע בנוגע לתוכנית לכאורה של הליכוד לשבש את ההצבעה על יושב הראש על ידי מניעת כניסתם של חברי כנסת למליאה, תוכנית שלא אומתה באופן עצמאי."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "c53b1cb65f52c1020bb909ee408fdfa9bb290b13a24fb0c417418adbc67c8606",
+    "privateStored": true
+  }
+}
