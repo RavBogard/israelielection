@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-05",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -1166,6 +1166,10 @@
         {
           "text": "Conditions: Oct 7 inquiry, universal service, prime-minister term limits, core curriculum, constitution by referendum.",
           "source": "Times of Israel, Aug 17, 2026"
+        },
+        {
+          "text": "Reportedly dropped veto on Haredi parties in coalition.",
+          "source": "Jerusalem Post, Nov 5, 2026"
         }
       ],
       "surplusPartner": {
