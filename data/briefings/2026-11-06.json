@@ -1,0 +1,252 @@
+{
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T13:50:55.153Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 3,
+    "discardedClaims": 1,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-06T13:50:55.153Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "5e58977b39b4484dfe11022b946afea6c6980d10687b1d8fe37e570f157a0976",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "428bc4c2cbe3011ce816ed287994cb08e5b326c80cbdaad503dd988eba04da9a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "cc2b9314fbccfb02fb3c38103a9e81a1b6e4c0f34215c96690419c8566b917f7",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Avigdor Liberman stated on Friday that forming a government would require compromises across a range of issues, including the draft law.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+      "translations": {
+        "he": {
+          "text": "אביגדור ליברמן הצהיר ביום שישי כי הרכבת ממשלה תדרוש פשרות בשורה של נושאים, כולל חוק הגיוס.",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح أفيغدور ليبرمان يوم الجمعة بأن تشكيل حكومة سيتطلب تقديم تنازلات بشأن مجموعة من القضايا، بما في ذلك قانون التجنيد.",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آویگدور لیبرمن در روز جمعه اعلام کرد که تشکیل یک دولت مستلزم مصالحه در طیفی از موضوعات، از جمله قانون نظام وظیفه خواهد بود.",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Avigdor Liberman erklärte am Freitag, dass die Bildung einer Regierung Kompromisse bei einer Reihe von Themen erfordern würde, einschließlich des Einberufungsgesetzes.",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Avigdor Liberman a déclaré vendredi que la formation d'un gouvernement nécessiterait des compromis sur un ensemble de questions, y compris la loi sur la conscription.",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Avigdor Liberman 周五表示，组建政府需要在包括征兵法在内的一系列问题上做出妥协。",
+          "sourceHash": "6a965e7ad231c184e39b332d213a11d3e7d8670a8e88ae8200a071fcf388ff8f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "To oust Netanyahu, Liberman needs the parties he promised to keep out - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-914064",
+          "published": "2026-11-06T15:25:54.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914064",
+          "bodyHash": "a1e266c4946b00a685ad2bb13d3f8a02965b8d73b2043385dea3bc27007d4fc1",
+          "capturedAt": "2026-11-06T13:49:38.736Z",
+          "quoteHash": "919b5e032bd74a20b94fcab615d0a7f7187de143c15fb05f5c3bae8e92679034",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ZVIKA KLEIN"
+          }
+        }
+      ],
+      "textHe": "אביגדור ליברמן הצהיר ביום שישי כי הרכבת ממשלה תדרוש פשרות בשורה של נושאים, כולל חוק הגיוס."
+    },
+    {
+      "text": "United Torah Judaism chairman Yakov Asher stated that it was heartening to observe flexibility from political players regarding military conscription following Liberman's announcement.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+      "translations": {
+        "he": {
+          "text": "יו\"ר יהדות התורה יעקב אשר הצהיר כי מעודד לראות גמישות מצד שחקנים פוליטיים בנוגע לגיוס לצבא בעקבות הודעתו של ליברמן.",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح رئيس حزب يهدوت هتوراة، يعقوب آشر، بأنه كان من المشجع ملاحظة المرونة من جانب الجهات السياسية الفاعلة فيما يتعلق بالتجنيد العسكري عقب إعلان ليبرمان.",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "یاکوف آشر، رئیس یهودیت تورات متحد، اظهار داشت که به دنبال بیانیه لیبرمن، مشاهده انعطاف‌پذیری از سوی بازیگران سیاسی در رابطه با خدمت سربازی اجباری دلگرم‌کننده بود.",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende des Vereinigten Thora-Judentums, Yakov Asher, erklärte, es sei erfreulich, nach Libermans Ankündigung Flexibilität von politischen Akteuren bezüglich der Wehrpflicht zu beobachten.",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président de Judaïsme unifié de la Torah, Yakov Asher, a déclaré qu'il était réconfortant d'observer de la flexibilité de la part des acteurs politiques concernant la conscription militaire suite à l'annonce de Liberman.",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "United Torah Judaism 主席 Yakov Asher 表示，在 Liberman 发表声明后，看到政治参与者在军事征兵方面表现出灵活性是令人鼓舞的。",
+          "sourceHash": "46cc8f3059e5ba00cbeaef5661bf4406fbe57f7ef8d8608434325daddf278b37",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Liberman willing to compromise on haredi IDF draft law, UTJ chairman welcomes 'flexibility'",
+          "url": "https://www.jpost.com/israel-election-2026/article-914045",
+          "published": "2026-11-06T10:50:35.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914045",
+          "bodyHash": "827d6073c431941e3bc3bb81aba860e01eb8a8c8da713d1eba53699e9a694340",
+          "capturedAt": "2026-11-06T13:49:40.534Z",
+          "quoteHash": "bfa309f9ae6af213b9d0f5596dc46cfba04cfa4553a882f5f479464fe6bcab51",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "MAYA ZANGER-SHAMIR, JAMES GENN"
+          }
+        }
+      ],
+      "textHe": "יו\"ר יהדות התורה יעקב אשר הצהיר כי מעודד לראות גמישות מצד שחקנים פוליטיים בנוגע לגיוס לצבא בעקבות הודעתו של ליברמן."
+    },
+    {
+      "text": "Reservists party leader Yoaz Hendel denounced Avigdor Liberman's statement, questioning how Liberman differed from Bezalel Smotrich and Benjamin Netanyahu if he was prepared to promote mass draft-dodging for power.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+      "translations": {
+        "he": {
+          "text": "מנהיג מפלגת המילואימניקים יועז הנדל גינה את הצהרתו של אביגדור ליברמן, ותהה במה ליברמן שונה מבצלאל סמוטריץ' ובנימין נתניהו אם הוא מוכן לקדם השתמטות המונית מגיוס למען כוח.",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "شجب زعيم حزب جنود الاحتياط يوعاز هندل تصريح أفيغدور ليبرمان، متسائلًا عن وجه الاختلاف بين ليبرمان وكل من بتسلئيل سموتريتش وبنيامين نتنياهو إذا كان مستعدًا للترويج للتهرب الجماعي من التجنيد في سبيل السلطة.",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "یوآز هندل، رهبر حزب نیروهای ذخیره، اظهارات آویگدور لیبرمن را محکوم کرد و این پرسش را مطرح ساخت که اگر لیبرمن حاضر است برای رسیدن به قدرت فرار دسته‌جمعی از خدمت سربازی را ترویج کند، چه تفاوتی با بتسلئیل اسموتریچ و بنیامین نتانیاهو دارد.",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Yoaz Hendel, der Parteivorsitzende der Reservisten, verurteilte die Erklärung von Avigdor Liberman und fragte sich, wie sich Liberman von Bezalel Smotrich und Benjamin Netanjahu unterscheide, wenn er bereit sei, massenhafte Wehrdienstverweigerung für die Macht zu fördern.",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le chef du parti des Réservistes, Yoaz Hendel, a dénoncé la déclaration d'Avigdor Liberman, se demandant en quoi Liberman différait de Bezalel Smotrich et de Benjamin Netanyahu s'il était prêt à promouvoir une insoumission massive pour le pouvoir.",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Reservists 党领袖 Yoaz Hendel 谴责了 Avigdor Liberman 的声明，质问如果 Liberman 准备为了权力而助长大规模逃避兵役，他与 Bezalel Smotrich 和 Benjamin Netanyahu 又有何区别。",
+          "sourceHash": "3e14a12332d09b6d296ee36982c6341fa39c26cf34d64e507181ec6827f9e87f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Liberman willing to compromise on haredi IDF draft law, UTJ chairman welcomes 'flexibility'",
+          "url": "https://www.jpost.com/israel-election-2026/article-914045",
+          "published": "2026-11-06T10:50:35.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914045",
+          "bodyHash": "827d6073c431941e3bc3bb81aba860e01eb8a8c8da713d1eba53699e9a694340",
+          "capturedAt": "2026-11-06T13:49:40.534Z",
+          "quoteHash": "6adab864fa58b06722e4dd7f91cf49ba3692659dc4d70eaf6233593d6fbdf852",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "MAYA ZANGER-SHAMIR, JAMES GENN"
+          }
+        }
+      ],
+      "textHe": "מנהיג מפלגת המילואימניקים יועז הנדל גינה את הצהרתו של אביגדור ליברמן, ותהה במה ליברמן שונה מבצלאל סמוטריץ' ובנימין נתניהו אם הוא מוכן לקדם השתמטות המונית מגיוס למען כוח."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "61b292d9e1ce63976f19d1db41be3e54f83c43442686dbf71077899c65adf0bf",
+    "privateStored": true
+  }
+}
