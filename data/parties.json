@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "provenance": "CRC party registers 11a–11d (docs/class-11*.md), compiled Oct 4, 2026; ported from Coalition Builder v2 / Party Map v2.",
   "bioSource": "Each bio names its sources in parentheses.",
   "blocs": [
@@ -1058,6 +1058,10 @@
         {
           "text": "Open to an Arab party: “It is natural, right, appropriate and democratic” (the party says this is its own platform, not the bloc's).",
           "source": "Kan via Times of Israel, Sep 27, 2026"
+        },
+        {
+          "text": "Open to a government with Haredim, but demands they enlist and “respect our way of life.”",
+          "source": "Times of Israel, Nov 7, 2026"
         }
       ],
       "surplusPartner": {
