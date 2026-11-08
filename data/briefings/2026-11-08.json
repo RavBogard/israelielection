@@ -1,0 +1,303 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T12:52:40.596Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 1,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-08T12:52:40.596Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "12d4599a01759a52d4e7f9e999f002950d46e2fa79a3db60d2203074bbb29e6d",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "85e68e74d46b4ca403a795251477cade5c9fc770fc3bbb9c0ea8eaf7804c9a05",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "80bc2b73e279e4b7236e377c9e324367590fbe52851a0cf899b1c1fc204cfab1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "d321fc2b1ad406e76ad0c5b3982ebcf9fcb2d6389709c5beb4f934c373428ef8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Anna Barsky of the Jerusalem Post reported that President Isaac Herzog announced he would task Yashar party chairman Gadi Eisenkot with forming Israel's next government, following recommendations from 67 MKs compared to 46 for Benjamin Netanyahu and seven abstentions.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+      "translations": {
+        "he": {
+          "text": "אנה ברסקי מ-Jerusalem Post דיווחה כי נשיא המדינה יצחק הרצוג הודיע שהוא יטיל על יושב ראש מפלגת ישר גדי איזנקוט להרכיב את ממשלת ישראל הבאה, בעקבות המלצות של 67 חברי כנסת בהשוואה ל-46 עבור בנימין נתניהו ושבעה נמנעים.",
+          "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت Anna Barsky من صحيفة Jerusalem Post أن الرئيس Isaac Herzog أعلن أنه سيكلف رئيس حزب Yashar، Gadi Eisenkot، بتشكيل الحكومة الإسرائيلية المقبلة، وذلك بعد تلقيه توصيات من 67 عضواً في الكنيست مقارنة بـ 46 عضواً لصالح Benjamin Netanyahu وامتناع سبعة أعضاء عن التصويت.",
+          "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آنا بارسکی از Jerusalem Post گزارش داد که رئیس‌جمهور اسحاق هرتزوگ اعلام کرد در پی توصیه‌های 67 نماینده کنست در مقایسه با 46 نماینده برای بنیامین نتانیاهو و هفت رأی ممتنع، گادی آیزنکوت، رئیس حزب یاشار را مأمور تشکیل دولت بعدی اسرائیل خواهد کرد.",
+          "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Anna Barsky von der Jerusalem Post berichtete, dass Präsident Isaac Herzog ankündigte, er werde den Vorsitzenden der Yashar-Partei, Gadi Eisenkot, mit der Bildung der nächsten Regierung Israels beauftragen, nachdem 67 Knesset-Abgeordnete Empfehlungen für ihn abgegeben hatten, verglichen mit 46 für Benjamin Netanjahu und sieben Enthaltungen.",
+          "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Anna Barsky du Jerusalem Post a rapporté que le président Isaac Herzog a annoncé qu'il chargerait le président du parti Yashar, Gadi Eisenkot, de former le prochain gouvernement d'Israël, à la suite des recommandations de 67 députés contre 46 pour Benjamin Netanyahu et sept abstentions.",
+          "sourceHash": "b3ff42191e798f0f49fb058f8591d52447c2832ddecd9618b40d97490499bc29",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot has the mandate, but Liberman and the haredim hold the keys to power - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "published": "2026-11-08T08:51:32.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "bodyHash": "57c39ec86f994e38ebd227ca116c3a9189ee4455ed06c77bec2ee946a7d0a43e",
+          "capturedAt": "2026-11-08T12:51:45.026Z",
+          "quoteHash": "4cc58f45dc095818122fae4dcee30d6db684621a420e86ba5e7bd49884b76590",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "אנה ברסקי מ-Jerusalem Post דיווחה כי נשיא המדינה יצחק הרצוג הודיע שהוא יטיל על יושב ראש מפלגת ישר גדי איזנקוט להרכיב את ממשלת ישראל הבאה, בעקבות המלצות של 67 חברי כנסת בהשוואה ל-46 עבור בנימין נתניהו ושבעה נמנעים."
+    },
+    {
+      "text": "Shir Perets reported that Yisrael Beytenu chairman Avigdor Liberman defended his willingness to compromise with haredi parties regarding military conscription, maintaining that reaching understandings does not mean abandoning his principles.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+      "translations": {
+        "he": {
+          "text": "שיר פרץ דיווחה כי יושב ראש ישראל ביתנו אביגדור ליברמן הגן על נכונותו להתפשר עם המפלגות החרדיות בנוגע לגיוס לצבא, וטען כי הגעה להבנות אינה מעידה על נטישת עקרונותיו.",
+          "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت Shir Perets أن رئيس حزب Yisrael Beytenu، Avigdor Liberman، دافع عن استعداده لتقديم تنازلات مع الأحزاب الحريدية فيما يتعلق بالتجنيد العسكري، مؤكداً أن التوصل إلى تفاهمات لا يعني التخلي عن مبادئه.",
+          "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "شیر پرتز گزارش داد که آویگدور لیبرمن، رئیس حزب Yisrael Beytenu، از تمایل خود برای مصالحه با احزاب حریدی در خصوص خدمت سربازی دفاع کرد و تأکید نمود که دستیابی به تفاهم به معنای دست کشیدن از اصول او نیست.",
+          "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Shir Perets berichtete, dass der Vorsitzende von Yisrael Beytenu, Avigdor Liberman, seine Bereitschaft zu Kompromissen mit charedischen Parteien bezüglich der Wehrpflicht verteidigte, wobei er betonte, dass das Erreichen von Verständigungen nicht bedeute, seine Grundsätze aufzugeben.",
+          "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Shir Perets a rapporté que le président d'Yisrael Beytenu, Avigdor Liberman, a défendu sa volonté de faire des compromis avec les partis haredi concernant la conscription militaire, maintenant que parvenir à des ententes ne signifie pas abandonner ses principes.",
+          "sourceHash": "7205055122d2224417e4cdc7667ee42b851186a2d752bc844d3d090664d8b1d3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Liberman defends haredi compromise amid coalition talks, vows not to abandon IDF draft principles",
+          "url": "https://www.jpost.com/israel-election-2026/article-914209",
+          "published": "2026-11-08T14:15:30.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914209",
+          "bodyHash": "a0a042e1ec8d2e5fcfde6c0254cf981951a331f4cee2c25dc78d0dc214d032c5",
+          "capturedAt": "2026-11-08T12:51:42.471Z",
+          "quoteHash": "6491e1afb3a2a43363682ad725121ce7a04187d44bd5163316279e10f9f9c862",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "שיר פרץ דיווחה כי יושב ראש ישראל ביתנו אביגדור ליברמן הגן על נכונותו להתפשר עם המפלגות החרדיות בנוגע לגיוס לצבא, וטען כי הגעה להבנות אינה מעידה על נטישת עקרונותיו."
+    },
+    {
+      "text": "According to haredi sources reported by Anna Barsky, Shas chairman Arye Deri recommended Netanyahu, making it difficult to envision Shas entering coalition negotiations with Eisenkot.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+      "translations": {
+        "he": {
+          "text": "על פי מקורות חרדיים שדווחו על ידי אנה ברסקי, יושב ראש ש\"ס אריה דרעי המליץ על נתניהו, דבר המקשה לדמיין את ש\"ס נכנסת למשא ומתן קואליציוני עם איזנקוט.",
+          "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لمصادر حريدية نقلتها Anna Barsky، أوصى رئيس حزب Shas، Arye Deri، بتكليف Netanyahu، مما يجعل من الصعب تصور دخول Shas في مفاوضات ائتلافية مع Eisenkot.",
+          "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "طبق منابع حریدی گزارش‌شده توسط آنا بارسکی، آریه درعی، رئیس حزب شاس، نتانیاهو را پیشنهاد کرد، که این امر تصور ورود شاس به مذاکرات ائتلافی با آیزنکوت را دشوار می‌سازد.",
+          "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut von Anna Barsky berichteten charedischen Quellen empfahl der Shas-Vorsitzende Arye Deri Netanjahu, was es schwer vorstellbar mache, dass Shas in Koalitionsverhandlungen mit Eisenkot eintritt.",
+          "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon des sources haredi rapportées par Anna Barsky, le président du Shas, Arye Deri, a recommandé Netanyahu, rendant difficile d'envisager que le Shas entame des négociations de coalition avec Eisenkot.",
+          "sourceHash": "1dd13de138ba62a0aef342defb7163a211dfef5c2062e5ccc8a11b7f3227486c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot has the mandate, but Liberman and the haredim hold the keys to power - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "published": "2026-11-08T08:51:32.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "bodyHash": "57c39ec86f994e38ebd227ca116c3a9189ee4455ed06c77bec2ee946a7d0a43e",
+          "capturedAt": "2026-11-08T12:51:45.026Z",
+          "quoteHash": "72a9871dcad419497156f557726633af23964795af67ee7136c5717b2e5fabd4",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "על פי מקורות חרדיים שדווחו על ידי אנה ברסקי, יושב ראש ש\"ס אריה דרעי המליץ על נתניהו, דבר המקשה לדמיין את ש\"ס נכנסת למשא ומתן קואליציוני עם איזנקוט."
+    },
+    {
+      "text": "Anna Barsky reported that Gadi Eisenkot published four principles for joining his government, including recognizing Israel as Jewish and democratic, accepting Declaration of Independence values, mandatory service, and designating Hamas as a terrorist organization.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+      "translations": {
+        "he": {
+          "text": "אנה ברסקי דיווחה כי גדי איזנקוט פרסם ארבעה עקרונות להצטרפות לממשלתו, לרבות הכרה בישראל כיהודית ודמוקרטית, קבלת ערכי מגילת העצמאות, שירות חובה והגדרת חמאס כארגון טרור.",
+          "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت Anna Barsky أن Gadi Eisenkot نشر أربعة مبادئ للانضمام إلى حكومته، بما في ذلك الاعتراف بإسرائيل كدولة يهودية وديمقراطية، وقبول قيم وثيقة الاستقلال، والخدمة الإلزامية، وتصنيف Hamas كمنظمة إرهابية.",
+          "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آنا بارسکی گزارش داد که گادی آیزنکوت چهار اصل را برای پیوستن به دولت خود منتشر کرد، از جمله به رسمیت شناختن اسرائیل به عنوان دولتی یهودی و دموکراتیک، پذیرش ارزش‌های منشور استقلال، خدمت اجباری سربازی، و تعیین حماس به عنوان یک سازمان تروریستی.",
+          "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Anna Barsky berichtete, dass Gadi Eisenkot vier Grundsätze für den Beitritt zu seiner Regierung veröffentlichte, darunter die Anerkennung Israels als jüdisch und demokratisch, die Annahme der Werte der Unabhängigkeitserklärung, die Dienstpflicht und die Einstufung der Hamas als terroristische Organisation.",
+          "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Anna Barsky a rapporté que Gadi Eisenkot a publié quatre principes pour rejoindre son gouvernement, notamment la reconnaissance d'Israël comme juif et démocratique, l'acceptation des valeurs de la Déclaration d'indépendance, le service obligatoire et la désignation du Hamas comme organisation terroriste.",
+          "sourceHash": "c239d4adc82247037136c1c043d998cd3b37aef307ff0cd6442fd3216536a699",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot has the mandate, but Liberman and the haredim hold the keys to power - analysis",
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "published": "2026-11-08T08:51:32.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914170",
+          "bodyHash": "57c39ec86f994e38ebd227ca116c3a9189ee4455ed06c77bec2ee946a7d0a43e",
+          "capturedAt": "2026-11-08T12:51:45.026Z",
+          "quoteHash": "fe448f810396a44b551b63e0aa2ce3e23b8b6958ea80e35ecfd232ed5c0cec3a",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "אנה ברסקי דיווחה כי גדי איזנקוט פרסם ארבעה עקרונות להצטרפות לממשלתו, לרבות הכרה בישראל כיהודית ודמוקרטית, קבלת ערכי מגילת העצמאות, שירות חובה והגדרת חמאס כארגון טרור."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "26e3624aff50fa9dd25ffd1ca3694461d42fa957e2e00c6cce07af96f8ae05ff",
+    "privateStored": true
+  }
+}
