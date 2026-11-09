@@ -1,0 +1,372 @@
+{
+  "date": "2026-11-09",
+  "generatedAt": "2026-11-09T15:24:45.454Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-09T15:24:45.454Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "aca820168fb5230da3478b3efb6addd3ae6df8934f89a70be3473048fd0ee881",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "98dc3e519294d1ea9c677f1b243ecfb7666b81f0fa2770ad952276fbc3233851",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "e9dbfdd894a389d4ea1fefc326ea903bc21b2c4e66c9ce320a232280cb67c842",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "1cb3beb6217b433007f04baec49fdeeeb7ed68e2ca531b5b323ac53a061029fa",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "4b84400ce05babc3f29690eba5051a0c228bc2416d4459dacf5333e53413ffe3",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to The Jerusalem Post, election results showed that Benjamin Netanyahu's bloc secured 53 seats in the next Knesset, while the opposition bloc won 48.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+      "translations": {
+        "he": {
+          "text": "לפי ה-Jerusalem Post, תוצאות הבחירות הראו שגוש בנימין נתניהו השיג 53 מושבים בכנסת הבאה, בעוד שגוש האופוזיציה זכה ב-48.",
+          "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لـ The Jerusalem Post، أظهرت نتائج الانتخابات أن كتلة بنيامين نتنياهو ضمنت 53 مقعداً في الكنيست المقبل، بينما فازت كتلة المعارضة بـ 48 مقعداً.",
+          "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش The Jerusalem Post، نتایج انتخابات نشان داد که بلوک بنیامین نتانیاهو 53 کرسی را در کنست بعدی به دست آورد، در حالی که بلوک اپوزیسیون 48 کرسی کسب کرد.",
+          "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut The Jerusalem Post zeigten die Wahlergebnisse, dass der Block von Benjamin Netanjahu 53 Sitze in der nächsten Knesset sicherte, während der Oppositionsblock 48 gewann.",
+          "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon The Jerusalem Post, les résultats des élections ont montré que le bloc de Benjamin Netanyahu a obtenu 53 sièges dans la prochaine Knesset, tandis que le bloc de l'opposition en a remporté 48.",
+          "sourceHash": "b5cd2487ca3283dd7a67f8afb14e169dc81549709d67712655757a630d8b166f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot seeks haredi parties' support to oust Knesset Speaker Ohana on inauguration day",
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "published": "2026-11-09T13:18:28.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "bodyHash": "58acce8b59bdfaee2b8912b9d624f41671e38184e325a4e9a6649625441ea2a8",
+          "capturedAt": "2026-11-09T15:23:45.415Z",
+          "quoteHash": "8d2f6ab4d407cdc8c7ac50e1de4b6a74f02fb2ee27fd9786e655182990f40a10",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "לפי ה-Jerusalem Post, תוצאות הבחירות הראו שגוש בנימין נתניהו השיג 53 מושבים בכנסת הבאה, בעוד שגוש האופוזיציה זכה ב-48."
+    },
+    {
+      "text": "Prime Minister Benjamin Netanyahu called on the leaders of the opposition bloc to join him in a single unified government, describing it as \"the need of the hour.\"",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+      "translations": {
+        "he": {
+          "text": "ראש הממשלה בנימין נתניהו קרא למנהיגי גוש האופוזיציה להצטרף אליו לממשלה אחת מאוחדת, ותיאר זאת כ\"צו השעה\".",
+          "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "دعا رئيس الوزراء بنيامين نتنياهو قادة كتلة المعارضة إلى الانضمام إليه في حكومة موحدة واحدة، واصفاً ذلك بأنه \"حاجة الساعة\".",
+          "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "نخست‌وزیر بنیامین نتانیاهو از رهبران بلوک اپوزیسیون خواست تا در یک دولت واحد یکپارچه به او بپیوندند، و آن را «نیاز مبرم این ساعت» توصیف کرد.",
+          "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Premierminister Benjamin Netanjahu rief die Führer des Oppositionsblocks dazu auf, sich ihm in einer einzigen einheitlichen Regierung anzuschließen, und bezeichnete dies als \"das Gebot der Stunde\".",
+          "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le Premier ministre Benjamin Netanyahu a appelé les dirigeants du bloc de l'opposition à le rejoindre au sein d'un gouvernement unifié unique, le qualifiant de \"besoin de l'heure\".",
+          "sourceHash": "d3ca55a48ed0c57531aa55e7347fb00bb1a5a8620321eb786416a68e8d0fbcc6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu calls for all Zionist opposition parties to join him in unified government",
+          "url": "https://www.jpost.com/israel-election-2026/article-914356",
+          "published": "2026-11-09T17:10:32.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914356",
+          "bodyHash": "7b696119ded79c10b6d2daaf86d3401d3d0e37b21bdf1bcbb390971894ea39c6",
+          "capturedAt": "2026-11-09T15:23:44.905Z",
+          "quoteHash": "5cacc189b047a819e992e460916ee1677ad9b4a8d80062b0e09ef5d463d6dd5c",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "ראש הממשלה בנימין נתניהו קרא למנהיגי גוש האופוזיציה להצטרף אליו לממשלה אחת מאוחדת, ותיאר זאת כ\"צו השעה\"."
+    },
+    {
+      "text": "The Jerusalem Post reported that Yashar leader Gadi Eisenkot received the mandate to form a government from President Isaac Herzog on Sunday at the President's Residence.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+      "translations": {
+        "he": {
+          "text": "ה-Jerusalem Post דיווח שמנהיג ישר גדי איזנקוט קיבל את המנדט להרכבת ממשלה מהנשיא יצחק הרצוג ביום ראשון בבית הנשיא.",
+          "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت The Jerusalem Post أن زعيم Yashar غادي أيزنكوت تلقى التفويض لتشكيل حكومة من الرئيس إسحاق هرتسوغ يوم الأحد في مقر إقامة الرئيس.",
+          "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "نشریه The Jerusalem Post گزارش داد که گادی آیزنکوت، رهبر حزب Yashar، در روز یکشنبه در اقامتگاه ریاست جمهوری، مأموریت تشکیل دولت را از رئیس‌جمهور اسحاق هرتزوگ دریافت کرد.",
+          "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass der Yashar-Vorsitzende Gadi Eisenkot am Sonntag in der Residenz des Präsidenten das Mandat zur Regierungsbildung von Präsident Isaac Herzog erhalten habe.",
+          "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que le chef de Yashar, Gadi Eisenkot, a reçu dimanche le mandat de former un gouvernement de la part du président Isaac Herzog à la résidence du président.",
+          "sourceHash": "296ea744d9a29d059190c52d02f46dffd6a44089b60b509b25fe4e8d96934633",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot seeks haredi parties' support to oust Knesset Speaker Ohana on inauguration day",
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "published": "2026-11-09T13:18:28.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "bodyHash": "58acce8b59bdfaee2b8912b9d624f41671e38184e325a4e9a6649625441ea2a8",
+          "capturedAt": "2026-11-09T15:23:45.415Z",
+          "quoteHash": "23f84c98d8dd4a47af36ba85274d5d7fd2c1306e5eab10765a93209dc89ffd4a",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "ה-Jerusalem Post דיווח שמנהיג ישר גדי איזנקוט קיבל את המנדט להרכבת ממשלה מהנשיא יצחק הרצוג ביום ראשון בבית הנשיא."
+    },
+    {
+      "text": "United Torah Judaism party chairman MK Yaakov Asher stated that the party would not support efforts to replace Knesset Speaker Amir Ohana prior to the formation of a new government.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+      "translations": {
+        "he": {
+          "text": "יו\"ר מפלגת יהדות התורה ח\"כ יעקב אשר הצהיר כי המפלגה לא תתמוך במאמצים להחלפת יו\"ר הכנסת אמיר אוחנה לפני הקמת ממשלה חדשה.",
+          "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح عضو الكنيست يعقوب آشر، رئيس حزب United Torah Judaism، بأن الحزب لن يدعم الجهود الرامية إلى استبدال رئيس الكنيست أمير أوحانا قبل تشكيل حكومة جديدة.",
+          "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رئیس حزب یهودیت تورات متحد، نماینده کنست یعقوب آشر، اعلام کرد که این حزب پیش از تشکیل دولت جدید، از تلاش‌ها برای جایگزینی رئیس کنست، امیر اوهانا، حمایت نخواهد کرد.",
+          "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende der Partei Vereinigtes Thora-Judentum, MK Yaakov Asher, erklärte, dass die Partei Bemühungen, den Knesset-Sprecher Amir Ohana vor der Bildung einer neuen Regierung zu ersetzen, nicht unterstützen werde.",
+          "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président du parti Judaïsme unifié de la Torah, le député Yaakov Asher, a déclaré que le parti ne soutiendrait pas les efforts visant à remplacer le président de la Knesset, Amir Ohana, avant la formation d'un nouveau gouvernement.",
+          "sourceHash": "2bff116bc324cfb5ae3bcc9db0322f97a82a678875e7b68f2b85e13eedd7e995",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot seeks haredi parties' support to oust Knesset Speaker Ohana on inauguration day",
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "published": "2026-11-09T13:18:28.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "bodyHash": "58acce8b59bdfaee2b8912b9d624f41671e38184e325a4e9a6649625441ea2a8",
+          "capturedAt": "2026-11-09T15:23:45.415Z",
+          "quoteHash": "43b2849eed2cd81d38ef3ab60b0e84c57ccff02b53b96363219ac314185ad1d3",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "יו\"ר מפלגת יהדות התורה ח\"כ יעקב אשר הצהיר כי המפלגה לא תתמוך במאמצים להחלפת יו\"ר הכנסת אמיר אוחנה לפני הקמת ממשלה חדשה."
+    },
+    {
+      "text": "Yisrael Beytenu leader Avigdor Liberman announced that he would support B'Yachad's Yair Lapid for Knesset speaker, according to The Jerusalem Post.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+      "translations": {
+        "he": {
+          "text": "מנהיג ישראל ביתנו אביגדור ליברמן הודיע כי יתמוך ביאיר לפיד מ-B'Yachad לתפקיד יו\"ר הכנסת, על פי ה-Jerusalem Post.",
+          "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن زعيم Yisrael Beytenu أفيغدور ليبرمان أنه سيدعم يائير لبيد من B'Yachad لمنصب رئيس الكنيست، وفقاً لـ The Jerusalem Post.",
+          "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "به گزارش The Jerusalem Post، آویگدور لیبرمن رهبر حزب Yisrael Beytenu اعلام کرد که از یائیر لاپید از B'Yachad برای ریاست کنست حمایت خواهد کرد.",
+          "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende von Jisra'el Beitenu, Avigdor Liberman, kündigte laut The Jerusalem Post an, dass er Yair Lapid von B'Yachad für das Amt des Knesset-Sprechers unterstützen werde.",
+          "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le chef d'Yisrael Beytenu, Avigdor Liberman, a annoncé qu'il soutiendrait Yair Lapid de B'Yachad pour la présidence de la Knesset, selon The Jerusalem Post.",
+          "sourceHash": "d3c7eeda86b90d3599cfd88eaba93c41ad6558606d2f29e4f1438a779554fdbe",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot seeks haredi parties' support to oust Knesset Speaker Ohana on inauguration day",
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "published": "2026-11-09T13:18:28.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914332",
+          "bodyHash": "58acce8b59bdfaee2b8912b9d624f41671e38184e325a4e9a6649625441ea2a8",
+          "capturedAt": "2026-11-09T15:23:45.415Z",
+          "quoteHash": "a282d6aa8fc890e66461c9a98e8691b45a148578d8f2d7d635c726738de3312e",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS, KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מנהיג ישראל ביתנו אביגדור ליברמן הודיע כי יתמוך ביאיר לפיד מ-B'Yachad לתפקיד יו\"ר הכנסת, על פי ה-Jerusalem Post."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "f48b05ce24983cc1b08dba5afb28100afd7b6806eefa573b991fe9a4054f1730",
+    "privateStored": true
+  }
+}
