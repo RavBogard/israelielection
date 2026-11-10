@@ -1,0 +1,477 @@
+{
+  "date": "2026-11-10",
+  "generatedAt": "2026-11-10T14:28:00.583Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 6,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 4
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-10T14:28:00.583Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "aee8b2f69cdd052b002e0d7005e10601b72f1a2142b2a6158db2758d38e5be9c",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "ec94a1afac9d1c4ca96b0cc90012192fe508714c4ef08b94de5fa2673a01b8c1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "0ed6264638a93af6dd38eed74de46a46db34612de6f23104b47d0bf9c7fd4d03",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "5a9b51dc5fa117917a01ae58f096c804f1520adb33b9e1401ea771d582a936c8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "5a8af5f5caf20e36921e3791cf86b6e1aa2bb4b180a145b3cde0663cf4bf4b5a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-6",
+        "contentHash": "ad1204781db81f689aa8edb38f60aee883b0722ebdb2df7f7f4355ead96b485a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "The Jerusalem Post reported that the October 27 election results showed both Benjamin Netanyahu's bloc and the opposition bloc lacking the 61-seat majority required to form a coalition.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+      "translations": {
+        "he": {
+          "text": "הג'רוזלם פוסט דיווח כי תוצאות הבחירות של 27 באוקטובר הראו שגם לגוש של בנימין נתניהו וגם לגוש האופוזיציה חסר הרוב של 61 מושבים הנדרש להרכבת קואליציה.",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت صحيفة The Jerusalem Post أن نتائج انتخابات 27 October أظهرت افتقار كل من كتلة Benjamin Netanyahu وكتلة المعارضة إلى أغلبية الـ 61 مقعداً المطلوبة لتشكيل ائتلاف.",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "روزنامه The Jerusalem Post گزارش داد که نتایج انتخابات 27 اکتبر نشان داد که هم بلوک بنیامین نتانیاهو و هم بلوک اپوزیسیون فاقد اکثریت 61 کرسی لازم برای تشکیل ائتلاف هستند.",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "The Jerusalem Post berichtete, dass die Wahlergebnisse vom 27. Oktober zeigten, dass sowohl dem Block von Benjamin Netanjahu als auch dem Oppositionsblock die für die Bildung einer Koalition erforderliche Mehrheit von 61 Sitzen fehlte.",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "The Jerusalem Post a rapporté que les résultats des élections du 27 octobre montraient que le bloc de Benjamin Netanyahu ainsi que le bloc de l'opposition ne disposaient pas de la majorité de 61 sièges requise pour former une coalition.",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "The Jerusalem Post报道称，10月27日的选举结果显示，Benjamin Netanyahu的阵营和反对派阵营都缺少组建执政联盟所需的61席多数。",
+          "sourceHash": "a3e40b3daf79303fda162a4104e1ca6d38f022e3e9296759e020ece75dea6203",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot-led bloc taps Yashar's Kahana for Knesset speaker, Liberman to head key defense panel",
+          "url": "https://www.jpost.com/israel-election-2026/article-914426",
+          "published": "2026-11-10T10:05:07.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914426",
+          "bodyHash": "b1f6faf64e8076e476f74dd6a0c7507b19b2ee22fa579ee41a640a3a42f45c89",
+          "capturedAt": "2026-11-10T14:26:51.150Z",
+          "quoteHash": "91264b7b8a42ad1f4b44204361e85cf499e8d2b55b31600994f5360569596263",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV, JAMES GENN"
+          }
+        }
+      ],
+      "textHe": "הג'רוזלם פוסט דיווח כי תוצאות הבחירות של 27 באוקטובר הראו שגם לגוש של בנימין נתניהו וגם לגוש האופוזיציה חסר הרוב של 61 מושבים הנדרש להרכבת קואליציה."
+    },
+    {
+      "text": "Yashar party leader Gadi Eisenkot stated that the opposition bloc seeking to replace Prime Minister Benjamin Netanyahu would not yield on the issue of haredi conscription amid ongoing coalition talks.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+      "translations": {
+        "he": {
+          "text": "מנהיג מפלגת ישר גדי איזנקוט הצהיר כי גוש האופוזיציה המבקש להחליף את ראש הממשלה בנימין נתניהו לא יתפשר בסוגיית גיוס החרדים על רקע שיחות הקואליציה הנמשכות.",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح زعيم حزب Yashar، Gadi Eisenkot، بأن كتلة المعارضة التي تسعى إلى استبدال رئيس الوزراء Benjamin Netanyahu لن تتنازل عن قضية تجنيد الـ haredi وسط محادثات الائتلاف الجارية.",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "گادی آیزنکوت، رهبر حزب Yashar، اعلام کرد که بلوک اپوزیسیون که به دنبال جایگزینی بنیامین نتانیاهو نخست‌وزیر است، در میانه مذاکرات جاری ائتلاف در خصوص موضوع خدمت سربازی حریدی‌ها تسلیم نخواهد شد.",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende der Yashar-Partei, Gadi Eisenkot, erklärte, dass der Oppositionsblock, der Premierminister Benjamin Netanjahu ablösen will, angesichts der laufenden Koalitionsgespräche in der Frage der Wehrpflicht für Haredim nicht nachgeben werde.",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le chef du parti Yashar, Gadi Eisenkot, a déclaré que le bloc de l'opposition cherchant à remplacer le Premier ministre Benjamin Netanyahu ne céderait pas sur la question de la conscription des haredim dans le cadre des pourparlers de coalition en cours.",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Yashar党领袖Gadi Eisenkot表示，在持续进行的联合政府谈判中，寻求取代总理Benjamin Netanyahu的反对派阵营不会在haredi征兵问题上妥协。",
+          "sourceHash": "fe6f998c0528df94ac0e8ee1d7d7adefd7dd71910b35da7748d0fd561a2f4bc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot says opposition bloc will ‘not surrender’ on conscription amid haredi coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "published": "2026-11-10T15:47:24.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "bodyHash": "491ddf7a2ecb05118dd24d908bfffe49b1e82306ce7420377dfd6641c24bc350",
+          "capturedAt": "2026-11-10T14:26:48.774Z",
+          "quoteHash": "1b1cc6ae805663644e3cb8b0a7d40d2862a105b19e9a31198a3a1937caf41807",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מנהיג מפלגת ישר גדי איזנקוט הצהיר כי גוש האופוזיציה המבקש להחליף את ראש הממשלה בנימין נתניהו לא יתפשר בסוגיית גיוס החרדים על רקע שיחות הקואליציה הנמשכות."
+    },
+    {
+      "text": "Yisrael Beytenu leader Avigdor Liberman stated that Gadi Eisenkot was in charge of forming the government and that he would serve as his right-hand man.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+      "translations": {
+        "he": {
+          "text": "מנהיג ישראל ביתנו אביגדור ליברמן הצהיר כי גדי איזנקוט היה אמון על הרכבת הממשלה וכי הוא ישמש כיד ימינו.",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح زعيم حزب Yisrael Beytenu، Avigdor Liberman، بأن Gadi Eisenkot كان مكلفاً بتشكيل الحكومة وأنه سيعمل كيده اليمنى.",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آویگدور لیبرمن، رهبر Yisrael Beytenu، اعلام کرد که گادی آیزنکوت مسئول تشکیل دولت است و او به عنوان دست راست وی خدمت خواهد کرد.",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende von Yisrael Beytenu, Avigdor Liberman, erklärte, dass Gadi Eisenkot für die Regierungsbildung verantwortlich sei und dass er als seine rechte Hand fungieren werde.",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le chef d'Yisrael Beytenu, Avigdor Liberman, a déclaré que Gadi Eisenkot était chargé de former le gouvernement et qu'il lui servirait de bras droit.",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Yisrael Beytenu党领袖Avigdor Liberman表示，Gadi Eisenkot负责组建政府，而他将担任其得力助手。",
+          "sourceHash": "8b5f8d337b5c598f07bace725465401c8fe776b221938436c4197ce34237c87c",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot says opposition bloc will ‘not surrender’ on conscription amid haredi coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "published": "2026-11-10T15:47:24.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "bodyHash": "491ddf7a2ecb05118dd24d908bfffe49b1e82306ce7420377dfd6641c24bc350",
+          "capturedAt": "2026-11-10T14:26:48.774Z",
+          "quoteHash": "e71ec10fd455e2232eb5f27d5701b51bcecbb1618f74482dfb63a1cc4d5129b6",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מנהיג ישראל ביתנו אביגדור ליברמן הצהיר כי גדי איזנקוט היה אמון על הרכבת הממשלה וכי הוא ישמש כיד ימינו."
+    },
+    {
+      "text": "Party leaders in the opposition bloc announced an agreement to nominate incoming Yashar MK Matan Kahana as their candidate for Knesset Speaker ahead of the swearing-in of the 26th Knesset.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+      "translations": {
+        "he": {
+          "text": "ראשי מפלגות בגוש האופוזיציה הודיעו על הסכמה להציג את ח\"כ הנכנס מטעם מפלגת ישר מתן כהנא כמועמדם לתפקיד יושב ראש הכנסת לקראת השבעת הכנסת ה-26.",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلن قادة الأحزاب في كتلة المعارضة عن اتفاق لترشيح عضو الكنيست القادم عن حزب Yashar، Matan Kahana، كمرشح لهم لمنصب رئيس الكنيست قبل أداء اليمين للكنيست الـ 26.",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رهبران احزاب در بلوک اپوزیسیون توافقی را برای معرفی متان کاهانا، نماینده جدید کنست از حزب Yashar، به عنوان نامزد خود برای ریاست کنست پیش از ادای سوگند 26مین کنست اعلام کردند.",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Parteiführer im Oppositionsblock gaben vor der Vereidigung der 26. Knesset eine Vereinbarung bekannt, den künftigen Yashar-Knesset-Abgeordneten Matan Kahana als ihren Kandidaten für das Amt des Knesset-Sprechers zu nominieren.",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Les chefs de parti du bloc de l'opposition ont annoncé un accord pour désigner le député entrant de Yashar à la Knesset, Matan Kahana, comme leur candidat à la présidence de la Knesset avant la prestation de serment de la 26e Knesset.",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "反对派阵营的政党领袖宣布达成协议，在第26届Knesset宣誓就职前，提名即将上任的Yashar党议员Matan Kahana作为其Knesset议长候选人。",
+          "sourceHash": "985a5404ae94ce6010bef18be313b3e36f0e216c5c1b477a1905ce546f0f8559",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot-led bloc taps Yashar's Kahana for Knesset speaker, Liberman to head key defense panel",
+          "url": "https://www.jpost.com/israel-election-2026/article-914426",
+          "published": "2026-11-10T10:05:07.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914426",
+          "bodyHash": "b1f6faf64e8076e476f74dd6a0c7507b19b2ee22fa579ee41a640a3a42f45c89",
+          "capturedAt": "2026-11-10T14:26:51.150Z",
+          "quoteHash": "46a2d8c5765512a11de0d6e92564da025e784aceb90d3ddcd15affd40cd6f48c",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV, JAMES GENN"
+          }
+        }
+      ],
+      "textHe": "ראשי מפלגות בגוש האופוזיציה הודיעו על הסכמה להציג את ח\"כ הנכנס מטעם מפלגת ישר מתן כהנא כמועמדם לתפקיד יושב ראש הכנסת לקראת השבעת הכנסת ה-26."
+    },
+    {
+      "text": "The Democrats leader Yair Golan urged the opposition bloc during a Knesset press conference not to rule out Arab parties or exclude the Arab public from the government and coalition.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+      "translations": {
+        "he": {
+          "text": "מנהיג הדמוקרטים יאיר גולן הפציר בגוש האופוזיציה במהלך מסיבת עיתונאים בכנסת שלא לפסול מפלגות ערביות ושלא להדיר את הציבור הערבי מהממשלה ומהקואליציה.",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "حث زعيم حزب The Democrats، Yair Golan، كتلة المعارضة خلال مؤتمر صحفي في الكنيست على عدم استبعاد الأحزاب العربية أو إقصاء الجمهور العربي من الحكومة والائتلاف.",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "یائیر گولان، رهبر حزب The Democrats، در جریان یک کنفرانس مطبوعاتی در کنست از بلوک اپوزیسیون خواست که احزاب عرب را کنار نگذارند یا جامعه عرب را از دولت و ائتلاف حذف نکنند.",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Vorsitzende von The Democrats, Yair Golan, forderte den Oppositionsblock während einer Pressekonferenz in der Knesset auf, arabische Parteien nicht auszuschließen und die arabische Öffentlichkeit nicht von Regierung und Koalition auszuschließen.",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le chef des Démocrates, Yair Golan, a exhorté le bloc de l'opposition lors d'une conférence de presse à la Knesset à ne pas écarter les partis arabes ni à exclure le public arabe du gouvernement et de la coalition.",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "The Democrats领袖Yair Golan在Knesset新闻发布会上敦促反对派阵营不要排除阿拉伯政党，也不要将阿拉伯公众排除在政府和执政联盟之外。",
+          "sourceHash": "d88f708080f8aa1448d5a3133765a458db83a5d6c8574e1bc213b07fbf742bd0",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot says opposition bloc will ‘not surrender’ on conscription amid haredi coalition talks",
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "published": "2026-11-10T15:47:24.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914472",
+          "bodyHash": "491ddf7a2ecb05118dd24d908bfffe49b1e82306ce7420377dfd6641c24bc350",
+          "capturedAt": "2026-11-10T14:26:48.774Z",
+          "quoteHash": "57117769063b1186895066347154d94c57b08f13e01f57dcfd3a78dcbc28c082",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "KESHET NEEV"
+          }
+        }
+      ],
+      "textHe": "מנהיג הדמוקרטים יאיר גולן הפציר בגוש האופוזיציה במהלך מסיבת עיתונאים בכנסת שלא לפסול מפלגות ערביות ושלא להדיר את הציבור הערבי מהממשלה ומהקואליציה."
+    },
+    {
+      "text": "The 5050 Initiative announced that a record 33 female MKs were set to be sworn in to Israel's 26th Knesset, citing data from the Choosing Wisely project.",
+      "claimId": "claim-6",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+      "translations": {
+        "he": {
+          "text": "יוזמת 5050 הודיעה כי מספר שיא של 33 חברות כנסת עתידות להישבע אמונים לכנסת ה-26 של ישראל, תוך ציטוט נתונים מפרויקט \"בוחרים נכון\" (Choosing Wisely).",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أعلنت The 5050 Initiative أنه كان من المقرر أن تؤدي 33 عضوة كنيست، في رقم قياسي، اليمين الدستورية في الكنيست الإسرائيلي الـ 26، نقلاً عن بيانات من مشروع Choosing Wisely.",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "سازمان The 5050 Initiative با استناد به داده‌های پروژه Choosing Wisely اعلام کرد که قرار است رکورد 33 نماینده زن کنست در 26مین کنست اسرائیل سوگند یاد کنند.",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die 5050 Initiative gab unter Berufung auf Daten des Projekts Choosing Wisely bekannt, dass eine Rekordzahl von 33 weiblichen Knesset-Abgeordneten in Israels 26. Knesset vereidigt werden sollte.",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "L'Initiative 5050 a annoncé qu'un nombre record de 33 femmes députées allaient prêter serment au sein de la 26e Knesset d'Israël, citant des données du projet Choosing Wisely.",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "5050 Initiative援引来自Choosing Wisely项目的数据宣布，创纪录的33名女性议员将在以色列第26届Knesset宣誓就职。",
+          "sourceHash": "37badbfb7b277a1fc23b3987167c7d3c0853d91141a83c1210c5f523147d1f11",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Record number of female MKs to be sworn in at ceremony for Israel's 26th Knesset",
+          "url": "https://www.jpost.com/israel-election-2026/article-914424",
+          "published": "2026-11-10T11:02:56.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914424",
+          "bodyHash": "234cc8d22e805f89fcae1b5bcf93e706f56f4fc07ebc334d79fad28c3ed3501f",
+          "capturedAt": "2026-11-10T14:26:50.926Z",
+          "quoteHash": "8f48494c11188a596767325986a3a948f0ec37e52f6f7707e83c022c3f4a3efc",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "יוזמת 5050 הודיעה כי מספר שיא של 33 חברות כנסת עתידות להישבע אמונים לכנסת ה-26 של ישראל, תוך ציטוט נתונים מפרויקט \"בוחרים נכון\" (Choosing Wisely)."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "0fb47e3e50b4100f6c74c244d0e84e2a5a64b1f44f684b93681aa9af095c985e",
+    "privateStored": true
+  }
+}
