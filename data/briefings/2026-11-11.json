@@ -1,0 +1,402 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T13:41:07.230Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 5,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 2
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-11T13:41:07.230Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "19a98e103e9f977dcac73e5b359cf58b3b7d1ba984befeeef69e81152806078d",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "36b3771e879dff87e0816629b8cdb76068f68129df12f563abafd63dac01421d",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "eef425fff471bf0d4dffdc93de016b84f240ad80c8af28765305b11d8336bbae",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "5144b5664c0f6f81cc8c796a19950bbbcb8e724cf68efa96906264c7cf565532",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "6d4c7ba84890c903d126111425abc2db4b263ebb129efa1200cdc8907920de95",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Sources within the Eisenkot-led bloc reported that Democrats party leader Yair Golan clearly prefers establishing a minority government supported by the Joint List and Ra'am over entering a coalition with ultra-Orthodox parties.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+      "translations": {
+        "he": {
+          "text": "מקורות בתוך הגוש בהובלת איזנקוט דיווחו כי מנהיג מפלגת הדמוקרטים יאיר גולן מעדיף בבירור הקמת ממשלת מיעוט הנתמכת על ידי הרשימה המשותפת ורע\"מ על פני כניסה לקואליציה עם מפלגות חרדיות.",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت مصادر داخل الكتلة التي يقودها آيزنكوت بأن زعيم حزب الديمقراطيين يائير غولان يفضل بوضوح تشكيل حكومة أقلية مدعومة من القائمة المشتركة والقائمة العربية الموحدة (راعم) على الدخول في ائتلاف مع الأحزاب الأرثوذكسية المتطرفة (الحريدية).",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "منابع درون بلوک تحت رهبری آیزنکوت گزارش دادند که یائیر گولان، رهبر حزب دموکرات‌ها، تشکیل دولت اقلیت با حمایت فهرست مشترک و رعم را به وضوح بر ورود به ائتلاف با احزاب ارتدوکس افراطی ترجیح می‌دهد.",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Quellen innerhalb des von Eisenkot gefuehrten Blocks berichteten, dass der Parteivorsitzende der Demokraten, Yair Golan, die Bildung einer von der Gemeinsamen Liste und Ra'am unterstuetzten Minderheitsregierung einem Eintritt in eine Koalition mit ultraorthodoxen Parteien eindeutig vorzieht.",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Des sources au sein du bloc dirigé par Eisenkot ont rapporté que le chef du parti des Démocrates, Yair Golan, préfère nettement établir un gouvernement minoritaire soutenu par la Liste conjointe et Ra'am plutôt que d'entrer dans une coalition avec des partis ultra-orthodoxes.",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "由Eisenkot领导的阵营内部消息人士报道称，Democrats党领袖Yair Golan明确更倾向于建立一个由Joint List和Ra'am支持的少数派政府，而不是与极端正统派（ultra-Orthodox）政党加入联合政府。",
+          "sourceHash": "3ed125ae672682889b7f7de7b965b67997d56d05dbabc8338c5f0c16c4767beb",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot's bloc divided as Golan eyes minority gov't with Arab support, Bennett stays silent",
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "published": "2026-11-11T11:10:39.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "bodyHash": "d6b972ff1b46eecde10ca763a4c5088d31e68ecb18e79481f4b3c179e04520bb",
+          "capturedAt": "2026-11-11T13:40:33.357Z",
+          "quoteHash": "3af1b898cdf8fbf4f78e25db1290867686ce506fcb74aa4780ad7d42bae6f048",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "מקורות בתוך הגוש בהובלת איזנקוט דיווחו כי מנהיג מפלגת הדמוקרטים יאיר גולן מעדיף בבירור הקמת ממשלת מיעוט הנתמכת על ידי הרשימה המשותפת ורע\"מ על פני כניסה לקואליציה עם מפלגות חרדיות."
+    },
+    {
+      "text": "Sources within the Eisenkot-led bloc raised suspicions that Naftali Bennett may not be genuinely committed to forming a government, suspecting he believes a subsequent election could strengthen his standing.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+      "translations": {
+        "he": {
+          "text": "מקורות בתוך הגוש בהובלת איזנקוט העלו חשד שנפתלי בנט עשוי לא להיות מחויב באמת להקמת ממשלה, מתוך חשד שהוא סבור שבחירות נוספות עשויות לחזק את מעמדו.",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أثارت مصادر داخل الكتلة التي يقودها آيزنكوت شكوكاً في أن نفتالي بينيت قد لا يكون ملتزماً بصدق بتشكيل حكومة، مشتبهة في أنه يعتقد أن انتخابات لاحقة قد تعزز مكانته.",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "منابع درون بلوک تحت رهبری آیزنکوت این سوءظن را مطرح کردند که نفتالی بنت ممکن است واقعاً متعهد به تشکیل دولت نباشد، و مشکوک هستند که او معتقد است انتخابات بعدی می‌تواند جایگاه او را تقویت کند.",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Quellen innerhalb des von Eisenkot gefuehrten Blocks aeusserten den Verdacht, dass Naftali Bennett sich moeglicherweise nicht aufrichtig fuer die Bildung einer Regierung engagiert, und vermuteten, er glaube, eine nachfolgende Wahl koennte seine Position staerken.",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Des sources au sein du bloc dirigé par Eisenkot ont émis des soupçons selon lesquels Naftali Bennett pourrait ne pas être véritablement déterminé à former un gouvernement, le soupçonnant de penser qu'une élection ultérieure pourrait renforcer sa position.",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "由Eisenkot领导的阵营内部消息人士提出怀疑，认为Naftali Bennett可能并非真心致力于组建政府，并怀疑他认为随后举行的选举可能会巩固其地位。",
+          "sourceHash": "96c599f76c66f51c17bff2a8ba502d6226f1127ffd971d39910e20fe5f76e382",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot's bloc divided as Golan eyes minority gov't with Arab support, Bennett stays silent",
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "published": "2026-11-11T11:10:39.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "bodyHash": "d6b972ff1b46eecde10ca763a4c5088d31e68ecb18e79481f4b3c179e04520bb",
+          "capturedAt": "2026-11-11T13:40:33.357Z",
+          "quoteHash": "e1e0bc90ac44538632c8c6752f4f692a00aab9e0c04b34dcb0b07d8022cc3bac",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "מקורות בתוך הגוש בהובלת איזנקוט העלו חשד שנפתלי בנט עשוי לא להיות מחויב באמת להקמת ממשלה, מתוך חשד שהוא סבור שבחירות נוספות עשויות לחזק את מעמדו."
+    },
+    {
+      "text": "Avigdor Liberman stated at a faction meeting that Gadi Eisenkot's negotiating team is leading the talks and that he is not personally conducting negotiations with the haredi factions.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+      "translations": {
+        "he": {
+          "text": "אביגדור ליברמן הצהיר בישיבת סיעה כי צוות המשא ומתן של גדי איזנקוט מוביל את השיחות וכי הוא אינו מנהל באופן אישי משא ומתן עם הסיעות החרדיות.",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح أفيغدور ليبرمان في اجتماع للكتلة بأن فريق التفاوض التابع لغادي آيزنكوت يقود المحادثات وأنه لا يجري مفاوضات شخصياً مع الفصائل الحريدية.",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "آویگدور لیبرمن در جلسه فراکسیون اظهار داشت که تیم مذاکره‌کننده گادی آیزنکوت هدایت گفتگوها را بر عهده دارد و او شخصاً در حال انجام مذاکرات با جناح‌های حریدی نیست.",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Avigdor Liberman erklaerte bei einer Fraktionssitzung, dass das Verhandlungsteam von Gadi Eisenkot die Gespraeche leitet und dass er persoenlich keine Verhandlungen mit den haredischen Fraktionen fuehrt.",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Avigdor Liberman a déclaré lors d'une réunion de faction que l'équipe de négociation de Gadi Eisenkot mène les pourparlers et qu'il ne mène pas personnellement de négociations avec les factions haredies.",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Avigdor Liberman在一次派系会议上表示，Gadi Eisenkot的谈判团队正在主导会谈，而他本人并未亲自与极端正统派（haredi）派系进行谈判。",
+          "sourceHash": "4e5a0ceb5006725fedf66da4c4f80ae36e17a371826dcc7eeac733a9055423bc",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot's bloc divided as Golan eyes minority gov't with Arab support, Bennett stays silent",
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "published": "2026-11-11T11:10:39.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "bodyHash": "d6b972ff1b46eecde10ca763a4c5088d31e68ecb18e79481f4b3c179e04520bb",
+          "capturedAt": "2026-11-11T13:40:33.357Z",
+          "quoteHash": "ad23c2a45e739e5791f8a8dab6ed40cd0ebb4827c87a0d1e5472660729c5fed2",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "אביגדור ליברמן הצהיר בישיבת סיעה כי צוות המשא ומתן של גדי איזנקוט מוביל את השיחות וכי הוא אינו מנהל באופן אישי משא ומתן עם הסיעות החרדיות."
+    },
+    {
+      "text": "Sources within the haredi parties told Maariv that they place substantially higher confidence in reaching understandings with Avigdor Liberman than with Gadi Eisenkot and his team.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+      "translations": {
+        "he": {
+          "text": "מקורות בתוך המפלגות החרדיות אמרו למעריב כי יש להם ביטחון גבוה באופן ניכר בהגעה להבנות עם אביגדור ליברמן מאשר עם גדי איזנקוט וצוותו.",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت مصادر داخل الأحزاب الحريدية لصحيفة معاريف أنها تضع ثقة أكبر بكثير في التوصل إلى تفاهمات مع أفيغدور ليبرمان مقارنة بغادي آيزنكوت وفريقه.",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "منابع درون احزاب حریدی به معاریو گفتند که آنها به دستیابی به تفاهم با آویگدور لیبرمن به مراتب بیشتر از گادی آیزنکوت و تیمش اعتماد دارند.",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Quellen innerhalb der haredischen Parteien sagten Maariv, dass sie wesentlich groesseres Vertrauen darein setzen, Verstaendigungen mit Avigdor Liberman zu erzielen als mit Gadi Eisenkot und seinem Team.",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Des sources au sein des partis haredim ont déclaré à Maariv qu'elles accordent une confiance nettement plus élevée à la conclusion d'ententes avec Avigdor Liberman qu'avec Gadi Eisenkot et son équipe.",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "极端正统派（haredi）政党内部消息人士告诉Maariv，比起与Gadi Eisenkot及其团队，他们对与Avigdor Liberman达成谅解抱有显著更高的信心。",
+          "sourceHash": "269c0ae00b064a2d0157bb0c4379db42c18f5b3ed08557e0ba514a0c2f37d7c4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Eisenkot's bloc divided as Golan eyes minority gov't with Arab support, Bennett stays silent",
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "published": "2026-11-11T11:10:39.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914561",
+          "bodyHash": "d6b972ff1b46eecde10ca763a4c5088d31e68ecb18e79481f4b3c179e04520bb",
+          "capturedAt": "2026-11-11T13:40:33.357Z",
+          "quoteHash": "ccac2a62a131b387703ddbaa784768d2d390bf9e27b5fe3b879b0eee7cc3fa6b",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "ANNA BARSKY"
+          }
+        }
+      ],
+      "textHe": "מקורות בתוך המפלגות החרדיות אמרו למעריב כי יש להם ביטחון גבוה באופן ניכר בהגעה להבנות עם אביגדור ליברמן מאשר עם גדי איזנקוט וצוותו."
+    },
+    {
+      "text": "Rahat Mayor Talal al-Krenawi attributed increased voter participation in the parliamentary election to voter discontent regarding government home demolitions.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+      "translations": {
+        "he": {
+          "text": "ראש עיריית רהט טלאל אל-קרינאווי ייחס את העלייה בהשתתפות המצביעים בבחירות לפרלמנט לחוסר שביעות רצון של המצביעים בנוגע להריסות בתים על ידי הממשלה.",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "عزا رئيس بلدية رهط طلال القريناوي زيادة مشاركة الناخبين في الانتخابات البرلمانية إلى استياء الناخبين بشأن عمليات هدم المنازل التي تنفذها الحكومة.",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "طلال القریناوی، شهردار رهط، افزایش مشارکت رأی‌دهندگان در انتخابات پارلمانی را به نارضایتی رأی‌دهندگان در مورد تخریب خانه‌ها توسط دولت نسبت داد.",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Buergermeister von Rahat, Talal al-Krenawi, fuehrte die gestiegene Wahlbeteiligung bei der Parlamentswahl auf die Unzufriedenheit der Waehler hinsichtlich der Hausabrisse durch die Regierung zurueck.",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le maire de Rahat, Talal al-Krenawi, a attribué l'augmentation de la participation électorale lors des élections législatives au mécontentement des électeurs face aux démolitions de maisons par le gouvernement.",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Rahat市长Talal al-Krenawi将议会选举中选民参与度的增加归因于选民对政府拆除房屋的不满。",
+          "sourceHash": "c09f85756b55d935d0b987fde58227b438150e54ca7d9fcd9d24f7f72e60ff75",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "3 years after Bedouin hero rescued 30 people on Oct. 7, Israel destroyed his family’s homes",
+          "url": "https://www.jta.org/2026/11/11/israel/3-years-after-bedouin-hero-rescued-30-people-on-oct-7-israel-destroyed-his-familys-homes",
+          "published": "2026-11-11T12:46:17Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/11/israel/3-years-after-bedouin-hero-rescued-30-people-on-oct-7-israel-destroyed-his-familys-homes",
+          "bodyHash": "eab28bade73883e43851bd8445c45135fbd7fb628610a427a49a5c534d16bcb5",
+          "capturedAt": "2026-11-11T13:40:32.515Z",
+          "quoteHash": "42dc1bf7a9d0c3c0de57506a9580a45ed9d812e366623d88527a8687e54e0d65",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Deborah Danan"
+          }
+        }
+      ],
+      "textHe": "ראש עיריית רהט טלאל אל-קרינאווי ייחס את העלייה בהשתתפות המצביעים בבחירות לפרלמנט לחוסר שביעות רצון של המצביעים בנוגע להריסות בתים על ידי הממשלה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "b69a6e1220657aea536ffcb0d47ced94cffcc5c0a056f4c6b85a0ca00e2afe01",
+    "privateStored": true
+  }
+}
