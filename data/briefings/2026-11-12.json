@@ -1,0 +1,327 @@
+{
+  "date": "2026-11-12",
+  "generatedAt": "2026-11-12T14:44:46.609Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 4,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 1
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-12T14:44:46.609Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "1dcc7c158f0795bdb318cee56cd2120056172af395dce1cc3bfaf9ef561ba009",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "5e413385c3d80a064d47ac5d73b110999132b5603534611495fae63c304595e8",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "66f4317313245fed47a072e80f6915c15573c2f0ed712dbcb83cd78b1bafcdaf",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "c9c86b18e70c44c4dee54d1bdf1bf4a7bc2dbf5fc3101df1d1fd4db2d499040a",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "Yashar chairman MK Gadi Eisenkot demanded that Prime Minister Benjamin Netanyahu refrain from unnecessary military operations until a new government is formed.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+      "translations": {
+        "he": {
+          "text": "יו\"ר ישר ח\"כ גדי איזנקוט דרש שראש הממשלה בנימין נתניהו יימנע ממבצעים צבאיים מיותרים עד להקמת ממשלה חדשה.",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "طالب رئيس حزب Yashar، عضو الكنيست غادي آيزنكوت، رئيس الوزراء بنيامين نتنياهو بالامتناع عن العمليات العسكرية غير الضرورية حتى يتم تشكيل حكومة جديدة.",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رئیس یاشار، عضو کنست گادی آیزنکوت، از نخست‌وزیر بنیامین نتانیاهو خواست تا زمان تشکیل دولت جدید از عملیات‌های نظامی غیرضروری خودداری کند.",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Der Yashar-Vorsitzende MK Gadi Eisenkot forderte, dass Premierminister Benjamin Netanjahu von unnötigen Militäroperationen absieht, bis eine neue Regierung gebildet ist.",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le président de Yashar, le député Gadi Eisenkot, a exigé que le Premier ministre Benjamin Netanyahu s'abstienne de toute opération militaire inutile jusqu'à ce qu'un nouveau gouvernement soit formé.",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Yashar主席、议员Gadi Eisenkot要求总理Benjamin Netanyahu在新政府组建前避免进行不必要的军事行动。",
+          "sourceHash": "b5d9a22bdb2cd50500ca6ee81d63033c46d6255b6eb1e4a1bd5f11d1ed6bfb66",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu to convene Israel's Security Cabinet as Eisenkot warns against renewed Iran strikes",
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "published": "2026-11-12T10:33:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "bodyHash": "a3354aede4a82b19c52a60e476d5de338ef6637420c73cc4fc31b6ee1961cf72",
+          "capturedAt": "2026-11-12T14:44:22.846Z",
+          "quoteHash": "acc134e3be9117d13c43874e53f45d4dd636a67f17b8ca51f030149bae68ce56",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "RICHARD OFFENBACHER"
+          }
+        }
+      ],
+      "textHe": "יו\"ר ישר ח\"כ גדי איזנקוט דרש שראש הממשלה בנימין נתניהו יימנע ממבצעים צבאיים מיותרים עד להקמת ממשלה חדשה."
+    },
+    {
+      "text": "MK Gadi Eisenkot stated in a letter to Prime Minister Benjamin Netanyahu that deploying security forces without an immediate threat could severely harm Israeli democracy and public trust.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+      "translations": {
+        "he": {
+          "text": "ח\"כ גדי איזנקוט ציין במכתב לראש הממשלה בנימין נתניהו כי פריסת כוחות ביטחון ללא איום מיידי עלולה לפגוע קשות בדמוקרטיה הישראלית ובאמון הציבור.",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح عضو الكنيست غادي آيزنكوت في رسالة إلى رئيس الوزراء بنيامين نتنياهو بأن نشر قوات الأمن دون وجود تهديد فوري قد يضر بشدة بالديمقراطية الإسرائيلية وثقة الجمهور.",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "عضو کنست گادی آیزنکوت در نامه‌ای به نخست‌وزیر بنیامین نتانیاهو اظهار داشت که به‌کارگیری نیروهای امنیتی بدون وجود یک تهدید فوری می‌تواند به‌شدت به دموکراسی اسرائیل و اعتماد عمومی آسیب برساند.",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "MK Gadi Eisenkot erklärte in einem Brief an Premierminister Benjamin Netanjahu, dass der Einsatz von Sicherheitskräften ohne eine unmittelbare Bedrohung die israelische Demokratie und das öffentliche Vertrauen schwer beschädigen könnte.",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le député Gadi Eisenkot a déclaré dans une lettre adressée au Premier ministre Benjamin Netanyahu que le déploiement des forces de sécurité sans menace immédiate pourrait gravement nuire à la démocratie israélienne et à la confiance du public.",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "议员Gadi Eisenkot在致总理Benjamin Netanyahu的信中表示，在没有迫在眉睫的威胁的情况下部署安全部队，可能会严重损害以色列的民主和公众信任。",
+          "sourceHash": "246a3eb146f02cbb3adab0818f8c180e56f90d82f21fe2d47f127f4460d5dbc5",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu to convene Israel's Security Cabinet as Eisenkot warns against renewed Iran strikes",
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "published": "2026-11-12T10:33:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "bodyHash": "a3354aede4a82b19c52a60e476d5de338ef6637420c73cc4fc31b6ee1961cf72",
+          "capturedAt": "2026-11-12T14:44:22.846Z",
+          "quoteHash": "3cb2d4e7e43a7cbae999e3fc7b4f0dbaf418b7c3e7ceb8ad9d2b07be1d318242",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "RICHARD OFFENBACHER"
+          }
+        }
+      ],
+      "textHe": "ח\"כ גדי איזנקוט ציין במכתב לראש הממשלה בנימין נתניהו כי פריסת כוחות ביטחון ללא איום מיידי עלולה לפגוע קשות בדמוקרטיה הישראלית ובאמון הציבור."
+    },
+    {
+      "text": "Prime Minister Benjamin Netanyahu stated that all government decisions were made strictly on security considerations in full coordination with the defense establishment, calling Eisenkot's public discussion irresponsible.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+      "translations": {
+        "he": {
+          "text": "ראש הממשלה בנימין נתניהו הצהיר כי כל החלטות הממשלה התקבלו אך ורק משיקולים ביטחוניים בתיאום מלא עם מערכת הביטחון, וכינה את הדיון הציבורי של איזנקוט חסר אחריות.",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح رئيس الوزراء بنيامين نتنياهو بأن جميع القرارات الحكومية قد اتُخذت حصراً بناءً على اعتبارات أمنية بالتنسيق الكامل مع المؤسسة الأمنية، واصفاً نقاش آيزنكوت العلني بأنه غير مسؤول.",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "نخست‌وزیر بنیامین نتانیاهو بیان کرد که تمام تصمیمات دولت صرفاً بر اساس ملاحظات امنیتی و در هماهنگی کامل با نهاد دفاعی اتخاذ شده است، و طرح عمومی این موضوع توسط آیزنکوت را غیرمسئولانه خواند.",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Premierminister Benjamin Netanjahu erklärte, dass alle Regierungsentscheidungen streng nach Sicherheitserwägungen in voller Abstimmung mit dem Verteidigungsapparat getroffen wurden, und bezeichnete Eisenkots öffentliche Diskussion als unverantwortlich.",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le Premier ministre Benjamin Netanyahu a affirmé que toutes les décisions du gouvernement étaient prises strictement selon des considérations sécuritaires, en pleine coordination avec l'appareil de défense, qualifiant d'irresponsable la prise de parole publique d'Eisenkot.",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "总理Benjamin Netanyahu表示，政府的所有决定都是严格基于安全考量并在与国防机构充分协调下做出的，并称Eisenkot的公开讨论是不负责任的。",
+          "sourceHash": "89ba6b75b67884b513a6d26afdba7974c2256bcdf06b2e439bf2b1f07097dac3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu to convene Israel's Security Cabinet as Eisenkot warns against renewed Iran strikes",
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "published": "2026-11-12T10:33:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "bodyHash": "a3354aede4a82b19c52a60e476d5de338ef6637420c73cc4fc31b6ee1961cf72",
+          "capturedAt": "2026-11-12T14:44:22.846Z",
+          "quoteHash": "a2ed44d29a2a9920454a842ea0f5b2940334487f5e1cb94e7882f1fabcfffa97",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "RICHARD OFFENBACHER"
+          }
+        }
+      ],
+      "textHe": "ראש הממשלה בנימין נתניהו הצהיר כי כל החלטות הממשלה התקבלו אך ורק משיקולים ביטחוניים בתיאום מלא עם מערכת הביטחון, וכינה את הדיון הציבורי של איזנקוט חסר אחריות."
+    },
+    {
+      "text": "Senior security officials told KAN that the IDF is maintaining preparations for potentially renewing military operations against Iran as directed by the political leadership.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+      "translations": {
+        "he": {
+          "text": "גורמי ביטחון בכירים אמרו ל-KAN כי צה\"ל שומר על היערכות לאפשרות של חידוש המבצעים הצבאיים נגד איראן כפי שהונחה על ידי הדרג המדיני.",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أبلغ مسؤولون أمنيون كبار شبكة KAN بأن الجيش الإسرائيلي يواصل الاستعدادات لاحتمال تجديد العمليات العسكرية ضد إيران وفقاً لتوجيهات القيادة السياسية.",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "مقامات ارشد امنیتی به KAN گفتند که IDF آمادگی برای ازسرگیری احتمالی عملیات‌های نظامی علیه ایران را طبق دستورات رهبری سیاسی حفظ می‌کند.",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Hochrangige Sicherheitsbeamte teilten KAN mit, dass die IDF Vorbereitungen für eine potenzielle Wiederaufnahme von Militäroperationen gegen den Iran aufrechterhält, wie von der politischen Führung angewiesen.",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "De hauts responsables de la sécurité ont déclaré à KAN que Tsahal maintient ses préparatifs en vue d'une éventuelle reprise des opérations militaires contre l'Iran, conformément aux directives des dirigeants politiques.",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "高级安全官员告诉KAN，IDF正按照政治领导层的指示，保持可能重启针对伊朗军事行动的准备。",
+          "sourceHash": "e4ce496f53a38a04c1f77fb0199ba8173aa608d388dcf7e1c781b63f16e174f4",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Netanyahu to convene Israel's Security Cabinet as Eisenkot warns against renewed Iran strikes",
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "published": "2026-11-12T10:33:44.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914671",
+          "bodyHash": "a3354aede4a82b19c52a60e476d5de338ef6637420c73cc4fc31b6ee1961cf72",
+          "capturedAt": "2026-11-12T14:44:22.846Z",
+          "quoteHash": "e6a63597d1c81db1447113ef2f9965df9a9239a0a86b4d125038ca7aeed3bd09",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "RICHARD OFFENBACHER"
+          }
+        }
+      ],
+      "textHe": "גורמי ביטחון בכירים אמרו ל-KAN כי צה\"ל שומר על היערכות לאפשרות של חידוש המבצעים הצבאיים נגד איראן כפי שהונחה על ידי הדרג המדיני."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "59105d8c6276a27b6c1da7b1c0928ceb4820fe4fe80c0d70825fd9ce8f6a84d5",
+    "privateStored": true
+  }
+}
