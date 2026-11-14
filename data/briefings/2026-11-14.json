@@ -1,0 +1,234 @@
+{
+  "date": "2026-11-14",
+  "generatedAt": "2026-11-14T13:03:59.843Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 3,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 1
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-14T13:03:59.843Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "5d0c053debe7855f60eaaf3ed1f56aface520768ca607e632dcc4a932760ea29",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "f2d5fb1d852804a1d09ae7ebd63ee896c674a2cc24a2b51b94c75b7b6d8fd1d1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "fe099c2099866de55416ba84fb7e9a5b7a172e8cc868bcf98beec3d7c4554815",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "JTA reported that Simon & Schuster will distribute a book by Yair Netanyahu asserting that foreign and domestic Israeli enemies coordinated to unseat his father, Benjamin Netanyahu.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+      "translations": {
+        "he": {
+          "text": "סוכנות הידיעות JTA דיווחה כי הוצאת Simon & Schuster תפיץ ספר מאת יאיר נתניהו הטוען כי אויבים זרים וישראליים מבית תיאמו ביניהם כדי להדיח את אביו, בנימין נתניהו.",
+          "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت JTA بأن Simon & Schuster ستوزع كتاباً لـ Yair Netanyahu يؤكد أن أعداء إسرائيليين أجانب ومحليين نسقوا للإطاحة بوالده، Benjamin Netanyahu.",
+          "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "JTA گزارش داد که Simon & Schuster کتابی از Yair Netanyahu را توزیع خواهد کرد که ادعا می‌کند دشمنان خارجی و داخلی اسرائیل برای برکنار کردن پدرش، Benjamin Netanyahu، با یکدیگر هماهنگ شده بودند.",
+          "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "JTA berichtete, dass Simon & Schuster ein Buch von Yair Netanyahu vertreiben wird, in dem behauptet wird, dass ausländische und inländische israelische Feinde sich koordinierten, um seinen Vater, Benjamin Netanyahu, abzusetzen.",
+          "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "JTA 报道称，Simon & Schuster 将发行一本由 Yair Netanyahu 所著的书籍，书中声称以色列国内外的敌人相互勾结以推翻其父亲 Benjamin Netanyahu。",
+          "sourceHash": "9a3509227f8728648245e57531117e442f86e873ecece34de28924f59a488f1f",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Netanyahu’s son calls dad’s opponents ‘saboteurs’ in book to be distributed by Simon & Schuster",
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "published": "2026-11-13T22:28:47Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "bodyHash": "7cf80ed367dc78d339b2a6401f743960d5ba31138c723084e91c860c36e40bc0",
+          "capturedAt": "2026-11-14T13:03:33.111Z",
+          "quoteHash": "e4fc4d07539f468d4b16b0a0937ab6d66515c078c7d6f820fc1fb98442b61af5",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Shira Li Bartov"
+          }
+        }
+      ],
+      "textHe": "סוכנות הידיעות JTA דיווחה כי הוצאת Simon & Schuster תפיץ ספר מאת יאיר נתניהו הטוען כי אויבים זרים וישראליים מבית תיאמו ביניהם כדי להדיח את אביו, בנימין נתניהו."
+    },
+    {
+      "text": "According to a Simon & Schuster website blurb cited by JTA, Israeli institutions conspired against Benjamin Netanyahu by working to remove him from power.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+      "translations": {
+        "he": {
+          "text": "על פי תיאור קצר באתר של Simon & Schuster שצוטט על ידי JTA, מוסדות ישראליים קשרו קשר נגד בנימין נתניהו בכך שפעלו להדחתו מהשלטון.",
+          "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لنص ترويجي على موقع Simon & Schuster الإلكتروني نقلته JTA، تآمرت مؤسسات إسرائيلية ضد Benjamin Netanyahu من خلال العمل على إبعاده عن السلطة.",
+          "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس متن تبلیغاتی وب‌سایت Simon & Schuster که توسط JTA نقل شده است، نهادهای اسرائیلی با تلاش برای کنار زدن Benjamin Netanyahu از قدرت، علیه او توطئه کردند.",
+          "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut einem von JTA zitierten Werbetext auf der Website von Simon & Schuster verschworen sich israelische Institutionen gegen Benjamin Netanyahu, indem sie darauf hinarbeiteten, ihn von der Macht zu entfernen.",
+          "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "根据 JTA 引用的 Simon & Schuster 网站宣传简介，以色列各机构通过致力于将 Benjamin Netanyahu 赶下台来合谋反对他。",
+          "sourceHash": "f5f145e48729fd8d7a1a12b5a59318726d061cc7246c3ecb5e5a48d5fdd97205",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Netanyahu’s son calls dad’s opponents ‘saboteurs’ in book to be distributed by Simon & Schuster",
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "published": "2026-11-13T22:28:47Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "bodyHash": "7cf80ed367dc78d339b2a6401f743960d5ba31138c723084e91c860c36e40bc0",
+          "capturedAt": "2026-11-14T13:03:33.111Z",
+          "quoteHash": "c89ff1bd2080eee017080fce8769c0e9e01df637de7f09bcad2533b388344a6f",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Shira Li Bartov"
+          }
+        }
+      ],
+      "textHe": "על פי תיאור קצר באתר של Simon & Schuster שצוטט על ידי JTA, מוסדות ישראליים קשרו קשר נגד בנימין נתניהו בכך שפעלו להדחתו מהשלטון."
+    },
+    {
+      "text": "JTA reported that Yair Netanyahu alleged Israel's October 27 election was rigged against his father and stolen by enemy states bribing Arab voters.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+      "translations": {
+        "he": {
+          "text": "JTA דיווחה כי יאיר נתניהו טען שהבחירות ב-27 באוקטובר בישראל זויפו נגד אביו ונגנבו על ידי מדינות אויב ששיחדו מצביעים ערבים.",
+          "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "أفادت JTA بأن Yair Netanyahu زعم أن انتخابات 27 أكتوبر في إسرائيل زُوِّرت ضد والده وسرقتها دول معادية قدمت رشاوى للناخبين العرب.",
+          "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "JTA گزارش داد که Yair Netanyahu ادعا کرده است انتخابات 27 October اسرائیل علیه پدرش مهندسی شده بود و توسط کشورهای دشمن از طریق تطمیع رأی‌دهندگان عرب به سرقت رفته است.",
+          "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "JTA berichtete, dass Yair Netanyahu behauptete, Israels Wahl am 27. Oktober sei gegen seinen Vater manipuliert und von feindlichen Staaten durch die Bestechung arabischer Wähler gestohlen worden.",
+          "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "JTA 报道称，Yair Netanyahu 指控以色列 10 月 27 日的选举存在针对其父亲的舞弊，并且是被通过贿赂阿拉伯选民的敌对国家窃取的。",
+          "sourceHash": "29f15f8184dbe2f478ee51d758916d20b62805391623acfb7e0ac876c86fcd35",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Netanyahu’s son calls dad’s opponents ‘saboteurs’ in book to be distributed by Simon & Schuster",
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "published": "2026-11-13T22:28:47Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/13/israel/netanyahus-son-calls-dads-opponents-saboteurs-in-book-to-be-distributed-by-simon-schuster",
+          "bodyHash": "7cf80ed367dc78d339b2a6401f743960d5ba31138c723084e91c860c36e40bc0",
+          "capturedAt": "2026-11-14T13:03:33.111Z",
+          "quoteHash": "19fe6a9ee33061050b7c36b93fb0f31ad615a2ed127ec16b35e50b45f4152f52",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Shira Li Bartov"
+          }
+        }
+      ],
+      "textHe": "JTA דיווחה כי יאיר נתניהו טען שהבחירות ב-27 באוקטובר בישראל זויפו נגד אביו ונגנבו על ידי מדינות אויב ששיחדו מצביעים ערבים."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "a0db7104fe1dd4c64e1c7958aaf1a51ae80ad189cd17fc677d54f5335b157af5",
+    "privateStored": true
+  }
+}
