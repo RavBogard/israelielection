@@ -1,0 +1,477 @@
+{
+  "date": "2026-11-15",
+  "generatedAt": "2026-11-15T13:31:33.516Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 6,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 2
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-15T13:31:33.516Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "dbe30d85ebf971cd27b2a710f401d28688404abe0ec79f3f37800518e60ce199",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "1ac6ef4eea6357bc324c652d8c080167a927f8990fdbc9674cd625b5ad996b20",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "4ec3bb19b1bbefe8a5178d3d444b5346c1186a0faea7d7f6eb9d3b3cdaa6ef82",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "f01ccb335b54a318c6f87df86cd5adb3aec3a6b562a935d9efcc323759348ef1",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "07289de184f071086bba9fb9a90ebc0410139d7d901ce18bc2b0e673ecef03ae",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-6",
+        "contentHash": "24c949c9bdd6d495635623dc16e60d64edd4be575909f1ff7e1b37741af7e5a0",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "The Jerusalem Post reported that representatives of Likud and Yashar were set to hold coalition negotiations on Sunday afternoon as Gadi Eisenkot worked to form a government after receiving the presidential mandate a week earlier.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+      "translations": {
+        "he": {
+          "text": "ה-Jerusalem Post דיווח כי נציגים של הליכוד ושל ישר היו אמורים לקיים משא ומתן קואליציוני ביום ראשון אחר הצהריים, כאשר גדי איזנקוט פעל להרכבת ממשלה לאחר שקיבל את המנדט הנשיאותי שבוע קודם לכן.",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت صحيفة The Jerusalem Post أن ممثلين عن حزبي الليكود ويشار كان من المقرر أن يعقدوا مفاوضات ائتلافية بعد ظهر يوم الأحد في الوقت الذي عمل فيه غادي آيزنكوت على تشكيل حكومة بعد تلقيه التكليف الرئاسي قبل أسبوع.",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "The Jerusalem Post گزارش داد که نمایندگان لیکود و یاشار قرار بود بعدازظهر یکشنبه مذاکرات ائتلافی را برگزار کنند، در حالی که گادی آیزنکوت پس از دریافت مأموریت ریاست‌جمهوری در یک هفته پیشتر، برای تشکیل دولت تلاش می‌کرد.",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Jerusalem Post berichtete, dass Vertreter des Likud und von Yashar am Sonntagnachmittag Koalitionsverhandlungen aufnehmen sollten, während Gadi Eisenkot daran arbeitete, eine Regierung zu bilden, nachdem er eine Woche zuvor das Mandat des Präsidenten erhalten hatte.",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Le Jerusalem Post a rapporté que des représentants du Likoud et de Yashar devaient mener des négociations de coalition dimanche après-midi alors que Gadi Eisenkot s'efforçait de former un gouvernement après avoir reçu le mandat présidentiel une semaine plus tôt.",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "《耶路撒冷邮报》（The Jerusalem Post）报道称，利库德集团（Likud）和亚沙尔党（Yashar）的代表定于周日下午举行联合政府谈判，而加迪·埃森科特（Gadi Eisenkot）在一周前获得总统授权后正致力于组建政府。",
+          "sourceHash": "641c85524837e2db9dcad3f9021bef954423b5a7c576897074dc24b090cad27b",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud, Yashar to hold coalition negotiations as Eisenkot's second week with mandate begins",
+          "url": "https://www.jpost.com/israel-election-2026/article-914935",
+          "published": "2026-11-15T12:45:05.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914935",
+          "bodyHash": "6829d1349f85503112cbf641b27972b2ded333bbbcbf19d1e68b3ee803cae26e",
+          "capturedAt": "2026-11-15T13:31:01.360Z",
+          "quoteHash": "5e4bc9a2ea3c45abd128f4f10af5847ebc314a0025be50afb660f41f5ea4ca67",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "ה-Jerusalem Post דיווח כי נציגים של הליכוד ושל ישר היו אמורים לקיים משא ומתן קואליציוני ביום ראשון אחר הצהריים, כאשר גדי איזנקוט פעל להרכבת ממשלה לאחר שקיבל את המנדט הנשיאותי שבוע קודם לכן."
+    },
+    {
+      "text": "According to Likud's announcement reported by the Jerusalem Post, MK Ophir Katz and attorney Michael Rabello were named to represent Likud in coalition negotiations, while Yashar selected MK Chili Tropper and Yoav Horowitz.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+      "translations": {
+        "he": {
+          "text": "על פי הודעת הליכוד כפי שדווחה על ידי ה-Jerusalem Post, חבר הכנסת אופיר כץ ועורך הדין מיכאל ראבילו נבחרו לייצג את הליכוד במשא ומתן הקואליציוני, בעוד שישר בחרה בחבר הכנסת חילי טרופר וביואב הורוביץ.",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لإعلان حزب الليكود الذي نقلته صحيفة The Jerusalem Post، تم اختيار عضو الكنيست أوفير كاتس والمحامي مايكل رابيلو لتمثيل الليكود في المفاوضات الائتلافية، في حين اختار حزب يشار عضو الكنيست حيلي تروبر ويوآف هوروفيتش.",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس اطلاعیه لیکود که توسط The Jerusalem Post گزارش شد، اوفیر کاتس، عضو کنست، و مایکل رابلو، وکیل دادگستری، به عنوان نمایندگان لیکود در مذاکرات ائتلافی معرفی شدند، در حالی که یاشار چیلی تروپر، عضو کنست، و یوآو هوروویتز را انتخاب کرد.",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut der von der Jerusalem Post berichteten Ankündigung des Likud wurden der Knesset-Abgeordnete Ophir Katz und der Anwalt Michael Rabello ernannt, um den Likud bei den Koalitionsverhandlungen zu vertreten, während Yashar den Knesset-Abgeordneten Chili Tropper und Yoav Horowitz auswählte.",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon l'annonce du Likoud rapportée par le Jerusalem Post, le député Ophir Katz et l'avocat Michael Rabello ont été désignés pour représenter le Likoud lors des négociations de coalition, tandis que Yashar a sélectionné le député Chili Tropper et Yoav Horowitz.",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "根据《耶路撒冷邮报》报道的利库德集团声明，议员奥菲尔·卡茨（Ophir Katz）和律师迈克尔·拉贝洛（Michael Rabello）被指定代表利库德集团参加联合政府谈判，而亚沙尔党则选派了议员奇利·特罗珀（Chili Tropper）和约阿夫·霍罗威茨（Yoav Horowitz）。",
+          "sourceHash": "6ad478d0daeb6e30a5c47f36e2c0e04baf5b978598bf4d48b223fa10519440d9",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Likud, Yashar to hold coalition negotiations as Eisenkot's second week with mandate begins",
+          "url": "https://www.jpost.com/israel-election-2026/article-914935",
+          "published": "2026-11-15T12:45:05.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914935",
+          "bodyHash": "6829d1349f85503112cbf641b27972b2ded333bbbcbf19d1e68b3ee803cae26e",
+          "capturedAt": "2026-11-15T13:31:01.360Z",
+          "quoteHash": "3654163cee353e4ec91bfdec8a94e8e3110a2bfe88613762b71b8dfd0eb2536f",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "SHIR PERETS"
+          }
+        }
+      ],
+      "textHe": "על פי הודעת הליכוד כפי שדווחה על ידי ה-Jerusalem Post, חבר הכנסת אופיר כץ ועורך הדין מיכאל ראבילו נבחרו לייצג את הליכוד במשא ומתן הקואליציוני, בעוד שישר בחרה בחבר הכנסת חילי טרופר וביואב הורוביץ."
+    },
+    {
+      "text": "N12 News reported, as relayed by the Jerusalem Post, that the Shin Bet sought to recruit Joint List activists to act against Ra'am during an inquiry into suspected election tampering in the Arab sector.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+      "translations": {
+        "he": {
+          "text": "חדשות N12 דיווחו, כפי שנמסר על ידי ה-Jerusalem Post, כי השב\"כ ביקש לגייס פעילי הרשימה המשותפת כדי לפעול נגד רע\"ם במהלך חקירה של חשד להטיית בחירות במגזר הערבי.",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ذكرت أخبار N12، بحسب ما نقلته صحيفة The Jerusalem Post، أن جهاز الشاباك سعى إلى تجنيد نشطاء من القائمة المشتركة للعمل ضد القائمة العربية الموحدة (Ra'am) خلال تحقيق في الاشتباه بالتلاعب بالانتخابات في الوسط العربي.",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "اخبار N12، همان‌طور که توسط The Jerusalem Post بازتاب یافت، گزارش داد که شین بت تلاش کرده بود تا فعالان لیست مشترک را برای اقدام علیه رعام در جریان تحقیقات پیرامون دستکاری مشکوک در انتخابات در بخش عربی جذب کند.",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "N12 News berichtete laut der Jerusalem Post, dass der Shin Bet versucht habe, Aktivisten der Joint List anzuwerben, um während einer Untersuchung mutmaßlicher Wahlmanipulationen im arabischen Sektor gegen Ra'am vorzugehen.",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "N12 News a rapporté, tel que relayé par le Jerusalem Post, que le Shin Bet a cherché à recruter des militants de la Liste conjointe pour agir contre Ra'am au cours d'une enquête sur des soupçons de falsification électorale dans le secteur arabe.",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据《耶路撒冷邮报》转引N12新闻的报道，在对阿拉伯地区涉嫌选举舞弊的调查期间，辛贝特（Shin Bet）试图招募联合名单（Joint List）活动分子来针对联合阿拉伯名单（Ra'am）。",
+          "sourceHash": "87fb604f607f51480806e2379bcf6b0d9efb258ca5c63846068f80346d048ea6",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet pressured Joint List activists to incriminate Ra'am during election probe - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "published": "2026-11-15T11:58:46.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "bodyHash": "4f777826796d0c0346b4a79d0f2bf8d533601b037f0d7139c1781dd6fabf5303",
+          "capturedAt": "2026-11-15T13:31:01.578Z",
+          "quoteHash": "9f603d460d8b9eb4f3c3a3b3a41b8493f7f1e5c1c66a3908afd438d425603384",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "חדשות N12 דיווחו, כפי שנמסר על ידי ה-Jerusalem Post, כי השב\"כ ביקש לגייס פעילי הרשימה המשותפת כדי לפעול נגד רע\"ם במהלך חקירה של חשד להטיית בחירות במגזר הערבי."
+    },
+    {
+      "text": "In comments to N12 reported by the Jerusalem Post, the Shin Bet defended its questions as a lawful interrogation method used in examining suspected subversive activity and foreign election influence.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+      "translations": {
+        "he": {
+          "text": "בהערות ל-N12 שדווחו על ידי ה-Jerusalem Post, השב\"כ הגן על שאלותיו כשיטת תשאול חוקית המשמשת לבחינת חשד לפעילות חתרנית ולהשפעה זרה על הבחירות.",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "في تصريحات لـ N12 نقلتها صحيفة The Jerusalem Post، دافع جهاز الشاباك عن أسئلته باعتبارها أسلوب استجواب قانونياً يُستخدم في فحص الأنشطة التخريبية المشتبه بها والتأثير الأجنبي في الانتخابات.",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "در اظهاراتی به N12 که توسط The Jerusalem Post گزارش شد، شین بت از پرسش‌های خود به عنوان یک روش بازجویی قانونی که در بررسی فعالیت‌های براندازانه مشکوک و نفوذ خارجی در انتخابات استفاده می‌شود، دفاع کرد.",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "In von der Jerusalem Post berichteten Äußerungen gegenüber N12 verteidigte der Shin Bet seine Fragen als rechtmäßige Verhörmethode, die bei der Untersuchung mutmaßlicher subversiver Aktivitäten und ausländischer Einflussnahme auf Wahlen eingesetzt werde.",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Dans des commentaires accordés à N12 et rapportés par le Jerusalem Post, le Shin Bet a défendu ses questions comme étant une méthode d'interrogatoire légale utilisée pour examiner des soupçons d'activité subversive et d'influence électorale étrangère.",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "在《耶路撒冷邮报》报道的对N12的置评中，辛贝特为其提问进行了辩护，称其为在调查涉嫌颠覆活动及外国干涉选举时所使用的合法审讯手段。",
+          "sourceHash": "0b70ebbd47ac2aa27871c0082fb5f9e9e82a351c8d835d05baa652caad9f6bef",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet pressured Joint List activists to incriminate Ra'am during election probe - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "published": "2026-11-15T11:58:46.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "bodyHash": "4f777826796d0c0346b4a79d0f2bf8d533601b037f0d7139c1781dd6fabf5303",
+          "capturedAt": "2026-11-15T13:31:01.578Z",
+          "quoteHash": "1342fb31b98b540324f6585f7e1163d870d4370ee094f08fb7c435c28281cab7",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "בהערות ל-N12 שדווחו על ידי ה-Jerusalem Post, השב\"כ הגן על שאלותיו כשיטת תשאול חוקית המשמשת לבחינת חשד לפעילות חתרנית ולהשפעה זרה על הבחירות."
+    },
+    {
+      "text": "Ra'am stated that attempts to cast aspersions on its election conduct by recruiting political activists against it are doomed to failure.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+      "translations": {
+        "he": {
+          "text": "רע\"ם הצהירה כי ניסיונות להטיל דופי בהתנהלותה בבחירות באמצעות גיוס פעילים פוליטיים נגדה נידונים לכישלון.",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وصرحت القائمة العربية الموحدة (Ra'am) بأن محاولات التشكيك في نزاهة سلوكها الانتخابي عبر تجنيد نشطاء سياسيين ضدها مصيرها الفشل.",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "رعام بیان کرد که تلاش‌ها برای زیر سؤال بردن رفتار انتخاباتی آن از طریق جذب فعالان سیاسی علیه آن، محکوم به شکست است.",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Ra'am erklärte, dass Versuche, das eigene Wahlverhalten durch die Anwerbung politischer Aktivisten gegen die Partei in Verruf zu bringen, zum Scheitern verurteilt seien.",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Ra'am a déclaré que les tentatives de jeter le discrédit sur sa conduite électorale en recrutant des militants politiques contre lui sont vouées à l'échec.",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Ra'am表示，企图通过招募政治活动分子来针对它、从而对其选举行为进行诽谤的举动注定要失败。",
+          "sourceHash": "5b88ce8a00fe3007d318fac987f82732da17c68770920f13191694fe857e7ff3",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet pressured Joint List activists to incriminate Ra'am during election probe - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "published": "2026-11-15T11:58:46.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "bodyHash": "4f777826796d0c0346b4a79d0f2bf8d533601b037f0d7139c1781dd6fabf5303",
+          "capturedAt": "2026-11-15T13:31:01.578Z",
+          "quoteHash": "e50023bc64102258e579425d54cbe3dda101b7d746a60a2fdb6e4e53c04b915b",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "רע\"ם הצהירה כי ניסיונות להטיל דופי בהתנהלותה בבחירות באמצעות גיוס פעילים פוליטיים נגדה נידונים לכישלון."
+    },
+    {
+      "text": "In response to the N12 report, the Joint List characterized the Shin Bet as a political tool for the government and asserted that intimidation tactics would neither deter nor silence the party.",
+      "claimId": "claim-6",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+      "translations": {
+        "he": {
+          "text": "בתגובה לדיווח של N12, הרשימה המשותפת אפיינה את השב\"כ ככלי פוליטי של הממשלה וטענה כי טקטיקות הפחדה לא ירתיעו ולא ישתיקו את המפלגה.",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "ورداً على تقرير N12، وصفت القائمة المشتركة جهاز الشاباك بأنه أداة سياسية للحكومة، وأكدت أن أساليب الترهيب لن تردع الحزب ولن تسكته.",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "در پاسخ به گزارش N12، لیست مشترک شین بت را ابزاری سیاسی برای دولت توصیف کرد و تأکید نمود که تاکتیک‌های ارعاب هرگز این حزب را منصرف یا ساکت نخواهد کرد.",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Als Reaktion auf den N12-Bericht bezeichnete die Joint List den Shin Bet als politisches Werkzeug der Regierung und betonte, dass Einschüchterungstaktiken die Partei weder abschrecken noch zum Schweigen bringen würden.",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "En réponse au reportage de N12, la Liste conjointe a qualifié le Shin Bet d'outil politique pour le gouvernement et a affirmé que les tactiques d'intimidation ne parviendraient ni à dissuader ni à faire taire le parti.",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "针对N12的报道，联合名单将辛贝特定性为政府的政治工具，并断言恐吓手段既不能吓退也不能让该党噤声。",
+          "sourceHash": "e34afe7b77dd111005df09daf798b1d0b91a5a80f2888448a481db42785c1553",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Shin Bet pressured Joint List activists to incriminate Ra'am during election probe - report",
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "published": "2026-11-15T11:58:46.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-914919",
+          "bodyHash": "4f777826796d0c0346b4a79d0f2bf8d533601b037f0d7139c1781dd6fabf5303",
+          "capturedAt": "2026-11-15T13:31:01.578Z",
+          "quoteHash": "d5396c5e4ecc8b35e5a9a357b0c4cb297f2168a701fe694f3deb9d9527addbbe",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "JERUSALEM POST STAFF"
+          }
+        }
+      ],
+      "textHe": "בתגובה לדיווח של N12, הרשימה המשותפת אפיינה את השב\"כ ככלי פוליטי של הממשלה וטענה כי טקטיקות הפחדה לא ירתיעו ולא ישתיקו את המפלגה."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "50ad7f590975b67e4db952b24b61acb6b3e243ae5d5add2561e62bd7ea178876",
+    "privateStored": true
+  }
+}
