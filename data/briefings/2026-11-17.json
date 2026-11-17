@@ -1,0 +1,252 @@
+{
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T15:36:29.041Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 3,
+    "discardedClaims": 0,
+    "sourceAttempts": 16,
+    "capturedSources": 3
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-17T15:36:29.041Z",
+    "claims": [
+      {
+        "id": "claim-1",
+        "contentHash": "7f498a392c38c1a7ef89fe714f97ebed49e3444a3bb82cb051fec2f528601b5f",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-2",
+        "contentHash": "8f76a74de1e5be444a75f9b9e4183ca316bfe9c4bcc1c3bc681e3a0fd0b0d659",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-3",
+        "contentHash": "5f9f26c273ec19aae5b2a40a3465f82cc179118782fd8d30b61d8a9d5c2b3b16",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "According to Likud election integrity director Sagi Keizler in an account reported by the Jerusalem Post, more than 1,200 complaints regarding voting irregularities across polling stations in the Arab sector had remained uninvestigated following the election.",
+      "claimId": "claim-1",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+      "translations": {
+        "he": {
+          "text": "לפי מנהל טוהר הבחירות של הליכוד שגיא קייזלר בדיווח שפורסם על ידי ה-Jerusalem Post, יותר מ-1,200 תלונות בנוגע לאי-סדרים בהצבעה ברחבי קלפיות במגזר הערבי נותרו ללא חקירה לאחר הבחירות.",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لمدير نزاهة الانتخابات في حزب الليكود ساغي كيزلر في رواية أوردتها صحيفة جيروزاليم بوست، بقيت أكثر من 1,200 شكوى تتعلق بمخالفات التصويت في مراكز الاقتراع في الوسط العربي دون تحقيق في أعقاب الانتخابات.",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس گفته ساگی کایزلر، مدیر سلامت انتخابات حزب لیکود، در گزارشی که توسط Jerusalem Post منتشر شد، بیش از 1,200 شکایت در رابطه با بی‌نظمی‌های رأی‌گیری در حوزه‌های رأی‌گیری بخش عربی پس از انتخابات بررسی‌نشده باقی مانده بود.",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut dem Direktor für Wahlintegrität des Likud, Sagi Keizler, in einem von der Jerusalem Post gemeldeten Bericht blieben nach der Wahl mehr als 1.200 Beschwerden über Unregelmäßigkeiten bei der Stimmabgabe in Wahllokalen im arabischen Sektor ununtersucht.",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon le directeur de l'intégrité électorale du Likoud, Sagi Keizler, dans un récit rapporté par le Jerusalem Post, plus de 1 200 plaintes concernant des irrégularités de vote dans les bureaux de vote du secteur arabe étaient restées sans enquête à la suite de l'élection.",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据 Jerusalem Post 报道中利库德集团（Likud）选举诚信主管 Sagi Keizler 的记述，选举后阿拉伯地区各投票站关于投票违规行为的 1,200 多起投诉仍未得到调查。",
+          "sourceHash": "da49c9d4d58df135cde6b2fdbf77d69b1d9d0321169994832a9e48b3197252af",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'No democracy in Arab sector': Likud official says thousands of claims of election fraud unanswered",
+          "url": "https://www.jpost.com/israel-election-2026/article-915181",
+          "published": "2026-11-17T13:57:05.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-915181",
+          "bodyHash": "4f0b27409fb0d92a8bae073a74be72928cc77eadcf0a52478351459e3abafca7",
+          "capturedAt": "2026-11-17T15:35:57.432Z",
+          "quoteHash": "cba6bf3c4eee98f4e83aa2a14f659a0505fa2ace9da3c39acd14b6c5696a6a35",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "103FM"
+          }
+        }
+      ],
+      "textHe": "לפי מנהל טוהר הבחירות של הליכוד שגיא קייזלר בדיווח שפורסם על ידי ה-Jerusalem Post, יותר מ-1,200 תלונות בנוגע לאי-סדרים בהצבעה ברחבי קלפיות במגזר הערבי נותרו ללא חקירה לאחר הבחירות."
+    },
+    {
+      "text": "According to former police spokesman Eli Levy as reported by the Jerusalem Post, Attorney-General Gali Baharav-Miara was entirely justified in freezing the internal police review initiated by Police Commissioner Danny Levy.",
+      "claimId": "claim-2",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+      "translations": {
+        "he": {
+          "text": "לפי דובר המשטרה לשעבר אלי לוי כפי שדווח על ידי ה-Jerusalem Post, היועצת המשפטית לממשלה גלי בהרב-מיארה הייתה מוצדקת לחלוטין בהקפאת הבדיקה המשטרתית הפנימית שיזם מפכ\"ל המשטרה דני לוי.",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً للمتحدث السابق باسم الشرطة إيلي ليفي كما أوردت صحيفة جيروزاليم بوست، كانت المستشارة القضائية للحكومة غالي باهاراف-ميارا محقة تماماً في تجميد المراجعة الداخلية للشرطة التي بدأها مفوض الشرطة داني ليفي.",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس گزارش Jerusalem Post به نقل از الی لوی، سخنگوی سابق پلیس، دادستان کل گالی باهاراو-میارا در تعلیق بررسی داخلی پلیس که توسط کمیسر پلیس دنی لوی آغاز شده بود، کاملاً محق و موجه بود.",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut dem ehemaligen Polizeisprecher Eli Levy, wie von der Jerusalem Post berichtet, war Generalstaatsanwältin Gali Baharav-Miara vollkommen im Recht, die von Polizeikommissar Danny Levy eingeleitete interne polizeiliche Überprüfung einzufrieren.",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon l'ancien porte-parole de la police Eli Levy, tel que rapporté par le Jerusalem Post, la procureure générale Gali Baharav-Miara était entièrement justifiée de geler l'examen interne de la police initié par le commissaire de police Danny Levy.",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据 Jerusalem Post 报道的前警方发言人 Eli Levy 所述，总检察长 Gali Baharav-Miara 完全有理由冻结由警察总监 Danny Levy 发起的警方内部审查。",
+          "sourceHash": "e42e5e0131e08458b40d3cb9a14959e45af3fc7e41b4a3c18562f6ebb8ce1393",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "Former police spokesman slams election day arrests, accuses commissioner, police of major failures",
+          "url": "https://www.jpost.com/israel-election-2026/article-915174",
+          "published": "2026-11-17T12:59:14.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-915174",
+          "bodyHash": "cd9ec0eb5e0b5840bb901e0b9f29514b5626a59c535e18fe5b9e9e7119984d77",
+          "capturedAt": "2026-11-17T15:35:58.921Z",
+          "quoteHash": "e113828275f8ee7d2479a2f553619e8b239f92e5d994c210fb35e120611f807c",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "103FM"
+          }
+        }
+      ],
+      "textHe": "לפי דובר המשטרה לשעבר אלי לוי כפי שדווח על ידי ה-Jerusalem Post, היועצת המשפטית לממשלה גלי בהרב-מיארה הייתה מוצדקת לחלוטין בהקפאת הבדיקה המשטרתית הפנימית שיזם מפכ\"ל המשטרה דני לוי."
+    },
+    {
+      "text": "According to Mishpacha editor Aryeh Erlich in an interview reported by the Jerusalem Post, Avigdor Liberman was willing to drop his longstanding posture on haredi military enlistment in order to facilitate coalition formation with the Eisenkot bloc.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+      "translations": {
+        "he": {
+          "text": "לפי עורך \"משפחה\" אריה ארליך בריאיון שדווח על ידי ה-Jerusalem Post, אביגדור ליברמן היה מוכן לוותר על עמדתו ארוכת השנים בנוגע לגיוס חרדים לצבא כדי להקל על הקמת קואליציה עם גוש איזנקוט.",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وفقاً لرئيس تحرير صحيفة مشبحة أرييه إرليخ في مقابلة أوردتها صحيفة جيروزاليم بوست، كان أفيغدور ليبرمان مستعداً للتخلي عن موقفه طويل الأمد بشأن تجنيد الحريديم في الجيش من أجل تسهيل تشكيل ائتلاف مع كتلة آيزنكوت.",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "بر اساس گفته آریه ارلیخ، سردبیر Mishpacha، در مصاحبه‌ای که توسط Jerusalem Post گزارش شد، آویگدور لیبرمن حاضر بود از موضع دیرینه خود درباره خدمت نظام وظیفه حریدی‌ها صرف‌نظر کند تا تشکیل ائتلاف با بلوک آیزنکوت را تسهیل کند.",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Laut Mishpacha-Redakteur Aryeh Erlich in einem von der Jerusalem Post berichteten Interview war Avigdor Liberman bereit, seine langjährige Haltung zur militärischen Einberufung von Haredim aufzugeben, um die Koalitionsbildung mit dem Eisenkot-Block zu erleichtern.",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "Selon le rédacteur en chef de Mishpacha, Aryeh Erlich, dans un entretien rapporté par le Jerusalem Post, Avigdor Liberman était disposé à abandonner sa position de longue date sur l'enrôlement militaire des haredim afin de faciliter la formation d'une coalition avec le bloc Eisenkot.",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "据 Jerusalem Post 报道的一次访谈中 Mishpacha 编辑 Aryeh Erlich 所述，Avigdor Liberman 愿意放弃其在哈雷迪服兵役问题上长期以来的立场，以促进与 Eisenkot 阵营组建联盟。",
+          "sourceHash": "721ae564da5d30eb8ab6fbd971626d65fa8ec46bb891f0fd96e8beb57dc00b1d",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "Jerusalem Post",
+          "title": "'We were persecuted': Haredi journalist slams Eisenkot bloc's offer to end yeshiva student arrests",
+          "url": "https://www.jpost.com/israel-election-2026/article-915133",
+          "published": "2026-11-17T09:23:01.000+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jpost.com/israel-election-2026/article-915133",
+          "bodyHash": "c3b051c3fd02a55f0ebf2435433e424b4e1bdf97fae7bd05a9036f2f3c6060a4",
+          "capturedAt": "2026-11-17T15:36:00.081Z",
+          "quoteHash": "fe411557f25ca000cdf4cbe35be982ed31871995510d784b48595e49c7d3ce79",
+          "origin": {
+            "id": "newsroom:jpost.com",
+            "kind": "newsroom",
+            "byline": "103FM"
+          }
+        }
+      ],
+      "textHe": "לפי עורך \"משפחה\" אריה ארליך בריאיון שדווח על ידי ה-Jerusalem Post, אביגדור ליברמן היה מוכן לוותר על עמדתו ארוכת השנים בנוגע לגיוס חרדים לצבא כדי להקל על הקמת קואליציה עם גוש איזנקוט."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "7537e9ec02ab349034532a0c803169477595f21c62836e9da4f9490b801078af",
+    "privateStored": true
+  }
+}
