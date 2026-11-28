@@ -1,0 +1,252 @@
+{
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T15:10:55.637Z",
+  "model": "gemini-3.8-flash",
+  "evidenceVersion": 2,
+  "coverage": {
+    "state": "limited",
+    "publishedClaims": 3,
+    "discardedClaims": 2,
+    "sourceAttempts": 16,
+    "capturedSources": 1
+  },
+  "verification": {
+    "model": "gemini-3.8-flash",
+    "reviewedAt": "2026-11-28T15:10:55.637Z",
+    "claims": [
+      {
+        "id": "claim-3",
+        "contentHash": "6da32dc50f6b4a82fa6d1a54c34bc6ceb227f7ce9d88f8bf671aeed607134f25",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-4",
+        "contentHash": "bd684c6e491487bef57127e44f6c553ba67942b8a8a14e34bde2766b8d9ca7f6",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      },
+      {
+        "id": "claim-5",
+        "contentHash": "4262736e7615f2722cb1a1244b0115f0739a36b7acec7cc8145fd6aa05ab44ce",
+        "supported": true,
+        "atomic": true,
+        "attributionPreserved": true,
+        "noAddedInference": true
+      }
+    ]
+  },
+  "sentences": [
+    {
+      "text": "The Orthodox Union stated that the commercial exploits civilian suffering while completely ignoring Hamas's role in the conflict.",
+      "claimId": "claim-3",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+      "translations": {
+        "he": {
+          "text": "האיחוד האורתודוקסי הצהיר כי הפרסומת מנצלת סבל של אזרחים תוך התעלמות מוחלטת מתפקידו של חמאס בסכסוך.",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح اتحاد الأرثوذكس (The Orthodox Union) بأن الإعلان التجاري يستغل معاناة المدنيين بينما يتجاهل تماماً دور حماس في النزاع.",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "اتحادیه ارتدوکس اظهار داشت که این آگهی بازرگانی از رنج غیرنظامیان سوءاستفاده می‌کند، در حالی که نقش حماس در این درگیری را کاملاً نادیده می‌گیرد.",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Orthodox Union erklärte, dass der Werbespot das zivile Leiden ausnutzt, während er die Rolle der Hamas im Konflikt völlig ignoriert.",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "L'Orthodox Union a déclaré que le spot publicitaire exploite la souffrance des civils tout en ignorant complètement le rôle du Hamas dans le conflit.",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Orthodox Union表示，该商业广告利用了平民的苦难，同时完全无视了哈马斯在冲突中的角色。",
+          "sourceHash": "d4316cbceaa3750bd66d55097336a090968b68369bbb333b5cfd7897403c896a",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Jewish groups slam NBC for anti-Israel ad aired during ‘SNL’ Thanksgiving special",
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "published": "2026-11-28T00:10:13Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "bodyHash": "9e400ebc2af08661542722743e7caf347b04389a32b98b5bef2934f27c5f4819",
+          "capturedAt": "2026-11-28T15:09:30.312Z",
+          "quoteHash": "32767d8334fec6f74467063f6b81c19e221cdfedf283a07fb1835a2d9659977d",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Sharon Udasin"
+          }
+        }
+      ],
+      "textHe": "האיחוד האורתודוקסי הצהיר כי הפרסומת מנצלת סבל של אזרחים תוך התעלמות מוחלטת מתפקידו של חמאס בסכסוך."
+    },
+    {
+      "text": "The Union for Reform Judaism stated that the advertisement reduces the war to an emotionally manipulative accusation regarding American taxpayers funding the maiming of Palestinian children.",
+      "claimId": "claim-4",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+      "translations": {
+        "he": {
+          "text": "האיחוד ליהדות רפורמית הצהיר כי הפרסומת מצמצמת את המלחמה להאשמה מניפולטיבית מבחינה רגשית בנוגע לכך שמשלמי המסים האמריקאים מממנים את הטלת המומים בילדים פלסטינים.",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "صرح اتحاد اليهودية الإصلاحية (The Union for Reform Judaism) بأن الإعلان يختزل الحرب في اتهام متلاعب عاطفياً يتعلق بتمويل دافعي الضرائب الأمريكيين لتشويه الأطفال الفلسطينيين.",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "اتحادیه یهودیت اصلاح‌گرا اعلام کرد که این آگهی، جنگ را به اتهامی از نظر احساسی فریبکارانه در خصوص تأمین مالی نقص عضو کودکان فلسطینی توسط مالیات‌دهندگان آمریکایی تقلیل می‌دهد.",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Die Union for Reform Judaism erklärte, dass die Anzeige den Krieg auf eine emotional manipulative Anschuldigung reduziert, wonach amerikanische Steuerzahler die Verstümmelung palästinensischer Kinder finanzieren.",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "L'Union for Reform Judaism a déclaré que la publicité réduit la guerre à une accusation émotionnellement manipulatrice selon laquelle les contribuables américains financent la mutilation d'enfants palestiniens.",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "Union for Reform Judaism表示，该广告将战争简化为一种在情感上具有操纵性的指控，即指责美国纳税人资助了对巴勒斯坦儿童的致残行为。",
+          "sourceHash": "c391c71b01909755fd4690ae982dc09fcf68d88b463e225ddd1f5659d5149819",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Jewish groups slam NBC for anti-Israel ad aired during ‘SNL’ Thanksgiving special",
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "published": "2026-11-28T00:10:13Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "bodyHash": "9e400ebc2af08661542722743e7caf347b04389a32b98b5bef2934f27c5f4819",
+          "capturedAt": "2026-11-28T15:09:30.312Z",
+          "quoteHash": "1fd7d764ab9f7f657949dff01ed0dea3544d52aeda6e9c630e55d24d5228d970",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Sharon Udasin"
+          }
+        }
+      ],
+      "textHe": "האיחוד ליהדות רפורמית הצהיר כי הפרסומת מצמצמת את המלחמה להאשמה מניפולטיבית מבחינה רגשית בנוגע לכך שמשלמי המסים האמריקאים מממנים את הטלת המומים בילדים פלסטינים."
+    },
+    {
+      "text": "The IMEU Policy Project characterized the prospect of a successor Memorandum of Understanding between the United States and Israel as a long-term weapons giveaway.",
+      "claimId": "claim-5",
+      "kind": "attributed_perspective",
+      "evidenceClass": "attributed_perspective",
+      "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+      "translations": {
+        "he": {
+          "text": "ארגון IMEU Policy Project אפיין את האפשרות של מזכר הבנות המשך בין ארצות הברית לישראל כחלוקת נשק בחינם לטווח ארוך.",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "ar": {
+          "text": "وصف مشروع سياسة IMEU (The IMEU Policy Project) احتمال إبرام مذكرة تفاهم لاحقة بين الولايات المتحدة وإسرائيل بأنه هبة أسلحة طويلة الأجل.",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fa": {
+          "text": "پروژه سیاستی IMEU چشم‌انداز یک یادداشت تفاهم جانشین میان ایالات متحده و اسرائیل را به عنوان یک بذل و بخشش طولانی‌مدت سلاح توصیف کرد.",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "de": {
+          "text": "Das IMEU Policy Project bezeichnete die Aussicht auf ein Nachfolge-Memorandum of Understanding zwischen den Vereinigten Staaten und Israel als langfristiges Waffengeschenk.",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "fr": {
+          "text": "L'IMEU Policy Project a qualifié la perspective d'un protocole d'accord de succession entre les États-Unis et Israël de don d'armes à long terme.",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        },
+        "zh": {
+          "text": "IMEU Policy Project将美国与以色列之间达成后续谅解备忘录的前景描述为长期的武器赠予。",
+          "sourceHash": "39675ab9e73344c89ff0179040d08105db701fff91dcfb22f9c02ed1a184ed45",
+          "model": "gemini-3.8-flash",
+          "reviewed": true
+        }
+      },
+      "sources": [
+        {
+          "outlet": "JTA",
+          "title": "Jewish groups slam NBC for anti-Israel ad aired during ‘SNL’ Thanksgiving special",
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "published": "2026-11-28T00:10:13Z"
+        }
+      ],
+      "evidence": [
+        {
+          "url": "https://www.jta.org/2026/11/27/israel/jewish-groups-slam-nbc-for-anti-israel-ad-aired-during-snl-thanksgiving-special",
+          "bodyHash": "9e400ebc2af08661542722743e7caf347b04389a32b98b5bef2934f27c5f4819",
+          "capturedAt": "2026-11-28T15:09:30.312Z",
+          "quoteHash": "dbb46dd821309e93691dc9734b8f05096da0753b7f8b149ef3ad7d54a77ea36d",
+          "origin": {
+            "id": "newsroom:jta.org",
+            "kind": "newsroom",
+            "byline": "Sharon Udasin"
+          }
+        }
+      ],
+      "textHe": "ארגון IMEU Policy Project אפיין את האפשרות של מזכר הבנות המשך בין ארצות הברית לישראל כחלוקת נשק בחינם לטווח ארוך."
+    }
+  ],
+  "dropped": [],
+  "capture": {
+    "state": "archived",
+    "captureHash": "d07c96bdf6a31699479aadfb8faab1bf535366503a00cb8dbb722e95d05031c9",
+    "privateStored": true
+  }
+}
